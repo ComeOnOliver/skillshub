@@ -7,7 +7,20 @@
     },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "dist/**"]
+      "outputs": [".next/**", "dist/**"],
+      "env": [
+        "DATABASE_URL",
+        "SESSION_SECRET",
+        "ENCRYPTION_KEY",
+        "BSC_RPC_URL",
+        "GITHUB_CLIENT_ID",
+        "GITHUB_CLIENT_SECRET",
+        "GITHUB_REDIRECT_URI",
+        "NEXT_PUBLIC_APP_URL",
+        "NEXT_PUBLIC_API_URL",
+        "NEXT_PUBLIC_PLATFORM_BSC_ADDRESS",
+        "NODE_ENV"
+      ]
     },
     "db:generate": {
       "cache": false

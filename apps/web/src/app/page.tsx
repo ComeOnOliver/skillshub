@@ -72,10 +72,9 @@ async function TopRepos() {
     .limit(6);
 
   // Fetch live GitHub stars
-  const repoKeys = (data.length > 0 ? data : FEATURED_REPOS).filter(r => r.githubOwner && r.githubRepoName).map(r => ({
-    owner: r.githubOwner!,
-    repo: r.githubRepoName!,
-  }));
+  const repoKeys = data.length > 0
+    ? data.filter(r => r.githubOwner && r.githubRepoName).map(r => ({ owner: r.githubOwner!, repo: r.githubRepoName! }))
+    : FEATURED_REPOS.map(r => ({ owner: r.owner, repo: r.repo }));
   const liveStars = await getMultiRepoStars(repoKeys);
 
   if (data.length === 0) {
