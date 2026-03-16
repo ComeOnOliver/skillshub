@@ -176,26 +176,16 @@ export async function scanRepoForSkills(
     ? "Repository is very large. Some skills may not be detected."
     : undefined;
 
-  // Step 3: Find all SKILL.md files — check multiple patterns
+  // Step 3: Find ALL SKILL.md files anywhere in the repo
+  // Supports any nesting: skills/*/SKILL.md, skills/.curated/*/SKILL.md, */SKILL.md, SKILL.md
   const skillMdPaths: string[] = [];
-
-  // Pattern 1: skills/*/SKILL.md (standard — e.g. openclaw/openclaw)
   for (const item of treeData.tree || []) {
-    if (item.type === "blob" && /^skills\/[^/]+\/SKILL\.md$/.test(item.path)) {
+    if (item.type === "blob" && item.path.endsWith("/SKILL.md")) {
       skillMdPaths.push(item.path);
     }
   }
 
-  // Pattern 2: */SKILL.md at root level (for repos that ARE skill collections — e.g. openai/skills)
-  if (skillMdPaths.length === 0) {
-    for (const item of treeData.tree || []) {
-      if (item.type === "blob" && /^[^/]+\/SKILL\.md$/.test(item.path)) {
-        skillMdPaths.push(item.path);
-      }
-    }
-  }
-
-  // Pattern 3: SKILL.md at root (single-skill repo)
+  // Also check for SKILL.md at root (single-skill repo)
   if (skillMdPaths.length === 0) {
     for (const item of treeData.tree || []) {
       if (item.type === "blob" && item.path === "SKILL.md") {
@@ -208,7 +198,7 @@ export async function scanRepoForSkills(
     throw new GitHubApiError(
       404,
       "NO_SKILLS",
-      `No skills found in ${owner}/${repo}. Looked for: skills/*/SKILL.md, */SKILL.md, or SKILL.md at root.`
+      `No SKILL.md files found anywhere in ${owner}/${repo}.`
     );
   }
 
