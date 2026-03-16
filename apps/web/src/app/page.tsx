@@ -175,16 +175,19 @@ export default async function HomePage() {
             </div>
             <div className="p-4 font-mono text-xs leading-relaxed">
               <div className="text-neutral-500">
-                <span className="text-neon-cyan">$</span> npx skillshub search &quot;web scraping&quot;
+                <span className="text-neon-cyan">$</span> curl &quot;skillshub.wtf/api/v1/skills/search?q=mcp&quot;
               </div>
               <div className="mt-1 text-neutral-600">
-                <span className="text-neon-lime">found</span> 12 skills matching query
+                <span className="text-neon-lime">→</span> {`{"data":[{"name":"mcp-builder","slug":"mcp-builder"...}]}`}
               </div>
               <div className="mt-2 text-neutral-500">
-                <span className="text-neon-cyan">$</span> npx skillshub add haoran/web-scraper
+                <span className="text-neon-cyan">$</span> curl &quot;skillshub.wtf/anthropics/skills/mcp-builder?format=md&quot;
               </div>
               <div className="mt-1 text-neutral-600">
-                <span className="text-neon-lime">✓</span> installed web-scraper@1.2.0
+                <span className="text-neon-lime">→</span> # MCP Server Development Guide...
+              </div>
+              <div className="mt-1 text-neutral-600">
+                <span className="text-neon-lime">✓</span> skill fetched. read it. follow it.
               </div>
               <div className="mt-2 text-neutral-400">
                 <span className="text-neon-cyan">$</span> <span className="cursor-blink text-neon-cyan">▋</span>
