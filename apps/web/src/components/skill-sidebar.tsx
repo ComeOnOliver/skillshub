@@ -72,18 +72,20 @@ export function SkillSidebar({
             </div>
             <StatBar value={weeklyInstalls} max={maxInstalls} color="text-neon-lime/60" />
           </div>
-          <div className="text-xs">
-            <div className="flex items-center justify-between mb-1">
-              <span className="flex items-center gap-1.5 font-mono text-neutral-500">
-                <Star className="h-3 w-3" />
-                gh stars
-              </span>
-              <span className="font-mono font-semibold text-neon-yellow">
-                {formatCount(githubStars)}
-              </span>
+          {githubStars > 0 && (
+            <div className="text-xs">
+              <div className="flex items-center justify-between mb-1">
+                <span className="flex items-center gap-1.5 font-mono text-neutral-500">
+                  <Star className="h-3 w-3" />
+                  github stars
+                </span>
+                <span className="font-mono font-semibold text-neon-yellow">
+                  {formatCount(githubStars)}
+                </span>
+              </div>
+              <StatBar value={githubStars} max={maxGhStars} color="text-neon-yellow/60" />
             </div>
-            <StatBar value={githubStars} max={maxGhStars} color="text-neon-yellow/60" />
-          </div>
+          )}
           <div className="flex items-center justify-between text-xs">
             <span className="flex items-center gap-1.5 font-mono text-neutral-500">
               <Calendar className="h-3 w-3" />

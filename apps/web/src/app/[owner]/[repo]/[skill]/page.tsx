@@ -68,11 +68,11 @@ export default async function SkillDetailPage({ params }: Props) {
 
   if (!result) notFound();
 
-  // Fetch GitHub stars live from Ungh (cached 1hr)
-  const githubStars = await getRepoStars(
-    result.repo.githubOwner ?? owner,
-    result.repo.githubRepoName ?? repo
-  );
+  // Only show GitHub stars if the repo owner matches the GitHub repo owner
+  const isOriginalOwner = result.owner.username === result.repo.githubOwner;
+  const githubStars = isOriginalOwner
+    ? await getRepoStars(result.repo.githubOwner ?? owner, result.repo.githubRepoName ?? repo)
+    : 0;
 
   let hasStarred = false;
   if (currentUser) {

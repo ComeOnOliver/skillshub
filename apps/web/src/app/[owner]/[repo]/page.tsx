@@ -47,11 +47,12 @@ export default async function RepoPage({ params }: Props) {
 
   if (!repoData) notFound();
 
-  // Fetch GitHub stars live from Ungh (cached 1hr)
-  const githubStars = await getRepoStars(
-    repoData.githubOwner ?? owner,
-    repoData.githubRepoName ?? repo
-  );
+  // Only fetch GitHub stars if the repo owner matches the GitHub repo owner
+  // (prevents imported repos from showing someone else's star count)
+  const isOriginalOwner = repoData.owner.username === repoData.githubOwner;
+  const githubStars = isOriginalOwner
+    ? await getRepoStars(repoData.githubOwner ?? owner, repoData.githubRepoName ?? repo)
+    : 0;
 
   // Get skills in this repo
   const data = await db
@@ -107,7 +108,9 @@ export default async function RepoPage({ params }: Props) {
         <div className="mt-2 flex items-center gap-4 font-mono text-xs text-neutral-600">
           <span>📦 {data.length} skill{data.length !== 1 ? "s" : ""}</span>
           <span>❤️ {repoData.starCount} likes</span>
-          <span>⭐ {githubStars >= 1000 ? `${(githubStars / 1000).toFixed(1)}k` : githubStars} stars</span>
+          {githubStars > 0 && (
+            <span>⭐ {githubStars >= 1000 ? `${(githubStars / 1000).toFixed(1)}k` : githubStars} github stars</span>
+          )}
           <span>📥 {repoData.downloadCount.toLocaleString()} downloads</span>
           {repoData.githubRepoUrl && (
             <a
