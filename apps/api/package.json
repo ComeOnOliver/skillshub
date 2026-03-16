@@ -1,0 +1,26 @@
+{
+  "name": "@skillshub/api",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "true"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.14.0",
+    "@skillshub/db": "workspace:*",
+    "@skillshub/shared": "workspace:*",
+    "arctic": "^3.7.0",
+    "crypto-random-string": "^5.0.0",
+    "dotenv": "^16.4.0",
+    "drizzle-orm": "^0.39.0",
+    "hono": "^4.7.0",
+    "iron-session": "^8.0.4",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.8.0"
+  }
+}
