@@ -176,11 +176,31 @@ export async function scanRepoForSkills(
     ? "Repository is very large. Some skills may not be detected."
     : undefined;
 
-  // Step 3: Find all SKILL.md files under skills/
+  // Step 3: Find all SKILL.md files — check multiple patterns
   const skillMdPaths: string[] = [];
+
+  // Pattern 1: skills/*/SKILL.md (standard — e.g. openclaw/openclaw)
   for (const item of treeData.tree || []) {
     if (item.type === "blob" && /^skills\/[^/]+\/SKILL\.md$/.test(item.path)) {
       skillMdPaths.push(item.path);
+    }
+  }
+
+  // Pattern 2: */SKILL.md at root level (for repos that ARE skill collections — e.g. openai/skills)
+  if (skillMdPaths.length === 0) {
+    for (const item of treeData.tree || []) {
+      if (item.type === "blob" && /^[^/]+\/SKILL\.md$/.test(item.path)) {
+        skillMdPaths.push(item.path);
+      }
+    }
+  }
+
+  // Pattern 3: SKILL.md at root (single-skill repo)
+  if (skillMdPaths.length === 0) {
+    for (const item of treeData.tree || []) {
+      if (item.type === "blob" && item.path === "SKILL.md") {
+        skillMdPaths.push(item.path);
+      }
     }
   }
 
@@ -188,7 +208,7 @@ export async function scanRepoForSkills(
     throw new GitHubApiError(
       404,
       "NO_SKILLS",
-      `No skills found in ${owner}/${repo}/skills/. Expected structure: skills/<name>/SKILL.md`
+      `No skills found in ${owner}/${repo}. Looked for: skills/*/SKILL.md, */SKILL.md, or SKILL.md at root.`
     );
   }
 
@@ -201,7 +221,9 @@ export async function scanRepoForSkills(
     const results = await Promise.allSettled(
       batch.map(async (path) => {
         const content = await fetchFileContent(token, owner, repo, path);
-        const dirName = path.split("/")[1];
+        // Extract dir name: "skills/foo/SKILL.md" → "foo", "foo/SKILL.md" → "foo", "SKILL.md" → repo name
+        const parts = path.split("/");
+        const dirName = parts.length >= 3 ? parts[parts.length - 2] : parts.length === 2 ? parts[0] : repo;
         const { data: frontmatter, content: body } = matter(content);
 
         const name = (frontmatter.name as string) || dirName;
