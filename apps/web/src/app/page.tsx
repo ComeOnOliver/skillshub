@@ -144,9 +144,9 @@ export default async function HomePage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4">
-      {/* ── Hero ──────────────────────────────── */}
+      {/* ── Hero (centered) ──────────────────── */}
       <section className="py-20 md:py-28">
-        <div className="max-w-3xl">
+        <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 font-mono text-xs text-neutral-600">
             <span className="text-neon-cyan/60">~/skillshub</span> <span className="text-neutral-700">on</span> <span className="text-neon-lime/60">main</span> <span className="text-neutral-700">via</span> <span className="text-neon-orange/60">⬡ v0.1.0</span>
           </div>
@@ -159,14 +159,14 @@ export default async function HomePage() {
             </span>
           </h1>
 
-          <p className="mt-4 mb-8 max-w-xl text-sm text-neutral-500 leading-relaxed font-mono">
+          <p className="mt-4 mb-8 mx-auto max-w-xl text-sm text-neutral-500 leading-relaxed font-mono">
             discover, share & monetize skills for AI agents.
             <br />
             built by degens, for degens.
           </p>
 
           {/* Fake terminal */}
-          <div className="mb-8 max-w-lg rounded border border-neutral-800/80 bg-[#0a0a0a] overflow-hidden">
+          <div className="mb-8 mx-auto max-w-lg rounded border border-neutral-800/80 bg-[#0a0a0a] overflow-hidden text-left">
             <div className="flex items-center gap-1.5 px-3 py-2 border-b border-neutral-800/50">
               <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
               <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
@@ -195,7 +195,7 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
               href="/skills"
               className="group inline-flex items-center gap-2 rounded border border-neon-cyan/50 bg-neon-cyan/5 px-5 py-2.5 font-mono text-xs font-medium text-neon-cyan hover:bg-neon-cyan/10 hover:border-neon-cyan transition-all glow-box"
@@ -219,10 +219,8 @@ export default async function HomePage() {
           available for these agents
         </p>
         <div className="relative">
-          {/* Fade edges */}
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-[#050505] to-transparent" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-[#050505] to-transparent" />
-          {/* Scrolling track */}
           <div className="flex animate-scroll-x gap-8">
             {[...Array(2)].map((_, setIdx) => (
               <div key={setIdx} className="flex shrink-0 gap-8">
