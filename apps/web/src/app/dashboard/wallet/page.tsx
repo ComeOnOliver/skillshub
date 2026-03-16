@@ -14,6 +14,9 @@ export default function WalletSetupPage() {
   const [copiedAddr, setCopiedAddr] = useState(false);
   const [copiedKey, setCopiedKey] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [manualAddress, setManualAddress] = useState("");
+  const [manualError, setManualError] = useState<string | null>(null);
+  const [showManual, setShowManual] = useState(false);
 
   useEffect(() => {
     fetch("/api/wallet/status")
@@ -50,6 +53,31 @@ export default function WalletSetupPage() {
       setCopiedKey(true);
       setTimeout(() => setCopiedKey(false), 2000);
     }
+  }
+
+  async function handleManualSave() {
+    const addr = manualAddress.trim();
+    if (!/^0x[a-fA-F0-9]{40}$/.test(addr)) {
+      setManualError("Invalid BSC address. Must be 0x followed by 40 hex characters.");
+      return;
+    }
+    setManualError(null);
+    setSaving(true);
+    try {
+      const res = await fetch("/api/wallet/setup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ address: addr }),
+      });
+      if (res.ok) {
+        setBscAddress(addr);
+        setManualAddress("");
+        setShowManual(false);
+      }
+    } catch (err) {
+      console.error("Failed to save address:", err);
+    }
+    setSaving(false);
   }
 
   async function handleConfirmSave() {
@@ -115,24 +143,73 @@ export default function WalletSetupPage() {
         </div>
       )}
 
-      {/* Generate button */}
-      {!generatedWallet && (
-        <button
-          onClick={handleGenerate}
-          disabled={generating}
-          className="flex items-center gap-2 rounded border border-neutral-800/50 px-5 py-3 font-mono text-sm text-neutral-400 transition-all hover:border-neon-cyan/30 hover:text-neon-cyan glow-box disabled:opacity-50"
-        >
-          {bscAddress ? (
-            <RefreshCw className={`h-4 w-4 ${generating ? "animate-spin" : ""}`} />
-          ) : (
-            <Wallet className="h-4 w-4" />
+      {/* Action buttons */}
+      {!generatedWallet && !showManual && (
+        <div className="flex flex-col sm:flex-row gap-3">
+          <button
+            onClick={handleGenerate}
+            disabled={generating}
+            className="flex items-center gap-2 rounded border border-neutral-800/50 px-5 py-3 font-mono text-sm text-neutral-400 transition-all hover:border-neon-cyan/30 hover:text-neon-cyan glow-box disabled:opacity-50"
+          >
+            {bscAddress ? (
+              <RefreshCw className={`h-4 w-4 ${generating ? "animate-spin" : ""}`} />
+            ) : (
+              <Wallet className="h-4 w-4" />
+            )}
+            {generating
+              ? "generating..."
+              : bscAddress
+                ? "generate new address"
+                : "generate new address"}
+          </button>
+          <button
+            onClick={() => setShowManual(true)}
+            className="flex items-center gap-2 rounded border border-neutral-800/50 px-5 py-3 font-mono text-sm text-neutral-400 transition-all hover:border-neon-magenta/30 hover:text-neon-magenta"
+          >
+            <span className="text-neutral-600">→</span>
+            use my own address
+          </button>
+        </div>
+      )}
+
+      {/* Manual address input */}
+      {showManual && !generatedWallet && (
+        <div className="rounded border border-neutral-800/60 bg-[#0a0a0a] p-5 space-y-4">
+          <div className="font-mono text-[10px] uppercase tracking-wider text-neutral-600">
+            paste your BSC (BEP-20) address
+          </div>
+          <input
+            type="text"
+            value={manualAddress}
+            onChange={(e) => { setManualAddress(e.target.value); setManualError(null); }}
+            placeholder="0x..."
+            className="w-full rounded border border-neutral-800/40 bg-[#050505] px-4 py-3 font-mono text-sm text-neon-cyan/80 placeholder-neutral-700 outline-none focus:border-neon-cyan/30 transition-all"
+          />
+          {manualError && (
+            <div className="flex items-center gap-2 font-mono text-xs text-red-400">
+              <AlertTriangle className="h-3.5 w-3.5" />
+              {manualError}
+            </div>
           )}
-          {generating
-            ? "generating..."
-            : bscAddress
-              ? "generate new address"
-              : "generate receiving address"}
-        </button>
+          <p className="font-mono text-[10px] text-neutral-600 leading-relaxed">
+            make sure this is a valid BSC/EVM address you control. donors will send USDT/USDC directly here.
+          </p>
+          <div className="flex gap-3">
+            <button
+              onClick={handleManualSave}
+              disabled={saving || !manualAddress.trim()}
+              className="flex-1 rounded border border-neon-lime/30 bg-neon-lime/5 py-3 font-mono text-sm text-neon-lime transition-all hover:bg-neon-lime/10 disabled:opacity-50"
+            >
+              {saving ? "saving..." : "save address"}
+            </button>
+            <button
+              onClick={() => { setShowManual(false); setManualAddress(""); setManualError(null); }}
+              className="rounded border border-neutral-800/40 px-4 py-3 font-mono text-xs text-neutral-600 hover:text-neutral-400 transition-all"
+            >
+              [cancel]
+            </button>
+          </div>
+        </div>
       )}
 
       {/* Generated wallet reveal modal */}
