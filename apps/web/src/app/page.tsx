@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Zap, Shield, Coins, Star, Download, Package } from "lucide-react";
+import { ArrowRight, Zap, Shield, Coins, Star, Download, Package, Github } from "lucide-react";
 import { getDb } from "@/lib/db";
 import { skills, repos, users } from "@skillshub/db/schema";
 import { eq, desc, sql } from "drizzle-orm";
@@ -149,7 +149,7 @@ export default async function HomePage() {
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 font-mono text-xs text-neutral-600">
-            <span className="text-neon-cyan/60">~/skillshub</span> <span className="text-neutral-700">on</span> <span className="text-neon-lime/60">main</span> <span className="text-neutral-700">via</span> <span className="text-neon-orange/60">⬡ v0.1.0</span>
+            <span className="text-neon-cyan/60">~/skillshub</span><a href="https://github.com/ComeOnOliver/skillshub" target="_blank" rel="noopener noreferrer" className="inline-flex ml-1 align-middle"><Github className="h-3 w-3 text-neutral-600 hover:text-neon-cyan transition-colors" /></a> <span className="text-neutral-700">on</span> <span className="text-neon-lime/60">main</span> <span className="text-neutral-700">via</span> <span className="text-neon-orange/60">⬡ v0.1.0</span>
           </div>
 
           <h1 className="glitch-text mb-2 font-mono text-4xl md:text-5xl font-bold tracking-tight leading-tight">
