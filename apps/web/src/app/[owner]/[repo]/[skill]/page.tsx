@@ -2,7 +2,7 @@ import { getDb } from "@/lib/db";
 import { skills, repos, users, stars } from "@skillshub/db/schema";
 import { eq, and } from "drizzle-orm";
 import { notFound } from "next/navigation";
-import { StarButton } from "@/components/star-button";
+import { LikeButton } from "@/components/star-button";
 import { DonateButton } from "@/components/donate-button";
 import { CopyButton } from "@/components/copy-button";
 import { SkillSidebar } from "@/components/skill-sidebar";
@@ -183,11 +183,11 @@ export default async function SkillDetailPage({ params }: Props) {
               isVerified: result.owner.isVerified,
             }}
             skillId={result.id}
-            starButton={
-              <StarButton
+            likeButton={
+              <LikeButton
                 repoId={result.repo.id}
                 initialCount={result.repo.starCount}
-                initialStarred={hasStarred}
+                initialLiked={hasStarred}
               />
             }
             donateButton={

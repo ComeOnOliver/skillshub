@@ -1,27 +1,26 @@
 "use client";
 
-import { Star } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useState } from "react";
 
-interface StarButtonProps {
+interface LikeButtonProps {
   repoId: string;
   initialCount: number;
-  initialStarred?: boolean;
+  initialLiked?: boolean;
 }
 
-export function StarButton({
+export function LikeButton({
   repoId,
   initialCount,
-  initialStarred = false,
-}: StarButtonProps) {
-  const [starred, setStarred] = useState(initialStarred);
+  initialLiked = false,
+}: LikeButtonProps) {
+  const [liked, setLiked] = useState(initialLiked);
   const [count, setCount] = useState(initialCount);
   const [loading, setLoading] = useState(false);
 
   async function handleToggle() {
-    // Optimistic update
-    setStarred(!starred);
-    setCount(starred ? count - 1 : count + 1);
+    setLiked(!liked);
+    setCount(liked ? count - 1 : count + 1);
     setLoading(true);
 
     try {
@@ -30,18 +29,16 @@ export function StarButton({
       });
 
       if (!res.ok) {
-        // Revert on error
-        setStarred(starred);
+        setLiked(liked);
         setCount(count);
         return;
       }
 
       const data = await res.json();
-      setStarred(data.data.starred);
+      setLiked(data.data.starred);
       setCount(data.data.starCount);
     } catch {
-      // Revert on error
-      setStarred(starred);
+      setLiked(liked);
       setCount(count);
     } finally {
       setLoading(false);
@@ -53,15 +50,18 @@ export function StarButton({
       onClick={handleToggle}
       disabled={loading}
       className={`flex items-center gap-2 rounded border px-4 py-2 font-mono text-xs transition-all disabled:opacity-50 ${
-        starred
-          ? "border-neon-yellow/40 bg-neon-yellow/5 text-neon-yellow pulse-glow"
-          : "border-neutral-800/50 text-neutral-500 hover:border-neon-yellow/30 hover:text-neon-yellow glow-box"
+        liked
+          ? "border-red-500/40 bg-red-500/5 text-red-400 pulse-glow"
+          : "border-neutral-800/50 text-neutral-500 hover:border-red-500/30 hover:text-red-400 glow-box"
       }`}
     >
-      <Star
-        className={`h-3.5 w-3.5 ${starred ? "fill-neon-yellow text-neon-yellow" : ""}`}
+      <Heart
+        className={`h-3.5 w-3.5 ${liked ? "fill-red-400 text-red-400" : ""}`}
       />
       <span>{count}</span>
     </button>
   );
 }
+
+// Keep backward-compatible export
+export { LikeButton as StarButton };

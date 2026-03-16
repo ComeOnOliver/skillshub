@@ -15,7 +15,7 @@ interface SkillSidebarProps {
     isVerified: boolean;
   };
   skillId: string;
-  starButton: React.ReactNode;
+  likeButton: React.ReactNode;
   donateButton: React.ReactNode;
 }
 
@@ -39,7 +39,7 @@ export function SkillSidebar({
   githubRepoName,
   tags,
   owner,
-  starButton,
+  likeButton,
   donateButton,
 }: SkillSidebarProps) {
   // Use reasonable max for bars
@@ -50,7 +50,7 @@ export function SkillSidebar({
     <div className="space-y-4">
       {/* Actions */}
       <div className="flex gap-2">
-        {starButton}
+        {likeButton}
         {donateButton}
       </div>
 

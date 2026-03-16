@@ -105,8 +105,9 @@ export default async function RepoPage({ params }: Props) {
           </h1>
         </div>
         <div className="mt-2 flex items-center gap-4 font-mono text-xs text-neutral-600">
+          <span>📦 {data.length} skill{data.length !== 1 ? "s" : ""}</span>
+          <span>❤️ {repoData.starCount} likes</span>
           <span>⭐ {githubStars >= 1000 ? `${(githubStars / 1000).toFixed(1)}k` : githubStars} stars</span>
-          <span>{data.length} skill{data.length !== 1 ? "s" : ""}</span>
           <span>📥 {repoData.downloadCount.toLocaleString()} downloads</span>
           {repoData.githubRepoUrl && (
             <a
