@@ -229,23 +229,6 @@ export default async function HomePage() {
       {/* ── Available for these agents ──────────── */}
       <AgentLogos />
 
-      {/* ── API Entry Point ─────────────────────── */}
-      <section className="mb-16">
-        <div className="mx-auto max-w-2xl rounded border border-neon-cyan/10 bg-neon-cyan/[0.02] p-6 text-center">
-          <p className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-neon-cyan/40">
-            agent api entry point
-          </p>
-          <code className="block font-mono text-lg text-neon-cyan/80 mb-3">
-            GET https://skillshub.wtf/api/
-          </code>
-          <p className="font-mono text-xs text-neutral-500 leading-relaxed">
-            returns a complete JSON guide — every endpoint, parameters, examples, and error codes.
-            <br />
-            point your agent here to get started. no auth required.
-          </p>
-        </div>
-      </section>
-
       {/* ── Stats ─────────────────────────────── */}
       <section className="mb-16 grid grid-cols-2 md:grid-cols-4 gap-3">
         {[
