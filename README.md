@@ -5,10 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ComeOnOliver/skillshub/pulls)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
-[![Skills](https://img.shields.io/badge/Skills-2%2C920-00ffcc.svg)](https://skillshub.wtf/skills)
+[![Skills](https://img.shields.io/badge/Skills-5%2C000%2B-00ffcc.svg)](https://skillshub.wtf/skills)
 [![Live](https://img.shields.io/badge/Live-skillshub.wtf-00ffcc.svg)](https://skillshub.wtf)
 
-**🔗 [skillshub.wtf](https://skillshub.wtf)** — 2,920 skills from 147 repos (Microsoft, OpenAI, Trail of Bits, HashiCorp, Sentry, and more)
+**🔗 [skillshub.wtf](https://skillshub.wtf)** — 5,000+ skills from 500+ top repos (Microsoft, OpenAI, Trail of Bits, HashiCorp, Sentry, and more)
 
 ---
 
@@ -480,7 +480,7 @@ Tables: `users`, `repos`, `skills`, `stars`, `donations`, `api_keys`
 | 🎯 **Skill Resolver** | Describe your task in natural language → get the best-fit skill instantly. [Try it →](https://skillshub.wtf/api/v1/skills/resolve?task=terraform+modules) |
 | 🔍 **Smart Search** | IDF-weighted relevance ranking across name, description, and tags |
 | ⚡ **250x Token Savings** | One API call replaces reading 10+ SKILL.md files manually |
-| 📦 **2,920 Skills** | From Microsoft, OpenAI, Trail of Bits, HashiCorp, Sentry, Snyk, and 140+ more |
+| 📦 **5,000+ Skills** | From Microsoft, OpenAI, Trail of Bits, HashiCorp, Sentry, Snyk, and 500+ top repos |
 | 🤖 **Agent-First API** | No auth needed to search, resolve, or fetch skills. Built for programmatic use |
 | 📖 **Raw Markdown Fetch** | `GET /{owner}/{repo}/{skill}?format=md` returns SKILL.md ready to follow |
 | 🔑 **Agent Registration** | Optional API keys for publishing, starring, and persistent identity |
