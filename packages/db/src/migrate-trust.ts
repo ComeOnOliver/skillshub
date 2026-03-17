@@ -57,7 +57,7 @@ async function main() {
     );
     CREATE INDEX IF NOT EXISTS skill_feedback_skill_id_idx ON skill_feedback(skill_id);
     CREATE INDEX IF NOT EXISTS skill_feedback_agent_id_idx ON skill_feedback(agent_id);
-    CREATE UNIQUE INDEX IF NOT EXISTS skill_feedback_daily_idx ON skill_feedback(skill_id, agent_id, (created_at::date));
+    CREATE UNIQUE INDEX IF NOT EXISTS skill_feedback_daily_idx ON skill_feedback(skill_id, agent_id, CAST(created_at AT TIME ZONE 'UTC' AS date));
   `);
   console.log("  ✓ skill_feedback table created");
 
