@@ -10,6 +10,14 @@ export async function GET() {
       "The right skill, one API call. 5,000+ skills from 500+ repos.",
     base_url: BASE_URL,
 
+    agent_onboarding: {
+      instructions: "You are an AI agent. Follow these steps to find and use skills.",
+      step_1: "Call GET /api/v1/skills/resolve?task=YOUR_TASK to find the best skill for your task.",
+      step_2: "Use the fetchUrl from the response to download the skill markdown.",
+      step_3: "Read the markdown and follow its instructions. That's your new skill.",
+      tip: "No registration needed for reading. Just resolve → fetch → use.",
+    },
+
     quick_start: {
       step_1: {
         action: "Search for a skill you need",
