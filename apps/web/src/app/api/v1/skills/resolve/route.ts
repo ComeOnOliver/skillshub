@@ -45,24 +45,41 @@ interface SkillRow {
 
 function scoreSkill(skill: SkillRow, tokens: string[]): number {
   const nameLower = skill.name.toLowerCase();
+  const nameParts = nameLower.split(/[-_\s]+/);
   const descLower = (skill.description ?? "").toLowerCase();
   const tagsLower = skill.tags.map((t) => t.toLowerCase());
 
   // TEXT RELEVANCE (0-60)
   let textScore = 0;
+  let nameHits = 0;
+
   for (const token of tokens) {
+    // Name matching — strongest signal
     if (nameLower === token) {
-      textScore += 15;
+      textScore += 20; // exact full name match
+      nameHits++;
+    } else if (nameParts.includes(token)) {
+      textScore += 15; // exact word in name (e.g. "terraform" in "terraform-skill")
+      nameHits++;
     } else if (nameLower.includes(token)) {
-      textScore += 10;
+      textScore += 8; // substring in name
+      nameHits++;
     }
+
+    // Description matching
     if (descLower.includes(token)) {
-      textScore += 5;
+      textScore += 3;
     }
+
+    // Tag matching — good signal
     if (tagsLower.includes(token)) {
-      textScore += 8;
+      textScore += 6;
     }
   }
+
+  // Bonus: if multiple tokens match the name, this skill is highly relevant
+  if (nameHits >= 2) textScore += 10;
+
   textScore = Math.min(textScore, 60);
 
   // QUALITY (0-25)
@@ -169,7 +186,7 @@ export async function GET(request: Request) {
     },
     score: r.score,
     confidence: Math.round((r.score / 100) * 100) / 100,
-    fetchUrl: `${BASE_URL}/${r.skill.owner.username}/${r.skill.repo.githubRepoName}/${r.skill.slug}?format=md`,
+    fetchUrl: `${BASE_URL}/${r.skill.repo.githubOwner ?? r.skill.owner.username}/${r.skill.repo.githubRepoName ?? r.skill.slug}/${r.skill.slug}?format=md`,
   }));
 
   return corsJson({
