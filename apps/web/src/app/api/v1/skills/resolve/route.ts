@@ -33,6 +33,10 @@ interface SkillRow {
   description: string | null;
   tags: string[];
   readmeLength: number;
+  trustScore: string;
+  fetchCount: number;
+  helpfulRate: string | null;
+  feedbackCount: number;
   repo: {
     githubOwner: string | null;
     githubRepoName: string | null;
@@ -99,7 +103,13 @@ function scoreSkill(skill: SkillRow, tokens: string[], tokenWeights: Map<string,
   const stars = Math.max(skill.repo.starCount, 1);
   const popularityScore = Math.min(15, Math.log10(stars) * 4);
 
-  return Math.round(textScore + qualityScore + popularityScore);
+  // FEEDBACK BONUS (0-10)
+  let feedbackBonus = 0;
+  if (skill.helpfulRate !== null && skill.feedbackCount >= 5) {
+    feedbackBonus = Number(skill.helpfulRate) * 10;
+  }
+
+  return Math.round(textScore + qualityScore + popularityScore + feedbackBonus);
 }
 
 export async function GET(request: Request) {
@@ -150,6 +160,10 @@ export async function GET(request: Request) {
       description: skills.description,
       tags: skills.tags,
       readmeLength: sql<number>`coalesce(length(${skills.readme}), 0)::int`,
+      trustScore: skills.trustScore,
+      fetchCount: skills.fetchCount,
+      helpfulRate: skills.helpfulRate,
+      feedbackCount: skills.feedbackCount,
       repo: {
         githubOwner: repos.githubOwner,
         githubRepoName: repos.githubRepoName,
@@ -211,6 +225,8 @@ export async function GET(request: Request) {
       name: r.skill.name,
       description: r.skill.description,
       tags: r.skill.tags,
+      trustScore: Number(r.skill.trustScore),
+      helpfulRate: r.skill.helpfulRate !== null ? Number(r.skill.helpfulRate) : null,
       repo: r.skill.repo,
       owner: r.skill.owner,
     },
