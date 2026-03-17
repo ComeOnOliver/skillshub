@@ -10,6 +10,7 @@ import {
   uniqueIndex,
   index,
 } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 
 export const users = pgTable(
   "users",
@@ -33,6 +34,7 @@ export const users = pgTable(
     trustScore: numeric("trust_score", { precision: 10, scale: 2 })
       .notNull()
       .default("0"),
+    reputation: integer("reputation").notNull().default(0),
     isVerified: boolean("is_verified").notNull().default(false),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
@@ -92,6 +94,12 @@ export const skills = pgTable(
     source: text("source", { enum: ["manual", "github_import"] })
       .notNull()
       .default("manual"),
+    trustScore: numeric("trust_score", { precision: 5, scale: 2 })
+      .notNull()
+      .default("0"),
+    fetchCount: integer("fetch_count").notNull().default(0),
+    helpfulRate: numeric("helpful_rate", { precision: 4, scale: 3 }),
+    feedbackCount: integer("feedback_count").notNull().default(0),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
   },
@@ -165,6 +173,49 @@ export const apiKeys = pgTable(
   (table) => [
     uniqueIndex("api_keys_key_hash_idx").on(table.keyHash),
     index("api_keys_user_id_idx").on(table.userId),
+  ]
+);
+
+export const skillEvents = pgTable(
+  "skill_events",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    eventType: text("event_type").notNull(),
+    skillId: uuid("skill_id").references(() => skills.id, { onDelete: "cascade" }),
+    agentId: uuid("agent_id").references(() => users.id, { onDelete: "cascade" }),
+    metadata: jsonb("metadata"),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+  },
+  (table) => [
+    index("skill_events_skill_id_idx").on(table.skillId),
+    index("skill_events_type_idx").on(table.eventType),
+    index("skill_events_created_idx").on(table.createdAt),
+  ]
+);
+
+export const skillFeedback = pgTable(
+  "skill_feedback",
+  {
+    id: uuid("id").defaultRandom().primaryKey(),
+    skillId: uuid("skill_id")
+      .references(() => skills.id, { onDelete: "cascade" })
+      .notNull(),
+    agentId: uuid("agent_id")
+      .references(() => users.id, { onDelete: "cascade" })
+      .notNull(),
+    task: text("task").notNull(),
+    helpful: boolean("helpful").notNull(),
+    context: text("context", { enum: ["resolve", "search", "direct"] }),
+    createdAt: timestamp("created_at").defaultNow().notNull(),
+  },
+  (table) => [
+    index("skill_feedback_skill_id_idx").on(table.skillId),
+    index("skill_feedback_agent_id_idx").on(table.agentId),
+    uniqueIndex("skill_feedback_daily_idx").on(
+      table.skillId,
+      table.agentId,
+      sql`(created_at::date)`
+    ),
   ]
 );
 

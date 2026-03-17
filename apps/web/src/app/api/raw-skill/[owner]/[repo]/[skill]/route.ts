@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getDb } from "@/lib/db";
-import { skills, repos } from "@skillshub/db/schema";
+import { skills, repos, skillEvents } from "@skillshub/db/schema";
 import { eq, and, sql } from "drizzle-orm";
 
 export async function GET(
@@ -11,7 +11,7 @@ export async function GET(
   const db = getDb();
 
   const [row] = await db
-    .select({ readme: skills.readme })
+    .select({ id: skills.id, readme: skills.readme })
     .from(skills)
     .innerJoin(repos, eq(skills.repoId, repos.id))
     .where(
@@ -37,7 +37,19 @@ export async function GET(
       )
     )
     .execute()
-    .catch(() => {});
+    .catch((err: unknown) => console.error("fetch tracking failed:", err));
+
+  // Increment fetch count on the skill and log event (fire and forget)
+  db.update(skills)
+    .set({ fetchCount: sql`${skills.fetchCount} + 1` })
+    .where(eq(skills.id, row.id))
+    .execute()
+    .catch((err: unknown) => console.error("fetch tracking failed:", err));
+
+  db.insert(skillEvents)
+    .values({ eventType: "fetch", skillId: row.id })
+    .execute()
+    .catch((err: unknown) => console.error("fetch tracking failed:", err));
 
   return new NextResponse(row.readme, {
     headers: { "content-type": "text/markdown; charset=utf-8" },

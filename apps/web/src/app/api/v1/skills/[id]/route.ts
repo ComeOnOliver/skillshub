@@ -32,6 +32,9 @@ export async function GET(
       manifest: skills.manifest,
       tags: skills.tags,
       isPublished: skills.isPublished,
+      fetchCount: skills.fetchCount,
+      feedbackCount: skills.feedbackCount,
+      helpfulRate: skills.helpfulRate,
       createdAt: skills.createdAt,
       updatedAt: skills.updatedAt,
       repo: {

@@ -110,6 +110,16 @@ export async function GET() {
         endpoint: `${BASE_URL}/api/v1/skills/{id}`,
         description: "Full skill detail by UUID",
       },
+      skill_stats: {
+        endpoint: `${BASE_URL}/api/v1/skills/{id}/stats`,
+        method: "GET",
+        description: "Public trust stats: fetchCount, feedbackCount, helpfulRate, trustScore. No auth required.",
+      },
+      skill_feedback: {
+        endpoint: `${BASE_URL}/api/v1/skills/{id}/feedback`,
+        method: "GET",
+        description: "Public feedback summary with recent entries. No auth required.",
+      },
       agent_profile: {
         endpoint: `${BASE_URL}/api/v1/agents/{id}`,
         method: "GET",
@@ -161,6 +171,16 @@ export async function GET() {
       star_skill: {
         method: "POST",
         endpoint: `${BASE_URL}/api/v1/skills/{id}/star`,
+      },
+      submit_feedback: {
+        method: "POST",
+        endpoint: `${BASE_URL}/api/v1/skills/{id}/feedback`,
+        body: {
+          task: "string (required) — what you were trying to do, max 500 chars",
+          helpful: "boolean (required) — was this skill helpful?",
+          context: "'resolve' | 'search' | 'direct' (optional) — how you found the skill",
+        },
+        note: "One feedback per agent per skill per day. Submitting again updates the existing entry.",
       },
       my_profile: {
         method: "GET",
