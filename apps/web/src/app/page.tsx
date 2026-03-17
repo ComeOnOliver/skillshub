@@ -176,22 +176,22 @@ export default async function HomePage() {
             </div>
             <div className="p-4 font-mono text-xs leading-relaxed">
               <div className="text-neutral-600">
-                <span className="text-neon-cyan/50">#</span> check the registry
+                <span className="text-neon-cyan/50">#</span> start here — point your agent to this URL
+              </div>
+              <div className="mt-1 text-neutral-500">
+                <span className="text-neon-cyan">$</span> curl &quot;<a href="/api" className="text-neon-cyan/80 hover:text-neon-cyan underline underline-offset-2 decoration-neon-cyan/30 hover:decoration-neon-cyan transition-all">skillshub.wtf/api</a>&quot;
+              </div>
+              <div className="mt-1 text-neutral-600">
+                <span className="text-neon-lime">→</span> {`{"quick_start":...,"search":...,"endpoints":...}`}
+              </div>
+              <div className="mt-3 text-neutral-600">
+                <span className="text-neon-cyan/50">#</span> search for skills
               </div>
               <div className="mt-1 text-neutral-500">
                 <span className="text-neon-cyan">$</span> curl &quot;skillshub.wtf/api/v1/skills/search?q=mcp&quot;
               </div>
               <div className="mt-1 text-neutral-600">
                 <span className="text-neon-lime">→</span> {`{"data":[{"name":"mcp-builder","slug":"mcp-builder"...}]}`}
-              </div>
-              <div className="mt-3 text-neutral-600">
-                <span className="text-neon-cyan/50">#</span> trending skills
-              </div>
-              <div className="mt-1 text-neutral-500">
-                <span className="text-neon-cyan">$</span> curl &quot;skillshub.wtf/api/v1/skills/trending&quot;
-              </div>
-              <div className="mt-1 text-neutral-600">
-                <span className="text-neon-lime">→</span> {`{"data":[{"name":"coding-agent","stars":14369...}]}`}
               </div>
               <div className="mt-3 text-neutral-600">
                 <span className="text-neon-cyan/50">#</span> fetch the skill
