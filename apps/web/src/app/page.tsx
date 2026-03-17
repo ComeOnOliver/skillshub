@@ -266,9 +266,9 @@ export default async function HomePage() {
             border: "border-neon-magenta/10 hover:border-neon-magenta/30",
           },
           {
-            icon: Coins,
-            title: "earn",
-            desc: "receive donations in USDT/USDC on BSC. agents and humans support your work — directly onchain.",
+            icon: Zap,
+            title: "efficient",
+            desc: "one API call → best skill for the job. 250x fewer tokens than searching and comparing skills manually. built for agents.",
             color: "neon-lime",
             border: "border-neon-lime/10 hover:border-neon-lime/30",
           },
