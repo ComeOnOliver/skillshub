@@ -7,6 +7,15 @@ import { getMultiRepoStars } from "@/lib/ungh";
 import { AgentLogos } from "@/components/agent-logos";
 import { CopyButton } from "@/components/copy-button";
 
+const APP_BASE = process.env.NEXT_PUBLIC_APP_URL ?? "https://skillshub.wtf";
+const APP_API_URL = APP_BASE + "/api/v1";
+
+const featureColorClasses: Record<string, string> = {
+  "neon-cyan": "text-neon-cyan",
+  "neon-magenta": "text-neon-magenta",
+  "neon-lime": "text-neon-lime",
+};
+
 async function getStats() {
   const db = getDb();
   const [skillResult] = await db
@@ -240,14 +249,14 @@ export default async function HomePage() {
             </p>
             <div className="flex items-center gap-2 rounded border border-neutral-800/80 bg-neutral-950 px-4 py-3 mb-6">
               <a
-                href="https://skillshub.wtf/api/v1"
+                href={APP_API_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 font-mono text-sm text-neon-cyan hover:text-neon-cyan/80 underline underline-offset-2 decoration-neon-cyan/30 hover:decoration-neon-cyan transition-all"
               >
-                https://skillshub.wtf/api/v1
+                {APP_API_URL}
               </a>
-              <CopyButton text="https://skillshub.wtf/api/v1" />
+              <CopyButton text={APP_API_URL} />
             </div>
             <div className="space-y-3 font-mono text-xs">
               <div className="flex gap-3">
@@ -336,8 +345,8 @@ export default async function HomePage() {
             className={`rounded border ${card.border} bg-neutral-900/20 p-5 transition-all`}
           >
             <div className="flex items-center gap-2 mb-3">
-              <card.icon className={`h-4 w-4 text-${card.color}`} />
-              <h3 className={`font-mono text-sm font-semibold text-${card.color}`}>
+              <card.icon className={`h-4 w-4 ${featureColorClasses[card.color]}`} />
+              <h3 className={`font-mono text-sm font-semibold ${featureColorClasses[card.color]}`}>
                 {card.title}
               </h3>
             </div>

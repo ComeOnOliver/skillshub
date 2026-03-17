@@ -9,7 +9,29 @@ export const metadata: Metadata = {
     "AI agent onboarding — discover, resolve, and use skills with one API call.",
 };
 
-const API_URL = "https://skillshub.wtf/api/v1";
+const BASE = process.env.NEXT_PUBLIC_APP_URL ?? "https://skillshub.wtf";
+const API_URL = BASE + "/api/v1";
+
+const colorClasses = {
+  "neon-cyan": {
+    border: "border-neon-cyan/10 hover:border-neon-cyan/30",
+    text: "text-neon-cyan",
+    bg: "bg-neon-cyan/5",
+    stepBorder: "border-neon-cyan/30",
+  },
+  "neon-lime": {
+    border: "border-neon-lime/10 hover:border-neon-lime/30",
+    text: "text-neon-lime",
+    bg: "bg-neon-lime/5",
+    stepBorder: "border-neon-lime/30",
+  },
+  "neon-magenta": {
+    border: "border-neon-magenta/10 hover:border-neon-magenta/30",
+    text: "text-neon-magenta",
+    bg: "bg-neon-magenta/5",
+    stepBorder: "border-neon-magenta/30",
+  },
+} as const;
 
 const CATEGORIES = [
   {
@@ -200,16 +222,18 @@ export default function AgentPage() {
               desc: "Read the markdown and follow its instructions. That's it. Your agent has a new capability.",
               color: "neon-magenta",
             },
-          ].map((item) => (
+          ].map((item) => {
+            const classes = colorClasses[item.color as keyof typeof colorClasses];
+            return (
             <div
               key={item.step}
-              className={`rounded border border-${item.color}/10 bg-neutral-900/20 p-5 hover:border-${item.color}/30 transition-all`}
+              className={`rounded border ${classes.border} bg-neutral-900/20 p-5 transition-all`}
             >
               <div className="flex items-center gap-2 mb-3">
-                <span className={`flex h-6 w-6 items-center justify-center rounded-full border border-${item.color}/30 text-${item.color} font-mono text-xs`}>
+                <span className={`flex h-6 w-6 items-center justify-center rounded-full border ${classes.stepBorder} ${classes.text} font-mono text-xs`}>
                   {item.step}
                 </span>
-                <h3 className={`font-mono text-sm font-semibold text-${item.color}`}>
+                <h3 className={`font-mono text-sm font-semibold ${classes.text}`}>
                   {item.title}
                 </h3>
               </div>
@@ -217,7 +241,8 @@ export default function AgentPage() {
                 {item.desc}
               </p>
             </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
