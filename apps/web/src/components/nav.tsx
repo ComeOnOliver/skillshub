@@ -90,12 +90,6 @@ export function Nav() {
           >
             /browse
           </Link>
-          <Link
-            href="/agent"
-            className="font-mono text-xs text-neutral-500 hover:text-neon-cyan transition-colors"
-          >
-            /for-agents
-          </Link>
           <Suspense
             fallback={
               <div className="h-7 w-16 animate-pulse rounded bg-neutral-800/50" />

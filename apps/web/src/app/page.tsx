@@ -1,14 +1,11 @@
 import Link from "next/link";
-import { ArrowRight, Zap, Shield, Coins, Star, Download, Package, Github } from "lucide-react";
+import { ArrowRight, Zap, Shield, Star, Download, Package, Github } from "lucide-react";
 import { getDb } from "@/lib/db";
 import { skills, repos, users } from "@skillshub/db/schema";
 import { eq, desc, sql } from "drizzle-orm";
 import { getMultiRepoStars } from "@/lib/ungh";
 import { AgentLogos } from "@/components/agent-logos";
-import { CopyButton } from "@/components/copy-button";
-
-const APP_BASE = process.env.NEXT_PUBLIC_APP_URL ?? "https://skillshub.wtf";
-const APP_API_URL = APP_BASE + "/api/v1";
+import { TerminalToggle } from "@/components/terminal-toggle";
 
 const featureColorClasses: Record<string, string> = {
   "neon-cyan": "text-neon-cyan",
@@ -176,47 +173,8 @@ export default async function HomePage() {
             250x fewer tokens than searching yourself.
           </p>
 
-          {/* Fake terminal */}
-          <div className="mb-8 mx-auto max-w-lg rounded border border-neutral-800/80 bg-[#0a0a0a] overflow-hidden text-left">
-            <div className="flex items-center gap-1.5 px-3 py-2 border-b border-neutral-800/50">
-              <span className="h-2.5 w-2.5 rounded-full bg-red-500/60" />
-              <span className="h-2.5 w-2.5 rounded-full bg-yellow-500/60" />
-              <span className="h-2.5 w-2.5 rounded-full bg-green-500/60" />
-              <span className="ml-2 font-mono text-[10px] text-neutral-600">terminal</span>
-            </div>
-            <div className="p-4 font-mono text-xs leading-relaxed">
-              <div className="text-neutral-600">
-                <span className="text-neon-cyan/50">#</span> start here — point your agent to this URL
-              </div>
-              <div className="mt-1 text-neutral-500">
-                <span className="text-neon-cyan">$</span> curl &quot;<a href="/api/v1" className="text-neon-cyan/80 hover:text-neon-cyan underline underline-offset-2 decoration-neon-cyan/30 hover:decoration-neon-cyan transition-all">skillshub.wtf/api/v1</a>&quot;
-              </div>
-              <div className="mt-1 text-neutral-600">
-                <span className="text-neon-lime">→</span> {`{"quick_start":...,"resolve":...,"search":...}`}
-              </div>
-              <div className="mt-3 text-neutral-600">
-                <span className="text-neon-cyan/50">#</span> find the best skill for your task
-              </div>
-              <div className="mt-1 text-neutral-500">
-                <span className="text-neon-cyan">$</span> curl &apos;skillshub.wtf/api/v1/skills/resolve?task=terraform+modules&apos;
-              </div>
-              <div className="mt-1 text-neutral-600">
-                <span className="text-neon-lime">→</span> {`{"skill":"terraform-skill","confidence":0.92,"fetchUrl":"..."}`}
-              </div>
-              <div className="mt-3 text-neutral-600">
-                <span className="text-neon-cyan/50">#</span> fetch the skill
-              </div>
-              <div className="mt-1 text-neutral-500">
-                <span className="text-neon-cyan">$</span> curl &quot;skillshub.wtf/anthropics/skills/mcp-builder?format=md&quot;
-              </div>
-              <div className="mt-1 text-neutral-600">
-                <span className="text-neon-lime">✓</span> skill fetched. read it. follow it.
-              </div>
-              <div className="mt-2 text-neutral-400">
-                <span className="text-neon-cyan">$</span> <span className="cursor-blink text-neon-cyan">▋</span>
-              </div>
-            </div>
-          </div>
+          {/* Terminal with Human/Agent toggle */}
+          <TerminalToggle />
 
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
@@ -232,63 +190,6 @@ export default async function HomePage() {
             >
               <span className="text-neutral-600 group-hover:text-neon-magenta">$</span> publish --skill
             </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* ── For Agents ─────────────────────────── */}
-      <section className="mb-16">
-        <div className="mx-auto max-w-2xl rounded border border-neon-cyan/20 bg-[#0a0a0a] overflow-hidden">
-          <div className="flex items-center gap-1.5 px-4 py-2.5 border-b border-neutral-800/50 bg-neutral-900/40">
-            <span className="h-2.5 w-2.5 rounded-full bg-neon-cyan/60" />
-            <span className="font-mono text-[10px] text-neutral-500 ml-1">for-agents</span>
-          </div>
-          <div className="p-6">
-            <p className="font-mono text-sm text-neutral-300 mb-4">
-              Point your AI agent here to get started:
-            </p>
-            <div className="flex items-center gap-2 rounded border border-neutral-800/80 bg-neutral-950 px-4 py-3 mb-6">
-              <a
-                href={APP_API_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 font-mono text-sm text-neon-cyan hover:text-neon-cyan/80 underline underline-offset-2 decoration-neon-cyan/30 hover:decoration-neon-cyan transition-all"
-              >
-                {APP_API_URL}
-              </a>
-              <CopyButton text={APP_API_URL} />
-            </div>
-            <div className="space-y-3 font-mono text-xs">
-              <div className="flex gap-3">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neon-cyan/30 text-neon-cyan text-[10px]">1</span>
-                <div>
-                  <span className="text-neutral-300">Agent reads the API guide</span>
-                  <span className="text-neutral-600 ml-1">— auto-discovers all endpoints</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neon-lime/30 text-neon-lime text-[10px]">2</span>
-                <div>
-                  <span className="text-neutral-300">Agent calls /resolve with a task description</span>
-                  <span className="text-neutral-600 ml-1">→ gets best skill</span>
-                </div>
-              </div>
-              <div className="flex gap-3">
-                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full border border-neon-magenta/30 text-neon-magenta text-[10px]">3</span>
-                <div>
-                  <span className="text-neutral-300">Agent fetches the skill markdown</span>
-                  <span className="text-neutral-600 ml-1">→ follows it</span>
-                </div>
-              </div>
-            </div>
-            <div className="mt-5 pt-4 border-t border-neutral-800/50">
-              <Link
-                href="/agent"
-                className="font-mono text-xs text-neutral-500 hover:text-neon-cyan transition-colors"
-              >
-                learn more → /agent
-              </Link>
-            </div>
           </div>
         </div>
       </section>
