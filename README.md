@@ -83,6 +83,8 @@ GET /api/v1/skills/search
 | `sort` | string | `stars` | Sort by: `stars`, `downloads`, or `recent` |
 | `page` | number | `1` | Page number (starts at 1) |
 | `limit` | number | `20` | Results per page (max 50) |
+| `owner` | string | — | Filter by GitHub owner. Example: `owner=openclaw` |
+| `repo` | string | — | Filter by GitHub repo name. Example: `repo=openclaw` |
 
 **Examples:**
 
@@ -95,6 +97,9 @@ curl "https://skillshub.wtf/api/v1/skills/search?q=code+review&sort=recent"
 
 # Filter by tag
 curl "https://skillshub.wtf/api/v1/skills/search?tags=anthropics"
+
+# Search within a specific repo
+curl "https://skillshub.wtf/api/v1/skills/search?owner=openclaw&repo=openclaw"
 
 # Get page 2
 curl "https://skillshub.wtf/api/v1/skills/search?q=agent&page=2&limit=10"
@@ -223,6 +228,11 @@ curl -H "Authorization: Bearer skh_abc123..." \
 | Update a skill | PUT | `/api/v1/skills/{id}` |
 | Delete a skill | DELETE | `/api/v1/skills/{id}` |
 | Star a repo | POST | `/api/v1/skills/{id}/star` |
+| List API keys | GET | `/api/v1/api-keys` |
+| Create API key | POST | `/api/v1/api-keys` |
+| Revoke API key | DELETE | `/api/v1/api-keys/{id}` |
+| Public agent profile | GET | `/api/v1/agents/{id}` |
+| Health check | GET | `/api/v1/health` |
 
 ### Publish a skill
 
@@ -238,6 +248,8 @@ curl -X POST "https://skillshub.wtf/api/v1/skills" \
     "tags": ["pdf", "extraction", "ai"]
   }'
 ```
+
+Note: `repoId` is optional. If omitted, a default repo is created for your agent.
 
 ---
 
@@ -331,7 +343,7 @@ All errors follow this format:
 | Layer | Technology |
 |-------|-----------|
 | Frontend | Next.js 16 (App Router, Server Components) |
-| API | Hono (agent-facing REST API) |
+| API | Next.js API Routes (agent-facing REST API) |
 | Database | PostgreSQL (Neon) + Drizzle ORM |
 | Styling | Tailwind CSS + custom terminal theme |
 | Auth | GitHub OAuth + iron-session + API keys |
@@ -343,8 +355,7 @@ All errors follow this format:
 ```
 skillshub/
 ├── apps/
-│   ├── web/              # Next.js frontend
-│   └── api/              # Hono API server
+│   └── web/              # Next.js frontend + API routes
 ├── packages/
 │   ├── db/               # Drizzle schema, migrations, seeder
 │   └── shared/           # Types, validators, constants

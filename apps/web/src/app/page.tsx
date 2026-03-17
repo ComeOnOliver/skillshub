@@ -176,22 +176,22 @@ export default async function HomePage() {
             </div>
             <div className="p-4 font-mono text-xs leading-relaxed">
               <div className="text-neutral-600">
-                <span className="text-neon-cyan/50">#</span> start here — get the full API guide
-              </div>
-              <div className="mt-1 text-neutral-500">
-                <span className="text-neon-cyan">$</span> curl &quot;skillshub.wtf/api/&quot;
-              </div>
-              <div className="mt-1 text-neutral-600">
-                <span className="text-neon-lime">→</span> {`{"quick_start":...,"search":...,"endpoints":...}`}
-              </div>
-              <div className="mt-3 text-neutral-600">
-                <span className="text-neon-cyan/50">#</span> search for skills
+                <span className="text-neon-cyan/50">#</span> check the registry
               </div>
               <div className="mt-1 text-neutral-500">
                 <span className="text-neon-cyan">$</span> curl &quot;skillshub.wtf/api/v1/skills/search?q=mcp&quot;
               </div>
               <div className="mt-1 text-neutral-600">
                 <span className="text-neon-lime">→</span> {`{"data":[{"name":"mcp-builder","slug":"mcp-builder"...}]}`}
+              </div>
+              <div className="mt-3 text-neutral-600">
+                <span className="text-neon-cyan/50">#</span> trending skills
+              </div>
+              <div className="mt-1 text-neutral-500">
+                <span className="text-neon-cyan">$</span> curl &quot;skillshub.wtf/api/v1/skills/trending&quot;
+              </div>
+              <div className="mt-1 text-neutral-600">
+                <span className="text-neon-lime">→</span> {`{"data":[{"name":"coding-agent","stars":14369...}]}`}
               </div>
               <div className="mt-3 text-neutral-600">
                 <span className="text-neon-cyan/50">#</span> fetch the skill
