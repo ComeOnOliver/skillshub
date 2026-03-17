@@ -43,42 +43,45 @@ interface SkillRow {
   };
 }
 
-function scoreSkill(skill: SkillRow, tokens: string[]): number {
+function scoreSkill(skill: SkillRow, tokens: string[], tokenWeights: Map<string, number>): number {
   const nameLower = skill.name.toLowerCase();
   const nameParts = nameLower.split(/[-_\s]+/);
   const descLower = (skill.description ?? "").toLowerCase();
   const tagsLower = skill.tags.map((t) => t.toLowerCase());
 
   // TEXT RELEVANCE (0-60)
+  // Each token is weighted by specificity — rare tokens (matching fewer skills) score higher
   let textScore = 0;
   let nameHits = 0;
 
   for (const token of tokens) {
-    // Name matching — strongest signal
+    const w = tokenWeights.get(token) ?? 1;
+
+    // Name matching — strongest signal, amplified by specificity
     if (nameLower === token) {
-      textScore += 20; // exact full name match
+      textScore += 20 * w;
       nameHits++;
     } else if (nameParts.includes(token)) {
-      textScore += 15; // exact word in name (e.g. "terraform" in "terraform-skill")
+      textScore += 15 * w; // exact word in name
       nameHits++;
     } else if (nameLower.includes(token)) {
-      textScore += 8; // substring in name
+      textScore += 8 * w;
       nameHits++;
     }
 
-    // Description matching
+    // Description matching — lower weight
     if (descLower.includes(token)) {
-      textScore += 3;
+      textScore += 2 * w;
     }
 
-    // Tag matching — good signal
+    // Tag matching
     if (tagsLower.includes(token)) {
-      textScore += 6;
+      textScore += 5 * w;
     }
   }
 
-  // Bonus: if multiple tokens match the name, this skill is highly relevant
-  if (nameHits >= 2) textScore += 10;
+  // Bonus: multiple tokens hitting the name = very relevant
+  if (nameHits >= 2) textScore += 12;
 
   textScore = Math.min(textScore, 60);
 
@@ -161,11 +164,32 @@ export async function GET(request: Request) {
     .innerJoin(users, eq(skills.ownerId, users.id))
     .where(and(eq(skills.isPublished, true), tokenFilter));
 
+  // Compute token specificity weights (IDF-like)
+  // Tokens that match fewer skills are more important
+  const tokenMatchCounts = new Map<string, number>();
+  for (const token of tokens) {
+    let count = 0;
+    for (const row of rows) {
+      const n = row.name.toLowerCase();
+      const d = (row.description ?? "").toLowerCase();
+      const t = row.tags.map((tag: string) => tag.toLowerCase());
+      if (n.includes(token) || d.includes(token) || t.includes(token)) count++;
+    }
+    tokenMatchCounts.set(token, count);
+  }
+  const totalMatched = rows.length || 1;
+  const tokenWeights = new Map<string, number>();
+  for (const [token, count] of tokenMatchCounts) {
+    // IDF-inspired: rare tokens get weight up to 3x, common tokens get 1x
+    const idf = Math.log2(totalMatched / Math.max(count, 1)) + 1;
+    tokenWeights.set(token, Math.min(3, Math.max(1, idf)));
+  }
+
   // Score and sort in JS
   const scored = rows
     .map((row) => ({
       skill: row,
-      score: scoreSkill(row as SkillRow, tokens),
+      score: scoreSkill(row as SkillRow, tokens, tokenWeights),
     }))
     .filter((r) => r.score > 0)
     .sort((a, b) => b.score - a.score)
