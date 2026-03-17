@@ -98,7 +98,7 @@ export const skills = pgTable(
       .notNull()
       .default("0"),
     fetchCount: integer("fetch_count").notNull().default(0),
-    helpfulRate: numeric("helpful_rate", { precision: 3, scale: 2 }),
+    helpfulRate: numeric("helpful_rate", { precision: 4, scale: 3 }),
     feedbackCount: integer("feedback_count").notNull().default(0),
     createdAt: timestamp("created_at").defaultNow().notNull(),
     updatedAt: timestamp("updated_at").defaultNow().notNull(),
@@ -181,14 +181,15 @@ export const skillEvents = pgTable(
   {
     id: uuid("id").defaultRandom().primaryKey(),
     eventType: text("event_type").notNull(),
-    skillId: uuid("skill_id").references(() => skills.id),
-    agentId: uuid("agent_id").references(() => users.id),
+    skillId: uuid("skill_id").references(() => skills.id, { onDelete: "cascade" }),
+    agentId: uuid("agent_id").references(() => users.id, { onDelete: "cascade" }),
     metadata: jsonb("metadata"),
     createdAt: timestamp("created_at").defaultNow().notNull(),
   },
   (table) => [
     index("skill_events_skill_id_idx").on(table.skillId),
     index("skill_events_type_idx").on(table.eventType),
+    index("skill_events_created_idx").on(table.createdAt),
   ]
 );
 
@@ -197,14 +198,14 @@ export const skillFeedback = pgTable(
   {
     id: uuid("id").defaultRandom().primaryKey(),
     skillId: uuid("skill_id")
-      .references(() => skills.id)
+      .references(() => skills.id, { onDelete: "cascade" })
       .notNull(),
     agentId: uuid("agent_id")
-      .references(() => users.id)
+      .references(() => users.id, { onDelete: "cascade" })
       .notNull(),
     task: text("task").notNull(),
     helpful: boolean("helpful").notNull(),
-    context: text("context"),
+    context: text("context", { enum: ["resolve", "search", "direct"] }),
     createdAt: timestamp("created_at").defaultNow().notNull(),
   },
   (table) => [

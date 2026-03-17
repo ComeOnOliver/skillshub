@@ -2,7 +2,7 @@ import { getDb } from "@/lib/db";
 import { corsJson, OPTIONS as corsOptions, formatZodError } from "@/lib/api-cors";
 import { authenticateApiKey, isAuthError } from "@/lib/api-key-auth";
 import { skills, skillFeedback } from "@skillshub/db/schema";
-import { eq, and, sql, desc } from "drizzle-orm";
+import { eq, sql, desc } from "drizzle-orm";
 import { z } from "zod";
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -65,37 +65,13 @@ export async function POST(
 
   const { task, helpful, context } = parsed.data;
 
-  // Check for existing feedback today (deduplicate)
-  const [existing] = await db
-    .select({ id: skillFeedback.id })
-    .from(skillFeedback)
-    .where(
-      and(
-        eq(skillFeedback.skillId, id),
-        eq(skillFeedback.agentId, auth.userId),
-        sql`${skillFeedback.createdAt}::date = CURRENT_DATE`
-      )
-    )
-    .limit(1);
-
-  if (existing) {
-    // Update existing feedback
-    await db
-      .update(skillFeedback)
-      .set({ task, helpful, context: context ?? null })
-      .where(eq(skillFeedback.id, existing.id));
-  } else {
-    // Insert new feedback
-    await db
-      .insert(skillFeedback)
-      .values({
-        skillId: id,
-        agentId: auth.userId,
-        task,
-        helpful,
-        context: context ?? null,
-      });
-  }
+  // Upsert: insert or update if same agent already left feedback today
+  await db.execute(sql`
+    INSERT INTO skill_feedback (id, skill_id, agent_id, task, helpful, context)
+    VALUES (gen_random_uuid(), ${id}, ${auth.userId}, ${task}, ${helpful}, ${context ?? null})
+    ON CONFLICT (skill_id, agent_id, (created_at::date))
+    DO UPDATE SET task = EXCLUDED.task, helpful = EXCLUDED.helpful, context = EXCLUDED.context, created_at = NOW()
+  `);
 
   // Recompute feedback stats for this skill
   const [stats] = await db

@@ -37,19 +37,19 @@ export async function GET(
       )
     )
     .execute()
-    .catch(() => {});
+    .catch((err: unknown) => console.error("fetch tracking failed:", err));
 
   // Increment fetch count on the skill and log event (fire and forget)
   db.update(skills)
     .set({ fetchCount: sql`${skills.fetchCount} + 1` })
     .where(eq(skills.id, row.id))
     .execute()
-    .catch(() => {});
+    .catch((err: unknown) => console.error("fetch tracking failed:", err));
 
   db.insert(skillEvents)
     .values({ eventType: "fetch", skillId: row.id })
     .execute()
-    .catch(() => {});
+    .catch((err: unknown) => console.error("fetch tracking failed:", err));
 
   return new NextResponse(row.readme, {
     headers: { "content-type": "text/markdown; charset=utf-8" },

@@ -33,7 +33,6 @@ interface SkillRow {
   description: string | null;
   tags: string[];
   readmeLength: number;
-  trustScore: string;
   fetchCount: number;
   helpfulRate: string | null;
   feedbackCount: number;
@@ -47,6 +46,8 @@ interface SkillRow {
     avatarUrl: string | null;
   };
 }
+
+const MIN_FEEDBACK_FOR_BONUS = 5;
 
 function scoreSkill(skill: SkillRow, tokens: string[], tokenWeights: Map<string, number>): number {
   const nameLower = skill.name.toLowerCase();
@@ -105,7 +106,7 @@ function scoreSkill(skill: SkillRow, tokens: string[], tokenWeights: Map<string,
 
   // FEEDBACK BONUS (0-10)
   let feedbackBonus = 0;
-  if (skill.helpfulRate !== null && skill.feedbackCount >= 5) {
+  if (skill.helpfulRate !== null && skill.feedbackCount >= MIN_FEEDBACK_FOR_BONUS) {
     feedbackBonus = Number(skill.helpfulRate) * 10;
   }
 
@@ -160,7 +161,6 @@ export async function GET(request: Request) {
       description: skills.description,
       tags: skills.tags,
       readmeLength: sql<number>`coalesce(length(${skills.readme}), 0)::int`,
-      trustScore: skills.trustScore,
       fetchCount: skills.fetchCount,
       helpfulRate: skills.helpfulRate,
       feedbackCount: skills.feedbackCount,
@@ -225,7 +225,6 @@ export async function GET(request: Request) {
       name: r.skill.name,
       description: r.skill.description,
       tags: r.skill.tags,
-      trustScore: Number(r.skill.trustScore),
       helpfulRate: r.skill.helpfulRate !== null ? Number(r.skill.helpfulRate) : null,
       repo: r.skill.repo,
       owner: r.skill.owner,

@@ -17,7 +17,7 @@ async function main() {
   await client.query(`
     ALTER TABLE skills ADD COLUMN IF NOT EXISTS trust_score NUMERIC(5,2) NOT NULL DEFAULT 0;
     ALTER TABLE skills ADD COLUMN IF NOT EXISTS fetch_count INTEGER NOT NULL DEFAULT 0;
-    ALTER TABLE skills ADD COLUMN IF NOT EXISTS helpful_rate NUMERIC(3,2);
+    ALTER TABLE skills ADD COLUMN IF NOT EXISTS helpful_rate NUMERIC(4,3);
     ALTER TABLE skills ADD COLUMN IF NOT EXISTS feedback_count INTEGER NOT NULL DEFAULT 0;
   `);
   console.log("  ✓ skills columns added");
@@ -40,6 +40,7 @@ async function main() {
     );
     CREATE INDEX IF NOT EXISTS skill_events_skill_id_idx ON skill_events(skill_id);
     CREATE INDEX IF NOT EXISTS skill_events_type_idx ON skill_events(event_type);
+    CREATE INDEX IF NOT EXISTS skill_events_created_idx ON skill_events(created_at);
   `);
   console.log("  ✓ skill_events table created");
 
@@ -60,6 +61,7 @@ async function main() {
   `);
   console.log("  ✓ skill_feedback table created");
 
+  // TODO: Add a cleanup cron job to prune old skill_events rows (e.g. older than 90 days)
   console.log("Migration complete.");
   await client.end();
 }

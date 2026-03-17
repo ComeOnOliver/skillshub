@@ -35,7 +35,6 @@ export async function GET(
       fetchCount: skills.fetchCount,
       feedbackCount: skills.feedbackCount,
       helpfulRate: skills.helpfulRate,
-      trustScore: skills.trustScore,
       createdAt: skills.createdAt,
       updatedAt: skills.updatedAt,
       repo: {
