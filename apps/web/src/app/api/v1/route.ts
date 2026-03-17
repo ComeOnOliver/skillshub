@@ -16,7 +16,7 @@ export async function GET() {
         method: "GET",
         url: `${BASE_URL}/api/v1/skills/resolve?task=YOUR_TASK_DESCRIPTION`,
         example: `${BASE_URL}/api/v1/skills/resolve?task=write+terraform+modules+with+tests`,
-        note: "Returns the single best skill for your task. One call, zero token waste. No auth required.",
+        note: "Returns ranked skills for your task with confidence scores. One call, zero token waste. No auth required.",
       },
       step_2: {
         action: "Search for a skill you need",
@@ -37,10 +37,17 @@ export async function GET() {
     resolve: {
       endpoint: `${BASE_URL}/api/v1/skills/resolve`,
       method: "GET",
-      description: "Describe your task in natural language — get the best matching skill instantly.",
+      description: "Describe your task in natural language — get ranked skills with confidence scores.",
       parameters: {
         task: "Natural language description of what you need. Example: task=write+terraform+modules+with+tests",
-        limit: "Number of results (1-5, default 1)",
+        limit: "Max results, 1-50 (default: 10)",
+        threshold: "Minimum confidence to include, 0-1 (default: 0.3)",
+      },
+      response: {
+        data: "[{ skill, score, confidence (0-1 absolute), relativeScore (0-1 vs top result), fetchUrl }]",
+        tokenWeights: "{ token: weight } — shows which query tokens mattered most (IDF-based)",
+        matched: "Number of results above threshold (before limit cap)",
+        threshold: "The threshold used for this request",
       },
     },
 

@@ -14,7 +14,8 @@ const STOPWORDS = new Set([
 
 const resolveSchema = z.object({
   task: z.string().min(1).max(500),
-  limit: z.coerce.number().int().min(1).max(5).default(1),
+  limit: z.coerce.number().int().min(1).max(50).default(10),
+  threshold: z.coerce.number().min(0).max(1).default(0.3),
 });
 
 function tokenize(task: string): string[] {
@@ -113,7 +114,7 @@ export async function GET(request: Request) {
     );
   }
 
-  const { task, limit } = parsed.data;
+  const { task, limit, threshold } = parsed.data;
   const tokens = tokenize(task);
 
   if (tokens.length === 0) {
@@ -186,17 +187,22 @@ export async function GET(request: Request) {
   }
 
   // Score and sort in JS
-  const scored = rows
+  const allScored = rows
     .map((row) => ({
       skill: row,
       score: scoreSkill(row as SkillRow, tokens, tokenWeights),
     }))
     .filter((r) => r.score > 0)
-    .sort((a, b) => b.score - a.score)
-    .slice(0, limit);
+    .sort((a, b) => b.score - a.score);
 
-  const topScore = scored[0]?.score ?? 0;
-  const confidence = Math.min(1, topScore / 100);
+  const topScore = allScored[0]?.score ?? 0;
+
+  // Filter by threshold, then cap at limit
+  const aboveThreshold = allScored.filter(
+    (r) => Math.round((r.score / 100) * 100) / 100 >= threshold,
+  );
+  const matched = aboveThreshold.length;
+  const scored = aboveThreshold.slice(0, limit);
 
   const data = scored.map((r) => ({
     skill: {
@@ -210,6 +216,7 @@ export async function GET(request: Request) {
     },
     score: r.score,
     confidence: Math.round((r.score / 100) * 100) / 100,
+    relativeScore: topScore > 0 ? Math.round((r.score / topScore) * 100) / 100 : 0,
     fetchUrl: `${BASE_URL}/${r.skill.repo.githubOwner ?? r.skill.owner.username}/${r.skill.repo.githubRepoName ?? r.skill.slug}/${r.skill.slug}?format=md`,
   }));
 
@@ -217,8 +224,10 @@ export async function GET(request: Request) {
     data,
     query: task,
     tokens,
+    tokenWeights: Object.fromEntries(tokenWeights),
     total,
-    matched: scored.length,
+    matched,
+    threshold,
   });
 }
 

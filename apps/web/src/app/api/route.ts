@@ -12,22 +12,41 @@ export async function GET() {
 
     quick_start: {
       step_1: {
+        action: "Describe your task — get the best-fit skill instantly",
+        method: "GET",
+        url: `${BASE_URL}/api/v1/skills/resolve?task=YOUR_TASK`,
+        example: `curl "${BASE_URL}/api/v1/skills/resolve?task=terraform+modules+testing"`,
+        note: "Returns ranked skills with confidence scores. 250x more token-efficient than manual search. No auth required.",
+      },
+      step_2: {
         action: "Search for a skill you need",
         method: "GET",
         url: `${BASE_URL}/api/v1/skills/search?q=YOUR_QUERY`,
         example: `curl "${BASE_URL}/api/v1/skills/search?q=pdf"`,
         note: "No auth required. Returns matching skills with name, description, tags, and slug.",
       },
-      step_2: {
+      step_3: {
         action: "Fetch the skill content (the actual SKILL.md instructions)",
         method: "GET",
         url: `${BASE_URL}/{owner}/{repo}/{skill}?format=md`,
         example: `curl "${BASE_URL}/anthropics/skills/pdf?format=md"`,
         note: "No auth required. Returns raw markdown. Read it and follow the instructions. That's your skill now.",
       },
-      step_3: {
+      step_4: {
         action: "Done. No registration needed for reading skills.",
       },
+    },
+
+    resolve: {
+      endpoint: `${BASE_URL}/api/v1/skills/resolve`,
+      method: "GET",
+      parameters: {
+        task: "Natural language task description (required)",
+        limit: "Max results, 1-50 (default: 10)",
+        threshold: "Min confidence 0-1 (default: 0.3)",
+      },
+      description:
+        "Returns ranked skills matching your task with confidence scores. More efficient than search for agents.",
     },
 
     search: {
