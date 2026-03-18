@@ -31,10 +31,10 @@ async function SkillsList({ searchParams }: Props) {
   }
 
   const sort = params.sort ?? "stars";
-  const isDefaultBrowse = !params.q && sort === "stars";
-  const orderBy = isDefaultBrowse
-    ? sql`${repos.starCount} DESC, md5(${repos.id}::text || ${skills.id}::text)`
-    : sort === "downloads"
+  const isDefaultBrowse = !params.q && !params.tags && sort === "stars";
+
+  const orderBy =
+    sort === "downloads"
       ? desc(repos.downloadCount)
       : sort === "recent"
         ? desc(skills.createdAt)
@@ -42,42 +42,93 @@ async function SkillsList({ searchParams }: Props) {
 
   const where = and(...conditions);
 
-  const [data, countResult] = await Promise.all([
-    db
-      .select({
-        id: skills.id,
-        slug: skills.slug,
-        name: skills.name,
-        description: skills.description,
-        tags: skills.tags,
-        createdAt: skills.createdAt,
-        repo: {
-          starCount: repos.starCount,
-          downloadCount: repos.downloadCount,
-          githubOwner: repos.githubOwner,
-          githubRepoName: repos.githubRepoName,
-        },
-        owner: {
-          id: users.id,
-          username: users.username,
-          displayName: users.displayName,
-          avatarUrl: users.avatarUrl,
-        },
-      })
-      .from(skills)
-      .innerJoin(repos, eq(skills.repoId, repos.id))
-      .innerJoin(users, eq(skills.ownerId, users.id))
-      .where(where)
-      .orderBy(orderBy)
-      .limit(limit)
-      .offset(offset),
-    db
-      .select({ count: sql<number>`count(*)::int` })
-      .from(skills)
-      .where(where),
-  ]);
+  // For default browse (no search/tags), show ONE skill per repo for diversity
+  let data;
+  let total: number;
 
-  const total = countResult[0]?.count ?? 0;
+  if (isDefaultBrowse) {
+    const diverseResults = await db.execute(sql`
+      SELECT DISTINCT ON (r.github_owner)
+        s.id, s.slug, s.name, s.description, s.tags,
+        s.created_at as "createdAt",
+        r.star_count as "repoStarCount",
+        r.download_count as "repoDownloadCount",
+        r.github_owner as "repoGithubOwner",
+        r.github_repo_name as "repoGithubRepoName",
+        u.id as "ownerId",
+        u.username as "ownerUsername",
+        u.display_name as "ownerDisplayName",
+        u.avatar_url as "ownerAvatarUrl"
+      FROM skills s
+      JOIN repos r ON s.repo_id = r.id
+      JOIN users u ON s.owner_id = u.id
+      WHERE s.is_published = true
+      ORDER BY r.github_owner, r.star_count DESC, s.fetch_count DESC
+    `);
+
+    // Sort the diverse results by star count, then paginate
+    const sorted = (diverseResults.rows as any[]).sort((a, b) => b.repoStarCount - a.repoStarCount);
+    total = sorted.length;
+    const pageRows = sorted.slice(offset, offset + limit);
+
+    data = pageRows.map((r: any) => ({
+      id: r.id,
+      slug: r.slug,
+      name: r.name,
+      description: r.description,
+      tags: r.tags,
+      createdAt: r.createdAt,
+      repo: {
+        starCount: r.repoStarCount,
+        downloadCount: r.repoDownloadCount,
+        githubOwner: r.repoGithubOwner,
+        githubRepoName: r.repoGithubRepoName,
+      },
+      owner: {
+        id: r.ownerId,
+        username: r.ownerUsername,
+        displayName: r.ownerDisplayName,
+        avatarUrl: r.ownerAvatarUrl,
+      },
+    }));
+  } else {
+    const [queryData, countResult] = await Promise.all([
+      db
+        .select({
+          id: skills.id,
+          slug: skills.slug,
+          name: skills.name,
+          description: skills.description,
+          tags: skills.tags,
+          createdAt: skills.createdAt,
+          repo: {
+            starCount: repos.starCount,
+            downloadCount: repos.downloadCount,
+            githubOwner: repos.githubOwner,
+            githubRepoName: repos.githubRepoName,
+          },
+          owner: {
+            id: users.id,
+            username: users.username,
+            displayName: users.displayName,
+            avatarUrl: users.avatarUrl,
+          },
+        })
+        .from(skills)
+        .innerJoin(repos, eq(skills.repoId, repos.id))
+        .innerJoin(users, eq(skills.ownerId, users.id))
+        .where(where)
+        .orderBy(orderBy)
+        .limit(limit)
+        .offset(offset),
+      db
+        .select({ count: sql<number>`count(*)::int` })
+        .from(skills)
+        .where(where),
+    ]);
+    data = queryData;
+    total = countResult[0]?.count ?? 0;
+  }
 
   if (data.length === 0) {
     return (
