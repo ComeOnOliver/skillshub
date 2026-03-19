@@ -1,8 +1,15 @@
+import { signOut } from "@/auth";
 import { getSession } from "@/lib/session";
 
 export async function POST() {
-  const session = await getSession();
-  session.destroy();
-  await session.save();
-  return Response.redirect(new URL("/", process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"));
+  // Clear legacy iron-session as well
+  try {
+    const session = await getSession();
+    session.destroy();
+    await session.save();
+  } catch {
+    // Ignore — legacy session may not exist
+  }
+
+  await signOut({ redirectTo: "/" });
 }

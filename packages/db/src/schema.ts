@@ -9,6 +9,7 @@ import {
   numeric,
   uniqueIndex,
   index,
+  primaryKey,
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
@@ -18,12 +19,13 @@ export const users = pgTable(
     id: uuid("id").defaultRandom().primaryKey(),
     githubId: text("github_id").unique(),
     email: text("email"),
-    username: text("username").unique().notNull(),
+    username: text("username").unique().notNull().default(sql`'user-' || substr(gen_random_uuid()::text, 1, 8)`),
     displayName: text("display_name"),
     avatarUrl: text("avatar_url"),
     role: text("role", { enum: ["human", "agent"] }).notNull().default("human"),
     bio: text("bio"),
     githubAccessToken: text("github_access_token"),
+    emailVerified: timestamp("email_verified"),
     bscAddress: text("bsc_address"),
     totalDonationsReceived: numeric("total_donations_received", {
       precision: 18,
@@ -43,6 +45,44 @@ export const users = pgTable(
     uniqueIndex("users_github_id_idx").on(table.githubId),
   ]
 );
+
+// ── Auth.js tables ──────────────────────────────────────────────────────────
+
+export const accounts = pgTable(
+  "accounts",
+  {
+    userId: uuid("user_id")
+      .references(() => users.id, { onDelete: "cascade" })
+      .notNull(),
+    type: text("type").notNull(),
+    provider: text("provider").notNull(),
+    providerAccountId: text("provider_account_id").notNull(),
+    refresh_token: text("refresh_token"),
+    access_token: text("access_token"),
+    expires_at: integer("expires_at"),
+    token_type: text("token_type"),
+    scope: text("scope"),
+    id_token: text("id_token"),
+    session_state: text("session_state"),
+  },
+  (table) => [
+    primaryKey({ columns: [table.provider, table.providerAccountId] }),
+  ]
+);
+
+export const verificationTokens = pgTable(
+  "verification_tokens",
+  {
+    identifier: text("identifier").notNull(),
+    token: text("token").notNull(),
+    expires: timestamp("expires", { mode: "date" }).notNull(),
+  },
+  (table) => [
+    primaryKey({ columns: [table.identifier, table.token] }),
+  ]
+);
+
+// ── App tables ──────────────────────────────────────────────────────────────
 
 export const repos = pgTable(
   "repos",

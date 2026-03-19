@@ -1,5 +1,6 @@
 import { getIronSession, type IronSession } from "iron-session";
 import { cookies } from "next/headers";
+import { auth } from "@/auth";
 
 export interface SessionData {
   userId?: string;
@@ -7,6 +8,8 @@ export interface SessionData {
   displayName?: string;
   avatarUrl?: string;
 }
+
+// ── Iron-session (legacy fallback) ──────────────────────────────────────────
 
 const secret = process.env.SESSION_SECRET ?? "build-placeholder-not-for-production";
 if (!process.env.SESSION_SECRET && process.env.NODE_ENV === "production") {
@@ -29,13 +32,31 @@ export async function getSession(): Promise<IronSession<SessionData>> {
   return getIronSession<SessionData>(cookieStore, sessionOptions);
 }
 
+// ── Unified getUser() ───────────────────────────────────────────────────────
+// Tries Auth.js first, falls back to iron-session for existing sessions.
+
 export async function getUser() {
-  const session = await getSession();
-  if (!session.userId) return null;
-  return {
-    userId: session.userId,
-    username: session.username!,
-    displayName: session.displayName,
-    avatarUrl: session.avatarUrl,
-  };
+  // 1. Auth.js (primary)
+  const session = await auth();
+  if (session?.user?.id) {
+    return {
+      userId: session.user.id,
+      username: session.user.username,
+      displayName: session.user.displayName ?? session.user.name ?? undefined,
+      avatarUrl: session.user.avatarUrl ?? session.user.image ?? undefined,
+    };
+  }
+
+  // 2. Iron-session (fallback for existing sessions)
+  const legacy = await getSession();
+  if (legacy.userId) {
+    return {
+      userId: legacy.userId,
+      username: legacy.username!,
+      displayName: legacy.displayName,
+      avatarUrl: legacy.avatarUrl,
+    };
+  }
+
+  return null;
 }

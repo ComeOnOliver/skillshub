@@ -10,11 +10,11 @@ async function UserNav() {
   if (!user) {
     return (
       <Link
-        href="/api/auth/github"
-        aria-label="Sign in with GitHub"
+        href="/login"
+        aria-label="Sign in"
         className="group rounded border border-neon-cyan/40 px-4 py-1.5 font-mono text-xs text-neon-cyan hover:bg-neon-cyan/10 hover:border-neon-cyan transition-all glow-box"
       >
-        <span className="text-neutral-500 group-hover:text-neon-cyan">$</span> login --github
+        <span className="text-neutral-500 group-hover:text-neon-cyan">$</span> login
       </Link>
     );
   }
