@@ -183,6 +183,26 @@ interface SkillRow {
   };
 }
 
+// ---------------------------------------------------------------------------
+// In-memory skill cache (per serverless instance)
+// ---------------------------------------------------------------------------
+const CACHE_TTL = 300_000; // 5 minutes
+
+interface CorpusStats {
+  totalDocs: number;
+  avgFieldLengths: { name: number; description: number; tags: number };
+  /** token → { name: count, description: count, tags: count } */
+  documentFrequencies: Map<string, { name: number; description: number; tags: number }>;
+}
+
+interface SkillCache {
+  data: SkillRow[];
+  stats: CorpusStats;
+  timestamp: number;
+}
+
+let skillCache: SkillCache | null = null;
+
 interface ScoredResult {
   skill: SkillRow;
   rawScore: number;
@@ -222,6 +242,95 @@ function tokenizeField(text: string): string[] {
 
 function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+// ---------------------------------------------------------------------------
+// Cache: pre-computed corpus stats
+// ---------------------------------------------------------------------------
+
+function buildCorpusStats(rows: SkillRow[]): CorpusStats {
+  const totalDocs = rows.length;
+  let nameLen = 0;
+  let descLen = 0;
+  let tagsLen = 0;
+  const df = new Map<string, { name: number; description: number; tags: number }>();
+
+  for (const row of rows) {
+    const nameTokens = tokenizeField(row.name);
+    const descTokens = tokenizeField(row.description ?? "");
+    const tagTokens = row.tags.map((t) => t.toLowerCase());
+
+    nameLen += nameTokens.length;
+    descLen += descTokens.length;
+    tagsLen += tagTokens.length;
+
+    // Unique tokens per field for document frequency
+    const nameSet = new Set(nameTokens);
+    const descSet = new Set(descTokens);
+    const tagSet = new Set(tagTokens);
+    const allTokens = new Set([...nameSet, ...descSet, ...tagSet]);
+
+    for (const token of allTokens) {
+      let entry = df.get(token);
+      if (!entry) {
+        entry = { name: 0, description: 0, tags: 0 };
+        df.set(token, entry);
+      }
+      if (nameSet.has(token)) entry.name++;
+      if (descSet.has(token)) entry.description++;
+      if (tagSet.has(token)) entry.tags++;
+    }
+  }
+
+  return {
+    totalDocs,
+    avgFieldLengths: {
+      name: totalDocs > 0 ? nameLen / totalDocs : 0,
+      description: totalDocs > 0 ? descLen / totalDocs : 0,
+      tags: totalDocs > 0 ? tagsLen / totalDocs : 0,
+    },
+    documentFrequencies: df,
+  };
+}
+
+async function getSkillCatalog(): Promise<{ cache: SkillCache; cacheHit: boolean; dbMs: number }> {
+  const now = Date.now();
+  if (skillCache && (now - skillCache.timestamp) < CACHE_TTL) {
+    return { cache: skillCache, cacheHit: true, dbMs: 0 };
+  }
+
+  const dbStart = performance.now();
+  const db = getDb();
+  const rows = await db
+    .select({
+      id: skills.id,
+      slug: skills.slug,
+      name: skills.name,
+      description: skills.description,
+      tags: skills.tags,
+      readmeLength: sql<number>`coalesce(length(${skills.readme}), 0)::int`,
+      fetchCount: skills.fetchCount,
+      helpfulRate: skills.helpfulRate,
+      feedbackCount: skills.feedbackCount,
+      repo: {
+        githubOwner: repos.githubOwner,
+        githubRepoName: repos.githubRepoName,
+        starCount: repos.starCount,
+      },
+      owner: {
+        username: users.username,
+        avatarUrl: users.avatarUrl,
+      },
+    })
+    .from(skills)
+    .innerJoin(repos, eq(skills.repoId, repos.id))
+    .innerJoin(users, eq(skills.ownerId, users.id))
+    .where(eq(skills.isPublished, true));
+  const dbMs = Math.round(performance.now() - dbStart);
+
+  const stats = buildCorpusStats(rows as SkillRow[]);
+  skillCache = { data: rows as SkillRow[], stats, timestamp: now };
+  return { cache: skillCache, cacheHit: false, dbMs };
 }
 
 /**
@@ -627,6 +736,19 @@ function computeAmbiguity(topScore: number, runnerUpScore: number): number {
   return Math.round(Math.min(1, runnerUpScore / topScore) * 1000) / 1000;
 }
 
+// ---------------------------------------------------------------------------
+// JS pre-filter (replaces SQL token filter — works against cached data)
+// ---------------------------------------------------------------------------
+
+function preFilterSkills(allSkills: SkillRow[], tokens: string[]): SkillRow[] {
+  return allSkills.filter((row) => {
+    const n = row.name.toLowerCase();
+    const d = (row.description ?? "").toLowerCase();
+    const t = row.tags.map((tag) => tag.toLowerCase());
+    return tokens.some((token) => n.includes(token) || d.includes(token) || t.includes(token));
+  });
+}
+
 // ─── GET Handler ──────────────────────────────────────────────────────────────
 
 export async function GET(request: Request) {
@@ -642,46 +764,14 @@ export async function GET(request: Request) {
   }
 
   const { task, limit, threshold } = parsed.data;
-  const db = getDb();
 
-  // Fetch total published count (N for BM25 IDF) and all published skills in parallel.
-  // ~4800 skills is trivially small — fits in memory and scores in < 10ms.
-  const [countRows, rows] = await Promise.all([
-    db
-      .select({ count: sql<number>`count(*)::int` })
-      .from(skills)
-      .where(eq(skills.isPublished, true)),
-    db
-      .select({
-        id: skills.id,
-        slug: skills.slug,
-        name: skills.name,
-        description: skills.description,
-        tags: skills.tags,
-        readmeLength: sql<number>`coalesce(length(${skills.readme}), 0)::int`,
-        fetchCount: skills.fetchCount,
-        helpfulRate: skills.helpfulRate,
-        feedbackCount: skills.feedbackCount,
-        repo: {
-          githubOwner: repos.githubOwner,
-          githubRepoName: repos.githubRepoName,
-          starCount: repos.starCount,
-        },
-        owner: {
-          username: users.username,
-          avatarUrl: users.avatarUrl,
-        },
-      })
-      .from(skills)
-      .innerJoin(repos, eq(skills.repoId, repos.id))
-      .innerJoin(users, eq(skills.ownerId, users.id))
-      .where(eq(skills.isPublished, true)),
-  ]);
-
-  const total = countRows[0]?.count ?? 0;
+  // Fetch skill catalog (from cache or DB)
+  const { cache, cacheHit, dbMs } = await getSkillCatalog();
+  const { data: allSkills, stats } = cache;
+  const total = stats.totalDocs;
 
   // Collect all skill slugs for compound term auto-generation
-  const skillSlugs = new Set(rows.map((r) => r.slug.toLowerCase()));
+  const skillSlugs = new Set(allSkills.map((r) => r.slug.toLowerCase()));
 
   // Tokenize query: detect compound terms, remove stopwords
   const { tokens, compounds } = tokenizeQuery(task, skillSlugs);
@@ -693,14 +783,18 @@ export async function GET(request: Request) {
     );
   }
 
+  // Pre-filter in JS (replaces SQL ILIKE/array overlap filter)
+  const scoreStart = performance.now();
+  const filtered = preFilterSkills(allSkills, tokens);
+
   // Build BM25 inverted index across all three fields
-  const index = buildIndex(rows as SkillRow[], total);
+  const index = buildIndex(filtered as SkillRow[], total);
 
   // Detect anchor tokens: technology-specific, high-IDF terms
   const anchors = detectAnchors(tokens, index.globalIdf, skillSlugs);
 
   // Score every skill
-  const scored = rows.map((row, i) =>
+  const scored = filtered.map((row, i) =>
     scoreSkill(row as SkillRow, i, tokens, compounds, anchors, index),
   );
 
@@ -722,12 +816,16 @@ export async function GET(request: Request) {
   // Rejection gate
   const rejection = shouldReject(positive, anchors);
 
-  // IDF-based token weights for backward-compatible response
+  // IDF-based token weights using pre-computed corpus stats
   const tokenWeights: Record<string, number> = {};
   for (const t of tokens) {
-    const idf = index.globalIdf.get(t) ?? 0;
+    const df = stats.documentFrequencies.get(t);
+    const count = df ? Math.max(df.name, df.description, df.tags) : 0;
+    const idf = Math.log2(total / Math.max(count, 1)) + 1;
     tokenWeights[t] = Math.round(Math.min(3, Math.max(1, idf)) * 100) / 100;
   }
+
+  const scoreMs = Math.round(performance.now() - scoreStart);
 
   // Build fetch URL for a skill
   const fetchUrl = (r: SkillRow) =>
@@ -751,29 +849,42 @@ export async function GET(request: Request) {
     fetchUrl: fetchUrl(r.skill),
   });
 
+  // Build timing headers
+  const timingParts = [`cache;desc=${cacheHit ? "hit" : "miss"}`];
+  if (!cacheHit) timingParts.push(`db;dur=${dbMs}`);
+  timingParts.push(`score;dur=${scoreMs}`);
+
+  const headers = {
+    "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300",
+    "Server-Timing": timingParts.join(", "),
+  };
+
   // ── Rejected: no good match ──
   if (rejection.rejected) {
     const nearMiss = positive[0]
       ? {
-          skill: positive[0].skill.slug,
-          confidence: calibrateConfidence(positive[0].adjustedScore, spread),
-          reason: `Partial match rejected: ${rejection.reason}`,
-        }
+            skill: positive[0].skill.slug,
+            confidence: calibrateConfidence(positive[0].adjustedScore, spread),
+            reason: `Partial match rejected: ${rejection.reason}`,
+          }
       : undefined;
 
-    return corsJson({
-      data: positive.slice(0, limit).map(formatResult),
-      query: task,
-      tokens,
-      tokenWeights,
-      total,
-      matched: 0,
-      threshold,
-      noMatchReason: rejection.reason,
-      noMatchDetail: rejection.detail,
-      nearMiss,
-      ambiguity,
-    });
+    return corsJson(
+      {
+        data: positive.slice(0, limit).map(formatResult),
+        query: task,
+        tokens,
+        tokenWeights,
+        total,
+        matched: 0,
+        threshold,
+        noMatchReason: rejection.reason,
+        noMatchDetail: rejection.detail,
+        nearMiss,
+        ambiguity,
+      },
+      { headers },
+    );
   }
 
   // ── Matched: apply threshold and return ──
@@ -781,16 +892,19 @@ export async function GET(request: Request) {
     (r) => calibrateConfidence(r.adjustedScore, spread) >= threshold,
   );
 
-  return corsJson({
-    data: aboveThreshold.slice(0, limit).map(formatResult),
-    query: task,
-    tokens,
-    tokenWeights,
-    total,
-    matched: aboveThreshold.length,
-    threshold,
-    ambiguity,
-  });
+  return corsJson(
+    {
+      data: aboveThreshold.slice(0, limit).map(formatResult),
+      query: task,
+      tokens,
+      tokenWeights,
+      total,
+      matched: aboveThreshold.length,
+      threshold,
+      ambiguity,
+    },
+    { headers },
+  );
 }
 
 export async function POST() { return methodNotAllowed(["GET"]); }

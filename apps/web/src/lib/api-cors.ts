@@ -32,10 +32,10 @@ function getWriteCorsHeaders(request?: Request): Record<string, string> {
 }
 
 /** CORS response for read-only (GET) endpoints — open to all origins */
-export function corsJson(data: unknown, init?: { status?: number }) {
+export function corsJson(data: unknown, init?: { status?: number; headers?: Record<string, string> }) {
   return Response.json(data, {
     status: init?.status,
-    headers: readCorsHeaders,
+    headers: { ...readCorsHeaders, ...init?.headers },
   });
 }
 
