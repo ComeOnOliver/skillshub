@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Geist } from "next/font/google";
 import { Fira_Code } from "next/font/google";
 import { Nav } from "@/components/nav";
+import { APP_VERSION } from "@/lib/version";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -53,7 +54,7 @@ export default function RootLayout({
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-neutral-600">
               <div className="flex items-center gap-2">
                 <span className="text-neon-cyan/50">&gt;_</span>
-                <span>SkillsHub v0.1.0</span>
+                <span>SkillsHub v{APP_VERSION}</span>
                 <span className="text-neutral-700">|</span>
                 <span>built by degens, for degens</span>
               </div>

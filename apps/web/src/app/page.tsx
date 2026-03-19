@@ -10,6 +10,7 @@ import { TerminalToggle } from "@/components/terminal-toggle";
 import { SkillCard } from "@/components/skill-card";
 import Image from "next/image";
 import { JsonLd } from "@/components/json-ld";
+import { APP_VERSION } from "@/lib/version";
 
 const featureColorClasses: Record<string, string> = {
   "neon-cyan": "text-neon-cyan",
@@ -255,7 +256,7 @@ export default async function HomePage() {
       <section className="py-10 md:py-16">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 font-mono text-xs text-neutral-600">
-            <span className="text-neon-cyan/60">~/skillshub</span><a href="https://github.com/ComeOnOliver/skillshub" target="_blank" rel="noopener noreferrer" className="inline-flex ml-1 align-middle"><Github className="h-3 w-3 text-neutral-600 hover:text-neon-cyan transition-colors" /></a> <span className="text-neutral-700">on</span> <span className="text-neon-lime/60">main</span> <span className="text-neutral-700">via</span> <span className="text-neon-orange/60">⬡ v0.1.0</span>
+            <span className="text-neon-cyan/60">~/skillshub</span><a href="https://github.com/ComeOnOliver/skillshub" target="_blank" rel="noopener noreferrer" className="inline-flex ml-1 align-middle"><Github className="h-3 w-3 text-neutral-600 hover:text-neon-cyan transition-colors" /></a> <span className="text-neutral-700">on</span> <span className="text-neon-lime/60">main</span> <span className="text-neutral-700">via</span> <span className="text-neon-orange/60">⬡ v{APP_VERSION}</span>
           </div>
 
           <h1 className="glitch-text mb-2 font-mono text-4xl md:text-5xl font-bold tracking-tight leading-tight">

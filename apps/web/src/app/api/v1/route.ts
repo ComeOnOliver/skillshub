@@ -1,4 +1,5 @@
 import { corsJson, methodNotAllowed, OPTIONS as corsOptions } from "@/lib/api-cors";
+import { APP_VERSION } from "@/lib/version";
 
 export async function POST() { return methodNotAllowed(["GET"]); }
 export async function PUT() { return methodNotAllowed(["GET"]); }
@@ -10,7 +11,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_APP_URL ?? "https://skillshub.wtf";
 export async function GET() {
   return corsJson({
     name: "SkillsHub",
-    version: "0.1.0",
+    version: APP_VERSION,
     description:
       "The right skill, one API call. 4,800+ skills from 200+ repos.",
     base_url: BASE_URL,
