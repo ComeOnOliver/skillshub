@@ -53,6 +53,20 @@ export async function POST(request: Request) {
     }
   }
 
+  // Check for duplicate: same name AND same repo
+  const [duplicateByName] = await db
+    .select({ id: skills.id })
+    .from(skills)
+    .where(and(eq(skills.name, parsed.data.name), eq(skills.repoId, repoId)))
+    .limit(1);
+
+  if (duplicateByName) {
+    return corsJson(
+      { error: { code: "CONFLICT", message: "A skill with this name already exists in this repo. Use PUT to update it." } },
+      { status: 409 }
+    );
+  }
+
   // Check slug uniqueness per owner
   const [existing] = await db
     .select({ id: skills.id })
