@@ -3,26 +3,34 @@ import { getDb } from "@/lib/db";
 import { skills, repos } from "@skillshub/db/schema";
 import { eq } from "drizzle-orm";
 
+// Force dynamic rendering — sitemap needs DB access at runtime, not build time
+export const dynamic = "force-dynamic";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const db = getDb();
 
-  const rows = await db
-    .select({
-      slug: skills.slug,
-      githubOwner: repos.githubOwner,
-      githubRepoName: repos.githubRepoName,
-      updatedAt: skills.updatedAt,
-    })
-    .from(skills)
-    .innerJoin(repos, eq(skills.repoId, repos.id))
-    .where(eq(skills.isPublished, true));
+  let skillPages: MetadataRoute.Sitemap = [];
+  try {
+    const rows = await db
+      .select({
+        slug: skills.slug,
+        githubOwner: repos.githubOwner,
+        githubRepoName: repos.githubRepoName,
+        updatedAt: skills.updatedAt,
+      })
+      .from(skills)
+      .innerJoin(repos, eq(skills.repoId, repos.id))
+      .where(eq(skills.isPublished, true));
 
-  const skillPages: MetadataRoute.Sitemap = rows.map((row) => ({
-    url: `https://skillshub.wtf/${row.githubOwner}/${row.githubRepoName}/${row.slug}`,
-    lastModified: row.updatedAt,
-    changeFrequency: "weekly",
-    priority: 0.8,
-  }));
+    skillPages = rows.map((row) => ({
+      url: `https://skillshub.wtf/${row.githubOwner}/${row.githubRepoName}/${row.slug}`,
+      lastModified: row.updatedAt,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    }));
+  } catch {
+    // DB unavailable (e.g., build time) — return static pages only
+  }
 
   return [
     {
