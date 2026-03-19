@@ -9,92 +9,91 @@ import { eq, sql } from "drizzle-orm";
  */
 
 const TAG_RULES: Record<string, string[]> = {
-  // Languages
-  'python': ['python', 'pip', 'pyproject', 'pytest', 'django', 'flask', 'fastapi', 'pandas', 'numpy', 'scipy', 'pytorch', 'tensorflow', 'jupyter', 'conda', 'uv ', 'ruff', 'mypy', 'pylint'],
-  'typescript': ['typescript', ' ts ', 'deno', 'bun ', 'tsx ', 'zod'],
-  'javascript': ['javascript', ' js ', 'node.js', 'nodejs', 'npm ', 'express', 'webpack', 'vite '],
-  'rust': ['rust', 'cargo', 'wasm', 'webassembly', 'tokio', 'axum'],
-  'go': ['golang', ' go ', 'goroutine'],
-  'swift': ['swift', 'swiftui', 'xcode', 'ios ', 'uikit', 'cocoa'],
-  'java': [' java ', 'spring', 'maven', 'gradle', 'kotlin', 'android'],
-  'csharp': ['c#', '.net', 'dotnet', 'blazor', 'asp.net', 'nuget'],
-  'ruby': ['ruby', 'rails', 'gems'],
-  'php': [' php ', 'laravel', 'composer', 'wordpress'],
-  'sql': [' sql', 'postgres', 'mysql', 'sqlite', 'database query', 'drizzle'],
-  'shell': ['bash', 'shell', 'zsh', 'cli ', 'command line', 'terminal'],
+  // Languages — use specific keywords, avoid short/ambiguous matches
+  'python': ['python', 'pyproject', 'pytest', 'django', 'flask', 'fastapi', 'pandas', 'numpy', 'scipy', 'pytorch', 'tensorflow', 'jupyter', 'conda', 'ruff', 'mypy', 'pylint'],
+  'typescript': ['typescript', 'deno', 'tsx '],
+  'javascript': ['javascript', 'node.js', 'nodejs', 'webpack', 'vite'],
+  'rust': ['rust ', 'rustlang', 'cargo', 'webassembly', 'tokio', 'axum'],
+  'go': ['golang', 'goroutine'],
+  'swift': ['swift ', 'swiftui', 'xcode', 'uikit'],
+  'java': [' java ', 'spring boot', 'maven', 'gradle'],
+  'csharp': ['c#', '.net', 'dotnet', 'blazor', 'asp.net'],
+  'ruby': ['ruby', 'rails'],
+  'php': [' php ', 'laravel', 'wordpress'],
+  'sql': ['sql ', 'postgres', 'mysql', 'sqlite', 'database query'],
+  'shell': ['bash', 'shell script', 'zsh', 'command line'],
 
-  // Frameworks
-  'react': ['react', 'jsx', 'nextjs', 'next.js', 'remix', 'gatsby'],
+  // Frameworks — require explicit mentions
+  'react': ['react', 'jsx', 'nextjs', 'next.js', 'remix'],
   'vue': ['vue', 'nuxt', 'vuex', 'pinia'],
-  'angular': ['angular', 'rxjs', 'ngrx'],
+  'angular': ['angular'],
   'svelte': ['svelte', 'sveltekit'],
   'django': ['django'],
-  'express': ['express', 'koa ', 'hono', 'fastify'],
   'tailwind': ['tailwind', 'tailwindcss'],
 
-  // Domains
-  'ai': ['ai ', 'artificial intelligence', 'machine learning', ' ml ', 'llm', 'gpt', 'claude', 'openai', 'anthropic', 'gemini', 'copilot', 'neural', 'deep learning'],
-  'ml': ['machine learning', 'model training', 'scikit', 'sklearn', 'tensorflow', 'pytorch', 'hugging face', 'transformers', 'fine-tun'],
-  'nlp': ['nlp', 'natural language', 'text processing', 'tokeniz', 'embedding', 'sentiment'],
-  'rag': ['rag', 'retrieval augmented', 'vector search', 'embedding', 'langchain', 'llama.?index'],
+  // Domains — AI/ML
+  'ai': ['artificial intelligence', 'machine learning', 'llm', 'gpt', 'openai', 'anthropic', 'neural', 'deep learning'],
+  'ml': ['machine learning', 'model training', 'scikit', 'sklearn', 'tensorflow', 'pytorch', 'hugging face', 'fine-tun'],
+  'nlp': ['nlp', 'natural language processing', 'tokeniz', 'sentiment analysis'],
+  'rag': ['retrieval augmented', 'vector search', 'langchain'],
   'mcp': ['mcp', 'model context protocol'],
-  'agent': ['agent', 'autonomous', 'orchestrat', 'multi-agent', 'agentic', 'tool-use', 'tool call'],
+  'agent': ['ai agent', 'autonomous agent', 'multi-agent', 'agentic', 'tool-use'],
 
-  // Infrastructure
-  'devops': ['devops', 'ci/cd', 'ci cd', 'pipeline', 'infrastructure', 'iac', 'gitops'],
-  'docker': ['docker', 'container', 'dockerfile', 'compose'],
-  'kubernetes': ['kubernetes', 'k8s', 'helm', 'kubectl', 'pod ', 'cluster'],
-  'terraform': ['terraform', 'opentofu', 'hcl', 'infrastructure as code'],
-  'aws': ['aws', 'amazon web services', 's3 ', 'ec2', 'lambda', 'cloudformation', 'dynamodb'],
-  'azure': ['azure', 'microsoft cloud', 'arm template', 'bicep'],
-  'gcp': ['gcp', 'google cloud', 'bigquery', 'cloud run', 'firebase'],
-  'cloudflare': ['cloudflare', 'workers', 'pages'],
-  'vercel': ['vercel', 'serverless', 'edge function'],
+  // Infrastructure — require explicit infra context
+  'devops': ['devops', 'ci/cd', 'ci cd', 'gitops'],
+  'docker': ['docker', 'dockerfile', 'docker compose'],
+  'kubernetes': ['kubernetes', 'k8s', 'helm', 'kubectl'],
+  'terraform': ['terraform', 'opentofu', 'infrastructure as code'],
+  'aws': ['aws', 'amazon web services', 'ec2', 'cloudformation', 'dynamodb'],
+  'azure': ['azure', 'arm template', 'bicep'],
+  'gcp': ['gcp', 'google cloud', 'bigquery', 'cloud run'],
+  'cloudflare': ['cloudflare workers', 'cloudflare pages'],
+  'vercel': ['vercel'],
 
-  // Security
-  'security': ['security', 'vulnerability', 'exploit', 'pentest', 'penetration', 'cve ', 'owasp', 'xss', 'csrf', 'injection', 'threat model'],
-  'auth': ['auth', 'authentication', 'authorization', 'oauth', 'jwt', 'saml', 'session', 'login'],
-  'crypto': ['cryptograph', 'encryption', 'decryption', 'hash', 'signing', 'tls', 'ssl', 'certificate'],
-  'audit': ['audit', 'compliance', 'code review', 'static analysis', 'sast', 'dast'],
-  'fuzzing': ['fuzz', 'fuzzer', 'fuzzing', 'libfuzzer', 'afl'],
+  // Security — require explicit security context
+  'security': ['security', 'vulnerability', 'exploit', 'pentest', 'penetration test', 'owasp', 'xss', 'csrf', 'threat model'],
+  'auth': ['authentication', 'authorization', 'oauth', 'jwt', 'saml'],
+  'crypto': ['cryptograph', 'encryption', 'decryption', 'signing', 'tls', 'ssl certificate'],
+  'audit': ['security audit', 'compliance', 'static analysis', 'sast', 'dast'],
+  'fuzzing': ['fuzzer', 'fuzzing', 'libfuzzer', 'afl'],
 
-  // Testing
-  'testing': ['test', 'testing', 'spec ', 'assertion', 'mock', 'stub'],
-  'e2e': ['e2e', 'end-to-end', 'end to end', 'playwright', 'cypress', 'selenium', 'puppeteer'],
-  'unit-testing': ['unit test', 'jest', 'vitest', 'pytest', 'mocha', 'chai'],
-  'performance': ['performance', 'benchmark', 'load test', 'profil', 'optimization', 'latency'],
+  // Testing — require explicit testing context
+  'testing': ['testing', 'test suite', 'test framework', 'assertion'],
+  'e2e': ['e2e', 'end-to-end', 'playwright', 'cypress', 'selenium', 'puppeteer'],
+  'unit-testing': ['unit test', 'jest', 'vitest', 'pytest', 'mocha'],
+  'performance': ['performance testing', 'benchmark', 'load test', 'profiling'],
 
-  // Data
-  'data': ['data', 'analytics', 'etl', 'pipeline', 'warehouse', 'ingestion'],
-  'pandas': ['pandas', 'dataframe', 'jupyter', 'notebook'],
-  'visualization': ['visualization', 'chart', 'd3', 'plotly', 'grafana', 'dashboard', 'graph'],
-  'scraping': ['scraping', 'scraper', 'crawl', 'web scraping', 'beautiful soup', 'cheerio'],
+  // Data — require explicit data context
+  'data': ['data engineering', 'data pipeline', 'etl', 'data warehouse', 'data ingestion'],
+  'pandas': ['pandas', 'dataframe'],
+  'visualization': ['data visualization', 'chart', 'plotly', 'grafana dashboard', 'd3.js'],
+  'scraping': ['scraping', 'scraper', 'web scraping', 'beautiful soup', 'cheerio'],
 
-  // Frontend
-  'frontend': ['frontend', 'front-end', 'ui ', 'user interface', 'responsive', 'accessibility', 'a11y', 'css'],
-  'design': ['design', 'figma', 'ui/ux', 'ux ', 'prototype', 'wireframe', 'mockup'],
-  'animation': ['animation', 'motion', 'transition', 'framer', 'gsap', 'manim'],
+  // Frontend — require explicit frontend context
+  'frontend': ['frontend', 'front-end', 'user interface', 'responsive design', 'accessibility', 'a11y', 'css'],
+  'design': ['ui design', 'figma', 'ui/ux', 'wireframe', 'mockup'],
+  'animation': ['animation', 'framer motion', 'gsap', 'manim'],
 
-  // Backend
-  'backend': ['backend', 'back-end', 'server', 'api ', 'rest ', 'graphql', 'grpc', 'microservice'],
-  'database': ['database', 'postgres', 'mongodb', 'redis', 'supabase', 'dynamodb', 'clickhouse', 'drizzle orm'],
+  // Backend — require explicit backend context
+  'backend': ['backend', 'back-end', 'rest api', 'graphql', 'grpc', 'microservice'],
+  'database': ['database', 'postgres', 'mongodb', 'redis', 'supabase', 'dynamodb', 'clickhouse'],
 
-  // Mobile
-  'mobile': ['mobile', 'ios', 'android', 'react native', 'flutter', 'expo', 'swift', 'kotlin'],
-  'ios': ['ios', 'swiftui', 'uikit', 'xcode', 'apple', 'cocoapods'],
-  'android': ['android', 'kotlin', 'jetpack compose', 'gradle'],
+  // Mobile — require explicit mobile context
+  'mobile': ['mobile app', 'react native', 'flutter', 'expo'],
+  'ios': ['ios ', 'swiftui', 'uikit', 'xcode', 'cocoapods'],
+  'android': ['android', 'jetpack compose'],
 
   // Web3
-  'web3': ['blockchain', 'smart contract', 'solidity', 'web3', 'ethereum', 'solana', 'defi', 'nft'],
+  'web3': ['blockchain', 'smart contract', 'solidity', 'web3', 'ethereum', 'solana', 'defi'],
 
-  // Content
-  'writing': ['writing', 'documentation', 'docs', 'markdown', 'blog', 'content', 'readme', 'technical writing'],
-  'pdf': ['pdf', 'document', 'docx', 'pptx', 'slides', 'presentation'],
+  // Content — require explicit content context
+  'writing': ['technical writing', 'documentation', 'blog writing'],
+  'pdf': ['pdf'],
 
   // Tools
-  'git': ['git ', 'github', 'gitlab', 'version control', 'branch', 'merge', 'pull request', 'commit'],
-  'editor': ['vscode', 'vim', 'neovim', 'emacs', 'ide', 'editor', 'cursor'],
-  'monitoring': ['monitoring', 'observability', 'logging', 'tracing', 'sentry', 'datadog', 'prometheus', 'grafana'],
+  'git': ['git ', 'github', 'gitlab', 'version control', 'pull request'],
+  'editor': ['vscode', 'vim', 'neovim', 'emacs', 'ide'],
+  'monitoring': ['monitoring', 'observability', 'logging', 'tracing', 'sentry', 'datadog', 'prometheus'],
 };
 
 function generateTags(name: string, description: string, _readme: string): string[] {
