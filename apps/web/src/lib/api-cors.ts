@@ -61,6 +61,37 @@ export function methodNotAllowed(allowed: string[]) {
   );
 }
 
+/** Rate-limited JSON 429 response with CORS headers for any origin context. */
+export function rateLimitResponse(
+  retryAfter: number,
+  request: Request,
+  headers?: Record<string, string>,
+) {
+  const origin = request.headers.get("Origin") ?? "";
+  const corsHeaders = ALLOWED_ORIGINS.includes(origin)
+    ? getWriteCorsHeaders(request)
+    : readCorsHeaders;
+
+  return new Response(
+    JSON.stringify({
+      error: {
+        code: "RATE_LIMITED",
+        message: "Too many requests. Try again later.",
+        retryAfter,
+      },
+    }),
+    {
+      status: 429,
+      headers: {
+        ...corsHeaders,
+        "Content-Type": "application/json",
+        "Retry-After": String(retryAfter),
+        ...headers,
+      },
+    },
+  );
+}
+
 export function OPTIONS() {
   return new Response(null, { status: 204, headers: readCorsHeaders });
 }

@@ -1,6 +1,6 @@
 import { getUser } from "@/lib/session";
 import { getDb } from "@/lib/db";
-import { checkRateLimit } from "@/lib/rate-limit";
+import { rateLimit, writeLimiter } from "@/lib/rate-limit";
 import { skills, repos } from "@skillshub/db/schema";
 import { eq, and } from "drizzle-orm";
 import { z } from "zod";
@@ -61,11 +61,11 @@ export async function POST(request: Request) {
     );
   }
 
-  // Fix 9: Rate limiting — max 5 imports per hour
-  const rateLimitMsg = checkRateLimit(`import:${user.userId}`, 5);
-  if (rateLimitMsg) {
+  // Fix 9: Rate limiting — max 20 imports per minute (write tier)
+  const rl = await rateLimit(`user:${user.userId}:import`, writeLimiter);
+  if (!rl.success) {
     return Response.json(
-      { error: { code: "RATE_LIMITED", message: rateLimitMsg } },
+      { error: { code: "RATE_LIMITED", message: "Too many requests. Try again later." } },
       { status: 429 }
     );
   }

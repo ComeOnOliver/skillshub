@@ -2,7 +2,7 @@ import { getUser } from "@/lib/session";
 import { getDb } from "@/lib/db";
 import { decryptToken } from "@/lib/crypto";
 import { scanRepoForSkills, GitHubApiError } from "@/lib/github";
-import { checkRateLimit } from "@/lib/rate-limit";
+import { rateLimit, writeLimiter } from "@/lib/rate-limit";
 import { users } from "@skillshub/db/schema";
 import { eq } from "drizzle-orm";
 import { z } from "zod";
@@ -32,11 +32,11 @@ export async function POST(request: Request) {
     );
   }
 
-  // Fix 9: Rate limiting — max 10 scans per hour
-  const rateLimitMsg = checkRateLimit(`scan:${user.userId}`, 10);
-  if (rateLimitMsg) {
+  // Fix 9: Rate limiting — max 20 scans per minute (write tier)
+  const rl = await rateLimit(`user:${user.userId}:scan`, writeLimiter);
+  if (!rl.success) {
     return Response.json(
-      { error: { code: "RATE_LIMITED", message: rateLimitMsg } },
+      { error: { code: "RATE_LIMITED", message: "Too many requests. Try again later." } },
       { status: 429 }
     );
   }

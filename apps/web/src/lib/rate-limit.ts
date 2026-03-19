@@ -1,68 +1,96 @@
-/**
- * Simple in-memory per-user rate limiter.
- * Not suitable for multi-instance deployments — use Redis in that case.
- */
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
-interface RateLimitEntry {
-  timestamps: number[];
+// ---------------------------------------------------------------------------
+// Upstash Redis client – initialised lazily so the app still boots when
+// env vars are missing (e.g. local dev without Redis).
+// ---------------------------------------------------------------------------
+
+let redis: Redis | null = null;
+
+function getRedis(): Redis | null {
+  if (redis) return redis;
+  const url = process.env.UPSTASH_REDIS_REST_URL;
+  const token = process.env.UPSTASH_REDIS_REST_TOKEN;
+  if (!url || !token) return null;
+  redis = new Redis({ url, token });
+  return redis;
 }
 
-const store = new Map<string, RateLimitEntry>();
+// ---------------------------------------------------------------------------
+// Pre-built limiters (sliding window)
+// ---------------------------------------------------------------------------
 
-// Clean up old entries every 10 minutes
-const CLEANUP_INTERVAL = 10 * 60 * 1000;
+function createLimiter(
+  tokens: number,
+  window: Parameters<typeof Ratelimit.slidingWindow>[1],
+  prefix: string,
+) {
+  return () => {
+    const r = getRedis();
+    if (!r) return null;
+    return new Ratelimit({
+      redis: r,
+      limiter: Ratelimit.slidingWindow(tokens, window),
+      prefix,
+    });
+  };
+}
 
-let cleanupTimer: ReturnType<typeof setInterval> | null = null;
+/** 60 requests per 60 seconds – for GET / read endpoints */
+export const readLimiter = createLimiter(60, "60 s", "rl:read");
 
-function ensureCleanup() {
-  if (cleanupTimer) return;
-  cleanupTimer = setInterval(() => {
-    const now = Date.now();
-    for (const [key, entry] of store) {
-      entry.timestamps = entry.timestamps.filter((t) => now - t < 3600_000);
-      if (entry.timestamps.length === 0) {
-        store.delete(key);
-      }
+/** 20 requests per 60 seconds – for POST / PUT / DELETE write endpoints */
+export const writeLimiter = createLimiter(20, "60 s", "rl:write");
+
+/** 5 requests per hour – for agent registration */
+export const registerLimiter = createLimiter(5, "3600 s", "rl:register");
+
+// ---------------------------------------------------------------------------
+// rateLimit() helper
+// ---------------------------------------------------------------------------
+
+export interface RateLimitResult {
+  success: boolean;
+  limit: number;
+  remaining: number;
+  reset: number; // unix epoch ms
+}
+
+/**
+ * Check rate limit for a given identifier and limiter.
+ * Fails open – if Upstash is unreachable the request is allowed through.
+ */
+export async function rateLimit(
+  identifier: string,
+  limiterFn: () => Ratelimit | null,
+): Promise<RateLimitResult> {
+  try {
+    const limiter = limiterFn();
+    if (!limiter) {
+      // Redis not configured – fail open
+      return { success: true, limit: 0, remaining: 0, reset: 0 };
     }
-  }, CLEANUP_INTERVAL);
-  // Don't block process exit
-  if (cleanupTimer && typeof cleanupTimer === "object" && "unref" in cleanupTimer) {
-    cleanupTimer.unref();
+    const { success, limit, remaining, reset } = await limiter.limit(identifier);
+    return { success, limit, remaining, reset };
+  } catch (error) {
+    console.warn("[rate-limit] Upstash check failed, allowing request through:", error);
+    return { success: true, limit: 0, remaining: 0, reset: 0 };
   }
 }
 
-/**
- * Check if a request should be rate-limited.
- * @param key - Unique key (e.g., `scan:${userId}`)
- * @param maxRequests - Maximum requests allowed in the window
- * @param windowMs - Time window in milliseconds (default: 1 hour)
- * @returns `null` if allowed, or a message string if rate-limited
- */
-export function checkRateLimit(
-  key: string,
-  maxRequests: number,
-  windowMs: number = 3600_000
-): string | null {
-  ensureCleanup();
+// ---------------------------------------------------------------------------
+// Identifier helpers
+// ---------------------------------------------------------------------------
 
-  const now = Date.now();
-  let entry = store.get(key);
-
-  if (!entry) {
-    entry = { timestamps: [] };
-    store.set(key, entry);
-  }
-
-  // Remove timestamps outside the window
-  entry.timestamps = entry.timestamps.filter((t) => now - t < windowMs);
-
-  if (entry.timestamps.length >= maxRequests) {
-    const oldestInWindow = entry.timestamps[0];
-    const retryAfterMs = windowMs - (now - oldestInWindow);
-    const retryAfterMin = Math.ceil(retryAfterMs / 60_000);
-    return `Rate limit exceeded. Max ${maxRequests} requests per ${Math.round(windowMs / 60_000)} minutes. Try again in ${retryAfterMin} minute(s).`;
-  }
-
-  entry.timestamps.push(now);
-  return null;
+/** Extract a stable client identifier from the request. */
+export function getIdentifier(request: Request, apiKeyId?: string): string {
+  if (apiKeyId) return `key:${apiKeyId}`;
+  // x-real-ip is set by Vercel and cannot be spoofed by the client
+  const realIp = request.headers.get("x-real-ip");
+  if (realIp) return `ip:${realIp}`;
+  // Fallback to x-forwarded-for (less reliable)
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) return `ip:${forwarded.split(",")[0].trim()}`;
+  return "ip:unknown";
 }
