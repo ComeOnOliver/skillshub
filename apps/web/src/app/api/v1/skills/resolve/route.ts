@@ -82,6 +82,49 @@ interface SkillRow {
 
 const MIN_FEEDBACK_FOR_BONUS = 5;
 
+/**
+ * Compute the maximum possible text relevance score for a given set of tokens.
+ * This is the score a "perfect match" skill would receive: every token matches
+ * the skill name exactly, with all bonuses and no penalties.
+ */
+function maxPossibleScore(tokens: string[], tokenWeights: Map<string, number>): number {
+  let textScore = 0;
+
+  // Exact slug/name match boost: +20 (once)
+  textScore += 20;
+
+  // Every token matches name exactly: +20 * weight per token
+  for (const token of tokens) {
+    const w = tokenWeights.get(token) ?? 1;
+    textScore += 20 * w;
+    // Each token also matches as exact word in description: +6 * w
+    textScore += 6 * w;
+    // Each token matches a tag: +5 * w
+    textScore += 5 * w;
+  }
+
+  // Multiple tokens hitting name: +12
+  if (tokens.length >= 2) textScore += 12;
+  // ALL tokens match name: +20
+  if (tokens.length >= 2) textScore += 20;
+  // Name coverage 100%: +8
+  textScore += 8;
+  // Description coverage 100%: +10
+  textScore += 10;
+
+  // Cap text at 70
+  textScore = Math.min(textScore, 70);
+
+  // Quality max: 8 (readme) + 4 (tags) + 4 (desc) + 4 (tag count) = 20
+  const qualityScore = 20;
+  // Popularity max: 10
+  const popularityScore = 10;
+  // Feedback max: 10
+  const feedbackBonus = 10;
+
+  return textScore + qualityScore + popularityScore + feedbackBonus;
+}
+
 function scoreSkill(skill: SkillRow, tokens: string[], tokenWeights: Map<string, number>): number {
   const nameLower = skill.name.toLowerCase();
   const slugLower = skill.slug.toLowerCase();
@@ -305,10 +348,11 @@ export async function GET(request: Request) {
     });
 
   const topScore = allScored[0]?.score ?? 0;
+  const maxScore = maxPossibleScore(tokens, tokenWeights);
 
   // Filter by threshold, then cap at limit
   const aboveThreshold = allScored.filter(
-    (r) => Math.round((r.score / 100) * 100) / 100 >= threshold,
+    (r) => Math.round((r.score / maxScore) * 100) / 100 >= threshold,
   );
   const matched = aboveThreshold.length;
   const scored = aboveThreshold.slice(0, limit);
@@ -325,7 +369,7 @@ export async function GET(request: Request) {
       owner: r.skill.owner,
     },
     score: r.score,
-    confidence: Math.round((r.score / 100) * 100) / 100,
+    confidence: Math.round((r.score / maxScore) * 100) / 100,
     relativeScore: topScore > 0 ? Math.round((r.score / topScore) * 100) / 100 : 0,
     fetchUrl: `${BASE_URL}/${r.skill.repo.githubOwner ?? r.skill.owner.username}/${r.skill.repo.githubRepoName ?? r.skill.slug}/${r.skill.slug}?format=md`,
   }));
