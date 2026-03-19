@@ -53,6 +53,9 @@ jobs:
 
       - name: Full build
         run: pnpm turbo build
+        env:
+          SESSION_SECRET: ${{ secrets.SESSION_SECRET }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL || 'postgresql://localhost:5432/skillshub' }}
 
   security:
     name: Security Audit

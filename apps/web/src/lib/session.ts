@@ -8,8 +8,10 @@ export interface SessionData {
   avatarUrl?: string;
 }
 
-const secret = process.env.SESSION_SECRET;
-if (!secret) throw new Error("SESSION_SECRET environment variable is required");
+const secret = process.env.SESSION_SECRET ?? "build-placeholder-not-for-production";
+if (!process.env.SESSION_SECRET && process.env.NODE_ENV === "production") {
+  console.warn("WARNING: SESSION_SECRET not set. Sessions will not work.");
+}
 
 const sessionOptions = {
   password: secret,
