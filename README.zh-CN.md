@@ -14,6 +14,19 @@
 
 ---
 
+## 贡献者
+
+感谢所有让 SkillsHub 变得更好的贡献者！🙌
+
+<a href="https://github.com/ComeOnOliver"><img src="https://avatars.githubusercontent.com/u/43215937?v=4" width="50" height="50" alt="ComeOnOliver" style="border-radius:50%" /></a>
+<a href="https://github.com/anmolxlight"><img src="https://avatars.githubusercontent.com/u/116251176?v=4" width="50" height="50" alt="anmolxlight" style="border-radius:50%" /></a>
+<a href="https://github.com/Palingenos"><img src="https://avatars.githubusercontent.com/u/212714017?v=4" width="50" height="50" alt="Palingenos" style="border-radius:50%" /></a>
+<a href="https://github.com/xilei-wang-90"><img src="https://avatars.githubusercontent.com/u/129632857?v=4" width="50" height="50" alt="xilei-wang-90" style="border-radius:50%" /></a>
+
+[成为贡献者 →](CONTRIBUTING.md)
+
+---
+
 ## 为什么选择 SkillsHub？
 
 传统 Agent 查找技能的方式：
