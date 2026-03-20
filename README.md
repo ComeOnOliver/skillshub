@@ -427,16 +427,19 @@ docker compose up -d
 # 3. Set up environment (works out of the box)
 cp .env.example .env
 
-# 4. Install dependencies
+# 4. Create a symlink for Next.js
+ln -s ../../.env apps/web/.env  # Next.js needs .env in its own directory
+
+# 5. Install dependencies
 pnpm install
 
-# 5. Create database tables
+# 6. Create database tables
 pnpm db:push
 
-# 6. Import 5,300+ skills from the skills/ directory
+# 7. Import 5,300+ skills from the skills/ directory
 pnpm db:seed-skills
 
-# 7. Start the dev server
+# 8. Start the dev server
 pnpm dev
 ```
 
@@ -465,7 +468,6 @@ skillshub/
 ```
 
 ### Contributing Without Code
-
 You don't need a local dev environment to contribute skills:
 
 1. Browse the `skills/` directory on GitHub

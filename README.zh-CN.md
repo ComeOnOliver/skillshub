@@ -427,16 +427,19 @@ docker compose up -d
 # 3. 配置环境变量（开箱即用）
 cp .env.example .env
 
-# 4. 安装依赖
+# 4. Next.js 需要在自身目录下找到 .env
+ln -s ../../.env apps/web/.env  # Next.js 需要在自身目录下找到 .env
+
+# 5. 安装依赖
 pnpm install
 
-# 5. 创建数据库表
+# 6. 创建数据库表
 pnpm db:push
 
-# 6. 导入 5,300+ 技能（来自 skills/ 目录）
+# 7. 导入 5,300+ 技能（来自 skills/ 目录）
 pnpm db:seed-skills
 
-# 7. 启动开发服务器
+# 8. 启动开发服务器
 pnpm dev
 ```
 
