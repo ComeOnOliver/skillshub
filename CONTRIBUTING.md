@@ -50,6 +50,7 @@ pnpm install
 
 # 3. Set up environment variables
 cp .env.example .env
+ln -s ../../.env apps/web/.env  # Next.js needs .env in its own directory
 # Fill in your values (see .env.example for descriptions)
 
 # 4. Push database schema

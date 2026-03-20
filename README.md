@@ -443,6 +443,7 @@ git clone https://github.com/ComeOnOliver/skillshub.git
 cd skillshub
 pnpm install
 cp .env.example .env     # fill in your values
+ln -s ../../.env apps/web/.env  # Next.js needs .env in its own directory
 npx drizzle-kit push
 npx tsx packages/db/src/clear-and-seed.ts
 pnpm dev
