@@ -1,3 +1,15 @@
+---
+name: gws-slides
+version: 1.0.0
+description: "Google Slides: Read and write presentations."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws slides --help"
+---
+
 # slides (v1)
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.
@@ -28,3 +40,4 @@ gws schema slides.<resource>.<method>
 ```
 
 Use `gws schema` output to build your `--params` and `--json` flags.
+

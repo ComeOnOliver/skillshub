@@ -1,3 +1,9 @@
+---
+name: axiom-networking-legacy
+description: This skill should be used when working with NWConnection patterns for iOS 12-25, supporting apps that can't use async/await yet, or maintaining backward compatibility with completion handler networking.
+license: MIT
+---
+
 # Legacy iOS 12-25 NWConnection Patterns
 
 These patterns use NWConnection with completion handlers for apps supporting iOS 12-25. If your app targets iOS 26+, use NetworkConnection with async/await instead (see axiom-network-framework-ref skill).

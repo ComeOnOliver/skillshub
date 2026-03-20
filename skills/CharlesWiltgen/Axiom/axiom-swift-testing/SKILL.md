@@ -1,3 +1,12 @@
+---
+name: axiom-swift-testing
+description: Use when writing unit tests, adopting Swift Testing framework, making tests run faster without simulator, architecting code for testability, testing async code reliably, or migrating from XCTest - covers @Test/@Suite macros, #expect/#require, parameterized tests, traits, tags, parallel execution, host-less testing
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "WWDC 2024 (Swift Testing framework)"
+---
+
 # Swift Testing
 
 ## Overview

@@ -1,3 +1,9 @@
+---
+name: axiom-apple-docs
+description: Use when ANY question involves Apple framework APIs, Swift compiler errors, or Xcode-bundled documentation. Covers Liquid Glass, Swift 6.2 concurrency, Foundation Models, SwiftData, StoreKit, 32 Swift compiler diagnostics.
+license: MIT
+---
+
 # Apple Documentation Router
 
 Apple bundles for-LLM markdown documentation inside Xcode. These are authoritative, up-to-date guides and diagnostics written by Apple engineers. Use them alongside Axiom skills for the most accurate information.

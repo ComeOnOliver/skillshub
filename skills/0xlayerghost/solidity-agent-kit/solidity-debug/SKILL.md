@@ -1,3 +1,8 @@
+---
+name: solidity-debug
+description: "[AUTO-INVOKE] MUST be invoked when debugging failed on-chain transactions. Covers transaction receipt analysis, gas diagnosis, calldata decoding, revert reason extraction, and state verification. Trigger: any task involving failed tx analysis, revert debugging, or on-chain transaction troubleshooting."
+---
+
 # Failed Transaction Debug Workflow
 
 ## Language Rule

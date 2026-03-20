@@ -1,3 +1,9 @@
+---
+name: map
+description: 高德地图路线规划与 POI 搜索。支持驾车、步行、骑行、公交路线规划，以及景点、餐厅搜索。当用户询问路线、行程规划、景点推荐、餐厅推荐时使用。
+homepage: https://github.com/countbot-ai/CountBot
+---
+
 # 地图路线规划与 POI 搜索
 
 基于高德地图 API 的路线规划和 POI 搜索服务。

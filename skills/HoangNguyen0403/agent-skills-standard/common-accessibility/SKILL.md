@@ -1,3 +1,8 @@
+---
+name: common-accessibility
+description: "WCAG 2.2, ARIA, semantic HTML, keyboard navigation, and color contrast standards for web UIs. Legal compliance baseline. (triggers: **/*.tsx, **/*.jsx, **/*.html, **/*.vue, **/*.component.html, accessibility, a11y, wcag, aria, screen reader, focus, alt text)"
+---
+
 # Common Accessibility (a11y) Standards
 
 ## **Priority: P1 (OPERATIONAL)**

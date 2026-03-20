@@ -1,3 +1,8 @@
+---
+name: nextjs-tooling
+description: "Ecosystem optimization, deployment, and developer flow. Use when configuring Next.js build optimization, deployment settings, or developer tooling. (triggers: next.config.js, package.json, Dockerfile, turbopack, output, standalone, lint, telemetry)"
+---
+
 # Next.js Tooling
 
 ## **Priority: P2 (MEDIUM)**

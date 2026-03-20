@@ -1,3 +1,11 @@
+---
+name: axiom-assume-isolated
+description: Use when needing synchronous actor access in tests, legacy delegate callbacks, or performance-critical code. Covers MainActor.assumeIsolated, @preconcurrency protocol conformances, crash behavior, Task vs assumeIsolated.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # assumeIsolated — Synchronous Actor Access
 
 Synchronously access actor-isolated state when you **know** you're already on the correct isolation domain.

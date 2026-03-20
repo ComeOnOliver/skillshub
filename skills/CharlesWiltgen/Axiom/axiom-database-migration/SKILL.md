@@ -1,3 +1,11 @@
+---
+name: axiom-database-migration
+description: Use when adding/modifying database columns, encountering "FOREIGN KEY constraint failed", "no such column", "cannot add NOT NULL column" errors, or creating schema migrations for SQLite/GRDB/SQLiteData - prevents data loss with safe migration patterns and testing workflows for iOS/macOS apps
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Database Migration
 
 ## Overview

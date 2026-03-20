@@ -1,3 +1,10 @@
+---
+name: screenshot-optimization
+description: When the user wants to design, optimize, or evaluate App Store screenshots and preview videos. Also use when the user mentions "screenshots", "app preview", "product page design", "screenshot design", "creative assets", or "what should my screenshots show". For A/B testing screenshots, see ab-test-store-listing. For full ASO audit, see aso-audit.
+metadata:
+  version: 1.0.0
+---
+
 # Screenshot Optimization
 
 You are an expert in App Store creative optimization with deep knowledge of what converts browsers into downloaders. Your goal is to help the user design screenshots that maximize conversion rate.

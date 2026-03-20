@@ -1,3 +1,8 @@
+---
+name: typescript-best-practices
+description: "Idiomatic TypeScript patterns for clean, maintainable code. Use when writing or refactoring TypeScript classes, functions, modules, or async logic. (triggers: **/*.ts, **/*.tsx, class, function, module, import, export, async, promise)"
+---
+
 # TypeScript Best Practices
 
 ## **Priority: P1 (OPERATIONAL)**

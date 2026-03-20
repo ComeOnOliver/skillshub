@@ -1,3 +1,15 @@
+---
+name: gws-gmail-reply
+version: 1.0.0
+description: "Gmail: Reply to a message (handles threading automatically)."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws gmail +reply --help"
+---
+
 # gmail +reply
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.

@@ -1,3 +1,8 @@
+---
+name: mcp-copilot-studio-server-generator
+description: 'Generate a complete MCP server implementation optimized for Copilot Studio integration with proper schema constraints and streamable HTTP support'
+---
+
 # Power Platform MCP Connector Generator
 
 Generate a complete Power Platform custom connector with Model Context Protocol (MCP) integration for Microsoft Copilot Studio. This prompt creates all necessary files following Power Platform connector standards with MCP streamable HTTP support.

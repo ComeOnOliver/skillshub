@@ -1,3 +1,9 @@
+---
+name: axiom-ios-performance
+description: Use when app feels slow, memory grows, battery drains, or diagnosing ANY performance issue. Covers memory leaks, profiling, Instruments workflows, retain cycles, performance optimization.
+license: MIT
+---
+
 # iOS Performance Router
 
 **You MUST use this skill for ANY performance issue including memory leaks, slow execution, battery drain, or profiling.**

@@ -1,3 +1,27 @@
+---
+name: electric-proxy-auth
+description: >
+  Set up a server-side proxy to forward Electric shape requests securely.
+  Covers ELECTRIC_PROTOCOL_QUERY_PARAMS forwarding, server-side shape
+  definition (table, where, params), content-encoding/content-length header
+  cleanup, CORS configuration for electric-offset/electric-handle/
+  electric-schema/electric-cursor headers, auth token injection,
+  ELECTRIC_SECRET/SOURCE_SECRET server-side only, tenant isolation via
+  WHERE positional params, onError 401 token refresh, and subset security
+  (AND semantics). Load when creating proxy routes, adding auth, or
+  configuring CORS for Electric.
+type: core
+library: electric
+library_version: '1.5.10'
+requires:
+  - electric-shapes
+sources:
+  - 'electric-sql/electric:packages/typescript-client/src/constants.ts'
+  - 'electric-sql/electric:examples/proxy-auth/app/shape-proxy/route.ts'
+  - 'electric-sql/electric:website/docs/guides/auth.md'
+  - 'electric-sql/electric:website/docs/guides/security.md'
+---
+
 This skill builds on electric-shapes. Read it first for ShapeStream configuration.
 
 # Electric — Proxy and Auth

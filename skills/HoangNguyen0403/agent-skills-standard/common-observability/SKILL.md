@@ -1,3 +1,8 @@
+---
+name: common-observability
+description: "Standards for structured logging, distributed tracing, and metrics. (triggers: **/*.service.ts, **/*.handler.ts, **/*.middleware.ts, **/*.interceptor.ts, **/*.go, **/*.java, **/*.kt, **/*.py, logging, tracing, metrics, opentelemetry, observability, slo)"
+---
+
 # Common Observability Standards
 
 ## **Priority: P1 (OPERATIONAL)**

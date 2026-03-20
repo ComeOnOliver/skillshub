@@ -1,3 +1,8 @@
+---
+name: flutter-idiomatic-flutter
+description: "Modern layout and widget composition standards. Use when composing Flutter widget trees, managing layout constraints, or following idiomatic Flutter patterns. (triggers: lib/presentation/**/*.dart, context.mounted, SizedBox, Gap, composition, shrink)"
+---
+
 # Idiomatic Flutter
 
 ## **Priority: P1 (OPERATIONAL)**

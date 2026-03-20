@@ -1,3 +1,13 @@
+---
+name: axiom-core-location-diag
+description: Use for Core Location troubleshooting - no location updates, background location broken, authorization denied, geofence not triggering
+license: MIT
+compatibility: iOS 17+, iPadOS 17+, macOS 14+, watchOS 10+
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-01-03"
+---
+
 # Core Location Diagnostics
 
 Symptom-based troubleshooting for Core Location issues.

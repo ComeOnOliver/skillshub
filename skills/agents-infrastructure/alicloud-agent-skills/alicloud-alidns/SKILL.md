@@ -1,3 +1,14 @@
+---
+name: alicloud-alidns
+description: Manage Alibaba Cloud DNS (Alidns) using the @alicloud/alidns20150109 TypeScript SDK. Use when working with DNS resolution on Alibaba Cloud, including domain management, DNS record CRUD (A, AAAA, CNAME, MX, TXT, SRV, CAA, etc.), DNS load balancing (DNSSLB), custom resolution lines, DNSSEC, domain groups, batch operations, Cloud GTM (Global Traffic Manager), DNS GTM, GTM Classic, recursive DNS, DNS cache, Public DNS (PDNS), DNS over HTTPS (DoH), ISP cache flush, domain statistics, and resource tagging. Covers all 234 APIs of the Alidns 20150109 version.
+license: Apache-2.0
+metadata:
+  author: alicloud
+  version: "1.0"
+  sdk-package: "@alicloud/alidns20150109"
+  api-version: "2015-01-09"
+---
+
 # Alibaba Cloud DNS (Alidns) Skill
 
 Manage DNS domains, records, traffic management, and resolution services via the `@alicloud/alidns20150109` TypeScript SDK.

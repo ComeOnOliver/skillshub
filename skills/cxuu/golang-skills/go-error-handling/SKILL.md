@@ -1,3 +1,13 @@
+---
+name: go-error-handling
+description: Use when writing Go code that returns, wraps, or handles errors — choosing between sentinel errors, custom types, and fmt.Errorf (%w vs %v), structuring error flow, or deciding whether to log or return. Also use when propagating errors across package boundaries or using errors.Is/As, even if the user doesn't ask about error strategy. Does not cover panic/recover patterns (see go-defensive).
+license: Apache-2.0
+compatibility: Requires Go 1.13+ for errors.Is/errors.As and fmt.Errorf %w wrapping. Structured logging examples use slog (Go 1.21+).
+metadata:
+  sources: "Google Style Guide, Uber Style Guide"
+allowed-tools: Bash(bash:*)
+---
+
 # Go Error Handling
 
 ## Available Scripts
@@ -168,3 +178,4 @@ annotation adds nothing, return `err` directly.
 - **Panic handling**: See [go-defensive](../go-defensive/SKILL.md) when deciding between panic and error returns, or writing recover guards
 - **Guard clauses**: See [go-control-flow](../go-control-flow/SKILL.md) when structuring early-return error flow or reducing nesting
 - **Logging decisions**: See [go-logging](../go-logging/SKILL.md) when choosing log levels, configuring structured logging, or deciding what context to include in log messages
+

@@ -1,3 +1,9 @@
+---
+name: axiom-ios-ml
+description: Use when deploying ANY machine learning model on-device, converting models to CoreML, compressing models, or implementing speech-to-text. Covers CoreML conversion, MLTensor, model compression (quantization/palettization/pruning), stateful models, KV-cache, multi-function models, async prediction, SpeechAnalyzer, SpeechTranscriber.
+license: MIT
+---
+
 # iOS Machine Learning Router
 
 **You MUST use this skill for ANY on-device machine learning or speech-to-text work.**

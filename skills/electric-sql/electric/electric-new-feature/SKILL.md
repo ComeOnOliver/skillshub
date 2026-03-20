@@ -1,3 +1,26 @@
+---
+name: electric-new-feature
+description: >
+  End-to-end guide for adding a new synced feature with Electric and TanStack
+  DB. Covers the full journey: design Postgres schema, set REPLICA IDENTITY
+  FULL, define shape, create proxy route, set up TanStack DB collection with
+  electricCollectionOptions, implement optimistic mutations with txid
+  handshake (pg_current_xact_id, awaitTxId), and build live queries with
+  useLiveQuery. Also covers migration from old ElectricSQL (electrify/db
+  pattern does not exist), current API patterns (table as query param not
+  path, handle not shape_id). Load when building a new feature from scratch.
+type: lifecycle
+library: electric
+library_version: '1.5.10'
+requires:
+  - electric-shapes
+  - electric-proxy-auth
+  - electric-schema-shapes
+sources:
+  - 'electric-sql/electric:AGENTS.md'
+  - 'electric-sql/electric:examples/tanstack-db-web-starter/'
+---
+
 This skill builds on electric-shapes, electric-proxy-auth, and electric-schema-shapes. Read those first.
 
 # Electric — New Feature End-to-End

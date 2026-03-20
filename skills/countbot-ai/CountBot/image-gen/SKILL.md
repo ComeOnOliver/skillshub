@@ -1,3 +1,9 @@
+---
+name: image-gen
+description: AI 图片生成。通过 ModelScope API 生成图片，支持文生图、异步任务轮询、LoRA 风格叠加、自定义尺寸。当用户要求生成图片、画图、创建插画、制作海报配图时使用。
+homepage: https://github.com/countbot-ai/CountBot
+---
+
 # AI 图片生成
 
 基于 ModelScope API 的文生图工具，支持异步生成、LoRA 风格叠加。

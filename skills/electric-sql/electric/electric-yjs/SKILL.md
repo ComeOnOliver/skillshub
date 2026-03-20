@@ -1,3 +1,27 @@
+---
+name: electric-yjs
+description: >
+  Set up ElectricProvider for real-time collaborative editing with Yjs via
+  Electric shapes. Covers ElectricProvider configuration, document updates
+  shape with BYTEA parser (parseToDecoder), awareness shape at offset='now',
+  LocalStorageResumeStateProvider for reconnection with stableStateVector
+  diff, debounceMs for batching writes, sendUrl PUT endpoint, required
+  Postgres schema (ydoc_update and ydoc_awareness tables), CORS header
+  exposure, and sendErrorRetryHandler. Load when implementing collaborative
+  editing with Yjs and Electric.
+type: composition
+library: electric
+library_version: '0.1.36'
+requires:
+  - electric-shapes
+sources:
+  - 'electric-sql/electric:packages/y-electric/src/y-electric.ts'
+  - 'electric-sql/electric:packages/y-electric/src/types.ts'
+  - 'electric-sql/electric:packages/y-electric/src/local-storage-resume-state.ts'
+  - 'electric-sql/electric:packages/y-electric/src/utils.ts'
+  - 'electric-sql/electric:examples/yjs/'
+---
+
 This skill builds on electric-shapes. Read it first for ShapeStream configuration.
 
 # Electric — Yjs Collaboration

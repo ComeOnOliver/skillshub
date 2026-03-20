@@ -1,3 +1,12 @@
+---
+name: axiom-timer-patterns-ref
+description: Timer, DispatchSourceTimer, Combine Timer.publish, AsyncTimerSequence, Task.sleep API reference with lifecycle diagrams, RunLoop modes, and platform availability
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-02-26"
+---
+
 # Timer Patterns Reference
 
 Complete API reference for iOS timer mechanisms. For decision trees and crash prevention, see `axiom-timer-patterns`.

@@ -1,3 +1,15 @@
+---
+name: gws-calendar-insert
+version: 1.0.0
+description: "Google Calendar: Create a new event."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws calendar +insert --help"
+---
+
 # calendar +insert
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.

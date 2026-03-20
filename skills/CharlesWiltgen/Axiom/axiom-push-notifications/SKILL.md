@@ -1,3 +1,9 @@
+---
+name: axiom-push-notifications
+description: Use when implementing remote or local push notifications, requesting notification permission, managing APNs device tokens, adding notification actions/categories, building service extensions, or debugging push delivery failures. Covers APNs, FCM, Live Activity push transport, broadcast push, communication notifications, Focus interaction.
+license: MIT
+---
+
 # Push Notifications
 
 Remote and local notification patterns for iOS. Covers permission flow, APNs registration, token management, payload design, actionable notifications, rich notifications with service extensions, communication notifications, Focus interaction, and Live Activity push transport.

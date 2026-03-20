@@ -1,3 +1,8 @@
+---
+name: android-persistence
+description: "Standards for Room Database and DataStore. Use when implementing Room database schemas or DataStore preferences in Android. (triggers: **/*Dao.kt, **/*Database.kt, **/*Entity.kt, @Dao, @Entity, RoomDatabase)"
+---
+
 # Android Persistence Standards
 
 ## **Priority: P0**

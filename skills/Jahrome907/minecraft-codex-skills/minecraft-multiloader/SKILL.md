@@ -1,3 +1,16 @@
+---
+name: minecraft-multiloader
+description: >
+  Build Minecraft mods targeting both NeoForge and Fabric simultaneously using the
+  Architectury framework for Minecraft 1.21.x. Covers Architectury project structure
+  (common/neoforge/fabric subprojects), ExpectPlatform annotation for platform-specific
+  implementations, shared registry via Architectury's registration API, platform-specific
+  entrypoints, architectury-loom Gradle plugin configuration, gradle.properties for both
+  loaders, multi-jar publishing to Modrinth and CurseForge, and avoiding common pitfalls
+  when sharing code. Use this skill when building a mod that must run on both NeoForge
+  and Fabric with a single shared codebase.
+---
+
 # Minecraft Multiloader Skill (Architectury)
 
 ## What Is Architectury?

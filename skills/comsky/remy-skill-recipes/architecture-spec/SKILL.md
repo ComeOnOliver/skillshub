@@ -1,3 +1,20 @@
+---
+name: architecture-spec
+description: >
+  Generate architecture and design documents for implemented code changes
+  with risk-based depth selection. Automatically evaluates risk signals,
+  layer spread, and change magnitude to choose documentation level (A/B/C).
+license: MIT
+compatibility:
+  - Claude Code
+  - Cursor
+metadata:
+  type: execution
+  category: documentation
+  maturity: draft
+  estimated_time: 10 min
+---
+
 # Skill: Architecture Spec (Post-Implementation)
 
 **Type:** Execution

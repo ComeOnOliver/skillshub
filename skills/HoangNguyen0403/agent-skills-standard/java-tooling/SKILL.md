@@ -1,3 +1,8 @@
+---
+name: java-tooling
+description: "Standards for build tools (Maven/Gradle) and static analysis. Use when configuring Maven/Gradle builds or static analysis tools for Java projects. (triggers: pom.xml, build.gradle, build.gradle.kts, build, dependency, plugin, sdk, lint)"
+---
+
 # Java Tooling Standards
 
 ## **Priority: P2 (RECOMMENDED)**

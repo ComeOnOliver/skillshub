@@ -1,3 +1,9 @@
+---
+name: wp-cli-ops
+description: WordPress operations with WP-CLI — search-replace, plugin/theme management, cron, cache, DB export/import, automation. Always-active rules when using wp commands.
+user-invocable: false
+---
+
 # WP-CLI and Operations
 
 Skill for the safe and effective use of WP-CLI in day-to-day WordPress operations. Covers migrations, plugin/theme management, cron, cache, database, and automation patterns.

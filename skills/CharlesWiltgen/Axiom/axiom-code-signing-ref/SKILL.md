@@ -1,3 +1,9 @@
+---
+name: axiom-code-signing-ref
+description: Use when needing certificate CLI commands, provisioning profile inspection, entitlement extraction, Keychain management scripts, codesign verification, fastlane match setup, Xcode build settings for signing, or APNs .p8 vs .p12 decision. Covers complete code signing API and CLI surface.
+license: MIT
+---
+
 # Code Signing API Reference
 
 Comprehensive CLI and API reference for iOS/macOS code signing: certificate management, provisioning profile inspection, entitlement extraction, Keychain operations, codesign verification, fastlane match, and Xcode build settings.

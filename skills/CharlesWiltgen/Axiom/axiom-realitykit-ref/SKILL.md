@@ -1,3 +1,12 @@
+---
+name: axiom-realitykit-ref
+description: RealityKit API reference — Entity, Component, System, RealityView, Model3D, anchor types, material system, physics, collision, animation, audio, accessibility
+license: MIT
+compatibility: [iOS 13+, macOS 10.15+, visionOS 1.0+, tvOS 26+]
+metadata:
+  version: "1.0.0"
+---
+
 # RealityKit API Reference
 
 Complete API reference for RealityKit organized by category.

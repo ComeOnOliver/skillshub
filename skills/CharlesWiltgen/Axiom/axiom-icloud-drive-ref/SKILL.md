@@ -1,3 +1,13 @@
+---
+name: axiom-icloud-drive-ref
+description: Use when implementing 'iCloud Drive', 'ubiquitous container', 'file sync', 'NSFileCoordinator', 'NSFilePresenter', 'isUbiquitousItem', 'NSUbiquitousKeyValueStore', 'ubiquitous file sync' - comprehensive file-based iCloud sync reference
+license: MIT
+compatibility: iOS 5.0+, iPadOS 13.0+, macOS 10.7+
+metadata:
+  version: "1.0.0"
+  last-updated: "2025-12-12"
+---
+
 # iCloud Drive Reference
 
 **Purpose**: Comprehensive reference for file-based iCloud sync using ubiquitous containers

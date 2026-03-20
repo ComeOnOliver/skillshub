@@ -1,3 +1,9 @@
+---
+name: axiom-metrickit-ref
+description: MetricKit API reference for field diagnostics - MXMetricPayload, MXDiagnosticPayload, MXCallStackTree parsing, crash and hang collection
+license: MIT
+---
+
 # MetricKit API Reference
 
 Complete API reference for collecting field performance metrics and diagnostics using MetricKit.

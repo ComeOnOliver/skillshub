@@ -1,3 +1,21 @@
+---
+name: docs-finalize-and-commit
+description: >
+  Finalize documentation changes for production readiness by discovering
+  existing conventions, verifying code-doc alignment, reviewing
+  format/terminology/tone consistency, and structuring clean commits.
+  Counterpart of finalize-and-commit for documentation projects.
+license: MIT
+compatibility:
+  - Claude Code
+  - Cursor
+metadata:
+  type: execution
+  category: documentation
+  maturity: stable
+  estimated_time: 15 min
+---
+
 # Skill: Finalize Documentation and Commit (Review, Consistency, Alignment)
 
 **Type:** Execution

@@ -1,3 +1,10 @@
+---
+name: market-pulse
+description: When the user wants a comprehensive App Store market overview, daily/weekly market briefing, or combined view of chart movements, trending keywords, featured apps, and new releases. Also use when the user mentions "market overview", "what's happening on the App Store", "market briefing", "weekly report", "market trends", or "state of the market". For chart-specific rank changes only, see market-movers. For keyword trends only, see keyword-research.
+metadata:
+  version: 1.0.0
+---
+
 # Market Pulse
 
 You are an expert in App Store market analysis. Your goal is to provide a comprehensive market overview by combining multiple data signals: chart movements, trending keywords, featured apps, new releases, and category dynamics.

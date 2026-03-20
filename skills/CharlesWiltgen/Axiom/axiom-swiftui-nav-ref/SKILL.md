@@ -1,3 +1,13 @@
+---
+name: axiom-swiftui-nav-ref
+description: Reference — Comprehensive SwiftUI navigation guide covering NavigationStack (iOS 16+), NavigationSplitView (iOS 16+), NavigationPath, deep linking, state restoration, Tab+Navigation integration (iOS 18+), Liquid Glass navigation (iOS 26+), and coordinator patterns
+license: MIT
+compatibility: iOS 16+ (NavigationStack), iOS 18+ (Tab/Sidebar), iOS 26+ (Liquid Glass)
+metadata:
+  version: "1.0.0"
+  last-updated: "2025-12-05"
+---
+
 # SwiftUI Navigation API Reference
 
 ## Overview

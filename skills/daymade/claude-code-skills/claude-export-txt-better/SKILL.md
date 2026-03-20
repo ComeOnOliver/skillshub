@@ -1,3 +1,15 @@
+---
+name: fixing-claude-export-conversations
+description: >
+  Fixes broken line wrapping in Claude Code exported conversation files (.txt),
+  reconstructing tables, paragraphs, paths, and tool calls that were hard-wrapped
+  at fixed column widths. Includes an automated validation suite (generic, file-agnostic checks).
+  Triggers when the user has a Claude Code export file with broken formatting,
+  mentions "fix export", "fix conversation", "exported conversation", "make export
+  readable", references a file matching YYYY-MM-DD-HHMMSS-*.txt, or has a .txt
+  file with broken tables, split paths, or mangled tool output from Claude Code.
+---
+
 # Fixing Claude Code Export Conversations
 
 Reconstruct broken line wrapping in Claude Code exported `.txt` files.

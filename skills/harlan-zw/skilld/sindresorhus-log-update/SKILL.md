@@ -1,3 +1,10 @@
+---
+name: sindresorhus-log-update
+description: "ALWAYS use when writing code importing \"log-update\". Consult for debugging, best practices, or modifying log-update, log update."
+metadata:
+  version: 7.1.0
+---
+
 # sindresorhus/log-update `log-update`
 
 **Version:** 7.1.0 (1 week ago)

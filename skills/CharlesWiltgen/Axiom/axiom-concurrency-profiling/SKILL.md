@@ -1,3 +1,11 @@
+---
+name: axiom-concurrency-profiling
+description: Use when profiling async/await performance, diagnosing actor contention, or investigating thread pool exhaustion. Covers Swift Concurrency Instruments template, task visualization, actor contention analysis, thread pool debugging.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Concurrency Profiling — Instruments Workflows
 
 Profile and optimize Swift async/await code using Instruments.

@@ -1,3 +1,9 @@
+---
+name: axiom-ios-testing
+description: Use when writing ANY test, debugging flaky tests, making tests faster, or asking about Swift Testing vs XCTest. Covers unit tests, UI tests, fast tests without simulator, async testing, test architecture.
+license: MIT
+---
+
 # iOS Testing Router
 
 **You MUST use this skill for ANY testing-related question, including writing tests, debugging test failures, making tests faster, or choosing between testing approaches.**

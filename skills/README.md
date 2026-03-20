@@ -1,6 +1,6 @@
 # SkillsHub Skills Directory
 
-This directory contains **5,300+ AI agent skills** as individual SKILL.md files.
+This directory contains **5,800+ AI agent skills** as individual SKILL.md files.
 
 ## Structure
 
@@ -45,8 +45,6 @@ Common mistakes and how to avoid them.
 ```
 
 ## Importing to Local Database
-
-After adding skills to this directory, run:
 
 ```bash
 cd packages/db && npx tsx src/seed-from-skills-dir.ts

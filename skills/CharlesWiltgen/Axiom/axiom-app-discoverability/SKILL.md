@@ -1,3 +1,11 @@
+---
+name: axiom-app-discoverability
+description: Use when making app surface in Spotlight search, Siri suggestions, or system experiences - covers the 6-step strategy combining App Intents, App Shortcuts, Core Spotlight, and NSUserActivity to feed the system metadata for iOS 16+
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # App Discoverability
 
 ## Overview

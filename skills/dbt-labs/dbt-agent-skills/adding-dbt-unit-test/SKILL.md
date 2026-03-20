@@ -1,3 +1,11 @@
+---
+name: adding-dbt-unit-test
+description: Creates unit test YAML definitions that mock upstream model inputs and validate expected outputs. Use when adding unit tests for a dbt model or practicing test-driven development (TDD) in dbt.
+user-invocable: false
+metadata:
+  author: dbt-labs
+---
+
 # Add unit test for a dbt model
 
 ## Additional Resources
@@ -351,3 +359,4 @@ dbt run --select "stg_customers top_level_email_domains" --empty
 | Using `sql` format when `dict` works | Prefer `dict` (most readable), fall back to `csv` or `sql` only when needed |
 | Missing `input` for a `ref` or `source` | Include all model dependencies to avoid "node not found" errors |
 | Testing Python models or snapshots | Unit tests only support SQL models |
+

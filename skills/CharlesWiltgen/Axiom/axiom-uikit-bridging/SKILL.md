@@ -1,3 +1,9 @@
+---
+name: axiom-uikit-bridging
+description: Use when wrapping UIKit views/controllers in SwiftUI, embedding SwiftUI in UIKit, or debugging UIKit-SwiftUI interop issues. Covers UIViewRepresentable, UIViewControllerRepresentable, UIHostingController, UIHostingConfiguration, coordinators, lifecycle, state binding, memory management.
+license: MIT
+---
+
 # UIKit-SwiftUI Bridging
 
 Systematic guidance for bridging UIKit and SwiftUI. Most production iOS apps need both — this skill teaches the bridging patterns themselves, not the domain-specific views being bridged.

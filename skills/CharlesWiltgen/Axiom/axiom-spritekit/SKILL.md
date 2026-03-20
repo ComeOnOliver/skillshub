@@ -1,3 +1,11 @@
+---
+name: axiom-spritekit
+description: Use when building SpriteKit games, implementing physics, actions, scene management, or debugging game performance. Covers scene graph, physics engine, actions system, game loop, rendering optimization.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # SpriteKit Game Development Guide
 
 **Purpose**: Build reliable SpriteKit games by mastering the scene graph, physics engine, action system, and rendering pipeline

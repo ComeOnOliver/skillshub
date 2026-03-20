@@ -1,3 +1,13 @@
+---
+name: axiom-file-protection-ref
+description: Use when asking about 'FileProtectionType', 'file encryption iOS', 'NSFileProtection', 'data protection', 'secure file storage', 'encrypt files at rest', 'complete protection', 'file security' - comprehensive reference for iOS file encryption and data protection APIs
+license: MIT
+compatibility: iOS 4.0+, iPadOS 4.0+, macOS 10.0+
+metadata:
+  version: "1.0.0"
+  last-updated: "2025-12-12"
+---
+
 # iOS File Protection Reference
 
 **Purpose**: Comprehensive reference for file encryption and data protection APIs
@@ -522,6 +532,9 @@ File protection generally works without special entitlements, but some features 
 - `axiom-storage` — Decide when to use file protection vs other security measures
 - `axiom-storage-management-ref` — File lifecycle, purging, and disk management
 - `axiom-storage-diag` — Debug file access issues
+- `axiom-keychain` — Secure credential storage (tokens, passwords, keys)
+- `axiom-keychain-ref` — Complete SecItem API reference
+- `axiom-cryptokit` — Encryption and signing with CryptoKit
 
 ---
 

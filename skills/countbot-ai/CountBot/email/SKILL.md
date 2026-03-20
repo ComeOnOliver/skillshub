@@ -1,3 +1,9 @@
+---
+name: email
+description: 通过 QQ 或 163 邮箱发送和接收邮件。支持发送普通邮件、带附件邮件、接收邮件、检查新邮件。当用户要求发送邮件、查看邮件、检查新邮件时使用。
+homepage: https://github.com/countbot-ai/CountBot
+---
+
 # 邮件管理
 
 通过 QQ 或 163 邮箱发送和接收邮件。

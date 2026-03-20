@@ -1,3 +1,15 @@
+---
+name: gws-classroom
+version: 1.0.0
+description: "Google Classroom: Manage classes, rosters, and coursework."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws classroom --help"
+---
+
 # classroom (v1)
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.
@@ -60,3 +72,4 @@ gws schema classroom.<resource>.<method>
 ```
 
 Use `gws schema` output to build your `--params` and `--json` flags.
+

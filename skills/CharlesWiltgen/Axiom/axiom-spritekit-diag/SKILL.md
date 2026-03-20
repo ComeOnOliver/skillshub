@@ -1,3 +1,11 @@
+---
+name: axiom-spritekit-diag
+description: Use when physics contacts don't fire, objects tunnel through walls, frame rate drops, touches don't register, memory spikes, coordinate confusion, or scene transition crashes
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # SpriteKit Diagnostics
 
 Systematic diagnosis for common SpriteKit issues with time-cost annotations.

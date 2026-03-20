@@ -1,3 +1,38 @@
+---
+name: email-sequence
+version: "1.0.0"
+brand: AgentKits Marketing by AityTech
+category: content
+difficulty: intermediate
+description: When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions "email sequence," "drip campaign," "nurture sequence," "onboarding emails," "welcome sequence," "re-engagement emails," "email automation," or "lifecycle emails." For in-app onboarding, see onboarding-cro.
+triggers:
+  - email sequence
+  - drip campaign
+  - nurture sequence
+  - welcome sequence
+  - onboarding emails
+  - re-engagement emails
+  - email automation
+  - lifecycle emails
+prerequisites:
+  - email-marketing
+  - copywriting
+related_skills:
+  - email-marketing
+  - copywriting
+  - onboarding-cro
+agents:
+  - email-wizard
+  - copywriter
+mcp_integrations:
+  optional:
+    - hubspot
+success_metrics:
+  - sequence_completion_rate
+  - conversion_rate
+output_schema: email-sequence
+---
+
 # Email Sequence Design
 
 You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward conversion.

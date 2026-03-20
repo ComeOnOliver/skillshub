@@ -1,3 +1,8 @@
+---
+name: ef-core
+description: 'Get best practices for Entity Framework Core'
+---
+
 # Entity Framework Core Best Practices
 
 Your goal is to help me follow best practices when working with Entity Framework Core.

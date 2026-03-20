@@ -1,3 +1,8 @@
+---
+name: claude-code-usage
+description: "[AUTO-INVOKE] MUST be invoked at the START of each new coding session. Covers context management, task strategies, and Foundry-specific workflows. Trigger: beginning of any new conversation or coding session in a Solidity/Foundry project."
+---
+
 # Claude Code Best Practices
 
 ## Language Rule

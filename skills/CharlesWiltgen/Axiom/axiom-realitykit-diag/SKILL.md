@@ -1,3 +1,11 @@
+---
+name: axiom-realitykit-diag
+description: Use when RealityKit entities not visible, anchors not tracking, gestures not responding, performance drops, materials wrong, or multiplayer sync fails
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # RealityKit Diagnostics
 
 Systematic diagnosis for common RealityKit issues with time-cost annotations.

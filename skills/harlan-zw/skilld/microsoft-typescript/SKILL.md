@@ -1,3 +1,11 @@
+---
+name: microsoft-typescript
+description: "ALWAYS use when editing or working with *.ts, *.tsx, *.mts, *.cts files or code importing \"typescript\". Consult for debugging, best practices, or modifying typescript, TypeScript."
+metadata:
+  version: 6.0.0-beta
+  generated_by: Claude Code · Opus 4.6
+---
+
 # microsoft/TypeScript `typescript`
 
 **Version:** 6.0.0-beta (4 months ago)

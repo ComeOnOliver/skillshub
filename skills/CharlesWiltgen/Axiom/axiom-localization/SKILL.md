@@ -1,3 +1,12 @@
+---
+name: axiom-localization
+description: Use when localizing apps, using String Catalogs, generating type-safe symbols (Xcode 26+), handling plurals, RTL layouts, locale-aware formatting, or migrating from .strings files - comprehensive i18n patterns for Xcode 15-26
+license: MIT
+metadata:
+  version: "1.1.0"
+  last-updated: "2025-12-16"
+---
+
 # Localization & Internationalization
 
 Comprehensive guide to app localization using String Catalogs. Apple Design Award Inclusivity winners always support multiple languages with excellent RTL (Right-to-Left) support.

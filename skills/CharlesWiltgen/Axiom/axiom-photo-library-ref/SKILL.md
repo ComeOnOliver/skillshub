@@ -1,3 +1,11 @@
+---
+name: axiom-photo-library-ref
+description: Reference — PHPickerViewController, PHPickerConfiguration, PhotosPicker, PhotosPickerItem, Transferable, PHPhotoLibrary, PHAsset, PHAssetCreationRequest, PHFetchResult, PHAuthorizationStatus, limited library APIs
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Photo Library API Reference
 
 ## Quick Reference

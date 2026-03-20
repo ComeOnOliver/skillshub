@@ -1,3 +1,8 @@
+---
+name: react-security
+description: "Security practices for React (XSS, Auth, Dependencies). Use when preventing XSS, securing auth flows, or auditing third-party dependencies in React. (triggers: **/*.tsx, **/*.jsx, dangerouslySetInnerHTML, token, auth, xss)"
+---
+
 # React Security
 
 ## **Priority: P0 (CRITICAL)**

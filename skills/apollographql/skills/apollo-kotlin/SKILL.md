@@ -1,3 +1,19 @@
+---
+name: apollo-kotlin
+description: >
+  Guide for building applications with Apollo Kotlin, the GraphQL client library for Android and Kotlin. Use this skill when:
+  (1) setting up Apollo Kotlin in a Gradle project for Android, Kotlin/JVM, or KMP,
+  (2) configuring schema download and codegen for GraphQL services,
+  (3) configuring an `ApolloClient` with auth, interceptors, and caching,
+  (4) writing queries, mutations, or subscriptions,
+license: MIT
+compatibility: JVM 8+, Kotlin 1.9+, Gradle 8+, Android/JVM/Kotlin Multiplatform projects.
+metadata:
+  author: apollographql
+  version: "1.0.1"
+allowed-tools: Bash(./gradlew:*) Bash(gradle:*) Bash(curl:*) Read Write Edit Glob Grep WebFetch
+---
+
 # Apollo Kotlin Guide
 
 Apollo Kotlin is a strongly typed GraphQL client that generates Kotlin models from your GraphQL operations and schema, that can be used in Android, JVM, and Kotlin Multiplatform projects.

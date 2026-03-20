@@ -1,3 +1,14 @@
+---
+name: twig-component
+description: Symfony UX TwigComponent for reusable UI elements. Use when creating reusable Twig templates with PHP backing classes, component composition, props, slots/blocks, computed properties, or anonymous components. Triggers - twig component, AsTwigComponent, reusable template, component props, twig blocks, component slots, anonymous component, Symfony UX component, HTML component, component library, design system component, UI kit, reusable button, reusable card, PreMount, PostMount, mount method. Also trigger for any question about building a reusable piece of UI in Symfony, even if the user doesn't mention TwigComponent by name.
+license: MIT
+metadata:
+  author: Simon Andre
+  email: smn.andre@gmail.com
+  url: https://smnandre.dev
+  version: "1.0"
+---
+
 # TwigComponent
 
 Reusable UI components with PHP classes + Twig templates. Think React/Vue components, but server-rendered with zero JavaScript.

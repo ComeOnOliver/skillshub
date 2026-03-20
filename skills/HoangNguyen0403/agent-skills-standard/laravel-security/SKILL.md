@@ -1,3 +1,8 @@
+---
+name: laravel-security
+description: "Security standards for hardening Laravel applications. Use when securing authentication, authorization, input validation, or CSRF in Laravel. (triggers: app/Policies/**/*.php, config/*.php, policy, gate, authorize, env, config)"
+---
+
 # Laravel Security
 
 ## **Priority: P0 (CRITICAL)**

@@ -1,3 +1,10 @@
+---
+name: iam
+description: AWS Identity and Access Management for users, roles, policies, and permissions. Use when creating IAM policies, configuring cross-account access, setting up service roles, troubleshooting permission errors, or managing access control.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/IAM/latest/UserGuide/
+---
+
 # AWS IAM
 
 AWS Identity and Access Management (IAM) enables secure access control to AWS services and resources. IAM is foundational to AWS security—every AWS API call is authenticated and authorized through IAM.

@@ -1,3 +1,16 @@
+---
+name: "board-deck-builder"
+description: "Assembles comprehensive board and investor update decks by pulling perspectives from all C-suite roles. Use when preparing board meetings, investor updates, quarterly business reviews, or fundraising narratives. Covers structure, narrative framework, bad news delivery, and common mistakes."
+license: MIT
+metadata:
+  version: 1.0.0
+  author: Alireza Rezvani
+  category: c-level
+  domain: board-governance
+  updated: 2026-03-05
+  frameworks: deck-frameworks, board-deck-template
+---
+
 # Board Deck Builder
 
 Build board decks that tell a story — not just show data. Every section has an owner, a narrative, and a "so what."

@@ -1,3 +1,12 @@
+---
+name: go-context
+description: Use when working with context.Context in Go — placement in signatures, propagating cancellation and deadlines, and storing values in context vs parameters. Also use when cancelling long-running operations, setting timeouts, or passing request-scoped data, even if they don't mention context.Context directly. Does not cover goroutine lifecycle or sync primitives (see go-concurrency).
+license: Apache-2.0
+compatibility: Requires Go 1.7+ (context moved to standard library in Go 1.7)
+metadata:
+  sources: "Go Wiki CodeReviewComments"
+---
+
 # Go Context Usage
 
 ## Context as First Parameter

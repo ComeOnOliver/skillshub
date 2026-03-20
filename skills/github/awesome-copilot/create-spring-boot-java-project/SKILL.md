@@ -1,3 +1,8 @@
+---
+name: create-spring-boot-java-project
+description: 'Create Spring Boot Java Project Skeleton'
+---
+
 # Create Spring Boot Java project prompt
 
 - Please make sure you have the following software installed on your system:

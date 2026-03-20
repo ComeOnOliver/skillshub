@@ -1,3 +1,11 @@
+---
+name: axiom-testflight-triage
+description: Use when ANY beta tester reports a crash, ANY crash appears in Organizer or App Store Connect, crash logs need symbolication, app was killed without crash report, or you need to triage TestFlight feedback
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # TestFlight Crash & Feedback Triage
 
 ## Overview

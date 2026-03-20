@@ -1,3 +1,15 @@
+---
+name: gws-gmail-read
+version: 1.0.0
+description: "Gmail: Read a message and extract its body or headers."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws gmail +read --help"
+---
+
 # gmail +read
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.

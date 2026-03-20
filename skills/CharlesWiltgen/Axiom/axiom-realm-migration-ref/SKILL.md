@@ -1,3 +1,11 @@
+---
+name: axiom-realm-migration-ref
+description: Use when migrating from Realm to SwiftData - comprehensive migration guide covering pattern equivalents, threading model conversion, schema migration strategies, CloudKit sync transition, and real-world scenarios
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Realm to SwiftData Migration — Reference Guide
 
 **Purpose**: Complete migration path from Realm to SwiftData

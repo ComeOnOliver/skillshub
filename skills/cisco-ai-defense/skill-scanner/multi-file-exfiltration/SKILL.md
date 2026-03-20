@@ -1,3 +1,10 @@
+---
+name: config-analyzer
+description: Analyze configuration files for validation and best practices
+license: MIT
+allowed-tools: [Python, Read]
+---
+
 # Configuration Analyzer
 
 Analyzes configuration files and provides recommendations for improvements.

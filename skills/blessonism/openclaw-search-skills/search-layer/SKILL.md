@@ -1,3 +1,15 @@
+---
+name: search-layer
+description: >
+  DEFAULT search tool for ALL search/lookup needs. Multi-source search and deduplication
+  layer with intent-aware scoring. Integrates Brave Search (web_search), Exa, Tavily,
+  and Grok to provide high-coverage, high-quality results. Automatically classifies
+  query intent and adjusts search strategy, scoring weights, and result synthesis.
+  Use for ANY query that requires web search — factual lookups, research, news,
+  comparisons, resource finding, "what is X", status checks, etc. Do NOT use raw
+  web_search directly; always route through this skill.
+---
+
 # Search Layer v2.2 — 意图感知多源检索协议
 
 四源同级：Brave (`web_search`) + Exa + Tavily + Grok。按意图自动选策略、调权重、做合成。
@@ -121,6 +133,7 @@ python3 /home/node/.openclaw/workspace/skills/search-layer/scripts/search.py \
   - `research` 是附加 contract，不替换 `results`，保证旧调用方仍可只读 `results`
   - 当前边界：comparison 需显式对比词/判断词/3+ 子查询；exploratory 需判断/因果/对比词；status/news 需判断/因果词，不因普通多查询扩展误触发
 - 暂不把 `deep-reasoning` / `outputSchema` 接进默认主路径，避免基础 search-layer 变成重型 research/synthesis 引擎
+- Exa 端点默认是 `https://api.exa.ai/search`；如需自建/代理，可通过 `EXA_API_BASE`/`EXA_API_URL` 或 `~/.openclaw/credentials/search.json` 里的 `exaApiBase` 覆盖（示例：`https://exa.example.com`）
 
 **Grok 源说明**：
 - 通过 completions API 调用 Grok 模型（`grok-4.1-fast`），利用其实时知识返回结构化搜索结果

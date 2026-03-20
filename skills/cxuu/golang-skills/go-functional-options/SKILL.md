@@ -1,3 +1,11 @@
+---
+name: go-functional-options
+description: Use when designing a Go constructor or factory function with optional configuration — especially with 3+ optional parameters or extensible APIs. Also use when building a New* function that takes many settings, even if they don't mention "functional options" by name. Does not cover general function design (see go-functions).
+license: Apache-2.0
+metadata:
+  sources: "Uber Style Guide"
+---
+
 # Functional Options Pattern
 
 Functional options is a pattern where you declare an opaque `Option` type that records information in an internal struct. The constructor accepts a variadic number of these options and applies them to configure the result.

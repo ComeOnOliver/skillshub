@@ -1,3 +1,10 @@
+---
+name: migrating-dbt-project-across-platforms
+description: Use when migrating a dbt project from one data platform or data warehouse to another (e.g., Snowflake to Databricks, Databricks to Snowflake) using dbt Fusion's real-time compilation to identify and fix SQL dialect differences.
+metadata:
+  author: dbt-labs
+---
+
 # Migrating a dbt Project Across Data Platforms
 
 This skill guides migration of a dbt project from one data platform (source) to another (target) — for example, Snowflake to Databricks, or Databricks to Snowflake.

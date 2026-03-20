@@ -1,3 +1,12 @@
+---
+name: axiom-sqlitedata
+description: Use when working with SQLiteData @Table models, CRUD operations, query patterns, CloudKit SyncEngine setup, or batch imports. Covers model definitions, @FetchAll/@FetchOne, upsert patterns, database setup with Dependencies.
+license: MIT
+metadata:
+  version: "3.0.0"
+  last-updated: "2025-12-19"
+---
+
 # SQLiteData
 
 ## Overview

@@ -1,3 +1,11 @@
+---
+name: building-classification-models
+description: |
+  This skill enables Claude to construct and evaluate classification models using provided datasets or specifications. It leverages the classification-model-builder plugin to automate model creation, optimization, and reporting. Use this skill when the user requests to "build a classifier", "create a classification model", "train a classification model", or needs help with supervised learning tasks involving labeled data. The skill ensures best practices are followed, including data validation, error handling, and performance metric reporting.
+allowed-tools: Read, Write, Edit, Grep, Glob, Bash
+version: 1.0.0
+---
+
 ## Overview
 
 This skill empowers Claude to efficiently build and deploy classification models. It automates the process of model selection, training, and evaluation, providing users with a robust and reliable classification solution. The skill also provides insights into model performance and suggests potential improvements.

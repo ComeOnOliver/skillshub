@@ -1,3 +1,11 @@
+---
+name: axiom-synchronization
+description: Use when needing thread-safe primitives for performance-critical code. Covers Mutex (iOS 18+), OSAllocatedUnfairLock (iOS 16+), Atomic types, when to use locks vs actors, deadlock prevention with Swift Concurrency.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Mutex & Synchronization — Thread-Safe Primitives
 
 Low-level synchronization primitives for when actors are too slow or heavyweight.

@@ -1,3 +1,9 @@
+---
+name: axiom-push-notifications-diag
+description: Use when push notifications fail to arrive, token registration errors occur, notifications work in development but not production, silent push does not wake app, rich notification media is missing, or Live Activity stops updating via push. Covers APNs errors, environment mismatches, Focus mode filtering, service extension failures, FCM diagnostics.
+license: MIT
+---
+
 # Push Notification Diagnostics
 
 Systematic troubleshooting for push notification failures: missing notifications, token registration errors, environment mismatches, silent push throttling, and service extension problems.

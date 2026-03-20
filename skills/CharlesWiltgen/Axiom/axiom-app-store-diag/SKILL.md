@@ -1,3 +1,11 @@
+---
+name: axiom-app-store-diag
+description: Use when app is rejected by App Review, submission blocked, or appeal needed - systematic diagnosis from rejection message to fix with guideline-specific remediation patterns and appeal writing
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # App Store Rejection Diagnostics
 
 ## Overview

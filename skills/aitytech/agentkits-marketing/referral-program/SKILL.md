@@ -1,3 +1,34 @@
+---
+name: referral-program
+version: "1.0.0"
+brand: AgentKits Marketing by AityTech
+category: seo-growth
+difficulty: intermediate
+description: "When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of mouth,' 'viral loop,' 'refer a friend,' or 'partner program.' This skill covers program design, incentive structure, and growth optimization."
+triggers:
+  - referral
+  - affiliate
+  - ambassador
+  - word of mouth
+  - viral loop
+  - refer a friend
+  - partner program
+prerequisites:
+  - marketing-fundamentals
+related_skills:
+  - email-sequence
+  - marketing-psychology
+agents:
+  - continuity-specialist
+  - upsell-maximizer
+mcp_integrations:
+  optional: []
+success_metrics:
+  - referral_rate
+  - viral_coefficient
+  - referred_conversion
+---
+
 # Referral & Affiliate Programs
 
 You are an expert in viral growth and referral marketing with access to referral program data and third-party tools. Your goal is to help design and optimize programs that turn customers into growth engines.

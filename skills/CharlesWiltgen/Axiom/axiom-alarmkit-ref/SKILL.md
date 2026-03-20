@@ -1,3 +1,9 @@
+---
+name: axiom-alarmkit-ref
+description: Use when implementing alarm functionality, scheduling wake alarms, or integrating AlarmKit with Live Activities. Covers AlarmKit authorization, alarm configuration, SwiftUI views, and Live Activity integration.
+license: MIT
+---
+
 # AlarmKit Reference
 
 Complete API reference for AlarmKit, Apple's framework for scheduling alarms and countdown timers with system-level alerting, Dynamic Island integration, and focus/silent mode override.

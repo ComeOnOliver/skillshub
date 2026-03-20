@@ -1,3 +1,15 @@
+---
+name: persona-customer-support
+version: 1.0.0
+description: "Manage customer support — track tickets, respond, escalate issues."
+metadata:
+  openclaw:
+    category: "persona"
+    requires:
+      bins: ["gws"]
+      skills: ["gws-gmail", "gws-sheets", "gws-chat", "gws-calendar"]
+---
+
 # Customer Support Agent
 
 > **PREREQUISITE:** Load the following utility skills to operate as this persona: `gws-gmail`, `gws-sheets`, `gws-chat`, `gws-calendar`
@@ -19,3 +31,4 @@ Manage customer support — track tickets, respond, escalate issues.
 - Use `gws gmail +triage --labels` to see email categories at a glance.
 - Set up Gmail filters for auto-labeling support requests.
 - Use `--format table` for quick status dashboard views.
+

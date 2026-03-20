@@ -1,3 +1,25 @@
+---
+name: electric-shapes
+description: >
+  Configure ShapeStream and Shape to sync a Postgres table to the client.
+  Covers ShapeStreamOptions (url, table, where, columns, replica, offset,
+  handle), custom type parsers (timestamptz, jsonb, int8), column mappers
+  (snakeCamelMapper, createColumnMapper), onError retry semantics, backoff
+  options, log modes (full, changes_only), requestSnapshot, fetchSnapshot,
+  subscribe/unsubscribe, and Shape materialized view. Load when setting up
+  sync, configuring shapes, parsing types, or handling sync errors.
+type: core
+library: electric
+library_version: '1.5.10'
+sources:
+  - 'electric-sql/electric:packages/typescript-client/src/client.ts'
+  - 'electric-sql/electric:packages/typescript-client/src/shape.ts'
+  - 'electric-sql/electric:packages/typescript-client/src/types.ts'
+  - 'electric-sql/electric:packages/typescript-client/src/parser.ts'
+  - 'electric-sql/electric:packages/typescript-client/src/column-mapper.ts'
+  - 'electric-sql/electric:website/docs/guides/shapes.md'
+---
+
 # Electric — Shape Streaming
 
 ## Setup

@@ -1,3 +1,20 @@
+---
+name: competitive-feature-benchmark
+description: >
+  Research and compare how competing products implement a similar feature
+  at the UX and interaction level. Provides structured comparison tables
+  and strategic differentiation recommendations.
+license: MIT
+compatibility:
+  - Claude Code
+  - Cursor
+metadata:
+  type: execution
+  category: research
+  maturity: draft
+  estimated_time: 15 min
+---
+
 # Skill: Competitive Feature Benchmark (UX & Interaction Level)
 
 **Type:** Execution

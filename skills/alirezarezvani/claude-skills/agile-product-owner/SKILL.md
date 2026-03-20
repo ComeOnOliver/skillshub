@@ -1,3 +1,21 @@
+---
+name: "agile-product-owner"
+description: Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use for writing user stories, creating acceptance criteria, planning sprints, estimating story points, breaking down epics, or prioritizing backlog.
+triggers:
+  - write user story
+  - create acceptance criteria
+  - plan sprint
+  - estimate story points
+  - break down epic
+  - prioritize backlog
+  - sprint planning
+  - INVEST criteria
+  - Given When Then
+  - user story template
+  - sprint capacity
+  - velocity tracking
+---
+
 # Agile Product Owner
 
 Backlog management and sprint execution toolkit for product owners, including user story generation, acceptance criteria patterns, sprint planning, and velocity tracking.

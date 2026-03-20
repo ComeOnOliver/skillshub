@@ -1,3 +1,20 @@
+---
+name: graphql-schema
+description: >
+  Guide for designing GraphQL schemas following industry best practices. Use this skill when:
+  (1) designing a new GraphQL schema or API,
+  (2) reviewing existing schema for improvements,
+  (3) deciding on type structures or nullability,
+  (4) implementing pagination or error patterns,
+  (5) ensuring security in schema design.
+license: MIT
+compatibility: Any GraphQL implementation (Apollo Server, graphql-js, Yoga, etc.)
+metadata:
+  author: apollographql
+  version: "1.0.0"
+allowed-tools: Bash(npm:*) Bash(npx:*) Read Write Edit Glob Grep
+---
+
 # GraphQL Schema Design Guide
 
 This guide covers best practices for designing GraphQL schemas that are intuitive, performant, and maintainable. Schema design is primarily a server-side concern that directly impacts API usability.

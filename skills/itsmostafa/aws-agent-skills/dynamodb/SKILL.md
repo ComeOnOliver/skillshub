@@ -1,3 +1,10 @@
+---
+name: dynamodb
+description: AWS DynamoDB NoSQL database for scalable data storage. Use when designing table schemas, writing queries, configuring indexes, managing capacity, implementing single-table design, or troubleshooting performance issues.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/
+---
+
 # AWS DynamoDB
 
 Amazon DynamoDB is a fully managed NoSQL database service providing fast, predictable performance at any scale. It supports key-value and document data structures.

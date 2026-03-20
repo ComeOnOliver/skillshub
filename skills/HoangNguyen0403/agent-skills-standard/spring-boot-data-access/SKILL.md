@@ -1,3 +1,8 @@
+---
+name: spring-boot-data-access
+description: "Best practices for JPA, Hibernate, and Database interactions in Spring Boot. Use when implementing JPA entities, repositories, or database access in Spring Boot. (triggers: **/*Repository.java, **/*Entity.java, jpa-repository, entity-graph, transactional, n-plus-1)"
+---
+
 # Spring Boot Data Access
 
 ## **Priority: P0**

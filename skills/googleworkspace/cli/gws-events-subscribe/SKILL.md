@@ -1,3 +1,15 @@
+---
+name: gws-events-subscribe
+version: 1.0.0
+description: "Google Workspace Events: Subscribe to Workspace events and stream them as NDJSON."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws events +subscribe --help"
+---
+
 # events +subscribe
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.

@@ -1,3 +1,25 @@
+---
+name: pinme
+version: 1.0.0
+description: This skill should be used when the user asks to "deploy", "upload", "publish", or "pin" any files, folders, frontend projects, or static websites to IPFS. Also activates when user mentions "pinme", "IPFS", or wants to share files via decentralized storage.
+author:
+  name: glitternetwork
+  url: https://github.com/glitternetwork
+homepage: https://github.com/glitternetwork/skills/tree/main/pinme
+repository: https://github.com/glitternetwork/skills
+license: MIT
+keywords:
+  - deploy
+  - ipfs
+  - upload
+  - files
+  - pinme
+  - hosting
+  - frontend
+  - web3
+  - storage
+---
+
 # PinMe Skill
 
 Use PinMe CLI to upload files and get a preview URL.

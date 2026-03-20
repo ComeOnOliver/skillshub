@@ -1,3 +1,8 @@
+---
+name: typescript-mcp-server-generator
+description: 'Generate a complete MCP server project in TypeScript with tools, resources, and proper configuration'
+---
+
 # Generate TypeScript MCP Server
 
 Create a complete Model Context Protocol (MCP) server in TypeScript with the following specifications:

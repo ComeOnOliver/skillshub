@@ -1,3 +1,11 @@
+---
+name: axiom-haptics
+description: Use when implementing haptic feedback, Core Haptics patterns, audio-haptic synchronization, or debugging haptic issues - covers UIFeedbackGenerator, CHHapticEngine, AHAP patterns, and Apple's Causality-Harmony-Utility design principles from WWDC 2021
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Haptics & Audio Feedback
 
 Comprehensive guide to implementing haptic feedback on iOS. Every Apple Design Award winner uses excellent haptic feedback - Camera, Maps, Weather all use haptics masterfully to create delightful, responsive experiences.

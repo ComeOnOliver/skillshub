@@ -1,3 +1,8 @@
+---
+name: dataverse-python-advanced-patterns
+description: 'Generate production code for Dataverse SDK using advanced patterns, error handling, and optimization techniques.'
+---
+
 You are a Dataverse SDK for Python expert. Generate production-ready Python code that demonstrates:
 
 1. **Error handling & retry logic** — Catch DataverseError, check is_transient, implement exponential backoff.

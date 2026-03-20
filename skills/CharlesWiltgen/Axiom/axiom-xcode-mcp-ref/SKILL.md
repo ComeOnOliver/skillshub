@@ -1,3 +1,9 @@
+---
+name: axiom-xcode-mcp-ref
+description: Reference — all 20 Xcode MCP tools with parameters, return schemas, and examples
+license: MIT
+---
+
 # Xcode MCP Tool Reference
 
 Complete reference for all 20 tools exposed by Xcode's MCP server (`xcrun mcpbridge`).

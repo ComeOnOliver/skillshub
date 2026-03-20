@@ -1,3 +1,8 @@
+---
+name: common-protocol-enforcement
+description: "Standards for Red-Team verification and adversarial protocol audit. Use when verifying tasks, performing self-scans, or checking for protocol violations. (triggers: **/*, verify, complete, check, audit, scan, retrospective)"
+---
+
 # Protocol Enforcement (Red-Team Verification)
 
 ## **Priority: P0 (CRITICAL)**

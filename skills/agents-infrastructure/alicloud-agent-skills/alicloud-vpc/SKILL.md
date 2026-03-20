@@ -1,3 +1,14 @@
+---
+name: alicloud-vpc
+description: Manage Alibaba Cloud VPC networking using the @alicloud/vpc20160428 TypeScript SDK. Use when working with virtual private clouds, VSwitches, route tables, EIPs, NAT gateways, VPN gateways, Express Connect, BGP routing, network ACLs, flow logs, traffic mirroring, IPv6, HAVIP, gateway endpoints, and resource tagging. Covers all 396 APIs of the VPC 20160428 version.
+license: Apache-2.0
+metadata:
+  author: alicloud
+  version: "1.0"
+  sdk-package: "@alicloud/vpc20160428"
+  api-version: "2016-04-28"
+---
+
 # Alibaba Cloud VPC Skill
 
 Manage VPC networking infrastructure via the `@alicloud/vpc20160428` TypeScript SDK.

@@ -1,3 +1,11 @@
+---
+name: detecting-data-anomalies
+description: |
+  This skill empowers Claude to identify anomalies and outliers within datasets. It leverages the anomaly-detection-system plugin to analyze data, apply appropriate machine learning algorithms, and highlight unusual data points. Use this skill when the user requests anomaly detection, outlier analysis, or identification of unusual patterns in data. Trigger this skill when the user mentions "anomaly detection," "outlier analysis," "unusual data," or requests insights into data irregularities.
+allowed-tools: Read, Bash, Grep, Glob
+version: 1.0.0
+---
+
 ## Overview
 
 This skill allows Claude to utilize the anomaly-detection-system plugin to pinpoint unusual data points within a given dataset. It automates the process of anomaly detection, providing insights into potential errors, fraud, or other significant deviations from expected patterns.

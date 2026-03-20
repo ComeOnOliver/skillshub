@@ -1,3 +1,8 @@
+---
+name: flutter-riverpod-state-management
+description: "Reactive state management using Riverpod 2.0 with code generation. Use when managing state with Riverpod providers or using riverpod_generator in Flutter. (triggers: **_provider.dart, **_notifier.dart, riverpod, ProviderScope, ConsumerWidget, Notifier, AsyncValue, ref.watch, @riverpod)"
+---
+
 # Riverpod State Management
 
 ## **Priority: P0 (CRITICAL)**

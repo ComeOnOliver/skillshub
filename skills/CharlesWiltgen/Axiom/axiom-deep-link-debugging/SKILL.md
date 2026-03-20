@@ -1,3 +1,13 @@
+---
+name: axiom-deep-link-debugging
+description: Use when adding debug-only deep links for testing, enabling simulator navigation to specific screens, or integrating with automated testing workflows - enables closed-loop debugging without production deep link implementation
+license: MIT
+compatibility: iOS 13+
+metadata:
+  version: "1.0.0"
+  last-updated: "2025-12-08"
+---
+
 # Deep Link Debugging
 
 ## When to Use This Skill

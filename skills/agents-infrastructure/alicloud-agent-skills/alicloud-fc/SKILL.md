@@ -1,3 +1,14 @@
+---
+name: alicloud-fc
+description: Manage Alibaba Cloud Function Compute (FC) 3.0 using the @alicloud/fc20230330 TypeScript SDK. Use when working with serverless functions on Alibaba Cloud, including function CRUD, invocation, versions, aliases, triggers (HTTP/Timer/OSS/CDN/MNS), async invocation, concurrency and scaling configs, provisioned instances, custom domains, layers, VPC bindings, sessions, and resource tagging. Covers all 67 APIs of the FC 20230330 version.
+license: Apache-2.0
+metadata:
+  author: alicloud
+  version: "1.0"
+  sdk-package: "@alicloud/fc20230330"
+  api-version: "2023-03-30"
+---
+
 # Alibaba Cloud Function Compute (FC) 3.0 Skill
 
 Manage serverless functions, triggers, aliases, layers, custom domains, scaling, and async invocations via the `@alicloud/fc20230330` TypeScript SDK.

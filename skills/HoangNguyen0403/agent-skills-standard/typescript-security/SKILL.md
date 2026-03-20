@@ -1,3 +1,8 @@
+---
+name: typescript-security
+description: "Secure coding practices for TypeScript. Use when validating input, handling auth tokens, sanitizing data, or managing secrets and sensitive configuration. (triggers: **/*.ts, **/*.tsx, validate, sanitize, xss, injection, auth, password, secret, token)"
+---
+
 # TypeScript Security
 
 ## **Priority: P0 (CRITICAL)**

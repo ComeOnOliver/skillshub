@@ -1,3 +1,8 @@
+---
+name: what-context-needed
+description: 'Ask Copilot what files it needs to see before answering a question'
+---
+
 # What Context Do You Need?
 
 Before answering my question, tell me what files you need to see.

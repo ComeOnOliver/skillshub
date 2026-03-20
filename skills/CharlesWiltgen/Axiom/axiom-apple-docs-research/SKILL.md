@@ -1,3 +1,11 @@
+---
+name: axiom-apple-docs-research
+description: Use when researching Apple frameworks, APIs, or WWDC sessions - provides techniques for retrieving full transcripts, code samples, and documentation using Chrome browser and sosumi.ai
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Apple Documentation Research
 
 ## When to Use This Skill

@@ -1,3 +1,11 @@
+---
+name: axiom-app-store-ref
+description: App Store submission reference — complete metadata field specs, App Review guideline index, privacy manifest schema, age rating system, export compliance, EU DSA requirements, IAP review pipeline, and WWDC25 submission changes
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # App Store Submission Reference
 
 ## Overview

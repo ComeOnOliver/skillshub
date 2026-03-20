@@ -1,3 +1,20 @@
+---
+name: Agent Skills Architecture
+description: Foundational "High-Density" standard for token-optimized agent instructions and CLI-based automated activation.
+metadata:
+  labels: [architecture, high-density, meta, optimization, cli-integration]
+  triggers:
+    files: ['.skillsrc', 'metadata.json', 'SKILL.md']
+    keywords:
+      [
+        skill architecture,
+        high-density standard,
+        modular skills,
+        dependency exclusion,
+        skill separation,
+      ]
+---
+
 # Agent Skills Architecture Standard
 
 ## **Priority: P0 (CRITICAL)**

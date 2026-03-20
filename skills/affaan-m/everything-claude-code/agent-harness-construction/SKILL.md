@@ -1,67 +1,77 @@
-# Agent Harness Construction
+---
+name: agent-harness-construction
+description: 设计和优化AI代理的动作空间、工具定义和观察格式，以提高完成率。
+origin: ECC
+---
 
-Use this skill when you are improving how an agent plans, calls tools, recovers from errors, and converges on completion.
+# 智能体框架构建
 
-## Core Model
+当你在改进智能体的规划、调用工具、从错误中恢复以及收敛到完成状态的方式时，使用此技能。
 
-Agent output quality is constrained by:
-1. Action space quality
-2. Observation quality
-3. Recovery quality
-4. Context budget quality
+## 核心模型
 
-## Action Space Design
+智能体输出质量受限于：
 
-1. Use stable, explicit tool names.
-2. Keep inputs schema-first and narrow.
-3. Return deterministic output shapes.
-4. Avoid catch-all tools unless isolation is impossible.
+1. 行动空间质量
+2. 观察质量
+3. 恢复质量
+4. 上下文预算质量
 
-## Granularity Rules
+## 行动空间设计
 
-- Use micro-tools for high-risk operations (deploy, migration, permissions).
-- Use medium tools for common edit/read/search loops.
-- Use macro-tools only when round-trip overhead is the dominant cost.
+1. 使用稳定、明确的工具名称。
+2. 保持输入模式优先且范围狭窄。
+3. 返回确定性的输出形状。
+4. 除非无法隔离，否则避免使用全能型工具。
 
-## Observation Design
+## 粒度规则
 
-Every tool response should include:
-- `status`: success|warning|error
-- `summary`: one-line result
-- `next_actions`: actionable follow-ups
-- `artifacts`: file paths / IDs
+* 对高风险操作（部署、迁移、权限）使用微工具。
+* 对常见的编辑/读取/搜索循环使用中等工具。
+* 仅当往返开销是主要成本时使用宏工具。
 
-## Error Recovery Contract
+## 观察设计
 
-For every error path, include:
-- root cause hint
-- safe retry instruction
-- explicit stop condition
+每个工具响应都应包括：
 
-## Context Budgeting
+* `status`: success|warning|error
+* `summary`: 一行结果
+* `next_actions`: 可执行的后续步骤
+* `artifacts`: 文件路径 / ID
 
-1. Keep system prompt minimal and invariant.
-2. Move large guidance into skills loaded on demand.
-3. Prefer references to files over inlining long documents.
-4. Compact at phase boundaries, not arbitrary token thresholds.
+## 错误恢复契约
 
-## Architecture Pattern Guidance
+对于每个错误路径，应包括：
 
-- ReAct: best for exploratory tasks with uncertain path.
-- Function-calling: best for structured deterministic flows.
-- Hybrid (recommended): ReAct planning + typed tool execution.
+* 根本原因提示
+* 安全重试指令
+* 明确的停止条件
 
-## Benchmarking
+## 上下文预算管理
 
-Track:
-- completion rate
-- retries per task
-- pass@1 and pass@3
-- cost per successful task
+1. 保持系统提示词最少且不变。
+2. 将大量指导信息移至按需加载的技能中。
+3. 优先引用文件，而不是内联长文档。
+4. 在阶段边界处进行压缩，而不是任意的令牌阈值。
 
-## Anti-Patterns
+## 架构模式指导
 
-- Too many tools with overlapping semantics.
-- Opaque tool output with no recovery hints.
-- Error-only output without next steps.
-- Context overloading with irrelevant references.
+* ReAct：最适合路径不确定的探索性任务。
+* 函数调用：最适合结构化的确定性流程。
+* 混合模式（推荐）：ReAct 规划 + 类型化工具执行。
+
+## 基准测试
+
+跟踪：
+
+* 完成率
+* 每项任务的重试次数
+* pass@1 和 pass@3
+* 每个成功任务的成本
+
+## 反模式
+
+* 太多语义重叠的工具。
+* 不透明的工具输出，没有恢复提示。
+* 仅输出错误而没有后续步骤。
+* 上下文过载，包含不相关的引用。

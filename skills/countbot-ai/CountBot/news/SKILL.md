@@ -1,3 +1,9 @@
+---
+name: news
+description: 新闻与资讯查询。获取中文新闻和全球 AI 技术资讯，支持按分类查询（时政、财经、科技、社会、国际、体育、娱乐、AI 技术、AI 社区）。当用户询问最新新闻、AI 动态、行业资讯时使用。
+homepage: https://github.com/countbot-ai/CountBot
+---
+
 # 新闻与资讯查询
 
 通过 RSS 源和网页抓取获取中文新闻和全球 AI 资讯，支持多分类、关键词过滤。

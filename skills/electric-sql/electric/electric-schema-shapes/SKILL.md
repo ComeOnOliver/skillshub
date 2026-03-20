@@ -1,3 +1,23 @@
+---
+name: electric-schema-shapes
+description: >
+  Design Postgres schema and Electric shape definitions together for a new
+  feature. Covers single-table shape constraint, cross-table joins using
+  multiple shapes, WHERE clause design for tenant isolation, column selection
+  for bandwidth optimization, replica mode choice (default vs full for
+  old_value), enum casting in WHERE clauses, and txid handshake setup with
+  pg_current_xact_id() for optimistic writes. Load when designing database
+  tables for use with Electric shapes.
+type: core
+library: electric
+library_version: '1.5.10'
+requires:
+  - electric-shapes
+sources:
+  - 'electric-sql/electric:AGENTS.md'
+  - 'electric-sql/electric:website/docs/guides/shapes.md'
+---
+
 This skill builds on electric-shapes. Read it first for ShapeStream configuration.
 
 # Electric — Schema and Shapes

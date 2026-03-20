@@ -1,3 +1,15 @@
+---
+name: minecraft-plugin-dev
+description: >
+  Develop Minecraft server plugins using the Paper/Bukkit/Spigot API for Minecraft 1.21.x.
+  Handles creating Paper plugins with JavaPlugin, event listeners with @EventHandler, 
+  commands, schedulers (sync/async), Persistent Data Container (PDC), Adventure text components,
+  Vault economy integration, BungeeCord/Velocity messaging, plugin.yml configuration,
+  YAML config management, and Paper-specific enhancement APIs. Always targets Paper API
+  1.21.x (Java 21) with Gradle (Kotlin DSL). Distinguishes plugin development from mod
+  development: plugins run server-side only and do not require client installation.
+---
+
 # Minecraft Plugin Development Skill
 
 ## Platform Overview

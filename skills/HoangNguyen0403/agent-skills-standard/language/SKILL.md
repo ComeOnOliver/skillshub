@@ -1,55 +1,71 @@
-# TypeScript Language Patterns
+---
+name: JavaScript Language Patterns
+description: Modern JavaScript (ES2022+) patterns for clean, maintainable code.
+metadata:
+  labels: [javascript, language, es6, modern-js]
+  triggers:
+    files: ['**/*.js', '**/*.mjs', '**/*.cjs']
+    keywords:
+      [const, let, arrow, async, await, promise, destructuring, spread, class]
+---
+
+# JavaScript Language Patterns
 
 ## **Priority: P0 (CRITICAL)**
 
+Modern JavaScript standards for clean, maintainable code.
+
 ## Implementation Guidelines
 
-- **Type Annotations**: Explicit params/returns. Infer locals.
-- **Interfaces vs Types**: `interface` for APIs. `type` for unions.
-- **Strict Mode**: `strict: true`. Null Safety: `?.` and `??`.
-- **Enums**: Literal unions or `as const`. **No runtime `enum`**.
-- **Generics**: Reusable, type-safe code.
-- **Type Guards**: `typeof`, `instanceof`, predicates.
-- **Utility Types**: `Partial`, `Pick`, `Omit`, `Record`.
-- **Immutability**: `readonly` arrays/objects. Const Assertions: `as const`, `satisfies`.
-- **Template Literals**: `on${Capitalize<string>}`.
-- **Discriminated Unions**: Literal `kind` property.
-- **Advanced**: Mapped, Conditional, Indexed types.
-- **Access**: Default `public`. Use `private`/`protected` or `#private`.
-- **Branded Types**: `string & { __brand: 'Id' }`.
+- **Variables**: `const` default. `let` if needed. No `var`.
+- **Functions**: Arrows for callbacks. Declarations for top-level.
+- **Async**: `async/await` + `try/catch`.
+- **Objects**: Destructuring, Spread `...`, Optional Chain `?.`, Nullish `??`.
+- **Strings**: Template literals `${}`.
+- **Arrays**: `map`, `filter`, `reduce`. No loops.
+- **Modules**: ESM `import`/`export`. Export only what is necessary.
+- **Classes**: Use `#private` fields for true privacy.
 
 ## Anti-Patterns
 
-- **No `any`**: NEVER use `any`. Use `unknown` or specific interfaces.
-- **No `Function`**: Use signature `() => void`.
-- **No `enum`**: Runtime cost.
-- **No `!`**: Use narrowing.
-- **NO LINT DISABLE**: PROHIBITED. Fix issues properly.
-
-## Testing
-
-- **Mocking**: Use `jest.Mocked<T>` or `as unknown as T`.
-- **Checklist**: Check method existence, match error constants, satisfy required properties.
-- **References**: See [references/TESTING.md](references/TESTING.md) for common issues/solutions.
+- **No `var`**: Block scope only.
+- **No `==`**: Strict `===`.
+- **No `new Object()`**: Use literals `{}`.
+- **No Callbacks**: Promisify everything.
+- **No Mutation**: Immutability first.
 
 ## Code
 
-```typescript
-// Branded Type
-type UserId = string & { __brand: 'Id' };
+```javascript
+// Modern Syntax
+const [x, ...rest] = items;
+const name = user?.profile?.name ?? 'Guest';
 
-// Satisfies (Validate + Infer)
-const cfg = { port: 3000 } satisfies Record<string, number>;
+// Async
+async function getUser(id) {
+  try {
+    const res = await fetch(`/api/${id}`);
+    return res.json();
+  } catch (err) {
+    console.error(err);
+    throw err;
+  }
+}
 
-// Discriminated Union
-type Result<T> = { kind: 'ok'; data: T } | { kind: 'err'; error: Error };
+// Class + Private
+class Service {
+  #key;
+  constructor(k) {
+    this.#key = k;
+  }
+}
 ```
 
 ## Reference & Examples
 
-For advanced type patterns and utility types:
+For advanced patterns and functional programming:
 See [references/REFERENCE.md](references/REFERENCE.md).
 
 ## Related Topics
 
-best-practices | security | tooling
+best-practices | tooling

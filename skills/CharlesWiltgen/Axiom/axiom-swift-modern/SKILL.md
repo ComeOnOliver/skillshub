@@ -1,3 +1,9 @@
+---
+name: axiom-swift-modern
+description: Use when reviewing or generating Swift code for modern idiom correctness — catches outdated APIs, pre-Swift 5.5 patterns, and Foundation legacy usage that Claude defaults to
+license: MIT
+---
+
 # Modern Swift Idioms
 
 ## Purpose

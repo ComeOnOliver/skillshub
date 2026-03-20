@@ -1,3 +1,11 @@
+---
+name: axiom-swiftui-layout-ref
+description: Reference — Complete SwiftUI adaptive layout API guide covering ViewThatFits, AnyLayout, Layout protocol, onGeometryChange, GeometryReader, size classes, and iOS 26 window APIs
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # SwiftUI Layout API Reference
 
 Comprehensive API reference for SwiftUI adaptive layout tools. For decision guidance and anti-patterns, see the `axiom-swiftui-layout` skill.

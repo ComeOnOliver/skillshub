@@ -1,3 +1,9 @@
+---
+name: axiom-ios-accessibility
+description: Use when fixing or auditing ANY accessibility issue - VoiceOver, Dynamic Type, color contrast, touch targets, WCAG compliance, App Store accessibility review.
+license: MIT
+---
+
 # iOS Accessibility Router
 
 **You MUST use this skill for ANY accessibility work including VoiceOver, Dynamic Type, color contrast, and WCAG compliance.**

@@ -1,3 +1,9 @@
+---
+name: wp-performance-backend
+description: WordPress backend performance optimization — profiling, queries, object cache, autoload, cron, and remote HTTP. Always-active rules when investigating slowness issues.
+user-invocable: false
+---
+
 # WordPress Backend Performance
 
 Skill for diagnosing and resolving backend performance issues in WordPress 6.x+. Complementary to the `performance` skill (which covers frontend/Core Web Vitals). This one focuses on: server-side profiling, database queries, object cache, autoload options, cron, and remote HTTP calls.

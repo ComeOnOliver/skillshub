@@ -1,3 +1,13 @@
+---
+name: axiom-liquid-glass
+description: Use when implementing Liquid Glass effects, reviewing UI for Liquid Glass adoption, debugging visual artifacts, optimizing performance, or requesting expert review of Liquid Glass implementation - provides comprehensive design principles, API patterns, and troubleshooting guidance from WWDC 2025. Includes design review pressure handling and professional push-back frameworks
+license: MIT
+compatibility: iOS 26+, iPadOS 26+, macOS Tahoe+, axiom-visionOS 3+
+metadata:
+  version: "1.2.0"
+  last-updated: "Added new iOS 26 APIs and backward compatibility guidance"
+---
+
 # Liquid Glass — Apple's New Material Design System
 
 ## When to Use This Skill

@@ -1,3 +1,9 @@
+---
+name: axiom-shipping
+description: Use when preparing ANY app for submission, handling App Store rejections, writing appeals, or managing App Store Connect. Covers submission checklists, rejection troubleshooting, metadata requirements, privacy manifests, age ratings, export compliance.
+license: MIT
+---
+
 # Shipping & App Store Router
 
 **You MUST use this skill when preparing to submit ANY app, handling App Store rejections, or working on release workflow.**

@@ -1,3 +1,12 @@
+---
+name: axiom-mapkit-ref
+description: MapKit API reference — SwiftUI Map, MKMapView, Marker, Annotation, MKLocalSearch, MKDirections, Look Around, MKMapSnapshotter, clustering, overlays, GeoToolbox PlaceDescriptor, geocoding
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-02-26"
+---
+
 # MapKit API Reference
 
 Complete MapKit API reference for iOS development. Covers both SwiftUI Map (iOS 17+) and MKMapView (UIKit).

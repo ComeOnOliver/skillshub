@@ -1,3 +1,23 @@
+---
+name: Security Standards
+description: Universal security protocols for safe, resilient software. Use when implementing authentication, encryption, authorization, or any security-sensitive feature.
+metadata:
+  labels: [security, encryption, authentication, authorization]
+  triggers:
+    keywords: [security, encrypt, authenticate, authorize]
+    files:
+      [
+        '**/*.ts',
+        '**/*.tsx',
+        '**/*.go',
+        '**/*.dart',
+        '**/*.java',
+        '**/*.kt',
+        '**/*.swift',
+        '**/*.py',
+      ]
+---
+
 # Security Standards - High-Density Standards
 
 Universal security protocols for building safe and resilient software.

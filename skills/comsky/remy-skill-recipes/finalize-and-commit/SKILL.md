@@ -1,3 +1,20 @@
+---
+name: finalize-and-commit
+description: >
+  Finalize code changes for production readiness by removing duplicate logic,
+  auditing hardcoded values, verifying build integrity, and structuring
+  clean commits with Conventional Commits format.
+license: MIT
+compatibility:
+  - Claude Code
+  - Cursor
+metadata:
+  type: execution
+  category: cleanup
+  maturity: stable
+  estimated_time: 15 min
+---
+
 # Skill: Finalize Changes and Commit (Cleanup, Deduplication, Hardcoded Audit)
 
 **Type:** Execution

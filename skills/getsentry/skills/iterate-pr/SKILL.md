@@ -1,8 +1,15 @@
+---
+name: iterate-pr
+description: Iterate on a PR until CI passes. Use when you need to fix CI failures, address review feedback, or continuously push fixes until all checks are green. Automates the feedback-fix-push-wait cycle.
+---
+
 # Iterate on PR Until CI Passes
 
 Continuously iterate on the current branch until all CI checks pass and review feedback is addressed.
 
 **Requires**: GitHub CLI (`gh`) authenticated.
+
+**Requires**: The `uv` CLI for python package management, install guide at https://docs.astral.sh/uv/getting-started/installation/
 
 **Important**: All scripts must be run from the repository root directory (where `.git` is located), not from the skill directory. Use the full path to the script via `${CLAUDE_SKILL_ROOT}`.
 
@@ -46,7 +53,22 @@ Returns JSON with feedback categorized as:
 Review bot feedback (from Sentry, Warden, Cursor, Bugbot, CodeQL, etc.) appears in `high`/`medium`/`low` with `review_bot: true` — it is NOT placed in the `bot` bucket.
 
 Each feedback item may also include:
-- `thread_id` - GraphQL node ID for inline review comments (used for replies)
+- `thread_id` - GraphQL node ID for inline review comments (used for replies via `reply_to_thread.py`)
+
+### `scripts/reply_to_thread.py`
+
+Replies to PR review threads. Batches multiple replies into a single GraphQL call.
+
+```bash
+uv run ${CLAUDE_SKILL_ROOT}/scripts/reply_to_thread.py THREAD_ID "body" [THREAD_ID "body" ...]
+```
+
+Arguments are alternating `(thread_id, body)` pairs. Example:
+```bash
+uv run ${CLAUDE_SKILL_ROOT}/scripts/reply_to_thread.py \
+  PRRT_abc $'Fixed the null check.\n\n*— Claude Code*' \
+  PRRT_def $'Replaced with path-segment counting.\n\n*— Claude Code*'
+```
 
 ## Workflow
 
@@ -102,13 +124,19 @@ After processing each inline review comment, reply on the PR thread to acknowled
 - `high` and `medium` items — whether fixed or determined to be false positives
 - `low` items — whether fixed or declined by the user
 
-**How to reply:** Use the `addPullRequestReviewThreadReply` GraphQL mutation with `pullRequestReviewThreadId` and `body` inputs.
+**How to reply:** Use `${CLAUDE_SKILL_ROOT}/scripts/reply_to_thread.py`. Batch all replies for a round into a single call:
+
+```bash
+uv run ${CLAUDE_SKILL_ROOT}/scripts/reply_to_thread.py \
+  PRRT_abc $'Fixed — description of change.\n\n*— Claude Code*' \
+  PRRT_def $'Not applicable — reason.\n\n*— Claude Code*'
+```
 
 **Reply format:**
 - 1-2 sentences: what was changed, why it's not an issue, or acknowledgment of declined items
 - End every reply with `\n\n*— Claude Code*`
 - Before replying, check if the thread already has a reply ending with `*- Claude Code*` or `*— Claude Code*` to avoid duplicates on re-loops
-- If the `gh api` call fails, log and continue — do not block the workflow
+- If the script fails, log and continue — do not block the workflow
 
 ### 4. Check CI Status
 
@@ -152,7 +180,7 @@ Poll CI status and review feedback in a loop instead of blocking:
    a. Run `uv run ${CLAUDE_SKILL_ROOT}/scripts/fetch_pr_feedback.py` for new review feedback
    b. Address any new high/medium feedback immediately (same as step 3)
    c. If changes were needed, commit and push (this restarts CI), then continue polling
-   d. Sleep 30 seconds, then repeat from sub-step 1
+   d. Sleep 30 seconds (don't increase on subsequent iterations), then repeat from sub-step 1
 5. After all checks pass, do a final feedback check: `sleep 10`, then run `uv run ${CLAUDE_SKILL_ROOT}/scripts/fetch_pr_feedback.py`. Address any new high/medium feedback — if changes are needed, return to step 6.
 
 ### 8. Repeat

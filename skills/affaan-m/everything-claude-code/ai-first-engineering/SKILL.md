@@ -1,45 +1,55 @@
-# AI-First Engineering
+---
+name: ai-first-engineering
+description: 团队中人工智能代理生成大部分实施输出的工程运营模型。
+origin: ECC
+---
 
-Use this skill when designing process, reviews, and architecture for teams shipping with AI-assisted code generation.
+# 人工智能优先工程
 
-## Process Shifts
+在为由人工智能辅助代码生成的团队设计流程、评审和架构时，使用此技能。
 
-1. Planning quality matters more than typing speed.
-2. Eval coverage matters more than anecdotal confidence.
-3. Review focus shifts from syntax to system behavior.
+## 流程转变
 
-## Architecture Requirements
+1. 规划质量比打字速度更重要。
+2. 评估覆盖率比主观信心更重要。
+3. 评审重点从语法转向系统行为。
 
-Prefer architectures that are agent-friendly:
-- explicit boundaries
-- stable contracts
-- typed interfaces
-- deterministic tests
+## 架构要求
 
-Avoid implicit behavior spread across hidden conventions.
+优先选择对智能体友好的架构：
 
-## Code Review in AI-First Teams
+* 明确的边界
+* 稳定的契约
+* 类型化的接口
+* 确定性的测试
 
-Review for:
-- behavior regressions
-- security assumptions
-- data integrity
-- failure handling
-- rollout safety
+避免隐含的行为分散在隐藏的惯例中。
 
-Minimize time spent on style issues already covered by automation.
+## 人工智能优先团队中的代码评审
 
-## Hiring and Evaluation Signals
+评审关注：
 
-Strong AI-first engineers:
-- decompose ambiguous work cleanly
-- define measurable acceptance criteria
-- produce high-signal prompts and evals
-- enforce risk controls under delivery pressure
+* 行为回归
+* 安全假设
+* 数据完整性
+* 故障处理
+* 发布安全性
 
-## Testing Standard
+尽量减少花在已由自动化覆盖的风格问题上的时间。
 
-Raise testing bar for generated code:
-- required regression coverage for touched domains
-- explicit edge-case assertions
-- integration checks for interface boundaries
+## 招聘和评估信号
+
+强大的人工智能优先工程师：
+
+* 能清晰地分解模糊的工作
+* 定义可衡量的验收标准
+* 生成高价值的提示和评估
+* 在交付压力下执行风险控制
+
+## 测试标准
+
+提高生成代码的测试标准：
+
+* 对涉及的领域要求回归测试覆盖率
+* 明确的边界情况断言
+* 接口边界的集成检查

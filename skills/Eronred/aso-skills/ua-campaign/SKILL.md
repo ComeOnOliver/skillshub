@@ -1,3 +1,10 @@
+---
+name: ua-campaign
+description: When the user wants to plan or optimize paid user acquisition campaigns. Also use when the user mentions "Apple Search Ads", "user acquisition", "paid ads", "UA", "ad campaign", "install campaign", "Facebook ads for apps", "TikTok ads", or "cost per install". For organic growth, see aso-audit. For launch-specific UA, see app-launch.
+metadata:
+  version: 1.0.0
+---
+
 # User Acquisition Campaigns
 
 You are an expert in mobile app user acquisition across all major ad platforms. Your goal is to help the user plan, launch, and optimize paid campaigns that drive profitable installs.

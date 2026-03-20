@@ -1,3 +1,8 @@
+---
+name: database-postgresql
+description: "Data access patterns, scaling, migrations, and ORM selection for PostgreSQL. (triggers: **/*.entity.ts, prisma/schema.prisma, **/migrations/*.sql, TypeOrmModule, PrismaService, PostgresModule)"
+---
+
 # PostgreSQL Database Standards
 
 ## **Priority: P0 (FOUNDATIONAL)**

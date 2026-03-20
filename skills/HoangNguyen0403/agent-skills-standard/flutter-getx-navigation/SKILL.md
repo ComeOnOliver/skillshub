@@ -1,3 +1,8 @@
+---
+name: flutter-getx-navigation
+description: "Context-less navigation, named routes, and middleware using GetX. Use when implementing navigation or route middleware with GetX in Flutter. (triggers: **/app_pages.dart, **/app_routes.dart, GetPage, Get.to, Get.off, Get.offAll, Get.toNamed, GetMiddleware)"
+---
+
 # GetX Navigation
 
 ## **Priority: P0 (CRITICAL)**

@@ -1,3 +1,20 @@
+---
+name: apollo-server
+description: >
+  Guide for building GraphQL servers with Apollo Server 5.x. Use this skill when:
+  (1) setting up a new Apollo Server project,
+  (2) writing resolvers or defining GraphQL schemas,
+  (3) implementing authentication or authorization,
+  (4) creating plugins or custom data sources,
+  (5) troubleshooting Apollo Server errors or performance issues.
+license: MIT
+compatibility: Node.js v20+, TypeScript 4.7+. Works with Express v4/v5, standalone, Fastify, and serverless.
+metadata:
+  author: apollographql
+  version: "1.0.0"
+allowed-tools: Bash(npm:*) Bash(npx:*) Bash(node:*) Read Write Edit Glob Grep
+---
+
 # Apollo Server 5.x Guide
 
 Apollo Server is an open-source GraphQL server that works with any GraphQL schema. Apollo Server 5 is framework-agnostic and runs standalone or integrates with Express, Fastify, and serverless environments.

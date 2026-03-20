@@ -1,3 +1,15 @@
+---
+name: gws-calendar
+version: 1.0.0
+description: "Google Calendar: Manage calendars and events."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws calendar --help"
+---
+
 # calendar (v3)
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.
@@ -93,3 +105,4 @@ gws schema calendar.<resource>.<method>
 ```
 
 Use `gws schema` output to build your `--params` and `--json` flags.
+

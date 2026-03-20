@@ -1,3 +1,11 @@
+---
+name: go-control-flow
+description: Use when writing conditionals, loops, or switch statements in Go — including if with initialization, early returns, for loop forms, range, switch, type switches, and blank identifier patterns. Also use when writing a simple if/else or for loop, even if the user doesn't mention guard clauses or variable scoping. Does not cover error flow patterns (see go-error-handling).
+license: Apache-2.0
+metadata:
+  sources: "Effective Go, Google Style Guide"
+---
+
 # Go Control Flow
 
 > Read [references/SWITCH-PATTERNS.md](references/SWITCH-PATTERNS.md) when using switch statements, type switches, or break with labels

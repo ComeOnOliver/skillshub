@@ -1,3 +1,11 @@
+---
+name: axiom-scenekit
+description: Use when working with SceneKit 3D scenes, migrating SceneKit to RealityKit, or maintaining legacy SceneKit code. Covers scene graph, materials, physics, animation, SwiftUI bridge, migration decision tree.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # SceneKit Development Guide
 
 **Purpose**: Maintain existing SceneKit code safely and plan migration to RealityKit

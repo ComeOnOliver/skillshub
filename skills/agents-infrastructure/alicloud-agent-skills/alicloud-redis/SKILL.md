@@ -1,3 +1,14 @@
+---
+name: alicloud-redis
+description: Manage Alibaba Cloud Redis (Tair / R-KVStore) using the @alicloud/r-kvstore20150101 TypeScript SDK. Use when working with Redis or Tair instances, accounts, backups, security (whitelist/SSL/TDE/audit), parameters, monitoring, cluster scaling, direct connection, Tair Custom instances, and resource tagging. Covers all 157 APIs of the R-KVStore 20150101 version.
+license: Apache-2.0
+metadata:
+  author: alicloud
+  version: "1.0"
+  sdk-package: "@alicloud/r-kvstore20150101"
+  api-version: "2015-01-01"
+---
+
 # Alibaba Cloud Redis (R-KVStore) Skill
 
 Manage Redis and Tair instances via the `@alicloud/r-kvstore20150101` TypeScript SDK.

@@ -1,3 +1,16 @@
+---
+name: "board-meeting"
+description: "Multi-agent board meeting protocol for strategic decisions. Runs a structured 6-phase deliberation: context loading, independent C-suite contributions (isolated, no cross-pollination), critic analysis, synthesis, founder review, and decision extraction. Use when the user invokes /cs:board, calls a board meeting, or wants structured multi-perspective executive deliberation on a strategic question."
+license: MIT
+metadata:
+  version: 1.0.0
+  author: Alireza Rezvani
+  category: c-level
+  domain: board-protocol
+  updated: 2026-03-05
+  frameworks: 6-phase-board, two-layer-memory, independent-contributions
+---
+
 # Board Meeting Protocol
 
 Structured multi-agent deliberation that prevents groupthink, captures minority views, and produces clean, actionable decisions.

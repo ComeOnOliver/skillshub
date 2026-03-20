@@ -1,3 +1,14 @@
+---
+name: alicloud-rds
+description: Manage Alibaba Cloud RDS using the @alicloud/rds20140815 TypeScript SDK. Use when working with relational database instances (MySQL, PostgreSQL, SQL Server, MariaDB), accounts, databases, backups, security, monitoring, parameters, read-only instances, database proxy, migration, cross-region DR, PostgreSQL extensions, RDS Custom instances, and resource tagging. Covers all 398 APIs of the RDS 20140815 version.
+license: Apache-2.0
+metadata:
+  author: alicloud
+  version: "1.0"
+  sdk-package: "@alicloud/rds20140815"
+  api-version: "2014-08-15"
+---
+
 # Alibaba Cloud RDS Skill
 
 Manage RDS relational database service via the `@alicloud/rds20140815` TypeScript SDK.

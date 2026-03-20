@@ -1,3 +1,9 @@
+---
+name: axiom-code-signing-diag
+description: Use when code signing fails during build, archive, or upload — certificate not found, provisioning profile mismatch, errSecInternalComponent in CI, ITMS-90035 invalid signature, ambiguous identity, entitlement mismatch. Covers certificate, profile, keychain, entitlement, and archive signing diagnostics.
+license: MIT
+---
+
 # Code Signing Diagnostics
 
 Systematic troubleshooting for code signing failures: missing certificates, provisioning profile mismatches, Keychain issues in CI, entitlement conflicts, and App Store upload rejections.

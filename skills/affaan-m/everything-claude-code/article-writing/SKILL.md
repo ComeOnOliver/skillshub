@@ -1,79 +1,92 @@
-# Article Writing
+---
+name: article-writing
+description: 根据提供的示例或品牌指导，以独特的语气撰写文章、指南、博客帖子、教程、新闻简报等长篇内容。当用户需要超过一段的精致书面内容时使用，尤其是当语气一致性、结构和可信度至关重要时。
+origin: ECC
+---
 
-Write long-form content that sounds like a real person or brand, not generic AI output.
+# 文章写作
 
-## When to Activate
+撰写听起来像真人或真实品牌的长篇内容，而非通用的 AI 输出。
 
-- drafting blog posts, essays, launch posts, guides, tutorials, or newsletter issues
-- turning notes, transcripts, or research into polished articles
-- matching an existing founder, operator, or brand voice from examples
-- tightening structure, pacing, and evidence in already-written long-form copy
+## 何时使用
 
-## Core Rules
+* 起草博客文章、散文、发布帖、指南、教程或新闻简报时
+* 将笔记、转录稿或研究转化为精炼文章时
+* 根据示例匹配现有的创始人、运营者或品牌声音时
+* 强化已有长篇文稿的结构、节奏和论据时
 
-1. Lead with the concrete thing: example, output, anecdote, number, screenshot description, or code block.
-2. Explain after the example, not before.
-3. Prefer short, direct sentences over padded ones.
-4. Use specific numbers when available and sourced.
-5. Never invent biographical facts, company metrics, or customer evidence.
+## 核心规则
 
-## Voice Capture Workflow
+1. **以具体事物开头**：示例、输出、轶事、数据、截图描述或代码块。
+2. 先展示示例，再解释。
+3. 倾向于简短、直接的句子，而非冗长的句子。
+4. 尽可能使用具体且有来源的数据。
+5. **绝不编造**传记事实、公司指标或客户证据。
 
-If the user wants a specific voice, collect one or more of:
-- published articles
-- newsletters
-- X / LinkedIn posts
-- docs or memos
-- a short style guide
+## 声音捕捉工作流
 
-Then extract:
-- sentence length and rhythm
-- whether the voice is formal, conversational, or sharp
-- favored rhetorical devices such as parentheses, lists, fragments, or questions
-- tolerance for humor, opinion, and contrarian framing
-- formatting habits such as headers, bullets, code blocks, and pull quotes
+如果用户需要特定的声音，请收集以下一项或多项：
 
-If no voice references are given, default to a direct, operator-style voice: concrete, practical, and low on hype.
+* 已发表的文章
+* 新闻简报
+* X / LinkedIn 帖子
+* 文档或备忘录
+* 简短的风格指南
 
-## Banned Patterns
+然后提取：
 
-Delete and rewrite any of these:
-- generic openings like "In today's rapidly evolving landscape"
-- filler transitions such as "Moreover" and "Furthermore"
-- hype phrases like "game-changer", "cutting-edge", or "revolutionary"
-- vague claims without evidence
-- biography or credibility claims not backed by provided context
+* 句子长度和节奏
+* 声音是正式、对话式还是犀利的
+* 偏好的修辞手法，如括号、列表、断句或设问
+* 对幽默、观点和反主流框架的容忍度
+* 格式习惯，如标题、项目符号、代码块和引用块
 
-## Writing Process
+如果未提供声音参考，则默认为直接、运营者风格的声音：具体、实用，且少用夸张宣传。
 
-1. Clarify the audience and purpose.
-2. Build a skeletal outline with one purpose per section.
-3. Start each section with evidence, example, or scene.
-4. Expand only where the next sentence earns its place.
-5. Remove anything that sounds templated or self-congratulatory.
+## 禁止模式
 
-## Structure Guidance
+删除并重写以下任何内容：
 
-### Technical Guides
-- open with what the reader gets
-- use code or terminal examples in every major section
-- end with concrete takeaways, not a soft summary
+* 通用开头，如“在当今快速发展的格局中”
+* 填充性过渡词，如“此外”和“而且”
+* 夸张短语，如“游戏规则改变者”、“尖端”或“革命性的”
+* 没有证据支持的模糊主张
+* 没有提供上下文支持的传记或可信度声明
 
-### Essays / Opinion Pieces
-- start with tension, contradiction, or a sharp observation
-- keep one argument thread per section
-- use examples that earn the opinion
+## 写作流程
 
-### Newsletters
-- keep the first screen strong
-- mix insight with updates, not diary filler
-- use clear section labels and easy skim structure
+1. 明确受众和目的。
+2. 构建一个框架大纲，每个部分一个目的。
+3. 每个部分都以证据、示例或场景开头。
+4. 只在下一句话有其存在价值的地方展开。
+5. 删除任何听起来像模板化或自我祝贺的内容。
 
-## Quality Gate
+## 结构指导
 
-Before delivering:
-- verify factual claims against provided sources
-- remove filler and corporate language
-- confirm the voice matches the supplied examples
-- ensure every section adds new information
-- check formatting for the intended platform
+### 技术指南
+
+* 以读者能获得什么开头
+* 在每个主要部分使用代码或终端示例
+* 以具体的要点结束，而非软性的总结
+
+### 散文 / 观点文章
+
+* 以张力、矛盾或尖锐的观察开头
+* 每个部分只保持一个论点线索
+* 使用能支撑观点的示例
+
+### 新闻简报
+
+* 保持首屏内容有力
+* 将见解与更新结合，而非日记式填充
+* 使用清晰的部分标签和易于浏览的结构
+
+## 质量检查
+
+交付前：
+
+* 根据提供的来源核实事实主张
+* 删除填充词和企业语言
+* 确认声音与提供的示例匹配
+* 确保每个部分都添加了新信息
+* 检查针对目标平台的格式

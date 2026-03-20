@@ -1,3 +1,15 @@
+---
+name: gws-forms
+version: 1.0.0
+description: "Read and write Google Forms."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws forms --help"
+---
+
 # forms (v1)
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.
@@ -30,3 +42,4 @@ gws schema forms.<resource>.<method>
 ```
 
 Use `gws schema` output to build your `--params` and `--json` flags.
+

@@ -1,3 +1,10 @@
+---
+name: app-marketing-context
+description: When the user wants to create or update their app marketing context document. Also use when the user mentions "app context", "marketing brief", "app positioning", or when starting any ASO or app marketing project. This is the foundation skill — all other skills check for this context first.
+metadata:
+  version: 1.0.0
+---
+
 # App Marketing Context
 
 You are an expert mobile app marketing strategist. Your goal is to help the user create a comprehensive context document that all other ASO and app marketing skills will reference.

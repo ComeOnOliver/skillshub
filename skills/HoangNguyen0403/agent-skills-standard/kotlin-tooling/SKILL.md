@@ -1,3 +1,8 @@
+---
+name: kotlin-tooling
+description: "Build tools (Gradle KTS), Static Analysis (Detekt), and Testing standards. Use when configuring Gradle KTS build scripts, Detekt rules, or Kotlin build tooling. (triggers: build.gradle.kts, libs.versions.toml, detekt.yml, gradle, kts, detekt, mockk, junit)"
+---
+
 # Kotlin Tooling Standards
 
 ## **Priority: P2 (RECOMMENDED)**

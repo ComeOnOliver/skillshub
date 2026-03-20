@@ -1,3 +1,13 @@
+---
+name: axiom-core-location-ref
+description: Use for Core Location API reference - CLLocationUpdate, CLMonitor, CLServiceSession, authorization, background location, geofencing
+license: MIT
+compatibility: iOS 17+, iPadOS 17+, macOS 14+, watchOS 10+
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-01-03"
+---
+
 # Core Location Reference
 
 Comprehensive API reference for modern Core Location (iOS 17+).

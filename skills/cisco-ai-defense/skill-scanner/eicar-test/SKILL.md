@@ -1,3 +1,9 @@
+---
+name: eicar-test
+description: Test skill containing EICAR test file for malware detection
+license: MIT
+---
+
 # EICAR Test Skill
 
 This skill contains the EICAR Standard Anti-Virus Test File in the assets folder.

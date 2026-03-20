@@ -1,3 +1,10 @@
+---
+name: eks
+description: AWS EKS Kubernetes management for clusters, node groups, and workloads. Use when creating clusters, configuring IRSA, managing node groups, deploying applications, or integrating with AWS services.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/eks/latest/userguide/
+---
+
 # AWS EKS
 
 Amazon Elastic Kubernetes Service (EKS) runs Kubernetes without installing and operating your own control plane. EKS manages the control plane and integrates with AWS services.

@@ -1,3 +1,10 @@
+---
+name: cloudwatch
+description: AWS CloudWatch monitoring for logs, metrics, alarms, and dashboards. Use when setting up monitoring, creating alarms, querying logs with Insights, configuring metric filters, building dashboards, or troubleshooting application issues.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/
+---
+
 # AWS CloudWatch
 
 Amazon CloudWatch provides monitoring and observability for AWS resources and applications. It collects metrics, logs, and events, enabling you to monitor, troubleshoot, and optimize your AWS environment.

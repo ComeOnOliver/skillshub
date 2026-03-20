@@ -1,3 +1,9 @@
+---
+name: axiom-now-playing-carplay
+description: CarPlay Now Playing integration patterns. Use when implementing CarPlay audio controls, CPNowPlayingTemplate customization, or debugging CarPlay-specific issues.
+license: MIT
+---
+
 # CarPlay Integration
 
 **Time cost**: 15-20 minutes (if MPNowPlayingInfoCenter already working)

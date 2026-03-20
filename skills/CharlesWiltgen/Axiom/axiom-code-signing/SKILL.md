@@ -1,3 +1,9 @@
+---
+name: axiom-code-signing
+description: Use when setting up code signing, managing certificates, configuring provisioning profiles, debugging signing errors, setting up CI/CD signing, or preparing distribution builds. Covers certificate lifecycle, automatic vs manual signing, entitlements, fastlane match, Keychain management, and App Store distribution signing.
+license: MIT
+---
+
 # Code Signing
 
 Certificate management, provisioning profiles, entitlements configuration, CI/CD signing setup, and distribution build preparation for iOS/macOS apps.

@@ -1,3 +1,8 @@
+---
+name: planning-oracle-to-postgres-migration-integration-testing
+description: 'Creates an integration testing plan for .NET data access artifacts during Oracle-to-PostgreSQL database migrations. Analyzes a single project to identify repositories, DAOs, and service layers that interact with the database, then produces a structured testing plan. Use when planning integration test coverage for a migrated project, identifying which data access methods need tests, or preparing for Oracle-to-PostgreSQL migration validation.'
+---
+
 # Planning Integration Testing for Oracle-to-PostgreSQL Migration
 
 Analyze a single target project to identify data access artifacts that require integration testing, then produce a structured, actionable testing plan.

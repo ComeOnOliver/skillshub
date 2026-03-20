@@ -1,3 +1,8 @@
+---
+name: typescript-language
+description: "Modern TypeScript standards for type safety and maintainability. Use when working with types, interfaces, generics, enums, unions, or tsconfig settings. (triggers: **/*.ts, **/*.tsx, tsconfig.json, type, interface, generic, enum, union, intersection, readonly, const, namespace)"
+---
+
 # TypeScript Language Patterns
 
 ## **Priority: P0 (CRITICAL)**

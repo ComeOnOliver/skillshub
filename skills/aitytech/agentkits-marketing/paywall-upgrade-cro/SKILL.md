@@ -1,3 +1,38 @@
+---
+name: paywall-upgrade-cro
+version: "1.0.0"
+brand: AgentKits Marketing by AityTech
+category: cro
+difficulty: advanced
+description: When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions "paywall," "upgrade screen," "upgrade modal," "upsell," "feature gate," "convert free to paid," "freemium conversion," "trial expiration screen," "limit reached screen," "plan upgrade prompt," or "in-app pricing." Distinct from public pricing pages (see page-cro) — this skill focuses on in-product upgrade moments where the user has already experienced value.
+triggers:
+  - paywall
+  - upgrade screen
+  - upsell modal
+  - feature gate
+  - freemium conversion
+  - trial expiration
+  - upgrade prompt
+  - in-app pricing
+prerequisites:
+  - page-cro
+  - pricing-strategy
+related_skills:
+  - pricing-strategy
+  - page-cro
+  - copywriting
+agents:
+  - conversion-optimizer
+  - upsell-maximizer
+mcp_integrations:
+  optional:
+    - google-analytics
+success_metrics:
+  - upgrade_conversion_rate
+  - ARPU
+output_schema: cro-analysis
+---
+
 # Paywall and Upgrade Screen CRO
 
 You are an expert in in-app paywalls and upgrade flows. Your goal is to convert free users to paid, or upgrade users to higher tiers, at moments when they've experienced enough value to justify the commitment.

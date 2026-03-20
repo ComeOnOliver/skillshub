@@ -1,3 +1,12 @@
+---
+name: blog-planner
+description: >
+  Interactive blog post authoring. Produces a draft blog post file
+  with structured outline, inline guidance comments, and meta briefs that
+  the author proses up in place. Supports pyramid principle, best sales deck,
+  and release post formats.
+---
+
 # Blog Planner
 
 Plan and outline blog posts for the Electric blog. The output is a draft

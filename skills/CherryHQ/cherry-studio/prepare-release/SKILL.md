@@ -1,3 +1,8 @@
+---
+name: prepare-release
+description: Prepare a new release by collecting commits, generating bilingual release notes, updating version files, and creating a release branch with PR. Use when asked to prepare/create a release, bump version, or run `/prepare-release`.
+---
+
 # Prepare Release
 
 Automate the Cherry Studio release workflow: collect changes → generate bilingual release notes → update files → create release branch + PR → trigger CI/CD.

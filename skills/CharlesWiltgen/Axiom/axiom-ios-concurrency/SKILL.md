@@ -1,3 +1,9 @@
+---
+name: axiom-ios-concurrency
+description: Use when writing ANY code with async, actors, threads, or seeing ANY concurrency error. Covers Swift 6 concurrency, @MainActor, Sendable, data races, async/await patterns, performance optimization.
+license: MIT
+---
+
 # iOS Concurrency Router
 
 **You MUST use this skill for ANY concurrency, async/await, threading, or Swift 6 concurrency work.**

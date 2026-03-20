@@ -1,3 +1,8 @@
+---
+name: csharp-xunit
+description: 'Get best practices for XUnit unit testing, including data-driven tests'
+---
+
 # XUnit Best Practices
 
 Your goal is to help me write effective unit tests with XUnit, covering both standard and data-driven testing approaches.

@@ -1,3 +1,8 @@
+---
+name: solidity-audit
+description: "Security audit and code review checklist. Covers 30+ vulnerability types with real-world exploit cases (2021-2026) and EVMbench Code4rena patterns. Use when conducting security audits, code reviews, or pre-deployment security assessments."
+---
+
 # Solidity Security Audit Checklist
 
 ## Language Rule

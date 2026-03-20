@@ -1,3 +1,15 @@
+---
+name: gws-gmail
+version: 1.0.0
+description: "Gmail: Send, read, and manage email."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws gmail --help"
+---
+
 # gmail (v1)
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.
@@ -45,3 +57,4 @@ gws schema gmail.<resource>.<method>
 ```
 
 Use `gws schema` output to build your `--params` and `--json` flags.
+

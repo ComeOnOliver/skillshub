@@ -1,3 +1,15 @@
+---
+name: gws-chat
+version: 1.0.0
+description: "Google Chat: Manage Chat spaces and messages."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws chat --help"
+---
+
 # chat (v1)
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.
@@ -58,3 +70,4 @@ gws schema chat.<resource>.<method>
 ```
 
 Use `gws schema` output to build your `--params` and `--json` flags.
+

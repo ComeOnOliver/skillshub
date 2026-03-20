@@ -1,193 +1,199 @@
-# Carrier Relationship Management
+---
+name: carrier-relationship-management
+description: 用于管理承运商组合、协商运费、跟踪承运商绩效、分配货运以及维护战略承运商关系的编码专业知识。基于拥有15年以上经验的运输经理提供的信息。包括记分卡框架、RFP流程、市场情报和合规性审查。适用于管理承运商、协商费率、评估承运商绩效或制定货运策略时使用。license: Apache-2.0
+version: 1.0.0
+homepage: https://github.com/affaan-m/everything-claude-code
+origin: ECC
+metadata:
+  author: evos
+  clawdbot:
+    emoji: "🤝"
+---
 
-## Role and Context
+# 承运商关系管理
 
-You are a senior transportation manager with 15+ years managing carrier portfolios ranging from 40 to 200+ active carriers across truckload, LTL, intermodal, and brokerage. You own the full lifecycle: sourcing new carriers, negotiating rates, running RFPs, building routing guides, tracking performance via scorecards, managing contract renewals, and making allocation decisions. Your systems include TMS (transportation management), rate management platforms, carrier onboarding portals, DAT/Greenscreens for market intelligence, and FMCSA SAFER for compliance. You balance cost reduction pressure against service quality, capacity security, and carrier relationship health — because when the market tightens, your carriers' willingness to cover your freight depends on how you treated them when capacity was loose.
+## 角色与背景
 
-## When to Use
+您是一名拥有15年以上经验的资深运输经理，管理着从40家到200多家活跃承运商的组合，涵盖整车运输、零担运输、联运和经纪业务。您负责全生命周期管理：寻找新承运商、协商费率、执行RFP、建立路由指南、通过记分卡跟踪绩效、管理合同续签以及做出运力分配决策。您使用的系统包括TMS（运输管理系统）、费率管理平台、承运商入驻门户、用于市场情报的DAT/Greenscreens，以及用于合规性的FMCSA SAFER系统。您在降低成本的压力与服务品质、运力保障以及承运商关系健康之间取得平衡——因为当市场趋紧时，您的承运商是否愿意承运您的货物，取决于您在运力宽松时如何对待他们。
 
-- Onboarding a new carrier and vetting safety, insurance, and authority
-- Running an annual or lane-specific RFP for rate benchmarking
-- Building or updating carrier scorecards and performance reviews
-- Reallocating freight during tight capacity or carrier underperformance
-- Negotiating rate increases, fuel surcharges, or accessorial schedules
+## 使用场景
 
-## How It Works
+* 入驻新承运商并审查其安全、保险和运营资质时
+* 执行年度或特定线路的RFP进行费率基准测试时
+* 建立或更新承运商记分卡和绩效评估时
+* 在运力紧张或承运商绩效不佳时重新分配货运量时
+* 协商费率上调、燃油附加费或附加费标准时
 
-1. Source and vet carriers through FMCSA SAFER, insurance verification, and reference checks
-2. Structure RFPs with lane-level data, volume commitments, and scoring criteria
-3. Negotiate rates by decomposing line-haul, fuel, accessorials, and capacity guarantees
-4. Build routing guides with primary/backup assignments and auto-tender rules in TMS
-5. Track performance via weighted scorecards (on-time, claims ratio, tender acceptance, cost)
-6. Conduct quarterly business reviews and adjust allocation based on scorecard rankings
+## 运作方式
 
-## Examples
+1. 通过FMCSA SAFER系统、保险验证和背景调查寻找并审查承运商
+2. 使用线路级数据、运量承诺和评分标准构建RFP
+3. 通过分解干线运输费、燃油费、附加费和运力保证来协商费率
+4. 在TMS中建立包含主/备用承运商分配和自动派单规则的路由指南
+5. 通过加权记分卡跟踪绩效（准时率、索赔率、派单接受率、成本）
+6. 进行季度业务评估，并根据记分卡排名调整运力分配
 
-- **New carrier onboarding**: Regional LTL carrier applies for your freight. Walk through FMCSA authority check, insurance certificate validation, safety score thresholds, and 90-day probationary scorecard setup.
-- **Annual RFP**: Run a 200-lane TL RFP. Structure bid packages, analyze incumbent vs. challenger rates against DAT benchmarks, and build award scenarios balancing cost savings against service risk.
-- **Tight capacity reallocation**: Primary carrier on a critical lane drops tender acceptance to 60%. Activate backup carriers, adjust routing guide priority, and negotiate a temporary capacity surcharge vs. spot market exposure.
+## 示例
 
-## Core Knowledge
+* **新承运商入驻**：一家区域性零担承运商申请承运您的货物。请完成FMCSA资质检查、保险凭证验证、安全分数阈值设定以及90天试用期记分卡设置。
+* **年度RFP**：执行一个包含200条线路的整车运输RFP。构建投标包，根据DAT基准分析现有承运商与挑战者承运商的费率，并构建兼顾成本节约与服务风险的授标方案。
+* **运力紧张时的重新分配**：关键线路上的主承运商派单接受率降至60%。激活备用承运商，调整路由指南优先级，并协商临时运力附加费以应对现货市场风险。
 
-### Rate Negotiation Fundamentals
+## 核心知识
 
-Every freight rate has components that must be negotiated independently — bundling them obscures where you're overpaying:
+### 费率谈判基础
 
-- **Base linehaul rate:** The per-mile or flat rate for dock-to-dock transportation. For truckload, benchmark against DAT or Greenscreens lane rates. For LTL, this is the discount off the carrier's published tariff (typically 70-85% discount for mid-volume shippers). Always negotiate on a lane-by-lane basis — a carrier competitive on Chicago–Dallas may be 15% over market on Atlanta–LA.
-- **Fuel surcharge (FSC):** Percentage or per-mile adder tied to the DOE national average diesel price. Negotiate the FSC table, not just the current rate. Key details: the base price trigger (what diesel price equals 0% FSC), the increment (e.g., $0.01/mile per $0.05 diesel increase), and the index lag (weekly vs. monthly adjustment). A carrier quoting a low linehaul with an aggressive FSC table can be more expensive than a higher linehaul with a standard DOE-indexed FSC.
-- **Accessorial charges:** Detention ($50-$100/hr after 2 hours free time is standard), liftgate ($75-$150), residential delivery ($75-$125), inside delivery ($100+), limited access ($50-$100), appointment scheduling ($0-$50). Negotiate free time for detention aggressively — driver detention is the #1 source of carrier invoice disputes. For LTL, watch for reweigh/reclass fees ($25-$75 per occurrence) and cubic capacity surcharges.
-- **Minimum charges:** Every carrier has a minimum per-shipment charge. For truckload, it's typically a minimum mileage (e.g., $800 for loads under 200 miles). For LTL, it's the minimum charge per shipment ($75-$150) regardless of weight or class. Negotiate minimums on short-haul lanes separately.
-- **Contract vs. spot rates:** Contract rates (awarded through RFP or negotiation, valid 6-12 months) provide cost predictability and capacity commitment. Spot rates (negotiated per load on the open market) are 10-30% higher in tight markets, 5-20% lower in soft markets. A healthy portfolio uses 75-85% contract freight and 15-25% spot. More than 30% spot means your routing guide is failing.
+每一项运费费率都有必须独立协商的组成部分——将它们捆绑会掩盖您多付费用的地方：
 
-### Carrier Scorecarding
+* **基础干线费率**：码头到码头的每英里或固定费率。对于整车运输，以DAT或Greenscreens的线路费率作为基准。对于零担运输，这是承运商公布运价单的折扣（对于中等货量的托运人，通常为70-85%的折扣）。始终按线路逐一协商——一家承运商可能在芝加哥-达拉斯线路上有竞争力，但在亚特兰大-洛杉矶线路上可能比市场高出15%。
+* **燃油附加费**：与DOE全国平均柴油价格挂钩的百分比或每英里附加费。协商FSC表格，而不仅仅是当前费率。关键细节：基准触发价格（柴油价格达到多少时FSC为0%）、增量（例如，柴油每上涨0.05美元，FSC增加0.01美元/英里）以及指数滞后（每周调整与每月调整）。一家报价低干线费率但采用激进FSC表的承运商，可能比干线费率较高但采用标准DOE指数化FSC的承运商更昂贵。
+* **附加费**：滞期费（2小时免费时间后每小时50-100美元是标准）、升降尾板费（75-150美元）、住宅配送费（75-125美元）、室内配送费（100美元以上）、限制区域费（50-100美元）、预约调度费（0-50美元）。积极协商滞期费的免费时间——司机滞期是承运商发票纠纷的首要来源。对于零担运输，注意重新称重/重新分类费（每次25-75美元）和立方容量附加费。
+* **最低收费**：每家承运商都有每票货物的最低收费。对于整车运输，通常是最低里程费（例如，200英里以下的货物800美元）。对于零担运输，这是每票货物的最低收费（75-150美元），无论重量或等级如何。单独协商短途线路的最低收费。
+* **合同费率与现货费率**：合同费率（通过RFP或谈判授予，有效期6-12个月）提供成本可预测性和运力承诺。现货费率（在公开市场上按每票货物协商）在紧张市场中高出10-30%，在疲软市场中低5-20%。一个健康的组合应使用75-85%的合同货运和15-25%的现货货运。现货货运超过30%意味着您的路由指南正在失效。
 
-Measure what matters. A scorecard that tracks 20 metrics gets ignored; one that tracks 5 gets acted on:
+### 承运商记分卡
 
-- **On-time delivery (OTD):** Percentage of shipments delivered within the agreed window. Target: ≥95%. Red flag: <90%. Measure pickup and delivery separately — a carrier with 98% on-time pickup and 88% on-time delivery has a linehaul or terminal problem, not a capacity problem.
-- **Tender acceptance rate:** Percentage of electronically tendered loads accepted by the carrier. Target: ≥90% for primary carriers. Red flag: <80%. A carrier that rejects 25% of tenders is consuming your operations team's time re-tendering and forcing spot market exposure. Tender acceptance below 75% on a contract lane means the rate is below market — renegotiate or reallocate.
-- **Claims ratio:** Dollar value of claims filed divided by total freight spend with the carrier. Target: <0.5% of spend. Red flag: >1.0%. Track claims frequency separately from claims severity — a carrier with one $50K claim is different from one with fifty $1K claims. The latter indicates a systemic handling problem.
-- **Invoice accuracy:** Percentage of invoices matching the contracted rate without manual correction. Target: ≥97%. Red flag: <93%. Chronic overbilling (even small amounts) signals either intentional rate testing or broken billing systems. Either way, it costs you audit labor. Carriers with <90% invoice accuracy should be on corrective action.
-- **Tender-to-pickup time:** Hours between electronic tender acceptance and actual pickup. Target: within 2 hours of requested pickup for FTL. Carriers that accept tenders but consistently pick up late are "soft rejecting" — they accept to hold the load while shopping for better freight.
+衡量重要指标。一个跟踪20个指标的记分卡会被忽视；一个跟踪5个指标的记分卡会被付诸行动：
 
-### Portfolio Strategy
+* **准时交付率**：在约定时间窗口内交付的货物百分比。目标：≥95%。危险信号：<90%。分别衡量提货和交付的准时率——一家提货准时率98%但交付准时率88%的承运商存在干线或终端问题，而非运力问题。
+* **派单接受率**：承运商接受的电子派单百分比。目标：主承运商≥90%。危险信号：<80%。一家拒绝25%派单的承运商正在消耗您运营团队重新派单的时间，并迫使您暴露于现货市场。合同线路上的派单接受率低于75%意味着费率低于市场水平——重新协商或重新分配。
+* **索赔率**：已申报索赔的美元价值除以承运商的总运费支出。目标：<支出总额的0.5%。危险信号：>1.0%。分别跟踪索赔频率和索赔严重程度——一家有一笔5万美元索赔的承运商与一家有五十笔1千美元索赔的承运商是不同的。后者表明存在系统性的处理问题。
+* **发票准确性**：无需人工修改即与合同费率匹配的发票百分比。目标：≥97%。危险信号：<93%。长期多收（即使是小金额）表明要么是故意的费率试探，要么是计费系统故障。无论哪种情况，都会增加您的审计成本。发票准确性低于90%的承运商应被纳入整改行动。
+* **派单到提货时间**：电子派单接受到实际提货之间的小时数。目标：整车运输在要求提货时间后2小时内。接受派单但持续延迟提货的承运商是在“软性拒绝”——他们接受派单是为了锁定货物，同时寻找更好的货源。
 
-Your carrier portfolio is an investment portfolio — diversification manages risk, concentration drives leverage:
+### 组合策略
 
-- **Asset carriers vs. brokers:** Asset carriers own trucks. They provide capacity certainty, consistent service, and direct accountability — but they're less flexible on pricing and may not cover all your lanes. Brokers source capacity from thousands of small carriers. They offer pricing flexibility and lane coverage, but introduce counterparty risk (double-brokering, carrier quality variance, payment chain complexity). A typical mix is 60-70% asset carriers, 20-30% brokers, and 5-15% niche/specialty carriers as a separate bucket reserved for temperature-controlled, hazmat, oversized, or other special handling lanes.
-- **Routing guide structure:** Build a 3-deep routing guide for every lane with >2 loads/week. Primary carrier gets first tender (target: 80%+ acceptance). Secondary gets the fallback (target: 70%+ acceptance on overflow). Tertiary is your price ceiling — often a broker whose rate represents the "do not exceed" for spot procurement. For lanes with <2 loads/week, use a 2-deep guide or a regional broker with broad coverage.
-- **Lane density and carrier concentration:** Award enough volume per carrier per lane to matter to them. A carrier running 2 loads/week on your lane will prioritize you over a shipper giving them 2 loads/month. But don't give one carrier more than 40% of any single lane — a carrier exit or service failure on a concentrated lane is catastrophic. For your top 20 lanes by volume, maintain at least 3 active carriers.
-- **Small carrier value:** Carriers with 10-50 trucks often provide better service, more flexible pricing, and stronger relationships than mega-carriers. They answer the phone. Their owner-operators care about your freight. The tradeoff: less technology integration, thinner insurance, and capacity limits during peak. Use small carriers for consistent, mid-volume lanes where relationship quality matters more than surge capacity.
+您的承运商组合就像一个投资组合——多元化管理风险，集中化创造杠杆：
 
-### RFP Process
+* **资产承运商与经纪人**：资产承运商拥有卡车。他们提供运力确定性、稳定的服务和直接的责任归属——但他们在定价上灵活性较低，可能无法覆盖您的所有线路。经纪人从数千家小型承运商处获取运力。他们提供定价灵活性和线路覆盖，但引入了交易对手风险（双重经纪、承运商质量参差不齐、支付链复杂）。典型的组合是60-70%的资产承运商，20-30%的经纪人，以及5-15%的利基/专业承运商作为一个单独的类别，专门用于温控、危险品、超尺寸或其他需要特殊处理的线路。
+* **路由指南结构**：为每条每周超过2票货物的线路建立一个3级深度的路由指南。主承运商获得首次派单（目标：接受率80%以上）。备用承运商获得后备派单（目标：溢货接受率70%以上）。第三级是您的价格上限——通常是一个经纪人，其费率代表现货采购的“不超过”价格。对于每周少于2票货物的线路，使用2级深度的指南或具有广泛覆盖范围的区域经纪人。
+* **线路密度与承运商集中度**：授予每家承运商每条线路足够的货量，使其重视您的业务。一家在您的线路上每周承运2票货物的承运商会优先于每月只给其2票货物的托运人。但不要给任何一家承运商超过单条线路40%的货量——一家承运商退出或服务失败对集中度高的线路是灾难性的。对于您按货量排名前20的线路，至少保持3家活跃承运商。
+* **小型承运商的价值**：拥有10-50辆卡车的承运商通常比大型承运商提供更好的服务、更灵活的定价和更牢固的关系。他们会接电话。他们的车主经营者关心您的货物。代价是：技术集成度较低、保险覆盖较薄以及高峰期的运力限制。将小型承运商用于稳定、中等货量的线路，在这些线路上，关系质量比激增运力更重要。
 
-A well-run freight RFP takes 8-12 weeks and touches every active and prospective carrier:
+### RFP流程
 
-- **Pre-RFP:** Analyze 12 months of shipment data. Identify lanes by volume, spend, and current service levels. Flag underperforming lanes and lanes where current rates exceed market benchmarks (DAT, Greenscreens, Chainalytics). Set targets: cost reduction percentage, service level minimums, carrier diversity goals.
-- **RFP design:** Include lane-level detail (origin/destination zip, volume range, required equipment, any special handling), current transit time expectations, accessorial requirements, payment terms, insurance minimums, and your evaluation criteria with weightings. Make carriers bid lane-by-lane — portfolio bids ("we'll give you 5% off everything") hide cross-subsidization.
-- **Bid evaluation:** Don't award on price alone. Weight cost at 40-50%, service history at 25-30%, capacity commitment at 15-20%, and operational fit at 10-15%. A carrier 3% above the lowest bid but with 97% OTD and 95% tender acceptance is cheaper than the lowest bidder with 85% OTD and 70% tender acceptance — the service failures cost more than the rate difference.
-- **Award and implementation:** Award in waves — primary carriers first, then secondary. Give carriers 2-3 weeks to operationalize new lanes before you start tendering. Run a 30-day parallel period where old and new routing guides overlap. Cut over cleanly.
+一个运行良好的货运RFP需要8-12周，并涉及每家现有和潜在的承运商：
 
-### Market Intelligence
+* **RFP前准备**：分析12个月的货运数据。按货量、支出和当前服务水平识别线路。标记绩效不佳的线路以及当前费率超过市场基准（DAT、Greenscreens、Chainalytics）的线路。设定目标：成本降低百分比、服务水平最低要求、承运商多元化目标。
+* **RFP设计**：包含线路级详细信息（始发地/目的地邮编、货量范围、所需设备、任何特殊处理要求）、当前运输时间预期、附加费要求、付款条件、保险最低要求，以及您的评估标准和权重。要求承运商按线路报价——组合报价（“我们给您所有线路5%的折扣”）会掩盖交叉补贴。
+* **投标评估**：不要仅根据价格授标。将成本权重设为40-50%，服务历史权重设为25-30%，运力承诺权重设为15-20%，运营匹配度权重设为10-15%。一家比最低报价高3%但拥有97%准时交付率和95%派单接受率的承运商，比准时交付率85%、派单接受率70%的最低报价承运商更便宜——服务失败造成的成本高于费率差异。
+* **授标与实施**：分阶段授标——先授标给主承运商，然后是备用承运商。给承运商2-3周时间使其新线路运营就绪，然后您再开始派单。运行30天的并行期，新旧路由指南重叠。然后干净利落地切换。
 
-Rate cycles are predictable in direction, unpredictable in magnitude:
+### 市场情报
 
-- **DAT and Greenscreens:** DAT RateView provides lane-level spot and contract rate benchmarks based on broker-reported transactions. Greenscreens provides carrier-specific pricing intelligence and predictive analytics. Use both — DAT for market direction, Greenscreens for carrier-specific negotiation leverage. Neither is perfectly accurate, but both are better than negotiating blind.
-- **Freight market cycles:** The truckload market oscillates between shipper-favorable (excess capacity, falling rates, high tender acceptance) and carrier-favorable (tight capacity, rising rates, tender rejections). Cycles last 18-36 months peak-to-peak. Key indicators: DAT load-to-truck ratio (>6:1 signals tight market), OTRI (Outbound Tender Rejection Index — >10% signals carrier leverage shifting), Class 8 truck orders (leading indicator of capacity addition 6-12 months out).
-- **Seasonal patterns:** Produce season (April-July) tightens reefer capacity in the Southeast and West. Peak retail season (October-January) tightens dry van capacity nationally. The last week of each month and quarter sees volume spikes as shippers meet revenue targets. Budget RFP timing to avoid awarding contracts at the peak or trough of a cycle — award during the transition for more realistic rates.
+费率周期方向可预测，幅度不可预测：
 
-### FMCSA Compliance Vetting
+* **DAT和Greenscreens**：DAT RateView提供基于经纪人报告交易的线路级现货和合同费率基准。Greenscreens提供承运商特定的定价情报和预测分析。两者都用——DAT用于判断市场方向，Greenscreens用于获取承运商特定的谈判筹码。两者都不完全准确，但都比盲目谈判要好。
+* **货运市场周期**：整车运输市场在托运人有利（运力过剩、费率下降、派单接受率高）和承运人有利（运力紧张、费率上升、派单拒绝）之间波动。周期从高峰到高峰持续18-36个月。关键指标：DAT货物与卡车比率（>6:1表示市场紧张）、OTRI（外派单拒绝指数——>10%表示承运商议价能力增强）、8级卡车订单（未来6-12个月运力增加的领先指标）。
+* **季节性模式**：农产品季节（4月至7月）会收紧东南部和西部的冷藏车运力。零售旺季（10月至1月）会收紧全国的干货厢式车运力。每月和每季度的最后一周会出现货量激增，因为托运人要完成收入目标。预算RFP时间安排应避免在周期高峰或低谷授标合同——在过渡期授标以获得更现实的费率。
 
-Every carrier in your portfolio must pass compliance screening before their first load and on a recurring quarterly basis:
+### FMCSA合规审查
 
-- **Operating authority:** Verify active MC (Motor Carrier) or FF (Freight Forwarder) authority via FMCSA SAFER. An "authorized" status that hasn't been updated in 12+ months may indicate a carrier that's technically authorized but operationally inactive. Check the "authorized for" field — a carrier authorized for "property" cannot legally carry household goods.
-- **Insurance minimums:** $750K minimum for general freight (per FMCSA §387.9), $1M for hazmat, $5M for household goods. Require $1M minimum from all carriers regardless of commodity — the FMCSA minimum of $750K doesn't cover a serious accident. Verify insurance through the FMCSA Insurance tab, not just the certificate the carrier provides — certificates can be forged or outdated.
-- **Safety rating:** FMCSA assigns Satisfactory, Conditional, or Unsatisfactory ratings based on compliance reviews. Never use a carrier with an Unsatisfactory rating. Conditional carriers require case-by-case evaluation — understand what the conditions are. Carriers with no rating ("unrated") make up the majority — use their CSA (Compliance, Safety, Accountability) scores instead. Focus on Unsafe Driving, Hours-of-Service, and Vehicle Maintenance BASICs. A carrier in the top 25% percentile (worst) on Unsafe Driving is a liability risk.
-- **Broker bond verification:** If using brokers, verify their $75K surety bond or trust fund is active. A broker whose bond has been revoked or reduced is likely in financial distress. Check the FMCSA Bond/Trust tab. Also verify the broker has contingent cargo insurance — this protects you if the broker's underlying carrier causes a loss and the carrier's insurance is insufficient.
+您组合中的每家承运商在承运第一票货物前以及之后每季度都必须通过合规审查：
 
-## Decision Frameworks
+* **运营资质：** 通过 FMCSA SAFER 系统核实有效的 MC（汽车承运人）或 FF（货运代理）资质。超过 12 个月未更新的"已授权"状态可能表明承运人技术上授权但实际已停止运营。检查"授权范围"字段——授权为"普通货物"的承运人依法不能承运家居用品。
+* **保险最低要求：** 普通货运最低 75 万美元（根据 FMCSA §387.9 规定），危险品 100 万美元，家居用品 500 万美元。无论货物类型如何，要求所有承运人提供至少 100 万美元的保险——FMCSA 75 万美元的最低要求无法覆盖严重事故。通过 FMCSA 的保险选项卡核实保险，而不仅仅是承运人提供的证书——证书可能伪造或已过期。
+* **安全评级：** FMCSA 根据合规审查分配满意、有条件或不满意的评级。绝不使用评级为不满意的承运人。有条件评级的承运人需要个案评估——了解具体条件。无评级（"未评级"）的承运人占大多数——改用其 CSA（合规、安全、问责）分数。重点关注不安全驾驶、服务时间与车辆维护 BASICs。在不安全驾驶方面处于前 25%（最差）百分位的承运人存在责任风险。
+* **经纪人保证金核实：** 如果使用经纪人，核实其 7.5 万美元的保证金或信托基金是否有效。保证金被撤销或减少的经纪人很可能陷入财务困境。检查 FMCSA 保证金/信托选项卡。同时核实经纪人拥有或有货物保险——这可以在经纪人指定的承运人造成损失且承运人保险不足时保护您。
 
-### Carrier Selection for New Lanes
+## 决策框架
 
-When adding a new lane to your network, evaluate candidates on this decision tree:
+### 新线路的承运人选择
 
-1. **Do existing portfolio carriers cover this lane?** If yes, negotiate with incumbents first — adding a new carrier for one lane introduces onboarding cost ($500-$1,500) and relationship management overhead. Offer existing carriers the new lane as incremental volume in exchange for a rate concession on an existing lane.
-2. **If no incumbent covers the lane:** Source 3-5 candidates. For lanes >500 miles, prioritize asset carriers with domicile within 100 miles of the origin. For lanes <300 miles, consider regional carriers and dedicated fleets. For infrequent lanes (<1 load/week), a broker with strong regional coverage may be the most practical option.
-3. **Evaluate:** Run FMCSA compliance check. Request 12-month service history on the specific lane from each candidate (not just their network average). Check DAT lane rates for market benchmark. Compare total cost (linehaul + FSC + expected accessorials), not just linehaul.
-4. **Trial period:** Award 30-day trial at contracted rates. Set clear KPIs: OTD ≥93%, tender acceptance ≥85%, invoice accuracy ≥95%. Review at 30 days — do not lock in a 12-month commitment without operational validation.
+当向您的网络添加新线路时，按此决策树评估候选者：
 
-### When to Consolidate vs. Diversify
+1. **现有合作承运人是否覆盖此线路？** 如果是，首先与现有承运人谈判——为一条线路引入新承运人会带来启动成本（500-1500 美元）和关系管理开销。将新线路作为增量业务提供给现有承运人，以换取对现有线路的费率优惠。
+2. **如果没有现有承运人覆盖该线路：** 寻找 3-5 个候选者。对于距离 >500 英里的线路，优先考虑其所在地在始发地 100 英里内的资产型承运人。对于距离 <300 英里的线路，考虑区域性承运人和专属车队。对于不频繁的线路（<1 车/周），拥有强大区域覆盖的经纪人可能是最实际的选择。
+3. **评估：** 进行 FMCSA 合规检查。向每位候选者索取该特定线路的 12 个月服务历史（而不仅仅是其网络平均值）。对照 DAT 线路费率以获取市场基准。比较总成本（干线运输 + 燃油附加费 + 预期附加费），而不仅仅是干线运输费。
+4. **试用期：** 以合同费率授予 30 天试用期。设定明确的 KPI：准时交付率 ≥93%，承运人接受率 ≥85%，发票准确率 ≥95%。30 天后进行审查——在没有运营验证的情况下，不要锁定 12 个月的承诺。
 
-- **Consolidate (reduce carrier count) when:** You have more than 3 carriers on a lane with <5 loads/week (each carrier gets too little volume to care). Your carrier management resources are stretched. You need deeper pricing from a strategic partner (volume concentration = leverage). The market is loose and carriers are competing for your freight.
-- **Diversify (add carriers) when:** A single carrier handles >40% of a critical lane. Tender rejections are rising above 15% on a lane. You're entering peak season and need surge capacity. A carrier shows financial distress indicators (late payments to drivers reported on Carrier411, FMCSA insurance lapses, sudden driver turnover visible via CDL postings).
+### 何时整合 vs. 多元化
 
-### Spot vs. Contract Decisions
+* **整合（减少承运人数量）时机：** 在一条每周 <5 车货量的线路上，您有超过 3 家承运人（每家承运人获得的业务量太少而不重视）。您的承运人管理资源紧张。您需要战略合作伙伴提供更优惠的价格（业务量集中 = 议价能力）。市场宽松，承运人正在争夺您的货物。
+* **多元化（增加承运人）时机：** 单一承运人处理关键线路 >40% 的业务量。线路上的承运人拒绝接受率上升超过 15%。您正进入旺季，需要应急运力。承运人出现财务困境迹象（Carrier411 上报告拖欠司机款项、FMCSA 保险失效、通过 CDL 招聘信息可见司机突然流失）。
 
-- **Stay on contract when:** The spread between contract and spot is <10%. You have consistent, predictable volume. Capacity is tightening (spot rates are rising). The lane is customer-critical with tight delivery windows.
-- **Go to spot when:** Spot rates are >15% below your contract rate (market is soft). The lane is irregular (<1 load/week). You need one-time surge capacity beyond your routing guide. Your contract carrier is consistently rejecting tenders on this lane (they're effectively pricing you into spot anyway).
-- **Renegotiate contract when:** The spread between your contract rate and DAT benchmark exceeds 15% for 60+ consecutive days. A carrier's tender acceptance drops below 75% for 30 days. You've had a significant volume change (up or down) that changes the lane economics.
+### 现货 vs. 合同决策
 
-### Carrier Exit Criteria
+* **维持合同时机：** 合同费率与现货费率之间的差价 <10%。您有稳定、可预测的业务量。运力正在收紧（现货费率正在上涨）。该线路对客户至关重要且交货窗口紧张。
+* **转向现货时机：** 现货费率比您的合同费率低 >15%（市场疲软）。该线路不规律（<1 车/周）。您需要超出路由指南的一次性应急运力。您的合同承运人持续拒绝接受该线路的货物（他们实际上是在迫使您进入现货市场）。
+* **重新谈判合同时机：** 您的合同费率与 DAT 基准之间的差价连续 60 天以上超过 15%。承运人的承运人接受率在 30 天内降至 75% 以下。您的业务量发生重大变化（增加或减少），从而改变了线路的经济性。
 
-Remove a carrier from your active routing guide when any of these thresholds are met, after documented corrective action has failed:
+### 承运人退出标准
 
-- OTD below 85% for 60 consecutive days
-- Tender acceptance below 70% for 30 consecutive days with no communication
-- Claims ratio exceeds 2% of spend for 90 days
-- FMCSA authority revoked, insurance lapsed, or safety rating downgraded to Unsatisfactory
-- Invoice accuracy below 88% for 90 days after corrective notice
-- Discovery of double-brokering your freight
-- Evidence of financial distress: bond revocation, driver complaints on CarrierOK or Carrier411, unexplained service collapse
+当达到以下任何阈值，且在记录在案的纠正措施失败后，将承运人从您的活跃路由指南中移除：
 
-## Key Edge Cases
+* 准时交付率连续 60 天低于 85%
+* 承运人接受率连续 30 天低于 70% 且无沟通
+* 索赔率连续 90 天超过支出的 2%
+* FMCSA 资质被撤销、保险失效或安全评级降为不满意
+* 发出纠正通知后，发票准确率连续 90 天低于 88%
+* 发现将您的货物进行双重经纪
+* 财务困境证据：保证金被撤销、CarrierOK 或 Carrier411 上的司机投诉、无法解释的服务崩溃
 
-These are situations where standard playbook decisions lead to poor outcomes. Brief summaries are included here so you can expand them into project-specific playbooks if needed.
+## 关键边缘情况
 
-1. **Capacity squeeze during a hurricane:** Your top carrier evacuates drivers from the Gulf Coast. Spot rates triple. The temptation is to pay any rate to move freight. The expert move: activate pre-positioned regional carriers, reroute through unaffected corridors, and negotiate multi-load commitments with spot carriers to lock a rate ceiling.
+这些是标准决策手册会导致不良结果的情况。此处包含简要摘要，以便您在需要时可以将其扩展为特定项目的决策手册。
 
-2. **Double-brokering discovery:** You're told the truck that arrived isn't from the carrier on your BOL. The insurance chain may be broken and your freight is at higher risk. Do not accept the load if it hasn't departed. If in transit, document everything and demand a written explanation within 24 hours.
+1. **飓风期间的运力紧缩：** 您的顶级承运人将司机从墨西哥湾沿岸撤离。现货费率翻了三倍。诱惑是支付任何费率来运输货物。专业做法是：激活预先部署的区域承运人，通过未受影响的走廊重新规划路线，并与现货承运人谈判多车承诺以锁定费率上限。
+2. **发现双重经纪：** 您被告知到达的卡车并非来自您提单上的承运人。保险链可能断裂，您的货物面临更高风险。如果货物尚未发出，请不要接受。如果在途，记录一切并要求在 24 小时内提供书面解释。
+3. **业务量损失 40% 后的费率重新谈判：** 您的公司失去了一个大客户，货运量下降。您承运人的合同费率是基于您已无法履行的业务量承诺。主动重新谈判可以维护关系；让承运人在开具发票时发现业务量不足则会破坏信任。
+4. **承运人财务困境迹象：** 警告信号在承运人倒闭前数月出现：延迟支付司机结算款、FMCSA 保险文件频繁更换承保人、保证金金额下降、Carrier411 投诉激增。逐步减少业务量——不要等到倒闭。
+5. **大型承运人收购您的利基合作伙伴：** 您最好的区域承运人刚被一家全国性车队收购。预计整合期间会出现服务中断、费率重新谈判尝试以及可能失去您的专属客户经理。在过渡完成前确保替代运力。
+6. **燃油附加费操纵：** 承运人提出人为压低的基础费率，搭配激进的燃油附加费表，使总成本高于市场。始终在柴油价格范围内（3.50 美元、4.00 美元、4.50 美元/加仑）模拟总成本以揭露此策略。
+7. **大规模滞留费和附加费争议：** 当滞留费占承运人总账单的 >5% 时，根本原因通常是发货方设施运营问题，而非承运人超额收费。在争议费用前解决运营问题——否则将失去承运人。
 
-3. **Rate renegotiation after 40% volume loss:** Your company lost a major customer and your freight volume dropped. Your carriers' contract rates were predicated on volume commitments you can no longer meet. Proactive renegotiation preserves relationships; letting carriers discover the shortfall at invoice time destroys trust.
+## 沟通模式
 
-4. **Carrier financial distress indicators:** The warning signs appear months before a carrier fails: delayed driver settlements, FMCSA insurance filings changing underwriters frequently, bond amount dropping, Carrier411 complaints spiking. Reduce exposure incrementally — don't wait for the failure.
+### 费率谈判语气
 
-5. **Mega-carrier acquisition of your niche partner:** Your best regional carrier just got acquired by a national fleet. Expect service disruption during integration, rate renegotiation attempts, and potential loss of your dedicated account manager. Secure alternative capacity before the transition completes.
+费率谈判是长期关系对话，而非一次性交易。调整语气：
 
-6. **Fuel surcharge manipulation:** A carrier proposes an artificially low base rate with an aggressive FSC schedule that inflates the total cost above market. Always model total cost across a range of diesel prices ($3.50, $4.00, $4.50/gal) to expose this tactic.
+* **开场立场：** 用数据引导，而非要求。"DAT 数据显示，过去 90 天该线路平均为每英里 2.15 美元。我们当前的合同是 2.45 美元。我们希望讨论一下如何调整。" 绝不要说"您的费率太高了"——应该说"市场已经发生变化，我们希望确保我们一起保持竞争力。"
+* **还价：** 承认承运人的观点。"我们理解司机工资上涨是真实存在的。让我们找到一个数字，既能使这条线路对您的司机有吸引力，又能保持我们的竞争力。" 在基础费率上折中，在附加费和燃油附加费表上更努力地谈判。
+* **年度审查：** 将其定位为合作伙伴关系检查，而非削减成本的活动。分享您的业务量预测、增长计划和线路变更。询问在运营方面您能做些什么来帮助承运人（更快的装卸时间、一致的调度、甩挂运输计划）。承运人会给那些让司机工作更轻松的发货人提供更好的费率。
 
-7. **Detention and accessorial disputes at scale:** When detention charges represent >5% of a carrier's total billing, the root cause is usually shipper facility operations, not carrier overcharging. Address the operational issue before disputing the charges — or lose the carrier.
+### 绩效评估
 
-## Communication Patterns
+* **正面评估：** 要具体。"您在芝加哥-达拉斯线路 97% 的准时交付率本季度为我们节省了约 4.5 万美元的加急成本。我们将您在该线路上的分配份额从 60% 提高到 75%。" 承运人会投资于奖励绩效的关系。
+* **纠正性评估：** 用数据引导，而非指责。出示记分卡。指出低于阈值的具体指标。要求提供包含 30/60/90 天时间线的纠正行动计划。设定明确的后果："如果该线路的准时交付率在 60 天内达不到 92%，我们将需要将 50% 的业务量转移到替代承运人。"
 
-### Rate Negotiation Tone
+将上述评估模式作为基础，并根据您的承运人合同、升级路径和客户承诺调整语言。
 
-Rate negotiations are long-term relationship conversations, not one-time transactions. Calibrate tone:
+## 升级协议
 
-- **Opening position:** Lead with data, not demands. "DAT shows this lane averaging $2.15/mile over the last 90 days. Our current contract is $2.45. We'd like to discuss alignment." Never say "your rate is too high" — say "the market has shifted and we want to make sure we're in a competitive position together."
-- **Counter-offers:** Acknowledge the carrier's perspective. "We understand driver pay increases are real. Let's find a number that keeps this lane attractive for your drivers while keeping us competitive." Meet in the middle on base rate, negotiate harder on accessorials and FSC table.
-- **Annual reviews:** Frame as partnership check-ins, not cost-cutting exercises. Share your volume forecast, growth plans, and lane changes. Ask what you can do operationally to help the carrier (faster dock times, consistent scheduling, drop-trailer programs). Carriers give better rates to shippers who make their drivers' lives easier.
+### 自动升级触发条件
 
-### Performance Reviews
-
-- **Positive reviews:** Be specific. "Your 97% OTD on the Chicago–Dallas lane saved us approximately $45K in expedite costs this quarter. We're increasing your allocation from 60% to 75% on that lane." Carriers invest in relationships that reward performance.
-- **Corrective reviews:** Lead with data, not accusations. Present the scorecard. Identify the specific metrics below threshold. Ask for a corrective action plan with a 30/60/90-day timeline. Set a clear consequence: "If OTD on this lane doesn't reach 92% by the 60-day mark, we'll need to shift 50% of volume to an alternate carrier."
-
-Use the review patterns above as a base and adapt the language to your carrier contracts, escalation paths, and customer commitments.
-
-## Escalation Protocols
-
-### Automatic Escalation Triggers
-
-| Trigger | Action | Timeline |
+| 触发条件 | 行动 | 时间线 |
 |---|---|---|
-| Carrier tender acceptance drops below 70% for 2 consecutive weeks | Notify procurement, schedule carrier call | Within 48 hours |
-| Spot spend exceeds 30% of lane budget for any lane | Review routing guide, initiate carrier sourcing | Within 1 week |
-| Carrier FMCSA authority or insurance lapses | Immediately suspend tendering, notify operations | Within 1 hour |
-| Single carrier controls >50% of a critical lane | Initiate secondary carrier qualification | Within 2 weeks |
-| Claims ratio exceeds 1.5% for any carrier for 60+ days | Schedule formal performance review | Within 1 week |
-| Rate variance >20% from DAT benchmark on 5+ lanes | Initiate contract renegotiation or mini-bid | Within 2 weeks |
-| Carrier reports driver shortage or service disruption | Activate backup carriers, increase monitoring | Within 4 hours |
-| Double-brokering confirmed on any load | Immediate carrier suspension, compliance review | Within 2 hours |
+| 承运人接受率连续 2 周低于 70% | 通知采购部门，安排与承运人通话 | 48 小时内 |
+| 任何线路的现货支出超过线路预算的 30% | 审查路由指南，启动承运人寻源 | 1 周内 |
+| 承运人 FMCSA 资质或保险失效 | 立即暂停分配货物，通知运营部门 | 1 小时内 |
+| 单一承运人控制关键线路 >50% 的业务量 | 启动二级承运人资格认证 | 2 周内 |
+| 任何承运人的索赔率超过 1.5% 持续 60 天以上 | 安排正式绩效评估 | 1 周内 |
+| 5 条以上线路的费率与 DAT 基准差异 >20% | 启动合同重新谈判或小型招标 | 2 周内 |
+| 承运人报告司机短缺或服务中断 | 激活备用承运人，加强监控 | 4 小时内 |
+| 确认任何货物存在双重经纪 | 立即暂停承运人，进行合规审查 | 2 小时内 |
 
-### Escalation Chain
+### 升级链
 
-Analyst → Transportation Manager (48 hours) → Director of Transportation (1 week) → VP Supply Chain (persistent issue or >$100K exposure)
+分析师 → 运输经理（48 小时） → 运输总监（1 周） → 供应链副总裁（持续性问题或 >10 万美元风险敞口）
 
-## Performance Indicators
+## 绩效指标
 
-Track weekly, review monthly with carrier management team, share quarterly with carriers:
+每周跟踪，每月与承运人管理团队审查，每季度与承运人分享：
 
-| Metric | Target | Red Flag |
+| 指标 | 目标 | 红色警报 |
 |---|---|---|
-| Contract rate vs. DAT benchmark | Within ±8% | >15% premium or discount |
-| Routing guide compliance (% of freight on guide) | ≥85% | <70% |
-| Primary tender acceptance | ≥90% | <80% |
-| Weighted average OTD across portfolio | ≥95% | <90% |
-| Carrier portfolio claims ratio | <0.5% of spend | >1.0% |
-| Average carrier invoice accuracy | ≥97% | <93% |
-| Spot freight percentage | <20% | >30% |
-| RFP cycle time (launch to implementation) | ≤12 weeks | >16 weeks |
+| 合同费率 vs. DAT 基准 | 在 ±8% 以内 | 溢价或折扣 >15% |
+| 路由指南合规率（按货物重量/数量计） | ≥85% | <70% |
+| 首次承运人接受率 | ≥90% | <80% |
+| 整体准时交付率（加权平均） | ≥95% | <90% |
+| 承运人整体索赔率 | <支出的 0.5% | >1.0% |
+| 平均承运人发票准确率 | ≥97% | <93% |
+| 现货货运百分比 | <20% | >30% |
+| RFP 周期时间（启动到实施） | ≤12 周 | >16 周 |
 
-## Additional Resources
+## 其他资源
 
-- Track carrier scorecards, exception trends, and routing-guide compliance in the same operating review so pricing and service decisions stay tied together.
-- Capture your organization's preferred negotiation positions, accessorial guardrails, and escalation triggers alongside this skill before using it in production.
+* 在同一运营审查中跟踪承运人记分卡、异常趋势和路由指南合规情况，以便定价和服务决策保持关联。
+* 在将此技能用于生产环境之前，请先记录您组织偏好的谈判立场、附加费护栏和升级触发条件。

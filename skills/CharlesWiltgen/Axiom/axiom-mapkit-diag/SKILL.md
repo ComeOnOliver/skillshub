@@ -1,3 +1,12 @@
+---
+name: axiom-mapkit-diag
+description: MapKit troubleshooting — annotations not appearing, region jumping, clustering not working, search failures, overlay rendering issues, user location problems
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-02-26"
+---
+
 # MapKit Diagnostics
 
 Symptom-based MapKit troubleshooting. Start with the symptom you're seeing, follow the diagnostic path.

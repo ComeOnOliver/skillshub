@@ -1,3 +1,11 @@
+---
+name: axiom-swiftui-animation-ref
+description: Use when implementing SwiftUI animations, understanding VectorArithmetic, using @Animatable macro, zoom transitions, UIKit/AppKit animation bridging, choosing between spring and timing curve animations, or debugging animation behavior - comprehensive animation reference from iOS 13 through iOS 26
+license: MIT
+metadata:
+  version: "1.1.0"
+---
+
 # SwiftUI Animation
 
 ## Overview
@@ -1002,3 +1010,4 @@ Spring animations merge by default, preserving velocity. Use timing curve animat
 **Docs**: /swiftui/animatable, /swiftui/animation, /swiftui/vectorarithmetic, /swiftui/transaction, /swiftui/view/navigationtransition(_:), /swiftui/view/matchedtransitionsource(id:in:configuration:), /uikit/uiview/animate(_:changes:completion:)
 
 **Skills**: axiom-swiftui-26-ref, axiom-swiftui-nav-ref, axiom-swiftui-performance, axiom-swiftui-debugging, axiom-sf-symbols-ref
+

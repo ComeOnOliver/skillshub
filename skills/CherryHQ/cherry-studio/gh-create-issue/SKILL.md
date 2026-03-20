@@ -1,3 +1,8 @@
+---
+name: gh-create-issue
+description: Use when user wants to create a GitHub issue for the current repository. Must read and follow the repository's issue template format.
+---
+
 # GitHub Create Issue
 
 Use this skill when the user requests to create an issue. Must follow the repository's issue template format.

@@ -1,3 +1,8 @@
+---
+name: create-github-issue-feature-from-specification
+description: 'Create GitHub Issue for feature request from specification file using feature_request.yml template.'
+---
+
 # Create GitHub Issue from Specification
 
 Create GitHub Issue for the specification at `${file}`.

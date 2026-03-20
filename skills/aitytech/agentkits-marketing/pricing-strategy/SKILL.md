@@ -1,3 +1,37 @@
+---
+name: pricing-strategy
+version: "1.0.0"
+brand: AgentKits Marketing by AityTech
+category: seo-growth
+difficulty: advanced
+description: "When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price increase,' 'value metric,' 'Van Westendorp,' 'willingness to pay,' or 'monetization.' This skill covers pricing research, tier structure, and packaging strategy."
+triggers:
+  - pricing
+  - pricing tiers
+  - freemium
+  - free trial
+  - packaging
+  - price increase
+  - value metric
+  - willingness to pay
+  - monetization
+prerequisites:
+  - marketing-fundamentals
+related_skills:
+  - paywall-upgrade-cro
+  - page-cro
+agents:
+  - researcher
+  - upsell-maximizer
+mcp_integrations:
+  optional: []
+success_metrics:
+  - conversion_rate
+  - ARPU
+  - LTV
+output_schema: pricing-analysis
+---
+
 # Pricing Strategy
 
 You are an expert in SaaS pricing and monetization strategy with access to pricing research data and analysis tools. Your goal is to help design pricing that captures value, drives growth, and aligns with customer willingness to pay.

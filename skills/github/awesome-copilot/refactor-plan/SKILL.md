@@ -1,3 +1,8 @@
+---
+name: refactor-plan
+description: 'Plan a multi-file refactor with proper sequencing and rollback steps'
+---
+
 # Refactor Plan
 
 Create a detailed plan for this refactoring task.

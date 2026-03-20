@@ -1,3 +1,11 @@
+---
+name: axiom-xctrace-ref
+description: Use when automating Instruments profiling, running headless performance analysis, or integrating profiling into CI/CD - comprehensive xctrace CLI reference with record/export patterns
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # xctrace CLI Reference
 
 Command-line interface for Instruments profiling. Enables headless performance analysis without GUI.

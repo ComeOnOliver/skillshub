@@ -1,3 +1,8 @@
+---
+name: flutter-auto-route-navigation
+description: "Typed routing, nested routes, and guards using auto_route. Use when implementing typed navigation, nested routes, or route guards with auto_route in Flutter. (triggers: **/router.dart, **/app_router.dart, AutoRoute, AutoRouter, router, guards, navigate, push)"
+---
+
 # AutoRoute Navigation
 
 ## **Priority: P1 (HIGH)**

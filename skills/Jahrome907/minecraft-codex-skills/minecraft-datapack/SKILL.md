@@ -1,3 +1,15 @@
+---
+name: minecraft-datapack
+description: >
+  Create, edit, and debug Minecraft vanilla datapacks for 1.21.x. Covers the full
+  datapack format: pack.mcmeta, function files (.mcfunction), advancements, predicates,
+  loot tables, item modifiers, recipe overrides, tags, damage types, dimension types,
+  worldgen overrides, and structure sets. Handles function syntax, execute command chains,
+  macro functions (1.20.2+), storage NBT, scoreboard operations, advancement triggers,
+  pack format numbers, and /reload workflow. No Java or mod loader required — pure
+  vanilla JSON and .mcfunction files.
+---
+
 # Minecraft Datapack Skill
 
 ## What Is a Datapack?

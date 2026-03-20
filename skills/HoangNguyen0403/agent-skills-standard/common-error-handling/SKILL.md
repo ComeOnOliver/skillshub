@@ -1,3 +1,8 @@
+---
+name: common-error-handling
+description: "Cross-cutting standards for error design, response shapes, error codes, and boundary placement. (triggers: **/*.service.ts, **/*.handler.ts, **/*.controller.ts, **/*.go, **/*.java, **/*.kt, **/*.py, error handling, exception, try catch, error boundary, error response, error code, throw)"
+---
+
 # Error Handling Standards
 
 ## **Priority: P1 (OPERATIONAL)**

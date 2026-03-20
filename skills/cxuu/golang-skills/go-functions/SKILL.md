@@ -1,3 +1,11 @@
+---
+name: go-functions
+description: Use when organizing functions within a Go file, formatting function signatures, designing return values, or following Printf-style naming conventions. Also use when a user is adding or refactoring any Go function, even if they don't mention function design or signature formatting. Does not cover functional options constructors (see go-functional-options).
+license: Apache-2.0
+metadata:
+  sources: "Effective Go, Google Style Guide, Uber Style Guide"
+---
+
 # Go Function Design
 
 > **When this skill does NOT apply**: For functional options constructors (`WithTimeout`, `WithLogger`), see [go-functional-options](../go-functional-options/SKILL.md). For error return conventions, see [go-error-handling](../go-error-handling/SKILL.md). For naming functions and methods, see [go-naming](../go-naming/SKILL.md).

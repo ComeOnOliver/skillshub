@@ -1,3 +1,8 @@
+---
+name: csharp-async
+description: 'Get best practices for C# async programming'
+---
+
 # C# Async Programming Best Practices
 
 Your goal is to help me follow best practices for asynchronous programming in C#.

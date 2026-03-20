@@ -1,3 +1,12 @@
+---
+name: script-example
+description: Example skill demonstrating script execution capabilities. Use when you need to demonstrate how to execute shell, Python, or PHP scripts from within a skill.
+license: MIT
+metadata:
+  author: Guikingone
+  version: "1.0"
+---
+
 # Script Example Skill
 
 This skill demonstrates how to execute scripts from within a skill using the `executeScript` method.

@@ -1,3 +1,15 @@
+---
+name: minecraft-resource-pack
+description: >
+  Create and edit Minecraft resource packs for 1.21.x including custom block models,
+  item models, blockstate definitions, textures (PNG format requirements), sounds.json,
+  custom fonts, MCMETA animation files, OptiFine CIT (Custom Item Textures), and
+  pack.mcmeta format. Covers the full block/item model JSON schema (parent, textures,
+  elements, display, overrides), multi-layer items, GUI textures, GUI sprites, language
+  files, shader integration (core shaders, Iris), and the pack format numbers for each
+  1.21.x version. Use to customize how Minecraft looks and sounds without mods.
+---
+
 # Minecraft Resource Pack Skill
 
 ## What Is a Resource Pack?

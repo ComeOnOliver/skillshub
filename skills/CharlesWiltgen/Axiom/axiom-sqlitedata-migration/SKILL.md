@@ -1,3 +1,11 @@
+---
+name: axiom-sqlitedata-migration
+description: Use when migrating from SwiftData to SQLiteData — decision guide, pattern equivalents, code examples, CloudKit sharing (SwiftData can't), performance benchmarks, gradual migration strategy
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Migrating from SwiftData to SQLiteData
 
 ## When to Switch

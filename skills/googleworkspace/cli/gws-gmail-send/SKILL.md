@@ -1,3 +1,15 @@
+---
+name: gws-gmail-send
+version: 1.0.0
+description: "Gmail: Send an email."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws gmail +send --help"
+---
+
 # gmail +send
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.
@@ -18,7 +30,6 @@ gws gmail +send --to <EMAILS> --subject <SUBJECT> --body <TEXT>
 | `--subject` | ✓ | — | Email subject |
 | `--body` | ✓ | — | Email body (plain text, or HTML with --html) |
 | `--from` | — | — | Sender address (for send-as/alias; omit to use account default) |
-| `--attachment` | — | — | Attach a file (can be repeated for multiple files) |
 | `--attach` | — | — | Attach a file (can be specified multiple times) |
 | `--cc` | — | — | CC email address(es), comma-separated |
 | `--bcc` | — | — | BCC email address(es), comma-separated |

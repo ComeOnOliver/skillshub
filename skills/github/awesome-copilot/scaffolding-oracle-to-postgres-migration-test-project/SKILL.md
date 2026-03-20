@@ -1,3 +1,8 @@
+---
+name: scaffolding-oracle-to-postgres-migration-test-project
+description: 'Scaffolds an xUnit integration test project for validating Oracle-to-PostgreSQL database migration behavior in .NET solutions. Creates the test project, transaction-rollback base class, and seed data manager. Use when setting up test infrastructure before writing migration integration tests, or when a test project is needed for Oracle-to-PostgreSQL validation.'
+---
+
 # Scaffolding an Integration Test Project for Oracle-to-PostgreSQL Migration
 
 Creates a compilable, empty xUnit test project with transaction management and seed data infrastructure for a single target project. Run once per project before writing tests.

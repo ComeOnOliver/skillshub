@@ -1,3 +1,8 @@
+---
+name: common-architecture-diagramming
+description: "Standards for creating clear, effective, and formalized software architecture diagrams (C4, UML). (triggers: ARCHITECTURE.md, **/*.mermaid, **/*.drawio, diagram, architecture, c4, system design, mermaid)"
+---
+
 # Architecture Diagramming Standard
 
 ## **Priority: P1 (Standard)**

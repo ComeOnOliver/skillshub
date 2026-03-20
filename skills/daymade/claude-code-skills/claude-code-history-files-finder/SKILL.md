@@ -1,3 +1,8 @@
+---
+name: claude-code-history-files-finder
+description: Finds and recovers content from Claude Code session history files. This skill should be used when searching for deleted files, tracking changes across sessions, analyzing conversation history, or recovering code from previous Claude interactions. Triggers include mentions of "session history", "recover deleted", "find in history", "previous conversation", or ".claude/projects".
+---
+
 # Claude Code History Files Finder
 
 Extract and recover content from Claude Code's session history files stored in `~/.claude/projects/`.

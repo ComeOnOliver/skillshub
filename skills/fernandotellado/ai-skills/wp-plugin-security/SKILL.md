@@ -1,3 +1,13 @@
+---
+name: wp-plugin-security
+description: "Security guidelines for WordPress plugin development: sanitization, validation, escaping, nonces, capabilities, SQL injection prevention, XSS protection, and CSRF mitigation. Based on official WordPress Developer Resources."
+compatibility: "WordPress 6.0+ / PHP 7.4+. Applies to plugins, themes, and custom code."
+license: GPL-2.0-or-later
+metadata:
+  author: fernando-tellado
+  version: "1.0"
+---
+
 # WordPress plugin security
 
 ## When to use

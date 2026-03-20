@@ -1,3 +1,23 @@
+---
+name: electric-deployment
+description: >
+  Deploy Electric via Docker, Docker Compose, or Electric Cloud. Covers
+  DATABASE_URL (direct connection, not pooler), ELECTRIC_SECRET (required
+  since v1.x), ELECTRIC_INSECURE for dev, wal_level=logical,
+  max_replication_slots, ELECTRIC_STORAGE_DIR persistence,
+  ELECTRIC_POOLED_DATABASE_URL for pooled queries, IPv6 with
+  ELECTRIC_DATABASE_USE_IPV6, Kubernetes readiness probes (200 vs 202),
+  replication slot cleanup, and Postgres v14+ requirements. Load when
+  deploying Electric or configuring Postgres for logical replication.
+type: lifecycle
+library: electric
+library_version: '1.5.10'
+sources:
+  - 'electric-sql/electric:website/docs/guides/deployment.md'
+  - 'electric-sql/electric:packages/sync-service/dev/postgres.conf'
+  - 'electric-sql/electric:packages/sync-service/CHANGELOG.md'
+---
+
 # Electric — Deployment
 
 ## Setup

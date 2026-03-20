@@ -1,3 +1,8 @@
+---
+name: java-springboot
+description: 'Get best practices for developing applications with Spring Boot.'
+---
+
 # Spring Boot Best Practices
 
 Your goal is to help me write high-quality Spring Boot applications by following established best practices.

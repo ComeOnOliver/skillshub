@@ -1,3 +1,14 @@
+---
+name: alicloud-cdn
+description: Manage Alibaba Cloud CDN using the @alicloud/cdn20180510 TypeScript SDK. Use when working with CDN domain acceleration, domain configuration, SSL certificates, cache refresh/prefetch, real-time monitoring, traffic analysis, log management, usage/billing, IP tools, Function Compute triggers, delivery tasks, and resource tagging. Covers all 168 APIs of the CDN 20180510 version.
+license: Apache-2.0
+metadata:
+  author: alicloud
+  version: "1.0"
+  sdk-package: "@alicloud/cdn20180510"
+  api-version: "2018-05-10"
+---
+
 # Alibaba Cloud CDN Skill
 
 Manage CDN content delivery network via the `@alicloud/cdn20180510` TypeScript SDK.

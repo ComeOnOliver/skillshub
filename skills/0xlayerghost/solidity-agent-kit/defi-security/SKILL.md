@@ -1,3 +1,8 @@
+---
+name: defi-security
+description: "[AUTO-INVOKE] MUST be invoked BEFORE deploying DeFi contracts (DEX, lending, staking, LP, token). Covers anti-whale, anti-MEV, flash loan protection, launch checklists, and emergency response. Trigger: any deployment or security review of DeFi-related contracts."
+---
+
 # DeFi Security Principles
 
 ## Language Rule

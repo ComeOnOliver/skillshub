@@ -1,3 +1,8 @@
+---
+name: quality-engineering-zephyr-test-generation
+description: 'Workflow for generating or updating Zephyr Scale Test Cases from requirements. Use when generating or updating Zephyr Scale test cases from user stories or requirements. (triggers: **/*.feature, **/user_story.md, generate test cases, update zephyr, jira validation, impact analysis)'
+---
+
 # Zephyr Test Generation Standards
 
 ## **Priority: P1 (HIGH)**

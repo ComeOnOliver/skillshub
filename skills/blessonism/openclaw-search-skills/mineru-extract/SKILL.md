@@ -1,3 +1,8 @@
+---
+name: mineru-extract
+description: Use the official MinerU (mineru.net) parsing API to convert a URL (HTML pages like WeChat articles, or direct PDF/Office/image links) into clean Markdown + structured outputs. Use when web_fetch/browser can’t access or extracts messy content, and you want higher-fidelity parsing (layout/table/formula/OCR).
+---
+
 # MinerU Extract (official API)
 
 Use MinerU as an upstream “content normalizer”: submit a URL to MinerU, poll for completion, download the result zip, and extract the main Markdown.

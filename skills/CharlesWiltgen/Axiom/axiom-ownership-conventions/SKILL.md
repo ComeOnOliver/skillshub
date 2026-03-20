@@ -1,3 +1,11 @@
+---
+name: axiom-ownership-conventions
+description: Use when optimizing large value type performance, working with noncopyable types, reducing ARC traffic, or using InlineArray/Span for zero-copy memory access. Covers borrowing, consuming, inout modifiers, consume operator, ~Copyable types, InlineArray, Span, value generics.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # borrowing & consuming — Parameter Ownership
 
 Explicit ownership modifiers for performance optimization and noncopyable type support.

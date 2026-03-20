@@ -1,3 +1,11 @@
+---
+name: axiom-background-processing-ref
+description: Complete background task API reference - BGTaskScheduler, BGAppRefreshTask, BGProcessingTask, BGContinuedProcessingTask (iOS 26), beginBackgroundTask, background URLSession, with all WWDC code examples
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Background Processing Reference
 
 Complete API reference for iOS background execution, with code examples from WWDC sessions.

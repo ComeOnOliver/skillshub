@@ -1,3 +1,8 @@
+---
+name: kotlin-mcp-server-generator
+description: 'Generate a complete Kotlin MCP server project with proper structure, dependencies, and implementation using the official io.modelcontextprotocol:kotlin-sdk library.'
+---
+
 # Kotlin MCP Server Project Generator
 
 Generate a complete, production-ready Model Context Protocol (MCP) server project in Kotlin.

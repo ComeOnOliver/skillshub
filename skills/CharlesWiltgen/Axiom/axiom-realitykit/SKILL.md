@@ -1,3 +1,11 @@
+---
+name: axiom-realitykit
+description: Use when building 3D content, AR experiences, or spatial computing with RealityKit. Covers ECS architecture, SwiftUI integration, RealityView, AR anchors, materials, physics, interaction, multiplayer, performance.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # RealityKit Development Guide
 
 **Purpose**: Build 3D content, AR experiences, and spatial computing apps using RealityKit's Entity-Component-System architecture

@@ -1,3 +1,12 @@
+---
+name: axiom-scenekit-ref
+description: SceneKit → RealityKit concept mapping, complete API cross-reference for migration, scene graph API, materials, lighting, camera, physics, animation, constraints
+license: MIT
+compatibility: [iOS 8+, macOS 10.8+, tvOS 9+]
+metadata:
+  version: "1.0.0"
+---
+
 # SceneKit API Reference & Migration Mapping
 
 Complete API reference for SceneKit with RealityKit equivalents for every major concept.

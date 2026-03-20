@@ -1,3 +1,8 @@
+---
+name: quality-engineering-jira-integration
+description: 'Standards for retrieving Jira issue details and linking Zephyr test cases back to Jira. Use when retrieving Jira issues or linking Zephyr test cases to Jira tickets. (triggers: **/jira_*.xml, **/test_case.json, jira issue, link zephyr, jira details, jira mcp)'
+---
+
 # Jira Integration Standards
 
 ## **Priority: P1 (HIGH)**

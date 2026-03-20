@@ -1,3 +1,12 @@
+---
+name: axiom-sf-symbols
+description: Use when implementing SF Symbols rendering modes, symbol effects, animations, custom symbols, or troubleshooting symbol appearance - covers the full symbol effects system from iOS 17 through SF Symbols 7 Draw animations in iOS 26
+license: MIT
+compatibility: iOS 17+, iOS 18+ (Wiggle/Rotate/Breathe), iOS 26+ (Draw animations)
+metadata:
+  version: "1.0.0"
+---
+
 # SF Symbols — Effects, Rendering, and Custom Symbols
 
 ## When to Use This Skill

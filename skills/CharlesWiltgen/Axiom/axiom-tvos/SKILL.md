@@ -1,3 +1,13 @@
+---
+name: axiom-tvos
+description: Use when building ANY tvOS app - covers Focus Engine, Siri Remote input, storage constraints (no Document directory), no WebView, TVUIKit, TextField workarounds, AVPlayer tuning, Menu button state machines, and tvOS-specific gotchas that catch iOS developers
+license: MIT
+compatibility: tvOS 17+
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-02-23"
+---
+
 # tvOS Development
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+name: secrets-manager
+description: AWS Secrets Manager for secure secret storage and rotation. Use when storing credentials, configuring automatic rotation, managing secret versions, retrieving secrets in applications, or integrating with RDS.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/secretsmanager/latest/userguide/
+---
+
 # AWS Secrets Manager
 
 AWS Secrets Manager helps protect access to applications, services, and IT resources. Store, retrieve, and automatically rotate credentials, API keys, and other secrets.

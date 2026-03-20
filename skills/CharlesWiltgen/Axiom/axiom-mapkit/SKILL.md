@@ -1,3 +1,12 @@
+---
+name: axiom-mapkit
+description: Use when implementing maps, annotations, search, directions, or debugging MapKit display/performance issues - SwiftUI Map, MKMapView, MKLocalSearch, clustering, Look Around
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-02-26"
+---
+
 # MapKit Patterns
 
 MapKit patterns and anti-patterns for iOS apps. Prevents common mistakes: using MKMapView when SwiftUI Map suffices, annotations in view bodies, setRegion loops, and performance issues with large annotation counts.

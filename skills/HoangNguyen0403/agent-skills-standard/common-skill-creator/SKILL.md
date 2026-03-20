@@ -1,3 +1,8 @@
+---
+name: common-skill-creator
+description: "Standards for creating, testing, and optimizing Agent Skills. (triggers: SKILL.md, metadata.json, evals/evals.json, create skill, new standard, writing rules, high density, test skill, optimize)"
+---
+
 # Agent Skill Creator Standard
 
 ## **Priority: P0 (CRITICAL)**

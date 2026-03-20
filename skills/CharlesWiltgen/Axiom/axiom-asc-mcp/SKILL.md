@@ -1,3 +1,9 @@
+---
+name: axiom-asc-mcp
+description: Use when automating App Store Connect via MCP — submit builds, manage TestFlight, respond to reviews, triage feedback programmatically
+license: MIT
+---
+
 # App Store Connect MCP Integration
 
 **Core principle**: When asc-mcp is configured, you can manage the entire App Store Connect workflow without leaving Claude Code — submit builds, distribute to TestFlight, respond to reviews, and monitor metrics programmatically.

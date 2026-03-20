@@ -1,3 +1,9 @@
+---
+name: axiom-hang-diagnostics
+description: Use when app freezes, UI unresponsive, main thread blocked, watchdog termination, or diagnosing hang reports from Xcode Organizer or MetricKit
+license: MIT
+---
+
 # Hang Diagnostics
 
 Systematic diagnosis and resolution of app hangs. A hang occurs when the main thread is blocked for more than 1 second, making the app unresponsive to user input.

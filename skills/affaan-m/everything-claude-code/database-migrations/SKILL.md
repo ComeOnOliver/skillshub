@@ -1,38 +1,44 @@
-# Database Migration Patterns
+---
+name: database-migrations
+description: 数据库迁移最佳实践，涵盖模式变更、数据迁移、回滚以及零停机部署，适用于PostgreSQL、MySQL及常用ORM（Prisma、Drizzle、Django、TypeORM、golang-migrate）。
+origin: ECC
+---
 
-Safe, reversible database schema changes for production systems.
+# 数据库迁移模式
 
-## When to Activate
+为生产系统提供安全、可逆的数据库模式变更。
 
-- Creating or altering database tables
-- Adding/removing columns or indexes
-- Running data migrations (backfill, transform)
-- Planning zero-downtime schema changes
-- Setting up migration tooling for a new project
+## 何时激活
 
-## Core Principles
+* 创建或修改数据库表
+* 添加/删除列或索引
+* 运行数据迁移（回填、转换）
+* 计划零停机模式变更
+* 为新项目设置迁移工具
 
-1. **Every change is a migration** — never alter production databases manually
-2. **Migrations are forward-only in production** — rollbacks use new forward migrations
-3. **Schema and data migrations are separate** — never mix DDL and DML in one migration
-4. **Test migrations against production-sized data** — a migration that works on 100 rows may lock on 10M
-5. **Migrations are immutable once deployed** — never edit a migration that has run in production
+## 核心原则
 
-## Migration Safety Checklist
+1. **每个变更都是一次迁移** — 切勿手动更改生产数据库
+2. **迁移在生产环境中是只进不退的** — 回滚使用新的前向迁移
+3. **模式迁移和数据迁移是分开的** — 切勿在一个迁移中混合 DDL 和 DML
+4. **针对生产规模的数据测试迁移** — 适用于 100 行的迁移可能在 1000 万行时锁定
+5. **迁移一旦部署就是不可变的** — 切勿编辑已在生产中运行的迁移
 
-Before applying any migration:
+## 迁移安全检查清单
 
-- [ ] Migration has both UP and DOWN (or is explicitly marked irreversible)
-- [ ] No full table locks on large tables (use concurrent operations)
-- [ ] New columns have defaults or are nullable (never add NOT NULL without default)
-- [ ] Indexes created concurrently (not inline with CREATE TABLE for existing tables)
-- [ ] Data backfill is a separate migration from schema change
-- [ ] Tested against a copy of production data
-- [ ] Rollback plan documented
+应用任何迁移之前：
 
-## PostgreSQL Patterns
+* \[ ] 迁移同时包含 UP 和 DOWN（或明确标记为不可逆）
+* \[ ] 对大表没有全表锁（使用并发操作）
+* \[ ] 新列有默认值或可为空（切勿添加没有默认值的 NOT NULL）
+* \[ ] 索引是并发创建的（对于现有表，不与 CREATE TABLE 内联创建）
+* \[ ] 数据回填是与模式变更分开的迁移
+* \[ ] 已针对生产数据副本进行测试
+* \[ ] 回滚计划已记录
 
-### Adding a Column Safely
+## PostgreSQL 模式
+
+### 安全地添加列
 
 ```sql
 -- GOOD: Nullable column, no lock
@@ -46,7 +52,7 @@ ALTER TABLE users ADD COLUMN role TEXT NOT NULL;
 -- This locks the table and rewrites every row
 ```
 
-### Adding an Index Without Downtime
+### 无停机添加索引
 
 ```sql
 -- BAD: Blocks writes on large tables
@@ -59,9 +65,9 @@ CREATE INDEX CONCURRENTLY idx_users_email ON users (email);
 -- Most migration tools need special handling for this
 ```
 
-### Renaming a Column (Zero-Downtime)
+### 重命名列（零停机）
 
-Never rename directly in production. Use the expand-contract pattern:
+切勿在生产中直接重命名。使用扩展-收缩模式：
 
 ```sql
 -- Step 1: Add new column (migration 001)
@@ -77,7 +83,7 @@ UPDATE users SET display_name = username WHERE display_name IS NULL;
 ALTER TABLE users DROP COLUMN username;
 ```
 
-### Removing a Column Safely
+### 安全地删除列
 
 ```sql
 -- Step 1: Remove all application references to the column
@@ -89,7 +95,7 @@ ALTER TABLE orders DROP COLUMN legacy_status;
 -- without generating DROP COLUMN (then drop in next migration)
 ```
 
-### Large Data Migrations
+### 大型数据迁移
 
 ```sql
 -- BAD: Updates all rows in one transaction (locks table)
@@ -120,7 +126,7 @@ END $$;
 
 ## Prisma (TypeScript/Node.js)
 
-### Workflow
+### 工作流
 
 ```bash
 # Create migration from schema changes
@@ -136,7 +142,7 @@ npx prisma migrate reset
 npx prisma generate
 ```
 
-### Schema Example
+### 模式示例
 
 ```prisma
 model User {
@@ -153,9 +159,9 @@ model User {
 }
 ```
 
-### Custom SQL Migration
+### 自定义 SQL 迁移
 
-For operations Prisma cannot express (concurrent indexes, data backfills):
+对于 Prisma 无法表达的操作（并发索引、数据回填）：
 
 ```bash
 # Create empty migration, then edit the SQL manually
@@ -170,7 +176,7 @@ CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_users_email ON users (email);
 
 ## Drizzle (TypeScript/Node.js)
 
-### Workflow
+### 工作流
 
 ```bash
 # Generate migration from schema changes
@@ -183,7 +189,7 @@ npx drizzle-kit migrate
 npx drizzle-kit push
 ```
 
-### Schema Example
+### 模式示例
 
 ```typescript
 import { pgTable, text, timestamp, uuid, boolean } from "drizzle-orm/pg-core";
@@ -200,7 +206,7 @@ export const users = pgTable("users", {
 
 ## Django (Python)
 
-### Workflow
+### 工作流
 
 ```bash
 # Generate migration from model changes
@@ -216,7 +222,7 @@ python manage.py showmigrations
 python manage.py makemigrations --empty app_name -n description
 ```
 
-### Data Migration
+### 数据迁移
 
 ```python
 from django.db import migrations
@@ -244,7 +250,7 @@ class Migration(migrations.Migration):
 
 ### SeparateDatabaseAndState
 
-Remove a column from the Django model without dropping it from the database immediately:
+从 Django 模型中删除列，而不立即从数据库中删除：
 
 ```python
 class Migration(migrations.Migration):
@@ -260,7 +266,7 @@ class Migration(migrations.Migration):
 
 ## golang-migrate (Go)
 
-### Workflow
+### 工作流
 
 ```bash
 # Create migration pair
@@ -276,7 +282,7 @@ migrate -path migrations -database "$DATABASE_URL" down 1
 migrate -path migrations -database "$DATABASE_URL" force VERSION
 ```
 
-### Migration Files
+### 迁移文件
 
 ```sql
 -- migrations/000003_add_user_avatar.up.sql
@@ -288,9 +294,9 @@ DROP INDEX IF EXISTS idx_users_avatar;
 ALTER TABLE users DROP COLUMN IF EXISTS avatar_url;
 ```
 
-## Zero-Downtime Migration Strategy
+## 零停机迁移策略
 
-For critical production changes, follow the expand-contract pattern:
+对于关键的生产变更，遵循扩展-收缩模式：
 
 ```
 Phase 1: EXPAND
@@ -307,7 +313,7 @@ Phase 3: CONTRACT
   - Drop old column/table in separate migration
 ```
 
-### Timeline Example
+### 时间线示例
 
 ```
 Day 1: Migration adds new_status column (nullable)
@@ -317,13 +323,13 @@ Day 3: Deploy app v3 — reads from new_status only
 Day 7: Migration drops old status column
 ```
 
-## Anti-Patterns
+## 反模式
 
-| Anti-Pattern | Why It Fails | Better Approach |
+| 反模式 | 为何会失败 | 更好的方法 |
 |-------------|-------------|-----------------|
-| Manual SQL in production | No audit trail, unrepeatable | Always use migration files |
-| Editing deployed migrations | Causes drift between environments | Create new migration instead |
-| NOT NULL without default | Locks table, rewrites all rows | Add nullable, backfill, then add constraint |
-| Inline index on large table | Blocks writes during build | CREATE INDEX CONCURRENTLY |
-| Schema + data in one migration | Hard to rollback, long transactions | Separate migrations |
-| Dropping column before removing code | Application errors on missing column | Remove code first, drop column next deploy |
+| 在生产中手动执行 SQL | 没有审计追踪，不可重复 | 始终使用迁移文件 |
+| 编辑已部署的迁移 | 导致环境间出现差异 | 改为创建新迁移 |
+| 没有默认值的 NOT NULL | 锁定表，重写所有行 | 添加可为空列，回填数据，然后添加约束 |
+| 在大表上内联创建索引 | 在构建期间阻塞写入 | 使用 CREATE INDEX CONCURRENTLY |
+| 在一个迁移中混合模式和数据的变更 | 难以回滚，事务时间长 | 分开的迁移 |
+| 在移除代码之前删除列 | 应用程序在缺失列时出错 | 先移除代码，下一次部署再删除列 |

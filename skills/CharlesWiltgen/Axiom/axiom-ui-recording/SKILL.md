@@ -1,3 +1,11 @@
+---
+name: axiom-ui-recording
+description: Use when setting up UI test recording in Xcode 26, enhancing recorded tests for stability, or configuring test plans for multi-configuration replay. Based on WWDC 2025-344 "Record, replay, and review".
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Recording UI Automation (Xcode 26+)
 
 Guide to Xcode 26's Recording UI Automation feature for creating UI tests through user interaction recording.

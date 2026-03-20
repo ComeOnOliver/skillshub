@@ -1,3 +1,8 @@
+---
+name: laravel-sessions-middleware
+description: "Expert standards for session drivers, security headers, and middleware logic. Use when configuring session drivers, security headers, or custom middleware in Laravel. (triggers: app/Http/Middleware/**/*.php, config/session.php, session, driver, handle, headers, csrf)"
+---
+
 # Laravel Sessions & Middleware
 
 ## **Priority: P1 (HIGH)**

@@ -1,3 +1,8 @@
+---
+name: agent-factory
+description: Claude Code agent generation system that creates custom agents and sub-agents with enhanced YAML frontmatter, tool access patterns, and MCP integration support following proven production patterns
+---
+
 # Agent Factory
 
 A comprehensive system for generating production-ready Claude Code agents and sub-agents. This skill provides templates, standards, and generation tools to create custom agents that seamlessly integrate with Claude Code's agent system.

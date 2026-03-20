@@ -1,3 +1,8 @@
+---
+name: terminal-session
+description: tmux 持久化终端会话控制。通过向 tmux 发送按键、读取输出，管理 Claude Code、Codex、SSH 等长时间运行的交互式进程。跨多轮对话保持进程状态。需预装 tmux（Linux/macOS 默认提供；Windows 用户需 WSL2）。
+---
+
 # 终端会话控制（tmux）
 
 > 本技能完全通过已有的 `exec` 工具调用系统级 `tmux` CLI，无需任何新工具或依赖。

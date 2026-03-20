@@ -1,3 +1,13 @@
+---
+name: axiom-storage
+description: Use when asking 'where should I store this data', 'should I use SwiftData or files', 'CloudKit vs iCloud Drive', 'Documents vs Caches', 'local or cloud storage', 'how do I sync data', 'where do app files go' - comprehensive decision framework for all iOS storage options
+license: MIT
+compatibility: iOS 17+, iPadOS 17+, macOS Sonoma+
+metadata:
+  version: "1.0.0"
+  last-updated: "2025-12-12"
+---
+
 # iOS Storage Guide
 
 **Purpose**: Navigation hub for ALL storage decisions — database vs files, local vs cloud, specific locations

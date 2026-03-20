@@ -1,3 +1,14 @@
+---
+name: alicloud-cr
+description: Manage Alibaba Cloud Container Registry (ACR) Enterprise Edition using the @alicloud/cr20181201 TypeScript SDK. Use when working with container image registries on Alibaba Cloud, including instance management, namespaces, image repositories, image tags, build rules, image synchronization, security scanning, delivery chains, Helm charts, artifact lifecycle, and event notifications. Covers all 115 APIs of the CR 20181201 version.
+license: Apache-2.0
+metadata:
+  author: alicloud
+  version: "1.0"
+  sdk-package: "@alicloud/cr20181201"
+  api-version: "2018-12-01"
+---
+
 # Alibaba Cloud Container Registry (ACR) Skill
 
 Manage Alibaba Cloud Container Registry Enterprise Edition instances, namespaces, repositories, images, builds, sync, security scanning, delivery chains, and Helm charts via the `@alicloud/cr20181201` TypeScript SDK.

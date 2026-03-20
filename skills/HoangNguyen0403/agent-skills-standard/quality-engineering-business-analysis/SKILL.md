@@ -1,3 +1,8 @@
+---
+name: quality-engineering-business-analysis
+description: "Standard for deep requirement investigation, logic validation, and technical impact mapping. Use when investigating requirements, validating business rules, or mapping technical impact. (triggers: **/user_story.md, **/requirements.md, **/jira_*.xml, analyze requirements, scenario decomposition, logic conflict, technical impact)"
+---
+
 # Business Analysis Standards (Deep Analysis)
 
 ## **Priority: P0 (CRITICAL)**

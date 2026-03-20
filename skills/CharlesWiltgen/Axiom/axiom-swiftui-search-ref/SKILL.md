@@ -1,3 +1,11 @@
+---
+name: axiom-swiftui-search-ref
+description: Use when implementing SwiftUI search — .searchable, isSearching, search suggestions, scopes, tokens, programmatic search control (iOS 15-18). For iOS 26 search refinements (bottom-aligned, minimized toolbar, search tab role), see swiftui-26-ref.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # SwiftUI Search API Reference
 
 ## Overview

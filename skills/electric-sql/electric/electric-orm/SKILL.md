@@ -1,3 +1,22 @@
+---
+name: electric-orm
+description: >
+  Use Electric with Drizzle ORM or Prisma for the write path. Covers getting
+  pg_current_xact_id() from ORM transactions using Drizzle tx.execute(sql)
+  and Prisma $queryRaw, running migrations that preserve REPLICA IDENTITY
+  FULL, and schema management patterns compatible with Electric shapes.
+  Load when using Drizzle or Prisma alongside Electric for writes.
+type: composition
+library: electric
+library_version: '1.5.10'
+requires:
+  - electric-shapes
+  - electric-schema-shapes
+sources:
+  - 'electric-sql/electric:AGENTS.md'
+  - 'electric-sql/electric:website/docs/guides/troubleshooting.md'
+---
+
 This skill builds on electric-shapes and electric-schema-shapes. Read those first.
 
 # Electric — ORM Integration

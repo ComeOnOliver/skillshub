@@ -1,3 +1,12 @@
+---
+name: axiom-swiftui-debugging
+description: Use when debugging SwiftUI view updates, preview crashes, or layout issues - diagnostic decision trees to identify root causes quickly and avoid misdiagnosis under pressure
+license: MIT
+metadata:
+  version: "1.3.0"
+  last-updated: "Added Self._printChanges() debugging, @Observable patterns (iOS 17+), @Bindable, view identity section, and cross-references to swiftui-performance"
+---
+
 # SwiftUI Debugging
 
 ## Overview
@@ -1288,3 +1297,4 @@ xcrun simctl io booted screenshot /tmp/after-fix.png
 **Docs**: /swiftui/managing-model-data-in-your-app, /swiftui, /swiftui/state-and-data-flow, /xcode/previews, /observation
 
 **Skills**: axiom-swiftui-performance, axiom-swiftui-debugging-diag, axiom-xcode-debugging, axiom-swift-concurrency, axiom-lldb (LLDB debugging workflows beyond Self._printChanges)
+

@@ -1,3 +1,9 @@
+---
+name: dmux-workflows
+description: Multi-agent orchestration using dmux (tmux pane manager for AI agents). Patterns for parallel agent workflows across Claude Code, Codex, OpenCode, and other harnesses. Use when running multiple agent sessions in parallel or coordinating multi-agent development workflows.
+origin: ECC
+---
+
 # dmux Workflows
 
 Orchestrate parallel AI agent sessions using dmux, a tmux pane manager for agent harnesses.
@@ -109,8 +115,8 @@ For tasks that touch overlapping files:
 
 ```bash
 # Create worktrees for isolation
-git worktree add -b feat/auth ../feature-auth HEAD
-git worktree add -b feat/billing ../feature-billing HEAD
+git worktree add ../feature-auth feat/auth
+git worktree add ../feature-billing feat/billing
 
 # Run agents in separate worktrees
 # Pane 1: cd ../feature-auth && claude
@@ -130,56 +136,9 @@ git merge feat/billing
 | **Claude Code Task tool** | In-process subagent spawning | Programmatic parallelism within a session |
 | **Codex multi-agent** | Built-in agent roles | Codex-specific parallel work |
 
-## ECC Helper
-
-ECC now includes a helper for external tmux-pane orchestration with separate git worktrees:
-
-```bash
-node scripts/orchestrate-worktrees.js plan.json --execute
-```
-
-Example `plan.json`:
-
-```json
-{
-  "sessionName": "skill-audit",
-  "baseRef": "HEAD",
-  "launcherCommand": "codex exec --cwd {worktree_path} --task-file {task_file}",
-  "workers": [
-    { "name": "docs-a", "task": "Fix skills 1-4 and write handoff notes." },
-    { "name": "docs-b", "task": "Fix skills 5-8 and write handoff notes." }
-  ]
-}
-```
-
-The helper:
-- Creates one branch-backed git worktree per worker
-- Optionally overlays selected `seedPaths` from the main checkout into each worker worktree
-- Writes per-worker `task.md`, `handoff.md`, and `status.md` files under `.orchestration/<session>/`
-- Starts a tmux session with one pane per worker
-- Launches each worker command in its own pane
-- Leaves the main pane free for the orchestrator
-
-Use `seedPaths` when workers need access to dirty or untracked local files that are not yet part of `HEAD`, such as local orchestration scripts, draft plans, or docs:
-
-```json
-{
-  "sessionName": "workflow-e2e",
-  "seedPaths": [
-    "scripts/orchestrate-worktrees.js",
-    "scripts/lib/tmux-worktree-orchestrator.js",
-    ".claude/plan/workflow-e2e-test.json"
-  ],
-  "launcherCommand": "bash {repo_root}/scripts/orchestrate-codex-worker.sh {task_file} {handoff_file} {status_file}",
-  "workers": [
-    { "name": "seed-check", "task": "Verify seeded files are present before starting work." }
-  ]
-}
-```
-
 ## Troubleshooting
 
-- **Pane not responding:** Switch to the pane directly or inspect it with `tmux capture-pane -pt <session>:0.<pane-index>`.
+- **Pane not responding:** Check if the agent session is waiting for input. Use `m` to read output.
 - **Merge conflicts:** Use git worktrees to isolate file changes per pane.
 - **High token usage:** Reduce number of parallel panes. Each pane is a full agent session.
 - **tmux not found:** Install with `brew install tmux` (macOS) or `apt install tmux` (Linux).

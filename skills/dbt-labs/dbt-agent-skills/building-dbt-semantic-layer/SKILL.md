@@ -1,3 +1,11 @@
+---
+name: building-dbt-semantic-layer
+description: Use when creating or modifying dbt Semantic Layer components — semantic models, metrics, dimensions, entities, measures, or time spines. Covers MetricFlow configuration, metric types (simple, derived, cumulative, ratio, conversion), and validation for both latest and legacy YAML specs.
+user-invocable: false
+metadata:
+  author: dbt-labs
+---
+
 # Building the dbt Semantic Layer
 
 This skill guides the creation and modification of dbt Semantic Layer components: semantic models, entities, dimensions, and metrics.

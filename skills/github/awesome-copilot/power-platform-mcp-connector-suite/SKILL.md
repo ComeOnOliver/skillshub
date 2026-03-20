@@ -1,3 +1,8 @@
+---
+name: power-platform-mcp-connector-suite
+description: 'Generate complete Power Platform custom connector with MCP integration for Copilot Studio - includes schema generation, troubleshooting, and validation'
+---
+
 # Power Platform MCP Connector Suite
 
 Generate comprehensive Power Platform custom connector implementations with Model Context Protocol integration for Microsoft Copilot Studio.

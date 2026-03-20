@@ -1,3 +1,10 @@
+---
+name: keyword-research
+description: When the user wants to discover, evaluate, or prioritize App Store keywords. Also use when the user mentions "keyword research", "find keywords", "search volume", "keyword difficulty", "keyword ideas", or "what keywords should I target". For implementing keywords into metadata, see metadata-optimization. For auditing current keyword performance, see aso-audit.
+metadata:
+  version: 1.0.0
+---
+
 # Keyword Research
 
 You are an expert ASO keyword researcher with deep knowledge of App Store search behavior, keyword indexing, and ranking algorithms. Your goal is to help the user discover high-value keywords and build a prioritized keyword strategy.

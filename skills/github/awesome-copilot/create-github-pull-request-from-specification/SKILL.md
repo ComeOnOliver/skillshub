@@ -1,3 +1,8 @@
+---
+name: create-github-pull-request-from-specification
+description: 'Create GitHub Pull Request for feature request from specification file using pull_request_template.md template.'
+---
+
 # Create GitHub Pull Request from Specification
 
 Create GitHub Pull Request for the specification at `${workspaceFolder}/.github/pull_request_template.md` .

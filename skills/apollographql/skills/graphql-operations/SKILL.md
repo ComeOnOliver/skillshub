@@ -1,3 +1,20 @@
+---
+name: graphql-operations
+description: >
+  Guide for writing GraphQL operations (queries, mutations, fragments) following best practices. Use this skill when:
+  (1) writing GraphQL queries or mutations,
+  (2) organizing operations with fragments,
+  (3) optimizing data fetching patterns,
+  (4) setting up type generation or linting,
+  (5) reviewing operations for efficiency.
+license: MIT
+compatibility: Any GraphQL client (Apollo Client, urql, Relay, etc.)
+metadata:
+  author: apollographql
+  version: "1.0.0"
+allowed-tools: Bash(npm:*) Bash(npx:*) Read Write Edit Glob Grep
+---
+
 # GraphQL Operations Guide
 
 This guide covers best practices for writing GraphQL operations (queries, mutations, subscriptions) as a client developer. Well-written operations are efficient, type-safe, and maintainable.

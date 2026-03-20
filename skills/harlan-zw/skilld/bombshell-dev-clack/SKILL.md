@@ -1,3 +1,10 @@
+---
+name: bombshell-dev-clack
+description: "ALWAYS use when writing code importing \"@clack/prompts\". Consult for debugging, best practices, or modifying @clack/prompts, clack/prompts, clack prompts, clack."
+metadata:
+  version: 1.0.1
+---
+
 # bombshell-dev/clack `@clack/prompts`
 
 **Version:** 1.0.1 (yesterday)

@@ -1,3 +1,17 @@
+---
+name: minecraft-commands-scripting
+description: >
+  Write Minecraft vanilla commands, NBT scripts, scoreboards, and complex execute chains
+  for use in command blocks, chat, or .mcfunction files. Covers full execute subcommand
+  reference (as/at/in/positioned/rotated/facing/anchored/if/unless/store/run), selector
+  arguments with all filter options, scoreboard objectives and operations, NBT path syntax
+  for entities/blocks/storage, schedule and forceload commands, tellraw/title JSON text
+  components, bossbar, team management, item modification commands, attribute commands,
+  particle/playsound effects, and RCON scripting. Targets Minecraft 1.21.x Java Edition.
+  Use for command-only work; for full function/advancement/recipe systems use the
+  minecraft-datapack skill instead.
+---
+
 # Minecraft Commands & Scripting Skill
 
 ## Command Syntax Conventions

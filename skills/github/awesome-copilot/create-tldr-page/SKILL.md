@@ -1,3 +1,8 @@
+---
+name: create-tldr-page
+description: 'Create a tldr page from documentation URLs and command examples, requiring both URL and command name.'
+---
+
 # Create TLDR Page
 
 ## Overview

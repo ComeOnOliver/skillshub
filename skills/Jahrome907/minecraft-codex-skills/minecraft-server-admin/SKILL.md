@@ -1,3 +1,16 @@
+---
+name: minecraft-server-admin
+description: >
+  Set up, configure, and optimize a Minecraft Java Edition server for 1.21.x. Covers
+  Paper server installation and startup (Aikar's JVM flags), server.properties reference,
+  paper-global.yml and paper-world-defaults.yml configuration for performance, spigot.yml
+  and bukkit.yml tuning, chunk loading/unloading optimization, player count and TPS
+  monitoring, plugin management best practices, world management (pre-generation with
+  Chunky), backup strategies, Docker/Pterodactyl deployment, Velocity proxy setup for
+  multi-server networks, Geyser for Bedrock crossplay, and performance profiling with
+  Spark. Use for server operations and infrastructure — not for plugin or mod development.
+---
+
 # Minecraft Server Administration Skill
 
 ## Server Software Comparison

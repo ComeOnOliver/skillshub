@@ -1,3 +1,8 @@
+---
+name: aliyun-api-ref
+description: Alibaba Cloud API reference for developing aero-cli. Use this skill when adding new cloud provider features, fixing API calls, or extending FC/RDS/Redis/OSS/DNS/VPC integrations. Contains SDK usage patterns, API signatures, and error handling conventions specific to this project.
+---
+
 # Alibaba Cloud API Development Reference
 
 ## When to use this skill

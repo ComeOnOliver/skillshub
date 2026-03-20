@@ -1,3 +1,17 @@
+---
+name: github-archive
+description: Investigate GitHub security incidents using tamper-proof GitHub Archive data via BigQuery. Use when verifying repository activity claims, recovering deleted PRs/branches/tags/repos, attributing actions to actors, or reconstructing attack timelines. Provides immutable forensic evidence of all public GitHub events since 2011.
+version: 1.0
+author: mbrg
+tags:
+  - github
+  - gharchive
+  - security
+  - osint
+  - forensics
+  - git
+---
+
 # GitHub Archive
 
 **Purpose**: Query immutable GitHub event history via BigQuery to obtain tamper-proof forensic evidence for security investigations.

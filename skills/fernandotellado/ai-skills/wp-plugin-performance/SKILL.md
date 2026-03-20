@@ -1,3 +1,13 @@
+---
+name: wp-plugin-performance
+description: "Performance guidelines for WordPress plugin development: database optimization, object caching, conditional asset loading, efficient hooks, HTTP requests, WP-Cron, AJAX/REST optimization, and common anti-patterns. Based on official WordPress Developer Resources and WP VIP documentation."
+compatibility: "WordPress 6.0+ / PHP 7.4+. Applies to plugins and custom code."
+license: GPL-2.0-or-later
+metadata:
+  author: fernando-tellado
+  version: "1.0"
+---
+
 # WordPress plugin performance
 
 ## When to use

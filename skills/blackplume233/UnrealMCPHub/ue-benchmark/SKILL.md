@@ -1,3 +1,10 @@
+---
+name: ue-benchmark
+description: 'UE Agent Benchmark 评测框架。定义通用评分体系、评测流程和质量层级，支持多场景 Benchmark。触发：用户提及 Benchmark/评测/基准测试/跑分 等关键词时激活。'
+license: MIT
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, CallMcpTool
+---
+
 # UE Agent Benchmark — 评测框架
 
 > **前置技能**：本技能依赖 `use-unrealhub` 技能提供的 UE 工具链知识。

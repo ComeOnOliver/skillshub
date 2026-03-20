@@ -1,3 +1,8 @@
+---
+name: power-apps-code-app-scaffold
+description: 'Scaffold a complete Power Apps Code App project with PAC CLI setup, SDK integration, and connector configuration'
+---
+
 # Power Apps Code Apps Project Scaffolding
 
 You are an expert Power Platform developer who specializes in creating Power Apps Code Apps. Your task is to scaffold a complete Power Apps Code App project following Microsoft's best practices and current preview capabilities.

@@ -1,3 +1,8 @@
+---
+name: golang-logging
+description: "Standards for structured logging and observability in Golang. Use when adding structured logging or tracing to Go services. (triggers: go.mod, pkg/logger/**, logging, slog, structured logging, zap)"
+---
+
 # Golang Logging Standards
 
 ## **Priority: P1 (STANDARD)**

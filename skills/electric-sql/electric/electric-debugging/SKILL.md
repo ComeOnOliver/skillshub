@@ -1,3 +1,27 @@
+---
+name: electric-debugging
+description: >
+  Troubleshoot Electric sync issues. Covers fast-loop detection from CDN/proxy
+  cache key misconfiguration, stale cache diagnosis (StaleCacheError),
+  MissingHeadersError from CORS misconfiguration, 409 shape expired handling,
+  SSE proxy buffering (nginx proxy_buffering off, Caddy flush_interval -1),
+  HTTP/1.1 6-connection limit in local dev (Caddy HTTP/2 proxy), WAL growth
+  from replication slots (max_slot_wal_keep_size), Vercel CDN cache issues,
+  and onError/backoff behavior. Load when shapes are not receiving updates,
+  sync is slow, or errors appear in the console.
+type: lifecycle
+library: electric
+library_version: '1.5.10'
+requires:
+  - electric-shapes
+  - electric-proxy-auth
+sources:
+  - 'electric-sql/electric:packages/typescript-client/src/client.ts'
+  - 'electric-sql/electric:packages/typescript-client/src/fetch.ts'
+  - 'electric-sql/electric:packages/typescript-client/src/error.ts'
+  - 'electric-sql/electric:website/docs/guides/troubleshooting.md'
+---
+
 This skill builds on electric-shapes and electric-proxy-auth. Read those first.
 
 # Electric — Debugging Sync Issues

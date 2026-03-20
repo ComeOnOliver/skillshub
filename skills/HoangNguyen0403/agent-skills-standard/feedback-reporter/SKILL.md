@@ -1,3 +1,13 @@
+---
+name: AI Feedback Reporter
+description: CRITICAL - Before ANY file write, audit loaded skills for violations. Auto-report via feedback command.
+metadata:
+  labels: [meta, feedback, quality, monitoring]
+  triggers:
+    files: ['**/*']
+    keywords: [write, edit, create, generate, skill, violation]
+---
+
 # Feedback Reporter
 
 ## **Priority: P0 - Auto-detect skill violations before file writes**

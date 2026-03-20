@@ -1,3 +1,9 @@
+---
+name: axiom-ios-vision
+description: Use when implementing ANY computer vision feature - image analysis, object detection, pose detection, person segmentation, subject lifting, hand/body pose tracking.
+license: MIT
+---
+
 # iOS Computer Vision Router
 
 **You MUST use this skill for ANY computer vision work using the Vision framework.**

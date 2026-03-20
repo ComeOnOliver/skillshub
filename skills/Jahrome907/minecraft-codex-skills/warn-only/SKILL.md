@@ -1,3 +1,9 @@
+---
+name: minecraft-ci-release
+description: >
+  Fixture with valid workflow YAML but a warning-only secrets section.
+---
+
 # Warning Fixture
 
 ## Secrets

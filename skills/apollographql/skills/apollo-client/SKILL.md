@@ -1,3 +1,20 @@
+---
+name: apollo-client
+description: >
+  Guide for building React applications with Apollo Client 4.x. Use this skill when:
+  (1) setting up Apollo Client in a React project,
+  (2) writing GraphQL queries or mutations with hooks,
+  (3) configuring caching or cache policies,
+  (4) managing local state with reactive variables,
+  (5) troubleshooting Apollo Client errors or performance issues.
+license: MIT
+compatibility: React 18+, React 19 (Suspense/RSC). Works with Next.js, Vite, CRA, and other React frameworks.
+metadata:
+  author: apollographql
+  version: "1.0.0"
+allowed-tools: Bash(npm:*) Bash(npx:*) Bash(node:*) Read Write Edit Glob Grep
+---
+
 # Apollo Client 4.x Guide
 
 Apollo Client is a comprehensive state management library for JavaScript that enables you to manage both local and remote data with GraphQL. Version 4.x brings improved caching, better TypeScript support, and React 19 compatibility.

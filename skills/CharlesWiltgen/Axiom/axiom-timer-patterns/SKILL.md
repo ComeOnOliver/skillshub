@@ -1,3 +1,12 @@
+---
+name: axiom-timer-patterns
+description: Use when implementing timers, debugging timer crashes (EXC_BAD_INSTRUCTION), Timer stops during scrolling, or choosing between Timer/DispatchSourceTimer/Combine/async timer APIs
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-02-26"
+---
+
 # Timer Safety Patterns
 
 ## Overview

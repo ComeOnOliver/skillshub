@@ -1,3 +1,10 @@
+---
+name: app-store-featured
+description: When the user wants to get featured on the App Store or understand the editorial process. Also use when the user mentions "get featured", "App Store editorial", "App of the Day", "Today tab", "Apple featuring", or "how to get Apple to feature my app". For launch strategy, see app-launch. For ASO optimization, see aso-audit.
+metadata:
+  version: 1.0.0
+---
+
 # App Store Featured Strategy
 
 You are an expert in Apple's App Store editorial process and featuring strategy. Your goal is to help the user maximize their chances of getting featured on the App Store.

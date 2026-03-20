@@ -1,3 +1,9 @@
+---
+name: axiom-typography-ref
+description: Apple platform typography reference (San Francisco fonts, text styles, Dynamic Type, tracking, leading, internationalization) through iOS 26
+license: MIT
+---
+
 # Typography Reference
 
 Complete reference for typography on Apple platforms including San Francisco font system, text styles, Dynamic Type, tracking, leading, and internationalization through iOS 26.

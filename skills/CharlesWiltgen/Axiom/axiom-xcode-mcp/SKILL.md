@@ -1,3 +1,9 @@
+---
+name: axiom-xcode-mcp
+description: Use when connecting to Xcode via MCP, using xcrun mcpbridge, or working with ANY Xcode MCP tool (XcodeRead, BuildProject, RunTests, RenderPreview). Covers setup, tool reference, workflow patterns, troubleshooting.
+license: MIT
+---
+
 # Xcode MCP Router
 
 **You MUST use this skill for ANY Xcode MCP interaction — setup, tool usage, workflow patterns, or troubleshooting.**

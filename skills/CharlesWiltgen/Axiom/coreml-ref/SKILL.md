@@ -1,3 +1,10 @@
+---
+name: coreml-ref
+description: CoreML API reference - MLModel lifecycle, MLTensor operations, coremltools conversion, compression APIs, state management, compute device availability, performance profiling.
+license: MIT
+version: 1.0.0
+---
+
 # CoreML API Reference
 
 ## Part 1 - Model Lifecycle

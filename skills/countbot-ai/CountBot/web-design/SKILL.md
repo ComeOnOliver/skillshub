@@ -1,3 +1,9 @@
+---
+name: web-design
+description: 网页设计与部署。生成精美的单页 HTML 网页（报告、落地页、数据可视化等），支持一键部署到 Cloudflare Pages。使用 Tailwind CSS + Chart.js + Font Awesome 技术栈。当用户要求制作网页、生成报告页面、创建落地页、数据可视化展示、部署网页到线上时使用。
+homepage: https://github.com/countbot-ai/CountBot
+---
+
 # 网页设计与部署
 
 生成精美单页 HTML 并部署到 Cloudflare Pages。

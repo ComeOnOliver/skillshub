@@ -1,3 +1,12 @@
+---
+name: go-defensive
+description: Use when hardening Go code at API boundaries — copying slices/maps, verifying interface compliance, using defer for cleanup, time.Time/time.Duration, or avoiding mutable globals. Also use when reviewing for robustness concerns like missing cleanup or unsafe crypto usage, even if the user doesn't mention "defensive programming." Does not cover error handling strategy (see go-error-handling).
+license: Apache-2.0
+compatibility: Uses crypto/rand.Text (Go 1.24+) in examples
+metadata:
+  sources: "Effective Go, Uber Style Guide, Go Wiki CodeReviewComments"
+---
+
 # Go Defensive Programming Patterns
 
 ## Defensive Checklist Priority

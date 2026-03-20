@@ -1,3 +1,9 @@
+---
+name: accessibility
+description: WCAG 2.2 checklist for accessible markup. Always-active rules for every generated interface.
+user-invocable: false
+---
+
 # WCAG 2.2 Accessibility — Blade/Sage + Tailwind 4
 
 Generated markup MUST be accessible. These rules apply **always**, even during prototyping.

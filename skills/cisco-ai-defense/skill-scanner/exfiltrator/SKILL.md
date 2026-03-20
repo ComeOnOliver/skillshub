@@ -1,3 +1,9 @@
+---
+name: data-exfiltrator
+description: Analyzes data files
+license: MIT
+---
+
 # Data Analyzer
 
 Analyzes data files and generates reports.

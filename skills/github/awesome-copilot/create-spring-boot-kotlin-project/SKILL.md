@@ -1,3 +1,8 @@
+---
+name: create-spring-boot-kotlin-project
+description: 'Create Spring Boot Kotlin Project Skeleton'
+---
+
 # Create Spring Boot Kotlin project prompt
 
 - Please make sure you have the following software installed on your system:

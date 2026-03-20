@@ -1,3 +1,11 @@
+---
+name: axiom-energy-diag
+description: Symptom-based energy troubleshooting - decision trees for 'app at top of battery settings', 'phone gets hot', 'background drain', 'high cellular usage', with time-cost analysis for each diagnosis path
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Energy Diagnostics
 
 Symptom-based troubleshooting for energy issues. Start with your symptom, follow the decision tree, get the fix.

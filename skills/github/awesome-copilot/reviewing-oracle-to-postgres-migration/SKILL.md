@@ -1,3 +1,8 @@
+---
+name: reviewing-oracle-to-postgres-migration
+description: 'Identifies Oracle-to-PostgreSQL migration risks by cross-referencing code against known behavioral differences (empty strings, refcursors, type coercion, sorting, timestamps, concurrent transactions, etc.). Use when planning a database migration, reviewing migration artifacts, or validating that integration tests cover Oracle/PostgreSQL differences.'
+---
+
 # Oracle-to-PostgreSQL Database Migration
 
 Surfaces migration risks and validates migration work against known Oracle/PostgreSQL behavioral differences documented in the `references/` folder.

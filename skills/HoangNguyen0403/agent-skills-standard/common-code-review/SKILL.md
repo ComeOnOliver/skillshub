@@ -1,3 +1,8 @@
+---
+name: common-code-review
+description: "Standards for high-quality, persona-driven code reviews. Use when reviewing PRs, critiquing code quality, or analyzing changes for team feedback. (triggers: review, pr, critique, analyze code)"
+---
+
 # Code Review Expert
 
 ## **Priority: P1 (OPERATIONAL)**

@@ -1,3 +1,9 @@
+---
+name: minecraft-ci-release
+description: >
+  Fixture with malformed workflow YAML.
+---
+
 # Invalid YAML Fixture
 
 ## Secrets

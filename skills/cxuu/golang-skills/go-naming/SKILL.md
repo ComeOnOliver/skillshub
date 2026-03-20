@@ -1,3 +1,12 @@
+---
+name: go-naming
+description: Use when naming any Go identifier — packages, types, functions, methods, variables, constants, or receivers — to ensure idiomatic, clear names. Also use when a user is creating new types, packages, or exported APIs, even if they don't explicitly ask about naming conventions. Does not cover package organization (see go-packages).
+license: Apache-2.0
+metadata:
+  sources: "Google Style Guide, Uber Style Guide"
+allowed-tools: Bash(bash:*)
+---
+
 # Go Naming Conventions
 
 ## Available Scripts

@@ -1,3 +1,8 @@
+---
+name: solidity-security
+description: "[AUTO-INVOKE] MUST be invoked BEFORE writing or modifying any Solidity contract (.sol files). Covers private key handling, access control, reentrancy prevention, gas safety, and pre-audit checklists. Trigger: any task involving creating, editing, or reviewing .sol source files."
+---
+
 # Solidity Security Standards
 
 ## Language Rule

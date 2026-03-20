@@ -1,3 +1,12 @@
+---
+name: new-terraform-provider
+description: Use this when scaffolding a new Terraform provider.
+license: MPL-2.0
+metadata:
+  copyright: Copyright IBM Corp. 2026
+  version: "0.0.1"
+---
+
 To scaffold a new Terraform provider with Plugin Framework:
 
 1. If I am already in a Terraform provider workspace, then confirm that I want
@@ -13,3 +22,4 @@ To scaffold a new Terraform provider with Plugin Framework:
 1. Run `go mod tidy`
 1. Run `go build -o /dev/null`
 1. Run `go test ./...`
+

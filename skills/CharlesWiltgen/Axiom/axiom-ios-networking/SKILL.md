@@ -1,3 +1,9 @@
+---
+name: axiom-ios-networking
+description: Use when implementing or debugging ANY network connection, API call, or socket. Covers URLSession, Network.framework, NetworkConnection, deprecated APIs, connection diagnostics, structured concurrency networking.
+license: MIT
+---
+
 # iOS Networking Router
 
 **You MUST use this skill for ANY networking work including HTTP requests, WebSockets, TCP connections, or network debugging.**

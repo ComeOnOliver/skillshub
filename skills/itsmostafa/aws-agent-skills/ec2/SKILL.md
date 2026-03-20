@@ -1,3 +1,10 @@
+---
+name: ec2
+description: AWS EC2 virtual machine management for instances, AMIs, and networking. Use when launching instances, configuring security groups, managing key pairs, troubleshooting connectivity, or automating instance lifecycle.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/
+---
+
 # AWS EC2
 
 Amazon Elastic Compute Cloud (EC2) provides resizable compute capacity in the cloud. Launch virtual servers, configure networking and security, and manage storage.

@@ -1,3 +1,8 @@
+---
+name: doublecheck
+description: 'Three-layer verification pipeline for AI output. Extracts verifiable claims, finds supporting or contradicting sources via web search, runs adversarial review for hallucination patterns, and produces a structured verification report with source links for human review.'
+---
+
 # Doublecheck
 
 Run a three-layer verification pipeline on AI-generated output. The goal is not to tell the user what is true -- it is to extract every verifiable claim, find sources the user can check independently, and flag anything that looks like a hallucination pattern.

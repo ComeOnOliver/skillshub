@@ -1,3 +1,11 @@
+---
+name: axiom-app-store-connect-ref
+description: Reference for App Store Connect crash analysis, TestFlight feedback, metrics dashboards, and data export workflows
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # App Store Connect Reference
 
 ## Overview

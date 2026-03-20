@@ -1,3 +1,12 @@
+---
+name: go-logging
+description: Use when choosing a logging approach, configuring slog, writing structured log statements, or deciding log levels in Go. Also use when setting up production logging, adding request-scoped context to logs, or migrating from log to slog, even if the user doesn't explicitly mention logging. Does not cover error handling strategy (see go-error-handling).
+license: Apache-2.0
+compatibility: slog requires Go 1.21+; slog/slogtest requires Go 1.22+
+metadata:
+  sources: "Google Style Guide, Uber Style Guide"
+---
+
 # Go Logging
 
 ## Core Principle
@@ -186,3 +195,4 @@ handle-once pattern and error wrapping guidance.
 - **Context propagation**: See [go-context](../go-context/SKILL.md) when passing request-scoped values (including loggers) through context
 - **Performance**: See [go-performance](../go-performance/SKILL.md) when optimizing hot-path logging or reducing allocations in log calls
 - **Code review**: See [go-code-review](../go-code-review/SKILL.md) when reviewing logging practices in Go PRs
+

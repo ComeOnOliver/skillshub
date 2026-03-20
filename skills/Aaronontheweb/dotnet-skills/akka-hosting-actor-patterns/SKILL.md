@@ -1,3 +1,9 @@
+---
+name: akka-hosting-actor-patterns
+description: Patterns for building entity actors with Akka.Hosting - GenericChildPerEntityParent, message extractors, cluster sharding abstraction, akka-reminders, and ITimeProvider. Supports both local testing and clustered production modes.
+invocable: false
+---
+
 # Akka.Hosting Actor Patterns
 
 ## When to Use This Skill

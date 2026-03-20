@@ -1,3 +1,13 @@
+---
+name: vueuse-functions
+description: Apply VueUse composables where appropriate to build concise, maintainable Vue.js / Nuxt features.
+license: MIT
+metadata:
+    author: SerKo <https://github.com/serkodev>
+    version: "1.0"
+compatibility: Requires Vue 3 (or above) or Nuxt 3 (or above) project
+---
+
 # VueUse Functions
 
 This skill is a decision-and-implementation guide for VueUse composables in Vue.js / Nuxt projects. It maps requirements to the most suitable VueUse function, applies the correct usage pattern, and prefers composable-based solutions over bespoke code to keep implementations concise, maintainable, and performant.
@@ -405,3 +415,5 @@ IMPORTANT: Each function entry includes a short `Description` and a detailed `Re
 | Function | Description | Invocation |
 |----------|-------------|------------|
 | [`useSound`](https://github.com/vueuse/sound#examples) | Play sound effects reactively. | EXTERNAL |
+
+

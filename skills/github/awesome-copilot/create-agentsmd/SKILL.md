@@ -1,3 +1,8 @@
+---
+name: create-agentsmd
+description: 'Prompt for generating an AGENTS.md file for a repository'
+---
+
 # Create high‑quality AGENTS.md file
 
 You are a code agent. Your task is to create a complete, accurate AGENTS.md at the root of this repository that follows the public guidance at https://agents.md/.

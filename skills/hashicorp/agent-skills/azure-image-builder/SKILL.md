@@ -1,3 +1,8 @@
+---
+name: azure-image-builder
+description: Build Azure managed images and Azure Compute Gallery images with Packer. Use when creating custom images for Azure VMs.
+---
+
 # Azure Image Builder
 
 Build Azure managed images and Azure Compute Gallery images using Packer's `azure-arm` builder.

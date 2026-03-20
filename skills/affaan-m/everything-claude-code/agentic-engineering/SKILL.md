@@ -1,57 +1,66 @@
-# Agentic Engineering
+---
+name: agentic-engineering
+description: 作为代理工程师，采用评估优先执行、分解和成本感知模型路由进行操作。
+origin: ECC
+---
 
-Use this skill for engineering workflows where AI agents perform most implementation work and humans enforce quality and risk controls.
+# 智能体工程
 
-## Operating Principles
+在 AI 智能体执行大部分实施工作、而人类负责质量与风险控制的工程工作流中使用此技能。
 
-1. Define completion criteria before execution.
-2. Decompose work into agent-sized units.
-3. Route model tiers by task complexity.
-4. Measure with evals and regression checks.
+## 操作原则
 
-## Eval-First Loop
+1. 在执行前定义完成标准。
+2. 将工作分解为智能体可处理的单元。
+3. 根据任务复杂度路由模型层级。
+4. 使用评估和回归检查进行度量。
 
-1. Define capability eval and regression eval.
-2. Run baseline and capture failure signatures.
-3. Execute implementation.
-4. Re-run evals and compare deltas.
+## 评估优先循环
 
-## Task Decomposition
+1. 定义能力评估和回归评估。
+2. 运行基线并捕获失败特征。
+3. 执行实施。
+4. 重新运行评估并比较差异。
 
-Apply the 15-minute unit rule:
-- each unit should be independently verifiable
-- each unit should have a single dominant risk
-- each unit should expose a clear done condition
+## 任务分解
 
-## Model Routing
+应用 15 分钟单元规则：
 
-- Haiku: classification, boilerplate transforms, narrow edits
-- Sonnet: implementation and refactors
-- Opus: architecture, root-cause analysis, multi-file invariants
+* 每个单元应可独立验证
+* 每个单元应有一个主要风险
+* 每个单元应暴露一个清晰的完成条件
 
-## Session Strategy
+## 模型路由
 
-- Continue session for closely-coupled units.
-- Start fresh session after major phase transitions.
-- Compact after milestone completion, not during active debugging.
+* Haiku：分类、样板转换、狭窄编辑
+* Sonnet：实施和重构
+* Opus：架构、根因分析、多文件不变量
 
-## Review Focus for AI-Generated Code
+## 会话策略
 
-Prioritize:
-- invariants and edge cases
-- error boundaries
-- security and auth assumptions
-- hidden coupling and rollout risk
+* 对于紧密耦合的单元，继续使用同一会话。
+* 在主要阶段转换后，启动新的会话。
+* 在里程碑完成后进行压缩，而不是在主动调试期间。
 
-Do not waste review cycles on style-only disagreements when automated format/lint already enforce style.
+## AI 生成代码的审查重点
 
-## Cost Discipline
+优先审查：
 
-Track per task:
-- model
-- token estimate
-- retries
-- wall-clock time
-- success/failure
+* 不变量和边界情况
+* 错误边界
+* 安全性和身份验证假设
+* 隐藏的耦合和上线风险
 
-Escalate model tier only when lower tier fails with a clear reasoning gap.
+当自动化格式化/代码检查工具已强制执行代码风格时，不要在仅涉及风格分歧的审查上浪费周期。
+
+## 成本纪律
+
+按任务跟踪：
+
+* 模型
+* 令牌估算
+* 重试次数
+* 实际用时
+* 成功/失败
+
+仅当较低层级的模型失败且存在清晰的推理差距时，才升级模型层级。

@@ -1,3 +1,8 @@
+---
+name: solidity-deploy
+description: "[AUTO-INVOKE] MUST be invoked BEFORE deploying contracts or writing deployment scripts (*.s.sol). Covers pre-flight checks, forge script commands, post-deployment validation, and verification. Trigger: any task involving forge script, contract deployment, or block explorer verification."
+---
+
 # Deployment Workflow
 
 ## Language Rule

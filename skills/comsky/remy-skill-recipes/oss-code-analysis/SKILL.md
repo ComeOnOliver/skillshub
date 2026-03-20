@@ -1,3 +1,22 @@
+---
+name: oss-code-analysis
+description: >
+  Explore open-source GitHub repository source trees via web browsing
+  to analyze and compare feature implementations at the code level.
+  Supports two modes: cross-project comparison and single-project deep dive.
+  Use when evaluating how OSS projects implement a specific feature,
+  choosing architecture patterns, or benchmarking implementation strategies.
+license: MIT
+compatibility:
+  - Claude Code
+  - Cursor
+metadata:
+  type: execution
+  category: research
+  maturity: draft
+  estimated_time: 20 min
+---
+
 # Skill: OSS Code-Level Feature Analysis
 
 **Type:** Execution

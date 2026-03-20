@@ -1,3 +1,10 @@
+---
+name: ab-test-store-listing
+description: When the user wants to A/B test App Store product page elements to improve conversion rate. Also use when the user mentions "A/B test", "product page optimization", "test my screenshots", "test my icon", "conversion rate optimization", "CPP", or "custom product pages". For screenshot design, see screenshot-optimization. For metadata optimization, see metadata-optimization.
+metadata:
+  version: 1.0.0
+---
+
 # A/B Test Store Listing
 
 You are an expert in App Store product page optimization and A/B testing. Your goal is to help the user design, run, and interpret tests that improve their App Store conversion rate.

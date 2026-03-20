@@ -1,19 +1,25 @@
-# Cost-Aware LLM Pipeline
+---
+name: cost-aware-llm-pipeline
+description: LLM API 使用成本优化模式 —— 基于任务复杂度的模型路由、预算跟踪、重试逻辑和提示缓存。
+origin: ECC
+---
 
-Patterns for controlling LLM API costs while maintaining quality. Combines model routing, budget tracking, retry logic, and prompt caching into a composable pipeline.
+# 成本感知型 LLM 流水线
 
-## When to Activate
+在保持质量的同时控制 LLM API 成本的模式。将模型路由、预算跟踪、重试逻辑和提示词缓存组合成一个可组合的流水线。
 
-- Building applications that call LLM APIs (Claude, GPT, etc.)
-- Processing batches of items with varying complexity
-- Need to stay within a budget for API spend
-- Optimizing cost without sacrificing quality on complex tasks
+## 何时激活
 
-## Core Concepts
+* 构建调用 LLM API（Claude、GPT 等）的应用程序时
+* 处理具有不同复杂度的批量项目时
+* 需要将 API 支出控制在预算范围内时
+* 需要在复杂任务上优化成本而不牺牲质量时
 
-### 1. Model Routing by Task Complexity
+## 核心概念
 
-Automatically select cheaper models for simple tasks, reserving expensive models for complex ones.
+### 1. 根据任务复杂度进行模型路由
+
+自动为简单任务选择更便宜的模型，为复杂任务保留昂贵的模型。
 
 ```python
 MODEL_SONNET = "claude-sonnet-4-6"
@@ -35,9 +41,9 @@ def select_model(
     return MODEL_HAIKU  # Simple task (3-4x cheaper)
 ```
 
-### 2. Immutable Cost Tracking
+### 2. 不可变的成本跟踪
 
-Track cumulative spend with frozen dataclasses. Each API call returns a new tracker — never mutates state.
+使用冻结的数据类跟踪累计支出。每个 API 调用都会返回一个新的跟踪器 —— 永不改变状态。
 
 ```python
 from dataclasses import dataclass
@@ -70,9 +76,9 @@ class CostTracker:
         return self.total_cost > self.budget_limit
 ```
 
-### 3. Narrow Retry Logic
+### 3. 窄范围重试逻辑
 
-Retry only on transient errors. Fail fast on authentication or bad request errors.
+仅在暂时性错误时重试。对于认证或错误请求错误，快速失败。
 
 ```python
 from anthropic import (
@@ -96,9 +102,9 @@ def call_with_retry(func, *, max_retries: int = _MAX_RETRIES):
     # AuthenticationError, BadRequestError etc. → raise immediately
 ```
 
-### 4. Prompt Caching
+### 4. 提示词缓存
 
-Cache long system prompts to avoid resending them on every request.
+缓存长的系统提示词，以避免在每个请求上重新发送它们。
 
 ```python
 messages = [
@@ -119,9 +125,9 @@ messages = [
 ]
 ```
 
-## Composition
+## 组合
 
-Combine all four techniques in a single pipeline function:
+将所有四种技术组合到一个流水线函数中：
 
 ```python
 def process(text: str, config: Config, tracker: CostTracker) -> tuple[Result, CostTracker]:
@@ -145,33 +151,33 @@ def process(text: str, config: Config, tracker: CostTracker) -> tuple[Result, Co
     return parse_result(response), tracker
 ```
 
-## Pricing Reference (2025-2026)
+## 价格参考（2025-2026）
 
-| Model | Input ($/1M tokens) | Output ($/1M tokens) | Relative Cost |
+| 模型 | 输入（美元/百万令牌） | 输出（美元/百万令牌） | 相对成本 |
 |-------|---------------------|----------------------|---------------|
 | Haiku 4.5 | $0.80 | $4.00 | 1x |
 | Sonnet 4.6 | $3.00 | $15.00 | ~4x |
 | Opus 4.5 | $15.00 | $75.00 | ~19x |
 
-## Best Practices
+## 最佳实践
 
-- **Start with the cheapest model** and only route to expensive models when complexity thresholds are met
-- **Set explicit budget limits** before processing batches — fail early rather than overspend
-- **Log model selection decisions** so you can tune thresholds based on real data
-- **Use prompt caching** for system prompts over 1024 tokens — saves both cost and latency
-- **Never retry on authentication or validation errors** — only transient failures (network, rate limit, server error)
+* **从最便宜的模型开始**，仅在达到复杂度阈值时才路由到昂贵的模型
+* **在处理批次之前设置明确的预算限制** —— 尽早失败而不是超支
+* **记录模型选择决策**，以便您可以根据实际数据调整阈值
+* **对于超过 1024 个令牌的系统提示词，使用提示词缓存** —— 既能节省成本，又能降低延迟
+* **切勿在认证或验证错误时重试** —— 仅针对暂时性故障（网络、速率限制、服务器错误）重试
 
-## Anti-Patterns to Avoid
+## 应避免的反模式
 
-- Using the most expensive model for all requests regardless of complexity
-- Retrying on all errors (wastes budget on permanent failures)
-- Mutating cost tracking state (makes debugging and auditing difficult)
-- Hardcoding model names throughout the codebase (use constants or config)
-- Ignoring prompt caching for repetitive system prompts
+* 无论复杂度如何，对所有请求都使用最昂贵的模型
+* 对所有错误都进行重试（在永久性故障上浪费预算）
+* 改变成本跟踪状态（使调试和审计变得困难）
+* 在整个代码库中硬编码模型名称（使用常量或配置）
+* 对重复的系统提示词忽略提示词缓存
 
-## When to Use
+## 适用场景
 
-- Any application calling Claude, OpenAI, or similar LLM APIs
-- Batch processing pipelines where cost adds up quickly
-- Multi-model architectures that need intelligent routing
-- Production systems that need budget guardrails
+* 任何调用 Claude、OpenAI 或类似 LLM API 的应用程序
+* 成本快速累积的批处理流水线
+* 需要智能路由的多模型架构
+* 需要预算护栏的生产系统

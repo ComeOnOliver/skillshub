@@ -1,3 +1,9 @@
+---
+name: image-analysis
+description: 图片分析与识别，可分析本地图片、网络图片、视频、文件。适用于 OCR、物体识别、场景理解等。当用户发送图片或要求分析图片时必须使用此技能。
+homepage: https://github.com/countbot-ai/CountBot
+---
+
 # 图片分析与识别
 
 支持智谱 GLM-4V 和千问 Qwen-VL 两种视觉模型。

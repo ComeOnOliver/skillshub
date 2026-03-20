@@ -1,3 +1,9 @@
+---
+name: axiom-ios-ui
+description: Use when building, fixing, or improving ANY iOS UI including SwiftUI, UIKit, layout, navigation, animations, design guidelines. Covers view updates, layout bugs, navigation issues, performance, architecture, Apple design compliance.
+license: MIT
+---
+
 # iOS UI Router
 
 **You MUST use this skill for ANY iOS UI work including SwiftUI, UIKit, layout, navigation, animations, and design.**

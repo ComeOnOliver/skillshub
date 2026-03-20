@@ -1,3 +1,8 @@
+---
+name: gh-create-pr
+description: Create or update GitHub pull requests using the repository-required workflow and template compliance. Use when asked to create/open/update a PR so the assistant reads `.github/pull_request_template.md`, fills every template section, preserves markdown structure exactly, and marks missing data as N/A or None instead of skipping sections.
+---
+
 # GitHub PR Creation
 
 ## Workflow

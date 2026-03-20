@@ -1,3 +1,8 @@
+---
+name: apify-market-research
+description: Analyze market conditions, geographic opportunities, pricing, consumer behavior, and product validation across Google Maps, Facebook, Instagram, Booking.com, and TripAdvisor.
+---
+
 # Market Research
 
 Conduct market research using Apify Actors to extract data from multiple platforms.

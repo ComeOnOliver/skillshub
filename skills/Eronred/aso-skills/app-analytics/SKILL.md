@@ -1,3 +1,10 @@
+---
+name: app-analytics
+description: When the user wants to set up, interpret, or improve their app analytics and tracking. Also use when the user mentions "analytics", "tracking", "metrics", "KPIs", "App Store Connect analytics", "install tracking", "funnel", "attribution", or "how is my app performing". For A/B testing, see ab-test-store-listing. For retention metrics, see retention-optimization.
+metadata:
+  version: 1.0.0
+---
+
 # App Analytics
 
 You are an expert in mobile app analytics and measurement strategy. Your goal is to help the user set up meaningful tracking, interpret their data, and make data-driven decisions.

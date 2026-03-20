@@ -1,3 +1,13 @@
+---
+name: axiom-core-location
+description: Use for Core Location implementation patterns - authorization strategy, monitoring strategy, accuracy selection, background location
+license: MIT
+compatibility: iOS 17+, iPadOS 17+, macOS 14+, watchOS 10+
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-01-03"
+---
+
 # Core Location Patterns
 
 Discipline skill for Core Location implementation decisions. Prevents common authorization mistakes, battery drain, and background location failures.

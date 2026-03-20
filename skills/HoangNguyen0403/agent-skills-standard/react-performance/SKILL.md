@@ -1,3 +1,8 @@
+---
+name: react-performance
+description: "Optimization strategies for React applications (Client & Server). Use when optimizing React rendering performance, reducing re-renders, or improving bundle size. (triggers: **/*.tsx, **/*.jsx, waterfall, bundle, lazy, suspense, dynamic)"
+---
+
 # React Performance
 
 ## **Priority: P0 (CRITICAL)**

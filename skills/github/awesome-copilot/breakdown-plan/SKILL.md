@@ -1,3 +1,8 @@
+---
+name: breakdown-plan
+description: 'Issue Planning and Automation prompt that generates comprehensive project plans with Epic > Feature > Story/Enabler > Test hierarchy, dependencies, priorities, and automated tracking.'
+---
+
 # GitHub Issue Planning & Project Automation Prompt
 
 ## Goal

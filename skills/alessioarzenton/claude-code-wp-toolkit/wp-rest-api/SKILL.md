@@ -1,3 +1,9 @@
+---
+name: wp-rest-api
+description: WordPress REST endpoint development and debugging. Always-active rules when working with REST routes, API authentication, or data exposure via JSON.
+user-invocable: false
+---
+
 # WordPress REST API
 
 Skill for creating, managing, and debugging REST endpoints in WordPress 6.x+. Covers route registration, authentication, input validation, security, and integration with CPTs/taxonomies.

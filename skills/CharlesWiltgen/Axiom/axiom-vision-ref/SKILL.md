@@ -1,3 +1,13 @@
+---
+name: axiom-vision-ref
+description: Use when needing Vision framework API details for hand/body pose, segmentation, text recognition, barcode detection, document scanning, or Visual Intelligence integration. Covers VNRequest types, coordinate conversion, DataScannerViewController, RecognizeDocumentsRequest, SemanticContentDescriptor, IntentValueQuery.
+license: MIT
+compatibility: iOS 11+, iPadOS 11+, macOS 10.13+, tvOS 11+, visionOS 1+
+metadata:
+  version: "1.1.0"
+  last-updated: "2026-01-03"
+---
+
 # Vision Framework API Reference
 
 Comprehensive reference for Vision framework computer vision: subject segmentation, hand/body pose detection, person detection, face analysis, text recognition (OCR), barcode detection, and document scanning.

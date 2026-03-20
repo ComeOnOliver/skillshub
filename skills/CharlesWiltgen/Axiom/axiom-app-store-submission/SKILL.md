@@ -1,3 +1,11 @@
+---
+name: axiom-app-store-submission
+description: Use when preparing ANY app for App Store submission - enforces pre-flight checklist, rejection prevention, privacy compliance, and metadata completeness to prevent common App Store rejections
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # App Store Submission
 
 ## Overview

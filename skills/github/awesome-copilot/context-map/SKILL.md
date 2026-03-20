@@ -1,3 +1,8 @@
+---
+name: context-map
+description: 'Generate a map of all files relevant to a task before making changes'
+---
+
 # Context Map
 
 Before implementing any changes, analyze the codebase and create a context map.

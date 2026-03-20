@@ -1,3 +1,9 @@
+---
+name: crosspost
+description: Multi-platform content distribution across X, LinkedIn, Threads, and Bluesky. Adapts content per platform using content-engine patterns. Never posts identical content cross-platform. Use when the user wants to distribute content across social platforms.
+origin: ECC
+---
+
 # Crosspost
 
 Distribute content across multiple social platforms with platform-native adaptation.
@@ -146,7 +152,7 @@ import os
 import requests
 
 resp = requests.post(
-    "https://your-crosspost-service.example/api/posts",
+    "https://api.postbridge.io/v1/posts",
     headers={"Authorization": f"Bearer {os.environ['POSTBRIDGE_API_KEY']}"},
     json={
         "platforms": ["twitter", "linkedin", "threads"],
@@ -155,10 +161,8 @@ resp = requests.post(
             "linkedin": {"text": linkedin_version},
             "threads": {"text": threads_version}
         }
-    },
-    timeout=30,
+    }
 )
-resp.raise_for_status()
 ```
 
 ### Manual Posting

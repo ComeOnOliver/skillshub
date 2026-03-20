@@ -1,3 +1,10 @@
+---
+name: file-validator
+description: Validate file formats and content safely
+license: MIT
+allowed-tools: [Python]
+---
+
 # File Validator
 
 Validates file formats and checks content integrity.

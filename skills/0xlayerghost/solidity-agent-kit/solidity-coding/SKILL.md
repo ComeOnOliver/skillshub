@@ -1,3 +1,8 @@
+---
+name: solidity-coding
+description: "[AUTO-INVOKE] MUST be invoked BEFORE writing or modifying any Solidity contract (.sol files). Covers pragma version, naming conventions, project layout, OpenZeppelin library selection standards, oracle integration, and anti-patterns. Trigger: any task involving creating, editing, or reviewing .sol source files."
+---
+
 # Solidity Coding Standards
 
 ## Language Rule

@@ -1,3 +1,8 @@
+---
+name: nextjs-pages-router
+description: "Legacy routing, getServerSideProps conventions, and strict architectural constraints. (triggers: pages/**/*.tsx, pages/**/*.ts, Pages Router, getServerSideProps, getStaticProps, _app, useRouter)"
+---
+
 # Next.js Pages Router (Legacy)
 
 ## **Priority: P0 (CRITICAL)**

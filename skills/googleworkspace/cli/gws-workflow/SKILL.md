@@ -1,3 +1,15 @@
+---
+name: gws-workflow
+version: 1.0.0
+description: "Google Workflow: Cross-service productivity workflows."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws workflow --help"
+---
+
 # workflow (v1)
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.
@@ -29,3 +41,4 @@ gws schema workflow.<resource>.<method>
 ```
 
 Use `gws schema` output to build your `--params` and `--json` flags.
+

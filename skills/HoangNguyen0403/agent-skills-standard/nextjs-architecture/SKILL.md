@@ -1,3 +1,8 @@
+---
+name: nextjs-architecture
+description: "Scalable project structure using Feature-Sliced Design (FSD). Use when structuring a Next.js project with Feature-Sliced Design architecture. (triggers: src/features/**, src/entities/**, src/widgets/**, FSD, Feature Sliced Design, slices, segments)"
+---
+
 # Architecture (Feature-Sliced Design)
 
 ## **Priority: P2 (MEDIUM)**

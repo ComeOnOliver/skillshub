@@ -1,3 +1,8 @@
+---
+name: flutter-error-handling
+description: "Functional error handling using Dartz and Either. Use when implementing functional error handling, Either monad, or failure types in Flutter. (triggers: lib/domain/**, lib/infrastructure/**, Either, fold, Left, Right, Failure, dartz)"
+---
+
 # Error Handling
 
 ## **Priority: P1 (HIGH)**

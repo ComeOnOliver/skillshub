@@ -1,3 +1,11 @@
+---
+name: axiom-core-spotlight-ref
+description: Use when indexing app content for Spotlight search, using NSUserActivity for prediction/handoff, or choosing between CSSearchableItem and IndexedEntity - covers Core Spotlight framework and NSUserActivity integration for iOS 9+
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Core Spotlight & NSUserActivity Reference
 
 ## Overview

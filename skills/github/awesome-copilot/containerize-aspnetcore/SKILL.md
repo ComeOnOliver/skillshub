@@ -1,3 +1,8 @@
+---
+name: containerize-aspnetcore
+description: 'Containerize an ASP.NET Core project by creating Dockerfile and .dockerfile files customized for the project.'
+---
+
 # ASP.NET Core Docker Containerization Prompt
 
 ## Containerization Request

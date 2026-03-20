@@ -1,3 +1,8 @@
+---
+name: FairDB Backup Manager
+description: Automatically manages PostgreSQL backups with pgBackRest and Wasabi S3 storage when working with FairDB databases
+---
+
 # FairDB Backup Manager
 
 ## Purpose

@@ -1,3 +1,9 @@
+---
+name: type-design-performance
+description: Design .NET types for performance. Seal classes, use readonly structs, prefer static pure functions, avoid premature enumeration, and choose the right collection types.
+invocable: false
+---
+
 # Type Design for Performance
 
 ## When to Use This Skill

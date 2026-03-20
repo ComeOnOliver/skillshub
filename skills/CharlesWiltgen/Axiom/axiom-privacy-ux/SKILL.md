@@ -1,3 +1,11 @@
+---
+name: axiom-privacy-ux
+description: Use when implementing privacy manifests, requesting permissions, App Tracking Transparency UX, or preparing Privacy Nutrition Labels - covers just-in-time permission requests, tracking domain management, and Required Reason APIs from WWDC 2023
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Privacy UX Patterns
 
 Comprehensive guide to privacy-first app design. Apple Design Award Social Impact winners handle data ethically, and privacy-first design is a key differentiator.

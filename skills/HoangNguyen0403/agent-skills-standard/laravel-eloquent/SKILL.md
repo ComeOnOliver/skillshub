@@ -1,3 +1,8 @@
+---
+name: laravel-eloquent
+description: "Advanced Eloquent ORM patterns for performance and query reuse. Use when working with Eloquent relationships, scopes, or advanced query optimization in Laravel. (triggers: app/Models/**/*.php, scope, with, eager, chunk, model)"
+---
+
 # Laravel Eloquent
 
 ## **Priority: P0 (CRITICAL)**

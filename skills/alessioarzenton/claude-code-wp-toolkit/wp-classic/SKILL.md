@@ -1,3 +1,9 @@
+---
+name: wp-classic
+description: Conventions for WordPress Bedrock projects with classic PHP theme (no Sage/Acorn/Blade). Always-active rules.
+user-invocable: false
+---
+
 # WP-Classic Stack — Bedrock + Classic PHP Theme
 
 ## Stack

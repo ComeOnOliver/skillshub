@@ -1,3 +1,9 @@
+---
+name: axiom-ios-graphics
+description: Use when working with ANY GPU rendering, Metal, OpenGL migration, shaders, 3D content, RealityKit, AR, or display performance. Covers Metal migration, shader conversion, RealityKit ECS, RealityView, variable refresh rate, ProMotion.
+license: MIT
+---
+
 # iOS Graphics Router
 
 **You MUST use this skill for ANY GPU rendering, graphics programming, 3D content display, or display performance work.**

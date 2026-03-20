@@ -1,3 +1,11 @@
+---
+name: simple-formatter
+description: Formats text according to specified style guidelines. A clean example skill with no security issues.
+license: MIT
+allowed-tools:
+  - Python
+---
+
 # Simple Text Formatter
 
 This skill formats text according to style guidelines.

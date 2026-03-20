@@ -1,3 +1,8 @@
+---
+name: windows-builder
+description: Build Windows images with Packer using WinRM communicator and PowerShell provisioners. Use when creating Windows AMIs, Azure images, or VMware templates.
+---
+
 # Windows Builder
 
 Platform-agnostic patterns for building Windows images with Packer.

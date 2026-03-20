@@ -1,3 +1,10 @@
+---
+name: sns
+description: AWS SNS notification service for pub/sub messaging. Use when creating topics, managing subscriptions, configuring message filtering, sending notifications, or setting up mobile push.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/sns/latest/dg/
+---
+
 # AWS SNS
 
 Amazon Simple Notification Service (SNS) is a fully managed pub/sub messaging service for application-to-application (A2A) and application-to-person (A2P) communication.

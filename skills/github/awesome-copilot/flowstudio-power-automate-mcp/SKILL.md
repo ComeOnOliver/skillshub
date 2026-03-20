@@ -1,3 +1,15 @@
+---
+name: flowstudio-power-automate-mcp
+description: >-
+  Connect to and operate Power Automate cloud flows via a FlowStudio MCP server.
+  Use when asked to: list flows, read a flow definition, check run history, inspect
+  action outputs, resubmit a run, cancel a running flow, view connections, get a
+  trigger URL, validate a definition, monitor flow health, or any task that requires
+  talking to the Power Automate API through an MCP tool. Also use for Power Platform
+  environment discovery and connection management. Requires a FlowStudio MCP
+  subscription or compatible server — see https://mcp.flowstudio.app
+---
+
 # Power Automate via FlowStudio MCP
 
 This skill lets AI agents read, monitor, and operate Microsoft Power Automate

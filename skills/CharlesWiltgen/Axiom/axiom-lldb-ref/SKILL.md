@@ -1,3 +1,9 @@
+---
+name: axiom-lldb-ref
+description: Complete LLDB command reference — variable inspection, breakpoints, threads, expression evaluation, process control, memory commands, and .lldbinit customization
+license: MIT
+---
+
 # LLDB Command Reference
 
 Complete command reference for LLDB in Xcode. Organized by task so you can find the exact command you need.

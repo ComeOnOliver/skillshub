@@ -1,3 +1,9 @@
+---
+name: skill-security-auditor
+description: "Security auditing for code, configs, and infrastructure. Use when the user wants to audit or improve security: scan for vulnerabilities (SQL injection, XSS, command injection, path traversal), detect hardcoded secrets and credentials, review auth and authorization, check dependencies for known CVEs, audit config files for insecure defaults, or generate security reports. Trigger on \"security audit\", \"vulnerability scan\", \"code review for security\", \"find secrets\", \"check for vulnerabilities\", \"OWASP\", \"CVE\", or questions about code security."
+license: Complete terms in LICENSE.txt
+---
+
 # Security Auditor Guide
 
 ## Overview

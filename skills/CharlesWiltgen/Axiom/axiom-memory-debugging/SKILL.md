@@ -1,3 +1,11 @@
+---
+name: axiom-memory-debugging
+description: Use when you see memory warnings, 'retain cycle', app crashes from memory pressure, or when asking 'why is my app using so much memory', 'how do I find memory leaks', 'my deinit is never called', 'Instruments shows memory growth', 'app crashes after 10 minutes' - systematic memory leak detection and fixes for iOS/macOS
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Memory Debugging
 
 ## Overview

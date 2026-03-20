@@ -1,3 +1,24 @@
+---
+name: electric-postgres-security
+description: >
+  Pre-deploy security checklist for Postgres with Electric. Checks REPLICATION
+  role, SELECT grants, CREATE on database, table ownership, REPLICA IDENTITY
+  FULL on all synced tables, publication management (auto vs manual with
+  ELECTRIC_MANUAL_TABLE_PUBLISHING), connection pooler exclusion for
+  DATABASE_URL (use direct connection), and ELECTRIC_POOLED_DATABASE_URL
+  for pooled queries. Load before deploying Electric to production or when
+  diagnosing Postgres permission errors.
+type: security
+library: electric
+library_version: '1.5.10'
+requires:
+  - electric-proxy-auth
+sources:
+  - 'electric-sql/electric:website/docs/guides/postgres-permissions.md'
+  - 'electric-sql/electric:website/docs/guides/troubleshooting.md'
+  - 'electric-sql/electric:website/docs/guides/deployment.md'
+---
+
 This skill builds on electric-proxy-auth. Read it first for proxy security patterns.
 
 # Electric — Postgres Security Checklist

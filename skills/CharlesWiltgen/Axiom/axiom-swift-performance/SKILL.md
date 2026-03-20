@@ -1,3 +1,11 @@
+---
+name: axiom-swift-performance
+description: Use when optimizing Swift code performance, reducing memory usage, improving runtime efficiency, dealing with COW, ARC overhead, generics specialization, or collection optimization
+license: MIT
+metadata:
+  version: "1.2.0"
+---
+
 # Swift Performance Optimization
 
 ## Purpose

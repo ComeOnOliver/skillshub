@@ -1,3 +1,14 @@
+---
+name: alicloud-ecs
+description: Manage Alibaba Cloud Elastic Compute Service (ECS) using the @alicloud/ecs20140526 TypeScript SDK. Use when working with cloud servers on Alibaba Cloud, including instance lifecycle (create, start, stop, reboot, delete), disks and snapshots, images, security groups, VPC networking, EIP, ENI, SSH key pairs, dedicated hosts, auto provisioning, launch templates, Cloud Assistant commands, tags, system events, diagnostics, storage capacity units, and prefix lists. Covers all 374 APIs of the ECS 20140526 version.
+license: Apache-2.0
+metadata:
+  author: alicloud
+  version: "1.0"
+  sdk-package: "@alicloud/ecs20140526"
+  api-version: "2014-05-26"
+---
+
 # Alibaba Cloud ECS Skill
 
 Manage cloud servers, disks, images, networks, security, and operations via the `@alicloud/ecs20140526` TypeScript SDK.

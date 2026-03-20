@@ -1,3 +1,8 @@
+---
+name: napkin
+description: 'Visual whiteboard collaboration for Copilot CLI. Creates an interactive whiteboard that opens in your browser — draw, sketch, add sticky notes, then share everything back with Copilot. Copilot sees your drawings and text, and responds with analysis, suggestions, and ideas.'
+---
+
 # Napkin — Visual Whiteboard for Copilot CLI
 
 Napkin gives users a browser-based whiteboard where they can draw, sketch, and add sticky notes to think through ideas visually. The agent reads back the whiteboard contents (via a PNG snapshot and optional JSON data) and responds conversationally with analysis, suggestions, and next steps.

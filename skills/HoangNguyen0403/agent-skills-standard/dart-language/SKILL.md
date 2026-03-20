@@ -1,3 +1,8 @@
+---
+name: dart-language
+description: "Modern Dart standards (3.x+) including null safety and patterns. Use when working with Dart 3.x null safety, records, patterns, or sealed classes. (triggers: **/*.dart, sealed, record, switch, pattern, extension, final, late, async, await)"
+---
+
 # Dart Language Patterns
 
 ## **Priority: P0 (CRITICAL)**

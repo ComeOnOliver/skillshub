@@ -1,7 +1,7 @@
-# Deploy to Production
+---
+name: deploy-prod
+description: Deploys to production
+allowed-tools: Bash Read Write
+---
 
-This skill deploys the application to production.
-
-## Usage
-
-This skill requires explicit user invocation due to its dangerous nature.
+Deploy the application to production.

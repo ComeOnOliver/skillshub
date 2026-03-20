@@ -1,3 +1,8 @@
+---
+name: typespec-create-agent
+description: 'Generate a complete TypeSpec declarative agent with instructions, capabilities, and conversation starters for Microsoft 365 Copilot'
+---
+
 # Create TypeSpec Declarative Agent
 
 Create a complete TypeSpec declarative agent for Microsoft 365 Copilot with the following structure:

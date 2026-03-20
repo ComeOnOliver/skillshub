@@ -1,8 +1,14 @@
-# Continuous Agent Loop
+---
+name: continuous-agent-loop
+description: 具有质量门、评估和恢复控制的连续自主代理循环模式。
+origin: ECC
+---
 
-This is the v1.8+ canonical loop skill name. It supersedes `autonomous-loops` while keeping compatibility for one release.
+# 持续代理循环
 
-## Loop Selection Flow
+这是 v1.8+ 的规范循环技能名称。它在保持一个发布版本的兼容性的同时，取代了 `autonomous-loops`。
+
+## 循环选择流程
 
 ```text
 Start
@@ -16,24 +22,25 @@ Start
   +-- default --> sequential
 ```
 
-## Combined Pattern
+## 组合模式
 
-Recommended production stack:
-1. RFC decomposition (`ralphinho-rfc-pipeline`)
-2. quality gates (`plankton-code-quality` + `/quality-gate`)
-3. eval loop (`eval-harness`)
-4. session persistence (`nanoclaw-repl`)
+推荐的生产栈：
 
-## Failure Modes
+1. RFC 分解 (`ralphinho-rfc-pipeline`)
+2. 质量门 (`plankton-code-quality` + `/quality-gate`)
+3. 评估循环 (`eval-harness`)
+4. 会话持久化 (`nanoclaw-repl`)
 
-- loop churn without measurable progress
-- repeated retries with same root cause
-- merge queue stalls
-- cost drift from unbounded escalation
+## 故障模式
 
-## Recovery
+* 循环空转，没有可衡量的进展
+* 因相同根本原因而重复重试
+* 合并队列停滞
+* 无限制升级导致的成本漂移
 
-- freeze loop
-- run `/harness-audit`
-- reduce scope to failing unit
-- replay with explicit acceptance criteria
+## 恢复
+
+* 冻结循环
+* 运行 `/harness-audit`
+* 将范围缩小到失败单元
+* 使用明确的验收标准重放

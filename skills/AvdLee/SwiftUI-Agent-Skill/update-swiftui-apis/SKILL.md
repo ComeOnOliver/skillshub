@@ -1,3 +1,8 @@
+---
+name: update-swiftui-apis
+description: Scan Apple's SwiftUI documentation for deprecated APIs and update the SwiftUI Expert Skill with modern replacements. Use when asked to "update latest APIs", "refresh deprecated SwiftUI APIs", "check for new SwiftUI deprecations", "scan for API changes", or after a new iOS/Xcode release. Requires the Sosumi MCP to be available.
+---
+
 # Update SwiftUI APIs
 
 Systematically scan Apple's developer documentation via the Sosumi MCP, identify deprecated SwiftUI APIs and their modern replacements, and update `swiftui-expert-skill/references/latest-apis.md`.

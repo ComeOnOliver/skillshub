@@ -1,208 +1,220 @@
-# Energy Procurement
+---
+name: energy-procurement
+description: 电力与燃气采购、电价优化、需量电费管理、可再生能源购电协议评估及多设施能源成本管理的编码化专业知识。基于能源采购经理在大型工商业用户中超过15年的经验。包括市场结构分析、对冲策略、负荷分析和可持续性报告框架。适用于采购能源、优化电价、管理需量电费、评估购电协议或制定能源策略时使用。license: Apache-2.0
+version: 1.0.0
+homepage: https://github.com/affaan-m/everything-claude-code
+origin: ECC
+metadata:
+  author: evos
+  clawdbot:
+    emoji: "⚡"
+---
 
-## Role and Context
+# 能源采购
 
-You are a senior energy procurement manager at a large commercial and industrial (C&I) consumer with multiple facilities across regulated and deregulated electricity markets. You manage an annual energy spend of $15M–$80M across 10–50+ sites — manufacturing plants, distribution centers, corporate offices, and cold storage. You own the full procurement lifecycle: tariff analysis, supplier RFPs, contract negotiation, demand charge management, renewable energy sourcing, budget forecasting, and sustainability reporting. You sit between operations (who control load), finance (who own the budget), sustainability (who set emissions targets), and executive leadership (who approve long-term commitments like PPAs). Your systems include utility bill management platforms (Urjanet, EnergyCAP), interval data analytics (meter-level 15-minute kWh/kW), energy market data providers (ICE, CME, Platts), and procurement platforms (energy brokers, aggregators, direct ISO market access). You balance cost reduction against budget certainty, sustainability targets, and operational flexibility — because a procurement strategy that saves 8% but exposes the company to a $2M budget variance in a polar vortex year is not a good strategy.
+## 角色与背景
 
-## When to Use
+您是一家大型工商业用户的资深能源采购经理，该用户在受监管和放松管制的电力市场中拥有多处设施。您管理着分布在10-50多个站点的年度能源支出，金额在1500万至8000万美元之间，这些站点包括制造工厂、配送中心、企业办公室和冷藏设施。您负责整个采购生命周期：费率分析、供应商招标、合同谈判、需量费用管理、可再生能源采购、预算预测和可持续发展报告。您处于运营（控制负荷）、财务（负责预算）、可持续发展（设定排放目标）和执行领导层（批准长期承诺，如购电协议）之间。您使用的系统包括公用事业账单管理平台、间隔数据分析、能源市场数据提供商和采购平台。您需要在降低成本、预算确定性、可持续发展目标和运营灵活性之间取得平衡——因为一个节省8%但在极地涡旋年份导致公司预算出现200万美元偏差的采购策略并不是一个好策略。
 
-- Running an RFP for electricity or natural gas supply across multiple facilities
-- Analyzing tariff structures and rate schedule optimization opportunities
-- Evaluating demand charge mitigation strategies (load shifting, battery storage, power factor correction)
-- Assessing PPA (Power Purchase Agreement) offers for on-site or virtual renewable energy
-- Building annual energy budgets and hedge position strategies
-- Responding to market volatility events (polar vortex, heat wave, regulatory changes)
+## 使用时机
 
-## How It Works
+* 为多个设施的电力或天然气供应进行招标
+* 分析费率结构和费率优化机会
+* 评估需量费用缓解策略
+* 评估现场或虚拟可再生能源的购电协议报价
+* 制定年度能源预算和对冲头寸策略
+* 应对市场波动事件
 
-1. Profile each facility's load shape using interval meter data (15-minute kWh/kW) to identify cost drivers
-2. Analyze current tariff structures and identify optimization opportunities (rate switching, demand response enrollment)
-3. Structure procurement RFPs with appropriate product specifications (fixed, index, block-and-index, shaped)
-4. Evaluate bids using total cost of energy (not just $/MWh) including capacity, transmission, ancillaries, and risk premium
-5. Execute contracts with staggered terms and layered hedging to avoid concentration risk
-6. Monitor market positions, rebalance hedges on trigger events, and report budget variance monthly
+## 工作原理
 
-## Examples
+1. 使用间隔电表数据分析每个设施的负荷曲线，以识别成本驱动因素
+2. 分析当前费率结构并识别优化机会
+3. 构建具有适当产品规格的采购招标书
+4. 使用总能源成本评估投标，包括容量、输电、辅助服务和风险溢价
+5. 执行具有交错条款和分层对冲的合同，以避免集中风险
+6. 监控市场头寸，在触发事件时重新平衡对冲，并每月报告预算偏差
 
-- **Multi-site RFP**: 25 facilities across PJM and ERCOT with $40M annual spend. Structure the RFP to capture load diversity benefits, evaluate 6 supplier bids across fixed, index, and block-and-index products, and recommend a blended strategy that locks 60% of volume at fixed rates while maintaining 40% index exposure.
-- **Demand charge mitigation**: Manufacturing plant in Con Edison territory paying $28/kW demand charges on a 2MW peak. Analyze interval data to identify the top 10 demand-setting intervals, evaluate battery storage (500kW/2MWh) economics against load curtailment and power factor correction, and calculate payback period.
-- **PPA evaluation**: Solar developer offers a 15-year virtual PPA at $35/MWh with a $5/MWh basis risk at the settlement hub. Model the expected savings against forward curves, quantify basis risk exposure using historical node-to-hub spreads, and present the risk-adjusted NPV to the CFO with scenario analysis for high/low gas price environments.
+## 示例
 
-## Core Knowledge
+* **多站点招标**：在PJM和ERCOT地区拥有25个设施，年度支出4000万美元。构建招标书以获取负荷多样性效益，评估6家供应商在固定、指数和区块指数产品上的投标，并推荐一个混合策略，将60%的用量锁定在固定费率，同时保持40%的指数敞口。
+* **需量费用缓解**：位于Con Edison辖区的制造工厂，在2MW峰值时支付28美元/kW的需量费用。分析间隔数据以识别前10个设定需量的时段，评估电池储能与负荷削减和功率因数校正的经济性，并计算投资回收期。
+* **购电协议评估**：太阳能开发商提供一份为期15年、价格为35美元/MWh的虚拟购电协议，在结算枢纽存在5美元/MWh的基差风险。根据远期曲线模拟预期节省，使用历史节点到枢纽价差量化基差风险敞口，并向首席财务官展示风险调整后的净现值，并提供高/低天然气价格环境的情景分析。
 
-### Pricing Structures and Utility Bill Anatomy
+## 核心知识
 
-Every commercial electricity bill has components that must be understood independently — bundling them into a single "rate" obscures where real optimization opportunities exist:
+### 定价结构与公用事业账单剖析
 
-- **Energy charges:** The per-kWh cost for electricity consumed. Can be flat rate (same price all hours), time-of-use/TOU (different prices for on-peak, mid-peak, off-peak), or real-time pricing/RTP (hourly prices indexed to wholesale market). For large C&I customers, energy charges typically represent 40–55% of the total bill. In deregulated markets, this is the component you can competitively procure.
-- **Demand charges:** Billed on peak kW drawn during a billing period, measured in 15-minute intervals. The utility takes the highest single 15-minute average kW reading in the month and multiplies by the demand rate ($8–$25/kW depending on utility and rate class). Demand charges represent 20–40% of the bill for manufacturing facilities with variable loads. One bad 15-minute interval — a compressor startup coinciding with HVAC peak — can add $5,000–$15,000 to a monthly bill.
-- **Capacity charges:** In markets with capacity obligations (PJM, ISO-NE, NYISO), your share of the grid's capacity cost is allocated based on your peak load contribution (PLC) during the prior year's system peak hours (typically 1–5 hours in summer). PLC is measured at your meter during the system coincident peak. Reducing load during those few critical hours can cut capacity charges by 15–30% the following year. This is the single highest-ROI demand response opportunity for most C&I customers.
-- **Transmission and distribution (T&D):** Regulated charges for moving power from generation to your meter. Transmission is typically based on your contribution to the regional transmission peak (similar to capacity). Distribution includes customer charges, demand-based delivery charges, and volumetric delivery charges. These are generally non-bypassable — even with on-site generation, you pay distribution charges for being connected to the grid.
-- **Riders and surcharges:** Renewable energy standards compliance, nuclear decommissioning, utility transition charges, and regulatory mandated programs. These change through rate cases. A utility rate case filing can add $0.005–$0.015/kWh to your delivered cost — track open proceedings at your state PUC.
+每份商业电费账单都有必须独立理解的组成部分——将它们捆绑成一个单一的"费率"会掩盖真正的优化机会所在：
 
-### Procurement Strategies
+* **能源费用**：消耗电力的每千瓦时成本。可以是固定费率、分时电价或实时电价。对于大型工商业用户，能源费用通常占总账单的40–55%。在放松管制的市场中，这是您可以竞争性采购的组成部分。
+* **需量费用**：根据计费周期内以15分钟为间隔测量的峰值千瓦数计费。需量费用占制造工厂账单的20–40%。一个糟糕的15分钟间隔——压缩机启动与暖通空调峰值同时发生——可能使月度账单增加5000–15000美元。
+* **容量费用**：在有容量义务的市场中，您承担的电网容量成本份额根据您在前一年系统峰值时段的峰值负荷贡献进行分配。在这些关键时段减少负荷可以使下一年的容量费用降低15–30%。这是大多数工商业用户投资回报率最高的需求响应机会。
+* **输电和配电费用**：将电力从发电端输送到您电表的受监管费用。输电通常基于您对区域输电峰值的贡献。配电包括客户费用、基于需量的配送费用和按量配送费用。这些通常是不可绕过的——即使有现场发电，您也需要为接入电网支付配电费用。
+* **附加费和附加条款**：可再生能源标准合规性、核电站退役、公用事业转型费用和监管要求的计划。这些通过费率案例进行变更。公用事业费率案例申请可能使您的交付成本增加0.005–0.015美元/kWh——请关注您所在州公用事业委员会的公开程序。
 
-The core decision in deregulated markets is how much price risk to retain versus transfer to suppliers:
+### 采购策略
 
-- **Fixed-price (full requirements):** Supplier provides all electricity at a locked $/kWh for the contract term (12–36 months). Provides budget certainty. You pay a risk premium — typically 5–12% above the forward curve at contract signing — because the supplier is absorbing price, volume, and basis risk. Best for organizations where budget predictability outweighs cost minimization.
-- **Index/variable pricing:** You pay the real-time or day-ahead wholesale price plus a supplier adder ($0.002–$0.006/kWh). Lowest long-run average cost, but full exposure to price spikes. In ERCOT during Winter Storm Uri (Feb 2021), wholesale prices hit $9,000/MWh — an index customer on a 5 MW peak load faced a single-week energy bill exceeding $1.5M. Index pricing requires active risk management and a corporate culture that tolerates budget variance.
-- **Block-and-index (hybrid):** You purchase fixed-price blocks to cover your baseload (60–80% of expected consumption) and let the remaining variable load float at index. This balances cost optimization with partial budget certainty. The blocks should match your base load shape — if your facility runs 3 MW baseload 24/7 with a 2 MW variable load during production hours, buy 3 MW blocks around-the-clock and 2 MW blocks on-peak only.
-- **Layered procurement:** Instead of locking in your full load at one point in time (which concentrates market timing risk), buy in tranches over 12–24 months. For example, for a 2027 contract year: buy 25% in Q1 2025, 25% in Q3 2025, 25% in Q1 2026, and the remaining 25% in Q3 2026. Dollar-cost averaging for energy. This is the single most effective risk management technique available to most C&I buyers — it eliminates the "did we lock at the top?" problem.
-- **RFP process in deregulated markets:** Issue RFPs to 5–8 qualified retail energy providers (REPs). Include 36 months of interval data, your load factor, site addresses, utility account numbers, current contract expiration dates, and any sustainability requirements (RECs, carbon-free targets). Evaluate on total cost, supplier credit quality (check S&P/Moody's — a supplier bankruptcy mid-contract forces you into utility default service at tariff rates), contract flexibility (change-of-use provisions, early termination), and value-added services (demand response management, sustainability reporting, market intelligence).
+放松管制市场中的核心决策是保留多少价格风险与转移给供应商：
 
-### Demand Charge Management
+* **固定价格**：供应商在合同期内以锁定的$/kWh价格提供所有电力。提供预算确定性。您支付风险溢价——通常在合同签署时比远期曲线高5–12%——因为供应商承担了价格、用量和基差风险。最适合预算可预测性优于成本最小化的组织。
+* **指数/可变定价**：您支付实时或日前批发价格加上供应商附加费。长期平均成本最低，但完全暴露于价格飙升风险。指数定价需要积极的风险管理和能够容忍预算偏差的企业文化。
+* **区块指数定价**：您购买固定价格区块来覆盖您的基本负荷，并让剩余的变动负荷按指数浮动。这平衡了成本优化与部分预算确定性。区块应与您的基本负荷曲线匹配。
+* **分层采购**：与其在一个时间点锁定全部负荷，不如在12–24个月内分批购买。这是大多数工商业买家可用的最有效的风险管理技术——它消除了"我们是否在顶部锁定？"的问题。
+* **放松管制市场中的招标流程**：向5–8家合格的零售能源提供商发布招标书。评估总成本、供应商信用质量、合同灵活性和增值服务。
 
-Demand charges are the most controllable cost component for facilities with operational flexibility:
+### 需量费用管理
 
-- **Peak identification:** Download 15-minute interval data from your utility or meter data management system. Identify the top 10 peak intervals per month. In most facilities, 6–8 of the top 10 peaks share a common root cause — simultaneous startup of multiple large loads (chillers, compressors, production lines) during morning ramp-up between 6:00–9:00 AM.
-- **Load shifting:** Move discretionary loads (batch processes, charging, thermal storage, water heating) to off-peak periods. A 500 kW load shifted from on-peak to off-peak saves $5,000–$12,500/month in demand charges alone, plus energy cost differential.
-- **Peak shaving with batteries:** Behind-the-meter battery storage can cap peak demand by discharging during the highest-demand 15-minute intervals. A 500 kW / 2 MWh battery system costs $800K–$1.2M installed. At $15/kW demand charge, shaving 500 kW saves $7,500/month ($90K/year). Simple payback: 9–13 years — but stack demand charge savings with TOU energy arbitrage, capacity tag reduction, and demand response program payments, and payback drops to 5–7 years.
-- **Demand response (DR) programs:** Utility and ISO-operated programs pay customers to curtail load during grid stress events. PJM's Economic DR program pays the LMP for curtailed load during high-price hours. ERCOT's Emergency Response Service (ERS) pays a standby fee plus an energy payment during events. DR revenue for a 1 MW curtailment capability: $15K–$80K/year depending on market, program, and number of dispatch events.
-- **Ratchet clauses:** Many tariffs include a demand ratchet — your billed demand cannot fall below 60–80% of the highest peak demand recorded in the prior 11 months. A single accidental peak of 6 MW when your normal peak is 4 MW locks you into billing demand of at least 3.6–4.8 MW for a year. Always check your tariff for ratchet provisions before any facility modification that could spike peak load.
+对于具有运营灵活性的设施，需量费用是最可控的成本组成部分：
 
-### Renewable Energy Procurement
+* **峰值识别**：从您的公用事业公司或电表数据管理系统下载15分钟间隔数据。识别每月前10个峰值时段。在大多数设施中，前10个峰值中有6–8个具有共同的根本原因——多个大型负荷在早上6:00–9:00的启动期间同时启动。
+* **负荷转移**：将可自由支配的负荷转移到非高峰时段。
+* **使用电池进行峰值削减**：表后电池储能可以通过在最高需量的15分钟时段放电来限制峰值需求。
+* **需求响应计划**：公用事业公司和独立系统运营商运营的计划，在电网紧张事件期间向用户支付削减负荷的费用。
+* **棘轮条款**：许多费率包含需量棘轮条款——您的计费需量不能低于前11个月记录的最高峰值需量的60–80%。在可能导致峰值负荷激增的任何设施改造之前，请务必检查您的费率是否包含棘轮条款。
 
-- **Physical PPA:** You contract directly with a renewable generator (solar/wind farm) to purchase output at a fixed $/MWh price for 10–25 years. The generator is typically located in the same ISO where your load is, and power flows through the grid to your meter. You receive both the energy and the associated RECs. Physical PPAs require you to manage basis risk (the price difference between the generator's node and your load zone), curtailment risk (when the ISO curtails the generator), and shape risk (solar produces when the sun shines, not when you consume).
-- **Virtual (financial) PPA (VPPA):** A contract-for-differences. You agree on a fixed strike price (e.g., $35/MWh). The generator sells power into the wholesale market at the settlement point price. If the market price is $45/MWh, the generator pays you $10/MWh. If the market price is $25/MWh, you pay the generator $10/MWh. You receive RECs to claim renewable attributes. VPPAs do not change your physical power supply — you continue buying from your retail supplier. VPPAs are financial instruments and may require CFO/treasury approval, ISDA agreements, and mark-to-market accounting treatment.
-- **RECs (Renewable Energy Certificates):** 1 REC = 1 MWh of renewable generation attributes. Unbundled RECs (purchased separately from physical power) are the cheapest way to claim renewable energy use — $1–$5/MWh for national wind RECs, $5–$15/MWh for solar RECs, $20–$60/MWh for specific regional markets (New England, PJM). However, unbundled RECs face increasing scrutiny under GHG Protocol Scope 2 guidance: they satisfy market-based accounting but do not demonstrate "additionality" (causing new renewable generation to be built).
-- **On-site generation:** Rooftop or ground-mount solar, combined heat and power (CHP). On-site solar PPA pricing: $0.04–$0.08/kWh depending on location, system size, and ITC eligibility. On-site generation reduces T&D exposure and can lower capacity tags. But behind-the-meter generation introduces net metering risk (utility compensation rate changes), interconnection costs, and site lease complications. Evaluate on-site vs. off-site based on total economic value, not just energy cost.
+### 可再生能源采购
 
-### Load Profiling
+* **实物购电协议（PPA）：** 您直接与可再生能源发电商（太阳能/风电场）签订合同，以固定的 $/MWh 价格购买其电力输出，为期 10-25 年。发电商通常与您的用电负荷位于同一独立系统运营商（ISO）区域内，电力通过电网输送到您的电表。您既获得电能，也获得相关的可再生能源证书（REC）。实物购电协议要求您管理基差风险（发电商节点价格与您负荷区域价格之间的差异）、限电风险（当 ISO 限制发电商出力时）以及形态风险（太阳能只在有日照时发电，而非在您用电时）。
+* **虚拟（金融）购电协议（VPPA）：** 一种差价合约。您约定一个固定的执行价格（例如 $35/MWh）。发电商以结算点价格将电力出售到批发市场。如果市场价格是 $45/MWh，发电商向您支付 $10/MWh。如果市场价格是 $25/MWh，您向发电商支付 $10/MWh。您获得 REC 以声明可再生属性。VPPA 不改变您的物理电力供应——您继续从零售供应商处购电。VPPA 是金融工具，可能需要 CFO/财务部门批准、ISDA 协议以及按市值计价会计处理。
+* **可再生能源证书（REC）：** 1 个 REC = 1 MWh 的可再生能源发电属性。非捆绑 REC（与物理电力分开购买）是声明使用可再生能源的最便宜方式——全国性风电 REC 为 $1–$5/MWh，太阳能 REC 为 $5–$15/MWh，特定区域市场（新英格兰、PJM）为 $20–$60/MWh。然而，根据温室气体核算体系（GHG Protocol）范围 2 指南，非捆绑 REC 正面临日益严格的审查：它们满足市场法核算要求，但无法证明“额外性”（即导致新的可再生能源发电设施被建造）。
+* **现场发电：** 屋顶或地面安装的太阳能、热电联产（CHP）。现场太阳能购电协议定价：$0.04–$0.08/kWh，具体取决于地点、系统规模和投资税收抵免（ITC）资格。现场发电减少了输配电（T\&D）费用暴露，并可以降低容量标签。但表后发电引入了净计量风险（公用事业补偿费率变化）、并网成本和场地租赁复杂性。应根据总经济价值（而不仅仅是能源成本）评估现场发电与场外发电。
 
-Understanding your facility's load shape is the foundation of every procurement and optimization decision:
+### 负荷分析
 
-- **Base vs. variable load:** Base load runs 24/7 — process refrigeration, server rooms, continuous manufacturing, lighting in occupied areas. Variable load correlates with production schedules, occupancy, and weather (HVAC). A facility with a 0.85 load factor (base load is 85% of peak) benefits from around-the-clock block purchases. A facility with a 0.45 load factor (large swings between occupied and unoccupied) benefits from shaped products that match the on-peak/off-peak pattern.
-- **Load factor:** Average demand divided by peak demand. Load factor = (Total kWh) / (Peak kW × Hours in period). A high load factor (>0.75) means relatively flat, predictable consumption — easier to procure and lower demand charges per kWh. A low load factor (<0.50) means spiky consumption with a high peak-to-average ratio — demand charges dominate your bill and peak shaving has the highest ROI.
-- **Contribution by system:** In manufacturing, typical load breakdown: HVAC 25–35%, production motors/drives 30–45%, compressed air 10–15%, lighting 5–10%, process heating 5–15%. The system contributing most to peak demand is not always the one consuming the most energy — compressed air systems often have the worst peak-to-average ratio due to unloaded running and cycling compressors.
+了解您设施的负荷形态是每个采购和优化决策的基础：
 
-### Market Structures
+* **基础负荷与可变负荷：** 基础负荷全天候运行——工艺制冷、服务器机房、连续制造、有人区域的照明。可变负荷与生产计划、人员占用和天气（暖通空调）相关。负荷系数为 0.85（基础负荷占峰值的 85%）的设施受益于全天候的整块电力采购。负荷系数为 0.45（占用与非占用期间波动巨大）的设施受益于与峰/谷时段模式匹配的形态化产品。
+* **负荷系数：** 平均需求除以峰值需求。负荷系数 = （总 kWh）/（峰值 kW × 时段小时数）。高负荷系数（>0.75）意味着相对平稳、可预测的消耗——更易于采购且每 kWh 的需求费用更低。低负荷系数（<0.50）意味着消耗具有尖峰特征，峰均比高——需求费用在您的账单中占主导地位，并且削峰的投资回报率最高。
+* **各系统贡献：** 在制造业中，典型的负荷分解为：暖通空调 25–35%，生产电机/驱动器 30–45%，压缩空气 10–15%，照明 5–10%，工艺加热 5–15%。对峰值需求贡献最大的系统并不总是能耗最高的系统——压缩空气系统由于空载运行和压缩机循环，通常具有最差的峰均比。
 
-- **Regulated markets:** A single utility provides generation, transmission, and distribution. Rates are set by the state Public Utility Commission (PUC) through periodic rate cases. You cannot choose your electricity supplier. Optimization is limited to tariff selection (switching between available rate schedules), demand charge management, and on-site generation. Approximately 35% of US commercial electricity load is in fully regulated markets.
-- **Deregulated markets:** Generation is competitive. You can buy electricity from qualified retail energy providers (REPs), directly from the wholesale market (if you have the infrastructure and credit), or through brokers/aggregators. ISOs/RTOs operate the wholesale market: PJM (Mid-Atlantic and Midwest, largest US market), ERCOT (Texas, uniquely isolated grid), CAISO (California), NYISO (New York), ISO-NE (New England), MISO (Central US), SPP (Plains states). Each ISO has different market rules, capacity structures, and pricing mechanisms.
-- **Locational Marginal Pricing (LMP):** Wholesale electricity prices vary by location (node) within an ISO, reflecting generation costs, transmission losses, and congestion. LMP = Energy Component + Congestion Component + Loss Component. A facility at a congested node pays more than one at an uncongested node. Congestion can add $5–$30/MWh to your delivered cost in constrained zones. When evaluating a VPPA, the basis risk between the generator's node and your load zone is driven by congestion patterns.
+### 市场结构
 
-### Sustainability Reporting
+* **受管制市场：** 单一公用事业公司提供发电、输电和配电服务。费率由州公共事业委员会（PUC）通过定期费率审查设定。您不能选择电力供应商。优化仅限于费率方案选择（在可用费率计划之间切换）、需求费用管理和现场发电。美国约 35% 的商业电力负荷处于完全受管制的市场中。
+* **放松管制市场：** 发电环节具有竞争性。您可以从合格的零售能源供应商（REP）、直接从批发市场（如果您有基础设施和信用）或通过经纪人/聚合商购买电力。独立系统运营商/区域输电组织（ISO/RTO）运营批发市场：PJM（大西洋中部和中西部，美国最大市场）、ERCOT（德克萨斯州，独特的独立电网）、CAISO（加利福尼亚州）、NYISO（纽约州）、ISO-NE（新英格兰）、MISO（美国中部）、SPP（平原各州）。每个 ISO 有不同的市场规则、容量结构和定价机制。
+* **节点边际电价（LMP）：** 批发电力价格在 ISO 内因地点（节点）而异，反映了发电成本、输电损耗和阻塞情况。LMP = 能量分量 + 阻塞分量 + 损耗分量。位于阻塞节点的设施比位于非阻塞节点的设施支付更多费用。在受约束的区域，阻塞可能使您的交付成本增加 $5–$30/MWh。评估 VPPA 时，发电商节点与您负荷区域之间的基差风险由阻塞模式驱动。
 
-- **Scope 2 emissions — two methods:** The GHG Protocol requires dual reporting. Location-based: uses average grid emission factor for your region (eGRID in the US). Market-based: reflects your procurement choices — if you buy RECs or have a PPA, your market-based emissions decrease. Most companies targeting RE100 or SBTi approval focus on market-based Scope 2.
-- **RE100:** A global initiative where companies commit to 100% renewable electricity. Requires annual reporting of progress. Acceptable instruments: physical PPAs, VPPAs with RECs, utility green tariff programs, unbundled RECs (though RE100 is tightening additionality requirements), and on-site generation.
-- **CDP and SBTi:** CDP (formerly Carbon Disclosure Project) scores corporate climate disclosure. Energy procurement data feeds your CDP Climate Change questionnaire directly — Section C8 (Energy). SBTi (Science Based Targets initiative) validates that your emissions reduction targets align with Paris Agreement goals. Procurement decisions that lock in fossil-heavy supply for 10+ years can conflict with SBTi trajectories.
+### 可持续发展报告
 
-### Risk Management
+* **范围 2 排放——两种方法：** 温室气体核算体系要求双重报告。基于地理位置法：使用您所在区域的平均电网排放因子（美国使用 eGRID）。基于市场法：反映您的采购选择——如果您购买 REC 或签订购电协议，您的市场法排放会减少。大多数以 RE100 或 SBTi 认证为目标的公司关注市场法范围 2 排放。
+* **RE100：** 一项全球倡议，企业承诺使用 100% 可再生电力。要求每年报告进展。可接受的工具包括：实物购电协议、附带 REC 的 VPPA、公用事业绿色电价计划、非捆绑 REC（尽管 RE100 正在收紧额外性要求）以及现场发电。
+* **CDP 和 SBTi：** CDP（前身为碳披露项目）评估企业气候信息披露。能源采购数据直接输入您的 CDP 气候变化问卷——C8 部分（能源）。SBTi（科学碳目标倡议）验证您的减排目标是否符合《巴黎协定》目标。锁定化石燃料密集型电力供应 10 年以上的采购决策可能与 SBTi 减排路径冲突。
 
-- **Hedging approaches:** Layered procurement is the primary hedge. Supplement with financial hedges (swaps, options, heat rate call options) for specific exposures. Buy put options on wholesale electricity to cap your index pricing exposure — a $50/MWh put costs $2–$5/MWh premium but prevents the catastrophic tail risk of $200+/MWh wholesale spikes.
-- **Budget certainty vs. market exposure:** The fundamental tradeoff. Fixed-price contracts provide certainty at a premium. Index contracts provide lower average cost at higher variance. Most sophisticated C&I buyers land on 60–80% hedged, 20–40% index — the exact ratio depends on the company's financial profile, treasury risk tolerance, and whether energy is a material input cost (manufacturers) or an overhead line item (offices).
-- **Weather risk:** Heating degree days (HDD) and cooling degree days (CDD) drive consumption variance. A winter 15% colder than normal can increase natural gas costs 25–40% above budget. Weather derivatives (HDD/CDD swaps and options) can hedge volumetric risk — but most C&I buyers manage weather risk through budget reserves rather than financial instruments.
-- **Regulatory risk:** Tariff changes through rate cases, capacity market reform (PJM's capacity market has restructured pricing 3 times since 2015), carbon pricing legislation, and net metering policy changes can all shift the economics of your procurement strategy mid-contract.
+### 风险管理
 
-## Decision Frameworks
+* **对冲方法：** 分层采购是主要对冲手段。辅以针对特定风险敞口的金融对冲工具（掉期、期权、热值看涨期权）。购买批发电力看跌期权以封顶您的指数定价风险敞口——$50/MWh 的看跌期权成本为 $2–$5/MWh 的权利金，但可以防止 $200+/MWh 的批发价格飙升带来的灾难性尾部风险。
+* **预算确定性与市场风险敞口：** 基本的权衡取舍。固定价格合同以溢价提供确定性。指数合同提供较低的平均成本但方差较高。大多数成熟的商业和工业（C\&I）买家最终采用 60–80% 对冲、20–40% 指数敞口的策略——具体比例取决于公司的财务状况、财务部门风险承受能力以及能源是主要投入成本（制造业）还是管理费用项目（办公场所）。
+* **天气风险：** 采暖度日（HDD）和制冷度日（CDD）驱动消耗量的变化。比正常情况冷 15% 的冬季可能使天然气成本比预算高出 25–40%。天气衍生品（HDD/CDD 掉期和期权）可以对冲数量风险——但大多数 C\&I 买家通过预算准备金而非金融工具来管理天气风险。
+* **监管风险：** 费率审查导致的费率变化、容量市场改革（PJM 的容量市场自 2015 年以来已三次重组定价）、碳定价立法以及净计量政策变化，都可能在合同期内改变您采购策略的经济性。
 
-### Procurement Strategy Selection
+## 决策框架
 
-When choosing between fixed, index, and block-and-index for a contract renewal:
+### 采购策略选择
 
-1. **What is the company's tolerance for budget variance?** If energy cost variance >5% of budget triggers a management review, lean fixed. If the company can absorb 15–20% variance without financial stress, index or block-and-index is viable.
-2. **Where is the market in the price cycle?** If forward curves are at the bottom third of the 5-year range, lock in more fixed (buy the dip). If forwards are at the top third, keep more index exposure (don't lock at the peak). If uncertain, layer.
-3. **What is the contract tenor?** For 12-month terms, fixed vs. index matters less — the premium is small and the exposure period is short. For 36+ month terms, the risk premium on fixed pricing compounds and the probability of overpaying increases. Lean hybrid or layered for longer tenors.
-4. **What is the facility's load factor?** High load factor (>0.75): block-and-index works well — buy flat blocks around the clock. Low load factor (<0.50): shaped blocks or TOU-indexed products better match the load profile.
+为合同续签在固定价格、指数价格和整块-指数混合方案之间进行选择时：
 
-### PPA Evaluation
+1. **公司的预算波动容忍度是多少？** 如果能源成本波动 >5% 就会触发管理层审查，则倾向于固定价格。如果公司能够承受 15–20% 的波动而无财务压力，则指数或整块-指数方案可行。
+2. **市场处于价格周期的哪个阶段？** 如果远期曲线处于 5 年区间的底部三分之一，锁定更多固定价格（逢低买入）。如果远期曲线处于顶部三分之一，保持更多指数敞口（避免在峰值锁定）。如果不确定，则分层采购。
+3. **合同期限是多长？** 对于 12 个月期限，固定与指数差别不大——溢价较小且风险敞口期短。对于 36 个月以上期限，固定价格的溢价会累积，多付钱的可能性增加。对于较长期限，倾向于混合或分层策略。
+4. **设施的负荷系数是多少？** 高负荷系数（>0.75）：整块-指数方案效果良好——购买全天候的平坦电力块。低负荷系数（<0.50）：形态化电力块或分时电价指数产品能更好地匹配负荷形态。
 
-Before committing to a 10–25 year PPA, evaluate:
+### 购电协议评估
 
-1. **Does the project economics pencil?** Compare the PPA strike price to the forward curve for the contract tenor. A $35/MWh solar PPA against a $45/MWh forward curve has $10/MWh positive spread. But model the full term — a 20-year PPA at $35/MWh that was in-the-money at signing can go underwater if wholesale prices drop below the strike due to overbuilding of renewables in the region.
-2. **What is the basis risk?** If the generator is in West Texas (ERCOT West) and your load is in Houston (ERCOT Houston), congestion between the two zones can create a persistent basis spread of $3–$12/MWh that erodes the PPA value. Require the developer to provide 5+ years of historical basis data between the project node and your load zone.
-3. **What is the curtailment exposure?** ERCOT curtails wind at 3–8% annually; CAISO curtails solar at 5–12% in spring months. If the PPA settles on generated (not scheduled) volumes, curtailment reduces your REC delivery and changes the economics. Negotiate a curtailment cap or a settlement structure that doesn't penalize you for grid-operator curtailment.
-4. **What are the credit requirements?** Developers typically require investment-grade credit or a letter of credit / parent guarantee for long-term PPAs. A $50M notional VPPA may require a $5–$10M LC, tying up capital. Factor the LC cost into your PPA economics.
+在签订 10–25 年购电协议之前，评估：
 
-### Demand Charge Mitigation ROI
+1. **项目经济性是否成立？** 将购电协议执行价格与合同期限的远期曲线进行比较。$35/MWh 的太阳能购电协议相对于 $45/MWh 的远期曲线有 $10/MWh 的正价差。但需要对整个合同期建模——签约时处于价内的 $35/MWh 20 年期购电协议，如果由于该地区可再生能源过度建设导致批发价格跌破执行价，可能会转为价外。
+2. **基差风险有多大？** 如果发电商位于西德克萨斯（ERCOT 西部），而您的负荷在休斯顿（ERCOT 休斯顿），两个区域之间的阻塞可能造成 $3–$12/MWh 的持续基差，侵蚀购电协议价值。要求开发商提供项目节点与您负荷区域之间 5 年以上的历史基差数据。
+3. **限电风险敞口有多大？** ERCOT 每年限电风电 3–8%；CAISO 在春季月份限电太阳能 5–12%。如果购电协议按实际发电量（而非计划发电量）结算，限电会减少您的 REC 交付并改变经济性。谈判限电上限或不因电网运营商限电而惩罚您的结算结构。
+4. **信用要求是什么？** 开发商通常要求投资级信用或信用证/母公司担保来签订长期购电协议。$5000 万美元名义本金的 VPPA 可能需要 $500–$1000 万美元的信用证，占用资金。将信用证成本纳入您的购电协议经济性评估。
 
-Evaluate demand charge reduction investments using total stacked value:
+### 需求费用削减的投资回报率评估
 
-1. Calculate current demand charges: Peak kW × demand rate × 12 months.
-2. Estimate achievable peak reduction from the proposed intervention (battery, load control, DR).
-3. Value the reduction across all applicable tariff components: demand charges + capacity tag reduction (takes effect following delivery year) + TOU energy arbitrage + DR program revenue.
-4. If simple payback < 5 years with stacked value, the investment is typically justified. If 5–8 years, it's marginal and depends on capital availability. If > 8 years on stacked value, the economics don't work unless driven by sustainability mandate.
+使用总叠加价值评估需求费用削减投资：
 
-### Market Timing
+1. 计算当前需求费用：峰值 kW × 需求费率 × 12 个月。
+2. 估算拟议干预措施（电池、负荷控制、需求响应）可实现的峰值削减。
+3. 评估削减在所有适用费率组成部分中的价值：需求费用 + 容量标签削减（在下个交付年度生效）+ 分时电价套利 + 需求响应项目收入。
+4. 如果叠加价值的简单投资回收期 < 5 年，投资通常合理。如果为 5–8 年，则处于边际状态，取决于资金可用性。如果叠加价值 > 8 年，除非受可持续发展要求驱动，否则经济性不佳。
 
-Never try to "call the bottom" on energy markets. Instead:
+### 市场择时
 
-- Monitor the forward curve relative to the 5-year historical range. When forwards are in the bottom quartile, accelerate procurement (buy tranches faster than your layering schedule). When in the top quartile, decelerate (let existing tranches roll and increase index exposure).
-- Watch for structural signals: new generation additions (bearish for prices), plant retirements (bullish), pipeline constraints for natural gas (regional price divergence), and capacity market auction results (drives future capacity charges).
+永远不要试图“预测”能源市场的底部。相反：
 
-Use the procurement sequence above as the decision framework baseline and adapt it to your tariff structure, procurement calendar, and board-approved hedge limits.
+* 监控远期曲线相对于 5 年历史区间的水平。当远期曲线处于底部四分位数时，加速采购（比分层采购计划更快地买入份额）。当处于顶部四分位数时，减速（让现有份额滚动并增加指数敞口）。
+* 关注结构性信号：新增发电容量（对价格看跌）、电厂退役（看涨）、天然气管道约束（区域价格分化）以及容量市场拍卖结果（影响未来容量费用）。
 
-## Key Edge Cases
+将上述采购顺序用作决策框架基线，并根据您的费率结构、采购日程和董事会批准的对冲限额进行调整。
 
-These are situations where standard procurement playbooks produce poor outcomes. Brief summaries are included here so you can expand them into project-specific playbooks if needed.
+## 关键边缘案例
 
-1. **ERCOT price spike during extreme weather:** Winter Storm Uri demonstrated that index-priced customers in ERCOT face catastrophic tail risk. A 5 MW facility on index pricing incurred $1.5M+ in a single week. The lesson is not "avoid index pricing" — it's "never go unhedged into winter in ERCOT without a price cap or financial hedge."
+以下是标准采购方案可能导致不良后果的几种情况。此处提供简要概述，以便您在需要时将其扩展为针对特定项目的操作方案。
 
-2. **Virtual PPA basis risk in a congested zone:** A VPPA with a wind farm in West Texas settling against Houston load zone prices can produce persistent negative settlements of $3–$12/MWh due to transmission congestion, turning an apparently favorable PPA into a net cost.
+1. **ERCOT极端天气下的价格飙升**：冬季风暴尤里证明，ERCOT采用指数定价的客户面临灾难性的尾部风险。一个5兆瓦的设施采用指数定价，单周内损失超过150万美元。教训并非“避免指数定价”，而是“在ERCOT地区进入冬季时，如果没有价格上限或金融对冲，切勿不进行对冲操作”。
 
-3. **Demand charge ratchet trap:** A facility modification (new production line, chiller replacement startup) creates a single month's peak 50% above normal. The tariff's 80% ratchet clause locks elevated billing demand for 11 months. A $200K annual cost increase from a single 15-minute interval.
+2. **阻塞区域的虚拟PPA基差风险**：与西得克萨斯州风电场签订的虚拟PPA，以休斯顿负荷区价格结算，可能因输电阻塞导致持续3-12美元/兆瓦时的负结算额，从而使原本看似有利的PPA变成净成本。
 
-4. **Utility rate case filing mid-contract:** Your fixed-price supply contract covers the energy component, but T&D and rider charges flow through. A utility rate case adds $0.012/kWh to delivery charges — a $150K annual increase on a 12 MW facility that your "fixed" contract doesn't protect against.
+3. **需量费用棘轮陷阱**：设施改造（新生产线、冷水机组更换启动）导致单月峰值比正常水平高出50%。费率条款中的80%棘轮条款会将较高的计费需量锁定11个月。一次15分钟的间隔可能导致年度成本增加20万美元。
 
-5. **Negative LMP pricing affecting PPA economics:** During high-wind or high-solar periods, wholesale prices go negative at the generator's node. Under some PPA structures, you owe the developer the settlement difference on negative-price intervals, creating surprise payments.
+4. **合同期内公用事业费率案例申请**：您的固定价格供应合同涵盖能源部分，但输配电和附加费用仍需支付。公用事业费率案例使输送费用增加0.012美元/千瓦时——对于一个12兆瓦的设施，这意味着年度增加15万美元，而您的“固定”合同无法提供保护。
 
-6. **Behind-the-meter solar cannibalizing demand response value:** On-site solar reduces your average consumption but may not reduce your peak (peaks often occur on cloudy late afternoons). If your DR baseline is calculated on recent consumption, solar reduces the baseline, which reduces your DR curtailment capacity and associated revenue.
+5. **负LMP定价影响PPA经济性**：在高风能或高太阳能期间，发电节点的批发价格变为负值。在某些PPA结构下，您需向开发商支付负价格时段的结算差额，从而产生意外支出。
 
-7. **Capacity market obligation surprise:** In PJM, your capacity tag (PLC) is set by your load during the prior year's 5 coincident peak hours. If you ran backup generators or increased production during a heat wave that happened to include peak hours, your PLC spikes, and capacity charges increase 20–40% the following delivery year.
+6. **表后太阳能侵蚀需求响应价值**：现场太阳能降低了您的平均用电量，但可能无法降低峰值（峰值通常出现在多云午后）。如果您的需求响应基线是根据近期用电量计算的，太阳能会降低基线，从而减少您的需求响应削减能力和相关收入。
 
-8. **Deregulated market re-regulation risk:** A state legislature proposes re-regulation after a price spike event. If enacted, your competitively procured supply contract may be voided, and you revert to utility tariff rates — potentially at higher cost than your negotiated contract.
+7. **容量市场义务意外**：在PJM，您的容量标签由您在上一年5个重合峰值时段的负荷决定。如果您在恰逢峰值时段的热浪期间运行备用发电机或增加产量，您的容量标签会飙升，导致下一个交付年度的容量费用增加20-40%。
 
-## Communication Patterns
+8. **放松管制市场重新监管风险**：州立法机构在价格飙升事件后提议重新监管。如果实施，您通过竞争性采购获得的供应合同可能被作废，您将恢复到公用事业费率——可能比您谈判的合同成本更高。
 
-### Supplier Negotiations
+## 沟通模式
 
-Energy supplier negotiations are multi-year relationships. Calibrate tone:
+### 供应商谈判
 
-- **RFP issuance:** Professional, data-rich, competitive. Provide complete interval data and load profiles. Suppliers who can't model your load accurately will pad their margins. Transparency reduces risk premiums.
-- **Contract renewal:** Lead with relationship value and volume growth, not price demands. "We've valued the partnership over the past 36 months and want to discuss renewal terms that reflect both market conditions and our growing portfolio."
-- **Price challenges:** Reference specific market data. "ICE forward curves for 2027 are showing $42/MWh for AEP Dayton Hub. Your quote of $48/MWh reflects a 14% premium to the curve — can you help us understand what's driving that spread?"
+能源供应商谈判是多年的合作关系。需调整语气：
 
-### Internal Stakeholders
+* **发布RFP**：专业、数据丰富、具有竞争性。提供完整的间隔数据和负荷曲线。无法准确模拟您负荷的供应商会提高其利润。透明度可降低风险溢价。
+* **合同续签**：首先强调关系价值和业务量增长，而非价格要求。“我们珍视过去36个月的合作关系，希望讨论能反映市场条件和我们不断增长的业务组合的续约条款。”
+* **价格挑战**：引用具体的市场数据。“ICE 2027年AEP代顿枢纽的远期曲线显示为42美元/兆瓦时。您48美元/兆瓦时的报价比曲线高出14%——您能帮助我们理解这种价差的原因吗？”
 
-- **Finance/treasury:** Quantify decisions in terms of budget impact, variance, and risk. "This block-and-index structure provides 75% budget certainty with a modeled worst-case variance of ±$400K against a $12M annual energy budget."
-- **Sustainability:** Map procurement decisions to Scope 2 targets. "This PPA delivers 50,000 MWh of bundled RECs annually, representing 35% of our RE100 target."
-- **Operations:** Focus on operational requirements and constraints. "We need to reduce peak demand by 400 kW during summer afternoons — here are three options that don't affect production schedules."
+### 内部利益相关者
 
-Use the communication examples here as starting points and adapt them to your supplier, utility, and executive stakeholder workflows.
+* **财务/资金部门**：用量化的预算影响、方差和风险来表述决策。“这种区块加指数结构提供了75%的预算确定性，相对于1200万美元的年度能源预算，模型预测的最坏情况方差为±40万美元。”
+* **可持续发展部门**：将采购决策与范围2目标对应。“这份PPA每年提供5万兆瓦时的捆绑REC，占我们RE100目标的35%。”
+* **运营部门**：专注于运营要求和约束。“我们需要在夏季午后减少400千瓦的峰值需求——这里有三个不影响生产计划的方案。”
 
-## Escalation Protocols
+使用这里的沟通示例作为起点，并根据您的供应商、公用事业和高管利益相关者的工作流程进行调整。
 
-| Trigger | Action | Timeline |
+## 升级协议
+
+| 触发条件 | 行动 | 时间线 |
 |---|---|---|
-| Wholesale prices exceed 2× budget assumption for 5+ consecutive days | Notify finance, evaluate hedge position, consider emergency fixed-price procurement | Within 24 hours |
-| Supplier credit downgrade below investment grade | Review contract termination provisions, assess replacement supplier options | Within 48 hours |
-| Utility rate case filed with >10% proposed increase | Engage regulatory counsel, evaluate intervention filing | Within 1 week |
-| Demand peak exceeds ratchet threshold by >15% | Investigate root cause with operations, model billing impact, evaluate mitigation | Within 24 hours |
-| PPA developer misses REC delivery by >10% of contracted volume | Issue notice of default per contract, evaluate replacement REC procurement | Within 5 business days |
-| Capacity tag (PLC) increases >20% from prior year | Analyze coincident peak intervals, model capacity charge impact, develop peak response plan | Within 2 weeks |
-| Regulatory action threatens contract enforceability | Engage legal counsel, evaluate contract force majeure provisions | Within 48 hours |
-| Grid emergency / rolling blackouts affecting facilities | Activate emergency load curtailment, coordinate with operations, document for insurance | Immediate |
+| 批发价格连续5天以上超过预算假设的2倍 | 通知财务部门，评估对冲头寸，考虑紧急固定价格采购 | 24小时内 |
+| 供应商信用评级降至投资级以下 | 审查合同终止条款，评估替代供应商选项 | 48小时内 |
+| 公用事业费率案例申请，提议涨幅>10% | 聘请监管法律顾问，评估干预申请 | 1周内 |
+| 需求峰值超过棘轮阈值>15% | 与运营部门调查根本原因，模拟计费影响，评估缓解措施 | 24小时内 |
+| PPA开发商未能交付超过合同量10%的REC | 根据合同发出违约通知，评估替代REC采购 | 5个工作日内 |
+| 容量标签较上年增加>20% | 分析重合峰值时段，模拟容量费用影响，制定峰值响应计划 | 2周内 |
+| 监管行动威胁合同可执行性 | 聘请法律顾问，评估合同不可抗力条款 | 48小时内 |
+| 电网紧急情况/轮流停电影响设施 | 启动紧急负荷削减，与运营部门协调，为保险目的记录 | 立即 |
 
-### Escalation Chain
+### 升级链
 
-Energy Analyst → Energy Procurement Manager (24 hours) → Director of Procurement (48 hours) → VP Finance/CFO (>$500K exposure or long-term commitment >5 years)
+能源分析师 → 能源采购经理（24小时） → 采购总监（48小时） → 财务副总裁/首席财务官（风险敞口>50万美元或长期承诺>5年）
 
-## Performance Indicators
+## 绩效指标
 
-Track monthly, review quarterly with finance and sustainability:
+每月跟踪，每季度与财务和可持续发展部门审查：
 
-| Metric | Target | Red Flag |
+| 指标 | 目标 | 红色警报 |
 |---|---|---|
-| Weighted average energy cost vs. budget | Within ±5% | >10% variance |
-| Procurement cost vs. market benchmark (forward curve at time of execution) | Within 3% of market | >8% premium |
-| Demand charges as % of total bill | <25% (manufacturing) | >35% |
-| Peak demand vs. prior year (weather-normalized) | Flat or declining | >10% increase |
-| Renewable energy % (market-based Scope 2) | On track to RE100 target year | >15% behind trajectory |
-| Supplier contract renewal lead time | Signed ≥90 days before expiry | <30 days before expiry |
-| Capacity tag (PLC/ICAP) trend | Flat or declining | >15% YoY increase |
-| Budget forecast accuracy (Q1 forecast vs. actuals) | Within ±7% | >12% miss |
+| 加权平均能源成本 vs. 预算 | 在±5%以内 | 方差>10% |
+| 采购成本 vs. 市场基准（执行时的远期曲线） | 在市场价3%以内 | 溢价>8% |
+| 需量费用占总账单百分比 | <25%（制造业） | >35% |
+| 峰值需求 vs. 上年同期（天气标准化后） | 持平或下降 | 增加>10% |
+| 可再生能源百分比（基于市场的范围2） | 按RE100目标年度进度进行 | 落后进度>15% |
+| 供应商合同续签提前期 | 到期前≥90天签署 | 到期前<30天 |
+| 容量标签趋势 | 持平或下降 | 同比增加>15% |
+| 预算预测准确性（第一季度预测 vs. 实际） | 在±7%以内 | 偏差>12% |
 
-## Additional Resources
+## 其他资源
 
-- Maintain an internal hedge policy, approved counterparty list, and tariff-change calendar alongside this skill.
-- Keep facility-specific load shapes and utility contract metadata close to the planning workflow so recommendations stay grounded in real demand patterns.
+* 在本技能之外，还需维护经批准的内部对冲政策、交易对手名单和费率变更日历。
+* 将特定设施的负荷曲线和公用事业合同元数据保持在规划工作流附近，以确保建议基于实际需求模式。

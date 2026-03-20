@@ -1,3 +1,9 @@
+---
+name: axiom-push-notifications-ref
+description: Use when needing APNs HTTP/2 transport details, JWT authentication setup, payload key reference, UNUserNotificationCenter API, notification category/action registration, service extension lifecycle, local notification triggers, Live Activity push headers, or broadcast push format. Covers complete push notification API surface.
+license: MIT
+---
+
 # Push Notifications API Reference
 
 Comprehensive API reference for APNs HTTP/2 transport, UserNotifications framework, and push-driven features including Live Activities and broadcast push.

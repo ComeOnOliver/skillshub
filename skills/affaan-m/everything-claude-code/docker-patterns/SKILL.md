@@ -1,18 +1,24 @@
-# Docker Patterns
+---
+name: docker-patterns
+description: 用于本地开发的Docker和Docker Compose模式，包括容器安全、网络、卷策略和多服务编排。
+origin: ECC
+---
 
-Docker and Docker Compose best practices for containerized development.
+# Docker 模式
 
-## When to Activate
+适用于容器化开发的 Docker 和 Docker Compose 最佳实践。
 
-- Setting up Docker Compose for local development
-- Designing multi-container architectures
-- Troubleshooting container networking or volume issues
-- Reviewing Dockerfiles for security and size
-- Migrating from local dev to containerized workflow
+## 何时启用
 
-## Docker Compose for Local Development
+* 为本地开发设置 Docker Compose
+* 设计多容器架构
+* 排查容器网络或卷问题
+* 审查 Dockerfile 的安全性和大小
+* 从本地开发迁移到容器化工作流
 
-### Standard Web App Stack
+## 用于本地开发的 Docker Compose
+
+### 标准 Web 应用栈
 
 ```yaml
 # docker-compose.yml
@@ -72,7 +78,7 @@ volumes:
   redisdata:
 ```
 
-### Development vs Production Dockerfile
+### 开发与生产 Dockerfile
 
 ```dockerfile
 # Stage: dependencies
@@ -110,7 +116,7 @@ HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://localhost:3000/heal
 CMD ["node", "dist/server.js"]
 ```
 
-### Override Files
+### 覆盖文件
 
 ```yaml
 # docker-compose.override.yml (auto-loaded, dev-only settings)
@@ -143,18 +149,19 @@ docker compose up
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 ```
 
-## Networking
+## 网络
 
-### Service Discovery
+### 服务发现
 
-Services in the same Compose network resolve by service name:
+同一 Compose 网络中的服务可通过服务名解析：
+
 ```
 # From "app" container:
 postgres://postgres:postgres@db:5432/app_dev    # "db" resolves to the db container
 redis://redis:6379/0                             # "redis" resolves to the redis container
 ```
 
-### Custom Networks
+### 自定义网络
 
 ```yaml
 services:
@@ -176,7 +183,7 @@ networks:
   backend-net:
 ```
 
-### Exposing Only What's Needed
+### 仅暴露所需内容
 
 ```yaml
 services:
@@ -186,7 +193,7 @@ services:
     # Omit ports entirely in production -- accessible only within Docker network
 ```
 
-## Volume Strategies
+## 卷策略
 
 ```yaml
 volumes:
@@ -200,7 +207,7 @@ volumes:
   # - /app/node_modules
 ```
 
-### Common Patterns
+### 常见模式
 
 ```yaml
 services:
@@ -216,9 +223,9 @@ services:
       - ./scripts/init.sql:/docker-entrypoint-initdb.d/init.sql  # Init scripts
 ```
 
-## Container Security
+## 容器安全
 
-### Dockerfile Hardening
+### Dockerfile 加固
 
 ```dockerfile
 # 1. Use specific tags (never :latest)
@@ -233,7 +240,7 @@ USER app
 # 5. No secrets in image layers
 ```
 
-### Compose Security
+### Compose 安全
 
 ```yaml
 services:
@@ -250,7 +257,7 @@ services:
       - NET_BIND_SERVICE          # Only if binding to ports < 1024
 ```
 
-### Secret Management
+### 密钥管理
 
 ```yaml
 # GOOD: Use environment variables (injected at runtime)
@@ -293,9 +300,9 @@ README.md
 tests/
 ```
 
-## Debugging
+## 调试
 
-### Common Commands
+### 常用命令
 
 ```bash
 # View logs
@@ -321,7 +328,7 @@ docker compose down -v                # Also remove volumes (DESTRUCTIVE)
 docker system prune                   # Remove unused images/containers
 ```
 
-### Debugging Network Issues
+### 调试网络问题
 
 ```bash
 # Check DNS resolution inside container
@@ -335,7 +342,7 @@ docker network ls
 docker network inspect <project>_default
 ```
 
-## Anti-Patterns
+## 反模式
 
 ```
 # BAD: Using docker compose in production without orchestration

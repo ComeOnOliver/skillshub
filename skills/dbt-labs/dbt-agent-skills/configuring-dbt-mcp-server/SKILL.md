@@ -1,3 +1,11 @@
+---
+name: configuring-dbt-mcp-server
+description: Generates MCP server configuration JSON, resolves authentication setup, and validates server connectivity for dbt. Use when setting up, configuring, or troubleshooting the dbt MCP server for AI tools like Claude Desktop, Claude Code, Cursor, or VS Code.
+user-invocable: false
+metadata:
+  author: dbt-labs
+---
+
 # Configure dbt MCP Server
 
 ## Overview

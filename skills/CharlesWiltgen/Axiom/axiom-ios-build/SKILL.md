@@ -1,3 +1,9 @@
+---
+name: axiom-ios-build
+description: Use when ANY iOS build fails, test crashes, Xcode misbehaves, or environment issue occurs before debugging code. Covers build failures, compilation errors, dependency conflicts, simulator problems, environment-first diagnostics.
+license: MIT
+---
+
 # iOS Build & Environment Router
 
 **You MUST use this skill for ANY build, environment, or Xcode-related issue before debugging application code.**

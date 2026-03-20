@@ -1,3 +1,8 @@
+---
+name: golang-security
+description: "Security standards for Go backend services. Use when implementing input validation, crypto, or SQL injection prevention in Go. (triggers: **/*.go, crypto/rand, sql, sanitize, jwt, bcrypt, validation)"
+---
+
 # Golang Security Standards
 
 ## **Priority: P0 (CRITICAL)**

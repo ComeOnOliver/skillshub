@@ -1,3 +1,10 @@
+---
+name: unjs-citty
+description: "ALWAYS use when writing code importing \"citty\". Consult for debugging, best practices, or modifying citty."
+metadata:
+  version: 0.2.1
+---
+
 # unjs/citty `citty`
 
 **Version:** 0.2.1 (yesterday)

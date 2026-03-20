@@ -1,3 +1,10 @@
+---
+name: coreml-diag
+description: CoreML diagnostics - model load failures, slow inference, memory issues, compression accuracy loss, compute unit problems, conversion errors.
+license: MIT
+version: 1.0.0
+---
+
 # CoreML Diagnostics
 
 ## Quick Reference

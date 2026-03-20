@@ -1,3 +1,8 @@
+---
+name: react-native-components
+description: "Modern component patterns using function components and composition. Use when building or refactoring React Native function components and composable UI. (triggers: **/*.tsx, **/*.jsx, component, props, children, composition, presentational, container)"
+---
+
 # React Native Components
 
 ## **Priority: P0 (CRITICAL)**

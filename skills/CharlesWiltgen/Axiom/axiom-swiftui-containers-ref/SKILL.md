@@ -1,3 +1,11 @@
+---
+name: axiom-swiftui-containers-ref
+description: Reference — SwiftUI stacks, grids, outlines, and scroll enhancements through iOS 26
+license: MIT
+metadata:
+  version: "1.2.0"
+---
+
 # SwiftUI Containers Reference
 
 Stacks, grids, outlines, and scroll enhancements. iOS 14 through iOS 26.

@@ -1,3 +1,9 @@
+---
+name: axiom-xcode-mcp-setup
+description: Xcode MCP setup — enable mcpbridge, per-client config, permission handling, multi-Xcode targeting, troubleshooting
+license: MIT
+---
+
 # Xcode MCP Setup
 
 ## Prerequisites

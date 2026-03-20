@@ -1,3 +1,9 @@
+---
+name: dotnet-project-structure
+description: Modern .NET project structure including .slnx solution format, Directory.Build.props, central package management, SourceLink, version management with RELEASE_NOTES.md, and SDK pinning with global.json.
+invocable: false
+---
+
 # .NET Project Structure and Build Configuration
 
 ## When to Use This Skill

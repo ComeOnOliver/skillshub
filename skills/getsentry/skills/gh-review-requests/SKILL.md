@@ -1,8 +1,16 @@
+---
+name: gh-review-requests
+description: Fetch unread GitHub notifications for open PRs where review is requested from a specified team or opened by a team member. Use when asked to "find PRs I need to review", "show my review requests", "what needs my review", "fetch GitHub review requests", or "check team review queue".
+allowed-tools: Bash
+---
+
 # GitHub Review Requests
 
 Fetch unread `review_requested` notifications for open (unmerged) PRs, filtered by a GitHub team.
 
 **Requires**: GitHub CLI (`gh`) authenticated.
+
+**Requires**: The `uv` CLI for python package management, install guide at https://docs.astral.sh/uv/getting-started/installation/
 
 ## Step 1: Identify the Team
 

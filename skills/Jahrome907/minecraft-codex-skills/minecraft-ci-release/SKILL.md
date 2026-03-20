@@ -1,3 +1,15 @@
+---
+name: minecraft-ci-release
+description: >
+  Set up CI/CD pipelines, automated publishing, and release workflows for Minecraft
+  mods and plugins for 1.21.x. Covers GitHub Actions matrix builds for NeoForge and
+  Fabric, automated publishing to Modrinth (via minotaur Gradle plugin) and CurseForge
+  (via curseforgegradle), GitHub Releases with JAR artifacts, semantic versioning
+  conventions for Minecraft mods, CHANGELOG generation, Dependabot for Gradle wrapper
+  and plugin updates, build caching with gradle/actions/setup-gradle, pull request
+  checks, and release tag workflows. Also covers Paper plugin CI with shadow JAR builds.
+---
+
 # Minecraft CI / Release Skill
 
 ## Workflow Overview

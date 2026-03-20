@@ -1,3 +1,10 @@
+---
+name: ecs
+description: AWS ECS container orchestration for running Docker containers. Use when deploying containerized applications, configuring task definitions, setting up services, managing clusters, or troubleshooting container issues.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/AmazonECS/latest/developerguide/
+---
+
 # AWS ECS
 
 Amazon Elastic Container Service (ECS) is a fully managed container orchestration service. Run containers on AWS Fargate (serverless) or EC2 instances.

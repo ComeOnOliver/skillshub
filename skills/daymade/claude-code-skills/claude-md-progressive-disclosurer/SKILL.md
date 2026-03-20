@@ -1,3 +1,11 @@
+---
+name: claude-md-progressive-disclosurer
+description: |
+  Optimize CLAUDE.md files using progressive disclosure.
+  Goal: Maximize information efficiency, readability, and maintainability.
+  Use when: User wants to optimize CLAUDE.md, information is duplicated across files, or LLM repeatedly fails to follow rules.
+---
+
 # CLAUDE.md 渐进式披露优化器
 
 ## 核心理念

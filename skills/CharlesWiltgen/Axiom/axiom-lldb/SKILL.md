@@ -1,3 +1,9 @@
+---
+name: axiom-lldb
+description: Use when ANY runtime debugging is needed — setting breakpoints, inspecting variables, evaluating expressions, analyzing threads, or reproducing crashes interactively with LLDB
+license: MIT
+---
+
 # LLDB Debugging
 
 Interactive debugging with LLDB. The debugger freezes time so you can interrogate your running app — inspect variables, evaluate expressions, navigate threads, and understand exactly why something went wrong.

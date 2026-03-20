@@ -1,3 +1,15 @@
+---
+name: persona-project-manager
+version: 1.0.0
+description: "Coordinate projects — track tasks, schedule meetings, and share docs."
+metadata:
+  openclaw:
+    category: "persona"
+    requires:
+      bins: ["gws"]
+      skills: ["gws-drive", "gws-sheets", "gws-calendar", "gws-gmail", "gws-chat"]
+---
+
 # Project Manager
 
 > **PREREQUISITE:** Load the following utility skills to operate as this persona: `gws-drive`, `gws-sheets`, `gws-calendar`, `gws-gmail`, `gws-chat`
@@ -20,3 +32,4 @@ Coordinate projects — track tasks, schedule meetings, and share docs.
 - Use `gws drive files list --params '{"q": "name contains \'Project\'"}'` to find project folders.
 - Pipe triage output through `jq` for filtering by sender or subject.
 - Use `--dry-run` before any write operations to preview what will happen.
+

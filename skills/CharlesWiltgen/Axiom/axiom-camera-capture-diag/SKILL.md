@@ -1,3 +1,13 @@
+---
+name: axiom-camera-capture-diag
+description: camera freezes, preview rotated wrong, capture slow, session interrupted, black preview, front camera mirrored, camera not starting, AVCaptureSession errors, startRunning blocks, phone call interrupts camera
+license: MIT
+compatibility: iOS 17+, iPadOS 17+, macOS 14+, tvOS 17+
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-01-03"
+---
+
 # Camera Capture Diagnostics
 
 Systematic troubleshooting for AVFoundation camera issues: frozen preview, wrong rotation, slow capture, session interruptions, and permission problems.

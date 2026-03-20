@@ -1,3 +1,10 @@
+---
+name: figma-bridge
+description: How to use Figma MCP and Variables2CSS to read designs from Figma and generate code consistent with tokens. Use when the designer shares a Figma link.
+user-invocable: false
+disable-model-invocation: true
+---
+
 # Figma Bridge — Implement Design
 
 ## Overview

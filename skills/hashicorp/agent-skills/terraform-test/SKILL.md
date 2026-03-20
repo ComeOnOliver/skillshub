@@ -1,3 +1,11 @@
+---
+name: terraform-test
+description: Comprehensive guide for writing and running Terraform tests. Use when creating test files (.tftest.hcl), writing test scenarios with run blocks, validating infrastructure behavior with assertions, mocking providers and data sources, testing module outputs and resource configurations, or troubleshooting Terraform test syntax and execution.
+metadata:
+  copyright: Copyright IBM Corp. 2026
+  version: "0.0.1"
+---
+
 # Terraform Test
 
 Terraform's built-in testing framework enables module authors to validate that configuration updates don't introduce breaking changes. Tests execute against temporary resources, protecting existing infrastructure and state files.

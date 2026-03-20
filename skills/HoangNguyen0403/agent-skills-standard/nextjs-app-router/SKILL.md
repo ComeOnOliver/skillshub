@@ -1,3 +1,8 @@
+---
+name: nextjs-app-router
+description: "File-system routing, Layouts, and Route Groups. Use when implementing App Router routing, nested layouts, or route groups in Next.js. (triggers: app/**/page.tsx, app/**/layout.tsx, app/**/loading.tsx, App Router, Layout, Route Group, parallel routes)"
+---
+
 # Next.js App Router
 
 ## **Priority: P0 (CRITICAL)**

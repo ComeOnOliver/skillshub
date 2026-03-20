@@ -1,3 +1,14 @@
+---
+name: TypeScript Security
+description: Secure coding practices for TypeScript. Use when validating input, handling auth tokens, sanitizing data, or managing secrets and sensitive configuration.
+metadata:
+  labels: [security, typescript, validation, sanitization]
+  triggers:
+    files: ['**/*.ts', '**/*.tsx']
+    keywords:
+      [validate, sanitize, xss, injection, auth, password, secret, token]
+---
+
 # TypeScript Security
 
 ## **Priority: P0 (CRITICAL)**

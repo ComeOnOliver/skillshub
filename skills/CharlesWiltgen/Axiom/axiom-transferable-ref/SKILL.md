@@ -1,3 +1,11 @@
+---
+name: axiom-transferable-ref
+description: Use when implementing drag and drop, copy/paste, ShareLink, or ANY content sharing between apps or views - covers Transferable protocol, TransferRepresentation types, UTType declarations, SwiftUI surfaces, and NSItemProvider bridging
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Transferable & Content Sharing Reference
 
 Comprehensive guide to the CoreTransferable framework and SwiftUI sharing surfaces: drag and drop, copy/paste, and ShareLink.

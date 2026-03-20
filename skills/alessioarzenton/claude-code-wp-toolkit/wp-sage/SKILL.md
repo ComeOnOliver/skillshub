@@ -1,3 +1,9 @@
+---
+name: wp-sage
+description: Conventions for WordPress Bedrock + Sage + Acorn + Blade + Tailwind CSS 4 + Vite projects. Always-active rules.
+user-invocable: false
+---
+
 # WP-Sage Stack — Bedrock + Sage + Acorn
 
 ## Stack

@@ -1,3 +1,12 @@
+---
+name: axiom-metal-migration
+description: Use when porting OpenGL/DirectX to Metal - translation layer vs native rewrite decisions, migration planning, anti-patterns
+license: MIT
+compatibility: [iOS 12+, macOS 10.14+, tvOS 12+]
+metadata:
+  version: "1.0.0"
+---
+
 # Metal Migration
 
 Porting OpenGL/OpenGL ES or DirectX code to Metal on Apple platforms.

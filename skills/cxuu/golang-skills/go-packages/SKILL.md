@@ -1,3 +1,11 @@
+---
+name: go-packages
+description: Use when creating Go packages, organizing imports, managing dependencies, or deciding how to structure Go code into packages. Also use when starting a new Go project or splitting a growing codebase into packages, even if the user doesn't explicitly ask about package organization. Does not cover naming individual identifiers (see go-naming).
+license: Apache-2.0
+metadata:
+  sources: "Google Style Guide, Uber Style Guide, Go Wiki CodeReviewComments"
+---
+
 # Go Packages and Imports
 
 > **When this skill does NOT apply**: For naming individual identifiers within a package, see [go-naming](../go-naming/SKILL.md). For organizing functions within a single file, see [go-functions](../go-functions/SKILL.md). For configuring linters that enforce import rules, see [go-linting](../go-linting/SKILL.md).
@@ -136,3 +144,4 @@ func main() {
 - **Error handling across packages**: See [go-error-handling](../go-error-handling/SKILL.md) when wrapping errors at package boundaries with `%w` vs `%v`
 - **Import linting**: See [go-linting](../go-linting/SKILL.md) when configuring goimports local-prefixes or enforcing import grouping
 - **Global state**: See [go-defensive](../go-defensive/SKILL.md) when replacing `init()` with explicit initialization or avoiding mutable globals
+

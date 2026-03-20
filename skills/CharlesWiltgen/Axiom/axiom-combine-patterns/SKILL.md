@@ -1,3 +1,12 @@
+---
+name: axiom-combine-patterns
+description: Use when working with Combine publishers, AnyCancellable lifecycle, @Published properties, or bridging Combine with async/await. Covers reactive patterns, operator selection, memory management, and migration strategy.
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-03-12"
+---
+
 # Combine Patterns
 
 ## Overview

@@ -1,3 +1,8 @@
+---
+name: bigquery-pipeline-audit
+description: 'Audits Python + BigQuery pipelines for cost safety, idempotency, and production readiness. Returns a structured report with exact patch locations.'
+---
+
 # BigQuery Pipeline Audit: Cost, Safety and Production Readiness
 
 You are a senior data engineer reviewing a Python + BigQuery pipeline script.

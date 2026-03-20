@@ -1,3 +1,10 @@
+---
+name: bedrock
+description: AWS Bedrock foundation models for generative AI. Use when invoking foundation models, building AI applications, creating embeddings, configuring model access, or implementing RAG patterns.
+last_updated: "2026-01-07"
+doc_source: https://docs.aws.amazon.com/bedrock/latest/userguide/
+---
+
 # AWS Bedrock
 
 Amazon Bedrock provides access to foundation models (FMs) from AI companies through a unified API. Build generative AI applications with text generation, embeddings, and image generation capabilities.

@@ -1,3 +1,11 @@
+---
+name: axiom-xclog-ref
+description: Use when capturing iOS simulator console output, diagnosing runtime crashes, viewing print/os_log output, or needing structured app logs for analysis. Reference for xclog CLI covering launch, attach, list modes with JSON output.
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # xclog Reference (iOS Simulator Console Capture)
 
 xclog captures iOS simulator console output by combining `simctl launch --console` (print/debugPrint/NSLog) with `log stream --style json` (os_log/Logger). Single binary, no dependencies.
@@ -18,21 +26,60 @@ ${CLAUDE_PLUGIN_ROOT}/bin/xclog
 
 ## Critical Best Practices
 
-**ALWAYS run `list` before `launch` to discover the correct bundle ID.**
+**Check `.axiom/preferences.yaml` first.** If no saved preferences, run `list` before `launch` to discover the correct bundle ID.
 
 **App already running?** `launch` will terminate it and relaunch. Use `attach` if you need to preserve current state (os_log only — no print() capture).
 
 ```bash
-# 1. FIRST: Discover installed apps
+# 1. FIRST: Check .axiom/preferences.yaml for saved device and bundle ID
+# 2. If no preferences: Discover installed apps
 ${CLAUDE_PLUGIN_ROOT}/bin/xclog list
 
-# 2. Find the target app's bundle_id from output
-# 3. THEN: Launch with the correct bundle ID (restarts app)
+# 3. Find the target app's bundle_id from output
+# 4. THEN: Launch with the correct bundle ID (restarts app)
 ${CLAUDE_PLUGIN_ROOT}/bin/xclog launch com.example.MyApp --timeout 30s --max-lines 200
 
 # OR: Attach to running app without restarting (os_log only)
 ${CLAUDE_PLUGIN_ROOT}/bin/xclog attach MyApp --timeout 30s --max-lines 200
 ```
+
+## Preferences
+
+Axiom saves simulator preferences to `.axiom/preferences.yaml` in the project root. **Check this file before running `xclog list`** — if preferences exist, use the saved device and bundle ID directly.
+
+### Reading Preferences
+
+Before running `xclog list`, read `.axiom/preferences.yaml`:
+
+```yaml
+simulator:
+  device: iPhone 16 Pro
+  deviceUDID: 1A2B3C4D-5E6F-7890-ABCD-EF1234567890
+  bundleId: com.example.MyApp
+```
+
+If the file exists and contains a `simulator` section, use the saved `deviceUDID` and `bundleId` for xclog commands. Skip `xclog list` unless the user asks for a different app or the saved values fail.
+
+```bash
+${CLAUDE_PLUGIN_ROOT}/bin/xclog launch <bundleId> --device <deviceUDID> --timeout 30s --max-lines 200
+```
+
+If the file doesn't exist or the `simulator` section is missing, fall back to `xclog list` discovery.
+
+If the saved `deviceUDID` is not found among available simulators (xclog or simctl fails), fall back to discovery and save the new selection.
+
+If the YAML is malformed, warn the developer and fall back to discovery. Do not overwrite a malformed file.
+
+### Writing Preferences
+
+After a successful `xclog launch` or when the user selects a target app from `xclog list` output, save the device and bundle ID:
+
+1. If `.axiom/` doesn't exist, create it. Then check `.gitignore`: if the file exists, check if any line matches `.axiom/` exactly — if not, append `.axiom/` on a new line. If `.gitignore` doesn't exist, create it with `.axiom/` as its content.
+2. Read `.axiom/preferences.yaml` if it exists (to preserve other keys)
+3. Update the `simulator:` section with `device`, `deviceUDID`, and `bundleId`
+4. Write the merged YAML back using the Write tool
+
+Write the same `simulator:` structure shown in Reading Preferences above.
 
 ## Commands
 

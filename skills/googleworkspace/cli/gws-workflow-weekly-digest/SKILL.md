@@ -1,3 +1,15 @@
+---
+name: gws-workflow-weekly-digest
+version: 1.0.0
+description: "Google Workflow: Weekly summary: this week's meetings + unread email count."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws workflow +weekly-digest --help"
+---
+
 # workflow +weekly-digest
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.

@@ -1,20 +1,26 @@
-# Compose Multiplatform Patterns
+---
+name: compose-multiplatform-patterns
+description: KMP项目中的Compose Multiplatform和Jetpack Compose模式——状态管理、导航、主题化、性能优化和平台特定UI。
+origin: ECC
+---
 
-Patterns for building shared UI across Android, iOS, Desktop, and Web using Compose Multiplatform and Jetpack Compose. Covers state management, navigation, theming, and performance.
+# Compose 多平台模式
 
-## When to Activate
+使用 Compose Multiplatform 和 Jetpack Compose 构建跨 Android、iOS、桌面和 Web 的共享 UI 的模式。涵盖状态管理、导航、主题和性能。
 
-- Building Compose UI (Jetpack Compose or Compose Multiplatform)
-- Managing UI state with ViewModels and Compose state
-- Implementing navigation in KMP or Android projects
-- Designing reusable composables and design systems
-- Optimizing recomposition and rendering performance
+## 何时启用
 
-## State Management
+* 构建 Compose UI（Jetpack Compose 或 Compose Multiplatform）
+* 使用 ViewModel 和 Compose 状态管理 UI 状态
+* 在 KMP 或 Android 项目中实现导航
+* 设计可复用的可组合项和设计系统
+* 优化重组和渲染性能
 
-### ViewModel + Single State Object
+## 状态管理
 
-Use a single data class for screen state. Expose it as `StateFlow` and collect in Compose:
+### ViewModel + 单一状态对象
+
+使用单个数据类表示屏幕状态。将其暴露为 `StateFlow` 并在 Compose 中收集：
 
 ```kotlin
 data class ItemListState(
@@ -47,7 +53,7 @@ class ItemListViewModel(
 }
 ```
 
-### Collecting State in Compose
+### 在 Compose 中收集状态
 
 ```kotlin
 @Composable
@@ -69,9 +75,9 @@ private fun ItemListContent(
 }
 ```
 
-### Event Sink Pattern
+### 事件接收器模式
 
-For complex screens, use a sealed interface for events instead of multiple callback lambdas:
+对于复杂屏幕，使用密封接口表示事件，而非多个回调 lambda：
 
 ```kotlin
 sealed interface ItemListEvent {
@@ -96,11 +102,11 @@ ItemListContent(
 )
 ```
 
-## Navigation
+## 导航
 
-### Type-Safe Navigation (Compose Navigation 2.8+)
+### 类型安全导航（Compose Navigation 2.8+）
 
-Define routes as `@Serializable` objects:
+将路由定义为 `@Serializable` 对象：
 
 ```kotlin
 @Serializable data object HomeRoute
@@ -122,9 +128,9 @@ fun AppNavHost(navController: NavHostController = rememberNavController()) {
 }
 ```
 
-### Dialog and Bottom Sheet Navigation
+### 对话框和底部抽屉导航
 
-Use `dialog()` and overlay patterns instead of imperative show/hide:
+使用 `dialog()` 和覆盖层模式，而非命令式的显示/隐藏：
 
 ```kotlin
 NavHost(navController, startDestination = HomeRoute) {
@@ -140,11 +146,11 @@ NavHost(navController, startDestination = HomeRoute) {
 }
 ```
 
-## Composable Design
+## 可组合项设计
 
-### Slot-Based APIs
+### 基于槽位的 API
 
-Design composables with slot parameters for flexibility:
+使用槽位参数设计可组合项以获得灵活性：
 
 ```kotlin
 @Composable
@@ -164,9 +170,9 @@ fun AppCard(
 }
 ```
 
-### Modifier Ordering
+### 修饰符顺序
 
-Modifier order matters — apply in this sequence:
+修饰符顺序很重要 —— 按此顺序应用：
 
 ```kotlin
 Text(
@@ -179,9 +185,9 @@ Text(
 )
 ```
 
-## KMP Platform-Specific UI
+## KMP 平台特定 UI
 
-### expect/actual for Platform Composables
+### 平台可组合项的 expect/actual
 
 ```kotlin
 // commonMain
@@ -202,11 +208,11 @@ actual fun PlatformStatusBar(darkIcons: Boolean) {
 }
 ```
 
-## Performance
+## 性能
 
-### Stable Types for Skippable Recomposition
+### 用于可跳过重组的稳定类型
 
-Mark classes as `@Stable` or `@Immutable` when all properties are stable:
+当所有属性都稳定时，将类标记为 `@Stable` 或 `@Immutable`：
 
 ```kotlin
 @Immutable
@@ -218,7 +224,7 @@ data class ItemUiModel(
 )
 ```
 
-### Use `key()` and Lazy Lists Correctly
+### 正确使用 `key()` 和惰性列表
 
 ```kotlin
 LazyColumn {
@@ -231,7 +237,7 @@ LazyColumn {
 }
 ```
 
-### Defer Reads with `derivedStateOf`
+### 使用 `derivedStateOf` 延迟读取
 
 ```kotlin
 val listState = rememberLazyListState()
@@ -240,7 +246,7 @@ val showScrollToTop by remember {
 }
 ```
 
-### Avoid Allocations in Recomposition
+### 避免在重组中分配内存
 
 ```kotlin
 // BAD — new lambda and list every recomposition
@@ -255,9 +261,9 @@ activeItems.forEach { item ->
 }
 ```
 
-## Theming
+## 主题
 
-### Material 3 Dynamic Theming
+### Material 3 动态主题
 
 ```kotlin
 @Composable
@@ -279,15 +285,15 @@ fun AppTheme(
 }
 ```
 
-## Anti-Patterns to Avoid
+## 应避免的反模式
 
-- Using `mutableStateOf` in ViewModels when `MutableStateFlow` with `collectAsStateWithLifecycle` is safer for lifecycle
-- Passing `NavController` deep into composables — pass lambda callbacks instead
-- Heavy computation inside `@Composable` functions — move to ViewModel or `remember {}`
-- Using `LaunchedEffect(Unit)` as a substitute for ViewModel init — it re-runs on configuration change in some setups
-- Creating new object instances in composable parameters — causes unnecessary recomposition
+* 在 ViewModel 中使用 `mutableStateOf`，而 `MutableStateFlow` 配合 `collectAsStateWithLifecycle` 对生命周期更安全
+* 将 `NavController` 深入传递到可组合项中 —— 应传递 lambda 回调
+* 在 `@Composable` 函数中进行繁重计算 —— 应移至 ViewModel 或 `remember {}`
+* 使用 `LaunchedEffect(Unit)` 作为 ViewModel 初始化的替代 —— 在某些设置中，它会在配置更改时重新运行
+* 在可组合项参数中创建新的对象实例 —— 会导致不必要的重组
 
-## References
+## 参考资料
 
-See skill: `android-clean-architecture` for module structure and layering.
-See skill: `kotlin-coroutines-flows` for coroutine and Flow patterns.
+查看技能：`android-clean-architecture` 了解模块结构和分层。
+查看技能：`kotlin-coroutines-flows` 了解协程和 Flow 模式。

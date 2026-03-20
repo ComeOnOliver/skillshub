@@ -1,3 +1,12 @@
+---
+name: Debugging Expert
+description: Systematic troubleshooting using the Scientific Method. Use when debugging crashes, tracing errors, diagnosing unexpected behavior, or investigating exceptions.
+metadata:
+  labels: [debugging, troubleshooting, bug-fixing, root-cause]
+  triggers:
+    keywords: [debug, fix bug, crash, error, exception, troubleshooting]
+---
+
 # Debugging Expert
 
 ## **Priority: P1 (OPERATIONAL)**

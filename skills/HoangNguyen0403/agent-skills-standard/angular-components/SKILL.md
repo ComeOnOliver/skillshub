@@ -1,3 +1,8 @@
+---
+name: angular-components
+description: "Standards for Standalone Components, Signals inputs, and Control Flow. Use when building standalone Angular components or implementing @if/@for control flow. (triggers: **/*.component.ts, **/*.html, angular component, standalone, input signal, output, @if, @for)"
+---
+
 # Angular Components
 
 ## **Priority: P0 (CRITICAL)**

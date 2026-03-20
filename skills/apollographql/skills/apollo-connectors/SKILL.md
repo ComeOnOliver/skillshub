@@ -1,3 +1,20 @@
+---
+name: apollo-connectors
+description: >
+  Guide for integrating REST APIs into GraphQL supergraphs using Apollo Connectors
+  with @source and @connect directives. Use this skill when the user:
+  (1) mentions "connectors", "Apollo Connectors", or "REST Connector",
+  (2) wants to integrate a REST API into GraphQL,
+  (3) references @source or @connect directives,
+  (4) works with files containing "# Note to AI Friends: This is an Apollo Connectors schema".
+license: MIT
+compatibility: Requires rover CLI installed. Works with Claude Code and similar AI coding assistants.
+metadata:
+  author: apollographql
+  version: "1.0.0"
+allowed-tools: Bash(rover:*) Read Write Edit Glob Grep
+---
+
 # Apollo Connectors Schema Assistant
 
 ## MCP Tools

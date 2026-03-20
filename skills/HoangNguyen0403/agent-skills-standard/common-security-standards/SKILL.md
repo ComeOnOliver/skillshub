@@ -1,3 +1,8 @@
+---
+name: common-security-standards
+description: 'Universal security protocols for safe, resilient software. Use when implementing authentication, encryption, authorization, or any security-sensitive feature. (triggers: **/*.ts, **/*.tsx, **/*.go, **/*.dart, **/*.java, **/*.kt, **/*.swift, **/*.py, security, encrypt, authenticate, authorize)'
+---
+
 # Security Standards - High-Density Standards
 
 Universal security protocols for building safe and resilient software.

@@ -1,3 +1,15 @@
+---
+name: gws-gmail-reply-all
+version: 1.0.0
+description: "Gmail: Reply-all to a message (handles threading automatically)."
+metadata:
+  openclaw:
+    category: "productivity"
+    requires:
+      bins: ["gws"]
+    cliHelp: "gws gmail +reply-all --help"
+---
+
 # gmail +reply-all
 
 > **PREREQUISITE:** Read `../gws-shared/SKILL.md` for auth, global flags, and security rules. If missing, run `gws generate-skills` to create it.

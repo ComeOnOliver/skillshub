@@ -1,3 +1,12 @@
+---
+name: axiom-swiftui-debugging-diag
+description: Use when SwiftUI view debugging requires systematic investigation - view updates not working after basic troubleshooting, intermittent UI issues, complex state dependencies, or when Self._printChanges() shows unexpected update patterns - systematic diagnostic workflows with Instruments integration
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "Initial release with 5 diagnostic patterns, SwiftUI Instrument workflows, and production crisis protocols"
+---
+
 # SwiftUI Debugging Diagnostics
 
 ## When to Use This Diagnostic Skill

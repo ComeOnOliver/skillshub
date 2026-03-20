@@ -1,45 +1,50 @@
-# C++ Testing (Agent Skill)
+---
+name: cpp-testing
+description: C++ テストの作成/更新/修正、GoogleTest/CTest の設定、失敗またはフレーキーなテストの診断、カバレッジ/サニタイザーの追加時にのみ使用します。
+---
 
-Agent-focused testing workflow for modern C++ (C++17/20) using GoogleTest/GoogleMock with CMake/CTest.
+# C++ Testing（エージェントスキル）
 
-## When to Use
+CMake/CTest を使用した GoogleTest/GoogleMock による最新の C++（C++17/20）向けのエージェント重視のテストワークフローです。
 
-- Writing new C++ tests or fixing existing tests
-- Designing unit/integration test coverage for C++ components
-- Adding test coverage, CI gating, or regression protection
-- Configuring CMake/CTest workflows for consistent execution
-- Investigating test failures or flaky behavior
-- Enabling sanitizers for memory/race diagnostics
+## 使用タイミング
 
-### When NOT to Use
+- 新しい C++ テストの作成または既存のテストの修正
+- C++ コンポーネントのユニット/統合テストカバレッジの設計
+- テストカバレッジ、CI ゲーティング、リグレッション保護の追加
+- 一貫した実行のための CMake/CTest ワークフローの設定
+- テスト失敗またはフレーキーな動作の調査
+- メモリ/レース診断のためのサニタイザーの有効化
 
-- Implementing new product features without test changes
-- Large-scale refactors unrelated to test coverage or failures
-- Performance tuning without test regressions to validate
-- Non-C++ projects or non-test tasks
+### 使用すべきでない場合
 
-## Core Concepts
+- テスト変更を伴わない新しい製品機能の実装
+- テストカバレッジや失敗に関連しない大規模なリファクタリング
+- 検証するテストリグレッションのないパフォーマンスチューニング
+- C++ 以外のプロジェクトまたはテスト以外のタスク
 
-- **TDD loop**: red → green → refactor (tests first, minimal fix, then cleanups).
-- **Isolation**: prefer dependency injection and fakes over global state.
-- **Test layout**: `tests/unit`, `tests/integration`, `tests/testdata`.
-- **Mocks vs fakes**: mock for interactions, fake for stateful behavior.
-- **CTest discovery**: use `gtest_discover_tests()` for stable test discovery.
-- **CI signal**: run subset first, then full suite with `--output-on-failure`.
+## コア概念
 
-## TDD Workflow
+- **TDD ループ**: red → green → refactor（テスト優先、最小限の修正、その後クリーンアップ）
+- **分離**: グローバル状態よりも依存性注入とフェイクを優先
+- **テストレイアウト**: `tests/unit`、`tests/integration`、`tests/testdata`
+- **モック vs フェイク**: 相互作用にはモック、ステートフルな動作にはフェイク
+- **CTest ディスカバリー**: 安定したテストディスカバリーのために `gtest_discover_tests()` を使用
+- **CI シグナル**: 最初にサブセットを実行し、次に `--output-on-failure` でフルスイートを実行
 
-Follow the RED → GREEN → REFACTOR loop:
+## TDD ワークフロー
 
-1. **RED**: write a failing test that captures the new behavior
-2. **GREEN**: implement the smallest change to pass
-3. **REFACTOR**: clean up while tests stay green
+RED → GREEN → REFACTOR ループに従います：
+
+1. **RED**: 新しい動作をキャプチャする失敗するテストを書く
+2. **GREEN**: 合格する最小限の変更を実装する
+3. **REFACTOR**: テストがグリーンのままクリーンアップする
 
 ```cpp
 // tests/add_test.cpp
 #include <gtest/gtest.h>
 
-int Add(int a, int b); // Provided by production code.
+int Add(int a, int b); // プロダクションコードによって提供されます。
 
 TEST(AddTest, AddsTwoNumbers) { // RED
   EXPECT_EQ(Add(2, 3), 5);
@@ -50,29 +55,29 @@ int Add(int a, int b) { // GREEN
   return a + b;
 }
 
-// REFACTOR: simplify/rename once tests pass
+// REFACTOR: テストが合格したら簡素化/名前変更
 ```
 
-## Code Examples
+## コード例
 
-### Basic Unit Test (gtest)
+### 基本的なユニットテスト（gtest）
 
 ```cpp
 // tests/calculator_test.cpp
 #include <gtest/gtest.h>
 
-int Add(int a, int b); // Provided by production code.
+int Add(int a, int b); // プロダクションコードによって提供されます。
 
 TEST(CalculatorTest, AddsTwoNumbers) {
     EXPECT_EQ(Add(2, 3), 5);
 }
 ```
 
-### Fixture (gtest)
+### フィクスチャ（gtest）
 
 ```cpp
 // tests/user_store_test.cpp
-// Pseudocode stub: replace UserStore/User with project types.
+// 擬似コードスタブ: UserStore/User をプロジェクトの型に置き換えてください。
 #include <gtest/gtest.h>
 #include <memory>
 #include <optional>
@@ -103,7 +108,7 @@ TEST_F(UserStoreTest, FindsExistingUser) {
 }
 ```
 
-### Mock (gmock)
+### モック（gmock）
 
 ```cpp
 // tests/notifier_test.cpp
@@ -140,10 +145,10 @@ TEST(ServiceTest, SendsNotifications) {
 }
 ```
 
-### CMake/CTest Quickstart
+### CMake/CTest クイックスタート
 
 ```cmake
-# CMakeLists.txt (excerpt)
+# CMakeLists.txt（抜粋）
 cmake_minimum_required(VERSION 3.20)
 project(example LANGUAGES CXX)
 
@@ -151,12 +156,11 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(FetchContent)
-# Prefer project-locked versions. If using a tag, use a pinned version per project policy.
-set(GTEST_VERSION v1.17.0) # Adjust to project policy.
+# プロジェクトロックされたバージョンを優先します。タグを使用する場合は、プロジェクトポリシーに従って固定されたバージョンを使用します。
+set(GTEST_VERSION v1.17.0) # プロジェクトポリシーに合わせて調整します。
 FetchContent_Declare(
   googletest
-  # Google Test framework (official repository)
-  URL https://github.com/google/googletest/archive/refs/tags/${GTEST_VERSION}.zip
+  URL Google Test framework (official repository) https://github.com/google/googletest/archive/refs/tags/${GTEST_VERSION}.zip
 )
 FetchContent_MakeAvailable(googletest)
 
@@ -177,7 +181,7 @@ cmake --build build -j
 ctest --test-dir build --output-on-failure
 ```
 
-## Running Tests
+## テストの実行
 
 ```bash
 ctest --test-dir build --output-on-failure
@@ -190,16 +194,16 @@ ctest --test-dir build -R "UserStoreTest.*" --output-on-failure
 ./build/example_tests --gtest_filter=UserStoreTest.FindsExistingUser
 ```
 
-## Debugging Failures
+## 失敗のデバッグ
 
-1. Re-run the single failing test with gtest filter.
-2. Add scoped logging around the failing assertion.
-3. Re-run with sanitizers enabled.
-4. Expand to full suite once the root cause is fixed.
+1. gtest フィルタで単一の失敗したテストを再実行します。
+2. 失敗したアサーションの周りにスコープ付きログを追加します。
+3. サニタイザーを有効にして再実行します。
+4. 根本原因が修正されたら、フルスイートに拡張します。
 
-## Coverage
+## カバレッジ
 
-Prefer target-level settings instead of global flags.
+グローバルフラグではなく、ターゲットレベルの設定を優先します。
 
 ```cmake
 option(ENABLE_COVERAGE "Enable coverage flags" OFF)
@@ -236,7 +240,7 @@ llvm-profdata merge -sparse build-llvm/default.profraw -o build-llvm/default.pro
 llvm-cov report build-llvm/example_tests -instr-profile=build-llvm/default.profdata
 ```
 
-## Sanitizers
+## サニタイザー
 
 ```cmake
 option(ENABLE_ASAN "Enable AddressSanitizer" OFF)
@@ -257,48 +261,48 @@ if(ENABLE_TSAN)
 endif()
 ```
 
-## Flaky Tests Guardrails
+## フレーキーテストのガードレール
 
-- Never use `sleep` for synchronization; use condition variables or latches.
-- Make temp directories unique per test and always clean them.
-- Avoid real time, network, or filesystem dependencies in unit tests.
-- Use deterministic seeds for randomized inputs.
+- 同期に `sleep` を使用しないでください。条件変数またはラッチを使用してください。
+- 一時ディレクトリをテストごとに一意にし、常にクリーンアップしてください。
+- ユニットテストで実際の時間、ネットワーク、ファイルシステムの依存関係を避けてください。
+- ランダム化された入力には決定論的シードを使用してください。
 
-## Best Practices
+## ベストプラクティス
 
-### DO
+### すべきこと
 
-- Keep tests deterministic and isolated
-- Prefer dependency injection over globals
-- Use `ASSERT_*` for preconditions, `EXPECT_*` for multiple checks
-- Separate unit vs integration tests in CTest labels or directories
-- Run sanitizers in CI for memory and race detection
+- テストを決定論的かつ分離されたものに保つ
+- グローバル変数よりも依存性注入を優先する
+- 前提条件には `ASSERT_*` を使用し、複数のチェックには `EXPECT_*` を使用する
+- CTest ラベルまたはディレクトリでユニットテストと統合テストを分離する
+- メモリとレース検出のために CI でサニタイザーを実行する
 
-### DON'T
+### すべきでないこと
 
-- Don't depend on real time or network in unit tests
-- Don't use sleeps as synchronization when a condition variable can be used
-- Don't over-mock simple value objects
-- Don't use brittle string matching for non-critical logs
+- ユニットテストで実際の時間やネットワークに依存しない
+- 条件変数を使用できる場合、同期としてスリープを使用しない
+- 単純な値オブジェクトをオーバーモックしない
+- 重要でないログに脆弱な文字列マッチングを使用しない
 
-### Common Pitfalls
+### よくある落とし穴
 
-- **Using fixed temp paths** → Generate unique temp directories per test and clean them.
-- **Relying on wall clock time** → Inject a clock or use fake time sources.
-- **Flaky concurrency tests** → Use condition variables/latches and bounded waits.
-- **Hidden global state** → Reset global state in fixtures or remove globals.
-- **Over-mocking** → Prefer fakes for stateful behavior and only mock interactions.
-- **Missing sanitizer runs** → Add ASan/UBSan/TSan builds in CI.
-- **Coverage on debug-only builds** → Ensure coverage targets use consistent flags.
+- **固定一時パスの使用** → テストごとに一意の一時ディレクトリを生成し、クリーンアップします。
+- **ウォールクロック時間への依存** → クロックを注入するか、偽の時間ソースを使用します。
+- **フレーキーな並行性テスト** → 条件変数/ラッチと境界付き待機を使用します。
+- **隠れたグローバル状態** → フィクスチャでグローバル状態をリセットするか、グローバル変数を削除します。
+- **オーバーモック** → ステートフルな動作にはフェイクを優先し、相互作用のみをモックします。
+- **サニタイザー実行の欠落** → CI に ASan/UBSan/TSan ビルドを追加します。
+- **デバッグのみのビルドでのカバレッジ** → カバレッジターゲットが一貫したフラグを使用することを確認します。
 
-## Optional Appendix: Fuzzing / Property Testing
+## オプションの付録: ファジングとプロパティテスト
 
-Only use if the project already supports LLVM/libFuzzer or a property-testing library.
+プロジェクトがすでに LLVM/libFuzzer またはプロパティテストライブラリをサポートしている場合にのみ使用してください。
 
-- **libFuzzer**: best for pure functions with minimal I/O.
-- **RapidCheck**: property-based tests to validate invariants.
+- **libFuzzer**: 最小限の I/O で純粋関数に最適です。
+- **RapidCheck**: 不変条件を検証するプロパティベースのテストです。
 
-Minimal libFuzzer harness (pseudocode: replace ParseConfig):
+最小限の libFuzzer ハーネス（擬似コード: ParseConfig を置き換えてください）：
 
 ```cpp
 #include <cstddef>
@@ -307,12 +311,12 @@ Minimal libFuzzer harness (pseudocode: replace ParseConfig):
 
 extern "C" int LLVMFuzzerTestOneInput(const uint8_t *data, size_t size) {
     std::string input(reinterpret_cast<const char *>(data), size);
-    // ParseConfig(input); // project function
+    // ParseConfig(input); // プロジェクト関数
     return 0;
 }
 ```
 
-## Alternatives to GoogleTest
+## GoogleTest の代替
 
-- **Catch2**: header-only, expressive matchers
-- **doctest**: lightweight, minimal compile overhead
+- **Catch2**: ヘッダーオンリー、表現力豊かなマッチャー
+- **doctest**: 軽量、最小限のコンパイルオーバーヘッド

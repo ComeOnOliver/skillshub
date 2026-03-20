@@ -1,3 +1,10 @@
+---
+name: expo-deployment
+description: Deploying Expo apps to iOS App Store, Android Play Store, web hosting, and API routes
+version: 1.0.0
+license: MIT
+---
+
 # Deployment
 
 This skill covers deploying Expo applications across all platforms using EAS (Expo Application Services).

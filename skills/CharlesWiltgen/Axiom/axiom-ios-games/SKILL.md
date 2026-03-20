@@ -1,3 +1,9 @@
+---
+name: axiom-ios-games
+description: Use when building ANY 2D or 3D game, game prototype, or interactive simulation with SpriteKit, SceneKit, or RealityKit. Covers scene graphs, ECS architecture, physics, actions, game loops, rendering, SwiftUI integration, SceneKit migration.
+license: MIT
+---
+
 # iOS Games Router
 
 **You MUST use this skill for ANY game development, SpriteKit, SceneKit, RealityKit, or interactive simulation work.**

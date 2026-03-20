@@ -1,3 +1,12 @@
+---
+name: axiom-swift-concurrency-ref
+description: Swift concurrency API reference — actors, Sendable, Task/TaskGroup, AsyncStream, continuations, isolation patterns, DispatchQueue-to-actor migration with gotcha tables
+license: MIT
+metadata:
+  version: "1.0.0"
+  last-updated: "2026-02-26"
+---
+
 # Swift Concurrency API Reference
 
 Complete Swift concurrency API reference for copy-paste patterns and syntax lookup.

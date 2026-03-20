@@ -1,3 +1,13 @@
+---
+name: axiom-vision
+description: subject segmentation, VNGenerateForegroundInstanceMaskRequest, isolate object from hand, VisionKit subject lifting, image foreground detection, instance masks, class-agnostic segmentation, VNRecognizeTextRequest, OCR, VNDetectBarcodesRequest, DataScannerViewController, document scanning, RecognizeDocumentsRequest
+license: MIT
+compatibility: iOS 14+, iPadOS 14+, macOS 11+, tvOS 14+, axiom-visionOS 1+
+metadata:
+  version: "1.1.0"
+  last-updated: "2026-01-03"
+---
+
 # Vision Framework Computer Vision
 
 Guides you through implementing computer vision: subject segmentation, hand/body pose detection, person detection, text recognition, barcode detection, document scanning, and combining Vision APIs to solve complex problems.

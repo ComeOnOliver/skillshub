@@ -1,3 +1,8 @@
+---
+name: golang-api-server
+description: "Standards for building HTTP services, REST APIs, and middleware in Golang. Use when building Go HTTP servers, REST APIs, or custom middleware. (triggers: cmd/server/*.go, internal/adapter/handler/**, http server, rest api, gin, echo, middleware)"
+---
+
 # Golang API Server Standards
 
 ## **Priority: P0 (CRITICAL)**

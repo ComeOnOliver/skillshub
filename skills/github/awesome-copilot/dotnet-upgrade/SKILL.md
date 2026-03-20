@@ -1,3 +1,8 @@
+---
+name: dotnet-upgrade
+description: 'Ready-to-use prompts for comprehensive .NET framework upgrade analysis and execution'
+---
+
 # Project Discovery & Assessment
   - name: "Project Classification Analysis"
     prompt: "Identify all projects in the solution and classify them by type (`.NET Framework`, `.NET Core`, `.NET Standard`). Analyze each `.csproj` for its current `TargetFramework` and SDK usage."

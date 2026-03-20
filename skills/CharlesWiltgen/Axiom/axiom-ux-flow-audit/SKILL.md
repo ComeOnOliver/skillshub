@@ -1,3 +1,9 @@
+---
+name: axiom-ux-flow-audit
+description: Use when auditing user journeys, checking for UX dead ends, dismiss traps, buried CTAs, missing empty/loading/error states, or broken data paths in iOS apps (SwiftUI and UIKit).
+license: MIT
+---
+
 # UX Flow Audit
 
 **UX issues are not polish — they're defects that cause support tickets, bad reviews, and user churn.**

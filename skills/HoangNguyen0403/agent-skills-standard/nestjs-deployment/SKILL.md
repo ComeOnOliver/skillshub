@@ -1,3 +1,8 @@
+---
+name: nestjs-deployment
+description: "Docker builds, Memory tuning, and Graceful shutdown. Use when containerizing NestJS apps, tuning memory, or implementing graceful shutdown. (triggers: Dockerfile, k8s/**, helm/**, Dockerfile, max-old-space-size, shutdown hooks)"
+---
+
 # Deployment & Ops Standards
 
 ## **Priority: P1 (OPERATIONAL)**

@@ -1,3 +1,12 @@
+---
+name: react-native-best-practices
+description: Provides React Native performance optimization guidelines for FPS, TTI, bundle size, memory leaks, re-renders, and animations. Applies to tasks involving Hermes optimization, JS thread blocking, bridge overhead, FlashList, native modules, or debugging jank and frame drops.
+license: MIT
+metadata:
+  author: Callstack
+  tags: react-native, expo, performance, optimization, profiling
+---
+
 # React Native Best Practices
 
 ## Overview
@@ -26,6 +35,12 @@ Reference these guidelines when:
 - Writing native modules (Turbo Modules)
 - Profiling React Native performance
 - Reviewing React Native code for performance
+
+## Security Notes
+
+- Treat shell commands in these references as local developer operations. Review them before running, prefer version-pinned tooling, and avoid piping remote scripts directly to a shell.
+- Treat third-party libraries and plugins as dependencies that still require normal supply-chain controls: pin versions, verify provenance, and update through your standard review process.
+- Treat Re.Pack code splitting as first-party artifact delivery only. Remote chunks must come from trusted HTTPS origins you control and be pinned to the current app release.
 
 ## Priority-Ordered Guidelines
 

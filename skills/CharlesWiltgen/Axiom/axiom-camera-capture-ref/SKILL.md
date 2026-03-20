@@ -1,3 +1,11 @@
+---
+name: axiom-camera-capture-ref
+description: Reference — AVCaptureSession, AVCapturePhotoSettings, AVCapturePhotoOutput, RotationCoordinator, photoQualityPrioritization, deferred processing, AVCaptureMovieFileOutput, session presets, capture device APIs
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Camera Capture API Reference
 
 ## Quick Reference

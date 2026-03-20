@@ -1,3 +1,9 @@
+---
+name: minecraft-ci-release
+description: >
+  Fixture with valid multiline flow collections in workflow YAML.
+---
+
 # Multiline Flow Fixture
 
 ## Required Secrets

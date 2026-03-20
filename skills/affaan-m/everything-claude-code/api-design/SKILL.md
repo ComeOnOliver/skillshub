@@ -1,19 +1,25 @@
-# API Design Patterns
+---
+name: api-design
+description: REST API设计模式，包括资源命名、状态码、分页、过滤、错误响应、版本控制和生产API的速率限制。
+origin: ECC
+---
 
-Conventions and best practices for designing consistent, developer-friendly REST APIs.
+# API 设计模式
 
-## When to Activate
+用于设计一致、对开发者友好的 REST API 的约定和最佳实践。
 
-- Designing new API endpoints
-- Reviewing existing API contracts
-- Adding pagination, filtering, or sorting
-- Implementing error handling for APIs
-- Planning API versioning strategy
-- Building public or partner-facing APIs
+## 何时启用
 
-## Resource Design
+* 设计新的 API 端点时
+* 审查现有的 API 契约时
+* 添加分页、过滤或排序功能时
+* 为 API 实现错误处理时
+* 规划 API 版本策略时
+* 构建面向公众或合作伙伴的 API 时
 
-### URL Structure
+## 资源设计
+
+### URL 结构
 
 ```
 # Resources are nouns, plural, lowercase, kebab-case
@@ -34,7 +40,7 @@ POST   /api/v1/auth/login
 POST   /api/v1/auth/refresh
 ```
 
-### Naming Rules
+### 命名规则
 
 ```
 # GOOD
@@ -49,21 +55,21 @@ POST   /api/v1/auth/refresh
 /api/v1/users/123/getOrders   # verb in nested resource
 ```
 
-## HTTP Methods and Status Codes
+## HTTP 方法和状态码
 
-### Method Semantics
+### 方法语义
 
-| Method | Idempotent | Safe | Use For |
+| 方法 | 幂等性 | 安全性 | 用途 |
 |--------|-----------|------|---------|
-| GET | Yes | Yes | Retrieve resources |
-| POST | No | No | Create resources, trigger actions |
-| PUT | Yes | No | Full replacement of a resource |
-| PATCH | No* | No | Partial update of a resource |
-| DELETE | Yes | No | Remove a resource |
+| GET | 是 | 是 | 检索资源 |
+| POST | 否 | 否 | 创建资源，触发操作 |
+| PUT | 是 | 否 | 完全替换资源 |
+| PATCH | 否\* | 否 | 部分更新资源 |
+| DELETE | 是 | 否 | 删除资源 |
 
-*PATCH can be made idempotent with proper implementation
+\*通过适当的实现，PATCH 可以实现幂等
 
-### Status Code Reference
+### 状态码参考
 
 ```
 # Success
@@ -86,7 +92,7 @@ POST   /api/v1/auth/refresh
 503 Service Unavailable   — Temporary overload, include Retry-After
 ```
 
-### Common Mistakes
+### 常见错误
 
 ```
 # BAD: 200 for everything
@@ -105,9 +111,9 @@ HTTP/1.1 201 Created
 Location: /api/v1/users/abc-123
 ```
 
-## Response Format
+## 响应格式
 
-### Success Response
+### 成功响应
 
 ```json
 {
@@ -120,7 +126,7 @@ Location: /api/v1/users/abc-123
 }
 ```
 
-### Collection Response (with Pagination)
+### 集合响应（带分页）
 
 ```json
 {
@@ -142,7 +148,7 @@ Location: /api/v1/users/abc-123
 }
 ```
 
-### Error Response
+### 错误响应
 
 ```json
 {
@@ -165,7 +171,7 @@ Location: /api/v1/users/abc-123
 }
 ```
 
-### Response Envelope Variants
+### 响应包装器变体
 
 ```typescript
 // Option A: Envelope with data wrapper (recommended for public APIs)
@@ -189,9 +195,9 @@ interface ApiError {
 // Distinguish by HTTP status code
 ```
 
-## Pagination
+## 分页
 
-### Offset-Based (Simple)
+### 基于偏移量（简单）
 
 ```
 GET /api/v1/users?page=2&per_page=20
@@ -202,10 +208,10 @@ ORDER BY created_at DESC
 LIMIT 20 OFFSET 20;
 ```
 
-**Pros:** Easy to implement, supports "jump to page N"
-**Cons:** Slow on large offsets (OFFSET 100000), inconsistent with concurrent inserts
+**优点：** 易于实现，支持“跳转到第 N 页”
+**缺点：** 在大偏移量时速度慢（例如 OFFSET 100000），并发插入时结果不一致
 
-### Cursor-Based (Scalable)
+### 基于游标（可扩展）
 
 ```
 GET /api/v1/users?cursor=eyJpZCI6MTIzfQ&limit=20
@@ -227,21 +233,21 @@ LIMIT 21;  -- fetch one extra to determine has_next
 }
 ```
 
-**Pros:** Consistent performance regardless of position, stable with concurrent inserts
-**Cons:** Cannot jump to arbitrary page, cursor is opaque
+**优点：** 无论位置如何，性能一致；在并发插入时结果稳定
+**缺点：** 无法跳转到任意页面；游标是不透明的
 
-### When to Use Which
+### 何时使用哪种
 
-| Use Case | Pagination Type |
+| 用例 | 分页类型 |
 |----------|----------------|
-| Admin dashboards, small datasets (<10K) | Offset |
-| Infinite scroll, feeds, large datasets | Cursor |
-| Public APIs | Cursor (default) with offset (optional) |
-| Search results | Offset (users expect page numbers) |
+| 管理仪表板，小数据集 (<10K) | 偏移量 |
+| 无限滚动，信息流，大数据集 | 游标 |
+| 公共 API | 游标（默认）配合偏移量（可选） |
+| 搜索结果 | 偏移量（用户期望有页码） |
 
-## Filtering, Sorting, and Search
+## 过滤、排序和搜索
 
-### Filtering
+### 过滤
 
 ```
 # Simple equality
@@ -258,7 +264,7 @@ GET /api/v1/products?category=electronics,clothing
 GET /api/v1/orders?customer.country=US
 ```
 
-### Sorting
+### 排序
 
 ```
 # Single field (prefix - for descending)
@@ -268,7 +274,7 @@ GET /api/v1/products?sort=-created_at
 GET /api/v1/products?sort=-featured,price,-created_at
 ```
 
-### Full-Text Search
+### 全文搜索
 
 ```
 # Search query parameter
@@ -278,7 +284,7 @@ GET /api/v1/products?q=wireless+headphones
 GET /api/v1/users?email=alice
 ```
 
-### Sparse Fieldsets
+### 稀疏字段集
 
 ```
 # Return only specified fields (reduces payload)
@@ -286,9 +292,9 @@ GET /api/v1/users?fields=id,name,email
 GET /api/v1/orders?fields=id,total,status&include=customer.name
 ```
 
-## Authentication and Authorization
+## 认证和授权
 
-### Token-Based Auth
+### 基于令牌的认证
 
 ```
 # Bearer token in Authorization header
@@ -300,7 +306,7 @@ GET /api/v1/data
 X-API-Key: sk_live_abc123
 ```
 
-### Authorization Patterns
+### 授权模式
 
 ```typescript
 // Resource-level: check ownership
@@ -318,9 +324,9 @@ app.delete("/api/v1/users/:id", requireRole("admin"), async (req, res) => {
 });
 ```
 
-## Rate Limiting
+## 速率限制
 
-### Headers
+### 响应头
 
 ```
 HTTP/1.1 200 OK
@@ -339,38 +345,38 @@ Retry-After: 60
 }
 ```
 
-### Rate Limit Tiers
+### 速率限制层级
 
-| Tier | Limit | Window | Use Case |
+| 层级 | 限制 | 时间窗口 | 用例 |
 |------|-------|--------|----------|
-| Anonymous | 30/min | Per IP | Public endpoints |
-| Authenticated | 100/min | Per user | Standard API access |
-| Premium | 1000/min | Per API key | Paid API plans |
-| Internal | 10000/min | Per service | Service-to-service |
+| 匿名用户 | 30/分钟 | 每个 IP | 公共端点 |
+| 认证用户 | 100/分钟 | 每个用户 | 标准 API 访问 |
+| 高级用户 | 1000/分钟 | 每个 API 密钥 | 付费 API 套餐 |
+| 内部服务 | 10000/分钟 | 每个服务 | 服务间调用 |
 
-## Versioning
+## 版本控制
 
-### URL Path Versioning (Recommended)
+### URL 路径版本控制（推荐）
 
 ```
 /api/v1/users
 /api/v2/users
 ```
 
-**Pros:** Explicit, easy to route, cacheable
-**Cons:** URL changes between versions
+**优点：** 明确，易于路由，可缓存
+**缺点：** 版本间 URL 会变化
 
-### Header Versioning
+### 请求头版本控制
 
 ```
 GET /api/users
 Accept: application/vnd.myapp.v2+json
 ```
 
-**Pros:** Clean URLs
-**Cons:** Harder to test, easy to forget
+**优点：** URL 简洁
+**缺点：** 测试更困难，容易忘记
 
-### Versioning Strategy
+### 版本控制策略
 
 ```
 1. Start with /api/v1/ — don't version until you need to
@@ -390,9 +396,9 @@ Accept: application/vnd.myapp.v2+json
    - Changing authentication method
 ```
 
-## Implementation Patterns
+## 实现模式
 
-### TypeScript (Next.js API Route)
+### TypeScript (Next.js API 路由)
 
 ```typescript
 import { z } from "zod";
@@ -499,19 +505,19 @@ func (h *UserHandler) CreateUser(w http.ResponseWriter, r *http.Request) {
 }
 ```
 
-## API Design Checklist
+## API 设计清单
 
-Before shipping a new endpoint:
+发布新端点前请检查：
 
-- [ ] Resource URL follows naming conventions (plural, kebab-case, no verbs)
-- [ ] Correct HTTP method used (GET for reads, POST for creates, etc.)
-- [ ] Appropriate status codes returned (not 200 for everything)
-- [ ] Input validated with schema (Zod, Pydantic, Bean Validation)
-- [ ] Error responses follow standard format with codes and messages
-- [ ] Pagination implemented for list endpoints (cursor or offset)
-- [ ] Authentication required (or explicitly marked as public)
-- [ ] Authorization checked (user can only access their own resources)
-- [ ] Rate limiting configured
-- [ ] Response does not leak internal details (stack traces, SQL errors)
-- [ ] Consistent naming with existing endpoints (camelCase vs snake_case)
-- [ ] Documented (OpenAPI/Swagger spec updated)
+* \[ ] 资源 URL 遵循命名约定（复数、短横线连接、不含动词）
+* \[ ] 使用了正确的 HTTP 方法（GET 用于读取，POST 用于创建等）
+* \[ ] 返回了适当的状态码（不要所有情况都返回 200）
+* \[ ] 使用模式（Zod, Pydantic, Bean Validation）验证了输入
+* \[ ] 错误响应遵循带代码和消息的标准格式
+* \[ ] 列表端点实现了分页（游标或偏移量）
+* \[ ] 需要认证（或明确标记为公开）
+* \[ ] 检查了授权（用户只能访问自己的资源）
+* \[ ] 配置了速率限制
+* \[ ] 响应未泄露内部细节（堆栈跟踪、SQL 错误）
+* \[ ] 与现有端点命名一致（camelCase 对比 snake\_case）
+* \[ ] 已记录（更新了 OpenAPI/Swagger 规范）

@@ -1,3 +1,8 @@
+---
+name: slidev
+description: Create and present web-based slidedecks for developers using Slidev with Markdown, Vue components, code highlighting, animations, and interactive features. Use when building technical presentations, conference talks, code walkthroughs, teaching materials, or developer decks.
+---
+
 # Slidev - Presentation Slides for Developers
 
 Web-based slides maker built on Vite, Vue, and Markdown.

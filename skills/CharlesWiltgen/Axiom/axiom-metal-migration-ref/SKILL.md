@@ -1,3 +1,12 @@
+---
+name: axiom-metal-migration-ref
+description: Use when converting shaders or looking up API equivalents - GLSL to MSL, HLSL to MSL, GL/DirectX to Metal mappings, MTKView setup code
+license: MIT
+compatibility: [iOS 12+, macOS 10.14+, tvOS 12+]
+metadata:
+  version: "1.0.0"
+---
+
 # Metal Migration Reference
 
 Complete reference for converting OpenGL/DirectX code to Metal.

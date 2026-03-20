@@ -1,3 +1,9 @@
+---
+name: wp-plugin-development
+description: WordPress plugin development — architecture, hooks, Settings API, security, data, and lifecycle. Always-active rules when working on plugins or mu-plugins.
+user-invocable: false
+---
+
 # WordPress Plugin Development
 
 Skill for creating and maintaining WordPress plugins. Covers architecture, lifecycle (activation/deactivation/uninstallation), Settings API, security, and data storage.

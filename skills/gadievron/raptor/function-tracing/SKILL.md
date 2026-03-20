@@ -1,3 +1,15 @@
+---
+name: Function Call Tracing
+description: Instrument C/C++ with -finstrument-functions for execution tracing and Perfetto visualization
+version: 1.0
+author: Claude
+tags:
+  - tracing
+  - profiling
+  - instrumentation
+  - perfetto
+---
+
 # Function Call Tracing
 
 ## Purpose

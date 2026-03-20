@@ -1,3 +1,20 @@
+---
+name: rover
+description: >
+  Guide for using Apollo Rover CLI to manage GraphQL schemas and federation. Use this skill when:
+  (1) publishing or fetching subgraph/graph schemas,
+  (2) composing supergraph schemas locally or via GraphOS,
+  (3) running local supergraph development with rover dev,
+  (4) validating schemas with check and lint commands,
+  (5) configuring Rover authentication and environment.
+license: MIT
+compatibility: Node.js v18+, Linux/macOS/Windows
+metadata:
+  author: apollographql
+  version: "1.0.1"
+allowed-tools: Bash(rover:*) Bash(npm:*) Bash(npx:*) Read Write Edit Glob Grep
+---
+
 # Apollo Rover CLI Guide
 
 Rover is the official CLI for Apollo GraphOS. It helps you manage schemas, run composition locally, publish to GraphOS, and develop supergraphs on your local machine.

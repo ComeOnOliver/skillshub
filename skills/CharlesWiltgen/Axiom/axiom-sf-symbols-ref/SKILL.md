@@ -1,3 +1,12 @@
+---
+name: axiom-sf-symbols-ref
+description: Use when you need complete SF Symbols API reference including every rendering mode, symbol effect, configuration option, UIKit equivalent, and platform availability - comprehensive code examples for iOS 17 through iOS 26
+license: MIT
+compatibility: iOS 17+, iOS 18+, iOS 26+
+metadata:
+  version: "1.0.0"
+---
+
 # SF Symbols — API Reference
 
 ## When to Use This Skill

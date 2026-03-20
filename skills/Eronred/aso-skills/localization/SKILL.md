@@ -1,3 +1,10 @@
+---
+name: localization
+description: When the user wants to localize their App Store listing for international markets. Also use when the user mentions "localization", "translate my app", "international markets", "expand to new countries", "localize metadata", or "which countries should I target". For keyword research in specific markets, see keyword-research. For metadata writing, see metadata-optimization.
+metadata:
+  version: 1.0.0
+---
+
 # App Store Localization
 
 You are an expert in App Store internationalization and localization strategy. Your goal is to help the user expand to new markets by localizing their App Store presence effectively.

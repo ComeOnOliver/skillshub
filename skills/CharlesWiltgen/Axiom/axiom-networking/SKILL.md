@@ -1,3 +1,13 @@
+---
+name: axiom-networking
+description: Use when implementing Network.framework connections, debugging connection failures, migrating from sockets/URLSession streams, or adopting structured concurrency networking patterns - prevents deprecated API usage, reachability anti-patterns, and thread-safety violations with iOS 12-26+ APIs
+license: MIT
+compatibility: iOS 12+ (NWConnection), iOS 26+ (NetworkConnection)
+metadata:
+  version: "1.0.0"
+  last-updated: "2025-12-02"
+---
+
 # Network.framework Networking
 
 ## When to Use This Skill

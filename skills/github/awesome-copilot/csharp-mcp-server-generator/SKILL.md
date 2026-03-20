@@ -1,3 +1,8 @@
+---
+name: csharp-mcp-server-generator
+description: 'Generate a complete MCP server project in C# with tools, prompts, and proper configuration'
+---
+
 # Generate C# MCP Server
 
 Create a complete Model Context Protocol (MCP) server in C# with the following specifications:

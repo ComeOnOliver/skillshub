@@ -1,3 +1,9 @@
+---
+name: axiom-xcode-mcp-tools
+description: Xcode MCP workflow patterns — BuildFix loop, TestFix loop, preview verification, window targeting, tool gotchas
+license: MIT
+---
+
 # Xcode MCP Tool Workflows
 
 **Core principle**: Xcode MCP gives you programmatic IDE access. Use workflow loops, not isolated tool calls.

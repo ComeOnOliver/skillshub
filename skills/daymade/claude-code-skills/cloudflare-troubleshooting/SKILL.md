@@ -1,3 +1,8 @@
+---
+name: cloudflare-troubleshooting
+description: Investigate and resolve Cloudflare configuration issues using API-driven evidence gathering. Use when troubleshooting ERR_TOO_MANY_REDIRECTS, SSL errors, DNS issues, or any Cloudflare-related problems. Focus on systematic investigation using Cloudflare API to examine actual configuration rather than making assumptions.
+---
+
 # Cloudflare Troubleshooting
 
 ## Core Principle

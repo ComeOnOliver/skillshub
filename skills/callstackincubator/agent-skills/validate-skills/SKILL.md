@@ -1,3 +1,12 @@
+---
+name: validate-skills
+description: Validates skills in this repo against agentskills.io spec and Claude Code best practices. Use via /validate-skills command.
+license: MIT
+metadata:
+  author: Callstack
+  tags: validation, linting, skill-authoring
+---
+
 # Validate Skills
 
 Validate all skills in `skills/` against the agentskills.io spec and Claude Code best practices.

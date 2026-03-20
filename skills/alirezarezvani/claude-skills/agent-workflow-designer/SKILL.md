@@ -1,3 +1,8 @@
+---
+name: "agent-workflow-designer"
+description: "Agent Workflow Designer"
+---
+
 # Agent Workflow Designer
 
 **Tier:** POWERFUL  

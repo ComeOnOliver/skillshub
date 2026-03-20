@@ -1,3 +1,8 @@
+---
+name: golang-configuration
+description: "Standards for application configuration using environment variables and libraries. Use when managing Go application config with environment variables or viper. (triggers: configs/**, cmd/**, configuration, env var, viper, koanf)"
+---
+
 # Golang Configuration Standards
 
 ## **Priority: P1 (STANDARD)**

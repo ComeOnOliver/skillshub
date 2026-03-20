@@ -1,3 +1,12 @@
+---
+name: go-concurrency
+description: Use when writing concurrent Go code — goroutines, channels, mutexes, or thread-safety guarantees. Also use when parallelizing work, fixing data races, or protecting shared state, even if the user doesn't explicitly mention concurrency primitives. Does not cover context.Context patterns (see go-context).
+license: Apache-2.0
+compatibility: Requires go.uber.org/atomic for atomic operation wrappers
+metadata:
+  sources: "Effective Go, Google Style Guide, Uber Style Guide"
+---
+
 # Go Concurrency
 
 ## Goroutine Lifetimes

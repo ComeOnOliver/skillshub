@@ -1,361 +1,298 @@
+---
+name: configure-ecc
+description: Everything Claude Code のインタラクティブなインストーラー — スキルとルールの選択とインストールをユーザーレベルまたはプロジェクトレベルのディレクトリへガイドし、パスを検証し、必要に応じてインストールされたファイルを最適化します。
+---
+
 # Configure Everything Claude Code (ECC)
 
-An interactive, step-by-step installation wizard for the Everything Claude Code project. Uses `AskUserQuestion` to guide users through selective installation of skills and rules, then verifies correctness and offers optimization.
+Everything Claude Code プロジェクトのインタラクティブなステップバイステップのインストールウィザードです。`AskUserQuestion` を使用してスキルとルールの選択的インストールをユーザーにガイドし、正確性を検証し、最適化を提供します。
 
-## When to Activate
+## 起動タイミング
 
-- User says "configure ecc", "install ecc", "setup everything claude code", or similar
-- User wants to selectively install skills or rules from this project
-- User wants to verify or fix an existing ECC installation
-- User wants to optimize installed skills or rules for their project
+- ユーザーが "configure ecc"、"install ecc"、"setup everything claude code" などと言った場合
+- ユーザーがこのプロジェクトからスキルまたはルールを選択的にインストールしたい場合
+- ユーザーが既存の ECC インストールを検証または修正したい場合
+- ユーザーがインストールされたスキルまたはルールをプロジェクト用に最適化したい場合
 
-## Prerequisites
+## 前提条件
 
-This skill must be accessible to Claude Code before activation. Two ways to bootstrap:
-1. **Via Plugin**: `/plugin install everything-claude-code` — the plugin loads this skill automatically
-2. **Manual**: Copy only this skill to `~/.claude/skills/configure-ecc/SKILL.md`, then activate by saying "configure ecc"
+このスキルは起動前に Claude Code からアクセス可能である必要があります。ブートストラップには2つの方法があります：
+1. **プラグイン経由**: `/plugin install everything-claude-code` — プラグインがこのスキルを自動的にロードします
+2. **手動**: このスキルのみを `~/.claude/skills/configure-ecc/SKILL.md` にコピーし、"configure ecc" と言って起動します
 
 ---
 
-## Step 0: Clone ECC Repository
+## ステップ 0: ECC リポジトリのクローン
 
-Before any installation, clone the latest ECC source to `/tmp`:
+インストールの前に、最新の ECC ソースを `/tmp` にクローンします：
 
 ```bash
 rm -rf /tmp/everything-claude-code
 git clone https://github.com/affaan-m/everything-claude-code.git /tmp/everything-claude-code
 ```
 
-Set `ECC_ROOT=/tmp/everything-claude-code` as the source for all subsequent copy operations.
+以降のすべてのコピー操作のソースとして `ECC_ROOT=/tmp/everything-claude-code` を設定します。
 
-If the clone fails (network issues, etc.), use `AskUserQuestion` to ask the user to provide a local path to an existing ECC clone.
+クローンが失敗した場合（ネットワークの問題など）、`AskUserQuestion` を使用してユーザーに既存の ECC クローンへのローカルパスを提供するよう依頼します。
 
 ---
 
-## Step 1: Choose Installation Level
+## ステップ 1: インストールレベルの選択
 
-Use `AskUserQuestion` to ask the user where to install:
+`AskUserQuestion` を使用してユーザーにインストール先を尋ねます：
 
 ```
-Question: "Where should ECC components be installed?"
+Question: "ECC コンポーネントをどこにインストールしますか？"
 Options:
-  - "User-level (~/.claude/)" — "Applies to all your Claude Code projects"
-  - "Project-level (.claude/)" — "Applies only to the current project"
-  - "Both" — "Common/shared items user-level, project-specific items project-level"
+  - "User-level (~/.claude/)" — "すべての Claude Code プロジェクトに適用されます"
+  - "Project-level (.claude/)" — "現在のプロジェクトのみに適用されます"
+  - "Both" — "共通/共有アイテムはユーザーレベル、プロジェクト固有アイテムはプロジェクトレベル"
 ```
 
-Store the choice as `INSTALL_LEVEL`. Set the target directory:
+選択を `INSTALL_LEVEL` として保存します。ターゲットディレクトリを設定します：
 - User-level: `TARGET=~/.claude`
-- Project-level: `TARGET=.claude` (relative to current project root)
-- Both: `TARGET_USER=~/.claude`, `TARGET_PROJECT=.claude`
+- Project-level: `TARGET=.claude`（現在のプロジェクトルートからの相対パス）
+- Both: `TARGET_USER=~/.claude`、`TARGET_PROJECT=.claude`
 
-Create the target directories if they don't exist:
+ターゲットディレクトリが存在しない場合は作成します：
 ```bash
 mkdir -p $TARGET/skills $TARGET/rules
 ```
 
 ---
 
-## Step 2: Select & Install Skills
+## ステップ 2: スキルの選択とインストール
 
-### 2a: Choose Scope (Core vs Niche)
+### 2a: スキルカテゴリの選択
 
-Default to **Core (recommended for new users)** — copy `.agents/skills/*` plus `skills/search-first/` for research-first workflows. This bundle covers engineering, evals, verification, security, strategic compaction, frontend design, and Anthropic cross-functional skills (article-writing, content-engine, market-research, frontend-slides).
+27個のスキルが4つのカテゴリに分類されています。`multiSelect: true` で `AskUserQuestion` を使用します：
 
-Use `AskUserQuestion` (single select):
 ```
-Question: "Install core skills only, or include niche/framework packs?"
+Question: "どのスキルカテゴリをインストールしますか？"
 Options:
-  - "Core only (recommended)" — "tdd, e2e, evals, verification, research-first, security, frontend patterns, compacting, cross-functional Anthropic skills"
-  - "Core + selected niche" — "Add framework/domain-specific skills after core"
-  - "Niche only" — "Skip core, install specific framework/domain skills"
-Default: Core only
+  - "Framework & Language" — "Django, Spring Boot, Go, Python, Java, Frontend, Backend パターン"
+  - "Database" — "PostgreSQL, ClickHouse, JPA/Hibernate パターン"
+  - "Workflow & Quality" — "TDD, 検証, 学習, セキュリティレビュー, コンパクション"
+  - "All skills" — "利用可能なすべてのスキルをインストール"
 ```
 
-If the user chooses niche or core + niche, continue to category selection below and only include those niche skills they pick.
+### 2b: 個別スキルの確認
 
-### 2b: Choose Skill Categories
+選択された各カテゴリについて、以下の完全なスキルリストを表示し、ユーザーに確認または特定のものの選択解除を依頼します。リストが4項目を超える場合、リストをテキストとして表示し、`AskUserQuestion` で「リストされたすべてをインストール」オプションと、ユーザーが特定の名前を貼り付けるための「その他」オプションを使用します。
 
-There are 7 selectable category groups below. The detailed confirmation lists that follow cover 45 skills across 8 categories, plus 1 standalone template. Use `AskUserQuestion` with `multiSelect: true`:
+**カテゴリ: Framework & Language（16スキル）**
 
-```
-Question: "Which skill categories do you want to install?"
-Options:
-  - "Framework & Language" — "Django, Laravel, Spring Boot, Go, Python, Java, Frontend, Backend patterns"
-  - "Database" — "PostgreSQL, ClickHouse, JPA/Hibernate patterns"
-  - "Workflow & Quality" — "TDD, verification, learning, security review, compaction"
-  - "Research & APIs" — "Deep research, Exa search, Claude API patterns"
-  - "Social & Content Distribution" — "X/Twitter API, crossposting alongside content-engine"
-  - "Media Generation" — "fal.ai image/video/audio alongside VideoDB"
-  - "Orchestration" — "dmux multi-agent workflows"
-  - "All skills" — "Install every available skill"
-```
-
-### 2c: Confirm Individual Skills
-
-For each selected category, print the full list of skills below and ask the user to confirm or deselect specific ones. If the list exceeds 4 items, print the list as text and use `AskUserQuestion` with an "Install all listed" option plus "Other" for the user to paste specific names.
-
-**Category: Framework & Language (21 skills)**
-
-| Skill | Description |
+| スキル | 説明 |
 |-------|-------------|
-| `backend-patterns` | Backend architecture, API design, server-side best practices for Node.js/Express/Next.js |
-| `coding-standards` | Universal coding standards for TypeScript, JavaScript, React, Node.js |
-| `django-patterns` | Django architecture, REST API with DRF, ORM, caching, signals, middleware |
-| `django-security` | Django security: auth, CSRF, SQL injection, XSS prevention |
-| `django-tdd` | Django testing with pytest-django, factory_boy, mocking, coverage |
-| `django-verification` | Django verification loop: migrations, linting, tests, security scans |
-| `laravel-patterns` | Laravel architecture patterns: routing, controllers, Eloquent, queues, caching |
-| `laravel-security` | Laravel security: auth, policies, CSRF, mass assignment, rate limiting |
-| `laravel-tdd` | Laravel testing with PHPUnit and Pest, factories, fakes, coverage |
-| `laravel-verification` | Laravel verification: linting, static analysis, tests, security scans |
-| `frontend-patterns` | React, Next.js, state management, performance, UI patterns |
-| `frontend-slides` | Zero-dependency HTML presentations, style previews, and PPTX-to-web conversion |
-| `golang-patterns` | Idiomatic Go patterns, conventions for robust Go applications |
-| `golang-testing` | Go testing: table-driven tests, subtests, benchmarks, fuzzing |
-| `java-coding-standards` | Java coding standards for Spring Boot: naming, immutability, Optional, streams |
-| `python-patterns` | Pythonic idioms, PEP 8, type hints, best practices |
-| `python-testing` | Python testing with pytest, TDD, fixtures, mocking, parametrization |
-| `springboot-patterns` | Spring Boot architecture, REST API, layered services, caching, async |
-| `springboot-security` | Spring Security: authn/authz, validation, CSRF, secrets, rate limiting |
-| `springboot-tdd` | Spring Boot TDD with JUnit 5, Mockito, MockMvc, Testcontainers |
-| `springboot-verification` | Spring Boot verification: build, static analysis, tests, security scans |
+| `backend-patterns` | バックエンドアーキテクチャ、API設計、Node.js/Express/Next.js のサーバーサイドベストプラクティス |
+| `coding-standards` | TypeScript、JavaScript、React、Node.js の汎用コーディング標準 |
+| `django-patterns` | Django アーキテクチャ、DRF による REST API、ORM、キャッシング、シグナル、ミドルウェア |
+| `django-security` | Django セキュリティ: 認証、CSRF、SQL インジェクション、XSS 防止 |
+| `django-tdd` | pytest-django、factory_boy、モック、カバレッジによる Django テスト |
+| `django-verification` | Django 検証ループ: マイグレーション、リンティング、テスト、セキュリティスキャン |
+| `frontend-patterns` | React、Next.js、状態管理、パフォーマンス、UI パターン |
+| `golang-patterns` | 慣用的な Go パターン、堅牢な Go アプリケーションのための規約 |
+| `golang-testing` | Go テスト: テーブル駆動テスト、サブテスト、ベンチマーク、ファジング |
+| `java-coding-standards` | Spring Boot 用 Java コーディング標準: 命名、不変性、Optional、ストリーム |
+| `python-patterns` | Pythonic なイディオム、PEP 8、型ヒント、ベストプラクティス |
+| `python-testing` | pytest、TDD、フィクスチャ、モック、パラメータ化による Python テスト |
+| `springboot-patterns` | Spring Boot アーキテクチャ、REST API、レイヤードサービス、キャッシング、非同期 |
+| `springboot-security` | Spring Security: 認証/認可、検証、CSRF、シークレット、レート制限 |
+| `springboot-tdd` | JUnit 5、Mockito、MockMvc、Testcontainers による Spring Boot TDD |
+| `springboot-verification` | Spring Boot 検証: ビルド、静的解析、テスト、セキュリティスキャン |
 
-**Category: Database (3 skills)**
+**カテゴリ: Database（3スキル）**
 
-| Skill | Description |
+| スキル | 説明 |
 |-------|-------------|
-| `clickhouse-io` | ClickHouse patterns, query optimization, analytics, data engineering |
-| `jpa-patterns` | JPA/Hibernate entity design, relationships, query optimization, transactions |
-| `postgres-patterns` | PostgreSQL query optimization, schema design, indexing, security |
+| `clickhouse-io` | ClickHouse パターン、クエリ最適化、分析、データエンジニアリング |
+| `jpa-patterns` | JPA/Hibernate エンティティ設計、リレーションシップ、クエリ最適化、トランザクション |
+| `postgres-patterns` | PostgreSQL クエリ最適化、スキーマ設計、インデックス作成、セキュリティ |
 
-**Category: Workflow & Quality (8 skills)**
+**カテゴリ: Workflow & Quality（8スキル）**
 
-| Skill | Description |
+| スキル | 説明 |
 |-------|-------------|
-| `continuous-learning` | Auto-extract reusable patterns from sessions as learned skills |
-| `continuous-learning-v2` | Instinct-based learning with confidence scoring, evolves into skills/commands/agents |
-| `eval-harness` | Formal evaluation framework for eval-driven development (EDD) |
-| `iterative-retrieval` | Progressive context refinement for subagent context problem |
-| `security-review` | Security checklist: auth, input, secrets, API, payment features |
-| `strategic-compact` | Suggests manual context compaction at logical intervals |
-| `tdd-workflow` | Enforces TDD with 80%+ coverage: unit, integration, E2E |
-| `verification-loop` | Verification and quality loop patterns |
+| `continuous-learning` | セッションから再利用可能なパターンを学習済みスキルとして自動抽出 |
+| `continuous-learning-v2` | 信頼度スコアリングを持つ本能ベースの学習、スキル/コマンド/エージェントに進化 |
+| `eval-harness` | 評価駆動開発（EDD）のための正式な評価フレームワーク |
+| `iterative-retrieval` | サブエージェントコンテキスト問題のための段階的コンテキスト改善 |
+| `security-review` | セキュリティチェックリスト: 認証、入力、シークレット、API、決済機能 |
+| `strategic-compact` | 論理的な間隔で手動コンテキスト圧縮を提案 |
+| `tdd-workflow` | 80%以上のカバレッジで TDD を強制: ユニット、統合、E2E |
+| `verification-loop` | 検証と品質ループのパターン |
 
-**Category: Business & Content (5 skills)**
+**スタンドアロン**
 
-| Skill | Description |
+| スキル | 説明 |
 |-------|-------------|
-| `article-writing` | Long-form writing in a supplied voice using notes, examples, or source docs |
-| `content-engine` | Multi-platform social content, scripts, and repurposing workflows |
-| `market-research` | Source-attributed market, competitor, fund, and technology research |
-| `investor-materials` | Pitch decks, one-pagers, investor memos, and financial models |
-| `investor-outreach` | Personalized investor cold emails, warm intros, and follow-ups |
+| `project-guidelines-example` | プロジェクト固有のスキルを作成するためのテンプレート |
 
-**Category: Research & APIs (3 skills)**
+### 2c: インストールの実行
 
-| Skill | Description |
-|-------|-------------|
-| `deep-research` | Multi-source deep research using firecrawl and exa MCPs with cited reports |
-| `exa-search` | Neural search via Exa MCP for web, code, company, and people research |
-| `claude-api` | Anthropic Claude API patterns: Messages, streaming, tool use, vision, batches, Agent SDK |
-
-**Category: Social & Content Distribution (2 skills)**
-
-| Skill | Description |
-|-------|-------------|
-| `x-api` | X/Twitter API integration for posting, threads, search, and analytics |
-| `crosspost` | Multi-platform content distribution with platform-native adaptation |
-
-**Category: Media Generation (2 skills)**
-
-| Skill | Description |
-|-------|-------------|
-| `fal-ai-media` | Unified AI media generation (image, video, audio) via fal.ai MCP |
-| `video-editing` | AI-assisted video editing for cutting, structuring, and augmenting real footage |
-
-**Category: Orchestration (1 skill)**
-
-| Skill | Description |
-|-------|-------------|
-| `dmux-workflows` | Multi-agent orchestration using dmux for parallel agent sessions |
-
-**Standalone**
-
-| Skill | Description |
-|-------|-------------|
-| `project-guidelines-example` | Template for creating project-specific skills |
-
-### 2d: Execute Installation
-
-For each selected skill, copy the entire skill directory:
+選択された各スキルについて、スキルディレクトリ全体をコピーします：
 ```bash
 cp -r $ECC_ROOT/skills/<skill-name> $TARGET/skills/
 ```
 
-Note: `continuous-learning` and `continuous-learning-v2` have extra files (config.json, hooks, scripts) — ensure the entire directory is copied, not just SKILL.md.
+注: `continuous-learning` と `continuous-learning-v2` には追加ファイル（config.json、フック、スクリプト）があります — SKILL.md だけでなく、ディレクトリ全体がコピーされることを確認してください。
 
 ---
 
-## Step 3: Select & Install Rules
+## ステップ 3: ルールの選択とインストール
 
-Use `AskUserQuestion` with `multiSelect: true`:
+`multiSelect: true` で `AskUserQuestion` を使用します：
 
 ```
-Question: "Which rule sets do you want to install?"
+Question: "どのルールセットをインストールしますか？"
 Options:
-  - "Common rules (Recommended)" — "Language-agnostic principles: coding style, git workflow, testing, security, etc. (8 files)"
-  - "TypeScript/JavaScript" — "TS/JS patterns, hooks, testing with Playwright (5 files)"
-  - "Python" — "Python patterns, pytest, black/ruff formatting (5 files)"
-  - "Go" — "Go patterns, table-driven tests, gofmt/staticcheck (5 files)"
+  - "Common rules (Recommended)" — "言語に依存しない原則: コーディングスタイル、git ワークフロー、テスト、セキュリティなど（8ファイル）"
+  - "TypeScript/JavaScript" — "TS/JS パターン、フック、Playwright によるテスト（5ファイル）"
+  - "Python" — "Python パターン、pytest、black/ruff フォーマット（5ファイル）"
+  - "Go" — "Go パターン、テーブル駆動テスト、gofmt/staticcheck（5ファイル）"
 ```
 
-Execute installation:
+インストールを実行：
 ```bash
-# Common rules (flat copy into rules/)
+# 共通ルール（rules/ にフラットコピー）
 cp -r $ECC_ROOT/rules/common/* $TARGET/rules/
 
-# Language-specific rules (flat copy into rules/)
-cp -r $ECC_ROOT/rules/typescript/* $TARGET/rules/   # if selected
-cp -r $ECC_ROOT/rules/python/* $TARGET/rules/        # if selected
-cp -r $ECC_ROOT/rules/golang/* $TARGET/rules/        # if selected
+# 言語固有のルール（rules/ にフラットコピー）
+cp -r $ECC_ROOT/rules/typescript/* $TARGET/rules/   # 選択された場合
+cp -r $ECC_ROOT/rules/python/* $TARGET/rules/        # 選択された場合
+cp -r $ECC_ROOT/rules/golang/* $TARGET/rules/        # 選択された場合
 ```
 
-**Important**: If the user selects any language-specific rules but NOT common rules, warn them:
-> "Language-specific rules extend the common rules. Installing without common rules may result in incomplete coverage. Install common rules too?"
+**重要**: ユーザーが言語固有のルールを選択したが、共通ルールを選択しなかった場合、警告します：
+> "言語固有のルールは共通ルールを拡張します。共通ルールなしでインストールすると、不完全なカバレッジになる可能性があります。共通ルールもインストールしますか？"
 
 ---
 
-## Step 4: Post-Installation Verification
+## ステップ 4: インストール後の検証
 
-After installation, perform these automated checks:
+インストール後、以下の自動チェックを実行します：
 
-### 4a: Verify File Existence
+### 4a: ファイルの存在確認
 
-List all installed files and confirm they exist at the target location:
+インストールされたすべてのファイルをリストし、ターゲットロケーションに存在することを確認します：
 ```bash
 ls -la $TARGET/skills/
 ls -la $TARGET/rules/
 ```
 
-### 4b: Check Path References
+### 4b: パス参照のチェック
 
-Scan all installed `.md` files for path references:
+インストールされたすべての `.md` ファイルでパス参照をスキャンします：
 ```bash
 grep -rn "~/.claude/" $TARGET/skills/ $TARGET/rules/
 grep -rn "../common/" $TARGET/rules/
 grep -rn "skills/" $TARGET/skills/
 ```
 
-**For project-level installs**, flag any references to `~/.claude/` paths:
-- If a skill references `~/.claude/settings.json` — this is usually fine (settings are always user-level)
-- If a skill references `~/.claude/skills/` or `~/.claude/rules/` — this may be broken if installed only at project level
-- If a skill references another skill by name — check that the referenced skill was also installed
+**プロジェクトレベルのインストールの場合**、`~/.claude/` パスへの参照をフラグします：
+- スキルが `~/.claude/settings.json` を参照している場合 — これは通常問題ありません（設定は常にユーザーレベルです）
+- スキルが `~/.claude/skills/` または `~/.claude/rules/` を参照している場合 — プロジェクトレベルのみにインストールされている場合、これは壊れている可能性があります
+- スキルが別のスキルを名前で参照している場合 — 参照されているスキルもインストールされているか確認します
 
-### 4c: Check Cross-References Between Skills
+### 4c: スキル間の相互参照のチェック
 
-Some skills reference others. Verify these dependencies:
-- `django-tdd` may reference `django-patterns`
-- `laravel-tdd` may reference `laravel-patterns`
-- `springboot-tdd` may reference `springboot-patterns`
-- `continuous-learning-v2` references `~/.claude/homunculus/` directory
-- `python-testing` may reference `python-patterns`
-- `golang-testing` may reference `golang-patterns`
-- `crosspost` references `content-engine` and `x-api`
-- `deep-research` references `exa-search` (complementary MCP tools)
-- `fal-ai-media` references `videodb` (complementary media skill)
-- `x-api` references `content-engine` and `crosspost`
-- Language-specific rules reference `common/` counterparts
+一部のスキルは他のスキルを参照します。これらの依存関係を検証します：
+- `django-tdd` は `django-patterns` を参照する可能性があります
+- `springboot-tdd` は `springboot-patterns` を参照する可能性があります
+- `continuous-learning-v2` は `~/.claude/homunculus/` ディレクトリを参照します
+- `python-testing` は `python-patterns` を参照する可能性があります
+- `golang-testing` は `golang-patterns` を参照する可能性があります
+- 言語固有のルールは `common/` の対応物を参照します
 
-### 4d: Report Issues
+### 4d: 問題の報告
 
-For each issue found, report:
-1. **File**: The file containing the problematic reference
-2. **Line**: The line number
-3. **Issue**: What's wrong (e.g., "references ~/.claude/skills/python-patterns but python-patterns was not installed")
-4. **Suggested fix**: What to do (e.g., "install python-patterns skill" or "update path to .claude/skills/")
+見つかった各問題について、報告します：
+1. **ファイル**: 問題のある参照を含むファイル
+2. **行**: 行番号
+3. **問題**: 何が間違っているか（例: "~/.claude/skills/python-patterns を参照していますが、python-patterns がインストールされていません"）
+4. **推奨される修正**: 何をすべきか（例: "python-patterns スキルをインストール" または "パスを .claude/skills/ に更新"）
 
 ---
 
-## Step 5: Optimize Installed Files (Optional)
+## ステップ 5: インストールされたファイルの最適化（オプション）
 
-Use `AskUserQuestion`:
+`AskUserQuestion` を使用します：
 
 ```
-Question: "Would you like to optimize the installed files for your project?"
+Question: "インストールされたファイルをプロジェクト用に最適化しますか？"
 Options:
-  - "Optimize skills" — "Remove irrelevant sections, adjust paths, tailor to your tech stack"
-  - "Optimize rules" — "Adjust coverage targets, add project-specific patterns, customize tool configs"
-  - "Optimize both" — "Full optimization of all installed files"
-  - "Skip" — "Keep everything as-is"
+  - "Optimize skills" — "無関係なセクションを削除、パスを調整、技術スタックに合わせて調整"
+  - "Optimize rules" — "カバレッジ目標を調整、プロジェクト固有のパターンを追加、ツール設定をカスタマイズ"
+  - "Optimize both" — "インストールされたすべてのファイルの完全な最適化"
+  - "Skip" — "すべてをそのまま維持"
 ```
 
-### If optimizing skills:
-1. Read each installed SKILL.md
-2. Ask the user what their project's tech stack is (if not already known)
-3. For each skill, suggest removals of irrelevant sections
-4. Edit the SKILL.md files in-place at the installation target (NOT the source repo)
-5. Fix any path issues found in Step 4
+### スキルを最適化する場合：
+1. インストールされた各 SKILL.md を読み取ります
+2. ユーザーにプロジェクトの技術スタックを尋ねます（まだ不明な場合）
+3. 各スキルについて、無関係なセクションの削除を提案します
+4. インストール先（ソースリポジトリではなく）で SKILL.md ファイルをその場で編集します
+5. ステップ4で見つかったパスの問題を修正します
 
-### If optimizing rules:
-1. Read each installed rule .md file
-2. Ask the user about their preferences:
-   - Test coverage target (default 80%)
-   - Preferred formatting tools
-   - Git workflow conventions
-   - Security requirements
-3. Edit the rule files in-place at the installation target
+### ルールを最適化する場合：
+1. インストールされた各ルール .md ファイルを読み取ります
+2. ユーザーに設定について尋ねます：
+   - テストカバレッジ目標（デフォルト80%）
+   - 優先フォーマットツール
+   - Git ワークフロー規約
+   - セキュリティ要件
+3. インストール先でルールファイルをその場で編集します
 
-**Critical**: Only modify files in the installation target (`$TARGET/`), NEVER modify files in the source ECC repository (`$ECC_ROOT/`).
+**重要**: インストール先（`$TARGET/`）のファイルのみを変更し、ソース ECC リポジトリ（`$ECC_ROOT/`）のファイルは決して変更しないでください。
 
 ---
 
-## Step 6: Installation Summary
+## ステップ 6: インストールサマリー
 
-Clean up the cloned repository from `/tmp`:
+`/tmp` からクローンされたリポジトリをクリーンアップします：
 
 ```bash
 rm -rf /tmp/everything-claude-code
 ```
 
-Then print a summary report:
+次にサマリーレポートを出力します：
 
 ```
-## ECC Installation Complete
+## ECC インストール完了
 
-### Installation Target
-- Level: [user-level / project-level / both]
-- Path: [target path]
+### インストール先
+- レベル: [user-level / project-level / both]
+- パス: [ターゲットパス]
 
-### Skills Installed ([count])
+### インストールされたスキル（[数]）
 - skill-1, skill-2, skill-3, ...
 
-### Rules Installed ([count])
-- common (8 files)
-- typescript (5 files)
+### インストールされたルール（[数]）
+- common（8ファイル）
+- typescript（5ファイル）
 - ...
 
-### Verification Results
-- [count] issues found, [count] fixed
-- [list any remaining issues]
+### 検証結果
+- [数]個の問題が見つかり、[数]個が修正されました
+- [残っている問題をリスト]
 
-### Optimizations Applied
-- [list changes made, or "None"]
+### 適用された最適化
+- [加えられた変更をリスト、または "なし"]
 ```
 
 ---
 
-## Troubleshooting
+## トラブルシューティング
 
-### "Skills not being picked up by Claude Code"
-- Verify the skill directory contains a `SKILL.md` file (not just loose .md files)
-- For user-level: check `~/.claude/skills/<skill-name>/SKILL.md` exists
-- For project-level: check `.claude/skills/<skill-name>/SKILL.md` exists
+### "スキルが Claude Code に認識されません"
+- スキルディレクトリに `SKILL.md` ファイルが含まれていることを確認します（単なる緩い .md ファイルではありません）
+- ユーザーレベルの場合: `~/.claude/skills/<skill-name>/SKILL.md` が存在するか確認します
+- プロジェクトレベルの場合: `.claude/skills/<skill-name>/SKILL.md` が存在するか確認します
 
-### "Rules not working"
-- Rules are flat files, not in subdirectories: `$TARGET/rules/coding-style.md` (correct) vs `$TARGET/rules/common/coding-style.md` (incorrect for flat install)
-- Restart Claude Code after installing rules
+### "ルールが機能しません"
+- ルールはフラットファイルで、サブディレクトリにはありません: `$TARGET/rules/coding-style.md`（正しい） vs `$TARGET/rules/common/coding-style.md`（フラットインストールでは不正）
+- ルールをインストール後、Claude Code を再起動します
 
-### "Path reference errors after project-level install"
-- Some skills assume `~/.claude/` paths. Run Step 4 verification to find and fix these.
-- For `continuous-learning-v2`, the `~/.claude/homunculus/` directory is always user-level — this is expected and not an error.
+### "プロジェクトレベルのインストール後のパス参照エラー"
+- 一部のスキルは `~/.claude/` パスを前提としています。ステップ4の検証を実行してこれらを見つけて修正します。
+- `continuous-learning-v2` の場合、`~/.claude/homunculus/` ディレクトリは常にユーザーレベルです — これは想定されており、エラーではありません。

@@ -1,3 +1,10 @@
+---
+name: competitor-analysis
+description: When the user wants to analyze competitors' App Store strategy, find keyword gaps, or understand competitive positioning. Also use when the user mentions "competitor analysis", "competitive research", "keyword gap", "what are my competitors doing", or "compare my app to". For keyword-specific research, see keyword-research. For metadata writing, see metadata-optimization.
+metadata:
+  version: 1.0.0
+---
+
 # Competitor Analysis
 
 You are an expert in competitive intelligence for mobile apps. Your goal is to perform a thorough analysis of the user's competitors and identify actionable opportunities to outperform them.

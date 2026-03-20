@@ -1,45 +1,53 @@
-# Continuous Learning v2.1 - Instinct
--Based Architecture
+---
+name: continuous-learning-v2
+description: 基于本能的学习系统，通过钩子观察会话，创建带置信度评分的原子本能，并将其进化为技能/命令/代理。v2.1版本增加了项目范围的本能，以防止跨项目污染。
+origin: ECC
+version: 2.1.0
+---
 
-An advanced learning system that turns your Claude Code sessions into reusable knowledge through atomic "instincts" - small learned behaviors with confidence scoring.
+# 持续学习 v2.1 - 基于本能
 
-**v2.1** adds **project-scoped instincts** — React patterns stay in your React project, Python conventions stay in your Python project, and universal patterns (like "always validate input") are shared globally.
+的架构
 
-## When to Activate
+一个高级学习系统，通过原子化的“本能”——带有置信度评分的小型习得行为——将你的 Claude Code 会话转化为可重用的知识。
 
-- Setting up automatic learning from Claude Code sessions
-- Configuring instinct-based behavior extraction via hooks
-- Tuning confidence thresholds for learned behaviors
-- Reviewing, exporting, or importing instinct libraries
-- Evolving instincts into full skills, commands, or agents
-- Managing project-scoped vs global instincts
-- Promoting instincts from project to global scope
+**v2.1** 新增了**项目作用域的本能** — React 模式保留在你的 React 项目中，Python 约定保留在你的 Python 项目中，而通用模式（如“始终验证输入”）则全局共享。
 
-## What's New in v2.1
+## 何时激活
 
-| Feature | v2.0 | v2.1 |
+* 设置从 Claude Code 会话自动学习
+* 通过钩子配置基于本能的行为提取
+* 调整已学习行为的置信度阈值
+* 查看、导出或导入本能库
+* 将本能进化为完整的技能、命令或代理
+* 管理项目作用域与全局本能
+* 将本能从项目作用域提升到全局作用域
+
+## v2.1 的新特性
+
+| 特性 | v2.0 | v2.1 |
 |---------|------|------|
-| Storage | Global (~/.claude/homunculus/) | Project-scoped (projects/<hash>/) |
-| Scope | All instincts apply everywhere | Project-scoped + global |
-| Detection | None | git remote URL / repo path |
-| Promotion | N/A | Project → global when seen in 2+ projects |
-| Commands | 4 (status/evolve/export/import) | 6 (+promote/projects) |
-| Cross-project | Contamination risk | Isolated by default |
+| 存储 | 全局 (~/.claude/homunculus/) | 项目作用域 (projects/<hash>/) |
+| 作用域 | 所有本能随处适用 | 项目作用域 + 全局 |
+| 检测 | 无 | git remote URL / 仓库路径 |
+| 提升 | 不适用 | 在 2+ 个项目中出现时，项目 → 全局 |
+| 命令 | 4个 (status/evolve/export/import) | 6个 (+promote/projects) |
+| 跨项目 | 存在污染风险 | 默认隔离 |
 
-## What's New in v2 (vs v1)
+## v2 的新特性（对比 v1）
 
-| Feature | v1 | v2 |
+| 特性 | v1 | v2 |
 |---------|----|----|
-| Observation | Stop hook (session end) | PreToolUse/PostToolUse (100% reliable) |
-| Analysis | Main context | Background agent (Haiku) |
-| Granularity | Full skills | Atomic "instincts" |
-| Confidence | None | 0.3-0.9 weighted |
-| Evolution | Direct to skill | Instincts -> cluster -> skill/command/agent |
-| Sharing | None | Export/import instincts |
+| 观察 | 停止钩子（会话结束） | PreToolUse/PostToolUse (100% 可靠) |
+| 分析 | 主上下文 | 后台代理 (Haiku) |
+| 粒度 | 完整技能 | 原子化“本能” |
+| 置信度 | 无 | 0.3-0.9 加权 |
+| 进化 | 直接进化为技能 | 本能 -> 聚类 -> 技能/命令/代理 |
+| 共享 | 无 | 导出/导入本能 |
 
-## The Instinct Model
+## 本能模型
 
-An instinct is a small learned behavior:
+一个本能是一个小型习得行为：
 
 ```yaml
 ---
@@ -63,14 +71,15 @@ Use functional patterns over classes when appropriate.
 - User corrected class-based approach to functional on 2025-01-15
 ```
 
-**Properties:**
-- **Atomic** -- one trigger, one action
-- **Confidence-weighted** -- 0.3 = tentative, 0.9 = near certain
-- **Domain-tagged** -- code-style, testing, git, debugging, workflow, etc.
-- **Evidence-backed** -- tracks what observations created it
-- **Scope-aware** -- `project` (default) or `global`
+**属性：**
 
-## How It Works
+* **原子化** -- 一个触发条件，一个动作
+* **置信度加权** -- 0.3 = 试探性，0.9 = 几乎确定
+* **领域标记** -- 代码风格、测试、git、调试、工作流等
+* **有证据支持** -- 追踪是哪些观察创建了它
+* **作用域感知** -- `project` (默认) 或 `global`
+
+## 工作原理
 
 ```
 Session Activity (in a git repo)
@@ -116,24 +125,24 @@ Session Activity (in a git repo)
 +---------------------------------------------+
 ```
 
-## Project Detection
+## 项目检测
 
-The system automatically detects your current project:
+系统会自动检测您当前的项目：
 
-1. **`CLAUDE_PROJECT_DIR` env var** (highest priority)
-2. **`git remote get-url origin`** -- hashed to create a portable project ID (same repo on different machines gets the same ID)
-3. **`git rev-parse --show-toplevel`** -- fallback using repo path (machine-specific)
-4. **Global fallback** -- if no project is detected, instincts go to global scope
+1. **`CLAUDE_PROJECT_DIR` 环境变量** (最高优先级)
+2. **`git remote get-url origin`** -- 哈希化以创建可移植的项目 ID (同一仓库在不同机器上获得相同的 ID)
+3. **`git rev-parse --show-toplevel`** -- 使用仓库路径作为后备方案 (机器特定)
+4. **全局后备方案** -- 如果未检测到项目，本能将进入全局作用域
 
-Each project gets a 12-character hash ID (e.g., `a1b2c3d4e5f6`). A registry file at `~/.claude/homunculus/projects.json` maps IDs to human-readable names.
+每个项目都会获得一个 12 字符的哈希 ID (例如 `a1b2c3d4e5f6`)。`~/.claude/homunculus/projects.json` 处的注册表文件将 ID 映射到人类可读的名称。
 
-## Quick Start
+## 快速开始
 
-### 1. Enable Observation Hooks
+### 1. 启用观察钩子
 
-Add to your `~/.claude/settings.json`.
+添加到你的 `~/.claude/settings.json` 中。
 
-**If installed as a plugin** (recommended):
+**如果作为插件安装**（推荐）：
 
 ```json
 {
@@ -156,7 +165,7 @@ Add to your `~/.claude/settings.json`.
 }
 ```
 
-**If installed manually** to `~/.claude/skills`:
+**如果手动安装**到 `~/.claude/skills`：
 
 ```json
 {
@@ -179,9 +188,9 @@ Add to your `~/.claude/settings.json`.
 }
 ```
 
-### 2. Initialize Directory Structure
+### 2. 初始化目录结构
 
-The system creates directories automatically on first use, but you can also create them manually:
+系统会在首次使用时自动创建目录，但您也可以手动创建：
 
 ```bash
 # Global directories
@@ -190,7 +199,7 @@ mkdir -p ~/.claude/homunculus/{instincts/{personal,inherited},evolved/{agents,sk
 # Project directories are auto-created when the hook first runs in a git repo
 ```
 
-### 3. Use the Instinct Commands
+### 3. 使用本能命令
 
 ```bash
 /instinct-status     # Show learned instincts (project + global)
@@ -201,20 +210,20 @@ mkdir -p ~/.claude/homunculus/{instincts/{personal,inherited},evolved/{agents,sk
 /projects            # List all known projects and their instinct counts
 ```
 
-## Commands
+## 命令
 
-| Command | Description |
+| 命令 | 描述 |
 |---------|-------------|
-| `/instinct-status` | Show all instincts (project-scoped + global) with confidence |
-| `/evolve` | Cluster related instincts into skills/commands, suggest promotions |
-| `/instinct-export` | Export instincts (filterable by scope/domain) |
-| `/instinct-import <file>` | Import instincts with scope control |
-| `/promote [id]` | Promote project instincts to global scope |
-| `/projects` | List all known projects and their instinct counts |
+| `/instinct-status` | 显示所有本能 (项目作用域 + 全局) 及其置信度 |
+| `/evolve` | 将相关本能聚类成技能/命令，建议提升 |
+| `/instinct-export` | 导出本能 (可按作用域/领域过滤) |
+| `/instinct-import <file>` | 导入本能 (带作用域控制) |
+| `/promote [id]` | 将项目本能提升到全局作用域 |
+| `/projects` | 列出所有已知项目及其本能数量 |
 
-## Configuration
+## 配置
 
-Edit `config.json` to control the background observer:
+编辑 `config.json` 以控制后台观察器：
 
 ```json
 {
@@ -227,15 +236,15 @@ Edit `config.json` to control the background observer:
 }
 ```
 
-| Key | Default | Description |
+| 键 | 默认值 | 描述 |
 |-----|---------|-------------|
-| `observer.enabled` | `false` | Enable the background observer agent |
-| `observer.run_interval_minutes` | `5` | How often the observer analyzes observations |
-| `observer.min_observations_to_analyze` | `20` | Minimum observations before analysis runs |
+| `observer.enabled` | `false` | 启用后台观察器代理 |
+| `observer.run_interval_minutes` | `5` | 观察器分析观察结果的频率 |
+| `observer.min_observations_to_analyze` | `20` | 运行分析所需的最小观察次数 |
 
-Other behavior (observation capture, instinct thresholds, project scoping, promotion criteria) is configured via code defaults in `instinct-cli.py` and `observe.sh`.
+其他行为 (观察捕获、本能阈值、项目作用域、提升标准) 通过 `instinct-cli.py` 和 `observe.sh` 中的代码默认值进行配置。
 
-## File Structure
+## 文件结构
 
 ```
 ~/.claude/homunculus/
@@ -265,28 +274,29 @@ Other behavior (observation capture, instinct thresholds, project scoping, promo
         +-- ...
 ```
 
-## Scope Decision Guide
+## 作用域决策指南
 
-| Pattern Type | Scope | Examples |
+| 模式类型 | 作用域 | 示例 |
 |-------------|-------|---------|
-| Language/framework conventions | **project** | "Use React hooks", "Follow Django REST patterns" |
-| File structure preferences | **project** | "Tests in `__tests__`/", "Components in src/components/" |
-| Code style | **project** | "Use functional style", "Prefer dataclasses" |
-| Error handling strategies | **project** | "Use Result type for errors" |
-| Security practices | **global** | "Validate user input", "Sanitize SQL" |
-| General best practices | **global** | "Write tests first", "Always handle errors" |
-| Tool workflow preferences | **global** | "Grep before Edit", "Read before Write" |
-| Git practices | **global** | "Conventional commits", "Small focused commits" |
+| 语言/框架约定 | **项目** | "使用 React hooks", "遵循 Django REST 模式" |
+| 文件结构偏好 | **项目** | "测试放在 `__tests__`/", "组件放在 src/components/" |
+| 代码风格 | **项目** | "使用函数式风格", "首选数据类" |
+| 错误处理策略 | **项目** | "对错误使用 Result 类型" |
+| 安全实践 | **全局** | "验证用户输入", "清理 SQL" |
+| 通用最佳实践 | **全局** | "先写测试", "始终处理错误" |
+| 工具工作流偏好 | **全局** | "编辑前先 Grep", "写入前先读取" |
+| Git 实践 | **全局** | "约定式提交", "小而专注的提交" |
 
-## Instinct Promotion (Project -> Global)
+## 本能提升 (项目 -> 全局)
 
-When the same instinct appears in multiple projects with high confidence, it's a candidate for promotion to global scope.
+当同一个本能在多个项目中以高置信度出现时，它就有资格被提升到全局作用域。
 
-**Auto-promotion criteria:**
-- Same instinct ID in 2+ projects
-- Average confidence >= 0.8
+**自动提升标准：**
 
-**How to promote:**
+* 相同的本能 ID 出现在 2+ 个项目中
+* 平均置信度 >= 0.8
+
+**如何提升：**
 
 ```bash
 # Promote a specific instinct
@@ -299,60 +309,64 @@ python3 instinct-cli.py promote
 python3 instinct-cli.py promote --dry-run
 ```
 
-The `/evolve` command also suggests promotion candidates.
+`/evolve` 命令也会建议可提升的候选本能。
 
-## Confidence Scoring
+## 置信度评分
 
-Confidence evolves over time:
+置信度随时间演变：
 
-| Score | Meaning | Behavior |
+| 分数 | 含义 | 行为 |
 |-------|---------|----------|
-| 0.3 | Tentative | Suggested but not enforced |
-| 0.5 | Moderate | Applied when relevant |
-| 0.7 | Strong | Auto-approved for application |
-| 0.9 | Near-certain | Core behavior |
+| 0.3 | 尝试性的 | 建议但不强制执行 |
+| 0.5 | 中等的 | 相关时应用 |
+| 0.7 | 强烈的 | 自动批准应用 |
+| 0.9 | 近乎确定的 | 核心行为 |
 
-**Confidence increases** when:
-- Pattern is repeatedly observed
-- User doesn't correct the suggested behavior
-- Similar instincts from other sources agree
+**置信度增加**当：
 
-**Confidence decreases** when:
-- User explicitly corrects the behavior
-- Pattern isn't observed for extended periods
-- Contradicting evidence appears
+* 模式被反复观察到
+* 用户未纠正建议的行为
+* 来自其他来源的相似本能一致
 
-## Why Hooks vs Skills for Observation?
+**置信度降低**当：
 
-> "v1 relied on skills to observe. Skills are probabilistic -- they fire ~50-80% of the time based on Claude's judgment."
+* 用户明确纠正该行为
+* 长时间未观察到该模式
+* 出现矛盾证据
 
-Hooks fire **100% of the time**, deterministically. This means:
-- Every tool call is observed
-- No patterns are missed
-- Learning is comprehensive
+## 为什么用钩子而非技能进行观察？
 
-## Backward Compatibility
+> "v1 依赖技能来观察。技能是概率性的 -- 根据 Claude 的判断，它们触发的概率约为 50-80%。"
 
-v2.1 is fully compatible with v2.0 and v1:
-- Existing global instincts in `~/.claude/homunculus/instincts/` still work as global instincts
-- Existing `~/.claude/skills/learned/` skills from v1 still work
-- Stop hook still runs (but now also feeds into v2)
-- Gradual migration: run both in parallel
+钩子**100% 触发**，是确定性的。这意味着：
 
-## Privacy
+* 每次工具调用都被观察到
+* 不会错过任何模式
+* 学习是全面的
 
-- Observations stay **local** on your machine
-- Project-scoped instincts are isolated per project
-- Only **instincts** (patterns) can be exported — not raw observations
-- No actual code or conversation content is shared
-- You control what gets exported and promoted
+## 向后兼容性
 
-## Related
+v2.1 与 v2.0 和 v1 完全兼容：
 
-- [Skill Creator](https://skill-creator.app) - Generate instincts from repo history
-- Homunculus - Community project that inspired the v2 instinct-based architecture (atomic observations, confidence scoring, instinct evolution pipeline)
-- [The Longform Guide](https://x.com/affaanmustafa/status/2014040193557471352) - Continuous learning section
+* `~/.claude/homunculus/instincts/` 中现有的全局本能仍然作为全局本能工作
+* 来自 v1 的现有 `~/.claude/skills/learned/` 技能仍然有效
+* 停止钩子仍然运行 (但现在也会输入到 v2)
+* 逐步迁移：并行运行两者
 
----
+## 隐私
 
-*Instinct-based learning: teaching Claude your patterns, one project at a time.*
+* 观察结果**本地**保留在您的机器上
+* 项目作用域的本能按项目隔离
+* 只有**本能** (模式) 可以被导出 — 而不是原始观察数据
+* 不会共享实际的代码或对话内容
+* 您控制导出和提升的内容
+
+## 相关链接
+
+* [技能创建器](https://skill-creator.app) - 从仓库历史生成本能
+* Homunculus - 启发了 v2 基于本能的架构的社区项目（原子观察、置信度评分、本能进化管道）
+* [长篇指南](https://x.com/affaanmustafa/status/2014040193557471352) - 持续学习部分
+
+***
+
+*基于本能的学习：一次一个项目，教会 Claude 您的模式。*

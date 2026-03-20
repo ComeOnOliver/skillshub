@@ -1,3 +1,11 @@
+---
+name: axiom-energy
+description: Use when app drains battery, device gets hot, users report energy issues, or auditing power consumption - systematic Power Profiler diagnosis, subsystem identification (CPU/GPU/Network/Location/Display), anti-pattern fixes for iOS/iPadOS
+license: MIT
+metadata:
+  version: "1.0.0"
+---
+
 # Energy Optimization
 
 ## Overview
