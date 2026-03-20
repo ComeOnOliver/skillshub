@@ -1,0 +1,1 @@
+# Community Rails Hotwire Best Practices

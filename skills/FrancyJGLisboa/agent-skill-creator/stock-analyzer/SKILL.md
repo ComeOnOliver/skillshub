@@ -1,0 +1,1 @@
+# Stock Analyzer Skill - Technical Specification

@@ -1,0 +1,1 @@
+# OpenAI Codex Rust CLI Agent Best Practices

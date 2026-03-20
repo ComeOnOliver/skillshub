@@ -1,0 +1,1 @@
+# Azure Update Manager Skill

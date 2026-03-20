@@ -1,0 +1,1 @@
+# Google Classroom Automation via Rube MCP

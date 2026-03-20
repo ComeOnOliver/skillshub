@@ -1,0 +1,1 @@
+# All Images AI Automation via Rube MCP

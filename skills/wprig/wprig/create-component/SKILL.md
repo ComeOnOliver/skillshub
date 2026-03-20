@@ -1,0 +1,1 @@
+# Create a New WP Rig Component

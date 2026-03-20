@@ -1,0 +1,1 @@
+# @azure/storage-file-share (TypeScript/JavaScript)

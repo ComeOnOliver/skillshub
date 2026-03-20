@@ -1,0 +1,1 @@
+# Honeybadger Automation via Rube MCP

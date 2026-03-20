@@ -1,0 +1,1 @@
+# Defold Native Extension Structure

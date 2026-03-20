@@ -1,0 +1,1 @@
+# Azure.ResourceManager.PostgreSql (.NET)

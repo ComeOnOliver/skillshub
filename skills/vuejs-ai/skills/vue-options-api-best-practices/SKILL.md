@@ -1,0 +1,1 @@
+Vue.js Options API best practices, TypeScript integration, and common gotchas.

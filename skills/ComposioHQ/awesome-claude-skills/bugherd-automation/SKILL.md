@@ -1,0 +1,1 @@
+# Bugherd Automation via Rube MCP

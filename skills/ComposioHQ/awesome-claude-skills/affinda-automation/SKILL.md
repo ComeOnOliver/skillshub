@@ -1,0 +1,1 @@
+# Affinda Automation via Rube MCP

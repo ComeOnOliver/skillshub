@@ -1,0 +1,1 @@
+# XSS Vulnerability Scanner for Frontend Code

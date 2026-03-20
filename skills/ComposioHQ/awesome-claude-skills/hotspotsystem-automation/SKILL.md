@@ -1,0 +1,1 @@
+# Hotspotsystem Automation via Rube MCP

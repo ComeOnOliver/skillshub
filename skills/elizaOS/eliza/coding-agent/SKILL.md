@@ -1,0 +1,1 @@
+# Coding Agent (bash-first)

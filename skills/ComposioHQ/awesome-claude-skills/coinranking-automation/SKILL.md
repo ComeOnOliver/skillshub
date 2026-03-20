@@ -1,0 +1,1 @@
+# Coinranking Automation via Rube MCP

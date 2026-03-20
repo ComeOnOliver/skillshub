@@ -1,0 +1,1 @@
+# ffuf (Fuzz Faster U Fool)

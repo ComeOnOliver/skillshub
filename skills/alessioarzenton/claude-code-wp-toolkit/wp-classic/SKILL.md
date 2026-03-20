@@ -1,0 +1,1 @@
+# WP-Classic Stack — Bedrock + Classic PHP Theme

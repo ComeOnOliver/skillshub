@@ -1,0 +1,1 @@
+# Nx Workspace Patterns

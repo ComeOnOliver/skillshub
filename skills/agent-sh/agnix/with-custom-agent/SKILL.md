@@ -1,0 +1,1 @@
+This skill uses a custom agent name in kebab-case format.

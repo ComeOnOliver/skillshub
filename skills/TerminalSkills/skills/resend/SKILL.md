@@ -1,0 +1,1 @@
+# Resend — Modern Email API for Developers

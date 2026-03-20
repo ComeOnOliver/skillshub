@@ -1,0 +1,1 @@
+# Coinmarketcal Automation via Rube MCP

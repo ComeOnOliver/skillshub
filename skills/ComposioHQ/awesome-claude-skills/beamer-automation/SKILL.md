@@ -1,0 +1,1 @@
+# Beamer Automation via Rube MCP

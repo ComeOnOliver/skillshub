@@ -1,0 +1,1 @@
+# Booqable Automation via Rube MCP

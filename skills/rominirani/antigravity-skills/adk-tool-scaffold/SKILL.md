@@ -1,0 +1,1 @@
+# ADK Tool Scaffold Skill

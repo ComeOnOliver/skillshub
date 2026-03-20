@@ -1,0 +1,1 @@
+# Azure Resource Graph Skill

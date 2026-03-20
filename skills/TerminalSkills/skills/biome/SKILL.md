@@ -1,0 +1,1 @@
+# Biome — Fast Linter and Formatter (ESLint + Prettier Replacement)

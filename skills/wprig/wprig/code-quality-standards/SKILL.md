@@ -1,0 +1,1 @@
+# Code Quality Standards in WP Rig

@@ -1,0 +1,1 @@
+# Azure Data Explorer Skill

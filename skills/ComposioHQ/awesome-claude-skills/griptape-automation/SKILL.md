@@ -1,0 +1,1 @@
+# Griptape Automation via Rube MCP

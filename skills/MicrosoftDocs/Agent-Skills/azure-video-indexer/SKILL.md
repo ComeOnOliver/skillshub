@@ -1,0 +1,1 @@
+# Azure AI Video Indexer Skill

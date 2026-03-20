@@ -1,0 +1,1 @@
+# Fireberry Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Strapi — Open-Source Headless CMS

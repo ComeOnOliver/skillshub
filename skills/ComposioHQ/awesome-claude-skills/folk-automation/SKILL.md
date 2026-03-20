@@ -1,0 +1,1 @@
+# Folk Automation via Rube MCP

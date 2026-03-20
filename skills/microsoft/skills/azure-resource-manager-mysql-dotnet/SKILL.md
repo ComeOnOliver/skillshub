@@ -1,0 +1,1 @@
+# Azure.ResourceManager.MySql (.NET)

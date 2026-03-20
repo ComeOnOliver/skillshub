@@ -1,0 +1,1 @@
+# smolagents — Hugging Face Lightweight Agent Framework

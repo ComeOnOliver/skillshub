@@ -1,0 +1,1 @@
+# Maintaining Skill Index Snippets (AGENTS.md / CLAUDE.md)

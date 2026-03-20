@@ -1,0 +1,1 @@
+# Copilot Instructions Blueprint Generator

@@ -1,0 +1,1 @@
+# Emailable Automation via Rube MCP

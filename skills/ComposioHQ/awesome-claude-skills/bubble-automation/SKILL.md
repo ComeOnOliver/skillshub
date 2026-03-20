@@ -1,0 +1,1 @@
+# Bubble Automation via Rube MCP

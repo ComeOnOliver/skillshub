@@ -1,0 +1,1 @@
+# SKILL: HTTP Parameter Pollution (HPP)

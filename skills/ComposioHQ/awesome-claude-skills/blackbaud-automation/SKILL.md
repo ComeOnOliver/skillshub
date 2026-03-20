@@ -1,0 +1,1 @@
+# Blackbaud Automation via Rube MCP

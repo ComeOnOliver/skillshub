@@ -1,0 +1,1 @@
+# Database Schema Validator Skill

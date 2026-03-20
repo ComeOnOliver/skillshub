@@ -1,0 +1,1 @@
+# Terraform Skill for Claude

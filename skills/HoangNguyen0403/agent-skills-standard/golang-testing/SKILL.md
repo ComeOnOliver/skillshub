@@ -1,0 +1,1 @@
+# Golang Testing Standards

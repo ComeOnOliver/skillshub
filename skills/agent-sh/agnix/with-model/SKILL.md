@@ -1,0 +1,1 @@
+This skill has a valid model value.

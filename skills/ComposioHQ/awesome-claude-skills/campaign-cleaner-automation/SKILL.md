@@ -1,0 +1,1 @@
+# Campaign Cleaner Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Giphy Automation via Rube MCP

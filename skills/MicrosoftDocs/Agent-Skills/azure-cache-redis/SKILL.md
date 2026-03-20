@@ -1,0 +1,1 @@
+# Azure Cache for Redis Skill

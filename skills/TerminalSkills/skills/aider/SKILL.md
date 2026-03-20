@@ -1,0 +1,1 @@
+# Aider — AI Pair Programming in Your Terminal

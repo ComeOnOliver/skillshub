@@ -1,0 +1,1 @@
+# Zed — High-Performance Code Editor

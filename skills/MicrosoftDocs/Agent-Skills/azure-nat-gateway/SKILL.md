@@ -1,0 +1,1 @@
+# Azure NAT Gateway Skill

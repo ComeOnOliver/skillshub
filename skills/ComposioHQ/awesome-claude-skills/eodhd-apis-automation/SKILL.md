@@ -1,0 +1,1 @@
+# Eodhd Apis Automation via Rube MCP

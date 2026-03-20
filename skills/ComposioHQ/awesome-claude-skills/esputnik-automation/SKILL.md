@@ -1,0 +1,1 @@
+# Esputnik Automation via Rube MCP

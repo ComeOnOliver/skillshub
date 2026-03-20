@@ -1,0 +1,1 @@
+# Hashnode Automation via Rube MCP

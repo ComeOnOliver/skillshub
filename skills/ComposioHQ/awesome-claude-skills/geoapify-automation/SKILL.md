@@ -1,0 +1,1 @@
+# Geoapify Automation via Rube MCP

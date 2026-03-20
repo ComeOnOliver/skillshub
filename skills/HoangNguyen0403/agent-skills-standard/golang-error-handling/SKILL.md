@@ -1,0 +1,1 @@
+# Golang Error Handling Standards

@@ -1,0 +1,1 @@
+Strategically introduce color to designs that are too monochromatic, gray, or lacking in visual warmth and personality.

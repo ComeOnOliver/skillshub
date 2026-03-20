@@ -1,0 +1,1 @@
+# SKILL: Cross-Site Scripting (XSS)

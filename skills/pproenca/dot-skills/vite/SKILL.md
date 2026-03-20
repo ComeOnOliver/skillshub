@@ -1,0 +1,1 @@
+# Vite Best Practices

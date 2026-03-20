@@ -1,0 +1,1 @@
+# Trend & Intent Scout — Skill Instructions

@@ -1,0 +1,1 @@
+# Firebase APK Security Scanner

@@ -1,0 +1,1 @@
+# Apollo Connectors Schema Assistant

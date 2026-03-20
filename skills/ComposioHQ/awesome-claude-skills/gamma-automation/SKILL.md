@@ -1,0 +1,1 @@
+# Gamma Automation via Rube MCP

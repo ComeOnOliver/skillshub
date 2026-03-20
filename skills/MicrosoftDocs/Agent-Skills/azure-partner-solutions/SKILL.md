@@ -1,0 +1,1 @@
+# Azure Partner Solutions Skill

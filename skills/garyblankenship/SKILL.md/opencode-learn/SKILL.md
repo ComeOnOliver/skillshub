@@ -1,0 +1,1 @@
+# INSTRUCTIONS FOR AI ASSISTANT: The /learn Command

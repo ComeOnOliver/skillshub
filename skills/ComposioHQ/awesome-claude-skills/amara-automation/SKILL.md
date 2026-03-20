@@ -1,0 +1,1 @@
+# Amara Automation via Rube MCP

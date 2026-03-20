@@ -1,0 +1,1 @@
+# Affinity Automation via Rube MCP

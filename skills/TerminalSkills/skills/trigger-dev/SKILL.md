@@ -1,0 +1,1 @@
+# Trigger.dev — Background Jobs for TypeScript

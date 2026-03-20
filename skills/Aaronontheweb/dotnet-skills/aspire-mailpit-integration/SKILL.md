@@ -1,0 +1,1 @@
+# Email Testing with Mailpit and .NET Aspire

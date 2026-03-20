@@ -1,0 +1,1 @@
+# Azure Analysis Services Skill

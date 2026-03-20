@@ -1,0 +1,1 @@
+# MCP SDK — Model Context Protocol for AI Tools

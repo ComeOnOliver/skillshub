@@ -1,0 +1,1 @@
+# Habitica Automation via Rube MCP

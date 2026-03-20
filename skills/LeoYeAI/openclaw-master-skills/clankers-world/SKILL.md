@@ -1,0 +1,1 @@
+Use this skill to run room operations safely on `https://clankers.world`.

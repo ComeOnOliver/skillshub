@@ -1,0 +1,1 @@
+# Solidity Coding Standards

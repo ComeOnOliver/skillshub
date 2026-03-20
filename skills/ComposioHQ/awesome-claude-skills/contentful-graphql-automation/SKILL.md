@@ -1,0 +1,1 @@
+# Contentful Graphql Automation via Rube MCP

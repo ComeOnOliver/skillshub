@@ -1,0 +1,1 @@
+# EICAR Test Skill

@@ -1,0 +1,1 @@
+# Azure Cosmos DB NoSQL Data Modeling Expert System Prompt

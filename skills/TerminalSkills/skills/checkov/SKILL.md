@@ -1,0 +1,1 @@
+# Checkov — Infrastructure as Code Security Scanner

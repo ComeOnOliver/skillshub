@@ -1,0 +1,1 @@
+# Botsonic Automation via Rube MCP

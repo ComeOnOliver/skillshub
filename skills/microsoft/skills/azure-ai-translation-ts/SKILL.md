@@ -1,0 +1,1 @@
+# Azure Translation SDKs for TypeScript

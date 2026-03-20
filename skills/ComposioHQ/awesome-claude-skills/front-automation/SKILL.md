@@ -1,0 +1,1 @@
+# Front Automation via Rube MCP

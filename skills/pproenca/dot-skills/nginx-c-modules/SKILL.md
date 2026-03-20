@@ -1,0 +1,1 @@
+# nginx.org C Module Development Best Practices

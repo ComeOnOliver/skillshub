@@ -1,0 +1,1 @@
+# Botstar Automation via Rube MCP

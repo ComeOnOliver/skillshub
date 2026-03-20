@@ -1,0 +1,1 @@
+# Atuin — Magical Shell History

@@ -1,0 +1,1 @@
+This skill builds on electric-shapes, electric-proxy-auth, and electric-schema-shapes. Read those first.

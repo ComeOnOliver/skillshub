@@ -1,0 +1,1 @@
+# Fingertip Automation via Rube MCP

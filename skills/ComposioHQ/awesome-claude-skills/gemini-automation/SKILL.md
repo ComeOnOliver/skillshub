@@ -1,0 +1,1 @@
+# Gemini Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Azure Monitor OpenTelemetry SDK for TypeScript

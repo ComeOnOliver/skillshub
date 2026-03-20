@@ -1,0 +1,1 @@
+# AMAZON ALEXA — Voz Inteligente com Claude

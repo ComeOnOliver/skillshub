@@ -1,0 +1,1 @@
+# content-extract — 上层内容解析入口（MCP 语义对齐，但不跑 MCP Server）

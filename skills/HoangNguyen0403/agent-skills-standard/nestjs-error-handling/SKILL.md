@@ -1,0 +1,1 @@
+# NestJS Error Handling Standards

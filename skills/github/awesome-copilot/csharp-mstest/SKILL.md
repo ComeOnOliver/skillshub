@@ -1,0 +1,1 @@
+# MSTest Best Practices (MSTest 3.x/4.x)

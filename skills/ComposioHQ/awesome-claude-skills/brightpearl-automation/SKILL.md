@@ -1,0 +1,1 @@
+# Brightpearl Automation via Rube MCP

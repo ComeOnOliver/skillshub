@@ -1,0 +1,1 @@
+# Agent Mail Automation via Rube MCP

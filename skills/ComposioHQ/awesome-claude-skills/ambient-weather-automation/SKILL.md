@@ -1,0 +1,1 @@
+# Ambient Weather Automation via Rube MCP

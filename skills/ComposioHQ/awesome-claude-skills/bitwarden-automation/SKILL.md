@@ -1,0 +1,1 @@
+# Bitwarden Automation via Rube MCP

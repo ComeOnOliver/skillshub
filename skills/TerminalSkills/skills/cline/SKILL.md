@@ -1,0 +1,1 @@
+# Cline — Autonomous AI Coding Agent for VS Code

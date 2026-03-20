@@ -1,0 +1,1 @@
+# Google Docs Automation via Rube MCP

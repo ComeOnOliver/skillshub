@@ -1,0 +1,1 @@
+# Goody Automation via Rube MCP

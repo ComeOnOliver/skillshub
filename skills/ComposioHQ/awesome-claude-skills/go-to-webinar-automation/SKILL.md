@@ -1,0 +1,1 @@
+# GoToWebinar Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Django Development Patterns

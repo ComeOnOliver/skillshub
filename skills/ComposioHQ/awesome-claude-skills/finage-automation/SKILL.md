@@ -1,0 +1,1 @@
+# Finage Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Xata — Serverless Data Platform

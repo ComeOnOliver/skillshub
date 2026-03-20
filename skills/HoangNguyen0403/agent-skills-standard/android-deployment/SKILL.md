@@ -1,0 +1,1 @@
+# Android Deployment Standards

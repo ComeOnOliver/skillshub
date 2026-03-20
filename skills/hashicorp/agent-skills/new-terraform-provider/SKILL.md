@@ -1,0 +1,1 @@
+To scaffold a new Terraform provider with Plugin Framework:

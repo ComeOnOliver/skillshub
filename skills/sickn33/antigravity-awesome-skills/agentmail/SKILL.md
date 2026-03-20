@@ -1,0 +1,1 @@
+# AgentMail — Email for AI Agents

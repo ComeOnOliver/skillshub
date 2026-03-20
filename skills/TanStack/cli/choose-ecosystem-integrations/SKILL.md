@@ -1,0 +1,1 @@
+This skill requires familiarity with scaffold and discovery workflows. Read `create-app-scaffold` and `query-docs-library-metadata` first.

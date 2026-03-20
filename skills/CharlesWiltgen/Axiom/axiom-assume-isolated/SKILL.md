@@ -1,0 +1,1 @@
+# assumeIsolated — Synchronous Actor Access

@@ -1,0 +1,1 @@
+# Foursquare Automation via Rube MCP

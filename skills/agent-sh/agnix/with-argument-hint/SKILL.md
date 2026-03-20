@@ -1,0 +1,1 @@
+Greet the user with the name provided via $ARGUMENTS.

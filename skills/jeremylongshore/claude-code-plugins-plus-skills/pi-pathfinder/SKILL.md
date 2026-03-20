@@ -1,0 +1,1 @@
+# Skill Adapter - Universal Plugin Capability Extractor

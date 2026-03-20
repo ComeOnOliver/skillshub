@@ -1,0 +1,1 @@
+# Rust MCP Server Generator

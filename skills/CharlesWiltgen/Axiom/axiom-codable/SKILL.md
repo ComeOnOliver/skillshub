@@ -1,0 +1,1 @@
+# Swift Codable Patterns

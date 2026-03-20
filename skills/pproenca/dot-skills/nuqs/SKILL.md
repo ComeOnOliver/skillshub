@@ -1,0 +1,1 @@
+# Community nuqs Best Practices for Next.js

@@ -1,0 +1,1 @@
+Strengthen interfaces against edge cases, errors, internationalization issues, and real-world usage scenarios that break idealized designs.

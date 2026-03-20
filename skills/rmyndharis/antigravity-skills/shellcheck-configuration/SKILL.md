@@ -1,0 +1,1 @@
+# ShellCheck Configuration and Static Analysis

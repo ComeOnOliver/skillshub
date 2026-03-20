@@ -1,0 +1,1 @@
+# Azure Monitor Ingestion SDK for Python

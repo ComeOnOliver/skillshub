@@ -1,0 +1,1 @@
+# Firmao Automation via Rube MCP

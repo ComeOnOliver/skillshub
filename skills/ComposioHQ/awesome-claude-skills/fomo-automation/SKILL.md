@@ -1,0 +1,1 @@
+# Fomo Automation via Rube MCP

@@ -1,0 +1,1 @@
+Remove unnecessary complexity from designs, revealing the essential elements and creating clarity through ruthless simplification.

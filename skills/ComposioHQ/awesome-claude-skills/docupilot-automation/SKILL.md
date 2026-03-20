@@ -1,0 +1,1 @@
+# Docupilot Automation via Rube MCP

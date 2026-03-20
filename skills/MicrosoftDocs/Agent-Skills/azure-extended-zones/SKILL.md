@@ -1,0 +1,1 @@
+# Azure Extended Zones Skill

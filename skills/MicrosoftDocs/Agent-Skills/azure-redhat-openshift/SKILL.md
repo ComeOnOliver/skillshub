@@ -1,0 +1,1 @@
+# Azure Red Hat OpenShift Skill

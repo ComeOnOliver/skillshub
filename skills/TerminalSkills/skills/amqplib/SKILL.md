@@ -1,0 +1,1 @@
+# amqplib — RabbitMQ Client for Node.js

@@ -1,0 +1,1 @@
+# Browserhub Automation via Rube MCP

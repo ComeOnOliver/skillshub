@@ -1,0 +1,1 @@
+# PrimeKG Knowledge Graph Skill

@@ -1,0 +1,1 @@
+# OpenAI Codex CLI — AI Coding Agent in Your Terminal

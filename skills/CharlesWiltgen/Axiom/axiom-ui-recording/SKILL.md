@@ -1,0 +1,1 @@
+# Recording UI Automation (Xcode 26+)

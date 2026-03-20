@@ -1,0 +1,1 @@
+# Cabinpanda Automation via Rube MCP

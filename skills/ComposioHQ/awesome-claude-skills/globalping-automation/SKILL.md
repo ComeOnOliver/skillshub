@@ -1,0 +1,1 @@
+# Globalping Automation via Rube MCP

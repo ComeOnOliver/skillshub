@@ -1,0 +1,1 @@
+# Autobound Automation via Rube MCP

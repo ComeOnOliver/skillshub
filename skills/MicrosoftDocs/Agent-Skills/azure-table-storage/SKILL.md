@@ -1,0 +1,1 @@
+# Azure Table Storage Skill

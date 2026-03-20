@@ -1,0 +1,1 @@
+# Debug Council: Research-Aligned Self-Consistency

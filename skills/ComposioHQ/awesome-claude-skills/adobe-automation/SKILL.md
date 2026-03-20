@@ -1,0 +1,1 @@
+# Adobe Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Mermaid — Diagrams as Code in Markdown

@@ -1,0 +1,1 @@
+# Cal Automation via Rube MCP

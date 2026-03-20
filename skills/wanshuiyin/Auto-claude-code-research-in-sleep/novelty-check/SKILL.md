@@ -1,0 +1,1 @@
+# Novelty Check Skill

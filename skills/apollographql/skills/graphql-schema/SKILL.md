@@ -1,0 +1,1 @@
+# GraphQL Schema Design Guide

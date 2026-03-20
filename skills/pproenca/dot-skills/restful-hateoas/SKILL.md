@@ -1,0 +1,1 @@
+# Community RESTful HATEOAS Best Practices

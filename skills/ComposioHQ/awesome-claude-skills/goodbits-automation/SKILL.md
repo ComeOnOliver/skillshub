@@ -1,0 +1,1 @@
+# Goodbits Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Brilliant Directories Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Anthropic's official skill authoring best practices

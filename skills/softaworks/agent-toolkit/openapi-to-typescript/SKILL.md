@@ -1,0 +1,1 @@
+# OpenAPI to TypeScript

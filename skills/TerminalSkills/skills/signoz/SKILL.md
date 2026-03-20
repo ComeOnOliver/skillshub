@@ -1,0 +1,1 @@
+# SigNoz — Open-Source Observability Platform

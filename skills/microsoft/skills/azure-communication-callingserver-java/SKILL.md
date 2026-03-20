@@ -1,0 +1,1 @@
+# Azure Communication CallingServer (Java) - DEPRECATED

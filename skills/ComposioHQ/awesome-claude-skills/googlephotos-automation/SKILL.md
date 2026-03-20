@@ -1,0 +1,1 @@
+# Google Photos Automation via Rube MCP

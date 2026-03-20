@@ -1,0 +1,1 @@
+# Algolia Automation via Rube MCP

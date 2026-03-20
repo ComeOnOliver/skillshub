@@ -1,0 +1,1 @@
+# Cats Automation via Rube MCP

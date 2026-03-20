@@ -1,0 +1,1 @@
+# Agent-Friendly CLI Spec v0.1

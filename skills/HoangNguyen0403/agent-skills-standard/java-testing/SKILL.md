@@ -1,0 +1,1 @@
+# Java Testing Standards

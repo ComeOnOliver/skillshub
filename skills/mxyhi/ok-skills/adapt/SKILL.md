@@ -1,0 +1,1 @@
+Adapt existing designs to work effectively across different contexts - different screen sizes, devices, platforms, or use cases.

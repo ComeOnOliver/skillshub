@@ -1,0 +1,1 @@
+# Editing Defold Proto Text Format Files

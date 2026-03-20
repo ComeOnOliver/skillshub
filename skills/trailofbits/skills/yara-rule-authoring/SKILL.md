@@ -1,0 +1,1 @@
+# YARA-X Rule Authoring

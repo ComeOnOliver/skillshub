@@ -1,0 +1,1 @@
+# VSCode SFTP Configuration

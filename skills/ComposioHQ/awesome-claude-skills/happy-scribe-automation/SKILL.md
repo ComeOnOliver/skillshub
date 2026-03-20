@@ -1,0 +1,1 @@
+# Happy Scribe Automation via Rube MCP

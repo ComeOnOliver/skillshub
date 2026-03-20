@@ -1,0 +1,1 @@
+# Godial Automation via Rube MCP

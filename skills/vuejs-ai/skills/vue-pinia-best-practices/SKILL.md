@@ -1,0 +1,1 @@
+Pinia best practices, common gotchas, and state management patterns.

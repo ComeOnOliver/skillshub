@@ -1,0 +1,1 @@
+# Novu — Open-Source Notification Infrastructure

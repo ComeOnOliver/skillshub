@@ -1,0 +1,1 @@
+# Template Method and Pluggable Strategies

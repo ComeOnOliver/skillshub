@@ -1,0 +1,1 @@
+# Hackernews Automation via Rube MCP

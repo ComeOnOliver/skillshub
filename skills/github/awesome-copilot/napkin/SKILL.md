@@ -1,0 +1,1 @@
+# Napkin — Visual Whiteboard for Copilot CLI

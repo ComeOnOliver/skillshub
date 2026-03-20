@@ -1,0 +1,1 @@
+# Beaconstac Automation via Rube MCP

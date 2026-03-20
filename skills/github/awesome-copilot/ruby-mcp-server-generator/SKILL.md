@@ -1,0 +1,1 @@
+# Ruby MCP Server Generator

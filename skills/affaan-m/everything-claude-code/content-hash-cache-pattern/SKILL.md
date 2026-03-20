@@ -1,0 +1,1 @@
+# Content-Hash File Cache Pattern

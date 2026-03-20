@@ -1,0 +1,1 @@
+# Bugsnag Automation via Rube MCP

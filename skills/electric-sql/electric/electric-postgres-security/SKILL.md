@@ -1,0 +1,1 @@
+This skill builds on electric-proxy-auth. Read it first for proxy security patterns.

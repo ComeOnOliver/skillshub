@@ -1,0 +1,1 @@
+## Breaking Changes from AI SDK 4

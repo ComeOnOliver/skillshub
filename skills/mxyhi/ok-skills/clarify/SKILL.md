@@ -1,0 +1,1 @@
+Identify and improve unclear, confusing, or poorly written interface text to make the product easier to understand and use.

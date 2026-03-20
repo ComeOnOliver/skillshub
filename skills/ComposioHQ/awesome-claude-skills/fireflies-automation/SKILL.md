@@ -1,0 +1,1 @@
+# Fireflies Automation via Rube MCP

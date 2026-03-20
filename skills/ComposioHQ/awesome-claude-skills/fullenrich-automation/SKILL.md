@@ -1,0 +1,1 @@
+# Fullenrich Automation via Rube MCP

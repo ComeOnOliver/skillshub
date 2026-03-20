@@ -1,0 +1,1 @@
+You are assisting with Microsoft Dataverse SDK for Python (preview).

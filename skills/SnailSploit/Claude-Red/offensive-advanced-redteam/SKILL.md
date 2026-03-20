@@ -1,0 +1,1 @@
+# SKILL: Advanced Redteam Ops

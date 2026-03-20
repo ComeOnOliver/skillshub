@@ -1,0 +1,1 @@
+Analyze a feature and strategically add animations and micro-interactions that enhance understanding, provide feedback, and create delight.

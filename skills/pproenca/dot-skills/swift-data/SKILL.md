@@ -1,0 +1,1 @@
+# SwiftData Best Practices — Modular MVVM-C Data Layer

@@ -1,0 +1,1 @@
+# MUI v7 Patterns

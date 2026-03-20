@@ -1,0 +1,1 @@
+# Bunnycdn Automation via Rube MCP

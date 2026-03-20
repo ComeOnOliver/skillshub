@@ -1,0 +1,1 @@
+# Azure AI Content Safety REST SDK for TypeScript

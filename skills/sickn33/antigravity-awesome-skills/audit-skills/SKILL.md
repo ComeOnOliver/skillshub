@@ -1,0 +1,1 @@
+<!-- security-allowlist: curl-pipe-bash -->

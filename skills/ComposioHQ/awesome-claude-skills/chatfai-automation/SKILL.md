@@ -1,0 +1,1 @@
+# Chatfai Automation via Rube MCP

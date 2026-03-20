@@ -1,0 +1,1 @@
+# Skill: Competitive Feature Benchmark (UX & Interaction Level)

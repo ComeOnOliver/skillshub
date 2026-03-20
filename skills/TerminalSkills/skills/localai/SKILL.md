@@ -1,0 +1,1 @@
+# LocalAI — Self-Hosted OpenAI Alternative

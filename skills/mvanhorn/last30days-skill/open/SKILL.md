@@ -1,0 +1,1 @@
+# last30days (open variant): Research + Watchlist + Briefings

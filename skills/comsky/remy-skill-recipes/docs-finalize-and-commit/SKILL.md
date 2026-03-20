@@ -1,0 +1,1 @@
+# Skill: Finalize Documentation and Commit (Review, Consistency, Alignment)

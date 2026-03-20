@@ -1,0 +1,1 @@
+# Timer Safety Patterns

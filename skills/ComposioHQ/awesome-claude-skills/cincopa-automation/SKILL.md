@@ -1,0 +1,1 @@
+# Cincopa Automation via Rube MCP

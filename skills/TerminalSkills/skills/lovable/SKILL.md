@@ -1,0 +1,1 @@
+# Lovable — AI Full-Stack App Generator with Supabase Backend

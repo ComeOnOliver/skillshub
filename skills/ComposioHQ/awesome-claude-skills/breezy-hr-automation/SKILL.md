@@ -1,0 +1,1 @@
+# Breezy HR Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Beads - Persistent Task Memory for AI Agents

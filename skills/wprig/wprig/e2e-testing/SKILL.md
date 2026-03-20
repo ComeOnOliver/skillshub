@@ -1,0 +1,1 @@
+# Playwright E2E Testing in WP Rig

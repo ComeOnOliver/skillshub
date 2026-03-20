@@ -1,0 +1,1 @@
+# Capsule CRM Automation via Rube MCP

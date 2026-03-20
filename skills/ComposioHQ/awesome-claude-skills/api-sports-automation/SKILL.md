@@ -1,0 +1,1 @@
+# API Sports Automation via Rube MCP

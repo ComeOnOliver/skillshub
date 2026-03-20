@@ -1,0 +1,1 @@
+# SymPy - Symbolic Mathematics in Python

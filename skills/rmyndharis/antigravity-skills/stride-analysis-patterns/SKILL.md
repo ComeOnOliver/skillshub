@@ -1,0 +1,1 @@
+# STRIDE Analysis Patterns

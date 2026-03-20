@@ -1,0 +1,1 @@
+# MotherDuck — Serverless DuckDB in the Cloud

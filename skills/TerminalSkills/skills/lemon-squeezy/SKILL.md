@@ -1,0 +1,1 @@
+# Lemon Squeezy — Merchant of Record for SaaS

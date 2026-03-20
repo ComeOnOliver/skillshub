@@ -1,0 +1,1 @@
+# College Football Data Automation via Rube MCP

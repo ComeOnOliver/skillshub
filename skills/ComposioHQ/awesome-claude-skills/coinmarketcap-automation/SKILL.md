@@ -1,0 +1,1 @@
+# Coinmarketcap Automation via Rube MCP

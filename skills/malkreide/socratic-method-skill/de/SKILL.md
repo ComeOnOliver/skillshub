@@ -1,0 +1,1 @@
+# Sokratische Methode: Die Dialektik-Maschine

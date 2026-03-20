@@ -1,0 +1,1 @@
+This skill builds on electric-shapes. Read it first for ShapeStream configuration.

@@ -1,0 +1,1 @@
+You can run tasks with Nx in the following way.

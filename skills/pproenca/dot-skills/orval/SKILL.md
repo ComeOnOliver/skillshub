@@ -1,0 +1,1 @@
+# Orval OpenAPI Best Practices

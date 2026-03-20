@@ -1,0 +1,1 @@
+# Gosquared Automation via Rube MCP

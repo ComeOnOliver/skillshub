@@ -1,0 +1,1 @@
+# SKILL: Endpoint Detection and Response

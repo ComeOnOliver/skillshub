@@ -1,0 +1,1 @@
+# Community WXT Browser Extensions Best Practices

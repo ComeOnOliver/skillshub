@@ -1,0 +1,1 @@
+# WP Rig custom filters and hooks

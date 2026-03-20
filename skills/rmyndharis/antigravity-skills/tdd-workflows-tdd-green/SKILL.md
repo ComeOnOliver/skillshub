@@ -1,0 +1,1 @@
+# Green Phase: Simple function

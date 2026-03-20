@@ -1,0 +1,1 @@
+# Cults Automation via Rube MCP

@@ -1,0 +1,1 @@
+# GitHub Issue Planning & Project Automation Prompt

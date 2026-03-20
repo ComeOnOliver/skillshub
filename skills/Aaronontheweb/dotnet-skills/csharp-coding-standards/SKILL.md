@@ -1,0 +1,1 @@
+# Modern C# Coding Standards

@@ -1,0 +1,1 @@
+# Azure Speech to Text REST API for Short Audio

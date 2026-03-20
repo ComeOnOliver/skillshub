@@ -1,0 +1,1 @@
+# Agent Skills Architecture Standard

@@ -1,0 +1,1 @@
+# SKILL: Open Redirect Vulnerabilities

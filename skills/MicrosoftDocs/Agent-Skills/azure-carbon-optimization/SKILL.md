@@ -1,0 +1,1 @@
+# Azure Carbon Optimization Skill

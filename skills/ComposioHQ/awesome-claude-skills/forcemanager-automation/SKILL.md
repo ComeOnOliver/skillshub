@@ -1,0 +1,1 @@
+# Forcemanager Automation via Rube MCP

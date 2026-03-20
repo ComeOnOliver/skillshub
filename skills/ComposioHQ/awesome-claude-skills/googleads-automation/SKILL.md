@@ -1,0 +1,1 @@
+# Google Ads Automation via Rube MCP

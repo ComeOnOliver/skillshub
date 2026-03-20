@@ -1,0 +1,1 @@
+# Tesseract — Open-Source OCR Engine

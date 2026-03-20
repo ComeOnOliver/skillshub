@@ -1,0 +1,1 @@
+# Email Service Patterns

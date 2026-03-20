@@ -1,0 +1,1 @@
+# Azure Data Manager for Agriculture Skill

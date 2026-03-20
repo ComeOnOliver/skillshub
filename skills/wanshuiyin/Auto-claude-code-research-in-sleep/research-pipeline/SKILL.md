@@ -1,0 +1,1 @@
+# Full Research Pipeline: Idea → Experiments → Submission

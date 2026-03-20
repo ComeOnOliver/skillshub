@@ -1,0 +1,1 @@
+# Azure AI Foundry Local Skill

@@ -1,0 +1,1 @@
+# Docker Hub Automation via Rube MCP

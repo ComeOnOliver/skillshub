@@ -1,0 +1,1 @@
+# Community Ruby on Rails Development Best Practices

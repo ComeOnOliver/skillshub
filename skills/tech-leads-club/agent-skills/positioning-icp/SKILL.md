@@ -1,0 +1,1 @@
+# Positioning, ICP & Messaging Architecture for AI Products

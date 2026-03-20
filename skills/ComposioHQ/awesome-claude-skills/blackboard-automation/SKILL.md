@@ -1,0 +1,1 @@
+# Blackboard Automation via Rube MCP

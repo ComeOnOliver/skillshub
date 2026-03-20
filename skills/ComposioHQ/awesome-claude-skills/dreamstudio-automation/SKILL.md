@@ -1,0 +1,1 @@
+# Dreamstudio Automation via Rube MCP

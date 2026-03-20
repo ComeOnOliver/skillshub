@@ -1,0 +1,1 @@
+# Raycast — macOS Launcher Extension Development

@@ -1,0 +1,1 @@
+# Clickmeeting Automation via Rube MCP

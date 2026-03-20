@@ -1,0 +1,1 @@
+# Azure Verified Modules (AVM) Requirements

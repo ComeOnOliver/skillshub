@@ -1,0 +1,1 @@
+# SKILL: Insecure Direct Object References (IDOR)

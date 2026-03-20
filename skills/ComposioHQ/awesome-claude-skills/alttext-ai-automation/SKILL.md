@@ -1,0 +1,1 @@
+# Alttext AI Automation via Rube MCP

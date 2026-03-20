@@ -1,0 +1,1 @@
+# Slopwatch: LLM Anti-Cheat for .NET

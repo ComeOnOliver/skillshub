@@ -1,0 +1,1 @@
+# Automatic1111 (Stable Diffusion WebUI)

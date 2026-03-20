@@ -1,0 +1,1 @@
+# Google Search Console Automation via Rube MCP

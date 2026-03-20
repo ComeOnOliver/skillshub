@@ -1,0 +1,1 @@
+# Curated Automation via Rube MCP

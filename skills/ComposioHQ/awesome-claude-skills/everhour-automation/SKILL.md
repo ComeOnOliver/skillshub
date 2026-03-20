@@ -1,0 +1,1 @@
+# Everhour Automation via Rube MCP

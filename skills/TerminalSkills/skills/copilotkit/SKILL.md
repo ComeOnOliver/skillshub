@@ -1,0 +1,1 @@
+# CopilotKit — In-App AI Copilots for React

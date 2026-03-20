@@ -1,0 +1,1 @@
+# Fibery Automation via Rube MCP

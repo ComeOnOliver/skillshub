@@ -1,0 +1,1 @@
+This skill body does not reference the arguments variable.

@@ -1,0 +1,1 @@
+# Azure Monitor Query SDK for Java

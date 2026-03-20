@@ -1,0 +1,1 @@
+# SKILL: Server-Side Template Injection (SSTI)

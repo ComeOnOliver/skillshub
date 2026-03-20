@@ -1,0 +1,1 @@
+# Advanced Templating in WP Rig

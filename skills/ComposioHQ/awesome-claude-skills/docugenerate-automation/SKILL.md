@@ -1,0 +1,1 @@
+# Docugenerate Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Azure Synapse Analytics Skill

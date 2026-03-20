@@ -1,0 +1,1 @@
+# Helpwise Automation via Rube MCP

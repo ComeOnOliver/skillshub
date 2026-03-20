@@ -1,0 +1,1 @@
+# Craftmypdf Automation via Rube MCP

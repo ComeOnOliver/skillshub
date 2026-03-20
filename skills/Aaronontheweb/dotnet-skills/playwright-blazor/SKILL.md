@@ -1,0 +1,1 @@
+# Testing Blazor Applications with Playwright

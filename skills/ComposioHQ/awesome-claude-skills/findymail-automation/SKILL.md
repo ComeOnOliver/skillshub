@@ -1,0 +1,1 @@
+# Findymail Automation via Rube MCP

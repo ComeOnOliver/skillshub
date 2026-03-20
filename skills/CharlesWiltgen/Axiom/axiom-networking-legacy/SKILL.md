@@ -1,0 +1,1 @@
+# Legacy iOS 12-25 NWConnection Patterns

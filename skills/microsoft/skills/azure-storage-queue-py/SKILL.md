@@ -1,0 +1,1 @@
+# Azure Queue Storage SDK for Python

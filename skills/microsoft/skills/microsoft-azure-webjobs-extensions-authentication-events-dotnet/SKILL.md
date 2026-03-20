@@ -1,0 +1,1 @@
+# Microsoft.Azure.WebJobs.Extensions.AuthenticationEvents (.NET)

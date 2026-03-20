@@ -1,0 +1,1 @@
+An acceptance test is a Go test function with the prefix `TestAcc`.

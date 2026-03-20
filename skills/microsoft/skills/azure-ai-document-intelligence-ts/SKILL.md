@@ -1,0 +1,1 @@
+# Azure Document Intelligence REST SDK for TypeScript

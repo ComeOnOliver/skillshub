@@ -1,0 +1,1 @@
+These two fields are the only ones required. `name` must be lowercase with hyphens, max 64 characters, and match the parent directory name. `description` is what Claude reads at startup to decide when the skill is relevant (max 1024 characters).

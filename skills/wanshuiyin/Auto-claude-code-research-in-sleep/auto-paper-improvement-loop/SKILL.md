@@ -1,0 +1,1 @@
+# Auto Paper Improvement Loop: Review → Fix → Recompile

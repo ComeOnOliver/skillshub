@@ -1,0 +1,1 @@
+# Gemini CLI — Google's AI Coding Agent for the Terminal

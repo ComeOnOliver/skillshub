@@ -1,0 +1,1 @@
+# SQL Server on Azure Virtual Machines Skill

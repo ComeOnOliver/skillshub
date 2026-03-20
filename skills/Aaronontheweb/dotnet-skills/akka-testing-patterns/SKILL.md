@@ -1,0 +1,1 @@
+# Akka.NET Testing Patterns

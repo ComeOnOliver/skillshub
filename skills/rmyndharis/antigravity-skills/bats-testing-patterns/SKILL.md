@@ -1,0 +1,1 @@
+# Bats Testing Patterns

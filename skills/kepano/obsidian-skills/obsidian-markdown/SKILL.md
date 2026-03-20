@@ -1,0 +1,1 @@
+# Obsidian Flavored Markdown Skill

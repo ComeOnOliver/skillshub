@@ -1,0 +1,1 @@
+# Nhost — Open-Source Firebase Alternative with GraphQL

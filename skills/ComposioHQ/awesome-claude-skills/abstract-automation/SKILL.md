@@ -1,0 +1,1 @@
+# Abstract Automation via Rube MCP

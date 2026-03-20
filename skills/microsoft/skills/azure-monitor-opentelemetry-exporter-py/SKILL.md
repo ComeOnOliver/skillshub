@@ -1,0 +1,1 @@
+# Azure Monitor OpenTelemetry Exporter for Python

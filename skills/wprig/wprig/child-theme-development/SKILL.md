@@ -1,0 +1,1 @@
+# Child Theme Development in WP Rig

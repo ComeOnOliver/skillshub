@@ -1,0 +1,1 @@
+# Claude in Chrome MCP Troubleshooting

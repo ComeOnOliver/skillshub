@@ -1,0 +1,1 @@
+# Finmei Automation via Rube MCP

@@ -1,0 +1,1 @@
+# 37signals Rails Best Practices

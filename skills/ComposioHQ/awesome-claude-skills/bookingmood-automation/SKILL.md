@@ -1,0 +1,1 @@
+# Bookingmood Automation via Rube MCP

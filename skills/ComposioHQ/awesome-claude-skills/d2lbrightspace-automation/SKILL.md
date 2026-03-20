@@ -1,0 +1,1 @@
+# D2lbrightspace Automation via Rube MCP

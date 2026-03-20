@@ -1,0 +1,1 @@
+# Better Proposals Automation via Rube MCP

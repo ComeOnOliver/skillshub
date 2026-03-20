@@ -1,0 +1,1 @@
+# Gatus — Lightweight Health Check Dashboard

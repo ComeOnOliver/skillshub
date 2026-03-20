@@ -1,0 +1,1 @@
+Gather design context for this project, then persist it for all future sessions.

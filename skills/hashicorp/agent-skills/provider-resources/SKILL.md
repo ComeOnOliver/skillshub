@@ -1,0 +1,1 @@
+# Terraform Provider Resources Implementation Guide

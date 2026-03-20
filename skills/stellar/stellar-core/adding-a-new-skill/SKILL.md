@@ -1,0 +1,1 @@
+If the user wants to add a new skill, you can help them with this:

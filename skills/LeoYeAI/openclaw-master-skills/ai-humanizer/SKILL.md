@@ -1,0 +1,1 @@
+# Humanizer: remove AI writing patterns

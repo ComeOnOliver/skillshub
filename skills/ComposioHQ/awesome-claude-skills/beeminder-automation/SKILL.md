@@ -1,0 +1,1 @@
+# Beeminder Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Android XML Views Standards

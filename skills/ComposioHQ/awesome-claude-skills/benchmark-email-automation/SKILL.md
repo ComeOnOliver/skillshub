@@ -1,0 +1,1 @@
+# Benchmark Email Automation via Rube MCP

@@ -1,0 +1,1 @@
+# Snapshot Testing Email Templates with Verify

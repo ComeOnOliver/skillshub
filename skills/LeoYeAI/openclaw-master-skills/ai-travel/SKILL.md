@@ -1,0 +1,1 @@
+# AI Travel Platform — Agent Skill

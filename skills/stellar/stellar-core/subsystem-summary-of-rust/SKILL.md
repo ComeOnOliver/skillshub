@@ -1,0 +1,1 @@
+# Rust Subsystem (Non-Soroban) — Technical Summary

@@ -1,0 +1,1 @@
+# GWAS Catalog Database

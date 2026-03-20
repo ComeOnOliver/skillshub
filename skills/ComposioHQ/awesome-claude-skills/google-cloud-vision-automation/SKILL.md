@@ -1,0 +1,1 @@
+# Google Cloud Vision Automation via Rube MCP

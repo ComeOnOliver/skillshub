@@ -1,0 +1,1 @@
+# AI Studio Image — Especialista em Imagens Humanizadas
