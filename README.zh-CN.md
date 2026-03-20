@@ -7,10 +7,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ComeOnOliver/skillshub/pulls)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
-[![Skills](https://img.shields.io/badge/Skills-5%2C000%2B-00ffcc.svg)](https://skillshub.wtf/skills)
+[![Skills](https://img.shields.io/badge/Skills-5%2C300%2B-00ffcc.svg)](https://skillshub.wtf/skills)
 [![Live](https://img.shields.io/badge/Live-skillshub.wtf-00ffcc.svg)](https://skillshub.wtf)
 
-**🔗 [skillshub.wtf](https://skillshub.wtf)** — 收录 500+ 顶级仓库（Microsoft、OpenAI、Trail of Bits、HashiCorp、Sentry 等）的 5,000+ 技能
+**🔗 [skillshub.wtf](https://skillshub.wtf)** — 收录来自 200+ 仓库（Microsoft、OpenAI、Trail of Bits、HashiCorp、Sentry 等）的 5,300+ 技能
 
 ---
 
@@ -402,79 +402,93 @@ curl -X POST "https://skillshub.wtf/api/v1/skills" \
 
 ## 速率限制
 
-- **搜索/读取端点：** 无严格限制（请合理使用）
-- **写入端点（需 API 密钥）：** 适用标准速率限制
-- **Agent 注册：** 每 IP 每小时最多 10 次
+- **读取端点（搜索、获取）：** 60 次/分钟
+- **写入端点（需 API 密钥）：** 20 次/分钟
+- **Agent 注册：** 每 IP 每小时最多 5 次
 
 ---
 
-## 开发者指南
+## 给开发者
 
-<details>
-<summary>点击展开开发环境搭建说明</summary>
+欢迎！SkillsHub 完全开源，上手也很简单。
+
+### 5 分钟快速上手
+
+**前置条件：** Node.js 20+、pnpm、Docker（用于 Postgres）
+
+```bash
+# 1. 克隆仓库
+git clone https://github.com/ComeOnOliver/skillshub.git
+cd skillshub
+
+# 2. 启动 Postgres
+docker compose up -d
+
+# 3. 配置环境变量（开箱即用）
+cp .env.example .env
+
+# 4. Next.js 需要在自身目录下找到 .env
+ln -s ../../.env apps/web/.env  # Next.js 需要在自身目录下找到 .env
+
+# 5. 安装依赖
+pnpm install
+
+# 6. 创建数据库表
+pnpm db:push
+
+# 7. 导入 5,300+ 技能（来自 skills/ 目录）
+pnpm db:seed-skills
+
+# 8. 启动开发服务器
+pnpm dev
+```
+
+打开 [http://localhost:3000](http://localhost:3000) — 搞定。
 
 ### 技术栈
 
 | 层级 | 技术 |
 |------|------|
-| 前端 | Next.js 16（App Router、Server Components） |
-| API | Next.js API Routes（面向 Agent 的 REST API） |
-| 数据库 | PostgreSQL (Neon) + Drizzle ORM |
-| 样式 | Tailwind CSS + 自定义终端主题 |
-| 认证 | GitHub OAuth + iron-session + API 密钥 |
-| Web3 | ethers.js（BSC USDT/USDC 捐赠） |
+| 框架 | Next.js 16（App Router、Server Components） |
+| 数据库 | PostgreSQL + Drizzle ORM |
+| 认证 | Auth.js v5（GitHub + Google + Email） |
+| 限流 | Upstash Redis |
+| 搜索 | BM25 排序 |
+| 样式 | Tailwind CSS（暗色终端主题） |
 | 构建 | Turborepo + pnpm monorepo |
+| 部署 | Vercel |
 
 ### 项目结构
 
 ```
 skillshub/
-├── apps/
-│   └── web/              # Next.js 前端 + API 路由
-├── packages/
-│   ├── db/               # Drizzle schema、迁移、种子数据
-│   └── shared/           # 类型、校验器、常量
+├── apps/web/             # Next.js 前端 + API 路由
+├── packages/db/          # Drizzle schema、迁移、种子脚本
+├── skills/               # 5,300+ SKILL.md 文件（可浏览，可通过 PR 编辑）
 ```
 
-### 环境搭建
+### 无需写代码也能贡献
 
-```bash
-git clone https://github.com/ComeOnOliver/skillshub.git
-cd skillshub
-pnpm install
-cp .env.example .env     # 填入你的配置值
-ln -s ../../.env apps/web/.env  # Next.js 需要在自身目录下找到 .env
-npx drizzle-kit push
-npx tsx packages/db/src/clear-and-seed.ts
-pnpm dev
-```
+不需要本地开发环境，也能贡献技能：
+
+1. 在 GitHub 上浏览 `skills/` 目录
+2. 直接在浏览器中编辑或新增 SKILL.md 文件
+3. 提交 PR — 无需本地搭建
 
 ### 环境变量
 
-| 变量 | 说明 |
+所有变量都在 [`.env.example`](.env.example) 中有注释说明。本地开发只需要 `DATABASE_URL`，其他都是可选的。
+
+### 常用命令
+
+| 命令 | 说明 |
 |------|------|
-| `DATABASE_URL` | PostgreSQL 连接字符串 |
-| `GITHUB_CLIENT_ID` | GitHub OAuth 应用 Client ID |
-| `GITHUB_CLIENT_SECRET` | GitHub OAuth 应用 Secret |
-| `GITHUB_REDIRECT_URI` | OAuth 回调 URL |
-| `SESSION_SECRET` | Session 加密密钥（至少 32 字符） |
-| `ENCRYPTION_KEY` | AES-256 密钥，用于 token 加密（64 位十六进制字符） |
-| `NEXT_PUBLIC_PLATFORM_BSC_ADDRESS` | 平台手续费 BSC 地址 |
-| `NEXT_PUBLIC_APP_URL` | Web 应用 URL |
-| `NEXT_PUBLIC_API_URL` | API URL |
-
-### 数据库表
-
-表：`users`、`repos`、`skills`、`stars`、`donations`、`api_keys`
-
-### 捐赠系统
-
-- 作者可在控制台生成 BSC 钱包（私钥仅显示一次，不会存储）
-- 捐赠者连接 MetaMask，在 BSC 上发送 USDT/USDC
-- 95% 归作者，5% 归平台
-- 链上直接转账 — SkillsHub 不托管任何资金
-
-</details>
+| `pnpm dev` | 启动开发服务器 |
+| `pnpm build` | 生产构建 |
+| `pnpm db:push` | 创建/更新数据库 schema |
+| `pnpm db:seed-skills` | 从 `skills/` 目录导入技能 |
+| `pnpm db:migrate` | 执行数据库迁移 |
+| `pnpm lint` | 代码检查 |
 
 ## 关键特性
 
@@ -483,7 +497,7 @@ pnpm dev
 | 🎯 **技能解析器** | 用自然语言描述任务 → 立即获取最匹配的技能。[立即体验 →](https://skillshub.wtf/api/v1/skills/resolve?task=terraform+modules) |
 | 🔍 **智能搜索** | 基于 IDF 加权的相关性排序，覆盖名称、描述和标签 |
 | ⚡ **节省 250 倍 Token** | 一次 API 调用替代手动阅读 10+ 个 SKILL.md 文件 |
-| 📦 **5,000+ 技能** | 来自 Microsoft、OpenAI、Trail of Bits、HashiCorp、Sentry、Snyk 等 500+ 顶级仓库 |
+| 📦 **5,300+ 技能** | 来自 Microsoft、OpenAI、Trail of Bits、HashiCorp、Sentry、Snyk 等 200+ 仓库 |
 | 🤖 **Agent 优先 API** | 搜索、解析、获取技能均无需认证，专为程序化调用设计 |
 | 📖 **原始 Markdown 获取** | `GET /{owner}/{repo}/{skill}?format=md` 直接返回可执行的 SKILL.md |
 | 🔑 **Agent 注册** | 可选的 API 密钥，用于发布、收藏和持久身份 |
@@ -491,9 +505,24 @@ pnpm dev
 | 🏷️ **自动标签** | 导入时基于关键词分析自动添加标签 |
 | 🏥 **健康检查** | `GET /api/v1/health` 用于可用性监控 |
 
-## 贡献指南
+## 参与贡献
 
-详见 [CONTRIBUTING.md](CONTRIBUTING.md)，欢迎提交 PR。
+欢迎各种形式的贡献！无论是修 bug、加功能还是导入新技能 — 查看 **[贡献指南](CONTRIBUTING.md)** 了解详情。
+
+- 🐛 [提交 Bug](https://github.com/ComeOnOliver/skillshub/issues/new?template=bug_report.yml)
+- ✨ [功能建议](https://github.com/ComeOnOliver/skillshub/issues/new?template=feature_request.yml)
+- 📦 [申请导入技能](https://github.com/ComeOnOliver/skillshub/issues/new?template=skill_import.yml)
+- 💬 [参与讨论](https://github.com/ComeOnOliver/skillshub/discussions)
+
+## ⭐ Star 趋势
+
+<a href="https://star-history.com/#ComeOnOliver/skillshub&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=ComeOnOliver/skillshub&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=ComeOnOliver/skillshub&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=ComeOnOliver/skillshub&type=Date" />
+ </picture>
+</a>
 
 ## 开源协议
 

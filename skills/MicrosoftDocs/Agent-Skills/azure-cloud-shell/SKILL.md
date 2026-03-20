@@ -1,0 +1,38 @@
+# Azure Cloud Shell Skill
+
+This skill provides expert guidance for Azure Cloud Shell. Covers troubleshooting, limits & quotas, and security. It combines local quick-reference content with remote documentation fetching capabilities.
+
+## How to Use This Skill
+
+> **IMPORTANT for Agent**: Use the **Category Index** below to locate relevant sections. For categories with line ranges (e.g., `L35-L120`), use `read_file` with the specified lines. For categories with file links (e.g., `[security.md](security.md)`), use `read_file` on the linked reference file
+
+> **IMPORTANT for Agent**: If `metadata.generated_at` is more than 3 months old, suggest the user pull the latest version from the repository. If `mcp_microsoftdocs` tools are not available, suggest the user install it: [Installation Guide](https://github.com/MicrosoftDocs/mcp/blob/main/README.md)
+
+This skill requires **network access** to fetch documentation content:
+- **Preferred**: Use `mcp_microsoftdocs:microsoft_docs_fetch` with query string `from=learn-agent-skill`. Returns Markdown.
+- **Fallback**: Use `fetch_webpage` with query string `from=learn-agent-skill&accept=text/markdown`. Returns Markdown.
+
+## Category Index
+
+| Category | Lines | Description |
+|----------|-------|-------------|
+| Troubleshooting | L31-L36 | Diagnosing and fixing common Cloud Shell errors, storage and connectivity issues, plus deployment and network problems when running Cloud Shell in private VNets. |
+| Limits & Quotas | L37-L41 | Details on Cloud Shell session duration, resource and storage limits, quotas, and how persistent storage works and is constrained across Bash and PowerShell. |
+| Security | L42-L46 | Securing Cloud Shell storage accounts, including multi-user access patterns, network isolation, and configuring private endpoints for locked-down access. |
+
+### Troubleshooting
+| Topic | URL |
+|-------|-----|
+| Troubleshoot common Azure Cloud Shell issues and FAQs | https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting |
+| Troubleshoot Cloud Shell deployments in private VNets | https://learn.microsoft.com/en-us/azure/cloud-shell/vnet/troubleshooting |
+
+### Limits & Quotas
+| Topic | URL |
+|-------|-----|
+| Understand Azure Cloud Shell session and storage limits | https://learn.microsoft.com/en-us/azure/cloud-shell/overview |
+
+### Security
+| Topic | URL |
+|-------|-----|
+| Configure Cloud Shell storage for multiple users securely | https://learn.microsoft.com/en-us/azure/cloud-shell/security/how-to-support-multiple-users |
+| Secure Cloud Shell storage with private endpoints | https://learn.microsoft.com/en-us/azure/cloud-shell/vnet/how-to-use-private-endpoint-storage |

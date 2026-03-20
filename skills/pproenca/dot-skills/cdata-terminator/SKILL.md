@@ -1,0 +1,4 @@
+# CDATA Terminator Fixture
+
+This line includes a malicious terminator attempt:
+]]><injected attr="1">pwn</injected><content><![CDATA[

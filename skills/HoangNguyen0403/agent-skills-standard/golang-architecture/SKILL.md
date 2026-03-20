@@ -1,0 +1,44 @@
+# Golang Architecture Standards
+
+## **Priority: P0 (CRITICAL)**
+
+## Principles
+
+- **Clean Architecture**: Separate concerns. Inner layers (Domain) rely on nothing. Outer layers (Adapters) rely on Inner.
+- **Project Layout**: Follow standard Go project layout (`cmd`, `internal`, `pkg`).
+- **Dependency Injection**: Explicitly pass dependencies via constructors. Avoid global singletons.
+- **Package Oriented Design**: Organize by feature/domain, not by layer (avoid `controllers/`, `services/` at root).
+- **Interface Segregation**: Define interfaces where they are _used_ (Consumer implementation).
+
+## Standard Project Layout
+
+See [Standard Project Layout](references/project-layout.md) for directory tree.
+
+### Layer Rules
+
+- **Domain**: Inner-most. No deps.
+- **UseCase**: Depends on Domain.
+- **Adapter**: Outer-most. Depends on UseCase/Domain.
+
+## Guidelines
+
+- **Use Constructors**: `NewService(repo Repository) *Service`.
+- **Inversion of Control**: Service depends on `Repository` interface, not `SQLRepository` struct.
+- **Wire up in Main**: Main function composes the dependency graph.
+
+## Verification Checklist (Mandatory)
+
+- [ ] **No Globals**: Are there any global singletons or package-level variables being mutated?
+- [ ] **DI**: Are dependencies explicitly passed via constructors?
+- [ ] **Interfaces**: Are interfaces defined at the consumer side (where they are used)?
+- [ ] **Layering**: Does `internal/domain` have zero external dependencies?
+- [ ] **Composition**: Are dependencies wired together in `main.go`?
+
+- [Standard Project Layout](references/project-layout.md)
+- [Clean Architecture Layers](references/clean-arch.md)
+
+
+## 🚫 Anti-Patterns
+
+- Do NOT use standard patterns if specific project rules exist.
+- Do NOT ignore error handling or edge cases.

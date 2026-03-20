@@ -23,7 +23,9 @@
     "db:generate": "turbo db:generate",
     "db:migrate": "turbo db:migrate",
     "db:seed": "turbo db:seed",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "db:push": "turbo db:push",
+    "db:seed-skills": "cd packages/db && npx tsx src/seed-from-skills-dir.ts"
   },
   "devDependencies": {
     "tsx": "^4.21.0",

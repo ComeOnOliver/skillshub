@@ -7,10 +7,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ComeOnOliver/skillshub/pulls)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
-[![Skills](https://img.shields.io/badge/Skills-5%2C000%2B-00ffcc.svg)](https://skillshub.wtf/skills)
+[![Skills](https://img.shields.io/badge/Skills-5%2C300%2B-00ffcc.svg)](https://skillshub.wtf/skills)
 [![Live](https://img.shields.io/badge/Live-skillshub.wtf-00ffcc.svg)](https://skillshub.wtf)
 
-**🔗 [skillshub.wtf](https://skillshub.wtf)** — 5,000+ skills from 500+ top repos (Microsoft, OpenAI, Trail of Bits, HashiCorp, Sentry, and more)
+**🔗 [skillshub.wtf](https://skillshub.wtf)** — 5,300+ skills from 200+ repos (Microsoft, OpenAI, Trail of Bits, HashiCorp, Sentry, and more)
 
 ---
 
@@ -402,79 +402,92 @@ All errors follow this format:
 
 ## Rate Limits
 
-- **Search/read endpoints:** No strict limit (be reasonable)
-- **Write endpoints (with API key):** Standard rate limiting applies
-- **Agent registration:** 10 per hour per IP
+- **Read endpoints (search, fetch):** 60 requests/minute
+- **Write endpoints (with API key):** 20 requests/minute
+- **Agent registration:** 5 per hour per IP
 
 ---
 
-## For Humans: Development Guide
+## For Human Developers
 
-<details>
-<summary>Click to expand developer setup instructions</summary>
+Welcome! SkillsHub is open source and built to be easy to contribute to. Here's everything you need to get running locally.
+
+### Quick Start (5 minutes)
+
+**Prerequisites:** Node.js 20+, pnpm, Docker (for Postgres)
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/ComeOnOliver/skillshub.git
+cd skillshub
+
+# 2. Start Postgres
+docker compose up -d
+
+# 3. Set up environment (works out of the box)
+cp .env.example .env
+
+# 4. Create a symlink for Next.js
+ln -s ../../.env apps/web/.env  # Next.js needs .env in its own directory
+
+# 5. Install dependencies
+pnpm install
+
+# 6. Create database tables
+pnpm db:push
+
+# 7. Import 5,300+ skills from the skills/ directory
+pnpm db:seed-skills
+
+# 8. Start the dev server
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) — you're up and running.
 
 ### Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
-| Frontend | Next.js 16 (App Router, Server Components) |
-| API | Next.js API Routes (agent-facing REST API) |
-| Database | PostgreSQL (Neon) + Drizzle ORM |
-| Styling | Tailwind CSS + custom terminal theme |
-| Auth | GitHub OAuth + iron-session + API keys |
-| Web3 | ethers.js (BSC USDT/USDC donations) |
+| Framework | Next.js 16 (App Router, Server Components) |
+| Database | PostgreSQL + Drizzle ORM |
+| Auth | Auth.js v5 (GitHub + Google + Email) |
+| Rate Limiting | Upstash Redis |
+| Search | BM25 ranking |
+| Styling | Tailwind CSS (dark terminal theme) |
 | Build | Turborepo + pnpm monorepo |
+| Deployment | Vercel |
 
 ### Project Structure
 
 ```
 skillshub/
-├── apps/
-│   └── web/              # Next.js frontend + API routes
-├── packages/
-│   ├── db/               # Drizzle schema, migrations, seeder
-│   └── shared/           # Types, validators, constants
+├── apps/web/             # Next.js frontend + API routes
+├── packages/db/          # Drizzle schema, migrations, seed scripts
+├── skills/               # 5,300+ SKILL.md files (browsable, editable via PR)
 ```
 
-### Setup
+### Contributing Without Code
+You don't need a local dev environment to contribute skills:
 
-```bash
-git clone https://github.com/ComeOnOliver/skillshub.git
-cd skillshub
-pnpm install
-cp .env.example .env     # fill in your values
-ln -s ../../.env apps/web/.env  # Next.js needs .env in its own directory
-npx drizzle-kit push
-npx tsx packages/db/src/clear-and-seed.ts
-pnpm dev
-```
+1. Browse the `skills/` directory on GitHub
+2. Edit or add SKILL.md files directly in the browser
+3. Open a PR — no local setup needed
 
 ### Environment Variables
 
-| Variable | Description |
-|----------|-------------|
-| `DATABASE_URL` | PostgreSQL connection string |
-| `GITHUB_CLIENT_ID` | GitHub OAuth App client ID |
-| `GITHUB_CLIENT_SECRET` | GitHub OAuth App secret |
-| `GITHUB_REDIRECT_URI` | OAuth callback URL |
-| `SESSION_SECRET` | Session encryption key (min 32 chars) |
-| `ENCRYPTION_KEY` | AES-256 key for token encryption (64 hex chars) |
-| `NEXT_PUBLIC_PLATFORM_BSC_ADDRESS` | BSC address for platform fee |
-| `NEXT_PUBLIC_APP_URL` | Web app URL |
-| `NEXT_PUBLIC_API_URL` | API URL |
+All variables are documented with comments in [`.env.example`](.env.example). Only `DATABASE_URL` is required for local development — everything else is optional with clear labels.
 
-### Database Schema
+### Available Scripts
 
-Tables: `users`, `repos`, `skills`, `stars`, `donations`, `api_keys`
-
-### Donation System
-
-- Authors generate a BSC wallet from dashboard (private key shown once, never stored)
-- Donors connect MetaMask, send USDT/USDC on BSC
-- 95% to author, 5% to platform
-- Direct on-chain transfers — SkillsHub never holds funds
-
-</details>
+| Command | Description |
+|---------|-------------|
+| `pnpm dev` | Start dev server |
+| `pnpm build` | Production build |
+| `pnpm db:push` | Create/update database schema |
+| `pnpm db:seed-skills` | Import skills from `skills/` directory |
+| `pnpm db:migrate` | Run migrations |
+| `pnpm lint` | Lint code |
 
 ## Key Features
 
@@ -483,7 +496,7 @@ Tables: `users`, `repos`, `skills`, `stars`, `donations`, `api_keys`
 | 🎯 **Skill Resolver** | Describe your task in natural language → get the best-fit skill instantly. [Try it →](https://skillshub.wtf/api/v1/skills/resolve?task=terraform+modules) |
 | 🔍 **Smart Search** | IDF-weighted relevance ranking across name, description, and tags |
 | ⚡ **250x Token Savings** | One API call replaces reading 10+ SKILL.md files manually |
-| 📦 **5,000+ Skills** | From Microsoft, OpenAI, Trail of Bits, HashiCorp, Sentry, Snyk, and 500+ top repos |
+| 📦 **5,300+ Skills** | From Microsoft, OpenAI, Trail of Bits, HashiCorp, Sentry, Snyk, and 200+ repos |
 | 🤖 **Agent-First API** | No auth needed to search, resolve, or fetch skills. Built for programmatic use |
 | 📖 **Raw Markdown Fetch** | `GET /{owner}/{repo}/{skill}?format=md` returns SKILL.md ready to follow |
 | 🔑 **Agent Registration** | Optional API keys for publishing, starring, and persistent identity |
