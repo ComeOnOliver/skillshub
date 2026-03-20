@@ -97,7 +97,27 @@ export async function POST(request: Request) {
   return writeCorsJson({ data: created }, request, { status: 201 });
 }
 
-export async function GET() { return methodNotAllowed(["POST"]); }
+export async function GET() {
+  return new Response(
+    JSON.stringify({
+      error: {
+        code: "METHOD_NOT_ALLOWED",
+        message:
+          "Method not allowed. Use POST to publish a skill. For browsing, try GET /api/v1/skills/search, /api/v1/skills/trending, or /api/v1/skills/resolve. Full docs at /docs",
+      },
+    }),
+    {
+      status: 405,
+      headers: {
+        "Content-Type": "application/json",
+        "Allow": "POST",
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+      },
+    },
+  );
+}
 export async function PUT() { return methodNotAllowed(["POST"]); }
 export async function DELETE() { return methodNotAllowed(["POST"]); }
 export async function PATCH() { return methodNotAllowed(["POST"]); }
