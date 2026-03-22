@@ -93,7 +93,7 @@ async function PopularSkills() {
     JOIN repos r ON s.repo_id = r.id
     JOIN users u ON s.owner_id = u.id
     WHERE s.is_published = true
-      AND r.github_owner IN ('trailofbits', 'microsoft', 'openai', 'hashicorp', 'antonbabenko', 'openclaw')
+      AND r.github_owner IN ('trailofbits', 'microsoft', 'openai', 'hashicorp', 'antonbabenko', 'openclaw', 'tanweai')
     ORDER BY r.github_owner, s.fetch_count DESC
     LIMIT 6
   `);
