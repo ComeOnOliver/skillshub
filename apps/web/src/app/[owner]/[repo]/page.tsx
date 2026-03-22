@@ -5,6 +5,7 @@ import { eq, and } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { SkillCard } from "@/components/skill-card";
 import { DonateButton } from "@/components/donate-button";
+import { CopyButton } from "@/components/copy-button";
 import Link from "next/link";
 import Image from "next/image";
 import { getRepoStars } from "@/lib/ungh";
@@ -50,7 +51,6 @@ export default async function RepoPage({ params }: Props) {
   if (!repoData) notFound();
 
   // Only fetch GitHub stars if the repo owner matches the GitHub repo owner
-  // (prevents imported repos from showing someone else's star count)
   const isOriginalOwner = repoData.owner.username === repoData.githubOwner;
   const githubStars = isOriginalOwner
     ? await getRepoStars(repoData.githubOwner ?? owner, repoData.githubRepoName ?? repo)
@@ -74,6 +74,9 @@ export default async function RepoPage({ params }: Props) {
     )
     .orderBy(skills.name);
 
+  const firstSkillSlug = data.length > 0 ? data[0].slug : "skill-name";
+  const installCommand = `npx skills add ${owner}/${repo} --skill ${firstSkillSlug}`;
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-8 animate-fade-in">
       {/* Breadcrumbs */}
@@ -92,42 +95,58 @@ export default async function RepoPage({ params }: Props) {
         <span className="text-neutral-300">{repo}</span>
       </nav>
 
-      {/* Repo header */}
+      {/* Hero Section */}
       <div className="mb-8">
-        <div className="flex items-center gap-3">
+        <div className="flex items-start gap-4">
           {repoData.owner.avatarUrl && (
             <Image
               src={repoData.owner.avatarUrl}
               alt={owner}
-              width={32}
-              height={32}
-              className="h-8 w-8 rounded-full ring-1 ring-neutral-800"
+              width={48}
+              height={48}
+              className="h-12 w-12 rounded-full ring-2 ring-neutral-800"
             />
           )}
-          <h1 className="font-mono text-2xl font-bold text-neutral-100">
-            <span className="text-neon-cyan/40">&gt;</span>{" "}
-            <span className="text-neutral-500">{owner}/</span>{repo}
-          </h1>
+          <div className="flex-1">
+            <h1 className="font-mono text-3xl font-extrabold tracking-tight text-neutral-100">
+              <span className="text-neon-cyan/40">&gt;</span>{" "}
+              <span className="text-neutral-500">{owner}/</span>
+              <span className="text-neutral-50">{repo}</span>
+            </h1>
+            {repoData.description && (
+              <p className="mt-2 font-mono text-sm text-neutral-400 max-w-2xl">
+                {repoData.description}
+              </p>
+            )}
+          </div>
         </div>
-        <div className="mt-2 flex items-center gap-4 font-mono text-xs text-neutral-600">
-          <span>📦 {data.length} skill{data.length !== 1 ? "s" : ""}</span>
-          <span>❤️ {repoData.starCount} likes</span>
+
+        {/* Stats cluster */}
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-neutral-800 bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400">
+            <span>📦</span> {data.length} skill{data.length !== 1 ? "s" : ""}
+          </span>
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-neutral-800 bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400">
+            <span>❤️</span> {repoData.starCount} likes
+          </span>
           {githubStars > 0 && (
-            <span>⭐ {githubStars >= 1000 ? `${(githubStars / 1000).toFixed(1)}k` : githubStars} github stars</span>
+            <span className="inline-flex items-center gap-1.5 rounded-md border border-neutral-800 bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400">
+              <span>⭐</span> {githubStars >= 1000 ? `${(githubStars / 1000).toFixed(1)}k` : githubStars} stars
+            </span>
           )}
-          <span>📥 {repoData.downloadCount.toLocaleString()} downloads</span>
+          <span className="inline-flex items-center gap-1.5 rounded-md border border-neutral-800 bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400">
+            <span>📥</span> {repoData.downloadCount.toLocaleString()} downloads
+          </span>
           {repoData.githubRepoUrl && (
             <a
               href={repoData.githubRepoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-neon-cyan transition-colors"
+              className="inline-flex items-center gap-1.5 rounded-md border border-neutral-800 bg-neutral-900/50 px-2.5 py-1 font-mono text-xs text-neutral-400 transition-colors hover:border-neon-cyan/50 hover:text-neon-cyan"
             >
               github →
             </a>
           )}
-        </div>
-        <div className="mt-3">
           <DonateButton
             authorBscAddress={repoData.owner.bscAddress}
             authorName={repoData.owner.username}
@@ -137,25 +156,53 @@ export default async function RepoPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Skills grid */}
-      <div className="grid gap-3 md:grid-cols-2">
-        {data.map((skill) => (
-          <SkillCard
-            key={skill.id}
-            id={skill.id}
-            slug={skill.slug}
-            name={skill.name}
-            description={skill.description}
-            tags={skill.tags}
-            repo={{
-              starCount: repoData.starCount,
-              downloadCount: repoData.downloadCount,
-              githubOwner: repoData.githubOwner,
-              githubRepoName: repoData.githubRepoName,
-            }}
-            owner={repoData.owner}
-          />
-        ))}
+      {/* Quick Install Bar */}
+      <div className="mb-8 flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-900/50 px-4 py-3">
+        <span className="font-mono text-sm text-neon-cyan/60 select-none">$</span>
+        <code className="flex-1 font-mono text-sm text-neutral-300 overflow-x-auto">
+          {installCommand}
+        </code>
+        <CopyButton text={installCommand} />
+      </div>
+
+      {/* About Section */}
+      {repoData.description && (
+        <div className="mb-8">
+          <h2 className="mb-3 font-mono text-sm font-semibold text-neutral-500">
+            <span className="text-neon-cyan/50">&gt;</span> about
+          </h2>
+          <div className="rounded border border-neutral-800/50 bg-neutral-900/20 p-4">
+            <p className="font-mono text-sm leading-relaxed text-neutral-300">
+              {repoData.description}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* Skills Grid */}
+      <div className="mb-8">
+        <h2 className="mb-4 font-mono text-sm font-semibold text-neutral-500">
+          <span className="text-neon-cyan/50">&gt;</span> skills ({data.length})
+        </h2>
+        <div className="grid gap-3 md:grid-cols-2">
+          {data.map((skill) => (
+            <SkillCard
+              key={skill.id}
+              id={skill.id}
+              slug={skill.slug}
+              name={skill.name}
+              description={skill.description}
+              tags={skill.tags}
+              repo={{
+                starCount: repoData.starCount,
+                downloadCount: repoData.downloadCount,
+                githubOwner: repoData.githubOwner,
+                githubRepoName: repoData.githubRepoName,
+              }}
+              owner={repoData.owner}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
