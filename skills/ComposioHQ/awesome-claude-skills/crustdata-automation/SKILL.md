@@ -1,3 +1,10 @@
+---
+name: crustdata-automation
+description: "Automate Crustdata tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Crustdata Automation via Rube MCP
 
 Automate Crustdata operations through Composio's Crustdata toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -341,3 +341,4 @@ aws secretsmanager list-secrets \
 - [Secrets Manager API Reference](https://docs.aws.amazon.com/secretsmanager/latest/apireference/)
 - [Secrets Manager CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/)
 - [boto3 Secrets Manager](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html)
+

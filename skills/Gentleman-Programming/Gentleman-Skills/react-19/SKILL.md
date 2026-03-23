@@ -1,3 +1,14 @@
+---
+name: react-19
+description: >
+  React 19 patterns with React Compiler.
+  Trigger: When writing React components - no useMemo/useCallback needed.
+license: Apache-2.0
+metadata:
+  author: gentleman-programming
+  version: "1.0"
+---
+
 ## No Manual Memoization (REQUIRED)
 
 ```typescript
@@ -111,3 +122,4 @@ const Input = forwardRef((props, ref) => <input ref={ref} {...props} />);
 
 ## Keywords
 react, react 19, compiler, useMemo, useCallback, server components, use hook
+

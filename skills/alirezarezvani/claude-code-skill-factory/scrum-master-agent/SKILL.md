@@ -402,3 +402,4 @@ Notifications are token-efficient (50-100 tokens max) with:
 ## Support
 
 For issues, feature requests, or contributions, see the skill's GitHub repository or contact the Skills Factory maintainers.
+

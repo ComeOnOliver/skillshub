@@ -183,3 +183,4 @@ multiple statements on a single line.
 - **Linting enforcement**: See [go-linting](../go-linting/SKILL.md) when automating style checks with golangci-lint or configuring CI
 - **Code review**: See [go-code-review](../go-code-review/SKILL.md) when applying style principles during a systematic code review
 - **Logging style**: See [go-logging](../go-logging/SKILL.md) when reviewing logging practices, choosing between log and slog, or structuring log output
+

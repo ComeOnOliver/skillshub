@@ -1,3 +1,10 @@
+---
+name: classmarker-automation
+description: "Automate Classmarker tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Classmarker Automation via Rube MCP
 
 Automate Classmarker operations through Composio's Classmarker toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: fillout-forms-automation
+description: "Automate Fillout tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Fillout Automation via Rube MCP
 
 Automate Fillout operations through Composio's Fillout toolkit via Rube MCP.
@@ -24,71 +31,51 @@ Automate Fillout operations through Composio's Fillout toolkit via Rube MCP.
 Always discover available tools before executing workflows:
 
 ```
-RUBE_SEARCH_TOOLS: queries=[{"use_case": "forms, submissions, workflows, and form builder", "known_fields": ""}]
+RUBE_SEARCH_TOOLS
+queries: [{use_case: "Fillout operations", known_fields: ""}]
+session: {generate_id: true}
 ```
 
-This returns:
-- Available tool slugs for Fillout
-- Recommended execution plan steps
-- Known pitfalls and edge cases
-- Input schemas for each tool
+This returns available tool slugs, input schemas, recommended execution plans, and known pitfalls.
 
-## Core Workflows
+## Core Workflow Pattern
 
-### 1. Discover Available Fillout Tools
+### Step 1: Discover Available Tools
 
 ```
-RUBE_SEARCH_TOOLS:
-  queries:
-    - use_case: "list all available Fillout tools and capabilities"
+RUBE_SEARCH_TOOLS
+queries: [{use_case: "your specific Fillout task"}]
+session: {id: "existing_session_id"}
 ```
 
-Review the returned tools, their descriptions, and input schemas before proceeding.
-
-### 2. Execute Fillout Operations
-
-After discovering tools, execute them via:
+### Step 2: Check Connection
 
 ```
-RUBE_MULTI_EXECUTE_TOOL:
-  tools:
-    - tool_slug: "<discovered_tool_slug>"
-      arguments: {<schema-compliant arguments>}
-  memory: {}
-  sync_response_to_workbench: false
+RUBE_MANAGE_CONNECTIONS
+toolkits: ["fillout_forms"]
+session_id: "your_session_id"
 ```
 
-### 3. Multi-Step Workflows
+### Step 3: Execute Tools
 
-For complex workflows involving multiple Fillout operations:
-
-1. Search for all relevant tools: `RUBE_SEARCH_TOOLS` with specific use case
-2. Execute prerequisite steps first (e.g., fetch before update)
-3. Pass data between steps using tool responses
-4. Use `RUBE_REMOTE_WORKBENCH` for bulk operations or data processing
-
-## Common Patterns
-
-### Search Before Action
-Always search for existing resources before creating new ones to avoid duplicates.
-
-### Pagination
-Many list operations support pagination. Check responses for `next_cursor` or `page_token` and continue fetching until exhausted.
-
-### Error Handling
-- Check tool responses for errors before proceeding
-- If a tool fails, verify the connection is still ACTIVE
-- Re-authenticate via `RUBE_MANAGE_CONNECTIONS` if connection expired
-
-### Batch Operations
-For bulk operations, use `RUBE_REMOTE_WORKBENCH` with `run_composio_tool()` in a loop with `ThreadPoolExecutor` for parallel execution.
+```
+RUBE_MULTI_EXECUTE_TOOL
+tools: [{
+  tool_slug: "TOOL_SLUG_FROM_SEARCH",
+  arguments: {/* schema-compliant args from search results */}
+}]
+memory: {}
+session_id: "your_session_id"
+```
 
 ## Known Pitfalls
 
-- **Always search tools first**: Tool schemas and available operations may change. Never hardcode tool slugs without first discovering them via `RUBE_SEARCH_TOOLS`.
-- **Check connection status**: Ensure the Fillout connection is ACTIVE before executing any tools. Expired OAuth tokens require re-authentication.
-- **Respect rate limits**: If you receive rate limit errors, reduce request frequency and implement backoff.
-- **Validate schemas**: Always pass strictly schema-compliant arguments. Use `RUBE_GET_TOOL_SCHEMAS` to load full input schemas when `schemaRef` is returned instead of `input_schema`.
+- **Always search first**: Tool schemas change. Never hardcode tool slugs or arguments without calling `RUBE_SEARCH_TOOLS`
+- **Check connection**: Verify `RUBE_MANAGE_CONNECTIONS` shows ACTIVE status before executing tools
+- **Schema compliance**: Use exact field names and types from the search results
+- **Memory parameter**: Always include `memory` in `RUBE_MULTI_EXECUTE_TOOL` calls, even if empty (`{}`)
+- **Session reuse**: Reuse session IDs within a workflow. Generate new ones for new workflows
+- **Pagination**: Check responses for pagination tokens and continue fetching until complete
 
 ## Quick Reference
 
@@ -100,4 +87,6 @@ For bulk operations, use `RUBE_REMOTE_WORKBENCH` with `run_composio_tool()` in a
 | Bulk ops | `RUBE_REMOTE_WORKBENCH` with `run_composio_tool()` |
 | Full schema | `RUBE_GET_TOOL_SCHEMAS` for tools with `schemaRef` |
 
-> **Toolkit docs**: [composio.dev/toolkits/fillout_forms](https://composio.dev/toolkits/fillout_forms)
+---
+*Powered by [Composio](https://composio.dev)*
+

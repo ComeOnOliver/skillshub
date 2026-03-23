@@ -279,3 +279,4 @@ add_action('my_plugin_cron', function (): void {
 - **Do not** trust `$_POST`/`$_GET`/`$_REQUEST` without sanitization
 - **Do not** use `wp_die()` as the only error handling — return `WP_Error` when possible
 - **Do not** forget the text domain `'{{TEXT_DOMAIN}}'` in translatable strings
+

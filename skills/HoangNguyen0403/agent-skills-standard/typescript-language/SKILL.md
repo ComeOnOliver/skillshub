@@ -1,6 +1,6 @@
 ---
 name: typescript-language
-description: "Modern TypeScript standards for type safety and maintainability. Use when working with types, interfaces, generics, enums, unions, or tsconfig settings. (triggers: **/*.ts, **/*.tsx, tsconfig.json, type, interface, generic, enum, union, intersection, readonly, const, namespace)"
+description: 'Modern TypeScript standards for type safety and maintainability. Use when working with types, interfaces, generics, enums, unions, or tsconfig settings. (triggers: **/*.ts, **/*.tsx, tsconfig.json, type, interface, generic, enum, union, intersection, readonly, const, namespace)'
 ---
 
 # TypeScript Language Patterns
@@ -10,26 +10,26 @@ description: "Modern TypeScript standards for type safety and maintainability. U
 ## Implementation Guidelines
 
 - **Type Annotations**: Explicit params/returns. Infer locals.
-- **Interfaces vs Types**: `interface` for APIs. `type` for unions.
-- **Strict Mode**: `strict: true`. Null Safety: `?.` and `??`.
+- **Interfaces vs Types**: interface for APIs (supports declaration merging). type for unions, intersection types, mapped/conditional types.
+- **Strict Mode**: strict: true. Null Safety: ?. and ?? — Use narrowing instead. Avoid non-null assertion (!) operator.
 - **Enums**: Literal unions or `as const`. **No runtime `enum`**.
 - **Generics**: Reusable, type-safe code.
 - **Type Guards**: `typeof`, `instanceof`, predicates.
 - **Utility Types**: `Partial`, `Pick`, `Omit`, `Record`.
 - **Immutability**: `readonly` arrays/objects. Const Assertions: `as const`, `satisfies`.
 - **Template Literals**: `on${Capitalize<string>}`.
-- **Discriminated Unions**: Literal `kind` property.
+- **Discriminated Unions**: Literal kind property to narrow the type safely. Switch on discriminant.
 - **Advanced**: Mapped, Conditional, Indexed types.
 - **Access**: Default `public`. Use `private`/`protected` or `#private`.
 - **Branded Types**: `string & { __brand: 'Id' }`.
 
 ## Anti-Patterns
 
-- **No `any`**: NEVER use `any`. Use `unknown` or specific interfaces.
+- **NEVER use `any`**: Use `unknown` or a specific interface instead.
 - **No `Function`**: Use signature `() => void`.
 - **No `enum`**: Runtime cost.
-- **No `!`**: Use narrowing.
-- **NO LINT DISABLE**: PROHIBITED. Fix issues properly.
+- **No `!`**: Avoid non-null assertion (!). Use narrowing (typeof, instanceof, if-checks).
+- **No Lint Disable**: Fix root cause; never suppress.
 
 ## Testing
 
@@ -50,11 +50,12 @@ const cfg = { port: 3000 } satisfies Record<string, number>;
 type Result<T> = { kind: 'ok'; data: T } | { kind: 'err'; error: Error };
 ```
 
-## Reference & Examples
+## Verification
+
+After any type change that crosses module boundaries or involves generics, unions, conditional types, or branded types: call `getDiagnostics` (typescript-lsp MCP tool) to confirm no type errors before finalizing.
+
+## References
 
 For advanced type patterns and utility types:
 See [references/REFERENCE.md](references/REFERENCE.md).
 
-## Related Topics
-
-best-practices | security | tooling

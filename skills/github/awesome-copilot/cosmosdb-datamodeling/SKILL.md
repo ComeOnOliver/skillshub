@@ -1043,3 +1043,4 @@ Container-level TTL configuration:
 ```
 
 The `ttl` property on individual documents overrides the container default, providing flexible expiration policies per document type.
+

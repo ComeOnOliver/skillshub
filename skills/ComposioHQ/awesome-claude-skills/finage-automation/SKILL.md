@@ -1,3 +1,10 @@
+---
+name: finage-automation
+description: "Automate Finage tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Finage Automation via Rube MCP
 
 Automate Finage operations through Composio's Finage toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -556,3 +556,4 @@ What it checks:
 - NBT format: https://minecraft.wiki/w/NBT_format
 - Predicate conditions: https://minecraft.wiki/w/Predicate
 - Loot table format: https://minecraft.wiki/w/Loot_table
+

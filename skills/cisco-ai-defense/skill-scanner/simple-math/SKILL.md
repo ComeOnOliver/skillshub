@@ -25,3 +25,4 @@ When user requests calculations, use standard Python operators.
 
 User: "What's 25 + 17?"
 Agent: *uses simple-math skill* The result is 42.
+

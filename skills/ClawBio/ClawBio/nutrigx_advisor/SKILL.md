@@ -310,3 +310,4 @@ The SNP panel (`data/snp_panel.json`) is maintained by the skill author.
 To suggest additions or corrections, contact David de Lorenzo directly via
 GitHub ([@drdaviddelorenzo](https://github.com/drdaviddelorenzo)) or open
 an issue tagging him in the main ClawBio repository.
+

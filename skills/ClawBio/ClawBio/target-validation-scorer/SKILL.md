@@ -42,7 +42,7 @@ metadata:
     always: false
     emoji: "🎯"
     homepage: https://github.com/ClawBio/ClawBio
-    os: [macos, linux]
+    os: [darwin, linux]
     install:
       - kind: pip
         package: matplotlib
@@ -218,3 +218,4 @@ The agent (LLM) dispatches and explains. The skill (Python) executes.
 The agent must NOT override scoring thresholds, invent gene-drug associations,
 skip safety warnings, or claim that a NO_GO target is worth pursuing.
 The skill does not replace wet-lab validation, medicinal chemistry review, or clinical judgement.
+

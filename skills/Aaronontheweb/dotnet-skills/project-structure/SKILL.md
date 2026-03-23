@@ -519,3 +519,4 @@ MySolution/
 | `RELEASE_NOTES.md` | Version history (parsed by build) |
 | `build.ps1` | Build orchestration script |
 | `.config/dotnet-tools.json` | Local .NET tools |
+

@@ -256,3 +256,4 @@ Sponsoring just {N} people/orgs supports {sponsorable} of your {total} dependenc
 9. **Deduplicate by maintainer.** Group to show real impact of sponsoring one person.
 10. **Show the actionable minimum.** Tell users the fewest sponsorships to support the most deps.
 11. **Minimize intermediate output.** Don't announce each batch. Collect all data, then output one cohesive report.
+

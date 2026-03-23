@@ -1,3 +1,10 @@
+---
+name: exist-automation
+description: "Automate Exist tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Exist Automation via Rube MCP
 
 Automate Exist operations through Composio's Exist toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

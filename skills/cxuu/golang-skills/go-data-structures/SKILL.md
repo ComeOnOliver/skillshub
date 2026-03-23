@@ -143,3 +143,4 @@ func increment(sc *SafeCounter) {
 - **Capacity hints**: See [go-performance](../go-performance/SKILL.md) when pre-sizing slices or maps for known workloads
 - **Iteration patterns**: See [go-control-flow](../go-control-flow/SKILL.md) when using range loops over slices, maps, or channels
 - **Declaration style**: See [go-declarations](../go-declarations/SKILL.md) when choosing between `new`, `make`, `var`, and composite literals
+

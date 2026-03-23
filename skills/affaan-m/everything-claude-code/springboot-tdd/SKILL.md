@@ -1,27 +1,27 @@
 ---
 name: springboot-tdd
-description: 使用JUnit 5、Mockito、MockMvc、Testcontainers和JaCoCo进行Spring Boot的测试驱动开发。适用于添加功能、修复错误或重构时。
+description: Test-driven development for Spring Boot using JUnit 5, Mockito, MockMvc, Testcontainers, and JaCoCo. Use when adding features, fixing bugs, or refactoring.
 origin: ECC
 ---
 
-# Spring Boot TDD 工作流程
+# Spring Boot TDD Workflow
 
-适用于 Spring Boot 服务、覆盖率 80%+（单元 + 集成）的 TDD 指南。
+TDD guidance for Spring Boot services with 80%+ coverage (unit + integration).
 
-## 何时使用
+## When to Use
 
-* 新功能或端点
-* 错误修复或重构
-* 添加数据访问逻辑或安全规则
+- New features or endpoints
+- Bug fixes or refactors
+- Adding data access logic or security rules
 
-## 工作流程
+## Workflow
 
-1. 先写测试（它们应该失败）
-2. 实现最小代码以通过测试
-3. 在测试通过后进行重构
-4. 强制覆盖率（JaCoCo）
+1) Write tests first (they should fail)
+2) Implement minimal code to pass
+3) Refactor with tests green
+4) Enforce coverage (JaCoCo)
 
-## 单元测试 (JUnit 5 + Mockito)
+## Unit Tests (JUnit 5 + Mockito)
 
 ```java
 @ExtendWith(MockitoExtension.class)
@@ -42,13 +42,12 @@ class MarketServiceTest {
 }
 ```
 
-模式：
+Patterns:
+- Arrange-Act-Assert
+- Avoid partial mocks; prefer explicit stubbing
+- Use `@ParameterizedTest` for variants
 
-* Arrange-Act-Assert
-* 避免部分模拟；优先使用显式桩
-* 使用 `@ParameterizedTest` 处理变体
-
-## Web 层测试 (MockMvc)
+## Web Layer Tests (MockMvc)
 
 ```java
 @WebMvcTest(MarketController.class)
@@ -67,7 +66,7 @@ class MarketControllerTest {
 }
 ```
 
-## 集成测试 (SpringBootTest)
+## Integration Tests (SpringBootTest)
 
 ```java
 @SpringBootTest
@@ -88,7 +87,7 @@ class MarketIntegrationTest {
 }
 ```
 
-## 持久层测试 (DataJpaTest)
+## Persistence Tests (DataJpaTest)
 
 ```java
 @DataJpaTest
@@ -111,13 +110,12 @@ class MarketRepositoryTest {
 
 ## Testcontainers
 
-* 对 Postgres/Redis 使用可复用的容器以镜像生产环境
-* 通过 `@DynamicPropertySource` 连接，将 JDBC URL 注入 Spring 上下文
+- Use reusable containers for Postgres/Redis to mirror production
+- Wire via `@DynamicPropertySource` to inject JDBC URLs into Spring context
 
-## 覆盖率 (JaCoCo)
+## Coverage (JaCoCo)
 
-Maven 片段：
-
+Maven snippet:
 ```xml
 <plugin>
   <groupId>org.jacoco</groupId>
@@ -136,13 +134,13 @@ Maven 片段：
 </plugin>
 ```
 
-## 断言
+## Assertions
 
-* 为可读性，优先使用 AssertJ (`assertThat`)
-* 对于 JSON 响应，使用 `jsonPath`
-* 对于异常：`assertThatThrownBy(...)`
+- Prefer AssertJ (`assertThat`) for readability
+- For JSON responses, use `jsonPath`
+- For exceptions: `assertThatThrownBy(...)`
 
-## 测试数据构建器
+## Test Data Builders
 
 ```java
 class MarketBuilder {
@@ -152,9 +150,10 @@ class MarketBuilder {
 }
 ```
 
-## CI 命令
+## CI Commands
 
-* Maven: `mvn -T 4 test` 或 `mvn verify`
-* Gradle: `./gradlew test jacocoTestReport`
+- Maven: `mvn -T 4 test` or `mvn verify`
+- Gradle: `./gradlew test jacocoTestReport`
 
-**记住**：保持测试快速、隔离且确定。测试行为，而非实现细节。
+**Remember**: Keep tests fast, isolated, and deterministic. Test behavior, not implementation details.
+

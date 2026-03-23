@@ -154,3 +154,4 @@ SERVICE AGREEMENT
 - Date everything, initial every page
 - Keep contracts as simple and clear as possible
 - **Always get legal review for contracts over $10K or with significant risk**
+

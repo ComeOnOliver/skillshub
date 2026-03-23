@@ -298,3 +298,4 @@ Most founders are at Level 0. Level 2 is a reasonable target. Level 3 is a strat
 ## Detailed References
 - `references/leadership-growth.md` — Maxwell levels, situational leadership, founder-to-CEO transition
 - `references/founder-toolkit.md` — Weekly reflection, energy audit, delegation matrix, 1:1 templates
+

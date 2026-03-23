@@ -1,3 +1,9 @@
+---
+name: wechat-article-formatter
+description: 将 Markdown 文章转换为微信公众号 HTML 格式，支持自动插入配图、微信样式优化。
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep
+---
+
 # WeChat Article Formatter（微信文章格式化）
 
 将 Markdown 文章转换为可直接粘贴到微信公众号编辑器的 HTML 格式。
@@ -127,3 +133,4 @@ p: margin: 15px 0; text-align: justify;
 | 2 | illustration-generator | 为文章生成配图 |
 | 3 | **wechat-article-formatter** | 格式化为微信 HTML |
 | 4 | wechat-publisher | 发布到微信公众号 |
+

@@ -33,3 +33,4 @@ Plan and manage events — scheduling, invitations, and logistics.
 - Create a dedicated calendar for each major event series.
 - Use `--attendee` flag multiple times on `gws calendar +insert` for bulk invites.
 
+

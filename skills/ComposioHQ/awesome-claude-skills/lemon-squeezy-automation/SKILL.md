@@ -154,3 +154,4 @@ List all checkout sessions with optional filtering by store or variant.
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

@@ -149,3 +149,4 @@ manim --format gif scene.py  # Output as GIF
 manim checkhealth            # Verify installation
 manim plugins -l             # List plugins
 ```
+

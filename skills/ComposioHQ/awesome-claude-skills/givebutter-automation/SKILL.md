@@ -1,3 +1,10 @@
+---
+name: givebutter-automation
+description: "Automate Givebutter tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Givebutter Automation via Rube MCP
 
 Automate Givebutter operations through Composio's Givebutter toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

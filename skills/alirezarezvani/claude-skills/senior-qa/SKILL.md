@@ -329,3 +329,4 @@ npx playwright codegen             # Generate tests
 npm test -- --coverage --coverageReporters=lcov,json
 python scripts/coverage_analyzer.py coverage/coverage-final.json
 ```
+

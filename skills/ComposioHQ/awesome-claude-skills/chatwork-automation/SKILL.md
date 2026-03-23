@@ -1,3 +1,10 @@
+---
+name: chatwork-automation
+description: "Automate Chatwork tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Chatwork Automation via Rube MCP
 
 Automate Chatwork operations through Composio's Chatwork toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

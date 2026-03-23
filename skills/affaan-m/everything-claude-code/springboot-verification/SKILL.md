@@ -1,22 +1,22 @@
 ---
 name: springboot-verification
-description: "Spring Boot项目验证循环：构建、静态分析、测试覆盖、安全扫描，以及发布或PR前的差异审查。"
+description: "Verification loop for Spring Boot projects: build, static analysis, tests with coverage, security scans, and diff review before release or PR."
 origin: ECC
 ---
 
-# Spring Boot 验证循环
+# Spring Boot Verification Loop
 
-在提交 PR 前、重大变更后以及部署前运行。
+Run before PRs, after major changes, and pre-deploy.
 
-## 何时激活
+## When to Activate
 
-* 为 Spring Boot 服务开启拉取请求之前
-* 在重大重构或依赖项升级之后
-* 用于暂存或生产环境的部署前验证
-* 运行完整的构建 → 代码检查 → 测试 → 安全扫描流水线
-* 验证测试覆盖率是否满足阈值
+- Before opening a pull request for a Spring Boot service
+- After major refactoring or dependency upgrades
+- Pre-deployment verification for staging or production
+- Running full build → lint → test → security scan pipeline
+- Validating test coverage meets thresholds
 
-## 阶段 1：构建
+## Phase 1: Build
 
 ```bash
 mvn -T 4 clean verify -DskipTests
@@ -24,23 +24,21 @@ mvn -T 4 clean verify -DskipTests
 ./gradlew clean assemble -x test
 ```
 
-如果构建失败，停止并修复。
+If build fails, stop and fix.
 
-## 阶段 2：静态分析
+## Phase 2: Static Analysis
 
-Maven（常用插件）：
-
+Maven (common plugins):
 ```bash
 mvn -T 4 spotbugs:check pmd:check checkstyle:check
 ```
 
-Gradle（如果已配置）：
-
+Gradle (if configured):
 ```bash
 ./gradlew checkstyleMain pmdMain spotbugsMain
 ```
 
-## 阶段 3：测试 + 覆盖率
+## Phase 3: Tests + Coverage
 
 ```bash
 mvn -T 4 test
@@ -49,14 +47,13 @@ mvn jacoco:report   # verify 80%+ coverage
 ./gradlew test jacocoTestReport
 ```
 
-报告：
+Report:
+- Total tests, passed/failed
+- Coverage % (lines/branches)
 
-* 总测试数，通过/失败
-* 覆盖率百分比（行/分支）
+### Unit Tests
 
-### 单元测试
-
-使用模拟的依赖项来隔离测试服务逻辑：
+Test service logic in isolation with mocked dependencies:
 
 ```java
 @ExtendWith(MockitoExtension.class)
@@ -88,9 +85,9 @@ class UserServiceTest {
 }
 ```
 
-### 使用 Testcontainers 进行集成测试
+### Integration Tests with Testcontainers
 
-针对真实数据库（而非 H2）进行测试：
+Test against a real database instead of H2:
 
 ```java
 @SpringBootTest
@@ -122,9 +119,9 @@ class UserRepositoryIntegrationTest {
 }
 ```
 
-### 使用 MockMvc 进行 API 测试
+### API Tests with MockMvc
 
-在完整的 Spring 上下文中测试控制器层：
+Test controller layer with full Spring context:
 
 ```java
 @WebMvcTest(UserController.class)
@@ -159,7 +156,7 @@ class UserControllerTest {
 }
 ```
 
-## 阶段 4：安全扫描
+## Phase 4: Security Scan
 
 ```bash
 # Dependency CVEs
@@ -175,7 +172,7 @@ grep -rn "sk-\|api_key\|secret" src/ --include="*.java" --include="*.yml"
 git secrets --scan  # if configured
 ```
 
-### 常见安全发现
+### Common Security Findings
 
 ```
 # Check for System.out.println (use logger instead)
@@ -188,28 +185,27 @@ grep -rn "e\.getMessage()" src/main/ --include="*.java"
 grep -rn "allowedOrigins.*\*" src/main/ --include="*.java"
 ```
 
-## 阶段 5：代码检查/格式化（可选关卡）
+## Phase 5: Lint/Format (optional gate)
 
 ```bash
 mvn spotless:apply   # if using Spotless plugin
 ./gradlew spotlessApply
 ```
 
-## 阶段 6：差异审查
+## Phase 6: Diff Review
 
 ```bash
 git diff --stat
 git diff
 ```
 
-检查清单：
+Checklist:
+- No debugging logs left (`System.out`, `log.debug` without guards)
+- Meaningful errors and HTTP statuses
+- Transactions and validation present where needed
+- Config changes documented
 
-* 没有遗留调试日志（`System.out`、`log.debug` 没有防护）
-* 有意义的错误信息和 HTTP 状态码
-* 在需要的地方有事务和验证
-* 配置变更已记录
-
-## 输出模板
+## Output Template
 
 ```
 VERIFICATION REPORT
@@ -227,9 +223,10 @@ Issues to Fix:
 2. ...
 ```
 
-## 持续模式
+## Continuous Mode
 
-* 在重大变更时或长时间会话中每 30–60 分钟重新运行各阶段
-* 保持短循环：`mvn -T 4 test` + spotbugs 以获取快速反馈
+- Re-run phases on significant changes or every 30–60 minutes in long sessions
+- Keep a short loop: `mvn -T 4 test` + spotbugs for quick feedback
 
-**记住**：快速反馈胜过意外惊喜。保持关卡严格——将警告视为生产系统中的缺陷。
+**Remember**: Fast feedback beats late surprises. Keep the gate strict—treat warnings as defects in production systems.
+

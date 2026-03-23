@@ -152,3 +152,4 @@ It looks like we haven't started a napkin yet. Want me to open one for you?
 - If the clipboard doesn't have JSON data, proceed with the PNG alone.
 - The HTML template is located at `assets/napkin.html` relative to this SKILL.md file.
 - If the noob-mode skill is also active, use its risk indicator format (green/yellow/red) when requesting file or bash permissions.
+

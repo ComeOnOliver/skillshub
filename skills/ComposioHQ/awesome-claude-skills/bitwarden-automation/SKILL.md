@@ -1,3 +1,10 @@
+---
+name: bitwarden-automation
+description: "Automate Bitwarden tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bitwarden Automation via Rube MCP
 
 Automate Bitwarden operations through Composio's Bitwarden toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

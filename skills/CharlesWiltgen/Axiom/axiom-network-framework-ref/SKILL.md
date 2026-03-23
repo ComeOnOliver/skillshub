@@ -1411,3 +1411,4 @@ monitor.start(queue: .main)
 **Last Updated** 2025-12-02
 **Status** Production-ready reference from WWDC 2018 and WWDC 2025
 **Coverage** NWConnection (iOS 12-25), NetworkConnection (iOS 26+), all 12 WWDC 2025 code examples
+

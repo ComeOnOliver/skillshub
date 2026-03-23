@@ -61,3 +61,4 @@ class UserView extends GetView<UserController> {
 ## Related Topics
 
 getx-navigation | layer-based-clean-architecture | dependency-injection
+

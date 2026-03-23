@@ -77,3 +77,4 @@ Check for large metadata or constants impacting IDE performance and binary size.
 
 - Do NOT use standard patterns if specific project rules exist.
 - Do NOT ignore error handling or edge cases.
+

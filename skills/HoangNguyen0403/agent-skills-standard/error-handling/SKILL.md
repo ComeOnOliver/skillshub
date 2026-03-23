@@ -96,3 +96,4 @@ Request → [API Layer: maps to HTTP] → [Domain: business errors] → [Infra: 
 - **No generic `500` for validation**: Use `400` with `details`.
 - **No HTTP status codes in domain layer**: Domain errors are business concepts, not transport decisions.
 - **No error-code proliferation**: Prefer a small, well-documented set over one code per exception class.
+

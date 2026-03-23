@@ -1,3 +1,14 @@
+---
+name: ai-sdk-5
+description: >
+  Vercel AI SDK 5 patterns.
+  Trigger: When building AI chat features - breaking changes from v4.
+license: Apache-2.0
+metadata:
+  author: gentleman-programming
+  version: "1.0"
+---
+
 ## Breaking Changes from AI SDK 4
 
 ```typescript
@@ -223,3 +234,4 @@ const { error, messages, sendMessage } = useChat({
 
 ## Keywords
 ai sdk, vercel ai, chat, streaming, langchain, openai, llm
+

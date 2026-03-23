@@ -166,3 +166,4 @@ Avoid these common mistakes:
 
 - [Sentry Voice Guidelines](https://develop.sentry.dev/frontend/sentry-voice/)
 - [Sentry Frontend Handbook](https://develop.sentry.dev/frontend/)
+

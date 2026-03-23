@@ -68,3 +68,4 @@ Results include:
 - Organic reach calculations may vary by platform algorithm changes
 - Cannot access data directly from platforms (requires manual export or API integration)
 - Some platforms limit data availability (e.g., TikTok analytics for business accounts only)
+

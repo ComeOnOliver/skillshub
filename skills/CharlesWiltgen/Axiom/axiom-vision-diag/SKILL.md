@@ -974,3 +974,4 @@ func scaled(_ point: CGPoint, to size: CGSize) -> CGPoint {
 **Docs**: /vision, /vision/vnrecognizetextrequest, /visionkit
 
 **Skills**: axiom-vision, axiom-vision-ref
+

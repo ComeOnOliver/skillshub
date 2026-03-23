@@ -1,3 +1,8 @@
+---
+name: defold-project-build
+description: Builds the project using the running Defold editor, returns build errors, and launches the game if build succeeds.
+---
+
 # Build Defold Project via Editor HTTP API
 
 Build and run a Defold project by sending HTTP requests to the running Defold editor.
@@ -106,3 +111,4 @@ curl "http://127.0.0.1:$port/console" --silent
   ]
 }
 ```
+

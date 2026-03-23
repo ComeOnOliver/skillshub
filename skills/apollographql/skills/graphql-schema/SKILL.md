@@ -170,3 +170,4 @@ Detailed documentation for specific topics:
 - PREFER enums over arbitrary strings for fixed values
 - USE `ID` type for identifiers, not `String` or `Int`
 - USE custom scalars for domain-specific values (DateTime, Email, URL)
+

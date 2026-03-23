@@ -23,3 +23,4 @@ Retrieve and review responses from a Google Form.
 2. Get form details: `gws forms forms get --params '{"formId": "FORM_ID"}'`
 3. Get responses: `gws forms forms responses list --params '{"formId": "FORM_ID"}' --format table`
 
+

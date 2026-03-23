@@ -421,3 +421,4 @@ User: "I need to see the simulator console output"
 
 User: "The app fails silently, no error in the UI"
 → Invoke: `/skill axiom-xclog-ref` or `/axiom:console`
+

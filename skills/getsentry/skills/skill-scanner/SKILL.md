@@ -207,3 +207,4 @@ Example assessments:
 | `references/prompt-injection-patterns.md` | Injection patterns, jailbreaks, obfuscation techniques, false positive guide |
 | `references/dangerous-code-patterns.md` | Script security patterns: exfiltration, shells, credential theft, eval/exec |
 | `references/permission-analysis.md` | Tool risk tiers, least privilege methodology, common skill permission profiles |
+

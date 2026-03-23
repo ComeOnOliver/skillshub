@@ -1,3 +1,10 @@
+---
+name: cutt-ly-automation
+description: "Automate Cutt Ly tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Cutt Ly Automation via Rube MCP
 
 Automate Cutt Ly operations through Composio's Cutt Ly toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

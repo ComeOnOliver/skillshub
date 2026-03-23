@@ -1,103 +1,137 @@
-# Docker Hub Automation via Rube MCP
+---
+name: Docker Hub Automation
+description: "Automate Docker Hub operations -- manage organizations, repositories, teams, members, and webhooks via the Composio MCP integration."
+requires:
+  mcp:
+    - rube
+---
 
-Automate Docker Hub operations through Composio's Docker Hub toolkit via Rube MCP.
+# Docker Hub Automation
 
-**Toolkit docs**: [composio.dev/toolkits/docker_hub](https://composio.dev/toolkits/docker_hub)
+Automate your Docker Hub workflows -- create and manage organizations, repositories, teams, add members, set up image push webhooks, and list container images.
 
-## Prerequisites
+**Toolkit docs:** [composio.dev/toolkits/docker_hub](https://composio.dev/toolkits/docker_hub)
 
-- Rube MCP must be connected (RUBE_SEARCH_TOOLS available)
-- Active Docker Hub connection via `RUBE_MANAGE_CONNECTIONS` with toolkit `docker_hub`
-- Always call `RUBE_SEARCH_TOOLS` first to get current tool schemas
+---
 
 ## Setup
 
-**Get Rube MCP**: Add `https://rube.app/mcp` as an MCP server in your client configuration. No API keys needed — just add the endpoint and it works.
+1. Add the Composio MCP server to your client: `https://rube.app/mcp`
+2. Connect your Docker Hub account when prompted (JWT/token authentication)
+3. Start using the workflows below
 
-1. Verify Rube MCP is available by confirming `RUBE_SEARCH_TOOLS` responds
-2. Call `RUBE_MANAGE_CONNECTIONS` with toolkit `docker_hub`
-3. If connection is not ACTIVE, follow the returned auth link to complete setup
-4. Confirm connection status shows ACTIVE before running any workflows
-
-## Tool Discovery
-
-Always discover available tools before executing workflows:
-
-```
-RUBE_SEARCH_TOOLS: queries=[{"use_case": "repositories, images, tags, and container registry management", "known_fields": ""}]
-```
-
-This returns:
-- Available tool slugs for Docker Hub
-- Recommended execution plan steps
-- Known pitfalls and edge cases
-- Input schemas for each tool
+---
 
 ## Core Workflows
 
-### 1. Discover Available Docker Hub Tools
+### 1. List Organizations
+
+Use `DOCKER_HUB_LIST_ORGANIZATIONS` to discover which organizations the authenticated user belongs to.
 
 ```
-RUBE_SEARCH_TOOLS:
-  queries:
-    - use_case: "list all available Docker Hub tools and capabilities"
+Tool: DOCKER_HUB_LIST_ORGANIZATIONS
+Inputs:
+  - page: integer (1-indexed, default 1)
+  - page_size: integer (1-100, default 25)
 ```
 
-Review the returned tools, their descriptions, and input schemas before proceeding.
+### 2. Create an Organization
 
-### 2. Execute Docker Hub Operations
-
-After discovering tools, execute them via:
+Use `DOCKER_HUB_CREATE_ORGANIZATION` to programmatically create a new Docker Hub organization.
 
 ```
-RUBE_MULTI_EXECUTE_TOOL:
-  tools:
-    - tool_slug: "<discovered_tool_slug>"
-      arguments: {<schema-compliant arguments>}
-  memory: {}
-  sync_response_to_workbench: false
+Tool: DOCKER_HUB_CREATE_ORGANIZATION
+Inputs:
+  - orgname: string (required) -- lowercase, letters/numbers/._- only, min 2 chars
+  - company: string (optional) -- company name associated with the org
 ```
 
-### 3. Multi-Step Workflows
+**Note:** Requires JWT authentication obtained via `/v2/users/login` and may have restricted access.
 
-For complex workflows involving multiple Docker Hub operations:
+### 3. Get Organization Details and Repositories
 
-1. Search for all relevant tools: `RUBE_SEARCH_TOOLS` with specific use case
-2. Execute prerequisite steps first (e.g., fetch before update)
-3. Pass data between steps using tool responses
-4. Use `RUBE_REMOTE_WORKBENCH` for bulk operations or data processing
+Use `DOCKER_HUB_GET_ORGANIZATION` to retrieve namespace info and its repositories. Works with any public namespace.
 
-## Common Patterns
+```
+Tool: DOCKER_HUB_GET_ORGANIZATION
+Inputs:
+  - organization: string (required) -- e.g., "docker", "bitnami", "library"
+```
 
-### Search Before Action
-Always search for existing resources before creating new ones to avoid duplicates.
+### 4. Create a Repository
 
-### Pagination
-Many list operations support pagination. Check responses for `next_cursor` or `page_token` and continue fetching until exhausted.
+Use `DOCKER_HUB_CREATE_REPOSITORY` to create public or private repositories under a namespace.
 
-### Error Handling
-- Check tool responses for errors before proceeding
-- If a tool fails, verify the connection is still ACTIVE
-- Re-authenticate via `RUBE_MANAGE_CONNECTIONS` if connection expired
+```
+Tool: DOCKER_HUB_CREATE_REPOSITORY
+Inputs:
+  - namespace: string (required) -- Docker Hub username or org name
+  - name: string (required) -- lowercase; letters, numbers, ._- allowed
+  - description: string (optional) -- max 100 characters
+  - full_description: string (optional) -- Markdown README content
+  - is_private: boolean (default false) -- private repos require paid plan
+```
 
-### Batch Operations
-For bulk operations, use `RUBE_REMOTE_WORKBENCH` with `run_composio_tool()` in a loop with `ThreadPoolExecutor` for parallel execution.
+### 5. List Repositories with Filtering
+
+Use `DOCKER_HUB_LIST_REPOSITORIES` to enumerate repos within a namespace with sorting and content-type filtering.
+
+```
+Tool: DOCKER_HUB_LIST_REPOSITORIES
+Inputs:
+  - namespace: string (required) -- e.g., "library", "myorg"
+  - ordering: "name" | "last_updated" | "pull_count" (prefix with - for descending)
+  - page: integer (default 1)
+  - page_size: integer (1-100, default 25)
+  - content_types: string (comma-separated, e.g., "image,artifact")
+```
+
+### 6. Manage Teams, Members, and Webhooks
+
+Use `DOCKER_HUB_LIST_TEAMS` to list teams within an org, `DOCKER_HUB_ADD_ORG_MEMBER` to invite users, and `DOCKER_HUB_CREATE_WEBHOOK` for push notifications.
+
+```
+Tool: DOCKER_HUB_LIST_TEAMS
+  - Lists all teams/groups within a Docker Hub organization
+
+Tool: DOCKER_HUB_ADD_ORG_MEMBER
+  - Invite a user to join an organization by Docker ID or email
+  - Requires owner or admin permissions
+
+Tool: DOCKER_HUB_CREATE_WEBHOOK
+  - Create a webhook on a repository for image push notifications
+  - Two-step process: create webhook, then add hook URL
+  - Requires admin permissions on the repository
+```
+
+---
 
 ## Known Pitfalls
 
-- **Always search tools first**: Tool schemas and available operations may change. Never hardcode tool slugs without first discovering them via `RUBE_SEARCH_TOOLS`.
-- **Check connection status**: Ensure the Docker Hub connection is ACTIVE before executing any tools. Expired OAuth tokens require re-authentication.
-- **Respect rate limits**: If you receive rate limit errors, reduce request frequency and implement backoff.
-- **Validate schemas**: Always pass strictly schema-compliant arguments. Use `RUBE_GET_TOOL_SCHEMAS` to load full input schemas when `schemaRef` is returned instead of `input_schema`.
+| Pitfall | Detail |
+|---------|--------|
+| JWT authentication | `DOCKER_HUB_CREATE_ORGANIZATION` requires JWT auth from `/v2/users/login` -- standard API tokens may not suffice. |
+| Private repo limits | Creating private repos (`is_private: true`) requires a paid Docker Hub plan. |
+| Org name constraints | Organization names must be lowercase, at least 2 characters, containing only letters, numbers, `.`, `_`, or `-`. |
+| Webhook two-step | `DOCKER_HUB_CREATE_WEBHOOK` is a two-step process: first create the webhook with a name, then add a hook URL to it. |
+| Pagination | All list endpoints use page-based pagination -- iterate pages until results are exhausted. |
+
+---
 
 ## Quick Reference
 
-| Operation | Approach |
-|-----------|----------|
-| Find tools | `RUBE_SEARCH_TOOLS` with Docker Hub-specific use case |
-| Connect | `RUBE_MANAGE_CONNECTIONS` with toolkit `docker_hub` |
-| Execute | `RUBE_MULTI_EXECUTE_TOOL` with discovered tool slugs |
-| Bulk ops | `RUBE_REMOTE_WORKBENCH` with `run_composio_tool()` |
-| Full schema | `RUBE_GET_TOOL_SCHEMAS` for tools with `schemaRef` |
+| Tool Slug | Description |
+|-----------|-------------|
+| `DOCKER_HUB_LIST_ORGANIZATIONS` | List orgs the user belongs to |
+| `DOCKER_HUB_CREATE_ORGANIZATION` | Create a new Docker Hub organization |
+| `DOCKER_HUB_GET_ORGANIZATION` | Get org details and repository list |
+| `DOCKER_HUB_CREATE_REPOSITORY` | Create a repository under a namespace |
+| `DOCKER_HUB_LIST_REPOSITORIES` | List repos with filtering and sorting |
+| `DOCKER_HUB_LIST_TEAMS` | List teams/groups within an org |
+| `DOCKER_HUB_ADD_ORG_MEMBER` | Invite a user to an organization |
+| `DOCKER_HUB_CREATE_WEBHOOK` | Create push-notification webhook on a repo |
 
-> **Toolkit docs**: [composio.dev/toolkits/docker_hub](https://composio.dev/toolkits/docker_hub)
+---
+
+*Powered by [Composio](https://composio.dev)*
+

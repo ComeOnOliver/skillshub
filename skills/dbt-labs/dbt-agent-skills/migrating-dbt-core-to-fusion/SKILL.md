@@ -250,3 +250,4 @@ Next: [What to do next]
 - **After each fix, validate**: Re-run the repro command and check for cascading errors
 - **Success = progress**: Not reaching 100% in one pass is expected — many issues need Fusion fixes
 - **Consider `dbt debug` first**: If you see connection or credential errors during triage, suggest running `dbt debug` to verify the environment
+

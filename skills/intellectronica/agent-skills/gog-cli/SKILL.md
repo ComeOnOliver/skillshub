@@ -1,3 +1,8 @@
+---
+name: gog-cli
+description: This skill provides comprehensive instructions for using gogcli (gog), a fast, script-friendly CLI for Google Workspace services including Gmail, Calendar, Drive, Docs, Sheets, Slides, Chat, Classroom, Contacts, Tasks, People, Groups, and Keep. This skill should be used when the user wants to interact with Google services via the command line, including reading/sending email, managing calendar events, working with Google Drive files, managing classroom courses, or any other Google Workspace operations. The skill assumes gog is installed and authorised.
+---
+
 # gogcli (gog) CLI
 
 A fast, script-friendly CLI for Google Workspace services with JSON-first output and multi-account support.
@@ -248,3 +253,4 @@ gog auth status
 - `references/calendar.md` - Calendar operations
 - `references/drive-docs.md` - Drive, Docs, Sheets, Slides
 - `references/other-services.md` - Classroom, Chat, Contacts, Tasks, People, Groups, Keep
+

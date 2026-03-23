@@ -1,3 +1,10 @@
+---
+name: botsonic-automation
+description: "Automate Botsonic tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Botsonic Automation via Rube MCP
 
 Automate Botsonic operations through Composio's Botsonic toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

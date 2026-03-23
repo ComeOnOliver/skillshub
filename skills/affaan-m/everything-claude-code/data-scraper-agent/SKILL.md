@@ -1,29 +1,29 @@
 ---
 name: data-scraper-agent
-description: Build a fully automated AI-powered data collection agent for any public source — job boards, prices, news, GitHub, sports, anything. Scrapes on a schedule, enriches data with a free LLM (Gemini Flash), stores results in Notion/Sheets/Supabase, and learns from user feedback. Runs 100% free on GitHub Actions. Use when the user wants to monitor, collect, or track any public data automatically.
+description: 构建一个全自动化的AI驱动数据收集代理，适用于任何公共来源——招聘网站、价格信息、新闻、GitHub、体育赛事等任何内容。按计划进行抓取，使用免费LLM（Gemini Flash）丰富数据，将结果存储在Notion/Sheets/Supabase中，并从用户反馈中学习。完全免费在GitHub Actions上运行。适用于用户希望自动监控、收集或跟踪任何公共数据的场景。
 origin: community
 ---
 
-# Data Scraper Agent
+# 数据抓取代理
 
-Build a production-ready, AI-powered data collection agent for any public data source.
-Runs on a schedule, enriches results with a free LLM, stores to a database, and improves over time.
+构建一个生产就绪、AI驱动的数据收集代理，适用于任何公共数据源。
+按计划运行，使用免费LLM丰富结果，存储到数据库，并随时间推移不断改进。
 
-**Stack: Python · Gemini Flash (free) · GitHub Actions (free) · Notion / Sheets / Supabase**
+**技术栈：Python · Gemini Flash (免费) · GitHub Actions (免费) · Notion / Sheets / Supabase**
 
-## When to Activate
+## 何时激活
 
-- User wants to scrape or monitor any public website or API
-- User says "build a bot that checks...", "monitor X for me", "collect data from..."
-- User wants to track jobs, prices, news, repos, sports scores, events, listings
-- User asks how to automate data collection without paying for hosting
-- User wants an agent that gets smarter over time based on their decisions
+* 用户想要抓取或监控任何公共网站或API
+* 用户说"构建一个检查...的机器人"、"为我监控X"、"从...收集数据"
+* 用户想要跟踪工作、价格、新闻、仓库、体育比分、事件、列表
+* 用户询问如何自动化数据收集而无需支付托管费用
+* 用户想要一个能根据他们的决策随时间推移变得更智能的代理
 
-## Core Concepts
+## 核心概念
 
-### The Three Layers
+### 三层架构
 
-Every data scraper agent has three layers:
+每个数据抓取代理都有三层：
 
 ```
 COLLECT → ENRICH → STORE
@@ -34,20 +34,20 @@ schedule   summarises Sheets /
            & classifies Supabase
 ```
 
-### Free Stack
+### 免费技术栈
 
-| Layer | Tool | Why |
+| 层级 | 工具 | 原因 |
 |---|---|---|
-| **Scraping** | `requests` + `BeautifulSoup` | No cost, covers 80% of public sites |
-| **JS-rendered sites** | `playwright` (free) | When HTML scraping fails |
-| **AI enrichment** | Gemini Flash via REST API | 500 req/day, 1M tokens/day — free |
-| **Storage** | Notion API | Free tier, great UI for review |
-| **Schedule** | GitHub Actions cron | Free for public repos |
-| **Learning** | JSON feedback file in repo | Zero infra, persists in git |
+| **抓取** | `requests` + `BeautifulSoup` | 无成本，覆盖80%的公共网站 |
+| **JS渲染的网站** | `playwright` (免费) | 当HTML抓取失败时使用 |
+| **AI丰富** | 通过REST API的Gemini Flash | 500次请求/天，100万令牌/天 — 免费 |
+| **存储** | Notion API | 免费层级，用于审查的优秀UI |
+| **调度** | GitHub Actions cron | 对公共仓库免费 |
+| **学习** | 仓库中的JSON反馈文件 | 零基础设施，在git中持久化 |
 
-### AI Model Fallback Chain
+### AI模型后备链
 
-Build agents to auto-fallback across Gemini models on quota exhaustion:
+构建代理以在配额耗尽时自动在Gemini模型间回退：
 
 ```
 gemini-2.0-flash-lite (30 RPM) →
@@ -56,9 +56,9 @@ gemini-2.5-flash (10 RPM) →
 gemini-flash-lite-latest (fallback)
 ```
 
-### Batch API Calls for Efficiency
+### 批量API调用以提高效率
 
-Never call the LLM once per item. Always batch:
+切勿为每个项目单独调用LLM。始终批量处理：
 
 ```python
 # BAD: 33 API calls for 33 items
@@ -70,71 +70,72 @@ for batch in chunks(items, size=5):
     results = call_ai(batch)  # 7 calls → stays within free tier
 ```
 
----
+***
 
-## Workflow
+## 工作流程
 
-### Step 1: Understand the Goal
+### 步骤 1: 理解目标
 
-Ask the user:
+询问用户：
 
-1. **What to collect:** "What data source? URL / API / RSS / public endpoint?"
-2. **What to extract:** "What fields matter? Title, price, URL, date, score?"
-3. **How to store:** "Where should results go? Notion, Google Sheets, Supabase, or local file?"
-4. **How to enrich:** "Do you want AI to score, summarise, classify, or match each item?"
-5. **Frequency:** "How often should it run? Every hour, daily, weekly?"
+1. **收集什么：** "数据源是什么？URL / API / RSS / 公共端点？"
+2. **提取什么：** "哪些字段重要？标题、价格、URL、日期、分数？"
+3. **如何存储：** "结果应该存储在哪里？Notion、Google Sheets、Supabase，还是本地文件？"
+4. **如何丰富：** "您希望AI对每个项目进行评分、总结、分类或匹配吗？"
+5. **频率：** "应该多久运行一次？每小时、每天、每周？"
 
-Common examples to prompt:
-- Job boards → score relevance to resume
-- Product prices → alert on drops
-- GitHub repos → summarise new releases
-- News feeds → classify by topic + sentiment
-- Sports results → extract stats to tracker
-- Events calendar → filter by interest
+常见的提示示例：
 
----
+* 招聘网站 → 根据简历评分相关性
+* 产品价格 → 降价时发出警报
+* GitHub仓库 → 总结新版本
+* 新闻源 → 按主题+情感分类
+* 体育结果 → 提取统计数据到跟踪器
+* 活动日历 → 按兴趣筛选
 
-### Step 2: Design the Agent Architecture
+***
 
-Generate this directory structure for the user:
+### 步骤 2: 设计代理架构
+
+为用户生成以下目录结构：
 
 ```
 my-agent/
-├── config.yaml              # User customises this (keywords, filters, preferences)
+├── config.yaml              # 用户自定义此文件（关键词、过滤器、偏好设置）
 ├── profile/
-│   └── context.md           # User context the AI uses (resume, interests, criteria)
+│   └── context.md           # AI 使用的用户上下文（简历、兴趣、标准）
 ├── scraper/
 │   ├── __init__.py
-│   ├── main.py              # Orchestrator: scrape → enrich → store
-│   ├── filters.py           # Rule-based pre-filter (fast, before AI)
+│   ├── main.py              # 协调器：抓取 → 丰富 → 存储
+│   ├── filters.py           # 基于规则的预过滤器（快速，在 AI 处理之前）
 │   └── sources/
 │       ├── __init__.py
-│       └── source_name.py   # One file per data source
+│       └── source_name.py   # 每个数据源一个文件
 ├── ai/
 │   ├── __init__.py
-│   ├── client.py            # Gemini REST client with model fallback
-│   ├── pipeline.py          # Batch AI analysis
-│   ├── jd_fetcher.py        # Fetch full content from URLs (optional)
-│   └── memory.py            # Learn from user feedback
+│   ├── client.py            # Gemini REST 客户端，带模型回退
+│   ├── pipeline.py          # 批量 AI 分析
+│   ├── jd_fetcher.py        # 从 URL 获取完整内容（可选）
+│   └── memory.py            # 从用户反馈中学习
 ├── storage/
 │   ├── __init__.py
-│   └── notion_sync.py       # Or sheets_sync.py / supabase_sync.py
+│   └── notion_sync.py       # 或 sheets_sync.py / supabase_sync.py
 ├── data/
-│   └── feedback.json        # User decision history (auto-updated)
+│   └── feedback.json        # 用户决策历史（自动更新）
 ├── .env.example
-├── setup.py                 # One-time DB/schema creation
-├── enrich_existing.py       # Backfill AI scores on old rows
+├── setup.py                 # 一次性数据库/模式创建
+├── enrich_existing.py       # 对旧行进行 AI 分数回填
 ├── requirements.txt
 └── .github/
     └── workflows/
-        └── scraper.yml      # GitHub Actions schedule
+        └── scraper.yml      # GitHub Actions 计划任务
 ```
 
----
+***
 
-### Step 3: Build the Scraper Source
+### 步骤 3: 构建抓取器源
 
-Template for any data source:
+适用于任何数据源的模板：
 
 ```python
 # scraper/sources/my_source.py
@@ -181,7 +182,8 @@ def _normalise(raw: dict) -> dict:
     }
 ```
 
-**HTML scraping pattern:**
+**HTML抓取模式：**
+
 ```python
 soup = BeautifulSoup(resp.text, "lxml")
 for card in soup.select("[class*='listing']"):
@@ -191,7 +193,8 @@ for card in soup.select("[class*='listing']"):
         link = f"https://example.com{link}"
 ```
 
-**RSS feed pattern:**
+**RSS源模式：**
+
 ```python
 import xml.etree.ElementTree as ET
 root = ET.fromstring(resp.text)
@@ -200,11 +203,11 @@ for item in root.findall(".//item"):
     link = item.findtext("link", "")
 ```
 
----
+***
 
-### Step 4: Build the Gemini AI Client
+### 步骤 4: 构建Gemini AI客户端
 
-```python
+````python
 # ai/client.py
 import os, json, time, requests
 
@@ -272,11 +275,11 @@ def _parse(resp) -> dict:
         return json.loads(text)
     except (json.JSONDecodeError, KeyError):
         return {}
-```
+````
 
----
+***
 
-### Step 5: Build the AI Pipeline (Batch)
+### 步骤 5: 构建AI管道（批量）
 
 ```python
 # ai/pipeline.py
@@ -341,9 +344,9 @@ Return: {{"analyses": [{{"score": <0-100>, "summary": "<2 sentences>", "notes": 
 Be concise. Score 90+=excellent match, 70-89=good, 50-69=ok, <50=weak."""
 ```
 
----
+***
 
-### Step 6: Build the Feedback Learning System
+### 步骤 6: 构建反馈学习系统
 
 ```python
 # ai/memory.py
@@ -384,11 +387,11 @@ def build_preference_prompt(feedback: dict, max_examples: int = 15) -> str:
     return "\n".join(lines)
 ```
 
-**Integration with your storage layer:** after each run, query your DB for items with positive/negative status and call `save_feedback()` with the extracted patterns.
+**与存储层集成：** 每次运行后，从数据库中查询具有正面/负面状态的项，并使用提取的模式调用 `save_feedback()`。
 
----
+***
 
-### Step 7: Build Storage (Notion example)
+### 步骤 7: 构建存储（Notion示例）
 
 ```python
 # storage/notion_sync.py
@@ -453,9 +456,9 @@ def sync(db_id: str, items: list[dict]) -> tuple[int, int]:
     return added, skipped
 ```
 
----
+***
 
-### Step 8: Orchestrate in main.py
+### 步骤 8: 在 main.py 中编排
 
 ```python
 # scraper/main.py
@@ -533,9 +536,9 @@ if __name__ == "__main__":
     main()
 ```
 
----
+***
 
-### Step 9: GitHub Actions Workflow
+### 步骤 9: GitHub Actions工作流
 
 ```yaml
 # .github/workflows/scraper.yml
@@ -584,9 +587,9 @@ jobs:
           git push
 ```
 
----
+***
 
-### Step 10: config.yaml Template
+### 步骤 10: config.yaml 模板
 
 ```yaml
 # Customise this file — no code changes needed
@@ -619,17 +622,19 @@ ai:
   batch_size: 5              # items per API call
 ```
 
----
+***
 
-## Common Scraping Patterns
+## 常见抓取模式
 
-### Pattern 1: REST API (easiest)
+### 模式 1: REST API（最简单）
+
 ```python
 resp = requests.get(url, params={"q": query}, headers=HEADERS, timeout=15)
 items = resp.json().get("results", [])
 ```
 
-### Pattern 2: HTML Scraping
+### 模式 2: HTML抓取
+
 ```python
 soup = BeautifulSoup(resp.text, "lxml")
 for card in soup.select(".listing-card"):
@@ -637,7 +642,8 @@ for card in soup.select(".listing-card"):
     href = card.select_one("a")["href"]
 ```
 
-### Pattern 3: RSS Feed
+### 模式 3: RSS源
+
 ```python
 import xml.etree.ElementTree as ET
 root = ET.fromstring(resp.text)
@@ -647,7 +653,8 @@ for item in root.findall(".//item"):
     pub_date = item.findtext("pubDate", "")
 ```
 
-### Pattern 4: Paginated API
+### 模式 4: 分页API
+
 ```python
 page = 1
 while True:
@@ -663,7 +670,8 @@ while True:
     page += 1
 ```
 
-### Pattern 5: JS-Rendered Pages (Playwright)
+### 模式 5: JS渲染页面（Playwright）
+
 ```python
 from playwright.sync_api import sync_playwright
 
@@ -678,38 +686,38 @@ with sync_playwright() as p:
 soup = BeautifulSoup(html, "lxml")
 ```
 
----
+***
 
-## Anti-Patterns to Avoid
+## 需要避免的反模式
 
-| Anti-pattern | Problem | Fix |
+| 反模式 | 问题 | 修复方法 |
 |---|---|---|
-| One LLM call per item | Hits rate limits instantly | Batch 5 items per call |
-| Hardcoded keywords in code | Not reusable | Move all config to `config.yaml` |
-| Scraping without rate limit | IP ban | Add `time.sleep(1)` between requests |
-| Storing secrets in code | Security risk | Always use `.env` + GitHub Secrets |
-| No deduplication | Duplicate rows pile up | Always check URL before pushing |
-| Ignoring `robots.txt` | Legal/ethical risk | Respect crawl rules; use public APIs when available |
-| JS-rendered sites with `requests` | Empty response | Use Playwright or look for the underlying API |
-| `maxOutputTokens` too low | Truncated JSON, parse error | Use 2048+ for batch responses |
+| 每个项目调用一次LLM | 立即达到速率限制 | 每次调用批量处理5个项目 |
+| 代码中硬编码关键字 | 不可重用 | 将所有配置移动到 `config.yaml` |
+| 没有速率限制的抓取 | IP被禁止 | 在请求之间添加 `time.sleep(1)` |
+| 在代码中存储密钥 | 安全风险 | 始终使用 `.env` + GitHub Secrets |
+| 没有去重 | 重复行堆积 | 在推送前始终检查URL |
+| 忽略 `robots.txt` | 法律/道德风险 | 遵守爬虫规则；尽可能使用公共API |
+| 使用 `requests` 处理JS渲染的网站 | 空响应 | 使用Playwright或查找底层API |
+| `maxOutputTokens` 太低 | JSON截断，解析错误 | 对批量响应使用2048+ |
 
----
+***
 
-## Free Tier Limits Reference
+## 免费层级限制参考
 
-| Service | Free Limit | Typical Usage |
+| 服务 | 免费限制 | 典型用法 |
 |---|---|---|
-| Gemini Flash Lite | 30 RPM, 1500 RPD | ~56 req/day at 3-hr intervals |
-| Gemini 2.0 Flash | 15 RPM, 1500 RPD | Good fallback |
-| Gemini 2.5 Flash | 10 RPM, 500 RPD | Use sparingly |
-| GitHub Actions | Unlimited (public repos) | ~20 min/day |
-| Notion API | Unlimited | ~200 writes/day |
-| Supabase | 500MB DB, 2GB transfer | Fine for most agents |
-| Google Sheets API | 300 req/min | Works for small agents |
+| Gemini Flash Lite | 30 RPM, 1500 RPD | 以3小时间隔约56次请求/天 |
+| Gemini 2.0 Flash | 15 RPM, 1500 RPD | 良好的后备选项 |
+| Gemini 2.5 Flash | 10 RPM, 500 RPD | 谨慎使用 |
+| GitHub Actions | 无限（公共仓库） | 约20分钟/天 |
+| Notion API | 无限 | 约200次写入/天 |
+| Supabase | 500MB DB, 2GB传输 | 适用于大多数代理 |
+| Google Sheets API | 300次请求/分钟 | 适用于小型代理 |
 
----
+***
 
-## Requirements Template
+## 需求模板
 
 ```
 requests==2.31.0
@@ -717,48 +725,49 @@ beautifulsoup4==4.12.3
 lxml==5.1.0
 python-dotenv==1.0.1
 pyyaml==6.0.2
-notion-client==2.2.1   # if using Notion
-# playwright==1.40.0   # uncomment for JS-rendered sites
+notion-client==2.2.1   # 如需使用 Notion
+# playwright==1.40.0   # 针对 JS 渲染的站点，请取消注释
 ```
 
----
+***
 
-## Quality Checklist
+## 质量检查清单
 
-Before marking the agent complete:
+在将代理标记为完成之前：
 
-- [ ] `config.yaml` controls all user-facing settings — no hardcoded values
-- [ ] `profile/context.md` holds user-specific context for AI matching
-- [ ] Deduplication by URL before every storage push
-- [ ] Gemini client has model fallback chain (4 models)
-- [ ] Batch size ≤ 5 items per API call
-- [ ] `maxOutputTokens` ≥ 2048
-- [ ] `.env` is in `.gitignore`
-- [ ] `.env.example` provided for onboarding
-- [ ] `setup.py` creates DB schema on first run
-- [ ] `enrich_existing.py` backfills AI scores on old rows
-- [ ] GitHub Actions workflow commits `feedback.json` after each run
-- [ ] README covers: setup in < 5 minutes, required secrets, customisation
+* \[ ] `config.yaml` 控制所有面向用户的设置 — 没有硬编码的值
+* \[ ] `profile/context.md` 保存用于AI匹配的用户特定上下文
+* \[ ] 在每次存储推送前通过URL进行去重
+* \[ ] Gemini客户端具有模型后备链（4个模型）
+* \[ ] 批量大小 ≤ 每个API调用5个项目
+* \[ ] `maxOutputTokens` ≥ 2048
+* \[ ] `.env` 在 `.gitignore` 中
+* \[ ] 提供了用于入门的 `.env.example`
+* \[ ] `setup.py` 在首次运行时创建数据库模式
+* \[ ] `enrich_existing.py` 回填旧行的AI分数
+* \[ ] GitHub Actions工作流在每次运行后提交 `feedback.json`
+* \[ ] README涵盖：在<5分钟内设置，所需的密钥，自定义
 
----
+***
 
-## Real-World Examples
+## 真实世界示例
 
 ```
-"Build me an agent that monitors Hacker News for AI startup funding news"
-"Scrape product prices from 3 e-commerce sites and alert when they drop"
-"Track new GitHub repos tagged with 'llm' or 'agents' — summarise each one"
-"Collect Chief of Staff job listings from LinkedIn and Cutshort into Notion"
-"Monitor a subreddit for posts mentioning my company — classify sentiment"
-"Scrape new academic papers from arXiv on a topic I care about daily"
-"Track sports fixture results and keep a running table in Google Sheets"
-"Build a real estate listing watcher — alert on new properties under ₹1 Cr"
+"为我构建一个监控 Hacker News 上 AI 初创公司融资新闻的智能体"
+"从 3 家电商网站抓取产品价格并在降价时发出提醒"
+"追踪标记有 'llm' 或 'agents' 的新 GitHub 仓库——并为每个仓库生成摘要"
+"将 LinkedIn 和 Cutshort 上的首席运营官职位列表收集到 Notion 中"
+"监控一个提到我公司的 subreddit 帖子——并进行情感分类"
+"每日从 arXiv 抓取我关注主题的新学术论文"
+"追踪体育赛事结果并在 Google Sheets 中维护动态更新的表格"
+"构建一个房地产房源监控器——在新房源价格低于 1 千万卢比时发出提醒"
 ```
 
----
+***
 
-## Reference Implementation
+## 参考实现
 
-A complete working agent built with this exact architecture would scrape 4+ sources,
-batch Gemini calls, learn from Applied/Rejected decisions stored in Notion, and run
-100% free on GitHub Actions. Follow Steps 1–9 above to build your own.
+一个使用此确切架构构建的完整工作代理将抓取4+个数据源，
+批量处理Gemini调用，从存储在Notion中的"已应用"/"已拒绝"决策中学习，并且
+在GitHub Actions上100%免费运行。按照上述步骤1-9构建您自己的代理。
+

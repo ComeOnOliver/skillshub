@@ -12,3 +12,4 @@ Generate concise Python snippets that:
 - Show retrieve-multiple with paging (top, page_size)
 - Optionally demonstrate file upload to a File column
 Keep code aligned with official examples and avoid unannounced preview features.
+

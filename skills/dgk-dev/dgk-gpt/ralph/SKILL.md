@@ -1,3 +1,8 @@
+---
+name: ralph
+description: Persistent completion mode. Use when the user explicitly says `/ralph` or clearly wants you to keep iterating until the task is actually finished, repeating implement-verify-fix loops instead of stopping at partial progress.
+---
+
 # Ralph
 
 Use this as a persistence override, not a separate methodology.
@@ -36,3 +41,4 @@ Return:
 - what was completed
 - what was verified
 - what is still blocked, if anything
+

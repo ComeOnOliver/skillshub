@@ -109,3 +109,4 @@ Help users build and manage effective sales processes and customer relationships
 - Review pipeline weekly — remove stale deals
 - Track why deals are lost — patterns reveal improvements
 - Respond to inbound leads within 5 minutes (response time matters enormously)
+

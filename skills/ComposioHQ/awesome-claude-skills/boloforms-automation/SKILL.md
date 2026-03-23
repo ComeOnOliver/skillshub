@@ -1,3 +1,10 @@
+---
+name: boloforms-automation
+description: "Automate Boloforms tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Boloforms Automation via Rube MCP
 
 Automate Boloforms operations through Composio's Boloforms toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

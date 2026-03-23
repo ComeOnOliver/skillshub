@@ -316,3 +316,4 @@ The only valid reasons to update baseline or disable a rule:
 - "The warning is annoying" → Fix the code
 - "It works on my machine" → Fix the race condition
 - "We'll fix it later" → Fix it now
+

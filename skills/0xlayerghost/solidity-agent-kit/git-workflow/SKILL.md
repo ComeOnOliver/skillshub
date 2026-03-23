@@ -67,3 +67,4 @@ Every PR must include:
 - Always review AI output for: correct import paths, proper access control, gas implications
 - Include relevant file paths and test cases in AI prompts for better results
 - Run `forge fmt` after AI generates code to ensure consistent formatting
+

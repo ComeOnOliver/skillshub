@@ -1,33 +1,34 @@
 ---
 name: nanoclaw-repl
-description: 操作并扩展NanoClaw v2，这是ECC基于claude -p构建的零依赖会话感知REPL。
+description: Operate and extend NanoClaw v2, ECC's zero-dependency session-aware REPL built on claude -p.
 origin: ECC
 ---
 
 # NanoClaw REPL
 
-在运行或扩展 `scripts/claw.js` 时使用此技能。
+Use this skill when running or extending `scripts/claw.js`.
 
-## 能力
+## Capabilities
 
-* 持久的、基于 Markdown 的会话
-* 使用 `/model` 进行模型切换
-* 使用 `/load` 进行动态技能加载
-* 使用 `/branch` 进行会话分支
-* 使用 `/search` 进行跨会话搜索
-* 使用 `/compact` 进行历史压缩
-* 使用 `/export` 导出为 md/json/txt 格式
-* 使用 `/metrics` 查看会话指标
+- persistent markdown-backed sessions
+- model switching with `/model`
+- dynamic skill loading with `/load`
+- session branching with `/branch`
+- cross-session search with `/search`
+- history compaction with `/compact`
+- export to md/json/txt with `/export`
+- session metrics with `/metrics`
 
-## 操作指南
+## Operating Guidance
 
-1. 保持会话聚焦于任务。
-2. 在进行高风险更改前进行分支。
-3. 在完成主要里程碑后进行压缩。
-4. 在分享或存档前进行导出。
+1. Keep sessions task-focused.
+2. Branch before high-risk changes.
+3. Compact after major milestones.
+4. Export before sharing or archival.
 
-## 扩展规则
+## Extension Rules
 
-* 保持零外部运行时依赖
-* 保持以 Markdown 作为数据库的兼容性
-* 保持命令处理器的确定性和本地性
+- keep zero external runtime dependencies
+- preserve markdown-as-database compatibility
+- keep command handlers deterministic and local
+

@@ -81,3 +81,4 @@ grep -rE "^FROM .+:latest|^USER root|curl.*sh.*|ADD http" . --include="Dockerfil
 
 - Do NOT use standard patterns if specific project rules exist.
 - Do NOT ignore error handling or edge cases.
+

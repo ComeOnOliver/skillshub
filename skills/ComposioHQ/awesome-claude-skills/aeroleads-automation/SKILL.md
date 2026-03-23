@@ -1,3 +1,10 @@
+---
+name: aeroleads-automation
+description: "Automate Aeroleads tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Aeroleads Automation via Rube MCP
 
 Automate Aeroleads operations through Composio's Aeroleads toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

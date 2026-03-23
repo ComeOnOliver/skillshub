@@ -373,3 +373,4 @@ ScoutQA tests run remotely on ScoutQA's infrastructure. After starting a test wi
 | Test hangs or needs input      | Use `scoutqa send-message --execution-id`                   |
 | Check test results             | Visit browser URL or `scoutqa get-execution --execution-id` |
 | Need issue ID for verification | Run `scoutqa list-issues --execution-id <id>`               |
+

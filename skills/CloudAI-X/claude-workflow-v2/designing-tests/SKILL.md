@@ -1,3 +1,8 @@
+---
+name: designing-tests
+description: Designs and implements testing strategies for any codebase. Use when adding tests, improving coverage, setting up testing infrastructure, debugging test failures, or when asked about unit tests, integration tests, or E2E testing.
+---
+
 # Designing Tests
 
 ### When to Load
@@ -244,3 +249,4 @@ npm test -- path/to/test.spec.ts
 # Run in watch mode during development
 npm test -- --watch
 ```
+

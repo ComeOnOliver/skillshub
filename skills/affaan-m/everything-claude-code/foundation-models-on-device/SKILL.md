@@ -1,24 +1,24 @@
 ---
 name: foundation-models-on-device
-description: 苹果FoundationModels框架用于设备上的LLM——文本生成、使用@Generable进行引导生成、工具调用，以及在iOS 26+中的快照流。
+description: Apple FoundationModels framework for on-device LLM — text generation, guided generation with @Generable, tool calling, and snapshot streaming in iOS 26+.
 ---
 
-# FoundationModels：设备端 LLM（iOS 26）
+# FoundationModels: On-Device LLM (iOS 26)
 
-使用 FoundationModels 框架将苹果的设备端语言模型集成到应用中的模式。涵盖文本生成、使用 `@Generable` 的结构化输出、自定义工具调用以及快照流式传输——全部在设备端运行，以保护隐私并支持离线使用。
+Patterns for integrating Apple's on-device language model into apps using the FoundationModels framework. Covers text generation, structured output with `@Generable`, custom tool calling, and snapshot streaming — all running on-device for privacy and offline support.
 
-## 何时启用
+## When to Activate
 
-* 使用 Apple Intelligence 在设备端构建 AI 功能
-* 无需依赖云端即可生成或总结文本
-* 从自然语言输入中提取结构化数据
-* 为特定领域的 AI 操作实现自定义工具调用
-* 流式传输结构化响应以实现实时 UI 更新
-* 需要保护隐私的 AI（数据不离开设备）
+- Building AI-powered features using Apple Intelligence on-device
+- Generating or summarizing text without cloud dependency
+- Extracting structured data from natural language input
+- Implementing custom tool calling for domain-specific AI actions
+- Streaming structured responses for real-time UI updates
+- Need privacy-preserving AI (no data leaves the device)
 
-## 核心模式 — 可用性检查
+## Core Pattern — Availability Check
 
-在创建会话之前，始终检查模型可用性：
+Always check model availability before creating a session:
 
 ```swift
 struct GenerativeView: View {
@@ -41,7 +41,7 @@ struct GenerativeView: View {
 }
 ```
 
-## 核心模式 — 基础会话
+## Core Pattern — Basic Session
 
 ```swift
 // Single-turn: create a new session each time
@@ -60,18 +60,17 @@ let first = try await session.respond(to: "I have chicken and rice")
 let followUp = try await session.respond(to: "What about a vegetarian option?")
 ```
 
-指令的关键点：
+Key points for instructions:
+- Define the model's role ("You are a mentor")
+- Specify what to do ("Help extract calendar events")
+- Set style preferences ("Respond as briefly as possible")
+- Add safety measures ("Respond with 'I can't help with that' for dangerous requests")
 
-* 定义模型的角色（"你是一位导师"）
-* 指定要做什么（"帮助提取日历事件"）
-* 设置风格偏好（"尽可能简短地回答"）
-* 添加安全措施（"对于危险请求，回复'我无法提供帮助'"）
+## Core Pattern — Guided Generation with @Generable
 
-## 核心模式 — 使用 @Generable 进行引导式生成
+Generate structured Swift types instead of raw strings:
 
-生成结构化的 Swift 类型，而不是原始字符串：
-
-### 1. 定义可生成类型
+### 1. Define a Generable Type
 
 ```swift
 @Generable(description: "Basic profile information about a cat")
@@ -86,7 +85,7 @@ struct CatProfile {
 }
 ```
 
-### 2. 请求结构化输出
+### 2. Request Structured Output
 
 ```swift
 let response = try await session.respond(
@@ -100,17 +99,17 @@ print("Age: \(response.content.age)")
 print("Profile: \(response.content.profile)")
 ```
 
-### 支持的 @Guide 约束
+### Supported @Guide Constraints
 
-* `.range(0...20)` — 数值范围
-* `.count(3)` — 数组元素数量
-* `description:` — 生成的语义引导
+- `.range(0...20)` — numeric range
+- `.count(3)` — array element count
+- `description:` — semantic guidance for generation
 
-## 核心模式 — 工具调用
+## Core Pattern — Tool Calling
 
-让模型调用自定义代码以执行特定领域的任务：
+Let the model invoke custom code for domain-specific tasks:
 
-### 1. 定义工具
+### 1. Define a Tool
 
 ```swift
 struct RecipeSearchTool: Tool {
@@ -133,14 +132,14 @@ struct RecipeSearchTool: Tool {
 }
 ```
 
-### 2. 创建带工具的会话
+### 2. Create Session with Tools
 
 ```swift
 let session = LanguageModelSession(tools: [RecipeSearchTool()])
 let response = try await session.respond(to: "Find me some pasta recipes")
 ```
 
-### 3. 处理工具错误
+### 3. Handle Tool Errors
 
 ```swift
 do {
@@ -153,9 +152,9 @@ do {
 }
 ```
 
-## 核心模式 — 快照流式传输
+## Core Pattern — Snapshot Streaming
 
-使用 `PartiallyGenerated` 类型为实时 UI 流式传输结构化响应：
+Stream structured responses for real-time UI with `PartiallyGenerated` types:
 
 ```swift
 @Generable
@@ -175,7 +174,7 @@ for try await partial in stream {
 }
 ```
 
-### SwiftUI 集成
+### SwiftUI Integration
 
 ```swift
 @State private var partialResult: TripIdeas.PartiallyGenerated?
@@ -203,42 +202,43 @@ var body: some View {
 }
 ```
 
-## 关键设计决策
+## Key Design Decisions
 
-| 决策 | 理由 |
+| Decision | Rationale |
 |----------|-----------|
-| 设备端执行 | 隐私性——数据不离开设备；支持离线工作 |
-| 4,096 个令牌限制 | 设备端模型约束；跨会话分块处理大数据 |
-| 快照流式传输（非增量） | 对结构化输出友好；每个快照都是一个完整的部分状态 |
-| `@Generable` 宏 | 为结构化生成提供编译时安全性；自动生成 `PartiallyGenerated` 类型 |
-| 每个会话单次请求 | `isResponding` 防止并发请求；如有需要，创建多个会话 |
-| `response.content`（而非 `.output`） | 正确的 API——始终通过 `.content` 属性访问结果 |
+| On-device execution | Privacy — no data leaves the device; works offline |
+| 4,096 token limit | On-device model constraint; chunk large data across sessions |
+| Snapshot streaming (not deltas) | Structured output friendly; each snapshot is a complete partial state |
+| `@Generable` macro | Compile-time safety for structured generation; auto-generates `PartiallyGenerated` type |
+| Single request per session | `isResponding` prevents concurrent requests; create multiple sessions if needed |
+| `response.content` (not `.output`) | Correct API — always access results via `.content` property |
 
-## 最佳实践
+## Best Practices
 
-* 在创建会话之前**始终检查 `model.availability`**——处理所有不可用的情况
-* **使用 `instructions`** 来引导模型行为——它们的优先级高于提示词
-* 在发送新请求之前**检查 `isResponding`**——会话一次处理一个请求
-* 通过 `response.content` **访问结果**——而不是 `.output`
-* **将大型输入分块处理**——4,096 个令牌的限制适用于指令、提示词和输出的总和
-* 对于结构化输出**使用 `@Generable`**——比解析原始字符串提供更强的保证
-* **使用 `GenerationOptions(temperature:)`** 来调整创造力（值越高越有创意）
-* **使用 Instruments 进行监控**——使用 Xcode Instruments 来分析请求性能
+- **Always check `model.availability`** before creating a session — handle all unavailability cases
+- **Use `instructions`** to guide model behavior — they take priority over prompts
+- **Check `isResponding`** before sending a new request — sessions handle one request at a time
+- **Access `response.content`** for results — not `.output`
+- **Break large inputs into chunks** — 4,096 token limit applies to instructions + prompt + output combined
+- **Use `@Generable`** for structured output — stronger guarantees than parsing raw strings
+- **Use `GenerationOptions(temperature:)`** to tune creativity (higher = more creative)
+- **Monitor with Instruments** — use Xcode Instruments to profile request performance
 
-## 应避免的反模式
+## Anti-Patterns to Avoid
 
-* 未先检查 `model.availability` 就创建会话
-* 发送超过 4,096 个令牌上下文窗口的输入
-* 尝试在单个会话上进行并发请求
-* 使用 `.output` 而不是 `.content` 来访问响应数据
-* 当 `@Generable` 结构化输出可行时，却去解析原始字符串响应
-* 在单个提示词中构建复杂的多步逻辑——将其拆分为多个聚焦的提示词
-* 假设模型始终可用——设备的资格和设置各不相同
+- Creating sessions without checking `model.availability` first
+- Sending inputs exceeding the 4,096 token context window
+- Attempting concurrent requests on a single session
+- Using `.output` instead of `.content` to access response data
+- Parsing raw string responses when `@Generable` structured output would work
+- Building complex multi-step logic in a single prompt — break into multiple focused prompts
+- Assuming the model is always available — device eligibility and settings vary
 
-## 何时使用
+## When to Use
 
-* 为注重隐私的应用进行设备端文本生成
-* 从用户输入（表单、自然语言命令）中提取结构化数据
-* 必须离线工作的 AI 辅助功能
-* 逐步显示生成内容的流式 UI
-* 通过工具调用（搜索、计算、查找）执行特定领域的 AI 操作
+- On-device text generation for privacy-sensitive apps
+- Structured data extraction from user input (forms, natural language commands)
+- AI-assisted features that must work offline
+- Streaming UI that progressively shows generated content
+- Domain-specific AI actions via tool calling (search, compute, lookup)
+

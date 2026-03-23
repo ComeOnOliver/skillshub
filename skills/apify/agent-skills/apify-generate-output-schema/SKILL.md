@@ -413,3 +413,4 @@ Report:
 - Fields selected for the overview view
 - Any fields that need user clarification (ambiguous types, unclear nullability)
 - Suggested next steps (test locally with `apify run`, verify output tab in Console)
+

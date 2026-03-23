@@ -1,3 +1,8 @@
+---
+name: opencode-learn
+description: Extracts actionable knowledge from external sources and enhances existing skills using a 4-tier novelty framework. Use PROACTIVELY when a user says "/learn <source>", provides documentation URLs, code examples, or explicitly asks to extract patterns from a repository or marketplace.
+---
+
 # INSTRUCTIONS FOR AI ASSISTANT: The /learn Command
 
 ## System Prompt

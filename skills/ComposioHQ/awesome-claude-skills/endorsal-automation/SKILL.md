@@ -1,3 +1,10 @@
+---
+name: endorsal-automation
+description: "Automate Endorsal tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Endorsal Automation via Rube MCP
 
 Automate Endorsal operations through Composio's Endorsal toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,12 @@
+---
+name: Gong Automation
+description: "Automate Gong conversation intelligence -- retrieve call recordings, transcripts, detailed analytics, speaker stats, and workspace data -- using natural language through the Composio MCP integration."
+category: conversation-intelligence
+requires:
+  mcp:
+    - rube
+---
+
 # Gong Automation
 
 Unlock insights from your sales calls -- retrieve transcripts, analyze call data by date range, access detailed conversation analytics with topics and trackers, and manage workspaces -- all through natural language commands.
@@ -161,3 +170,4 @@ Retrieve all workspaces in your Gong organization to get workspace IDs for filte
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

@@ -199,3 +199,4 @@ jq '.nodes["model.project_name.model_name"].columns' target/catalog.json
 | Reading full manifest.json | Use jq to filter |
 | Suggesting ETL changes | Keep suggestions at semantic layer |
 | Not checking tool availability | List available tools before choosing approach |
+

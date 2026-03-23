@@ -203,3 +203,4 @@ gh api users/labudis/copilot-spaces/19 -X PUT -f general_instructions="updated i
 - Some spaces contain custom instructions that should guide your behavior (coding standards, preferred patterns, workflows). Treat these as directives, not suggestions.
 - **Write operations** (`gh api` for create/update/delete) require the `user` PAT scope. If you get a 404 on write operations, run `gh auth refresh -h github.com -s user`.
 - Resource updates **replace the entire array**. To add a resource, include all existing resources plus the new one. To remove one, include `{ "id": 123, "_destroy": true }` in the array.
+

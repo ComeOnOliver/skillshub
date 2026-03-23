@@ -1,3 +1,10 @@
+---
+name: curated-automation
+description: "Automate Curated tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Curated Automation via Rube MCP
 
 Automate Curated operations through Composio's Curated toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

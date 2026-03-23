@@ -1,3 +1,9 @@
+---
+name: monitoring-error-rates
+description: |
+  This skill enables Claude to monitor and analyze application error rates to improve reliability. It is used when the user needs to track and understand errors occurring in their application, including HTTP errors, application exceptions, database errors, external API errors, background job errors, and client-side errors. Use this skill when the user asks to "monitor errors", "analyze error rates", "track application errors", or requests help with "error monitoring". It sets up comprehensive error tracking and alerting based on defined thresholds.
+---
+
 ## Overview
 
 This skill automates the process of setting up comprehensive error monitoring and alerting for various components of an application. It helps identify, track, and analyze different types of errors, enabling proactive identification and resolution of issues before they impact users.

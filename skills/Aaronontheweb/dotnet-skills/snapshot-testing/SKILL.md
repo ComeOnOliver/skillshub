@@ -408,3 +408,4 @@ This catches:
 - **Verify.Xunit**: https://github.com/VerifyTests/Verify.Xunit
 - **ApiApprover**: https://github.com/JakeGinnivan/ApiApprover
 - **DiffPlex Integration**: https://github.com/VerifyTests/Verify.DiffPlex
+

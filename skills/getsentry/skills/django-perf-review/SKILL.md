@@ -394,3 +394,4 @@ N+1 requires a loop. A single object doing 2 queries instead of 1 can be reporte
 
 **Style preferences are not performance issues:**
 If your only suggestion is "combine these two lines" or "rename this variable" - that's style, not performance. Don't report it.
+

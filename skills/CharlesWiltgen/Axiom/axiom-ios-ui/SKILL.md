@@ -242,3 +242,4 @@ User: "Check my app for Liquid Glass adoption opportunities"
 
 User: "Why isn't Writing Tools appearing in my text view?"
 → Invoke: `textkit-auditor` agent
+

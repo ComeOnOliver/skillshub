@@ -340,3 +340,4 @@ Use `penpot.generateStyle(selection, { type: 'css', includeChildren: true })` vi
 6. **Embrace whitespace**: Breathing room improves comprehension
 7. **Be consistent**: Same action = same appearance everywhere
 8. **Provide feedback**: Every action needs a response
+

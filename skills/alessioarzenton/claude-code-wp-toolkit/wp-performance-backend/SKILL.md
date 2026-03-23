@@ -260,3 +260,4 @@ Keep these changes in mind when profiling:
 - **Do not** flush cache during traffic without reason
 - **Do not** add MySQL indexes blindly — verify with `EXPLAIN` first
 - **Do not** cache everything indiscriminately — invalid cache is worse than no cache
+

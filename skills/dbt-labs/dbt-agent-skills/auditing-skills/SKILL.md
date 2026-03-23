@@ -214,3 +214,4 @@ Good candidates for extraction: credential setup guides, troubleshooting tables,
 4. **Group findings by root cause** — description issues often affect many skills at once
 5. **Prioritize:** description enrichment (highest impact, easiest), then conciseness, then progressive disclosure
 6. **Run repo validation** after changes: `uv run scripts/validate_repo.py`
+

@@ -441,3 +441,4 @@ What it checks:
 - softprops/action-gh-release: https://github.com/softprops/action-gh-release
 - gradle/actions: https://github.com/gradle/actions
 - Modrinth API docs: https://docs.modrinth.com/
+

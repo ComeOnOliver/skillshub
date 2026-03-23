@@ -1,3 +1,10 @@
+---
+name: bitquery-automation
+description: "Automate Bitquery tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bitquery Automation via Rube MCP
 
 Automate Bitquery operations through Composio's Bitquery toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

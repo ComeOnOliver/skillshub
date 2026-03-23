@@ -1,3 +1,17 @@
+---
+name: robotics-software-principles
+description: >
+  Foundational software design principles applied specifically to robotics module development.
+  Use this skill when designing robot software modules, structuring codebases, making architecture
+  decisions, reviewing robotics code, or building reusable robotics libraries. Trigger whenever the
+  user mentions SOLID principles for robots, modular robotics software, clean architecture for robots,
+  dependency injection in robotics, interface design for hardware, real-time design constraints, error
+  handling strategies for robots, configuration management, separation of concerns in perception-planning-
+  control, composability of robot behaviors, or any discussion of software craftsmanship in a robotics
+  context. Also trigger for code reviews of robotics code, refactoring robot software, or designing
+  APIs for robotics libraries.
+---
+
 # Robotics Software Design Principles
 
 ## Why Robotics Software Is Different
@@ -880,3 +894,4 @@ Use this during code reviews:
 | 10 | Observe Everything | Can you diagnose a 2 AM failure from logs alone? |
 | 11 | Composability | Can you build new tasks from existing skills? |
 | 12 | Graceful Degradation | What's the robot's behavior when a sensor fails? |
+

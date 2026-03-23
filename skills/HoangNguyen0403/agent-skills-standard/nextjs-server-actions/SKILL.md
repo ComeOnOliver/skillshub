@@ -1,6 +1,6 @@
 ---
 name: nextjs-server-actions
-description: "Mutations, Form handling, and RPC-style calls. Use when implementing Server Actions, form mutations, or RPC-style data mutations in Next.js. (triggers: app/**/actions.ts, src/app/**/actions.ts, app/**/*.tsx, src/app/**/*.tsx, use server, Server Action, revalidatePath, useFormStatus)"
+description: 'Mutations, Form handling, and RPC-style calls. Use when implementing Server Actions, form mutations, or RPC-style data mutations in Next.js. (triggers: app/**/actions.ts, src/app/**/actions.ts, app/**/*.tsx, src/app/**/*.tsx, use server, Server Action, revalidatePath, useFormStatus)'
 ---
 
 # Server Actions
@@ -12,22 +12,14 @@ description: "Mutations, Form handling, and RPC-style calls. Use when implementi
 
 Handle form submissions and mutations without creating API endpoints.
 
-## Implementation
+## Implementation Guidelines
 
-- **Directive**: Add `'use server'` at the top of an async function.
-- **Usage**: Pass to `action` prop of `<form>` or invoke from event handlers.
-
-```tsx
-// actions.ts
-'use server';
-export async function createPost(formData: FormData) {
-  const title = formData.get('title');
-  await db.post.create({ title });
-  revalidatePath('/posts'); // Refresh UI
-}
-```
-
-## Client Invocation
+- **Directive**: Always start the file or function with `'use server'`. Access `formData.get('title')` for typed form fields. Export async functions for mutations.
+- **Form Handling**: Use the `action` prop of `<form>` to trigger actions via `action={createPost}`. Use `useFormStatus()` for `pending` states — `disabled={pending}` on buttons. Use `useActionState` (React 19/Next.js 15) for `action={action}` form state with `<form action={action}>`.
+- **Data Refresh**: Trigger UI updates using **`revalidatePath('/')`** or **`revalidateTag('tag-name')`** after a successful mutation.
+- **Interactivity**: For non-form triggers, invoke actions using the **`useTransition`** hook to handle loading UI and prevent the page from blocking.
+- **Optimistic Updates**: Use **`useOptimistic`** to show the expected UI state immediately before the server confirms the mutation.
+- **Security**: **Sanitize all inputs** from `FormData`. Perform **auth checks** inside every action (`await auth()`). Limit file uploads by size and MIME type.
 
 - **Form**: `<form action={createPost}>` (Progressive enhancements work without JS).
 - **Event Handler**: `onClick={() => createPost(data)}`.
@@ -37,25 +29,7 @@ export async function createPost(formData: FormData) {
 
 ### **1. Secure & Validate**
 
-Always validate inputs and authorization within the action.
-
-```tsx
-'use server';
-export async function updateProfile(prevState: any, formData: FormData) {
-  const session = await auth();
-  if (!session) throw new Error('Unauthorized');
-
-  const validatedFields = ProfileSchema.safeParse(
-    Object.fromEntries(formData.entries()),
-  );
-  if (!validatedFields.success)
-    return { errors: validatedFields.error.flatten().fieldErrors };
-
-  // mutation...
-  revalidatePath('/profile');
-  return { success: true };
-}
-```
+Always validate inputs with `z.object({` schema and `safeParse` before processing. Check authorization within the action. See [Secure Action Example](references/secure-actions.md).
 
 ### **2. Pending States**
 
@@ -66,8 +40,10 @@ Use `useActionState` (React 19/Next.js 15+) for state handling and `useFormStatu
 - **Closures**: Avoid defining actions inside components to prevent hidden closure encryption overhead and serialization bugs.
 - **Redirection**: Use `redirect()` for success navigation; it throws an error that Next.js catches to handle the redirect.
 
+## Anti-Patterns
 
-## 🚫 Anti-Patterns
+- **No unvalidated Server Action inputs**: Always validate with Zod before processing.
+- **No skipped auth checks**: Verify session/user inside every action, not just middleware.
+- **No actions defined inside components**: Define in `actions.ts` to avoid closure bugs.
+- **No `redirect()` in try/catch**: `redirect()` throws; catching it suppresses the redirect.
 
-- Do NOT use standard patterns if specific project rules exist.
-- Do NOT ignore error handling or edge cases.

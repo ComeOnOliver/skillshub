@@ -82,3 +82,4 @@ Detailed template and section examples live in:
 2. Document the "why" for key architectural decisions.
 3. Update docs in the same PR as behavior changes.
 4. Treat onboarding docs as living operational assets, not one-time deliverables.
+

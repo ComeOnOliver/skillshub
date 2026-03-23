@@ -390,3 +390,4 @@ RUN tdnf update -y && tdnf install -y curl ca-certificates && tdnf clean all
 - Minimize the number of installed packages
 - Keep base images updated
 - Use multi-stage builds to exclude build dependencies from the final image
+

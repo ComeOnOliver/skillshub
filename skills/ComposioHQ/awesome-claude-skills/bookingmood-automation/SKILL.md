@@ -1,3 +1,10 @@
+---
+name: bookingmood-automation
+description: "Automate Bookingmood tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bookingmood Automation via Rube MCP
 
 Automate Bookingmood operations through Composio's Bookingmood toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

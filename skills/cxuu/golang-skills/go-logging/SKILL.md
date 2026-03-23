@@ -196,3 +196,4 @@ handle-once pattern and error wrapping guidance.
 - **Performance**: See [go-performance](../go-performance/SKILL.md) when optimizing hot-path logging or reducing allocations in log calls
 - **Code review**: See [go-code-review](../go-code-review/SKILL.md) when reviewing logging practices in Go PRs
 
+

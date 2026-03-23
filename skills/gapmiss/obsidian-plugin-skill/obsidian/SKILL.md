@@ -260,3 +260,4 @@ button.addEventListener('keydown', (e) => {
 ---
 
 When helping with Obsidian plugin development, proactively apply these rules and suggest improvements based on these guidelines. Refer to the detailed reference files for comprehensive information on specific topics.
+

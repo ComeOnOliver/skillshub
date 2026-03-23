@@ -100,3 +100,4 @@ If yes, apply all fixes using `Edit` tool.
 - Summary: total files, average score, critical issue count
 - Actionable fix list
 - Coverage gaps identified (pages/features with no tests)
+

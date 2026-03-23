@@ -1,3 +1,17 @@
+---
+name: robotics-security
+description: >
+  Security hardening and best practices for robotic systems, covering SROS2 DDS security, network
+  segmentation, secrets management, secure boot, and the physical-cyber safety intersection. Use
+  this skill when securing ROS2 communications, configuring DDS encryption and access control,
+  hardening robot onboard computers, managing certificates and credentials, setting up network
+  segmentation for robot fleets, or addressing the unique security challenges where cyber
+  vulnerabilities become physical safety risks. Trigger whenever the user mentions SROS2, DDS
+  security, robot security, robot hardening, ROS2 encryption, ROS2 access control, robot
+  network security, secure robot deployment, robot certificates, keystore generation, robot
+  firewall, e-stop security, safety controller isolation, or IEC 62443 for robotics.
+---
+
 # Robotics Security Skill
 
 ## When to Use This Skill
@@ -874,3 +888,4 @@ ros2 launch my_robot test.launch.py  # Must pass with security on
 12. **auditd monitoring active** — keystore access, config changes, USB events, root commands logged
 13. **Firmware updates signature-verified** — no unsigned code on motor controllers or safety MCUs
 14. **Security tested in CI/CD** — SROS2 Enforce in integration tests, image scanning in pipeline
+

@@ -105,3 +105,4 @@ Tell the user:
 - **PPTX conversion fails:** Tell user to run `pip install python-pptx`.
 - **PDF conversion fails:** Suggest installing `poppler-utils` (`apt install poppler-utils` or `brew install poppler`).
 - **Google Slides download fails:** The presentation may not be publicly accessible. Ask user to make it viewable or download the PPTX manually.
+

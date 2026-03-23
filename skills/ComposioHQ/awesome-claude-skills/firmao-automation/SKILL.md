@@ -1,3 +1,10 @@
+---
+name: firmao-automation
+description: "Automate Firmao tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Firmao Automation via Rube MCP
 
 Automate Firmao operations through Composio's Firmao toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

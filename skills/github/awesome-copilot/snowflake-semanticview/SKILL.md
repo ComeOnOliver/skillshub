@@ -81,3 +81,4 @@ snow sql --help
 - Treat installation and connection setup as one-time steps, but confirm they are done before the first validation.
 - Keep the final semantic view definition identical to the validated temporary definition except for the name.
 - Do not omit synonyms or comments; consider them required for completeness even if optional in syntax.
+

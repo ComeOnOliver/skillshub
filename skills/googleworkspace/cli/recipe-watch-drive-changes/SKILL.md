@@ -23,3 +23,4 @@ Subscribe to change notifications on a Google Drive file or folder.
 2. List active subscriptions: `gws events subscriptions list`
 3. Renew before expiry: `gws events +renew --subscription SUBSCRIPTION_ID`
 
+

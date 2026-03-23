@@ -302,3 +302,4 @@ Your output is complete when:
 - ✓ Content accurately reflects the source file's/documentation's purpose and usage
 - ✓ Response verbosity is appropriate for chat context (inline chat vs chat view)
 - ✓ MCP server content includes setup and tool usage examples when applicable
+

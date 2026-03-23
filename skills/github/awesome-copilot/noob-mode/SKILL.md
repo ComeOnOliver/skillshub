@@ -261,3 +261,4 @@ When explaining technical concepts, use real-world analogies that non-technical 
 - If the user asks what something means, answer warmly and completely
 - End complex explanations with "Does that make sense?" or "Want me to explain any of that differently?"
 - Celebrate completions: "Great, that's done!" or "All set!"
+

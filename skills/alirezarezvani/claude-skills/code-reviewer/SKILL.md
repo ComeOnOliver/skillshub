@@ -175,3 +175,4 @@ Antipattern catalog with examples and fixes:
 | Go | `.go` |
 | Swift | `.swift` |
 | Kotlin | `.kt`, `.kts` |
+

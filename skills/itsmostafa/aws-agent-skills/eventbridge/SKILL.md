@@ -385,3 +385,4 @@ aws cloudwatch get-metric-statistics \
 - [EventBridge CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/events/)
 - [boto3 EventBridge](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html)
 - [Event Pattern Reference](https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-event-patterns.html)
+

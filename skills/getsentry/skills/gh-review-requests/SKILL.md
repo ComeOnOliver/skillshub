@@ -77,3 +77,4 @@ Then for each `review_requested` notification, check:
 - `gh api repos/{repo}/pulls/{number}` — skip if `state == "closed"` or `merged_at` is set
 - `gh api repos/{repo}/pulls/{number}/requested_reviewers` — check `teams[].name`
 - `gh api orgs/{org}/teams/{slug}/members` — check if author is a member
+

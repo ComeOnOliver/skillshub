@@ -1,3 +1,10 @@
+---
+name: bugherd-automation
+description: "Automate Bugherd tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bugherd Automation via Rube MCP
 
 Automate Bugherd operations through Composio's Bugherd toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

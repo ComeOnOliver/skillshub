@@ -1,3 +1,10 @@
+---
+name: heyreach-automation
+description: "Automate Heyreach tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Heyreach Automation via Rube MCP
 
 Automate Heyreach operations through Composio's Heyreach toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

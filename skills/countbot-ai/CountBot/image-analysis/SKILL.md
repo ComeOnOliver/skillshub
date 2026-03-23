@@ -87,3 +87,4 @@ python3 skills/image-analysis/scripts/vision.py analyze --image data/temp/images
 - 智谱图片限制 5MB，像素不超过 6000x6000
 - 千问不支持同时处理图片、视频和文件
 - 思考模式会增加响应时间但提升准确度
+

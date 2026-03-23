@@ -1,3 +1,8 @@
+---
+name: ue5-cpp-scaffold
+description: Generate Unreal Engine 5 C++ class boilerplate following Epic coding standards. Creates Actors, Components, Subsystems, GameplayAbilities, AttributeSets, Widgets, and more with proper UPROPERTY/UFUNCTION macros, include hierarchy, and module API macros. Use whenever creating new UE5 C++ classes, scaffolding gameplay systems, generating header/source pairs, or setting up GAS classes. Also use when the user asks to "create a new Actor", "add a component", "scaffold a gameplay ability", or "make a UE5 class".
+---
+
 # UE5 C++ Scaffold Skill
 
 Generates production-quality UE5 C++ header/source file pairs following Epic's coding standard. Handles all the boilerplate — macros, includes, forward declarations, and module API exports.
@@ -448,3 +453,4 @@ For the full Epic C++ coding standard, see:
 `dev.epicgames.com/documentation/en-us/unreal-engine/epic-cplusplus-coding-standard-for-unreal-engine`
 
 For GAS documentation: `github.com/tranek/GASDocumentation`
+

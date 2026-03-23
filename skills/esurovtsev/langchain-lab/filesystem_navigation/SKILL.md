@@ -55,3 +55,4 @@ Don't read every file. Choose what to read based on what you're trying to answer
 - A file named `app.py`, `main.py`, or `server.py` is usually the entry point
 - `__init__.py` files in Python indicate a package; they may re-export key symbols
 - Hidden files (`.gitignore`, `.flake8`, `.pre-commit-config.yaml`) reveal tooling choices
+

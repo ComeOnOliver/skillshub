@@ -1,54 +1,54 @@
 ---
 name: ai-regression-testing
-description: Regression testing strategies for AI-assisted development. Sandbox-mode API testing without database dependencies, automated bug-check workflows, and patterns to catch AI blind spots where the same model writes and reviews code.
+description: AI辅助开发的回归测试策略。沙盒模式API测试，无需依赖数据库，自动化的缺陷检查工作流程，以及捕捉AI盲点的模式，其中同一模型编写和审查代码。
 origin: ECC
 ---
 
-# AI Regression Testing
+# AI 回归测试
 
-Testing patterns specifically designed for AI-assisted development, where the same model writes code and reviews it — creating systematic blind spots that only automated tests can catch.
+专为 AI 辅助开发设计的测试模式，其中同一模型编写代码并审查代码——这会形成系统性的盲点，只有自动化测试才能发现。
 
-## When to Activate
+## 何时激活
 
-- AI agent (Claude Code, Cursor, Codex) has modified API routes or backend logic
-- A bug was found and fixed — need to prevent re-introduction
-- Project has a sandbox/mock mode that can be leveraged for DB-free testing
-- Running `/bug-check` or similar review commands after code changes
-- Multiple code paths exist (sandbox vs production, feature flags, etc.)
+* AI 代理（Claude Code、Cursor、Codex）已修改 API 路由或后端逻辑
+* 发现并修复了一个 bug——需要防止重新引入
+* 项目具有沙盒/模拟模式，可用于无需数据库的测试
+* 在代码更改后运行 `/bug-check` 或类似的审查命令
+* 存在多个代码路径（沙盒与生产环境、功能开关等）
 
-## The Core Problem
+## 核心问题
 
-When an AI writes code and then reviews its own work, it carries the same assumptions into both steps. This creates a predictable failure pattern:
-
-```
-AI writes fix → AI reviews fix → AI says "looks correct" → Bug still exists
-```
-
-**Real-world example** (observed in production):
+当 AI 编写代码然后审查其自身工作时，它会将相同的假设带入这两个步骤。这会形成一个可预测的失败模式：
 
 ```
-Fix 1: Added notification_settings to API response
-  → Forgot to add it to the SELECT query
-  → AI reviewed and missed it (same blind spot)
-
-Fix 2: Added it to SELECT query
-  → TypeScript build error (column not in generated types)
-  → AI reviewed Fix 1 but didn't catch the SELECT issue
-
-Fix 3: Changed to SELECT *
-  → Fixed production path, forgot sandbox path
-  → AI reviewed and missed it AGAIN (4th occurrence)
-
-Fix 4: Test caught it instantly on first run ✅
+AI 编写修复 → AI 审查修复 → AI 表示“看起来正确” → 漏洞依然存在
 ```
 
-The pattern: **sandbox/production path inconsistency** is the #1 AI-introduced regression.
+**实际示例**（在生产环境中观察到）：
 
-## Sandbox-Mode API Testing
+```
+修复 1：向 API 响应添加了 notification_settings
+  → 忘记将其添加到 SELECT 查询中
+  → AI 审核时遗漏了（相同的盲点）
 
-Most projects with AI-friendly architecture have a sandbox/mock mode. This is the key to fast, DB-free API testing.
+修复 2：将其添加到 SELECT 查询中
+  → TypeScript 构建错误（列不在生成的类型中）
+  → AI 审核了修复 1，但未发现 SELECT 问题
 
-### Setup (Vitest + Next.js App Router)
+修复 3：改为 SELECT *
+  → 修复了生产路径，忘记了沙箱路径
+  → AI 审核时再次遗漏（第 4 次出现）
+
+修复 4：测试在首次运行时立即捕获了问题 ✅
+```
+
+模式：**沙盒/生产环境路径不一致**是 AI 引入的 #1 回归问题。
+
+## 沙盒模式 API 测试
+
+大多数具有 AI 友好架构的项目都有一个沙盒/模拟模式。这是实现快速、无需数据库的 API 测试的关键。
+
+### 设置（Vitest + Next.js App Router）
 
 ```typescript
 // vitest.config.ts
@@ -78,7 +78,7 @@ process.env.NEXT_PUBLIC_SUPABASE_URL = "";
 process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY = "";
 ```
 
-### Test Helper for Next.js API Routes
+### Next.js API 路由的测试辅助工具
 
 ```typescript
 // __tests__/helpers.ts
@@ -120,9 +120,9 @@ export async function parseResponse(response: Response) {
 }
 ```
 
-### Writing Regression Tests
+### 编写回归测试
 
-The key principle: **write tests for bugs that were found, not for code that works**.
+关键原则：**为已发现的 bug 编写测试，而不是为正常工作的代码编写测试**。
 
 ```typescript
 // __tests__/api/user/profile.test.ts
@@ -167,9 +167,9 @@ describe("GET /api/user/profile", () => {
 });
 ```
 
-### Testing Sandbox/Production Parity
+### 测试沙盒/生产环境一致性
 
-The most common AI regression: fixing production path but forgetting sandbox path (or vice versa).
+最常见的 AI 回归问题：修复了生产环境路径但忘记了沙盒路径（或反之）。
 
 ```typescript
 // Test that sandbox responses match the expected contract
@@ -192,61 +192,61 @@ describe("GET /api/user/messages (conversation list)", () => {
 });
 ```
 
-## Integrating Tests into Bug-Check Workflow
+## 将测试集成到 Bug 检查工作流中
 
-### Custom Command Definition
+### 自定义命令定义
 
 ```markdown
 <!-- .claude/commands/bug-check.md -->
-# Bug Check
+# Bug 检查
 
-## Step 1: Automated Tests (mandatory, cannot skip)
+## 步骤 1：自动化测试（强制，不可跳过）
 
-Run these commands FIRST before any code review:
+在代码审查前**首先**运行以下命令：
 
-    npm run test       # Vitest test suite
-    npm run build      # TypeScript type check + build
+    npm run test       # Vitest 测试套件
+    npm run build      # TypeScript 类型检查 + 构建
 
-- If tests fail → report as highest priority bug
-- If build fails → report type errors as highest priority
-- Only proceed to Step 2 if both pass
+- 如果测试失败 → 报告为最高优先级 Bug
+- 如果构建失败 → 将类型错误报告为最高优先级
+- 只有在两者都通过后，才能继续到步骤 2
 
-## Step 2: Code Review (AI review)
+## 步骤 2：代码审查（AI 审查）
 
-1. Sandbox / production path consistency
-2. API response shape matches frontend expectations
-3. SELECT clause completeness
-4. Error handling with rollback
-5. Optimistic update race conditions
+1. 沙盒/生产环境路径一致性
+2. API 响应结构是否符合前端预期
+3. SELECT 子句的完整性
+4. 包含回滚的错误处理
+5. 乐观更新的竞态条件
 
-## Step 3: For each bug fixed, propose a regression test
+## 步骤 3：对于每个修复的 Bug，提出回归测试方案
 ```
 
-### The Workflow
+### 工作流程
 
 ```
 User: "バグチェックして" (or "/bug-check")
   │
   ├─ Step 1: npm run test
-  │   ├─ FAIL → Bug found mechanically (no AI judgment needed)
-  │   └─ PASS → Continue
+  │   ├─ FAIL → 发现机械性错误（无需AI判断）
+  │   └─ PASS → 继续
   │
   ├─ Step 2: npm run build
-  │   ├─ FAIL → Type error found mechanically
-  │   └─ PASS → Continue
+  │   ├─ FAIL → 发现类型错误
+  │   └─ PASS → 继续
   │
-  ├─ Step 3: AI code review (with known blind spots in mind)
-  │   └─ Findings reported
+  ├─ Step 3: AI代码审查（考虑已知盲点）
+  │   └─ 报告发现的问题
   │
-  └─ Step 4: For each fix, write a regression test
-      └─ Next bug-check catches if fix breaks
+  └─ Step 4: 对每个修复编写回归测试
+      └─ 下次bug-check时捕获修复是否破坏功能
 ```
 
-## Common AI Regression Patterns
+## 常见的 AI 回归模式
 
-### Pattern 1: Sandbox/Production Path Mismatch
+### 模式 1：沙盒/生产环境路径不匹配
 
-**Frequency**: Most common (observed in 3 out of 4 regressions)
+**频率**：最常见（在 4 个回归问题中观察到 3 个）
 
 ```typescript
 // ❌ AI adds field to production path only
@@ -263,7 +263,7 @@ if (isSandboxMode()) {
 return { data: { id, email, name, notification_settings } };
 ```
 
-**Test to catch it**:
+**用于捕获它的测试**：
 
 ```typescript
 it("sandbox and production return same fields", async () => {
@@ -277,9 +277,9 @@ it("sandbox and production return same fields", async () => {
 });
 ```
 
-### Pattern 2: SELECT Clause Omission
+### 模式 2：SELECT 子句遗漏
 
-**Frequency**: Common with Supabase/Prisma when adding new columns
+**频率**：在使用 Supabase/Prisma 添加新列时常见
 
 ```typescript
 // ❌ New column added to response but not to SELECT
@@ -298,9 +298,9 @@ const { data } = await supabase
   .single();
 ```
 
-### Pattern 3: Error State Leakage
+### 模式 3：错误状态泄漏
 
-**Frequency**: Moderate — when adding error handling to existing components
+**频率**：中等——当向现有组件添加错误处理时
 
 ```typescript
 // ❌ Error state set but old data not cleared
@@ -316,7 +316,7 @@ catch (err) {
 }
 ```
 
-### Pattern 4: Optimistic Update Without Proper Rollback
+### 模式 4：乐观更新未正确回滚
 
 ```typescript
 // ❌ No rollback on failure
@@ -340,46 +340,49 @@ const handleRemove = async (id: string) => {
 };
 ```
 
-## Strategy: Test Where Bugs Were Found
+## 策略：在发现 Bug 的地方进行测试
 
-Don't aim for 100% coverage. Instead:
+不要追求 100% 的覆盖率。相反：
 
 ```
-Bug found in /api/user/profile     → Write test for profile API
-Bug found in /api/user/messages    → Write test for messages API
-Bug found in /api/user/favorites   → Write test for favorites API
-No bug in /api/user/notifications  → Don't write test (yet)
+在 /api/user/profile 发现 bug → 为 profile API 编写测试
+在 /api/user/messages 发现 bug → 为 messages API 编写测试
+在 /api/user/favorites 发现 bug → 为 favorites API 编写测试
+在 /api/user/notifications 没有发现 bug → 暂时不编写测试
 ```
 
-**Why this works with AI development:**
+**为什么这在 AI 开发中有效：**
 
-1. AI tends to make the **same category of mistake** repeatedly
-2. Bugs cluster in complex areas (auth, multi-path logic, state management)
-3. Once tested, that exact regression **cannot happen again**
-4. Test count grows organically with bug fixes — no wasted effort
+1. AI 倾向于重复犯**同一类错误**
+2. Bug 集中在复杂区域（身份验证、多路径逻辑、状态管理）
+3. 一旦经过测试，该特定回归问题**就不会再次发生**
+4. 测试数量随着 Bug 修复而有机增长——没有浪费精力
 
-## Quick Reference
+## 快速参考
 
-| AI Regression Pattern | Test Strategy | Priority |
+| AI 回归模式 | 测试策略 | 优先级 |
 |---|---|---|
-| Sandbox/production mismatch | Assert same response shape in sandbox mode | 🔴 High |
-| SELECT clause omission | Assert all required fields in response | 🔴 High |
-| Error state leakage | Assert state cleanup on error | 🟡 Medium |
-| Missing rollback | Assert state restored on API failure | 🟡 Medium |
-| Type cast masking null | Assert field is not undefined | 🟡 Medium |
+| 沙盒/生产环境不匹配 | 断言沙盒模式下响应结构相同 | 🔴 高 |
+| SELECT 子句遗漏 | 断言响应中包含所有必需字段 | 🔴 高 |
+| 错误状态泄漏 | 断言出错时状态已清理 | 🟡 中 |
+| 缺少回滚 | 断言 API 失败时状态已恢复 | 🟡 中 |
+| 类型转换掩盖 null | 断言字段不为 undefined | 🟡 中 |
 
-## DO / DON'T
+## 要 / 不要
 
-**DO:**
-- Write tests immediately after finding a bug (before fixing it if possible)
-- Test the API response shape, not the implementation
-- Run tests as the first step of every bug-check
-- Keep tests fast (< 1 second total with sandbox mode)
-- Name tests after the bug they prevent (e.g., "BUG-R1 regression")
+**要：**
 
-**DON'T:**
-- Write tests for code that has never had a bug
-- Trust AI self-review as a substitute for automated tests
-- Skip sandbox path testing because "it's just mock data"
-- Write integration tests when unit tests suffice
-- Aim for coverage percentage — aim for regression prevention
+* 发现 bug 后立即编写测试（如果可能，在修复之前）
+* 测试 API 响应结构，而不是实现细节
+* 将运行测试作为每次 bug 检查的第一步
+* 保持测试快速（在沙盒模式下总计 < 1 秒）
+* 以测试所预防的 bug 来命名测试（例如，"BUG-R1 regression"）
+
+**不要：**
+
+* 为从未出现过 bug 的代码编写测试
+* 相信 AI 自我审查可以作为自动化测试的替代品
+* 因为“只是模拟数据”而跳过沙盒路径测试
+* 在单元测试足够时编写集成测试
+* 追求覆盖率百分比——追求回归预防
+

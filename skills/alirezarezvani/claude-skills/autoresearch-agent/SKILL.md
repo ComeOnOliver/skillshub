@@ -306,3 +306,4 @@ clawhub install cs-autoresearch-agent
 - **senior-ml-engineer** — ML architecture decisions. Complementary — use for initial design, then autoresearch for optimization.
 - **tdd-guide** — test-driven development. Complementary — tests can be the evaluation function.
 - **skill-security-auditor** — audit skills before publishing. NOT for optimization loops.
+

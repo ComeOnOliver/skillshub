@@ -1,3 +1,10 @@
+---
+name: bestbuy-automation
+description: "Automate Bestbuy tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bestbuy Automation via Rube MCP
 
 Automate Bestbuy operations through Composio's Bestbuy toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

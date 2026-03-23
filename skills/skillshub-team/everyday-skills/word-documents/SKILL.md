@@ -119,3 +119,4 @@ Help users create professional, well-formatted Word documents.
 - Not using styles (makes TOC and formatting changes impossible)
 - Embedding huge images at full resolution (compress: Format → Compress Pictures)
 - Not using section breaks for different headers/footers or page orientations
+

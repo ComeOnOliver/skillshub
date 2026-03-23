@@ -137,3 +137,4 @@ Detailed reference material is available in the `references/` folder. Consult th
 | Performance is poor | Profile with browser dev tools, reduce draw calls, use object pooling, and optimize asset sizes |
 | Touch controls are unresponsive | Prevent default touch behavior and handle touch events separately from mouse events |
 | WebGL context lost | Handle the `webglcontextlost` event and restore state on `webglcontextrestored` |
+

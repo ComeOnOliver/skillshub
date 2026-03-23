@@ -237,3 +237,4 @@ python proteomics_de.py \
 - s0 correction algorithm is from: Giai Gianetto Q, Couté Y, Bruley C, Burger T. Uses and misuses of the fudge factor in quantitative discovery proteomics. Proteomics. 2016 Jul;16(14):1955-60. doi: 10.1002/pmic.201600132. PMID: 27272648.
 - s0 correction algorithm is cited by: Michaelis AC, Brunner AD, Zwiebel M, Meier F, Strauss MT, Bludau I, Mann M. The social and structural architecture of the yeast protein interactome. Nature. 2023 Dec;624(7990):192-200. doi: 10.1038/s41586-023-06739-5. Epub 2023 Nov 15. PMID: 37968396; PMCID: PMC10700138.
 
+

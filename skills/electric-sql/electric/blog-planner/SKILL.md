@@ -254,3 +254,4 @@ ChatGPT DALL-E prompt, use the `/blog-image-brief` command separately.
 
 Once the author has prosed up the outline, use `/blog-review` to review
 the draft against the outline, format, and execution guidelines.
+

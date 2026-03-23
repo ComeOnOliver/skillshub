@@ -1,3 +1,8 @@
+---
+name: adding-cli-command
+description: Provides Typer templates, handles registration, and ensures consistency. ALWAYS use this skill when adding or modifying CLI commands. Use when user requests to add/create/implement/build/write a new command (e.g., "add edit command", "create search feature") OR update/modify/change/edit an existing command. 
+---
+
 # Adding CLI Commands
 
 Templates and workflow for adding or updating Typer CLI commands.
@@ -134,3 +139,4 @@ app.add_typer(clear_app)
 | Output | Always via `display` module |
 | Exit codes | 0=success, 1=error, 2=invalid |
 | Destructive | Must have `--force` flag, `default=False` confirmation |
+

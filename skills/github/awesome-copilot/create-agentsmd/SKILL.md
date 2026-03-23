@@ -247,3 +247,4 @@ For large monorepos:
 - This is living documentation - update it as your project evolves
 
 When creating the AGENTS.md file, prioritize clarity, completeness, and actionability. The goal is to give any coding agent enough context to effectively contribute to the project without requiring additional human guidance.
+

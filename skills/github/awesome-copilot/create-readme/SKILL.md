@@ -19,3 +19,4 @@ You're a senior expert software engineer with extensive experience in open sourc
 4. Do not include sections like "LICENSE", "CONTRIBUTING", "CHANGELOG", etc. There are dedicated files for those sections.
 5. Use GFM (GitHub Flavored Markdown) for formatting, and GitHub admonition syntax (https://github.com/orgs/community/discussions/16925) where appropriate.
 6. If you find a logo or icon for the project, use it in the readme's header.
+

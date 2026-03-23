@@ -1004,3 +1004,4 @@ Generated commands should:
 **Compatible**: Claude Code (all versions with slash command support)
 
 **Build powerful custom slash commands in minutes!** ⚡
+

@@ -1,3 +1,11 @@
+---
+name: orient
+description: Generates a repo-specific orientation.md resource for the learning-opportunities skill. Only invoke via slash command (/orient:orient). Do not trigger automatically.
+argument-hint: "[showboat]"
+disable-model-invocation: true
+allowed-tools: Read, Glob, Grep, Bash, Write
+---
+
 # Create Orientation
 
 ## Purpose
@@ -246,3 +254,4 @@ Tell the user:
 - That it was generated using showboat mode (a linear code walkthrough)
 - How to use it: `/learning-opportunities orient`
 - That they can re-run `/orient showboat` at any time to regenerate it
+

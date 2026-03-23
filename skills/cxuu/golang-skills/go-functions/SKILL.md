@@ -111,3 +111,4 @@ parameters.
 - **Naming conventions**: See [go-naming](../go-naming/SKILL.md) when naming functions, methods, or choosing getter/setter patterns
 - **Functional options**: See [go-functional-options](../go-functional-options/SKILL.md) when designing a constructor with 3+ optional parameters
 - **Formatting principles**: See [go-style-core](../go-style-core/SKILL.md) when deciding line length, naked returns, or signature formatting
+

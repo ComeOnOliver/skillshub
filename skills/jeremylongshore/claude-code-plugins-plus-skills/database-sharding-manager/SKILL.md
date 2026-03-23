@@ -1,3 +1,9 @@
+---
+name: managing-database-sharding
+description: |
+  This skill assists with managing database sharding strategies. It is activated when the user needs to implement horizontal database sharding to scale beyond single-server limitations. The skill supports designing sharding strategies, distributing data across multiple database instances, and implementing consistent hashing, automatic rebalancing, and cross-shard query coordination. Use this skill when the user mentions "database sharding", "sharding implementation", "scale database", or "horizontal partitioning". The plugin helps design and implement sharding for high-scale applications.
+---
+
 ## Overview
 
 This skill empowers Claude to design and implement horizontal database sharding strategies. It guides the user through the process of distributing data across multiple database instances, ensuring scalability and performance for applications handling large datasets and high query loads.

@@ -110,3 +110,4 @@ After generation:
 - Do you need integration tests or just unit tests?
 - Any specific database technology preferences?
 - Should the API include pagination, filtering, and sorting examples?
+

@@ -1,3 +1,10 @@
+---
+name: dungeon-fighter-online-automation
+description: "Automate Dungeon Fighter Online tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dungeon Fighter Online Automation via Rube MCP
 
 Automate Dungeon Fighter Online operations through Composio's Dungeon Fighter Online toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

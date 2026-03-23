@@ -78,3 +78,4 @@ Standard gdb commands work at any point:
 ## Automation Script
 
 Use `scripts/crash_trace.py` to automatically extract execution trace before crash.
+

@@ -1,3 +1,10 @@
+---
+name: census-bureau-automation
+description: "Automate Census Bureau tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Census Bureau Automation via Rube MCP
 
 Automate Census Bureau operations through Composio's Census Bureau toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

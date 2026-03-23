@@ -396,3 +396,4 @@ public ValueTask<Order> CreateOrderAsync();  // Just use Task
 - **Performance Best Practices**: https://learn.microsoft.com/en-us/dotnet/standard/performance/
 - **Span<T> Guidance**: https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/
 - **Frozen Collections**: https://learn.microsoft.com/en-us/dotnet/api/system.collections.frozen
+

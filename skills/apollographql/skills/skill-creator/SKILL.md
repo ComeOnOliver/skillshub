@@ -267,3 +267,4 @@ Before publishing a skill, verify:
 - PREFER opinionated guidance over listing multiple options
 - USE `allowed-tools` to pre-approve tools the skill needs
 - NEVER include `Bash(curl:*)` in `allowed-tools` as it grants unrestricted network access and enables `curl | sh` remote code execution patterns
+

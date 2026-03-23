@@ -79,3 +79,4 @@ gws <service> <resource> [sub-resource] <method> [flags]
 - For bugs or feature requests, direct users to open issues in the repository: `https://github.com/googleworkspace/cli/issues`
 - Before creating a new issue, **always** search existing issues and feature requests first
 - If a matching issue already exists, add context by commenting on the existing thread instead of creating a duplicate
+

@@ -44,3 +44,4 @@ tmux -S "$SOCKET" kill-session -t "$SESSION"
 - If sign-in without app integration is needed, use `op account add`.
 - If a command returns "account is not signed in", re-run `op signin` inside tmux and authorize in the app.
 - Do not run `op` outside tmux; stop and ask if tmux is unavailable.
+

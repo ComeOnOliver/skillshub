@@ -364,3 +364,4 @@ See also: electric-proxy-auth/SKILL.md — E2E feature journey includes setting 
 ## Version
 
 Targets @electric-sql/client v1.5.10, @tanstack/react-db latest.
+

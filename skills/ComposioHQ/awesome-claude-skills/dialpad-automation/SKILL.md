@@ -1,3 +1,10 @@
+---
+name: dialpad-automation
+description: "Automate Dialpad tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dialpad Automation via Rube MCP
 
 Automate Dialpad operations through Composio's Dialpad toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

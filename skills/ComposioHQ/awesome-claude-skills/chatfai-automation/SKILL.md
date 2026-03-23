@@ -1,3 +1,10 @@
+---
+name: chatfai-automation
+description: "Automate Chatfai tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Chatfai Automation via Rube MCP
 
 Automate Chatfai operations through Composio's Chatfai toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -486,3 +486,4 @@ immediately    Yes─┴─No
 | [capa-officer](../capa-officer/) | CAPA system oversight |
 | [qms-audit-expert](../qms-audit-expert/) | Internal audit program |
 | [quality-documentation-manager](../quality-documentation-manager/) | Document control oversight |
+

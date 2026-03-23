@@ -1,3 +1,10 @@
+---
+name: conveyor-automation
+description: "Automate Conveyor tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Conveyor Automation via Rube MCP
 
 Automate Conveyor operations through Composio's Conveyor toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

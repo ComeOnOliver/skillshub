@@ -1,3 +1,10 @@
+---
+name: faceup-automation
+description: "Automate Faceup tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Faceup Automation via Rube MCP
 
 Automate Faceup operations through Composio's Faceup toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

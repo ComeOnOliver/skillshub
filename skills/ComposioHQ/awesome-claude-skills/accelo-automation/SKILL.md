@@ -1,3 +1,10 @@
+---
+name: accelo-automation
+description: "Automate Accelo tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Accelo Automation via Rube MCP
 
 Automate Accelo operations through Composio's Accelo toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

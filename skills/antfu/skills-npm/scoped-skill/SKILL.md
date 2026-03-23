@@ -1,0 +1,9 @@
+---
+name: Test Skill B
+description: A test skill in scoped pkg-b
+---
+
+# Test Skill B
+
+This is a test skill from @test-scope/test-pkg-b.
+

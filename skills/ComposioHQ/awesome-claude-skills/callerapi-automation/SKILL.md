@@ -1,3 +1,10 @@
+---
+name: callerapi-automation
+description: "Automate Callerapi tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Callerapi Automation via Rube MCP
 
 Automate Callerapi operations through Composio's Callerapi toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

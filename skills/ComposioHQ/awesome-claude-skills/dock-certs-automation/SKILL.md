@@ -1,3 +1,10 @@
+---
+name: dock-certs-automation
+description: "Automate Dock Certs tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dock Certs Automation via Rube MCP
 
 Automate Dock Certs operations through Composio's Dock Certs toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

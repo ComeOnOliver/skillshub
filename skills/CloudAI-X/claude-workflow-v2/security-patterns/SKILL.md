@@ -1,3 +1,8 @@
+---
+name: security-patterns
+description: Implements authentication, authorization, encryption, secrets management, and security hardening patterns. Use when designing auth flows, managing secrets, configuring CORS, implementing rate limiting, or when asked about JWT, OAuth, password hashing, API keys, RBAC, or security best practices.
+---
+
 # Security Patterns
 
 ### When to Load
@@ -476,3 +481,4 @@ No HTTPS redirect                  Force HTTPS + HSTS header
 Symmetric JWT for multi-service    Use RS256/ES256 (asymmetric) for distributed
 No input length limits             Max length on all string inputs
 ```
+

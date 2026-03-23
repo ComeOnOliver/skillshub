@@ -1,3 +1,11 @@
+---
+name: Ashby Automation
+description: "Automate recruiting and hiring workflows in Ashby -- manage candidates, jobs, applications, interviews, and notes through natural language commands."
+requires:
+  mcp:
+    - rube
+---
+
 # Ashby Automation
 
 Automate your Ashby ATS recruiting operations directly from Claude Code. Create candidates, post jobs, manage applications, view interview schedules, and search your talent pipeline -- all without leaving your terminal.
@@ -157,3 +165,4 @@ List all applications to see the current state of our hiring pipeline
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

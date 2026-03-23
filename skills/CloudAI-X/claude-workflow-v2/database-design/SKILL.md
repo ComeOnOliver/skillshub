@@ -1,3 +1,8 @@
+---
+name: database-design
+description: Designs database schemas, indexing strategies, query optimization, and migration patterns for SQL and NoSQL databases. Use when designing tables, optimizing queries, fixing N+1 problems, planning migrations, or when asked about database performance, normalization, ORMs, or data modeling.
+---
+
 # Database Design
 
 ### When to Load
@@ -382,3 +387,4 @@ Giant migrations                   Small, reversible steps
 No connection pooling              Always pool connections
 Premature denormalization          Normalize first, denormalize with data
 ```
+

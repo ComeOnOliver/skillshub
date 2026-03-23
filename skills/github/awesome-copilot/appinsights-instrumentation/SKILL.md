@@ -46,3 +46,4 @@ No matter which option you choose, recommend the user to create the App Insights
 - If the app is an ASP.NET Core app, see [ASPNETCORE guide](references/ASPNETCORE.md) for how to modify the C# code.
 - If the app is a Node.js app, see [NODEJS guide](references/NODEJS.md) for how to modify the JavaScript/TypeScript code.
 - If the app is a Python app, see [PYTHON guide](references/PYTHON.md) for how to modify the Python code.
+

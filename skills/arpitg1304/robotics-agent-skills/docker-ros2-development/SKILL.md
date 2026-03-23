@@ -1,3 +1,19 @@
+---
+name: docker-ros2-development
+description: >
+  Best practices for Docker-based ROS2 development including multi-stage Dockerfiles, docker-compose
+  for multi-container robotic systems, DDS discovery across containers, GPU passthrough for perception,
+  and dev-vs-deploy container patterns. Use this skill when containerizing ROS2 workspaces, setting up
+  docker-compose for robot software stacks, debugging DDS communication between containers, configuring
+  NVIDIA Container Toolkit for GPU workloads, forwarding X11/Wayland for rviz2 and GUI tools, or
+  managing USB device passthrough for cameras and serial devices. Trigger whenever the user mentions
+  Docker with ROS2, docker-compose for robots, Dockerfile for colcon workspaces, container networking
+  for DDS, GPU containers for perception, devcontainer for ROS2, multi-stage builds for ROS2, or
+  deploying ROS2 in containers. Also trigger for CI/CD with Docker-based ROS2 builds, CycloneDDS
+  or FastDDS configuration in containers, shared memory in Docker, or X11 forwarding for rviz2.
+  Covers Humble, Iron, Jazzy, and Rolling distributions across Ubuntu 22.04 and 24.04 base images.
+---
+
 # Docker-Based ROS2 Development Skill
 
 ## When to Use This Skill
@@ -1084,3 +1100,4 @@ exec "$@"
 10. **Device stability** -- Use udev rules on the host to create stable `/dev/robot/*` symlinks and reference those in compose device mappings
 11. **Image versioning** -- Tag images with both `latest` and a commit SHA or semantic version; never deploy unversioned `latest` to production
 12. **Backup and rollback** -- Keep the previous image version available so a failed deployment can be rolled back by reverting the image tag
+

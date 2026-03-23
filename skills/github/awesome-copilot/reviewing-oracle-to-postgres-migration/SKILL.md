@@ -65,3 +65,4 @@ Confirm tests exercise both the happy path and the failure scenarios highlighted
 **Step 4: Gate the result**
 
 Return a checklist asserting each applicable insight was addressed, migration scripts run, and integration tests pass.
+

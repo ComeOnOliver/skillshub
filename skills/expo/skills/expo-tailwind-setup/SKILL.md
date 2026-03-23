@@ -478,3 +478,4 @@ Add className to component props:
 ```tsx
 type Props = React.ComponentProps<typeof RNView> & { className?: string };
 ```
+

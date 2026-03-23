@@ -1,3 +1,10 @@
+---
+name: bugbug-automation
+description: "Automate Bugbug tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bugbug Automation via Rube MCP
 
 Automate Bugbug operations through Composio's Bugbug toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

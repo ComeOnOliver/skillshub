@@ -1,3 +1,11 @@
+---
+name: Gorgias Automation
+description: "Automate e-commerce customer support workflows in Gorgias -- manage tickets, customers, tags, and teams through natural language commands."
+requires:
+  mcp:
+    - rube
+---
+
 # Gorgias Automation
 
 Automate your Gorgias helpdesk operations directly from Claude Code. Create, update, and triage support tickets, manage customers, and organize your support team -- all without leaving your terminal.
@@ -135,3 +143,4 @@ List recent events to see what activity has happened across our support queue
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

@@ -94,3 +94,4 @@ This skill is invoked by the Bio Orchestrator when:
 It can be chained with:
 - **pharmgx-reporter**: After generating a patient PGx report, query ClinPGx for deeper annotation on flagged gene-drug pairs
 - **vcf-annotator**: Use ClinPGx allele definitions to annotate VCF variants
+

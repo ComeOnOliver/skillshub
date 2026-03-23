@@ -1,3 +1,10 @@
+---
+name: botpress-automation
+description: "Automate Botpress tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Botpress Automation via Rube MCP
 
 Automate Botpress operations through Composio's Botpress toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

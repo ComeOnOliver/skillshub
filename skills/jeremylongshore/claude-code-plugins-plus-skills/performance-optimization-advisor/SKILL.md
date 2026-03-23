@@ -1,3 +1,9 @@
+---
+name: providing-performance-optimization-advice
+description: |
+  This skill enables Claude to provide comprehensive, prioritized performance optimization recommendations for software projects. It is triggered when the user requests performance improvements, optimization suggestions, or asks for a performance review. The skill analyzes frontend, backend, and infrastructure aspects of the project to identify bottlenecks and anti-patterns. It then provides actionable advice, estimates potential performance gains, and suggests a phased implementation roadmap. Use this skill when the user mentions "optimize performance", "performance recommendations", "performance review", "improve speed", or asks about "bottlenecks".
+---
+
 ## Overview
 
 This skill empowers Claude to act as a performance optimization advisor, delivering a detailed report of potential improvements across various layers of a software application. It prioritizes recommendations based on impact and effort, allowing for a focused and efficient optimization strategy.

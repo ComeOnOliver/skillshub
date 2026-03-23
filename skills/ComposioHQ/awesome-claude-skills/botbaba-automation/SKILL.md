@@ -1,3 +1,10 @@
+---
+name: botbaba-automation
+description: "Automate Botbaba tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Botbaba Automation via Rube MCP
 
 Automate Botbaba operations through Composio's Botbaba toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

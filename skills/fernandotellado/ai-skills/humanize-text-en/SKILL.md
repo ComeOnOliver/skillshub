@@ -151,3 +151,4 @@ When reviewing generated text:
 - [humanizer](https://github.com/blader/humanizer) — blader's Wikipedia-based skill (MIT)
 - [The AI-isms of Writing Bible](https://docs.google.com/document/d/1l3OLrnWaXUqH0ycS-0so65Hd6ayxSQqUypRtrFHMt3M/) — Community-sourced AI pattern document
 - [Novelcrafter: AI-isms](https://www.novelcrafter.com/help/faq/ai-and-prompting/ai-isms) — Fiction writers' community list
+

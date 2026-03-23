@@ -182,3 +182,4 @@ Otherwise, the MCP Server url: `https://mcp.apify.com/?tools=docs`.
 - [Apify SDK for Python](https://docs.apify.com/sdk/python) - Full SDK reference
 - [Apify CLI Reference](https://docs.apify.com/cli) - CLI commands
 - [Actor Specification](https://raw.githubusercontent.com/apify/actor-whitepaper/refs/heads/master/README.md) - Complete specification
+

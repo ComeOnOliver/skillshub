@@ -145,3 +145,4 @@ python3 skills/web-design/scripts/deploy.py deploy 文件路径 --project prompt
 - 项目名会作为子域名：`<project>.pages.dev`
 - 首次部署会自动创建项目
 - 纯 Python 标准库实现，无需 Node.js 或 wrangler
+

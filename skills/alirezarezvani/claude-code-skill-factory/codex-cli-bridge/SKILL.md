@@ -346,3 +346,4 @@ Apache 2.0
 **Created by**: Claude Code Skills Factory
 **Maintained for**: Cross-tool team collaboration (Claude Code ↔ Codex CLI)
 **Sync Status**: Reference-based bridge (one-way sync: CLAUDE.md → AGENTS.md)
+

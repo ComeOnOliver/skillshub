@@ -658,3 +658,4 @@ MIT
 8. **Follow Ruby conventions** (snake_case, modules, frozen_string_literal)
 9. **Add proper error handling** with is_error flag
 10. **Provide both stdio and HTTP** usage examples
+

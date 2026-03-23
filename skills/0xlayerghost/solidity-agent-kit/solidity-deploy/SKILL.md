@@ -187,3 +187,4 @@ PROXY_ADDRESS=0x... forge script script/Upgrade.s.sol --rpc-url <RPC_URL> --ffi 
 - **Use `Upgrades` in scripts, `UnsafeUpgrades` only in tests** — `UnsafeUpgrades` skips all safety checks
 - **Keep V1 source code in project** when upgrading — plugin needs it for storage comparison. Or use `@custom:oz-upgrades-from` annotation
 - **Never hand-roll proxy deployment** when this plugin is available — the storage layout check alone prevents critical bugs
+

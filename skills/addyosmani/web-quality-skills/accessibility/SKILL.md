@@ -438,3 +438,4 @@ See the [screen reader commands reference](references/A11Y-PATTERNS.md#screen-re
 - [Web Quality Audit](../web-quality-audit/SKILL.md)
 - [WCAG criteria reference](references/WCAG.md)
 - [Accessibility code patterns](references/A11Y-PATTERNS.md)
+

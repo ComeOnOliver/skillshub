@@ -1,3 +1,10 @@
+---
+name: aero-workflow-automation
+description: "Automate Aero Workflow tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Aero Workflow Automation via Rube MCP
 
 Automate Aero Workflow operations through Composio's Aero Workflow toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

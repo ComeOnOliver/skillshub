@@ -561,3 +561,4 @@ Before considering web development complete:
 The Web Coder skill transforms you into an expert 10x engineer with comprehensive knowledge across all aspects of web development. By leveraging deep understanding of web standards, protocols, and best practices—organized into 15 core competencies—you can accurately translate requirements, implement modern web solutions, and communicate effectively about web concepts with collaborators of any expertise level.
 
 **Remember**: Web development is multidisciplinary. Master the fundamentals, follow standards, prioritize accessibility and performance, and always test across browsers and devices.
+

@@ -360,3 +360,4 @@ When conducting a security audit, check each item:
 | Jan 2026 | Step Finance | $30M | Key compromise | Treasury wallet private keys stolen via device breach | [Halborn](https://www.halborn.com/blog/post/explained-the-step-finance-hack-january-2026) |
 | Jan 2026 | Truebit | $26.4M | Legacy contract | Solidity 0.6.10 integer overflow in mint pricing | [CoinDesk](https://www.coindesk.com/markets/2026/01/09/truebit-token-tru-crashes-99-9-after-usd26-6m-exploit-drains-8-535-eth) |
 | Jan 2026 | SagaEVM | $7M | Supply chain / bridge | Inherited Ethermint precompile bridge vulnerability | [The Block](https://www.theblock.co/post/386638/sagaevm-suffers-exploit) |
+

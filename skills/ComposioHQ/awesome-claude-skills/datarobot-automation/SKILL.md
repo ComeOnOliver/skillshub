@@ -1,3 +1,10 @@
+---
+name: datarobot-automation
+description: "Automate Datarobot tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Datarobot Automation via Rube MCP
 
 Automate Datarobot operations through Composio's Datarobot toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

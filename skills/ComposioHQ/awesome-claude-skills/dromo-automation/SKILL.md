@@ -1,3 +1,10 @@
+---
+name: dromo-automation
+description: "Automate Dromo tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dromo Automation via Rube MCP
 
 Automate Dromo operations through Composio's Dromo toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

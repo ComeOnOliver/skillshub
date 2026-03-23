@@ -1,3 +1,10 @@
+---
+name: asin-data-api-automation
+description: "Automate Asin Data API tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Asin Data API Automation via Rube MCP
 
 Automate Asin Data API operations through Composio's Asin Data API toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -15,7 +15,7 @@ Global error handling and exception management patterns.
   - `const { httpAdapter } = this.httpAdapterHost;`
 - **Structure**:
   - Implement strictly typed error responses.
-  - Refer to **[API Standards](../api-standards/SKILL.md)** for `ApiErrorResponse`.
+  - Refer to **[API Standards](../nestjs-api-standards/SKILL.md)** for `ApiErrorResponse`.
 
   ```json
   {
@@ -52,7 +52,9 @@ Global error handling and exception management patterns.
 - **Sanitization**: Ensure `ApiException` payloads do not leak internal file paths or raw variable dumps.
 
 
-## 🚫 Anti-Patterns
+## Anti-Patterns
 
-- Do NOT use standard patterns if specific project rules exist.
-- Do NOT ignore error handling or edge cases.
+- **No stack traces in production**: Gate stack exposure behind `NODE_ENV === 'production'` check.
+- **No Express types in filters**: Use `HttpAdapterHost` for platform-agnostic error handling.
+- **No HttpException in services**: Throw domain errors in services; let Interceptors map to HTTP exceptions.
+

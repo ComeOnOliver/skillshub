@@ -1,3 +1,10 @@
+---
+name: fitbit-automation
+description: "Automate Fitbit tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Fitbit Automation via Rube MCP
 
 Automate Fitbit operations through Composio's Fitbit toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

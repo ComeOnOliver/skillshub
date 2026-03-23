@@ -260,3 +260,4 @@ Options:
 - MUST state that Rover is required only for the local supergraph path; GraphOS-managed runtime does not require local Rover composition
 - USE `max_depth: 50` as the default starting point, not 15 (too aggressive) or 100 (too permissive)
 - RECOMMEND `warn_only: true` for initial limits rollout to observe real traffic before enforcing
+

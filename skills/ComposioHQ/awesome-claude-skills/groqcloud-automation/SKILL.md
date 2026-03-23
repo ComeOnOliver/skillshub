@@ -1,3 +1,11 @@
+---
+name: GroqCloud Automation
+description: "Automate AI inference, chat completions, audio translation, and TTS voice management through GroqCloud's high-performance API via Composio"
+requires:
+  mcp:
+    - rube
+---
+
 # GroqCloud Automation
 
 Automate AI inference workflows using GroqCloud's ultra-fast API -- chat completions, model discovery, audio translation, and TTS voice selection -- all orchestrated through the Composio MCP integration.
@@ -107,3 +115,4 @@ Returns the set of supported TTS voices. Note: this is a static list maintained 
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

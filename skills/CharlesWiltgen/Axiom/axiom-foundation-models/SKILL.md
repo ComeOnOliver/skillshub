@@ -1123,3 +1123,4 @@ Before shipping Foundation Models features:
 **Last Updated**: 2025-12-03
 **Version**: 1.0.0
 **Target**: iOS 26+, macOS 26+, iPadOS 26+, axiom-visionOS 26+
+

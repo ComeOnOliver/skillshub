@@ -1,3 +1,10 @@
+---
+name: anonyflow-automation
+description: "Automate Anonyflow tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Anonyflow Automation via Rube MCP
 
 Automate Anonyflow operations through Composio's Anonyflow toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

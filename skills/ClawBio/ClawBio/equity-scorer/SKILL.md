@@ -180,3 +180,4 @@ of GWAS findings from this cohort to non-European populations.
 - **No data upload**: All computation local. No external API calls for genomic data.
 - **Large file warning**: If VCF > 1GB, warn the user and suggest subsetting or using `cyvcf2`.
 - **Ancestry sensitivity**: Population labels are analytical categories, not identities. Include this disclaimer in reports.
+

@@ -1,3 +1,8 @@
+---
+name: n8n-workflow-sdk
+description: "Builds, tests, validates, and manages n8n workflows programmatically using the @n8n/workflow-sdk. Activates when the user wants to create n8n workflows with code, convert between JSON and code, validate workflows, generate test/pin data, build AI agent workflows, or work with the n8n workflow SDK in any capacity. Also triggers on mentions of workflow-sdk, workflow builder, n8n workflow code, workflow JSON, workflow validation, code generation, or programmatic workflow creation."
+---
+
 # n8n Workflow SDK
 
 Build, test, validate, and manage n8n workflows programmatically using the `@n8n/workflow-sdk`. This skill enables code-based workflow construction with full validation, JSON round-tripping, and testing support.
@@ -567,3 +572,4 @@ This skill is for **building and manipulating n8n workflows programmatically** u
 12. **Use `sticky()` for workflow documentation** — Auto-positions around given nodes, making it easy to annotate sections of complex workflows for other developers.
 13. **NEVER generate empty Set nodes** — A Set node with `parameters: { options: {} }` is broken and does nothing. Every Set node v3.4 MUST have `mode: 'manual'` with `assignments.assignments` containing at least one entry, OR `mode: 'raw'` with a `jsonOutput` string. Use `type: 'string'`/`'number'`/`'boolean'` and a single `value` field — NOT the old `stringValue`/`numberValue` format. If you don't know what fields to set, ask the user.
 14. **Use current AI models, not example model IDs** — Model IDs in code examples (e.g., `gpt-4o-mini`, `claude-sonnet-4-20250514`) are illustrative and become outdated. Always select the most appropriate current model for the user's task. Check the provider's latest offerings rather than copying from examples.
+

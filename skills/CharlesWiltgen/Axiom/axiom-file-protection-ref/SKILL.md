@@ -542,3 +542,4 @@ File protection generally works without special entitlements, but some features 
 **Skill Type**: Reference
 **Minimum iOS**: 4.0 (all protection levels)
 **Latest Updates**: iOS 26
+

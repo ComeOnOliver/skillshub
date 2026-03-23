@@ -104,3 +104,4 @@ When outdated agents are identified:
 3. Provide recommendation to update with key changes noted
 4. When user requests update, replace entire local file with remote version
 5. Preserve file location in `.github/agents/` directory
+

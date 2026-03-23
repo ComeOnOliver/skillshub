@@ -627,3 +627,4 @@ var options = new DbContextOptionsBuilder<ApplicationDbContext>()
     .UseNpgsql(container.GetConnectionString())
     .Options;
 ```
+

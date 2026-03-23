@@ -1,3 +1,10 @@
+---
+name: baselinker-automation
+description: "Automate Baselinker tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Baselinker Automation via Rube MCP
 
 Automate Baselinker operations through Composio's Baselinker toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

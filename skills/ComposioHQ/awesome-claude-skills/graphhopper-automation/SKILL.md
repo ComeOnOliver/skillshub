@@ -1,3 +1,10 @@
+---
+name: graphhopper-automation
+description: "Automate Graphhopper tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Graphhopper Automation via Rube MCP
 
 Automate Graphhopper operations through Composio's Graphhopper toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

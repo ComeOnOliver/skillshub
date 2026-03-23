@@ -1,3 +1,10 @@
+---
+name: epic-games-automation
+description: "Automate Epic Games tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Epic Games Automation via Rube MCP
 
 Automate Epic Games operations through Composio's Epic Games toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

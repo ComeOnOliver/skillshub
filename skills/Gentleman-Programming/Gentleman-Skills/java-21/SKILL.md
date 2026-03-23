@@ -1,3 +1,13 @@
+---
+name: java-21
+description: >
+  Java 21 language and runtime patterns for modern, safe code.
+  Trigger: When writing Java 21 code using records, sealed types, or virtual threads.
+metadata:
+  author: diegnghrmr
+  version: "1.0"
+---
+
 ## When to Use
 
 Load this skill when:
@@ -109,3 +119,4 @@ new Thread(() -> blockingFetch("https://api" )).start();
 
 - Java 21 Release Notes: https://www.oracle.com/java/technologies/javase/21-relnote-issues.html
 - JEP Index: https://openjdk.org/jeps/0
+

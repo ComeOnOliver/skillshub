@@ -67,3 +67,4 @@ This section documents version-specific API changes — prioritize recent major/
 
 - **Select embedding models with quantization support for better results** — models like `nomic-embed-text-v1.5`, `mxbai-embed-large-v1`, and OpenAI's `text-embedding-3` are specifically trained to maintain quality after quantization and Matryoshka truncation [source](./.skilld/docs/binary-quant.md#L114:125)
 <!-- /skilld:best-practices -->
+

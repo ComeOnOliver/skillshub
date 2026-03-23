@@ -365,3 +365,4 @@ When returning results, provide:
 
 - [Azure Verified Modules index (Terraform)](https://github.com/Azure/Azure-Verified-Modules/tree/main/docs/static/module-indexes)
 - [Terraform AVM Registry namespace](https://registry.terraform.io/namespaces/Azure)
+

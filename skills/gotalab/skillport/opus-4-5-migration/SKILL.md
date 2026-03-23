@@ -1,3 +1,14 @@
+---
+name: opus-4-5-migration
+description: Migrate prompts and code from Claude Sonnet 4.0, Sonnet 4.5, or Opus 4.1 to Opus 4.5. Use when the user wants to update their codebase, prompts, or API calls to use Opus 4.5. Handles model string updates and prompt adjustments for known Opus 4.5 behavioral differences. Does NOT migrate Haiku 4.5.
+metadata:
+  skillport:
+    category: context-engineering
+    tags:
+      - claude-code
+      - prompt-engineering
+---
+
 # Opus 4.5 Migration Guide
 
 One-shot migration from Sonnet 4.0, Sonnet 4.5, or Opus 4.1 to Opus 4.5.
@@ -98,3 +109,4 @@ Replace "think" with alternatives like "consider," "believe," or "evaluate."
 See `references/prompt-snippets.md` for the full text of each snippet to add.
 
 See `references/effort.md` for configuring the effort parameter (only if user requests it).
+

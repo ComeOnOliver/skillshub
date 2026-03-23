@@ -1,66 +1,59 @@
 ---
 name: videodb
-description: 视频与音频的查看、理解与行动。查看：从本地文件、URL、RTSP/直播源或实时录制桌面获取内容；返回实时上下文和可播放流链接。理解：提取帧，构建视觉/语义/时间索引，并通过时间戳和自动剪辑搜索片段。行动：转码和标准化（编解码器、帧率、分辨率、宽高比），执行时间线编辑（字幕、文本/图像叠加、品牌化、音频叠加、配音、翻译），生成媒体资源（图像、音频、视频），并为直播流或桌面捕获的事件创建实时警报。
+description: See, Understand, Act on video and audio. See- ingest from local files, URLs, RTSP/live feeds, or live record desktop; return realtime context and playable stream links. Understand- extract frames, build visual/semantic/temporal indexes, and search moments with timestamps and auto-clips. Act- transcode and normalize (codec, fps, resolution, aspect ratio), perform timeline edits (subtitles, text/image overlays, branding, audio overlays, dubbing, translation), generate media assets (image, audio, video), and create real time alerts for events from live streams or desktop capture.
 origin: ECC
 allowed-tools: Read Grep Glob Bash(python:*)
 argument-hint: "[task description]"
 ---
 
-# VideoDB 技能
+# VideoDB Skill
 
-**针对视频、直播流和桌面会话的感知 + 记忆 + 操作。**
+**Perception + memory + actions for video, live streams, and desktop sessions.**
 
-## 使用场景
+## When to use
 
-### 桌面感知
+### Desktop Perception
+- Start/stop a **desktop session** capturing **screen, mic, and system audio**
+- Stream **live context** and store **episodic session memory**
+- Run **real-time alerts/triggers** on what's spoken and what's happening on screen
+- Produce **session summaries**, a searchable timeline, and **playable evidence links**
 
-* 启动/停止**桌面会话**，捕获**屏幕、麦克风和系统音频**
-* 流式传输**实时上下文**并存储**片段式会话记忆**
-* 对所说的内容和屏幕上发生的事情运行**实时警报/触发器**
-* 生成**会话摘要**、可搜索的时间线和**可播放的证据链接**
+### Video ingest + stream
+- Ingest a **file or URL** and return a **playable web stream link**
+- Transcode/normalize: **codec, bitrate, fps, resolution, aspect ratio**
 
-### 视频摄取 + 流
+### Index + search (timestamps + evidence)
+- Build **visual**, **spoken**, and **keyword** indexes
+- Search and return exact moments with **timestamps** and **playable evidence**
+- Auto-create **clips** from search results
 
-* 摄取**文件或URL**并返回**可播放的网络流链接**
-* 转码/标准化：**编解码器、比特率、帧率、分辨率、宽高比**
+### Timeline editing + generation
+- Subtitles: **generate**, **translate**, **burn-in**
+- Overlays: **text/image/branding**, motion captions
+- Audio: **background music**, **voiceover**, **dubbing**
+- Programmatic composition and exports via **timeline operations**
 
-### 索引 + 搜索（时间戳 + 证据）
+### Live streams (RTSP) + monitoring
+- Connect **RTSP/live feeds**
+- Run **real-time visual and spoken understanding** and emit **events/alerts** for monitoring workflows
 
-* 构建**视觉**、**语音**和**关键词**索引
-* 搜索并返回带有**时间戳**和**可播放证据**的精确时刻
-* 从搜索结果自动创建**片段**
+## How it works
 
-### 时间线编辑 + 生成
+### Common inputs
+- Local **file path**, public **URL**, or **RTSP URL**
+- Desktop capture request: **start / stop / summarize session**
+- Desired operations: get context for understanding, transcode spec, index spec, search query, clip ranges, timeline edits, alert rules
 
-* 字幕：**生成**、**翻译**、**烧录**
-* 叠加层：**文本/图片/品牌标识**，动态字幕
-* 音频：**背景音乐**、**画外音**、**配音**
-* 通过**时间线操作**进行程序化合成和导出
+### Common outputs
+- **Stream URL**
+- Search results with **timestamps** and **evidence links**
+- Generated assets: subtitles, audio, images, clips
+- **Event/alert payloads** for live streams
+- Desktop **session summaries** and memory entries
 
-### 直播流（RTSP）+ 监控
+### Running Python code
 
-* 连接**RTSP/实时流**
-* 运行**实时视觉和语音理解**，并为监控工作流发出**事件/警报**
-
-## 工作原理
-
-### 常见输入
-
-* 本地**文件路径**、公共**URL**或**RTSP URL**
-* 桌面捕获请求：**启动 / 停止 / 总结会话**
-* 期望的操作：获取理解上下文、转码规格、索引规格、搜索查询、片段范围、时间线编辑、警报规则
-
-### 常见输出
-
-* **流URL**
-* 带有**时间戳**和**证据链接**的搜索结果
-* 生成的资产：字幕、音频、图片、片段
-* 用于直播流的**事件/警报负载**
-* 桌面**会话摘要**和记忆条目
-
-### 运行 Python 代码
-
-在运行任何 VideoDB 代码之前，请切换到项目目录并加载环境变量：
+Before running any VideoDB code, change to the project directory and load environment variables:
 
 ```python
 from dotenv import load_dotenv
@@ -70,16 +63,15 @@ import videodb
 conn = videodb.connect()
 ```
 
-这会从以下位置读取 `VIDEO_DB_API_KEY`：
+This reads `VIDEO_DB_API_KEY` from:
+1. Environment (if already exported)
+2. Project's `.env` file in current directory
 
-1. 环境变量（如果已导出）
-2. 项目当前目录中的 `.env` 文件
+If the key is missing, `videodb.connect()` raises `AuthenticationError` automatically.
 
-如果密钥缺失，`videodb.connect()` 会自动引发 `AuthenticationError`。
+Do NOT write a script file when a short inline command works.
 
-当简短的內联命令有效时，不要编写脚本文件。
-
-编写內联 Python (`python -c "..."`) 时，始终使用格式正确的代码——使用分号分隔语句并保持可读性。对于任何超过约3条语句的内容，请改用 heredoc：
+When writing inline Python (`python -c "..."`), always use properly formatted code — use semicolons to separate statements and keep it readable. For anything longer than ~3 statements, use a heredoc instead:
 
 ```bash
 python << 'EOF'
@@ -93,36 +85,36 @@ print(f"Videos: {len(coll.get_videos())}")
 EOF
 ```
 
-### 设置
+### Setup
 
-当用户要求“设置 videodb”或类似操作时：
+When the user asks to "setup videodb" or similar:
 
-### 1. 安装 SDK
+### 1. Install SDK
 
 ```bash
 pip install "videodb[capture]" python-dotenv
 ```
 
-如果在 Linux 上 `videodb[capture]` 失败，请安装不带捕获扩展的版本：
+If `videodb[capture]` fails on Linux, install without the capture extra:
 
 ```bash
 pip install videodb python-dotenv
 ```
 
-### 2. 配置 API 密钥
+### 2. Configure API key
 
-用户必须使用**任一**方法设置 `VIDEO_DB_API_KEY`：
+The user must set `VIDEO_DB_API_KEY` using **either** method:
 
-* **在终端中导出**（在启动 Claude 之前）：`export VIDEO_DB_API_KEY=your-key`
-* **项目 `.env` 文件**：将 `VIDEO_DB_API_KEY=your-key` 保存在项目的 `.env` 文件中
+- **Export in terminal** (before starting Claude): `export VIDEO_DB_API_KEY=your-key`
+- **Project `.env` file**: Save `VIDEO_DB_API_KEY=your-key` in the project's `.env` file
 
-免费获取 API 密钥，请访问 [console.videodb.io](https://console.videodb.io)（50 次免费上传，无需信用卡）。
+Get a free API key at [console.videodb.io](https://console.videodb.io) (50 free uploads, no credit card).
 
-**请勿**自行读取、写入或处理 API 密钥。始终让用户设置。
+**Do NOT** read, write, or handle the API key yourself. Always let the user set it.
 
-### 快速参考
+### Quick Reference
 
-### 上传媒体
+### Upload media
 
 ```python
 # URL
@@ -135,7 +127,7 @@ video = coll.upload(url="https://www.youtube.com/watch?v=VIDEO_ID")
 video = coll.upload(file_path="/path/to/video.mp4")
 ```
 
-### 转录 + 字幕
+### Transcript + subtitle
 
 ```python
 # force=True skips the error if the video is already indexed
@@ -144,7 +136,7 @@ text = video.get_transcript_text()
 stream_url = video.add_subtitle()
 ```
 
-### 在视频内搜索
+### Search inside videos
 
 ```python
 from videodb.exceptions import InvalidRequestError
@@ -164,7 +156,7 @@ except InvalidRequestError as e:
         raise
 ```
 
-### 场景搜索
+### Scene search
 
 ```python
 import re
@@ -203,13 +195,12 @@ except InvalidRequestError as e:
         raise
 ```
 
-### 时间线编辑
+### Timeline editing
 
-**重要提示：** 在构建时间线之前，请务必验证时间戳：
-
-* `start` 必须 >= 0（负值会被静默接受，但会产生损坏的输出）
-* `start` 必须 < `end`
-* `end` 必须 <= `video.length`
+**Important:** Always validate timestamps before building a timeline:
+- `start` must be >= 0 (negative values are silently accepted but produce broken output)
+- `start` must be < `end`
+- `end` must be <= `video.length`
 
 ```python
 from videodb.timeline import Timeline
@@ -221,7 +212,7 @@ timeline.add_overlay(0, TextAsset(text="The End", duration=3, style=TextStyle(fo
 stream_url = timeline.generate_stream()
 ```
 
-### 转码视频（分辨率 / 质量更改）
+### Transcode video (resolution / quality change)
 
 ```python
 from videodb import TranscodeMode, VideoConfig, AudioConfig
@@ -236,13 +227,13 @@ job_id = conn.transcode(
 )
 ```
 
-### 调整宽高比（适用于社交平台）
+### Reframe aspect ratio (for social platforms)
 
-**警告：** `reframe()` 是一项缓慢的服务器端操作。对于长视频，可能需要几分钟，并可能超时。最佳实践：
-
-* 尽可能使用 `start`/`end` 限制为短片段
-* 对于全长视频，使用 `callback_url` 进行异步处理
-* 先在 `Timeline` 上修剪视频，然后调整较短结果的宽高比
+**Warning:** `reframe()` is a slow server-side operation. For long videos it can take
+several minutes and may time out. Best practices:
+- Always limit to a short segment using `start`/`end` when possible
+- For full-length videos, use `callback_url` for async processing
+- Trim the video on a `Timeline` first, then reframe the shorter result
 
 ```python
 from videodb import ReframeMode
@@ -260,7 +251,7 @@ reframed = video.reframe(start=0, end=60, target="square")
 reframed = video.reframe(start=0, end=60, target={"width": 1280, "height": 720})
 ```
 
-### 生成式媒体
+### Generative media
 
 ```python
 image = coll.generate_image(
@@ -269,7 +260,7 @@ image = coll.generate_image(
 )
 ```
 
-## 错误处理
+## Error handling
 
 ```python
 from videodb.exceptions import AuthenticationError, InvalidRequestError
@@ -285,43 +276,42 @@ except InvalidRequestError as e:
     print(f"Upload failed: {e}")
 ```
 
-### 常见问题
+### Common pitfalls
 
-| 场景 | 错误信息 | 解决方案 |
+| Scenario | Error message | Solution |
 |----------|--------------|----------|
-| 为已索引的视频建立索引 | `Spoken word index for video already exists` | 使用 `video.index_spoken_words(force=True)` 跳过已索引的情况 |
-| 场景索引已存在 | `Scene index with id XXXX already exists` | 使用 `re.search(r"id\s+([a-f0-9]+)", str(e))` 从错误中提取现有的 `scene_index_id` |
-| 搜索无匹配项 | `InvalidRequestError: No results found` | 捕获异常并视为空结果 (`shots = []`) |
-| 调整宽高比超时 | 长视频上无限期阻塞 | 使用 `start`/`end` 限制片段，或传递 `callback_url` 进行异步处理 |
-| Timeline 上的负时间戳 | 静默产生损坏的流 | 在创建 `VideoAsset` 之前，始终验证 `start >= 0` |
-| `generate_video()` / `create_collection()` 失败 | `Operation not allowed` 或 `maximum limit` | 计划限制的功能——告知用户关于计划限制 |
+| Indexing an already-indexed video | `Spoken word index for video already exists` | Use `video.index_spoken_words(force=True)` to skip if already indexed |
+| Scene index already exists | `Scene index with id XXXX already exists` | Extract the existing `scene_index_id` from the error with `re.search(r"id\s+([a-f0-9]+)", str(e))` |
+| Search finds no matches | `InvalidRequestError: No results found` | Catch the exception and treat as empty results (`shots = []`) |
+| Reframe times out | Blocks indefinitely on long videos | Use `start`/`end` to limit segment, or pass `callback_url` for async |
+| Negative timestamps on Timeline | Silently produces broken stream | Always validate `start >= 0` before creating `VideoAsset` |
+| `generate_video()` / `create_collection()` fails | `Operation not allowed` or `maximum limit` | Plan-gated features — inform the user about plan limits |
 
-## 示例
+## Examples
 
-### 规范提示
+### Canonical prompts
+- "Start desktop capture and alert when a password field appears."
+- "Record my session and produce an actionable summary when it ends."
+- "Ingest this file and return a playable stream link."
+- "Index this folder and find every scene with people, return timestamps."
+- "Generate subtitles, burn them in, and add light background music."
+- "Connect this RTSP URL and alert when a person enters the zone."
 
-* "开始桌面捕获，并在密码字段出现时发出警报。"
-* "记录我的会话并在结束时生成可操作的摘要。"
-* "摄取此文件并返回可播放的流链接。"
-* "为此文件夹建立索引，并找到每个有人的场景，返回时间戳。"
-* "生成字幕，将其烧录进去，并添加轻背景音乐。"
-* "连接此 RTSP URL，并在有人进入区域时发出警报。"
+### Screen Recording (Desktop Capture)
 
-### 屏幕录制（桌面捕获）
+Use `ws_listener.py` to capture WebSocket events during recording sessions. Desktop capture supports **macOS** only.
 
-使用 `ws_listener.py` 在录制会话期间捕获 WebSocket 事件。桌面捕获仅支持 **macOS**。
+#### Quick Start
 
-#### 快速开始
+1. **Choose state dir**: `STATE_DIR="${VIDEODB_EVENTS_DIR:-$HOME/.local/state/videodb}"`
+2. **Start listener**: `VIDEODB_EVENTS_DIR="$STATE_DIR" python scripts/ws_listener.py --clear "$STATE_DIR" &`
+3. **Get WebSocket ID**: `cat "$STATE_DIR/videodb_ws_id"`
+4. **Run capture code** (see reference/capture.md for the full workflow)
+5. **Events written to**: `$STATE_DIR/videodb_events.jsonl`
 
-1. **选择状态目录**：`STATE_DIR="${VIDEODB_EVENTS_DIR:-$HOME/.local/state/videodb}"`
-2. **启动监听器**：`VIDEODB_EVENTS_DIR="$STATE_DIR" python scripts/ws_listener.py --clear "$STATE_DIR" &`
-3. **获取 WebSocket ID**：`cat "$STATE_DIR/videodb_ws_id"`
-4. **运行捕获代码**（完整工作流程请参阅 reference/capture.md）
-5. **事件写入**：`$STATE_DIR/videodb_events.jsonl`
+Use `--clear` whenever you start a fresh capture run so stale transcript and visual events do not leak into the new session.
 
-每当开始新的捕获运行时，请使用 `--clear`，以免过时的转录和视觉事件泄露到新会话中。
-
-#### 查询事件
+#### Query Events
 
 ```python
 import json
@@ -349,38 +339,37 @@ recent_visual = [
 ]
 ```
 
-## 附加文档
+## Additional docs
 
-参考文档位于与此 SKILL.md 文件相邻的 `reference/` 目录中。如果需要，请使用 Glob 工具来定位。
+Reference documentation is in the `reference/` directory adjacent to this SKILL.md file. Use the Glob tool to locate it if needed.
 
-* [reference/api-reference.md](reference/api-reference.md) - 完整的 VideoDB Python SDK API 参考
-* [reference/search.md](reference/search.md) - 视频搜索深入指南（口语词和基于场景的）
-* [reference/editor.md](reference/editor.md) - 时间线编辑、资产和合成
-* [reference/streaming.md](reference/streaming.md) - HLS 流和即时播放
-* [reference/generative.md](reference/generative.md) - AI 驱动的媒体生成（图像、视频、音频）
-* [reference/rtstream.md](reference/rtstream.md) - 直播流摄取工作流程（RTSP/RTMP）
-* [reference/rtstream-reference.md](reference/rtstream-reference.md) - RTStream SDK 方法和 AI 管道
-* [reference/capture.md](reference/capture.md) - 桌面捕获工作流程
-* [reference/capture-reference.md](reference/capture-reference.md) - Capture SDK 和 WebSocket 事件
-* [reference/use-cases.md](reference/use-cases.md) - 常见的视频处理模式和示例
+- [reference/api-reference.md](reference/api-reference.md) - Complete VideoDB Python SDK API reference
+- [reference/search.md](reference/search.md) - In-depth guide to video search (spoken word and scene-based)
+- [reference/editor.md](reference/editor.md) - Timeline editing, assets, and composition
+- [reference/streaming.md](reference/streaming.md) - HLS streaming and instant playback
+- [reference/generative.md](reference/generative.md) - AI-powered media generation (images, video, audio)
+- [reference/rtstream.md](reference/rtstream.md) - Live stream ingestion workflow (RTSP/RTMP)
+- [reference/rtstream-reference.md](reference/rtstream-reference.md) - RTStream SDK methods and AI pipelines
+- [reference/capture.md](reference/capture.md) - Desktop capture workflow
+- [reference/capture-reference.md](reference/capture-reference.md) - Capture SDK and WebSocket events
+- [reference/use-cases.md](reference/use-cases.md) - Common video processing patterns and examples
 
-**当 VideoDB 支持该操作时，不要使用 ffmpeg、moviepy 或本地编码工具。** 以下所有操作均由 VideoDB 在服务器端处理——修剪、合并片段、叠加音频或音乐、添加字幕、文本/图像叠加层、转码、分辨率更改、宽高比转换、为平台要求调整大小、转录和媒体生成。仅当 reference/editor.md 中“限制”部分列出的操作（转场、速度变化、裁剪/缩放、色彩分级、音量混合）时，才回退到本地工具。
+**Do not use ffmpeg, moviepy, or local encoding tools** when VideoDB supports the operation. The following are all handled server-side by VideoDB — trimming, combining clips, overlaying audio or music, adding subtitles, text/image overlays, transcoding, resolution changes, aspect-ratio conversion, resizing for platform requirements, transcription, and media generation. Only fall back to local tools for operations listed under Limitations in reference/editor.md (transitions, speed changes, crop/zoom, colour grading, volume mixing).
 
-### 何时使用什么
+### When to use what
 
-| 问题 | VideoDB 解决方案 |
+| Problem | VideoDB solution |
 |---------|-----------------|
-| 平台拒绝视频宽高比或分辨率 | 使用 `VideoConfig` 的 `video.reframe()` 或 `conn.transcode()` |
-| 需要为 Twitter/Instagram/TikTok 调整视频大小 | `video.reframe(target="vertical")` 或 `target="square"` |
-| 需要更改分辨率（例如 1080p → 720p） | 使用 `VideoConfig(resolution=720)` 的 `conn.transcode()` |
-| 需要在视频上叠加音频/音乐 | 在 `Timeline` 上使用 `AudioAsset` |
-| 需要添加字幕 | `video.add_subtitle()` 或 `CaptionAsset` |
-| 需要合并/修剪片段 | 在 `Timeline` 上使用 `VideoAsset` |
-| 需要生成画外音、音乐或音效 | `coll.generate_voice()`、`generate_music()`、`generate_sound_effect()` |
+| Platform rejects video aspect ratio or resolution | `video.reframe()` or `conn.transcode()` with `VideoConfig` |
+| Need to resize video for Twitter/Instagram/TikTok | `video.reframe(target="vertical")` or `target="square"` |
+| Need to change resolution (e.g. 1080p → 720p) | `conn.transcode()` with `VideoConfig(resolution=720)` |
+| Need to overlay audio/music on video | `AudioAsset` on a `Timeline` |
+| Need to add subtitles | `video.add_subtitle()` or `CaptionAsset` |
+| Need to combine/trim clips | `VideoAsset` on a `Timeline` |
+| Need to generate voiceover, music, or SFX | `coll.generate_voice()`, `generate_music()`, `generate_sound_effect()` |
 
-## 来源
+## Provenance
 
-此技能的参考材料在 `skills/videodb/reference/` 下本地提供。
-请使用上面的本地副本，而不是在运行时遵循外部存储库链接。
+Reference material for this skill is vendored locally under `skills/videodb/reference/`.
+Use the local copies above instead of following external repository links at runtime.
 
-**维护者：** [VideoDB](https://www.videodb.io/)

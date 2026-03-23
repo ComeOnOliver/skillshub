@@ -1,3 +1,14 @@
+---
+name: jira-epic
+description: >
+  Creates Jira epics for large features following Prowler's standard format.
+  Trigger: When user asks to create an epic, large feature, or multi-task initiative.
+license: Apache-2.0
+metadata:
+  author: gentleman-programming
+  version: "1.0"
+---
+
 ## When to Use
 
 Use this skill when creating Jira epics for:
@@ -299,3 +310,4 @@ mcp__mcp-atlassian__jira_transition_issue (status)
 
 ## Keywords
 jira, epic, feature, initiative, prowler, large feature
+

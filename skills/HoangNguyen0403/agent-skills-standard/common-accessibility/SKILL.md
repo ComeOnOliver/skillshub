@@ -31,7 +31,7 @@ ARIA supplements semantics when native HTML is insufficient (e.g., custom widget
 
 - All interactive elements MUST be reachable and operable via keyboard.
 - Tab order must follow visual reading order. Never use positive `tabindex` values (`tabindex="1"` breaks natural order).
-- Provide visible focus indicators. Never `outline: none` without a custom focus style.
+- Provide visible focus indicators (see Focus style rule below).
 - **Modals/Dialogs**: Trap focus inside when open. Return focus to trigger element on close.
 - **Escape key**: Must close modals, dropdowns, and tooltips.
 - **Focus style**: Never `outline: none` without a visible replacement (min 2px solid, 3:1 contrast).
@@ -73,3 +73,4 @@ ARIA supplements semantics when native HTML is insufficient (e.g., custom widget
 - [WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/)
 - [ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/)
 - [axe-core Rules](https://dequeuniversity.com/rules/axe/)
+

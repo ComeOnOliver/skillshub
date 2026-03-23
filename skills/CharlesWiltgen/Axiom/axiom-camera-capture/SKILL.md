@@ -888,3 +888,4 @@ Before shipping camera features:
 **Docs**: /avfoundation/avcapturesession, /avfoundation/avcapturedevice/rotationcoordinator, /avfoundation/avcapturephotosettings, /avfoundation/avcapturephotooutputreadinesscoordinator
 
 **Skills**: axiom-camera-capture-ref, axiom-camera-capture-diag, axiom-photo-library
+

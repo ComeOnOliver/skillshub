@@ -1,26 +1,24 @@
 ---
 name: verification-loop
-description: "Claude Code 会话的全面验证系统。"
+description: "A comprehensive verification system for Claude Code sessions."
 origin: ECC
 ---
 
-# 验证循环技能
+# Verification Loop Skill
 
-一个全面的 Claude Code 会话验证系统。
+A comprehensive verification system for Claude Code sessions.
 
-## 何时使用
+## When to Use
 
-在以下情况下调用此技能：
+Invoke this skill:
+- After completing a feature or significant code change
+- Before creating a PR
+- When you want to ensure quality gates pass
+- After refactoring
 
-* 完成功能或重大代码变更后
-* 创建 PR 之前
-* 当您希望确保质量门通过时
-* 重构之后
+## Verification Phases
 
-## 验证阶段
-
-### 阶段 1：构建验证
-
+### Phase 1: Build Verification
 ```bash
 # Check if project builds
 npm run build 2>&1 | tail -20
@@ -28,10 +26,9 @@ npm run build 2>&1 | tail -20
 pnpm build 2>&1 | tail -20
 ```
 
-如果构建失败，请停止并在继续之前修复。
+If build fails, STOP and fix before continuing.
 
-### 阶段 2：类型检查
-
+### Phase 2: Type Check
 ```bash
 # TypeScript projects
 npx tsc --noEmit 2>&1 | head -30
@@ -40,10 +37,9 @@ npx tsc --noEmit 2>&1 | head -30
 pyright . 2>&1 | head -30
 ```
 
-报告所有类型错误。在继续之前修复关键错误。
+Report all type errors. Fix critical ones before continuing.
 
-### 阶段 3：代码规范检查
-
+### Phase 3: Lint Check
 ```bash
 # JavaScript/TypeScript
 npm run lint 2>&1 | head -30
@@ -52,8 +48,7 @@ npm run lint 2>&1 | head -30
 ruff check . 2>&1 | head -30
 ```
 
-### 阶段 4：测试套件
-
+### Phase 4: Test Suite
 ```bash
 # Run tests with coverage
 npm run test -- --coverage 2>&1 | tail -50
@@ -62,15 +57,13 @@ npm run test -- --coverage 2>&1 | tail -50
 # Target: 80% minimum
 ```
 
-报告：
+Report:
+- Total tests: X
+- Passed: X
+- Failed: X
+- Coverage: X%
 
-* 总测试数：X
-* 通过：X
-* 失败：X
-* 覆盖率：X%
-
-### 阶段 5：安全扫描
-
+### Phase 5: Security Scan
 ```bash
 # Check for secrets
 grep -rn "sk-" --include="*.ts" --include="*.js" . 2>/dev/null | head -10
@@ -80,23 +73,21 @@ grep -rn "api_key" --include="*.ts" --include="*.js" . 2>/dev/null | head -10
 grep -rn "console.log" --include="*.ts" --include="*.tsx" src/ 2>/dev/null | head -10
 ```
 
-### 阶段 6：差异审查
-
+### Phase 6: Diff Review
 ```bash
 # Show what changed
 git diff --stat
 git diff HEAD~1 --name-only
 ```
 
-审查每个更改的文件，检查：
+Review each changed file for:
+- Unintended changes
+- Missing error handling
+- Potential edge cases
 
-* 意外更改
-* 缺失的错误处理
-* 潜在的边界情况
+## Output Format
 
-## 输出格式
-
-运行所有阶段后，生成验证报告：
+After running all phases, produce a verification report:
 
 ```
 VERIFICATION REPORT
@@ -116,21 +107,21 @@ Issues to Fix:
 2. ...
 ```
 
-## 持续模式
+## Continuous Mode
 
-对于长时间会话，每 15 分钟或在重大更改后运行验证：
+For long sessions, run verification every 15 minutes or after major changes:
 
 ```markdown
-设置一个心理检查点：
-- 完成每个函数后
-- 完成一个组件后
-- 在移动到下一个任务之前
+Set a mental checkpoint:
+- After completing each function
+- After finishing a component
+- Before moving to next task
 
-运行: /verify
-
+Run: /verify
 ```
 
-## 与钩子的集成
+## Integration with Hooks
 
-此技能补充 PostToolUse 钩子，但提供更深入的验证。
-钩子会立即捕获问题；此技能提供全面的审查。
+This skill complements PostToolUse hooks but provides deeper verification.
+Hooks catch issues immediately; this skill provides comprehensive review.
+

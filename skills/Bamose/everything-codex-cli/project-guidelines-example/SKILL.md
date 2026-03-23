@@ -1,3 +1,8 @@
+---
+name: project-guidelines-example
+description: Example project-specific skill for the Ongize monorepo (Next.js + Cloudflare Workers + Drizzle).
+---
+
 # Project Guidelines Skill (Ongize Example)
 
 This is an example of a project-specific skill. Use this as a template for your own projects.
@@ -203,3 +208,4 @@ pnpm --filter @ongize/api deploy
 - `backend-patterns/` - API and database patterns
 - `frontend-patterns/` - React and Next.js patterns
 - `tdd-workflow/` - Test-driven development methodology
+

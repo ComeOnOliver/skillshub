@@ -66,3 +66,4 @@ When updating a version, follow these steps:
 2. Find where it's defined (e.g., `Directory.Packages.props`).
 3. Edit the file to update the version.
 4. Run `dotnet restore`.
+

@@ -33,3 +33,4 @@ Manage an executive's schedule, inbox, and communications.
 - Use `--format table` for quick visual scans of agenda and triage output.
 - Check `gws calendar +agenda --week` on Monday mornings for weekly planning.
 
+

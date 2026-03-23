@@ -28,3 +28,4 @@ After gathering sufficient information, and having a clear understanding of the 
 1. Show your plan to the user with redundancy kept to a minimum
 2. Create a todo list
 3. Get to work!
+

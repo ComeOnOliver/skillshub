@@ -1,3 +1,11 @@
+---
+name: Clockify Automation
+description: "Automate time tracking workflows in Clockify -- create and manage time entries, workspaces, and users through natural language commands."
+requires:
+  mcp:
+    - rube
+---
+
 # Clockify Automation
 
 Automate your Clockify time tracking operations directly from Claude Code. Log time entries, query historical data, manage workspaces, and audit team activity -- all without leaving your terminal.
@@ -137,3 +145,4 @@ Start a timer on project abc in workspace xyz with description "Working on bug f
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

@@ -536,3 +536,4 @@ module "vpc" {
 | Version | Date | Changes |
 |---------|------|---------|
 | 1.0.0 | 2025-11-07 | Initial skill definition |
+

@@ -297,3 +297,4 @@ User: "Audit my tests for quality issues"
 
 User: "Should I migrate to Swift Testing?"
 → Invoke: `testing-auditor` agent
+

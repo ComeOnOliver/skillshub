@@ -74,3 +74,4 @@ const log = createLogUpdate(process.stdout, { showCursor: true })
 ✅ v7.1.0 uses synchronized output (`\x1b[?2026h/l`) on TTYs to eliminate flicker — no action needed, but be aware this wraps every write in DEC private mode sequences that some non-standard terminals may not support [source](./.skilld/releases/v7.1.0.md)
 
 ✅ Identical consecutive frames are skipped (no-op) — safe to call `logUpdate()` at high frequency without performance concern, the library diffs and only writes changed lines [source](./.skilld/pkg/index.js)
+

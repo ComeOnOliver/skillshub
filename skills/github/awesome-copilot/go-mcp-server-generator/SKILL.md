@@ -332,3 +332,4 @@ When generating a Go MCP server:
 - Keep main.go minimal, logic in packages
 - Write tests for tool handlers
 - Document all exported functions
+

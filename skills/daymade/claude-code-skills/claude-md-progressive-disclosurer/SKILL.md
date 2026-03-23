@@ -476,3 +476,4 @@ function getDatabase() {
 - [ ] Reference 触发索引在文档末尾（入口3：长对话后复述）
 - [ ] 每个 Level 2 引用都有触发条件
 - [ ] 引用的文件都存在
+

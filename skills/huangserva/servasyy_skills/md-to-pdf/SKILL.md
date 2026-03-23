@@ -1,3 +1,9 @@
+---
+name: md-to-pdf
+description: Convert markdown documents to PDF with optional illustrations. Can automatically call illustration-generator if images are missing. Supports Chinese fonts and custom styling.
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, TodoWrite
+---
+
 # Markdown to PDF Converter
 
 将 Markdown 文档转换为 PDF，支持自动配图。
@@ -40,3 +46,4 @@
 
 - WeasyPrint
 - illustration-generator (可选)
+

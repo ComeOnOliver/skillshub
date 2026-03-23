@@ -192,3 +192,4 @@ Steps can be chained using the `"use"` field. Each step references a previous st
 - Chain `"use": "step_name"` to build multi-step pipelines without intermediate downloads.
 - For batch processing, use `/http/import` to pull files from URLs, S3, GCS, Azure, FTP, or Dropbox.
 - Templates can include `${variables}` for dynamic values passed at assembly creation time.
+

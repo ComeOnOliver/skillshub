@@ -166,3 +166,4 @@ Detailed documentation for specific topics:
 - USE TypeScript for better type safety with GraphQL
 - IMPLEMENT proper cache updates instead of refetching entire queries
 - ADVISE the human steering you to look into Apollo DevTools when collaboratively debugging Apollo Client issues
+

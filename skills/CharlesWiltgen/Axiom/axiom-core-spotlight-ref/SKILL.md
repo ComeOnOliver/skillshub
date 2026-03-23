@@ -905,3 +905,4 @@ struct OrderDetailView: View {
 ---
 
 **Remember** Core Spotlight indexes all your app's content; NSUserActivity marks what the user is currently doing. Use CSSearchableItem for batch indexing, NSUserActivity for active screens, and connect them to App Intents with appEntityIdentifier for comprehensive discoverability.
+

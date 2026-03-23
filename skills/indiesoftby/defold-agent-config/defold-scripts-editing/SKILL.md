@@ -1,3 +1,8 @@
+---
+name: defold-scripts-editing
+description: "Creates and edits Defold Lua script files (.script, .gui_script, .render_script, .editor_script) and plain Lua modules (.lua). Use when asked to create, modify, or configure any Defold script or Lua module."
+---
+
 # Editing Defold Script Files and Lua Modules
 
 Defold has four Lua script types (each running in a different context with different APIs) and plain `.lua` modules for reusable logic.
@@ -148,3 +153,4 @@ Consult the `references/` directory for constraints, templates, and patterns spe
 2. Preserve existing declarations (e.g., `go.property()` names) and callback signatures.
 3. Add/modify callbacks as needed.
 4. Changing a `go.property()` name or type may break overrides in `.go` and `.collection` files.
+

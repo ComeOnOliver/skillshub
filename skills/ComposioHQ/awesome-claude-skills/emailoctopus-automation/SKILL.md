@@ -1,3 +1,10 @@
+---
+name: emailoctopus-automation
+description: "Automate Emailoctopus tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Emailoctopus Automation via Rube MCP
 
 Automate Emailoctopus operations through Composio's Emailoctopus toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

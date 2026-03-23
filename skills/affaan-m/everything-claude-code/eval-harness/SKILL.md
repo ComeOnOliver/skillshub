@@ -1,69 +1,60 @@
 ---
 name: eval-harness
-description: 克劳德代码会话的正式评估框架，实施评估驱动开发（EDD）原则
+description: Formal evaluation framework for Claude Code sessions implementing eval-driven development (EDD) principles
 origin: ECC
 tools: Read, Write, Edit, Bash, Grep, Glob
 ---
 
-# Eval Harness 技能
+# Eval Harness Skill
 
-一个用于 Claude Code 会话的正式评估框架，实现了评估驱动开发 (EDD) 原则。
+A formal evaluation framework for Claude Code sessions, implementing eval-driven development (EDD) principles.
 
-## 何时激活
+## When to Activate
 
-* 为 AI 辅助工作流程设置评估驱动开发 (EDD)
-* 定义 Claude Code 任务完成的标准（通过/失败）
-* 使用 pass@k 指标衡量代理可靠性
-* 为提示或代理变更创建回归测试套件
-* 跨模型版本对代理性能进行基准测试
+- Setting up eval-driven development (EDD) for AI-assisted workflows
+- Defining pass/fail criteria for Claude Code task completion
+- Measuring agent reliability with pass@k metrics
+- Creating regression test suites for prompt or agent changes
+- Benchmarking agent performance across model versions
 
-## 理念
+## Philosophy
 
-评估驱动开发将评估视为 "AI 开发的单元测试"：
+Eval-Driven Development treats evals as the "unit tests of AI development":
+- Define expected behavior BEFORE implementation
+- Run evals continuously during development
+- Track regressions with each change
+- Use pass@k metrics for reliability measurement
 
-* 在实现 **之前** 定义预期行为
-* 在开发过程中持续运行评估
-* 跟踪每次更改的回归情况
-* 使用 pass@k 指标来衡量可靠性
+## Eval Types
 
-## 评估类型
-
-### 能力评估
-
-测试 Claude 是否能完成之前无法完成的事情：
-
+### Capability Evals
+Test if Claude can do something it couldn't before:
 ```markdown
-[能力评估：功能名称]
-任务：描述 Claude 应完成的工作
-成功标准：
-  - [ ] 标准 1
-  - [ ] 标准 2
-  - [ ] 标准 标准 3
-预期输出：对预期结果的描述
-
+[CAPABILITY EVAL: feature-name]
+Task: Description of what Claude should accomplish
+Success Criteria:
+  - [ ] Criterion 1
+  - [ ] Criterion 2
+  - [ ] Criterion 3
+Expected Output: Description of expected result
 ```
 
-### 回归评估
-
-确保更改不会破坏现有功能：
-
+### Regression Evals
+Ensure changes don't break existing functionality:
 ```markdown
-[回归评估：功能名称]
-基线：SHA 或检查点名称
-测试：
-  - 现有测试-1：通过/失败
-  - 现有测试-2：通过/失败
-  - 现有测试-3：通过/失败
-结果：X/Y 通过（之前为 Y/Y）
-
+[REGRESSION EVAL: feature-name]
+Baseline: SHA or checkpoint name
+Tests:
+  - existing-test-1: PASS/FAIL
+  - existing-test-2: PASS/FAIL
+  - existing-test-3: PASS/FAIL
+Result: X/Y passed (previously Y/Y)
 ```
 
-## 评分器类型
+## Grader Types
 
-### 1. 基于代码的评分器
-
-使用代码进行确定性检查：
-
+### 1. Code-Based Grader
+Deterministic checks using code:
 ```bash
 # Check if file contains expected pattern
 grep -q "export function handleAuth" src/auth.ts && echo "PASS" || echo "FAIL"
@@ -75,82 +66,68 @@ npm test -- --testPathPattern="auth" && echo "PASS" || echo "FAIL"
 npm run build && echo "PASS" || echo "FAIL"
 ```
 
-### 2. 基于模型的评分器
-
-使用 Claude 来评估开放式输出：
-
+### 2. Model-Based Grader
+Use Claude to evaluate open-ended outputs:
 ```markdown
 [MODEL GRADER PROMPT]
-评估以下代码变更：
-1. 它是否解决了所述问题？
-2. 它的结构是否良好？
-3. 是否处理了边界情况？
-4. 错误处理是否恰当？
+Evaluate the following code change:
+1. Does it solve the stated problem?
+2. Is it well-structured?
+3. Are edge cases handled?
+4. Is error handling appropriate?
 
-评分：1-5 (1=差，5=优秀)
-推理：[解释]
-
+Score: 1-5 (1=poor, 5=excellent)
+Reasoning: [explanation]
 ```
 
-### 3. 人工评分器
-
-标记为需要手动审查：
-
+### 3. Human Grader
+Flag for manual review:
 ```markdown
 [HUMAN REVIEW REQUIRED]
-变更：对更改内容的描述
-原因：为何需要人工审核
-风险等级：低/中/高
-
+Change: Description of what changed
+Reason: Why human review is needed
+Risk Level: LOW/MEDIUM/HIGH
 ```
 
-## 指标
+## Metrics
 
 ### pass@k
-
-"k 次尝试中至少成功一次"
-
-* pass@1：首次尝试成功率
-* pass@3：3 次尝试内成功率
-* 典型目标：pass@3 > 90%
+"At least one success in k attempts"
+- pass@1: First attempt success rate
+- pass@3: Success within 3 attempts
+- Typical target: pass@3 > 90%
 
 ### pass^k
+"All k trials succeed"
+- Higher bar for reliability
+- pass^3: 3 consecutive successes
+- Use for critical paths
 
-"所有 k 次试验都成功"
+## Eval Workflow
 
-* 更高的可靠性门槛
-* pass^3：连续 3 次成功
-* 用于关键路径
-
-## 评估工作流程
-
-### 1. 定义（编码前）
-
+### 1. Define (Before Coding)
 ```markdown
-## 评估定义：功能-xyz
+## EVAL DEFINITION: feature-xyz
 
-### 能力评估
-1. 可以创建新用户账户
-2. 可以验证电子邮件格式
-3. 可以安全地哈希密码
+### Capability Evals
+1. Can create new user account
+2. Can validate email format
+3. Can hash password securely
 
-### 回归评估
-1. 现有登录功能仍然有效
-2. 会话管理未改变
-3. 注销流程完整
+### Regression Evals
+1. Existing login still works
+2. Session management unchanged
+3. Logout flow intact
 
-### 成功指标
-- 能力评估的 pass@3 > 90%
-- 回归评估的 pass^3 = 100%
-
+### Success Metrics
+- pass@3 > 90% for capability evals
+- pass^3 = 100% for regression evals
 ```
 
-### 2. 实现
+### 2. Implement
+Write code to pass the defined evals.
 
-编写代码以通过已定义的评估。
-
-### 3. 评估
-
+### 3. Evaluate
 ```bash
 # Run capability evals
 [Run each capability eval, record PASS/FAIL]
@@ -161,62 +138,53 @@ npm test -- --testPathPattern="existing"
 # Generate report
 ```
 
-### 4. 报告
-
+### 4. Report
 ```markdown
-评估报告：功能-xyz
+EVAL REPORT: feature-xyz
 ========================
 
-能力评估：
-  创建用户：    通过（通过@1）
-  验证邮箱：    通过（通过@2）
-  哈希密码：    通过（通过@1）
-  总计：         3/3 通过
+Capability Evals:
+  create-user:     PASS (pass@1)
+  validate-email:  PASS (pass@2)
+  hash-password:   PASS (pass@1)
+  Overall:         3/3 passed
 
-回归评估：
-  登录流程：     通过
-  会话管理：     通过
-  登出流程：     通过
-  总计：         3/3 通过
+Regression Evals:
+  login-flow:      PASS
+  session-mgmt:    PASS
+  logout-flow:     PASS
+  Overall:         3/3 passed
 
-指标：
-  通过@1： 67% (2/3)
-  通过@3： 100% (3/3)
+Metrics:
+  pass@1: 67% (2/3)
+  pass@3: 100% (3/3)
 
-状态：准备就绪，待审核
-
+Status: READY FOR REVIEW
 ```
 
-## 集成模式
+## Integration Patterns
 
-### 实施前
-
+### Pre-Implementation
 ```
 /eval define feature-name
 ```
+Creates eval definition file at `.claude/evals/feature-name.md`
 
-在 `.claude/evals/feature-name.md` 处创建评估定义文件
-
-### 实施过程中
-
+### During Implementation
 ```
 /eval check feature-name
 ```
+Runs current evals and reports status
 
-运行当前评估并报告状态
-
-### 实施后
-
+### Post-Implementation
 ```
 /eval report feature-name
 ```
+Generates full eval report
 
-生成完整的评估报告
+## Eval Storage
 
-## 评估存储
-
-将评估存储在项目中：
-
+Store evals in project:
 ```
 .claude/
   evals/
@@ -225,80 +193,79 @@ npm test -- --testPathPattern="existing"
     baseline.json       # Regression baselines
 ```
 
-## 最佳实践
+## Best Practices
 
-1. **在编码前定义评估** - 强制清晰地思考成功标准
-2. **频繁运行评估** - 及早发现回归问题
-3. **随时间跟踪 pass@k** - 监控可靠性趋势
-4. **尽可能使用代码评分器** - 确定性 > 概率性
-5. **对安全性进行人工审查** - 永远不要完全自动化安全检查
-6. **保持评估快速** - 缓慢的评估不会被运行
-7. **评估与代码版本化** - 评估是一等工件
+1. **Define evals BEFORE coding** - Forces clear thinking about success criteria
+2. **Run evals frequently** - Catch regressions early
+3. **Track pass@k over time** - Monitor reliability trends
+4. **Use code graders when possible** - Deterministic > probabilistic
+5. **Human review for security** - Never fully automate security checks
+6. **Keep evals fast** - Slow evals don't get run
+7. **Version evals with code** - Evals are first-class artifacts
 
-## 示例：添加身份验证
+## Example: Adding Authentication
 
 ```markdown
-## EVAL：添加身份验证
+## EVAL: add-authentication
 
-### 第 1 阶段：定义 (10 分钟)
-能力评估：
-- [ ] 用户可以使用邮箱/密码注册
-- [ ] 用户可以使用有效凭证登录
-- [ ] 无效凭证被拒绝并显示适当的错误
-- [ ] 会话在页面重新加载后保持
-- [ ] 登出操作清除会话
+### Phase 1: Define (10 min)
+Capability Evals:
+- [ ] User can register with email/password
+- [ ] User can login with valid credentials
+- [ ] Invalid credentials rejected with proper error
+- [ ] Sessions persist across page reloads
+- [ ] Logout clears session
 
-回归评估：
-- [ ] 公共路由仍可访问
-- [ ] API 响应未改变
-- [ ] 数据库模式兼容
+Regression Evals:
+- [ ] Public routes still accessible
+- [ ] API responses unchanged
+- [ ] Database schema compatible
 
-### 第 2 阶段：实施 (时间不定)
-[编写代码]
+### Phase 2: Implement (varies)
+[Write code]
 
-### 第 3 阶段：评估
-运行：/eval check add-authentication
+### Phase 3: Evaluate
+Run: /eval check add-authentication
 
-### 第 4 阶段：报告
-评估报告：添加身份验证
+### Phase 4: Report
+EVAL REPORT: add-authentication
 ==============================
-能力：5/5 通过 (pass@3: 100%)
-回归：3/3 通过 (pass^3: 100%)
-状态：可以发布
-
+Capability: 5/5 passed (pass@3: 100%)
+Regression: 3/3 passed (pass^3: 100%)
+Status: SHIP IT
 ```
 
-## 产品评估 (v1.8)
+## Product Evals (v1.8)
 
-当单元测试无法单独捕获行为质量时，使用产品评估。
+Use product evals when behavior quality cannot be captured by unit tests alone.
 
-### 评分器类型
+### Grader Types
 
-1. 代码评分器（确定性断言）
-2. 规则评分器（正则表达式/模式约束）
-3. 模型评分器（LLM 作为评判者的评估准则）
-4. 人工评分器（针对模糊输出的人工裁定）
+1. Code grader (deterministic assertions)
+2. Rule grader (regex/schema constraints)
+3. Model grader (LLM-as-judge rubric)
+4. Human grader (manual adjudication for ambiguous outputs)
 
-### pass@k 指南
+### pass@k Guidance
 
-* `pass@1`：直接可靠性
-* `pass@3`：受控重试下的实际可靠性
-* `pass^3`：稳定性测试（所有 3 次运行必须通过）
+- `pass@1`: direct reliability
+- `pass@3`: practical reliability under controlled retries
+- `pass^3`: stability test (all 3 runs must pass)
 
-推荐阈值：
+Recommended thresholds:
+- Capability evals: pass@3 >= 0.90
+- Regression evals: pass^3 = 1.00 for release-critical paths
 
-* 能力评估：pass@3 >= 0.90
-* 回归评估：对于发布关键路径，pass^3 = 1.00
+### Eval Anti-Patterns
 
-### 评估反模式
+- Overfitting prompts to known eval examples
+- Measuring only happy-path outputs
+- Ignoring cost and latency drift while chasing pass rates
+- Allowing flaky graders in release gates
 
-* 将提示过度拟合到已知的评估示例
-* 仅测量正常路径输出
-* 在追求通过率时忽略成本和延迟漂移
-* 在发布关卡中允许不稳定的评分器
+### Minimal Eval Artifact Layout
 
-### 最小评估工件布局
+- `.claude/evals/<feature>.md` definition
+- `.claude/evals/<feature>.log` run history
+- `docs/releases/<version>/eval-summary.md` release snapshot
 
-* `.claude/evals/<feature>.md` 定义
-* `.claude/evals/<feature>.log` 运行历史
-* `docs/releases/<version>/eval-summary.md` 发布快照

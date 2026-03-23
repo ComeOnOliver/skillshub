@@ -166,3 +166,4 @@ Output is printed to the terminal. With `--dump`, a markdown file is saved to th
 - [protocols.io](https://www.protocols.io) — Open access repository for scientific methods
 - [protocols.io API v3 Documentation](https://apidocs.protocols.io/) — REST API reference
 - Teytelman et al. (2016) "protocols.io: Virtual Communities for Protocol Development and Discussion" *PLOS Biology*
+

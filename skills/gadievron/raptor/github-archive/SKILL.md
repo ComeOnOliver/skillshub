@@ -956,3 +956,4 @@ print(f"Found {len(deleted_commits)} force-pushed commits to investigate")
 - **BigQuery Documentation**: https://cloud.google.com/bigquery/docs
 - **BigQuery SQL Reference**: https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax
 - **Force Push Scanner Tool**: https://github.com/trufflesecurity/force-push-scanner
+

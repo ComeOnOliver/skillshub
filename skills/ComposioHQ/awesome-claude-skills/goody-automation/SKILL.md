@@ -1,3 +1,10 @@
+---
+name: goody-automation
+description: "Automate Goody tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Goody Automation via Rube MCP
 
 Automate Goody operations through Composio's Goody toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

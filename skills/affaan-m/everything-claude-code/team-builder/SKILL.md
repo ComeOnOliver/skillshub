@@ -1,26 +1,26 @@
 ---
 name: team-builder
-description: Interactive agent picker for composing and dispatching parallel teams
+description: 用于组合和派遣并行团队的交互式代理选择器
 origin: community
 ---
 
-# Team Builder
+# 团队构建器
 
-Interactive menu for browsing and composing agent teams on demand. Works with flat or domain-subdirectory agent collections.
+用于按需浏览和组合智能体团队的交互式菜单。适用于扁平化或按领域子目录组织的智能体集合。
 
-## When to Use
+## 使用场景
 
-- You have multiple agent personas (markdown files) and want to pick which ones to use for a task
-- You want to compose an ad-hoc team from different domains (e.g., Security + SEO + Architecture)
-- You want to browse what agents are available before deciding
+* 你拥有多个智能体角色（markdown 文件），并希望为某项任务选择使用哪些智能体
+* 你希望从不同领域（例如，安全 + SEO + 架构）临时组建一个团队
+* 你希望在决定前先浏览有哪些可用的智能体
 
-## Prerequisites
+## 前提条件
 
-Agent files must be markdown files containing a persona prompt (identity, rules, workflow, deliverables). The first `# Heading` is used as the agent name and the first paragraph as the description.
+智能体文件必须是包含角色提示（身份、规则、工作流程、交付物）的 markdown 文件。第一个 `# Heading` 用作智能体名称，第一段用作描述。
 
-Both flat and subdirectory layouts are supported:
+支持扁平化和子目录两种布局：
 
-**Subdirectory layout** — domain is inferred from the folder name:
+**子目录布局** — 领域从文件夹名称推断：
 
 ```
 agents/
@@ -33,7 +33,7 @@ agents/
     └── discovery-coach.md
 ```
 
-**Flat layout** — domain inferred from shared filename prefixes. A prefix counts as a domain when 2+ files share it. Files with unique prefixes go to "General". Note: the algorithm splits at the first `-`, so multi-word domains (e.g., `product-management`) should use the subdirectory layout instead:
+**扁平化布局** — 领域从共享的文件名前缀推断。当 2 个或更多文件共享同一前缀时，该前缀被视为一个领域。具有唯一前缀的文件归入 "General" 类别。注意：算法在第一个 `-` 处分割，因此多单词领域（例如 `product-management`）应使用子目录布局：
 
 ```
 agents/
@@ -45,117 +45,122 @@ agents/
 └── sales-outbound-strategist.md
 ```
 
-## Configuration
+## 配置
 
-Agent directories are probed in order and results are merged:
+智能体目录按顺序探测，结果会被合并：
 
-1. `./agents/**/*.md` + `./agents/*.md` — project-local agents (both depths)
-2. `~/.claude/agents/**/*.md` + `~/.claude/agents/*.md` — global agents (both depths)
+1. `./agents/**/*.md` + `./agents/*.md` — 项目本地智能体（两种深度）
+2. `~/.claude/agents/**/*.md` + `~/.claude/agents/*.md` — 全局智能体（两种深度）
 
-Results from all locations are merged and deduplicated by agent name. Project-local agents take precedence over global agents with the same name. A custom path can be used instead if the user specifies one.
+所有位置的结果会合并，并按智能体名称去重。同名情况下，项目本地智能体优先于全局智能体。如果用户指定了自定义路径，则使用该路径代替。
 
-## How It Works
+## 工作原理
 
-### Step 1: Discover Available Agents
+### 步骤 1：发现可用智能体
 
-Glob agent directories using the probe order above. Exclude README files. For each file found:
-- **Subdirectory layout:** extract the domain from the parent folder name
-- **Flat layout:** collect all filename prefixes (text before the first `-`). A prefix qualifies as a domain only if it appears in 2 or more filenames (e.g., `engineering-security-engineer.md` and `engineering-software-architect.md` both start with `engineering` → Engineering domain). Files with unique prefixes (e.g., `code-reviewer.md`, `tdd-guide.md`) are grouped under "General"
-- Extract the agent name from the first `# Heading`. If no heading is found, derive the name from the filename (strip `.md`, replace hyphens with spaces, title-case)
-- Extract a one-line summary from the first paragraph after the heading
+使用上述探测顺序在智能体目录中进行全局搜索。排除 README 文件。对于找到的每个文件：
 
-If no agent files are found after probing all locations, inform the user: "No agent files found. Checked: [list paths probed]. Expected: markdown files in one of those directories." Then stop.
+* **子目录布局：** 从父文件夹名称提取领域
+* **扁平化布局：** 收集所有文件名前缀（第一个 `-` 之前的文本）。一个前缀只有在出现在 2 个或更多文件名中时才符合领域资格（例如，`engineering-security-engineer.md` 和 `engineering-software-architect.md` 都以 `engineering` 开头 → Engineering 领域）。具有唯一前缀的文件（例如 `code-reviewer.md`, `tdd-guide.md`）归入 "General" 类别
+* 从第一个 `# Heading` 提取智能体名称。如果未找到标题，则从文件名派生名称（去除 `.md`，用空格替换连字符，并转换为标题大小写）
+* 从标题后的第一段提取一行摘要
 
-### Step 2: Present Domain Menu
+如果在探测完所有位置后未找到任何智能体文件，则通知用户："未找到智能体文件。已检查：\[探测的路径列表]。期望：这些目录中的 markdown 文件。" 然后停止。
+
+### 步骤 2：呈现领域菜单
 
 ```
-Available agent domains:
-1. Engineering — Software Architect, Security Engineer
-2. Marketing — SEO Specialist
-3. Sales — Discovery Coach, Outbound Strategist
+可用的代理领域：
+1. 工程领域 — 软件架构师、安全工程师
+2. 市场营销 — SEO专家
+3. 销售领域 — 发现教练、外拓策略师
 
-Pick domains or name specific agents (e.g., "1,3" or "security + seo"):
+请选择领域或指定具体代理（例如："1,3" 或 "security + seo"）：
 ```
 
-- Skip domains with zero agents (empty directories)
-- Show agent count per domain
+* 跳过智能体数量为零的领域（空目录）
+* 显示每个领域的智能体数量
 
-### Step 3: Handle Selection
+### 步骤 3：处理选择
 
-Accept flexible input:
-- Numbers: "1,3" selects all agents from Engineering and Sales
-- Names: "security + seo" fuzzy-matches against discovered agents
-- "all from engineering" selects every agent in that domain
+接受灵活的输入：
 
-If more than 5 agents are selected, list them alphabetically and ask the user to narrow down: "You selected N agents (max 5). Pick which to keep, or say 'first 5' to use the first five alphabetically."
+* 数字："1,3" 选择 Engineering 和 Sales 中的所有智能体
+* 名称："security + seo" 对发现的智能体进行模糊匹配
+* "all from engineering" 选择该领域中的每个智能体
 
-Confirm selection:
+如果选择的智能体超过 5 个，则按字母顺序列出它们，并要求用户缩小范围："您选择了 N 个智能体（最多 5 个）。请选择保留哪些，或说 'first 5' 以使用按字母顺序排列的前五个。"
+
+确认选择：
+
 ```
-Selected: Security Engineer + SEO Specialist
-What should they work on? (describe the task):
+选定：安全工程师 + SEO专家  
+他们应该专注于什么任务？（描述任务）
 ```
 
-### Step 4: Spawn Agents in Parallel
+### 步骤 4：并行启动智能体
 
-1. Read each selected agent's markdown file
-2. Prompt for the task description if not already provided
-3. Spawn all agents in parallel using the Agent tool:
-   - `subagent_type: "general-purpose"`
-   - `prompt: "{agent file content}\n\nTask: {task description}"`
-   - Each agent runs independently — no inter-agent communication needed
-4. If an agent fails (error, timeout, or empty output), note the failure inline (e.g., "Security Engineer: failed — [reason]") and continue with results from agents that succeeded
+1. 读取每个所选智能体的 markdown 文件
+2. 如果尚未提供，则提示输入任务描述
+3. 使用 Agent 工具并行启动所有智能体：
+   * `subagent_type: "general-purpose"`
+   * `prompt: "{agent file content}\n\nTask: {task description}"`
+   * 每个智能体独立运行 — 不需要智能体间通信
+4. 如果某个智能体失败（错误、超时或输出为空），则在内联中注明失败（例如，"Security Engineer: failed — \[原因]"）并继续处理成功智能体的结果
 
-### Step 5: Synthesize Results
+### 步骤 5：综合结果
 
-Collect all outputs and present a unified report:
-- Results grouped by agent
-- Synthesis section highlighting:
-  - Agreements across agents
-  - Conflicts or tensions between recommendations
-  - Recommended next steps
+收集所有输出并呈现统一的报告：
 
-If only 1 agent was selected, skip synthesis and present the output directly.
+* 按智能体分组的结果
+* 综合部分重点突出：
+  * 各智能体间的共识
+  * 建议之间的冲突或矛盾
+  * 建议的后续步骤
 
-## Rules
+如果只选择了一个智能体，则跳过综合部分，直接呈现输出。
 
-- **Dynamic discovery only.** Never hardcode agent lists. New files in the directory auto-appear in the menu.
-- **Max 5 agents per team.** More than 5 produces diminishing returns and excessive token usage. Enforce at selection time.
-- **Parallel dispatch.** All agents run simultaneously — use the Agent tool's parallel invocation pattern.
-- **Parallel Agent calls, not TeamCreate.** This skill uses parallel Agent tool calls for independent work. TeamCreate (a Claude Code tool for multi-agent dialogue) is only needed when agents must debate or respond to each other.
+## 规则
 
-## Examples
+* **仅限动态发现。** 切勿硬编码智能体列表。目录中的新文件会自动出现在菜单中。
+* **每个团队最多 5 个智能体。** 超过 5 个会产生收益递减和过多的令牌使用。在选择时强制执行。
+* **并行分发。** 所有智能体同时运行 — 使用 Agent 工具的并行调用模式。
+* **并行 Agent 调用，而非 TeamCreate。** 此技能使用并行 Agent 工具调用来处理独立工作。只有当智能体需要辩论或相互回应时，才需要 TeamCreate（一个用于多智能体对话的 Claude Code 工具）。
+
+## 示例
 
 ```
 User: team builder
 
 Claude:
-Available agent domains:
-1. Engineering (2) — Software Architect, Security Engineer
-2. Marketing (1) — SEO Specialist
-3. Sales (4) — Discovery Coach, Outbound Strategist, Proposal Strategist, Sales Engineer
-4. Support (1) — Executive Summary
+可用代理领域：
+1. 工程 (2) — 软件架构师，安全工程师
+2. 市场营销 (1) — SEO专家
+3. 销售 (4) — 探索教练，外拓策略师，提案策略师，销售工程师
+4. 支持 (1) — 执行摘要
 
-Pick domains or name specific agents:
+选择领域或指定具体代理：
 
 User: security + seo
 
 Claude:
-Selected: Security Engineer + SEO Specialist
-What should they work on?
+已选择：安全工程师 + SEO专家
+他们应该处理什么任务？
 
-User: Review my Next.js e-commerce site before launch
+User: 在发布前审查我的 Next.js 电商网站
 
-[Both agents spawn in parallel, each applying their specialty to the codebase]
+[两个代理并行启动，各自将他们的专长应用于代码库]
 
 Claude:
-## Security Engineer Findings
-- [findings...]
+## 安全工程师发现
+- [发现内容...]
 
-## SEO Specialist Findings
-- [findings...]
+## SEO专家发现
+- [发现内容...]
 
-## Synthesis
-Both agents agree on: [...]
-Tension: Security recommends CSP that blocks inline styles, SEO needs inline schema markup. Resolution: [...]
-Next steps: [...]
+## 综合分析
+双方代理均同意：[...]
+冲突点：安全建议的CSP阻止内联样式，SEO需要内联模式标记。解决方案：[...]
+后续步骤：[...]
 ```
+

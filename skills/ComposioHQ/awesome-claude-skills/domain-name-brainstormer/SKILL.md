@@ -210,3 +210,4 @@ After picking a domain:
 - Research trademark availability
 - Plan brand identity colors/fonts
 
+

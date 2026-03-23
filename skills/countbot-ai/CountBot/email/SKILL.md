@@ -56,3 +56,4 @@ python3 skills/email/scripts/mail.py --mailbox 163 send --to user@example.com --
 
 - QQ 邮箱（IMAP）：默认移到「已删除」文件夹，可以从已删除中恢复。加 `--permanent` 彻底删除。
 - 163 邮箱（POP3）：POP3 协议不支持文件夹操作，删除始终是永久的，不可恢复。
+

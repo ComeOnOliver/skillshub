@@ -1,3 +1,8 @@
+---
+name: defold-api-fetch
+description: "Fetches Defold API documentation. Use when working with Defold engine APIs, looking up Lua/C++ functions, or needing API reference for game development."
+---
+
 # Defold API Reference
 
 Fetch documentation from the links below (the URLs point to plain Markdown files).
@@ -153,3 +158,4 @@ When you need API documentation:
 1. Identify the namespace (e.g., `go`, `gui`, `vmath`)
 2. Fetch the corresponding URL (all URLs are plain Markdown — fetch and read the raw content)
 3. Example: fetch `https://defold.com/llms/apis/go-lua.md`
+

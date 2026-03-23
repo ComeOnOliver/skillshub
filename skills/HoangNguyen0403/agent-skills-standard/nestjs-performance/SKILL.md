@@ -30,7 +30,7 @@ High-performance patterns and optimization techniques for NestJS applications.
 ## Caching Strategy
 
 - **Application Cache**: Use `@nestjs/cache-manager` for computation results.
-  - **Deep Dive**: See **[Caching & Redis](../caching/SKILL.md)** for L1/L2 strategies and Invalidation patterns.
+  - **Deep Dive**: See **[Caching & Redis](../nestjs-caching/SKILL.md)** for L1/L2 strategies and Invalidation patterns.
 - **HTTP Cache**: Set `Cache-Control` headers for client-side caching (CDN/Browser).
 - **Distributed**: In microservices, use Redis store, not memory store.
 
@@ -61,7 +61,9 @@ High-performance patterns and optimization techniques for NestJS applications.
 - **Clustering**: For non-containerized environments, use `ClusterModule` to utilize all CPU cores. In K8s, prefer ReplicaSets.
 
 
-## 🚫 Anti-Patterns
+## Anti-Patterns
 
-- Do NOT use standard patterns if specific project rules exist.
-- Do NOT ignore error handling or edge cases.
+- **No REQUEST scope without evaluation**: One REQUEST-scoped provider makes the entire chain request-scoped.
+- **No CPU tasks in HTTP handler**: Offload image/crypto work to `worker_threads` or BullMQ.
+- **No unprojected queries**: Always `select: []` the needed columns to avoid serializing unused data.
+

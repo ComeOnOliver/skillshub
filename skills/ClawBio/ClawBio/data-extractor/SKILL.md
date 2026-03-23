@@ -97,3 +97,4 @@ Launch with `--web` flag. Upload images, draw boxes around plots, extract and ed
 - Uses Claude Sonnet for pre-analysis/detection, Claude Opus for extraction
 - OpenCV calibration improves accuracy for scatter/bar plots with clear markers
 - Error bars are reported as ± extent (delta from mean), not absolute positions
+

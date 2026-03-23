@@ -211,3 +211,4 @@ Rating:             [X]/10  ████████░░
 - `screenshot-optimization` — Screenshots matter for editorial review
 - `app-launch` — Feature timing around launches
 - `review-management` — Rating must be 4.5+ before pitching
+

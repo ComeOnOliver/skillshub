@@ -27,3 +27,4 @@ When the user provides text to format, apply the following rules:
 
 Input: "hello world.this is a test."
 Output: "Hello world. This is a test."
+

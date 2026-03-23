@@ -105,3 +105,4 @@ Restart Claude Code — skills are loaded at startup.
 
 ### Permission errors
 Check write permissions to `~/.claude/skills/`. Try installing with `--project` for project-level scope.
+

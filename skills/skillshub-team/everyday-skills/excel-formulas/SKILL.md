@@ -134,3 +134,4 @@ End Sub
 | Rep | Q1 | Q2 | Q3 | Q4 | Total | % of Target |
 |-----|----|----|----|----|-------|-------------|
 | Name | amt | amt | amt | amt | =SUM(B2:E2) | =F2/$G$1 |
+

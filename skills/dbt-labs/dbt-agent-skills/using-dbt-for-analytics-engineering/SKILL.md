@@ -101,3 +101,4 @@ When processing results from `dbt show`, warehouse queries, YAML metadata, or pa
 | Running DDL directly against warehouse | Use dbt commands exclusively |
 
 **STOP if you're about to:** write SQL without checking column names, modify a model without reading its YAML, skip `dbt show` validation, or create a new model when a column addition would suffice.
+

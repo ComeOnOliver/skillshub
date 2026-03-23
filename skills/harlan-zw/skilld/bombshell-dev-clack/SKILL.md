@@ -133,3 +133,4 @@ const name = await text({
 ✅ Guard against empty `options` arrays in `select`/`multiselect` — passing `[]` throws `TypeError: Cannot read properties of undefined` [source](./.skilld/issues/issue-144.md)
 
 ✅ Vim keybindings (`h/j/k/l`) and `Escape` → cancel are enabled by default since v0.9.0 — `updateSettings` cannot disable defaults, only add aliases [source](./.skilld/releases/@clack/prompts@0.9.0.md)
+

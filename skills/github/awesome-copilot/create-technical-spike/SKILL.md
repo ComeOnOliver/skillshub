@@ -228,3 +228,4 @@ Use descriptive, kebab-case names that indicate the category and specific unknow
 - **vscodeAPI:** Test VS Code extension capabilities and limitations
 
 Focus on time-boxed research that resolves critical technical decisions and unblocks development progress.
+

@@ -249,3 +249,4 @@ wp db search "stringa-da-trovare" --format=table
 - **Do not** assume `--path` is correct — always verify with `wp option get siteurl`
 - **Do not** use `wp-cron.php` via HTTP for heavy tasks in production — use system crontab
 - **Do not** run `wp cache flush` during traffic spikes without reason
+

@@ -119,3 +119,4 @@ type Product @key(fields: "id", resolvable: false) {
 - PREFER `@key` with single ID field for simple entity identification
 - USE `rover supergraph compose` to validate composition locally
 - USE `rover subgraph check` to validate against production supergraph
+

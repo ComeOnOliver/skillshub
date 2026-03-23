@@ -23,3 +23,4 @@ After gathering sufficient information, produce the improved prompt as markdown,
 ```
 
 Announce to the user that the prompt is available on the clipboard, and also ask the user if they want any changes or additions. Repeat the copy + chat + ask after any revisions of the prompt.
+

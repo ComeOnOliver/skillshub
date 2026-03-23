@@ -1,3 +1,13 @@
+---
+name: angular-core
+description: >
+  Angular core patterns: standalone components, signals, inject, control flow, zoneless.
+  Trigger: When creating Angular components, using signals, or setting up zoneless.
+metadata:
+  author: gentleman-programming
+  version: "1.0"
+---
+
 ## Standalone Components (REQUIRED)
 
 Components are standalone by default. Do NOT set `standalone: true`.
@@ -195,3 +205,4 @@ Remove from `angular.json` polyfills: `zone.js` and `zone.js/testing`.
 - https://angular.dev/guide/signals
 - https://angular.dev/guide/templates/control-flow
 - https://angular.dev/guide/zoneless
+

@@ -1,3 +1,9 @@
+---
+name: comic-generator
+description: 知识漫画生成器，支持多种风格（Ligne Claire/漫画教程风/武侠风等）。将文章/教程/人物传记转换为漫画形式。
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, TodoWrite
+---
+
 # Comic Generator（知识漫画生成器）
 
 将知识内容转换为漫画形式，支持多种风格和布局。
@@ -230,3 +236,4 @@ gen = IllustrationGenerator()
 - `references/layouts/` - 布局定义
 - `references/storyboard-template.md` - 分镜模板
 - `references/character-template.md` - 角色模板
+

@@ -1,3 +1,13 @@
+---
+name: git-branch-cleanup
+description: |
+  Analyzes and safely cleans up local Git branches. Categorizes branches by merge status,
+  staleness, and remote tracking. Provides interactive selection with safety guards.
+  Use when the user wants to clean up branches, delete old branches, organize Git branches,
+  or asks about which branches can be safely deleted.
+compatibility: Requires git 2.17+ (for worktree support). Git 2.22+ recommended for `git branch --show-current`.
+---
+
 # Git Branch Cleanup
 
 Safely organize and clean up local Git branches. Categorizes branches by merge status, staleness, and remote tracking, then guides users through safe deletion.
@@ -236,3 +246,4 @@ git branch -v | grep "^+" | awk '{print $2}'
 # Find worktree path for a specific branch
 git worktree list | grep "\\[branch-name\\]"
 ```
+

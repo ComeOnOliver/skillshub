@@ -267,3 +267,4 @@ See also: electric-postgres-security/SKILL.md — Proxy injects secrets that Pos
 ## Version
 
 Targets @electric-sql/client v1.5.10.
+

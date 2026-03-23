@@ -100,3 +100,4 @@ These are hard rules -- violations are always bugs:
 - `references/macos-scenes.md` -- Settings, MenuBarExtra, WindowGroup, multi-window
 - `references/macos-window-styling.md` -- Toolbar styles, window sizing, Commands
 - `references/macos-views.md` -- HSplitView, Table, PasteButton, AppKit interop
+

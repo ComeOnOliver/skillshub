@@ -1,3 +1,8 @@
+---
+name: competitive-ads-extractor
+description: Extracts and analyzes competitors' ads from ad libraries (Facebook, LinkedIn, etc.) to understand what messaging, problems, and creative approaches are working. Helps inspire and improve your own ad campaigns.
+---
+
 # Competitive Ads Extractor
 
 This skill extracts your competitors' ads from ad libraries and analyzes what's working—the problems they're highlighting, use cases they're targeting, and copy/creative that's resonating.
@@ -285,3 +290,5 @@ Which gets more engagement? (if data available)
 - Discovering new use cases for your product
 - Planning product marketing strategy
 - Inspiring social media content
+
+

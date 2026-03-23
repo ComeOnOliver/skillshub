@@ -256,3 +256,4 @@ Always check `{{COMPONENTS_CATALOG}}` for existing components before creating ne
 
 - `references/figma-tools-and-prompts.md` — Complete MCP tool catalog and prompt patterns
 - `references/figma-mcp-setup.md` — Setup, verification, and troubleshooting for the Figma MCP server
+

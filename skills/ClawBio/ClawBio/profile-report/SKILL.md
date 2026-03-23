@@ -118,3 +118,4 @@ output_directory/
 **Chaining partners**:
 - `full-profile pipeline`: Run `python clawbio.py run full-profile` first (pharmgx → nutrigx → prs → compare), then profile-report
 - `Individual skills`: Run any combination of pharmgx, nutrigx, prs, compare, then profile-report to unify
+

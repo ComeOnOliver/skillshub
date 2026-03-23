@@ -163,3 +163,4 @@ receivers only for small, immutable types (`Point`, `time.Time`) or basic types.
 - **Generics vs interfaces**: See [go-generics](../go-generics/SKILL.md) when deciding whether generics are needed or an interface already suffices
 - **Functional options**: See [go-functional-options](../go-functional-options/SKILL.md) when using an interface-based Option pattern for flexible constructors
 - **Compile-time checks**: See [go-defensive](../go-defensive/SKILL.md) when adding `var _ I = (*T)(nil)` satisfaction checks at API boundaries
+

@@ -89,3 +89,4 @@ python3 mineru-extract/scripts/mineru_parse_documents.py \
 
 - MinerU API docs: https://mineru.net/apiManage/docs
 - MinerU output files: https://opendatalab.github.io/MinerU/reference/output_files/
+

@@ -1,3 +1,10 @@
+---
+name: desktime-automation
+description: "Automate Desktime tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Desktime Automation via Rube MCP
 
 Automate Desktime operations through Composio's Desktime toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

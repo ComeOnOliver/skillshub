@@ -1,154 +1,72 @@
-# Agent Context Auto-Loader
-
-**⚡ This skill activates AUTOMATICALLY - no user action required!**
-
-## Purpose
-
-This skill makes Claude Code recognize and load `AGENTS.md` files with the same priority as `CLAUDE.md` files, enabling specialized agent-specific instructions for your projects.
-
-## How It Works
-
-### Automatic Trigger Conditions
-
-This skill automatically activates when:
-1. **Starting a new Claude Code session** in any directory
-2. **Changing directories** during a session (via `cd` or file operations)
-3. **Any other agent skill is invoked** (ensures agent context is loaded first)
-4. **User explicitly requests**: "load agent context", "check for AGENTS.md", or "read agent rules"
-
-### Execution Flow
-
-When triggered, Claude Code will:
-
-1. **Check for AGENTS.md**: Look for `./AGENTS.md` in the current working directory
-2. **Read the file** (if it exists): Use the Read tool to load full content
-3. **Incorporate into context**: Treat AGENTS.md rules as session-level instructions
-4. **Announce loading**: Confirm with user: "📋 Loaded agent-specific context from AGENTS.md"
-5. **Apply for session**: Follow these rules for all subsequent operations
-
-### Priority and Conflict Resolution
-
-- **AGENTS.md supplements CLAUDE.md**: Both are active simultaneously
-- **In case of conflicts**: AGENTS.md takes precedence for agent-specific behaviors
-- **Scope**: AGENTS.md applies to agent workflows; CLAUDE.md applies to general project context
-
-## Expected Behavior
-
-### If AGENTS.md exists:
-```
-📋 Loaded agent-specific context from AGENTS.md
-
-Following specialized agent rules for this session:
-- [rule 1 from AGENTS.md]
-- [rule 2 from AGENTS.md]
-...
-```
-
-### If AGENTS.md doesn't exist:
-```
-No AGENTS.md found - using standard CLAUDE.md context only
-```
-
-## User Experience
-
-**Fully Automatic** (preferred):
-- Install plugin → AGENTS.md loads automatically → Agent rules active → No user action needed
-
-**Manual Invocation** (fallback):
-```bash
-# If auto-loading doesn't trigger, user can say:
-"load agent context"
-"check for AGENTS.md"
-"read agent rules from AGENTS.md"
-```
-
-## Implementation Details
-
-### Step 1: Check for File
-```bash
-# Claude executes internally:
-if [ -f "./AGENTS.md" ]; then
-    echo "📋 AGENTS.md detected"
-fi
-```
-
-### Step 2: Read Content
-```markdown
-Use Read tool:
-file_path: ./AGENTS.md
-
-Load full content into session context
-```
-
-### Step 3: Apply Rules
-```
-Treat AGENTS.md content as:
-- Session-level instructions (like CLAUDE.md)
-- Agent-specific behavioral rules
-- Overrides for agent workflows
-```
-
-## Example AGENTS.md Structure
-
-```markdown
-# AGENTS.md - Agent-Specific Instructions
-
-## Agent Behavior Rules
-
-When working with Agent Skills in this project:
-
-1. **Always use TypeScript strict mode** for all generated code
-2. **Never create files** without explicit user permission
-3. **Follow naming convention**: use kebab-case for all file names
-4. **Auto-commit after changes**: Create git commits automatically when tasks complete
-
-## Specialized Workflows
-
-### Code Generation
-- Use templates from `./templates/` directory
-- Run ESLint after generating any .ts/.js files
-- Add comprehensive JSDoc comments
-
-### Testing
-- Generate tests alongside implementation files
-- Use Jest for all test files
-- Achieve 80%+ code coverage
-
-## Priority Overrides
-
-These rules override CLAUDE.md when agent skills are active:
-- AGENTS.md → agent-specific strict rules
-- CLAUDE.md → general project context
-```
-
-## Integration with Other Skills
-
-This skill runs **before** other agent skills to ensure agent context is loaded first. When any other skill is invoked, this skill checks if AGENTS.md has been loaded for the current directory and loads it if not already present.
-
-## Troubleshooting
-
-**If AGENTS.md isn't loading automatically:**
-
-1. **Manual invoke**: Say "load agent context"
-2. **Check file location**: Ensure `AGENTS.md` is in current working directory (`pwd`)
-3. **Check file permissions**: Ensure `AGENTS.md` is readable
-4. **Use slash command**: Run `/sync-agent-context` to merge AGENTS.md into CLAUDE.md permanently
-
-## Related Features
-
-- **Slash Command**: `/sync-agent-context` - Permanently merges AGENTS.md into CLAUDE.md
-- **Hook Script**: Runs on directory change to remind Claude to load context
-- **Manual Loading**: Can always explicitly request "load AGENTS.md"
-
-## Benefits
-
-- **Zero configuration**: Just create `AGENTS.md` and it works
-- **Project-specific rules**: Different agent behaviors per project
-- **No CLAUDE.md pollution**: Keep agent-specific rules separate
-- **Automatic synchronization**: Always up-to-date with current directory
+---
+name: agent-context-loader
+description: |
+  Execute proactive auto-loading: automatically detects and loads agents.md files.
+  Use when appropriate context detected. Trigger with relevant phrases based on skill purpose.
+  
+allowed-tools: Read, Write, Edit, Grep, Glob, Bash(general:*), Bash(util:*)
+version: 1.0.0
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+license: MIT
+compatible-with: claude-code, codex, openclaw
+tags: [productivity, agent-context]
 
 ---
+# Agent Context Loader
 
-**Status**: Proactive Auto-Loading Enabled
-**Requires User Action**: No (automatic)
-**Fallback**: Manual invocation if auto-loading fails
+## Overview
+
+Automatic discovery and loading of `AGENTS.md` files across project hierarchies for AI coding agents. This skill scans the current workspace and its parent directories to locate agent instruction files, then surfaces their contents so the active agent session has full operational context.
+
+## Prerequisites
+
+- A project workspace containing one or more `AGENTS.md` files at any directory depth
+- Read and Glob permissions to traverse the directory tree
+- Grep access for searching file contents when multiple candidates exist
+
+## Instructions
+
+1. Scan the current working directory and all ancestor directories (up to the filesystem root or repository root) for files named `AGENTS.md` or `agents.md`.
+2. Search subdirectories of the current workspace for additional `AGENTS.md` files that may apply to sub-projects or modules.
+3. Determine load order: files closer to the repository root load first (global context), files in deeper directories load later (override or supplement).
+4. Read each discovered `AGENTS.md` file and extract its instruction blocks, workflow definitions, and constraint declarations.
+5. Merge instructions into a unified context, noting any conflicts between levels (e.g., a subdirectory agent overriding a root-level rule).
+6. Present the loaded context as a structured summary: source file path, instruction count, and any detected conflicts.
+7. Cache the discovery results for the current session to avoid redundant filesystem scans on subsequent activations.
+
+## Output
+
+- Ordered list of discovered `AGENTS.md` file paths with their directory depth
+- Merged instruction set combining all discovered agent contexts
+- Conflict report highlighting any contradictory directives between levels
+- Session cache status indicating whether results are fresh or reused
+
+## Error Handling
+
+| Error | Cause | Solution |
+|-------|-------|----------|
+| No `AGENTS.md` found | Workspace has no agent instruction files | Confirm the correct working directory; create an `AGENTS.md` at the project root if needed |
+| Permission denied on directory traversal | Restricted parent directories above the workspace | Limit scan depth to the repository root (detected via `.git/` presence) |
+| Circular symlink detected | Symlinked directories create an infinite traversal loop | Skip symlinked directories during the scan; log a warning with the symlink path |
+| Conflicting instructions across levels | A subdirectory `AGENTS.md` contradicts the root-level file | Flag the conflict in the output; apply the more specific (deeper) instruction by default |
+| File encoding error | `AGENTS.md` uses a non-UTF-8 encoding | Attempt latin-1 fallback; report the file path and encoding issue |
+
+## Examples
+
+**Example 1: Monorepo with per-package agent instructions**
+- Structure: Root `AGENTS.md` sets global conventions; `packages/api/AGENTS.md` adds API-specific tooling rules.
+- Result: Both files loaded in order. The API-specific rules supplement the global context without conflict.
+
+**Example 2: Nested workspace with conflicting commit policies**
+- Structure: Root `AGENTS.md` says "always sign commits"; `services/legacy/AGENTS.md` says "skip commit signing."
+- Result: Conflict detected and reported. The deeper (legacy) directive is applied with a warning noting the override.
+
+**Example 3: First-time setup with no agent files**
+- Structure: A freshly cloned repository with no `AGENTS.md` anywhere.
+- Result: Scan completes with zero files found. Output includes a suggestion to create `AGENTS.md` at the repository root with a minimal template.
+
+## Resources
+
+- Claude Code AGENTS.md specification: https://docs.anthropic.com/en/docs/agents
+- Monorepo workspace patterns for agent configuration: https://docs.anthropic.com/en/docs/claude-code
+- File discovery best practices for hierarchical configuration loading

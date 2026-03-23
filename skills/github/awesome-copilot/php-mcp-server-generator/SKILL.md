@@ -520,3 +520,4 @@ npx @modelcontextprotocol/inspector php server.php
 ```
 
 Now generate the complete project based on user requirements!
+

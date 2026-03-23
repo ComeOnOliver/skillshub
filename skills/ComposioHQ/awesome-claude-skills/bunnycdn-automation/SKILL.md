@@ -1,3 +1,10 @@
+---
+name: bunnycdn-automation
+description: "Automate Bunnycdn tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bunnycdn Automation via Rube MCP
 
 Automate Bunnycdn operations through Composio's Bunnycdn toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

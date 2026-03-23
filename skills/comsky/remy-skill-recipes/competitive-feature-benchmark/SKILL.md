@@ -257,3 +257,4 @@ Competitors: Mixpanel, Amplitude, PostHog, Metabase.
 ---
 
 If competitors are not specified in the input, identify 3–5 relevant products in the same domain before proceeding.
+

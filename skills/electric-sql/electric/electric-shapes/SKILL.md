@@ -337,3 +337,4 @@ See also: electric-debugging/SKILL.md — onError semantics and backoff are esse
 ## Version
 
 Targets @electric-sql/client v1.5.10.
+

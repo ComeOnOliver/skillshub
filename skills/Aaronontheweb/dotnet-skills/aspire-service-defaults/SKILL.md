@@ -373,3 +373,4 @@ Services receive `OTEL_EXPORTER_OTLP_ENDPOINT` automatically, sending telemetry 
 - **Aspire Service Defaults**: https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/service-defaults
 - **OpenTelemetry .NET**: https://opentelemetry.io/docs/languages/net/
 - **Health Checks**: https://learn.microsoft.com/en-us/aspnet/core/host-and-deploy/health-checks
+

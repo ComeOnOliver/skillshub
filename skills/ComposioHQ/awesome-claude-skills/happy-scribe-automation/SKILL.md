@@ -1,3 +1,10 @@
+---
+name: happy-scribe-automation
+description: "Automate Happy Scribe tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Happy Scribe Automation via Rube MCP
 
 Automate Happy Scribe operations through Composio's Happy Scribe toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

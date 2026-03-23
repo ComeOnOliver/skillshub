@@ -1,44 +1,43 @@
-## Overview
+---
+name: sql-query-optimizer
+description: |
+  Sql Query Optimizer - Auto-activating skill for Data Analytics.
+  Triggers on: sql query optimizer, sql query optimizer
+  Part of the Data Analytics skill category.
+allowed-tools: Read, Write, Edit, Bash, Grep
+version: 1.0.0
+license: MIT
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+---
 
-This skill empowers Claude to analyze SQL queries, identify performance bottlenecks, and suggest optimizations such as index creation or query rewriting. It leverages the sql-query-optimizer plugin to provide actionable recommendations for improving database performance.
+# Sql Query Optimizer
 
-## How It Works
+## Purpose
 
-1. **Query Input**: The user provides an SQL query to be optimized.
-2. **Analysis**: The plugin analyzes the query structure, potential indexing issues, and execution plan (if available).
-3. **Recommendations**: The plugin generates optimization suggestions, including index recommendations and query rewrites.
+This skill provides automated assistance for sql query optimizer tasks within the Data Analytics domain.
 
-## When to Use This Skill
+## When to Use
 
-This skill activates when you need to:
-- Optimize a slow-running SQL query.
-- Identify missing or unused indexes in a database.
-- Improve the performance of a database application.
+This skill activates automatically when you:
+- Mention "sql query optimizer" in your request
+- Ask about sql query optimizer patterns or best practices
+- Need help with data analytics skills covering sql queries, data visualization, statistical analysis, and business intelligence.
 
-## Examples
+## Capabilities
 
-### Example 1: Optimizing a Slow Query
+- Provides step-by-step guidance for sql query optimizer
+- Follows industry best practices and patterns
+- Generates production-ready code and configurations
+- Validates outputs against common standards
 
-User request: "Optimize this SQL query: SELECT * FROM orders WHERE customer_id = 123 AND order_date < '2023-01-01';"
+## Example Triggers
 
-The skill will:
-1. Analyze the provided SQL query.
-2. Suggest creating an index on customer_id and order_date columns to improve query performance.
+- "Help me with sql query optimizer"
+- "Set up sql query optimizer"
+- "How do I implement sql query optimizer?"
 
-### Example 2: Finding Indexing Opportunities
+## Related Skills
 
-User request: "I need help optimizing a query that filters on product_category and price.  Can you suggest any indexes?"
+Part of the **Data Analytics** skill category.
+Tags: sql, analytics, visualization, statistics, bi
 
-The skill will:
-1. Analyze a hypothetical query based on the user's description.
-2. Recommend a composite index on (product_category, price) to speed up filtering.
-
-## Best Practices
-
-- **Provide Full Queries**: Include the complete SQL query for accurate analysis.
-- **Include EXPLAIN Output**: Providing the output of `EXPLAIN` can help the optimizer identify bottlenecks more effectively.
-- **Test Recommendations**: Always test the suggested optimizations in a staging environment before applying them to production.
-
-## Integration
-
-This skill can be used in conjunction with other database management plugins to automate index creation and query rewriting based on the optimizer's suggestions.

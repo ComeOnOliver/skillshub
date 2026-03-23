@@ -8,7 +8,7 @@ origin: ECC
 
 Create zero-dependency, animation-rich HTML presentations that run entirely in the browser.
 
-Inspired by the visual exploration approach showcased in work by [zarazhangrui](https://github.com/zarazhangrui).
+Inspired by the visual exploration approach showcased in work by zarazhangrui (credit: @zarazhangrui).
 
 ## When to Activate
 
@@ -182,3 +182,4 @@ Use these maxima unless the user explicitly asks for denser slides and readabili
 - animation is meaningful, not noisy
 - reduced motion is respected
 - file paths and customization points are explained at handoff
+

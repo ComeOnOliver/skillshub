@@ -1,3 +1,9 @@
+---
+name: twitter-crawler
+description: Twitter 推文爬取器 - 指定用户名爬取推文，保存为 Markdown 格式，支持自定义数量和字段
+allowed-tools: Bash, Read, Write, Edit
+---
+
 # Twitter 推文爬取器
 
 ## 概述
@@ -173,3 +179,4 @@ twitter_accounts:
 1. **频率限制**：Twitter 有 API 频率限制，建议间隔使用
 2. **auth_token 过期**：如果遇到错误，可能需要更新 auth_token
 3. **访客模式**：不配置 auth_token 也能使用，但可能受限
+

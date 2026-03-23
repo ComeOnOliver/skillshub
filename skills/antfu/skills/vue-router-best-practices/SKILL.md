@@ -21,3 +21,4 @@ Vue Router best practices, common gotchas, and navigation patterns.
 
 ### Setup
 - Building production single-page application → See [router-use-vue-router-for-production](reference/router-use-vue-router-for-production.md)
+

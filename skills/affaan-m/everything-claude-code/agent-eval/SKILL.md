@@ -18,10 +18,7 @@ A lightweight CLI tool for comparing coding agents head-to-head on reproducible 
 
 ## Installation
 
-```bash
-# pinned to v0.1.0 — latest stable commit
-pip install git+https://github.com/joaquinhuigomez/agent-eval.git@6d062a2f5cda6ea443bf5d458d361892c04e749b
-```
+> **Note:** Install agent-eval from its repository after reviewing the source.
 
 ## Core Concepts
 
@@ -146,3 +143,4 @@ judge:
 ## Links
 
 - Repository: [github.com/joaquinhuigomez/agent-eval](https://github.com/joaquinhuigomez/agent-eval)
+

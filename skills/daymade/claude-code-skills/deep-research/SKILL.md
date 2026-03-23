@@ -205,3 +205,4 @@ Present the draft as a reviewable version:
 - Mixing conflicting dates without calling out discrepancies
 - Copying external AI output without verification
 - Deleting intermediate drafts or raw research outputs
+

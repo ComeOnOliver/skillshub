@@ -1,3 +1,8 @@
+---
+name: skill-manager
+description: Detect project tech stack and disable irrelevant skills to save context window space. Use when the user says "manage skills", "optimize skills", "disable irrelevant skills", "skill manager", or asks which skills are relevant for this project.
+---
+
 # Skill Manager
 
 Analyze the current project's tech stack and disable irrelevant globally-installed skills by injecting a bounded section into the project's CLAUDE.md.
@@ -282,3 +287,4 @@ If Python is not available, follow the manual steps above — they produce the s
 - **New skills installed since last run**: Automatically picked up on re-run.
 - **Skill uninstalled**: Removed from disabled list on re-run.
 - **CLAUDE.md has other content**: Only the marker-bounded section is touched.
+

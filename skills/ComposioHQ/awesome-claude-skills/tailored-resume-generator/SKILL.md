@@ -343,3 +343,4 @@ Ask if user wants to:
 ## Privacy Note
 
 This skill processes your personal and professional information to generate tailored resumes. Always review the output before submitting to ensure accuracy and appropriateness. Remove or modify any information you prefer not to share with potential employers.
+

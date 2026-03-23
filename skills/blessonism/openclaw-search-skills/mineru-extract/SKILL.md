@@ -93,3 +93,4 @@ It prints a JSON summary to **stderr** with paths:
 
 - MinerU API docs: https://mineru.net/apiManage/docs
 - MinerU output files: https://opendatalab.github.io/MinerU/reference/output_files/
+

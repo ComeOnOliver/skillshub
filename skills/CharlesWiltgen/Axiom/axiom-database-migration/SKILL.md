@@ -440,3 +440,4 @@ See `axiom-tvos` for full tvOS storage constraints.
 **Last Updated**: 2025-11-28
 **Frameworks**: SQLite, GRDB, SwiftData
 **Status**: Production-ready patterns for safe schema evolution
+

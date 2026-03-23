@@ -144,3 +144,4 @@ const photoData = await Office365UsersService.UserPhoto_V2(profile.data.id);
 6. Best practices implementation examples
 
 Ensure the generated project follows Microsoft's official Power Apps Code Apps documentation and samples from https://github.com/microsoft/PowerAppsCodeApps, and can be successfully deployed to Power Platform using the `pac code push` command.
+

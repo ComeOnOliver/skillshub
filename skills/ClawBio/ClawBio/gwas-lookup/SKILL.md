@@ -120,3 +120,4 @@ It can be chained with:
 - `clinpgx`: Look up pharmacogenomic data for genes near the variant
 - `gwas-prs`: If the variant is part of a polygenic score, calculate PRS
 - `lit-synthesizer`: Find publications about the variant's associated traits
+

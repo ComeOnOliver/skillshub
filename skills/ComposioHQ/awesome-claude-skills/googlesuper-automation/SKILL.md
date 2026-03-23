@@ -1,3 +1,10 @@
+---
+name: googlesuper-automation
+description: "Automate Google Super tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Google Super Automation via Rube MCP
 
 Automate Google Super operations through Composio's Google Super toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

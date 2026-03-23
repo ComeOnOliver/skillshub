@@ -224,3 +224,4 @@ Use this structure when documenting migration changes:
 ### Cross-platform data differences
 - **Sample datasets may differ between platforms.** Even "standard" datasets like TPCH can have minor schema or data differences across platforms (e.g., column names, data types, row counts). When using sample data for migration testing, verify the source data schema on both platforms before assuming 1:1 equivalence.
 - **Platform-specific config keys are not errors until Fusion flags them.** Keys like `snowflake_warehouse` or `cluster_by` won't cause Fusion compile errors on the source platform — they'll only surface when compiling against the target. Don't pre-remove them.
+

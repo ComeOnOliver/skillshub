@@ -1,3 +1,10 @@
+---
+name: bonsai-automation
+description: "Automate Bonsai tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bonsai Automation via Rube MCP
 
 Automate Bonsai operations through Composio's Bonsai toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

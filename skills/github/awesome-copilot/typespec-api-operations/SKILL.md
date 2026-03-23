@@ -416,3 +416,4 @@ After adding operations, test with these prompts:
 
 ### Issue: Model property not appearing in response
 **Solution**: Check if property needs `@visibility(Lifecycle.Read)` or remove it if it should be writable
+

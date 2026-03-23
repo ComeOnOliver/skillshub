@@ -1,3 +1,8 @@
+---
+name: rr
+description: 코드 리뷰. 작업 후 변경사항을 Z.AI 모델로 검토하고, Codex가 결과를 다시 검증해 유효한 이슈만 정리한다. /rr 또는 'GLM 리뷰' 요청 시 사용.
+---
+
 # /rr
 
 Use `glm-review` as a second reviewer for the current change set, then validate the reported issues against the actual code before you trust or repeat them.
@@ -82,3 +87,4 @@ Return:
 - confirmed findings only
 - what was rejected as false positive, if anything material
 - what verification ran after fixes, if any
+

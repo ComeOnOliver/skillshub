@@ -1,3 +1,10 @@
+---
+name: calendarhero-automation
+description: "Automate Calendarhero tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Calendarhero Automation via Rube MCP
 
 Automate Calendarhero operations through Composio's Calendarhero toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -214,3 +214,4 @@ add_action('wp_enqueue_scripts', 'mytheme_enqueue_assets');
 - Don't create ACF field groups via complex PHP code — use the GUI and `acf-json/`
 - Don't use fixed heading levels in reusable components — make them parametric
 - Don't use `echo` without escaping — always `esc_html()`, `esc_attr()`, `esc_url()`, `wp_kses_post()`
+

@@ -1,43 +1,43 @@
 ---
 name: rust-testing
-description: Rust testing patterns including unit tests, integration tests, async testing, property-based testing, mocking, and coverage. Follows TDD methodology.
+description: Rust测试模式，包括单元测试、集成测试、异步测试、基于属性的测试、模拟和覆盖率。遵循TDD方法学。
 origin: ECC
 ---
 
-# Rust Testing Patterns
+# Rust 测试模式
 
-Comprehensive Rust testing patterns for writing reliable, maintainable tests following TDD methodology.
+遵循 TDD 方法论编写可靠、可维护测试的全面 Rust 测试模式。
 
-## When to Use
+## 何时使用
 
-- Writing new Rust functions, methods, or traits
-- Adding test coverage to existing code
-- Creating benchmarks for performance-critical code
-- Implementing property-based tests for input validation
-- Following TDD workflow in Rust projects
+* 编写新的 Rust 函数、方法或特征
+* 为现有代码添加测试覆盖率
+* 为性能关键代码创建基准测试
+* 为输入验证实现基于属性的测试
+* 在 Rust 项目中遵循 TDD 工作流
 
-## How It Works
+## 工作原理
 
-1. **Identify target code** — Find the function, trait, or module to test
-2. **Write a test** — Use `#[test]` in a `#[cfg(test)]` module, rstest for parameterized tests, or proptest for property-based tests
-3. **Mock dependencies** — Use mockall to isolate the unit under test
-4. **Run tests (RED)** — Verify the test fails with the expected error
-5. **Implement (GREEN)** — Write minimal code to pass
-6. **Refactor** — Improve while keeping tests green
-7. **Check coverage** — Use cargo-llvm-cov, target 80%+
+1. **识别目标代码** — 找到要测试的函数、特征或模块
+2. **编写测试** — 在 `#[cfg(test)]` 模块中使用 `#[test]`，使用 rstest 进行参数化测试，或使用 proptest 进行基于属性的测试
+3. **模拟依赖项** — 使用 mockall 来隔离被测单元
+4. **运行测试 (RED)** — 验证测试是否按预期失败
+5. **实现 (GREEN)** — 编写最少代码以通过测试
+6. **重构** — 改进代码同时保持测试通过
+7. **检查覆盖率** — 使用 cargo-llvm-cov，目标 80% 以上
 
-## TDD Workflow for Rust
+## Rust 的 TDD 工作流
 
-### The RED-GREEN-REFACTOR Cycle
+### RED-GREEN-REFACTOR 循环
 
 ```
-RED     → Write a failing test first
-GREEN   → Write minimal code to pass the test
-REFACTOR → Improve code while keeping tests green
-REPEAT  → Continue with next requirement
+RED     → 先写一个失败的测试
+GREEN   → 编写最少代码使测试通过
+REFACTOR → 重构代码，同时保持测试通过
+REPEAT  → 继续下一个需求
 ```
 
-### Step-by-Step TDD in Rust
+### Rust 中的分步 TDD
 
 ```rust
 // RED: Write test first, use todo!() as placeholder
@@ -58,9 +58,9 @@ pub fn add(a: i32, b: i32) -> i32 { a + b }
 // cargo test → PASS, then REFACTOR while keeping tests green
 ```
 
-## Unit Tests
+## 单元测试
 
-### Module-Level Test Organization
+### 模块级测试组织
 
 ```rust
 // src/user.rs
@@ -103,7 +103,7 @@ mod tests {
 }
 ```
 
-### Assertion Macros
+### 断言宏
 
 ```rust
 assert_eq!(2 + 2, 4);                                    // Equality
@@ -113,9 +113,9 @@ assert_eq!(value, 42, "expected 42 but got {value}");    // Custom message
 assert!((0.1_f64 + 0.2 - 0.3).abs() < f64::EPSILON);   // Float comparison
 ```
 
-## Error and Panic Testing
+## 错误与 Panic 测试
 
-### Testing `Result` Returns
+### 测试 `Result` 返回值
 
 ```rust
 #[test]
@@ -136,7 +136,7 @@ fn parse_succeeds_for_valid_input() -> Result<(), Box<dyn std::error::Error>> {
 }
 ```
 
-### Testing Panics
+### 测试 Panic
 
 ```rust
 #[test]
@@ -153,22 +153,22 @@ fn panics_with_specific_message() {
 }
 ```
 
-## Integration Tests
+## 集成测试
 
-### File Structure
+### 文件结构
 
 ```text
 my_crate/
 ├── src/
 │   └── lib.rs
-├── tests/              # Integration tests
-│   ├── api_test.rs     # Each file is a separate test binary
+├── tests/              # 集成测试
+│   ├── api_test.rs     # 每个文件都是一个独立的测试二进制文件
 │   ├── db_test.rs
-│   └── common/         # Shared test utilities
+│   └── common/         # 共享测试工具
 │       └── mod.rs
 ```
 
-### Writing Integration Tests
+### 编写集成测试
 
 ```rust
 // tests/api_test.rs
@@ -185,9 +185,9 @@ fn full_request_lifecycle() {
 }
 ```
 
-## Async Tests
+## 异步测试
 
-### With Tokio
+### 使用 Tokio
 
 ```rust
 #[tokio::test]
@@ -210,9 +210,9 @@ async fn handles_timeout() {
 }
 ```
 
-## Test Organization Patterns
+## 测试组织模式
 
-### Parameterized Tests with `rstest`
+### 使用 `rstest` 进行参数化测试
 
 ```rust
 use rstest::{rstest, fixture};
@@ -238,7 +238,7 @@ fn test_insert(test_db: TestDb) {
 }
 ```
 
-### Test Helpers
+### 测试辅助函数
 
 ```rust
 #[cfg(test)]
@@ -258,9 +258,9 @@ mod tests {
 }
 ```
 
-## Property-Based Testing with `proptest`
+## 使用 `proptest` 进行基于属性的测试
 
-### Basic Property Tests
+### 基本属性测试
 
 ```rust
 use proptest::prelude::*;
@@ -290,7 +290,7 @@ proptest! {
 }
 ```
 
-### Custom Strategies
+### 自定义策略
 
 ```rust
 use proptest::prelude::*;
@@ -308,9 +308,9 @@ proptest! {
 }
 ```
 
-## Mocking with `mockall`
+## 使用 `mockall` 进行模拟
 
-### Trait-Based Mocking
+### 基于特征的模拟
 
 ```rust
 use mockall::{automock, predicate::eq};
@@ -345,11 +345,11 @@ fn service_returns_none_when_not_found() {
 }
 ```
 
-## Doc Tests
+## 文档测试
 
-### Executable Documentation
+### 可执行的文档
 
-```rust
+````rust
 /// Adds two numbers together.
 ///
 /// # Examples
@@ -385,9 +385,9 @@ pub fn add(a: i32, b: i32) -> i32 {
 pub fn parse_config(input: &str) -> Result<Config, ParseError> {
     todo!()
 }
-```
+````
 
-## Benchmarking with Criterion
+## 使用 Criterion 进行基准测试
 
 ```toml
 # Cargo.toml
@@ -418,9 +418,9 @@ criterion_group!(benches, bench_fibonacci);
 criterion_main!(benches);
 ```
 
-## Test Coverage
+## 测试覆盖率
 
-### Running Coverage
+### 运行覆盖率
 
 ```bash
 # Install: cargo install cargo-llvm-cov (or use taiki-e/install-action in CI)
@@ -430,16 +430,16 @@ cargo llvm-cov --lcov > lcov.info # LCOV format for CI
 cargo llvm-cov --fail-under-lines 80  # Fail if below threshold
 ```
 
-### Coverage Targets
+### 覆盖率目标
 
-| Code Type | Target |
+| 代码类型 | 目标 |
 |-----------|--------|
-| Critical business logic | 100% |
-| Public API | 90%+ |
-| General code | 80%+ |
-| Generated / FFI bindings | Exclude |
+| 关键业务逻辑 | 100% |
+| 公共 API | 90%+ |
+| 通用代码 | 80%+ |
+| 生成的 / FFI 绑定 | 排除 |
 
-## Testing Commands
+## 测试命令
 
 ```bash
 cargo test                        # Run all tests
@@ -452,25 +452,27 @@ cargo test --no-fail-fast         # Don't stop on first failure
 cargo test -- --ignored           # Run ignored tests
 ```
 
-## Best Practices
+## 最佳实践
 
-**DO:**
-- Write tests FIRST (TDD)
-- Use `#[cfg(test)]` modules for unit tests
-- Test behavior, not implementation
-- Use descriptive test names that explain the scenario
-- Prefer `assert_eq!` over `assert!` for better error messages
-- Use `?` in tests that return `Result` for cleaner error output
-- Keep tests independent — no shared mutable state
+**应该做：**
 
-**DON'T:**
-- Use `#[should_panic]` when you can test `Result::is_err()` instead
-- Mock everything — prefer integration tests when feasible
-- Ignore flaky tests — fix or quarantine them
-- Use `sleep()` in tests — use channels, barriers, or `tokio::time::pause()`
-- Skip error path testing
+* 先写测试 (TDD)
+* 使用 `#[cfg(test)]` 模块进行单元测试
+* 测试行为，而非实现
+* 使用描述性测试名称来解释场景
+* 为了更好的错误信息，优先使用 `assert_eq!` 而非 `assert!`
+* 在返回 `Result` 的测试中使用 `?` 以获得更清晰的错误输出
+* 保持测试独立 — 没有共享的可变状态
 
-## CI Integration
+**不应该做：**
+
+* 在可以测试 `Result::is_err()` 时使用 `#[should_panic]`
+* 模拟所有内容 — 在可行时优先考虑集成测试
+* 忽略不稳定的测试 — 修复或隔离它们
+* 在测试中使用 `sleep()` — 使用通道、屏障或 `tokio::time::pause()`
+* 跳过错误路径测试
+
+## CI 集成
 
 ```yaml
 # GitHub Actions
@@ -497,4 +499,5 @@ test:
       run: cargo llvm-cov --fail-under-lines 80
 ```
 
-**Remember**: Tests are documentation. They show how your code is meant to be used. Write them clearly and keep them up to date.
+**记住**：测试就是文档。它们展示了你的代码应如何使用。清晰编写并保持更新。
+

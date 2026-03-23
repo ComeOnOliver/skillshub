@@ -1,86 +1,91 @@
 ---
 name: context-budget
-description: Audits Claude Code context window consumption across agents, skills, MCP servers, and rules. Identifies bloat, redundant components, and produces prioritized token-savings recommendations.
+description: 审核Claude Code上下文窗口在代理、技能、MCP服务器和规则中的消耗情况。识别膨胀、冗余组件，并提供优先的令牌节省建议。
 origin: ECC
 ---
 
-# Context Budget
+# 上下文预算
 
-Analyze token overhead across every loaded component in a Claude Code session and surface actionable optimizations to reclaim context space.
+分析 Claude Code 会话中每个已加载组件的令牌开销，并提供可操作的优化建议以回收上下文空间。
 
-## When to Use
+## 使用时机
 
-- Session performance feels sluggish or output quality is degrading
-- You've recently added many skills, agents, or MCP servers
-- You want to know how much context headroom you actually have
-- Planning to add more components and need to know if there's room
-- Running `/context-budget` command (this skill backs it)
+* 会话性能感觉迟缓或输出质量下降
+* 你最近添加了许多技能、代理或 MCP 服务器
+* 你想知道实际有多少上下文余量
+* 计划添加更多组件，需要知道是否有空间
+* 运行 `/context-budget` 命令（本技能为其提供支持）
 
-## How It Works
+## 工作原理
 
-### Phase 1: Inventory
+### 阶段 1：清单
 
-Scan all component directories and estimate token consumption:
+扫描所有组件目录并估算令牌消耗：
 
-**Agents** (`agents/*.md`)
-- Count lines and tokens per file (words × 1.3)
-- Extract `description` frontmatter length
-- Flag: files >200 lines (heavy), description >30 words (bloated frontmatter)
+**代理** (`agents/*.md`)
 
-**Skills** (`skills/*/SKILL.md`)
-- Count tokens per SKILL.md
-- Flag: files >400 lines
-- Check for duplicate copies in `.agents/skills/` — skip identical copies to avoid double-counting
+* 统计每个文件的行数和令牌数（单词数 × 1.3）
+* 提取 `description` 前言长度
+* 标记：文件 >200 行（繁重），描述 >30 词（臃肿的前言）
 
-**Rules** (`rules/**/*.md`)
-- Count tokens per file
-- Flag: files >100 lines
-- Detect content overlap between rule files in the same language module
+**技能** (`skills/*/SKILL.md`)
 
-**MCP Servers** (`.mcp.json` or active MCP config)
-- Count configured servers and total tool count
-- Estimate schema overhead at ~500 tokens per tool
-- Flag: servers with >20 tools, servers that wrap simple CLI commands (`gh`, `git`, `npm`, `supabase`, `vercel`)
+* 统计 SKILL.md 的令牌数
+* 标记：文件 >400 行
+* 检查 `.agents/skills/` 中的重复副本 — 跳过相同副本以避免重复计数
 
-**CLAUDE.md** (project + user-level)
-- Count tokens per file in the CLAUDE.md chain
-- Flag: combined total >300 lines
+**规则** (`rules/**/*.md`)
 
-### Phase 2: Classify
+* 统计每个文件的令牌数
+* 标记：文件 >100 行
+* 检测同一语言模块中规则文件之间的内容重叠
 
-Sort every component into a bucket:
+**MCP 服务器** (`.mcp.json` 或活动的 MCP 配置)
 
-| Bucket | Criteria | Action |
+* 统计配置的服务器数量和工具总数
+* 估算模式开销约为每个工具 500 令牌
+* 标记：工具数 >20 的服务器，包装简单 CLI 命令的服务器 (`gh`, `git`, `npm`, `supabase`, `vercel`)
+
+**CLAUDE.md**（项目级 + 用户级）
+
+* 统计 CLAUDE.md 链中每个文件的令牌数
+* 标记：合并总数 >300 行
+
+### 阶段 2：分类
+
+将每个组件归入一个类别：
+
+| 类别 | 标准 | 操作 |
 |--------|----------|--------|
-| **Always needed** | Referenced in CLAUDE.md, backs an active command, or matches current project type | Keep |
-| **Sometimes needed** | Domain-specific (e.g. language patterns), not referenced in CLAUDE.md | Consider on-demand activation |
-| **Rarely needed** | No command reference, overlapping content, or no obvious project match | Remove or lazy-load |
+| **始终需要** | 在 CLAUDE.md 中被引用，支持活动命令，或匹配当前项目类型 | 保留 |
+| **有时需要** | 特定领域（例如语言模式），未在 CLAUDE.md 中引用 | 考虑按需激活 |
+| **很少需要** | 无命令引用，内容重叠，或无明显的项目匹配 | 移除或延迟加载 |
 
-### Phase 3: Detect Issues
+### 阶段 3：检测问题
 
-Identify the following problem patterns:
+识别以下问题模式：
 
-- **Bloated agent descriptions** — description >30 words in frontmatter loads into every Task tool invocation
-- **Heavy agents** — files >200 lines inflate Task tool context on every spawn
-- **Redundant components** — skills that duplicate agent logic, rules that duplicate CLAUDE.md
-- **MCP over-subscription** — >10 servers, or servers wrapping CLI tools available for free
-- **CLAUDE.md bloat** — verbose explanations, outdated sections, instructions that should be rules
+* **臃肿的代理描述** — 前言中描述 >30 词，会在每次任务工具调用时加载
+* **繁重的代理** — 文件 >200 行，每次生成时都会增加任务工具的上下文
+* **冗余组件** — 重复代理逻辑的技能，重复 CLAUDE.md 的规则
+* **MCP 超额订阅** — >10 个服务器，或包装了可免费使用的 CLI 工具的服务器
+* **CLAUDE.md 臃肿** — 冗长的解释、过时的部分、本应成为规则的指令
 
-### Phase 4: Report
+### 阶段 4：报告
 
-Produce the context budget report:
+生成上下文预算报告：
 
 ```
-Context Budget Report
+上下文预算报告
 ═══════════════════════════════════════
 
-Total estimated overhead: ~XX,XXX tokens
-Context model: Claude Sonnet (200K window)
-Effective available context: ~XXX,XXX tokens (XX%)
+总预估开销：约 XX,XXX 个词元
+上下文模型：Claude Sonnet (200K 窗口)
+有效可用上下文：约 XXX,XXX 个词元 (XX%)
 
-Component Breakdown:
+组件细分：
 ┌─────────────────┬────────┬───────────┐
-│ Component       │ Count  │ Tokens    │
+│ 组件            │ 数量   │ 词元数    │
 ├─────────────────┼────────┼───────────┤
 │ Agents          │ N      │ ~X,XXX    │
 │ Skills          │ N      │ ~X,XXX    │
@@ -89,47 +94,51 @@ Component Breakdown:
 │ CLAUDE.md       │ N      │ ~X,XXX    │
 └─────────────────┴────────┴───────────┘
 
-⚠ Issues Found (N):
-[ranked by token savings]
+⚠ 发现的问题 (N)：
+[按可节省词元数排序]
 
-Top 3 Optimizations:
-1. [action] → save ~X,XXX tokens
-2. [action] → save ~X,XXX tokens
-3. [action] → save ~X,XXX tokens
+前 3 项优化建议：
+1. [action] → 节省约 X,XXX 个词元
+2. [action] → 节省约 X,XXX 个词元
+3. [action] → 节省约 X,XXX 个词元
 
-Potential savings: ~XX,XXX tokens (XX% of current overhead)
+潜在节省空间：约 XX,XXX 个词元 (占当前开销的 XX%)
 ```
 
-In verbose mode, additionally output per-file token counts, line-by-line breakdown of the heaviest files, specific redundant lines between overlapping components, and MCP tool list with per-tool schema size estimates.
+在详细模式下，额外输出每个文件的令牌计数、最繁重文件的行级细分、重叠组件之间的具体冗余行，以及 MCP 工具列表和每个工具模式大小的估算。
 
-## Examples
+## 示例
 
-**Basic audit**
-```
-User: /context-budget
-Skill: Scans setup → 16 agents (12,400 tokens), 28 skills (6,200), 87 MCP tools (43,500), 2 CLAUDE.md (1,200)
-       Flags: 3 heavy agents, 14 MCP servers (3 CLI-replaceable)
-       Top saving: remove 3 MCP servers → -27,500 tokens (47% overhead reduction)
-```
+**基本审计**
 
-**Verbose mode**
 ```
-User: /context-budget --verbose
-Skill: Full report + per-file breakdown showing planner.md (213 lines, 1,840 tokens),
-       MCP tool list with per-tool sizes, duplicated rule lines side by side
+/context-budget
+技能：扫描设置 → 16个代理（12,400个令牌），28个技能（6,200），87个MCP工具（43,500），2个CLAUDE.md（1,200）
+       标记：3个重型代理，14个MCP服务器（3个可替换为CLI）
+       最高节省：移除3个MCP服务器 → -27,500个令牌（减少47%开销）
 ```
 
-**Pre-expansion check**
+**详细模式**
+
 ```
-User: I want to add 5 more MCP servers, do I have room?
-Skill: Current overhead 33% → adding 5 servers (~50 tools) would add ~25,000 tokens → pushes to 45% overhead
-       Recommendation: remove 2 CLI-replaceable servers first to stay under 40%
+/context-budget --verbose
+技能：完整报告 + 按文件细目显示 planner.md（213 行，1,840 个令牌），
+       MCP 工具列表及每个工具的大小，重复规则行并排显示
 ```
 
-## Best Practices
+**扩容前检查**
 
-- **Token estimation**: use `words × 1.3` for prose, `chars / 4` for code-heavy files
-- **MCP is the biggest lever**: each tool schema costs ~500 tokens; a 30-tool server costs more than all your skills combined
-- **Agent descriptions are loaded always**: even if the agent is never invoked, its description field is present in every Task tool context
-- **Verbose mode for debugging**: use when you need to pinpoint the exact files driving overhead, not for regular audits
-- **Audit after changes**: run after adding any agent, skill, or MCP server to catch creep early
+```
+User: 我想再添加5个MCP服务器，有空间吗？
+Skill: 当前开销33% → 添加5个服务器（约50个工具）会增加约25,000个tokens → 开销将升至45%
+       建议：先移除2个可用CLI替代的服务器以保持在40%以下
+```
+
+## 最佳实践
+
+* **令牌估算**：对散文使用 `words × 1.3`，对代码密集型文件使用 `chars / 4`
+* **MCP 是最大的杠杆**：每个工具模式约消耗 500 令牌；一个 30 个工具的服务器开销超过你所有技能的总和
+* **代理描述始终加载**：即使代理从未被调用，其描述字段也存在于每个任务工具上下文中
+* **详细模式用于调试**：需要精确定位导致开销的确切文件时使用，而非用于常规审计
+* **变更后审计**：添加任何代理、技能或 MCP 服务器后运行，以便及早发现增量
+

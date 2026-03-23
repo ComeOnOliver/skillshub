@@ -106,3 +106,4 @@ Update the context file, refresh timestamp, reset to `fresh`.
 ## References
 - `templates/company-context-template.md` — blank template for output
 - `references/interview-guide.md` — deep interview craft: probes, red flags, handling reluctant founders
+

@@ -82,3 +82,4 @@ A successful cleanup produces:
 2. **Value analysis** - Section-by-section justification
 3. **Before/after metrics** - Lines reduced, value preserved
 4. **Updated references** - CLAUDE.md or README with pointer to new location
+

@@ -627,3 +627,4 @@ func userDidAcceptCloudKitShareWith(_ cloudKitShareMetadata: CKShare.Metadata) {
 **Skill Type**: Reference
 **Minimum iOS**: 10.0 (basic), 17.0 (CKSyncEngine, SwiftData integration)
 **WWDC Sessions**: 2023-10188 (CKSyncEngine), 2024-10122 (CloudKit Console)
+

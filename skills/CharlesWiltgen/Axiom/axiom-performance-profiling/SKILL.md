@@ -1038,3 +1038,4 @@ See `axiom-metrickit-ref` for comprehensive MetricKit integration. Key metrics t
 **Targets:** iOS 14+, Swift 5.5+
 **Tools:** Instruments, Core Data
 **History:** See git log for changes
+

@@ -135,3 +135,4 @@ Help users plan trips efficiently with itineraries, budgets, and checklists.
 - Screenshot confirmations (don't rely on WiFi at airport)
 - Learn 5 phrases in local language (hello, thank you, excuse me, help, how much)
 - Keep digital and physical copies of all documents
+

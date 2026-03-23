@@ -323,3 +323,4 @@ agent-browser eval -b "$(echo -n 'Array.from(document.querySelectorAll("a")).map
 ./templates/authenticated-session.sh https://app.example.com/login
 ./templates/capture-workflow.sh https://example.com ./output
 ```
+

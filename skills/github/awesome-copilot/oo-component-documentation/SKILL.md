@@ -72,3 +72,4 @@ Choose the workflow before writing anything:
 - Front matter fields are accurate for the selected mode.
 - Examples and diagrams match the implementation.
 - Any unknowns, gaps, or assumptions are explicitly called out.
+

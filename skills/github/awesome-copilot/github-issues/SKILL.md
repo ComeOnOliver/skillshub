@@ -199,3 +199,4 @@ The following features require REST or GraphQL APIs beyond the basic MCP tools. 
 | Projects V2 | Project boards, progress reports, field management | [references/projects.md](references/projects.md) |
 | Issue fields | Custom metadata: dates, priority, text, numbers (private preview) | [references/issue-fields.md](references/issue-fields.md) |
 | Images in issues | Embedding images in issue bodies and comments via CLI | [references/images.md](references/images.md) |
+

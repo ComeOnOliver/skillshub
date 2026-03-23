@@ -193,3 +193,4 @@ Load these reference files as needed:
 - Domain theory selection requires extensive options → `domain_theories.md`
 - User requests multiple optimization examples → `examples.md`
 - Complex requirements with multiple stakeholders or non-functional specs → `advanced_techniques.md`
+

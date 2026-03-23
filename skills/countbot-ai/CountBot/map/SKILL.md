@@ -87,3 +87,4 @@ python3 skills/map/scripts/map.py search --keywords 关键词 --city 城市
 - 建议提供城市参数以提高地址解析准确性
 - 公交路线必须提供城市编码
 - 所有搜索命令支持 `--json` 输出
+

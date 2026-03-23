@@ -163,3 +163,4 @@ Estimated Impact: [X]% improvement = [Y] additional monthly users
 - `monetization-strategy` — Retention's impact on revenue
 - `review-management` — Retention issues surface in reviews
 - `app-launch` — First-time user experience
+

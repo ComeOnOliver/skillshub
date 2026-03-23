@@ -88,3 +88,4 @@ When creating a pull request, use existing templates in the repository if any ex
 If no template is provided, use the [this PR template](./assets/pr-template.md). It contains a collection of headers to use, each with guidance of what to place in the particular sections.
 
 If an issue was created or is being used, ensure that issue is referenced in the PR. Use the `Closes #NUMBER` syntax to enable auto-closing of the issue.
+

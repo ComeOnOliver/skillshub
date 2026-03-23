@@ -128,3 +128,4 @@ Avoid the default catalog. Catalog names can be adjusted per project needs.
 | App Development | Vue/Nuxt/UnoCSS conventions and patterns | [app-development](references/app-development.md) |
 | Library Development | tsdown bundling, pure ESM publishing | [library-development](references/library-development.md) |
 | Monorepo | pnpm workspaces, centralized alias, Turborepo | [monorepo](references/monorepo.md) |
+

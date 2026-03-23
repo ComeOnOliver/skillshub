@@ -196,3 +196,4 @@ expect(wrapper.emitted("save")?.[0]?.[0]).toBe("Agent Violet");
 - `references/pinia-patterns.md`
 - Pinia testing cookbook: <https://pinia.vuejs.org/cookbook/testing.html>
 - Vue Test Utils guide: <https://test-utils.vuejs.org/guide/>
+

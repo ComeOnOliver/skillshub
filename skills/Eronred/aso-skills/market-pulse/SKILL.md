@@ -168,3 +168,4 @@ Suggest the user run this skill weekly for trend tracking:
 - `app-store-featured` — Strategy for getting featured based on current patterns
 - `app-launch` — Time launches based on market dynamics
 - `ua-campaign` — Adjust spend based on category benchmarks
+

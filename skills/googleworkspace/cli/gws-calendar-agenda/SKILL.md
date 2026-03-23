@@ -53,3 +53,4 @@ gws calendar +agenda --today --timezone America/New_York
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-calendar](../gws-calendar/SKILL.md) — All manage calendars and events commands
+

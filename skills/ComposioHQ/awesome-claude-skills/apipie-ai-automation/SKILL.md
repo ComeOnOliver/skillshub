@@ -1,3 +1,10 @@
+---
+name: apipie-ai-automation
+description: "Automate Apipie AI tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Apipie AI Automation via Rube MCP
 
 Automate Apipie AI operations through Composio's Apipie AI toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

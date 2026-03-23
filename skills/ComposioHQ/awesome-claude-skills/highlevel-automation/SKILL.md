@@ -1,3 +1,10 @@
+---
+name: highlevel-automation
+description: "Automate Highlevel tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Highlevel Automation via Rube MCP
 
 Automate Highlevel operations through Composio's Highlevel toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

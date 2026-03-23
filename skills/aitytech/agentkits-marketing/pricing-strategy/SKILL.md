@@ -737,3 +737,4 @@ If you need more context:
 - **marketing-psychology**: For pricing psychology principles
 - **ab-test-setup**: For testing pricing changes
 - **analytics-tracking**: For tracking pricing metrics
+

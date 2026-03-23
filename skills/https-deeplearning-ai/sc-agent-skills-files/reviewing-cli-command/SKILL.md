@@ -1,3 +1,8 @@
+---
+name: reviewing-cli-command
+description: Provides checklist for reviewing Typer CLI command implementations. Covers structure, Annotated syntax, error handling, exit codes, display module usage, destructive action patterns, and help text conventions. Use when user asks to review/check/verify a CLI command, wants feedback on implementation, or asks if a command follows best practices.
+---
+
 # Reviewing CLI Commands
 
 Checklist for reviewing Typer CLI command implementations.
@@ -120,3 +125,4 @@ confirm = typer.confirm(f"Delete?", default=True)
 ### Suggested Fixes
 <code suggestions if needed>
 ```
+

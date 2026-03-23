@@ -363,3 +363,4 @@ xcrun xctrace symbolicate --input trace.trace --dsym /path/to/App.dSYM
 **Skills**: axiom-performance-profiling, axiom-memory-debugging, axiom-swiftui-performance
 
 **Docs**: /xcode/instruments, /os/logging/recording-performance-data
+

@@ -503,3 +503,4 @@ side = "BOTH"
 - Architectury Loom: https://github.com/architectury/architectury-loom
 - Architectury templates: https://github.com/architectury/architectury-templates
 - Architectury docs: https://docs.architectury.dev/
+

@@ -1,3 +1,9 @@
+---
+name: document-writer
+description: 多风格文档写作技能。支持乔木、小红书、Dankoe、微信公众号、Twitter等5种写作风格。Claude 根据内容智能选择风格，按规范撰写文章。
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, TodoWrite
+---
+
 # Document Writer（多风格文档写作）
 
 将任意主题或素材转化为指定风格的文章。
@@ -259,3 +265,4 @@ print(prompt)
 4. 每条 100-280 字
 5. 保存为推特线程格式
 6. 输出总结
+

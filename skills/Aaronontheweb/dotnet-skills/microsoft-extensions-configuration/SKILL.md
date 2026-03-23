@@ -341,3 +341,4 @@ public ValidateOptionsResult Validate(string? name, Settings options)
 | Cross-property rules | `IValidateOptions<T>` |
 | Environment-aware | Inject `IHostEnvironment` |
 | Testable | Validators are plain classes |
+

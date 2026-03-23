@@ -1,3 +1,10 @@
+---
+name: expofp-automation
+description: "Automate Expofp tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Expofp Automation via Rube MCP
 
 Automate Expofp operations through Composio's Expofp toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

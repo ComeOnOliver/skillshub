@@ -131,3 +131,4 @@ When `slither` MCP is configured, prefer it over the CLI for structured analysis
 **Recommended**: Use slither MCP when working with AI agents (results are structured and actionable). Use CLI for quick local checks during development.
 
 **Graceful degradation**: If neither slither MCP nor slither CLI is available, rely on the Pre-Audit Checklist above and `forge test --fuzz-runs 10000` for coverage.
+

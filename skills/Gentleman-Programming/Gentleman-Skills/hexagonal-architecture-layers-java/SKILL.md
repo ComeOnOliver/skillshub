@@ -1,3 +1,13 @@
+---
+name: hexagonal-architecture-layers-java
+description: >
+  Hexagonal architecture layering for Java services with strict boundaries.
+  Trigger: When structuring Java apps by Domain/Application/Infrastructure, or refactoring toward clean architecture.
+metadata:
+  author: diegnghrmr
+  version: "1.0"
+---
+
 ## When to Use
 
 Load this skill when:
@@ -152,3 +162,4 @@ public class Order {
 
 - Hexagonal Architecture: https://alistair.cockburn.us/hexagonal-architecture/
 - Clean Architecture: https://www.oreilly.com/library/view/clean-architecture/9780134494272/
+

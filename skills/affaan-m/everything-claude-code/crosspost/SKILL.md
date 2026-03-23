@@ -152,7 +152,7 @@ import os
 import requests
 
 resp = requests.post(
-    "https://api.postbridge.io/v1/posts",
+    "https://your-crosspost-service.example/api/posts",
     headers={"Authorization": f"Bearer {os.environ['POSTBRIDGE_API_KEY']}"},
     json={
         "platforms": ["twitter", "linkedin", "threads"],
@@ -161,8 +161,10 @@ resp = requests.post(
             "linkedin": {"text": linkedin_version},
             "threads": {"text": threads_version}
         }
-    }
+    },
+    timeout=30,
 )
+resp.raise_for_status()
 ```
 
 ### Manual Posting
@@ -186,3 +188,4 @@ Before posting:
 
 - `content-engine` — Generate platform-native content
 - `x-api` — X/Twitter API integration
+

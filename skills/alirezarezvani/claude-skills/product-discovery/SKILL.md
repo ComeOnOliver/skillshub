@@ -112,3 +112,4 @@ CLI utility that:
 - emits prioritized test plan with suggested test types
 
 See `references/discovery-frameworks.md` for framework details.
+

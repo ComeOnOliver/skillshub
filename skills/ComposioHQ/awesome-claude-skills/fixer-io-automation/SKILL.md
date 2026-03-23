@@ -1,3 +1,10 @@
+---
+name: fixer-io-automation
+description: "Automate Fixer IO tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Fixer IO Automation via Rube MCP
 
 Automate Fixer IO operations through Composio's Fixer IO toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

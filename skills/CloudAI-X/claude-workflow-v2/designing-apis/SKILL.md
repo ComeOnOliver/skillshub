@@ -1,3 +1,8 @@
+---
+name: designing-apis
+description: Designs REST and GraphQL APIs including endpoints, error handling, versioning, and documentation. Use when creating new APIs, designing endpoints, reviewing API contracts, or when asked about REST, GraphQL, or API patterns.
+---
+
 # Designing APIs
 
 ### When to Load
@@ -221,3 +226,4 @@ If validation fails, return to the relevant design step and address the issues.
 - [ ] CORS properly configured
 - [ ] No sensitive data in URLs
 - [ ] Audit logging
+

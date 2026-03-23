@@ -229,3 +229,4 @@ Full command reference with flags: [CLI Reference](references/cli-reference.md).
 | **Dashboard image** | `mcr.microsoft.com/dotnet/aspire-dashboard` |
 | **Discord** | https://aka.ms/aspire/discord |
 | **Reddit** | https://www.reddit.com/r/aspiredotdev/ |
+

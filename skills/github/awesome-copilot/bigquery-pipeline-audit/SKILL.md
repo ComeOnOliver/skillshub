@@ -127,3 +127,4 @@ If `run_id` is missing, propose a one-line fix:
 **2. Patch list** ordered by risk, referencing exact functions to change.
 **3. If FAIL: Top 3 cost risks** with a rough worst-case estimate
 (e.g., "loop over 90 dates x 3 retries = 270 BQ jobs").
+

@@ -61,3 +61,4 @@ The primary goal is **Maximum Information Density** and **Automated Precision**.
 
 - [Skill Creator Standard](../../skill-creator/SKILL.md) - Detailed authoring rules.
 - [Resource Organization](../../skill-creator/references/resource-organization.md) - Folder structure best practices.
+

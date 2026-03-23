@@ -1087,3 +1087,4 @@ Use `@Generable` with `respond(to:generating:)` instead of prompting for JSON an
 **Version**: 1.0.0
 **Skill Type**: Reference
 **Content**: All WWDC 2025 code examples included
+

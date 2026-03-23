@@ -1,3 +1,10 @@
+---
+name: bigml-automation
+description: "Automate Bigml tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bigml Automation via Rube MCP
 
 Automate Bigml operations through Composio's Bigml toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

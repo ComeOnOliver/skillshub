@@ -124,3 +124,4 @@ Important: Only include actual files from the codebase. Verify all file paths ex
 
 ## Expected Output
 Upon running this prompt, GitHub Copilot will scan your codebase and generate an exemplars.md file containing real references to high-quality code examples in your repository, organized according to your selected parameters.
+

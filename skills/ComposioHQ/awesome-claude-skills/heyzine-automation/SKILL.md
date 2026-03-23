@@ -1,3 +1,10 @@
+---
+name: heyzine-automation
+description: "Automate Heyzine tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Heyzine Automation via Rube MCP
 
 Automate Heyzine operations through Composio's Heyzine toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: active-campaign-automation
+description: "Automate ActiveCampaign tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # ActiveCampaign Automation via Rube MCP
 
 Automate ActiveCampaign operations through Composio's ActiveCampaign toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

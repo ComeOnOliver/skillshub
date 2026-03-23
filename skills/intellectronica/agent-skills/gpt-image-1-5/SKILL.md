@@ -1,3 +1,8 @@
+---
+name: gpt-image-1-5
+description: Generate and edit images using OpenAI's GPT Image 1.5 model. Use when the user asks to generate, create, edit, modify, change, alter, or update images. Also use when user references an existing image file and asks to modify it in any way (e.g., "modify this image", "change the background", "replace X with Y"). Supports text-to-image generation and image editing with optional mask. DO NOT read the image file first - use this skill directly with the --input-image parameter.
+---
+
 # GPT Image 1.5 - Image Generation & Editing
 
 Generate new images or edit existing ones using OpenAI's GPT Image 1.5 model.
@@ -134,3 +139,4 @@ uv run ~/.claude/skills/gpt-image-1-5/scripts/generate_image.py --prompt "make t
 ```bash
 uv run ~/.claude/skills/gpt-image-1-5/scripts/generate_image.py --prompt "a flamingo swimming" --filename "2025-12-17-14-30-00-lounge-flamingo.png" --input-image "lounge.png" --mask "mask.png"
 ```
+

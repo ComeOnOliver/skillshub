@@ -199,3 +199,4 @@ See **go-interfaces** for the interface satisfaction check pattern.
 - **Type switches**: See [go-interfaces](../go-interfaces/SKILL.md) when using type switches, the comma-ok idiom, or interface satisfaction checks
 - **Nesting reduction**: See [go-style-core](../go-style-core/SKILL.md) when reducing nesting depth or resolving formatting questions
 - **Variable scoping**: See [go-declarations](../go-declarations/SKILL.md) when using if-init, `:=` redeclaration, or reducing variable scope
+

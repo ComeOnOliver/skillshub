@@ -1,3 +1,10 @@
+---
+name: genderize-automation
+description: "Automate Genderize tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Genderize Automation via Rube MCP
 
 Automate Genderize operations through Composio's Genderize toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

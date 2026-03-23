@@ -1,3 +1,10 @@
+---
+name: files-com-automation
+description: "Automate Files Com tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Files Com Automation via Rube MCP
 
 Automate Files Com operations through Composio's Files Com toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

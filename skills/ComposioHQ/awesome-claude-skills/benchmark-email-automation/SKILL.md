@@ -1,3 +1,10 @@
+---
+name: benchmark-email-automation
+description: "Automate Benchmark Email tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Benchmark Email Automation via Rube MCP
 
 Automate Benchmark Email operations through Composio's Benchmark Email toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

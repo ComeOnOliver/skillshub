@@ -476,3 +476,4 @@ If you need more context:
 - **page-cro**: For the page context around popups
 - **email-sequence**: For what happens after popup conversion
 - **ab-test-setup**: For testing popup variations
+

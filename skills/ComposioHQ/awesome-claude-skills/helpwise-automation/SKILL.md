@@ -1,3 +1,10 @@
+---
+name: helpwise-automation
+description: "Automate Helpwise tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Helpwise Automation via Rube MCP
 
 Automate Helpwise operations through Composio's Helpwise toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

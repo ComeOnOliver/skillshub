@@ -8,12 +8,24 @@ tags:
   - translational-research
   - literature
   - trials
-trigger_keywords:
-  - target evidence
-  - gene disease evidence
-  - target triage
-  - omics evidence
-  - gene disease mapper
+metadata:
+  openclaw:
+    requires:
+      bins:
+        - python3
+      env: []
+      config: []
+    always: false
+    emoji: "🧬"
+    homepage: https://github.com/ClawBio/ClawBio
+    os: [darwin, linux]
+    install: []
+    trigger_keywords:
+      - target evidence
+      - gene disease evidence
+      - target triage
+      - omics evidence
+      - gene disease mapper
 ---
 
 # Why This Exists

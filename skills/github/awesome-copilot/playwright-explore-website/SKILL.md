@@ -15,3 +15,4 @@ Your goal is to explore the website and identify key functionalities.
 4. Close the browser context upon completion.
 5. Provide a concise summary of your findings.
 6. Propose and generate test cases based on the exploration.
+

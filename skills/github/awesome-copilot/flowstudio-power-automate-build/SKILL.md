@@ -458,3 +458,4 @@ The `body/recipient` parameter format depends on the `location` value:
 
 - `flowstudio-power-automate-mcp` — Core connection setup and tool reference
 - `flowstudio-power-automate-debug` — Debug failing flows after deployment
+

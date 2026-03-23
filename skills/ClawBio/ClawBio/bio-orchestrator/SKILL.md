@@ -168,3 +168,4 @@ Plan:
 - "Which Bioconductor package should I use for bulk RNA-seq?"
 - "Predict the structure of this protein sequence: MKWVTFISLLFLFSSAYS..."
 - "Make my analysis reproducible as a Nextflow pipeline"
+

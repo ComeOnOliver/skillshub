@@ -1,3 +1,12 @@
+---
+name: Attio Automation
+description: "Automate Attio CRM operations -- search records, query contacts and companies with advanced filters, manage notes, list attributes, and navigate your relationship data -- using natural language through the Composio MCP integration."
+category: crm
+requires:
+  mcp:
+    - rube
+---
+
 # Attio Automation
 
 Manage your Attio CRM workspace -- fuzzy search across people and companies, run complex filtered queries, browse notes, discover object schemas, and list records -- all through natural language commands.
@@ -149,3 +158,4 @@ Retrieve records from a specific object type with simple pagination, returned in
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

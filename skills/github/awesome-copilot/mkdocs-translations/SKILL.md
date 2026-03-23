@@ -106,3 +106,4 @@ Before starting to create **any** new files, create a new git branch using the t
 - Translate each file using the same rules as above.
 - Maintain the same file and folder structure in the translated output.
 - Save each translated file in the appropriate target language folder.
+

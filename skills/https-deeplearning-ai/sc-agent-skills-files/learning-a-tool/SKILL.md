@@ -1,3 +1,8 @@
+---
+name: learning-a-tool
+description: Create learning paths for programming tools, and define what information should be researched to create learning guides. Use when user asks to learn, understand, or get started with any programming tool, library, or framework.
+---
+
 # Learning a Tool
 
 Create comprehensive learning paths for programming tools.
@@ -71,3 +76,4 @@ learning-{tool-name}/
     ├── 02-core-concepts/
     └── 03-patterns/
 ```
+

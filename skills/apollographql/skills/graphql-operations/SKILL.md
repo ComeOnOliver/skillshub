@@ -242,3 +242,4 @@ Detailed documentation for specific topics:
 - PREFER colocating fragments with components
 - USE descriptive operation names that reflect purpose
 - USE `@include`/`@skip` for conditional fields
+

@@ -62,3 +62,4 @@ Consistent, predictable API contracts reduce integration friction and prevent br
 - **No 200 for errors**: `{ "success": false, "data": null }` with HTTP 200 breaks monitoring.
 - **No deeply nested URLs**: Hard to document, version, and cache.
 - **No breaking changes without versioning**: Removing/renaming fields in-place breaks consumers silently.
+

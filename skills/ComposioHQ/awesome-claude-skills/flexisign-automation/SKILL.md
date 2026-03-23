@@ -1,3 +1,10 @@
+---
+name: flexisign-automation
+description: "Automate Flexisign tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Flexisign Automation via Rube MCP
 
 Automate Flexisign operations through Composio's Flexisign toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

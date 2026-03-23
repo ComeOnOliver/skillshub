@@ -1,3 +1,14 @@
+---
+name: ros1-development
+description: >
+  Best practices, design patterns, and common pitfalls for ROS1 (Robot Operating System 1) development.
+  Use this skill when building ROS1 nodes, packages, launch files, or debugging ROS1 systems. Trigger
+  whenever the user mentions ROS1, catkin, rospy, roscpp, roslaunch, roscore, rostopic, tf, actionlib,
+  message types, services, or any ROS1-era robotics middleware. Also trigger for migrating ROS1 code
+  to ROS2, maintaining legacy ROS1 systems, or building ROS1-ROS2 bridges. Covers catkin workspaces,
+  nodelets, dynamic reconfigure, pluginlib, and the full ROS1 ecosystem.
+---
+
 # ROS1 Development Skill
 
 ## When to Use This Skill
@@ -394,3 +405,4 @@ When planning a migration, note these key differences:
 
 Start migration from leaf nodes (sensors, actuators) and work inward.
 Use the `ros1_bridge` package to run both stacks simultaneously during transition.
+

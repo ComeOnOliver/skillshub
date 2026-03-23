@@ -1,3 +1,10 @@
+---
+name: dropcontact-automation
+description: "Automate Dropcontact tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dropcontact Automation via Rube MCP
 
 Automate Dropcontact operations through Composio's Dropcontact toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,0 +1,9 @@
+---
+name: Test Skill A
+description: A test skill in pkg-a
+---
+
+# Test Skill A
+
+This is a test skill from test-pkg-a.
+

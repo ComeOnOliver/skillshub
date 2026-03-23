@@ -255,3 +255,4 @@ clawhub install agenthub
 - **autoresearch-agent** — Single-agent optimization loop (use AgentHub when you want N agents competing)
 - **self-improving-agent** — Self-modifying agent (use AgentHub when you want external competition)
 - **git-worktree-manager** — Git worktree utilities (AgentHub uses worktrees internally)
+

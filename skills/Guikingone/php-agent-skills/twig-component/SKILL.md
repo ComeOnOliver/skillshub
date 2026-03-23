@@ -348,3 +348,4 @@ TwigComponent had a security vulnerability (CVE-2025-47946) related to unsanitiz
 
 - **Full API** (attribute options, hooks, configuration, all methods): [references/api.md](references/api.md)
 - **Patterns** (forms, tables, layouts, composition, real-world examples): [references/patterns.md](references/patterns.md)
+

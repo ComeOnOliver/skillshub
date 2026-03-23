@@ -187,3 +187,4 @@ Use Jacoco maven plugin for coverage reporting and tracking.
   <scope>test</scope>
 </dependency>
 ```
+

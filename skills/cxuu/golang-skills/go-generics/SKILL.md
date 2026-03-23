@@ -174,3 +174,4 @@ func Contains[T comparable](slice []T, target T) bool { ... }
 - **Type declarations**: See [go-declarations](../go-declarations/SKILL.md) when defining new types, type aliases, or choosing between type definitions and aliases
 - **Documenting generic APIs**: See [go-documentation](../go-documentation/SKILL.md) when writing doc comments and runnable examples for generic functions
 - **Naming type parameters**: See [go-naming](../go-naming/SKILL.md) when choosing names for type parameters or constraint interfaces
+

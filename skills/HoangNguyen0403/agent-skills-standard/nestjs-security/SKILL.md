@@ -1,6 +1,6 @@
 ---
 name: nestjs-security
-description: "Authentication, RBAC, and Hardening standards. Use when implementing JWT auth, RBAC guards, or security hardening in NestJS. (triggers: **/*.guard.ts, **/*.strategy.ts, **/auth/**, Passport, JWT, AuthGuard, CSRF, Helmet)"
+description: 'Authentication, RBAC, and Hardening standards. Use when implementing JWT auth, RBAC guards, or security hardening in NestJS. (triggers: **/*.guard.ts, **/*.strategy.ts, **/auth/**, Passport, JWT, AuthGuard, CSRF, Helmet)'
 ---
 
 # NestJS Security Standards
@@ -51,6 +51,8 @@ description: "Authentication, RBAC, and Hardening standards. Use when implementi
 - **No SQLi**: Use ORM; avoid raw `query()` with string concatenation.
 - **No XSS**: Sanitize HTML input with `dompurify`.
 
-## Related Topics
+## References
 
-common/security-standards | architecture | database
+- [Implementation Examples](references/implementation.md)
+- [common/security-standards](../../common/common-security-standards/SKILL.md)
+

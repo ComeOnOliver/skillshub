@@ -206,3 +206,4 @@ It can be chained with:
 - After login, workspace defaults to the user's personal workspace; use `setWorkspace()` to switch
 - Entity IDs are integers; resource location GUIDs are strings
 - Protocol body text lives on `protocol-collection.last_version.state` (ProseMirror JSON), not on experiment-linked copies
+

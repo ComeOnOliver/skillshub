@@ -1,3 +1,19 @@
+---
+name: ros2-web-integration
+description: >
+  Patterns and best practices for integrating ROS2 systems with web technologies including REST APIs,
+  WebSocket bridges, and browser-based robot interfaces. Use this skill when building web dashboards
+  for robots, streaming camera feeds to browsers, exposing ROS2 services as REST endpoints, or
+  implementing bidirectional WebSocket communication between web UIs and ROS2 nodes. Trigger whenever
+  the user mentions rosbridge, rosbridge_suite, roslibjs, FastAPI with ROS2, Flask with rclpy,
+  WebSocket for robot telemetry, MJPEG streaming, WebRTC for robots, REST API wrapping ROS2 services,
+  web-based robot control, browser robot interface, robot dashboard, CORS configuration for robots,
+  or any web-to-ROS2 bridge pattern. Also trigger for authentication on robot web interfaces, rate
+  limiting sensor streams, video streaming from robot cameras to browsers, or running async web
+  frameworks alongside the ROS2 executor. Covers rosbridge_suite, FastAPI, Flask, WebSocket, and
+  WebRTC approaches.
+---
+
 # ROS2 Web Integration Skill
 
 ## When to Use This Skill
@@ -1412,3 +1428,4 @@ async def allowed_topic(ws: WebSocket, topic_name: str):
 10. **CORS restricts origins**: `allow_origins` lists specific dashboard URLs. Wildcard `*` is never used in production.
 11. **Connection lifecycle management**: WebSocket clients are tracked in a set, removed on disconnect, and periodically pruned. Dead client references are never retained.
 12. **Binary WebSocket for high-bandwidth data**: Image frames, point clouds, and other binary data use `send_bytes()`, not base64-encoded JSON. This saves ~33% bandwidth and CPU on both sides.
+

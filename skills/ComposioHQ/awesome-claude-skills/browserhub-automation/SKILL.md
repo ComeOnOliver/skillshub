@@ -1,3 +1,10 @@
+---
+name: browserhub-automation
+description: "Automate Browserhub tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Browserhub Automation via Rube MCP
 
 Automate Browserhub operations through Composio's Browserhub toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

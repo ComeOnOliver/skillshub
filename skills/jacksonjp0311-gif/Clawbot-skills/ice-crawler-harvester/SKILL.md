@@ -1,3 +1,8 @@
+---
+name: ice-crawler-harvester
+description: Run ICE-Crawler’s Frost→Glacier→Crystal pipeline to ingest repositories safely, emit bounded artifact bundles, and hand off sealed fossils for downstream agents.
+---
+
 # ICE-Crawler Harvester
 
 Use this skill to run the ICE-Crawler pipeline wherever you have the project cloned. Set an environment variable such as `ICE_CRAWLER_ROOT` that points to your local clone of the [Ice-Crawler repo](https://github.com/jacksonjp0311-gif/Ice-Crawler) and run the commands from there. The instructions below assume PowerShell, but any shell works.
@@ -54,3 +59,4 @@ Arguments: `<repo_url> <state_run_dir> <max_files> <max_kb> <temp_dir>`
 - Residue violation (`state/_temp_repo` not deleted) aborts the run; rerun after manual cleanup if needed.
 
 Follow this skill to get deterministic repo fossils with ICE-Crawler’s provenance guarantees.
+

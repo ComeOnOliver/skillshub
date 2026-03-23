@@ -120,3 +120,4 @@ H1: Primary keyword (single)
 - Buying backlinks (violates Google guidelines)
 - Neglecting page speed
 - Not updating old content
+

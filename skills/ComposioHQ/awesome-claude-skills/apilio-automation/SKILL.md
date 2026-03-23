@@ -1,3 +1,10 @@
+---
+name: apilio-automation
+description: "Automate Apilio tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Apilio Automation via Rube MCP
 
 Automate Apilio operations through Composio's Apilio toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

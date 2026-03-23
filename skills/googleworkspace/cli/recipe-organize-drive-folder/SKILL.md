@@ -24,3 +24,4 @@ Create a Google Drive folder structure and move files into the right locations.
 3. Move existing files into folder: `gws drive files update --params '{"fileId": "FILE_ID", "addParents": "FOLDER_ID", "removeParents": "OLD_PARENT_ID"}'`
 4. Verify structure: `gws drive files list --params '{"q": "FOLDER_ID in parents"}' --format table`
 
+

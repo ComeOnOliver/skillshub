@@ -264,3 +264,4 @@ All rights must be fulfilled within **30 days** (extendable to 90 for complex re
 | Employment | § 26 | Detailed employee data rules |
 | Video | § 4 | Signage and proportionality |
 | Scoring | § 31 | Explainable algorithms |
+

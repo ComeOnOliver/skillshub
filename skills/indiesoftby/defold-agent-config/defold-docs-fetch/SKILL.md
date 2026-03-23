@@ -1,3 +1,8 @@
+---
+name: defold-docs-fetch
+description: "Fetches Defold manuals and documentation. Use when looking up how Defold features work, understanding concepts, components, workflows, platform setup, or needing guidance beyond API reference."
+---
+
 # Defold Documentation Reference
 
 Fetch documentation from the links below (the URLs point to plain Markdown files).
@@ -280,3 +285,4 @@ When you need documentation on a Defold feature or concept:
 2. Find the matching entry in the tables above
 3. Fetch the corresponding URL (all URLs are plain Markdown — fetch and read the raw content)
 4. Example: fetch `https://defold.com/llms/manuals/collection-proxy.md`
+

@@ -1,3 +1,10 @@
+---
+name: algolia-automation
+description: "Automate Algolia tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Algolia Automation via Rube MCP
 
 Automate Algolia operations through Composio's Algolia toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

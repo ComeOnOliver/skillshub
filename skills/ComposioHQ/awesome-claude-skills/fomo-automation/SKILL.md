@@ -1,3 +1,10 @@
+---
+name: fomo-automation
+description: "Automate Fomo tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Fomo Automation via Rube MCP
 
 Automate Fomo operations through Composio's Fomo toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

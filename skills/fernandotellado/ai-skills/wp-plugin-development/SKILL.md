@@ -1216,3 +1216,4 @@ wp i18n make-pot . languages/my-plugin.pot
 - [Common Plugin Review Issues](https://developer.wordpress.org/plugins/wordpress-org/common-issues/)
 - [readme.txt Standard](https://developer.wordpress.org/plugins/wordpress-org/how-your-readme-txt-works/)
 - [WordPress Coding Standards](https://developer.wordpress.org/coding-standards/wordpress-coding-standards/)
+

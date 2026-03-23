@@ -403,3 +403,4 @@ For detailed documentation, load the following reference files as needed:
   - Search patterns: `no source code`, `out of disk`, `out of memory`, `403`, `C# compiler`, `analysis too long`, `fewer lines`, `Kotlin`, `extraction errors`, `debug logging`, `SARIF upload`, `SARIF limits`
 - `references/alert-management.md` — Alert severity, triage, Copilot Autofix, and dismissal
   - Search patterns: `severity`, `security severity`, `CVSS`, `Copilot Autofix`, `dismiss`, `triage`, `PR alerts`, `data flow`, `merge protection`, `REST API`
+

@@ -227,3 +227,4 @@ Deliver popup recommendations with specificity: name the trigger type, target au
 | Mobile Adaptation Notes | Specific adjustments for mobile trigger, sizing, and dismiss behavior |
 | Compliance Checklist | GDPR consent language, privacy link placement, opt-in mechanic review |
 | A/B Test Plan | Prioritized hypotheses with expected lift and success metrics |
+

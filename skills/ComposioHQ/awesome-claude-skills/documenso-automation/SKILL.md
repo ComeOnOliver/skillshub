@@ -1,3 +1,10 @@
+---
+name: documenso-automation
+description: "Automate Documenso tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Documenso Automation via Rube MCP
 
 Automate Documenso operations through Composio's Documenso toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

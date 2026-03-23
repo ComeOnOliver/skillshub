@@ -1,6 +1,6 @@
 ---
 name: java-tooling
-description: "Standards for build tools (Maven/Gradle) and static analysis. Use when configuring Maven/Gradle builds or static analysis tools for Java projects. (triggers: pom.xml, build.gradle, build.gradle.kts, build, dependency, plugin, sdk, lint)"
+description: 'Standards for Maven, Gradle, and static analysis in Java projects. Use when setting up Java build tooling, configuring Spotless or Checkstyle, managing JDK versions with sdkman, writing Dockerfiles for Java services, or adding SpotBugs/SonarLint. (triggers: pom.xml, build.gradle, build.gradle.kts, mvnw, gradlew, .sdkmanrc, spotbugs, checkstyle, spotless, eclipse-temurin)'
 ---
 
 # Java Tooling Standards
@@ -11,41 +11,21 @@ Standardized build and tooling configuration for consistent environments.
 
 ## Implementation Guidelines
 
-- **JDK Management**: Use `.sdkmanrc` or `.java-version` to lock JDK versions (Target LTS: 17 or 21).
-- **Maven**: Use `pom.xml` with `<dependencyManagement>` for version control. Use wrapper (`mvnw`).
-- **Gradle**: Prefer Kotlin DSL (`build.gradle.kts`). Use version catalogs (`libs.versions.toml`). Use wrapper (`gradlew`).
-- **Linter**: Use **Spotless** or **Checkstyle** (Google Style) to enforce formatting.
-- **Static Analysis**: Integrate **SpotBugs** or **SonarLint** for deeper issue detection.
-- **Docker**: Use multi-stage builds. Use `eclipse-temurin` or `distroless` images.
+- **JDK Setup**: Use **`.sdkmanrc`** or **`.java-version`** to lock the project to **LTS Support (17 or 21)**. Configure Gradle toolchain via `java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }` for reproducible builds.
+- **Maven & Wrapper**: Use **`pom.xml`** with **`<dependencyManagement>`**. ALWAYS use the **`mvnw`** wrapper.
+- **Gradle & Catalog**: Prefer **`build.gradle.kts`** (Kotlin DSL) with **`libs.versions.toml`** (Version Catalog). Use the **`gradlew`** wrapper.
+- **Formatting**: Enforce **Google Style Guide** using **`Spotless`** (`googleJavaFormat()` plugin) or **`Checkstyle`**.
+- **Static Analysis**: Integrate **`SpotBugs`** or **`SonarLint`** for deep analysis. Use **`Detekt`** if using Kotlin.
+- **Docker**: Use **Multi-stage Dockerfiles**. Use **`eclipse-temurin`** as the base image.
+- **CI/CD**: Configure **GitHub Actions** or **GitLab CI** to run `mvnw test` or `gradlew build` on every PR.
 
 ## Anti-Patterns
 
-- **Global Installs**: Relying on system Maven/Gradle. Always use wrappers.
-- **Fat Jars**: Avoid massive uber-jars if possible; prefer layered Docker images for caching.
-- **Snapshot Dependencies**: Do not rely on `-SNAPSHOT` versions in production builds.
+- **No Global Installs**: Always use mvnw/gradlew wrappers; never rely on system Maven/Gradle.
+- **No Fat Jars**: Prefer layered Docker images over uber-jars for better layer caching.
+- **No Snapshots in Prod**: Never use -SNAPSHOT dependency versions in production builds.
 
-## Code
+## References
 
-```kotlin
-// build.gradle.kts (Gradle Kotlin DSL)
-plugins {
-    java
-    id("com.diffplug.spotless") version "6.23.3"
-}
+- [Gradle Kotlin DSL & Spotless Setup](references/example.md)
 
-java {
-    toolchain {
-        languageVersion.set(JavaLanguageVersion.of(21))
-    }
-}
-
-spotless {
-    java {
-        googleJavaFormat()
-    }
-}
-```
-
-## Related Topics
-
-language | best-practices | testing

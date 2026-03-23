@@ -478,3 +478,4 @@ For detailed documentation, see:
 - `references/examples.md` - Complete working examples for multi-region and component dependencies
 - `references/api-monitoring.md` - Full API workflow for programmatic monitoring and automation
 - `references/troubleshooting.md` - Detailed troubleshooting guide for common issues and solutions
+

@@ -222,3 +222,4 @@ Automatically surface page-cro recommendations when:
 | High-Impact Recommendations | Structured list | Each with rationale, effort estimate, and success metric |
 | Copy Alternatives | Side-by-side table | 2-3 variants per key element (headline, CTA, subhead) with reasoning |
 | A/B Test Hypotheses | Table | Hypothesis × variant description × success metric × priority |
+

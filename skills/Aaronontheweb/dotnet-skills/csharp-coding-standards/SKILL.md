@@ -318,3 +318,4 @@ See [anti-patterns-and-reflection.md](anti-patterns-and-reflection.md) for detai
 - **Span<T> and Memory<T>**: https://learn.microsoft.com/en-us/dotnet/standard/memory-and-spans/
 - **Async Best Practices**: https://learn.microsoft.com/en-us/archive/msdn-magazine/2013/march/async-await-best-practices-in-asynchronous-programming
 - **.NET Performance Tips**: https://learn.microsoft.com/en-us/dotnet/framework/performance/
+

@@ -1,69 +1,68 @@
 ---
 name: ralphinho-rfc-pipeline
-description: 基于RFC驱动的多智能体DAG执行模式，包含质量门、合并队列和工作单元编排。
+description: RFC-driven multi-agent DAG execution pattern with quality gates, merge queues, and work unit orchestration.
 origin: ECC
 ---
 
-# Ralphinho RFC 管道
+# Ralphinho RFC Pipeline
 
-灵感来源于 [humanplane](https://github.com/humanplane) 风格的 RFC 分解模式和多单元编排工作流。
+Inspired by [humanplane](https://github.com/humanplane) style RFC decomposition patterns and multi-unit orchestration workflows.
 
-当一个功能对于单次代理处理来说过于庞大，必须拆分为独立可验证的工作单元时，请使用此技能。
+Use this skill when a feature is too large for a single agent pass and must be split into independently verifiable work units.
 
-## 管道阶段
+## Pipeline Stages
 
-1. RFC 接收
-2. DAG 分解
-3. 单元分配
-4. 单元实现
-5. 单元验证
-6. 合并队列与集成
-7. 最终系统验证
+1. RFC intake
+2. DAG decomposition
+3. Unit assignment
+4. Unit implementation
+5. Unit validation
+6. Merge queue and integration
+7. Final system verification
 
-## 单元规范模板
+## Unit Spec Template
 
-每个工作单元应包含：
+Each work unit should include:
+- `id`
+- `depends_on`
+- `scope`
+- `acceptance_tests`
+- `risk_level`
+- `rollback_plan`
 
-* `id`
-* `depends_on`
-* `scope`
-* `acceptance_tests`
-* `risk_level`
-* `rollback_plan`
+## Complexity Tiers
 
-## 复杂度层级
+- Tier 1: isolated file edits, deterministic tests
+- Tier 2: multi-file behavior changes, moderate integration risk
+- Tier 3: schema/auth/perf/security changes
 
-* 层级 1：独立文件编辑，确定性测试
-* 层级 2：多文件行为变更，中等集成风险
-* 层级 3：架构/认证/性能/安全性变更
+## Quality Pipeline per Unit
 
-## 每个单元的质量管道
+1. research
+2. implementation plan
+3. implementation
+4. tests
+5. review
+6. merge-ready report
 
-1. 研究
-2. 实现计划
-3. 实现
-4. 测试
-5. 审查
-6. 合并就绪报告
+## Merge Queue Rules
 
-## 合并队列规则
+- Never merge a unit with unresolved dependency failures.
+- Always rebase unit branches on latest integration branch.
+- Re-run integration tests after each queued merge.
 
-* 永不合并存在未解决依赖项失败的单元。
-* 始终将单元分支变基到最新的集成分支上。
-* 每次队列合并后重新运行集成测试。
+## Recovery
 
-## 恢复
+If a unit stalls:
+- evict from active queue
+- snapshot findings
+- regenerate narrowed unit scope
+- retry with updated constraints
 
-如果一个单元停滞：
+## Outputs
 
-* 从活动队列中移除
-* 快照发现结果
-* 重新生成范围缩小的单元
-* 使用更新的约束条件重试
+- RFC execution log
+- unit scorecards
+- dependency graph snapshot
+- integration risk summary
 
-## 输出
-
-* RFC 执行日志
-* 单元记分卡
-* 依赖关系图快照
-* 集成风险摘要

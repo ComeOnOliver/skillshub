@@ -50,3 +50,4 @@ When presenting results to the user:
 - The user must have appropriate permissions (enterprise owner, billing manager, or a token with `manage_billing:copilot` / `read:enterprise` scope).
 - The "Copilot usage metrics" policy must be enabled in enterprise settings.
 - If the API returns 403, advise the user to check their token permissions and enterprise policy settings.
+

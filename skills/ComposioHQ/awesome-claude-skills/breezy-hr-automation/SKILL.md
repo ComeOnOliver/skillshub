@@ -1,3 +1,10 @@
+---
+name: breezy-hr-automation
+description: "Automate Breezy HR tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Breezy HR Automation via Rube MCP
 
 Automate Breezy HR operations through Composio's Breezy HR toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

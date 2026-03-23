@@ -44,3 +44,4 @@ Follow this process when adding or working with Apollo Kotlin:
 
 - Use Apollo Kotlin v4+, do not use v3 or older versions.
 - Keep schema and operations in source control to make builds reproducible.
+

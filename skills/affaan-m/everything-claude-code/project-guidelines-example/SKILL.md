@@ -1,45 +1,49 @@
-# 專案指南技能（範例）
+---
+name: project-guidelines-example
+description: "Example project-specific skill template based on a real production application."
+origin: ECC
+---
 
-這是專案特定技能的範例。使用此作為你自己專案的範本。
+# Project Guidelines Skill (Example)
 
-基於真實生產應用程式：[Zenith](https://zenith.chat) - AI 驅動的客戶探索平台。
+This is an example of a project-specific skill. Use this as a template for your own projects.
+
+Based on a real production application: [Zenith](https://zenith.chat) - AI-powered customer discovery platform.
+
+## When to Use
+
+Reference this skill when working on the specific project it's designed for. Project skills contain:
+- Architecture overview
+- File structure
+- Code patterns
+- Testing requirements
+- Deployment workflow
 
 ---
 
-## 何時使用
+## Architecture Overview
 
-在處理專案特定設計時參考此技能。專案技能包含：
-- 架構概覽
-- 檔案結構
-- 程式碼模式
-- 測試要求
-- 部署工作流程
+**Tech Stack:**
+- **Frontend**: Next.js 15 (App Router), TypeScript, React
+- **Backend**: FastAPI (Python), Pydantic models
+- **Database**: Supabase (PostgreSQL)
+- **AI**: Claude API with tool calling and structured output
+- **Deployment**: Google Cloud Run
+- **Testing**: Playwright (E2E), pytest (backend), React Testing Library
 
----
-
-## 架構概覽
-
-**技術堆疊：**
-- **前端**：Next.js 15（App Router）、TypeScript、React
-- **後端**：FastAPI（Python）、Pydantic 模型
-- **資料庫**：Supabase（PostgreSQL）
-- **AI**：Claude API 帶工具呼叫和結構化輸出
-- **部署**：Google Cloud Run
-- **測試**：Playwright（E2E）、pytest（後端）、React Testing Library
-
-**服務：**
+**Services:**
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                         前端                                 │
+│                         Frontend                            │
 │  Next.js 15 + TypeScript + TailwindCSS                     │
-│  部署：Vercel / Cloud Run                                   │
+│  Deployed: Vercel / Cloud Run                              │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼
 ┌─────────────────────────────────────────────────────────────┐
-│                         後端                                 │
+│                         Backend                             │
 │  FastAPI + Python 3.11 + Pydantic                          │
-│  部署：Cloud Run                                            │
+│  Deployed: Cloud Run                                       │
 └─────────────────────────────────────────────────────────────┘
                               │
               ┌───────────────┼───────────────┐
@@ -52,44 +56,44 @@
 
 ---
 
-## 檔案結構
+## File Structure
 
 ```
 project/
 ├── frontend/
 │   └── src/
-│       ├── app/              # Next.js app router 頁面
-│       │   ├── api/          # API 路由
-│       │   ├── (auth)/       # 需認證路由
-│       │   └── workspace/    # 主應用程式工作區
-│       ├── components/       # React 元件
-│       │   ├── ui/           # 基礎 UI 元件
-│       │   ├── forms/        # 表單元件
-│       │   └── layouts/      # 版面配置元件
-│       ├── hooks/            # 自訂 React hooks
-│       ├── lib/              # 工具
-│       ├── types/            # TypeScript 定義
-│       └── config/           # 設定
+│       ├── app/              # Next.js app router pages
+│       │   ├── api/          # API routes
+│       │   ├── (auth)/       # Auth-protected routes
+│       │   └── workspace/    # Main app workspace
+│       ├── components/       # React components
+│       │   ├── ui/           # Base UI components
+│       │   ├── forms/        # Form components
+│       │   └── layouts/      # Layout components
+│       ├── hooks/            # Custom React hooks
+│       ├── lib/              # Utilities
+│       ├── types/            # TypeScript definitions
+│       └── config/           # Configuration
 │
 ├── backend/
-│   ├── routers/              # FastAPI 路由處理器
-│   ├── models.py             # Pydantic 模型
-│   ├── main.py               # FastAPI app 進入點
-│   ├── auth_system.py        # 認證
-│   ├── database.py           # 資料庫操作
-│   ├── services/             # 業務邏輯
-│   └── tests/                # pytest 測試
+│   ├── routers/              # FastAPI route handlers
+│   ├── models.py             # Pydantic models
+│   ├── main.py               # FastAPI app entry
+│   ├── auth_system.py        # Authentication
+│   ├── database.py           # Database operations
+│   ├── services/             # Business logic
+│   └── tests/                # pytest tests
 │
-├── deploy/                   # 部署設定
-├── docs/                     # 文件
-└── scripts/                  # 工具腳本
+├── deploy/                   # Deployment configs
+├── docs/                     # Documentation
+└── scripts/                  # Utility scripts
 ```
 
 ---
 
-## 程式碼模式
+## Code Patterns
 
-### API 回應格式（FastAPI）
+### API Response Format (FastAPI)
 
 ```python
 from pydantic import BaseModel
@@ -111,7 +115,7 @@ class ApiResponse(BaseModel, Generic[T]):
         return cls(success=False, error=error)
 ```
 
-### 前端 API 呼叫（TypeScript）
+### Frontend API Calls (TypeScript)
 
 ```typescript
 interface ApiResponse<T> {
@@ -144,7 +148,7 @@ async function fetchApi<T>(
 }
 ```
 
-### Claude AI 整合（結構化輸出）
+### Claude AI Integration (Structured Output)
 
 ```python
 from anthropic import Anthropic
@@ -170,7 +174,7 @@ async def analyze_with_claude(content: str) -> AnalysisResult:
         tool_choice={"type": "tool", "name": "provide_analysis"}
     )
 
-    # 提取工具使用結果
+    # Extract tool use result
     tool_use = next(
         block for block in response.content
         if block.type == "tool_use"
@@ -179,7 +183,7 @@ async def analyze_with_claude(content: str) -> AnalysisResult:
     return AnalysisResult(**tool_use.input)
 ```
 
-### 自訂 Hooks（React）
+### Custom Hooks (React)
 
 ```typescript
 import { useState, useCallback } from 'react'
@@ -217,22 +221,22 @@ export function useApi<T>(
 
 ---
 
-## 測試要求
+## Testing Requirements
 
-### 後端（pytest）
+### Backend (pytest)
 
 ```bash
-# 執行所有測試
+# Run all tests
 poetry run pytest tests/
 
-# 執行帶覆蓋率的測試
+# Run with coverage
 poetry run pytest tests/ --cov=. --cov-report=html
 
-# 執行特定測試檔案
+# Run specific test file
 poetry run pytest tests/test_auth.py -v
 ```
 
-**測試結構：**
+**Test structure:**
 ```python
 import pytest
 from httpx import AsyncClient
@@ -250,20 +254,20 @@ async def test_health_check(client: AsyncClient):
     assert response.json()["status"] == "healthy"
 ```
 
-### 前端（React Testing Library）
+### Frontend (React Testing Library)
 
 ```bash
-# 執行測試
+# Run tests
 npm run test
 
-# 執行帶覆蓋率的測試
+# Run with coverage
 npm run test -- --coverage
 
-# 執行 E2E 測試
+# Run E2E tests
 npm run test:e2e
 ```
 
-**測試結構：**
+**Test structure:**
 ```typescript
 import { render, screen, fireEvent } from '@testing-library/react'
 import { WorkspacePanel } from './WorkspacePanel'
@@ -284,38 +288,38 @@ describe('WorkspacePanel', () => {
 
 ---
 
-## 部署工作流程
+## Deployment Workflow
 
-### 部署前檢查清單
+### Pre-Deployment Checklist
 
-- [ ] 本機所有測試通過
-- [ ] `npm run build` 成功（前端）
-- [ ] `poetry run pytest` 通過（後端）
-- [ ] 無寫死密鑰
-- [ ] 環境變數已記錄
-- [ ] 資料庫 migrations 準備就緒
+- [ ] All tests passing locally
+- [ ] `npm run build` succeeds (frontend)
+- [ ] `poetry run pytest` passes (backend)
+- [ ] No hardcoded secrets
+- [ ] Environment variables documented
+- [ ] Database migrations ready
 
-### 部署指令
+### Deployment Commands
 
 ```bash
-# 建置和部署前端
+# Build and deploy frontend
 cd frontend && npm run build
 gcloud run deploy frontend --source .
 
-# 建置和部署後端
+# Build and deploy backend
 cd backend
 gcloud run deploy backend --source .
 ```
 
-### 環境變數
+### Environment Variables
 
 ```bash
-# 前端（.env.local）
+# Frontend (.env.local)
 NEXT_PUBLIC_API_URL=https://api.example.com
 NEXT_PUBLIC_SUPABASE_URL=https://xxx.supabase.co
 NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJ...
 
-# 後端（.env）
+# Backend (.env)
 DATABASE_URL=postgresql://...
 ANTHROPIC_API_KEY=sk-ant-...
 SUPABASE_URL=https://xxx.supabase.co
@@ -324,22 +328,23 @@ SUPABASE_KEY=eyJ...
 
 ---
 
-## 關鍵規則
+## Critical Rules
 
-1. **無表情符號** 在程式碼、註解或文件中
-2. **不可變性** - 永遠不要突變物件或陣列
-3. **TDD** - 實作前先寫測試
-4. **80% 覆蓋率** 最低
-5. **多個小檔案** - 200-400 行典型，最多 800 行
-6. **無 console.log** 在生產程式碼中
-7. **適當錯誤處理** 使用 try/catch
-8. **輸入驗證** 使用 Pydantic/Zod
+1. **No emojis** in code, comments, or documentation
+2. **Immutability** - never mutate objects or arrays
+3. **TDD** - write tests before implementation
+4. **80% coverage** minimum
+5. **Many small files** - 200-400 lines typical, 800 max
+6. **No console.log** in production code
+7. **Proper error handling** with try/catch
+8. **Input validation** with Pydantic/Zod
 
 ---
 
-## 相關技能
+## Related Skills
 
-- `coding-standards.md` - 一般程式碼最佳實務
-- `backend-patterns.md` - API 和資料庫模式
-- `frontend-patterns.md` - React 和 Next.js 模式
-- `tdd-workflow/` - 測試驅動開發方法論
+- `coding-standards.md` - General coding best practices
+- `backend-patterns.md` - API and database patterns
+- `frontend-patterns.md` - React and Next.js patterns
+- `tdd-workflow/` - Test-driven development methodology
+

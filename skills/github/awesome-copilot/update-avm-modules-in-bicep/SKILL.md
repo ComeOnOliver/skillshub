@@ -58,3 +58,4 @@ Describe updates made, any manual reviews needed or issues encountered.
 - Use MCR tags API only for version discovery
 - Parse JSON tags array and sort by semantic versioning
 - Maintain Bicep file validity and linting compliance
+

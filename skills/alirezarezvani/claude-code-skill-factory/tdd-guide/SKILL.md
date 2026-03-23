@@ -285,3 +285,4 @@ This skill works well with:
 - **refactoring-assistant**: Maintain tests during refactoring
 - **ci-cd-helper**: Integrate coverage in pipelines
 - **documentation-generator**: Generate test documentation
+

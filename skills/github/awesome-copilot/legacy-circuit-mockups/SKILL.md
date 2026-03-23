@@ -274,3 +274,4 @@ Detailed component specifications are available in the bundled reference files:
 - [lcd.md](references/lcd.md) - LCD display interfacing
 - [minipro.md](references/minipro.md) - EEPROM programmer usage
 - [t48eeprom-programmer.md](references/t48eeprom-programmer.md) - T48 programmer reference
+

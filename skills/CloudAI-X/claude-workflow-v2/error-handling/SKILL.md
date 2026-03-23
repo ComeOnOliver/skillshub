@@ -1,3 +1,8 @@
+---
+name: error-handling
+description: Implements error handling patterns, structured logging, retry strategies, circuit breakers, and graceful degradation. Use when designing error handling, setting up logging, implementing retries, adding error tracking, or when asked about error boundaries, log aggregation, alerting, or resilience patterns.
+---
+
 # Error Handling & Observability
 
 ### When to Load
@@ -473,3 +478,4 @@ One giant try/catch                Granular error handling per operation
 Logging inside tight loops         Log summaries/aggregates
 No error boundaries in React       Wrap independent sections separately
 ```
+

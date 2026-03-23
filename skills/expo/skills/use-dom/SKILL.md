@@ -415,3 +415,4 @@ On web, the `dom` prop is ignored since no webview is needed.
 - Test on all platforms — web rendering may differ slightly from native webviews
 - Large DOM components may impact performance — profile if needed
 - The webview has its own JavaScript context — cannot directly share state with native
+

@@ -171,3 +171,4 @@ The agent must NOT:
 - Summarise eligibility criteria unless they appear verbatim in the API response
 - Make clinical recommendations based on trial phase or status alone
 - Modify the safety disclaimer or omit it from any report
+

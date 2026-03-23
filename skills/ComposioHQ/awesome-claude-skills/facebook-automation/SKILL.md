@@ -1,3 +1,11 @@
+---
+name: Facebook Automation
+description: "Automate Facebook Page management including post creation, scheduling, video uploads, Messenger conversations, and audience engagement via Composio"
+requires:
+  mcp:
+    - rube
+---
+
 # Facebook Automation
 
 Automate Facebook Page operations -- create and schedule posts, upload videos, manage Messenger conversations, retrieve page insights, and handle scheduled content -- all orchestrated through the Composio MCP integration.
@@ -154,3 +162,4 @@ Respond to users via Messenger and mark messages as read.
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,6 +1,6 @@
 ---
 name: java-testing
-description: "Modern testing practices using JUnit 5, AssertJ, and Mockito. Use when writing JUnit 5 tests, AssertJ assertions, or Mockito mocks in Java. (triggers: **/*Test.java, **/*IT.java, test, assert, mock, verify, junit)"
+description: 'Testing standards using JUnit 5, AssertJ, and Mockito for Java. Use when writing or reviewing Java unit tests, setting up parameterized tests, writing integration tests with Testcontainers, or working with Mockito mocks. (triggers: **/*Test.java, **/*IT.java, @Test, @ParameterizedTest, Mockito, AssertJ, assertThat, JUnit, Testcontainers)'
 ---
 
 # Java Testing Standards
@@ -11,49 +11,25 @@ High-reliability testing using JUnit 5 and fluent assertions.
 
 ## Implementation Guidelines
 
-- **Framework**: Use JUnit 5 (Jupiter). Avoid JUnit 4.
-- **Assertions**: Use AssertJ (`assertThat`) over JUnit `assertEquals`. It's more readable and provides better error messages.
-- **Naming**: `MethodName_StateUnderTesting_ExpectedBehavior` or `@DisplayName("Should return X when Y")`.
-- **Parameterized**: Use `@ParameterizedTest` with `@ValueSource` or `@MethodSource` for data-driven tests.
-- **Mocking**: Use Mockito. Strictly limit mocking to external dependencies (I/O). Do not mock data objects.
-- **Integration**: Use **Testcontainers** for real databases/brokers in integration tests (`*IT.java`).
-- **Visibility**: Test classes and methods can be package-private in JUnit 5 (no `public` needed).
+- **JUnit 5 (Jupiter)**: Use **`@Test`**, **`@BeforeEach`**, and **`@AfterEach`**. Avoid JUnit 4 classes.
+- **Fluent Assertions**: Use **`AssertJ (assertThat)`** over JUnit `assertEquals` — enhanced readability.
+- **Naming**: Use **`MethodName_State_Result`** or **`@DisplayName("Check if X when Y")`**.
+- **Parameterized Tests**: Use **`@ParameterizedTest`** with **`@ValueSource`**, **`@CsvSource`**, or **`@MethodSource`**.
+- **Mocking Strategy**: Use **`Mockito`** with `@ExtendWith(MockitoExtension.class)` (JUnit 5). Use **`@Mock`**, **`@Spy`**, and **`@InjectMocks`**. NEVER mock data-only Records.
+- **Integration Testing**: Use **`Testcontainers`** with `@Container` annotation for real databases (PostgreSQL/Redis) in integration tests (`*IT.java`).
+- **Isolation**: Each test method MUST be isolated and independent; use **`@DirtiesContext`** sparingly.
+- **AssertJ Chaining**: Chain assertions for clarity: **`assertThat(result).isNotNull().hasSize(2).contains("X")`**.
+- **Mocking verification**: Use **`verify(mock, times(1)).method()`** to audit side-effects.
+- **Exceptions**: Use **`assertThatThrownBy(() -> ...)`** to verify specific Exception types and messages.
 
 ## Anti-Patterns
 
-- **Logic in Tests**: Tests should be declarative. No loops or heavy if/else.
-- **`System.out`**: Never print in tests. Use Assertions.
-- **Legacy Assertions**: Avoid `assertTrue(a == b)`. Use `assertThat(a).isEqualTo(b)`.
-- **Global State**: Tests must be isolated. No strict dependency on execution order.
+- **No Logic in Tests**: Keep tests declarative; no loops or if/else branching.
+- **No System.out in Tests**: Use assertions; never print to stdout.
+- **No Legacy Assertions**: Use `assertThat(a).isEqualTo(b)`, not `assertTrue(a == b)`.
+- **No Shared State**: Tests must be isolated and order-independent.
 
-## Code
+## References
 
-For a full `Mockito` + `AssertJ` test class template:
-[references/junit-template.md](references/junit-template.md)
+- [Full JUnit 5 + Mockito + AssertJ Template](references/junit-template.md)
 
-```java
-// JUnit 5 + AssertJ
-import static org.assertj.core.api.Assertions.assertThat;
-
-class UserServiceTest {
-
-    @Test
-    @DisplayName("Should detect active users")
-    void shouldDetectActiveUsers() {
-        // Arrange
-        var user = new User("id", "active");
-
-        // Act
-        boolean isActive = service.isActive(user);
-
-        // Assert
-        assertThat(isActive)
-            .as("Check active user status")
-            .isTrue();
-    }
-}
-```
-
-## Related Topics
-
-best-practices | quality-assurance

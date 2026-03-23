@@ -826,3 +826,4 @@ systemImageName: "cup.and.saucer.fill"
 ---
 
 **Remember** App Shortcuts make your app's functionality instantly available across iOS. Define 3-5 core shortcuts with natural phrases, promote them in your UI with SiriTipView, and users can invoke them immediately via Siri, Spotlight, Action Button, and more.
+

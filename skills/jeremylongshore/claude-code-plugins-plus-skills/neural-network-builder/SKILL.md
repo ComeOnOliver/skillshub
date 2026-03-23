@@ -1,3 +1,9 @@
+---
+name: building-neural-networks
+description: |
+  This skill allows Claude to construct and configure neural network architectures using the neural-network-builder plugin. It should be used when the user requests the creation of a new neural network, modification of an existing one, or assistance with defining the layers, parameters, and training process. The skill is triggered by requests involving terms like "build a neural network," "define network architecture," "configure layers," or specific mentions of neural network types (e.g., "CNN," "RNN," "transformer").
+---
+
 ## Overview
 
 This skill empowers Claude to design and implement neural networks tailored to specific tasks. It leverages the neural-network-builder plugin to automate the process of defining network architectures, configuring layers, and setting training parameters. This ensures efficient and accurate creation of neural network models.

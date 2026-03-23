@@ -216,3 +216,4 @@ When generating a security audit report, use this structure:
 
 - For detailed vulnerability patterns and code examples, see references/vulnerability-patterns.md
 - For secrets detection regex patterns, see references/secrets-patterns.md
+

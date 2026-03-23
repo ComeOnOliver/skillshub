@@ -109,3 +109,4 @@ pnpm skills:sync
 - Always run `pnpm skills:check` before completing
 - Public skills require both adding to `public-skills.txt` AND running `pnpm skills:sync`
 - If the skill-creator skill is available, you may use it for advanced skill development (evals, iterations), but this skill handles the basic creation workflow.
+

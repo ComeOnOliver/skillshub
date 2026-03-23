@@ -1,3 +1,10 @@
+---
+name: finmei-automation
+description: "Automate Finmei tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Finmei Automation via Rube MCP
 
 Automate Finmei operations through Composio's Finmei toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

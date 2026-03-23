@@ -181,3 +181,4 @@ Fix any issues before proceeding to the checklist above. For linter setup and co
 - **Testing patterns**: See [go-testing](../go-testing/SKILL.md) when reviewing test code for table-driven structure, failure messages, or helper usage
 - **Concurrency safety**: See [go-concurrency](../go-concurrency/SKILL.md) when reviewing goroutine lifetimes, channel usage, or mutex placement
 - **Logging practices**: See [go-logging](../go-logging/SKILL.md) when reviewing log usage, structured logging, or slog configuration
+

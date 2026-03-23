@@ -1,3 +1,8 @@
+---
+name: ppt-generator
+description: 生成专业 PPT 演示文稿，支持 22 种风格，自动根据内容选择最佳风格，输出到 ~/ppt-output/
+---
+
 # PPT Generator Skill
 
 专注于 PPT 生成的完整解决方案。
@@ -248,3 +253,4 @@ python ~/.claude/skills/ppt-generator/scripts/assemble_pptx.py \
 3. **受众优先** - 儿童/初学者 → 友好风格；高管 → 简洁风格
 4. **稳定性考虑** - 重要场合选择稳定性高的风格（apple, corporate, minimal）
 5. **风格一致** - 一个 PPT 只用一种风格，不要混用
+

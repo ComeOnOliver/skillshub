@@ -1,3 +1,10 @@
+---
+name: esignatures-io-automation
+description: "Automate Esignatures IO tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Esignatures IO Automation via Rube MCP
 
 Automate Esignatures IO operations through Composio's Esignatures IO toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

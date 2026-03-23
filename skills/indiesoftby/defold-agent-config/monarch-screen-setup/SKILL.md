@@ -1,3 +1,8 @@
+---
+name: monarch-screen-setup
+description: "Organizes screens and popups in a Defold game using Monarch screen manager. Use when creating new screens, popups, or setting up navigation between them."
+---
+
 # Organizing Screens and Popups with Monarch
 
 ## Prerequisite: Verify Monarch Dependency
@@ -219,3 +224,4 @@ end
 | Pass data to popup | `monarch.show("popup_name", nil, { key = "value" })` |
 | Check if popup | `monarch.is_popup("popup_name")` |
 | Get current top screen | `monarch.top()` |
+

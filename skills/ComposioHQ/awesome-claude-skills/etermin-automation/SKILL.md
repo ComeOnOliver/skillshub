@@ -1,3 +1,10 @@
+---
+name: etermin-automation
+description: "Automate Etermin tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Etermin Automation via Rube MCP
 
 Automate Etermin operations through Composio's Etermin toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

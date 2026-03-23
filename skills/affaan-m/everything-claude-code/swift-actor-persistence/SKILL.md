@@ -1,25 +1,25 @@
 ---
 name: swift-actor-persistence
-description: 在 Swift 中使用 actor 实现线程安全的数据持久化——基于内存缓存与文件支持的存储，通过设计消除数据竞争。
+description: Thread-safe data persistence in Swift using actors — in-memory cache with file-backed storage, eliminating data races by design.
 origin: ECC
 ---
 
-# 用于线程安全持久化的 Swift Actor
+# Swift Actors for Thread-Safe Persistence
 
-使用 Swift actor 构建线程安全数据持久化层的模式。结合内存缓存与文件支持的存储，利用 actor 模型在编译时消除数据竞争。
+Patterns for building thread-safe data persistence layers using Swift actors. Combines in-memory caching with file-backed storage, leveraging the actor model to eliminate data races at compile time.
 
-## 何时激活
+## When to Activate
 
-* 在 Swift 5.5+ 中构建数据持久化层
-* 需要对共享可变状态进行线程安全访问
-* 希望消除手动同步（锁、DispatchQueue）
-* 构建具有本地存储的离线优先应用
+- Building a data persistence layer in Swift 5.5+
+- Need thread-safe access to shared mutable state
+- Want to eliminate manual synchronization (locks, DispatchQueues)
+- Building offline-first apps with local storage
 
-## 核心模式
+## Core Pattern
 
-### 基于 Actor 的存储库
+### Actor-Based Repository
 
-Actor 模型保证了序列化访问 —— 没有数据竞争，由编译器强制执行。
+The actor model guarantees serialized access — no data races, enforced by the compiler.
 
 ```swift
 public actor LocalRepository<T: Codable & Identifiable> where T.ID == String {
@@ -69,9 +69,9 @@ public actor LocalRepository<T: Codable & Identifiable> where T.ID == String {
 }
 ```
 
-### 用法
+### Usage
 
-由于 actor 隔离，所有调用都会自动变为异步：
+All calls are automatically async due to actor isolation:
 
 ```swift
 let repository = LocalRepository<Question>()
@@ -85,7 +85,7 @@ try await repository.save(newQuestion)
 try await repository.delete("q-001")
 ```
 
-### 与 @Observable ViewModel 结合使用
+### Combining with @Observable ViewModel
 
 ```swift
 @Observable
@@ -108,36 +108,37 @@ final class QuestionListViewModel {
 }
 ```
 
-## 关键设计决策
+## Key Design Decisions
 
-| 决策 | 理由 |
+| Decision | Rationale |
 |----------|-----------|
-| Actor（而非类 + 锁） | 编译器强制执行的线程安全性，无需手动同步 |
-| 内存缓存 + 文件持久化 | 从缓存中快速读取，持久化写入磁盘 |
-| 同步初始化加载 | 避免异步初始化的复杂性 |
-| 按 ID 键控的字典 | 按标识符进行 O(1) 查找 |
-| 泛型化 `Codable & Identifiable` | 可在任何模型类型中重复使用 |
-| 原子文件写入 (`.atomic`) | 防止崩溃时部分写入 |
+| Actor (not class + lock) | Compiler-enforced thread safety, no manual synchronization |
+| In-memory cache + file persistence | Fast reads from cache, durable writes to disk |
+| Synchronous init loading | Avoids async initialization complexity |
+| Dictionary keyed by ID | O(1) lookups by identifier |
+| Generic over `Codable & Identifiable` | Reusable across any model type |
+| Atomic file writes (`.atomic`) | Prevents partial writes on crash |
 
-## 最佳实践
+## Best Practices
 
-* **对所有跨越 actor 边界的数据使用 `Sendable` 类型**
-* **保持 actor 的公共 API 最小化** —— 仅暴露领域操作，而非持久化细节
-* **使用 `.atomic` 写入** 以防止应用在写入过程中崩溃导致数据损坏
-* **在 `init` 中同步加载** —— 异步初始化器会增加复杂性，而对本地文件的益处微乎其微
-* **与 `@Observable` ViewModel 结合使用** 以实现响应式 UI 更新
+- **Use `Sendable` types** for all data crossing actor boundaries
+- **Keep the actor's public API minimal** — only expose domain operations, not persistence details
+- **Use `.atomic` writes** to prevent data corruption if the app crashes mid-write
+- **Load synchronously in `init`** — async initializers add complexity with minimal benefit for local files
+- **Combine with `@Observable`** ViewModels for reactive UI updates
 
-## 应避免的反模式
+## Anti-Patterns to Avoid
 
-* 在 Swift 并发新代码中使用 `DispatchQueue` 或 `NSLock` 而非 actor
-* 将内部缓存字典暴露给外部调用者
-* 在不进行验证的情况下使文件 URL 可配置
-* 忘记所有 actor 方法调用都是 `await` —— 调用者必须处理异步上下文
-* 使用 `nonisolated` 来绕过 actor 隔离（违背了初衷）
+- Using `DispatchQueue` or `NSLock` instead of actors for new Swift concurrency code
+- Exposing the internal cache dictionary to external callers
+- Making the file URL configurable without validation
+- Forgetting that all actor method calls are `await` — callers must handle async context
+- Using `nonisolated` to bypass actor isolation (defeats the purpose)
 
-## 何时使用
+## When to Use
 
-* iOS/macOS 应用中的本地数据存储（用户数据、设置、缓存内容）
-* 稍后同步到服务器的离线优先架构
-* 应用中多个部分并发访问的任何共享可变状态
-* 用现代 Swift 并发性替换基于 `DispatchQueue` 的旧式线程安全机制
+- Local data storage in iOS/macOS apps (user data, settings, cached content)
+- Offline-first architectures that sync to a server later
+- Any shared mutable state that multiple parts of the app access concurrently
+- Replacing legacy `DispatchQueue`-based thread safety with modern Swift concurrency
+

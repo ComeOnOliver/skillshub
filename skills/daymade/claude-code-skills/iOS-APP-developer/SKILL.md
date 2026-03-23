@@ -370,3 +370,4 @@ For complete step-by-step guide, entitlements, workflow examples, and full troub
 - [references/camera-avfoundation.md](references/camera-avfoundation.md) - Camera preview debugging
 - [references/testing-mainactor.md](references/testing-mainactor.md) - Testing @MainActor classes (state machines, regression tests)
 - [references/apple-codesign-notarize.md](references/apple-codesign-notarize.md) - Apple Developer signing + notarization for macOS/Electron CI/CD
+

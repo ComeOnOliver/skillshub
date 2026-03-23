@@ -21,9 +21,10 @@ description: "Standards for State integration with Views using Coroutines and Li
 
 ## Anti-Patterns
 
-- **launchWhenX**: `**Deprecated**: Use repeatOnLifecycle.`
-- **observe(this)**: `**Leak Risk**: Use viewLifecycleOwner in Fragments.`
+- **No launchWhenStarted/Resumed**: Deprecated. Use repeatOnLifecycle instead.
+- **No observe(this) in Fragments**: Use viewLifecycleOwner to prevent lifecycle leaks.
 
 ## References
 
 - [Flow Consumption Template](references/implementation.md)
+

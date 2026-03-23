@@ -39,3 +39,4 @@ acceptance test named `TestAccFeatureHappyPath`:
 1. Run the acceptance test. Expect the test to fail.
 1. If the test fails, then undo the edit and report a successful flip. Else,
    keep the edit and report an unsuccessful flip.
+

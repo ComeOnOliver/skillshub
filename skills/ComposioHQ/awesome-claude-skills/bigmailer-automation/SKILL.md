@@ -1,3 +1,10 @@
+---
+name: bigmailer-automation
+description: "Automate Bigmailer tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bigmailer Automation via Rube MCP
 
 Automate Bigmailer operations through Composio's Bigmailer toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

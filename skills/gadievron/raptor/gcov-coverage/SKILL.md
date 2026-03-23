@@ -96,3 +96,4 @@ endif()
 - **Function coverage**: Called functions / total functions
 
 Target: 80%+ line coverage, 70%+ branch coverage
+

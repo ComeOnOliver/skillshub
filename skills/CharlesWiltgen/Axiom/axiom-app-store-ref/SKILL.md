@@ -1044,3 +1044,4 @@ Authentication requires an API key from App Store Connect (Users and Access > In
 **Docs**: /app-store/review/guidelines, /app-store/submitting, /app-store/app-privacy-details, /help/app-store-connect
 
 **Skills**: app-store-submission, app-store-diag, privacy-ux, storekit-ref, accessibility-diag
+

@@ -1,3 +1,10 @@
+---
+name: doppler-marketing-automation-automation
+description: "Automate Doppler Marketing Automation tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Doppler Marketing Automation Automation via Rube MCP
 
 Automate Doppler Marketing Automation operations through Composio's Doppler Marketing Automation toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

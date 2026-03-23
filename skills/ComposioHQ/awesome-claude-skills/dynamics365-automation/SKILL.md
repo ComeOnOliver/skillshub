@@ -1,3 +1,10 @@
+---
+name: Dynamics 365 Automation
+description: "Dynamics 365 Automation: manage CRM contacts, accounts, leads, opportunities, sales orders, invoices, and cases via the Dynamics CRM Web API"
+requires:
+  mcp: [rube]
+---
+
 # Dynamics 365 Automation
 
 Automate Microsoft Dynamics 365 CRM operations including creating and updating contacts, accounts, leads, opportunities, sales orders, invoices, and support cases.
@@ -228,3 +235,4 @@ Arguments:
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

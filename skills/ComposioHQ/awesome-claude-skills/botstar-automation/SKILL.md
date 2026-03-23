@@ -1,3 +1,10 @@
+---
+name: botstar-automation
+description: "Automate Botstar tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Botstar Automation via Rube MCP
 
 Automate Botstar operations through Composio's Botstar toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

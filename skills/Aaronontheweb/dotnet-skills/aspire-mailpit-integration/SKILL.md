@@ -456,3 +456,4 @@ curl http://localhost:8025/api/v1/messages
 - **Mailpit API**: https://mailpit.axllent.org/docs/api-v1/
 - **MailKit**: https://github.com/jstedfast/MailKit
 - **Aspire Containers**: https://learn.microsoft.com/en-us/dotnet/aspire/fundamentals/container-resources
+

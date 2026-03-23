@@ -149,3 +149,4 @@ User: "How do I make my app work with Visual Intelligence?"
 
 User: "How do users discover my app content through the camera?"
 → Invoke: `/skill axiom-vision-ref`
+

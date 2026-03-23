@@ -181,3 +181,4 @@ When modifying existing semantic layer config:
 | Filtering on non-dimension columns | Filter expressions can only use declared dimensions/entities, not raw columns |
 | `mf validate-configs` shows stale results | Re-run `dbt parse` / `dbtf parse` first to regenerate the manifest |
 | MetricFlow install breaks `dbt-semantic-interfaces` | Install `dbt-metricflow` (not bare `metricflow`) to get compatible dependency versions |
+

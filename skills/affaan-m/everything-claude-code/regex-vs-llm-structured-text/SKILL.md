@@ -1,21 +1,21 @@
 ---
 name: regex-vs-llm-structured-text
-description: 选择在解析结构化文本时使用正则表达式还是大型语言模型的决策框架——从正则表达式开始，仅在低置信度的边缘情况下添加大型语言模型。
+description: Decision framework for choosing between regex and LLM when parsing structured text — start with regex, add LLM only for low-confidence edge cases.
 origin: ECC
 ---
 
-# 正则表达式 vs LLM 用于结构化文本解析
+# Regex vs LLM for Structured Text Parsing
 
-一个用于解析结构化文本（测验、表单、发票、文档）的实用决策框架。核心见解是：正则表达式能以低成本、确定性的方式处理 95-98% 的情况。将昂贵的 LLM 调用留给剩余的边缘情况。
+A practical decision framework for parsing structured text (quizzes, forms, invoices, documents). The key insight: regex handles 95-98% of cases cheaply and deterministically. Reserve expensive LLM calls for the remaining edge cases.
 
-## 何时使用
+## When to Activate
 
-* 解析具有重复模式的结构化文本（问题、表单、表格）
-* 决定在文本提取时使用正则表达式还是 LLM
-* 构建结合两种方法的混合管道
-* 在文本处理中优化成本/准确性权衡
+- Parsing structured text with repeating patterns (questions, forms, tables)
+- Deciding between regex and LLM for text extraction
+- Building hybrid pipelines that combine both approaches
+- Optimizing cost/accuracy tradeoffs in text processing
 
-## 决策框架
+## Decision Framework
 
 ```
 Is the text format consistent and repeating?
@@ -25,7 +25,7 @@ Is the text format consistent and repeating?
 └── No (free-form, highly variable) → Use LLM directly
 ```
 
-## 架构模式
+## Architecture Pattern
 
 ```
 Source Text
@@ -44,9 +44,9 @@ Source Text
     └── Low confidence (<0.95) → [LLM Validator] → Output
 ```
 
-## 实现
+## Implementation
 
-### 1. 正则表达式解析器（处理大多数情况）
+### 1. Regex Parser (Handles the Majority)
 
 ```python
 import re
@@ -82,9 +82,9 @@ def parse_structured_text(content: str) -> list[ParsedItem]:
     return items
 ```
 
-### 2. 置信度评分
+### 2. Confidence Scoring
 
-标记可能需要 LLM 审核的项：
+Flag items that may need LLM review:
 
 ```python
 @dataclass(frozen=True)
@@ -125,7 +125,7 @@ def identify_low_confidence(
     return [f for f in flags if f.score < threshold]
 ```
 
-### 3. LLM 验证器（仅用于边缘情况）
+### 3. LLM Validator (Edge Cases Only)
 
 ```python
 def validate_with_llm(
@@ -151,7 +151,7 @@ def validate_with_llm(
     return corrected_item
 ```
 
-### 4. 混合管道
+### 4. Hybrid Pipeline
 
 ```python
 def process_document(
@@ -182,39 +182,40 @@ def process_document(
     return result
 ```
 
-## 实际指标
+## Real-World Metrics
 
-来自一个生产中的测验解析管道（410 个项目）：
+From a production quiz parsing pipeline (410 items):
 
-| 指标 | 值 |
+| Metric | Value |
 |--------|-------|
-| 正则表达式成功率 | 98.0% |
-| 低置信度项目 | 8 (2.0%) |
-| 所需 LLM 调用次数 | ~5 |
-| 相比全 LLM 的成本节省 | ~95% |
-| 测试覆盖率 | 93% |
+| Regex success rate | 98.0% |
+| Low confidence items | 8 (2.0%) |
+| LLM calls needed | ~5 |
+| Cost savings vs all-LLM | ~95% |
+| Test coverage | 93% |
 
-## 最佳实践
+## Best Practices
 
-* **从正则表达式开始** — 即使不完美的正则表达式也能提供一个改进的基线
-* **使用置信度评分** 来以编程方式识别需要 LLM 帮助的内容
-* **使用最便宜的 LLM** 进行验证（Haiku 类模型已足够）
-* **切勿修改** 已解析的项 — 从清理/验证步骤返回新实例
-* **TDD 效果很好** 用于解析器 — 首先为已知模式编写测试，然后是边缘情况
-* **记录指标**（正则表达式成功率、LLM 调用次数）以跟踪管道健康状况
+- **Start with regex** — even imperfect regex gives you a baseline to improve
+- **Use confidence scoring** to programmatically identify what needs LLM help
+- **Use the cheapest LLM** for validation (Haiku-class models are sufficient)
+- **Never mutate** parsed items — return new instances from cleaning/validation steps
+- **TDD works well** for parsers — write tests for known patterns first, then edge cases
+- **Log metrics** (regex success rate, LLM call count) to track pipeline health
 
-## 应避免的反模式
+## Anti-Patterns to Avoid
 
-* 当正则表达式能处理 95% 以上的情况时，将所有文本发送给 LLM（昂贵且缓慢）
-* 对自由格式、高度可变的文本使用正则表达式（LLM 在此处更合适）
-* 跳过置信度评分，希望正则表达式“能正常工作”
-* 在清理/验证步骤中修改已解析的对象
-* 不测试边缘情况（格式错误的输入、缺失字段、编码问题）
+- Sending all text to an LLM when regex handles 95%+ of cases (expensive and slow)
+- Using regex for free-form, highly variable text (LLM is better here)
+- Skipping confidence scoring and hoping regex "just works"
+- Mutating parsed objects during cleaning/validation steps
+- Not testing edge cases (malformed input, missing fields, encoding issues)
 
-## 适用场景
+## When to Use
 
-* 测验/考试题目解析
-* 表单数据提取
-* 发票/收据处理
-* 文档结构解析（标题、章节、表格）
-* 任何具有重复模式且成本重要的结构化文本
+- Quiz/exam question parsing
+- Form data extraction
+- Invoice/receipt processing
+- Document structure parsing (headers, sections, tables)
+- Any structured text with repeating patterns where cost matters
+

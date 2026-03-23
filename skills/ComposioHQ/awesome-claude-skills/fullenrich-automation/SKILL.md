@@ -1,3 +1,10 @@
+---
+name: fullenrich-automation
+description: "Automate Fullenrich tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Fullenrich Automation via Rube MCP
 
 Automate Fullenrich operations through Composio's Fullenrich toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

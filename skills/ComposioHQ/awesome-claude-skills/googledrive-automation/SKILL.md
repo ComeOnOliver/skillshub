@@ -1,3 +1,10 @@
+---
+name: googledrive-automation
+description: "Automate Google Drive tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Google Drive Automation via Rube MCP
 
 Automate Google Drive operations through Composio's Google Drive toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

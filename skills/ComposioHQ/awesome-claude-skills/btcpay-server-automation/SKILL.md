@@ -1,3 +1,10 @@
+---
+name: btcpay-server-automation
+description: "Automate Btcpay Server tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Btcpay Server Automation via Rube MCP
 
 Automate Btcpay Server operations through Composio's Btcpay Server toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

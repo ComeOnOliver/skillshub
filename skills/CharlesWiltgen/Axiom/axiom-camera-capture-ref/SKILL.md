@@ -777,3 +777,4 @@ extension CameraManager: AVCapturePhotoCaptureDelegate {
 **Docs**: /avfoundation/avcapturesession, /avfoundation/avcapturedevice, /avfoundation/avcapturephotosettings, /avfoundation/avcapturedevice/rotationcoordinator
 
 **Skills**: axiom-camera-capture, axiom-camera-capture-diag
+

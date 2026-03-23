@@ -1,27 +1,27 @@
 ---
 name: deployment-patterns
-description: 部署工作流、CI/CD流水线模式、Docker容器化、健康检查、回滚策略以及Web应用程序的生产就绪检查清单。
+description: Deployment workflows, CI/CD pipeline patterns, Docker containerization, health checks, rollback strategies, and production readiness checklists for web applications.
 origin: ECC
 ---
 
-# 部署模式
+# Deployment Patterns
 
-生产环境部署工作流和 CI/CD 最佳实践。
+Production deployment workflows and CI/CD best practices.
 
-## 何时启用
+## When to Activate
 
-* 设置 CI/CD 流水线时
-* 将应用容器化（Docker）时
-* 规划部署策略（蓝绿、金丝雀、滚动）时
-* 实现健康检查和就绪探针时
-* 准备生产发布时
-* 配置环境特定设置时
+- Setting up CI/CD pipelines
+- Dockerizing an application
+- Planning deployment strategy (blue-green, canary, rolling)
+- Implementing health checks and readiness probes
+- Preparing for a production release
+- Configuring environment-specific settings
 
-## 部署策略
+## Deployment Strategies
 
-### 滚动部署（默认）
+### Rolling Deployment (Default)
 
-逐步替换实例——在发布过程中，新旧版本同时运行。
+Replace instances gradually — old and new versions run simultaneously during rollout.
 
 ```
 Instance 1: v1 → v2  (update first)
@@ -37,13 +37,13 @@ Instance 2: v2
 Instance 3: v1 → v2  (update last)
 ```
 
-**优点：** 零停机时间，渐进式发布
-**缺点：** 两个版本同时运行——需要向后兼容的更改
-**适用场景：** 标准部署，向后兼容的更改
+**Pros:** Zero downtime, gradual rollout
+**Cons:** Two versions run simultaneously — requires backward-compatible changes
+**Use when:** Standard deployments, backward-compatible changes
 
-### 蓝绿部署
+### Blue-Green Deployment
 
-运行两个相同的环境。原子化地切换流量。
+Run two identical environments. Switch traffic atomically.
 
 ```
 Blue  (v1) ← traffic
@@ -54,13 +54,13 @@ Blue  (v1)   idle (becomes standby)
 Green (v2) ← traffic
 ```
 
-**优点：** 即时回滚（切换回蓝色环境），切换干净利落
-**缺点：** 部署期间需要双倍的基础设施
-**适用场景：** 关键服务，对问题零容忍
+**Pros:** Instant rollback (switch back to blue), clean cutover
+**Cons:** Requires 2x infrastructure during deployment
+**Use when:** Critical services, zero-tolerance for issues
 
-### 金丝雀部署
+### Canary Deployment
 
-首先将一小部分流量路由到新版本。
+Route a small percentage of traffic to the new version first.
 
 ```
 v1: 95% of traffic
@@ -74,13 +74,13 @@ v2: 50% of traffic
 v2: 100% of traffic
 ```
 
-**优点：** 在全量发布前，通过真实流量发现问题
-**缺点：** 需要流量分割基础设施和监控
-**适用场景：** 高流量服务，风险性更改，功能标志
+**Pros:** Catches issues with real traffic before full rollout
+**Cons:** Requires traffic splitting infrastructure, monitoring
+**Use when:** High-traffic services, risky changes, feature flags
 
 ## Docker
 
-### 多阶段 Dockerfile (Node.js)
+### Multi-Stage Dockerfile (Node.js)
 
 ```dockerfile
 # Stage 1: Install dependencies
@@ -117,7 +117,7 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
 CMD ["node", "dist/server.js"]
 ```
 
-### 多阶段 Dockerfile (Go)
+### Multi-Stage Dockerfile (Go)
 
 ```dockerfile
 FROM golang:1.22-alpine AS builder
@@ -139,7 +139,7 @@ HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://localhost:8080/heal
 CMD ["/server"]
 ```
 
-### 多阶段 Dockerfile (Python/Django)
+### Multi-Stage Dockerfile (Python/Django)
 
 ```dockerfile
 FROM python:3.12-slim AS builder
@@ -165,7 +165,7 @@ HEALTHCHECK --interval=30s --timeout=3s CMD python -c "import urllib.request; ur
 CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers", "4"]
 ```
 
-### Docker 最佳实践
+### Docker Best Practices
 
 ```
 # GOOD practices
@@ -185,9 +185,9 @@ CMD ["gunicorn", "config.wsgi:application", "--bind", "0.0.0.0:8000", "--workers
 - Storing secrets in image (use env vars or secrets manager)
 ```
 
-## CI/CD 流水线
+## CI/CD Pipeline
 
-### GitHub Actions (标准流水线)
+### GitHub Actions (Standard Pipeline)
 
 ```yaml
 name: CI/CD
@@ -251,7 +251,7 @@ jobs:
           echo "Deploying ${{ github.sha }}"
 ```
 
-### 流水线阶段
+### Pipeline Stages
 
 ```
 PR opened:
@@ -261,9 +261,9 @@ Merged to main:
   lint → typecheck → unit tests → integration tests → build image → deploy staging → smoke tests → deploy production
 ```
 
-## 健康检查
+## Health Checks
 
-### 健康检查端点
+### Health Check Endpoint
 
 ```typescript
 // Simple health check
@@ -300,7 +300,7 @@ async function checkDatabase(): Promise<HealthCheck> {
 }
 ```
 
-### Kubernetes 探针
+### Kubernetes Probes
 
 ```yaml
 livenessProbe:
@@ -328,9 +328,9 @@ startupProbe:
   failureThreshold: 30    # 30 * 5s = 150s max startup time
 ```
 
-## 环境配置
+## Environment Configuration
 
-### 十二要素应用模式
+### Twelve-Factor App Pattern
 
 ```bash
 # All config via environment variables — never in code
@@ -345,7 +345,7 @@ NODE_ENV=production          # or staging, development
 APP_ENV=production           # explicit app environment
 ```
 
-### 配置验证
+### Configuration Validation
 
 ```typescript
 import { z } from "zod";
@@ -363,9 +363,9 @@ const envSchema = z.object({
 export const env = envSchema.parse(process.env);
 ```
 
-## 回滚策略
+## Rollback Strategy
 
-### 即时回滚
+### Instant Rollback
 
 ```bash
 # Docker/Kubernetes: point to previous image
@@ -381,52 +381,48 @@ railway up --commit <previous-sha>
 npx prisma migrate resolve --rolled-back <migration-name>
 ```
 
-### 回滚检查清单
+### Rollback Checklist
 
-* \[ ] 之前的镜像/制品可用且已标记
-* \[ ] 数据库迁移向后兼容（无破坏性更改）
-* \[ ] 功能标志可以在不部署的情况下禁用新功能
-* \[ ] 监控警报已配置，用于错误率飙升
-* \[ ] 在生产发布前，回滚已在预演环境测试
+- [ ] Previous image/artifact is available and tagged
+- [ ] Database migrations are backward-compatible (no destructive changes)
+- [ ] Feature flags can disable new features without deploy
+- [ ] Monitoring alerts configured for error rate spikes
+- [ ] Rollback tested in staging before production release
 
-## 生产就绪检查清单
+## Production Readiness Checklist
 
-在任何生产部署之前：
+Before any production deployment:
 
-### 应用
+### Application
+- [ ] All tests pass (unit, integration, E2E)
+- [ ] No hardcoded secrets in code or config files
+- [ ] Error handling covers all edge cases
+- [ ] Logging is structured (JSON) and does not contain PII
+- [ ] Health check endpoint returns meaningful status
 
-* \[ ] 所有测试通过（单元、集成、端到端）
-* \[ ] 代码或配置文件中没有硬编码的密钥
-* \[ ] 错误处理覆盖所有边缘情况
-* \[ ] 日志是结构化的（JSON）且不包含 PII
-* \[ ] 健康检查端点返回有意义的状态
+### Infrastructure
+- [ ] Docker image builds reproducibly (pinned versions)
+- [ ] Environment variables documented and validated at startup
+- [ ] Resource limits set (CPU, memory)
+- [ ] Horizontal scaling configured (min/max instances)
+- [ ] SSL/TLS enabled on all endpoints
 
-### 基础设施
+### Monitoring
+- [ ] Application metrics exported (request rate, latency, errors)
+- [ ] Alerts configured for error rate > threshold
+- [ ] Log aggregation set up (structured logs, searchable)
+- [ ] Uptime monitoring on health endpoint
 
-* \[ ] Docker 镜像可重复构建（版本已固定）
-* \[ ] 环境变量已记录并在启动时验证
-* \[ ] 资源限制已设置（CPU、内存）
-* \[ ] 水平伸缩已配置（最小/最大实例数）
-* \[ ] 所有端点均已启用 SSL/TLS
+### Security
+- [ ] Dependencies scanned for CVEs
+- [ ] CORS configured for allowed origins only
+- [ ] Rate limiting enabled on public endpoints
+- [ ] Authentication and authorization verified
+- [ ] Security headers set (CSP, HSTS, X-Frame-Options)
 
-### 监控
+### Operations
+- [ ] Rollback plan documented and tested
+- [ ] Database migration tested against production-sized data
+- [ ] Runbook for common failure scenarios
+- [ ] On-call rotation and escalation path defined
 
-* \[ ] 应用指标已导出（请求率、延迟、错误）
-* \[ ] 已配置错误率超过阈值的警报
-* \[ ] 日志聚合已设置（结构化日志，可搜索）
-* \[ ] 健康端点有正常运行时间监控
-
-### 安全
-
-* \[ ] 依赖项已扫描 CVE
-* \[ ] CORS 仅配置允许的来源
-* \[ ] 公共端点已启用速率限制
-* \[ ] 身份验证和授权已验证
-* \[ ] 安全头已设置（CSP、HSTS、X-Frame-Options）
-
-### 运维
-
-* \[ ] 回滚计划已记录并测试
-* \[ ] 数据库迁移已针对生产规模的数据进行测试
-* \[ ] 常见故障场景的应急预案
-* \[ ] 待命轮换和升级路径已定义

@@ -72,3 +72,4 @@ If the script exits non-zero, check stderr against these common blockers:
 | `AuthenticationError` / HTTP 401 | Key is invalid or has no credits. Verify at <https://openrouter.ai/settings/keys>. |
 
 For transient errors (HTTP 429, network timeouts), retry once after 30 seconds. Do not retry the same error more than twice — surface the issue to the user instead.
+

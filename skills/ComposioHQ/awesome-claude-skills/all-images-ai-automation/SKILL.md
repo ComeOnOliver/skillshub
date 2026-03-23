@@ -1,3 +1,10 @@
+---
+name: all-images-ai-automation
+description: "Automate All Images AI tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # All Images AI Automation via Rube MCP
 
 Automate All Images AI operations through Composio's All Images AI toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

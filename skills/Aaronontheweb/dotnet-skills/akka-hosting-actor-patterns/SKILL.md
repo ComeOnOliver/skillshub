@@ -612,3 +612,4 @@ builder.WithShardRegion<OrderActorRegion>("orders", ...);
 7. **ITimeProvider for scheduling** - Never use `DateTime.Now` directly in actors
 8. **akka-reminders for durability** - Use for scheduled tasks that must survive restarts
 9. **RememberEntities = false by default** - Only set to true for bounded, long-lived entities
+

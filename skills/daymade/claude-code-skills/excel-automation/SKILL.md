@@ -311,3 +311,4 @@ fi
 - Execute Python scripts with `uv run --with openpyxl` (never use system Python)
 - LibreOffice (`soffice --headless`) can convert formats and recalculate formulas
 - Detailed formatting reference: See `references/formatting-reference.md`
+

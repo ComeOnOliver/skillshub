@@ -199,3 +199,4 @@ section.
 - **Error naming**: See [go-error-handling](../go-error-handling/SKILL.md) when naming sentinel errors (`ErrFoo`) or custom error types
 - **Declaration scope**: See [go-declarations](../go-declarations/SKILL.md) when variable name length depends on scope or when avoiding built-in shadowing
 - **Style principles**: See [go-style-core](../go-style-core/SKILL.md) when balancing clarity vs concision in identifier names
+

@@ -48,3 +48,4 @@ gws workflow +file-announce --file-id FILE_ID --space spaces/ABC123 --message 'C
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-workflow](../gws-workflow/SKILL.md) — All cross-service productivity workflows commands
+

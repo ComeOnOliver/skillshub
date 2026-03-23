@@ -1,3 +1,8 @@
+---
+name: craftedwell-brand
+description: CraftedWell brand guidelines for presentations and documents. Use this skill whenever creating or styling documents (docx, pdf) or presentations (pptx) for CraftedWell. Apply warm, artisanal aesthetic with chocolate/caramel color palette, Georgia headings, and Arial body text.
+---
+
 # CraftedWell Brand Guidelines
 
 Apply CraftedWell's warm, artisanal brand to documents and presentations.
@@ -149,3 +154,4 @@ For positive/negative: Forest (#5A7A4A) / Terracotta (#B85C38).
 | Body | Alternating White / Cream (#FDF8F3) rows |
 | Borders | 1pt #E5D5C5, horizontal only |
 | Alignment | Text left, numbers right |
+

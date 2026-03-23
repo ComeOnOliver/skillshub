@@ -1,3 +1,8 @@
+---
+name: here-be-git
+description: Initialise a git repository with optional agent commit instructions and .gitignore. Use when users say "here be git", "init git", "initialise git", or otherwise indicate they want to set up version control in the current directory.
+---
+
 # Here Be Git
 
 Initialise a git repository with optional configuration for agent workflows.
@@ -68,3 +73,4 @@ If the user declines, skip this step.
 - If git is already initialised in the directory, inform the user and skip to Step 2
 - Use the AskUserQuestion tool for the confirmation prompts
 - Keep commits atomic and well-described
+

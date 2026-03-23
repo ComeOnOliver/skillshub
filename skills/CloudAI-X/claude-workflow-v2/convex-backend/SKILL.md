@@ -1,3 +1,8 @@
+---
+name: convex-backend
+description: Convex backend development guidelines. Use when writing Convex functions, schemas, queries, mutations, actions, or any backend code in a Convex project. Triggers on tasks involving Convex database operations, real-time subscriptions, file storage, or serverless functions.
+---
+
 # Convex Backend Guidelines
 
 ### When to Load
@@ -112,3 +117,4 @@ await ctx.db
 ## Full Compiled Document
 
 For the complete guide with all rules and detailed code examples, see: `AGENTS.md`
+

@@ -92,3 +92,4 @@ impl Connection<Connected> {
 - `///` doc comments explain *what* and *how* for public APIs
 - Every `TODO` needs a linked issue: `// TODO(#42): ...`
 - Enable `#![deny(missing_docs)]` for libraries
+

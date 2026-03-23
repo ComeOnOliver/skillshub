@@ -1,3 +1,8 @@
+---
+name: fd
+description: Frontend design mode for strong visual direction, UI polish, redesigns, landing pages, and production-grade interface work, including shadcn-based surfaces. Use when the user says `/fd` or explicitly asks for better design, styling, layout, visual quality, or UX polish.
+---
+
 # FD
 
 Use this as a frontend design and polish mode. The goal is not to make every UI louder; the goal is to make it feel intentionally designed.
@@ -165,3 +170,4 @@ Keep the final response focused on:
 - what changed visually and structurally
 - verification run
 - remaining rough edges or tradeoffs
+

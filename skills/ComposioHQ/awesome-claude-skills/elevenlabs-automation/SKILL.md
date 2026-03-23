@@ -1,3 +1,11 @@
+---
+name: ElevenLabs Automation
+description: "Automate ElevenLabs text-to-speech workflows -- generate speech from text, browse and inspect voices, check subscription limits, list models, stream audio, and retrieve history via the Composio MCP integration."
+requires:
+  mcp:
+    - rube
+---
+
 # ElevenLabs Automation
 
 Automate your ElevenLabs text-to-speech workflows -- convert text to natural speech, browse the voice library, inspect voice details, check subscription credits, select TTS models, stream audio for low-latency delivery, and retrieve previously generated audio from history.
@@ -121,3 +129,4 @@ Tool: ELEVENLABS_GET_AUDIO_FROM_HISTORY_ITEM
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

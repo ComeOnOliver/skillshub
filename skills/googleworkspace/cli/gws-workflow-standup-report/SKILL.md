@@ -44,3 +44,4 @@ gws workflow +standup-report --format table
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-workflow](../gws-workflow/SKILL.md) — All cross-service productivity workflows commands
+

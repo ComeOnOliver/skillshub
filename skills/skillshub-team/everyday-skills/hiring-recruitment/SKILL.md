@@ -161,3 +161,4 @@ Signature: _________________ Date: _________
 - Taking too long (good candidates get other offers fast)
 - Not providing feedback to rejected candidates
 - Not having a diverse interview panel
+

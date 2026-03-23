@@ -1,3 +1,9 @@
+---
+name: collecting-infrastructure-metrics
+description: |
+  This skill enables Claude to collect comprehensive infrastructure performance metrics across compute, storage, network, containers, load balancers, and databases. It is triggered when the user requests "collect infrastructure metrics", "monitor server performance", "set up performance dashboards", or needs to analyze system resource utilization. The skill configures metrics collection, sets up aggregation, and helps create infrastructure dashboards for health monitoring and capacity tracking. It supports configuration for Prometheus, Datadog, and CloudWatch.
+---
+
 ## Overview
 
 This skill automates the process of setting up infrastructure metrics collection. It identifies key performance indicators (KPIs) across various infrastructure layers, configures agents to collect these metrics, and assists in setting up central aggregation and visualization.

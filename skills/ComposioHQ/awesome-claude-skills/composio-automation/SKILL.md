@@ -1,3 +1,10 @@
+---
+name: composio-automation
+description: "Automate Composio tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Composio Automation via Rube MCP
 
 Automate Composio operations through Composio's Composio toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

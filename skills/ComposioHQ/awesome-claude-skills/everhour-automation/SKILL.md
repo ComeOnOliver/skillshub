@@ -1,3 +1,10 @@
+---
+name: everhour-automation
+description: "Automate Everhour tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Everhour Automation via Rube MCP
 
 Automate Everhour operations through Composio's Everhour toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

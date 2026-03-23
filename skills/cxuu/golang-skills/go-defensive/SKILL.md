@@ -196,3 +196,4 @@ var tmpl = template.Must(template.ParseFiles("index.html"))
 - **Concurrency safety**: See [go-concurrency](../go-concurrency/SKILL.md) when protecting shared state with mutexes, atomics, or channels
 - **Interface checks**: See [go-interfaces](../go-interfaces/SKILL.md) when adding compile-time interface satisfaction checks (`var _ I = (*T)(nil)`)
 - **Data structure copying**: See [go-data-structures](../go-data-structures/SKILL.md) when working with slice/map internals or pointer aliasing
+

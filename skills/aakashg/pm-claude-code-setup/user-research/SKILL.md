@@ -77,3 +77,4 @@ Gaps:
 - Findings from 1-2 participants are signals, not conclusions. Label them accordingly.
 - Distinguish said vs. did. Behavior always outranks stated preference.
 - Every finding requires a confidence level AND a product implication. A finding without "so what" is trivia.
+

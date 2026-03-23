@@ -372,3 +372,4 @@ If the project migrates from a Nunjucks design system:
 - `.js` → `resources/js/{atoms|molecules|organisms}/`
 - `.css` → stay in `resources/css/components/` (unchanged)
 - `.config.yml` → View Composer or `@include()` parameters
+

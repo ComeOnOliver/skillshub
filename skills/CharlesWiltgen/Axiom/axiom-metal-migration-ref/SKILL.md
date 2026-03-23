@@ -647,3 +647,4 @@ descriptor.usage = [.shaderRead, .shaderWrite]
 **Last Updated**: 2025-12-29
 **Platforms**: iOS 12+, macOS 10.14+, tvOS 12+
 **Status**: Complete shader conversion and API mapping reference
+

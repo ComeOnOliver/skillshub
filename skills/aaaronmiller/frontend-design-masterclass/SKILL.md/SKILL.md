@@ -294,3 +294,4 @@ bold, and intentionally designed for the specific context. No two designs should
 alike. Vary themes, fonts, layouts, and animation approaches across every generation.
 
 Claude is capable of extraordinary creative work. Commit fully to the vision.
+

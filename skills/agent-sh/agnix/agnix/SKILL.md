@@ -1,28 +1,12 @@
 ---
 name: agnix
-description: "Use when user asks to 'lint agent configs', 'validate skills', 'check CLAUDE.md', 'validate hooks', 'lint MCP'. Validates agent configuration files against 342 rules across 10+ AI tools."
-version: 0.16.1
-argument-hint: "[path] [--fix] [--strict] [--target=claude-code|cursor|codex]"
+description: "Use when user asks to 'lint agent configs', 'validate skills', 'check CLAUDE.md', 'validate hooks', 'lint MCP'. Validates agent configuration files against 230 rules."
+allowed-tools: Bash(agnix:*), Bash(cargo:*), Read, Glob, Grep
 ---
 
 # agnix
 
-Lint agent configurations before they break your workflow. Validates Skills, Hooks, MCP, Memory, Plugins across 10+ AI tools including Claude Code, Cursor, GitHub Copilot, Codex CLI, OpenCode, Gemini CLI, Cline, Windsurf, Kiro, and Amp.
-
-## Parse Arguments
-
-```javascript
-const args = '$ARGUMENTS'.split(' ').filter(Boolean);
-const targetPath = args.find(a => !a.startsWith('--')) || '.';
-const fix = args.includes('--fix');
-const strict = args.includes('--strict');
-let target = args.find(a => a.startsWith('--target='))?.split('=')[1];
-if (!target) {
-  const idx = args.indexOf('--target');
-  if (idx !== -1 && args[idx + 1]) target = args[idx + 1];
-}
-target = target || 'claude-code';
-```
+Lint agent configurations before they break your workflow. Validates Skills, Hooks, MCP, Memory, Plugins across Claude Code, Cursor, GitHub Copilot, and Codex CLI.
 
 ## When to Use
 
@@ -33,35 +17,44 @@ Invoke when user asks to:
 - "Validate hooks"
 - "Lint MCP configs"
 - "Fix agent configuration issues"
-- "Check if my SKILL.md is correct"
 
-## Prerequisites
+## Supported Files
 
-agnix must be installed. Check with:
+| File Type | Examples |
+|-----------|----------|
+| Skills | `SKILL.md` |
+| Memory | `CLAUDE.md`, `AGENTS.md` |
+| Hooks | `.claude/settings.json` |
+| MCP | `*.mcp.json` |
+| Cursor | `.cursor/rules/*.mdc` |
+| Copilot | `.github/copilot-instructions.md` |
+
+## Execution
+
+### 1. Check if agnix is installed
+
 ```bash
 agnix --version
 ```
 
-If not installed:
+If not found, install:
 ```bash
 cargo install agnix-cli
 ```
 
-## Execution
-
-### 1. Validate Project
+### 2. Validate
 
 ```bash
 agnix .
 ```
 
-### 2. If Issues Found and Fix Requested
+### 3. If issues found and --fix requested
 
 ```bash
 agnix --fix .
 ```
 
-### 3. Re-validate to Confirm
+### 4. Re-validate to confirm
 
 ```bash
 agnix .
@@ -76,20 +69,8 @@ agnix .
 | `agnix --strict .` | Treat warnings as errors |
 | `agnix --target claude-code .` | Only Claude Code rules |
 | `agnix --target cursor .` | Only Cursor rules |
-| `agnix --watch .` | Watch mode - re-validate on changes |
+| `agnix --watch .` | Watch mode |
 | `agnix --format json .` | JSON output |
-| `agnix --format sarif .` | SARIF for GitHub Code Scanning |
-
-## Supported Files
-
-| File Type | Examples |
-|-----------|----------|
-| Skills | `SKILL.md` |
-| Memory | `CLAUDE.md`, `AGENTS.md` |
-| Hooks | `${STATE_DIR}/settings.json` |
-| MCP | `*.mcp.json` |
-| Cursor | `.cursor/rules/*.mdc` |
-| Copilot | `.github/copilot-instructions.md` |
 
 ## Output Format
 
@@ -103,41 +84,17 @@ skills/review/SKILL.md:3:1 error: Invalid name [fixable]
 Found 1 error, 1 warning (2 fixable)
 ```
 
-Exit codes:
-- `0` - No errors (warnings allowed)
-- `1` - Errors found
-- `2` - Invalid arguments
-
-## Rule Categories
-
-| Prefix | Category | Examples |
-|--------|----------|----------|
-| AS-* | Agent Skills | Name format, triggers, description |
-| CC-* | Claude Code | Hooks, memory, plugins |
-| MCP-* | MCP Protocol | Server config, tool definitions |
-| PE-* | Prompt Engineering | Generic instructions, redundancy |
-| XP-* | Cross-Platform | Compatibility across tools |
-| AGM-* | AGENTS.md | Structure, sections |
-| COP-* | GitHub Copilot | Instructions format |
-| CUR-* | Cursor | MDC format, rules |
-
 ## Common Issues & Fixes
 
 | Issue | Solution |
 |-------|----------|
 | Invalid skill name | Use lowercase with hyphens: `my-skill` |
-| Directory/name mismatch | Rename directory to match `name:` field |
 | Generic instructions | Remove "be helpful", "be accurate" |
 | Missing trigger phrase | Add "Use when..." to description |
-
-## Integration
-
-This skill is standalone and can be invoked directly via `/agnix`.
-
-For CI integration, see the [GitHub Action](https://github.com/agent-sh/agnix#github-action).
+| Directory/name mismatch | Rename directory to match `name:` field |
 
 ## Links
 
-- [GitHub](https://github.com/agent-sh/agnix)
-- [Rules Reference](https://github.com/agent-sh/agnix/blob/main/knowledge-base/VALIDATION-RULES.md)
-- [Configuration](https://github.com/agent-sh/agnix/blob/main/docs/CONFIGURATION.md)
+- [GitHub](https://github.com/avifenesh/agnix)
+- [Rules Reference](https://avifenesh.github.io/agnix/docs/rules)
+

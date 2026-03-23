@@ -159,3 +159,4 @@ Review the test output and adjust test expectations. Some tests may require mock
 
 ### Wrong testing framework detected
 Specify your preferred framework in the initial request: "Generate Jest tests for..."
+

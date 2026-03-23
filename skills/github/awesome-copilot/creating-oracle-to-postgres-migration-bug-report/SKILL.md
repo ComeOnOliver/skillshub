@@ -41,3 +41,4 @@ Use the template in [references/BUG-REPORT-TEMPLATE.md](references/BUG-REPORT-TE
 ## Filename Convention
 
 Save bug reports as `BUG_REPORT_<DescriptiveSlug>.md` where `<DescriptiveSlug>` is a short PascalCase identifier (e.g., `EmptyStringNullHandling`, `RefCursorUnwrapFailure`).
+

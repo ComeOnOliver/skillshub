@@ -1,3 +1,11 @@
+---
+name: Ahrefs Automation
+description: "Automate SEO research with Ahrefs -- analyze backlink profiles, research keywords, track domain metrics history, audit organic rankings, and perform batch URL analysis through the Composio Ahrefs integration."
+requires:
+  mcp:
+    - rube
+---
+
 # Ahrefs Automation
 
 Run **Ahrefs** SEO analytics directly from Claude Code. Analyze backlink profiles, research keywords, track domain authority over time, audit organic keyword rankings, and batch-analyze multiple URLs without leaving your terminal.
@@ -167,3 +175,4 @@ Example prompt: *"Compare SEO metrics for competitor1.com, competitor2.com, and 
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

@@ -391,3 +391,4 @@ aws bedrock get-foundation-model \
 - [Bedrock Runtime API](https://docs.aws.amazon.com/bedrock/latest/APIReference/API_Operations_Amazon_Bedrock_Runtime.html)
 - [Model Parameters](https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html)
 - [Bedrock Pricing](https://aws.amazon.com/bedrock/pricing/)
+

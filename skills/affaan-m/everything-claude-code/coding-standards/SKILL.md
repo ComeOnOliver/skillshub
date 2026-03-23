@@ -1,72 +1,82 @@
 ---
 name: coding-standards
 description: Universal coding standards, best practices, and patterns for TypeScript, JavaScript, React, and Node.js development.
+origin: ECC
 ---
 
-# 程式碼標準與最佳實務
+# Coding Standards & Best Practices
 
-適用於所有專案的通用程式碼標準。
+Universal coding standards applicable across all projects.
 
-## 程式碼品質原則
+## When to Activate
 
-### 1. 可讀性優先
-- 程式碼被閱讀的次數遠多於被撰寫的次數
-- 使用清晰的變數和函式名稱
-- 優先使用自文件化的程式碼而非註解
-- 保持一致的格式化
+- Starting a new project or module
+- Reviewing code for quality and maintainability
+- Refactoring existing code to follow conventions
+- Enforcing naming, formatting, or structural consistency
+- Setting up linting, formatting, or type-checking rules
+- Onboarding new contributors to coding conventions
 
-### 2. KISS（保持簡單）
-- 使用最簡單的解決方案
-- 避免過度工程
-- 不做過早優化
-- 易於理解 > 聰明的程式碼
+## Code Quality Principles
 
-### 3. DRY（不重複自己）
-- 將共用邏輯提取為函式
-- 建立可重用的元件
-- 在模組間共享工具函式
-- 避免複製貼上程式設計
+### 1. Readability First
+- Code is read more than written
+- Clear variable and function names
+- Self-documenting code preferred over comments
+- Consistent formatting
 
-### 4. YAGNI（你不會需要它）
-- 在需要之前不要建置功能
-- 避免推測性的通用化
-- 只在需要時增加複雜度
-- 從簡單開始，需要時再重構
+### 2. KISS (Keep It Simple, Stupid)
+- Simplest solution that works
+- Avoid over-engineering
+- No premature optimization
+- Easy to understand > clever code
 
-## TypeScript/JavaScript 標準
+### 3. DRY (Don't Repeat Yourself)
+- Extract common logic into functions
+- Create reusable components
+- Share utilities across modules
+- Avoid copy-paste programming
 
-### 變數命名
+### 4. YAGNI (You Aren't Gonna Need It)
+- Don't build features before they're needed
+- Avoid speculative generality
+- Add complexity only when required
+- Start simple, refactor when needed
+
+## TypeScript/JavaScript Standards
+
+### Variable Naming
 
 ```typescript
-// ✅ 良好：描述性名稱
+// ✅ GOOD: Descriptive names
 const marketSearchQuery = 'election'
 const isUserAuthenticated = true
 const totalRevenue = 1000
 
-// ❌ 不良：不清楚的名稱
+// ❌ BAD: Unclear names
 const q = 'election'
 const flag = true
 const x = 1000
 ```
 
-### 函式命名
+### Function Naming
 
 ```typescript
-// ✅ 良好：動詞-名詞模式
+// ✅ GOOD: Verb-noun pattern
 async function fetchMarketData(marketId: string) { }
 function calculateSimilarity(a: number[], b: number[]) { }
 function isValidEmail(email: string): boolean { }
 
-// ❌ 不良：不清楚或只有名詞
+// ❌ BAD: Unclear or noun-only
 async function market(id: string) { }
 function similarity(a, b) { }
 function email(e) { }
 ```
 
-### 不可變性模式（關鍵）
+### Immutability Pattern (CRITICAL)
 
 ```typescript
-// ✅ 總是使用展開運算符
+// ✅ ALWAYS use spread operator
 const updatedUser = {
   ...user,
   name: 'New Name'
@@ -74,15 +84,15 @@ const updatedUser = {
 
 const updatedArray = [...items, newItem]
 
-// ❌ 永遠不要直接修改
-user.name = 'New Name'  // 不良
-items.push(newItem)     // 不良
+// ❌ NEVER mutate directly
+user.name = 'New Name'  // BAD
+items.push(newItem)     // BAD
 ```
 
-### 錯誤處理
+### Error Handling
 
 ```typescript
-// ✅ 良好：完整的錯誤處理
+// ✅ GOOD: Comprehensive error handling
 async function fetchData(url: string) {
   try {
     const response = await fetch(url)
@@ -98,33 +108,33 @@ async function fetchData(url: string) {
   }
 }
 
-// ❌ 不良：無錯誤處理
+// ❌ BAD: No error handling
 async function fetchData(url) {
   const response = await fetch(url)
   return response.json()
 }
 ```
 
-### Async/Await 最佳實務
+### Async/Await Best Practices
 
 ```typescript
-// ✅ 良好：可能時並行執行
+// ✅ GOOD: Parallel execution when possible
 const [users, markets, stats] = await Promise.all([
   fetchUsers(),
   fetchMarkets(),
   fetchStats()
 ])
 
-// ❌ 不良：不必要的順序執行
+// ❌ BAD: Sequential when unnecessary
 const users = await fetchUsers()
 const markets = await fetchMarkets()
 const stats = await fetchStats()
 ```
 
-### 型別安全
+### Type Safety
 
 ```typescript
-// ✅ 良好：正確的型別
+// ✅ GOOD: Proper types
 interface Market {
   id: string
   name: string
@@ -133,21 +143,21 @@ interface Market {
 }
 
 function getMarket(id: string): Promise<Market> {
-  // 實作
+  // Implementation
 }
 
-// ❌ 不良：使用 'any'
+// ❌ BAD: Using 'any'
 function getMarket(id: any): Promise<any> {
-  // 實作
+  // Implementation
 }
 ```
 
-## React 最佳實務
+## React Best Practices
 
-### 元件結構
+### Component Structure
 
 ```typescript
-// ✅ 良好：具有型別的函式元件
+// ✅ GOOD: Functional component with types
 interface ButtonProps {
   children: React.ReactNode
   onClick: () => void
@@ -172,16 +182,16 @@ export function Button({
   )
 }
 
-// ❌ 不良：無型別、結構不清楚
+// ❌ BAD: No types, unclear structure
 export function Button(props) {
   return <button onClick={props.onClick}>{props.children}</button>
 }
 ```
 
-### 自訂 Hooks
+### Custom Hooks
 
 ```typescript
-// ✅ 良好：可重用的自訂 hook
+// ✅ GOOD: Reusable custom hook
 export function useDebounce<T>(value: T, delay: number): T {
   const [debouncedValue, setDebouncedValue] = useState<T>(value)
 
@@ -196,55 +206,55 @@ export function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue
 }
 
-// 使用方式
+// Usage
 const debouncedQuery = useDebounce(searchQuery, 500)
 ```
 
-### 狀態管理
+### State Management
 
 ```typescript
-// ✅ 良好：正確的狀態更新
+// ✅ GOOD: Proper state updates
 const [count, setCount] = useState(0)
 
-// 基於先前狀態的函式更新
+// Functional update for state based on previous state
 setCount(prev => prev + 1)
 
-// ❌ 不良：直接引用狀態
-setCount(count + 1)  // 在非同步情境中可能過時
+// ❌ BAD: Direct state reference
+setCount(count + 1)  // Can be stale in async scenarios
 ```
 
-### 條件渲染
+### Conditional Rendering
 
 ```typescript
-// ✅ 良好：清晰的條件渲染
+// ✅ GOOD: Clear conditional rendering
 {isLoading && <Spinner />}
 {error && <ErrorMessage error={error} />}
 {data && <DataDisplay data={data} />}
 
-// ❌ 不良：三元地獄
+// ❌ BAD: Ternary hell
 {isLoading ? <Spinner /> : error ? <ErrorMessage error={error} /> : data ? <DataDisplay data={data} /> : null}
 ```
 
-## API 設計標準
+## API Design Standards
 
-### REST API 慣例
+### REST API Conventions
 
 ```
-GET    /api/markets              # 列出所有市場
-GET    /api/markets/:id          # 取得特定市場
-POST   /api/markets              # 建立新市場
-PUT    /api/markets/:id          # 更新市場（完整）
-PATCH  /api/markets/:id          # 更新市場（部分）
-DELETE /api/markets/:id          # 刪除市場
+GET    /api/markets              # List all markets
+GET    /api/markets/:id          # Get specific market
+POST   /api/markets              # Create new market
+PUT    /api/markets/:id          # Update market (full)
+PATCH  /api/markets/:id          # Update market (partial)
+DELETE /api/markets/:id          # Delete market
 
-# 過濾用查詢參數
+# Query parameters for filtering
 GET /api/markets?status=active&limit=10&offset=0
 ```
 
-### 回應格式
+### Response Format
 
 ```typescript
-// ✅ 良好：一致的回應結構
+// ✅ GOOD: Consistent response structure
 interface ApiResponse<T> {
   success: boolean
   data?: T
@@ -256,26 +266,26 @@ interface ApiResponse<T> {
   }
 }
 
-// 成功回應
+// Success response
 return NextResponse.json({
   success: true,
   data: markets,
   meta: { total: 100, page: 1, limit: 10 }
 })
 
-// 錯誤回應
+// Error response
 return NextResponse.json({
   success: false,
   error: 'Invalid request'
 }, { status: 400 })
 ```
 
-### 輸入驗證
+### Input Validation
 
 ```typescript
 import { z } from 'zod'
 
-// ✅ 良好：Schema 驗證
+// ✅ GOOD: Schema validation
 const CreateMarketSchema = z.object({
   name: z.string().min(1).max(200),
   description: z.string().min(1).max(2000),
@@ -288,7 +298,7 @@ export async function POST(request: Request) {
 
   try {
     const validated = CreateMarketSchema.parse(body)
-    // 使用驗證過的資料繼續處理
+    // Proceed with validated data
   } catch (error) {
     if (error instanceof z.ZodError) {
       return NextResponse.json({
@@ -301,68 +311,68 @@ export async function POST(request: Request) {
 }
 ```
 
-## 檔案組織
+## File Organization
 
-### 專案結構
+### Project Structure
 
 ```
 src/
 ├── app/                    # Next.js App Router
-│   ├── api/               # API 路由
-│   ├── markets/           # 市場頁面
-│   └── (auth)/           # 認證頁面（路由群組）
-├── components/            # React 元件
-│   ├── ui/               # 通用 UI 元件
-│   ├── forms/            # 表單元件
-│   └── layouts/          # 版面配置元件
-├── hooks/                # 自訂 React hooks
-├── lib/                  # 工具和設定
-│   ├── api/             # API 客戶端
-│   ├── utils/           # 輔助函式
-│   └── constants/       # 常數
-├── types/                # TypeScript 型別
-└── styles/              # 全域樣式
+│   ├── api/               # API routes
+│   ├── markets/           # Market pages
+│   └── (auth)/           # Auth pages (route groups)
+├── components/            # React components
+│   ├── ui/               # Generic UI components
+│   ├── forms/            # Form components
+│   └── layouts/          # Layout components
+├── hooks/                # Custom React hooks
+├── lib/                  # Utilities and configs
+│   ├── api/             # API clients
+│   ├── utils/           # Helper functions
+│   └── constants/       # Constants
+├── types/                # TypeScript types
+└── styles/              # Global styles
 ```
 
-### 檔案命名
+### File Naming
 
 ```
-components/Button.tsx          # 元件用 PascalCase
-hooks/useAuth.ts              # hooks 用 camelCase 加 'use' 前綴
-lib/formatDate.ts             # 工具用 camelCase
-types/market.types.ts         # 型別用 camelCase 加 .types 後綴
+components/Button.tsx          # PascalCase for components
+hooks/useAuth.ts              # camelCase with 'use' prefix
+lib/formatDate.ts             # camelCase for utilities
+types/market.types.ts         # camelCase with .types suffix
 ```
 
-## 註解與文件
+## Comments & Documentation
 
-### 何時註解
+### When to Comment
 
 ```typescript
-// ✅ 良好：解釋「為什麼」而非「什麼」
-// 使用指數退避以避免在服務中斷時壓垮 API
+// ✅ GOOD: Explain WHY, not WHAT
+// Use exponential backoff to avoid overwhelming the API during outages
 const delay = Math.min(1000 * Math.pow(2, retryCount), 30000)
 
-// 為了處理大陣列的效能，此處刻意使用突變
+// Deliberately using mutation here for performance with large arrays
 items.push(newItem)
 
-// ❌ 不良：陳述顯而易見的事實
-// 將計數器加 1
+// ❌ BAD: Stating the obvious
+// Increment counter by 1
 count++
 
-// 將名稱設為使用者的名稱
+// Set name to user's name
 name = user.name
 ```
 
-### 公開 API 的 JSDoc
+### JSDoc for Public APIs
 
 ```typescript
 /**
- * 使用語意相似度搜尋市場。
+ * Searches markets using semantic similarity.
  *
- * @param query - 自然語言搜尋查詢
- * @param limit - 最大結果數量（預設：10）
- * @returns 按相似度分數排序的市場陣列
- * @throws {Error} 如果 OpenAI API 失敗或 Redis 不可用
+ * @param query - Natural language search query
+ * @param limit - Maximum number of results (default: 10)
+ * @returns Array of markets sorted by similarity score
+ * @throws {Error} If OpenAI API fails or Redis unavailable
  *
  * @example
  * ```typescript
@@ -374,34 +384,34 @@ export async function searchMarkets(
   query: string,
   limit: number = 10
 ): Promise<Market[]> {
-  // 實作
+  // Implementation
 }
 ```
 
-## 效能最佳實務
+## Performance Best Practices
 
-### 記憶化
+### Memoization
 
 ```typescript
 import { useMemo, useCallback } from 'react'
 
-// ✅ 良好：記憶化昂貴的計算
+// ✅ GOOD: Memoize expensive computations
 const sortedMarkets = useMemo(() => {
   return markets.sort((a, b) => b.volume - a.volume)
 }, [markets])
 
-// ✅ 良好：記憶化回呼函式
+// ✅ GOOD: Memoize callbacks
 const handleSearch = useCallback((query: string) => {
   setSearchQuery(query)
 }, [])
 ```
 
-### 延遲載入
+### Lazy Loading
 
 ```typescript
 import { lazy, Suspense } from 'react'
 
-// ✅ 良好：延遲載入重型元件
+// ✅ GOOD: Lazy load heavy components
 const HeavyChart = lazy(() => import('./HeavyChart'))
 
 export function Dashboard() {
@@ -413,64 +423,64 @@ export function Dashboard() {
 }
 ```
 
-### 資料庫查詢
+### Database Queries
 
 ```typescript
-// ✅ 良好：只選擇需要的欄位
+// ✅ GOOD: Select only needed columns
 const { data } = await supabase
   .from('markets')
   .select('id, name, status')
   .limit(10)
 
-// ❌ 不良：選擇所有欄位
+// ❌ BAD: Select everything
 const { data } = await supabase
   .from('markets')
   .select('*')
 ```
 
-## 測試標準
+## Testing Standards
 
-### 測試結構（AAA 模式）
+### Test Structure (AAA Pattern)
 
 ```typescript
 test('calculates similarity correctly', () => {
-  // Arrange（準備）
+  // Arrange
   const vector1 = [1, 0, 0]
   const vector2 = [0, 1, 0]
 
-  // Act（執行）
+  // Act
   const similarity = calculateCosineSimilarity(vector1, vector2)
 
-  // Assert（斷言）
+  // Assert
   expect(similarity).toBe(0)
 })
 ```
 
-### 測試命名
+### Test Naming
 
 ```typescript
-// ✅ 良好：描述性測試名稱
+// ✅ GOOD: Descriptive test names
 test('returns empty array when no markets match query', () => { })
 test('throws error when OpenAI API key is missing', () => { })
 test('falls back to substring search when Redis unavailable', () => { })
 
-// ❌ 不良：模糊的測試名稱
+// ❌ BAD: Vague test names
 test('works', () => { })
 test('test search', () => { })
 ```
 
-## 程式碼異味偵測
+## Code Smell Detection
 
-注意這些反模式：
+Watch for these anti-patterns:
 
-### 1. 過長函式
+### 1. Long Functions
 ```typescript
-// ❌ 不良：函式超過 50 行
+// ❌ BAD: Function > 50 lines
 function processMarketData() {
-  // 100 行程式碼
+  // 100 lines of code
 }
 
-// ✅ 良好：拆分為較小的函式
+// ✅ GOOD: Split into smaller functions
 function processMarketData() {
   const validated = validateData()
   const transformed = transformData(validated)
@@ -478,38 +488,38 @@ function processMarketData() {
 }
 ```
 
-### 2. 過深巢狀
+### 2. Deep Nesting
 ```typescript
-// ❌ 不良：5 層以上巢狀
+// ❌ BAD: 5+ levels of nesting
 if (user) {
   if (user.isAdmin) {
     if (market) {
       if (market.isActive) {
         if (hasPermission) {
-          // 做某事
+          // Do something
         }
       }
     }
   }
 }
 
-// ✅ 良好：提前返回
+// ✅ GOOD: Early returns
 if (!user) return
 if (!user.isAdmin) return
 if (!market) return
 if (!market.isActive) return
 if (!hasPermission) return
 
-// 做某事
+// Do something
 ```
 
-### 3. 魔術數字
+### 3. Magic Numbers
 ```typescript
-// ❌ 不良：無解釋的數字
+// ❌ BAD: Unexplained numbers
 if (retryCount > 3) { }
 setTimeout(callback, 500)
 
-// ✅ 良好：命名常數
+// ✅ GOOD: Named constants
 const MAX_RETRIES = 3
 const DEBOUNCE_DELAY_MS = 500
 
@@ -517,4 +527,5 @@ if (retryCount > MAX_RETRIES) { }
 setTimeout(callback, DEBOUNCE_DELAY_MS)
 ```
 
-**記住**：程式碼品質是不可協商的。清晰、可維護的程式碼能實現快速開發和自信的重構。
+**Remember**: Code quality is not negotiable. Clear, maintainable code enables rapid development and confident refactoring.
+

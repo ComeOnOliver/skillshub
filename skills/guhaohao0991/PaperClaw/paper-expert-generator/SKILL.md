@@ -1,3 +1,8 @@
+---
+name: paper-expert-generator
+description: "Generate a specialized domain-expert research agent modeled on PaperClaw architecture. Use this skill when a user wants to create an AI agent that can automatically search, filter, summarize, and evaluate academic papers in a specific research field. Trigger phrases include help me create a paper tracking agent for my field, I want an agent to monitor latest papers in bioinformatics, build me a paper review agent for computer vision, create a PaperClaw-style agent for my domain, generate a domain-specific paper expert agent. The generated agent is a complete OpenClaw agent with all required skills (arxiv-search, semantic-scholar, paper-review, daily-search, weekly-report) fully adapted for the target domain."
+---
+
 # Paper Expert Generator
 
 Generate a complete, ready-to-use domain-specific paper expert agent by adapting the PaperClaw architecture for any research field.
@@ -180,3 +185,4 @@ Always deliver this summary after generation:
 - `assets/templates/AGENT.md.template` – Base template for the generated AGENT.md
 - `assets/templates/models.json` – Base models config template
 - `assets/templates/schedules.json` – Base schedules config template
+

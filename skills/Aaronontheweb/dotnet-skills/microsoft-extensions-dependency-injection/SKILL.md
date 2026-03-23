@@ -345,3 +345,4 @@ public class GoodBackgroundService : BackgroundService
 - **Akka.Hosting**: https://github.com/akkadotnet/Akka.Hosting
 - **Akka.DependencyInjection**: https://getakka.net/articles/actors/dependency-injection.html
 - **Options Pattern**: See `microsoft-extensions-configuration` skill
+

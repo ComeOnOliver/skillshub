@@ -1,3 +1,10 @@
+---
+name: feathery-automation
+description: "Automate Feathery tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Feathery Automation via Rube MCP
 
 Automate Feathery operations through Composio's Feathery toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

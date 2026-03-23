@@ -96,3 +96,4 @@ WorkIQ (Public Preview) lets Copilot query Microsoft 365 data with natural langu
 - Request recordings or summaries for overlapping sessions.
 - Capture action items into task trackers.
 - Run additional WorkIQ queries (by project, stakeholder, time range) for deeper analysis.
+

@@ -1,3 +1,10 @@
+---
+name: cloudflare-browser-rendering-automation
+description: "Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Cloudflare Browser Rendering Automation via Rube MCP
 
 Automate Cloudflare Browser Rendering operations through Composio's Cloudflare Browser Rendering toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

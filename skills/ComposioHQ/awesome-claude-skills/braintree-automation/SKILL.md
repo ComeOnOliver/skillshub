@@ -1,3 +1,10 @@
+---
+name: Braintree Automation
+description: "Braintree Automation: manage payment processing via Stripe-compatible tools for customers, subscriptions, payment methods, and transactions"
+requires:
+  mcp: [rube]
+---
+
 # Braintree Automation
 
 Automate payment processing operations via Stripe-compatible tooling including managing customers, subscriptions, payment methods, balance transactions, and customer searches. The Composio platform routes Braintree payment workflows through the Stripe toolkit for unified payment management.
@@ -177,3 +184,4 @@ Arguments:
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

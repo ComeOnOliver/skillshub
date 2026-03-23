@@ -303,3 +303,4 @@ This workflow analyzes Infrastructure-as-Code (IaC) files and Azure resources to
 - ✅ Priority scoring enables ROI-focused implementation
 - ✅ Architecture diagram accurately represents current state
 - ✅ User confirmation prevents unwanted issue creation
+

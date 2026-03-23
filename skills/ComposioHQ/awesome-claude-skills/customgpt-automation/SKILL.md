@@ -1,3 +1,10 @@
+---
+name: customgpt-automation
+description: "Automate Customgpt tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Customgpt Automation via Rube MCP
 
 Automate Customgpt operations through Composio's Customgpt toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

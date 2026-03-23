@@ -590,3 +590,4 @@ scoreboard players operation @s result /= #two constants
 - Minecraft Wiki — Raw JSON text: https://minecraft.wiki/w/Raw_JSON_text_format
 - Minecraft Wiki — Scoreboard: https://minecraft.wiki/w/Scoreboard
 - Execute command wiki: https://minecraft.wiki/w/Commands/execute
+

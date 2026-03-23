@@ -1,3 +1,10 @@
+---
+name: coupa-automation
+description: "Automate Coupa tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Coupa Automation via Rube MCP
 
 Automate Coupa operations through Composio's Coupa toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

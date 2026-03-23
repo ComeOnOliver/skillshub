@@ -48,3 +48,4 @@ metadata:
 
 - [Full PRD Template](references/prd-template.md)
 - [Validation Checklist](references/checklist.md)
+

@@ -54,3 +54,4 @@ When working with Semantic Kernel in any language:
 - Recommendations match the target language.
 - Package names, repository paths, and sample locations match the selected ecosystem.
 - Guidance reflects current Semantic Kernel documentation rather than stale assumptions.
+

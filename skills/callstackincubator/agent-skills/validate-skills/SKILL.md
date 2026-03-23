@@ -58,3 +58,4 @@ For each skill directory, verify:
 
 - [agentskills.io spec](https://agentskills.io/specification)
 - [Claude Code best practices](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/best-practices)
+

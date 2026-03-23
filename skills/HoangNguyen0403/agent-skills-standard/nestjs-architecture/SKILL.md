@@ -35,3 +35,4 @@ description: "Standards for scalable, modular NestJS backend architecture. Use w
 
 - [Advanced Patterns](references/advanced-patterns.md)
 - [Dynamic Modules](references/dynamic-module.md)
+

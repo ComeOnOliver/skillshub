@@ -1,3 +1,10 @@
+---
+name: formdesk-automation
+description: "Automate Formdesk tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Formdesk Automation via Rube MCP
 
 Automate Formdesk operations through Composio's Formdesk toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

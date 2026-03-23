@@ -100,3 +100,4 @@ ilspycmd -il MyLibrary.dll
 ## Legal note
 
 Decompiling assemblies may be subject to license restrictions.
+

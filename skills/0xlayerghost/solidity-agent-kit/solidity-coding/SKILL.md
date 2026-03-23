@@ -255,3 +255,4 @@ When `OpenZeppelinContracts` MCP is configured, prefer using it to generate base
 | Build contracts | `forge build` |
 | Format code | `forge fmt` |
 | Update remappings | `forge remappings` |
+

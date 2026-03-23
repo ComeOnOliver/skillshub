@@ -1,3 +1,10 @@
+---
+name: brilliant-directories-automation
+description: "Automate Brilliant Directories tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Brilliant Directories Automation via Rube MCP
 
 Automate Brilliant Directories operations through Composio's Brilliant Directories toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

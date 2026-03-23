@@ -1,3 +1,10 @@
+---
+name: FreshBooks Automation
+description: "FreshBooks Automation: manage businesses, projects, time tracking, and billing in FreshBooks cloud accounting"
+requires:
+  mcp: [rube]
+---
+
 # FreshBooks Automation
 
 Automate FreshBooks operations including listing businesses, managing projects, tracking time, and monitoring budgets for small and medium-sized business accounting.
@@ -131,3 +138,4 @@ Arguments:
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

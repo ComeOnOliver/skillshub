@@ -1,3 +1,9 @@
+---
+name: scanning-container-security
+description: |
+  This skill enables Claude to scan container images and running containers for vulnerabilities using tools like Trivy and Snyk. It identifies potential security risks in container environments. Use this skill when the user requests a security assessment of a container image, asks to identify vulnerabilities in a container, or wants to improve the security posture of their containerized applications. Trigger terms include "scan container," "container security," "vulnerability assessment," "Trivy scan," or "Snyk scan."
+---
+
 ## Overview
 
 This skill empowers Claude to perform comprehensive security scans of container images and running containers. By leveraging industry-standard tools, it identifies vulnerabilities and provides insights for remediation, enhancing the overall security of containerized applications.

@@ -535,3 +535,4 @@ When both source code and documentation changed in the same session, run
 `finalize-and-commit` for source code first, then `docs-finalize-and-commit`
 for documentation. Gate 2 of this skill reads source code diffs but does not
 modify or commit source code files.
+

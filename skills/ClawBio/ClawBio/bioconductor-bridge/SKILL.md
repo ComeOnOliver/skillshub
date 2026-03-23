@@ -217,3 +217,4 @@ output_directory/
 - [SingleCellExperiment](https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html) — canonical single-cell container
 - [GenomicRanges](https://bioconductor.org/packages/release/bioc/html/GenomicRanges.html) — canonical interval container
 - [VariantAnnotation](https://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html) — canonical VCF and variant annotation package
+

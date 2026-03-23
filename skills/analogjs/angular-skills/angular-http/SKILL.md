@@ -1,3 +1,8 @@
+---
+name: angular-http
+description: Implement HTTP data fetching in Angular v20+ using resource(), httpResource(), and HttpClient. Use for API calls, data loading with signals, request/response handling, and interceptors. Triggers on data fetching, API integration, loading states, error handling, or converting Observable-based HTTP to signal-based patterns.
+---
+
 # Angular HTTP & Data Fetching
 
 Fetch data in Angular using signal-based `resource()`, `httpResource()`, and the traditional `HttpClient`.
@@ -359,3 +364,4 @@ export class Data {
 ```
 
 For advanced patterns, see [references/http-patterns.md](references/http-patterns.md).
+

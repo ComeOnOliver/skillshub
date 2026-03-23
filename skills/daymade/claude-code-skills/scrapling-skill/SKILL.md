@@ -181,3 +181,4 @@ python3 scripts/diagnose_scrapling.py \
 
 - Installation and smoke test helper: `scripts/diagnose_scrapling.py`
 - Verified failure modes and recovery paths: `references/troubleshooting.md`
+

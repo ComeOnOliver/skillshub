@@ -24,3 +24,4 @@ Find Gmail messages with attachments and save them to a Google Drive folder.
 3. Download attachment: `gws gmail users messages attachments get --params '{"userId": "me", "messageId": "MESSAGE_ID", "id": "ATTACHMENT_ID"}'`
 4. Upload to Drive folder: `gws drive +upload --file ./attachment.pdf --parent FOLDER_ID`
 
+

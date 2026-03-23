@@ -1,3 +1,10 @@
+---
+name: backendless-automation
+description: "Automate Backendless tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Backendless Automation via Rube MCP
 
 Automate Backendless operations through Composio's Backendless toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

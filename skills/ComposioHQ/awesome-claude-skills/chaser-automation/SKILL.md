@@ -1,3 +1,10 @@
+---
+name: chaser-automation
+description: "Automate Chaser tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Chaser Automation via Rube MCP
 
 Automate Chaser operations through Composio's Chaser toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

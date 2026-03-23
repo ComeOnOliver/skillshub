@@ -1,3 +1,10 @@
+---
+name: affinity-automation
+description: "Automate Affinity tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Affinity Automation via Rube MCP
 
 Automate Affinity operations through Composio's Affinity toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

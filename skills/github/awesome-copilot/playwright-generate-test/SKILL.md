@@ -15,3 +15,4 @@ Your goal is to generate a Playwright test based on the provided scenario after 
 - Only after all steps are completed, emit a Playwright TypeScript test that uses `@playwright/test` based on message history
 - Save generated test file in the tests directory
 - Execute the test file and iterate until the test passes
+

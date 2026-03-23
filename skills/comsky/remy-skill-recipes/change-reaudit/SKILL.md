@@ -279,3 +279,4 @@ Single function change: `getUserById` in `services/user.ts` now returns `null` i
 
 - Limit to top 5 likely risks
 - Require at least one regression safeguard
+

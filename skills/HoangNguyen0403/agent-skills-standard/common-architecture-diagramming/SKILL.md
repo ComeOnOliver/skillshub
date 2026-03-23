@@ -36,3 +36,4 @@ description: "Standards for creating clear, effective, and formalized software a
 - [C4 Model Guide](references/c4-model.md)
 - [Checklist](references/checklist.md)
 - [Best Practices](references/best-practices.md)
+

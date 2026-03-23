@@ -1,3 +1,10 @@
+---
+name: helloleads-automation
+description: "Automate Helloleads tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Helloleads Automation via Rube MCP
 
 Automate Helloleads operations through Composio's Helloleads toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

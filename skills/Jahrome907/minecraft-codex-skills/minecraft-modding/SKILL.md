@@ -354,3 +354,4 @@ When adding a **new entity**:
 - Fabric developer docs: https://docs.fabricmc.net/develop/
 - Architectury (multiloader): https://docs.architectury.dev/
 - Minecraft Wiki (data formats): https://minecraft.wiki/w/Java_Edition_data_values
+

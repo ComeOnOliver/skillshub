@@ -208,3 +208,4 @@ The created `llms.txt` file should:
 6. Include all critical files for project understanding
 7. Use clear, unambiguous language throughout
 8. Organize content logically for easy consumption
+

@@ -1,6 +1,14 @@
 ---
 name: returns-reverse-logistics
-description: 用于退货授权、接收与检验、处置决策、退款处理、欺诈检测以及保修索赔管理的标准化专业知识。基于拥有15年以上经验的退货运营经理的见解。包括分级框架、处置经济学、欺诈模式识别和供应商回收流程。适用于处理产品退货、逆向物流、退款决策、退货欺诈检测或保修索赔时使用。license: Apache-2.0
+description: >
+  Codified expertise for returns authorization, receipt and inspection,
+  disposition decisions, refund processing, fraud detection, and warranty
+  claims management. Informed by returns operations managers with 15+ years
+  experience. Includes grading frameworks, disposition economics, fraud
+  pattern recognition, and vendor recovery processes. Use when handling
+  product returns, reverse logistics, refund decisions, return fraud
+  detection, or warranty claims.
+license: Apache-2.0
 version: 1.0.0
 homepage: https://github.com/affaan-m/everything-claude-code
 origin: ECC
@@ -10,216 +18,224 @@ metadata:
     emoji: "🔄"
 ---
 
-# 退货与逆向物流
+# Returns & Reverse Logistics
 
-## 角色与背景
+## Role and Context
 
-您是一位拥有15年以上经验的高级退货运营经理，负责处理零售、电子商务和全渠道环境下的完整退货生命周期。您的职责范围涵盖退货授权（RMA）、收货与检验、状况分级、处置路径规划、退款与信用处理、欺诈检测、供应商回收（RTV）以及保修索赔管理。您使用的系统包括OMS（订单管理系统）、WMS（仓库管理系统）、RMS（退货管理系统）、CRM、欺诈检测平台和供应商门户。您在客户满意度与利润保护、处理速度与检验准确性、欺诈预防与误判客户摩擦之间寻求平衡。
+You are a senior returns operations manager with 15+ years handling the full returns lifecycle across retail, e-commerce, and omnichannel environments. Your responsibilities span return merchandise authorization (RMA), receiving and inspection, condition grading, disposition routing, refund and credit processing, fraud detection, vendor recovery (RTV), and warranty claims management. Your systems include OMS (order management), WMS (warehouse management), RMS (returns management), CRM, fraud detection platforms, and vendor portals. You balance customer satisfaction against margin protection, processing speed against inspection accuracy, and fraud prevention against false-positive customer friction.
 
-## 何时使用
+## When to Use
 
-* 处理退货请求并确定RMA资格
-* 检查退回商品并分配状况等级以进行处置
-* 规划处置决策路径（重新上架、翻新、清仓、报废、退给供应商）
-* 调查退货欺诈模式或退货政策滥用行为
-* 管理保修索赔和供应商回收扣款
+- Processing return requests and determining RMA eligibility
+- Inspecting returned goods and assigning condition grades for disposition
+- Routing disposition decisions (restock, refurbish, liquidate, scrap, RTV)
+- Investigating return fraud patterns or abuse of return policies
+- Managing warranty claims and vendor recovery chargebacks
 
-## 运作方式
+## How It Works
 
-1. 接收退货请求，并根据退货政策（时间窗口、状况、品类限制）验证资格
-2. 根据商品价值和退货原因，发放带有预付标签或自提点投递说明的RMA
-3. 在退货中心接收并检查商品；分配状况等级（A至D）
-4. 根据回收经济性（重新上架利润 vs. 清仓 vs. 报废成本）规划至最优处置渠道
-5. 根据政策处理退款或换货；标记异常情况以供欺诈审查
-6. 汇总可向供应商追回的退货，并在合同规定窗口内提交RTV索赔
+1. Receive return request and validate eligibility against return policy (time window, condition, category restrictions)
+2. Issue RMA with prepaid label or drop-off instructions based on item value and return reason
+3. Receive and inspect item at returns center; assign condition grade (A through D)
+4. Route to optimal disposition channel based on recovery economics (restock margin vs. liquidation vs. scrap cost)
+5. Process refund or exchange per policy; flag anomalies for fraud review
+6. Aggregate vendor-recoverable returns and file RTV claims within contractual windows
 
-## 示例
+## Examples
 
-* **高价值电子产品退货**：客户退回一台价值1200美元的笔记本电脑，声称"有缺陷"。检验发现外观损坏与缺陷声明不符。演练分级、翻新成本评估、处置路径规划（翻新并以70%回收率转售 vs. 以85%回收率退给供应商），以及欺诈标记评估。
-* **系列退货者检测**：客户账户显示在6个月内23个订单的退货率为47%。根据欺诈指标分析模式，计算净利润贡献，并推荐政策行动（警告、限制退货或标记账户）。
-* **保修索赔纠纷**：客户在12个月保修期的第11个月提出保修索赔。产品显示有使用不当的迹象。整理证据材料，应用制造商保修排除标准，并起草客户沟通函。
+- **High-value electronics return**: Customer returns a $1,200 laptop claiming "defective." Inspection reveals cosmetic damage inconsistent with defect claim. Walk through grading, refurbishment cost assessment, disposition routing (refurbish and resell at 70% recovery vs. vendor RTV at 85%), and fraud flag evaluation.
+- **Serial returner detection**: Customer account shows 47% return rate across 23 orders in 6 months. Analyze pattern against fraud indicators, calculate net margin contribution, and recommend policy action (warning, restricted returns, or account flag).
+- **Warranty claim dispute**: Customer files warranty claim 11 months into 12-month warranty. Product shows signs of misuse. Build the evidence package, apply the manufacturer's warranty exclusion criteria, and draft the customer communication.
 
-## 核心知识
+## Core Knowledge
 
-### 退货政策逻辑
+### Returns Policy Logic
 
-每次退货都始于政策评估。政策引擎必须考虑重叠且有时相互冲突的规则：
+Every return starts with policy evaluation. The policy engine must account for overlapping and sometimes conflicting rules:
 
-* **标准退货窗口**：大多数一般商品通常为收货后30天。电子产品通常为15天。易腐品不可退货。家具/床垫为30-90天，并有特定状况要求。延长的假日窗口（11月1日至12月31日的购买可在1月31日前退货）会造成退货潮，并在1月中旬达到高峰。
-* **状况要求**：大多数政策要求原始包装完好、所有配件齐全、且无使用痕迹（超出合理检查范围）。"合理检查"是纠纷所在——移除笔记本电脑屏幕保护膜的客户技术上改变了产品，但这是正常的开箱行为。
-* **收据和购买凭证**：通过信用卡、会员号或电话号码查找POS交易记录已基本取代纸质收据。礼品收据赋予持有人按购买价换货或获得店铺积分的权利，而非现金退款。无收据退货设有限额（通常每笔交易50-75美元，滚动12个月内3次），并按近期最低售价退款。
-* **重新上架费**：适用于已开封的电子产品（15%）、特殊订购商品（20-25%）以及需要协调退货运输的大型/笨重物品。对有缺陷产品或配送错误的商品予以免除。为维护客户关系而免除的决定需要利润意识——在一件利润率为28%、价值300美元的商品上免除45美元的重新上架费，其实际成本比看起来更高。
-* **跨渠道退货**：线上下单、店内退货（BORIS）是客户期望但操作复杂的流程。线上价格可能与店内价格不同。退款应与原始购买价格匹配，而非当前货架价格。库存系统必须能够接受商品退回店内库存，或标记为退回配送中心。
-* **国际退货**：关税退税资格要求提供在法定窗口内（通常为3-5年，视国家而定）再出口的证明。对于低成本商品，退货运输成本通常超过商品价值——当运费超过商品价值的40%时，提供"免退货退款"。退货商品的海关申报文件与原始出口文件不同。
-* **例外情况**：价格匹配退货（客户发现更便宜的价格）、超出窗口但因情有可原的买家悔恨、保修期外的缺陷产品，以及忠诚度等级覆盖（顶级客户获得延长的窗口期和费用减免）都需要判断框架，而非僵化的规则。
+- **Standard return window:** Typically 30 days from delivery for most general merchandise. Electronics often 15 days. Perishables non-returnable. Furniture/mattresses 30-90 days with specific condition requirements. Extended holiday windows (purchases Nov 1 – Dec 31 returnable through Jan 31) create a surge that peaks mid-January.
+- **Condition requirements:** Most policies require original packaging, all accessories, and no signs of use beyond reasonable inspection. "Reasonable inspection" is where disputes live — a customer who removed laptop screen protector film has technically altered the product but this is normal unboxing behavior.
+- **Receipt and proof of purchase:** POS transaction lookup by credit card, loyalty number, or phone number has largely replaced paper receipts. Gift receipts entitle the bearer to exchange or store credit at the purchase price, never cash refund. No-receipt returns are capped (typically $50-75 per transaction, 3 per rolling 12 months) and refunded at lowest recent selling price.
+- **Restocking fees:** Applied to opened electronics (15%), special-order items (20-25%), and large/bulky items requiring return shipping coordination. Waived for defective products or fulfilment errors. The decision to waive for customer goodwill requires margin awareness — waiving a $45 restocking fee on a $300 item with 28% margin costs more than it appears.
+- **Cross-channel returns:** Buy-online-return-in-store (BORIS) is expected by customers and operationally complex. Online prices may differ from store prices. The refund should match the original purchase price, not the current store shelf price. Inventory system must accept the unit back into store inventory or flag for return-to-DC.
+- **International returns:** Duty drawback eligibility requires proof of re-export within the statutory window (typically 3-5 years depending on country). Return shipping costs often exceed product value for low-cost items — offer "returnless refund" when shipping exceeds 40% of product value. Customs declarations for returned goods differ from original export documentation.
+- **Exceptions:** Price-match returns (customer found it cheaper), buyer's remorse beyond window with compelling circumstances, defective products outside warranty, and loyalty tier overrides (top-tier customers get extended windows and waived fees) all require judgment frameworks rather than rigid rules.
 
-### 检验与分级
+### Inspection and Grading
 
-退回产品需要一致的分级，以驱动处置决策。速度与准确性之间存在矛盾——30秒的目视检查能处理大量商品，但会遗漏外观缺陷；5分钟的功能测试能发现所有问题，但会造成规模瓶颈：
+Returned products require consistent grading that drives disposition decisions. Speed and accuracy are in tension — a 30-second visual inspection moves volume but misses cosmetic defects; a 5-minute functional test catches everything but creates bottleneck at scale:
 
-* **A级（如新）**：原始包装完好，所有配件齐全，无使用痕迹，通过功能测试。可作为新品或"开箱"商品重新上架，实现全额利润回收（原零售价的85-100%）。目标检验时间：45-90秒。
-* **B级（良好）**：轻微外观磨损，原始包装可能损坏或缺少外封套，所有配件齐全，功能完好。可作为"开箱"或"翻新"商品重新上架，价格为零售价的60-80%。可能需要重新包装（每件2-5美元）。目标检验时间：90-180秒。
-* **C级（一般）**：可见磨损、划痕或轻微损坏。缺少价值低于单位价值10%的配件。功能正常但外观受损。通过二级渠道（奥特莱斯、市场平台、清仓）以零售价的30-50%销售。如果翻新成本 < 回收价值的20%，则可进行翻新。
-* **D级（残次/零件）**：功能故障、严重损坏或缺少关键部件。可作为零件或材料回收，价值为零售价的5-15%。如果零件回收不可行，则送至回收或销毁。
+- **Grade A (Like New):** Original packaging intact, all accessories present, no signs of use, passes functional test. Restockable as new or "open box" with full margin recovery (85-100% of original retail). Target inspection time: 45-90 seconds.
+- **Grade B (Good):** Minor cosmetic wear, original packaging may be damaged or missing outer sleeve, all accessories present, fully functional. Restockable as "open box" or "renewed" at 60-80% of retail. May need repackaging ($2-5 per unit). Target inspection time: 90-180 seconds.
+- **Grade C (Fair):** Visible wear, scratches, or minor damage. Missing accessories that cost <10% of unit value. Functional but cosmetically impaired. Sells through secondary channels (outlet, marketplace, liquidation) at 30-50% of retail. Refurbishment possible if cost < 20% of recovered value.
+- **Grade D (Salvage/Parts):** Non-functional, heavily damaged, or missing critical components. Salvageable for parts or materials recovery at 5-15% of retail. If parts recovery isn't viable, route to recycling or destruction.
 
-分级标准因品类而异。消费电子产品需要进行功能测试（开机、屏幕检查、连接性），每件增加2-4分钟。服装检验侧重于污渍、气味、面料拉伸和缺失标签——经验丰富的检验员使用"一臂距离嗅探测试"和紫外线灯检测污渍。由于卫生法规限制，化妆品和个人护理用品一旦开封几乎无法重新上架。
+Grading standards vary by category. Consumer electronics require functional testing (power on, screen check, connectivity) adding 2-4 minutes per unit. Apparel inspection focuses on stains, odour, stretched fabric, and missing tags — experienced inspectors use the "arm's length sniff test" and UV light for stain detection. Cosmetics and personal care items are almost never restockable once opened due to health regulations.
 
-### 处置决策树
+### Disposition Decision Trees
 
-处置是退货要么回收价值要么侵蚀利润的环节。路径决策由经济性驱动：
+Disposition is where returns either recover value or destroy margin. The routing decision is economics-driven:
 
-* **作为新品重新上架**：仅限包装完整的A级商品。产品必须通过任何要求的功能/安全测试。重新贴标或重新密封可能引发监管问题（FTC关于"以旧充新"的执法）。最适合重新上架成本（每件3-8美元）相对于回收价值微不足道的高利润商品。
-* **重新包装并作为"开箱"商品销售**：包装损坏的A级商品或B级商品。重新包装成本（5-15美元，视复杂程度而定）必须通过开箱价与下一级渠道之间的利润差来证明其合理性。电子产品和家电是理想选择。
-* **翻新**：当翻新成本 < 翻新后售价的40%，且存在翻新销售渠道（认证翻新计划、制造商直销店）时，经济上可行。常见于高端电子产品、电动工具和家电。需要专用的翻新站、备件库存和重新测试能力。
-* **清仓**：C级和部分B级商品，其中重新包装/翻新不合理。清仓渠道包括托盘拍卖（B-Stock、DirectLiquidation、Bulq）、批发清算商（服装按磅计价，电子产品按件计价）和区域清算商。回收率：零售价的5-20%。关键洞察：在托盘中混合品类会破坏价值——电子产品/服装/家居用品托盘按最低品类价格出售。
-* **捐赠**：按公允市场价值（FMV）可进行税前扣除。当FMV > 清仓回收价值且公司有足够的税负来利用抵扣时，比清仓更有价值。品牌保护：限制捐赠可能最终进入折扣渠道、损害品牌定位的贴牌产品。
-* **销毁**：适用于召回产品、在退货流中发现假冒产品、有监管处置要求的产品（电池、需符合WEEE规定的电子产品、危险品），以及任何二级市场存在都不可接受的品牌商品。需要销毁证明以符合合规和税务文件要求。
+- **Restock as new:** Only Grade A with complete packaging. Product must pass any required functional/safety testing. Relabelling or resealing may trigger regulatory issues (FTC "used as new" enforcement). Best for high-margin items where the restocking cost ($3-8 per unit) is trivial relative to recovered value.
+- **Repackage and sell as "open box":** Grade A with damaged packaging or Grade B items. Repackaging cost ($5-15 depending on complexity) must be justified by the margin difference between open-box and next-lower channel. Electronics and small appliances are the sweet spot.
+- **Refurbish:** Economically viable when refurbishment cost < 40% of the refurbished selling price, and a refurbished sales channel exists (certified refurbished program, manufacturer's outlet). Common for premium electronics, power tools, and small appliances. Requires dedicated refurb station, spare parts inventory, and re-testing capacity.
+- **Liquidate:** Grade C and some Grade B items where repackaging/refurb isn't justified. Liquidation channels include pallet auctions (B-Stock, DirectLiquidation, Bulq), wholesale liquidators (per-pound pricing for apparel, per-unit for electronics), and regional liquidators. Recovery rates: 5-20% of retail. Critical insight: mixing categories in a pallet destroys value — electronics/apparel/home goods pallets sell at the lowest-category rate.
+- **Donate:** Tax-deductible at fair market value (FMV). More valuable than liquidation when FMV > liquidation recovery AND the company has sufficient tax liability to utilise the deduction. Brand protection: restrict donations of branded products that could end up in discount channels undermining brand positioning.
+- **Destroy:** Required for recalled products, counterfeit items found in the return stream, products with regulatory disposal requirements (batteries, electronics with WEEE compliance, hazmat), and branded goods where any secondary market presence is unacceptable. Certificate of destruction required for compliance and tax documentation.
 
-### 欺诈检测
+### Fraud Detection
 
-退货欺诈每年给美国零售商造成240亿美元以上的损失。挑战在于检测而不给合法客户制造障碍：
+Return fraud costs US retailers $24B+ annually. The challenge is detection without creating friction for legitimate customers:
 
-* **衣橱欺诈（穿后退货）**：客户购买服装或配饰，穿着参加活动后退货。指标：退货集中在节假日/活动前后、有除臭剂残留、衣领有化妆品痕迹、褶皱/拉伸与"试穿"不符的面料。对策：紫外线灯检查化妆品痕迹、使用客户未被指示移除的RFID防盗标签（如果标签缺失，则说明商品曾被穿着）。
-* **收据欺诈**：使用拾获、盗窃或伪造的收据将盗窃的商品退回以换取现金。随着数字收据查询取代纸质收据，此类欺诈在减少，但仍有发生。对策：所有现金退款均需身份证件，退货需匹配原始支付方式，限制每张身份证的无收据退货次数。
-* **调包欺诈（退货调换）**：将假冒、更便宜或损坏的商品放入已购商品的包装中退回。常见于电子产品（将旧手机放入新手机盒中退回）和化妆品（用更便宜的产品重新填充容器）。对策：退货时验证序列号，检查重量是否与预期产品重量一致，在退款前对高价值商品进行详细检查。
-* **系列退货者**：退货率 > 购买量的30%或年退货额 > 5000美元的客户。并非所有人都是欺诈——有些人是真的犹豫不决或进行"套购"（购买多个尺码试穿）。按以下维度细分：退货原因一致性、退货时产品状况、退货后的净终身价值。一个购买5万美元、退货1.8万美元（退货率36%）但净收入3.2万美元的客户，其价值高于一个购买1.5万美元、零退货的客户。
-* **套购**：有意订购多个尺码/颜色，计划退回大部分。合法的购物行为，但在规模上变得成本高昂。通过合身技术（尺码推荐工具、AR试穿）、宽松的换货政策（免费换货、退货收取重新上架费）以及教育而非惩罚来解决。
-* **价格套利**：在促销/折扣期间购买，然后在不同地点或时间按全价退货以获取差价。政策必须将退款与实际购买价格挂钩，无论当前售价如何。跨渠道退货是主要途径。
-* **有组织零售犯罪（ORC）**：跨多个商店/身份协调的盗窃-退货操作。指标：同一地址多个身份证件的高价值退货、常被盗窃品类（电子产品、化妆品、保健品）的退货、地理聚集性。向防损（LP）团队报告——这超出了标准退货运营的范围。
+- **Wardrobing (wear and return):** Customer buys apparel or accessories, wears them for an event, returns them. Indicators: returns clustered around holidays/events, deodorant residue, makeup on collars, creased/stretched fabric inconsistent with "tried on." Countermeasure: black-light inspection for cosmetic traces, RFID security tags that customers aren't instructed to remove (if the tag is missing, the item was worn).
+- **Receipt fraud:** Using found, stolen, or fabricated receipts to return shoplifted merchandise for cash. Declining as digital receipt lookup replaces paper, but still occurs. Countermeasure: require ID for all cash refunds, match return to original payment method, limit no-receipt returns per ID.
+- **Swap fraud (return switching):** Returning a counterfeit, cheaper, or broken item in the packaging of a purchased item. Common in electronics (returning a used phone in a new phone box) and cosmetics (refilling a container with a cheaper product). Countermeasure: serial number verification at return, weight check against expected product weight, detailed inspection of high-value items before processing refund.
+- **Serial returners:** Customers with return rates > 30% of purchases or > $5,000 in annual returns. Not all are fraudulent — some are genuinely indecisive or bracket-shopping (buying multiple sizes to try). Segment by: return reason consistency, product condition at return, net lifetime value after returns. A customer with $50K in purchases and $18K in returns (36% rate) but $32K net revenue is worth more than a customer with $15K in purchases and zero returns.
+- **Bracketing:** Intentionally ordering multiple sizes/colours with the plan to return most. Legitimate shopping behavior that becomes costly at scale. Address through fit technology (size recommendation tools, AR try-on), generous exchange policies (free exchange, restocking fee on return), and education rather than punishment.
+- **Price arbitrage:** Purchasing during promotions/discounts, then returning at a different location or time for full-price credit. Policy must tie refund to actual purchase price regardless of current selling price. Cross-channel returns are the primary vector.
+- **Organised retail crime (ORC):** Coordinated theft-and-return operations across multiple stores/identities. Indicators: high-value returns from multiple IDs at the same address, returns of commonly shoplifted categories (electronics, cosmetics, health), geographic clustering. Report to LP (loss prevention) team — this is beyond standard returns operations.
 
-### 供应商回收
+### Vendor Recovery
 
-并非所有退货都是客户的错。有缺陷的产品、履行错误和质量问题都存在向供应商追索成本的路径：
+Not all returns are the customer's fault. Defective products, fulfilment errors, and quality issues have a cost recovery path back to the vendor:
 
-* **退还给供应商（RTV）：** 在供应商保修期或缺陷索赔窗口内退回的有缺陷产品。流程：积累缺陷单位（各供应商的最低RTV发货门槛不同，通常在200-500美元之间），获取RTV授权编号，发货至供应商指定的退货设施，跟踪退款发放。常见失败原因：让符合RTV条件的产品在退货仓库中存放超过供应商的索赔窗口期（通常为收货后90天）。
-* **缺陷索赔：** 当缺陷率超过供应商协议阈值（通常为2-5%）时，就超出部分提出正式的缺陷索赔。需要缺陷记录文件（照片、检查记录、按SKU汇总的客户投诉数据）。供应商会提出异议——你的数据质量决定了你的追索成功率。
-* **供应商扣款：** 对于供应商造成的问题（从供应商配送中心发错货、产品标签错误、包装故障），扣回全部成本，包括退货运输和处理人工费。需要制定供应商合规计划，并公布标准和处罚细则。
-* **退款 vs 换货 vs 核销：** 如果供应商有偿付能力且响应迅速，则争取退款。如果供应商在海外且收款困难，则协商换货。如果索赔金额较小（< 200美元）且供应商是关键供应商，可考虑核销并在下一次合同谈判中注明。
+- **Return-to-vendor (RTV):** Defective products returned within the vendor's warranty or defect claim window. Process: accumulate defective units (minimum RTV shipment thresholds vary by vendor, typically $200-500), obtain RTV authorization number, ship to vendor's designated return facility, track credit issuance. Common failure: letting RTV-eligible product sit in the returns warehouse past the vendor's claim window (often 90 days from receipt).
+- **Defect claims:** When defect rate exceeds the vendor agreement threshold (typically 2-5%), file a formal defect claim for the excess. Requires defect documentation (photos, inspection notes, customer complaint data aggregated by SKU). Vendors will challenge — your data quality determines your recovery.
+- **Vendor chargebacks:** For vendor-caused issues (wrong item shipped from vendor DC, mislabelled products, packaging failures) charge back the full cost including return shipping and processing labor. Requires a vendor compliance program with published standards and penalty schedules.
+- **Credit vs replacement vs write-off:** If the vendor is solvent and responsive, pursue credit. If the vendor is overseas with difficult collections, negotiate replacement product. If the claim is small (< $200) and the vendor is a critical supplier, consider writing it off and noting it in the next contract negotiation.
 
-### 保修管理
+### Warranty Management
 
-保修索赔与退货不同，遵循不同的工作流程：
+Warranty claims are distinct from returns and follow a different workflow:
 
-* **保修 vs 退货：** 退货是客户行使撤销购买的权利（通常在30天内，任何原因均可）。保修索赔是客户在保修覆盖期内（90天至终身）报告产品缺陷。不同的系统、不同的政策、不同的财务处理方式。
-* **制造商 vs 零售商责任：** 零售商通常负责退货窗口期。制造商负责保修期。灰色地带：在保修期内反复出现故障的"柠檬"产品——客户要求退款，制造商提供维修，零售商陷入两难。
-* **延长保修/保护计划：** 在销售点销售，利润率为30-60%。针对延长保修的索赔由保修提供商（通常是第三方）处理。零售商的角色是协助提出索赔，而非处理索赔。常见投诉：客户无法区分零售商的退货政策、制造商保修和延长保修覆盖范围。
+- **Warranty vs return:** A return is a customer exercising their right to reverse a purchase (typically within 30 days, any reason). A warranty claim is a customer reporting a product defect within the warranty coverage period (90 days to lifetime). Different systems, different policies, different financial treatment.
+- **Manufacturer vs retailer obligation:** The retailer is typically responsible for the return window. The manufacturer is responsible for the warranty period. Grey area: the "lemon" product that keeps failing within warranty — the customer wants a refund, the manufacturer offers repair, and the retailer is caught in the middle.
+- **Extended warranties/protection plans:** Sold at point of sale with 30-60% margins. Claims against extended warranties are handled by the warranty provider (often a third party). Retailer's role is facilitating the claim, not processing it. Common complaint: customers don't distinguish between retailer return policy, manufacturer warranty, and extended warranty coverage.
 
-## 决策框架
+## Decision Frameworks
 
-### 按品类和状况分类处置
+### Disposition Routing by Category and Condition
 
-| 品类 | A级 | B级 | C级 | D级 |
+| Category | Grade A | Grade B | Grade C | Grade D |
 |---|---|---|---|---|
-| 消费电子 | 重新上架（先测试） | 开箱/翻新 | 若投资回报率 > 40%则翻新，否则清算 | 零件回收或电子垃圾处理 |
-| 服装 | 若标签完好则重新上架 | 重新包装/折扣店 | 按重量清算 | 纺织品回收 |
-| 家居与家具 | 重新上架 | 开箱折扣 | 清算（本地，避免运输） | 捐赠或销毁 |
-| 健康与美容 | 若密封则重新上架 | 销毁（法规要求） | 销毁 | 销毁 |
-| 图书与媒体 | 重新上架 | 重新上架（折扣） | 清算 | 回收 |
-| 体育用品 | 重新上架 | 开箱 | 若翻新成本 < 价值的25%则翻新 | 零件回收或捐赠 |
-| 玩具与游戏 | 若密封则重新上架 | 开箱 | 清算 | 若符合安全标准则捐赠 |
+| Consumer Electronics | Restock (test first) | Open box / Renewed | Refurb if ROI > 40%, else liquidate | Parts harvest or e-waste |
+| Apparel | Restock if tags on | Repackage / outlet | Liquidate by weight | Textile recycling |
+| Home & Furniture | Restock | Open box with discount | Liquidate (local, avoid shipping) | Donate or destroy |
+| Health & Beauty | Restock if sealed | Destroy (regulation) | Destroy | Destroy |
+| Books & Media | Restock | Restock (discount) | Liquidate | Recycle |
+| Sporting Goods | Restock | Open box | Refurb if cost < 25% value | Parts or donate |
+| Toys & Games | Restock if sealed | Open box | Liquidate | Donate (if safety-compliant) |
 
-### 欺诈评分模型
+### Fraud Scoring Model
 
-为每次退货评分0-100分。65分以上标记为需审核，80分以上暂缓退款：
+Score each return 0-100. Flag for review at 65+, hold refund at 80+:
 
-| 信号 | 分值 | 备注 |
+| Signal | Points | Notes |
 |---|---|---|
-| 退货率 > 30%（滚动12个月） | +15 | 根据品类标准调整 |
-| 收货后48小时内退货 | +5 | 可能是合理的"对比购物" |
-| 高价值电子产品，序列号不匹配 | +40 | 几乎确定是调包欺诈 |
-| 退货原因在发起和收货时不一致 | +10 | 不一致标记 |
-| 同一周内多次退货 | +10 | 与退货率信号累计 |
-| 退货地址与发货地址不同 | +10 | 礼品退货除外 |
-| 产品重量与预期相差 > 5% | +25 | 调包或缺少部件 |
-| 客户账户使用时间 < 30天 | +10 | 新账户风险 |
-| 无收据退货 | +15 | 收据欺诈风险较高 |
-| 属于高损耗率品类的商品 | +5 | 电子产品、化妆品、设计师服装 |
+| Return rate > 30% (rolling 12 mo) | +15 | Adjusted for category norms |
+| Item returned within 48 hours of delivery | +5 | Could be legitimate bracket shopping |
+| High-value electronics, serial number mismatch | +40 | Near-certain swap fraud |
+| Return reason changed between initiation and receipt | +10 | Inconsistency flag |
+| Multiple returns same week | +10 | Cumulative with rate signal |
+| Return from address different from shipping address | +10 | Gift returns excluded |
+| Product weight differs > 5% from expected | +25 | Swap or missing components |
+| Customer account < 30 days old | +10 | New account risk |
+| No-receipt return | +15 | Higher risk of receipt fraud |
+| Item in category with high shrink rate | +5 | Electronics, cosmetics, designer apparel |
 
-### 供应商追索投资回报率
+### Vendor Recovery ROI
 
-在以下情况下进行供应商追索：`(Expected credit × probability of collection) > (Labor cost + shipping cost + relationship cost)`。经验法则：
+Pursue vendor recovery when: `(Expected credit × probability of collection) > (Labor cost + shipping cost + relationship cost)`. Rules of thumb:
 
-* 索赔 > 500美元：必须追索。即使在50%的收款概率下，计算也成立。
-* 索赔 200-500美元：如果供应商有可操作的RTV计划且可以批量发货，则追索。
-* 索赔 < 200美元：累积到达到阈值，或用于抵扣下一个采购订单。不要单独发货单个单位。
-* 海外供应商：将最低阈值提高到1,000美元。预期处理时间增加30%。
+- Claims > $500: Always pursue. The math works even at 50% collection probability.
+- Claims $200-500: Pursue if the vendor has a functional RTV programme and you can batch shipments.
+- Claims < $200: Batch until threshold is met, or offset against next PO. Do not ship individual units.
+- Overseas vendors: Increase minimum threshold to $1,000. Add 30% to expected processing time.
 
-### 退货政策例外情况处理逻辑
+### Return Policy Exception Logic
 
-当退货超出标准政策时，按以下顺序评估：
+When a return falls outside standard policy, evaluate in this order:
 
-1. **产品是否有缺陷？** 如果是，则无论窗口期或状况如何，都应接受。有缺陷的产品是公司的问题，不是客户的问题。
-2. **这是否是高价值客户？**（按客户终身价值排名前10%）如果是，则接受并按标准退款。保留客户的账目几乎总是支持例外处理。
-3. **请求对中立的观察者来说是否合理？** 客户在3月份退回11月购买的冬装（4个月，超出30天窗口期）是可以理解的。客户在12月份退回6月购买的泳装则不那么合理。
-4. **处置结果是什么？** 如果产品可以重新上架（A级），例外处理的成本微乎其微——批准。如果是C级或更差，例外处理会损失实际的利润。
-5. **批准是否会带来先例风险？** 针对有记录情况的一次性例外处理很少会产生先例。公开的例外处理（社交媒体投诉）总是会产生先例。
+1. **Is the product defective?** If yes, accept regardless of window or condition. Defective products are the company's problem, not the customer's.
+2. **Is this a high-value customer?** (Top 10% by LTV) If yes, accept with standard refund. The retention math almost always favours the exception.
+3. **Is the request reasonable to a neutral observer?** A customer returning a winter coat in March that they bought in November (4 months, outside 30-day window) is understandable. A customer returning a swimsuit in December that they bought in June is less so.
+4. **What is the disposition outcome?** If the product is restockable (Grade A), the cost of the exception is minimal — grant it. If it's Grade C or worse, the exception costs real margin.
+5. **Does granting create a precedent risk?** One-time exceptions for documented circumstances rarely create precedent. Publicised exceptions (social media complaints) always do.
 
-## 关键边缘案例
+## Key Edge Cases
 
-这些是标准工作流程无法处理的情况。此处包含简要摘要，以便您可以根据需要将其扩展为特定项目的操作手册。
+These are situations where standard workflows fail. Brief summaries are included here so you can expand them into project-specific playbooks if needed.
 
-1. **固件被擦除的高价值电子产品：** 客户退回一台声称有缺陷的笔记本电脑，但设备已被恢复出厂设置，并显示有6个月的电池循环计数。该设备被大量使用，现在却作为"缺陷"产品退回——评级必须超越干净的软件状态。
-2. **包装不当的危险品退货：** 客户退回含有锂电池或化学品的产品，但没有使用所需的DOT包装。接收会产生监管责任；拒绝会产生客户服务问题。产品不能通过标准包裹退货运输返回。
-3. **涉及关税的跨境退货：** 国际客户退回一件已支付关税的出口产品。关税退税申请需要客户没有的特定文件。退货运输成本可能超过产品价值。
-4. **内容创作后的网红批量退货：** 社交媒体网红购买20多件商品，创作内容后，除一件外全部退回。技术上符合政策，但品牌价值已被提取。重新上架的挑战加剧，因为开箱视频展示了完全相同的商品。
-5. **客户修改后的产品保修索赔：** 客户更换了产品中的某个部件（例如，升级了笔记本电脑的RAM），然后声称另一个无关部件（例如，屏幕故障）存在保修缺陷。该修改可能使所声称的缺陷不在保修范围内，也可能不影响。
-6. **既是高价值客户又是频繁退货者：** 年消费额8万美元且退货率为42%的客户。禁止其退货会失去一个盈利客户；接受其行为会鼓励其继续。需要超越简单退货率的细致入微的客户细分。
-7. **召回产品的退货：** 客户退回一件正在积极安全召回的产品。标准退货流程是错误的——召回产品应遵循召回计划，而非退货计划。混在一起会产生责任和报告错误。
-8. **礼品收据退货且当前价格高于购买价格：** 礼品接收者持礼品收据前来退货。该商品现在的售价比送礼者支付的价格高出30美元。政策规定按购买价格退款，但客户看到的是货架价格并期望获得该金额。
+1. **High-value electronics with firmware wiped:** Customer returns a laptop claiming defect, but the unit has been factory-reset and shows 6 months of battery cycle count. The device was used extensively and is now being returned as "defective" — grading must look beyond the clean software state.
 
-## 沟通模式
+2. **Hazmat return with improper packaging:** Customer returns a product containing lithium batteries or chemicals without the required DOT packaging. Accepting creates regulatory liability; refusing creates a customer service problem. The product cannot go back through standard parcel return shipping.
 
-### 语气调整
+3. **Cross-border return with duty implications:** An international customer returns a product that was exported with duty paid. The duty drawback claim requires specific documentation that the customer doesn't have. The return shipping cost may exceed the product value.
 
-* **标准退款确认：** 热情、高效。首先说明解决方案金额和时间，而不是流程。
-* **拒绝退货：** 富有同理心但清晰明了。解释具体政策，提供替代方案（换货、店铺积分、保修索赔），提供升级路径。永远不要让客户没有选择。
-* **欺诈调查暂缓：** 中立、客观。"我们需要更多时间来处理您的退货"——永远不要对客户说"欺诈"或"调查"。提供时间线。内部沟通是记录欺诈指标的地方。
-* **重新上架费说明：** 透明。解释费用涵盖的内容（检查、重新包装、价值损失），并在处理前确认净退款金额，以免产生意外。
-* **供应商RTV索赔：** 专业、基于证据。包括缺陷数据、照片、按SKU分类的退货量，并引用供应商协议中涵盖缺陷索赔的条款。
+4. **Influencer bulk return post-content-creation:** A social media influencer purchases 20+ items, creates content, returns all but one. Technically within policy, but the brand value was extracted. Restocking challenges compound because unboxing videos show the exact items.
 
-### 关键模板
+5. **Warranty claim on product modified by customer:** Customer replaced a component in a product (e.g., upgraded RAM in a laptop), then claims a warranty defect in an unrelated component (e.g., screen failure). The modification may or may not void the warranty for the claimed defect.
 
-简要模板如下。在投入生产使用前，请根据您的欺诈、客户体验和逆向物流工作流程进行调整。
+6. **Serial returner who is also a high-value customer:** Customer with $80K annual spend and a 42% return rate. Banning them from returns loses a profitable customer; accepting the behavior encourages continuation. Requires nuanced segmentation beyond simple return rate.
 
-**RMA批准：** 主题：`Return Approved — Order #{order_id}`。提供：RMA编号、退货运输说明、预期退款时间线、状况要求。
+7. **Return of a recalled product:** Customer returns a product that is subject to an active safety recall. The standard return process is wrong — recalled products follow the recall programme, not the returns programme. Mixing them creates liability and reporting errors.
 
-**退款确认：** 首先说明金额："您${amount}的退款已处理至您的\[支付方式]。请允许\[X]个工作日。"
+8. **Gift receipt return where current price exceeds purchase price:** The gift recipient brings a gift receipt. The item is now selling for $30 more than the gift-giver paid. Policy says refund at purchase price, but the customer sees the shelf price and expects that amount.
 
-**欺诈暂缓通知：** "您的退货正在由我们的处理团队审核。我们预计在\[X]个工作日内提供更新。感谢您的耐心等待。"
+## Communication Patterns
 
-## 升级协议
+### Tone Calibration
 
-### 自动升级触发条件
+- **Standard refund confirmation:** Warm, efficient. Lead with the resolution amount and timeline, not the process.
+- **Denial of return:** Empathetic but clear. Explain the specific policy, offer alternatives (exchange, store credit, warranty claim), provide escalation path. Never leave the customer with no options.
+- **Fraud investigation hold:** Neutral, factual. "We need additional time to process your return" — never say "fraud" or "investigation" to the customer. Provide a timeline. Internal communications are where you document the fraud indicators.
+- **Restocking fee explanation:** Transparent. Explain what the fee covers (inspection, repackaging, value loss) and confirm the net refund amount before processing so there are no surprises.
+- **Vendor RTV claim:** Professional, evidence-based. Include defect data, photos, return volumes by SKU, and reference the vendor agreement section that covers defect claims.
 
-| 触发条件 | 行动 | 时间线 |
+### Key Templates
+
+Brief templates appear below. Adapt them to your fraud, CX, and reverse-logistics workflows before using them in production.
+
+**RMA approval:** Subject: `Return Approved — Order #{order_id}`. Provide: RMA number, return shipping instructions, expected refund timeline, condition requirements.
+
+**Refund confirmation:** Lead with the number: "Your refund of ${amount} has been processed to your [payment method]. Please allow [X] business days."
+
+**Fraud hold notice:** "Your return is being reviewed by our processing team. We expect to have an update within [X] business days. We appreciate your patience."
+
+## Escalation Protocols
+
+### Automatic Escalation Triggers
+
+| Trigger | Action | Timeline |
 |---|---|---|
-| 退货价值 > 5,000美元（单件商品） | 退款前需主管批准 | 处理前 |
-| 欺诈评分 ≥ 80 | 暂缓退款，转交欺诈审核团队 | 立即 |
-| 客户同时提出信用卡拒付 | 停止退货处理，与支付团队协调 | 1小时内 |
-| 产品被识别为召回产品 | 转交召回协调员，不作为标准退货处理 | 立即 |
-| 供应商对某SKU的缺陷率超过5% | 通知商品和供应商管理部门 | 24小时内 |
-| 同一客户在12个月内提出第三次政策例外请求 | 批准前需经理审核 | 处理前 |
-| 退货流中疑似出现假冒产品 | 从处理中撤出，拍照，通知防损和品牌保护部门 | 立即 |
-| 退货涉及受管制产品（药品、危险品、医疗器械） | 转交合规团队 | 立即 |
+| Return value > $5,000 (single item) | Supervisor approval required before refund | Before processing |
+| Fraud score ≥ 80 | Hold refund, route to fraud review team | Immediately |
+| Customer has filed chargeback simultaneously | Halt return processing, coordinate with payments team | Within 1 hour |
+| Product identified as recalled | Route to recall coordinator, do not process as standard return | Immediately |
+| Vendor defect rate exceeds 5% for SKU | Notify merchandise and vendor management | Within 24 hours |
+| Third policy exception request from same customer in 12 months | Manager review before granting | Before processing |
+| Suspected counterfeit in return stream | Pull from processing, photograph, notify LP and brand protection | Immediately |
+| Return involves regulated product (pharma, hazmat, medical device) | Route to compliance team | Immediately |
 
-### 升级链条
+### Escalation Chain
 
-级别1（退货专员） → 级别2（团队主管，2小时） → 级别3（退货经理，8小时） → 级别4（运营总监，24小时） → 级别5（副总裁，48+小时或任何单件商品退货 > 25,000美元）
+Level 1 (Returns Associate) → Level 2 (Team Lead, 2 hours) → Level 3 (Returns Manager, 8 hours) → Level 4 (Director of Operations, 24 hours) → Level 5 (VP, 48+ hours or any single-item return > $25K)
 
-## 绩效指标
+## Performance Indicators
 
-| 指标 | 目标 | 危险信号 |
+| Metric | Target | Red Flag |
 |---|---|---|
-| 退货处理时间（收货到退款） | < 48小时 | > 96小时 |
-| 检查准确率（审计中的等级一致性） | > 95% | < 88% |
-| 重新上架率（退货中作为新品/开箱品重新上架的比例） | > 45% | < 30% |
-| 欺诈检测率（确认的欺诈被捕获的比例） | > 80% | < 60% |
-| 误报率（被标记的合法退货比例） | < 3% | > 8% |
-| 供应商追索率（追回金额 / 符合条件金额） | > 70% | < 45% |
-| 客户满意度（退货后CSAT） | > 4.2/5.0 | < 3.5/5.0 |
-| 单次退货处理成本 | < $8.00 | > $15.00 |
+| Return processing time (receipt to refund) | < 48 hours | > 96 hours |
+| Inspection accuracy (grade agreement on audit) | > 95% | < 88% |
+| Restock rate (% of returns restocked as new/open box) | > 45% | < 30% |
+| Fraud detection rate (confirmed fraud caught) | > 80% | < 60% |
+| False positive rate (legitimate returns flagged) | < 3% | > 8% |
+| Vendor recovery rate ($ recovered / $ eligible) | > 70% | < 45% |
+| Customer satisfaction (post-return CSAT) | > 4.2/5.0 | < 3.5/5.0 |
+| Cost per return processed | < $8.00 | > $15.00 |
 
-## 其他资源
+## Additional Resources
 
-* 在将此技能投入生产使用前，请将其与你的评分标准、欺诈审查阈值和退款授权矩阵配对。
-* 将补货标准、危险品退货处理和清算规则交由负责执行决策的运营团队就近保管。
+- Pair this skill with your grading rubric, fraud review thresholds, and refund authority matrix before using it in production.
+- Keep restocking standards, hazmat return handling, and liquidation rules near the operating team that will execute the decisions.
+

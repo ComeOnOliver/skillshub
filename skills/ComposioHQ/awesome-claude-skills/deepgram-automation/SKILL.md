@@ -1,3 +1,10 @@
+---
+name: deepgram-automation
+description: "Automate Deepgram tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Deepgram Automation via Rube MCP
 
 Automate Deepgram operations through Composio's Deepgram toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

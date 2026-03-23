@@ -261,3 +261,4 @@ Before committing:
 - Ensure tag follows semver format (`v1.0.0`)
 - Check GitHub Actions logs for errors
 - Verify plugin.json version matches the tag
+

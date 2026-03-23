@@ -1,3 +1,22 @@
+---
+name: Vertex AI Media Master
+description: |
+  Automatic activation for ALL Google Vertex AI multimodal operations - video processing, audio generation, image creation, and marketing campaigns.
+
+  **TRIGGER PHRASES:**
+  - "vertex ai", "gemini multimodal", "process video", "generate audio", "create images", "marketing campaign"
+  - "imagen", "video understanding", "multimodal", "content generation", "media assets"
+
+  **AUTO-INVOKES FOR:**
+  - Video processing and understanding (up to 6 hours)
+  - Audio generation and transcription
+  - Image generation with Imagen 4
+  - Marketing campaign automation
+  - Social media content creation
+  - Ad creative generation
+  - Multimodal content workflows
+---
+
 # Vertex AI Media Master - Comprehensive Multimodal AI Operations
 
 This Agent Skill provides comprehensive mastery of Google Vertex AI multimodal capabilities for video, audio, image, and text processing with focus on marketing applications.
@@ -260,3 +279,4 @@ This skill automatically activates when you mention:
 ---
 
 **This skill makes Jeremy a Vertex AI multimodal expert with instant access to video processing, audio generation, image creation, and marketing automation capabilities.**
+
