@@ -84,3 +84,4 @@ Before mainnet deployment, verify all items:
 | Fuzz test fund flows | Run fuzz tests on staking/pool contracts with high iterations (10000+) |
 | Fork mainnet testing | Use Foundry fork mode against mainnet RPC to test with real state |
 | Simulate whale transaction | Use Foundry cast CLI to simulate large-amount calls on a forked network |
+

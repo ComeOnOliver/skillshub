@@ -1,55 +1,73 @@
 ---
-name: Scanning for XSS Vulnerabilities
+name: skill-adapter
 description: |
-  This skill enables Claude to automatically scan for XSS (Cross-Site Scripting) vulnerabilities in code. It is triggered when the user requests to "scan for XSS vulnerabilities", "check for XSS", or uses the command "/xss". The skill identifies reflected, stored, and DOM-based XSS vulnerabilities. It analyzes HTML, JavaScript, CSS, and URL contexts to detect potential exploits and suggests safe proof-of-concept payloads. This skill is best used during code review, security audits, and before deploying web applications to production.
+  Execute analyzes existing plugins to extract their capabilities, then adapts and applies those skills to the current task. Acts as a universal skill chameleon that learns from other plugins. Activates when you request "skill adapter" functionality. Use when appropriate context detected. Trigger with relevant phrases based on skill purpose.
+allowed-tools: Read, Grep, Glob, Bash(cmd:*)
+version: 1.0.0
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+license: MIT
+compatible-with: claude-code, codex, openclaw
+tags: [example, adapter]
+
 ---
+# Skill Adapter
 
 ## Overview
 
-This skill empowers Claude to proactively identify and report XSS vulnerabilities within your codebase. By leveraging advanced detection techniques, including context-aware analysis and WAF bypass testing, this skill ensures your web applications are resilient against common XSS attack vectors. It provides detailed insights into vulnerability types and offers guidance on remediation strategies.
+Analyzes existing plugins in the repository to extract their capabilities, then synthesizes and applies those learned patterns to the current task. Functions as a universal skill chameleon that discovers relevant plugins, extracts their approaches and methodologies, and adapts them to novel requests.
 
-## How It Works
+## Prerequisites
 
-1. **Activation**: Claude recognizes the user's intent to scan for XSS vulnerabilities through specific trigger phrases like "scan for XSS" or the shortcut "/xss".
-2. **Code Analysis**: The plugin analyzes the codebase, identifying potential XSS vulnerabilities across different contexts (HTML, JavaScript, CSS, URL).
-3. **Vulnerability Detection**: The plugin detects reflected, stored, and DOM-based XSS vulnerabilities by injecting various payloads and analyzing the responses.
-4. **Reporting**: The plugin generates a report highlighting identified vulnerabilities, their location in the code, and recommended remediation steps.
+- Read access to the `plugins/` directory tree (community, packages, examples categories)
+- `grep` and `find` available on PATH for plugin discovery
+- Familiarity with the plugin structure: `commands/*.md`, `agents/*.md`, `skills/*/SKILL.md`, and `scripts/`
 
-## When to Use This Skill
+## Instructions
 
-This skill activates when you need to:
-- Perform a security audit of your web application.
-- Review code for potential XSS vulnerabilities.
-- Ensure compliance with security standards.
-- Test the effectiveness of your Content Security Policy (CSP).
-- Identify and mitigate XSS vulnerabilities before deploying to production.
+1. Analyze the user's task to identify the core capability needed, the domain (security, devops, testing, documentation, etc.), and key requirements or constraints (see `${CLAUDE_SKILL_DIR}/references/how-it-works.md`).
+2. Search existing plugins for relevant capabilities using file globbing across `plugins/community/`, `plugins/packages/`, and `plugins/examples/` directories. Match on `plugin.json` descriptions and keyword fields.
+3. For each relevant plugin discovered, extract capabilities from its components:
+   - **Commands** (`commands/*.md`): read content, extract approach and input/output patterns.
+   - **Agents** (`agents/*.md`): understand roles, decision-making patterns, expertise areas.
+   - **Skills** (`skills/*/SKILL.md`): read instructions, extract core capability and tool usage.
+   - **Scripts** (`scripts/*.sh`, `*.py`): analyze logic, identify reusable patterns and error handling.
+4. Synthesize extracted patterns by merging complementary approaches, simplifying where possible, and ensuring compatibility with the current environment.
+5. Apply the adapted skill to the user's task, following the learned methodology while adjusting syntax, tools, and output format to match the current context.
+6. Report which plugins were consulted, what patterns were extracted, and how they were adapted for the current task.
+
+## Output
+
+A structured adaptation report containing:
+- List of plugins analyzed and capabilities extracted from each
+- The synthesized approach combining relevant patterns
+- The direct application of that approach to the user's task
+- Any caveats or limitations of the adapted skill
+
+## Error Handling
+
+| Error | Cause | Solution |
+|---|---|---|
+| No matching plugins found | Search terms too narrow or domain not represented | Broaden search keywords; check alternative categories; fall back to general-purpose approach |
+| Plugin directory inaccessible | Missing read permissions or incorrect path | Verify `plugins/` directory exists and permissions allow traversal |
+| Incompatible patterns | Extracted approaches conflict with current environment | Prioritize the most relevant plugin's approach; discard conflicting elements |
+| Empty skill/command files | Plugin has stub content without real instructions | Skip that plugin and note it as incomplete; rely on other sources |
 
 ## Examples
 
-### Example 1: Detecting Reflected XSS
+**Learning code analysis from security plugins:**
+Task: "Analyze this codebase for issues."
+Process: Discover `owasp-top-10-scanner`, `code-quality-enforcer`, and `security-audit-agent`. Extract OWASP vulnerability checks, complexity/duplication metrics, and dependency scanning patterns. Synthesize a multi-layer analysis covering security, quality, and dependencies. Apply to the target codebase (see `${CLAUDE_SKILL_DIR}/references/example-workflows.md`).
 
-User request: "scan for XSS vulnerabilities in the search functionality"
+**Adopting documentation skills:**
+Task: "Generate API documentation."
+Process: Find `api-documenter`, `openapi-generator`, `readme-builder`. Extract code parsing, OpenAPI spec generation, and hierarchical documentation structuring. Combine into an end-to-end pipeline: parse endpoints, generate spec, create interactive docs, build README.
 
-The skill will:
-1. Analyze the code related to the search functionality.
-2. Identify a reflected XSS vulnerability in how search queries are displayed.
-3. Report the vulnerability, including the affected code snippet and a suggested fix using proper sanitization.
+**Learning automation from DevOps plugins:**
+Task: "Automate deployment process."
+Process: Search DevOps category for deployment, CI/CD, and Docker plugins. Extract build-test-deploy-verify workflows, parallel job patterns, and service orchestration. Adapt to the user's specific tech stack and infrastructure.
 
-### Example 2: Identifying Stored XSS
+## Resources
 
-User request: "/xss check the comment submission form"
-
-The skill will:
-1. Analyze the comment submission form and its associated backend code.
-2. Detect a stored XSS vulnerability where user comments are saved to the database without sanitization.
-3. Report the vulnerability, highlighting the unsanitized comment storage and suggesting the use of a sanitization library like `sanitizeHtml`.
-
-## Best Practices
-
-- **Sanitization**: Always sanitize user input before displaying it on the page. Use appropriate escaping functions for the specific context (HTML, JavaScript, URL).
-- **Content Security Policy (CSP)**: Implement a strong CSP to restrict the sources from which the browser can load resources, mitigating the impact of XSS vulnerabilities.
-- **Regular Updates**: Keep your web application framework and libraries up to date to patch known XSS vulnerabilities.
-
-## Integration
-
-This skill complements other security-focused plugins by providing targeted XSS vulnerability detection. It can be integrated with code review tools to automate security checks and provide developers with immediate feedback on potential XSS issues.
+- `${CLAUDE_SKILL_DIR}/references/how-it-works.md` -- detailed five-phase adaptation process
+- `${CLAUDE_SKILL_DIR}/references/example-workflows.md` -- end-to-end workflow examples
+- `${CLAUDE_SKILL_DIR}/references/errors.md` -- error handling patterns

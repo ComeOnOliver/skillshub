@@ -54,10 +54,7 @@ eas build --platform ios --profile production
 - **No Secrets in Code**: Use `.env` & CI secrets.
 - **No Manual Builds**: Automate with CI/CD.
 
-## Reference & Examples
+## References
 
-See [references/codepush-setup.md](references/codepush-setup.md).
+See [references/codepush-setup.md](references/codepush-setup.md) for CodePush config, EAS profiles, and Fastlane automation.
 
-## Related Topics
-
-common/git-collaboration | security

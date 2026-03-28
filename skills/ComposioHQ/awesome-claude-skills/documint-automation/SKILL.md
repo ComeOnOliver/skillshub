@@ -1,3 +1,10 @@
+---
+name: documint-automation
+description: "Automate Documint tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Documint Automation via Rube MCP
 
 Automate Documint operations through Composio's Documint toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: grist-automation
+description: "Automate Grist tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Grist Automation via Rube MCP
 
 Automate Grist operations through Composio's Grist toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

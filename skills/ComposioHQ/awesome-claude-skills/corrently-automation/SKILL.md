@@ -1,3 +1,10 @@
+---
+name: corrently-automation
+description: "Automate Corrently tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Corrently Automation via Rube MCP
 
 Automate Corrently operations through Composio's Corrently toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

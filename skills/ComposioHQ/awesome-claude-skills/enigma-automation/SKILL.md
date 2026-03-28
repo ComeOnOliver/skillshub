@@ -1,3 +1,10 @@
+---
+name: enigma-automation
+description: "Automate Enigma tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Enigma Automation via Rube MCP
 
 Automate Enigma operations through Composio's Enigma toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -225,3 +225,4 @@ See `references/examples/sample_growth_okrs.json` for a complete example.
 
 - **Senior PM** (`project-management/senior-pm/`) — Portfolio management and risk analysis inform strategic planning
 - **Competitive Teardown** (`product-team/competitive-teardown/`) — Competitive intelligence feeds product strategy
+

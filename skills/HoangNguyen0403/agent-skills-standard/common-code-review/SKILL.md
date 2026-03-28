@@ -45,3 +45,4 @@ Fix: 1-2 line code suggestion or specific action.
 
 - [Output Templates](references/output-format.md)
 - [Full Checklist](references/checklist.md)
+

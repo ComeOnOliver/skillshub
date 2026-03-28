@@ -271,3 +271,4 @@ output_directory/
 - [Leiden algorithm paper](https://www.nature.com/articles/s41598-019-41695-z) — community detection.
 - [Scrublet paper](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1736-8) — computational doublet detection.
 - [CellTypist documentation](https://www.celltypist.org/) — model-based immune and general cell annotation.
+

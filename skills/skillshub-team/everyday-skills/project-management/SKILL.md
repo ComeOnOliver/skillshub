@@ -177,3 +177,4 @@ Project
 - Not tracking risks until they become problems
 - Status reports that hide bad news
 - Over-planning: plan in detail for 2-4 weeks ahead, high-level beyond that
+

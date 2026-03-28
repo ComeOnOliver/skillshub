@@ -1,3 +1,10 @@
+---
+name: Excel Automation
+description: "Excel Automation: create workbooks, manage worksheets, read/write cell data, and format spreadsheets via Microsoft Excel and Google Sheets integration"
+requires:
+  mcp: [rube]
+---
+
 # Excel Automation
 
 Automate spreadsheet operations including creating workbooks, writing data, formatting cells, upserting rows, and managing worksheets. Works with Microsoft Excel (OneDrive) and Google Sheets.
@@ -194,3 +201,4 @@ Use `GOOGLESHEETS_BATCH_GET` to retrieve data from specified cell ranges for val
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

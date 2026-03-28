@@ -1,3 +1,10 @@
+---
+name: builtwith-automation
+description: "Automate Builtwith tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Builtwith Automation via Rube MCP
 
 Automate Builtwith operations through Composio's Builtwith toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

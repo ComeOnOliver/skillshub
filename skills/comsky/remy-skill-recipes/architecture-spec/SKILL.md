@@ -243,3 +243,4 @@ This skill delegates detailed work to four subskills:
 - **notion-spec-generator** — Markdown document generation per level
 - **adr-generator** — ADR section for Level C changes
 - **notion-page-publisher** — Persist spec to Notion (optional, requires Notion MCP)
+

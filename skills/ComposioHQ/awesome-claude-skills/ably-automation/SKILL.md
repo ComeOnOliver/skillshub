@@ -1,3 +1,10 @@
+---
+name: ably-automation
+description: "Automate Ably tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Ably Automation via Rube MCP
 
 Automate Ably operations through Composio's Ably toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

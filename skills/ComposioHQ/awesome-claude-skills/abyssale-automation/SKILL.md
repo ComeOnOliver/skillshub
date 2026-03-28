@@ -1,3 +1,10 @@
+---
+name: abyssale-automation
+description: "Automate Abyssale tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Abyssale Automation via Rube MCP
 
 Automate Abyssale operations through Composio's Abyssale toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

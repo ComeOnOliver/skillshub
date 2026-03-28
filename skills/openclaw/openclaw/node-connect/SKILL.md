@@ -135,3 +135,4 @@ Good:
 Bad:
 
 - `Maybe LAN, maybe Tailscale, maybe port forwarding, maybe public URL.`
+

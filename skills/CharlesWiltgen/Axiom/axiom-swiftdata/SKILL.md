@@ -1107,3 +1107,4 @@ modelContext.insert(track)
 **Targets** iOS 17+ (focus on iOS 26+ features)
 **Framework** SwiftData (Apple)
 **Swift** 5.9+ (Swift 6 concurrency patterns)
+

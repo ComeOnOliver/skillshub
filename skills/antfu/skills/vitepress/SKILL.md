@@ -63,3 +63,4 @@ VitePress is a Static Site Generator (SSG) built on Vite and Vue 3. It takes Mar
 | Topic | Description | Reference |
 |-------|-------------|-----------|
 | Deployment | GitHub Pages, Netlify, Vercel, Cloudflare, Nginx | [recipes-deploy](references/recipes-deploy.md) |
+

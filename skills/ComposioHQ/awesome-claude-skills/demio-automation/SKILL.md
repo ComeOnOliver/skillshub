@@ -1,3 +1,10 @@
+---
+name: demio-automation
+description: "Automate Demio tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Demio Automation via Rube MCP
 
 Automate Demio operations through Composio's Demio toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,9 @@
+---
+name: implementing-database-audit-logging
+description: |
+  This skill helps implement database audit logging for tracking changes and ensuring compliance. It is triggered when the user requests to "implement database audit logging", "add audit trails", "track database changes", or mentions "audit_log" in relation to a database. The skill provides options for trigger-based auditing, application-level logging, Change Data Capture (CDC), and parsing database logs. It generates a basic audit table schema and guides the user through selecting the appropriate auditing strategy.
+---
+
 ## Overview
 
 This skill automates the process of setting up database audit logging. It helps users choose an appropriate auditing strategy and provides a basic audit table schema. It simplifies the implementation of robust audit trails for compliance and debugging purposes.

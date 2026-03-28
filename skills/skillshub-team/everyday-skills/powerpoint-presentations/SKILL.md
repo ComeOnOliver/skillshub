@@ -132,3 +132,4 @@ Write notes for each slide:
 - Export to PDF as backup
 - Embed fonts if sharing the file
 - Use Presenter View to see notes while presenting
+

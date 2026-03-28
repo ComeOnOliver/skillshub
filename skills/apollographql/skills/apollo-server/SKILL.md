@@ -292,3 +292,4 @@ Detailed documentation for specific topics:
 - PREFER `startStandaloneServer` for prototyping only
 - USE an integration with a server framework like Express, Koa, Fastify, Next, etc. for production apps
 - IMPLEMENT authentication in context, authorization in resolvers
+

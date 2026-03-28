@@ -201,3 +201,4 @@ resource "aws_instance" "web" {
 - [HCP Packer Documentation](https://developer.hashicorp.com/hcp/docs/packer)
 - [hcp_packer_registry Block](https://developer.hashicorp.com/packer/docs/templates/hcl_templates/blocks/build/hcp_packer_registry)
 - [HCP Terraform Provider](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/data-sources/packer_artifact)
+

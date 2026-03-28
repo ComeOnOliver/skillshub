@@ -1,3 +1,8 @@
+---
+name: harvest-proposal-pipeline
+description: Automate ICE-Crawler ingestion → registry update → proposal stub creation. Use when you want a full harvest loop that ends with a ready-to-review skill idea.
+---
+
 # Harvest → Proposal Pipeline
 
 This skill runs the whole flow when you say so:
@@ -39,3 +44,4 @@ python scripts\harvest_pipeline.py <repo_url> --candidate <skill-name> --max-fil
 - You stay in control: nothing becomes a skill until you approve/edit the generated proposal.
 
 Invoke this skill whenever you want a one-command harvest that comes back with a ready-to-review idea.
+

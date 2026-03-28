@@ -60,3 +60,4 @@ gws gmail +reply --message-id 18f1a2b3c4d --body 'Updated version' -a updated.do
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-gmail](../gws-gmail/SKILL.md) — All send, read, and manage email commands
+

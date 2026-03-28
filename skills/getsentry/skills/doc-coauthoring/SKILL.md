@@ -377,3 +377,4 @@ Announce document completion. Provide a few final tips:
 ## Attribution
 
 This skill was adapted from [anthropics/skills](https://github.com/anthropics/courses/tree/master/claude-code/skills/doc-coauthoring).
+

@@ -1,3 +1,11 @@
+---
+name: Eventbrite Automation
+description: "Automate Eventbrite event management, attendee tracking, organization discovery, and category browsing through natural language commands"
+requires:
+  mcp:
+    - rube
+---
+
 # Eventbrite Automation
 
 Automate Eventbrite event management workflows -- list organization events, track attendees, browse categories and formats, and manage organizations -- all through natural language.
@@ -138,3 +146,4 @@ Example prompt:
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

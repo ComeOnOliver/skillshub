@@ -188,3 +188,4 @@ Preview: [Extends subject curiosity] (90-100 chars)
 - `references/segmentation.md` - Audience segmentation
 - `references/automation.md` - Automation workflows
 - `references/lead-nurturing-workflows.md` - Lead nurturing sequences
+

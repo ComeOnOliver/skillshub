@@ -165,3 +165,4 @@ dbt run --static-analysis=unsafe
 | Running `dbt` expecting Fusion when we are in a venv | Use `dbtf` or `~/.local/bin/dbt` |
 | Adding LIMIT to SQL in `dbt_show` | Use `limit` parameter instead |
 | Vars with special characters | Pass as simple string, no `\` or `\n` |
+

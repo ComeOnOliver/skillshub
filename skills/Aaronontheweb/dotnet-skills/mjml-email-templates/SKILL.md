@@ -394,3 +394,4 @@ Task<EmailMessage> ComposeAsync(
 - **MJML Documentation**: https://documentation.mjml.io/
 - **MJML Playground**: https://mjml.io/try-it-live
 - **Mjml.Net**: https://github.com/ArtZab/Mjml.Net
+

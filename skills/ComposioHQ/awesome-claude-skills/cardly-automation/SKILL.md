@@ -1,3 +1,10 @@
+---
+name: cardly-automation
+description: "Automate Cardly tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Cardly Automation via Rube MCP
 
 Automate Cardly operations through Composio's Cardly toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

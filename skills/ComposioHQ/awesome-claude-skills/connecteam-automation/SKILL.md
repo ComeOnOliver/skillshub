@@ -1,3 +1,10 @@
+---
+name: connecteam-automation
+description: "Automate Connecteam tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Connecteam Automation via Rube MCP
 
 Automate Connecteam operations through Composio's Connecteam toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

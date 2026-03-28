@@ -77,3 +77,4 @@ curl -s "wttr.in/Beijing?format=%l:+%c+%t+%h+%w"
 - URL 中空格用 `+` 替代
 - 支持机场代码（如 JFK）
 - `?m` 公制 / `?u` 美制
+

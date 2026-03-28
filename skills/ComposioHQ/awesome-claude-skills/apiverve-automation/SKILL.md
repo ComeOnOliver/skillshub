@@ -1,3 +1,10 @@
+---
+name: apiverve-automation
+description: "Automate Apiverve tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Apiverve Automation via Rube MCP
 
 Automate Apiverve operations through Composio's Apiverve toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

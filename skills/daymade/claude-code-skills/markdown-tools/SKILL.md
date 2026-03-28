@@ -158,3 +158,4 @@ brew install pandoc
 - `references/heavy-mode-guide.md` - Detailed Heavy Mode documentation
 - `references/tool-comparison.md` - Tool capabilities comparison
 - `references/conversion-examples.md` - Batch operation examples
+

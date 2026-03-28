@@ -303,3 +303,4 @@ cat seq.utxt
 **Problem**: Output file not created
 
 - **Solution**: Check file permissions, ensure PlantUML has write access
+

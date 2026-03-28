@@ -261,3 +261,4 @@ Report:
 | `Timeout` | Reduce `maxProductResults` or increase `--timeout` |
 | `No results` | Verify URLs are valid and accessible |
 | `Invalid marketplace` | Check marketplace value matches supported list exactly |
+

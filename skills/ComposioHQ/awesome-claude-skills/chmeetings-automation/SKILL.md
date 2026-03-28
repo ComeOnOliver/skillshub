@@ -1,3 +1,10 @@
+---
+name: chmeetings-automation
+description: "Automate Chmeetings tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Chmeetings Automation via Rube MCP
 
 Automate Chmeetings operations through Composio's Chmeetings toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

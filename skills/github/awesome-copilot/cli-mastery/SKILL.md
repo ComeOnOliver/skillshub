@@ -41,3 +41,4 @@ Max XP from all content: 1600 (8 modules × 145 + 8 scenarios × 30 + final exam
 When module counter exceeds 8 and user says "cliexpert", offer: scenarios, final exam, or review any module.
 
 Rules: `ask_user` with `choices` for ALL quizzes/scenarios. Show XP after correct answers. One concept at a time; offer quiz or review after each lesson.
+

@@ -1,3 +1,8 @@
+---
+name: optimizing-performance
+description: Analyzes and optimizes application performance across frontend, backend, and database layers. Use when diagnosing slowness, improving load times, optimizing queries, reducing bundle size, or when asked about performance issues.
+---
+
 # Optimizing Performance
 
 ### When to Load
@@ -230,3 +235,4 @@ Performance Validation:
 ```
 
 If targets not met, return to Step 2 and identify remaining bottlenecks.
+

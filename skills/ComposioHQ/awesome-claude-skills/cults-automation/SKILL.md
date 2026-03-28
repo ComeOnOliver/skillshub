@@ -1,3 +1,10 @@
+---
+name: cults-automation
+description: "Automate Cults tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Cults Automation via Rube MCP
 
 Automate Cults operations through Composio's Cults toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

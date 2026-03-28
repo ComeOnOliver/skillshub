@@ -148,3 +148,4 @@ Help users create effective YouTube content and grow their channels.
 - Ignoring analytics (watch retention graphs to improve)
 - Thumbnails with too much text or poor contrast
 - Not responding to comments (engagement boosts algorithm)
+

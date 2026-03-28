@@ -1,3 +1,10 @@
+---
+name: benzinga-automation
+description: "Automate Benzinga tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Benzinga Automation via Rube MCP
 
 Automate Benzinga operations through Composio's Benzinga toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

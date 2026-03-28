@@ -17,3 +17,4 @@ When adding a new language:
 - Translate all the content of `en.json` to the new language. The goal is to have all the JSON entries in the new language for a complete translation.
 - Add the path in `routing.ts` and `middleware.ts`.
 - Add the language to `language-toggle.tsx`.
+

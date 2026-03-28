@@ -1,26 +1,28 @@
 ---
 name: nutrient-document-processing
-description: 使用Nutrient DWS API处理、转换、OCR识别、提取、编辑、签名和填写文档。支持PDF、DOCX、XLSX、PPTX、HTML和图像格式。
+description: Process, convert, OCR, extract, redact, sign, and fill documents using the Nutrient DWS API. Works with PDFs, DOCX, XLSX, PPTX, HTML, and images.
 origin: ECC
 ---
 
-# 文档处理
+# Nutrient Document Processing
 
-使用 [Nutrient DWS Processor API](https://www.nutrient.io/api/) 处理文档。转换格式、提取文本和表格、对扫描文档进行 OCR、编辑 PII、添加水印、数字签名以及填写 PDF 表单。
+> **Note:** This skill integrates with the Nutrient commercial API. Review their terms before use.
 
-## 设置
+Process documents with the [Nutrient DWS Processor API](https://www.nutrient.io/api/). Convert formats, extract text and tables, OCR scanned documents, redact PII, add watermarks, digitally sign, and fill PDF forms.
 
-在 **[nutrient.io](https://dashboard.nutrient.io/sign_up/?product=processor)** 获取一个免费的 API 密钥
+## Setup
+
+Get a free API key at **[nutrient.io](https://dashboard.nutrient.io/sign_up/?product=processor)**
 
 ```bash
 export NUTRIENT_API_KEY="pdf_live_..."
 ```
 
-所有请求都以 multipart POST 形式发送到 `https://api.nutrient.io/build`，并附带一个 `instructions` JSON 字段。
+All requests go to `https://api.nutrient.io/build` as multipart POST with an `instructions` JSON field.
 
-## 操作
+## Operations
 
-### 转换文档
+### Convert Documents
 
 ```bash
 # DOCX to PDF
@@ -45,9 +47,9 @@ curl -X POST https://api.nutrient.io/build \
   -o output.pdf
 ```
 
-支持的输入格式：PDF, DOCX, XLSX, PPTX, DOC, XLS, PPT, PPS, PPSX, ODT, RTF, HTML, JPG, PNG, TIFF, HEIC, GIF, WebP, SVG, TGA, EPS。
+Supported inputs: PDF, DOCX, XLSX, PPTX, DOC, XLS, PPT, PPS, PPSX, ODT, RTF, HTML, JPG, PNG, TIFF, HEIC, GIF, WebP, SVG, TGA, EPS.
 
-### 提取文本和数据
+### Extract Text and Data
 
 ```bash
 # Extract plain text
@@ -65,7 +67,7 @@ curl -X POST https://api.nutrient.io/build \
   -o tables.xlsx
 ```
 
-### OCR 扫描文档
+### OCR Scanned Documents
 
 ```bash
 # OCR to searchable PDF (supports 100+ languages)
@@ -76,9 +78,9 @@ curl -X POST https://api.nutrient.io/build \
   -o searchable.pdf
 ```
 
-支持语言：通过 ISO 639-2 代码支持 100 多种语言（例如，`eng`, `deu`, `fra`, `spa`, `jpn`, `kor`, `chi_sim`, `chi_tra`, `ara`, `hin`, `rus`）。完整的语言名称如 `english` 或 `german` 也适用。查看 [完整的 OCR 语言表](https://www.nutrient.io/guides/document-engine/ocr/language-support/) 以获取所有支持的代码。
+Languages: Supports 100+ languages via ISO 639-2 codes (e.g., `eng`, `deu`, `fra`, `spa`, `jpn`, `kor`, `chi_sim`, `chi_tra`, `ara`, `hin`, `rus`). Full language names like `english` or `german` also work. See the [complete OCR language table](https://www.nutrient.io/guides/document-engine/ocr/language-support/) for all supported codes.
 
-### 编辑敏感信息
+### Redact Sensitive Information
 
 ```bash
 # Pattern-based (SSN, email)
@@ -96,9 +98,9 @@ curl -X POST https://api.nutrient.io/build \
   -o redacted.pdf
 ```
 
-预设：`social-security-number`, `email-address`, `credit-card-number`, `international-phone-number`, `north-american-phone-number`, `date`, `time`, `url`, `ipv4`, `ipv6`, `mac-address`, `us-zip-code`, `vin`。
+Presets: `social-security-number`, `email-address`, `credit-card-number`, `international-phone-number`, `north-american-phone-number`, `date`, `time`, `url`, `ipv4`, `ipv6`, `mac-address`, `us-zip-code`, `vin`.
 
-### 添加水印
+### Add Watermarks
 
 ```bash
 curl -X POST https://api.nutrient.io/build \
@@ -108,7 +110,7 @@ curl -X POST https://api.nutrient.io/build \
   -o watermarked.pdf
 ```
 
-### 数字签名
+### Digital Signatures
 
 ```bash
 # Self-signed CMS signature
@@ -119,7 +121,7 @@ curl -X POST https://api.nutrient.io/build \
   -o signed.pdf
 ```
 
-### 填写 PDF 表单
+### Fill PDF Forms
 
 ```bash
 curl -X POST https://api.nutrient.io/build \
@@ -129,9 +131,9 @@ curl -X POST https://api.nutrient.io/build \
   -o filled.pdf
 ```
 
-## MCP 服务器（替代方案）
+## MCP Server (Alternative)
 
-对于原生工具集成，请使用 MCP 服务器代替 curl：
+For native tool integration, use the MCP server instead of curl:
 
 ```json
 {
@@ -148,18 +150,19 @@ curl -X POST https://api.nutrient.io/build \
 }
 ```
 
-## 使用场景
+## When to Use
 
-* 在格式之间转换文档（PDF, DOCX, XLSX, PPTX, HTML, 图像）
-* 从 PDF 中提取文本、表格或键值对
-* 对扫描文档或图像进行 OCR
-* 在共享文档前编辑 PII
-* 为草稿或机密文档添加水印
-* 数字签署合同或协议
-* 以编程方式填写 PDF 表单
+- Converting documents between formats (PDF, DOCX, XLSX, PPTX, HTML, images)
+- Extracting text, tables, or key-value pairs from PDFs
+- OCR on scanned documents or images
+- Redacting PII before sharing documents
+- Adding watermarks to drafts or confidential documents
+- Digitally signing contracts or agreements
+- Filling PDF forms programmatically
 
-## 链接
+## Links
 
-* [API 游乐场](https://dashboard.nutrient.io/processor-api/playground/)
-* [完整 API 文档](https://www.nutrient.io/guides/dws-processor/)
-* [npm MCP 服务器](https://www.npmjs.com/package/@nutrient-sdk/dws-mcp-server)
+- [API Playground](https://dashboard.nutrient.io/processor-api/playground/)
+- [Full API Docs](https://www.nutrient.io/guides/dws-processor/)
+- [npm MCP Server](https://www.npmjs.com/package/@nutrient-sdk/dws-mcp-server)
+

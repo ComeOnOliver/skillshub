@@ -198,3 +198,4 @@ See also: electric-orm/SKILL.md — Schema design affects both shapes (read) and
 ## Version
 
 Targets @electric-sql/client v1.5.10.
+

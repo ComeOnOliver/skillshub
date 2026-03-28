@@ -1,3 +1,16 @@
+---
+name: ros2-development
+description: >
+  Comprehensive best practices, design patterns, and common pitfalls for ROS2 (Robot Operating System 2)
+  development. Use this skill when building ROS2 nodes, packages, launch files, components, or debugging
+  ROS2 systems. Trigger whenever the user mentions ROS2, colcon, rclpy, rclcpp, DDS, QoS, lifecycle nodes,
+  managed nodes, ROS2 launch, ROS2 parameters, ROS2 actions, nav2, MoveIt2, micro-ROS, or any ROS2-era
+  robotics middleware. Also trigger for ROS2 workspace setup, DDS tuning, intra-process communication,
+  ROS2 security, or deploying ROS2 in production. Also trigger for colcon build issues, ament_cmake,
+  ament_python, CMakeLists.txt for ROS2, package.xml dependencies, rosdep, workspace overlays, custom
+  message generation, or ROS2 build troubleshooting. Covers Humble, Iron, Jazzy, and Rolling distributions.
+---
+
 # ROS2 Development Skill
 
 ## When to Use This Skill
@@ -973,3 +986,4 @@ ros2 daemon stop && ros2 daemon start           # Reset discovery daemon
 8. **Record bags in MCAP format** — better tooling, random access, compression
 9. **Set up launch-testing** for integration tests
 10. **Use `ros2 doctor`** as part of your health check pipeline
+

@@ -1,3 +1,11 @@
+---
+name: Customer.io Automation
+description: "Automate customer engagement workflows including broadcast triggers, message analytics, segment management, and newsletter tracking through Customer.io via Composio"
+requires:
+  mcp:
+    - rube
+---
+
 # Customer.io Automation
 
 Automate customer engagement operations -- trigger targeted broadcasts, retrieve delivery metrics, manage audience segments, list newsletters and transactional templates, and inspect trigger execution history -- all orchestrated through the Composio MCP integration.
@@ -143,3 +151,4 @@ Review all trigger executions for a broadcast and inspect individual trigger det
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

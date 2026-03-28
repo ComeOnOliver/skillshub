@@ -621,3 +621,4 @@ java -Xms{{SERVER_MEMORY}}M -Xmx{{SERVER_MEMORY}}M -XX:+UseG1GC \
 - itzg/minecraft-server Docker: https://github.com/itzg/docker-minecraft-server
 - Chunky: https://github.com/pop4959/Chunky
 - YouHaveTrouble server optimization guide: https://github.com/YouHaveTrouble/minecraft-optimization
+

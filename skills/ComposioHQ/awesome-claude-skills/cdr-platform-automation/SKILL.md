@@ -1,3 +1,10 @@
+---
+name: cdr-platform-automation
+description: "Automate Cdr Platform tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Cdr Platform Automation via Rube MCP
 
 Automate Cdr Platform operations through Composio's Cdr Platform toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

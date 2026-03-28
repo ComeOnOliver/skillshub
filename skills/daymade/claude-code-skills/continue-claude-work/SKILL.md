@@ -139,3 +139,4 @@ These message types are skipped (37-53% of lines in real sessions):
 - "don't resume, just read the .claude files and continue"
 - "check what I was working on in the last session and keep going"
 - "search my sessions for the PR review work"
+

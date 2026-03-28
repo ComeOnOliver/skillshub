@@ -121,3 +121,4 @@ The key to getting stronger:
 - Changing programs too often (stick with one for 8-12 weeks)
 - Neglecting sleep (7-9 hours is when you actually recover and grow)
 - Only doing exercises you like (balance push/pull/legs)
+

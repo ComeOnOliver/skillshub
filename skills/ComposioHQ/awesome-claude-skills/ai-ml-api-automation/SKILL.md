@@ -1,3 +1,10 @@
+---
+name: ai-ml-api-automation
+description: "Automate AI ML API tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # AI ML API Automation via Rube MCP
 
 Automate AI ML API operations through Composio's AI ML API toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

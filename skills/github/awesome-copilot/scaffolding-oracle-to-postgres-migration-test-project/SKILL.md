@@ -52,3 +52,4 @@ Build the test project and confirm it compiles with zero errors before finishing
 - Oracle is the golden behavior source — scaffold for Oracle first.
 - Keep to existing .NET and C# versions; do not introduce newer language or runtime features.
 - Output is an empty test project with infrastructure only — no test cases.
+

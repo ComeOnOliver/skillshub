@@ -171,3 +171,4 @@ var errorMessage string
 - **Data structures**: See [go-data-structures](../go-data-structures/SKILL.md) when choosing between `new` and `make`, or initializing slices and maps
 - **Control flow scoping**: See [go-control-flow](../go-control-flow/SKILL.md) when using if-init, `:=` redeclaration, or avoiding variable shadowing
 - **Capacity hints**: See [go-performance](../go-performance/SKILL.md) when pre-allocating maps or slices with known sizes
+

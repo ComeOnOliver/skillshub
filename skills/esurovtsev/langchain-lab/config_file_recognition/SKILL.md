@@ -78,3 +78,4 @@ Structure your findings as:
 - Never display actual secret values even if found in code — just note their location
 - Don't assume config values are current — they might be defaults overridden at runtime
 - Don't confuse `requirements.txt` (dependencies) with `config.yaml` (runtime settings)
+

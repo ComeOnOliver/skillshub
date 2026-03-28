@@ -58,3 +58,4 @@ See [stacked-pr-workflow.md][stacked-pr-workflow] for full step-by-step details.
 | Merge stacked PRs cleanly | [stacked-pr-workflow.md][stacked-pr-workflow] |
 
 [stacked-pr-workflow]: references/stacked-pr-workflow.md
+

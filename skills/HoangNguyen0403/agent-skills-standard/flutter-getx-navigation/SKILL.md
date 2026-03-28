@@ -50,3 +50,4 @@ void logout() => Get.offAllNamed(Routes.LOGIN);
 ## Related Topics
 
 getx-state-management | feature-based-clean-architecture
+

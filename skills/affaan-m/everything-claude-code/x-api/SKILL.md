@@ -19,7 +19,7 @@ Programmatic interaction with X (Twitter) for posting, reading, searching, and a
 
 ## Authentication
 
-### OAuth 2.0 (App-Only / User Context)
+### OAuth 2.0 Bearer Token (App-Only)
 
 Best for: read-heavy operations, search, public data.
 
@@ -92,7 +92,6 @@ def post_thread(oauth, tweets: list[str]) -> list[str]:
         if reply_to:
             payload["reply"] = {"in_reply_to_tweet_id": reply_to}
         resp = oauth.post("https://api.x.com/2/tweets", json=payload)
-        resp.raise_for_status()
         tweet_id = resp.json()["data"]["id"]
         ids.append(tweet_id)
         reply_to = tweet_id
@@ -155,17 +154,12 @@ resp = oauth.post(
 )
 ```
 
-## Rate Limits Reference
+## Rate Limits
 
-| Endpoint | Limit | Window |
-|----------|-------|--------|
-| POST /2/tweets | 200 | 15 min |
-| GET /2/tweets/search/recent | 450 | 15 min |
-| GET /2/users/:id/tweets | 1500 | 15 min |
-| GET /2/users/by/username | 300 | 15 min |
-| POST media/upload | 415 | 15 min |
-
-Always check `x-rate-limit-remaining` and `x-rate-limit-reset` headers.
+X API rate limits vary by endpoint, auth method, and account tier, and they change over time. Always:
+- Check the current X developer docs before hardcoding assumptions
+- Read `x-rate-limit-remaining` and `x-rate-limit-reset` headers at runtime
+- Back off automatically instead of relying on static tables in code
 
 ```python
 import time
@@ -212,3 +206,4 @@ Use `content-engine` skill to generate platform-native content, then post via X 
 
 - `content-engine` — Generate platform-native content for X
 - `crosspost` — Distribute content across X, LinkedIn, and other platforms
+

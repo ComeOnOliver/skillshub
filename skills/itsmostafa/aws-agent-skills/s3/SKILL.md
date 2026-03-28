@@ -348,3 +348,4 @@ aws s3api put-bucket-cors --bucket my-bucket --cors-configuration '{
 - [S3 API Reference](https://docs.aws.amazon.com/AmazonS3/latest/API/)
 - [S3 CLI Reference](https://docs.aws.amazon.com/cli/latest/reference/s3/)
 - [boto3 S3](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html)
+

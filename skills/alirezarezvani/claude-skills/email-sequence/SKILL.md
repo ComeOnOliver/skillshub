@@ -133,3 +133,4 @@ Deliver email sequences as complete, ready-to-send drafts — include subject li
 | Metrics Benchmarks | Open rate, click rate, and conversion rate targets per email type and sequence goal |
 | Segmentation Rules | Audience entry/exit conditions, behavioral branching, and suppression lists |
 | Subject Line Variations | 3 subject line alternatives per email for A/B testing |
+

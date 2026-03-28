@@ -23,3 +23,4 @@ Create a Google Form for feedback and share it via Gmail.
 2. Get the form URL from the response (responderUri field)
 3. Email the form: `gws gmail +send --to attendees@company.com --subject 'Please share your feedback' --body 'Fill out the form: FORM_URL'`
 
+

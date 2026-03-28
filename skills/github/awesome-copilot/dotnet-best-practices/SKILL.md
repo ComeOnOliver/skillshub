@@ -83,3 +83,4 @@ Your task is to ensure .NET/C# code in ${selection} meets the best practices spe
 - Use meaningful names that reflect domain concepts
 - Keep methods focused and cohesive
 - Implement proper disposal patterns for resources
+

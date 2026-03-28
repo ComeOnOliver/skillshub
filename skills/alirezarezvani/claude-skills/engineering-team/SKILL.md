@@ -89,3 +89,4 @@ No pip install needed. Scripts include embedded samples for demo mode.
 - Load only the specific skill SKILL.md you need — don't bulk-load all 23
 - Use Python tools for analysis and scaffolding, not manual judgment
 - Check CLAUDE.md for tool usage examples and workflows
+

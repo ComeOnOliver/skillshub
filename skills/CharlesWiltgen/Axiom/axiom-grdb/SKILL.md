@@ -675,3 +675,4 @@ for track in tracks {
 **Targets:** iOS 13+, Swift 5.7+
 **Framework:** GRDB.swift 6.0+
 **History:** See git log for changes
+

@@ -1,3 +1,13 @@
+---
+name: skill-evaluator
+description: Evaluates agent skills against Anthropic's best practices. Use when asked to review, evaluate, assess, or audit a skill for quality. Analyzes SKILL.md structure, naming conventions, description quality, content organization, and identifies anti-patterns. Produces actionable improvement recommendations.
+metadata:
+  skillport:
+    category: skills
+    tags:
+      - agent-skills
+---
+
 # Skill Evaluator (WIP)
 
 Evaluates skills against Anthropic's official best practices for agent skill authoring. Produces structured evaluation reports with scores and actionable recommendations.
@@ -182,3 +192,4 @@ Use this template:
 ## Examples
 
 See [evaluations/](evaluations/) for example evaluation scenarios.
+

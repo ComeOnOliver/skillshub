@@ -1,3 +1,10 @@
+---
+name: gender-api-automation
+description: "Automate Gender API tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Gender API Automation via Rube MCP
 
 Automate Gender API operations through Composio's Gender API toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -647,3 +647,4 @@ Use this checklist when auditing app for Liquid Glass adoption. 30 highest-impac
 **Minimum Platform**: iOS/iPadOS 26, macOS Tahoe, tvOS, watchOS, visionOS 3
 **Xcode Version**: Xcode 26+
 **Skill Type**: Reference (comprehensive adoption guide)
+

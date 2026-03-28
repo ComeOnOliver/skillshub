@@ -1,3 +1,10 @@
+---
+name: atlassian-automation
+description: "Automate Atlassian tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Atlassian Automation via Rube MCP
 
 Automate Atlassian operations through Composio's Atlassian toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

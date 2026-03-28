@@ -922,3 +922,4 @@ SQLiteData with CloudKit SyncEngine is the **recommended tvOS data solution**. t
 **Targets:** iOS 17+, Swift 6
 **Framework:** SQLiteData 1.4+
 **History:** See git log for changes
+

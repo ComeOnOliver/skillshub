@@ -97,3 +97,4 @@ Original preserved as: screenshot-2024-original.png
 - **Presentations**: Upscale images for large screens
 - **Print Materials**: Increase resolution for physical media
 
+

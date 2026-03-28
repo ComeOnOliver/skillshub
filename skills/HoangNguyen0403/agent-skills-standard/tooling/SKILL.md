@@ -1,60 +1,84 @@
 ---
-name: JavaScript Tooling
-description: Development tools, linting, and testing for JavaScript projects.
+name: TypeScript Tooling
+description: Development tools, linting, and build config for TypeScript. Use when configuring ESLint, Prettier, Jest, Vitest, tsconfig, or any TS build tooling.
 metadata:
-  labels: [tooling, javascript, eslint, prettier, testing]
+  labels: [tooling, typescript, eslint, prettier, testing]
   triggers:
-    files: ['.eslintrc.*', 'jest.config.*', 'package.json']
-    keywords: [eslint, prettier, jest, test, lint, build]
+    files: ['tsconfig.json', '.eslintrc.*', 'jest.config.*', 'package.json']
+    keywords: [eslint, prettier, jest, vitest, build, compile, lint]
 ---
 
-# JavaScript Tooling
+# TypeScript Tooling
 
 ## **Priority: P1 (OPERATIONAL)**
 
-Essential tooling for JavaScript development.
+Essential tooling for TypeScript development and maintenance.
 
 ## Implementation Guidelines
 
-- **Linting**: ESLint (Rec + Prettier). Fix on save.
-- **Formatting**: Prettier. Run on save/commit.
-- **Testing**: Jest/Vitest. Co-locate tests. >80% cov.
-- **Build**: Vite (Apps), Rollup (Libs).
-- **Pkg Manager**: Sync versions (`npm`/`yarn`/`pnpm`).
+- **Compiler**: `tsc` for CI. `ts-node`/`esbuild` for dev.
+- **Lint**: ESLint + `@typescript-eslint`. Strict type checking.
+- **Format**: Prettier (on save + commit).
+- **Test**: Jest/Vitest > 80% coverage.
+- **Build**: `tsup` (libs), Vite/Webpack (apps).
+- **Check**: `tsc --noEmit` in CI.
 
 ## Anti-Patterns
 
-- **No Formatting Wars**: Prettier rules.
-- **No Untested Code**: TDD/Post-code tests.
-- **No Dirty Commits**: Lint before push.
+- **No Disable**: Avoid `// eslint-disable`.
+- **No Skip**: Avoid `skipLibCheck: true` if possible.
+- **No Ignore**: Use `@ts-expect-error` > `@ts-ignore`.
+
+## ESLint Configuration
+
+### Strict Mode Requirement
+
+**CRITICAL**: Every file in the project, including tests (`.spec.ts`), must adhere to strict type-checked rules. NEVER turn off `@typescript-eslint/no-explicit-any` or `no-unsafe-*` rules.
+
+### Common Linting Issues & Solutions
+
+#### Request Object Typing
+
+**Problem**: Using `any` for Express request objects or creating duplicate inline interfaces.
+**Solution**: Use the centralized interfaces in `src/common/interfaces/request.interface.ts`.
+
+```typescript
+import { RequestWithUser } from 'src/common/interfaces/request.interface';
+```
+
+#### Unused Parameters
+
+**Problem**: Function parameters marked as unused by linter.
+**Solution**: Prefix the parameter with an underscore (e.g., `_data`) or remove it. NEVER use `eslint-disable`.
+
+#### Test Mock Typing
+
+**Problem**: Jest mocks triggering unsafe type warnings when `expect.any()` or custom mocks are used.
+**Solution**: Cast the mock or expectation using `as unknown as TargetType`.
+
+```typescript
+mockRepo.save.mockResolvedValue(result as unknown as User);
+```
 
 ## Configuration
 
-```javascript
-// .eslintrc.js
-module.exports = {
-  extends: ['eslint:recommended', 'prettier'],
-  rules: { 'no-console': 'warn', 'prefer-const': 'error' },
-};
-```
-
 ```json
-// .prettierrc
-{ "semi": true, "singleQuote": true, "printWidth": 80 }
-```
-
-```javascript
-// jest.config.js
-export default {
-  coverageThreshold: { global: { lines: 80 } },
-};
+// tsconfig.json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true
+  }
+}
 ```
 
 ## Reference & Examples
 
-For testing patterns and CI/CD:
+For testing configuration and CI/CD setup:
 See [references/REFERENCE.md](references/REFERENCE.md).
 
 ## Related Topics
 
 best-practices | language
+

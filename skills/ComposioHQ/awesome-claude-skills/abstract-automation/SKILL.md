@@ -1,3 +1,10 @@
+---
+name: abstract-automation
+description: "Automate Abstract tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Abstract Automation via Rube MCP
 
 Automate Abstract operations through Composio's Abstract toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

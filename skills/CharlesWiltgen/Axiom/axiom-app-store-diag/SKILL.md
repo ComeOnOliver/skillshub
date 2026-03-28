@@ -1200,3 +1200,4 @@ Design & Originality (4.2/4.3):
 **Docs**: /app-store/review/guidelines, /distribute/app-review, /support/offering-account-deletion-in-your-app, /contact/app-store/?topic=appeal
 
 **Skills**: app-store-connect-ref, privacy-ux, storekit-ref, accessibility-diag
+

@@ -1,3 +1,8 @@
+---
+name: defold-project-setup
+description: "Downloads Defold project dependencies into .deps/ folder. Also provides recommended game.project settings. Use FIRST before any other task when .deps/ folder is missing or empty, or after editing dependency URLs in game.project. Also use when creating a new project, configuring game.project, or asking about recommended project settings."
+---
+
 # Setup Defold Project
 
 Downloads and extracts Defold library dependencies and engine builtins into the `.deps/` directory, which is used as read-only context for resolving module references. Also provides recommended `game.project` settings for new projects.
@@ -81,3 +86,4 @@ max_fixed_timesteps = 0
 - `velocity_threshold = 100.0` — (2D physics only) for stable physics this should be `1.0 / physics.scale`, so `100.0` when scale is `0.01`.
 - `use_fixed_timestep = 1` — physics runs in fixed timestep mode. Move object interpolation between physics steps via the `object_interpolation` extension.
 - `max_fixed_timesteps = 0` — (3D physics only) passes fixed dt directly from the Defold engine to Bullet3D and disables Bullet3D's internal accumulator.
+

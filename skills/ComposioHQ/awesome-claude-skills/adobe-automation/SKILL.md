@@ -1,3 +1,10 @@
+---
+name: adobe-automation
+description: "Automate Adobe tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Adobe Automation via Rube MCP
 
 Automate Adobe operations through Composio's Adobe toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

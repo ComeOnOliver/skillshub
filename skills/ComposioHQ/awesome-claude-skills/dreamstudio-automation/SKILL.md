@@ -1,3 +1,10 @@
+---
+name: dreamstudio-automation
+description: "Automate Dreamstudio tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dreamstudio Automation via Rube MCP
 
 Automate Dreamstudio operations through Composio's Dreamstudio toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,6 +1,6 @@
 ---
 name: dart-language
-description: "Modern Dart standards (3.x+) including null safety and patterns. Use when working with Dart 3.x null safety, records, patterns, or sealed classes. (triggers: **/*.dart, sealed, record, switch, pattern, extension, final, late, async, await)"
+description: "Dart 3.x language feature standards: null safety, records, sealed classes, switch pattern matching, extensions, and async/await. ALWAYS consult when using !, ?., ??, late, sealed classes, record types, switch expressions, or async patterns — and before introducing any new Dart 3.x construct to confirm the modern idiomatic approach. (triggers: **/*.dart, sealed, record, switch, pattern, !, late, async, extension)"
 ---
 
 # Dart Language Patterns
@@ -49,3 +49,4 @@ String message(Result r) => switch (r) {
 ## Related Topics
 
 feature-based-clean-architecture | tooling
+

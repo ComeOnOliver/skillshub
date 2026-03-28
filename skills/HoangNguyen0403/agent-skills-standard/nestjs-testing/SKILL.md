@@ -51,3 +51,4 @@ Setup examples, mocking patterns, E2E flows, test builders, coverage config:
 
 Strict-TypeScript patterns (Jest matchers, mock typing, DTO verification):
 [references/strict-typescript-testing.md](references/strict-typescript-testing.md)
+

@@ -1,340 +1,88 @@
 ---
-name: Plugin Auditor
-description: Automatically audits Claude Code plugins for security vulnerabilities, best practices, CLAUDE.md compliance, and quality standards when user mentions audit plugin, security review, or best practices check. Specific to claude-code-plugins repository standards.
-allowed-tools: Read, Grep, Bash
----
+name: plugin-auditor
+description: |
+  Audit automatically audits AI assistant code plugins for security vulnerabilities, best practices, AI assistant.md compliance, and quality standards when user mentions audit plugin, security review, or best practices check. specific to AI assistant-code-plugins repositor... Use when assessing security or running audits. Trigger with phrases like 'security scan', 'audit', or 'vulnerability'.
+allowed-tools: Read, Grep, Bash(cmd:*)
+version: 1.0.0
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+license: MIT
+compatible-with: claude-code, codex, openclaw
+tags: [example, security, compliance, audit]
 
+---
 # Plugin Auditor
 
-## Purpose
-Automatically audits Claude Code plugins for security vulnerabilities, best practice violations, CLAUDE.md compliance, and quality standards - optimized for claude-code-plugins repository requirements.
+## Overview
 
-## Trigger Keywords
-- "audit plugin"
-- "security review" or "security audit"
-- "best practices check"
-- "plugin quality"
-- "compliance check"
-- "plugin security"
+Audits Claude Code plugins for security vulnerabilities, best practices compliance, CLAUDE.md standards adherence, and marketplace readiness. Produces a scored audit report covering eight categories: security, best practices, CLAUDE.md compliance, marketplace compliance, git hygiene, MCP-specific checks, performance, and UX.
 
-## Audit Categories
+## Prerequisites
 
-### 1. Security Audit
+- Read access to the target plugin directory and repository-level `.claude-plugin/marketplace.extended.json`
+- `jq` installed for JSON schema validation
+- `grep` and `find` available on PATH for pattern scanning
+- Familiarity with the plugin structure defined in CLAUDE.md (`.claude-plugin/plugin.json`, `README.md`, `LICENSE`, component directories)
 
-**Critical Checks:**
-- ❌ No hardcoded secrets (passwords, API keys, tokens)
-- ❌ No AWS keys (AKIA...)
-- ❌ No private keys (BEGIN PRIVATE KEY)
-- ❌ No dangerous commands (rm -rf /, eval(), exec())
-- ❌ No command injection vectors
-- ❌ No suspicious URLs (IP addresses, non-HTTPS)
-- ❌ No obfuscated code (base64 decode, hex encoding)
+## Instructions
 
-**Security Patterns:**
-```bash
-# Check for hardcoded secrets
-grep -r "password\s*=\s*['\"]" --exclude-dir=node_modules
-grep -r "api_key\s*=\s*['\"]" --exclude-dir=node_modules
-grep -r "secret\s*=\s*['\"]" --exclude-dir=node_modules
+1. Identify the target plugin path (e.g., `plugins/security/plugin-name/`). Confirm the directory exists and contains `.claude-plugin/plugin.json`.
+2. Run a security scan across all plugin files (see `${CLAUDE_SKILL_DIR}/references/audit-categories.md` for full pattern list):
+   - Search for hardcoded secrets, API keys, AWS access keys (`AKIA...`), and private key headers.
+   - Detect dangerous commands (`rm -rf /`, `eval()`, `exec()`) and command injection vectors.
+   - Flag suspicious URLs (non-HTTPS, raw IP addresses) and obfuscated code (base64 decode, hex encoding).
+3. Validate plugin structure and best practices (see `${CLAUDE_SKILL_DIR}/references/audit-process.md`):
+   - Confirm required files exist: `plugin.json`, `README.md`, `LICENSE`.
+   - Verify semantic versioning format in `plugin.json`.
+   - Check that all `.sh` scripts have execute permissions.
+   - Scan for `TODO`/`TODO` comments without linked issues and `console.log()` in production code.
+4. Check CLAUDE.md compliance:
+   - Verify the plugin follows the directory structure specified in the repository CLAUDE.md.
+   - Confirm `plugin.json` contains only allowed fields (`name`, `version`, `description`, `author`, `repository`, `homepage`, `license`, `keywords`).
+   - Validate that hooks use `${CLAUDE_PLUGIN_ROOT}` instead of hardcoded paths.
+5. Verify marketplace compliance:
+   - Confirm the plugin has an entry in `marketplace.extended.json` with matching name, version, category, and source path.
+   - Check for duplicate plugin names in the catalog.
+6. Assess git hygiene: no committed `node_modules/`, `.env` files, large binaries, or merge conflict markers.
+7. For MCP plugins: validate `package.json` dependencies, TypeScript configuration, `dist/` in `.gitignore`, and build scripts.
+8. Generate a scored audit report following the format in `${CLAUDE_SKILL_DIR}/references/audit-report-format.md`, with per-category scores out of 10 and an overall quality rating.
 
-# Check for AWS keys
-grep -r "AKIA[0-9A-Z]{16}" --exclude=README.md
+## Output
 
-# Check for private keys
-grep -r "BEGIN.*PRIVATE KEY" --exclude=README.md
+A structured audit report containing:
+- Plugin identification (name, version, category, audit date)
+- Per-category results: passed checks, failed checks with fix commands, warnings with recommendations
+- Numeric quality scores: Security (x/10), Best Practices (x/10), Compliance (x/10), Documentation (x/10)
+- Overall score and rating (Excellent / Good / Needs Work / Failed)
+- Prioritized recommendations list with estimated fix time
 
-# Check for dangerous patterns
-grep -r "rm -rf /" | grep -v "/var/" | grep -v "/tmp/"
-grep -r "eval\s*\(" --exclude=README.md
-```
+## Error Handling
 
-### 2. Best Practices Audit
-
-**Plugin Structure:**
-- ✅ Proper directory hierarchy
-- ✅ Required files present
-- ✅ Semantic versioning (x.y.z)
-- ✅ Clear, concise descriptions
-- ✅ Proper LICENSE file (MIT/Apache-2.0)
-- ✅ Comprehensive README
-- ✅ At least 5 keywords
-
-**Code Quality:**
-- ✅ No TODO/FIXME without issue links
-- ✅ No console.log() in production code
-- ✅ No hardcoded paths (/home/, /Users/)
-- ✅ Uses `${CLAUDE_PLUGIN_ROOT}` in hooks
-- ✅ Scripts have proper shebangs
-- ✅ All scripts are executable
-
-**Documentation:**
-- ✅ README has installation section
-- ✅ README has usage examples
-- ✅ README has clear description
-- ✅ Commands have proper frontmatter
-- ✅ Agents have model specified
-- ✅ Skills have trigger keywords
-
-### 3. CLAUDE.md Compliance
-
-**Repository Standards:**
-- ✅ Follows plugin structure from CLAUDE.md
-- ✅ Uses correct marketplace slug
-- ✅ Proper category assignment
-- ✅ Valid plugin.json schema
-- ✅ Marketplace catalog entry exists
-- ✅ Version consistency
-
-**Skills Compliance (if applicable):**
-- ✅ SKILL.md has proper frontmatter
-- ✅ Description includes trigger keywords
-- ✅ allowed-tools specified (if restricted)
-- ✅ Clear purpose and instructions
-- ✅ Examples provided
-
-### 4. Marketplace Compliance
-
-**Catalog Requirements:**
-- ✅ Plugin listed in marketplace.extended.json
-- ✅ Source path matches actual location
-- ✅ Version matches plugin.json
-- ✅ Category is valid
-- ✅ No duplicate plugin names
-- ✅ Author information complete
-
-### 5. Git Hygiene
-
-**Repository Practices:**
-- ✅ No large binary files
-- ✅ No node_modules/ committed
-- ✅ No .env files
-- ✅ Proper .gitignore
-- ✅ No merge conflicts
-- ✅ Clean commit history
-
-### 6. MCP Plugin Audit (if applicable)
-
-**MCP-Specific Checks:**
-- ✅ Valid package.json with @modelcontextprotocol/sdk
-- ✅ TypeScript configured correctly
-- ✅ dist/ in .gitignore
-- ✅ Proper mcp/*.json configuration
-- ✅ Build scripts present
-- ✅ No dependency vulnerabilities
-
-### 7. Performance Audit
-
-**Efficiency Checks:**
-- ✅ No unnecessary file reads
-- ✅ Efficient glob patterns
-- ✅ No recursive loops
-- ✅ Reasonable timeout values
-- ✅ No memory leaks (event listeners)
-
-### 8. Accessibility & UX
-
-**User Experience:**
-- ✅ Clear error messages
-- ✅ Helpful command descriptions
-- ✅ Proper usage examples
-- ✅ Good README formatting
-- ✅ Working demo commands
-
-## Audit Process
-
-When activated, I will:
-
-1. **Security Scan**
-   ```bash
-   # Run security checks
-   grep -r "password\|secret\|api_key" plugins/plugin-name/
-   grep -r "AKIA[0-9A-Z]{16}" plugins/plugin-name/
-   grep -r "BEGIN.*PRIVATE KEY" plugins/plugin-name/
-   grep -r "rm -rf /" plugins/plugin-name/
-   grep -r "eval\(" plugins/plugin-name/
-   ```
-
-2. **Structure Validation**
-   ```bash
-   # Check required files
-   test -f .claude-plugin/plugin.json
-   test -f README.md
-   test -f LICENSE
-
-   # Check component directories
-   ls -d commands/ agents/ skills/ hooks/ mcp/ 2>/dev/null
-   ```
-
-3. **Best Practices Check**
-   ```bash
-   # Check for TODO/FIXME
-   grep -r "TODO\|FIXME" --exclude=README.md
-
-   # Check for console.log
-   grep -r "console\.log" --exclude=README.md
-
-   # Check script permissions
-   find . -name "*.sh" ! -perm -u+x
-   ```
-
-4. **Compliance Verification**
-   ```bash
-   # Check marketplace entry
-   jq '.plugins[] | select(.name == "plugin-name")' .claude-plugin/marketplace.extended.json
-
-   # Verify version consistency
-   plugin_version=$(jq -r '.version' .claude-plugin/plugin.json)
-   market_version=$(jq -r '.plugins[] | select(.name == "plugin-name") | .version' .claude-plugin/marketplace.extended.json)
-   ```
-
-5. **Generate Audit Report**
-
-## Audit Report Format
-
-```
-🔍 PLUGIN AUDIT REPORT
-Plugin: plugin-name
-Version: 1.0.0
-Category: security
-Audit Date: 2025-10-16
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🔒 SECURITY AUDIT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✅ PASSED (7/7)
-- No hardcoded secrets
-- No AWS keys
-- No private keys
-- No dangerous commands
-- No command injection vectors
-- HTTPS URLs only
-- No obfuscated code
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 BEST PRACTICES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✅ PASSED (10/12)
-- Proper directory structure
-- Required files present
-- Semantic versioning
-- Clear descriptions
-- Comprehensive README
-
-⚠️  WARNINGS (2)
-- 3 scripts missing execute permission
-  Fix: chmod +x scripts/*.sh
-
-- 2 TODO items without issue links
-  Location: commands/scan.md:45, agents/analyzer.md:67
-  Recommendation: Create GitHub issues or remove TODOs
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✅ CLAUDE.MD COMPLIANCE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-✅ PASSED (6/6)
-- Follows plugin structure
-- Uses correct marketplace slug
-- Proper category assignment
-- Valid plugin.json schema
-- Marketplace entry exists
-- Version consistency
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📊 QUALITY SCORE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Security:        10/10 ✅
-Best Practices:   8/10 ⚠️
-Compliance:      10/10 ✅
-Documentation:   10/10 ✅
-
-OVERALL SCORE: 9.5/10 (EXCELLENT)
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎯 RECOMMENDATIONS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Priority: MEDIUM
-1. Fix script permissions (2 min)
-2. Resolve TODO items (10 min)
-
-Optional Improvements:
-- Add more usage examples in README
-- Include troubleshooting section
-- Add GIF/video demo
-
-✅ AUDIT COMPLETE
-Plugin is production-ready with minor improvements needed.
-```
-
-## Severity Levels
-
-**Critical (🔴):**
-- Security vulnerabilities
-- Hardcoded secrets
-- Dangerous commands
-- Missing required files
-
-**High (🟠):**
-- Best practice violations
-- Missing documentation
-- Broken functionality
-- Schema violations
-
-**Medium (🟡):**
-- Code quality issues
-- Missing optional features
-- Performance concerns
-- UX improvements
-
-**Low (🟢):**
-- Style inconsistencies
-- Minor documentation gaps
-- Nice-to-have features
-
-## Auto-Fix Capabilities
-
-I can automatically fix:
-- ✅ Script permissions
-- ✅ JSON formatting
-- ✅ Markdown formatting
-- ✅ Version sync issues
-
-## Repository-Specific Checks
-
-**For claude-code-plugins repo:**
-- Validates against CLAUDE.md standards
-- Checks marketplace integration
-- Verifies category structure
-- Ensures quality for featured plugins
-- Checks contributor guidelines compliance
+| Error | Cause | Solution |
+|---|---|---|
+| Plugin directory not found | Incorrect path or plugin does not exist | Verify the path matches `plugins/[category]/[name]/` structure |
+| `plugin.json` missing or invalid | File absent or malformed JSON | Create from template or fix JSON syntax with `jq empty .claude-plugin/plugin.json` |
+| Marketplace entry missing | Plugin not yet added to catalog | Add entry to `marketplace.extended.json` and run `pnpm run sync-marketplace` |
+| Version mismatch detected | `plugin.json` and `marketplace.extended.json` carry different versions | Update the stale file to match the authoritative version |
+| Permission denied during scan | Restricted file access | Request read permissions on the plugin directory tree |
 
 ## Examples
 
-**User says:** "Audit the security-scanner plugin"
+**Full audit before publishing:**
+Trigger: "Audit the security-scanner plugin."
+Process: Run all eight audit categories against `plugins/security/security-scanner/`. Generate a comprehensive report with per-category scores. Report overall rating and prioritized fix list (see `${CLAUDE_SKILL_DIR}/references/examples.md`).
 
-**I automatically:**
-1. Run full security scan
-2. Check best practices
-3. Verify CLAUDE.md compliance
-4. Generate comprehensive report
-5. Provide recommendations
+**Publish readiness check:**
+Trigger: "Is this plugin safe to publish?"
+Process: Prioritize security audit (critical), then marketplace compliance and quality scoring. Produce a publish readiness assessment with pass/fail verdict.
 
-**User says:** "Is this plugin safe to publish?"
+**Featured status review:**
+Trigger: "Quality review before featured status."
+Process: Run full audit with elevated quality thresholds. Apply featured plugin requirements (higher documentation and test coverage standards). Recommend approve or reject.
 
-**I automatically:**
-1. Security audit (critical)
-2. Marketplace compliance
-3. Quality score calculation
-4. Publish readiness assessment
+## Resources
 
-**User says:** "Quality review before featured status"
-
-**I automatically:**
-1. Full audit (all categories)
-2. Higher quality thresholds
-3. Featured plugin requirements
-4. Recommendation: approve/reject
+- `${CLAUDE_SKILL_DIR}/references/audit-categories.md` -- all eight audit categories with specific checks
+- `${CLAUDE_SKILL_DIR}/references/audit-process.md` -- step-by-step audit execution procedures
+- `${CLAUDE_SKILL_DIR}/references/audit-report-format.md` -- report template with scoring rubric
+- `${CLAUDE_SKILL_DIR}/references/examples.md` -- audit scenario walkthroughs
+- `${CLAUDE_SKILL_DIR}/references/errors.md` -- error handling patterns

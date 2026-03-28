@@ -62,3 +62,4 @@ Each rule file contains:
 - https://wiki.postgresql.org/wiki/Performance_Optimization
 - https://supabase.com/docs/guides/database/overview
 - https://supabase.com/docs/guides/auth/row-level-security
+

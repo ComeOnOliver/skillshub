@@ -30,3 +30,4 @@ jobs:
           MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
         run: ./gradlew :${{ matrix.dir }}:build --no-daemon
 ```
+

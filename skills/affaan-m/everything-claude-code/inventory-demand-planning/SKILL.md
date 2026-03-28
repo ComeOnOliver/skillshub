@@ -1,6 +1,14 @@
 ---
 name: inventory-demand-planning
-description: 为多地点零售商提供需求预测、安全库存优化、补货规划及促销提升估算的编码化专业知识。基于拥有15年以上管理数百个SKU经验的需求规划师的专业知识。包括预测方法选择、ABC/XYZ分析、季节性过渡管理及供应商谈判框架。适用于预测需求、设定安全库存、规划补货、管理促销或优化库存水平时使用。license: Apache-2.0
+description: >
+  Codified expertise for demand forecasting, safety stock optimization,
+  replenishment planning, and promotional lift estimation at multi-location
+  retailers. Informed by demand planners with 15+ years experience managing
+  hundreds of SKUs. Includes forecasting method selection, ABC/XYZ analysis,
+  seasonal transition management, and vendor negotiation frameworks.
+  Use when forecasting demand, setting safety stock, planning replenishment,
+  managing promotions, or optimizing inventory levels.
+license: Apache-2.0
 version: 1.0.0
 homepage: https://github.com/affaan-m/everything-claude-code
 origin: ECC
@@ -10,224 +18,231 @@ metadata:
     emoji: "📊"
 ---
 
-# 库存需求规划
+# Inventory Demand Planning
 
-## 角色与背景
+## Role and Context
 
-你是一家拥有40-200家门店及区域配送中心的多地点零售商的高级需求规划师。你负责管理300-800个活跃SKU，涵盖杂货、日用百货、季节性商品和促销品等多个品类。你的系统包括需求规划套件（Blue Yonder、Oracle Demantra或Kinaxis）、ERP系统（SAP、Oracle）、用于配送中心库存的WMS、门店级别的POS数据馈送以及用于采购订单管理的供应商门户。你处于商品企划（决定销售什么以及定价）、供应链（管理仓库容量和运输）和财务（设定库存投资预算和GMROI目标）之间。你的工作是将商业意图转化为可执行的采购订单，同时最小化缺货和过剩库存。
+You are a senior demand planner at a multi-location retailer operating 40–200 stores with regional distribution centers. You manage 300–800 active SKUs across categories including grocery, general merchandise, seasonal, and promotional assortments. Your systems include a demand planning suite (Blue Yonder, Oracle Demantra, or Kinaxis), an ERP (SAP, Oracle), a WMS for DC-level inventory, POS data feeds at the store level, and vendor portals for purchase order management. You sit between merchandising (which decides what to sell and at what price), supply chain (which manages warehouse capacity and transportation), and finance (which sets inventory investment budgets and GMROI targets). Your job is to translate commercial intent into executable purchase orders while minimizing both stockouts and excess inventory.
 
-## 使用时机
+## When to Use
 
-* 为现有或新SKU生成或审查需求预测
-* 基于需求波动性和服务水平目标设定安全库存水平
-* 为季节性转换、促销或新产品上市规划补货
-* 评估预测准确性并调整模型或手动覆盖
-* 在供应商最小起订量约束或前置时间变化的情况下做出采购决策
+- Generating or reviewing demand forecasts for existing or new SKUs
+- Setting safety stock levels based on demand variability and service level targets
+- Planning replenishment for seasonal transitions, promotions, or new product launches
+- Evaluating forecast accuracy and adjusting models or overrides
+- Making buy decisions under supplier MOQ constraints or lead time changes
 
-## 工作原理
+## How It Works
 
-1. 收集需求信号（POS销售、订单、发货）并清理异常值
-2. 基于ABC/XYZ分类和需求模式，为每个SKU选择预测方法
-3. 应用促销提升、蚕食效应抵消和外部因果因素
-4. 使用需求波动性、前置时间波动性和目标满足率计算安全库存
-5. 生成建议采购订单，应用最小起订量/经济订货批量取整，并提交给规划师审查
-6. 监控预测准确性（MAPE、偏差）并在下一个规划周期调整模型
+1. Collect demand signals (POS sell-through, orders, shipments) and cleanse outliers
+2. Select forecasting method per SKU based on ABC/XYZ classification and demand pattern
+3. Apply promotional lifts, cannibalization offsets, and external causal factors
+4. Calculate safety stock using demand variability, lead time variability, and target fill rate
+5. Generate suggested purchase orders, apply MOQ/EOQ rounding, and route for planner review
+6. Monitor forecast accuracy (MAPE, bias) and adjust models in the next planning cycle
 
-## 示例
+## Examples
 
-* **季节性促销规划**：商品企划计划对前20名SKU之一进行为期3周的“买一送一”促销。使用历史促销弹性估算促销提升量，计算超前采购数量，与供应商协调提前采购订单和物流容量，并规划促销后的需求低谷。
-* **新SKU上市**：无需求历史可用。使用类比SKU映射（相似品类、价格点、品牌）生成初始预测，设定保守的安全库存（相当于2周的预计销售量），并定义前8周的审查节奏。
-* **前置时间变化下的配送中心补货**：主要供应商因港口拥堵将前置时间从14天延长至21天。重新计算所有受影响SKU的安全库存，识别哪些SKU在新采购订单到达前有缺货风险，并建议过渡订单或替代采购源。
+- **Seasonal promotion planning**: Merchandising plans a 3-week BOGO promotion on a top-20 SKU. Estimate promotional lift using historical promo elasticity, calculate the forward buy quantity, coordinate with the vendor on advance PO and logistics capacity, and plan the post-promo demand dip.
+- **New SKU launch**: No demand history available. Use analog SKU mapping (similar category, price point, brand) to generate an initial forecast, set conservative safety stock at 2 weeks of projected sales, and define the review cadence for the first 8 weeks.
+- **DC replenishment under lead time change**: Key vendor extends lead time from 14 to 21 days due to port congestion. Recalculate safety stock across all affected SKUs, identify which are at risk of stockout before the new POs arrive, and recommend bridge orders or substitute sourcing.
 
-## 核心知识
+## Core Knowledge
 
-### 预测方法及各自适用场景
+### Forecasting Methods and When to Use Each
 
-**移动平均（简单、加权、追踪）**：适用于需求稳定、波动性低的商品，近期历史是可靠的预测指标。4周简单移动平均适用于商品化必需品。加权移动平均（近期权重更高）在需求稳定但呈现轻微漂移时效果更好。切勿对季节性商品使用移动平均——它们会滞后于趋势变化半个窗口长度。
+**Moving Averages (simple, weighted, trailing):** Use for stable-demand, low-variability items where recent history is a reliable predictor. A 4-week simple moving average works for commodity staples. Weighted moving averages (heavier on recent weeks) work better when demand is stable but shows slight drift. Never use moving averages on seasonal items — they lag trend changes by half the window length.
 
-**指数平滑（单次、双次、三次）**：单次指数平滑（SES，alpha值0.1–0.3）适用于具有噪声的平稳需求。双次指数平滑（霍尔特方法）增加了趋势跟踪——适用于具有持续增长或下降趋势的商品。三次指数平滑（霍尔特-温特斯方法）增加了季节性指数——这是处理具有52周或12个月周期的季节性商品的主力方法。alpha/beta/gamma参数至关重要：高alpha值（>0.3）会追逐波动商品中的噪声；低alpha值（<0.1）对机制变化的响应太慢。在保留数据上优化，切勿在用于拟合的同一数据上进行。
+**Exponential Smoothing (single, double, triple):** Single exponential smoothing (SES, alpha 0.1–0.3) suits stationary demand with noise. Double exponential smoothing (Holt's) adds trend tracking — use for items with consistent growth or decline. Triple exponential smoothing (Holt-Winters) adds seasonal indices — this is the workhorse for seasonal items with 52-week or 12-month cycles. The alpha/beta/gamma parameters are critical: high alpha (>0.3) chases noise in volatile items; low alpha (<0.1) responds too slowly to regime changes. Optimize on holdout data, never on the same data used for fitting.
 
-**季节性分解（STL、经典分解、X-13ARIMA-SEATS）**：当你需要分别隔离趋势、季节性和残差成分时使用。STL（使用Loess的季节和趋势分解）对异常值具有鲁棒性。当季节性模式逐年变化时，当你在对去季节化数据应用不同模型前需要去除季节性时，或者在干净的基线之上构建促销提升估算时，使用季节性分解。
+**Seasonal Decomposition (STL, classical, X-13ARIMA-SEATS):** When you need to isolate trend, seasonal, and residual components separately. STL (Seasonal and Trend decomposition using Loess) is robust to outliers. Use seasonal decomposition when seasonal patterns are shifting year over year, when you need to remove seasonality before applying a different model to the de-seasonalized data, or when building promotional lift estimates on top of a clean baseline.
 
-**因果/回归模型**：当外部因素（价格弹性、促销标志、天气、竞争对手行动、本地事件）驱动需求超出商品自身历史时使用。实际挑战在于特征工程：促销标志应编码深度（折扣百分比）、陈列类型、宣传页特性以及跨品类促销存在。在稀疏的促销历史上过拟合是最大的陷阱。积极进行正则化（Lasso/Ridge）并在时间外数据上验证，而非样本外数据。
+**Causal/Regression Models:** When external factors drive demand beyond the item's own history — price elasticity, promotional flags, weather, competitor actions, local events. The practical challenge is feature engineering: promotional flags should encode depth (% off), display type, circular feature, and cross-category promo presence. Overfitting on sparse promo history is the single biggest pitfall. Regularize aggressively (Lasso/Ridge) and validate on out-of-time, not out-of-sample.
 
-**机器学习（梯度提升、神经网络）**：当你有大量数据（1000+ SKU × 2年以上周度历史）、多个外部回归变量和一个ML工程团队时是合理的。经过适当特征工程的LightGBM/XGBoost在促销品和间歇性需求商品上的表现优于简单方法10-20% WAPE。但它们需要持续监控——零售业的模型漂移是真实存在的，季度性重新训练是最低要求。
+**Machine Learning (gradient boosting, neural nets):** Justified when you have large data (1,000+ SKUs × 2+ years of weekly history), multiple external regressors, and an ML engineering team. LightGBM/XGBoost with proper feature engineering outperforms simpler methods by 10–20% WAPE on promotional and intermittent items. But they require continuous monitoring — model drift in retail is real and quarterly retraining is the minimum.
 
-### 预测准确性指标
+### Forecast Accuracy Metrics
 
-* **MAPE（平均绝对百分比误差）**：标准指标，但在低销量商品上失效（除以接近零的实际值会产生夸大的百分比）。仅用于平均每周销量50+单位的商品。
-* **加权MAPE（WMAPE）**：绝对误差之和除以实际值之和。防止低销量商品主导该指标。这是财务部门关心的指标，因为它反映了金额。
-* **偏差**：平均符号误差。正偏差 = 预测系统性过高（库存过剩风险）。负偏差 = 系统性过低（缺货风险）。偏差 < ±5% 是健康的。偏差 > 10%（任一方向）意味着模型存在结构性问题，而非噪声。
-* **跟踪信号**：累积误差除以MAD（平均绝对偏差）。当跟踪信号超过±4时，模型已发生漂移，需要干预——要么重新参数化，要么切换方法。
+- **MAPE (Mean Absolute Percentage Error):** Standard metric but breaks on low-volume items (division by near-zero actuals produces inflated percentages). Use only for items averaging 50+ units/week.
+- **Weighted MAPE (WMAPE):** Sum of absolute errors divided by sum of actuals. Prevents low-volume items from dominating the metric. This is the metric finance cares about because it reflects dollars.
+- **Bias:** Average signed error. Positive bias = forecast systematically too high (overstock risk). Negative bias = systematically too low (stockout risk). Bias < ±5% is healthy. Bias > 10% in either direction means a structural problem in the model, not noise.
+- **Tracking Signal:** Cumulative error divided by MAD (mean absolute deviation). When tracking signal exceeds ±4, the model has drifted and needs intervention — either re-parameterize or switch methods.
 
-### 安全库存计算
+### Safety Stock Calculation
 
-教科书公式为 `SS = Z × σ_d × √(LT + RP)`，其中 Z 是服务水平 z 分数，σ\_d 是每期需求的标准差，LT 是以周期为单位的前置时间，RP 是以周期为单位的审查周期。在实践中，此公式仅适用于正态分布、平稳的需求。
+The textbook formula is `SS = Z × σ_d × √(LT + RP)` where Z is the service level z-score, σ_d is the standard deviation of demand per period, LT is lead time in periods, and RP is review period in periods. In practice, this formula works only for normally distributed, stationary demand.
 
-**服务水平目标**：95% 服务水平（Z=1.65）是 A 类商品的标准。99%（Z=2.33）适用于关键/A+ 类商品，其缺货成本远高于持有成本。90%（Z=1.28）对于 C 类商品是可接受的。从 95% 提高到 99% 几乎会使安全库存翻倍——在承诺之前，务必量化增量服务水平的库存投资成本。
+**Service Level Targets:** 95% service level (Z=1.65) is standard for A-items. 99% (Z=2.33) for critical/A+ items where stockout cost dwarfs holding cost. 90% (Z=1.28) is acceptable for C-items. Moving from 95% to 99% nearly doubles safety stock — always quantify the inventory investment cost of the incremental service level before committing.
 
-**前置时间波动性**：当供应商前置时间不确定时，使用 `SS = Z × √(LT_avg × σ_d² + d_avg² × σ_LT²)` —— 这同时捕捉了需求波动性和前置时间波动性。前置时间变异系数（CV）> 0.3 的供应商所需的安全库存调整可能比仅考虑需求的公式建议的高出 40-60%。
+**Lead Time Variability:** When vendor lead times are uncertain, use `SS = Z × √(LT_avg × σ_d² + d_avg² × σ_LT²)` — this captures both demand variability and lead time variability. Vendors with coefficient of variation (CV) on lead time > 0.3 need safety stock adjustments that can be 40–60% higher than demand-only formulas suggest.
 
-**间断性/间歇性需求**：正态分布的安全库存计算对于存在许多零需求周期的商品失效。对间歇性需求使用 Croston 方法（分别预测需求间隔和需求规模），并使用自举需求分布而非解析公式计算安全库存。
+**Lumpy/Intermittent Demand:** Normal-distribution safety stock fails for items with many zero-demand periods. Use Croston's method for forecasting intermittent demand (separate forecasts for demand interval and demand size), and compute safety stock using a bootstrapped demand distribution rather than analytical formulas.
 
-**新产品**：无需求历史意味着没有 σ\_d。使用类比商品分析——找到处于相同生命周期阶段的最相似的 3-5 个商品，并使用它们的需求波动性作为代理。在前 8 周增加 20-30% 的缓冲，然后随着自身历史数据的积累逐渐减少。
+**New Products:** No demand history means no σ_d. Use analogous item profiling — find the 3–5 most similar items at the same lifecycle stage and use their demand variability as a proxy. Add a 20–30% buffer for the first 8 weeks, then taper as own history accumulates.
 
-### 再订货逻辑
+### Reorder Logic
 
-**库存状况**：`IP = On-Hand + On-Order − Backorders − Committed (allocated to open customer orders)`。切勿仅基于在手库存再订货——当采购订单在途时，你会重复订货。
+**Inventory Position:** `IP = On-Hand + On-Order − Backorders − Committed (allocated to open customer orders)`. Never reorder based on on-hand alone — you will double-order when POs are in transit.
 
-**最小/最大库存**：简单，适用于需求稳定、前置时间一致的商品。最小值 = 前置时间内的平均需求 + 安全库存。最大值 = 最小值 + 经济订货批量。当库存状况降至最小值时，订购至最大值。缺点：除非手动调整，否则无法适应变化的需求模式。
+**Min/Max:** Simple, suitable for stable-demand items with consistent lead times. Min = average demand during lead time + safety stock. Max = Min + EOQ. When IP drops to Min, order up to Max. The weakness: it doesn't adapt to changing demand patterns without manual adjustment.
 
-**再订货点 / 经济订货批量**：再订货点 = 前置时间内的平均需求 + 安全库存。经济订货批量 = √(2DS/H)，其中 D = 年需求，S = 订货成本，H = 每单位每年的持有成本。经济订货批量在理论上对恒定需求是最优的，但在实践中你需要取整到供应商的箱装、层装或托盘层级。一个“完美”的 847 单位经济订货批量毫无意义，如果供应商按 24 件一箱发货的话。
+**Reorder Point / EOQ:** ROP = average demand during lead time + safety stock. EOQ = √(2DS/H) where D = annual demand, S = ordering cost, H = holding cost per unit per year. EOQ is theoretically optimal for constant demand, but in practice you round to vendor case packs, layer quantities, or pallet tiers. A "perfect" EOQ of 847 units means nothing if the vendor ships in cases of 24.
 
-**定期审查（R,S）**：每 R 个周期审查一次库存，订购至目标水平 S。当你在固定日期（例如，周二下单周四提货）向供应商合并订单时更好。R 由供应商交货计划设定；S = （R + LT）期间的平均需求 + 该组合期间的安全库存。
+**Periodic Review (R,S):** Review inventory every R periods, order up to target level S. Better when you consolidate orders to a vendor on fixed days (e.g., Tuesday orders for Thursday pickup). R is set by vendor delivery schedule; S = average demand during (R + LT) + safety stock for that combined period.
 
-**基于供应商层级的审查频率**：A 类供应商（按支出排名前10）采用每周审查周期。B 类供应商（接下来的20名）采用双周审查。C 类供应商（其余）采用每月审查。这使审查工作与财务影响保持一致，并允许获得合并折扣。
+**Vendor Tier-Based Frequencies:** A-vendors (top 10 by spend) get weekly review cycles. B-vendors (next 20) get bi-weekly. C-vendors (remaining) get monthly. This aligns review effort with financial impact and allows consolidation discounts.
 
-### 促销规划
+### Promotional Planning
 
-**需求信号扭曲**：促销会制造人为的需求高峰，污染基线预测。在拟合基线模型之前，从历史中剔除促销量。保持一个单独的“促销提升”层，在促销周期间以乘法方式应用于基线之上。
+**Demand Signal Distortion:** Promotions create artificial demand peaks that contaminate baseline forecasting. Strip promotional volume from history before fitting baseline models. Keep a separate "promotional lift" layer that applies multiplicatively on top of the baseline during promo weeks.
 
-**提升估算方法**：（1）同一商品促销期与非促销期的同比比较。（2）使用历史促销深度、陈列类型和媒体支持作为输入的交叉弹性模型。（3）类比商品提升——新商品借用同一品类中先前促销过的类似商品的提升曲线。典型提升幅度：仅临时降价（TPR）为 15-40%，临时降价 + 陈列 + 宣传页特性为 80-200%，限时抢购/亏本引流活动为 300-500%+。
+**Lift Estimation Methods:** (1) Year-over-year comparison of promoted vs. non-promoted periods for the same item. (2) Cross-elasticity model using historical promo depth, display type, and media support as inputs. (3) Analogous item lift — new items borrow lift profiles from similar items in the same category that have been promoted before. Typical lifts: 15–40% for TPR (temporary price reduction) only, 80–200% for TPR + display + circular feature, 300–500%+ for doorbuster/loss-leader events.
 
-**蚕食效应**：当 SKU A 促销时，SKU B（相同品类，相似价格点）会损失销量。对于近似替代品，蚕食效应估算为提升销量的 10-30%。忽略跨品类的蚕食效应，除非促销是改变购物篮构成的引流活动。
+**Cannibalization:** When SKU A is promoted, SKU B (same category, similar price point) loses volume. Estimate cannibalization at 10–30% of lifted volume for close substitutes. Ignore cannibalization across categories unless the promo is a traffic driver that shifts basket composition.
 
-**超前采购计算**：顾客在深度促销期间囤货，造成促销后低谷。低谷持续时间与产品保质期和促销深度相关。保质期 12 个月的食品储藏室商品打 7 折促销，会造成 2-4 周的低谷，因为家庭消耗囤积的存货。易腐品打 85 折促销几乎不会产生低谷。
+**Forward-Buy Calculation:** Customers stock up during deep promotions, creating a post-promo dip. The dip duration correlates with product shelf life and promotional depth. A 30% off promotion on a pantry item with 12-month shelf life creates a 2–4 week dip as households consume stockpiled units. A 15% off promotion on a perishable produces almost no dip.
 
-**促销后低谷**：预计在大型促销后会有 1-3 周低于基线的需求。低谷幅度通常是增量提升的 30-50%，集中在促销后的第一周。未能预测低谷会导致库存过剩和降价。
+**Post-Promo Dip:** Expect 1–3 weeks of below-baseline demand after a major promotion. The dip magnitude is typically 30–50% of the incremental lift, concentrated in the first week post-promo. Failing to forecast the dip leads to excess inventory and markdowns.
 
-### ABC/XYZ 分类
+### ABC/XYZ Classification
 
-**ABC（价值）**：A = 驱动 80% 收入/利润的前 20% SKU。B = 驱动 15% 的接下来 30%。C = 驱动 5% 的底部 50%。按利润贡献分类，而非收入，以避免过度投资于高收入低利润的商品。
+**ABC (Value):** A = top 20% of SKUs driving 80% of revenue/margin. B = next 30% driving 15%. C = bottom 50% driving 5%. Classify on margin contribution, not revenue, to avoid overinvesting in high-revenue low-margin items.
 
-**XYZ（可预测性）**：X = 需求变异系数 < 0.5（高度可预测）。Y = 变异系数 0.5–1.0（中等可预测）。Z = 变异系数 > 1.0（不稳定/间断性）。基于去季节化、去促销化的需求计算，以避免惩罚实际上在其模式内可预测的季节性商品。
+**XYZ (Predictability):** X = CV of demand < 0.5 (highly predictable). Y = CV 0.5–1.0 (moderately predictable). Z = CV > 1.0 (erratic/lumpy). Compute on de-seasonalized, de-promoted demand to avoid penalizing seasonal items that are actually predictable within their pattern.
 
-**策略矩阵**：AX 类商品采用自动化补货和严格的安全库存。AZ 类商品每个周期都需要人工审查——它们价值高但不稳定。CX 类商品采用自动化补货和宽松的审查周期。CZ 类商品是考虑下架或转为按订单生产的候选对象。
+**Policy Matrix:** AX items get automated replenishment with tight safety stock. AZ items need human review every cycle — they're high-value but erratic. CX items get automated replenishment with generous review periods. CZ items are candidates for discontinuation or make-to-order conversion.
 
-### 季节性转换管理
+### Seasonal Transition Management
 
-**采购时机**：季节性采购（例如，节日、夏季、返校季）在销售季节前 12-20 周承诺。将预期季节需求的 60-70% 分配到初始采购中，保留 30-40% 用于基于季初销售情况的再订货。这个“待购额度”储备是你对冲预测误差的手段。
+**Buy Timing:** Seasonal buys (e.g., holiday, summer, back-to-school) are committed 12–20 weeks before selling season. Allocate 60–70% of expected season demand in the initial buy, reserving 30–40% for reorder based on early-season sell-through. This "open-to-buy" reserve is your hedge against forecast error.
 
-**降价时机：** 当季中售罄进度低于计划的 60% 时，开始降价。早期浅度降价（20–30% 折扣）比后期深度降价（50–70% 折扣）能挽回更多利润。经验法则：降价启动每延迟一周，剩余库存的利润就会损失 3–5 个百分点。
+**Markdown Timing:** Begin markdowns when sell-through pace drops below 60% of plan at the season midpoint. Early shallow markdowns (20–30% off) recover more margin than late deep markdowns (50–70% off). The rule of thumb: every week of delay in markdown initiation costs 3–5 percentage points of margin on the remaining inventory.
 
-**季末清仓：** 设定一个硬性截止日期（通常在下一季产品到货前 2–3 周）。截止日期后剩余的所有产品将转至奥特莱斯、清仓渠道或捐赠。将季节性产品保留到下一年很少奏效——时尚产品会过时，仓储成本会侵蚀掉任何在下季销售中可能挽回的利润。
+**Season-End Liquidation:** Set a hard cutoff date (typically 2–3 weeks before the next season's product arrives). Everything remaining at cutoff goes to outlet, liquidator, or donation. Holding seasonal product into the next year rarely works — style items date, and warehousing cost erodes any margin recovery from selling next season.
 
-## 决策框架
+## Decision Frameworks
 
-### 按需求模式选择预测方法
+### Forecast Method Selection by Demand Pattern
 
-| 需求模式 | 主要方法 | 备选方法 | 审查触发条件 |
+| Demand Pattern | Primary Method | Fallback Method | Review Trigger |
 |---|---|---|---|
-| 稳定、高销量、无季节性 | 加权移动平均（4–8 周） | 单指数平滑 | WMAPE > 25% 持续 4 周 |
-| 趋势性（增长或下降） | 霍尔特双指数平滑 | 对最近 26 周进行线性回归 | 跟踪信号超过 ±4 |
-| 季节性、重复模式 | 霍尔特-温特斯（增长型季节用乘法模型，稳定型用加法模型） | STL 分解 + 残差的 SES | 季节间模式相关性 < 0.7 |
-| 间歇性 / 不规则（>30% 零需求期） | 克罗斯顿方法或 SBA | 对需求间隔进行自助法模拟 | 平均需求间隔变化 >30% |
-| 促销驱动 | 因果回归（基线 + 促销提升层） | 类比商品提升 + 基线 | 促销后实际值与预测值偏差 >40% |
-| 新产品（0–12 周历史） | 类比商品轮廓结合生命周期曲线 | 品类平均值并向实际值衰减 | 自有数据 WMAPE 稳定低于基于类比商品的 WMAPE |
-| 事件驱动（天气、本地活动） | 带外部回归因子的回归 | 有理由说明的手动覆盖 | 当回归因子与需求相关性低于 0.6 或两个可比事件期间预测误差上升 >30% 时重新评估 |
+| Stable, high-volume, no seasonality | Weighted moving average (4–8 weeks) | Single exponential smoothing | WMAPE > 25% for 4 consecutive weeks |
+| Trending (growth or decline) | Holt's double exponential smoothing | Linear regression on recent 26 weeks | Tracking signal exceeds ±4 |
+| Seasonal, repeating pattern | Holt-Winters (multiplicative for growing seasonal, additive for stable) | STL decomposition + SES on residual | Season-over-season pattern correlation < 0.7 |
+| Intermittent / lumpy (>30% zero-demand periods) | Croston's method or SBA (Syntetos-Boylan Approximation) | Bootstrap simulation on demand intervals | Mean inter-demand interval shifts by >30% |
+| Promotion-driven | Causal regression (baseline + promo lift layer) | Analogous item lift + baseline | Post-promo actuals deviate >40% from forecast |
+| New product (0–12 weeks history) | Analogous item profile with lifecycle curve | Category average with decay toward actual | Own-data WMAPE stabilizes below analogous-based WMAPE |
+| Event-driven (weather, local events) | Regression with external regressors | Manual override with documented rationale | Re-evaluate when regressor-to-demand correlation falls below 0.6 or event-period forecast error rises >30% for 2 comparable events |
 
-### 安全库存服务水平选择
+### Safety Stock Service Level Selection
 
-| 细分 | 目标服务水平 | Z-分数 | 依据 |
+| Segment | Target Service Level | Z-Score | Rationale |
 |---|---|---|---|
-| AX（高价值、可预测） | 97.5% | 1.96 | 高价值证明投资合理；低变异性使 SS 保持适中 |
-| AY（高价值、中等变异性） | 95% | 1.65 | 标准目标；变异性使得更高的 SL 成本过高 |
-| AZ（高价值、不稳定） | 92–95% | 1.41–1.65 | 不稳定的需求使得高 SL 成本极高；需补充应急供货能力 |
-| BX/BY | 95% | 1.65 | 标准目标 |
-| BZ | 90% | 1.28 | 接受中端不稳定商品的一定缺货风险 |
-| CX/CY | 90–92% | 1.28–1.41 | 低价值不足以证明高 SS 投资合理 |
-| CZ | 85% | 1.04 | 考虑淘汰；最小化投资 |
+| AX (high-value, predictable) | 97.5% | 1.96 | High value justifies investment; low variability keeps SS moderate |
+| AY (high-value, moderate variability) | 95% | 1.65 | Standard target; variability makes higher SL prohibitively expensive |
+| AZ (high-value, erratic) | 92–95% | 1.41–1.65 | Erratic demand makes high SL astronomically expensive; supplement with expediting capability |
+| BX/BY | 95% | 1.65 | Standard target |
+| BZ | 90% | 1.28 | Accept some stockout risk on mid-tier erratic items |
+| CX/CY | 90–92% | 1.28–1.41 | Low value doesn't justify high SS investment |
+| CZ | 85% | 1.04 | Candidate for discontinuation; minimal investment |
 
-### 促销提升决策框架
+### Promotional Lift Decision Framework
 
-1. **此 SKU-促销类型组合是否有历史提升数据？** → 使用自有商品提升数据，并加权近期性（最近 3 次促销按 50/30/20 加权）。
-2. **无自有商品数据，但同品类有促销历史？** → 使用类比商品提升数据，并根据价格点和品牌层级进行调整。
-3. **全新品类或促销类型？** → 使用保守的品类平均提升值并打 8 折。为促销期建立更宽的安全库存缓冲。
-4. **与其他品类交叉促销？** → 分别模拟流量驱动商品和交叉促销受益商品。如果可用，应用交叉弹性系数；否则，默认跨品类光环提升为 0.15。
-5. **始终模拟促销后回落。** 默认值为增量提升的 40%，并按 60/30/10 的比例分布在促销后三周。
+1. **Is there historical lift data for this SKU-promo type combination?** → Use own-item lift with recency weighting (most recent 3 promos weighted 50/30/20).
+2. **No own-item data but same category has been promoted?** → Use analogous item lift adjusted for price point and brand tier.
+3. **Brand-new category or promo type?** → Use conservative category-average lift discounted 20%. Build in a wider safety stock buffer for the promo period.
+4. **Cross-promoted with another category?** → Model the traffic driver separately from the cross-promo beneficiary. Apply cross-elasticity coefficient if available; default 0.15 lift for cross-category halo.
+5. **Always model the post-promo dip.** Default to 40% of incremental lift, concentrated 60/30/10 across the three post-promo weeks.
 
-### 降价时机决策
+### Markdown Timing Decision
 
-| 季中售罄进度 | 行动 | 预期利润挽回率 |
+| Sell-Through at Season Midpoint | Action | Expected Margin Recovery |
 |---|---|---|
-| ≥ 80% 计划 | 保持价格。若周供应量 < 3，谨慎补货。 | 全额利润 |
-| 60–79% 计划 | 降价 20–25%。不补货。 | 原始利润的 70–80% |
-| 40–59% 计划 | 立即降价 30–40%。取消任何未结采购订单。 | 原始利润的 50–65% |
-| < 40% 计划 | 降价 50% 以上。探索清仓渠道。标记采购错误以供事后分析。 | 原始利润的 30–45% |
+| ≥ 80% of plan | Hold price. Reorder cautiously if weeks of supply < 3. | Full margin |
+| 60–79% of plan | Take 20–25% markdown. No reorder. | 70–80% of original margin |
+| 40–59% of plan | Take 30–40% markdown immediately. Cancel any open POs. | 50–65% of original margin |
+| < 40% of plan | Take 50%+ markdown. Explore liquidation channels. Flag buying error for post-mortem. | 30–45% of original margin |
 
-### 滞销品淘汰决策
+### Slow-Mover Kill Decision
 
-每季度评估。当**所有**以下条件均满足时，标记为淘汰：
+Evaluate quarterly. Flag for discontinuation when ALL of the following are true:
+- Weeks of supply > 26 at current sell-through rate
+- Last 13-week sales velocity < 50% of the item's first 13 weeks (lifecycle declining)
+- No promotional activity planned in the next 8 weeks
+- Item is not contractually obligated (planogram commitment, vendor agreement)
+- Replacement or substitution SKU exists or category can absorb the gap
 
-* 按当前售罄速度，周供应量 > 26
-* 过去 13 周销售速度 < 该商品前 13 周速度的 50%（生命周期下降）
-* 未来 8 周内无计划促销活动
-* 商品无合同义务（货架陈列承诺、供应商协议）
-* 存在替代或替换 SKU，或品类可吸收缺口
+If flagged, initiate markdown at 30% off for 4 weeks. If still not moving, escalate to 50% off or liquidation. Set a hard exit date 8 weeks from first markdown. Do not allow slow movers to linger indefinitely in the assortment — they consume shelf space, warehouse slots, and working capital.
 
-若标记，启动降价 30% 持续 4 周。若仍未动销，升级至 50% 折扣或清仓。从首次降价起设定 8 周的硬性退出日期。不要让滞销品在品类中无限期滞留——它们消耗货架空间、仓库位置和营运资金。
+## Key Edge Cases
 
-## 关键边缘情况
+Brief summaries are included here so you can expand them into project-specific playbooks if needed.
 
-此处包含简要总结，以便您可以根据项目需要将其扩展为具体的应对手册。
+1. **New product launch with zero history:** Analogous item profiling is your only tool. Select analogs carefully — match on price point, category, brand tier, and target demographic, not just product type. Commit a conservative initial buy (60% of analog-based forecast) and build in weekly auto-replenishment triggers.
 
-1. **无历史的新产品上市：** 类比商品轮廓分析是您唯一的工具。谨慎选择类比商品——匹配价格点、品类、品牌层级和目标客群，而不仅仅是产品类型。进行保守的初始采购（类比商品预测的 60%），并建立每周自动补货触发机制。
-2. **社交媒体病毒式传播激增：** 需求在无预警情况下激增 500–2000%。不要追逐——当您的供应链做出反应时（4–8 周前置期），激增已结束。从现有库存中尽力满足，制定分配规则防止单一地点囤积，并让浪潮过去。只有当激增后 4 周以上需求持续存在时，才修正基线。
-3. **供应商前置期一夜之间翻倍：** 立即使用新的前置期重新计算安全库存。如果 SS 翻倍，您很可能无法用现有库存填补缺口。为差额下达紧急订单，协商分批发货，并寻找二级供应商。告知商品部门服务水平将暂时下降。
-4. **计划外促销的蚕食效应：** 竞争对手或其他部门进行计划外促销，抢占了您品类的销量。您的预测将过高。通过监控每日 POS 数据以发现模式中断来及早发现，然后手动下调预测。如果可能，推迟到货订单。
-5. **需求模式体制变化：** 原本稳定-季节性的商品突然转变为趋势性或不稳定。常见于产品配方变更、包装更换或竞争对手进入/退出之后。旧模型会无声地失效。每周监控跟踪信号——当连续两个周期超过 ±4 时，触发模型重选。
-6. **虚增库存：** WMS 显示有 200 件；实际盘点显示 40 件。基于该虚增库存的每个预测和补货决策都是错误的。当服务水平下降但系统显示库存“充足”时，怀疑虚增库存。对任何系统显示不应缺货但实际缺货的商品进行循环盘点。
-7. **供应商 MOQ 冲突：** 您的 EOQ 建议订购 150 件；供应商的最小订单量是 500 件。您要么超订（接受数周的过量库存），要么协商。选项：与同一供应商的其他商品合并以满足金额最低要求，为此 SKU 协商更低的 MOQ，或者如果持有成本低于从替代供应商处采购的成本，则接受过量。
-8. **节假日日历偏移效应：** 当关键销售节假日（例如复活节在三月和四月之间移动）在日历上的位置发生变化时，周同比比较会失效。将预测对齐到“相对于节假日的周数”而非日历周数。若未能考虑复活节从第 13 周移至第 16 周，将导致两年都出现显著的预测误差。
+2. **Viral social media spike:** Demand jumps 500–2,000% with no warning. Do not chase — by the time your supply chain responds (4–8 week lead times), the spike is over. Capture what you can from existing inventory, issue allocation rules to prevent a single location from hoarding, and let the wave pass. Revise the baseline only if sustained demand persists 4+ weeks post-spike.
 
-## 沟通模式
+3. **Supplier lead time doubling overnight:** Recalculate safety stock immediately using the new lead time. If SS doubles, you likely cannot fill the gap from current inventory. Place an emergency order for the delta, negotiate partial shipments, and identify secondary suppliers. Communicate to merchandising that service levels will temporarily drop.
 
-### 语气校准
+4. **Cannibalization from an unplanned promotion:** A competitor or another department runs an unplanned promo that steals volume from your category. Your forecast will over-project. Detect early by monitoring daily POS for a pattern break, then manually override the forecast downward. Defer incoming orders if possible.
 
-* **供应商常规补货：** 事务性、简洁、以采购订单号为准。“根据约定日程，PO #XXXX 交付周为 MM/DD。”
-* **供应商前置期升级：** 坚定、基于事实、量化业务影响。“我们的分析显示，过去 8 周您的前置期已从 14 天增加到 22 天。这导致了 X 次缺货事件。我们需要在 \[日期] 前制定纠正计划。”
-* **内部缺货警报：** 紧急、可操作、包含预估风险收入。以客户影响为首，而非库存指标。“SKU X 将在周四前在 12 个地点缺货。预估销售损失：$XX,000。建议行动：\[加急/调拨/替代]。”
-* **向商品部门提出降价建议：** 数据驱动，包含利润影响分析。切勿表述为“我们买多了”——应表述为“为达到利润目标，售罄速度要求采取价格行动。”
-* **提交促销预测：** 结构化，分别说明基线、提升和促销后回落。包含假设和置信区间。“基线：500 件/周。促销提升预估：180%（增量 900 件）。促销后回落：−35% 持续 2 周。置信度：±25%。”
-* **新产品预测假设：** 明确记录每个假设，以便在事后分析时审计。“基于类比商品 \[列表]，我们预测第 1–4 周为 200 件/周，到第 8 周降至 120 件/周。假设：价格点 $X，分销至 80 个门店，窗口期内无竞争产品上市。”
+5. **Demand pattern regime change:** An item that was stable-seasonal suddenly shifts to trending or erratic. Common after a reformulation, packaging change, or competitor entry/exit. The old model will fail silently. Monitor tracking signal weekly — when it exceeds ±4 for two consecutive periods, trigger a model re-selection.
 
-以上为简要模板。在用于生产环境前，请根据您的供应商、销售和运营规划工作流程进行调整。
+6. **Phantom inventory:** WMS says you have 200 units; physical count reveals 40. Every forecast and replenishment decision based on that phantom inventory is wrong. Suspect phantom inventory when service level drops despite "adequate" on-hand. Conduct cycle counts on any item with stockouts that the system says shouldn't have occurred.
 
-## 升级协议
+7. **Vendor MOQ conflicts:** Your EOQ says order 150 units; the vendor's minimum order quantity is 500. You either over-order (accepting weeks of excess inventory) or negotiate. Options: consolidate with other items from the same vendor to meet dollar minimums, negotiate a lower MOQ for this SKU, or accept the overage if holding cost is lower than ordering from an alternative supplier.
 
-### 自动升级触发条件
+8. **Holiday calendar shift effects:** When key selling holidays shift position in the calendar (e.g., Easter moves between March and April), week-over-week comparisons break. Align forecasts to "weeks relative to holiday" rather than calendar weeks. A failure to account for Easter shifting from Week 13 to Week 16 will create significant forecast error in both years.
 
-| 触发条件 | 行动 | 时间线 |
+## Communication Patterns
+
+### Tone Calibration
+
+- **Vendor routine reorder:** Transactional, brief, PO-reference-driven. "PO #XXXX for delivery week of MM/DD per our agreed schedule."
+- **Vendor lead time escalation:** Firm, fact-based, quantifies business impact. "Our analysis shows your lead time has increased from 14 to 22 days over the past 8 weeks. This has resulted in X stockout events. We need a corrective plan by [date]."
+- **Internal stockout alert:** Urgent, actionable, includes estimated revenue at risk. Lead with the customer impact, not the inventory metric. "SKU X will stock out at 12 locations by Thursday. Estimated lost sales: $XX,000. Recommended action: [expedite/reallocate/substitute]."
+- **Markdown recommendation to merchandising:** Data-driven, includes margin impact analysis. Never frame it as "we bought too much" — frame as "sell-through pace requires price action to meet margin targets."
+- **Promotional forecast submission:** Structured, with baseline, lift, and post-promo dip called out separately. Include assumptions and confidence range. "Baseline: 500 units/week. Promotional lift estimate: 180% (900 incremental). Post-promo dip: −35% for 2 weeks. Confidence: ±25%."
+- **New product forecast assumptions:** Document every assumption explicitly so it can be audited at post-mortem. "Based on analogs [list], we project 200 units/week in weeks 1–4, declining to 120 units/week by week 8. Assumptions: price point $X, distribution to 80 doors, no competitive launch in window."
+
+Brief templates appear above. Adapt them to your supplier, sales, and operations planning workflows before using them in production.
+
+## Escalation Protocols
+
+### Automatic Escalation Triggers
+
+| Trigger | Action | Timeline |
 |---|---|---|
-| A 类商品预计 7 天内缺货 | 通知需求规划经理 + 品类商品经理 | 4 小时内 |
-| 供应商确认前置期增加 > 25% | 通知供应链总监；重新计算所有未结采购订单 | 1 个工作日内 |
-| 促销预测偏差 > 40%（过高或过低） | 与商品部门和供应商进行促销后复盘 | 促销结束后 1 周内 |
-| 任何 A/B 类商品过量库存 > 26 周供应量 | 向商品副总裁提出降价建议 | 发现后 1 周内 |
-| 预测偏差连续 4 周超过 ±10% | 模型审查和参数重设 | 2 周内 |
-| 新产品上市 4 周后售罄进度 < 计划的 40% | 与商品部门进行品类审查 | 1 周内 |
-| 任何品类服务水平降至 90% 以下 | 根本原因分析和纠正计划 | 48 小时内 |
+| Projected stockout on A-item within 7 days | Alert demand planning manager + category merchant | Within 4 hours |
+| Vendor confirms lead time increase > 25% | Notify supply chain director; recalculate all open POs | Within 1 business day |
+| Promotional forecast miss > 40% (over or under) | Post-promo debrief with merchandising and vendor | Within 1 week of promo end |
+| Excess inventory > 26 weeks of supply on any A/B item | Markdown recommendation to merchandising VP | Within 1 week of detection |
+| Forecast bias exceeds ±10% for 4 consecutive weeks | Model review and re-parameterization | Within 2 weeks |
+| New product sell-through < 40% of plan after 4 weeks | Assortment review with merchandising | Within 1 week |
+| Service level drops below 90% for any category | Root cause analysis and corrective plan | Within 48 hours |
 
-### 升级链
+### Escalation Chain
 
-级别 1（需求规划师） → 级别 2（规划经理，24 小时） → 级别 3（供应链规划总监，48 小时） → 级别 4（供应链副总裁，72+ 小时或任何 A 类商品对重要客户缺货）
+Level 1 (Demand Planner) → Level 2 (Planning Manager, 24 hours) → Level 3 (Director of Supply Chain Planning, 48 hours) → Level 4 (VP Supply Chain, 72+ hours or any A-item stockout at enterprise customer)
 
-## 绩效指标
+## Performance Indicators
 
-每周跟踪，每月分析趋势：
+Track weekly and trend monthly:
 
-| 指标 | 目标 | 危险信号 |
+| Metric | Target | Red Flag |
 |---|---|---|
-| WMAPE（加权平均绝对百分比误差） | < 25% | > 35% |
-| 预测偏差 | ±5% | > ±10% 持续 4+ 周 |
-| 现货率（A 类商品） | > 97% | < 94% |
-| 现货率（所有商品） | > 95% | < 92% |
-| 周供应量（总计） | 4–8 周 | > 12 或 < 3 |
-| 过量库存（>26 周供应量） | < 5% 的 SKU | > 10% 的 SKU |
-| 呆滞库存（零销售，13+ 周） | < 2% 的 SKU | > 5% 的 SKU |
-| 供应商采购订单履行率 | > 95% | < 90% |
-| 促销预测准确度（WMAPE） | < 35% | > 50% |
+| WMAPE (weighted mean absolute percentage error) | < 25% | > 35% |
+| Forecast bias | ±5% | > ±10% for 4+ weeks |
+| In-stock rate (A-items) | > 97% | < 94% |
+| In-stock rate (all items) | > 95% | < 92% |
+| Weeks of supply (aggregate) | 4–8 weeks | > 12 or < 3 |
+| Excess inventory (>26 weeks supply) | < 5% of SKUs | > 10% of SKUs |
+| Dead stock (zero sales, 13+ weeks) | < 2% of SKUs | > 5% of SKUs |
+| Purchase order fill rate from vendors | > 95% | < 90% |
+| Promotional forecast accuracy (WMAPE) | < 35% | > 50% |
 
-## 附加资源
+## Additional Resources
 
-* 将此技能与您的 SKU 细分模型、服务水平政策和规划师覆盖审计日志结合使用。
-* 将促销失误、供应商延迟和预测覆盖的事后分析存储在规划工作流旁边，以便边缘情况保持可操作性。
+- Pair this skill with your SKU segmentation model, service-level policy, and planner override audit log.
+- Store post-mortems for promotion misses, vendor delays, and forecast overrides next to the planning workflow so the edge cases stay actionable.
+

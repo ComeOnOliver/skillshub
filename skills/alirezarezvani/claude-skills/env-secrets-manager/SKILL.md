@@ -76,3 +76,4 @@ python3 scripts/env_auditor.py /path/to/repo --json
 2. Keep dev env files local and gitignored.
 3. Enforce detection in CI before merge.
 4. Re-test application paths immediately after credential rotation.
+

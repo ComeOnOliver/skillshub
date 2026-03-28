@@ -46,10 +46,7 @@ const count = useStore((state) => state.count);
 - **No Prop Drilling**: Use Context for global state.
 - **No Derived State in State**: Compute in render.
 
-## Reference & Examples
+## References
 
-See [references/REFERENCE.md](references/REFERENCE.md).
+See [references/REFERENCE.md](references/REFERENCE.md) for Context patterns, Zustand store setup, Redux Toolkit, and React Query.
 
-## Related Topics
-
-react/state-management | react/hooks

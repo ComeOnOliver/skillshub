@@ -1,3 +1,9 @@
+---
+name: managing-database-migrations
+description: |
+  This skill enables Claude to manage database schema changes through version-controlled migrations. It is activated when the user requests to create, apply, or rollback database migrations. The skill supports generating timestamped migration files with both up and down migrations for PostgreSQL, MySQL, SQLite, and MongoDB. It helps in tracking schema evolution and ensuring safe database modifications. Use this skill when the user mentions "database migration", "schema change", "add column", "rollback migration", or "create migration".
+---
+
 ## Overview
 
 This skill empowers Claude to handle database migrations, including creating new migrations, applying changes, and rolling back previous modifications. It ensures that database schema changes are managed safely and efficiently.

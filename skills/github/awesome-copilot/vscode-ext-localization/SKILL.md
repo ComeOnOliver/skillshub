@@ -23,3 +23,4 @@ VS Code localization is composed by three different approaches, depending on the
   -> An exclusive `Markdown` file like `walkthrough/someStep.pt-br.md` for Brazilian Portuguese localization
 3. Messages and string located in extension source code (JavaScript or TypeScript files)
   -> An exclusive `bundle.l10n.pt-br.json` for Brazilian Portuguese localization
+

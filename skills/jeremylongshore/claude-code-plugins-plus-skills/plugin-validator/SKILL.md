@@ -1,247 +1,91 @@
 ---
-name: Plugin Validator
-description: Automatically validates Claude Code plugin structure, schemas, and compliance when user mentions validate plugin, check plugin, or plugin errors. Runs comprehensive validation specific to claude-code-plugins repository standards.
-allowed-tools: Read, Grep, Bash
----
+name: plugin-validator
+description: |
+  Validate automatically validates AI assistant code plugin structure, schemas, and compliance when user mentions validate plugin, check plugin, or plugin errors. runs comprehensive validation specific to AI assistant-code-plugins repository standards. Use when validating configurations or code. Trigger with phrases like 'validate', 'check', or 'verify'.
+allowed-tools: Read, Grep, Bash(cmd:*)
+version: 1.0.0
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+license: MIT
+compatible-with: claude-code, codex, openclaw
+tags: [example, compliance, plugin-validator]
 
+---
 # Plugin Validator
 
-## Purpose
-Automatically validates Claude Code plugins against repository standards, checking structure, JSON schemas, frontmatter, permissions, security, and marketplace compliance - optimized for claude-code-plugins repository.
+## Overview
 
-## Trigger Keywords
-- "validate plugin"
-- "check plugin"
-- "plugin validation"
-- "plugin errors"
-- "lint plugin"
-- "verify plugin"
+Validates Claude Code plugin structure, JSON schemas, frontmatter format, security compliance, and marketplace catalog consistency. Runs the same checks as the CI pipeline to catch issues before committing.
 
-## Validation Checks
+## Prerequisites
 
-### 1. Required Files
-- ✅ `.claude-plugin/plugin.json` exists
-- ✅ `README.md` exists and not empty
-- ✅ `LICENSE` file exists
-- ✅ At least one component directory (commands/, agents/, skills/, hooks/, mcp/)
+- Read access to the target plugin directory and repository-level `.claude-plugin/marketplace.extended.json`
+- `jq` installed for JSON validation (`jq empty <file>`)
+- `grep` and `find` available on PATH for pattern scanning
+- `./scripts/validate-all-plugins.sh` available at the repository root
 
-### 2. Plugin.json Schema
-```bash
-# Required fields:
-- name (kebab-case, lowercase, hyphens only)
-- version (semantic versioning x.y.z)
-- description (clear, concise)
-- author.name
-- author.email
-- license (MIT, Apache-2.0, etc.)
-- keywords (array, at least 2)
+## Instructions
 
-# Optional but recommended:
-- repository (GitHub URL)
-- homepage (docs URL)
-```
+1. Identify the target plugin path from context or user request. Default to the current working directory if the path contains a `.claude-plugin/` subdirectory.
+2. Validate required files exist (see `${CLAUDE_SKILL_DIR}/references/validation-checks.md`):
+   - `.claude-plugin/plugin.json` present and valid JSON.
+   - `README.md` present and non-empty.
+   - `LICENSE` file present.
+   - At least one component directory exists (`commands/`, `agents/`, `skills/`, `hooks/`, or `mcp/`).
+3. Validate `plugin.json` schema:
+   - Confirm all required fields: `name` (kebab-case), `version` (semver `x.y.z`), `description`, `author.name`, `author.email`, `license`, `keywords` (array, minimum 2).
+   - Reject any fields not in the allowed set (`name`, `version`, `description`, `author`, `repository`, `homepage`, `license`, `keywords`).
+4. Validate frontmatter in all component files:
+   - **Commands** (`commands/*.md`): require `name`, `description`, `model` (one of `sonnet`, `opus`, `haiku`).
+   - **Agents** (`agents/*.md`): require `name`, `description`, `model`.
+   - **Skills** (`skills/*/SKILL.md`): require `name`, `description`; `allowed-tools` optional but validated against the allowed tools list if present.
+5. Validate directory structure matches the expected hierarchy (see `${CLAUDE_SKILL_DIR}/references/validation-checks.md` for the complete structure diagram).
+6. Check script permissions: find all `.sh` files and verify they have execute permission. Report any that lack it with a fix command.
+7. Run security scans: search for hardcoded secrets, AWS keys, private keys, dangerous commands, and suspicious URLs.
+8. Validate marketplace compliance:
+   - Confirm the plugin has an entry in `marketplace.extended.json`.
+   - Verify version, name, category, and source path match between `plugin.json` and the catalog entry.
+   - Check for duplicate plugin names.
+9. Validate README content: confirm it contains installation, usage, and description sections.
+10. Check hook path variables: verify hooks use `${CLAUDE_PLUGIN_ROOT}` instead of hardcoded absolute paths (`/home/`, `/Users/`).
+11. Compile results into a validation report following the format in `${CLAUDE_SKILL_DIR}/references/validation-report-format.md`.
 
-### 3. Frontmatter Validation
-**For Commands (commands/*.md):**
-```yaml
----
-name: command-name
-description: Brief description
-model: sonnet|opus|haiku
----
-```
+## Output
 
-**For Agents (agents/*.md):**
-```yaml
----
-name: agent-name
-description: Agent purpose
-model: sonnet|opus|haiku
----
-```
+A structured validation report containing:
+- Total checks passed and failed (e.g., "8/10 PASSED")
+- Per-check results with pass/fail status
+- For each failure: the specific issue, file location, and a ready-to-run fix command
+- Warnings for non-critical issues (e.g., missing optional README sections)
+- Overall verdict: PASSED or FAILED with critical issue count
 
-**For Skills (skills/*/SKILL.md):**
-```yaml
----
-name: Skill Name
-description: What it does AND when to use it
-allowed-tools: Tool1, Tool2, Tool3  # optional
----
-```
+## Error Handling
 
-### 4. Directory Structure
-Validates proper hierarchy:
-```
-plugin-name/
-├── .claude-plugin/          # Required
-│   └── plugin.json          # Required
-├── README.md                 # Required
-├── LICENSE                   # Required
-├── commands/                 # Optional
-│   └── *.md
-├── agents/                   # Optional
-│   └── *.md
-├── skills/                   # Optional
-│   └── skill-name/
-│       └── SKILL.md
-├── hooks/                    # Optional
-│   └── hooks.json
-└── mcp/                      # Optional
-    └── *.json
-```
-
-### 5. Script Permissions
-```bash
-# All .sh files must be executable
-find . -name "*.sh" ! -perm -u+x
-# Should return empty
-```
-
-### 6. JSON Validation
-```bash
-# All JSON must be valid
-jq empty plugin.json
-jq empty marketplace.extended.json
-jq empty hooks/hooks.json
-```
-
-### 7. Security Scans
-- ❌ No hardcoded secrets (API keys, tokens, passwords)
-- ❌ No AWS keys (AKIA...)
-- ❌ No private keys (BEGIN PRIVATE KEY)
-- ❌ No dangerous commands (rm -rf /, eval())
-- ❌ No suspicious URLs (non-HTTPS, IP addresses)
-
-### 8. Marketplace Compliance
-- ✅ Plugin listed in marketplace.extended.json
-- ✅ Source path matches actual location
-- ✅ Version matches between plugin.json and catalog
-- ✅ Category is valid
-- ✅ No duplicate plugin names
-
-### 9. README Requirements
-- ✅ Has installation instructions
-- ✅ Has usage examples
-- ✅ Has description section
-- ✅ Proper markdown formatting
-- ✅ No broken links
-
-### 10. Path Variables
-For hooks:
-- ✅ Uses `${CLAUDE_PLUGIN_ROOT}` not absolute paths
-- ✅ No hardcoded /home/ or /Users/ paths
-
-## Validation Process
-
-When activated, I will:
-
-1. **Identify Plugin**
-   - Detect plugin directory from context
-   - Or ask user which plugin to validate
-
-2. **Run Comprehensive Checks**
-   ```bash
-   # Structure validation
-   ./scripts/validate-all.sh plugins/category/plugin-name/
-
-   # JSON validation
-   jq empty .claude-plugin/plugin.json
-
-   # Frontmatter check
-   python3 scripts/check-frontmatter.py
-
-   # Permission check
-   find . -name "*.sh" ! -perm -u+x
-
-   # Security scan
-   grep -r "password\|secret\|api_key" | grep -v placeholder
-   ```
-
-3. **Generate Report**
-   - List all issues by severity (critical, high, medium, low)
-   - Provide fix commands for each issue
-   - Summary: PASSED or FAILED
-
-## Validation Report Format
-
-```
-🔍 PLUGIN VALIDATION REPORT
-Plugin: plugin-name
-Location: plugins/category/plugin-name/
-
-✅ PASSED CHECKS (8/10)
-- Required files present
-- Valid plugin.json schema
-- Proper frontmatter format
-- Directory structure correct
-- No security issues
-- Marketplace compliance
-- README complete
-- JSON valid
-
-❌ FAILED CHECKS (2/10)
-- Script permissions: 3 .sh files not executable
-  Fix: chmod +x scripts/*.sh
-
-- Marketplace version mismatch
-  plugin.json: v1.2.0
-  marketplace.extended.json: v1.1.0
-  Fix: Update marketplace.extended.json to v1.2.0
-
-⚠️  WARNINGS (1)
-- README missing usage examples
-  Recommendation: Add ## Usage section with examples
-
-OVERALL: FAILED (2 critical issues)
-Fix issues above before committing.
-```
-
-## Auto-Fix Capabilities
-
-I can automatically fix:
-- ✅ Script permissions (`chmod +x`)
-- ✅ JSON formatting (`jq` reformat)
-- ✅ Marketplace version sync
-- ✅ Missing LICENSE (copy from root)
-
-## Repository-Specific Checks
-
-**For claude-code-plugins repo:**
-- Validates against `.claude-plugin/marketplace.extended.json`
-- Checks category folder matches catalog entry
-- Ensures marketplace slug is `claude-code-plugins-plus`
-- Validates against other plugins (no duplicates)
-- Checks compliance with CLAUDE.md standards
-
-## Integration with CI
-
-Validation results match GitHub Actions:
-- Same checks as `.github/workflows/validate-plugins.yml`
-- Compatible with CI error format
-- Can be run locally before pushing
+| Error | Cause | Solution |
+|---|---|---|
+| Plugin directory not found | Incorrect path provided | Verify path matches `plugins/[category]/[name]/` and the directory exists |
+| `jq` parse error on JSON | Malformed JSON in `plugin.json` or catalog | Run `jq empty <file>` to locate the syntax error line |
+| Frontmatter parse failure | Missing `---` delimiters or invalid YAML | Ensure YAML frontmatter is enclosed in `---` lines with valid key-value pairs |
+| Version mismatch | `plugin.json` and `marketplace.extended.json` carry different versions | Update the stale version to match; run `pnpm run sync-marketplace` |
+| Scripts not executable | `.sh` files missing execute permission | Run `chmod +x <script>` for each flagged file |
+| Disallowed fields in plugin.json | Extra fields beyond the allowed set | Remove disallowed fields; only `name`, `version`, `description`, `author`, `repository`, `homepage`, `license`, `keywords` are permitted |
 
 ## Examples
 
-**User says:** "Validate the skills-powerkit plugin"
+**Validate a specific plugin:**
+Trigger: "Validate the skills-powerkit plugin."
+Process: Run all 10 validation checks against `plugins/community/skills-powerkit/`. Identify 2 failures (script permissions, version mismatch). Provide fix commands: `chmod +x scripts/*.sh` and version update instruction. Report overall: FAILED (see `${CLAUDE_SKILL_DIR}/references/examples.md`).
 
-**I automatically:**
-1. Run all validation checks
-2. Identify 2 issues (permissions, version mismatch)
-3. Provide fix commands
-4. Report overall status: FAILED
+**Pre-commit readiness check:**
+Trigger: "Check if my plugin is ready to commit."
+Process: Detect the plugin from working directory context. Run comprehensive validation including marketplace compliance. Report PASSED or list blocking issues with fixes.
 
-**User says:** "Check if my plugin is ready to commit"
+**Debug CI failures:**
+Trigger: "Why is my plugin failing CI?"
+Process: Run the same validation checks that CI executes (`validate-all-plugins.sh`). Identify the exact failure (e.g., disallowed field in `plugin.json`). Provide the fix command and verify the fix resolves the issue.
 
-**I automatically:**
-1. Detect plugin from context
-2. Run comprehensive validation
-3. Check marketplace compliance
-4. Report: PASSED or list issues
+## Resources
 
-**User says:** "Why is my plugin failing CI?"
-
-**I automatically:**
-1. Run same checks as CI
-2. Identify exact failure
-3. Provide fix command
-4. Validate fix works
+- `${CLAUDE_SKILL_DIR}/references/validation-checks.md` -- complete list of all 10 validation categories with specific checks
+- `${CLAUDE_SKILL_DIR}/references/validation-report-format.md` -- report template with pass/fail formatting
+- `${CLAUDE_SKILL_DIR}/references/examples.md` -- validation scenario walkthroughs
+- `${CLAUDE_SKILL_DIR}/references/errors.md` -- error handling patterns

@@ -1,3 +1,11 @@
+---
+name: Harvest Automation
+description: "Automate time tracking, project management, and invoicing workflows in Harvest -- log hours, manage projects, clients, and tasks through natural language commands."
+requires:
+  mcp:
+    - rube
+---
+
 # Harvest Automation
 
 Automate your Harvest time tracking operations directly from Claude Code. Log time entries, manage projects and clients, create tasks, and pull reporting data -- all without leaving your terminal.
@@ -143,3 +151,4 @@ Update time entry 123456 to change the hours to 4.0 and add the note "Completed 
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

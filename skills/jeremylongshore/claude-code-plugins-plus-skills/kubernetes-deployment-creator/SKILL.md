@@ -1,44 +1,43 @@
-## Overview
+---
+name: kubernetes-deployment-creator
+description: |
+  Kubernetes Deployment Creator - Auto-activating skill for DevOps Advanced.
+  Triggers on: kubernetes deployment creator, kubernetes deployment creator
+  Part of the DevOps Advanced skill category.
+allowed-tools: Read, Write, Edit, Bash, Grep
+version: 1.0.0
+license: MIT
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+---
 
-This skill allows Claude to create production-ready Kubernetes deployments and services. It generates complete K8s manifests with health checks, auto-scaling, ingress, TLS, and resource management configured.
+# Kubernetes Deployment Creator
 
-## How It Works
+## Purpose
 
-1. **Receiving Request**: Claude receives a request to create Kubernetes resources.
-2. **Generating Manifests**: Claude generates YAML manifests for deployments, services, configmaps, secrets, ingress, and horizontal pod autoscalers based on the user's requirements.
-3. **Presenting Manifests**: Claude presents the generated manifests to the user for review and deployment.
+This skill provides automated assistance for kubernetes deployment creator tasks within the DevOps Advanced domain.
 
-## When to Use This Skill
+## When to Use
 
-This skill activates when you need to:
-- Create a new Kubernetes deployment.
-- Define a Kubernetes service for an application.
-- Generate Kubernetes manifests for any K8s resource.
+This skill activates automatically when you:
+- Mention "kubernetes deployment creator" in your request
+- Ask about kubernetes deployment creator patterns or best practices
+- Need help with advanced devops skills covering kubernetes, terraform, advanced ci/cd, monitoring, and infrastructure as code.
 
-## Examples
+## Capabilities
 
-### Example 1: Deploying a Web Application
+- Provides step-by-step guidance for kubernetes deployment creator
+- Follows industry best practices and patterns
+- Generates production-ready code and configurations
+- Validates outputs against common standards
 
-User request: "Create a Kubernetes deployment for a web application named 'my-web-app' with 3 replicas, exposing port 80."
+## Example Triggers
 
-The skill will:
-1. Generate a Deployment manifest for 'my-web-app' with 3 replicas.
-2. Generate a Service manifest to expose port 80 of the deployment.
+- "Help me with kubernetes deployment creator"
+- "Set up kubernetes deployment creator"
+- "How do I implement kubernetes deployment creator?"
 
-### Example 2: Setting up Ingress for a Service
+## Related Skills
 
-User request: "Set up an Ingress resource to route traffic to the 'my-web-app' service."
+Part of the **DevOps Advanced** skill category.
+Tags: kubernetes, terraform, helm, monitoring, iac
 
-The skill will:
-1. Generate an Ingress manifest to route external traffic to the 'my-web-app' service.
-2. Configure TLS termination for secure access.
-
-## Best Practices
-
-- **Resource Limits**: Define resource requests and limits for each container to ensure fair resource allocation.
-- **Health Checks**: Configure liveness and readiness probes to enable automatic restarts and prevent traffic from being routed to unhealthy pods.
-- **Namespaces**: Use namespaces to isolate different environments or applications within the cluster.
-
-## Integration
-
-This skill can be used with other Claude Code plugins for tasks such as deploying infrastructure-as-code (IaC) or integrating with CI/CD pipelines. It provides the Kubernetes manifests that other plugins can then deploy or manage.

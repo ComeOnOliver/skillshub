@@ -607,3 +607,4 @@ For complete API reference including `glassEffect()`, `glassBackgroundEffect()`,
 **Platforms:** iOS 26+, iPadOS 26+, macOS Tahoe, axiom-visionOS 3
 **Xcode:** 26+
 **History:** See git log for changes
+

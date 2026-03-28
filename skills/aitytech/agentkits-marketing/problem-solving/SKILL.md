@@ -313,3 +313,4 @@ All techniques detailed in `./references/`:
 ---
 
 **Remember:** These techniques are tools, not rules. Mix and combine as needed. The goal is breakthrough thinking and unblocked execution, not perfect methodology.
+

@@ -144,3 +144,4 @@ memory/board-meetings/
 - `templates/meeting-agenda.md` — agenda format
 - `templates/meeting-minutes.md` — final output format
 - `references/meeting-facilitation.md` — conflict handling, timing, failure modes
+

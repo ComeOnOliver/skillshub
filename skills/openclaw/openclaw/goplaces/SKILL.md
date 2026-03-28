@@ -25,3 +25,4 @@ Notes
 - `--no-color` or `NO_COLOR` disables ANSI color.
 - Price levels: 0..4 (free → very expensive).
 - Type filter sends only the first `--type` value (API accepts one).
+

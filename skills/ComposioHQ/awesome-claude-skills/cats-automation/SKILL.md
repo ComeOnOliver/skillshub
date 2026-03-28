@@ -1,3 +1,10 @@
+---
+name: cats-automation
+description: "Automate Cats tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Cats Automation via Rube MCP
 
 Automate Cats operations through Composio's Cats toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

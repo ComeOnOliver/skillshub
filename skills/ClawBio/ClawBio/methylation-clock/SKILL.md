@@ -111,3 +111,4 @@ methylation_clock_report/
 2. Do not infer clinical diagnosis or treatment from clock estimates.
 3. Trigger terms include: epigenetic age, methylation clock, Horvath, GrimAge, DunedinPACE, GEO, GSE.
 4. Valid downstream chaining: `rnaseq-de` for transcriptomic-aging contrasts and `equity-scorer` for cohort context.
+

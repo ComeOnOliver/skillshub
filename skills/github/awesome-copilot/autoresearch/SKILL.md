@@ -273,3 +273,4 @@ experiment	commit	metric	status	description
 3. **Stay autonomous**: Never stop to ask. Think harder if stuck.
 4. **Keep it simple**: Complexity is a cost. Weigh it against gains.
 5. **Log everything**: The TSV is the research journal.
+

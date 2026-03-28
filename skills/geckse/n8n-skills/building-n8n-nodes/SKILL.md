@@ -1,3 +1,8 @@
+---
+name: building-n8n-nodes
+description: "Builds custom community nodes for n8n, the workflow automation platform. Activates when the user wants to create, scaffold, develop, test, lint, or publish an n8n node — including both declarative (REST API) and programmatic styles. Also triggers when the user mentions n8n nodes, n8n-cli, n8n-node, community nodes, node credentials, or anything related to extending n8n with custom integrations. Encodes all official best practices from n8n's documentation."
+---
+
 # n8n Node Builder
 
 Build production-ready custom nodes for n8n using the official `n8n-node` CLI tool and n8n's best practices.
@@ -423,3 +428,4 @@ nodes/MyNode/
 ## n8n Data Structure
 
 Data flows between nodes as arrays of items. Each item has `json` (required) and optionally `binary`. The `execute()` method returns `Promise<INodeExecutionData[][]>` — an array of arrays (one per output). Use `this.helpers.returnJsonArray(responseData)` to wrap raw data, and remember to return `[returnData]` (nested array).
+

@@ -1,3 +1,10 @@
+---
+name: docmosis-automation
+description: "Automate Docmosis tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Docmosis Automation via Rube MCP
 
 Automate Docmosis operations through Composio's Docmosis toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

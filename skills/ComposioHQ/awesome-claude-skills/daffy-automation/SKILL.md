@@ -1,3 +1,10 @@
+---
+name: daffy-automation
+description: "Automate Daffy tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Daffy Automation via Rube MCP
 
 Automate Daffy operations through Composio's Daffy toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

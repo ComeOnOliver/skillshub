@@ -188,3 +188,4 @@ All output passes quality verification:
 - **marketing-context**: Foundation — run this first if it doesn't exist.
 - **cmo-advisor** (C-Suite): Strategic marketing decisions. Marketing-ops handles execution routing.
 - **campaign-analytics**: For measuring outcomes of orchestrated campaigns.
+

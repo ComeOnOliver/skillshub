@@ -63,3 +63,4 @@ When working with Microsoft Agent Framework in any language:
 - Package names, repository paths, and sample locations match the selected ecosystem.
 - Guidance reflects current Microsoft Agent Framework documentation rather than legacy assumptions.
 - Migration advice calls out Semantic Kernel and AutoGen only when relevant.
+

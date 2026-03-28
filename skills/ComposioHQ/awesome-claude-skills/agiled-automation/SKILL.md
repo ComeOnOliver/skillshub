@@ -1,3 +1,10 @@
+---
+name: agiled-automation
+description: "Automate Agiled tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Agiled Automation via Rube MCP
 
 Automate Agiled operations through Composio's Agiled toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

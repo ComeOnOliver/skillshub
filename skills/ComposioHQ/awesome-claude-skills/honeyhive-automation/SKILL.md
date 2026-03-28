@@ -1,3 +1,10 @@
+---
+name: honeyhive-automation
+description: "Automate Honeyhive tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Honeyhive Automation via Rube MCP
 
 Automate Honeyhive operations through Composio's Honeyhive toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

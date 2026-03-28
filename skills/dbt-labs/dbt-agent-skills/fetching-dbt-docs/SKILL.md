@@ -85,3 +85,4 @@ Then fetch individual pages with `.md` URLs.
 | Searching llms-full.txt first | Search llms.txt index first, only use full docs if no results |
 | Loading llms-full.txt entirely | Use the search script to filter, then fetch individual pages |
 | Guessing page paths | Use llms.txt index to find correct paths |
+

@@ -145,3 +145,4 @@ my-awesome-skill/
 ## References
 
 - Agent Skills official spec: <https://agentskills.io/specification>
+

@@ -1,23 +1,23 @@
 ---
 name: jpa-patterns
-description: Spring Boot中的JPA/Hibernate模式，用于实体设计、关系处理、查询优化、事务管理、审计、索引、分页和连接池。
+description: JPA/Hibernate patterns for entity design, relationships, query optimization, transactions, auditing, indexing, pagination, and pooling in Spring Boot.
 origin: ECC
 ---
 
-# JPA/Hibernate 模式
+# JPA/Hibernate Patterns
 
-用于 Spring Boot 中的数据建模、存储库和性能调优。
+Use for data modeling, repositories, and performance tuning in Spring Boot.
 
-## 何时激活
+## When to Activate
 
-* 设计 JPA 实体和表映射时
-* 定义关系时 (@OneToMany, @ManyToOne, @ManyToMany)
-* 优化查询时 (N+1 问题预防、获取策略、投影)
-* 配置事务、审计或软删除时
-* 设置分页、排序或自定义存储库方法时
-* 调整连接池 (HikariCP) 或二级缓存时
+- Designing JPA entities and table mappings
+- Defining relationships (@OneToMany, @ManyToOne, @ManyToMany)
+- Optimizing queries (N+1 prevention, fetch strategies, projections)
+- Configuring transactions, auditing, or soft deletes
+- Setting up pagination, sorting, or custom repository methods
+- Tuning connection pooling (HikariCP) or second-level caching
 
-## 实体设计
+## Entity Design
 
 ```java
 @Entity
@@ -43,30 +43,29 @@ public class MarketEntity {
 }
 ```
 
-启用审计：
-
+Enable auditing:
 ```java
 @Configuration
 @EnableJpaAuditing
 class JpaConfig {}
 ```
 
-## 关联关系和 N+1 预防
+## Relationships and N+1 Prevention
 
 ```java
 @OneToMany(mappedBy = "market", cascade = CascadeType.ALL, orphanRemoval = true)
 private List<PositionEntity> positions = new ArrayList<>();
 ```
 
-* 默认使用延迟加载；需要时在查询中使用 `JOIN FETCH`
-* 避免在集合上使用 `EAGER`；对于读取路径使用 DTO 投影
+- Default to lazy loading; use `JOIN FETCH` in queries when needed
+- Avoid `EAGER` on collections; use DTO projections for read paths
 
 ```java
 @Query("select m from MarketEntity m left join fetch m.positions where m.id = :id")
 Optional<MarketEntity> findWithPositions(@Param("id") Long id);
 ```
 
-## 存储库模式
+## Repository Patterns
 
 ```java
 public interface MarketRepository extends JpaRepository<MarketEntity, Long> {
@@ -77,8 +76,7 @@ public interface MarketRepository extends JpaRepository<MarketEntity, Long> {
 }
 ```
 
-* 使用投影进行轻量级查询：
-
+- Use projections for lightweight queries:
 ```java
 public interface MarketSummary {
   Long getId();
@@ -88,11 +86,11 @@ public interface MarketSummary {
 Page<MarketSummary> findAllBy(Pageable pageable);
 ```
 
-## 事务
+## Transactions
 
-* 使用 `@Transactional` 注解服务方法
-* 对读取路径使用 `@Transactional(readOnly = true)` 以进行优化
-* 谨慎选择传播行为；避免长时间运行的事务
+- Annotate service methods with `@Transactional`
+- Use `@Transactional(readOnly = true)` for read paths to optimize
+- Choose propagation carefully; avoid long-running transactions
 
 ```java
 @Transactional
@@ -104,26 +102,25 @@ public Market updateStatus(Long id, MarketStatus status) {
 }
 ```
 
-## 分页
+## Pagination
 
 ```java
 PageRequest page = PageRequest.of(pageNumber, pageSize, Sort.by("createdAt").descending());
 Page<MarketEntity> markets = repo.findByStatus(MarketStatus.ACTIVE, page);
 ```
 
-对于类似游标的分页，在 JPQL 中包含 `id > :lastId` 并配合排序。
+For cursor-like pagination, include `id > :lastId` in JPQL with ordering.
 
-## 索引和性能
+## Indexing and Performance
 
-* 为常用过滤器添加索引（`status`、`slug`、外键）
-* 使用与查询模式匹配的复合索引（`status, created_at`）
-* 避免 `select *`；仅投影需要的列
-* 使用 `saveAll` 和 `hibernate.jdbc.batch_size` 进行批量写入
+- Add indexes for common filters (`status`, `slug`, foreign keys)
+- Use composite indexes matching query patterns (`status, created_at`)
+- Avoid `select *`; project only needed columns
+- Batch writes with `saveAll` and `hibernate.jdbc.batch_size`
 
-## 连接池 (HikariCP)
+## Connection Pooling (HikariCP)
 
-推荐属性：
-
+Recommended properties:
 ```
 spring.datasource.hikari.maximum-pool-size=20
 spring.datasource.hikari.minimum-idle=5
@@ -131,25 +128,25 @@ spring.datasource.hikari.connection-timeout=30000
 spring.datasource.hikari.validation-timeout=5000
 ```
 
-对于 PostgreSQL LOB 处理，添加：
-
+For PostgreSQL LOB handling, add:
 ```
 spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 ```
 
-## 缓存
+## Caching
 
-* 一级缓存是每个 EntityManager 的；避免在事务之间保持实体
-* 对于读取频繁的实体，谨慎考虑二级缓存；验证驱逐策略
+- 1st-level cache is per EntityManager; avoid keeping entities across transactions
+- For read-heavy entities, consider second-level cache cautiously; validate eviction strategy
 
-## 迁移
+## Migrations
 
-* 使用 Flyway 或 Liquibase；切勿在生产中依赖 Hibernate 自动 DDL
-* 保持迁移的幂等性和可添加性；避免无计划地删除列
+- Use Flyway or Liquibase; never rely on Hibernate auto DDL in production
+- Keep migrations idempotent and additive; avoid dropping columns without plan
 
-## 测试数据访问
+## Testing Data Access
 
-* 首选使用 Testcontainers 的 `@DataJpaTest` 来镜像生产环境
-* 使用日志断言 SQL 效率：设置 `logging.level.org.hibernate.SQL=DEBUG` 和 `logging.level.org.hibernate.orm.jdbc.bind=TRACE` 以查看参数值
+- Prefer `@DataJpaTest` with Testcontainers to mirror production
+- Assert SQL efficiency using logs: set `logging.level.org.hibernate.SQL=DEBUG` and `logging.level.org.hibernate.orm.jdbc.bind=TRACE` for parameter values
 
-**请记住**：保持实体精简，查询有针对性，事务简短。通过获取策略和投影来预防 N+1 问题，并根据读写路径建立索引。
+**Remember**: Keep entities lean, queries intentional, and transactions short. Prevent N+1 with fetch strategies and projections, and index for your read/write paths.
+

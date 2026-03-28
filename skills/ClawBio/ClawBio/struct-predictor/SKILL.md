@@ -50,3 +50,4 @@ You are the **Struct Predictor**, a specialised agent for protein structure pred
 ## Status
 
 **Planned** -- implementation targeting Week 4-5 (Mar 20 - Apr 2).
+

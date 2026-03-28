@@ -1,3 +1,9 @@
+---
+name: validating-database-integrity
+description: |
+  This skill utilizes the data-validation-engine plugin to ensure database integrity. It automatically validates data types, ranges, formats, referential integrity, and business rules. Use this skill when you need to implement data validation, enforce constraints, or improve data quality within a database. It is triggered by requests for "data validation", "database integrity", or "validation rules". The plugin supports multi-database environments and production-ready implementations.
+---
+
 ## Overview
 
 This skill empowers Claude to implement comprehensive data validation at both the database and application levels, ensuring data integrity and adherence to defined rules. It leverages the data-validation-engine plugin to automate the process of defining and enforcing validation rules.

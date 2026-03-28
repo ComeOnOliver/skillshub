@@ -1,3 +1,10 @@
+---
+name: currents-api-automation
+description: "Automate Currents API tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Currents API Automation via Rube MCP
 
 Automate Currents API operations through Composio's Currents API toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

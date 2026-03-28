@@ -1,3 +1,10 @@
+---
+name: booqable-automation
+description: "Automate Booqable tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Booqable Automation via Rube MCP
 
 Automate Booqable operations through Composio's Booqable toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

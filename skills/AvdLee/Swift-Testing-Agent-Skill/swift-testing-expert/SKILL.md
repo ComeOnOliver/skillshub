@@ -1,3 +1,8 @@
+---
+name: swift-testing-expert
+description: 'Expert guidance for Swift Testing: test structure, #expect/#require macros, traits and tags, parameterized tests, test plans, parallel execution, async waiting patterns, and XCTest migration. Use when writing new Swift tests, modernizing XCTest suites, debugging flaky tests, or improving test quality and maintainability in Apple-platform or Swift server projects.'
+---
+
 # Swift Testing
 
 ## Overview
@@ -72,3 +77,4 @@ Use this skill to write, review, migrate, and debug Swift tests with modern Swif
 - `references/async-testing-and-waiting.md`
 - `references/migration-from-xctest.md`
 - `references/xcode-workflows.md`
+

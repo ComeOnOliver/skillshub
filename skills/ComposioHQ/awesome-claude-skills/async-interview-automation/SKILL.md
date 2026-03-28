@@ -1,3 +1,10 @@
+---
+name: async-interview-automation
+description: "Automate Async Interview tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Async Interview Automation via Rube MCP
 
 Automate Async Interview operations through Composio's Async Interview toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

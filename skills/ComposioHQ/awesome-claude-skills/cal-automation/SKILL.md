@@ -1,3 +1,10 @@
+---
+name: cal-automation
+description: "Automate Cal tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Cal Automation via Rube MCP
 
 Automate Cal operations through Composio's Cal toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

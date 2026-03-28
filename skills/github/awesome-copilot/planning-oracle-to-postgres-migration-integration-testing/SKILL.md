@@ -42,3 +42,4 @@ Write the plan to: `.github/oracle-to-postgres-migration/Reports/{TARGET_PROJECT
 - **Database interactions only** — skip business logic that does not touch the database.
 - **Oracle is the golden source** — tests should capture Oracle's expected behavior for comparison against PostgreSQL.
 - **No multi-connection harnessing** — migrated applications are copied and renamed (e.g., `MyApp.Postgres`), so each instance targets one database.
+

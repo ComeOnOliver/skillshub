@@ -150,3 +150,4 @@ go test -bench=. -benchmem -count=10 ./...
 - **Declaration patterns**: See [go-declarations](../go-declarations/SKILL.md) when using `make` with capacity hints or initializing maps and slices
 - **Concurrency**: See [go-concurrency](../go-concurrency/SKILL.md) when parallelizing work across goroutines or using sync.Pool for buffer reuse
 - **Style principles**: See [go-style-core](../go-style-core/SKILL.md) when deciding whether an optimization is worth the readability cost
+

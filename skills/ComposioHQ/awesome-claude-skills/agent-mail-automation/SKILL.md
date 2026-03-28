@@ -1,3 +1,10 @@
+---
+name: agent-mail-automation
+description: "Automate Agent Mail tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Agent Mail Automation via Rube MCP
 
 Automate Agent Mail operations through Composio's Agent Mail toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: adrapid-automation
+description: "Automate Adrapid tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Adrapid Automation via Rube MCP
 
 Automate Adrapid operations through Composio's Adrapid toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

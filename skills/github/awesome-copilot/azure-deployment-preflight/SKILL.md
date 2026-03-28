@@ -214,3 +214,4 @@ bicep --version
 - [Validation Commands Reference](references/VALIDATION-COMMANDS.md)
 - [Report Template](references/REPORT-TEMPLATE.md)
 - [Error Handling Guide](references/ERROR-HANDLING.md)
+

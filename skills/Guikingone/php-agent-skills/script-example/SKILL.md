@@ -39,3 +39,4 @@ $result = $tool->executeScript('process.php', ['arg1', 'arg2']);
 - Capture of both stdout and stderr
 - Configurable timeout (default: 60 seconds)
 - Proper error handling and reporting
+

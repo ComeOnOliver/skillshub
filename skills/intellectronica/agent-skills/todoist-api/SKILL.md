@@ -1,3 +1,8 @@
+---
+name: todoist-api
+description: This skill provides instructions for interacting with Todoist using the td CLI tool. It covers CRUD operations for tasks/projects/sections/labels/comments, and requires confirmation before destructive actions. Use this skill when the user wants to read, create, update, or delete Todoist data.
+---
+
 # Todoist CLI Skill
 
 This skill provides procedural guidance for working with Todoist using the `td` CLI tool.
@@ -411,3 +416,4 @@ For detailed information on specific topics, consult:
 3. **Write operations** - Ask for confirmation before executing
 4. **Use JSON output** - Add `--json` flag for machine-readable data
 5. **Handle large datasets** - Use `--all` or pagination with `--cursor`
+

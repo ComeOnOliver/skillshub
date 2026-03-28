@@ -1,5 +1,5 @@
 ---
-name: Marketplace Manager
+name: marketplace-manager
 description: Automatically manages marketplace catalog updates, syncs marketplace.json, and handles plugin distribution when user mentions marketplace update, sync catalog, or add to marketplace. Specific to claude-code-plugins two-catalog system.
 allowed-tools: Read, Write, Edit, Grep, Bash
 ---
@@ -299,3 +299,4 @@ git commit -m "feat: Add new-plugin to marketplace"
 3. Sync marketplace.json
 4. Validate versions match
 5. Report success
+

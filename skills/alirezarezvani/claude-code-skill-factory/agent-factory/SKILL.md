@@ -266,3 +266,4 @@ Place in one of these locations:
 **Last Updated**: October 22, 2025
 **Compatibility**: Claude Code (agents system)
 **Template Location**: [documentation/templates/AGENTS_FACTORY_PROMPT.md](../../documentation/templates/AGENTS_FACTORY_PROMPT.md)
+

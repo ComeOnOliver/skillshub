@@ -1,3 +1,8 @@
+---
+name: defold-shaders-editing
+description: "Creates and edits Defold shader files (.vp, .fp, .glsl). Use when asked to create, modify, or configure any Defold vertex shader, fragment shader, or GLSL include file."
+---
+
 # Editing Defold Shaders
 
 Creates and edits Defold shader files: vertex programs (`.vp`), fragment programs (`.fp`), and GLSL include snippets (`.glsl`).
@@ -359,3 +364,4 @@ mediump float edge_smoothing(mediump float dist)
 3. Keep the existing code style (precision qualifiers, naming, spacing).
 4. Ensure any new uniforms are also added to the material file (use `defold-proto-file-editing` skill).
 5. Ensure any removed uniforms are also removed from the material file.
+

@@ -626,3 +626,4 @@ If you need more context:
 - **marketing-psychology**: For understanding referral motivation
 - **analytics-tracking**: For tracking referral attribution
 - **pricing-strategy**: For structuring rewards relative to LTV
+

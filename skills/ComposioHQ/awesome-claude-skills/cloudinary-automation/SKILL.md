@@ -1,3 +1,11 @@
+---
+name: Cloudinary Automation
+description: "Automate Cloudinary media management including folder organization, upload presets, asset lookup, transformations, and usage monitoring through natural language commands"
+requires:
+  mcp:
+    - rube
+---
+
 # Cloudinary Automation
 
 Automate Cloudinary media management workflows -- create folders, configure upload presets, look up assets, manage transformations, search folders, and monitor usage -- all through natural language.
@@ -175,3 +183,4 @@ Example prompt:
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

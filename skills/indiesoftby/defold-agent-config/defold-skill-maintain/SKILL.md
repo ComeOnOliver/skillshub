@@ -1,3 +1,8 @@
+---
+name: defold-skill-maintain
+description: "Maintains Defold agent skills. Use when asked to update link lists in api-fetch/docs-fetch/examples-fetch skills, create or update proto file references, or fetch proto schemas."
+---
+
 # Defold Skill Maintenance
 
 Handles maintenance tasks for other Defold skills: updating link indexes and managing proto file references.
@@ -42,3 +47,4 @@ For detailed instructions on creating, updating, and maintaining proto file refe
 ## Scripts
 
 - `scripts/fetch_proto.py` — downloads proto schemas from the stable Defold SDK into `.agents/skills/defold-skill-maintain/assets/proto/`. Run when proto schemas are missing or need updating: `python .agents/skills/defold-skill-maintain/scripts/fetch_proto.py`
+

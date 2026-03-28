@@ -1,117 +1,136 @@
 ---
 name: prompt-optimizer
-description: 分析原始提示，识别意图和差距，匹配ECC组件（技能/命令/代理/钩子），并输出一个可直接粘贴的优化提示。仅提供咨询角色——绝不自行执行任务。触发时机：当用户说“优化提示”、“改进我的提示”、“如何编写提示”、“帮我优化这个指令”或明确要求提高提示质量时。中文等效表达同样触发：“优化prompt”、“改进prompt”、“怎么写prompt”、“帮我优化这个指令”。不触发时机：当用户希望直接执行任务，或说“直接做”时。不触发时机：当用户说“优化代码”、“优化性能”、“optimize performance”、“optimize this code”时——这些是重构/性能优化任务，而非提示优化。origin: community
+description: >-
+  Analyze raw prompts, identify intent and gaps, match ECC components
+  (skills/commands/agents/hooks), and output a ready-to-paste optimized
+  prompt. Advisory role only — never executes the task itself.
+  TRIGGER when: user says "optimize prompt", "improve my prompt",
+  "how to write a prompt for", "help me prompt", "rewrite this prompt",
+  or explicitly asks to enhance prompt quality. Also triggers on Chinese
+  equivalents: "优化prompt", "改进prompt", "怎么写prompt", "帮我优化这个指令".
+  DO NOT TRIGGER when: user wants the task executed directly, or says
+  "just do it" / "直接做". DO NOT TRIGGER when user says "优化代码",
+  "优化性能", "optimize performance", "optimize this code" — those are
+  refactoring/performance tasks, not prompt optimization.
+origin: community
 metadata:
   author: YannJY02
   version: "1.0.0"
 ---
 
-# Prompt 优化器
+# Prompt Optimizer
 
-分析一个草稿提示，对其进行评估，匹配到 ECC 生态系统组件，并输出一个完整的优化提示供用户复制粘贴并运行。
+Analyze a draft prompt, critique it, match it to ECC ecosystem components,
+and output a complete optimized prompt the user can paste and run.
 
-## 何时使用
+## When to Use
 
-* 用户说“优化这个提示”、“改进我的提示”、“重写这个提示”
-* 用户说“帮我写一个更好的提示来...”
-* 用户说“询问 Claude Code 的...最佳方式是什么？”
-* 用户说“优化prompt”、“改进prompt”、“怎么写prompt”、“帮我优化这个指令”
-* 用户粘贴一个草稿提示并要求反馈或改进
-* 用户说“我不知道如何为此编写提示”
-* 用户说“我应该如何使用 ECC 来...”
-* 用户明确调用 `/prompt-optimize`
+- User says "optimize this prompt", "improve my prompt", "rewrite this prompt"
+- User says "help me write a better prompt for..."
+- User says "what's the best way to ask Claude Code to..."
+- User says "优化prompt", "改进prompt", "怎么写prompt", "帮我优化这个指令"
+- User pastes a draft prompt and asks for feedback or enhancement
+- User says "I don't know how to prompt for this"
+- User says "how should I use ECC for..."
+- User explicitly invokes `/prompt-optimize`
 
-### 不要用于
+### Do Not Use When
 
-* 用户希望直接执行任务（直接执行即可）
-* 用户说“优化代码”、“优化性能”、“optimize this code”、“optimize performance”——这些是重构任务，不是提示优化
-* 用户询问 ECC 配置（改用 `configure-ecc`）
-* 用户想要技能清单（改用 `skill-stocktake`）
-* 用户说“直接做”或“just do it”
+- User wants the task done directly (just execute it)
+- User says "优化代码", "优化性能", "optimize this code", "optimize performance" — these are refactoring tasks, not prompt optimization
+- User is asking about ECC configuration (use `configure-ecc` instead)
+- User wants a skill inventory (use `skill-stocktake` instead)
+- User says "just do it" or "直接做"
 
-## 工作原理
+## How It Works
 
-**仅提供建议——不要执行用户的任务。**
+**Advisory only — do not execute the user's task.**
 
-不要编写代码、创建文件、运行命令或采取任何实现行动。你的**唯一**输出是分析加上一个优化后的提示。
+Do NOT write code, create files, run commands, or take any implementation
+action. Your ONLY output is an analysis plus an optimized prompt.
 
-如果用户说“直接做”、“just do it”或“不要优化，直接执行”，不要在此技能内切换到实现模式。告诉用户此技能只生成优化提示，并指示他们如果要执行任务，请提出正常的任务请求。
+If the user says "just do it", "直接做", or "don't optimize, just execute",
+do not switch into implementation mode inside this skill. Tell the user this
+skill only produces optimized prompts, and instruct them to make a normal
+task request if they want execution instead.
 
-按顺序运行这个 6 阶段流程。使用下面的输出格式呈现结果。
+Run this 6-phase pipeline sequentially. Present results using the Output Format below.
 
-### 分析流程
+### Analysis Pipeline
 
-### 阶段 0：项目检测
+### Phase 0: Project Detection
 
-在分析提示之前，检测当前项目上下文：
+Before analyzing the prompt, detect the current project context:
 
-1. 检查工作目录中是否存在 `CLAUDE.md`——读取它以了解项目惯例
-2. 从项目文件中检测技术栈：
-   * `package.json` → Node.js / TypeScript / React / Next.js
-   * `go.mod` → Go
-   * `pyproject.toml` / `requirements.txt` → Python
-   * `Cargo.toml` → Rust
-   * `build.gradle` / `pom.xml` → Java / Kotlin / Spring Boot
-   * `Package.swift` → Swift
-   * `Gemfile` → Ruby
-   * `composer.json` → PHP
-   * `*.csproj` / `*.sln` → .NET
-   * `Makefile` / `CMakeLists.txt` → C / C++
-   * `cpanfile` / `Makefile.PL` → Perl
-3. 记录检测到的技术栈，用于阶段 3 和阶段 4
+1. Check if a `CLAUDE.md` exists in the working directory — read it for project conventions
+2. Detect tech stack from project files:
+   - `package.json` → Node.js / TypeScript / React / Next.js
+   - `go.mod` → Go
+   - `pyproject.toml` / `requirements.txt` → Python
+   - `Cargo.toml` → Rust
+   - `build.gradle` / `pom.xml` → Java / Kotlin / Spring Boot
+   - `Package.swift` → Swift
+   - `Gemfile` → Ruby
+   - `composer.json` → PHP
+   - `*.csproj` / `*.sln` → .NET
+   - `Makefile` / `CMakeLists.txt` → C / C++
+   - `cpanfile` / `Makefile.PL` → Perl
+3. Note detected tech stack for use in Phase 3 and Phase 4
 
-如果未找到项目文件（例如，提示是抽象的或用于新项目），则跳过检测并在阶段 4 标记“技术栈未知”。
+If no project files are found (e.g., the prompt is abstract or for a new project),
+skip detection and flag "tech stack unknown" in Phase 4.
 
-### 阶段 1：意图检测
+### Phase 1: Intent Detection
 
-将用户的任务分类为一个或多个类别：
+Classify the user's task into one or more categories:
 
-| 类别 | 信号词 | 示例 |
+| Category | Signal Words | Example |
 |----------|-------------|---------|
-| 新功能 | build, create, add, implement, 创建, 实现, 添加 | "Build a login page" |
-| 错误修复 | fix, broken, not working, error, 修复, 报错 | "Fix the auth flow" |
-| 重构 | refactor, clean up, restructure, 重构, 整理 | "Refactor the API layer" |
-| 研究 | how to, what is, explore, investigate, 怎么, 如何 | "How to add SSO" |
-| 测试 | test, coverage, verify, 测试, 覆盖率 | "Add tests for the cart" |
-| 审查 | review, audit, check, 审查, 检查 | "Review my PR" |
-| 文档 | document, update docs, 文档 | "Update the API docs" |
-| 基础设施 | deploy, CI, docker, database, 部署, 数据库 | "Set up CI/CD pipeline" |
-| 设计 | design, architecture, plan, 设计, 架构 | "Design the data model" |
+| New Feature | build, create, add, implement, 创建, 实现, 添加 | "Build a login page" |
+| Bug Fix | fix, broken, not working, error, 修复, 报错 | "Fix the auth flow" |
+| Refactor | refactor, clean up, restructure, 重构, 整理 | "Refactor the API layer" |
+| Research | how to, what is, explore, investigate, 怎么, 如何 | "How to add SSO" |
+| Testing | test, coverage, verify, 测试, 覆盖率 | "Add tests for the cart" |
+| Review | review, audit, check, 审查, 检查 | "Review my PR" |
+| Documentation | document, update docs, 文档 | "Update the API docs" |
+| Infrastructure | deploy, CI, docker, database, 部署, 数据库 | "Set up CI/CD pipeline" |
+| Design | design, architecture, plan, 设计, 架构 | "Design the data model" |
 
-### 阶段 2：范围评估
+### Phase 2: Scope Assessment
 
-如果阶段 0 检测到项目，则使用代码库大小作为信号。否则，仅根据提示描述进行估算，并将估算标记为不确定。
+If Phase 0 detected a project, use codebase size as a signal. Otherwise, estimate
+from the prompt description alone and mark the estimate as uncertain.
 
-| 范围 | 启发式判断 | 编排 |
+| Scope | Heuristic | Orchestration |
 |-------|-----------|---------------|
-| 微小 | 单个文件，< 50 行 | 直接执行 |
-| 低 | 单个组件或模块 | 单个命令或技能 |
-| 中 | 多个组件，同一领域 | 命令链 + /verify |
-| 高 | 跨领域，5+ 个文件 | 先使用 /plan，然后分阶段执行 |
-| 史诗级 | 多会话，多 PR，架构性变更 | 使用蓝图技能制定多会话计划 |
+| TRIVIAL | Single file, < 50 lines | Direct execution |
+| LOW | Single component or module | Single command or skill |
+| MEDIUM | Multiple components, same domain | Command chain + /verify |
+| HIGH | Cross-domain, 5+ files | /plan first, then phased execution |
+| EPIC | Multi-session, multi-PR, architectural shift | Use blueprint skill for multi-session plan |
 
-### 阶段 3：ECC 组件匹配
+### Phase 3: ECC Component Matching
 
-将意图 + 范围 + 技术栈（来自阶段 0）映射到特定的 ECC 组件。
+Map intent + scope + tech stack (from Phase 0) to specific ECC components.
 
-#### 按意图类型
+#### By Intent Type
 
-| 意图 | 命令 | 技能 | 代理 |
+| Intent | Commands | Skills | Agents |
 |--------|----------|--------|--------|
-| 新功能 | /plan, /tdd, /code-review, /verify | tdd-workflow, verification-loop | planner, tdd-guide, code-reviewer |
-| 错误修复 | /tdd, /build-fix, /verify | tdd-workflow | tdd-guide, build-error-resolver |
-| 重构 | /refactor-clean, /code-review, /verify | verification-loop | refactor-cleaner, code-reviewer |
-| 研究 | /plan | search-first, iterative-retrieval | — |
-| 测试 | /tdd, /e2e, /test-coverage | tdd-workflow, e2e-testing | tdd-guide, e2e-runner |
-| 审查 | /code-review | security-review | code-reviewer, security-reviewer |
-| 文档 | /update-docs, /update-codemaps | — | doc-updater |
-| 基础设施 | /plan, /verify | docker-patterns, deployment-patterns, database-migrations | architect |
-| 设计 (中-高) | /plan | — | planner, architect |
-| 设计 (史诗级) | — | blueprint (作为技能调用) | planner, architect |
+| New Feature | /plan, /tdd, /code-review, /verify | tdd-workflow, verification-loop | planner, tdd-guide, code-reviewer |
+| Bug Fix | /tdd, /build-fix, /verify | tdd-workflow | tdd-guide, build-error-resolver |
+| Refactor | /refactor-clean, /code-review, /verify | verification-loop | refactor-cleaner, code-reviewer |
+| Research | /plan | search-first, iterative-retrieval | — |
+| Testing | /tdd, /e2e, /test-coverage | tdd-workflow, e2e-testing | tdd-guide, e2e-runner |
+| Review | /code-review | security-review | code-reviewer, security-reviewer |
+| Documentation | /update-docs, /update-codemaps | — | doc-updater |
+| Infrastructure | /plan, /verify | docker-patterns, deployment-patterns, database-migrations | architect |
+| Design (MEDIUM-HIGH) | /plan | — | planner, architect |
+| Design (EPIC) | — | blueprint (invoke as skill) | planner, architect |
 
-#### 按技术栈
+#### By Tech Stack
 
-| 技术栈 | 要添加的技能 | 代理 |
+| Tech Stack | Skills to Add | Agent |
 |------------|--------------|-------|
 | Python / Django | django-patterns, django-tdd, django-security, django-verification, python-patterns, python-testing | python-reviewer |
 | Go | golang-patterns, golang-testing | go-reviewer, go-build-resolver |
@@ -122,142 +141,146 @@ metadata:
 | PostgreSQL | postgres-patterns, database-migrations | database-reviewer |
 | Perl | perl-patterns, perl-testing, perl-security | code-reviewer |
 | C++ | cpp-coding-standards, cpp-testing | code-reviewer |
-| 其他 / 未列出 | coding-standards (通用) | code-reviewer |
+| Other / Unlisted | coding-standards (universal) | code-reviewer |
 
-### 阶段 4：缺失上下文检测
+### Phase 4: Missing Context Detection
 
-扫描提示中缺失的关键信息。检查每个项目，并标记是阶段 0 自动检测到的还是用户必须提供的：
+Scan the prompt for missing critical information. Check each item and mark
+whether Phase 0 auto-detected it or the user must supply it:
 
-* \[ ] **技术栈** —— 阶段 0 检测到的，还是用户必须指定？
-* \[ ] **目标范围** —— 提到了文件、目录或模块吗？
-* \[ ] **验收标准** —— 如何知道任务已完成？
-* \[ ] **错误处理** —— 是否考虑了边界情况和故障模式？
-* \[ ] **安全要求** —— 身份验证、输入验证、密钥？
-* \[ ] **测试期望** —— 单元测试、集成测试、E2E？
-* \[ ] **性能约束** —— 负载、延迟、资源限制？
-* \[ ] **UI/UX 要求** —— 设计规范、响应式、无障碍访问？（如果是前端）
-* \[ ] **数据库变更** —— 模式、迁移、索引？（如果是数据层）
-* \[ ] **现有模式** —— 要遵循的参考文件或惯例？
-* \[ ] **范围边界** —— 什么**不要**做？
+- [ ] **Tech stack** — Detected in Phase 0, or must user specify?
+- [ ] **Target scope** — Files, directories, or modules mentioned?
+- [ ] **Acceptance criteria** — How to know the task is done?
+- [ ] **Error handling** — Edge cases and failure modes addressed?
+- [ ] **Security requirements** — Auth, input validation, secrets?
+- [ ] **Testing expectations** — Unit, integration, E2E?
+- [ ] **Performance constraints** — Load, latency, resource limits?
+- [ ] **UI/UX requirements** — Design specs, responsive, a11y? (if frontend)
+- [ ] **Database changes** — Schema, migrations, indexes? (if data layer)
+- [ ] **Existing patterns** — Reference files or conventions to follow?
+- [ ] **Scope boundaries** — What NOT to do?
 
-**如果缺少 3 个以上关键项目**，则在生成优化提示之前询问用户最多 3 个澄清问题。然后将答案纳入优化提示中。
+**If 3+ critical items are missing**, ask the user up to 3 clarification
+questions before generating the optimized prompt. Then incorporate the
+answers into the optimized prompt.
 
-### 阶段 5：工作流和模型推荐
+### Phase 5: Workflow & Model Recommendation
 
-确定此提示在开发生命周期中的位置：
+Determine where this prompt sits in the development lifecycle:
 
 ```
 Research → Plan → Implement (TDD) → Review → Verify → Commit
 ```
 
-对于中等级别及以上的任务，始终以 /plan 开始。对于史诗级任务，使用蓝图技能。
+For MEDIUM+ tasks, always start with /plan. For EPIC tasks, use blueprint skill.
 
-**模型推荐**（包含在输出中）：
+**Model recommendation** (include in output):
 
-| 范围 | 推荐模型 | 理由 |
+| Scope | Recommended Model | Rationale |
 |-------|------------------|-----------|
-| 微小-低 | Sonnet 4.6 | 快速、成本效益高，适合简单任务 |
-| 中 | Sonnet 4.6 | 标准工作的最佳编码模型 |
-| 高 | Sonnet 4.6 (主) + Opus 4.6 (规划) | Opus 用于架构，Sonnet 用于实现 |
-| 史诗级 | Opus 4.6 (蓝图) + Sonnet 4.6 (执行) | 深度推理用于多会话规划 |
+| TRIVIAL-LOW | Sonnet 4.6 | Fast, cost-efficient for simple tasks |
+| MEDIUM | Sonnet 4.6 | Best coding model for standard work |
+| HIGH | Sonnet 4.6 (main) + Opus 4.6 (planning) | Opus for architecture, Sonnet for implementation |
+| EPIC | Opus 4.6 (blueprint) + Sonnet 4.6 (execution) | Deep reasoning for multi-session planning |
 
-**多提示拆分**（针对高/史诗级范围）：
+**Multi-prompt splitting** (for HIGH/EPIC scope):
 
-对于超出单个会话的任务，拆分为顺序提示：
+For tasks that exceed a single session, split into sequential prompts:
+- Prompt 1: Research + Plan (use search-first skill, then /plan)
+- Prompt 2-N: Implement one phase per prompt (each ends with /verify)
+- Final Prompt: Integration test + /code-review across all phases
+- Use /save-session and /resume-session to preserve context between sessions
 
-* 提示 1：研究 + 计划（使用 search-first 技能，然后 /plan）
-* 提示 2-N：每个提示实现一个阶段（每个阶段以 /verify 结束）
-* 最终提示：集成测试 + 跨所有阶段的 /code-review
-* 使用 /save-session 和 /resume-session 在会话之间保存上下文
+---
 
-***
+## Output Format
 
-## 输出格式
+Present your analysis in this exact structure. Respond in the same language
+as the user's input.
 
-按照此确切结构呈现你的分析。使用与用户输入相同的语言进行回应。
+### Section 1: Prompt Diagnosis
 
-### 第 1 部分：提示诊断
+**Strengths:** List what the original prompt does well.
 
-**优点：** 列出原始提示做得好的地方。
+**Issues:**
 
-**问题：**
-
-| 问题 | 影响 | 建议的修复方法 |
+| Issue | Impact | Suggested Fix |
 |-------|--------|---------------|
-| (问题) | (后果) | (如何修复) |
+| (problem) | (consequence) | (how to fix) |
 
-**需要澄清：** 用户应回答的问题编号列表。如果阶段 0 自动检测到答案，请陈述该答案而不是提问。
+**Needs Clarification:** Numbered list of questions the user should answer.
+If Phase 0 auto-detected the answer, state it instead of asking.
 
-### 第 2 部分：推荐的 ECC 组件
+### Section 2: Recommended ECC Components
 
-| 类型 | 组件 | 目的 |
+| Type | Component | Purpose |
 |------|-----------|---------|
-| 命令 | /plan | 编码前规划架构 |
-| 技能 | tdd-workflow | TDD 方法指导 |
-| 代理 | code-reviewer | 实施后审查 |
-| 模型 | Sonnet 4.6 | 针对此范围的推荐模型 |
+| Command | /plan | Plan architecture before coding |
+| Skill | tdd-workflow | TDD methodology guidance |
+| Agent | code-reviewer | Post-implementation review |
+| Model | Sonnet 4.6 | Recommended for this scope |
 
-### 第 3 部分：优化提示 —— 完整版本
+### Section 3: Optimized Prompt — Full Version
 
-在单个围栏代码块内呈现完整的优化提示。该提示必须是自包含的，可以复制粘贴。包括：
+Present the complete optimized prompt inside a single fenced code block.
+The prompt must be self-contained and ready to copy-paste. Include:
+- Clear task description with context
+- Tech stack (detected or specified)
+- /command invocations at the right workflow stages
+- Acceptance criteria
+- Verification steps
+- Scope boundaries (what NOT to do)
 
-* 清晰的任务描述和上下文
-* 技术栈（检测到的或指定的）
-* 在正确工作流阶段调用的 /command
-* 验收标准
-* 验证步骤
-* 范围边界（什么**不要**做）
+For items that reference blueprint, write: "Use the blueprint skill to..."
+(not `/blueprint`, since blueprint is a skill, not a command).
 
-对于引用蓝图的项目，写成：“使用蓝图技能来...”（而不是 `/blueprint`，因为蓝图是技能，不是命令）。
+### Section 4: Optimized Prompt — Quick Version
 
-### 第 4 部分：优化提示 —— 快速版本
+A compact version for experienced ECC users. Vary by intent type:
 
-为有经验的 ECC 用户提供的紧凑版本。根据意图类型而变化：
-
-| 意图 | 快速模式 |
+| Intent | Quick Pattern |
 |--------|--------------|
-| 新功能 | `/plan [feature]. /tdd to implement. /code-review. /verify.` |
-| 错误修复 | `/tdd — write failing test for [bug]. Fix to green. /verify.` |
-| 重构 | `/refactor-clean [scope]. /code-review. /verify.` |
-| 研究 | `Use search-first skill for [topic]. /plan based on findings.` |
-| 测试 | `/tdd [module]. /e2e for critical flows. /test-coverage.` |
-| 审查 | `/code-review. Then use security-reviewer agent.` |
-| 文档 | `/update-docs. /update-codemaps.` |
-| 史诗级 | `Use blueprint skill for "[objective]". Execute phases with /verify gates.` |
+| New Feature | `/plan [feature]. /tdd to implement. /code-review. /verify.` |
+| Bug Fix | `/tdd — write failing test for [bug]. Fix to green. /verify.` |
+| Refactor | `/refactor-clean [scope]. /code-review. /verify.` |
+| Research | `Use search-first skill for [topic]. /plan based on findings.` |
+| Testing | `/tdd [module]. /e2e for critical flows. /test-coverage.` |
+| Review | `/code-review. Then use security-reviewer agent.` |
+| Docs | `/update-docs. /update-codemaps.` |
+| EPIC | `Use blueprint skill for "[objective]". Execute phases with /verify gates.` |
 
-### 第 5 部分：改进理由
+### Section 5: Enhancement Rationale
 
-| 改进 | 理由 |
+| Enhancement | Reason |
 |-------------|--------|
-| (添加了什么) | (为什么重要) |
+| (what was added) | (why it matters) |
 
-### 页脚
+### Footer
 
-> 不符合你的需求？告诉我需要调整什么，或者如果你想执行任务而不是优化提示，请提出正常的任务请求。
+> Not what you need? Tell me what to adjust, or make a normal task request
+> if you want execution instead of prompt optimization.
 
-***
+---
 
-## 示例
+## Examples
 
-### 触发示例
+### Trigger Examples
 
-* "Optimize this prompt for ECC"
-* "Rewrite this prompt so Claude Code uses the right commands"
-* "帮我优化这个指令"
-* "How should I prompt ECC for this task?"
+- "Optimize this prompt for ECC"
+- "Rewrite this prompt so Claude Code uses the right commands"
+- "帮我优化这个指令"
+- "How should I prompt ECC for this task?"
 
-### 示例 1：模糊的中文提示（检测到项目）
+### Example 1: Vague Chinese Prompt (Project Detected)
 
-**用户输入：**
-
+**User input:**
 ```
 帮我写一个用户登录页面
 ```
 
-**阶段 0 检测到：** `package.json`，使用 Next.js 15, TypeScript, Tailwind CSS
+**Phase 0 detects:** `package.json` with Next.js 15, TypeScript, Tailwind CSS
 
-**优化提示（完整）：**
-
+**Optimized Prompt (Full):**
 ```
 使用项目现有技术栈（Next.js 15 + TypeScript + Tailwind CSS）实现用户登录页面。
 
@@ -291,18 +314,16 @@ Research → Plan → Implement (TDD) → Review → Verify → Commit
 - 不要修改现有的路由结构
 ```
 
-### 示例 2：中等英文提示
+### Example 2: Moderate English Prompt
 
-**用户输入：**
-
+**User input:**
 ```
 Add a REST API endpoint for user profile updates with validation
 ```
 
-**阶段 0 检测到：** `go.mod`，使用 Go 1.22, Chi router
+**Phase 0 detects:** `go.mod` with Go 1.22, Chi router
 
-**优化提示（完整）：**
-
+**Optimized Prompt (Full):**
 ```
 Add a REST API endpoint for user profile updates (PATCH /api/users/:id).
 
@@ -330,16 +351,14 @@ Do not:
 - Add new dependencies without checking existing ones first (use search-first skill)
 ```
 
-### 示例 3：史诗级项目
+### Example 3: EPIC Project
 
-**用户输入：**
-
+**User input:**
 ```
 Migrate our monolith to microservices
 ```
 
-**优化提示（完整）：**
-
+**Optimized Prompt (Full):**
 ```
 Use the blueprint skill to plan: "Migrate monolith to microservices architecture"
 
@@ -364,15 +383,16 @@ Use git worktrees for parallel service extraction when dependencies allow.
 Recommended: Opus 4.6 for blueprint planning, Sonnet 4.6 for phase execution.
 ```
 
-***
+---
 
-## 相关组件
+## Related Components
 
-| 组件 | 何时引用 |
+| Component | When to Reference |
 |-----------|------------------|
-| `configure-ecc` | 用户尚未设置 ECC |
-| `skill-stocktake` | 审计安装了哪些组件（使用它而不是硬编码的目录） |
-| `search-first` | 优化提示中的研究阶段 |
-| `blueprint` | 史诗级范围的优化提示（作为技能调用，而非命令） |
-| `strategic-compact` | 长会话上下文管理 |
-| `cost-aware-llm-pipeline` | Token 优化推荐 |
+| `configure-ecc` | User hasn't set up ECC yet |
+| `skill-stocktake` | Audit which components are installed (use instead of hardcoded catalog) |
+| `search-first` | Research phase in optimized prompts |
+| `blueprint` | EPIC-scope optimized prompts (invoke as skill, not command) |
+| `strategic-compact` | Long session context management |
+| `cost-aware-llm-pipeline` | Token optimization recommendations |
+

@@ -1,338 +1,75 @@
 ---
-name: Version Bumper
-description: Automatically handles semantic version updates across plugin.json and marketplace catalog when user mentions version bump, update version, or release. Ensures version consistency in claude-code-plugins repository.
-allowed-tools: Read, Write, Edit, Grep, Bash
----
+name: version-bumper
+description: |
+  Execute automatically handles semantic version updates across plugin.json and marketplace catalog when user mentions version bump, update version, or release. ensures version consistency in AI assistant-code-plugins repository. Use when appropriate context detected. Trigger with relevant phrases based on skill purpose.
+allowed-tools: Read, Write, Edit, Grep, Bash(cmd:*)
+version: 1.0.0
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+license: MIT
+compatible-with: claude-code, codex, openclaw
+tags: [example, version-bumper]
 
+---
 # Version Bumper
 
-## Purpose
-Automatically manages semantic version updates for Claude Code plugins, ensuring consistency across plugin.json, marketplace catalog, and git tags - optimized for claude-code-plugins repository workflow.
-
-## Trigger Keywords
-- "bump version" or "update version"
-- "release" or "new release"
-- "major version" or "minor version" or "patch version"
-- "increment version"
-- "version update"
-
-## Semantic Versioning
-
-**Format:** MAJOR.MINOR.PATCH (e.g., 2.1.3)
-
-**Rules:**
-- **MAJOR (2.x.x)** - Breaking changes, incompatible API changes
-- **MINOR (x.1.x)** - New features, backward compatible
-- **PATCH (x.x.3)** - Bug fixes, backward compatible
-
-**Examples:**
-- `1.0.0` → `1.0.1` (bug fix)
-- `1.0.0` → `1.1.0` (new feature)
-- `1.0.0` → `2.0.0` (breaking change)
-
-## Version Bump Process
-
-When activated, I will:
-
-1. **Identify Current Version**
-   ```bash
-   # Read plugin version
-   current=$(jq -r '.version' .claude-plugin/plugin.json)
-   echo "Current version: $current"
-   ```
-
-2. **Determine Bump Type**
-   - From user request (major/minor/patch)
-   - Or suggest based on changes
-   - Or ask user which type
-
-3. **Calculate New Version**
-   ```bash
-   # Example for patch bump: 1.2.3 → 1.2.4
-   IFS='.' read -r major minor patch <<< "$current"
-   new_version="$major.$minor.$((patch + 1))"
-   ```
-
-4. **Update Files**
-   - Update `.claude-plugin/plugin.json`
-   - Update `.claude-plugin/marketplace.extended.json`
-   - Sync to `marketplace.json`
-
-5. **Validate Consistency**
-   - Verify all files have same version
-   - Check no other plugins use this version
-   - Validate semver format
-
-6. **Create Git Tag (Optional)**
-   ```bash
-   git tag -a "v$new_version" -m "Release v$new_version"
-   ```
-
-## Update Locations
-
-### 1. Plugin JSON
-```json
-// .claude-plugin/plugin.json
-{
-  "name": "plugin-name",
-  "version": "1.2.4",  // ← Update here
-  ...
-}
-```
-
-### 2. Marketplace Extended
-```json
-// .claude-plugin/marketplace.extended.json
-{
-  "plugins": [
-    {
-      "name": "plugin-name",
-      "version": "1.2.4",  // ← Update here
-      ...
-    }
-  ]
-}
-```
-
-### 3. Sync CLI Catalog
-```bash
-npm run sync-marketplace
-# Regenerates marketplace.json with new version
-```
-
-## Bump Types
-
-### Patch Bump (Bug Fix)
-**When to use:**
-- Bug fixes
-- Documentation updates
-- Minor improvements
-- No new features
-
-**Example:** 1.2.3 → 1.2.4
-
-### Minor Bump (New Feature)
-**When to use:**
-- New features
-- New commands/agents/skills
-- Backward compatible changes
-- Enhanced functionality
-
-**Example:** 1.2.3 → 1.3.0
-
-### Major Bump (Breaking Change)
-**When to use:**
-- Breaking API changes
-- Incompatible updates
-- Major refactor
-- Removed features
-
-**Example:** 1.2.3 → 2.0.0
-
-## Validation Checks
-
-Before bumping:
-- ✅ Current version is valid semver
-- ✅ New version is higher than current
-- ✅ No other plugin uses new version
-- ✅ All files have same current version
-- ✅ Git working directory is clean (optional)
-
-After bumping:
-- ✅ plugin.json updated
-- ✅ marketplace.extended.json updated
-- ✅ marketplace.json synced
-- ✅ All versions consistent
-- ✅ CHANGELOG.md updated (if exists)
-
-## Changelog Management
-
-If CHANGELOG.md exists, I update it:
-
-```markdown
-# Changelog
-
-## [1.2.4] - 2025-10-16
-
-### Fixed
-- Bug fix description
-- Another fix
-
-## [1.2.3] - 2025-10-15
-...
-```
-
-## Git Integration
-
-### Option 1: Version Commit
-```bash
-# Update version files
-git add .claude-plugin/plugin.json
-git add .claude-plugin/marketplace.extended.json
-git add .claude-plugin/marketplace.json
-git add CHANGELOG.md  # if exists
-
-# Commit version bump
-git commit -m "chore: Bump plugin-name to v1.2.4"
-```
-
-### Option 2: Version Tag
-```bash
-# Create annotated tag
-git tag -a "plugin-name-v1.2.4" -m "Release plugin-name v1.2.4"
-
-# Or for monorepo
-git tag -a "v1.2.4" -m "Release v1.2.4"
-
-# Push tag
-git push origin plugin-name-v1.2.4
-```
-
-## Multi-Plugin Updates
-
-For repository-wide version bump:
-
-```bash
-# Bump marketplace version
-jq '.metadata.version = "1.0.40"' .claude-plugin/marketplace.extended.json
-
-# Update all plugins (if needed)
-for plugin in plugins/*/; do
-  # Update plugin.json
-  # Update marketplace entry
-done
-```
-
-## Version Consistency Check
-
-I verify:
-```bash
-# Plugin version
-plugin_v=$(jq -r '.version' plugins/category/plugin-name/.claude-plugin/plugin.json)
-
-# Marketplace version
-market_v=$(jq -r '.plugins[] | select(.name == "plugin-name") | .version' .claude-plugin/marketplace.extended.json)
-
-# Should match
-if [ "$plugin_v" != "$market_v" ]; then
-  echo "❌ Version mismatch!"
-  echo "Plugin: $plugin_v"
-  echo "Marketplace: $market_v"
-fi
-```
-
-## Release Workflow
-
-Complete release process:
-
-1. **Determine Bump Type**
-   - Review changes since last version
-   - Decide: patch/minor/major
-
-2. **Update Version**
-   - Bump plugin.json
-   - Update marketplace catalog
-   - Sync marketplace.json
-
-3. **Update Changelog**
-   - Add release notes
-   - List changes
-   - Include date
-
-4. **Commit Changes**
-   ```bash
-   git add .
-   git commit -m "chore: Release v1.2.4"
-   ```
-
-5. **Create Tag**
-   ```bash
-   git tag -a "v1.2.4" -m "Release v1.2.4"
-   ```
-
-6. **Push**
-   ```bash
-   git push origin main
-   git push origin v1.2.4
-   ```
-
-7. **Validate**
-   - Check GitHub release created
-   - Verify marketplace updated
-   - Test plugin installation
-
-## Output Format
-
-```
-🔢 VERSION BUMP REPORT
-
-Plugin: plugin-name
-Old Version: 1.2.3
-New Version: 1.2.4
-Bump Type: PATCH
-
-✅ UPDATES COMPLETED:
-1. Updated .claude-plugin/plugin.json → v1.2.4
-2. Updated marketplace.extended.json → v1.2.4
-3. Synced marketplace.json → v1.2.4
-4. Updated CHANGELOG.md
-
-📊 CONSISTENCY CHECK:
-✅ All files have version 1.2.4
-✅ No version conflicts
-✅ Semantic versioning valid
-
-📝 CHANGELOG ENTRY:
-## [1.2.4] - 2025-10-16
-### Fixed
-- Bug fix description
-
-🎯 NEXT STEPS:
-1. Review changes: git diff
-2. Commit: git add . && git commit -m "chore: Bump to v1.2.4"
-3. Tag: git tag -a "v1.2.4" -m "Release v1.2.4"
-4. Push: git push origin main && git push origin v1.2.4
-
-✨ Ready to release!
-```
-
-## Repository-Specific Features
-
-**For claude-code-plugins repo:**
-- Handles both plugin and marketplace versions
-- Updates marketplace metadata version
-- Manages plugin count in README
-- Syncs both catalog files
-- Creates proper release tags
+## Overview
+
+Automates semantic version bumps across all version-bearing files in a Claude Code plugin. Ensures consistency between `plugin.json`, `marketplace.extended.json`, and the generated `marketplace.json` catalog.
+
+## Prerequisites
+
+- `jq` installed and available on PATH for JSON manipulation
+- Read/write access to `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.extended.json`
+- `pnpm run sync-marketplace` available at the repository root
+- Git installed for optional tag creation
+
+## Instructions
+
+1. Identify the target plugin directory and read the current version from `.claude-plugin/plugin.json` using `jq -r '.version'`.
+2. Determine the bump type (major, minor, or patch) from the user request. If unspecified, infer from the nature of changes: breaking changes warrant major, new features warrant minor, and fixes warrant patch.
+3. Parse the current version into its `major.minor.patch` components and compute the new version according to semver rules (see `${CLAUDE_SKILL_DIR}/references/version-bump-process.md`).
+4. Update the `"version"` field in `.claude-plugin/plugin.json` with the new version string.
+5. Locate the plugin entry in `.claude-plugin/marketplace.extended.json` and update its `"version"` field to match (see `${CLAUDE_SKILL_DIR}/references/update-locations.md`).
+6. Run `pnpm run sync-marketplace` at the repository root to regenerate `marketplace.json`.
+7. Verify version consistency across all three files by reading each and confirming the version strings match.
+8. Optionally create a git tag (`git tag -a "v<new_version>" -m "Release v<new_version>"`) and prepare a commit message following the `chore: Release v<version>` convention (see `${CLAUDE_SKILL_DIR}/references/release-workflow.md`).
+
+## Output
+
+A version bump execution summary containing:
+- The computed transition (`old_version` to `new_version`)
+- The exact files updated: `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.extended.json`, and regenerated `.claude-plugin/marketplace.json`
+- Validation confirmation that all files carry the same version
+- Suggested next commands (`git add`, `git commit`, `git tag`, validation scripts)
+
+## Error Handling
+
+| Error | Cause | Solution |
+|---|---|---|
+| `jq: command not found` | `jq` not installed | Install via `apt install jq` or `brew install jq` |
+| Version format invalid | Non-semver string in plugin.json | Correct to `x.y.z` format before bumping |
+| Plugin not found in marketplace | Missing catalog entry | Add the plugin to `marketplace.extended.json` first |
+| Sync marketplace failure | Schema mismatch or missing fields | Run `jq empty` on both JSON files to locate syntax errors |
+| Version mismatch after sync | `sync-marketplace` did not pick up changes | Verify the plugin name in `marketplace.extended.json` matches `plugin.json` exactly |
 
 ## Examples
 
-**User says:** "Bump the security-scanner plugin to patch version"
+**Patch bump for a specific plugin:**
+Trigger: "Bump the security-scanner plugin to patch version"
+Process: Read current version 1.2.3, compute 1.2.4, update `plugin.json` and `marketplace.extended.json`, run sync, verify consistency, report success.
 
-**I automatically:**
-1. Read current version: 1.2.3
-2. Calculate patch bump: 1.2.4
-3. Update plugin.json
-4. Update marketplace.extended.json
-5. Sync marketplace.json
-6. Validate consistency
-7. Report success
+**Explicit major release:**
+Trigger: "Release version 2.0.0 of plugin-name"
+Process: Set version to 2.0.0 in all files, sync marketplace, create git tag `v2.0.0`, prepare commit with `chore: Release v2.0.0`.
 
-**User says:** "Release version 2.0.0 of plugin-name"
+**Feature-based minor bump:**
+Trigger: "Increment version for new feature"
+Process: Detect minor bump, compute 1.2.3 to 1.3.0, update all version locations, sync, validate, report completion.
 
-**I automatically:**
-1. Recognize major version (breaking change)
-2. Update all version files
-3. Update CHANGELOG.md with major release notes
-4. Create git commit
-5. Create git tag v2.0.0
-6. Provide push commands
+## Resources
 
-**User says:** "Increment version for new feature"
-
-**I automatically:**
-1. Detect this is a minor bump
-2. Calculate new version (1.2.3 → 1.3.0)
-3. Update all files
-4. Add changelog entry
-5. Report completion
+- `${CLAUDE_SKILL_DIR}/references/version-bump-process.md` -- step-by-step bump algorithm
+- `${CLAUDE_SKILL_DIR}/references/update-locations.md` -- all files requiring version updates
+- `${CLAUDE_SKILL_DIR}/references/release-workflow.md` -- full release process including git tags
+- `${CLAUDE_SKILL_DIR}/references/examples.md` -- additional usage scenarios
+- [Semantic Versioning specification](https://semver.org/)

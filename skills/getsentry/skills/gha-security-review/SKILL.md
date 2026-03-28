@@ -184,3 +184,4 @@ If any link is broken, mark MEDIUM (needs verification) or drop the finding.
 ````
 
 If no findings: "No exploitable vulnerabilities identified. All workflows reviewed and cleared."
+

@@ -1,3 +1,10 @@
+---
+name: control-d-automation
+description: "Automate Control D tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Control D Automation via Rube MCP
 
 Automate Control D operations through Composio's Control D toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

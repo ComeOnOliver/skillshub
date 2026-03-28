@@ -249,3 +249,4 @@ See [scripts/update-competitors.sh](scripts/update-competitors.sh) for repositor
 ./scripts/update-competitors.sh pull    # 更新所有竞品
 ./scripts/update-competitors.sh status  # 检查状态
 ```
+

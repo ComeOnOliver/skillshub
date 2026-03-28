@@ -1,3 +1,10 @@
+---
+name: echtpost-automation
+description: "Automate Echtpost tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Echtpost Automation via Rube MCP
 
 Automate Echtpost operations through Composio's Echtpost toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

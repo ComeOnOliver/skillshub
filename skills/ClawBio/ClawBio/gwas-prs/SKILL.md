@@ -176,3 +176,4 @@ It can be chained with:
 - **nutrigx_advisor**: Combine PRS for metabolic traits (T2D, BMI) with nutrigenomic recommendations.
 - **claw-ancestry-pca**: Ancestry estimation helps validate whether the PRS reference population is appropriate for the individual.
 - **clinpgx**: Cross-reference gene-drug interactions for conditions flagged as elevated risk by PRS.
+

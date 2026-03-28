@@ -1,3 +1,8 @@
+---
+name: defold-proto-file-editing
+description: "Creates and edits Defold resource and component files that use Protobuf Text Format (.collection, .go, .atlas, .sprite, .gui, .collisionobject, .convexshape, .label, .font, .material, .model, .mesh, .particlefx, .sound, .camera, .factory, .collectionfactory, .collectionproxy, .tilemap, .tilesource, .objectinterpolation). Use when asked to create, modify, or configure any Defold proto text format file."
+---
+
 # Editing Defold Proto Text Format Files
 
 Creates and edits Defold resource and component files that use Protobuf Text Format.
@@ -227,3 +232,4 @@ Multi-line string concatenation blocks end with an empty `""` terminator. A sing
 3. Preserve existing field values and order.
 4. Apply omission rules: remove fields that become equal to their defaults after editing.
 5. When editing existing files, preserve the existing formatting style.
+

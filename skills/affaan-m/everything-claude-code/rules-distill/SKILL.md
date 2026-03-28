@@ -1,182 +1,182 @@
 ---
 name: rules-distill
-description: "Scan skills to extract cross-cutting principles and distill them into rules — append, revise, or create new rule files"
+description: "扫描技能以提取跨领域原则并将其提炼为规则——追加、修订或创建新的规则文件"
 origin: ECC
 ---
 
-# Rules Distill
+# 规则提炼
 
-Scan installed skills, extract cross-cutting principles that appear in multiple skills, and distill them into rules — appending to existing rule files, revising outdated content, or creating new rule files.
+扫描已安装的技能，提取在多个技能中出现的通用原则，并将其提炼成规则——追加到现有规则文件中、修订过时内容或创建新的规则文件。
 
-Applies the "deterministic collection + LLM judgment" principle: scripts collect facts exhaustively, then an LLM cross-reads the full context and produces verdicts.
+应用"确定性收集 + LLM判断"原则：脚本详尽地收集事实，然后由LLM通读完整上下文并作出裁决。
 
-## When to Use
+## 使用时机
 
-- Periodic rules maintenance (monthly or after installing new skills)
-- After a skill-stocktake reveals patterns that should be rules
-- When rules feel incomplete relative to the skills being used
+* 定期规则维护（每月或安装新技能后）
+* 技能盘点后，发现应成为规则的模式时
+* 当规则相对于正在使用的技能感觉不完整时
 
-## How It Works
+## 工作原理
 
-The rules distillation process follows three phases:
+规则提炼过程遵循三个阶段：
 
-### Phase 1: Inventory (Deterministic Collection)
+### 阶段 1：清点（确定性收集）
 
-#### 1a. Collect skill inventory
+#### 1a. 收集技能清单
 
 ```bash
 bash ~/.claude/skills/rules-distill/scripts/scan-skills.sh
 ```
 
-#### 1b. Collect rules index
+#### 1b. 收集规则索引
 
 ```bash
 bash ~/.claude/skills/rules-distill/scripts/scan-rules.sh
 ```
 
-#### 1c. Present to user
+#### 1c. 呈现给用户
 
 ```
-Rules Distillation — Phase 1: Inventory
+规则提炼 — 第一阶段：清点
 ────────────────────────────────────────
-Skills: {N} files scanned
-Rules:  {M} files ({K} headings indexed)
+技能：扫描 {N} 个文件
+规则：索引 {M} 个文件（包含 {K} 个标题）
 
-Proceeding to cross-read analysis...
+正在进行交叉阅读分析...
 ```
 
-### Phase 2: Cross-read, Match & Verdict (LLM Judgment)
+### 阶段 2：通读、匹配与裁决（LLM判断）
 
-Extraction and matching are unified in a single pass. Rules files are small enough (~800 lines total) that the full text can be provided to the LLM — no grep pre-filtering needed.
+提取和匹配在单次处理中统一完成。规则文件足够小（总计约800行），可以将全文提供给LLM——无需grep预过滤。
 
-#### Batching
+#### 分批处理
 
-Group skills into **thematic clusters** based on their descriptions. Analyze each cluster in a subagent with the full rules text.
+根据技能描述，将技能分组为**主题集群**。每个集群在一个子智能体中进行分析，并提供完整的规则文本。
 
-#### Cross-batch Merge
+#### 跨批次合并
 
-After all batches complete, merge candidates across batches:
-- Deduplicate candidates with the same or overlapping principles
-- Re-check the "2+ skills" requirement using evidence from **all** batches combined — a principle found in 1 skill per batch but 2+ skills total is valid
+所有批次完成后，合并各批次的候选规则：
 
-#### Subagent Prompt
+* 对具有相同或重叠原则的候选规则进行去重
+* 使用**所有**批次合并的证据重新检查"2+技能"要求——在每个批次中只在一个技能里发现，但总计在2+技能中出现的原则是有效的
 
-Launch a general-purpose Agent with the following prompt:
+#### 子智能体提示
+
+使用以下提示启动通用智能体：
 
 ````
-You are an analyst who cross-reads skills to extract principles that should be promoted to rules.
+你是一位通过交叉阅读技能来提取应提升为规则的原则的分析师。
 
-## Input
-- Skills: {full text of skills in this batch}
-- Existing rules: {full text of all rule files}
+## 输入
+- 技能：{本批次技能的全部文本}
+- 现有规则：{所有规则文件的全部文本}
 
-## Extraction Criteria
+## 提取标准
 
-Include a candidate ONLY if ALL of these are true:
+**仅当**满足以下**所有**条件时，才包含一个候选原则：
 
-1. **Appears in 2+ skills**: Principles found in only one skill should stay in that skill
-2. **Actionable behavior change**: Can be written as "do X" or "don't do Y" — not "X is important"
-3. **Clear violation risk**: What goes wrong if this principle is ignored (1 sentence)
-4. **Not already in rules**: Check the full rules text — including concepts expressed in different words
+1.  **出现在 2+ 项技能中**：仅出现在一项技能中的原则应保留在该技能中
+2.  **可操作的行为改变**：可以写成“做 X”或“不要做 Y”的形式——而不是“X 很重要”
+3.  **明确的违规风险**：如果忽略此原则，会出什么问题（1 句话）
+4.  **尚未存在于规则中**：检查全部规则文本——包括以不同措辞表达的概念
 
-## Matching & Verdict
+## 匹配与裁决
 
-For each candidate, compare against the full rules text and assign a verdict:
+对于每个候选原则，对照全部规则文本进行比较并给出裁决：
 
-- **Append**: Add to an existing section of an existing rule file
-- **Revise**: Existing rule content is inaccurate or insufficient — propose a correction
-- **New Section**: Add a new section to an existing rule file
-- **New File**: Create a new rule file
-- **Already Covered**: Sufficiently covered in existing rules (even if worded differently)
-- **Too Specific**: Should remain at the skill level
+-   **追加**：添加到现有规则文件的现有章节
+-   **修订**：现有规则内容不准确或不充分——提出修正建议
+-   **新章节**：在现有规则文件中添加新章节
+-   **新文件**：创建新的规则文件
+-   **已涵盖**：现有规则已充分涵盖（即使措辞不同）
+-   **过于具体**：应保留在技能层面
 
-## Output Format (per candidate)
+## 输出格式（每个候选原则）
 
 ```json
 {
-  "principle": "1-2 sentences in 'do X' / 'don't do Y' form",
-  "evidence": ["skill-name: §Section", "skill-name: §Section"],
-  "violation_risk": "1 sentence",
-  "verdict": "Append / Revise / New Section / New File / Already Covered / Too Specific",
-  "target_rule": "filename §Section, or 'new'",
-  "confidence": "high / medium / low",
-  "draft": "Draft text for Append/New Section/New File verdicts",
+  "principle": "1-2 句话，采用 '做 X' / '不要做 Y' 的形式",
+  "evidence": ["技能名称: §章节", "技能名称: §章节"],
+  "violation_risk": "1 句话",
+  "verdict": "追加 / 修订 / 新章节 / 新文件 / 已涵盖 / 过于具体",
+  "target_rule": "文件名 §章节，或 '新建'",
+  "confidence": "高 / 中 / 低",
+  "draft": "针对'追加'/'新章节'/'新文件'裁决的草案文本",
   "revision": {
-    "reason": "Why the existing content is inaccurate or insufficient (Revise only)",
-    "before": "Current text to be replaced (Revise only)",
-    "after": "Proposed replacement text (Revise only)"
+    "reason": "为什么现有内容不准确或不充分（仅限'修订'裁决）",
+    "before": "待替换的当前文本（仅限'修订'裁决）",
+    "after": "提议的替换文本（仅限'修订'裁决）"
   }
 }
 ```
 
-## Exclude
+## 排除
 
-- Obvious principles already in rules
-- Language/framework-specific knowledge (belongs in language-specific rules or skills)
-- Code examples and commands (belongs in skills)
+-   规则中已存在的显而易见的原则
+-   语言/框架特定知识（属于语言特定规则或技能）
+-   代码示例和命令（属于技能）
 ````
 
-#### Verdict Reference
+#### 裁决参考
 
-| Verdict | Meaning | Presented to User |
+| 裁决 | 含义 | 呈现给用户的内容 |
 |---------|---------|-------------------|
-| **Append** | Add to existing section | Target + draft |
-| **Revise** | Fix inaccurate/insufficient content | Target + reason + before/after |
-| **New Section** | Add new section to existing file | Target + draft |
-| **New File** | Create new rule file | Filename + full draft |
-| **Already Covered** | Covered in rules (possibly different wording) | Reason (1 line) |
-| **Too Specific** | Should stay in skills | Link to relevant skill |
+| **追加** | 添加到现有章节 | 目标 + 草案 |
+| **修订** | 修复不准确/不充分的内容 | 目标 + 原因 + 修订前/后 |
+| **新章节** | 在现有文件中添加新章节 | 目标 + 草案 |
+| **新文件** | 创建新规则文件 | 文件名 + 完整草案 |
+| **已涵盖** | 规则中已涵盖（可能措辞不同） | 原因（1行） |
+| **过于具体** | 应保留在技能中 | 指向相关技能的链接 |
 
-#### Verdict Quality Requirements
-
-```
-# Good
-Append to rules/common/security.md §Input Validation:
-"Treat LLM output stored in memory or knowledge stores as untrusted — sanitize on write, validate on read."
-Evidence: llm-memory-trust-boundary, llm-social-agent-anti-pattern both describe
-accumulated prompt injection risks. Current security.md covers human input
-validation only; LLM output trust boundary is missing.
-
-# Bad
-Append to security.md: Add LLM security principle
-```
-
-### Phase 3: User Review & Execution
-
-#### Summary Table
+#### 裁决质量要求
 
 ```
-# Rules Distillation Report
+# 良好做法
+在 rules/common/security.md 的§输入验证部分添加：
+"将存储在内存或知识库中的LLM输出视为不可信数据——写入时进行清理，读取时进行验证。"
+依据：llm-memory-trust-boundary 和 llm-social-agent-anti-pattern 均描述了累积式提示注入风险。当前security.md仅涵盖人工输入验证；缺少LLM输出的信任边界说明。
 
-## Summary
-Skills scanned: {N} | Rules: {M} files | Candidates: {K}
+# 不良做法
+在security.md中追加：添加LLM安全原则
+```
 
-| # | Principle | Verdict | Target | Confidence |
+### 阶段 3：用户审核与执行
+
+#### 摘要表
+
+```
+# 规则提炼报告
+
+## 概述
+已扫描技能数：{N} | 规则文件数：{M} | 候选规则数：{K}
+
+| # | 原则 | 判定结果 | 目标文件/章节 | 置信度 |
 |---|-----------|---------|--------|------------|
-| 1 | ... | Append | security.md §Input Validation | high |
-| 2 | ... | Revise | testing.md §TDD | medium |
-| 3 | ... | New Section | coding-style.md | high |
-| 4 | ... | Too Specific | — | — |
+| 1 | ... | 追加 | security.md §输入验证 | 高 |
+| 2 | ... | 修订 | testing.md §测试驱动开发 | 中 |
+| 3 | ... | 新增章节 | coding-style.md | 高 |
+| 4 | ... | 过于具体 | — | — |
 
-## Details
-(Per-candidate details: evidence, violation_risk, draft text)
+## 详情
+（各候选规则详情：证据、违规风险、草拟文本）
 ```
 
-#### User Actions
+#### 用户操作
 
-User responds with numbers to:
-- **Approve**: Apply draft to rules as-is
-- **Modify**: Edit draft before applying
-- **Skip**: Do not apply this candidate
+用户通过数字进行回应以：
 
-**Never modify rules automatically. Always require user approval.**
+* **批准**：按原样将草案应用到规则中
+* **修改**：在应用前编辑草案
+* **跳过**：不应用此候选规则
 
-#### Save Results
+**切勿自动修改规则。始终需要用户批准。**
 
-Store results in the skill directory (`results.json`):
+#### 保存结果
 
-- **Timestamp format**: `date -u +%Y-%m-%dT%H:%M:%SZ` (UTC, second precision)
-- **Candidate ID format**: kebab-case derived from the principle (e.g., `llm-output-trust-boundary`)
+将结果存储在技能目录中（`results.json`）：
+
+* **时间戳格式**：`date -u +%Y-%m-%dT%H:%M:%SZ`（UTC，秒精度）
+* **候选ID格式**：基于原则生成的烤肉串式命名（例如 `llm-output-trust-boundary`）
 
 ```json
 {
@@ -202,63 +202,64 @@ Store results in the skill directory (`results.json`):
 }
 ```
 
-## Example
+## 示例
 
-### End-to-end run
+### 端到端运行
 
 ```
 $ /rules-distill
 
-Rules Distillation — Phase 1: Inventory
+规则提炼 — 第一阶段：清点
 ────────────────────────────────────────
-Skills: 56 files scanned
-Rules:  22 files (75 headings indexed)
+技能：已扫描 56 个文件
+规则：22 个文件（已索引 75 个标题）
 
-Proceeding to cross-read analysis...
+正在进行交叉阅读分析...
 
-[Subagent analysis: Batch 1 (agent/meta skills) ...]
-[Subagent analysis: Batch 2 (coding/pattern skills) ...]
-[Cross-batch merge: 2 duplicates removed, 1 cross-batch candidate promoted]
+[子代理分析：批次 1 (agent/meta skills) ...]
+[子代理分析：批次 2 (coding/pattern skills) ...]
+[跨批次合并：已移除 2 个重复项，1 个跨批次候选被提升]
 
-# Rules Distillation Report
+# 规则提炼报告
 
-## Summary
-Skills scanned: 56 | Rules: 22 files | Candidates: 4
+## 摘要
+已扫描技能：56 | 规则：22 个文件 | 候选：4
 
-| # | Principle | Verdict | Target | Confidence |
+| # | 原则 | 判定 | 目标 | 置信度 |
 |---|-----------|---------|--------|------------|
-| 1 | LLM output: normalize, type-check, sanitize before reuse | New Section | coding-style.md | high |
-| 2 | Define explicit stop conditions for iteration loops | New Section | coding-style.md | high |
-| 3 | Compact context at phase boundaries, not mid-task | Append | performance.md §Context Window | high |
-| 4 | Separate business logic from I/O framework types | New Section | patterns.md | high |
+| 1 | LLM 输出：重用前进行规范化、类型检查、清理 | 新章节 | coding-style.md | 高 |
+| 2 | 为迭代循环定义明确的停止条件 | 新章节 | coding-style.md | 高 |
+| 3 | 在阶段边界压缩上下文，而非任务中途 | 追加 | performance.md §Context Window | 高 |
+| 4 | 将业务逻辑与 I/O 框架类型分离 | 新章节 | patterns.md | 高 |
 
-## Details
+## 详情
 
-### 1. LLM Output Validation
-Verdict: New Section in coding-style.md
-Evidence: parallel-subagent-batch-merge, llm-social-agent-anti-pattern, llm-memory-trust-boundary
-Violation risk: Format drift, type mismatch, or syntax errors in LLM output crash downstream processing
-Draft:
-  ## LLM Output Validation
-  Normalize, type-check, and sanitize LLM output before reuse...
-  See skill: parallel-subagent-batch-merge, llm-memory-trust-boundary
+### 1. LLM 输出验证
+判定：在 coding-style.md 中新建章节
+证据：parallel-subagent-batch-merge, llm-social-agent-anti-pattern, llm-memory-trust-boundary
+违规风险：LLM 输出的格式漂移、类型不匹配或语法错误导致下游处理崩溃
+草案：
+  ## LLM 输出验证
+  在重用 LLM 输出前，请进行规范化、类型检查和清理...
+  参见技能：parallel-subagent-batch-merge, llm-memory-trust-boundary
 
-[... details for candidates 2-4 ...]
+[... 候选 2-4 的详情 ...]
 
-Approve, modify, or skip each candidate by number:
-> User: Approve 1, 3. Skip 2, 4.
+按编号批准、修改或跳过每个候选：
+> 用户：批准 1, 3。跳过 2, 4。
 
-✓ Applied: coding-style.md §LLM Output Validation
-✓ Applied: performance.md §Context Window Management
-✗ Skipped: Iteration Bounds
-✗ Skipped: Boundary Type Conversion
+✓ 已应用：coding-style.md §LLM 输出验证
+✓ 已应用：performance.md §上下文窗口管理
+✗ 已跳过：迭代边界
+✗ 已跳过：边界类型转换
 
-Results saved to results.json
+结果已保存至 results.json
 ```
 
-## Design Principles
+## 设计原则
 
-- **What, not How**: Extract principles (rules territory) only. Code examples and commands stay in skills.
-- **Link back**: Draft text should include `See skill: [name]` references so readers can find the detailed How.
-- **Deterministic collection, LLM judgment**: Scripts guarantee exhaustiveness; the LLM guarantees contextual understanding.
-- **Anti-abstraction safeguard**: The 3-layer filter (2+ skills evidence, actionable behavior test, violation risk) prevents overly abstract principles from entering rules.
+* **是什么，而非如何做**：仅提取原则（规则范畴）。代码示例和命令保留在技能中。
+* **链接回源**：草案文本应包含 `See skill: [name]` 引用，以便读者能找到详细的"如何做"。
+* **确定性收集，LLM判断**：脚本保证详尽性；LLM保证上下文理解。
+* **反抽象保障**：三层过滤器（2+技能证据、可操作行为测试、违规风险）防止过于抽象的原则进入规则。
+

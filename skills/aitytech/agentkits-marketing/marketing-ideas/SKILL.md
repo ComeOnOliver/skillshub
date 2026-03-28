@@ -589,3 +589,4 @@ When recommending ideas:
 - **free-tool-strategy**: For engineering as marketing (#30)
 - **page-cro**: For landing page optimization
 - **ab-test-setup**: For testing marketing experiments
+

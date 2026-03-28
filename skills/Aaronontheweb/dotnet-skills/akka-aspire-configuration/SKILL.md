@@ -717,3 +717,4 @@ public class AkkaAspireIntegrationTests : IAsyncLifetime
 6. **Use Petabridge.Cmd** - Essential for debugging and managing clusters
 7. **Test with multiple replicas** - Always test with `Replicas > 1` to catch clustering issues
 8. **Monitor persistence health** - Configure health checks for journal and snapshot stores
+

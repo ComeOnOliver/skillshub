@@ -1,3 +1,10 @@
+---
+name: autobound-automation
+description: "Automate Autobound tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Autobound Automation via Rube MCP
 
 Automate Autobound operations through Composio's Autobound toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

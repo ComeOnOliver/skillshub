@@ -53,3 +53,4 @@ The scripts use these Chinese fonts (with fallbacks):
 
 **Problem**: `weasyprint` import error
 **Solution**: Run with `uv run --with weasyprint --with markdown` to ensure dependencies
+

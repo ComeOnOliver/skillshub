@@ -11,7 +11,7 @@ Transform raw meeting transcripts into comprehensive, evidence-based meeting min
 ## Quick Start
 
 **Pre-processing (Optional but Recommended):**
-- **Document conversion**: Use `markdown-tools` skill to convert .docx/.pdf to Markdown first (preserves tables/images)
+- **Document conversion**: Use `doc-to-markdown` skill to convert .docx/.pdf to Markdown first (preserves tables/images)
 - **Transcript cleanup**: Use `transcript-fixer` skill to fix ASR/STT errors if transcript quality is poor
 - **Context file**: Prepare `context.md` with team directory for accurate speaker identification
 
@@ -457,7 +457,7 @@ If v3 has a flowchart for "Status Query Mechanism" but v1/v2 don't have it, that
 **Full pipeline for .docx transcripts:**
 
 ```
-Step 0: markdown-tools      # Convert .docx → Markdown (preserves tables/images)
+Step 0: doc-to-markdown      # Convert .docx → Markdown (preserves tables/images)
         ↓
 Step 0.5: transcript-fixer  # Fix ASR errors (optional, if quality is poor)
         ↓
@@ -643,3 +643,4 @@ Round 4: Update to use "Annotation" instead of "Note"
 - ❌ **Creating non-existent links** - Do NOT create markdown links to files that don't exist in the repo (e.g., `[doc.md](reviewed-document)`); use plain text for external/local documents not in the repository
 - ❌ **Losing content during consolidation** - When moving or consolidating sections, verify ALL bullet points and details are preserved; never summarize away specific details like "supports batch operations" or "button triggers auto-save"
 - ❌ **Appending domain details to role titles** - Use ONLY the Role column from Team Directory for speaker attribution (e.g., "Backend", "Frontend", "TPM"); do NOT append specializations like "Backend, Infrastructure" or "Backend, Business Logic" - all team members with the same role should have identical attribution
+

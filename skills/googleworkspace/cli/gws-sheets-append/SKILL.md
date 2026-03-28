@@ -49,3 +49,4 @@ gws sheets +append --spreadsheet ID --json-values '[["a","b"],["c","d"]]'
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-sheets](../gws-sheets/SKILL.md) — All read and write spreadsheets commands
+

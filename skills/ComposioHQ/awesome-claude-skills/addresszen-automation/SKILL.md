@@ -1,3 +1,10 @@
+---
+name: addresszen-automation
+description: "Automate Addresszen tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Addresszen Automation via Rube MCP
 
 Automate Addresszen operations through Composio's Addresszen toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

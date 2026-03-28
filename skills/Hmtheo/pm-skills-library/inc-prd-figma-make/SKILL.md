@@ -1,3 +1,8 @@
+---
+name: inc-prd-figma-make
+description: Convert Product Requirements Documents (PRDs) into functional Figma Make prototype instructions for product and UX design workflows. Use when a user provides a PRD (complete or partial) and needs structured, build-ready guidance for screens, user flows, states, interactions, data behavior, edge cases, and acceptance criteria mapping.
+---
+
 # PRD to Figma Make
 
 Convert PRD content into implementation-oriented instructions that a designer can execute in Figma Make and an engineer can map to product behavior.
@@ -115,3 +120,4 @@ Before finalizing, verify:
 - Every mandatory requirement in scope is represented in at least one flow or screen spec.
 - Every acceptance criterion is testable in the prototype.
 - Out-of-scope items are explicitly excluded from the build sequence.
+

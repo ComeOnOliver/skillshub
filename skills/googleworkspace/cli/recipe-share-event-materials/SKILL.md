@@ -23,3 +23,4 @@ Share Google Drive files with all attendees of a Google Calendar event.
 2. Share file with each attendee: `gws drive permissions create --params '{"fileId": "FILE_ID"}' --json '{"role": "reader", "type": "user", "emailAddress": "attendee@company.com"}'`
 3. Verify sharing: `gws drive permissions list --params '{"fileId": "FILE_ID"}' --format table`
 
+

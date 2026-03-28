@@ -1,3 +1,8 @@
+---
+name: angular-component
+description: Create modern Angular standalone components following v20+ best practices. Use for building UI components with signal-based inputs/outputs, OnPush change detection, host bindings, content projection, and lifecycle hooks. Triggers on component creation, refactoring class-based inputs to signals, adding host bindings, or implementing accessible interactive components.
+---
+
 # Angular Component
 
 Create standalone components for Angular v20+. Components are standalone by default—do NOT set `standalone: true`.
@@ -281,3 +286,4 @@ export class Hero {
 ```
 
 For detailed patterns, see [references/component-patterns.md](references/component-patterns.md).
+

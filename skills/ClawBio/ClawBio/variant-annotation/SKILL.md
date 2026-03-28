@@ -218,3 +218,4 @@ output_directory/
 - [ClinVar](https://www.ncbi.nlm.nih.gov/clinvar/) — clinical significance assertions
 - [gnomAD](https://gnomad.broadinstitute.org/) — population allele frequency reference data
 - [VCF Specification](https://samtools.github.io/hts-specs/VCFv4.2.pdf) — variant file format reference
+

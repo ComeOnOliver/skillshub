@@ -1,18 +1,29 @@
 ---
 name: frontend-patterns
 description: Frontend development patterns for React, Next.js, state management, performance optimization, and UI best practices.
+origin: ECC
 ---
 
-# 前端開發模式
+# Frontend Development Patterns
 
-用於 React、Next.js 和高效能使用者介面的現代前端模式。
+Modern frontend patterns for React, Next.js, and performant user interfaces.
 
-## 元件模式
+## When to Activate
 
-### 組合優於繼承
+- Building React components (composition, props, rendering)
+- Managing state (useState, useReducer, Zustand, Context)
+- Implementing data fetching (SWR, React Query, server components)
+- Optimizing performance (memoization, virtualization, code splitting)
+- Working with forms (validation, controlled inputs, Zod schemas)
+- Handling client-side routing and navigation
+- Building accessible, responsive UI patterns
+
+## Component Patterns
+
+### Composition Over Inheritance
 
 ```typescript
-// ✅ 良好：元件組合
+// ✅ GOOD: Component composition
 interface CardProps {
   children: React.ReactNode
   variant?: 'default' | 'outlined'
@@ -30,14 +41,14 @@ export function CardBody({ children }: { children: React.ReactNode }) {
   return <div className="card-body">{children}</div>
 }
 
-// 使用方式
+// Usage
 <Card>
-  <CardHeader>標題</CardHeader>
-  <CardBody>內容</CardBody>
+  <CardHeader>Title</CardHeader>
+  <CardBody>Content</CardBody>
 </Card>
 ```
 
-### 複合元件
+### Compound Components
 
 ```typescript
 interface TabsContextValue {
@@ -78,16 +89,16 @@ export function Tab({ id, children }: { id: string, children: React.ReactNode })
   )
 }
 
-// 使用方式
+// Usage
 <Tabs defaultTab="overview">
   <TabList>
-    <Tab id="overview">概覽</Tab>
-    <Tab id="details">詳情</Tab>
+    <Tab id="overview">Overview</Tab>
+    <Tab id="details">Details</Tab>
   </TabList>
 </Tabs>
 ```
 
-### Render Props 模式
+### Render Props Pattern
 
 ```typescript
 interface DataLoaderProps<T> {
@@ -111,7 +122,7 @@ export function DataLoader<T>({ url, children }: DataLoaderProps<T>) {
   return <>{children(data, loading, error)}</>
 }
 
-// 使用方式
+// Usage
 <DataLoader<Market[]> url="/api/markets">
   {(markets, loading, error) => {
     if (loading) return <Spinner />
@@ -121,9 +132,9 @@ export function DataLoader<T>({ url, children }: DataLoaderProps<T>) {
 </DataLoader>
 ```
 
-## 自訂 Hooks 模式
+## Custom Hooks Patterns
 
-### 狀態管理 Hook
+### State Management Hook
 
 ```typescript
 export function useToggle(initialValue = false): [boolean, () => void] {
@@ -136,11 +147,11 @@ export function useToggle(initialValue = false): [boolean, () => void] {
   return [value, toggle]
 }
 
-// 使用方式
+// Usage
 const [isOpen, toggleOpen] = useToggle()
 ```
 
-### 非同步資料取得 Hook
+### Async Data Fetching Hook
 
 ```typescript
 interface UseQueryOptions<T> {
@@ -184,7 +195,7 @@ export function useQuery<T>(
   return { data, error, loading, refetch }
 }
 
-// 使用方式
+// Usage
 const { data: markets, loading, error, refetch } = useQuery(
   'markets',
   () => fetch('/api/markets').then(r => r.json()),
@@ -212,7 +223,7 @@ export function useDebounce<T>(value: T, delay: number): T {
   return debouncedValue
 }
 
-// 使用方式
+// Usage
 const [searchQuery, setSearchQuery] = useState('')
 const debouncedQuery = useDebounce(searchQuery, 500)
 
@@ -223,9 +234,9 @@ useEffect(() => {
 }, [debouncedQuery])
 ```
 
-## 狀態管理模式
+## State Management Patterns
 
-### Context + Reducer 模式
+### Context + Reducer Pattern
 
 ```typescript
 interface State {
@@ -278,22 +289,22 @@ export function useMarkets() {
 }
 ```
 
-## 效能優化
+## Performance Optimization
 
-### 記憶化
+### Memoization
 
 ```typescript
-// ✅ useMemo 用於昂貴計算
+// ✅ useMemo for expensive computations
 const sortedMarkets = useMemo(() => {
   return markets.sort((a, b) => b.volume - a.volume)
 }, [markets])
 
-// ✅ useCallback 用於傳遞給子元件的函式
+// ✅ useCallback for functions passed to children
 const handleSearch = useCallback((query: string) => {
   setSearchQuery(query)
 }, [])
 
-// ✅ React.memo 用於純元件
+// ✅ React.memo for pure components
 export const MarketCard = React.memo<MarketCardProps>(({ market }) => {
   return (
     <div className="market-card">
@@ -304,12 +315,12 @@ export const MarketCard = React.memo<MarketCardProps>(({ market }) => {
 })
 ```
 
-### 程式碼分割與延遲載入
+### Code Splitting & Lazy Loading
 
 ```typescript
 import { lazy, Suspense } from 'react'
 
-// ✅ 延遲載入重型元件
+// ✅ Lazy load heavy components
 const HeavyChart = lazy(() => import('./HeavyChart'))
 const ThreeJsBackground = lazy(() => import('./ThreeJsBackground'))
 
@@ -328,7 +339,7 @@ export function Dashboard() {
 }
 ```
 
-### 長列表虛擬化
+### Virtualization for Long Lists
 
 ```typescript
 import { useVirtualizer } from '@tanstack/react-virtual'
@@ -339,8 +350,8 @@ export function VirtualMarketList({ markets }: { markets: Market[] }) {
   const virtualizer = useVirtualizer({
     count: markets.length,
     getScrollElement: () => parentRef.current,
-    estimateSize: () => 100,  // 預估行高
-    overscan: 5  // 額外渲染的項目數
+    estimateSize: () => 100,  // Estimated row height
+    overscan: 5  // Extra items to render
   })
 
   return (
@@ -372,9 +383,9 @@ export function VirtualMarketList({ markets }: { markets: Market[] }) {
 }
 ```
 
-## 表單處理模式
+## Form Handling Patterns
 
-### 帶驗證的受控表單
+### Controlled Form with Validation
 
 ```typescript
 interface FormData {
@@ -402,17 +413,17 @@ export function CreateMarketForm() {
     const newErrors: FormErrors = {}
 
     if (!formData.name.trim()) {
-      newErrors.name = '名稱為必填'
+      newErrors.name = 'Name is required'
     } else if (formData.name.length > 200) {
-      newErrors.name = '名稱必須少於 200 個字元'
+      newErrors.name = 'Name must be under 200 characters'
     }
 
     if (!formData.description.trim()) {
-      newErrors.description = '描述為必填'
+      newErrors.description = 'Description is required'
     }
 
     if (!formData.endDate) {
-      newErrors.endDate = '結束日期為必填'
+      newErrors.endDate = 'End date is required'
     }
 
     setErrors(newErrors)
@@ -426,9 +437,9 @@ export function CreateMarketForm() {
 
     try {
       await createMarket(formData)
-      // 成功處理
+      // Success handling
     } catch (error) {
-      // 錯誤處理
+      // Error handling
     }
   }
 
@@ -437,19 +448,19 @@ export function CreateMarketForm() {
       <input
         value={formData.name}
         onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))}
-        placeholder="市場名稱"
+        placeholder="Market name"
       />
       {errors.name && <span className="error">{errors.name}</span>}
 
-      {/* 其他欄位 */}
+      {/* Other fields */}
 
-      <button type="submit">建立市場</button>
+      <button type="submit">Create Market</button>
     </form>
   )
 }
 ```
 
-## Error Boundary 模式
+## Error Boundary Pattern
 
 ```typescript
 interface ErrorBoundaryState {
@@ -478,10 +489,10 @@ export class ErrorBoundary extends React.Component<
     if (this.state.hasError) {
       return (
         <div className="error-fallback">
-          <h2>發生錯誤</h2>
+          <h2>Something went wrong</h2>
           <p>{this.state.error?.message}</p>
           <button onClick={() => this.setState({ hasError: false })}>
-            重試
+            Try again
           </button>
         </div>
       )
@@ -491,20 +502,20 @@ export class ErrorBoundary extends React.Component<
   }
 }
 
-// 使用方式
+// Usage
 <ErrorBoundary>
   <App />
 </ErrorBoundary>
 ```
 
-## 動畫模式
+## Animation Patterns
 
-### Framer Motion 動畫
+### Framer Motion Animations
 
 ```typescript
 import { motion, AnimatePresence } from 'framer-motion'
 
-// ✅ 列表動畫
+// ✅ List animations
 export function AnimatedMarketList({ markets }: { markets: Market[] }) {
   return (
     <AnimatePresence>
@@ -523,7 +534,7 @@ export function AnimatedMarketList({ markets }: { markets: Market[] }) {
   )
 }
 
-// ✅ Modal 動畫
+// ✅ Modal animations
 export function Modal({ isOpen, onClose, children }: ModalProps) {
   return (
     <AnimatePresence>
@@ -551,9 +562,9 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
 }
 ```
 
-## 無障礙模式
+## Accessibility Patterns
 
-### 鍵盤導航
+### Keyboard Navigation
 
 ```typescript
 export function Dropdown({ options, onSelect }: DropdownProps) {
@@ -588,13 +599,13 @@ export function Dropdown({ options, onSelect }: DropdownProps) {
       aria-haspopup="listbox"
       onKeyDown={handleKeyDown}
     >
-      {/* 下拉選單實作 */}
+      {/* Dropdown implementation */}
     </div>
   )
 }
 ```
 
-### 焦點管理
+### Focus Management
 
 ```typescript
 export function Modal({ isOpen, onClose, children }: ModalProps) {
@@ -603,13 +614,13 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
 
   useEffect(() => {
     if (isOpen) {
-      // 儲存目前聚焦的元素
+      // Save currently focused element
       previousFocusRef.current = document.activeElement as HTMLElement
 
-      // 聚焦 modal
+      // Focus modal
       modalRef.current?.focus()
     } else {
-      // 關閉時恢復焦點
+      // Restore focus when closing
       previousFocusRef.current?.focus()
     }
   }, [isOpen])
@@ -628,4 +639,5 @@ export function Modal({ isOpen, onClose, children }: ModalProps) {
 }
 ```
 
-**記住**：現代前端模式能實現可維護、高效能的使用者介面。選擇符合你專案複雜度的模式。
+**Remember**: Modern frontend patterns enable maintainable, performant user interfaces. Choose patterns that fit your project complexity.
+

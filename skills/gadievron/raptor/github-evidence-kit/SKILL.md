@@ -358,3 +358,4 @@ pip install -r requirements.txt
 - `requests` - HTTP client
 - `google-cloud-bigquery` - GH Archive queries (optional)
 - `google-auth` - GCP authentication (optional)
+

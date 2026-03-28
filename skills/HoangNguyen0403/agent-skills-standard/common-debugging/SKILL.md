@@ -36,3 +36,4 @@ Systematic, evidence-based troubleshooting. Do not guess; prove.
 ## 📚 References
 
 - [Bug Report Template](references/bug-report-template.md)
+

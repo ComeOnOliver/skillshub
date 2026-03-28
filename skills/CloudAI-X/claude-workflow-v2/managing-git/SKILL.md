@@ -1,3 +1,8 @@
+---
+name: managing-git
+description: Manages Git workflows including branching, commits, and pull requests. Use when working with Git, creating commits, opening PRs, managing branches, resolving conflicts, or when asked about version control best practices.
+---
+
 # Managing Git
 
 ### When to Load
@@ -220,3 +225,4 @@ Commit Validation:
 ```
 
 If validation fails, use `git rebase -i` to clean up commit history before pushing.
+

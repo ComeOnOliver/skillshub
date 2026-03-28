@@ -46,3 +46,4 @@ echo 'prompt' | gws modelarmor +sanitize-prompt --template ...
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-modelarmor](../gws-modelarmor/SKILL.md) — All filter user-generated content for safety commands
+

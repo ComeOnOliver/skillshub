@@ -1,3 +1,10 @@
+---
+name: gagelist-automation
+description: "Automate Gagelist tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Gagelist Automation via Rube MCP
 
 Automate Gagelist operations through Composio's Gagelist toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

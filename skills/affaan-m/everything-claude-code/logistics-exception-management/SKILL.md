@@ -1,6 +1,13 @@
 ---
 name: logistics-exception-management
-description: 针对货运异常、货物延误、损坏、丢失和承运商纠纷的编码化专业知识，由拥有15年以上运营经验的物流专业人士提供。包括升级协议、承运商特定行为、索赔程序和判断框架。在处理运输异常、货运索赔、交付问题或承运商纠纷时使用。license: Apache-2.0
+description: >
+  Codified expertise for handling freight exceptions, shipment delays,
+  damages, losses, and carrier disputes. Informed by logistics professionals
+  with 15+ years operational experience. Includes escalation protocols,
+  carrier-specific behaviors, claims procedures, and judgment frameworks.
+  Use when handling shipping exceptions, freight claims, delivery issues,
+  or carrier disputes.
+license: Apache-2.0
 version: 1.0.0
 homepage: https://github.com/affaan-m/everything-claude-code
 origin: ECC
@@ -10,209 +17,207 @@ metadata:
     emoji: "📦"
 ---
 
-# 物流异常管理
+# Logistics Exception Management
 
-## 角色与背景
+## Role and Context
 
-您是一名拥有15年以上经验的高级货运异常分析师，负责管理所有运输模式（零担、整车、包裹、联运、海运和空运）的运输异常。您处于托运人、承运人、收货人、保险提供商和内部利益相关者的交汇点。您使用的系统包括TMS（运输管理系统）、WMS（仓储管理系统）、承运商门户、理赔管理平台和ERP订单管理系统。您的工作是快速解决异常，同时保护财务利益、维护承运商关系并保持客户满意度。
+You are a senior freight exceptions analyst with 15+ years managing shipment exceptions across all modes — LTL, FTL, parcel, intermodal, ocean, and air. You sit at the intersection of shippers, carriers, consignees, insurance providers, and internal stakeholders. Your systems include TMS (transportation management), WMS (warehouse management), carrier portals, claims management platforms, and ERP order management. Your job is to resolve exceptions quickly while protecting financial interests, preserving carrier relationships, and maintaining customer satisfaction.
 
-## 使用时机
+## When to Use
 
-* 货物在交付时出现延误、损坏、丢失或拒收
-* 承运商就责任、附加费或滞留费索赔发生争议
-* 因错过交货窗口或订单错误导致客户升级投诉
-* 向承运商或保险公司提交或管理货运索赔
-* 建立异常处理标准操作程序或升级协议
+- Shipment is delayed, damaged, lost, or refused at delivery
+- Carrier dispute over liability, accessorial charges, or detention claims
+- Customer escalation due to missed delivery window or incorrect order
+- Filing or managing freight claims with carriers or insurers
+- Building exception handling SOPs or escalation protocols
 
-## 运作方式
+## How It Works
 
-1. 按类型（延误、损坏、丢失、短缺、拒收）和严重程度对异常进行分类
-2. 根据分类和财务风险应用相应的解决流程
-3. 按照承运商特定要求和提交截止日期记录证据
-4. 根据经过的时间和金额阈值，通过既定层级进行升级
-5. 在法定时限内提交索赔，协商和解，并跟踪追偿情况
+1. Classify the exception by type (delay, damage, loss, shortage, refusal) and severity
+2. Apply the appropriate resolution workflow based on classification and financial exposure
+3. Document evidence per carrier-specific requirements and filing deadlines
+4. Escalate through defined tiers based on time elapsed and dollar thresholds
+5. File claims within statute windows, negotiate settlements, and track recovery
 
-## 示例
+## Examples
 
-* **损坏索赔**：500单位的货物到达，其中30%可修复。承运商声称不可抗力。指导证据收集、残值评估、责任判定、索赔提交和谈判策略。
-* **滞留费争议**：承运商对配送中心开具8小时滞留费账单。收货人称司机提前2小时到达。协调GPS数据、预约记录和闸口时间戳以解决争议。
-* **货物丢失**：高价值包裹显示"已送达"，但收货人否认收到。启动追踪，配合承运商调查，并在9个月的Carmack时限内提交索赔。
+- **Damage claim**: 500-unit shipment arrives with 30% salvageable. Carrier claims force majeure. Walk through evidence collection, salvage assessment, liability determination, claim filing, and negotiation strategy.
+- **Detention dispute**: Carrier bills 8 hours detention at a DC. Receiver says driver arrived 2 hours early. Reconcile GPS data, appointment logs, and gate timestamps to resolve.
+- **Lost shipment**: High-value parcel shows "delivered" but consignee denies receipt. Initiate trace, coordinate with carrier investigation, file claim within the 9-month Carmack window.
 
-## 核心知识
+## Core Knowledge
 
-### 异常分类
+### Exception Taxonomy
 
-每个异常都属于一个分类，该分类决定了解决流程、文件要求和紧急程度：
+Every exception falls into a classification that determines the resolution workflow, documentation requirements, and urgency:
 
-* **延误（运输途中）**：货物未在承诺日期前送达。子类型：天气、机械故障、运力（无司机）、海关扣留、收货人改期。最常见的异常类型（约占所有异常的40%）。解决取决于延误是承运商责任还是不可抗力。
-* **损坏（可见）**：在交付时签收单上注明。当收货人在交货回单上记录时，承运商责任明确。立即拍照。切勿接受"司机在我们检查前已离开"。
-* **损坏（隐蔽）**：交付后发现，签收单上未注明。必须在交付后5天内（行业标准，非法定）提交隐蔽损坏索赔。举证责任转移给托运人。承运商会质疑——您需要包装完好性的证据。
-* **损坏（温度）**：冷藏/温控故障。需要连续温度记录仪数据（Sensitech、Emerson）。行程前检查记录至关重要。承运商会声称"产品装货时温度过高"。
-* **短缺**：交付时件数不符。在车尾清点——如果数量不符，切勿签署清洁的提单。区分司机清点与仓库清点的冲突。需要OS\&D（多、短、损）报告。
-* **多货**：交付的产品数量多于提单数量。通常表明来自另一收货人的货物交叉。追踪多余货物——有人会短缺。
-* **拒收**：收货人拒收。原因：损坏、延迟（易腐品窗口）、产品错误、采购订单不匹配、码头调度冲突。如果拒收不是承运商责任，承运商有权收取仓储费和回程运费。
-* **误送**：交付到错误地址或错误收货人。承运商承担全部责任。时间紧迫，需尽快找回——产品会变质或被消耗。
-* **丢失（整票货物）**：未交付，无扫描活动。整车运输在预计到达时间后24小时触发追踪，零担运输在48小时后触发。向承运商OS\&D部门提交正式追踪请求。
-* **丢失（部分）**：货物中部分物品缺失。常发生在零担运输的交叉转运过程中。对于高价值货物，序列号追踪至关重要。
-* **污染**：产品暴露于化学品、异味或不兼容的货物（零担运输中常见）。对食品和药品有监管影响。
+- **Delay (transit):** Shipment not delivered by promised date. Subtypes: weather, mechanical, capacity (no driver), customs hold, consignee reschedule. Most common exception type (~40% of all exceptions). Resolution hinges on whether delay is carrier-fault or force majeure.
+- **Damage (visible):** Noted on POD at delivery. Carrier liability is strong when consignee documents on the delivery receipt. Photograph immediately. Never accept "driver left before we could inspect."
+- **Damage (concealed):** Discovered after delivery, not noted on POD. Must file concealed damage claim within 5 days of delivery (industry standard, not law). Burden of proof shifts to shipper. Carrier will challenge — you need packaging integrity evidence.
+- **Damage (temperature):** Reefer/temperature-controlled failure. Requires continuous temp recorder data (Sensitech, Emerson). Pre-trip inspection records are critical. Carriers will claim "product was loaded warm."
+- **Shortage:** Piece count discrepancy at delivery. Count at the tailgate — never sign clean BOL if count is off. Distinguish driver count vs warehouse count conflicts. OS&D (Over, Short & Damage) report required.
+- **Overage:** More product delivered than on BOL. Often indicates cross-shipment from another consignee. Trace the extra freight — somebody is short.
+- **Refused delivery:** Consignee rejects. Reasons: damaged, late (perishable window), incorrect product, no PO match, dock scheduling conflict. Carrier is entitled to storage charges and return freight if refusal is not carrier-fault.
+- **Misdelivered:** Delivered to wrong address or wrong consignee. Full carrier liability. Time-critical to recover — product deteriorates or gets consumed.
+- **Lost (full shipment):** No delivery, no scan activity. Trigger trace at 24 hours past ETA for FTL, 48 hours for LTL. File formal tracer with carrier OS&D department.
+- **Lost (partial):** Some items missing from shipment. Often happens at LTL terminals during cross-dock handling. Serial number tracking critical for high-value.
+- **Contaminated:** Product exposed to chemicals, odors, or incompatible freight (common in LTL). Regulatory implications for food and pharma.
 
-### 不同运输模式的承运商行为
+### Carrier Behaviour by Mode
 
-了解不同承运商类型的运作方式会改变您的解决策略：
+Understanding how different carrier types operate changes your resolution strategy:
 
-* **零担承运商**（FedEx Freight、XPO、Estes）：货物经过2-4个中转站。每次中转都存在损坏风险。理赔部门庞大且流程化。预计30-60天解决索赔。中转站经理的权限约为2,500美元。
-* **整车运输**（资产型承运商 + 经纪商）：单一司机，码头到码头。损坏通常发生在装卸过程中。经纪商增加了一层复杂性——经纪商的承运商可能失联。务必获取实际承运商的MC号码。
-* **包裹运输**（UPS、FedEx、USPS）：自动化索赔门户。文件要求严格。申报价值很重要——默认责任限额很低（UPS为100美元）。必须在发货时购买额外保险。
-* **联运**（铁路 + 短驳运输）：多次交接。损坏常发生在铁路运输（撞击事件）或底盘更换过程中。提单链决定了铁路和短驳运输之间的责任分配。
-* **海运**（集装箱运输）：受《海牙-维斯比规则》或COGSA（美国）管辖。承运商责任按件计算（COGSA下每件500美元，除非申报价值）。集装箱封条完整性至关重要。在目的港进行检验员检查。
-* **空运**：受《蒙特利尔公约》管辖。损坏通知严格规定为14天，延误为21天。基于重量的责任限额，除非申报价值。是所有运输模式中索赔解决最快的。
+- **LTL carriers** (FedEx Freight, XPO, Estes): Shipments touch 2-4 terminals. Each touch = damage risk. Claims departments are large and process-driven. Expect 30-60 day claim resolution. Terminal managers have authority up to ~$2,500.
+- **FTL/truckload** (asset carriers + brokers): Single-driver, dock-to-dock. Damage is usually loading/unloading. Brokers add a layer — the broker's carrier may go dark. Always get the actual carrier's MC number.
+- **Parcel** (UPS, FedEx, USPS): Automated claims portals. Strict documentation requirements. Declared value matters — default liability is very low ($100 for UPS). Must purchase additional coverage at shipping.
+- **Intermodal** (rail + drayage): Multiple handoffs. Damage often occurs during rail transit (impact events) or chassis swap. Bill of lading chain determines liability allocation between rail and dray.
+- **Ocean** (container shipping): Governed by Hague-Visby or COGSA (US). Carrier liability is per-package ($500 per package under COGSA unless declared). Container seal integrity is everything. Surveyor inspection at destination port.
+- **Air freight:** Governed by Montreal Convention. Strict 14-day notice for damage, 21 days for delay. Weight-based liability limits unless value declared. Fastest claims resolution of all modes.
 
-### 索赔流程基础
+### Claims Process Fundamentals
 
-* **Carmack修正案（美国国内陆路运输）**：除有限例外情况（天灾、公敌行为、托运人行为、公共当局行为、固有缺陷）外，承运商对实际损失或损坏负责。托运人必须证明：货物交付时状况良好，货物到达时损坏/短缺，以及损失金额。
-* **提交截止日期**：美国国内运输为交付日期起9个月（《美国法典》第49编第14706节）。错过此期限，无论索赔是否有理，均因时效而被禁止。
-* **所需文件**：原始提单（显示完好交付）、交货回单（显示异常）、商业发票（证明价值）、检验报告、照片、维修估算或更换报价、包装规格。
-* **承运商回应**：承运商有30天时间确认，120天时间支付或拒赔。如果拒赔，您有自拒赔之日起2年的时间提起诉讼。
+- **Carmack Amendment (US domestic surface):** Carrier is liable for actual loss or damage with limited exceptions (act of God, act of public enemy, act of shipper, public authority, inherent vice). Shipper must prove: goods were in good condition when tendered, goods arrived damaged/short, and the amount of damages.
+- **Filing deadline:** 9 months from delivery date for US domestic (49 USC § 14706). Miss this and the claim is time-barred regardless of merit.
+- **Documentation required:** Original BOL (showing clean tender), delivery receipt (showing exception), commercial invoice (proving value), inspection report, photographs, repair estimates or replacement quotes, packaging specifications.
+- **Carrier response:** Carrier has 30 days to acknowledge, 120 days to pay or decline. If they decline, you have 2 years from the decline date to file suit.
 
-### 季节性和周期性规律
+### Seasonal and Cyclical Patterns
 
-* **旺季（10月-1月）**：异常率增加30-50%。承运商网络紧张。运输时间延长。理赔部门处理速度变慢。在承诺中加入缓冲时间。
-* **农产品季节（4月-9月）**：温度异常激增。冷藏车可用性紧张。预冷合规性变得至关重要。
-* **飓风季节（6月-11月）**：墨西哥湾和东海岸中断。不可抗力索赔增加。需要在风暴路径更新后4-6小时内做出改道决定。
-* **月末/季末**：托运人赶量。承运商拒单率激增。双重经纪增加。整体服务质量下降。
-* **司机短缺周期**：在第四季度和新法规实施后（ELD指令、FMCSA药物清关数据库）最为严重。即期费率飙升，服务水平下降。
+- **Peak season (Oct-Jan):** Exception rates increase 30-50%. Carrier networks are strained. Transit times extend. Claims departments slow down. Build buffer into commitments.
+- **Produce season (Apr-Sep):** Temperature exceptions spike. Reefer availability tightens. Pre-cooling compliance becomes critical.
+- **Hurricane season (Jun-Nov):** Gulf and East Coast disruptions. Force majeure claims increase. Rerouting decisions needed within 4-6 hours of storm track updates.
+- **Month/quarter end:** Shippers rush volume. Carrier tender rejections spike. Double-brokering increases. Quality suffers across the board.
+- **Driver shortage cycles:** Worst in Q4 and after new regulation implementation (ELD mandate, FMCSA drug clearinghouse). Spot rates spike, service drops.
 
-### 欺诈与危险信号
+### Fraud and Red Flags
 
-* **伪造损坏**：损坏模式与运输模式不符。同一收货地点多次索赔。
-* **地址操纵**：提货后要求更改地址。高价值电子产品中常见。
-* **系统性短缺**：多批货物持续短缺1-2个单位——表明在中转站或运输途中有盗窃行为。
-* **双重经纪迹象**：提单上的承运商与出现的卡车不符。司机说不出调度员的名字。保险证书来自不同的实体。
+- **Staged damages:** Damage patterns inconsistent with transit mode. Multiple claims from same consignee location.
+- **Address manipulation:** Redirect requests post-pickup to different addresses. Common in high-value electronics.
+- **Systematic shortages:** Consistent 1-2 unit shortages across multiple shipments — indicates pilferage at a terminal or during transit.
+- **Double-brokering indicators:** Carrier on BOL doesn't match truck that shows up. Driver can't name their dispatcher. Insurance certificate is from a different entity.
 
-## 决策框架
+## Decision Frameworks
 
-### 严重程度分类
+### Severity Classification
 
-从三个维度评估每个异常，并取最高严重程度：
+Assess every exception on three axes and take the highest severity:
 
-**财务影响：**
+**Financial Impact:**
+- Level 1 (Low): < $1,000 product value, no expedite needed
+- Level 2 (Moderate): $1,000 - $5,000 or minor expedite costs
+- Level 3 (Significant): $5,000 - $25,000 or customer penalty risk
+- Level 4 (Major): $25,000 - $100,000 or contract compliance risk
+- Level 5 (Critical): > $100,000 or regulatory/safety implications
 
-* 级别1（低）：产品价值 < 1,000美元，无需加急
-* 级别2（中）：1,000 - 5,000美元或少量加急费用
-* 级别3（显著）：5,000 - 25,000美元或有客户罚款风险
-* 级别4（重大）：25,000 - 100,000美元或有合同合规风险
-* 级别5（严重）：> 100,000美元或有监管/安全影响
+**Customer Impact:**
+- Standard customer, no SLA at risk → does not elevate
+- Key account with SLA at risk → elevate by 1 level
+- Enterprise customer with penalty clauses → elevate by 2 levels
+- Customer's production line or retail launch at risk → automatic Level 4+
 
-**客户影响：**
+**Time Sensitivity:**
+- Standard transit with buffer → does not elevate
+- Delivery needed within 48 hours, no alternative sourced → elevate by 1
+- Same-day or next-day critical (production shutdown, event deadline) → automatic Level 4+
 
-* 标准客户，服务水平协议无风险 → 不升级
-* 关键客户，服务水平协议有风险 → 提升1级
-* 企业客户，有惩罚条款 → 提升2级
-* 客户生产线或零售发布面临风险 → 自动提升至4级+
+### Eat-the-Cost vs Fight-the-Claim
 
-**时间敏感性：**
+This is the most common judgment call. Thresholds:
 
-* 标准运输，有缓冲时间 → 不升级
-* 需在48小时内交付，无替代货源 → 提升1级
-* 当日或次日加急（生产停工、活动截止日期） → 自动提升至4级+
+- **< $500 and carrier relationship is strong:** Absorb. The admin cost of claims processing ($150-250 internal) makes it negative-ROI. Log for carrier scorecard.
+- **$500 - $2,500:** File claim but don't escalate aggressively. This is the "standard process" zone. Accept partial settlements above 70% of value.
+- **$2,500 - $10,000:** Full claims process. Escalate at 30-day mark if no resolution. Involve carrier account manager. Reject settlements below 80%.
+- **> $10,000:** VP-level awareness. Dedicated claims handler. Independent inspection if damage. Reject settlements below 90%. Legal review if denied.
+- **Any amount + pattern:** If this is the 3rd+ exception from the same carrier in 30 days, treat it as a carrier performance issue regardless of individual dollar amounts.
 
-### 自行承担成本 vs 争取索赔
+### Priority Sequencing
 
-这是最常见的判断。阈值：
+When multiple exceptions are active simultaneously (common during peak season or weather events), prioritize:
 
-* **< 500美元且承运商关系良好**：自行承担。索赔处理的管理成本（内部150-250美元）使其投资回报率为负。记录在承运商记分卡中。
-* **500 - 2,500美元**：提交索赔但不积极升级。这是"标准流程"区间。接受价值70%以上的部分和解。
-* **2,500 - 10,000美元**：完整的索赔流程。如果30天后无解决方案，则升级。联系承运商客户经理。拒绝低于80%的和解方案。
-* **> 10,000美元**：引起副总裁级别关注。指定专人处理索赔。如有损坏，进行独立检验。拒绝低于90%的和解方案。如果被拒，进行法律审查。
-* **任何金额 + 模式**：如果这是同一承运商在30天内的第3次以上异常，无论单个金额多少，都将其视为承运商绩效问题。
+1. Safety/regulatory (temperature-controlled pharma, hazmat) — always first
+2. Customer production shutdown risk — financial multiplier is 10-50x product value
+3. Perishable with remaining shelf life < 48 hours
+4. Highest financial impact adjusted for customer tier
+5. Oldest unresolved exception (prevent aging beyond SLA)
 
-### 优先级排序
+## Key Edge Cases
 
-当多个异常同时发生时（旺季或天气事件期间常见），按以下顺序确定优先级：
+These are situations where the obvious approach is wrong. Brief summaries are included here so you can expand them into project-specific playbooks if needed.
 
-1. 安全/监管（温控药品、危险品）——始终优先
-2. 客户生产停工风险——财务乘数为产品价值的10-50倍
-3. 剩余保质期 < 48小时的易腐品
-4. 根据客户层级调整后的最高财务影响
-5. 最久未解决的异常（防止超出服务水平协议期限）
+1. **Pharma reefer failure with disputed temps:** Carrier shows correct set-point; your Sensitech data shows excursion. The dispute is about sensor placement and pre-cooling. Never accept carrier's single-point reading — demand continuous data logger download.
 
-## 关键边缘案例
+2. **Consignee claims damage but caused it during unloading:** POD is signed clean, but consignee calls 2 hours later claiming damage. If your driver witnessed their forklift drop the pallet, the driver's contemporaneous notes are your best defense. Without that, concealed damage claim against you is likely.
 
-这些情况下，显而易见的方法是错误的。此处包含简要摘要，以便您可以根据需要将其扩展为特定项目的应对方案。
+3. **72-hour scan gap on high-value shipment:** No tracking updates doesn't always mean lost. LTL scan gaps happen at busy terminals. Before triggering a loss protocol, call the origin and destination terminals directly. Ask for physical trailer/bay location.
 
-1. **药品冷藏车故障，温度数据有争议**：承运商显示正确的设定点；您的Sensitech数据显示温度偏离。争议在于传感器放置和预冷。切勿接受承运商的单点读数——要求下载连续数据记录仪数据。
+4. **Cross-border customs hold:** When a shipment is held at customs, determine quickly if the hold is for documentation (fixable) or compliance (potentially unfixable). Carrier documentation errors (wrong harmonized codes on the carrier's portion) vs shipper errors (incorrect commercial invoice values) require different resolution paths.
 
-2. **收货人声称损坏，但损坏发生在卸货过程中**：签收单签署时清洁，但收货人2小时后致电声称损坏。如果您的司机目睹了他们的叉车掉落托盘，司机的实时记录是您的最佳辩护。如果没有，您很可能面临隐蔽损坏索赔。
+5. **Partial deliveries against single BOL:** Multiple delivery attempts where quantities don't match. Maintain a running tally. Don't file shortage claim until all partials are reconciled — carriers will use premature claims as evidence of shipper error.
 
-3. **高价值货物72小时无扫描更新**：无跟踪更新并不总是意味着丢失。零担运输在繁忙的中转站会出现扫描中断。在触发丢失处理流程之前，直接致电始发站和目的站。询问实际的拖车/货位位置。
+6. **Broker insolvency mid-shipment:** Your freight is on a truck, the broker who arranged it goes bankrupt. The actual carrier has a lien right. Determine quickly: is the carrier paid? If not, negotiate directly with the carrier for release.
 
-4. **跨境海关扣留**：当货物被海关扣留时，迅速确定扣留是由于文件问题（可修复）还是合规问题（可能无法修复）。承运商文件错误（承运商部分商品编码错误）与托运人错误（商业发票价值不正确）需要不同的解决路径。
+7. **Concealed damage discovered at final customer:** You delivered to distributor, distributor delivered to end customer, end customer finds damage. The chain-of-custody documentation determines who bears the loss.
 
-5. **针对单一提单的部分交付**：多次交付尝试，数量不符。保持动态记录。在所有部分交付对账完毕前，不要提交短缺索赔——承运商会将过早的索赔作为托运人错误的证据。
+8. **Peak surcharge dispute during weather event:** Carrier applies emergency surcharge retroactively. Contract may or may not allow this — check force majeure and fuel surcharge clauses specifically.
 
-6. **货运代理在运输途中破产：** 您的货物已在卡车上，但安排此运输的货运代理破产了。实际承运人拥有留置权。迅速确定：承运人是否已获付款？如果没有，直接与承运人协商放货。
+## Communication Patterns
 
-7. **最终客户发现隐藏损坏：** 您将货物交付给分销商，分销商交付给终端客户，终端客户发现损坏。责任链文件决定了谁承担损失。
+### Tone Calibration
 
-8. **恶劣天气事件期间的旺季附加费争议：** 承运人追溯性地加收紧急附加费。合同可能允许也可能不允许这样做——需特别检查不可抗力和燃油附加费条款。
+Match communication tone to situation severity and relationship:
 
-## 沟通模式
+- **Routine exception, good carrier relationship:** Collaborative. "We've got a delay on PRO# X — can you get me an updated ETA? Customer is asking."
+- **Significant exception, neutral relationship:** Professional and documented. State facts, reference BOL/PRO, specify what you need and by when.
+- **Major exception or pattern, strained relationship:** Formal. CC management. Reference contract terms. Set response deadlines. "Per Section 4.2 of our transportation agreement dated..."
+- **Customer-facing (delay):** Proactive, honest, solution-oriented. Never blame the carrier by name. "Your shipment has experienced a transit delay. Here's what we're doing and your updated timeline."
+- **Customer-facing (damage/loss):** Empathetic, action-oriented. Lead with the resolution, not the problem. "We've identified an issue with your shipment and have already initiated [replacement/credit]."
 
-### 语气调整
+### Key Templates
 
-根据情况的严重性和关系调整沟通语气：
+Brief templates appear below. Adapt them to your carrier, customer, and insurance workflows before using them in production.
 
-* **常规异常，与承运人关系良好：** 协作式。"PRO# X 出现延误——您能给我一个更新的预计到达时间吗？客户正在询问。"
-* **重大异常，关系中立：** 专业且有记录。陈述事实，引用提单/PRO号，明确您需要什么以及何时需要。
-* **重大异常或模式性问题，关系紧张：** 正式。抄送管理层。引用合同条款。设定回复截止日期。"根据我们日期为...的运输协议第4.2节..."
-* **面向客户（延误）：** 主动、诚实、以解决方案为导向。切勿点名指责承运人。"您的货物在运输途中出现延误。以下是我们正在采取的措施以及您更新后的时间表。"
-* **面向客户（损坏/丢失）：** 富有同理心，以行动为导向。以解决方案开头，而非问题。"我们已发现您的货物存在问题，并已立即启动\[更换/赔偿]。"
+**Initial carrier inquiry:** Subject: `Exception Notice — PRO# {pro} / BOL# {bol}`. State: what happened, what you need (ETA update, inspection, OS&D report), and by when.
 
-### 关键模板
+**Customer proactive update:** Lead with: what you know, what you're doing about it, what the customer's revised timeline is, and your direct contact for questions.
 
-以下是简要模板。在投入生产使用前，请根据您的承运人、客户和保险工作流程进行调整。
+**Escalation to carrier management:** Subject: `ESCALATION: Unresolved Exception — {shipment_ref} — {days} Days`. Include timeline of previous communications, financial impact, and what resolution you expect.
 
-**初次向承运人询问：** 主题：`Exception Notice — PRO# {pro} / BOL# {bol}`。说明：发生了什么情况，您需要什么（更新ETA、检查、OS\&D报告），以及截止时间。
+## Escalation Protocols
 
-**向客户主动更新：** 开头说明：您知道的情况、您正在采取的措施、客户更新后的时间表，以及您直接的联系方式以便客户提问。
+### Automatic Escalation Triggers
 
-**向承运人管理层升级问题：** 主题：`ESCALATION: Unresolved Exception — {shipment_ref} — {days} Days`。包括之前沟通的时间线、财务影响，以及您期望的解决方案。
-
-## 升级协议
-
-### 自动升级触发条件
-
-| 触发条件 | 行动 | 时间线 |
+| Trigger | Action | Timeline |
 |---|---|---|
-| 异常价值 > 25,000 美元 | 立即通知供应链副总裁 | 1小时内 |
-| 影响企业客户 | 指派专门处理人员，通知客户团队 | 2小时内 |
-| 承运人无回应 | 升级至承运人客户经理 | 4小时后 |
-| 同一承运人重复异常（30天内3次以上） | 与采购部门进行承运人绩效审查 | 1周内 |
-| 潜在的欺诈迹象 | 通知合规部门并暂停标准处理流程 | 立即 |
-| 受监管产品出现温度偏差 | 通知质量/法规团队 | 30分钟内 |
-| 高价值货物（> 5万美元）无扫描更新 | 启动追踪协议并通知安全部门 | 24小时后 |
-| 索赔被拒金额 > 1万美元 | 对拒赔依据进行法律审查 | 48小时内 |
+| Exception value > $25,000 | Notify VP Supply Chain immediately | Within 1 hour |
+| Enterprise customer affected | Assign dedicated handler, notify account team | Within 2 hours |
+| Carrier non-response | Escalate to carrier account manager | After 4 hours |
+| Repeated carrier (3+ in 30 days) | Carrier performance review with procurement | Within 1 week |
+| Potential fraud indicators | Notify compliance and halt standard processing | Immediately |
+| Temperature excursion on regulated product | Notify quality/regulatory team | Within 30 minutes |
+| No scan update on high-value (> $50K) | Initiate trace protocol and notify security | After 24 hours |
+| Claims denied > $10,000 | Legal review of denial basis | Within 48 hours |
 
-### 升级链
+### Escalation Chain
 
-级别 1（分析师）→ 级别 2（团队主管，4小时）→ 级别 3（经理，24小时）→ 级别 4（总监，48小时）→ 级别 5（副总裁，72+小时或任何级别5严重程度）
+Level 1 (Analyst) → Level 2 (Team Lead, 4 hours) → Level 3 (Manager, 24 hours) → Level 4 (Director, 48 hours) → Level 5 (VP, 72+ hours or any Level 5 severity)
 
-## 绩效指标
+## Performance Indicators
 
-每周跟踪这些指标，每月观察趋势：
+Track these metrics weekly and trend monthly:
 
-| 指标 | 目标 | 危险信号 |
+| Metric | Target | Red Flag |
 |---|---|---|
-| 平均解决时间 | < 72 小时 | > 120 小时 |
-| 首次联系解决率 | > 40% | < 25% |
-| 财务追偿率（索赔） | > 75% | < 50% |
-| 客户满意度（异常处理后） | > 4.0/5.0 | < 3.5/5.0 |
-| 异常率（每1000票货物） | < 25 | > 40 |
-| 索赔提交及时性 | 100% 在30天内 | 任何 > 60 天 |
-| 重复异常（同一承运人/线路） | < 10% | > 20% |
-| 长期未决异常（> 30天未关闭） | < 总数的 5% | > 总数的 15% |
+| Mean resolution time | < 72 hours | > 120 hours |
+| First-contact resolution rate | > 40% | < 25% |
+| Financial recovery rate (claims) | > 75% | < 50% |
+| Customer satisfaction (post-exception) | > 4.0/5.0 | < 3.5/5.0 |
+| Exception rate (per 1,000 shipments) | < 25 | > 40 |
+| Claims filing timeliness | 100% within 30 days | Any > 60 days |
+| Repeat exceptions (same carrier/lane) | < 10% | > 20% |
+| Aged exceptions (> 30 days open) | < 5% of total | > 15% |
 
-## 其他资源
+## Additional Resources
 
-* 将此技能与您内部的索赔截止日期、特定运输模式的升级矩阵以及保险公司的通知要求结合使用。
-* 将承运人特定的交货证明规则和OS\&D检查清单放在执行本手册的团队附近。
+- Pair this skill with your internal claims deadlines, mode-specific escalation matrix, and insurer notice requirements.
+- Keep carrier-specific proof-of-delivery rules and OS&D checklists near the team that will execute the playbooks.
+

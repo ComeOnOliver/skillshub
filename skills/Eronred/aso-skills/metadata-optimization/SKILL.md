@@ -168,3 +168,4 @@ Include for each:
 - `localization` — Adapt metadata for international markets
 - `ab-test-store-listing` — Test metadata variations
 - `competitor-analysis` — See how competitors write their metadata
+

@@ -1,3 +1,10 @@
+---
+name: better-proposals-automation
+description: "Automate Better Proposals tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Better Proposals Automation via Rube MCP
 
 Automate Better Proposals operations through Composio's Better Proposals toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

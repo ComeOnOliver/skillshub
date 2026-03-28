@@ -1,3 +1,10 @@
+---
+name: hotspotsystem-automation
+description: "Automate Hotspotsystem tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Hotspotsystem Automation via Rube MCP
 
 Automate Hotspotsystem operations through Composio's Hotspotsystem toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -322,3 +322,4 @@ verify accept --all  // Dangerous!
 - **Verify**: https://github.com/VerifyTests/Verify
 - **Verify.Xunit**: https://github.com/VerifyTests/Verify#xunit
 - **Diff Tools**: https://github.com/VerifyTests/DiffEngine
+

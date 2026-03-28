@@ -221,3 +221,4 @@ buffer" pattern uses `select` with `default` for non-blocking operations.
   detector for testing
 - [go.uber.org/atomic](https://pkg.go.dev/go.uber.org/atomic) — Type-safe
   atomic operations
+

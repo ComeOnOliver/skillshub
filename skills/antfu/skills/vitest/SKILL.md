@@ -50,3 +50,4 @@ Vitest is a next-generation testing framework powered by Vite. It provides a Jes
 | Environments | Test environments: node, jsdom, happy-dom, custom | [advanced-environments](references/advanced-environments.md) |
 | Type Testing | Type-level testing with expectTypeOf and assertType | [advanced-type-testing](references/advanced-type-testing.md) |
 | Projects | Multi-project workspaces, different configs per project | [advanced-projects](references/advanced-projects.md) |
+

@@ -167,3 +167,4 @@ Apply brand expertise when:
 - `references/visual-identity.md` - Design guidelines
 - `references/voice-tone.md` - Verbal identity
 - `references/positioning.md` - Market positioning frameworks
+

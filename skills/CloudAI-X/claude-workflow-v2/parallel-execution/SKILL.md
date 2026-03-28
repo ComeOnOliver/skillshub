@@ -1,3 +1,8 @@
+---
+name: parallel-execution
+description: Patterns for parallel subagent execution using Task tool with run_in_background. Use when coordinating multiple independent tasks, spawning dynamic subagents, or implementing features that can be parallelized.
+---
+
 # Parallel Execution Patterns
 
 ### When to Load
@@ -234,3 +239,4 @@ All tasks run simultaneously...
 
 - Ensure tasks don't modify same files
 - Add conflict resolution in synthesis step
+

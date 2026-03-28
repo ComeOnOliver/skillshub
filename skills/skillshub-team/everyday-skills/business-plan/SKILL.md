@@ -134,3 +134,4 @@ For each key team member:
 - All vision, no execution details
 - Not knowing your unit economics (CAC, LTV, margins)
 - Forgetting to explain why NOW is the right time
+

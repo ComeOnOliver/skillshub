@@ -215,3 +215,4 @@ See also: electric-shapes/SKILL.md — onError semantics and backoff behavior.
 ## Version
 
 Targets @electric-sql/client v1.5.10.
+

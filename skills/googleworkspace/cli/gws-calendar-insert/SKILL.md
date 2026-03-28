@@ -55,3 +55,4 @@ gws calendar +insert --summary 'Meet' --start ... --end ... --meet
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-calendar](../gws-calendar/SKILL.md) — All manage calendars and events commands
+

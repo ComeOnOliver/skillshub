@@ -1,3 +1,10 @@
+---
+name: googleads-automation
+description: "Automate Google Ads analytics tasks via Rube MCP (Composio): list Google Ads links, run GA4 reports, check compatibility, list properties and accounts. Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Google Ads Automation via Rube MCP
 
 Access Google Ads data through Google Analytics integration, run performance reports, list linked Ads accounts, and analyze campaign metrics using Rube MCP (Composio).
@@ -115,3 +122,4 @@ Note: Call RUBE_SEARCH_TOOLS to get the full schema for this tool.
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

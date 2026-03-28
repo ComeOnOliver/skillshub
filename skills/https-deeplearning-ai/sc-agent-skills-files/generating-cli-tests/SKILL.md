@@ -1,3 +1,8 @@
+---
+name: generating-cli-tests
+description: Generate pytest tests for Typer CLI commands. Includes fixtures (temp_storage, sample_data), CliRunner patterns, confirmation handling (y/n/--force), and edge case coverage. Use when user asks to "write tests for", "test my CLI", "add test coverage", or any CLI + test request.
+---
+
 # Generating CLI Tests
 
 Patterns for generating tests for Typer CLI commands.
@@ -185,3 +190,4 @@ uv run pytest                       # All tests
 uv run pytest -v                    # Verbose
 uv run pytest tests/test_add.py    # Specific file
 ```
+

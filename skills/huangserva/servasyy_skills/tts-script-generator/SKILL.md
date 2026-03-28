@@ -1,3 +1,9 @@
+---
+name: tts-script-generator
+description: Intelligently compress and rewrite documents into TTS-friendly scripts. Uses Claude AI to analyze content, compress to target duration, convert to spoken style with emotional language, and auto-segment. Perfect for video narration.
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, TodoWrite
+---
+
 # TTS Script Generator
 
 智能压缩和改写文档为适合 TTS 朗读的脚本。
@@ -183,3 +189,4 @@ Claude 会根据文章主题自动选择最适合的风格：
 - image-to-video skill（主要）
 - podcast-generator skill
 - 其他需要 TTS 的 skills
+

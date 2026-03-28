@@ -103,3 +103,4 @@ Every report includes the standard ClawBio medical disclaimer:
 Triggered by: "summarise PubMed papers about X", "recent papers on BRCA1", "research briefing", "gene papers", "disease papers"
 
 Chaining partners: `lit-synthesizer` (broader literature), `gwas-lookup` (variant context), `gwas-prs` (polygenic risk)
+

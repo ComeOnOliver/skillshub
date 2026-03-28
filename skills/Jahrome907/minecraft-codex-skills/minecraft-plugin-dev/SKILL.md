@@ -650,3 +650,4 @@ What it checks:
 - Vault API: https://github.com/MilkBowl/VaultAPI
 - Bukkit API Javadoc: https://javadoc.io/doc/org.bukkit/bukkit/
 - run-task Gradle plugin: https://github.com/jpenilla/run-task
+

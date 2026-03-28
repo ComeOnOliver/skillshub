@@ -1,25 +1,25 @@
 ---
 name: perl-testing
-description: 使用Test2::V0、Test::More、prove runner、模拟、Devel::Cover覆盖率和TDD方法的Perl测试模式。
+description: Perl testing patterns using Test2::V0, Test::More, prove runner, mocking, coverage with Devel::Cover, and TDD methodology.
 origin: ECC
 ---
 
-# Perl 测试模式
+# Perl Testing Patterns
 
-使用 Test2::V0、Test::More、prove 和 TDD 方法论为 Perl 应用程序提供全面的测试策略。
+Comprehensive testing strategies for Perl applications using Test2::V0, Test::More, prove, and TDD methodology.
 
-## 何时激活
+## When to Activate
 
-* 编写新的 Perl 代码（遵循 TDD：红、绿、重构）
-* 为 Perl 模块或应用程序设计测试套件
-* 审查 Perl 测试覆盖率
-* 设置 Perl 测试基础设施
-* 将测试从 Test::More 迁移到 Test2::V0
-* 调试失败的 Perl 测试
+- Writing new Perl code (follow TDD: red, green, refactor)
+- Designing test suites for Perl modules or applications
+- Reviewing Perl test coverage
+- Setting up Perl testing infrastructure
+- Migrating tests from Test::More to Test2::V0
+- Debugging failing Perl tests
 
-## TDD 工作流程
+## TDD Workflow
 
-始终遵循 RED-GREEN-REFACTOR 循环。
+Always follow the RED-GREEN-REFACTOR cycle.
 
 ```perl
 # Step 1: RED — Write a failing test
@@ -54,11 +54,11 @@ sub add($self, $a, $b) {
 # Run: prove -lv t/unit/calculator.t
 ```
 
-## Test::More 基础
+## Test::More Fundamentals
 
-标准的 Perl 测试模块 —— 广泛使用，随核心发行。
+The standard Perl testing module — widely used, ships with core.
 
-### 基本断言
+### Basic Assertions
 
 ```perl
 use v5.36;
@@ -93,7 +93,7 @@ can_ok($obj, 'save', 'delete');
 done_testing;
 ```
 
-### SKIP 和 TODO
+### SKIP and TODO
 
 ```perl
 use v5.36;
@@ -117,19 +117,19 @@ TODO: {
 done_testing;
 ```
 
-## Test2::V0 现代框架
+## Test2::V0 Modern Framework
 
-Test2::V0 是 Test::More 的现代替代品 —— 更丰富的断言、更好的诊断和可扩展性。
+Test2::V0 is the modern replacement for Test::More — richer assertions, better diagnostics, and extensible.
 
-### 为什么选择 Test2？
+### Why Test2?
 
-* 使用哈希/数组构建器进行卓越的深层比较
-* 失败时提供更好的诊断输出
-* 具有更清晰作用域的子测试
-* 可通过 Test2::Tools::\* 插件扩展
-* 与 Test::More 测试向后兼容
+- Superior deep comparison with hash/array builders
+- Better diagnostic output on failures
+- Subtests with cleaner scoping
+- Extensible via Test2::Tools::* plugins
+- Backward-compatible with Test::More tests
 
-### 使用构建器进行深层比较
+### Deep Comparison with Builders
 
 ```perl
 use v5.36;
@@ -171,7 +171,7 @@ is(
 );
 ```
 
-### 子测试
+### Subtests
 
 ```perl
 use v5.36;
@@ -194,7 +194,7 @@ subtest 'User validation' => sub {
 done_testing;
 ```
 
-### 使用 Test2 进行异常测试
+### Exception Testing with Test2
 
 ```perl
 use v5.36;
@@ -223,9 +223,9 @@ subtest 'error handling' => sub {
 done_testing;
 ```
 
-## 测试组织与 prove
+## Test Organization and prove
 
-### 目录结构
+### Directory Structure
 
 ```text
 t/
@@ -245,7 +245,7 @@ t/
     └── users.csv
 ```
 
-### prove 命令
+### prove Commands
 
 ```bash
 # Run all tests
@@ -273,7 +273,7 @@ prove -l --color --timer t/
 prove -l --formatter TAP::Formatter::JUnit t/ > results.xml
 ```
 
-### .proverc 配置
+### .proverc Configuration
 
 ```text
 -l
@@ -284,9 +284,9 @@ prove -l --formatter TAP::Formatter::JUnit t/ > results.xml
 --state=save
 ```
 
-## 夹具与设置/拆卸
+## Fixtures and Setup/Teardown
 
-### 子测试隔离
+### Subtest Isolation
 
 ```perl
 use v5.36;
@@ -308,11 +308,11 @@ subtest 'file processing' => sub {
 };
 ```
 
-### 共享测试助手
+### Shared Test Helpers
 
-将可重用的助手放在 `t/lib/TestHelper.pm` 中，并通过 `use lib 't/lib'` 加载。通过 `Exporter` 导出工厂函数，例如 `create_test_db()`、`create_temp_dir()` 和 `fixture_path()`。
+Place reusable helpers in `t/lib/TestHelper.pm` and load with `use lib 't/lib'`. Export factory functions like `create_test_db()`, `create_temp_dir()`, and `fixture_path()` via `Exporter`.
 
-## 模拟
+## Mocking
 
 ### Test::MockModule
 
@@ -347,11 +347,11 @@ subtest 'mock external API' => sub {
 # *MyApp::API::fetch_user = sub { ... };  # NEVER — leaks across tests
 ```
 
-对于轻量级的模拟对象，使用 `Test::MockObject` 创建可注入的测试替身，使用 `->mock()` 并验证调用 `->called_ok()`。
+For lightweight mock objects, use `Test::MockObject` to create injectable test doubles with `->mock()` and verify calls with `->called_ok()`.
 
-## 使用 Devel::Cover 进行覆盖率分析
+## Coverage with Devel::Cover
 
-### 运行覆盖率分析
+### Running Coverage
 
 ```bash
 # Basic coverage report
@@ -373,9 +373,9 @@ cover -test && cover -report text -select '^lib/' \
   | perl -ne 'if (/Total.*?(\d+\.\d+)/) { exit 1 if $1 < 80 }'
 ```
 
-### 集成测试
+### Integration Testing
 
-对数据库测试使用内存中的 SQLite，对 API 测试模拟 HTTP::Tiny。
+Use in-memory SQLite for database tests, mock HTTP::Tiny for API tests.
 
 ```perl
 use v5.36;
@@ -396,50 +396,50 @@ subtest 'database integration' => sub {
 done_testing;
 ```
 
-## 最佳实践
+## Best Practices
 
-### 应做事项
+### DO
 
-* **遵循 TDD**：在实现之前编写测试（红-绿-重构）
-* **使用 Test2::V0**：现代断言，更好的诊断
-* **使用子测试**：分组相关断言，隔离状态
-* **模拟外部依赖**：网络、数据库、文件系统
-* **使用 `prove -l`**：始终将 lib/ 包含在 `@INC` 中
-* **清晰命名测试**：`'user login with invalid password fails'`
-* **测试边界情况**：空字符串、undef、零、边界值
-* **目标 80%+ 覆盖率**：专注于业务逻辑路径
-* **保持测试快速**：模拟 I/O，使用内存数据库
+- **Follow TDD**: Write tests before implementation (red-green-refactor)
+- **Use Test2::V0**: Modern assertions, better diagnostics
+- **Use subtests**: Group related assertions, isolate state
+- **Mock external dependencies**: Network, database, file system
+- **Use `prove -l`**: Always include lib/ in `@INC`
+- **Name tests clearly**: `'user login with invalid password fails'`
+- **Test edge cases**: Empty strings, undef, zero, boundary values
+- **Aim for 80%+ coverage**: Focus on business logic paths
+- **Keep tests fast**: Mock I/O, use in-memory databases
 
-### 禁止事项
+### DON'T
 
-* **不要测试实现**：测试行为和输出，而非内部细节
-* **不要在子测试之间共享状态**：每个子测试都应是独立的
-* **不要跳过 `done_testing`**：确保所有计划的测试都已运行
-* **不要过度模拟**：仅模拟边界，而非被测试的代码
-* **不要在新项目中使用 `Test::More`**：首选 Test2::V0
-* **不要忽略测试失败**：所有测试必须在合并前通过
-* **不要测试 CPAN 模块**：相信库能正常工作
-* **不要编写脆弱的测试**：避免过度具体的字符串匹配
+- **Don't test implementation**: Test behavior and output, not internals
+- **Don't share state between subtests**: Each subtest should be independent
+- **Don't skip `done_testing`**: Ensures all planned tests ran
+- **Don't over-mock**: Mock boundaries only, not the code under test
+- **Don't use `Test::More` for new projects**: Prefer Test2::V0
+- **Don't ignore test failures**: All tests must pass before merge
+- **Don't test CPAN modules**: Trust libraries to work correctly
+- **Don't write brittle tests**: Avoid over-specific string matching
 
-## 快速参考
+## Quick Reference
 
-| 任务 | 命令 / 模式 |
+| Task | Command / Pattern |
 |---|---|
-| 运行所有测试 | `prove -lr t/` |
-| 详细运行单个测试 | `prove -lv t/unit/user.t` |
-| 并行测试运行 | `prove -lr -j8 t/` |
-| 覆盖率报告 | `cover -test && cover -report html` |
-| 测试相等性 | `is($got, $expected, 'label')` |
-| 深层比较 | `is($got, hash { field k => 'v'; etc() }, 'label')` |
-| 测试异常 | `like(dies { ... }, qr/msg/, 'label')` |
-| 测试无异常 | `ok(lives { ... }, 'label')` |
-| 模拟一个方法 | `Test::MockModule->new('Pkg')->mock(m => sub { ... })` |
-| 跳过测试 | `SKIP: { skip 'reason', $count unless $cond; ... }` |
-| TODO 测试 | `TODO: { local $TODO = 'reason'; ... }` |
+| Run all tests | `prove -lr t/` |
+| Run one test verbose | `prove -lv t/unit/user.t` |
+| Parallel test run | `prove -lr -j8 t/` |
+| Coverage report | `cover -test && cover -report html` |
+| Test equality | `is($got, $expected, 'label')` |
+| Deep comparison | `is($got, hash { field k => 'v'; etc() }, 'label')` |
+| Test exception | `like(dies { ... }, qr/msg/, 'label')` |
+| Test no exception | `ok(lives { ... }, 'label')` |
+| Mock a method | `Test::MockModule->new('Pkg')->mock(m => sub { ... })` |
+| Skip tests | `SKIP: { skip 'reason', $count unless $cond; ... }` |
+| TODO tests | `TODO: { local $TODO = 'reason'; ... }` |
 
-## 常见陷阱
+## Common Pitfalls
 
-### 忘记 `done_testing`
+### Forgetting `done_testing`
 
 ```perl
 # Bad: Test file runs but doesn't verify all tests executed
@@ -453,7 +453,7 @@ is(1, 1, 'works');
 done_testing;
 ```
 
-### 缺少 `-l` 标志
+### Missing `-l` Flag
 
 ```bash
 # Bad: Modules in lib/ not found
@@ -464,12 +464,13 @@ prove t/unit/user.t
 prove -l t/unit/user.t
 ```
 
-### 过度模拟
+### Over-Mocking
 
-模拟*依赖项*，而非被测试的代码。如果你的测试只验证模拟返回了你告诉它的内容，那么它什么也没测试。
+Mock the *dependency*, not the code under test. If your test only verifies that a mock returns what you told it to, it tests nothing.
 
-### 测试污染
+### Test Pollution
 
-在子测试内部使用 `my` 变量 —— 永远不要用 `our` —— 以防止状态在测试之间泄漏。
+Use `my` variables inside subtests — never `our` — to prevent state leaking between tests.
 
-**记住**：测试是你的安全网。保持它们快速、专注和独立。新项目使用 Test2::V0，运行使用 prove，问责使用 Devel::Cover。
+**Remember**: Tests are your safety net. Keep them fast, focused, and independent. Use Test2::V0 for new projects, prove for running, and Devel::Cover for accountability.
+

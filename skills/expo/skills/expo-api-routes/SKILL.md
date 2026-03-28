@@ -366,3 +366,4 @@ export async function GET(request: Request) {
 - Keep API routes focused — one responsibility per endpoint
 - Use TypeScript for type safety
 - Log errors server-side for debugging
+

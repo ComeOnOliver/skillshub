@@ -1,6 +1,6 @@
 ---
 name: react-native-architecture
-description: "Feature-first project structure and separation of concerns for React Native. Use when structuring a React Native project or applying clean architecture patterns. (triggers: src/**/*.tsx, src/**/*.ts, app.json, feature, module, directory structure, separation of concerns, Expo, React Navigation, StyleSheet.create, react-native, mobile architecture)"
+description: 'Feature-first project structure and separation of concerns for React Native. Use when structuring a React Native project or applying clean architecture patterns. (triggers: src/**/*.tsx, src/**/*.ts, app.json, feature, module, directory structure, separation of concerns, Expo, React Navigation, StyleSheet.create, react-native, mobile architecture)'
 ---
 
 # React Native Architecture
@@ -9,32 +9,13 @@ description: "Feature-first project structure and separation of concerns for Rea
 
 Feature-first organization for scalable mobile apps.
 
-## Project Structure
-
-```text
-src/
-├── features/          # Feature modules (Home, Auth, Profile)
-│   └── home/
-│       ├── screens/   # Screens for this feature
-│       ├── components/ # Feature-specific components
-│       ├── hooks/     # Feature-specific hooks
-│       └── services/  # Feature-specific business logic
-├── components/        # Shared components
-├── navigation/        # Navigation configuration
-├── services/          # Shared services (API, storage)
-├── hooks/             # Shared custom hooks
-├── utils/             # Utility functions
-├── theme/             # Colors, typography, spacing
-└── types/             # TypeScript types
-```
-
 ## Implementation Guidelines
 
 - **Feature-First**: Organize by feature/module, not by type.
 - **Colocation**: Keep related files together (screens, components, hooks within feature).
-- **Separation**: UI (screens/components) separate from logic (hooks/services).
+- **Separation**: UI (screens/components) separate from logic (hooks/services). Example structure: `features/auth/` contains screens, hooks, and services together.
 - **Atomic Components**: Reusable components in `/components`. Feature-specific in feature folder.
-- **Absolute Imports**: Configure `tsconfig.json` paths (`@/components`, `@/features`).
+- **Absolute Imports**: Configure tsconfig.json paths (`@/components`, `@/features`).
 - **Single Responsibility**: Each file has one clear purpose.
 - **Expo vs CLI**: Structure works for both. Expo uses `app.json`, CLI uses `index.js`.
 
@@ -59,8 +40,5 @@ src/
 
 ## References
 
-See [references/folder-structure.md](references/folder-structure.md) for full directory tree, path mapping, and service layer patterns.
+See [references/folder-structure.md](references/folder-structure.md) for full directory tree, path alias config, and service layer patterns.
 
-## Related Topics
-
-common/system-design | components | navigation | react/hooks | react/component-patterns

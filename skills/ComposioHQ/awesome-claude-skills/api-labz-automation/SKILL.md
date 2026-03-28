@@ -1,3 +1,10 @@
+---
+name: api-labz-automation
+description: "Automate API Labz tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # API Labz Automation via Rube MCP
 
 Automate API Labz operations through Composio's API Labz toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -136,3 +136,4 @@ Apply these principles when composing scenes:
 ## Templates
 
 - [templates/scenes-template.md](templates/scenes-template.md) - Blank scenes.md template
+

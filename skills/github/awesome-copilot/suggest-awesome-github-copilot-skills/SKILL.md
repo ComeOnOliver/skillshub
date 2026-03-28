@@ -128,3 +128,4 @@ When outdated skills are identified:
 4. When user requests update, replace entire local skill folder with remote version
 5. Preserve folder location in `.github/skills/` directory
 6. Ensure all bundled assets are downloaded alongside the updated `SKILL.md`
+

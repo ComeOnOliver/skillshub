@@ -266,3 +266,4 @@ See also: electric-shapes/SKILL.md — Shape configuration and parser setup.
 ## Version
 
 Targets @electric-sql/y-electric v0.1.x.
+

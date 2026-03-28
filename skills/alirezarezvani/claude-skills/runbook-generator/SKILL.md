@@ -74,3 +74,4 @@ python3 scripts/runbook_generator.py payments-api --owner platform --output docs
 2. Include health checks after every critical step.
 3. Validate runbooks on a fixed review cadence.
 4. Update runbook content after incidents and postmortems.
+

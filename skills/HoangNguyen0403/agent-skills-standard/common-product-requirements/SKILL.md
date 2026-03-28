@@ -43,3 +43,4 @@ description: "Expert process for gathering requirements and drafting PRDs (Itera
 
 - [Full PRD Template](references/prd-template.md)
 - [Validation Checklist](references/checklist.md)
+

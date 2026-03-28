@@ -1,3 +1,10 @@
+---
+name: hashnode-automation
+description: "Automate Hashnode tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Hashnode Automation via Rube MCP
 
 Automate Hashnode operations through Composio's Hashnode toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

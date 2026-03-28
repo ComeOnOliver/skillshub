@@ -1,3 +1,8 @@
+---
+name: xmath-usage
+description: "Provides xmath API reference and in-place math optimization patterns for Defold. Use when writing performance-critical math code, optimizing vector/quaternion/matrix operations, or when the user mentions xmath, zero-allocation math, or reducing Lua GC pressure."
+---
+
 # Using xmath for Zero-Allocation Math in Defold
 
 ## Prerequisite: Verify xmath Dependency
@@ -127,3 +132,4 @@ All functions write the result into the first argument. No return values.
 | `xmath.matrix_rotation_y(out, angle)` | Rotation around Y axis |
 | `xmath.matrix_rotation_z(out, angle)` | Rotation around Z axis |
 | `xmath.matrix_translation(out, position)` | Translation matrix from vector3/vector4 |
+

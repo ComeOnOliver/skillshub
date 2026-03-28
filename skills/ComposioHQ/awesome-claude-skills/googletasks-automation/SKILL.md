@@ -1,3 +1,10 @@
+---
+name: googletasks-automation
+description: "Automate Google Tasks via Rube MCP (Composio): create, list, update, delete, move, and bulk-insert tasks and task lists. Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Google Tasks Automation via Rube MCP
 
 Create, manage, organize, and bulk-operate on Google Tasks and task lists using Rube MCP (Composio).
@@ -127,3 +134,4 @@ Parameters:
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

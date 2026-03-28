@@ -1,3 +1,10 @@
+---
+name: Coinbase Automation
+description: "Coinbase Automation: list and manage cryptocurrency wallets, accounts, and portfolio data via Coinbase CDP SDK"
+requires:
+  mcp: [rube]
+---
+
 # Coinbase Automation
 
 Automate Coinbase operations including listing cryptocurrency wallets, paginating through wallet collections, and retrieving portfolio data.
@@ -101,3 +108,4 @@ Periodically list wallets to detect new additions or changes.
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

@@ -128,3 +128,4 @@ Help users plan and organize events of all sizes.
 - Designate a point person for each area
 - Keep emergency kit: tape, scissors, pins, stain remover, phone chargers, first aid
 - Take photos of the setup for future reference
+

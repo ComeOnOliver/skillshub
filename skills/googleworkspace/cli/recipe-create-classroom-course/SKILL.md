@@ -23,3 +23,4 @@ Create a Google Classroom course and invite students.
 2. Invite a student: `gws classroom invitations create --json '{"courseId": "COURSE_ID", "userId": "student@school.edu", "role": "STUDENT"}'`
 3. List enrolled students: `gws classroom courses students list --params '{"courseId": "COURSE_ID"}' --format table`
 
+

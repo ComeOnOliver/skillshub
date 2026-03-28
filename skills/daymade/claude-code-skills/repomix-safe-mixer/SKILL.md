@@ -313,3 +313,4 @@ This skill detects common patterns but may not catch all credential types. Alway
 - Monitor for unauthorized access
 
 **Not a replacement for**: Secret scanning in CI/CD, git history scanning, or comprehensive security audits.
+

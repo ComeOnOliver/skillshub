@@ -62,3 +62,4 @@ UnoCSS is an instant atomic CSS engine designed to be flexible and extensible. T
 |-------|-------------|-----------|
 | Vite Integration | Setting up UnoCSS with Vite and framework-specific tips | [integrations-vite](references/integrations-vite.md) |
 | Nuxt Integration | UnoCSS module for Nuxt applications | [integrations-nuxt](references/integrations-nuxt.md) |
+

@@ -540,3 +540,4 @@ When reviewing discoverability implementation, verify:
 ---
 
 **Remember** Discoverability isn't one API—it's a strategy. Feed the system metadata across App Intents, App Shortcuts, Core Spotlight, and NSUserActivity. Let iOS decide when to surface your app based on context and user behavior.
+

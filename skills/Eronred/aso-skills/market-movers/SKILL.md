@@ -135,3 +135,4 @@ Full analysis with all sections above, formatted for sharing with a team.
 - `app-launch` — Use market timing insights for launch planning
 - `ua-campaign` — Adjust ad spend based on chart dynamics
 - `app-store-featured` — Check if featuring is driving observed movements
+

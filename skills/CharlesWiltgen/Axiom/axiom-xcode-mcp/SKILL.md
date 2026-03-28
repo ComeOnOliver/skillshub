@@ -135,3 +135,4 @@ User: "Cursor can't parse Xcode's MCP responses"
 ## Resources
 
 **Skills**: xcode-mcp-setup, xcode-mcp-tools, xcode-mcp-ref
+

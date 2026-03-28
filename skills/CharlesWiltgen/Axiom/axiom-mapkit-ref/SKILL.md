@@ -913,3 +913,4 @@ if let coordinate = descriptor.coordinate {
 **Docs**: /mapkit, /mapkit/map, /mapkit/mklocalsearch, /mapkit/mkdirections, /geotoolbox, /geotoolbox/placedescriptor, /mapkit/mkgeocodingrequest, /mapkit/mkreversegeocodingrequest, /mapkit/mkaddress
 
 **Skills**: mapkit, mapkit-diag, core-location-ref
+

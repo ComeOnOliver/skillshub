@@ -367,3 +367,4 @@ adults = [user for user in users if user.get('age', 0) > 18]
 The Quasi-Coder skill enables expert-level interpretation and implementation of code from imperfect descriptions. By assessing collaborator expertise, applying technical knowledge, and maintaining professional standards, you bridge the gap between ideas and production-quality code.
 
 **Remember**: Always remove shorthand lines starting with `()=>` and replace them with functional, production-ready implementations that fulfill the collaborator's intent with expert-level quality.
+

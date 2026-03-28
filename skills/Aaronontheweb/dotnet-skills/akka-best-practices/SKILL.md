@@ -381,3 +381,4 @@ When actors launch async operations via `PipeTo`, those operations can outlive t
 - **Graceful handling** - Distinguish timeout vs shutdown in catch blocks
 
 See [async-cancellation-patterns.md](async-cancellation-patterns.md) for complete implementation code.
+

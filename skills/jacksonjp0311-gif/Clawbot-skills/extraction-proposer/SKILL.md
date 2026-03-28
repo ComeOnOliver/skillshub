@@ -1,3 +1,8 @@
+---
+name: extraction-proposer
+description: Scan ICE-Crawler extraction logs, pick promising algorithms/tools, and emit skill creation proposals (name, scope, source files, next steps).
+---
+
 # Extraction Proposer
 
 Use this skill after ICE-Crawler runs to convert harvested fossils into concrete skill proposals. It expects the extraction registry under `../ice-crawler-harvester/extractions` (relative to this skill folder) and writes proposal specs under `proposals/`.
@@ -58,3 +63,4 @@ Reference: [`references/registry-workflow.md`](references/registry-workflow.md)
 - When a skill is built, link back to the proposal JSON for provenance.
 
 This skill ensures every ICE-Crawler extraction can graduate into a reusable capability with clean provenance.
+

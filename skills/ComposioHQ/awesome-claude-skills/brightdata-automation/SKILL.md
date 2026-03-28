@@ -1,3 +1,10 @@
+---
+name: brightdata-automation
+description: "Automate Brightdata tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Brightdata Automation via Rube MCP
 
 Automate Brightdata operations through Composio's Brightdata toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

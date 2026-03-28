@@ -1,6 +1,6 @@
 ---
 name: nextjs-data-fetching
-description: "Fetch API, Caching, and Revalidation strategies. Use when fetching data, configuring cache behavior, or implementing revalidation in Next.js. (triggers: **/*.tsx, **/service.ts, fetch, revalidate, no-store, force-cache)"
+description: 'Fetch API, Caching, and Revalidation strategies. Use when fetching data, configuring cache behavior, or implementing revalidation in Next.js. (triggers: **/*.tsx, **/service.ts, fetch, revalidate, no-store, force-cache)'
 ---
 
 # Data Fetching (App Router)
@@ -20,7 +20,7 @@ Fetch data directly in Server Components using `async/await`.
 
 ## Patterns
 
-- **Direct Access**: Call DB/Service layer directly. **Do not fetch your own /api routes.**
+- **Direct Access**: Call DB/Service layer directly. **Do not fetch your own /api routes.** Example: `export default async function Page() { const user = await db.user.findUnique({ where: { id }, select: { id: true, name: true } }); }`
 - **Colocation**: Fetch exactly where data is needed.
 - **Parallel**: Use `Promise.all()` to prevent waterfalls.
 - **Client-Side**: Use SWR/React Query for live/per-user data (no SEO).
@@ -32,11 +32,12 @@ Fetch data directly in Server Components using `async/await`.
 
 ## Anti-Patterns
 
-- **No Root Awaits**: Avoid blocking the entire page. Use `<Suspense>`.
-- **No useEffect**: Avoid manual fetching in client effects.
-- **Internal API**: Never call `/api/...` from Server Components.
+- **No root-level awaits**: Wrap slow fetches in `<Suspense>` to avoid blocking.
+- **No `useEffect` for data fetching**: Use SWR or React Query for client-side data.
+- **No internal API calls from RSC**: Fetch from DB/service layer directly.
 
 ## Examples & References
 
 - [Usage Examples](references/usage-examples.md)
 - [Caching Documentation](https://nextjs.org/docs/app/building-your-application/caching)
+

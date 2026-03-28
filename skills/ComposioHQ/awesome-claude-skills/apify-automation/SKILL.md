@@ -1,3 +1,11 @@
+---
+name: Apify Automation
+description: "Automate web scraping and data extraction with Apify -- run Actors, manage datasets, create reusable tasks, and retrieve crawl results through the Composio Apify integration."
+requires:
+  mcp:
+    - rube
+---
+
 # Apify Automation
 
 Run **Apify** web scraping Actors and manage datasets directly from Claude Code. Execute crawlers synchronously or asynchronously, retrieve structured data, create reusable tasks, and inspect run logs without leaving your terminal.
@@ -157,3 +165,4 @@ Example prompt: *"List the last 10 runs for the web scraper Actor and show logs 
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

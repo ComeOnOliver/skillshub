@@ -186,3 +186,4 @@ bash scripts/gen-table-test.sh --output config/parse_config_test.go ParseConfig 
 - **Interface mocking**: See [go-interfaces](../go-interfaces/SKILL.md) when creating test doubles by implementing interfaces at the consumer side
 - **Naming test functions**: See [go-naming](../go-naming/SKILL.md) when naming test functions, subtests, or test helper utilities
 - **Linter integration**: See [go-linting](../go-linting/SKILL.md) when running linters alongside tests in CI or pre-commit hooks
+

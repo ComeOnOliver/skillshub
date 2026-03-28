@@ -445,3 +445,4 @@ Every design decision should support these principles:
 
 **Last Updated**: Based on Apple HIG (2024-2025), WWDC25-356, WWDC19-808
 **Skill Type**: Discipline (Quick decisions, checklists, pressure scenarios)
+

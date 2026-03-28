@@ -1,3 +1,9 @@
+---
+name: forecasting-time-series-data
+description: |
+  This skill enables Claude to forecast future values based on historical time series data. It analyzes time-dependent data to identify trends, seasonality, and other patterns. Use this skill when the user asks to predict future values of a time series, analyze trends in data over time, or requires insights into time-dependent data. Trigger terms include "forecast," "predict," "time series analysis," "future values," and requests involving temporal data.
+---
+
 ## Overview
 
 This skill empowers Claude to perform time series forecasting, providing insights into future trends and patterns. It automates the process of data analysis, model selection, and prediction generation, delivering valuable information for decision-making.

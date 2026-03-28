@@ -1,3 +1,8 @@
+---
+name: analyzing-projects
+description: Analyzes codebases to understand structure, tech stack, patterns, and conventions. Use when onboarding to a new project, exploring unfamiliar code, or when asked "how does this work?" or "what's the architecture?"
+---
+
 # Analyzing Projects
 
 ### When to Load
@@ -153,3 +158,4 @@ Analysis Validation:
 ```
 
 If any items cannot be verified, note them as "needs clarification" in the report.
+

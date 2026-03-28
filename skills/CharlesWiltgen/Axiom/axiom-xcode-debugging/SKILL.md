@@ -249,3 +249,4 @@ atos -o YourApp.app.dSYM/Contents/Resources/DWARF/YourApp \
 **After** 2 min environment check → clean Derived Data → problem solved
 
 **Key insight** Check environment first, debug code second.
+

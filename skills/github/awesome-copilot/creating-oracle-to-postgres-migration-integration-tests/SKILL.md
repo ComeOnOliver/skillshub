@@ -58,3 +58,4 @@ Re-examine every assertion against non-null values. Confirm each is deterministi
 - **DB-agnostic assertions** — no platform-specific error messages or syntax in assertions.
 - **Seed only against Oracle** — test project will be migrated to PostgreSQL later.
 - **Scoped to one project** — do not create tests for artifacts outside the target project.
+

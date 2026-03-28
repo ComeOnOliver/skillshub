@@ -145,3 +145,4 @@ func main() {
 - **Import linting**: See [go-linting](../go-linting/SKILL.md) when configuring goimports local-prefixes or enforcing import grouping
 - **Global state**: See [go-defensive](../go-defensive/SKILL.md) when replacing `init()` with explicit initialization or avoiding mutable globals
 
+

@@ -1200,3 +1200,4 @@ Workflow:
 - User wants to clean system files requiring SIP disable (security risk)
 
 In these cases, explain limitations and suggest alternatives.
+

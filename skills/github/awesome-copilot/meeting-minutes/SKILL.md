@@ -233,3 +233,4 @@ A generated minutes document is acceptable if:
 - All significant decisions are captured with at least 1-line rationale.
 - Attachments or references are listed or explicitly marked `None`.
 - The document is factual; uncertain items are labeled `TBD`.
+

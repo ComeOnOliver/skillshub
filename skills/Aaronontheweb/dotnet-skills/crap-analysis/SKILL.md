@@ -385,3 +385,4 @@ The recommended `coverage.runsettings` excludes:
 - **Coverlet Documentation**: https://github.com/coverlet-coverage/coverlet
 - **ReportGenerator**: https://github.com/danielpalme/ReportGenerator
 - **CRAP Score Original Paper**: http://www.artima.com/weblogs/viewpost.jsp?thread=215899
+

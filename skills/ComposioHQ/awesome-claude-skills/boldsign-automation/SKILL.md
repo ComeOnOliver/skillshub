@@ -1,3 +1,10 @@
+---
+name: boldsign-automation
+description: "Automate Boldsign tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Boldsign Automation via Rube MCP
 
 Automate Boldsign operations through Composio's Boldsign toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

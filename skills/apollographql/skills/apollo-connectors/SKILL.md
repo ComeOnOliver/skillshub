@@ -193,3 +193,4 @@ type Product @connect(
 - ALWAYS create entity relationships when you see ID fields
 - Prefer `$env` over `$config` for environment variables
 - Use `rover dev` for running Apollo Router locally
+

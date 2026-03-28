@@ -1,3 +1,10 @@
+---
+name: giphy-automation
+description: "Automate Giphy tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Giphy Automation via Rube MCP
 
 Automate Giphy operations through Composio's Giphy toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

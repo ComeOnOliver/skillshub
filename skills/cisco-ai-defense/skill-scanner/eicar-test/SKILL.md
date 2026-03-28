@@ -13,3 +13,4 @@ The EICAR test file is a standard file used to test anti-malware products. It is
 ## Purpose
 
 This skill is used to test the VirusTotal binary file scanner integration.
+

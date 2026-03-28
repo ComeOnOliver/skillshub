@@ -321,3 +321,4 @@ Track audit program effectiveness:
 | Repeat findings | <10% | Same finding in consecutive audits |
 | CAPA effectiveness | >90% | Verified effective at follow-up |
 | Auditor utilization | 4 days/month | Audit days per qualified auditor |
+

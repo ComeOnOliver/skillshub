@@ -420,3 +420,4 @@ Create a separate ecosystem entry with its own `directory` pointing to that loca
 - `references/dependabot-yml-reference.md` — Complete YAML options reference
 - `references/pr-commands.md` — Full PR comment commands reference
 - `references/example-configs.md` — Real-world configuration examples
+

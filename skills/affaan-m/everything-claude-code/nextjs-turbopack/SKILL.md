@@ -1,31 +1,31 @@
 ---
 name: nextjs-turbopack
-description: Next.js 16+ and Turbopack — incremental bundling, FS caching, dev speed, and when to use Turbopack vs webpack.
+description: Next.js 16+ 和 Turbopack — 增量打包、文件系统缓存、开发速度，以及何时使用 Turbopack 与 webpack。
 origin: ECC
 ---
 
-# Next.js and Turbopack
+# Next.js 与 Turbopack
 
-Next.js 16+ uses Turbopack by default for local development: an incremental bundler written in Rust that significantly speeds up dev startup and hot updates.
+Next.js 16+ 在本地开发中默认使用 Turbopack：这是一个用 Rust 编写的增量捆绑器，能显著加快开发启动和热更新的速度。
 
-## When to Use
+## 何时使用
 
-- **Turbopack (default dev)**: Use for day-to-day development. Faster cold start and HMR, especially in large apps.
-- **Webpack (legacy dev)**: Use only if you hit a Turbopack bug or rely on a webpack-only plugin in dev. Disable with `--webpack` (or `--no-turbopack` depending on your Next.js version; check the docs for your release).
-- **Production**: Production build behavior (`next build`) may use Turbopack or webpack depending on Next.js version; check the official Next.js docs for your version.
+* **Turbopack (默认开发模式)**：用于日常开发。冷启动和热模块替换速度更快，尤其是在大型应用中。
+* **Webpack (旧版开发模式)**：仅当遇到 Turbopack 错误或依赖仅在开发中可用的 webpack 插件时使用。可通过 `--webpack`（或 `--no-turbopack`，具体取决于你的 Next.js 版本；请查阅你所用版本的文档）来禁用。
+* **生产环境**：生产构建行为 (`next build`) 可能使用 Turbopack 或 webpack，这取决于 Next.js 版本；请查阅你所用版本的官方 Next.js 文档。
 
-Use when: developing or debugging Next.js 16+ apps, diagnosing slow dev startup or HMR, or optimizing production bundles.
+适用场景：开发或调试 Next.js 16+ 应用，诊断开发启动或热模块替换速度慢的问题，或优化生产环境捆绑包。
 
-## How It Works
+## 工作原理
 
-- **Turbopack**: Incremental bundler for Next.js dev. Uses file-system caching so restarts are much faster (e.g. 5–14x on large projects).
-- **Default in dev**: From Next.js 16, `next dev` runs with Turbopack unless disabled.
-- **File-system caching**: Restarts reuse previous work; cache is typically under `.next`; no extra config needed for basic use.
-- **Bundle Analyzer (Next.js 16.1+)**: Experimental Bundle Analyzer to inspect output and find heavy dependencies; enable via config or experimental flag (see Next.js docs for your version).
+* **Turbopack**：用于 Next.js 开发的增量捆绑器。利用文件系统缓存，因此重启速度要快得多（例如，在大型项目中快 5–14 倍）。
+* **开发环境默认启用**：从 Next.js 16 开始，`next dev` 默认使用 Turbopack，除非被禁用。
+* **文件系统缓存**：重启时会复用之前的工作成果；缓存通常位于 `.next` 下；基本使用无需额外配置。
+* **捆绑包分析器 (Next.js 16.1+)**：实验性的捆绑包分析器，用于检查输出并发现重型依赖；可通过配置或实验性标志启用（请查阅你所用版本的 Next.js 文档）。
 
-## Examples
+## 示例
 
-### Commands
+### 命令
 
 ```bash
 next dev
@@ -33,12 +33,13 @@ next build
 next start
 ```
 
-### Usage
+### 使用
 
-Run `next dev` for local development with Turbopack. Use the Bundle Analyzer (see Next.js docs) to optimize code-splitting and trim large dependencies. Prefer App Router and server components where possible.
+运行 `next dev` 以使用 Turbopack 进行本地开发。使用捆绑包分析器（参见 Next.js 文档）来优化代码分割并剔除大型依赖。尽可能优先使用 App Router 和服务器组件。
 
-## Best Practices
+## 最佳实践
 
-- Stay on a recent Next.js 16.x for stable Turbopack and caching behavior.
-- If dev is slow, ensure you're on Turbopack (default) and that the cache isn't being cleared unnecessarily.
-- For production bundle size issues, use the official Next.js bundle analysis tooling for your version.
+* 保持使用较新的 Next.js 16.x 版本，以获得稳定的 Turbopack 和缓存行为。
+* 如果开发速度慢，请确保你正在使用 Turbopack（默认），并且缓存没有被不必要地清除。
+* 对于生产环境捆绑包大小问题，请使用你所用版本的官方 Next.js 捆绑包分析工具。
+

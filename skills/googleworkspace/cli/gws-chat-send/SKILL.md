@@ -47,3 +47,4 @@ gws chat +send --space spaces/AAAAxxxx --text 'Hello team!'
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-chat](../gws-chat/SKILL.md) — All manage chat spaces and messages commands
+

@@ -78,3 +78,4 @@ npm run dev          # Start dev server
 ## Vite Compatibility
 
 If your project uses Vite, you may need to allow the symlinked path in `server.fs.allow`. Add the symlink target's parent directory (e.g., `/home/agent/project-deps/`) to your Vite config so that Vite can serve files through the symlink.
+

@@ -102,3 +102,4 @@ Rotate through these themes:
 - Buying followers (destroys engagement rate)
 - Not repurposing content across platforms
 - Inconsistent posting schedule
+

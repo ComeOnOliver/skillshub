@@ -415,3 +415,4 @@ context.automaticallyMergesChangesFromParent = true
 - `axiom-swiftdata` — Modern alternative for iOS 17+
 - `axiom-database-migration` — Safe schema evolution patterns
 - `axiom-swift-concurrency` — Async/await patterns for Core Data
+

@@ -277,3 +277,4 @@ appBuilder
 | Azure VMs/VMSS | AzureTableStorage | `true` |
 | Fixed infrastructure | Config | `true` |
 | AWS ECS/EC2 | AWS discovery plugins | `true` |
+

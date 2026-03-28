@@ -1,3 +1,8 @@
+---
+name: swift-api-design-guidelines-skill
+description: Write, review, or improve Swift APIs using Swift API Design Guidelines for naming, argument labels, documentation comments, terminology, and general conventions. Use when designing new APIs, refactoring existing interfaces, or reviewing API clarity and fluency.
+---
+
 # Swift API Design Guidelines Skill
 
 ## Overview
@@ -141,3 +146,4 @@ Use this skill to design and review Swift APIs that are clear at the point of us
 - Follow established Swift conventions before inventing local style rules.
 - Optimize for maintainability and reviewability of public API surfaces.
 - Keep guidance practical: apply the smallest change that improves clarity.
+

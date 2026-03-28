@@ -161,3 +161,4 @@ spring.data.mongodb.database=test
 - (Optional) `docker-compose up -d` to start the services, `./mvnw spring-boot:run` to run the Spring Boot project, `docker-compose rm -sf` to stop the services.
 
 ## Let's do this step by step
+

@@ -589,3 +589,4 @@ If you've spent >30 minutes and the migration issue persists:
 **Status** Production-ready diagnostic patterns
 **Framework** SwiftData (Apple)
 **Swift** 5.9+
+

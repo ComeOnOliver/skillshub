@@ -1147,3 +1147,4 @@ function ayudawp_add_server_timing() {
 - [WP-Cron](https://developer.wordpress.org/plugins/cron/)
 - [WordPress VIP Performance Docs](https://docs.wpvip.com/performance/)
 - [Query Monitor Plugin](https://querymonitor.com/)
+

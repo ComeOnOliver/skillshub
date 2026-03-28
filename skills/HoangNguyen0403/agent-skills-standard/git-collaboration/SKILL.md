@@ -49,3 +49,4 @@ Universal standards for effective version control, branching strategies, and tea
 ## 📚 References
 
 - [Clean Linear History & Rebase Examples](references/CLEAN_HISTORY.md)
+

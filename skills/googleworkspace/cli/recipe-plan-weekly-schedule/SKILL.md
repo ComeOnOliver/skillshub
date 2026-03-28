@@ -24,3 +24,4 @@ Review your Google Calendar week, identify gaps, and add events to fill them.
 3. Add a new event: `gws calendar +insert --summary 'Deep Work Block' --start '2026-01-21T14:00:00' --end '2026-01-21T16:00:00'`
 4. Review updated schedule: `gws calendar +agenda`
 
+

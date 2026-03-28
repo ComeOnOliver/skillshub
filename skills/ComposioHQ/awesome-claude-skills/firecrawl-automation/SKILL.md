@@ -1,3 +1,11 @@
+---
+name: Firecrawl Automation
+description: "Automate web crawling and data extraction with Firecrawl -- scrape pages, crawl sites, extract structured data, batch scrape URLs, and map website structures through the Composio Firecrawl integration."
+requires:
+  mcp:
+    - rube
+---
+
 # Firecrawl Automation
 
 Run **Firecrawl** web crawling and extraction directly from Claude Code. Scrape individual pages, crawl entire sites, extract structured data with AI, batch process URL lists, and map website structures without leaving your terminal.
@@ -167,3 +175,4 @@ Example prompt: *"Check the status of crawl job 019b0806-b7a1-7652-94c1-e865b5d2
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

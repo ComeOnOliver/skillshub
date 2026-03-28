@@ -1,3 +1,10 @@
+---
+name: bouncer-automation
+description: "Automate Bouncer tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bouncer Automation via Rube MCP
 
 Automate Bouncer operations through Composio's Bouncer toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

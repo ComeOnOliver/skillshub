@@ -1,3 +1,10 @@
+---
+name: fluxguard-automation
+description: "Automate Fluxguard tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Fluxguard Automation via Rube MCP
 
 Automate Fluxguard operations through Composio's Fluxguard toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: folk-automation
+description: "Automate Folk tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Folk Automation via Rube MCP
 
 Automate Folk operations through Composio's Folk toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

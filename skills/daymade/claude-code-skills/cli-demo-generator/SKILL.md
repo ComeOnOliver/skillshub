@@ -344,3 +344,4 @@ This skill provides three main approaches:
 3. **Interactive** (`record_interactive.sh`) - Live recording, real output
 
 Choose the approach that best fits the user's needs. For most cases, automated generation is the fastest and most convenient option.
+

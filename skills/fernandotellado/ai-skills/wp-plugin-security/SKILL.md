@@ -716,3 +716,4 @@ phpcs --standard=WordPress path/to/plugin
 - [Common Vulnerabilities](https://developer.wordpress.org/apis/security/common-vulnerabilities/)
 - [Plugin Review Team Common Issues](https://developer.wordpress.org/plugins/wordpress-org/common-issues/)
 - [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards)
+

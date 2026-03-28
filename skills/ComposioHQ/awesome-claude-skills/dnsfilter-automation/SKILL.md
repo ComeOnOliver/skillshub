@@ -1,3 +1,10 @@
+---
+name: dnsfilter-automation
+description: "Automate Dnsfilter tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dnsfilter Automation via Rube MCP
 
 Automate Dnsfilter operations through Composio's Dnsfilter toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

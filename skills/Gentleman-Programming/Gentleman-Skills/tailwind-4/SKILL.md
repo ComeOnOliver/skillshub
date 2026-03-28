@@ -1,3 +1,14 @@
+---
+name: tailwind-4
+description: >
+  Tailwind CSS 4 patterns and best practices.
+  Trigger: When styling with Tailwind - cn(), theme variables, no var() in className.
+license: Apache-2.0
+metadata:
+  author: gentleman-programming
+  version: "1.1"
+---
+
 ## Styling Decision Tree
 
 ```
@@ -186,3 +197,4 @@ const CHART_COLORS = {
 
 ## Keywords
 tailwind, css, styling, cn, utility classes, responsive
+

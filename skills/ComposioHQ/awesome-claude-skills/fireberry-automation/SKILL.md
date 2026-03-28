@@ -1,3 +1,10 @@
+---
+name: fireberry-automation
+description: "Automate Fireberry tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Fireberry Automation via Rube MCP
 
 Automate Fireberry operations through Composio's Fireberry toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

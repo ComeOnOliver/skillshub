@@ -108,3 +108,4 @@ For bulk operations, use `RUBE_REMOTE_WORKBENCH` with `run_composio_tool()` in a
 | Full schema | `RUBE_GET_TOOL_SCHEMAS` for tools with `schemaRef` |
 
 > **Toolkit docs**: [composio.dev/toolkits/ring_central](https://composio.dev/toolkits/ring_central)
+

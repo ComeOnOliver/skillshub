@@ -95,3 +95,4 @@ Identify why a page is slow.
 - **Snapshots**: Take a new snapshot after any major navigation or DOM change, as `uid` values may change.
 - **Timeouts**: Use reasonable timeouts for `wait_for` to avoid hanging on slow-loading elements.
 - **Screenshots**: Use `take_screenshot` sparingly for visual verification, but rely on `take_snapshot` for logic.
+

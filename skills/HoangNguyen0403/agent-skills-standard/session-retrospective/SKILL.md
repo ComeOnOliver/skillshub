@@ -55,3 +55,4 @@ common/session-retrospective/
 
 Signal tables, root cause taxonomy, report template, real-world example:
 [references/methodology.md](references/methodology.md)
+

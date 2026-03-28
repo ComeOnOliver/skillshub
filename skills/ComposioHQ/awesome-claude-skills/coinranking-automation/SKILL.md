@@ -1,3 +1,10 @@
+---
+name: coinranking-automation
+description: "Automate Coinranking tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Coinranking Automation via Rube MCP
 
 Automate Coinranking operations through Composio's Coinranking toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

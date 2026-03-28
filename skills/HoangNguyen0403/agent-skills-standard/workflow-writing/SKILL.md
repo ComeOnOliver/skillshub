@@ -51,3 +51,4 @@ metadata:
 - [ ] Is every table row real structure, not example data?
 - [ ] Are there any paragraphs a bullet list could replace?
 - [ ] Would cutting this in half still give the agent enough to act on?
+

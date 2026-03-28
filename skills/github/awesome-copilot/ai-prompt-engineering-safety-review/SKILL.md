@@ -228,3 +228,4 @@ Provide your analysis in the following structured format:
 - **Follow industry best practices** from Microsoft, OpenAI, and Google AI
 
 Remember: Your goal is to help create prompts that are not only effective but also safe, unbiased, secure, and responsible. Every improvement should enhance both functionality and safety.
+

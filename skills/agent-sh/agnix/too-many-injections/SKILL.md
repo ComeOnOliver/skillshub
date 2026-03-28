@@ -11,3 +11,4 @@ Current branch: !`git branch --show-current`
 Current user: !`whoami`
 
 The limit is 3 injections per skill.
+

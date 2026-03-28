@@ -23,3 +23,4 @@ To scaffold a new Terraform provider with Plugin Framework:
 1. Run `go build -o /dev/null`
 1. Run `go test ./...`
 
+

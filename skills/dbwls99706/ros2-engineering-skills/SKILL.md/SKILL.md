@@ -455,3 +455,4 @@ ros2 lifecycle list /node_name
 ros2 lifecycle set /node_name configure
 ros2 lifecycle set /node_name activate
 ```
+

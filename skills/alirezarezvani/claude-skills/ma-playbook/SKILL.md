@@ -96,3 +96,4 @@ See `references/integration-playbook.md` for the 100-day integration plan.
 ## Resources
 - `references/integration-playbook.md` — 100-day post-acquisition integration plan
 - `references/due-diligence-checklist.md` — comprehensive DD checklist by domain
+

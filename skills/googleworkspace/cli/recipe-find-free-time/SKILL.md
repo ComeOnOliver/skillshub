@@ -23,3 +23,4 @@ Query Google Calendar free/busy status for multiple users to find a meeting slot
 2. Review the output to find overlapping free slots
 3. Create event in the free slot: `gws calendar +insert --summary 'Meeting' --attendee user1@company.com --attendee user2@company.com --start '2024-03-18T14:00:00' --end '2024-03-18T14:30:00'`
 
+

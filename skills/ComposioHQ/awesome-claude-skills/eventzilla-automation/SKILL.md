@@ -1,3 +1,10 @@
+---
+name: eventzilla-automation
+description: "Automate Eventzilla tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Eventzilla Automation via Rube MCP
 
 Automate Eventzilla operations through Composio's Eventzilla toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -953,3 +953,4 @@ func testDragGesture() throws {
 ---
 
 **Remember**: Prefer built-in controls (Button, Slider) over custom gestures whenever possible. Gestures should enhance interaction, not replace standard controls.
+

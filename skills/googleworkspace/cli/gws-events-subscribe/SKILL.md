@@ -57,3 +57,4 @@ gws events +subscribe ... --cleanup --output-dir ./events
 
 - [gws-shared](../gws-shared/SKILL.md) — Global flags and auth
 - [gws-events](../gws-events/SKILL.md) — All subscribe to google workspace events commands
+

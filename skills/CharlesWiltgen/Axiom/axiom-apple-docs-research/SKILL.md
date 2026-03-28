@@ -325,3 +325,4 @@ Before using captured content:
 ---
 
 **Time Saved**: Using this technique saves 30-40 minutes per WWDC session vs. manual video watching and transcription. For comprehensive research spanning multiple sessions, savings compound to 3-4 hours per skill.
+

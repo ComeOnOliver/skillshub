@@ -1,3 +1,10 @@
+---
+name: auth0-automation
+description: "Automate Auth0 tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Auth0 Automation via Rube MCP
 
 Automate Auth0 operations through Composio's Auth0 toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

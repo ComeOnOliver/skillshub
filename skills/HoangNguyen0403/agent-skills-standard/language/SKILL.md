@@ -1,71 +1,77 @@
 ---
-name: JavaScript Language Patterns
-description: Modern JavaScript (ES2022+) patterns for clean, maintainable code.
+name: TypeScript Language Patterns
+description: Modern TypeScript standards for type safety and maintainability. Use when working with types, interfaces, generics, enums, unions, or tsconfig settings.
 metadata:
-  labels: [javascript, language, es6, modern-js]
+  labels: [typescript, language, types, generics]
   triggers:
-    files: ['**/*.js', '**/*.mjs', '**/*.cjs']
+    files: ['**/*.ts', '**/*.tsx', 'tsconfig.json']
     keywords:
-      [const, let, arrow, async, await, promise, destructuring, spread, class]
+      [
+        type,
+        interface,
+        generic,
+        enum,
+        union,
+        intersection,
+        readonly,
+        const,
+        namespace,
+      ]
 ---
 
-# JavaScript Language Patterns
+# TypeScript Language Patterns
 
 ## **Priority: P0 (CRITICAL)**
 
-Modern JavaScript standards for clean, maintainable code.
-
 ## Implementation Guidelines
 
-- **Variables**: `const` default. `let` if needed. No `var`.
-- **Functions**: Arrows for callbacks. Declarations for top-level.
-- **Async**: `async/await` + `try/catch`.
-- **Objects**: Destructuring, Spread `...`, Optional Chain `?.`, Nullish `??`.
-- **Strings**: Template literals `${}`.
-- **Arrays**: `map`, `filter`, `reduce`. No loops.
-- **Modules**: ESM `import`/`export`. Export only what is necessary.
-- **Classes**: Use `#private` fields for true privacy.
+- **Type Annotations**: Explicit params/returns. Infer locals.
+- **Interfaces vs Types**: `interface` for APIs. `type` for unions.
+- **Strict Mode**: `strict: true`. Null Safety: `?.` and `??`.
+- **Enums**: Literal unions or `as const`. **No runtime `enum`**.
+- **Generics**: Reusable, type-safe code.
+- **Type Guards**: `typeof`, `instanceof`, predicates.
+- **Utility Types**: `Partial`, `Pick`, `Omit`, `Record`.
+- **Immutability**: `readonly` arrays/objects. Const Assertions: `as const`, `satisfies`.
+- **Template Literals**: `on${Capitalize<string>}`.
+- **Discriminated Unions**: Literal `kind` property.
+- **Advanced**: Mapped, Conditional, Indexed types.
+- **Access**: Default `public`. Use `private`/`protected` or `#private`.
+- **Branded Types**: `string & { __brand: 'Id' }`.
 
 ## Anti-Patterns
 
-- **No `var`**: Block scope only.
-- **No `==`**: Strict `===`.
-- **No `new Object()`**: Use literals `{}`.
-- **No Callbacks**: Promisify everything.
-- **No Mutation**: Immutability first.
+- **No `any`**: NEVER use `any`. Use `unknown` or specific interfaces.
+- **No `Function`**: Use signature `() => void`.
+- **No `enum`**: Runtime cost.
+- **No `!`**: Use narrowing.
+- **NO LINT DISABLE**: PROHIBITED. Fix issues properly.
+
+## Testing
+
+- **Mocking**: Use `jest.Mocked<T>` or `as unknown as T`.
+- **Checklist**: Check method existence, match error constants, satisfy required properties.
+- **References**: See [references/TESTING.md](references/TESTING.md) for common issues/solutions.
 
 ## Code
 
-```javascript
-// Modern Syntax
-const [x, ...rest] = items;
-const name = user?.profile?.name ?? 'Guest';
+```typescript
+// Branded Type
+type UserId = string & { __brand: 'Id' };
 
-// Async
-async function getUser(id) {
-  try {
-    const res = await fetch(`/api/${id}`);
-    return res.json();
-  } catch (err) {
-    console.error(err);
-    throw err;
-  }
-}
+// Satisfies (Validate + Infer)
+const cfg = { port: 3000 } satisfies Record<string, number>;
 
-// Class + Private
-class Service {
-  #key;
-  constructor(k) {
-    this.#key = k;
-  }
-}
+// Discriminated Union
+type Result<T> = { kind: 'ok'; data: T } | { kind: 'err'; error: Error };
 ```
 
 ## Reference & Examples
 
-For advanced patterns and functional programming:
+For advanced type patterns and utility types:
 See [references/REFERENCE.md](references/REFERENCE.md).
 
 ## Related Topics
 
-best-practices | tooling
+best-practices | security | tooling
+

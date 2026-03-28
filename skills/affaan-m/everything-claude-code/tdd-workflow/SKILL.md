@@ -1,61 +1,55 @@
 ---
 name: tdd-workflow
-description: 在编写新功能、修复错误或重构代码时使用此技能。强制执行测试驱动开发，确保单元测试、集成测试和端到端测试的覆盖率超过80%。
+description: Use this skill when writing new features, fixing bugs, or refactoring code. Enforces test-driven development with 80%+ coverage including unit, integration, and E2E tests.
 origin: ECC
 ---
 
-# 测试驱动开发工作流
+# Test-Driven Development Workflow
 
-此技能确保所有代码开发遵循TDD原则，并具备全面的测试覆盖率。
+This skill ensures all code development follows TDD principles with comprehensive test coverage.
 
-## 何时激活
+## When to Activate
 
-* 编写新功能或功能
-* 修复错误或问题
-* 重构现有代码
-* 添加API端点
-* 创建新组件
+- Writing new features or functionality
+- Fixing bugs or issues
+- Refactoring existing code
+- Adding API endpoints
+- Creating new components
 
-## 核心原则
+## Core Principles
 
-### 1. 测试优先于代码
+### 1. Tests BEFORE Code
+ALWAYS write tests first, then implement code to make tests pass.
 
-始终先编写测试，然后实现代码以使测试通过。
+### 2. Coverage Requirements
+- Minimum 80% coverage (unit + integration + E2E)
+- All edge cases covered
+- Error scenarios tested
+- Boundary conditions verified
 
-### 2. 覆盖率要求
+### 3. Test Types
 
-* 最低80%覆盖率（单元 + 集成 + 端到端）
-* 覆盖所有边缘情况
-* 测试错误场景
-* 验证边界条件
+#### Unit Tests
+- Individual functions and utilities
+- Component logic
+- Pure functions
+- Helpers and utilities
 
-### 3. 测试类型
+#### Integration Tests
+- API endpoints
+- Database operations
+- Service interactions
+- External API calls
 
-#### 单元测试
+#### E2E Tests (Playwright)
+- Critical user flows
+- Complete workflows
+- Browser automation
+- UI interactions
 
-* 单个函数和工具
-* 组件逻辑
-* 纯函数
-* 辅助函数和工具
+## TDD Workflow Steps
 
-#### 集成测试
-
-* API端点
-* 数据库操作
-* 服务交互
-* 外部API调用
-
-#### 端到端测试 (Playwright)
-
-* 关键用户流程
-* 完整工作流
-* 浏览器自动化
-* UI交互
-
-## TDD 工作流步骤
-
-### 步骤 1: 编写用户旅程
-
+### Step 1: Write User Journeys
 ```
 As a [role], I want to [action], so that [benefit]
 
@@ -64,9 +58,8 @@ As a user, I want to search for markets semantically,
 so that I can find relevant markets even without exact keywords.
 ```
 
-### 步骤 2: 生成测试用例
-
-针对每个用户旅程，创建全面的测试用例：
+### Step 2: Generate Test Cases
+For each user journey, create comprehensive test cases:
 
 ```typescript
 describe('Semantic Search', () => {
@@ -88,16 +81,14 @@ describe('Semantic Search', () => {
 })
 ```
 
-### 步骤 3: 运行测试（它们应该失败）
-
+### Step 3: Run Tests (They Should Fail)
 ```bash
 npm test
 # Tests should fail - we haven't implemented yet
 ```
 
-### 步骤 4: 实现代码
-
-编写最少的代码以使测试通过：
+### Step 4: Implement Code
+Write minimal code to make tests pass:
 
 ```typescript
 // Implementation guided by tests
@@ -106,33 +97,28 @@ export async function searchMarkets(query: string) {
 }
 ```
 
-### 步骤 5: 再次运行测试
-
+### Step 5: Run Tests Again
 ```bash
 npm test
 # Tests should now pass
 ```
 
-### 步骤 6: 重构
+### Step 6: Refactor
+Improve code quality while keeping tests green:
+- Remove duplication
+- Improve naming
+- Optimize performance
+- Enhance readability
 
-在保持测试通过的同时提高代码质量：
-
-* 消除重复
-* 改进命名
-* 优化性能
-* 增强可读性
-
-### 步骤 7: 验证覆盖率
-
+### Step 7: Verify Coverage
 ```bash
 npm run test:coverage
 # Verify 80%+ coverage achieved
 ```
 
-## 测试模式
+## Testing Patterns
 
-### 单元测试模式 (Jest/Vitest)
-
+### Unit Test Pattern (Jest/Vitest)
 ```typescript
 import { render, screen, fireEvent } from '@testing-library/react'
 import { Button } from './Button'
@@ -159,8 +145,7 @@ describe('Button Component', () => {
 })
 ```
 
-### API 集成测试模式
-
+### API Integration Test Pattern
 ```typescript
 import { NextRequest } from 'next/server'
 import { GET } from './route'
@@ -191,8 +176,7 @@ describe('GET /api/markets', () => {
 })
 ```
 
-### 端到端测试模式 (Playwright)
-
+### E2E Test Pattern (Playwright)
 ```typescript
 import { test, expect } from '@playwright/test'
 
@@ -245,7 +229,7 @@ test('user can create a new market', async ({ page }) => {
 })
 ```
 
-## 测试文件组织
+## Test File Organization
 
 ```
 src/
@@ -268,10 +252,9 @@ src/
     └── auth.spec.ts
 ```
 
-## 模拟外部服务
+## Mocking External Services
 
-### Supabase 模拟
-
+### Supabase Mock
 ```typescript
 jest.mock('@/lib/supabase', () => ({
   supabase: {
@@ -287,8 +270,7 @@ jest.mock('@/lib/supabase', () => ({
 }))
 ```
 
-### Redis 模拟
-
+### Redis Mock
 ```typescript
 jest.mock('@/lib/redis', () => ({
   searchMarketsByVector: jest.fn(() => Promise.resolve([
@@ -298,8 +280,7 @@ jest.mock('@/lib/redis', () => ({
 }))
 ```
 
-### OpenAI 模拟
-
+### OpenAI Mock
 ```typescript
 jest.mock('@/lib/openai', () => ({
   generateEmbedding: jest.fn(() => Promise.resolve(
@@ -308,16 +289,14 @@ jest.mock('@/lib/openai', () => ({
 }))
 ```
 
-## 测试覆盖率验证
+## Test Coverage Verification
 
-### 运行覆盖率报告
-
+### Run Coverage Report
 ```bash
 npm run test:coverage
 ```
 
-### 覆盖率阈值
-
+### Coverage Thresholds
 ```json
 {
   "jest": {
@@ -333,47 +312,41 @@ npm run test:coverage
 }
 ```
 
-## 应避免的常见测试错误
+## Common Testing Mistakes to Avoid
 
-### ❌ 错误：测试实现细节
-
+### ❌ WRONG: Testing Implementation Details
 ```typescript
 // Don't test internal state
 expect(component.state.count).toBe(5)
 ```
 
-### ✅ 正确：测试用户可见的行为
-
+### ✅ CORRECT: Test User-Visible Behavior
 ```typescript
 // Test what users see
 expect(screen.getByText('Count: 5')).toBeInTheDocument()
 ```
 
-### ❌ 错误：脆弱的定位器
-
+### ❌ WRONG: Brittle Selectors
 ```typescript
 // Breaks easily
 await page.click('.css-class-xyz')
 ```
 
-### ✅ 正确：语义化定位器
-
+### ✅ CORRECT: Semantic Selectors
 ```typescript
 // Resilient to changes
 await page.click('button:has-text("Submit")')
 await page.click('[data-testid="submit-button"]')
 ```
 
-### ❌ 错误：没有测试隔离
-
+### ❌ WRONG: No Test Isolation
 ```typescript
 // Tests depend on each other
 test('creates user', () => { /* ... */ })
 test('updates same user', () => { /* depends on previous test */ })
 ```
 
-### ✅ 正确：独立的测试
-
+### ✅ CORRECT: Independent Tests
 ```typescript
 // Each test sets up its own data
 test('creates user', () => {
@@ -387,24 +360,21 @@ test('updates user', () => {
 })
 ```
 
-## 持续测试
+## Continuous Testing
 
-### 开发期间的监视模式
-
+### Watch Mode During Development
 ```bash
 npm test -- --watch
 # Tests run automatically on file changes
 ```
 
-### 预提交钩子
-
+### Pre-Commit Hook
 ```bash
 # Runs before every commit
 npm test && npm run lint
 ```
 
-### CI/CD 集成
-
+### CI/CD Integration
 ```yaml
 # GitHub Actions
 - name: Run Tests
@@ -413,28 +383,29 @@ npm test && npm run lint
   uses: codecov/codecov-action@v3
 ```
 
-## 最佳实践
+## Best Practices
 
-1. **先写测试** - 始终遵循TDD
-2. **每个测试一个断言** - 专注于单一行为
-3. **描述性的测试名称** - 解释测试内容
-4. **组织-执行-断言** - 清晰的测试结构
-5. **模拟外部依赖** - 隔离单元测试
-6. **测试边缘情况** - Null、undefined、空、大量数据
-7. **测试错误路径** - 不仅仅是正常路径
-8. **保持测试快速** - 单元测试每个 < 50ms
-9. **测试后清理** - 无副作用
-10. **审查覆盖率报告** - 识别空白
+1. **Write Tests First** - Always TDD
+2. **One Assert Per Test** - Focus on single behavior
+3. **Descriptive Test Names** - Explain what's tested
+4. **Arrange-Act-Assert** - Clear test structure
+5. **Mock External Dependencies** - Isolate unit tests
+6. **Test Edge Cases** - Null, undefined, empty, large
+7. **Test Error Paths** - Not just happy paths
+8. **Keep Tests Fast** - Unit tests < 50ms each
+9. **Clean Up After Tests** - No side effects
+10. **Review Coverage Reports** - Identify gaps
 
-## 成功指标
+## Success Metrics
 
-* 达到 80%+ 代码覆盖率
-* 所有测试通过（绿色）
-* 没有跳过或禁用的测试
-* 快速测试执行（单元测试 < 30秒）
-* 端到端测试覆盖关键用户流程
-* 测试在生产前捕获错误
+- 80%+ code coverage achieved
+- All tests passing (green)
+- No skipped or disabled tests
+- Fast test execution (< 30s for unit tests)
+- E2E tests cover critical user flows
+- Tests catch bugs before production
 
-***
+---
 
-**记住**：测试不是可选的。它们是安全网，能够实现自信的重构、快速的开发和生产的可靠性。
+**Remember**: Tests are not optional. They are the safety net that enables confident refactoring, rapid development, and production reliability.
+

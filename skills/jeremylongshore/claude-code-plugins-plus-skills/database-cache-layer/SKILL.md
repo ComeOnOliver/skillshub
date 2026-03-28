@@ -1,3 +1,9 @@
+---
+name: implementing-database-caching
+description: |
+  This skill enables Claude to implement multi-tier database caching solutions. It is triggered when the user requests database caching, performance improvements, or reduced database load. The skill utilizes Redis, in-memory caching, and CDN layers to optimize database performance by reducing database load, improving query latency, and supporting horizontal scaling with cache-aside, write-through, and read-through patterns. Use this skill when the user mentions terms like "database caching", "improve database performance", "reduce database load", or uses the `/caching` command.
+---
+
 ## Overview
 
 This skill empowers Claude to implement a production-ready multi-tier caching architecture for databases. It leverages Redis for distributed caching, in-memory caching for L1 performance, and CDN for static assets. This results in significant database load reduction, improved query latency, and enhanced scalability.

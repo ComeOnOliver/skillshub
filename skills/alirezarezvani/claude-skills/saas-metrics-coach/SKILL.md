@@ -156,3 +156,4 @@ python scripts/unit_economics_simulator.py --mrr 50000 --growth 10 --churn 3 --c
 
 - **financial-analyst**: Use for DCF valuation, budget variance analysis, and traditional financial modeling. NOT for SaaS-specific metrics like CAC, LTV, or churn.
 - **business-growth/customer-success**: Use for retention strategies and customer health scoring. Complements this skill when churn is flagged as CRITICAL.
+

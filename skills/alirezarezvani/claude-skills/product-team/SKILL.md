@@ -59,3 +59,4 @@ python3 product-strategist/scripts/okr_cascade_generator.py --help
 
 - Load only the specific skill SKILL.md you need
 - Use Python tools for scoring and analysis, not manual judgment
+

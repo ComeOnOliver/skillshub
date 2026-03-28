@@ -190,3 +190,4 @@ Results are grouped by namespace. Higher-scored namespaces appear first.
 
 - [Windows Platform SDK API reference](https://learn.microsoft.com/uwp/api/) — documentation for `Windows.*` namespaces
 - [Windows App SDK API reference](https://learn.microsoft.com/windows/windows-app-sdk/api/winrt/) — documentation for `Microsoft.*` WinAppSDK namespaces
+

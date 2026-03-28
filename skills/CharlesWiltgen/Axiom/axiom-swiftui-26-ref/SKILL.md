@@ -1202,3 +1202,4 @@ Apps must support resizable windows on iPad.
 
 **Primary source** WWDC 2025-256 "What's new in SwiftUI". Additional content from 2025-323 (Build a SwiftUI app with the new design), 2025-287 (Meet WebKit for SwiftUI), and Apple documentation.
 **Version** iOS 26+, iPadOS 26+, macOS Tahoe+, watchOS 26+, visionOS 26+
+

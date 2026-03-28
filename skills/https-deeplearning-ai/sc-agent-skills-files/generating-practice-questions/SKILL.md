@@ -1,3 +1,8 @@
+---
+name: generating-practice-questions
+description: Generate educational practice questions from lecture notes to test student understanding. Use when users request practice questions, exam preparation materials, study guides, or assessment items based on lecture content.
+---
+
 # Practice Question Generator
 
 Generate comprehensive practice questions from lecture notes to test student understanding of learning objectives and key concepts.

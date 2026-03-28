@@ -1,3 +1,10 @@
+---
+name: accredible-certificates-automation
+description: "Automate Accredible Certificates tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Accredible Certificates Automation via Rube MCP
 
 Automate Accredible Certificates operations through Composio's Accredible Certificates toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

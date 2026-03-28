@@ -1,3 +1,9 @@
+---
+name: detecting-memory-leaks
+description: |
+  This skill enables Claude to detect potential memory leaks and analyze memory usage patterns in code. It is triggered when the user requests "detect memory leaks", "analyze memory usage", or similar phrases related to memory leak detection and performance analysis. The skill identifies potential issues such as unremoved event listeners, closures preventing garbage collection, uncancelled timers, unbounded cache growth, circular references, detached DOM nodes, and unnecessary global state accumulation. It then provides detailed fix recommendations. Use this skill to proactively identify and resolve memory leaks, improving application performance and stability.
+---
+
 ## Overview
 
 This skill helps you identify and resolve memory leaks in your code. By analyzing your code for common memory leak patterns, it can help you improve the performance and stability of your application.

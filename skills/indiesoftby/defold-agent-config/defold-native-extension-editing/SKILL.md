@@ -1,3 +1,8 @@
+---
+name: defold-native-extension-editing
+description: "Defold native extension development. Use when creating or editing C/C++ (.c, .cpp, .h, .hpp), JavaScript (.js), or manifest files in native extension directories (src/, include/, lib/, api/)."
+---
+
 # Defold Native Extension Structure
 
 A native extension is a folder containing `ext.manifest` and native code for extending the Defold engine.
@@ -268,3 +273,4 @@ https://raw.githubusercontent.com/defold/defold/refs/heads/dev/.clang-format
 ## API reference
 
 For C++ SDK documentation, use `defold-api-fetch` skill with C++ Native Extension APIs section (dmExtension, dmScript, dmBuffer, etc.).
+

@@ -174,3 +174,4 @@ When adding a new provider or extending an existing one:
 6. Add comments to any intentionally empty catch blocks
 7. Store sensitive outputs (passwords, connection strings) in `project.envs`
 8. Mask credentials in CLI output via `maskConnectionString()`
+

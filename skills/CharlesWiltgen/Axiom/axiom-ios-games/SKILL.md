@@ -286,3 +286,4 @@ User: "What particle emitter settings should I use for fire?"
 
 User: "Can you scan my SpriteKit code for common issues?"
 → Invoke: `spritekit-auditor` agent
+

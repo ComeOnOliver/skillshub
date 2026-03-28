@@ -1,3 +1,8 @@
+---
+name: stock-analyzer
+description: Provides comprehensive technical analysis for stocks and ETFs using RSI, MACD, Bollinger Bands, and other indicators. Activates when user requests stock analysis, technical indicators, trading signals, or market data for specific ticker symbols.
+version: 1.0.0
+---
 # Stock Analyzer Skill - Technical Specification
 
 **Version:** 1.0.0
@@ -388,3 +393,4 @@ matplotlib>=3.7.0
 **Activation Grade:** A (98% success rate)
 **Created by:** Agent-Skill-Creator v3.0.0
 **Last Updated:** 2025-10-23
+

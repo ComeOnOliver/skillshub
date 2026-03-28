@@ -316,3 +316,4 @@ After setup, ask the AI:
 See [Troubleshooting](references/troubleshooting.md) for common issues and fixes.
 
 See [Environment Variable Reference](references/environment-variables.md) for the full list of supported variables.
+

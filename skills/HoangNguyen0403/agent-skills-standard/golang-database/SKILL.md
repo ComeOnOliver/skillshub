@@ -22,11 +22,12 @@ description: "Standards for database interaction, connection pooling, and reposi
 
 ## Anti-Patterns
 
-- **Global DB Connection**: Do not use global `var db *sql.DB`. Inject it.
-- **Ignoring Context**: Always use `db.QueryContext` or `db.ExecContext` to handle timeouts.
-- **Leaking Rows**: ALWAYS `defer rows.Close()` and check `rows.Err()`.
+- **No global db var**: Inject DB connection via constructor; never use `var db *sql.DB`.
+- **No bare queries**: Use `QueryContext`/`ExecContext`; bare queries ignore context timeouts.
+- **No leaked rows**: Always `defer rows.Close()` and check `rows.Err()` after iteration.
 
 ## References
 
 - [Repository Pattern Implementation](references/repository-pattern.md)
 - [Connection Tuning](references/connection-tuning.md)
+

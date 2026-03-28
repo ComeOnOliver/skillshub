@@ -229,3 +229,4 @@ Produce a layered optimization report:
 - [references/analysis_dimensions.md](references/analysis_dimensions.md) — Detailed audit dimension definitions and prompts
 - [references/synthesis_methodology.md](references/synthesis_methodology.md) — How to weight and merge multi-agent findings
 - [references/codex_patterns.md](references/codex_patterns.md) — Codex CLI invocation patterns and flag reference
+

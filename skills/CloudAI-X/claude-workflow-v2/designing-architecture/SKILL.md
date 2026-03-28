@@ -1,3 +1,8 @@
+---
+name: designing-architecture
+description: Designs software architecture and selects appropriate patterns for projects. Use when designing systems, choosing architecture patterns, structuring projects, making technical decisions, or when asked about microservices, monoliths, or architectural approaches.
+---
+
 # Designing Architecture
 
 ### When to Load
@@ -222,3 +227,4 @@ Architecture Validation:
 ```
 
 If validation fails, reconsider the pattern selection or adjust the implementation approach.
+

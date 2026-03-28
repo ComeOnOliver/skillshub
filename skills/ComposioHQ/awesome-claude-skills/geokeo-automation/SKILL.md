@@ -1,3 +1,10 @@
+---
+name: geokeo-automation
+description: "Automate Geokeo tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Geokeo Automation via Rube MCP
 
 Automate Geokeo operations through Composio's Geokeo toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

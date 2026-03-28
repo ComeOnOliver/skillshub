@@ -1,3 +1,13 @@
+---
+name: raindrop-api
+description: >
+  This skill provides comprehensive instructions for interacting with the Raindrop.io bookmarks service
+  via its REST API using curl and jq. It covers authentication, CRUD operations for collections, raindrops
+  (bookmarks), tags, highlights, filters, import/export, and backups. Use this skill whenever the user asks
+  to work with their bookmarks from Raindrop.io, including reading, creating, updating, deleting, searching,
+  or organising bookmarks and collections.
+---
+
 # Raindrop.io API Skill
 
 This skill enables interaction with the Raindrop.io bookmarks service through its REST API. Use `curl` and `jq` for direct REST calls.
@@ -545,3 +555,4 @@ For detailed documentation on specific topics, consult:
 4. **Write operations** - Ask for confirmation before executing
 5. **Handle pagination** - Loop with page number until items < perpage
 6. **Parse responses** - Use jq to extract and format data
+

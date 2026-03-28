@@ -1,3 +1,10 @@
+---
+name: d2lbrightspace-automation
+description: "Automate D2lbrightspace tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # D2lbrightspace Automation via Rube MCP
 
 Automate D2lbrightspace operations through Composio's D2lbrightspace toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: getform-automation
+description: "Automate Getform tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Getform Automation via Rube MCP
 
 Automate Getform operations through Composio's Getform toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

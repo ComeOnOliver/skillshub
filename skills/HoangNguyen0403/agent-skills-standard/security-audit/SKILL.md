@@ -87,3 +87,4 @@ grep -rE "^FROM .+:latest|^USER root|curl.*sh.*|ADD http" . --include="Dockerfil
 ## 📚 Reference Links
 
 - [Vulnerability Remediation Protocols](references/REMEDIATION.md)
+

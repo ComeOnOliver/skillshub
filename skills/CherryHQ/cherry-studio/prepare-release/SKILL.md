@@ -173,3 +173,4 @@ Creating a PR from `release/v*` to `main` automatically triggers:
 - Never modify files other than `package.json` and `electron-builder.yml`.
 - Never push directly to `main`.
 - Always show the generated release notes to the user before creating the branch/PR (unless running in CI with no interactive user).
+

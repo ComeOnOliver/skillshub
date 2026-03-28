@@ -88,3 +88,4 @@ If URL returns 404:
 
 - `references/icons-list.md` - Comprehensive list of 100+ available icons by category
 - `references/developer-info.md` - npm installation and React usage examples
+

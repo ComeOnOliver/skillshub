@@ -92,3 +92,4 @@ rm -f "$issue_body_file"
 - Title must be clear and concise, avoid vague terms like "a suggestion" or "stuck".
 - Provide as much detail as possible to help developers understand and resolve the issue.
 - If user doesn't specify a template type, ask them to choose one first.
+

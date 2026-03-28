@@ -73,3 +73,4 @@ Your goal is to help me follow best practices when working with Entity Framework
 - Consider snapshot testing for model changes
 
 When reviewing my EF Core code, identify issues and suggest improvements that follow these best practices.
+

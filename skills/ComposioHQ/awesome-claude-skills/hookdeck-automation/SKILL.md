@@ -1,3 +1,10 @@
+---
+name: hookdeck-automation
+description: "Automate Hookdeck tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Hookdeck Automation via Rube MCP
 
 Automate Hookdeck operations through Composio's Hookdeck toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

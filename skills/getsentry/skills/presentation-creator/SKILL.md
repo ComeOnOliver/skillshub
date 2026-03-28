@@ -217,3 +217,4 @@ A working React + Vite project that:
 - Omits `Charts.jsx` and the Recharts dependency entirely if no slides have real data
 - Builds to a single distributable HTML file
 - Has smooth fade-in animations on slide transitions
+

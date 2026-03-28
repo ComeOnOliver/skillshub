@@ -1662,3 +1662,4 @@ struct TaskListQuery: EntityQuery, EntityStringQuery {
 ---
 
 **Remember** App Intents are how users interact with your app through Siri, Shortcuts, and system features. Well-designed intents feel like a natural extension of your app's functionality and provide value across Apple's ecosystem.
+

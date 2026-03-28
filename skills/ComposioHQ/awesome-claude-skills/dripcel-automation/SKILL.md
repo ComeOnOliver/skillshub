@@ -1,3 +1,10 @@
+---
+name: dripcel-automation
+description: "Automate Dripcel tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dripcel Automation via Rube MCP
 
 Automate Dripcel operations through Composio's Dripcel toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

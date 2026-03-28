@@ -1,3 +1,10 @@
+---
+name: dpd2-automation
+description: "Automate Dpd2 tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dpd2 Automation via Rube MCP
 
 Automate Dpd2 operations through Composio's Dpd2 toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

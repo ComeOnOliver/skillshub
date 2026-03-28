@@ -1,3 +1,10 @@
+---
+name: acculynx-automation
+description: "Automate Acculynx tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Acculynx Automation via Rube MCP
 
 Automate Acculynx operations through Composio's Acculynx toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

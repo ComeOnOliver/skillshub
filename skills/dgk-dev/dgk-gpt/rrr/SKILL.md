@@ -1,3 +1,8 @@
+---
+name: rrr
+description: GLM-5 코드 리뷰. /rr의 상위 버전으로 더 강한 모델로 변경사항을 검토하고, Codex가 결과를 다시 검증해 유효한 이슈만 정리한다.
+---
+
 # /rrr
 
 Use `glm-review --model glm-5` as the deeper paid review pass, then validate the results against the code before you trust them.
@@ -77,3 +82,4 @@ Return:
 - confirmed findings only
 - notable false positives filtered out
 - what verification ran after fixes, if any
+

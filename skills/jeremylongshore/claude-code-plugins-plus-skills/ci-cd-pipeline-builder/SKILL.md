@@ -1,3 +1,9 @@
+---
+name: building-cicd-pipelines
+description: |
+  This skill enables Claude to generate CI/CD pipeline configurations for various platforms, including GitHub Actions, GitLab CI, and Jenkins. It is used when a user requests the creation of a CI/CD pipeline, specifies a platform (e.g., "GitHub Actions"), or mentions specific pipeline stages like "test," "build," "security," or "deploy." This skill is also useful when the user needs to automate software delivery, integrate security scanning, or set up multi-environment deployments. The skill is triggered by terms such as "CI/CD pipeline," "GitHub Actions pipeline," "GitLab CI configuration," or "Jenkins pipeline."
+---
+
 ## Overview
 
 This skill empowers Claude to build production-ready CI/CD pipelines, automating software development workflows. It supports multiple platforms and incorporates best practices for testing, building, security, and deployment.

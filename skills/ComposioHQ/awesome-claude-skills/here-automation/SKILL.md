@@ -1,3 +1,10 @@
+---
+name: here-automation
+description: "Automate Here tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Here Automation via Rube MCP
 
 Automate Here operations through Composio's Here toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -236,3 +236,4 @@ These methods were tested and confirmed to fail on macOS:
 | Any macOS app | Swift | Basic (activate via `tell application`) | screencapture works universally |
 
 AppleScript control depth varies by application. Excel has the richest AppleScript dictionary. For apps with limited AppleScript, use keyboard simulation via `System Events` as a fallback.
+

@@ -1,3 +1,10 @@
+---
+name: helcim-automation
+description: "Automate Helcim tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Helcim Automation via Rube MCP
 
 Automate Helcim operations through Composio's Helcim toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

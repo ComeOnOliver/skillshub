@@ -1,3 +1,8 @@
+---
+name: ray-so-code-snippet
+description: Generate beautiful code snippet images using ray.so. This skill should be used when the user asks to create a code image, code screenshot, code snippet image, or wants to make their code look pretty for sharing. Saves images locally to the current working directory or a user-specified path.
+---
+
 # ray.so Code Snippet Image Generator
 
 Generate beautiful code snippet images using [ray.so](https://ray.so/) and save them locally.
@@ -314,3 +319,4 @@ This skill uses the `html-to-image` library with `pixelRatio: 4` to produce high
 - If the page doesn't load properly, increase the wait time (try 4000ms or more)
 - **If you get a blank page:** Use a fresh unique session name with `--session` flag
 - **If data URL is malformed:** Ensure quotes and newlines are stripped before base64 decoding
+

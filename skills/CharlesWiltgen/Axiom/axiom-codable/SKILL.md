@@ -830,3 +830,4 @@ struct User: Decodable {
 6. **Codable + Sendable** — Value types (structs/enums) are ideal for async networking
 
 **Core Principle**: Codable is Swift's universal serialization protocol. Master it once, use it everywhere.
+

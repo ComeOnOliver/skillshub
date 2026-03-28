@@ -777,3 +777,4 @@ If you need more context:
 - **copywriting**: For writing compelling comparison copy
 - **seo-audit**: For optimizing competitor pages
 - **schema-markup**: For FAQ and comparison schema
+

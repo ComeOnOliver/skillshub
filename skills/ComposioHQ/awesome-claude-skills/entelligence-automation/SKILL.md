@@ -1,3 +1,10 @@
+---
+name: entelligence-automation
+description: "Automate Entelligence tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Entelligence Automation via Rube MCP
 
 Automate Entelligence operations through Composio's Entelligence toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -187,3 +187,4 @@ When answering Copilot Studio pricing questions, fetch the latest content from t
 Fetch at least the first URL (billing rates) before calculating. The second URL provides supplementary context for licensing questions.
 
 See [references/COPILOT-STUDIO-RATES.md](references/COPILOT-STUDIO-RATES.md) for a cached snapshot of rates, formulas, and billing examples (use as fallback if web fetch is unavailable).
+

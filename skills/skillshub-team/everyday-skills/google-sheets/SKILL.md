@@ -131,3 +131,4 @@ function onOpen() {
 - Volatile functions slowing sheets (NOW(), RAND() recalculate constantly)
 - Not using Filter Views in shared sheets (regular filters affect everyone)
 - Exceeding 10 million cell limit
+

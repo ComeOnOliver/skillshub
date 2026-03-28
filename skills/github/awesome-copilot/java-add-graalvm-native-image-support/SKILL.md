@@ -447,3 +447,4 @@ public class Application {
 - [Micronaut GraalVM Support](https://docs.micronaut.io/latest/guide/index.html#graal)
 - [GraalVM Reachability Metadata](https://github.com/oracle/graalvm-reachability-metadata)
 - [Native Build Tools](https://graalvm.github.io/native-build-tools/latest/index.html)
+

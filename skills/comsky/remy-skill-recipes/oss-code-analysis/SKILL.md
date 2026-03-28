@@ -384,3 +384,4 @@ Focus: how session management and JWT handling are implemented internally
 - This skill complements `competitive-feature-benchmark` which operates at the UX/interaction level. Use both together for a complete picture: code-level implementation (this skill) + user-facing design (competitive-feature-benchmark).
 - For very large repositories, consider analyzing only the most recent tagged release rather than the HEAD of the default branch to ensure stability of analysis.
 - GitHub API has rate limits (60 requests/hour unauthenticated, 5000/hour with token). If rate-limited, switch to `raw.githubusercontent.com` URLs or `WebFetch` on regular GitHub pages.
+

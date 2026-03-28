@@ -312,3 +312,4 @@ Only include the package manager actually used by the project:
 | `Pipfile.lock`      | pipenv commands | pip, poetry                            |
 
 If multiple lock files exist, include only the commands for each detected manager.
+

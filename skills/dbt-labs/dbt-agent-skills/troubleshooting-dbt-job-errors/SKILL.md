@@ -274,3 +274,4 @@ Commit this document to the repository so findings aren't lost.
 
 **Ignoring data investigation for test failures**
 - Test failures often reveal data issues. Query the actual data before assuming code is wrong.
+

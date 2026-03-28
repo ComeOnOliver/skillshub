@@ -35,3 +35,4 @@ Native-feeling motion design. Optimize for 60fps and platform conventions.
 ## Related Topics
 
 mobile-ux-core | mobile-performance | flutter/animations
+

@@ -611,3 +611,4 @@ Use this checklist when developing or reviewing Azure Verified Modules:
 ---
 
 *Based on: Azure Verified Modules - Terraform Requirements*
+

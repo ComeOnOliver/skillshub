@@ -575,3 +575,4 @@ For Claude Desktop integration:
 ```
 
 Now generate the complete project based on the user's requirements!
+

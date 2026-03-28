@@ -1,3 +1,9 @@
+---
+name: illustration-generator
+description: 统一配图技能，支持文章配图、封面生成、小红书图片系列、单图修改/添加/删除、3变体风格预览。20种风格×多种布局。
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, TodoWrite
+---
+
 # Illustration Generator（统一配图技能）
 
 一个 skill 解决所有配图需求。
@@ -254,3 +260,4 @@ xhs-images/{topic}/
 ├── ...
 └── 05-ending-{slug}.png  # 结尾
 ```
+

@@ -177,3 +177,4 @@ Brief comparison table showing how the app stacks up against top 3 competitors o
 - `screenshot-optimization` — Redesign screenshots based on audit findings
 - `competitor-analysis` — Detailed competitive analysis
 - `review-management` — Address review issues found in audit
+

@@ -100,3 +100,4 @@ cursor.execute("SELECT * FROM users WHERE id = %s", [user_id])
 ## References
 
 - [Sentry Code Review Guidelines](https://develop.sentry.dev/engineering-practices/code-review/)
+

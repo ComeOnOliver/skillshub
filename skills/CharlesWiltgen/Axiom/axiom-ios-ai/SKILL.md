@@ -127,3 +127,4 @@ User: "My Foundation Models session is blocking the UI"
 
 User: "I want to run my PyTorch model on device"
 → Route to: `ios-ml` router (CoreML conversion, not Foundation Models)
+

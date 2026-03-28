@@ -165,3 +165,4 @@ If the user needs to brief a designer:
 - `aso-audit` — Screenshots as part of broader audit
 - `competitor-analysis` — Analyze competitor creative strategy
 - `localization` — Localize screenshots for international markets
+

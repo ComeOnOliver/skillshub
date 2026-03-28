@@ -267,3 +267,4 @@ Synthesize and respond to user
   - `usage_patterns.md` - Best practices and workflow examples
 - `.venv/` - Isolated Python environment (auto-created on first run)
 - `.gitignore` - Protects sensitive data from being committed
+

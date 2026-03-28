@@ -24,3 +24,4 @@ Transform this Python script into a polished, beginner-friendly project by refac
    - **Example Usage:** A code snippet showing how to use it  
    - **Sample Output:** (Optional) Include if the script returns visible results  
    - Use clear, readable Markdown formatting
+

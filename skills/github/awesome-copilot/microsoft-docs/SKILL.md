@@ -132,3 +132,4 @@ Include context:
 - **Version** when relevant (`.NET 8`, `Aspire 13`, `VS Code 1.96`)
 - **Task intent** (`quickstart`, `tutorial`, `overview`, `limits`, `API reference`)
 - **Language** for polyglot docs (`Python`, `TypeScript`, `C#`)
+

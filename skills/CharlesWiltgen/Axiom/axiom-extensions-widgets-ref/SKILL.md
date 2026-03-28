@@ -1284,3 +1284,4 @@ let entries = (0..<100).map { offset in
 ---
 
 **Version**: 0.9 | **Platforms**: iOS 14+, iPadOS 14+, watchOS 9+, macOS 11+, visionOS 2+
+

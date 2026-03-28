@@ -89,3 +89,4 @@ Ask the user:
 4. What are typical user interactions?
 
 Then generate the complete TypeSpec agent definition.
+

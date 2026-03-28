@@ -1,3 +1,13 @@
+---
+name: angular-forms
+description: >
+  Angular forms: Signal Forms (experimental) and Reactive Forms.
+  Trigger: When working with forms, validation, or form state in Angular.
+metadata:
+  author: gentleman-programming
+  version: "1.0"
+---
+
 ## When to Use What
 
 | Use Case | Recommendation |
@@ -113,3 +123,4 @@ addPhone() {
 
 - https://angular.dev/guide/forms/signals/overview
 - https://angular.dev/guide/forms/reactive-forms
+

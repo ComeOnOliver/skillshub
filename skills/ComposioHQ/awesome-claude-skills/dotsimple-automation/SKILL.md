@@ -1,3 +1,10 @@
+---
+name: dotsimple-automation
+description: "Automate Dotsimple tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dotsimple Automation via Rube MCP
 
 Automate Dotsimple operations through Composio's Dotsimple toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

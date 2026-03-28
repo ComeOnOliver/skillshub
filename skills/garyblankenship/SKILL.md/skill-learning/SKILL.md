@@ -1,3 +1,8 @@
+---
+name: skill-learning
+description: Extracts actionable knowledge from external sources and enhances existing skills using a 4-tier novelty framework. Use when learning from URLs, documentation, or codebases. Proactively use when the user asks to extract patterns from a reference repository or skill marketplace.
+---
+
 # INSTRUCTIONS FOR CLAUDE: Skill Learning Methodology
 
 ## Quick Reference
@@ -297,3 +302,4 @@ Apply this enhancement? [y/n/edit]
 
 Apply this enhancement? [y/n/edit]
 ```
+

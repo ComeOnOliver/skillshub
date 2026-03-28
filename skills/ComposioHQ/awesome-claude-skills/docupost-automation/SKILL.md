@@ -1,3 +1,10 @@
+---
+name: docupost-automation
+description: "Automate Docupost tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Docupost Automation via Rube MCP
 
 Automate Docupost operations through Composio's Docupost toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

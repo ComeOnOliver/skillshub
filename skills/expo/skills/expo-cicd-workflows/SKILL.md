@@ -90,3 +90,4 @@ The validator fetches the latest schema and checks the YAML structure. Fix any r
 ## Answering Questions
 
 When users ask about available options (job types, triggers, runner types, etc.), fetch the schema and derive the answer from it rather than relying on potentially outdated information.
+

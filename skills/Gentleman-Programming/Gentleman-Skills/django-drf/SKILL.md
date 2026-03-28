@@ -1,3 +1,14 @@
+---
+name: django-drf
+description: >
+  Django REST Framework patterns.
+  Trigger: When building REST APIs with Django - ViewSets, Serializers, Filters.
+license: Apache-2.0
+metadata:
+  author: gentleman-programming
+  version: "1.0"
+---
+
 ## ViewSet Pattern
 
 ```python
@@ -173,3 +184,4 @@ python manage.py shell
 
 ## Keywords
 django, drf, rest framework, viewset, serializer, api, rest api
+

@@ -949,3 +949,4 @@ Unsupported in TextKit 2:
 **WWDC**: 2021-10061, 2022-10090, 2023-10058, 2024-10168, 2025-265, 2025-280
 
 **Docs**: /uikit/nstextlayoutmanager, /appkit/textkit/using_textkit_2_to_interact_with_text, /uikit/display-text-with-a-custom-layout, /swiftui/building-rich-swiftui-text-experiences, /foundation/attributedstring, /foundation/attributedstring/textalignment, /foundation/attributedstring/lineheight, /foundation/discontiguousattributedsubstring, /uikit/writing-tools, /appkit/enhancing-your-custom-text-engine-with-writing-tools
+

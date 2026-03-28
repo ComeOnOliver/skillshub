@@ -1,23 +1,22 @@
 ---
 name: search-first
-description: 研究优先于编码的工作流程。在编写自定义代码之前，搜索现有的工具、库和模式。调用研究员代理。
+description: Research-before-coding workflow. Search for existing tools, libraries, and patterns before writing custom code. Invokes the researcher agent.
 origin: ECC
 ---
 
-# /search-first — 编码前先研究
+# /search-first — Research Before You Code
 
-系统化“在实现之前先寻找现有解决方案”的工作流程。
+Systematizes the "search for existing solutions before implementing" workflow.
 
-## 触发时机
+## Trigger
 
-在以下情况使用此技能：
+Use this skill when:
+- Starting a new feature that likely has existing solutions
+- Adding a dependency or integration
+- The user asks "add X functionality" and you're about to write code
+- Before creating a new utility, helper, or abstraction
 
-* 开始一项很可能已有解决方案的新功能
-* 添加依赖项或集成
-* 用户要求“添加 X 功能”而你准备开始编写代码
-* 在创建新的实用程序、助手或抽象之前
-
-## 工作流程
+## Workflow
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -47,30 +46,30 @@ origin: ECC
 └─────────────────────────────────────────────┘
 ```
 
-## 决策矩阵
+## Decision Matrix
 
-| 信号 | 行动 |
+| Signal | Action |
 |--------|--------|
-| 完全匹配，维护良好，MIT/Apache 许可证 | **采纳** — 直接安装并使用 |
-| 部分匹配，基础良好 | **扩展** — 安装 + 编写薄封装层 |
-| 多个弱匹配 | **组合** — 组合 2-3 个小包 |
-| 未找到合适的 | **构建** — 编写自定义代码，但需基于研究 |
+| Exact match, well-maintained, MIT/Apache | **Adopt** — install and use directly |
+| Partial match, good foundation | **Extend** — install + write thin wrapper |
+| Multiple weak matches | **Compose** — combine 2-3 small packages |
+| Nothing suitable found | **Build** — write custom, but informed by research |
 
-## 使用方法
+## How to Use
 
-### 快速模式（内联）
+### Quick Mode (inline)
 
-在编写实用程序或添加功能之前，在脑中过一遍：
+Before writing a utility or adding functionality, mentally run through:
 
-0. 这已经在仓库中存在吗？ → 首先通过相关模块/测试检查 `rg`
-1. 这是一个常见问题吗？ → 搜索 npm/PyPI
-2. 有对应的 MCP 吗？ → 检查 `~/.claude/settings.json` 并进行搜索
-3. 有对应的技能吗？ → 检查 `~/.claude/skills/`
-4. 有 GitHub 上的实现/模板吗？ → 在编写全新代码之前，先运行 GitHub 代码搜索以查找维护中的开源项目
+0. Does this already exist in the repo? → `rg` through relevant modules/tests first
+1. Is this a common problem? → Search npm/PyPI
+2. Is there an MCP for this? → Check `~/.claude/settings.json` and search
+3. Is there a skill for this? → Check `~/.claude/skills/`
+4. Is there a GitHub implementation/template? → Run GitHub code search for maintained OSS before writing net-new code
 
-### 完整模式（代理）
+### Full Mode (agent)
 
-对于非平凡的功能，启动研究员代理：
+For non-trivial functionality, launch the researcher agent:
 
 ```
 Task(subagent_type="general-purpose", prompt="
@@ -83,62 +82,51 @@ Task(subagent_type="general-purpose", prompt="
 ")
 ```
 
-## 按类别搜索快捷方式
+## Search Shortcuts by Category
 
-### 开发工具
+### Development Tooling
+- Linting → `eslint`, `ruff`, `textlint`, `markdownlint`
+- Formatting → `prettier`, `black`, `gofmt`
+- Testing → `jest`, `pytest`, `go test`
+- Pre-commit → `husky`, `lint-staged`, `pre-commit`
 
-* Linting → `eslint`, `ruff`, `textlint`, `markdownlint`
-* Formatting → `prettier`, `black`, `gofmt`
-* Testing → `jest`, `pytest`, `go test`
-* Pre-commit → `husky`, `lint-staged`, `pre-commit`
+### AI/LLM Integration
+- Claude SDK → Context7 for latest docs
+- Prompt management → Check MCP servers
+- Document processing → `unstructured`, `pdfplumber`, `mammoth`
 
-### AI/LLM 集成
+### Data & APIs
+- HTTP clients → `httpx` (Python), `ky`/`got` (Node)
+- Validation → `zod` (TS), `pydantic` (Python)
+- Database → Check for MCP servers first
 
-* Claude SDK → 使用 Context7 获取最新文档
-* 提示词管理 → 检查 MCP 服务器
-* 文档处理 → `unstructured`, `pdfplumber`, `mammoth`
+### Content & Publishing
+- Markdown processing → `remark`, `unified`, `markdown-it`
+- Image optimization → `sharp`, `imagemin`
 
-### 数据与 API
+## Integration Points
 
-* HTTP 客户端 → `httpx` (Python), `ky`/`got` (Node)
-* 验证 → `zod` (TS), `pydantic` (Python)
-* 数据库 → 首先检查是否有 MCP 服务器
+### With planner agent
+The planner should invoke researcher before Phase 1 (Architecture Review):
+- Researcher identifies available tools
+- Planner incorporates them into the implementation plan
+- Avoids "reinventing the wheel" in the plan
 
-### 内容与发布
+### With architect agent
+The architect should consult researcher for:
+- Technology stack decisions
+- Integration pattern discovery
+- Existing reference architectures
 
-* Markdown 处理 → `remark`, `unified`, `markdown-it`
-* 图片优化 → `sharp`, `imagemin`
+### With iterative-retrieval skill
+Combine for progressive discovery:
+- Cycle 1: Broad search (npm, PyPI, MCP)
+- Cycle 2: Evaluate top candidates in detail
+- Cycle 3: Test compatibility with project constraints
 
-## 集成点
+## Examples
 
-### 与规划器代理
-
-规划器应在阶段 1（架构评审）之前调用研究员：
-
-* 研究员识别可用的工具
-* 规划器将它们纳入实施计划
-* 避免在计划中“重新发明轮子”
-
-### 与架构师代理
-
-架构师应向研究员咨询：
-
-* 技术栈决策
-* 集成模式发现
-* 现有参考架构
-
-### 与迭代检索技能
-
-结合进行渐进式发现：
-
-* 循环 1：广泛搜索 (npm, PyPI, MCP)
-* 循环 2：详细评估顶级候选方案
-* 循环 3：测试与项目约束的兼容性
-
-## 示例
-
-### 示例 1：“添加死链检查”
-
+### Example 1: "Add dead link checking"
 ```
 Need: Check markdown files for broken links
 Search: npm "markdown dead link checker"
@@ -147,8 +135,7 @@ Action: ADOPT — npm install textlint-rule-no-dead-link
 Result: Zero custom code, battle-tested solution
 ```
 
-### 示例 2：“添加 HTTP 客户端包装器”
-
+### Example 2: "Add HTTP client wrapper"
 ```
 Need: Resilient HTTP client with retries and timeout handling
 Search: npm "http client retry", PyPI "httpx retry"
@@ -157,8 +144,7 @@ Action: ADOPT — use got/httpx directly with retry config
 Result: Zero custom code, production-proven libraries
 ```
 
-### 示例 3：“添加配置文件 linter”
-
+### Example 3: "Add config file linter"
 ```
 Need: Validate project config files against a schema
 Search: npm "config linter schema", "json schema validator cli"
@@ -167,9 +153,10 @@ Action: ADOPT + EXTEND — install ajv-cli, write project-specific schema
 Result: 1 package + 1 schema file, no custom validation logic
 ```
 
-## 反模式
+## Anti-Patterns
 
-* **直接跳转到编码**：不检查是否存在就编写实用程序
-* **忽略 MCP**：不检查 MCP 服务器是否已提供该能力
-* **过度定制**：对库进行如此厚重的包装以至于失去了其优势
-* **依赖项膨胀**：为了一个小功能安装一个庞大的包
+- **Jumping to code**: Writing a utility without checking if one exists
+- **Ignoring MCP**: Not checking if an MCP server already provides the capability
+- **Over-customizing**: Wrapping a library so heavily it loses its benefits
+- **Dependency bloat**: Installing a massive package for one small feature
+

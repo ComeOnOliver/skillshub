@@ -1,40 +1,40 @@
 ---
 name: claude-api
-description: Anthropic Claude API patterns for Python and TypeScript. Covers Messages API, streaming, tool use, vision, extended thinking, batches, prompt caching, and Claude Agent SDK. Use when building applications with the Claude API or Anthropic SDKs.
+description: Anthropic Claude API 的 Python 和 TypeScript 使用模式。涵盖 Messages API、流式处理、工具使用、视觉功能、扩展思维、批量处理、提示缓存和 Claude Agent SDK。适用于使用 Claude API 或 Anthropic SDK 构建应用程序的场景。
 origin: ECC
 ---
 
 # Claude API
 
-Build applications with the Anthropic Claude API and SDKs.
+使用 Anthropic Claude API 和 SDK 构建应用程序。
 
-## When to Activate
+## 何时激活
 
-- Building applications that call the Claude API
-- Code imports `anthropic` (Python) or `@anthropic-ai/sdk` (TypeScript)
-- User asks about Claude API patterns, tool use, streaming, or vision
-- Implementing agent workflows with Claude Agent SDK
-- Optimizing API costs, token usage, or latency
+* 构建调用 Claude API 的应用程序
+* 代码导入 `anthropic` (Python) 或 `@anthropic-ai/sdk` (TypeScript)
+* 用户询问 Claude API 模式、工具使用、流式传输或视觉功能
+* 使用 Claude Agent SDK 实现智能体工作流
+* 优化 API 成本、令牌使用或延迟
 
-## Model Selection
+## 模型选择
 
-| Model | ID | Best For |
+| 模型 | ID | 最适合 |
 |-------|-----|----------|
-| Opus 4.6 | `claude-opus-4-6` | Complex reasoning, architecture, research |
-| Sonnet 4.6 | `claude-sonnet-4-6` | Balanced coding, most development tasks |
-| Haiku 4.5 | `claude-haiku-4-5-20251001` | Fast responses, high-volume, cost-sensitive |
+| Opus 4.1 | `claude-opus-4-1` | 复杂推理、架构设计、研究 |
+| Sonnet 4 | `claude-sonnet-4-0` | 平衡的编码任务，大多数开发工作 |
+| Haiku 3.5 | `claude-3-5-haiku-latest` | 快速响应、高吞吐量、成本敏感型 |
 
-Default to Sonnet 4.6 unless the task requires deep reasoning (Opus) or speed/cost optimization (Haiku).
+默认使用 Sonnet 4，除非任务需要深度推理（Opus）或速度/成本优化（Haiku）。对于生产环境，优先使用固定的快照 ID 而非别名。
 
 ## Python SDK
 
-### Installation
+### 安装
 
 ```bash
 pip install anthropic
 ```
 
-### Basic Message
+### 基本消息
 
 ```python
 import anthropic
@@ -42,7 +42,7 @@ import anthropic
 client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
 
 message = client.messages.create(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-4-0",
     max_tokens=1024,
     messages=[
         {"role": "user", "content": "Explain async/await in Python"}
@@ -51,11 +51,11 @@ message = client.messages.create(
 print(message.content[0].text)
 ```
 
-### Streaming
+### 流式传输
 
 ```python
 with client.messages.stream(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-4-0",
     max_tokens=1024,
     messages=[{"role": "user", "content": "Write a haiku about coding"}]
 ) as stream:
@@ -63,11 +63,11 @@ with client.messages.stream(
         print(text, end="", flush=True)
 ```
 
-### System Prompt
+### 系统提示词
 
 ```python
 message = client.messages.create(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-4-0",
     max_tokens=1024,
     system="You are a senior Python developer. Be concise.",
     messages=[{"role": "user", "content": "Review this function"}]
@@ -76,13 +76,13 @@ message = client.messages.create(
 
 ## TypeScript SDK
 
-### Installation
+### 安装
 
 ```bash
 npm install @anthropic-ai/sdk
 ```
 
-### Basic Message
+### 基本消息
 
 ```typescript
 import Anthropic from "@anthropic-ai/sdk";
@@ -90,7 +90,7 @@ import Anthropic from "@anthropic-ai/sdk";
 const client = new Anthropic(); // reads ANTHROPIC_API_KEY from env
 
 const message = await client.messages.create({
-  model: "claude-sonnet-4-6",
+  model: "claude-sonnet-4-0",
   max_tokens: 1024,
   messages: [
     { role: "user", content: "Explain async/await in TypeScript" }
@@ -99,11 +99,11 @@ const message = await client.messages.create({
 console.log(message.content[0].text);
 ```
 
-### Streaming
+### 流式传输
 
 ```typescript
 const stream = client.messages.stream({
-  model: "claude-sonnet-4-6",
+  model: "claude-sonnet-4-0",
   max_tokens: 1024,
   messages: [{ role: "user", content: "Write a haiku" }],
 });
@@ -115,9 +115,9 @@ for await (const event of stream) {
 }
 ```
 
-## Tool Use
+## 工具使用
 
-Define tools and let Claude call them:
+定义工具并让 Claude 调用它们：
 
 ```python
 tools = [
@@ -136,7 +136,7 @@ tools = [
 ]
 
 message = client.messages.create(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-4-0",
     max_tokens=1024,
     tools=tools,
     messages=[{"role": "user", "content": "What's the weather in SF?"}]
@@ -149,7 +149,7 @@ for block in message.content:
         result = get_weather(**block.input)
         # Send result back
         follow_up = client.messages.create(
-            model="claude-sonnet-4-6",
+            model="claude-sonnet-4-0",
             max_tokens=1024,
             tools=tools,
             messages=[
@@ -162,9 +162,9 @@ for block in message.content:
         )
 ```
 
-## Vision
+## 视觉功能
 
-Send images for analysis:
+发送图像进行分析：
 
 ```python
 import base64
@@ -173,7 +173,7 @@ with open("diagram.png", "rb") as f:
     image_data = base64.standard_b64encode(f.read()).decode("utf-8")
 
 message = client.messages.create(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-4-0",
     max_tokens=1024,
     messages=[{
         "role": "user",
@@ -185,13 +185,13 @@ message = client.messages.create(
 )
 ```
 
-## Extended Thinking
+## 扩展思考
 
-For complex reasoning tasks:
+针对复杂推理任务：
 
 ```python
 message = client.messages.create(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-4-0",
     max_tokens=16000,
     thinking={
         "type": "enabled",
@@ -207,13 +207,13 @@ for block in message.content:
         print(f"Answer: {block.text}")
 ```
 
-## Prompt Caching
+## 提示词缓存
 
-Cache large system prompts or context to reduce costs:
+缓存大型系统提示词或上下文以降低成本：
 
 ```python
 message = client.messages.create(
-    model="claude-sonnet-4-6",
+    model="claude-sonnet-4-0",
     max_tokens=1024,
     system=[
         {"type": "text", "text": large_system_prompt, "cache_control": {"type": "ephemeral"}}
@@ -225,9 +225,9 @@ print(f"Cache read: {message.usage.cache_read_input_tokens}")
 print(f"Cache creation: {message.usage.cache_creation_input_tokens}")
 ```
 
-## Batches API
+## 批量 API
 
-Process large volumes asynchronously at 50% cost reduction:
+以 50% 的成本降低异步处理大量数据：
 
 ```python
 import time
@@ -237,7 +237,7 @@ batch = client.messages.batches.create(
         {
             "custom_id": f"request-{i}",
             "params": {
-                "model": "claude-sonnet-4-6",
+                "model": "claude-sonnet-4-0",
                 "max_tokens": 1024,
                 "messages": [{"role": "user", "content": prompt}]
             }
@@ -260,7 +260,7 @@ for result in client.messages.batches.results(batch.id):
 
 ## Claude Agent SDK
 
-Build multi-step agents:
+构建多步骤智能体：
 
 ```python
 # Note: Agent SDK API surface may change — check official docs
@@ -283,7 +283,7 @@ messages = [{"role": "user", "content": "Review the auth module for security iss
 
 while True:
     response = client.messages.create(
-        model="claude-sonnet-4-6",
+        model="claude-sonnet-4-0",
         max_tokens=4096,
         tools=tools,
         messages=messages,
@@ -295,17 +295,17 @@ while True:
     # ... execute tools and append tool_result messages
 ```
 
-## Cost Optimization
+## 成本优化
 
-| Strategy | Savings | When to Use |
+| 策略 | 节省幅度 | 使用时机 |
 |----------|---------|-------------|
-| Prompt caching | Up to 90% on cached tokens | Repeated system prompts or context |
-| Batches API | 50% | Non-time-sensitive bulk processing |
-| Haiku instead of Sonnet | ~75% | Simple tasks, classification, extraction |
-| Shorter max_tokens | Variable | When you know output will be short |
-| Streaming | None (same cost) | Better UX, same price |
+| 提示词缓存 | 缓存令牌成本降低高达 90% | 重复的系统提示词或上下文 |
+| 批量 API | 50% | 非时间敏感的批量处理 |
+| 使用 Haiku 而非 Sonnet | ~75% | 简单任务、分类、提取 |
+| 缩短 max\_tokens | 可变 | 已知输出较短时 |
+| 流式传输 | 无（成本相同） | 更好的用户体验，价格相同 |
 
-## Error Handling
+## 错误处理
 
 ```python
 import time
@@ -324,14 +324,15 @@ except APIError as e:
     print(f"API error {e.status_code}: {e.message}")
 ```
 
-## Environment Setup
+## 环境设置
 
 ```bash
 # Required
 export ANTHROPIC_API_KEY="your-api-key-here"
 
 # Optional: set default model
-export ANTHROPIC_MODEL="claude-sonnet-4-6"
+export ANTHROPIC_MODEL="claude-sonnet-4-0"
 ```
 
-Never hardcode API keys. Always use environment variables.
+切勿硬编码 API 密钥。始终使用环境变量。
+

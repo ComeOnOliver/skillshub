@@ -561,3 +561,4 @@ When changing storage approach:
 - WWDC 2023-10187: Meet SwiftData
 - WWDC 2023-10188: Sync to iCloud with CKSyncEngine
 - WWDC 2024-10137: What's new in SwiftData
+

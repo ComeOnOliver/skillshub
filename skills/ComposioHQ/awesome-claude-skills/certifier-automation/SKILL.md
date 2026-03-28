@@ -1,3 +1,10 @@
+---
+name: certifier-automation
+description: "Automate Certifier tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Certifier Automation via Rube MCP
 
 Automate Certifier operations through Composio's Certifier toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: cincopa-automation
+description: "Automate Cincopa tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Cincopa Automation via Rube MCP
 
 Automate Cincopa operations through Composio's Cincopa toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

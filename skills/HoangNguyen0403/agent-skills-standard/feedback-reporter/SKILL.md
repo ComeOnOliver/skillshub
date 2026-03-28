@@ -66,3 +66,4 @@ Before `notify_user` or task completion:
 - **No "I'll check later"**: Check before writing, not after
 - **No "minor change skip"**: Every write needs check
 - **No "user waiting skip"**: 10-second check > pattern violation
+

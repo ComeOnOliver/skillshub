@@ -1,3 +1,10 @@
+---
+name: enginemailer-automation
+description: "Automate Enginemailer tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Enginemailer Automation via Rube MCP
 
 Automate Enginemailer operations through Composio's Enginemailer toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: convolo-ai-automation
+description: "Automate Convolo AI tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Convolo AI Automation via Rube MCP
 
 Automate Convolo AI operations through Composio's Convolo AI toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

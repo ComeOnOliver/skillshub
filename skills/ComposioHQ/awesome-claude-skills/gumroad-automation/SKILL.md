@@ -1,3 +1,12 @@
+---
+name: Gumroad Automation
+description: "Automate Gumroad product management, sales tracking, license verification, and webhook subscriptions using natural language through the Composio MCP integration."
+category: e-commerce
+requires:
+  mcp:
+    - rube
+---
+
 # Gumroad Automation
 
 Automate your Gumroad storefront -- list products, track sales, verify licenses, and manage real-time webhooks -- all through natural language commands.
@@ -112,3 +121,4 @@ Review existing webhook subscriptions for a given resource type before adding ne
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

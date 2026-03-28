@@ -1,3 +1,10 @@
+---
+name: bannerbear-automation
+description: "Automate Bannerbear tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Bannerbear Automation via Rube MCP
 
 Automate Bannerbear operations through Composio's Bannerbear toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

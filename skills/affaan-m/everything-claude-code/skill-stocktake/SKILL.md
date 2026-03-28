@@ -1,65 +1,67 @@
 ---
-description: "用于审计Claude技能和命令的质量。支持快速扫描（仅变更技能）和全面盘点模式，采用顺序子代理批量评估。"
+description: "Use when auditing Claude skills and commands for quality. Supports Quick Scan (changed skills only) and Full Stocktake modes with sequential subagent batch evaluation."
 origin: ECC
 ---
 
 # skill-stocktake
 
-斜杠命令 (`/skill-stocktake`)，用于使用质量检查清单 + AI 整体判断来审核所有 Claude 技能和命令。支持两种模式：用于最近更改技能的快速扫描，以及用于完整审查的全面盘点。
+Slash command (`/skill-stocktake`) that audits all Claude skills and commands using a quality checklist + AI holistic judgment. Supports two modes: Quick Scan for recently changed skills, and Full Stocktake for a complete review.
 
-## 范围
+## Scope
 
-该命令针对以下**相对于调用命令所在目录**的路径：
+The command targets the following paths **relative to the directory where it is invoked**:
 
-| 路径 | 描述 |
+| Path | Description |
 |------|-------------|
-| `~/.claude/skills/` | 全局技能（所有项目） |
-| `{cwd}/.claude/skills/` | 项目级技能（如果目录存在） |
+| `~/.claude/skills/` | Global skills (all projects) |
+| `{cwd}/.claude/skills/` | Project-level skills (if the directory exists) |
 
-**在第 1 阶段开始时，该命令会明确列出找到并扫描了哪些路径。**
+**At the start of Phase 1, the command explicitly lists which paths were found and scanned.**
 
-### 针对特定项目
+### Targeting a specific project
 
-要包含项目级技能，请从该项目根目录运行：
+To include project-level skills, run from that project's root directory:
 
 ```bash
 cd ~/path/to/my-project
 /skill-stocktake
 ```
 
-如果项目没有 `.claude/skills/` 目录，则只评估全局技能和命令。
+If the project has no `.claude/skills/` directory, only global skills and commands are evaluated.
 
-## 模式
+## Modes
 
-| 模式 | 触发条件 | 持续时间 |
+| Mode | Trigger | Duration |
 |------|---------|---------|
-| 快速扫描 | `results.json` 存在（默认） | 5–10 分钟 |
-| 全面盘点 | `results.json` 不存在，或 `/skill-stocktake full` | 20–30 分钟 |
+| Quick Scan | `results.json` exists (default) | 5–10 min |
+| Full Stocktake | `results.json` absent, or `/skill-stocktake full` | 20–30 min |
 
-**结果缓存：** `~/.claude/skills/skill-stocktake/results.json`
+**Results cache:** `~/.claude/skills/skill-stocktake/results.json`
 
-## 快速扫描流程
+## Quick Scan Flow
 
-仅重新评估自上次运行以来发生更改的技能（5–10 分钟）。
+Re-evaluate only skills that have changed since the last run (5–10 min).
 
-1. 读取 `~/.claude/skills/skill-stocktake/results.json`
-2. 运行：`bash ~/.claude/skills/skill-stocktake/scripts/quick-diff.sh \   ~/.claude/skills/skill-stocktake/results.json`
-   （项目目录从 `$PWD/.claude/skills` 自动检测；仅在需要时显式传递）
-3. 如果输出是 `[]`：报告“自上次运行以来无更改。”并停止
-4. 使用相同的第 2 阶段标准仅重新评估那些已更改的文件
-5. 沿用先前结果中未更改的技能
-6. 仅输出差异
-7. 运行：`bash ~/.claude/skills/skill-stocktake/scripts/save-results.sh \   ~/.claude/skills/skill-stocktake/results.json <<< "$EVAL_RESULTS"`
+1. Read `~/.claude/skills/skill-stocktake/results.json`
+2. Run: `bash ~/.claude/skills/skill-stocktake/scripts/quick-diff.sh \
+         ~/.claude/skills/skill-stocktake/results.json`
+   (Project dir is auto-detected from `$PWD/.claude/skills`; pass it explicitly only if needed)
+3. If output is `[]`: report "No changes since last run." and stop
+4. Re-evaluate only those changed files using the same Phase 2 criteria
+5. Carry forward unchanged skills from previous results
+6. Output only the diff
+7. Run: `bash ~/.claude/skills/skill-stocktake/scripts/save-results.sh \
+         ~/.claude/skills/skill-stocktake/results.json <<< "$EVAL_RESULTS"`
 
-## 全面盘点流程
+## Full Stocktake Flow
 
-### 第 1 阶段 — 清单
+### Phase 1 — Inventory
 
-运行：`bash ~/.claude/skills/skill-stocktake/scripts/scan.sh`
+Run: `bash ~/.claude/skills/skill-stocktake/scripts/scan.sh`
 
-脚本枚举技能文件，提取 frontmatter，并收集 UTC 修改时间。
-项目目录从 `$PWD/.claude/skills` 自动检测；仅在需要时显式传递。
-从脚本输出中呈现扫描摘要和清单表：
+The script enumerates skill files, extracts frontmatter, and collects UTC mtimes.
+Project dir is auto-detected from `$PWD/.claude/skills`; pass it explicitly only if needed.
+Present the scan summary and inventory table from the script output:
 
 ```
 Scanning:
@@ -67,12 +69,12 @@ Scanning:
   ✗ {cwd}/.claude/skills/    (not found — global skills only)
 ```
 
-| 技能 | 7天使用 | 30天使用 | 描述 |
+| Skill | 7d use | 30d use | Description |
 |-------|--------|---------|-------------|
 
-### 第 2 阶段 — 质量评估
+### Phase 2 — Quality Evaluation
 
-启动一个 **通用代理** 工具子代理，并使用完整的清单和检查项：
+Launch an Agent tool subagent (**general-purpose agent**) with the full inventory and checklist:
 
 ```text
 Agent(
@@ -90,17 +92,17 @@ Return JSON for each skill:
 )
 ```
 
-子代理读取每项技能，应用检查项，并返回每项技能的 JSON 结果：
+The subagent reads each skill, applies the checklist, and returns per-skill JSON:
 
 `{ "verdict": "Keep"|"Improve"|"Update"|"Retire"|"Merge into [X]", "reason": "..." }`
 
-**分块指导：** 每个子代理调用处理约 20 个技能，以保持上下文可管理。在每个块之后将中间结果保存到 `results.json` (`status: "in_progress"`)。
+**Chunk guidance:** Process ~20 skills per subagent invocation to keep context manageable. Save intermediate results to `results.json` (`status: "in_progress"`) after each chunk.
 
-所有技能评估完成后：设置 `status: "completed"`，进入第 3 阶段。
+After all skills are evaluated: set `status: "completed"`, proceed to Phase 3.
 
-**恢复检测：** 如果在启动时找到 `status: "in_progress"`，则从第一个未评估的技能处恢复。
+**Resume detection:** If `status: "in_progress"` is found on startup, resume from the first unevaluated skill.
 
-每个技能都根据此检查清单进行评估：
+Each skill is evaluated against this checklist:
 
 ```
 - [ ] Content overlap with other skills checked
@@ -109,62 +111,60 @@ Return JSON for each skill:
 - [ ] Usage frequency considered
 ```
 
-判定标准：
+Verdict criteria:
 
-| 判定 | 含义 |
+| Verdict | Meaning |
 |---------|---------|
-| Keep | 有用且最新 |
-| Improve | 值得保留，但需要特定改进 |
-| Update | 引用的技术已过时（通过 WebSearch 验证） |
-| Retire | 质量低、陈旧或成本不对称 |
-| Merge into \[X] | 与另一技能有大量重叠；命名合并目标 |
+| Keep | Useful and current |
+| Improve | Worth keeping, but specific improvements needed |
+| Update | Referenced technology is outdated (verify with WebSearch) |
+| Retire | Low quality, stale, or cost-asymmetric |
+| Merge into [X] | Substantial overlap with another skill; name the merge target |
 
-评估是**整体 AI 判断** — 不是数字评分标准。指导维度：
+Evaluation is **holistic AI judgment** — not a numeric rubric. Guiding dimensions:
+- **Actionability**: code examples, commands, or steps that let you act immediately
+- **Scope fit**: name, trigger, and content are aligned; not too broad or narrow
+- **Uniqueness**: value not replaceable by MEMORY.md / CLAUDE.md / another skill
+- **Currency**: technical references work in the current environment
 
-* **可操作性**：代码示例、命令或步骤，让你可以立即行动
-* **范围契合度**：名称、触发器和内容保持一致；不过于宽泛或狭窄
-* **独特性**：价值不能被 MEMORY.md / CLAUDE.md / 其他技能取代
-* **时效性**：技术引用在当前环境中有效
+**Reason quality requirements** — the `reason` field must be self-contained and decision-enabling:
+- Do NOT write "unchanged" alone — always restate the core evidence
+- For **Retire**: state (1) what specific defect was found, (2) what covers the same need instead
+  - Bad: `"Superseded"`
+  - Good: `"disable-model-invocation: true already set; superseded by continuous-learning-v2 which covers all the same patterns plus confidence scoring. No unique content remains."`
+- For **Merge**: name the target and describe what content to integrate
+  - Bad: `"Overlaps with X"`
+  - Good: `"42-line thin content; Step 4 of chatlog-to-article already covers the same workflow. Integrate the 'article angle' tip as a note in that skill."`
+- For **Improve**: describe the specific change needed (what section, what action, target size if relevant)
+  - Bad: `"Too long"`
+  - Good: `"276 lines; Section 'Framework Comparison' (L80–140) duplicates ai-era-architecture-principles; delete it to reach ~150 lines."`
+- For **Keep** (mtime-only change in Quick Scan): restate the original verdict rationale, do not write "unchanged"
+  - Bad: `"Unchanged"`
+  - Good: `"mtime updated but content unchanged. Unique Python reference explicitly imported by rules/python/; no overlap found."`
 
-**原因质量要求** — `reason` 字段必须是自包含且能支持决策的：
+### Phase 3 — Summary Table
 
-* 不要只写“未更改” — 始终重述核心证据
-* 对于 **Retire**：说明 (1) 发现了什么具体缺陷，(2) 有什么替代方案覆盖了相同需求
-  * 差：`"Superseded"`
-  * 好：`"disable-model-invocation: true already set; superseded by continuous-learning-v2 which covers all the same patterns plus confidence scoring. No unique content remains."`
-* 对于 **Merge**：命名目标并描述要集成什么内容
-  * 差：`"Overlaps with X"`
-  * 好：`"42-line thin content; Step 4 of chatlog-to-article already covers the same workflow. Integrate the 'article angle' tip as a note in that skill."`
-* 对于 **Improve**：描述所需的具体更改（哪个部分，什么操作，如果相关则说明目标大小）
-  * 差：`"Too long"`
-  * 好：`"276 lines; Section 'Framework Comparison' (L80–140) duplicates ai-era-architecture-principles; delete it to reach ~150 lines."`
-* 对于 **Keep**（快速扫描中仅 mtime 更改）：重述原始判定理由，不要写“未更改”
-  * 差：`"Unchanged"`
-  * 好：`"mtime updated but content unchanged. Unique Python reference explicitly imported by rules/python/; no overlap found."`
-
-### 第 3 阶段 — 摘要表
-
-| 技能 | 7天使用 | 判定 | 原因 |
+| Skill | 7d use | Verdict | Reason |
 |-------|--------|---------|--------|
 
-### 第 4 阶段 — 整合
+### Phase 4 — Consolidation
 
-1. **Retire / Merge**：在用户确认之前，按文件呈现详细理由：
-   * 发现了什么具体问题（重叠、陈旧、引用损坏等）
-   * 什么替代方案覆盖了相同功能（对于 Retire：哪个现有技能/规则；对于 Merge：目标文件以及要集成什么内容）
-   * 移除的影响（是否有依赖技能、MEMORY.md 引用或受影响的工作流）
-2. **Improve**：呈现具体的改进建议及理由：
-   * 更改什么以及为什么（例如，“将 430 行压缩至 200 行，因为 X/Y 部分与 python-patterns 重复”）
-   * 用户决定是否采取行动
-3. **Update**：呈现已检查来源的更新后内容
-4. 检查 MEMORY.md 行数；如果超过 100 行，则建议压缩
+1. **Retire / Merge**: present detailed justification per file before confirming with user:
+   - What specific problem was found (overlap, staleness, broken references, etc.)
+   - What alternative covers the same functionality (for Retire: which existing skill/rule; for Merge: the target file and what content to integrate)
+   - Impact of removal (any dependent skills, MEMORY.md references, or workflows affected)
+2. **Improve**: present specific improvement suggestions with rationale:
+   - What to change and why (e.g., "trim 430→200 lines because sections X/Y duplicate python-patterns")
+   - User decides whether to act
+3. **Update**: present updated content with sources checked
+4. Check MEMORY.md line count; propose compression if >100 lines
 
-## 结果文件模式
+## Results File Schema
 
-`~/.claude/skills/skill-stocktake/results.json`：
+`~/.claude/skills/skill-stocktake/results.json`:
 
-**`evaluated_at`**：必须设置为评估完成时的实际 UTC 时间。
-通过 Bash 获取：`date -u +%Y-%m-%dT%H:%M:%SZ`。切勿使用仅日期的近似值，如 `T00:00:00Z`。
+**`evaluated_at`**: Must be set to the actual UTC time of evaluation completion.
+Obtain via Bash: `date -u +%Y-%m-%dT%H:%M:%SZ`. Never use a date-only approximation like `T00:00:00Z`.
 
 ```json
 {
@@ -186,8 +186,9 @@ Return JSON for each skill:
 }
 ```
 
-## 注意事项
+## Notes
 
-* 评估是盲目的：无论来源如何（ECC、自创、自动提取），所有技能都应用相同的检查清单
-* 归档 / 删除操作始终需要明确的用户确认
-* 不按技能来源进行判定分支
+- Evaluation is blind: the same checklist applies to all skills regardless of origin (ECC, self-authored, auto-extracted)
+- Archive / delete operations always require explicit user confirmation
+- No verdict branching by skill origin
+

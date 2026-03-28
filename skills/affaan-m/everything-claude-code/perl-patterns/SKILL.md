@@ -1,30 +1,30 @@
 ---
 name: perl-patterns
-description: 现代 Perl 5.36+ 的惯用法、最佳实践和约定，用于构建稳健、可维护的 Perl 应用程序。
+description: Modern Perl 5.36+ idioms, best practices, and conventions for building robust, maintainable Perl applications.
 origin: ECC
 ---
 
-# 现代 Perl 开发模式
+# Modern Perl Development Patterns
 
-适用于构建健壮、可维护应用程序的 Perl 5.36+ 惯用模式和最佳实践。
+Idiomatic Perl 5.36+ patterns and best practices for building robust, maintainable applications.
 
-## 何时启用
+## When to Activate
 
-* 编写新的 Perl 代码或模块时
-* 审查 Perl 代码是否符合惯用法时
-* 重构遗留 Perl 代码以符合现代标准时
-* 设计 Perl 模块架构时
-* 将 5.36 之前的代码迁移到现代 Perl 时
+- Writing new Perl code or modules
+- Reviewing Perl code for idiom compliance
+- Refactoring legacy Perl to modern standards
+- Designing Perl module architecture
+- Migrating pre-5.36 code to modern Perl
 
-## 工作原理
+## How It Works
 
-将这些模式作为偏向现代 Perl 5.36+ 默认设置的指南应用：签名、显式模块、聚焦的错误处理和可测试的边界。下面的示例旨在作为起点被复制，然后根据您面前的实际应用程序、依赖栈和部署模型进行调整。
+Apply these patterns as a bias toward modern Perl 5.36+ defaults: signatures, explicit modules, focused error handling, and testable boundaries. The examples below are meant to be copied as starting points, then tightened for the actual app, dependency stack, and deployment model in front of you.
 
-## 核心原则
+## Core Principles
 
-### 1. 使用 `v5.36` 编译指令
+### 1. Use `v5.36` Pragma
 
-单个 `use v5.36` 即可替代旧的样板代码，并启用严格模式、警告和子程序签名。
+A single `use v5.36` replaces the old boilerplate and enables strict, warnings, and subroutine signatures.
 
 ```perl
 # Good: Modern preamble
@@ -46,9 +46,9 @@ sub greet {
 }
 ```
 
-### 2. 子程序签名
+### 2. Subroutine Signatures
 
-使用签名以提高清晰度和自动参数数量检查。
+Use signatures for clarity and automatic arity checking.
 
 ```perl
 use v5.36;
@@ -76,9 +76,9 @@ sub connect_db {
 }
 ```
 
-### 3. 上下文敏感性
+### 3. Context Sensitivity
 
-理解标量上下文与列表上下文——这是 Perl 的核心概念。
+Understand scalar vs list context — a core Perl concept.
 
 ```perl
 use v5.36;
@@ -90,9 +90,9 @@ my $count = @items;            # Scalar context: count (5)
 say "Items: " . scalar @items; # Force scalar context
 ```
 
-### 4. 后缀解引用
+### 4. Postfix Dereferencing
 
-对嵌套结构使用后缀解引用语法以提高可读性。
+Use postfix dereference syntax for readability with nested structures.
 
 ```perl
 use v5.36;
@@ -114,18 +114,18 @@ my @users = @{ $data->{users} };
 my @roles = @{ $data->{users}[0]{roles} };
 ```
 
-### 5. `isa` 运算符 (5.32+)
+### 5. The `isa` Operator (5.32+)
 
-中缀类型检查——替代 `blessed($o) && $o->isa('X')`。
+Infix type-check — replaces `blessed($o) && $o->isa('X')`.
 
 ```perl
 use v5.36;
 if ($obj isa 'My::Class') { $obj->do_something }
 ```
 
-## 错误处理
+## Error Handling
 
-### eval/die 模式
+### eval/die Pattern
 
 ```perl
 use v5.36;
@@ -137,7 +137,7 @@ sub parse_config($path) {
 }
 ```
 
-### Try::Tiny（可靠的异常处理）
+### Try::Tiny (Reliable Exception Handling)
 
 ```perl
 use v5.36;
@@ -156,7 +156,7 @@ sub fetch_user($id) {
 }
 ```
 
-### 原生 try/catch (5.40+)
+### Native try/catch (5.40+)
 
 ```perl
 use v5.40;
@@ -173,9 +173,9 @@ sub divide($x, $y) {
 }
 ```
 
-## 使用 Moo 的现代 OO
+## Modern OO with Moo
 
-优先使用 Moo 进行轻量级、现代的面向对象编程。仅当需要 Moose 的元协议时才使用它。
+Prefer Moo for lightweight, modern OO. Use Moose only when its metaprotocol is needed.
 
 ```perl
 # Good: Moo class
@@ -216,7 +216,7 @@ sub name { return $_[0]->{name} }
 1;
 ```
 
-### Moo 角色
+### Moo Roles
 
 ```perl
 package Role::Serializable;
@@ -235,7 +235,7 @@ sub TO_HASH($self) { { name => $self->name, email => $self->email } }
 1;
 ```
 
-### 原生 `class` 关键字 (5.38+, Corinna)
+### Native `class` Keyword (5.38+, Corinna)
 
 ```perl
 use v5.38;
@@ -252,9 +252,9 @@ my $p = Point->new(x => 3, y => 4);
 say $p->magnitude;  # 5
 ```
 
-## 正则表达式
+## Regular Expressions
 
-### 命名捕获和 `/x` 标志
+### Named Captures and `/x` Flag
 
 ```perl
 use v5.36;
@@ -277,7 +277,7 @@ if ($line =~ /^(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2})\s+\[(\w+)\]\s+(.+)$/) {
 }
 ```
 
-### 预编译模式
+### Precompiled Patterns
 
 ```perl
 use v5.36;
@@ -290,9 +290,9 @@ sub validate_emails(@emails) {
 }
 ```
 
-## 数据结构
+## Data Structures
 
-### 引用和安全深度访问
+### References and Safe Deep Access
 
 ```perl
 use v5.36;
@@ -325,9 +325,9 @@ for my ($key, $val) (%$config) {
 }
 ```
 
-## 文件 I/O
+## File I/O
 
-### 三参数 open
+### Three-Argument Open
 
 ```perl
 use v5.36;
@@ -348,7 +348,7 @@ open FH, $path;            # NEVER do this
 open FH, "< $path";        # Still bad — user data in mode string
 ```
 
-### 使用 Path::Tiny 进行文件操作
+### Path::Tiny for File Operations
 
 ```perl
 use v5.36;
@@ -364,9 +364,9 @@ for my $child (path('src')->children(qr/\.pl$/)) {
 }
 ```
 
-## 模块组织
+## Module Organization
 
-### 标准项目布局
+### Standard Project Layout
 
 ```text
 MyApp/
@@ -387,7 +387,7 @@ MyApp/
 └── .perlcriticrc            # Linting config
 ```
 
-### 导出器模式
+### Exporter Patterns
 
 ```perl
 package MyApp::Util;
@@ -402,9 +402,9 @@ sub trim($str) { $str =~ s/^\s+|\s+$//gr }
 1;
 ```
 
-## 工具
+## Tooling
 
-### perltidy 配置 (.perltidyrc)
+### perltidy Configuration (.perltidyrc)
 
 ```text
 -i=4        # 4-space indent
@@ -415,7 +415,7 @@ sub trim($str) { $str =~ s/^\s+|\s+$//gr }
 -nolq       # don't outdent long quoted strings
 ```
 
-### perlcritic 配置 (.perlcriticrc)
+### perlcritic Configuration (.perlcriticrc)
 
 ```ini
 severity = 3
@@ -432,7 +432,7 @@ severity = 4
 allowed_values = 0 1 2 -1
 ```
 
-### 依赖管理 (cpanfile + carton)
+### Dependency Management (cpanfile + carton)
 
 ```bash
 cpanm App::cpanminus Carton   # Install tools
@@ -453,24 +453,24 @@ on test => sub {
 };
 ```
 
-## 快速参考：现代 Perl 惯用法
+## Quick Reference: Modern Perl Idioms
 
-| 遗留模式 | 现代替代方案 |
+| Legacy Pattern | Modern Replacement |
 |---|---|
 | `use strict; use warnings;` | `use v5.36;` |
 | `my ($x, $y) = @_;` | `sub foo($x, $y) { ... }` |
 | `@{ $ref }` | `$ref->@*` |
 | `%{ $ref }` | `$ref->%*` |
 | `open FH, "< $file"` | `open my $fh, '<:encoding(UTF-8)', $file` |
-| `blessed hashref` | `Moo` 带类型的类 |
-| `$1, $2, $3` | `$+{name}` (命名捕获) |
-| `eval { }; if ($@)` | `Try::Tiny` 或原生 `try/catch` (5.40+) |
+| `blessed hashref` | `Moo` class with types |
+| `$1, $2, $3` | `$+{name}` (named captures) |
+| `eval { }; if ($@)` | `Try::Tiny` or native `try/catch` (5.40+) |
 | `BEGIN { require Exporter; }` | `use Exporter 'import';` |
-| 手动文件操作 | `Path::Tiny` |
+| Manual file ops | `Path::Tiny` |
 | `blessed($o) && $o->isa('X')` | `$o isa 'X'` (5.32+) |
-| `builtin::true / false` | `use builtin 'true', 'false';` (5.36+, 实验性) |
+| `builtin::true / false` | `use builtin 'true', 'false';` (5.36+, experimental) |
 
-## 反模式
+## Anti-Patterns
 
 ```perl
 # 1. Two-arg open (security risk)
@@ -501,4 +501,5 @@ use Module::Runtime 'require_module';    # Good: safe module loading
 require_module($module);
 ```
 
-**记住**：现代 Perl 是简洁、可读且安全的。让 `use v5.36` 处理样板代码，使用 Moo 处理对象，并优先使用 CPAN 上经过实战检验的模块，而不是自己动手的解决方案。
+**Remember**: Modern Perl is clean, readable, and safe. Let `use v5.36` handle the boilerplate, use Moo for objects, and prefer CPAN's battle-tested modules over hand-rolled solutions.
+

@@ -1,3 +1,8 @@
+---
+name: devops-infrastructure
+description: Guides Docker, CI/CD pipelines, deployment strategies, infrastructure as code, and observability setup. Use when writing Dockerfiles, configuring GitHub Actions, planning deployments, setting up monitoring, or when asked about containers, pipelines, Terraform, or production infrastructure.
+---
+
 # DevOps & Infrastructure
 
 ### When to Load
@@ -451,3 +456,4 @@ Same config in all environments    Per-environment configuration
 No rollback plan                   Test rollback before every deploy
 Logs as unstructured strings       Structured JSON logs with correlation IDs
 ```
+

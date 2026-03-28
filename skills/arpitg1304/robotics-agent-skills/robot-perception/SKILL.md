@@ -1,3 +1,18 @@
+---
+name: robot-perception
+description: >
+  Comprehensive best practices for robot perception systems covering cameras, LiDARs, depth sensors,
+  IMUs, and multi-sensor setups. Use this skill when working with RGB image processing, depth maps,
+  point clouds, sensor calibration (intrinsic, extrinsic, hand-eye), object detection, semantic
+  segmentation, 3D reconstruction, visual servoing, or perception pipeline optimization. Trigger
+  whenever the user mentions OpenCV, Open3D, PCL, RealSense, ZED, OAK-D, camera calibration,
+  AprilTags, ArUco markers, stereo vision, RGBD, point cloud filtering, ICP registration, coordinate
+  transforms, camera intrinsics, distortion correction, image undistortion, sensor streaming,
+  frame synchronization, or any computer vision task in a robotics context. Also covers multi-camera
+  rigs, time synchronization across sensors, perception latency budgets, and production deployment
+  of perception pipelines.
+---
+
 # Robot Perception Skill
 
 ## When to Use This Skill
@@ -1637,3 +1652,4 @@ robot.move_to(object_in_base[:3])
 10. **Benchmark latency** — measure each pipeline stage, find bottlenecks
 11. **Test with edge cases** — empty scenes, cluttered scenes, reflective surfaces, direct sunlight
 12. **Version your models** — pin detection/segmentation model versions in deployment
+

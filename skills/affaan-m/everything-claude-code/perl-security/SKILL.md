@@ -1,31 +1,31 @@
 ---
 name: perl-security
-description: 全面的Perl安全指南，涵盖污染模式、输入验证、安全进程执行、DBI参数化查询、Web安全（XSS/SQLi/CSRF）以及perlcritic安全策略。
+description: Comprehensive Perl security covering taint mode, input validation, safe process execution, DBI parameterized queries, web security (XSS/SQLi/CSRF), and perlcritic security policies.
 origin: ECC
 ---
 
-# Perl 安全模式
+# Perl Security Patterns
 
-涵盖输入验证、注入预防和安全编码实践的 Perl 应用程序全面安全指南。
+Comprehensive security guidelines for Perl applications covering input validation, injection prevention, and secure coding practices.
 
-## 何时启用
+## When to Activate
 
-* 处理 Perl 应用程序中的用户输入时
-* 构建 Perl Web 应用程序时（CGI、Mojolicious、Dancer2、Catalyst）
-* 审查 Perl 代码中的安全漏洞时
-* 使用用户提供的路径执行文件操作时
-* 从 Perl 执行系统命令时
-* 编写 DBI 数据库查询时
+- Handling user input in Perl applications
+- Building Perl web applications (CGI, Mojolicious, Dancer2, Catalyst)
+- Reviewing Perl code for security vulnerabilities
+- Performing file operations with user-supplied paths
+- Executing system commands from Perl
+- Writing DBI database queries
 
-## 工作原理
+## How It Works
 
-从污染感知的输入边界开始，然后向外扩展：验证并净化输入，保持文件系统和进程执行受限，并处处使用参数化的 DBI 查询。下面的示例展示了在交付涉及用户输入、shell 或网络的 Perl 代码之前，此技能期望您应用的安全默认做法。
+Start with taint-aware input boundaries, then move outward: validate and untaint inputs, keep filesystem and process execution constrained, and use parameterized DBI queries everywhere. The examples below show the safe defaults this skill expects you to apply before shipping Perl code that touches user input, the shell, or the network.
 
-## 污染模式
+## Taint Mode
 
-Perl 的污染模式（`-T`）跟踪来自外部源的数据，并防止其在未经明确验证的情况下用于不安全操作。
+Perl's taint mode (`-T`) tracks data from external sources and prevents it from being used in unsafe operations without explicit validation.
 
-### 启用污染模式
+### Enabling Taint Mode
 
 ```perl
 #!/usr/bin/perl -T
@@ -42,7 +42,7 @@ $ENV{PATH} = '/usr/local/bin:/usr/bin:/bin';
 delete @ENV{qw(IFS CDPATH ENV BASH_ENV)};
 ```
 
-### 净化模式
+### Untainting Pattern
 
 ```perl
 use v5.36;
@@ -70,9 +70,9 @@ sub bad_untaint($input) {
 }
 ```
 
-## 输入验证
+## Input Validation
 
-### 允许列表优于阻止列表
+### Allowlist Over Blocklist
 
 ```perl
 use v5.36;
@@ -106,7 +106,7 @@ sub bad_validate($input) {
 }
 ```
 
-### 长度约束
+### Length Constraints
 
 ```perl
 use v5.36;
@@ -118,11 +118,11 @@ sub validate_comment($text) {
 }
 ```
 
-## 安全正则表达式
+## Safe Regular Expressions
 
-### 防止正则表达式拒绝服务
+### ReDoS Prevention
 
-嵌套的量词应用于重叠模式时会发生灾难性回溯。
+Catastrophic backtracking occurs with nested quantifiers on overlapping patterns.
 
 ```perl
 use v5.36;
@@ -156,9 +156,9 @@ sub safe_match($string, $pattern, $timeout = 2) {
 }
 ```
 
-## 安全的文件操作
+## Safe File Operations
 
-### 三参数 Open
+### Three-Argument Open
 
 ```perl
 use v5.36;
@@ -180,7 +180,7 @@ sub bad_read($path) {
 }
 ```
 
-### 防止检查时使用时间和路径遍历
+### TOCTOU Prevention and Path Traversal
 
 ```perl
 use v5.36;
@@ -206,11 +206,11 @@ sub safe_path($base_dir, $user_path) {
 }
 ```
 
-使用 `File::Temp` 处理临时文件（`tempfile(UNLINK => 1)`），并使用 `flock(LOCK_EX)` 防止竞态条件。
+Use `File::Temp` for temporary files (`tempfile(UNLINK => 1)`) and `flock(LOCK_EX)` to prevent race conditions.
 
-## 安全的进程执行
+## Safe Process Execution
 
-### 列表形式的 system 和 exec
+### List-Form system and exec
 
 ```perl
 use v5.36;
@@ -243,11 +243,11 @@ sub bad_search($pattern) {
 my $output = `ls $user_dir`;   # Shell injection risk
 ```
 
-也可以使用 `Capture::Tiny` 安全地捕获外部命令的标准输出和标准错误。
+Also use `Capture::Tiny` for capturing stdout/stderr from external commands safely.
 
-## SQL 注入预防
+## SQL Injection Prevention
 
-### DBI 占位符
+### DBI Placeholders
 
 ```perl
 use v5.36;
@@ -283,7 +283,7 @@ sub bad_find($dbh, $email) {
 }
 ```
 
-### 动态列允许列表
+### Dynamic Column Allowlists
 
 ```perl
 use v5.36;
@@ -307,7 +307,7 @@ sub bad_order($dbh, $column) {
 }
 ```
 
-### DBIx::Class（ORM 安全性）
+### DBIx::Class (ORM Safety)
 
 ```perl
 use v5.36;
@@ -322,9 +322,9 @@ my @users = $schema->resultset('User')->search({
 });
 ```
 
-## Web 安全
+## Web Security
 
-### XSS 预防
+### XSS Prevention
 
 ```perl
 use v5.36;
@@ -360,7 +360,7 @@ sub bad_html($input) {
 }
 ```
 
-### CSRF 保护
+### CSRF Protection
 
 ```perl
 use v5.36;
@@ -372,9 +372,9 @@ sub generate_csrf_token() {
 }
 ```
 
-验证令牌时使用恒定时间比较。大多数 Web 框架（Mojolicious、Dancer2、Catalyst）都提供内置的 CSRF 保护——优先使用这些而非自行实现的解决方案。
+Use constant-time comparison when verifying tokens. Most web frameworks (Mojolicious, Dancer2, Catalyst) provide built-in CSRF protection — prefer those over hand-rolled solutions.
 
-### 会话和标头安全
+### Session and Header Security
 
 ```perl
 use v5.36;
@@ -392,19 +392,19 @@ $app->hook(after_dispatch => sub ($c) {
 });
 ```
 
-## 输出编码
+## Output Encoding
 
-始终根据上下文对输出进行编码：HTML 使用 `HTML::Entities::encode_entities()`，URL 使用 `URI::Escape::uri_escape_utf8()`，JSON 使用 `JSON::MaybeXS::encode_json()`。
+Always encode output for its context: `HTML::Entities::encode_entities()` for HTML, `URI::Escape::uri_escape_utf8()` for URLs, `JSON::MaybeXS::encode_json()` for JSON.
 
-## CPAN 模块安全
+## CPAN Module Security
 
-* **固定版本** 在 cpanfile 中：`requires 'DBI', '== 1.643';`
-* **优先使用维护中的模块**：在 MetaCPAN 上检查最新发布版本
-* **最小化依赖项**：每个依赖项都是一个攻击面
+- **Pin versions** in cpanfile: `requires 'DBI', '== 1.643';`
+- **Prefer maintained modules**: Check MetaCPAN for recent releases
+- **Minimize dependencies**: Each dependency is an attack surface
 
-## 安全工具
+## Security Tooling
 
-### perlcritic 安全策略
+### perlcritic Security Policies
 
 ```ini
 # .perlcriticrc — security-focused configuration
@@ -441,7 +441,7 @@ severity = 5
 severity = 5
 ```
 
-### 运行 perlcritic
+### Running perlcritic
 
 ```bash
 # Check a file
@@ -454,24 +454,24 @@ perlcritic --severity 3 --theme security lib/
 perlcritic --severity 4 --theme security --quiet lib/ || exit 1
 ```
 
-## 快速安全检查清单
+## Quick Security Checklist
 
-| 检查项 | 需验证的内容 |
+| Check | What to Verify |
 |---|---|
-| 污染模式 | CGI/web 脚本上使用 `-T` 标志 |
-| 输入验证 | 允许列表模式，长度限制 |
-| 文件操作 | 三参数 open，路径遍历检查 |
-| 进程执行 | 列表形式的 system，无 shell 插值 |
-| SQL 查询 | DBI 占位符，绝不插值 |
-| HTML 输出 | `encode_entities()`，模板自动转义 |
-| CSRF 令牌 | 生成令牌，并在状态更改请求时验证 |
-| 会话配置 | 安全、HttpOnly、SameSite Cookie |
-| HTTP 标头 | CSP、X-Frame-Options、HSTS |
-| 依赖项 | 固定版本，已审计模块 |
-| 正则表达式安全 | 无嵌套量词，锚定模式 |
-| 错误消息 | 不向用户泄露堆栈跟踪或路径 |
+| Taint mode | `-T` flag on CGI/web scripts |
+| Input validation | Allowlist patterns, length limits |
+| File operations | Three-arg open, path traversal checks |
+| Process execution | List-form system, no shell interpolation |
+| SQL queries | DBI placeholders, never interpolate |
+| HTML output | `encode_entities()`, template auto-escape |
+| CSRF tokens | Generated, verified on state-changing requests |
+| Session config | Secure, HttpOnly, SameSite cookies |
+| HTTP headers | CSP, X-Frame-Options, HSTS |
+| Dependencies | Pinned versions, audited modules |
+| Regex safety | No nested quantifiers, anchored patterns |
+| Error messages | No stack traces or paths leaked to users |
 
-## 反模式
+## Anti-Patterns
 
 ```perl
 # 1. Two-arg open with user data (command injection)
@@ -500,4 +500,5 @@ print "<div>Welcome, $username!</div>";  # XSS
 print $cgi->redirect($user_url);         # Open redirect
 ```
 
-**请记住**：Perl 的灵活性很强大，但需要纪律。对面向 Web 的代码使用污染模式，使用允许列表验证所有输入，对每个查询使用 DBI 占位符，并根据上下文对所有输出进行编码。纵深防御——绝不依赖单一防护层。
+**Remember**: Perl's flexibility is powerful but requires discipline. Use taint mode for web-facing code, validate all input with allowlists, use DBI placeholders for every query, and encode all output for its context. Defense in depth — never rely on a single layer.
+

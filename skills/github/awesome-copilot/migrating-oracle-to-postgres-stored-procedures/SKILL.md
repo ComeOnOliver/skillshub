@@ -40,3 +40,4 @@ Consult the PostgreSQL table/view definitions at `.github/oracle-to-postgres-mig
 **Step 3: Write the migrated procedure to Postgres output directory**
 
 Place each migrated procedure in its own file under `.github/oracle-to-postgres-migration/DDL/Postgres/Procedures and Functions/{PACKAGE_NAME_IF_APPLICABLE}/`. One procedure per file.
+

@@ -70,3 +70,4 @@ scripts/fetch_tweets.sh \
 ## Environment Variables
 
 - `JINA_API_KEY`: Required. Your Jina.ai API key for accessing the reader API
+

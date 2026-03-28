@@ -239,3 +239,4 @@ If you use this skill in a publication, please cite:
 - Alcock, B.P. et al. (2023). CARD 2023: expanded curation, support for machine learning, and resistome prediction at the Comprehensive Antibiotic Resistance Database. Nucleic Acids Research, 51(D1), D419-D430.
 - Beghini, F. et al. (2021). Integrating taxonomic, functional, and strain-level profiling of diverse microbial communities with bioBakery 3. eLife, 10, e65088.
 - Corpas, M. (2026). ClawBio. https://github.com/ClawBio/ClawBio
+

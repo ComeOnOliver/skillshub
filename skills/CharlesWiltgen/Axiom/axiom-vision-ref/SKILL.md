@@ -1278,3 +1278,4 @@ struct ViewMoreLandmarksIntent: AppIntent, VisualIntelligenceSearchIntent {
 **Docs**: /vision, /visionkit, /visualintelligence, /visualintelligence/semanticcontentdescriptor, /vision/vnrecognizetextrequest, /vision/vndetectbarcodesrequest
 
 **Skills**: axiom-vision, axiom-vision-diag
+

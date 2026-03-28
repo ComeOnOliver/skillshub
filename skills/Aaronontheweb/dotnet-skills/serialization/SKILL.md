@@ -411,3 +411,4 @@ JsonConvert.SerializeObject(order);  // Slow, not AOT-compatible
 - **MessagePack-CSharp**: https://github.com/MessagePack-CSharp/MessagePack-CSharp
 - **Akka.NET Serialization**: https://getakka.net/articles/networking/serialization.html
 - **Wire Compatibility**: https://getakka.net/community/contributing/wire-compatibility.html
+

@@ -1,85 +1,76 @@
 ---
 name: market-research
-description: 进行市场研究、竞争分析、投资者尽职调查和行业情报，附带来源归属和决策导向的摘要。适用于用户需要市场规模、竞争对手比较、基金研究、技术扫描或为商业决策提供信息的研究时。
+description: Conduct market research, competitive analysis, investor due diligence, and industry intelligence with source attribution and decision-oriented summaries. Use when the user wants market sizing, competitor comparisons, fund research, technology scans, or research that informs business decisions.
 origin: ECC
 ---
 
-# 市场研究
+# Market Research
 
-产出支持决策的研究，而非研究表演。
+Produce research that supports decisions, not research theater.
 
-## 何时激活
+## When to Activate
 
-* 研究市场、品类、公司、投资者或技术趋势时
-* 构建 TAM/SAM/SOM 估算时
-* 比较竞争对手或相邻产品时
-* 在接触前准备投资者档案时
-* 在构建、投资或进入市场前对论点进行压力测试时
+- researching a market, category, company, investor, or technology trend
+- building TAM/SAM/SOM estimates
+- comparing competitors or adjacent products
+- preparing investor dossiers before outreach
+- pressure-testing a thesis before building, funding, or entering a market
 
-## 研究标准
+## Research Standards
 
-1. 每个重要主张都需要有来源。
-2. 优先使用近期数据，并明确指出陈旧数据。
-3. 包含反面证据和不利情况。
-4. 将发现转化为决策，而不仅仅是总结。
-5. 清晰区分事实、推论和建议。
+1. Every important claim needs a source.
+2. Prefer recent data and call out stale data.
+3. Include contrarian evidence and downside cases.
+4. Translate findings into a decision, not just a summary.
+5. Separate fact, inference, and recommendation clearly.
 
-## 常见研究模式
+## Common Research Modes
 
-### 投资者 / 基金尽职调查
+### Investor / Fund Diligence
+Collect:
+- fund size, stage, and typical check size
+- relevant portfolio companies
+- public thesis and recent activity
+- reasons the fund is or is not a fit
+- any obvious red flags or mismatches
 
-收集：
+### Competitive Analysis
+Collect:
+- product reality, not marketing copy
+- funding and investor history if public
+- traction metrics if public
+- distribution and pricing clues
+- strengths, weaknesses, and positioning gaps
 
-* 基金规模、阶段和典型投资额度
-* 相关的投资组合公司
-* 公开的投资理念和近期动态
-* 该基金适合或不适合的理由
-* 任何明显的危险信号或不匹配之处
+### Market Sizing
+Use:
+- top-down estimates from reports or public datasets
+- bottom-up sanity checks from realistic customer acquisition assumptions
+- explicit assumptions for every leap in logic
 
-### 竞争分析
+### Technology / Vendor Research
+Collect:
+- how it works
+- trade-offs and adoption signals
+- integration complexity
+- lock-in, security, compliance, and operational risk
 
-收集：
+## Output Format
 
-* 产品现实情况，而非营销文案
-* 公开的融资和投资者历史
-* 公开的吸引力指标
-* 分销和定价线索
-* 优势、劣势和定位差距
+Default structure:
+1. executive summary
+2. key findings
+3. implications
+4. risks and caveats
+5. recommendation
+6. sources
 
-### 市场规模估算
+## Quality Gate
 
-使用：
+Before delivering:
+- all numbers are sourced or labeled as estimates
+- old data is flagged
+- the recommendation follows from the evidence
+- risks and counterarguments are included
+- the output makes a decision easier
 
-* 来自报告或公共数据集的"自上而下"估算
-* 基于现实的客户获取假设进行的"自下而上"合理性检查
-* 对每个逻辑跳跃的明确假设
-
-### 技术 / 供应商研究
-
-收集：
-
-* 其工作原理
-* 权衡取舍和采用信号
-* 集成复杂度
-* 锁定、安全、合规和运营风险
-
-## 输出格式
-
-默认结构：
-
-1. 执行摘要
-2. 关键发现
-3. 影响
-4. 风险和注意事项
-5. 建议
-6. 来源
-
-## 质量门
-
-在交付前检查：
-
-* 所有数字均已注明来源或标记为估算
-* 陈旧数据已标注
-* 建议源自证据
-* 风险和反对论点已包含在内
-* 输出使决策更容易

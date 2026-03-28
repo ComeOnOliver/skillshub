@@ -1,29 +1,28 @@
 ---
 name: kotlin-patterns
-description: 惯用的Kotlin模式、最佳实践和约定，用于构建健壮、高效且可维护的Kotlin应用程序，包括协程、空安全和DSL构建器。
+description: Idiomatic Kotlin patterns, best practices, and conventions for building robust, efficient, and maintainable Kotlin applications with coroutines, null safety, and DSL builders.
 origin: ECC
 ---
 
-# Kotlin 开发模式
+# Kotlin Development Patterns
 
-适用于构建健壮、高效、可维护应用程序的惯用 Kotlin 模式与最佳实践。
+Idiomatic Kotlin patterns and best practices for building robust, efficient, and maintainable applications.
 
-## 使用时机
+## When to Use
 
-* 编写新的 Kotlin 代码
-* 审查 Kotlin 代码
-* 重构现有的 Kotlin 代码
-* 设计 Kotlin 模块或库
-* 配置 Gradle Kotlin DSL 构建
+- Writing new Kotlin code
+- Reviewing Kotlin code
+- Refactoring existing Kotlin code
+- Designing Kotlin modules or libraries
+- Configuring Gradle Kotlin DSL builds
 
-## 工作原理
+## How It Works
 
-本技能在七个关键领域强制执行惯用的 Kotlin 约定：使用类型系统和安全调用运算符实现空安全；通过数据类的 `val` 和 `copy()` 实现不可变性；使用密封类和接口实现穷举类型层次结构；使用协程和 `Flow` 实现结构化并发；使用扩展函数在不使用继承的情况下添加行为；使用 `@DslMarker` 和 lambda 接收器构建类型安全的 DSL；以及使用 Gradle Kotlin DSL 进行构建配置。
+This skill enforces idiomatic Kotlin conventions across seven key areas: null safety using the type system and safe-call operators, immutability via `val` and `copy()` on data classes, sealed classes and interfaces for exhaustive type hierarchies, structured concurrency with coroutines and `Flow`, extension functions for adding behaviour without inheritance, type-safe DSL builders using `@DslMarker` and lambda receivers, and Gradle Kotlin DSL for build configuration.
 
-## 示例
+## Examples
 
-**使用 Elvis 运算符实现空安全：**
-
+**Null safety with Elvis operator:**
 ```kotlin
 fun getUserEmail(userId: String): String {
     val user = userRepository.findById(userId)
@@ -31,8 +30,7 @@ fun getUserEmail(userId: String): String {
 }
 ```
 
-**使用密封类处理穷举结果：**
-
+**Sealed class for exhaustive results:**
 ```kotlin
 sealed class Result<out T> {
     data class Success<T>(val data: T) : Result<T>()
@@ -41,8 +39,7 @@ sealed class Result<out T> {
 }
 ```
 
-**使用 async/await 实现结构化并发：**
-
+**Structured concurrency with async/await:**
 ```kotlin
 suspend fun fetchUserWithPosts(userId: String): UserProfile =
     coroutineScope {
@@ -52,11 +49,11 @@ suspend fun fetchUserWithPosts(userId: String): UserProfile =
     }
 ```
 
-## 核心原则
+## Core Principles
 
-### 1. 空安全
+### 1. Null Safety
 
-Kotlin 的类型系统区分可空和不可空类型。充分利用它。
+Kotlin's type system distinguishes nullable and non-nullable types. Leverage it fully.
 
 ```kotlin
 // Good: Use non-nullable types by default
@@ -78,9 +75,9 @@ fun getUserEmail(userId: String): String {
 }
 ```
 
-### 2. 默认不可变性
+### 2. Immutability by Default
 
-优先使用 `val` 而非 `var`，优先使用不可变集合而非可变集合。
+Prefer `val` over `var`, immutable collections over mutable ones.
 
 ```kotlin
 // Good: Immutable data
@@ -103,9 +100,9 @@ var currentUser: User? = null // Avoid mutable global state
 val mutableUsers = mutableListOf<User>() // Avoid unless truly needed
 ```
 
-### 3. 表达式体和单表达式函数
+### 3. Expression Bodies and Single-Expression Functions
 
-使用表达式体编写简洁、可读的函数。
+Use expression bodies for concise, readable functions.
 
 ```kotlin
 // Good: Expression body
@@ -131,9 +128,9 @@ fun isAdult(age: Int): Boolean {
 }
 ```
 
-### 4. 数据类用于值对象
+### 4. Data Classes for Value Objects
 
-使用数据类表示主要包含数据的类型。
+Use data classes for types that primarily hold data.
 
 ```kotlin
 // Good: Data class with copy, equals, hashCode, toString
@@ -161,9 +158,9 @@ value class Email(val value: String) {
 fun getUser(id: UserId): User = userRepository.findById(id)
 ```
 
-## 密封类和接口
+## Sealed Classes and Interfaces
 
-### 建模受限的层次结构
+### Modeling Restricted Hierarchies
 
 ```kotlin
 // Good: Sealed class for exhaustive when
@@ -186,7 +183,7 @@ fun <T> Result<T>.getOrThrow(): T = when (this) {
 }
 ```
 
-### 用于 API 响应的密封接口
+### Sealed Interfaces for API Responses
 
 ```kotlin
 sealed interface ApiError {
@@ -212,9 +209,9 @@ fun ApiError.toStatusCode(): Int = when (this) {
 }
 ```
 
-## 作用域函数
+## Scope Functions
 
-### 何时使用各个函数
+### When to Use Each
 
 ```kotlin
 // let: Transform nullable or scoped result
@@ -243,7 +240,7 @@ val csv = with(StringBuilder()) {
 }
 ```
 
-### 反模式
+### Anti-Patterns
 
 ```kotlin
 // Bad: Nesting scope functions
@@ -260,9 +257,9 @@ val city = user?.address?.city
 city?.let { println(it) }
 ```
 
-## 扩展函数
+## Extension Functions
 
-### 在不使用继承的情况下添加功能
+### Adding Functionality Without Inheritance
 
 ```kotlin
 // Good: Domain-specific extensions
@@ -289,9 +286,9 @@ class UserService {
 }
 ```
 
-## 协程
+## Coroutines
 
-### 结构化并发
+### Structured Concurrency
 
 ```kotlin
 // Good: Structured concurrency with coroutineScope
@@ -333,7 +330,7 @@ suspend fun fetchDashboard(userId: String): Dashboard =
     }
 ```
 
-### Flow 用于响应式流
+### Flow for Reactive Streams
 
 ```kotlin
 // Good: Cold flow with proper error handling
@@ -358,7 +355,7 @@ fun searchUsers(query: Flow<String>): Flow<List<User>> =
         .catch { emit(emptyList()) }
 ```
 
-### 取消与清理
+### Cancellation and Cleanup
 
 ```kotlin
 // Good: Respect cancellation
@@ -382,9 +379,9 @@ suspend fun acquireAndProcess() {
 }
 ```
 
-## 委托
+## Delegation
 
-### 属性委托
+### Property Delegation
 
 ```kotlin
 // Lazy initialization
@@ -407,7 +404,7 @@ class Config(private val map: Map<String, Any?>) {
 val config = Config(mapOf("host" to "localhost", "port" to 8080, "debug" to true))
 ```
 
-### 接口委托
+### Interface Delegation
 
 ```kotlin
 // Good: Delegate interface implementation
@@ -425,9 +422,9 @@ class LoggingUserRepository(
 }
 ```
 
-## DSL 构建器
+## DSL Builders
 
-### 类型安全构建器
+### Type-Safe Builders
 
 ```kotlin
 // Good: DSL with @DslMarker
@@ -461,7 +458,7 @@ val page = html {
 }
 ```
 
-### 配置 DSL
+### Configuration DSL
 
 ```kotlin
 data class ServerConfig(
@@ -503,7 +500,7 @@ val config = serverConfig {
 }
 ```
 
-## 用于惰性求值的序列
+## Sequences for Lazy Evaluation
 
 ```kotlin
 // Good: Use sequences for large collections with multiple operations
@@ -531,7 +528,7 @@ val first20 = fibonacci.take(20).toList()
 
 ## Gradle Kotlin DSL
 
-### build.gradle.kts 配置
+### build.gradle.kts Configuration
 
 ```kotlin
 // Check for latest versions: https://kotlinlang.org/docs/releases.html
@@ -588,9 +585,9 @@ detekt {
 }
 ```
 
-## 错误处理模式
+## Error Handling Patterns
 
-### 用于领域操作的 Result 类型
+### Result Type for Domain Operations
 
 ```kotlin
 // Good: Use Kotlin's Result or a custom sealed class
@@ -625,9 +622,9 @@ fun withdraw(account: Account, amount: Money): Account {
 }
 ```
 
-## 集合操作
+## Collection Operations
 
-### 惯用的集合处理
+### Idiomatic Collection Processing
 
 ```kotlin
 // Good: Chained operations
@@ -649,27 +646,27 @@ val usersById: Map<UserId, User> = users.associateBy { it.id }
 val (active, inactive) = users.partition { it.isActive }
 ```
 
-## 快速参考：Kotlin 惯用法
+## Quick Reference: Kotlin Idioms
 
-| 惯用法 | 描述 |
+| Idiom | Description |
 |-------|-------------|
-| `val` 优于 `var` | 优先使用不可变变量 |
-| `data class` | 用于具有 equals/hashCode/copy 的值对象 |
-| `sealed class/interface` | 用于受限的类型层次结构 |
-| `value class` | 用于零开销的类型安全包装器 |
-| 表达式 `when` | 穷举模式匹配 |
-| 安全调用 `?.` | 空安全的成员访问 |
-| Elvis `?:` | 为可空类型提供默认值 |
-| `let`/`apply`/`also`/`run`/`with` | 用于编写简洁代码的作用域函数 |
-| 扩展函数 | 在不使用继承的情况下添加行为 |
-| `copy()` | 数据类上的不可变更新 |
-| `require`/`check` | 前置条件断言 |
-| 协程 `async`/`await` | 结构化并发执行 |
-| `Flow` | 冷响应式流 |
-| `sequence` | 惰性求值 |
-| 委托 `by` | 在不使用继承的情况下重用实现 |
+| `val` over `var` | Prefer immutable variables |
+| `data class` | For value objects with equals/hashCode/copy |
+| `sealed class/interface` | For restricted type hierarchies |
+| `value class` | For type-safe wrappers with zero overhead |
+| Expression `when` | Exhaustive pattern matching |
+| Safe call `?.` | Null-safe member access |
+| Elvis `?:` | Default value for nullables |
+| `let`/`apply`/`also`/`run`/`with` | Scope functions for clean code |
+| Extension functions | Add behavior without inheritance |
+| `copy()` | Immutable updates on data classes |
+| `require`/`check` | Precondition assertions |
+| Coroutine `async`/`await` | Structured concurrent execution |
+| `Flow` | Cold reactive streams |
+| `sequence` | Lazy evaluation |
+| Delegation `by` | Reuse implementation without inheritance |
 
-## 应避免的反模式
+## Anti-Patterns to Avoid
 
 ```kotlin
 // Bad: Force-unwrapping nullable types
@@ -711,4 +708,5 @@ user?.let { u ->
 user?.address?.city?.let { process(it) }
 ```
 
-**请记住**：Kotlin 代码应简洁但可读。利用类型系统确保安全，优先使用不可变性，并使用协程处理并发。如有疑问，让编译器帮助你。
+**Remember**: Kotlin code should be concise but readable. Leverage the type system for safety, prefer immutability, and use coroutines for concurrency. When in doubt, let the compiler help you.
+

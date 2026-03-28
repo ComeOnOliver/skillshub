@@ -255,3 +255,4 @@ All output passes the Internal Quality Loop before reaching the founder (see `ag
 - `references/technology_evaluation_framework.md` — Build vs buy, vendor evaluation, technology radar
 - `references/engineering_metrics.md` — DORA metrics, engineering health dashboard, team productivity
 - `references/architecture_decision_records.md` — ADR templates, decision governance, review process
+

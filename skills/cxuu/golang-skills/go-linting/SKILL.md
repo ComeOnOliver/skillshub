@@ -207,3 +207,4 @@ bash scripts/setup-lint.sh --json                                  # structured 
 - **Code review**: See [go-code-review](../go-code-review/SKILL.md) when combining linter output with a manual review checklist
 - **Error handling**: See [go-error-handling](../go-error-handling/SKILL.md) when errcheck flags unhandled errors and you need to decide how to handle them
 - **Testing**: See [go-testing](../go-testing/SKILL.md) when running linters alongside tests in CI pipelines
+

@@ -1,3 +1,14 @@
+---
+name: zustand-5
+description: >
+  Zustand 5 state management patterns.
+  Trigger: When managing React state with Zustand.
+license: Apache-2.0
+metadata:
+  author: gentleman-programming
+  version: "1.0"
+---
+
 ## Basic Store
 
 ```typescript
@@ -209,3 +220,4 @@ const unsubscribe = useCounterStore.subscribe(
 
 ## Keywords
 zustand, state management, react, store, persist, middleware
+

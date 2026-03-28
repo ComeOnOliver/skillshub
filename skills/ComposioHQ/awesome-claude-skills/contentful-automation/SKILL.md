@@ -1,3 +1,11 @@
+---
+name: Contentful Automation
+description: "Automate headless CMS operations in Contentful -- list spaces, retrieve space metadata, and update space configurations through the Composio Contentful integration."
+requires:
+  mcp:
+    - rube
+---
+
 # Contentful Automation
 
 Manage your **Contentful** headless CMS spaces directly from Claude Code. List spaces, retrieve metadata, and update space configurations without leaving your terminal.
@@ -96,3 +104,4 @@ Example prompt: *"Audit all Contentful spaces -- list them with their creation d
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

@@ -380,3 +380,4 @@ Provide details about your specific Power BI performance issue, including:
 - Business requirements and constraints
 
 I'll guide you through systematic diagnosis and provide specific, actionable solutions tailored to your situation.
+

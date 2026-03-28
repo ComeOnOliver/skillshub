@@ -64,3 +64,4 @@ python3 gdpr-dsgvo-expert/scripts/gdpr_compliance_checker.py --help
 
 - Load only the specific skill SKILL.md you need
 - Always verify compliance outputs against current regulations
+

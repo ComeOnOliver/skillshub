@@ -1,3 +1,10 @@
+---
+name: honeybadger-automation
+description: "Automate Honeybadger tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Honeybadger Automation via Rube MCP
 
 Automate Honeybadger operations through Composio's Honeybadger toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

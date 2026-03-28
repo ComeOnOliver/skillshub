@@ -641,3 +641,4 @@ try AVAudioSession.sharedInstance().setActive(true)
 **Targets:** iOS 12+ (core), iOS 26+ (spatial features)
 **Frameworks:** AVFoundation, AVKit, Cinematic (iOS 26+)
 **History:** See git log for changes
+

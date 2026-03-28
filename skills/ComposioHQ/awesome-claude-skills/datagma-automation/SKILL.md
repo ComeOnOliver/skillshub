@@ -1,3 +1,10 @@
+---
+name: datagma-automation
+description: "Automate Datagma tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Datagma Automation via Rube MCP
 
 Automate Datagma operations through Composio's Datagma toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

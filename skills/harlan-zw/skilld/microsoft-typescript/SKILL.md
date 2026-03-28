@@ -92,3 +92,4 @@ stack.defer(() => cleanup())
 ✅ Use `Uint8Array.fromBase64()`/`.toBase64()` instead of `btoa`/`atob` — handles binary data directly without string encoding issues, supports `base64url` alphabet (lib `"ESNext.TypedArrays"`) [source](./.skilld/pkg/lib/lib.esnext.typedarrays.d.ts)
 
 ✅ Use `customConditions` to resolve package.json `exports` with custom conditions — enables framework-specific entry points (e.g., `"react-server"`) without bundler hacks [source](./.skilld/pkg/lib/typescript.d.ts)
+

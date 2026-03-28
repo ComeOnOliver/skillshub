@@ -1,7 +1,15 @@
 ---
 name: deploy-prod
-description: Deploys to production
-allowed-tools: Bash Read Write
+description: Use when deploying to production environment
+disable-model-invocation: true
+allowed-tools: Bash(git:*) Bash(npm:*) Read
 ---
 
-Deploy the application to production.
+# Deploy to Production
+
+This skill deploys the application to production.
+
+## Usage
+
+This skill requires explicit user invocation due to its dangerous nature.
+

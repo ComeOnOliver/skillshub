@@ -1,3 +1,10 @@
+---
+name: alpha-vantage-automation
+description: "Automate Alpha Vantage tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Alpha Vantage Automation via Rube MCP
 
 Automate Alpha Vantage operations through Composio's Alpha Vantage toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

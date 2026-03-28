@@ -92,3 +92,4 @@ model MyAgent {
 ```
 
 **Which workflow would you like to start with?** Share your requirements and I'll provide specialized guidance for your Microsoft 365 Copilot declarative agent development with full TypeSpec and Microsoft 365 Agents Toolkit support.
+

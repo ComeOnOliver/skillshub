@@ -104,3 +104,4 @@ Target date: August 2024
 - Forgetting periodic expenses (insurance, car registration, holidays)
 - Not having an emergency fund buffer
 - Treating the budget as rigid — it should be a living document
+

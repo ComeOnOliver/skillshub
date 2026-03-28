@@ -312,3 +312,4 @@ search.py "query" --mode deep --intent tutorial --domain-boost dev.to,freecodeca
 | 最新动态 | `web_search(freshness="pw")` + `search.py --mode deep --intent status --freshness pw` |
 | 对比分析 | `web_search` × 3 queries + `search.py --queries "A vs B" "A pros" "B pros" --intent comparison` |
 | 找资源 | `web_search` + `search.py --mode fast --intent resource` |
+

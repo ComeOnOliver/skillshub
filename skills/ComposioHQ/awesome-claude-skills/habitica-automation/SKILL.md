@@ -1,3 +1,10 @@
+---
+name: habitica-automation
+description: "Automate Habitica tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Habitica Automation via Rube MCP
 
 Automate Habitica operations through Composio's Habitica toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

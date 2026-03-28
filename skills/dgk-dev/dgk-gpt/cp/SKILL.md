@@ -1,3 +1,8 @@
+---
+name: cp
+description: Local verify-commit-push wrapper for Codex. Use only when the user explicitly says `/cp` or clearly asks to finish the current work by running the relevant local checks, staging intended files explicitly, committing on the current branch, and pushing. This workflow may commit directly to `main` or `master` when that is the repo's chosen operating model.
+---
+
 # Cp
 
 Use this as a thin finish mode after implementation is done.
@@ -54,3 +59,4 @@ Return:
 - commit message
 - commit hash
 - intentionally excluded files if any
+

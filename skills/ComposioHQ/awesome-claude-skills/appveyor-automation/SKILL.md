@@ -1,3 +1,10 @@
+---
+name: appveyor-automation
+description: "Automate Appveyor tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Appveyor Automation via Rube MCP
 
 Automate Appveyor operations through Composio's Appveyor toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

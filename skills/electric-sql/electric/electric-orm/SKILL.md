@@ -187,3 +187,4 @@ See also: electric-schema-shapes/SKILL.md — Schema design affects both shapes 
 ## Version
 
 Targets @electric-sql/client v1.5.10.
+

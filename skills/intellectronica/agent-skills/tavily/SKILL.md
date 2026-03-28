@@ -1,3 +1,8 @@
+---
+name: tavily
+description: Use this skill for web search, extraction, mapping, crawling, and research via Tavily’s REST API when web searches are needed and no built-in tool is available, or when Tavily’s LLM-friendly format is beneficial.
+---
+
 # Tavily
 
 ## Purpose
@@ -222,3 +227,4 @@ Handle SSE events (tool calls, tool responses, content chunks, sources, done).
 - If any request returns 401/403, prompt for or re-check `TAVILY_API_KEY`.
 - If timeouts occur, reduce `max_depth`/`limit` or use `search_depth: basic`.
 - If responses are too large, lower `max_results` or `chunks_per_source`.
+

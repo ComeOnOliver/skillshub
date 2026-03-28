@@ -1,3 +1,10 @@
+---
+name: dailybot-automation
+description: "Automate Dailybot tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Dailybot Automation via Rube MCP
 
 Automate Dailybot operations through Composio's Dailybot toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

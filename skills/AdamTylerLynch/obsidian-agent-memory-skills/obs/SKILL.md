@@ -798,3 +798,4 @@ $VAULT/
 ├── templates/                        # Note templates
 └── inbox/                            # Unsorted
 ```
+

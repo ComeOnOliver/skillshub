@@ -1,3 +1,8 @@
+---
+name: ue5-docker-build
+description: Build, package, and deploy Unreal Engine 5 projects using Docker containers. Generates Dockerfiles, docker-compose configurations, CI/CD pipelines, and GPU passthrough setups for UE5 game servers, pixel streaming, and automated builds. Use this skill when someone wants to containerize a UE5 project, set up Docker-based CI/CD for Unreal, deploy a UE5 dedicated server, configure pixel streaming in Docker, or build UE5 projects in containers. Also triggers for mentions of "ue4-docker", "unrealcontainers", "GHCR Epic images", or "containerized Unreal builds".
+---
+
 # UE5 Docker Build Skill
 
 Creates Docker-based build and deployment configurations for Unreal Engine 5 projects. Covers the full pipeline from containerized compilation to production deployment.
@@ -194,3 +199,4 @@ export NVIDIA_DRIVER_VERSION=$(nvidia-smi --query-gpu=driver_version --format=cs
 ## Reference Files
 
 - [Dockerfile Templates](./references/dockerfiles.md) — Full library of Dockerfile patterns
+

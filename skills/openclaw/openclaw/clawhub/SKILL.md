@@ -53,3 +53,4 @@ Notes
 - Default registry: https://clawhub.com (override with CLAWHUB_REGISTRY or --registry)
 - Default workdir: cwd (falls back to OpenClaw workspace); install dir: ./skills (override with --workdir / --dir / CLAWHUB_WORKDIR)
 - Update command hashes local files, resolves matching version, and upgrades to latest unless --version is set
+

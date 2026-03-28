@@ -136,3 +136,4 @@ python skills/news/scripts/news.py category --cat ai --keyword "关键词" --jso
 - AI 类源为英文内容，返回给用户时可适当翻译
 - 多数 AI 博客网站（OpenAI、Google AI、DeepMind、MIT Tech Review 等）会阻止 `web_fetch` 直接访问（返回 403/404），因此深入阅读 AI 文章应使用 `--detail -1` 从 RSS 获取全文，而非尝试抓取原始链接
 - 中文新闻源（人民网、澎湃、36氪等）通常允许 `web_fetch` 抓取详情页
+

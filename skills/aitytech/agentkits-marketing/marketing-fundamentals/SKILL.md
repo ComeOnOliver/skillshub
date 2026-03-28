@@ -191,3 +191,4 @@ Apply marketing fundamentals when:
 - `references/copywriting-frameworks.md` - Proven copy formulas
 - `references/marketing-metrics.md` - Key marketing KPIs
 - `references/competitor-analysis.md` - Competitive intelligence
+

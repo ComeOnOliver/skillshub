@@ -1,3 +1,8 @@
+---
+name: analyzing-marketing-campaign
+description: Analyze weekly marketing campaign performance data across channels. Use when analyzing multi-channel digital marketing data to calculate funnel metrics (CTR, CVR) and compare to benchmarks, compute cost and revenue efficiency metrics (ROAS, CPA, Net Profit), or get budget reallocation recommendations based on performance rules.
+---
+
 # Marketing Campaign Analysis
 
 Automated analysis of multi-channel marketing campaign data from BigQuery.
@@ -107,3 +112,4 @@ Follow each table with brief channel-by-channel interpretation.
 ## Budget Reallocation
 
 If user asks about budget reallocation, read `references/budget_reallocation_rules.md` for the complete decision framework including eligibility rules, performance-based actions, and constraints.
+

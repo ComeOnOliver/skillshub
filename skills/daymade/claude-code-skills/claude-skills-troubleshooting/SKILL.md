@@ -146,3 +146,4 @@ If a skill should be explicitly invocable, add a corresponding command file.
 
 - See `references/known_issues.md` for GitHub issue tracking
 - See `references/architecture.md` for detailed plugin architecture
+

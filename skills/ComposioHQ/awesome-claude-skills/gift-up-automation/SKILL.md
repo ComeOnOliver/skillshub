@@ -1,3 +1,10 @@
+---
+name: gift-up-automation
+description: "Automate Gift Up tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Gift Up Automation via Rube MCP
 
 Automate Gift Up operations through Composio's Gift Up toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

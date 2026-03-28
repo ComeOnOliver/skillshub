@@ -44,3 +44,4 @@ Your goal is to help me create efficient multi-stage Dockerfiles that follow bes
 - Consider parallelization in build steps when possible
 - Set appropriate environment variables like NODE_ENV=production to optimize runtime behavior
 - Use appropriate healthchecks for the application type with the HEALTHCHECK instruction
+

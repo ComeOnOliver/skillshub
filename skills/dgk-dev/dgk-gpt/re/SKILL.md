@@ -1,3 +1,8 @@
+---
+name: re
+description: Explicit extra-research mode. Use only when the user says `/re` or clearly asks for a research-heavy pass before coding. This skill should bias Codex toward more source-checking and justification without replacing its normal orchestration.
+---
+
 # Re
 
 Use this as a light override, not a rigid workflow. Keep Codex's default orchestration and only add extra diligence where it matters.
@@ -45,3 +50,4 @@ Keep the final response compressed:
 - code or config changed
 - tests run
 - remaining unknowns
+

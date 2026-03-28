@@ -1,3 +1,10 @@
+---
+name: conversion-tools-automation
+description: "Automate Conversion Tools tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Conversion Tools Automation via Rube MCP
 
 Automate Conversion Tools operations through Composio's Conversion Tools toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

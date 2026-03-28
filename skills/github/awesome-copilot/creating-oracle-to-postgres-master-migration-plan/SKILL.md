@@ -81,3 +81,4 @@ Use this exact template — downstream consumers depend on the structure:
 ````
 
 Order projects so that shared/foundational libraries are migrated before their dependents.
+

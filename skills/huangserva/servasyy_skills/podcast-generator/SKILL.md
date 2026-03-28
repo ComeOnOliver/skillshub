@@ -1,3 +1,8 @@
+---
+name: podcast-generator
+description: 生成自然真实的双人访谈播客，使用共享TTS模块支持3种引擎（Edge TTS / IndexTTS2 / MiniMax）和情感控制
+---
+
 # 播客脚本生成规范
 
 ## 脚本格式（重要！）
@@ -183,3 +188,4 @@
 ```bash
 python skill.py workspace/脚本.txt --tts-engine indextts2 -o 播客.mp3
 ```
+

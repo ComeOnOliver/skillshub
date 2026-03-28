@@ -1,3 +1,8 @@
+---
+name: angular-testing
+description: Write unit and integration tests for Angular v20+ applications using Vitest or Jasmine with TestBed and modern testing patterns. Use for testing components with signals, OnPush change detection, services with inject(), and HTTP interactions. Triggers on test creation, testing signal-based components, mocking dependencies, or setting up test infrastructure. Don't use for E2E testing with Cypress or Playwright, or for testing non-Angular JavaScript/TypeScript code.
+---
+
 # Angular Testing
 
 Test Angular v20+ applications with Vitest (recommended) or Jasmine, focusing on signal-based components and modern patterns.
@@ -450,3 +455,4 @@ describe('UserCmpt', () => {
 For advanced testing patterns including component harnesses, router testing, form testing, and directive testing, see [references/testing-patterns.md](references/testing-patterns.md).
 
 For Vitest migration from Jasmine, see [references/vitest-migration.md](references/vitest-migration.md).
+

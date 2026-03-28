@@ -377,3 +377,4 @@ QualityBonus   = UserScore × 0.1
 | `vampire-survivors-v1` | [`scenarios/vampire-survivors-v1.md`](./scenarios/vampire-survivors-v1.md) | 3D 吸血鬼幸存者 | v1.3 |
 
 > 新场景按 `scenarios/<game-type>-v<N>.md` 命名。每个场景文件定义：标准 Prompt、执行阶段、游戏内容规格、场景专属评分细则、AI 审查 Prompt 模板。
+

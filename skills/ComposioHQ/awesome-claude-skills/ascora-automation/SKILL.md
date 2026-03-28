@@ -1,3 +1,10 @@
+---
+name: ascora-automation
+description: "Automate Ascora tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Ascora Automation via Rube MCP
 
 Automate Ascora operations through Composio's Ascora toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

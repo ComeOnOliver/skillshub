@@ -101,3 +101,4 @@ Keep the attribution line at the top of the file:
 - WWDC "What's new in SwiftUI" sessions are the best source for newly introduced replacements.
 - When unsure about the exact iOS version for a deprecation, verify by checking the "Availability" section in the fetched documentation.
 - If an API is deprecated but no direct replacement exists, note this rather than suggesting an incorrect alternative.
+

@@ -54,3 +54,4 @@ python3 revenue-operations/scripts/pipeline_analyzer.py --help
 
 - Load only the specific skill SKILL.md you need
 - Use Python tools for scoring and metrics, not manual estimates
+

@@ -57,3 +57,4 @@ Pinia is the official state management library for Vue, designed to be intuitive
 - **Call stores inside functions** not at module scope, especially for SSR
 - **Add HMR support** to each store for better development experience
 - **Use `@pinia/testing`** for component tests with mocked stores
+

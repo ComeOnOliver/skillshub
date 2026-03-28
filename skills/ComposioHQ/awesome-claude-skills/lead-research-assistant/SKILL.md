@@ -197,3 +197,4 @@ When a user requests lead research:
 - Researching specific companies in detail
 - Analyzing competitor customer bases
 - Identifying partnership opportunities
+

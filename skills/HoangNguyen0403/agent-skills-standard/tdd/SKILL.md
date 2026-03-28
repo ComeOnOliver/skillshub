@@ -93,3 +93,4 @@ Every test must follow Arrange-Act-Assert:
 - [AAA Example](references/aaa_example.md)
 - [TDD Patterns](references/tdd_patterns.md)
 - [Testing Anti-Patterns](references/testing_anti_patterns.md)
+

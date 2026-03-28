@@ -1,3 +1,8 @@
+---
+name: nano-banana-2
+description: Generate and edit images using Google's Nano Banana 2 (Gemini 3.1 Flash Image Preview) API. This skill should be used when the user asks to create or modify images, especially when they need fast iteration, explicit aspect-ratio control, or resolution control from 512px to 4K.
+---
+
 # Nano Banana 2 Image Generation & Editing
 
 Generate new images or edit existing images with Nano Banana 2 (`gemini-3.1-flash-image-preview`).
@@ -103,3 +108,4 @@ uv run ./.agents/skills/nano-banana-2/scripts/generate_image.py --prompt "Futuri
 ```bash
 uv run ./.agents/skills/nano-banana-2/scripts/generate_image.py --prompt "Create a polished campaign image that keeps the exact logo details and character identity" --filename "2026-02-26-17-50-10-campaign-image.png" --input-image "logo.png" --input-image "character.png" --resolution 2K --aspect-ratio 4:5
 ```
+

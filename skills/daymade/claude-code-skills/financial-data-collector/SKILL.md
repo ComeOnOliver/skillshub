@@ -150,3 +150,4 @@ capex = float(cash_flow.loc["Capital Expenditure", year_col])  # -37256.0
 ## Known yfinance Pitfalls
 
 See `references/yfinance-pitfalls.md` for detailed field mapping and workarounds.
+

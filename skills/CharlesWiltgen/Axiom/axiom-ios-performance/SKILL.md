@@ -309,3 +309,4 @@ User: "What is the app logging? I need to see console output"
 
 User: "Capture the simulator logs while I reproduce this bug"
 → Invoke: `/skill axiom-xclog-ref` or `/axiom:console`
+

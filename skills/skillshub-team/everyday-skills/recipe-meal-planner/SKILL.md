@@ -142,3 +142,4 @@ New Amount = Original Amount × (Desired Servings / Original Servings)
 | Butter | Olive oil | Dairy-free |
 | Eggs (baking) | Flax egg (1 tbsp flax + 3 tbsp water) | Vegan |
 | Meat | Tofu, tempeh, legumes | Plant-based |
+

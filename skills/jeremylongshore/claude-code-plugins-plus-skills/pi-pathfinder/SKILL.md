@@ -1,3 +1,9 @@
+---
+name: skill-adapter
+description: Analyzes existing plugins to extract their capabilities, then adapts and applies those skills to the current task. Acts as a universal skill chameleon that learns from other plugins.
+allowed-tools: Read, Grep, Glob, Bash
+---
+
 # Skill Adapter - Universal Plugin Capability Extractor
 
 ## Purpose
@@ -211,3 +217,4 @@ Skill Adapter improves by:
 ---
 
 **In essence:** Skill Adapter is a meta-skill that makes the entire plugin marketplace available as a learning resource, extracting and applying capabilities on-demand to solve user tasks efficiently.
+

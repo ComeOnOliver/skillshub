@@ -1,3 +1,10 @@
+---
+name: brex-staging-automation
+description: "Automate Brex Staging tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Brex Staging Automation via Rube MCP
 
 Automate Brex Staging operations through Composio's Brex Staging toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

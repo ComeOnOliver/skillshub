@@ -62,3 +62,4 @@ python3 skills/baidu-search/scripts/search.py "什么是人工智能" --api-type
 - 免费额度：100 次/天
 - 网页搜索查询最长 72 字符
 - 自动包含当前日期上下文，方便处理时效性查询
+

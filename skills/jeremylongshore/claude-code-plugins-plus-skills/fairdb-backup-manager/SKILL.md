@@ -1,188 +1,73 @@
 ---
-name: FairDB Backup Manager
-description: Automatically manages PostgreSQL backups with pgBackRest and Wasabi S3 storage when working with FairDB databases
----
+name: fairdb-backup-manager
+description: |
+  Manage use when you need to work with backup and recovery.
+  This skill provides backup automation and disaster recovery with comprehensive guidance and automation.
+  Trigger with phrases like "create backups", "automate backups",
+  or "implement disaster recovery".
 
+allowed-tools: Read, Write, Edit, Grep, Glob, Bash(tar:*), Bash(rsync:*), Bash(aws:s3:*)
+version: 1.0.0
+author: Jeremy Longshore <jeremy@intentsolutions.io>
+license: MIT
+compatible-with: claude-code, codex, openclaw
+tags: [devops, backup, disaster-recovery]
+
+---
 # FairDB Backup Manager
 
-## Purpose
-I automatically handle all backup-related operations for FairDB PostgreSQL databases, including scheduling, verification, restoration, and monitoring of pgBackRest backups with Wasabi S3 storage.
+## Overview
 
-## Activation Triggers
-I activate when you:
-- Mention "backup", "restore", "pgbackrest", or "recovery" in context of FairDB
-- Work with PostgreSQL backup configurations
-- Need to verify backup integrity
-- Discuss disaster recovery or data protection
-- Experience data loss or corruption issues
+Automate backup and recovery operations for FairDB database instances. Generate backup scripts, configure retention policies, schedule automated backups to local storage or S3, and produce tested restore procedures with integrity verification.
 
-## Core Capabilities
+## Prerequisites
 
-### Backup Operations
-- Configure pgBackRest with Wasabi S3
-- Execute full, differential, and incremental backups
-- Manage backup schedules and retention policies
-- Compress and encrypt backup data
-- Monitor backup health and success rates
+- FairDB instance running and accessible with admin credentials
+- `tar` and `rsync` installed for file-level backups
+- AWS CLI configured with `s3:PutObject` and `s3:GetObject` permissions (if using S3 as backup target)
+- Sufficient storage at backup destination (2-3x database size for rotation)
+- Cron or systemd timer access for scheduling
+- Test environment available for restore verification
 
-### Restore Operations
-- Perform point-in-time recovery (PITR)
-- Restore specific databases or tables
-- Test restore procedures without impacting production
-- Validate restored data integrity
-- Document recovery time objectives (RTO)
+## Instructions
 
-### Monitoring & Verification
-- Check backup completion status
-- Verify backup integrity with test restores
-- Monitor backup size and growth trends
-- Alert on backup failures or delays
-- Generate backup compliance reports
+1. Assess the FairDB instance: identify data directory location, database size, and write throughput
+2. Select backup method: logical dump for portability, filesystem snapshot for speed, or continuous archiving for minimal RPO
+3. Generate backup script with lock acquisition, data export, compression (`tar czf`), and checksum generation
+4. Configure S3 upload with server-side encryption (`aws s3 cp --sse aws:kms`) for off-site copies
+5. Set up retention policy: keep hourly backups for 24 hours, daily for 7 days, weekly for 4 weeks, monthly for 12 months
+6. Create cleanup script to purge expired backups according to retention schedule
+7. Schedule backups via cron with proper logging to `/var/log/fairdb-backup.log`
+8. Generate restore procedure: download from S3, verify checksum, decompress, and import with validation query
+9. Test restore procedure in a staging environment and document the time-to-recovery
 
-## Automated Workflows
+## Output
 
-When activated, I will:
+- Backup shell script with logging, locking, compression, and S3 upload
+- Restore shell script with checksum verification and data validation
+- Cron schedule entries or systemd timer units
+- Retention cleanup script
+- S3 lifecycle policy configuration for long-term archive tiering
 
-1. **Assess Current State**
-   - Check existing backup configuration
-   - Review backup history and success rate
-   - Identify any failed or missing backups
-   - Analyze storage usage and costs
+## Error Handling
 
-2. **Optimize Configuration**
-   - Adjust retention policies based on requirements
-   - Configure optimal compression settings
-   - Set up parallel backup processes
-   - Implement incremental backup strategies
+| Error | Cause | Solution |
+|-------|-------|---------|
+| `Backup lock acquisition failed` | Another backup or maintenance process is running | Check for stale lock files; implement timeout-based lock with `flock` |
+| `tar: Cannot open: No space left on device` | Local backup destination full | Run retention cleanup; check disk usage with `df -h`; increase volume size |
+| `aws s3 cp: upload failed` | Network issue or expired AWS credentials | Retry with `--retry 3`; refresh credentials; check S3 bucket permissions |
+| `Restore failed: checksum mismatch` | Backup file corrupted during transfer or storage | Re-download from S3; verify S3 object integrity; use a different backup copy |
+| `Database inconsistent after restore` | Backup taken during active write without lock | Ensure backup script acquires a consistent snapshot lock before export |
 
-3. **Execute Operations**
-   - Run scheduled backups automatically
-   - Perform test restores monthly
-   - Clean up old backups per retention policy
-   - Monitor and alert on issues
+## Examples
 
-4. **Document & Report**
-   - Maintain backup/restore runbooks
-   - Generate compliance reports
-   - Track metrics and trends
-   - Document recovery procedures
+- "Create an automated nightly backup for the FairDB production instance, compressed and uploaded to S3 with KMS encryption and 30-day retention."
+- "Generate a restore runbook that pulls the latest backup from S3, verifies integrity, and restores to a staging instance for validation."
+- "Set up backup monitoring that alerts via Slack if a backup job fails or if no successful backup exists within the last 25 hours."
 
-## Integration with FairDB Commands
+## Resources
 
-I work seamlessly with these FairDB commands:
-- `/fairdb-setup-backup` - Initial configuration
-- `/fairdb-onboard-customer` - Customer-specific backups
-- `/fairdb-emergency-response` - Disaster recovery
-- `/fairdb-health-check` - Backup health monitoring
-
-## Best Practices I Enforce
-
-### Backup Strategy
-- Full backups weekly (Sunday 2 AM)
-- Differential backups daily
-- Incremental backups hourly during business hours
-- WAL archiving for point-in-time recovery
-- Geographical redundancy with Wasabi regions
-
-### Security
-- AES-256 encryption for all backups
-- Secure key management
-- Access control and audit logging
-- Encrypted transport to S3
-- Immutable backup storage
-
-### Testing
-- Monthly restore tests
-- Quarterly disaster recovery drills
-- Automated integrity verification
-- Performance benchmarking
-- Documentation updates
-
-## Proactive Monitoring
-
-I continuously monitor for:
-- Backup failures or delays
-- Storage capacity issues
-- Unusual backup sizes
-- Performance degradation
-- Compliance violations
-
-## Emergency Response
-
-During data loss incidents, I:
-1. Assess the extent of data loss
-2. Identify the best recovery point
-3. Execute restore procedures
-4. Verify data integrity
-5. Document incident and recovery
-
-## Reporting
-
-I generate these reports automatically:
-- Daily backup status summary
-- Weekly storage utilization report
-- Monthly compliance audit
-- Quarterly DR test results
-- Annual backup strategy review
-
-## Cost Optimization
-
-I help reduce backup costs by:
-- Implementing intelligent retention policies
-- Using compression effectively
-- Cleaning up unnecessary backups
-- Optimizing transfer methods
-- Selecting appropriate storage tiers
-
-## Example Scenarios
-
-### Scenario: New Customer Onboarding
-```
-User: "Setting up database for new customer Acme Corp"
-Me: I'll configure automated backups for Acme Corp:
-- Creating dedicated pgBackRest stanza
-- Setting up daily full backups with 30-day retention
-- Configuring WAL archiving for PITR
-- Scheduling test restores monthly
-- Adding monitoring for backup success
-```
-
-### Scenario: Backup Failure Alert
-```
-System: "Backup failed for customer_db"
-Me: I'm investigating the backup failure:
-- Checking disk space: OK
-- Verifying S3 connectivity: Failed
-- Issue: Wasabi credentials expired
-- Action: Rotating credentials and retrying backup
-- Result: Backup completed successfully
-```
-
-### Scenario: Recovery Request
-```
-User: "Need to restore CustomerX database to yesterday 3 PM"
-Me: Initiating point-in-time recovery:
-- Target time: 2024-03-14 15:00:00
-- Latest backup: Full backup from 2024-03-14 02:00:00
-- Applying WAL logs to target time
-- Restoration complete in 12 minutes
-- Data verified and customer notified
-```
-
-## Success Metrics
-
-I track and optimize:
-- Backup success rate (target: >99.9%)
-- Recovery time objective (target: <1 hour)
-- Recovery point objective (target: <5 minutes)
-- Storage efficiency (compression ratio >3:1)
-- Cost per GB backed up
-
-## Continuous Improvement
-
-I learn from each operation to:
-- Refine backup schedules
-- Improve recovery procedures
-- Optimize resource usage
-- Enhance monitoring alerts
-- Update documentation
+- AWS S3 CLI: https://docs.aws.amazon.com/cli/latest/reference/s3/
+- rsync documentation: https://rsync.samba.org/documentation.html
+- Backup automation patterns: https://www.veeam.com/blog/321-backup-rule.html
+- Linux cron scheduling: https://crontab.guru/

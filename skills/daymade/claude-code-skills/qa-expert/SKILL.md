@@ -287,3 +287,4 @@ This skill is effective when:
 - ✅ Progress visible in real-time (CSV tracking)
 - ✅ Autonomous execution enabled (LLM can execute full plan)
 - ✅ Third-party QA teams can start testing immediately
+

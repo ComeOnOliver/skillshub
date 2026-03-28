@@ -60,3 +60,4 @@ description: 'Ensure that C# types are documented with XML comments and follow b
 - For exceptions thrown by nested members, document only the exceptions users are most likely to encounter.
 - The description of the exception describes the condition under which it's thrown.
   - Omit "Thrown if ..." or "If ..." at the beginning of the sentence. Just state the condition directly, for example "An error occurred when accessing a Message Queuing API."
+

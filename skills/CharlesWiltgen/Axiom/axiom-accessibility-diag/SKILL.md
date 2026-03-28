@@ -987,3 +987,4 @@ After making fixes:
 ---
 
 **Remember** Accessibility is not a feature, it's a requirement. 15% of users have some form of disability. Making your app accessible isn't just the right thing to do - it expands your user base and improves the experience for everyone.
+

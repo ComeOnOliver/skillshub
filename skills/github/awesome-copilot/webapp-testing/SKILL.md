@@ -131,3 +131,4 @@ try {
 ## Helper Functions
 
 Some helper functions are available in [`test-helper.js`](./assets/test-helper.js) to simplify common tasks like waiting for elements, capturing screenshots, and handling errors. You can import and use these functions in your tests to improve readability and maintainability.
+

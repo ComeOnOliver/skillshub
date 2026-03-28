@@ -479,3 +479,4 @@ If you need more context:
 - **popup-cro**: Use triggers and psychology in popups
 - **pricing-page optimization**: See page-cro for pricing psychology
 - **ab-test-setup**: Test psychological hypotheses
+

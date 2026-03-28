@@ -1,3 +1,8 @@
+---
+name: beautiful-mermaid
+description: Render Mermaid diagrams as SVG and PNG using the Beautiful Mermaid library. Use when the user asks to render a Mermaid diagram.
+---
+
 # Beautiful Mermaid Diagram Rendering
 
 Render Mermaid diagrams as SVG and PNG images using the Beautiful Mermaid library.
@@ -164,3 +169,4 @@ Check the render script output for the `bg` and `fg` values, or inspect the SVG'
 - Validate Mermaid syntax at https://mermaid.live before rendering
 - Check for special characters that need escaping (wrap in quotes)
 - Ensure flowchart direction is specified (`graph TD`, `graph LR`, etc.)
+

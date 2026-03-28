@@ -1,3 +1,10 @@
+---
+name: gan-ai-automation
+description: "Automate Gan AI tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Gan AI Automation via Rube MCP
 
 Automate Gan AI operations through Composio's Gan AI toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

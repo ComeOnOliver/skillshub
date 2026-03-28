@@ -1,6 +1,6 @@
 ---
 name: laravel-security
-description: "Security standards for hardening Laravel applications. Use when securing authentication, authorization, input validation, or CSRF in Laravel. (triggers: app/Policies/**/*.php, config/*.php, policy, gate, authorize, env, config)"
+description: 'Security standards for hardening Laravel applications. Use when securing authentication, authorization, input validation, or CSRF in Laravel. (triggers: app/Policies/**/*.php, config/*.php, policy, gate, authorize, env, config)'
 ---
 
 # Laravel Security
@@ -18,20 +18,32 @@ app/
 
 ## Implementation Guidelines
 
-- **Authorization**: Always use Policies or Gates (no `$user->role ===`).
-- **Environment**: Never use `env()` outside of config files. Use `config()`.
-- **Validation**: Strict validation via Form Requests to prevent injection.
-- **Auth Guarding**: Use `auth()->user()` type-shadowing or interfaces.
-- **XSS Safety**: Leverage Blade `{{ $var }}` automatic escaping.
-- **CSRF**: Ensure `@csrf` is present in all state-changing forms.
+### Authorization & RBAC
+
+- **Policies**: Always use **`php artisan make:policy PostPolicy --model=Post`** for model-level authorization.
+- **Checkers**: Implement **`update(User $user, Post $post): bool`** and call **`$this->authorize('update', $post)`** in controllers.
+- **Gates**: Use `Gate::define('admin', fn(User $user) => ...)` for global permissions. Check with `Gate::allows('admin')` or Blade `@can('admin')`. prefer Policies for model-bound checks; use Gates for global permissions.
+- **Admin Bypass**: Define **`Gate::before(fn($u) => $u->isAdmin() ? true : null)`** in **`AuthServiceProvider`**.
+
+### Configuration & Environment
+
+- **Environment**: Only call env() inside config/\*.php files. Access via `config('app.key')` in your application code. never env() in controllers; use config() instead.
+- **Caching**: Run **`php artisan config:cache`** to validate that `env()` isn't used where it shouldn't be.
+
+### Data & Input Security
+
+- **Mass Assignment**: Use Form Request with rules() and call $request->validated() for Model::create(). Define $fillable on model; never pass $request->all() to create().
+- **CSRF**: Ensure the @csrf directive is in all Blade `<form>` tags. active on web routes by default; use `->except(['/webhook'])` only for trusted third-party callbacks.
+- **Role-Based Access**: Use Policies with role checks in policy methods; define `Gate::before` for admin bypass; or use `spatie/laravel-permission`; never inline $user->role === 'admin'.
 
 ## Anti-Patterns
 
-- **Raw Env**: **No env() in code**: Access through config to allow caching.
-- **Manual Auth**: **No custom auth logic**: Use Laravel's built-in system.
-- **Unvalidated Mass**: **No unvalidated create**: Always use `validated()`.
-- **Logic in Blade**: **No auth logic in View**: Pass permissions as data.
+- **No `env()` outside config files**: Access via `config()` helper.
+- **No custom auth logic**: Use Laravel's built-in auth system.
+- **No unvalidated mass assignment**: Always call `validated()`.
+- **No auth logic in Blade**: Pass permissions as data from controller.
 
 ## References
 
 - [Policy & Env Best Practices](references/implementation.md)
+

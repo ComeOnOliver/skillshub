@@ -1,3 +1,10 @@
+---
+name: digital-ocean-automation
+description: "Automate DigitalOcean tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # DigitalOcean Automation via Rube MCP
 
 Automate DigitalOcean operations through Composio's DigitalOcean toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

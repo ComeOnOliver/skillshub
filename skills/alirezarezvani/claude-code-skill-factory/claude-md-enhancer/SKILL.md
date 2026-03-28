@@ -444,3 +444,4 @@ Adjusts detail level:
 **Compatible**: Claude Code 2.0+, Claude Apps, Claude API
 
 Remember: The goal is to make Claude more efficient and context-aware, not to create bureaucracy. Start simple, iterate based on real usage, and automate quality checks where possible.
+

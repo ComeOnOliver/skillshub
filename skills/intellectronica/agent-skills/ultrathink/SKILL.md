@@ -1,3 +1,8 @@
+---
+name: ultrathink
+description: Display colorful ANSI art of the word "ultrathink". Use when the user says "ultrathink" or invokes /ultrathink.
+---
+
 # Ultrathink
 
 When this skill is invoked, run this Bash command to display colourful ANSI art:
@@ -7,3 +12,4 @@ printf '\n  \033[1;31m╦ ╦\033[1;33m╦  \033[1;32m╔╦╗\033[1;36m╦═�
 ```
 
 Do not add any other output or commentary.
+

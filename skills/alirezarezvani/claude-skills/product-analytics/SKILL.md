@@ -105,3 +105,4 @@ python3 scripts/metrics_calculator.py retention events.csv
 python3 scripts/metrics_calculator.py cohort events.csv --cohort-grain month
 python3 scripts/metrics_calculator.py funnel funnel.csv --stages visit,signup,activate,pay
 ```
+

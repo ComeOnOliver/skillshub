@@ -1,25 +1,25 @@
 ---
 name: swift-protocol-di-testing
-description: 基于协议的依赖注入，用于可测试的Swift代码——使用聚焦协议和Swift Testing模拟文件系统、网络和外部API。
+description: Protocol-based dependency injection for testable Swift code — mock file system, network, and external APIs using focused protocols and Swift Testing.
 origin: ECC
 ---
 
-# 基于协议的 Swift 依赖注入测试
+# Swift Protocol-Based Dependency Injection for Testing
 
-通过将外部依赖（文件系统、网络、iCloud）抽象为小型、专注的协议，使 Swift 代码可测试的模式。支持无需 I/O 的确定性测试。
+Patterns for making Swift code testable by abstracting external dependencies (file system, network, iCloud) behind small, focused protocols. Enables deterministic tests without I/O.
 
-## 何时激活
+## When to Activate
 
-* 编写访问文件系统、网络或外部 API 的 Swift 代码时
-* 需要在未触发真实故障的情况下测试错误处理路径时
-* 构建需要在不同环境（应用、测试、SwiftUI 预览）中工作的模块时
-* 设计支持 Swift 并发（actor、Sendable）的可测试架构时
+- Writing Swift code that accesses file system, network, or external APIs
+- Need to test error handling paths without triggering real failures
+- Building modules that work across environments (app, test, SwiftUI preview)
+- Designing testable architecture with Swift concurrency (actors, Sendable)
 
-## 核心模式
+## Core Pattern
 
-### 1. 定义小型、专注的协议
+### 1. Define Small, Focused Protocols
 
-每个协议仅处理一个外部关注点。
+Each protocol handles exactly one external concern.
 
 ```swift
 // File system access
@@ -41,7 +41,7 @@ public protocol BookmarkStorageProviding: Sendable {
 }
 ```
 
-### 2. 创建默认（生产）实现
+### 2. Create Default (Production) Implementations
 
 ```swift
 public struct DefaultFileSystemProvider: FileSystemProviding {
@@ -69,7 +69,7 @@ public struct DefaultFileAccessor: FileAccessorProviding {
 }
 ```
 
-### 3. 创建用于测试的模拟实现
+### 3. Create Mock Implementations for Testing
 
 ```swift
 public final class MockFileAccessor: FileAccessorProviding, @unchecked Sendable {
@@ -98,9 +98,9 @@ public final class MockFileAccessor: FileAccessorProviding, @unchecked Sendable 
 }
 ```
 
-### 4. 使用默认参数注入依赖项
+### 4. Inject Dependencies with Default Parameters
 
-生产代码使用默认值；测试注入模拟对象。
+Production code uses defaults; tests inject mocks.
 
 ```swift
 public actor SyncManager {
@@ -127,7 +127,7 @@ public actor SyncManager {
 }
 ```
 
-### 5. 使用 Swift Testing 编写测试
+### 5. Write Tests with Swift Testing
 
 ```swift
 import Testing
@@ -166,25 +166,26 @@ func testReadError() async {
 }
 ```
 
-## 最佳实践
+## Best Practices
 
-* **单一职责**：每个协议应处理一个关注点——不要创建包含许多方法的“上帝协议”
-* **Sendable 一致性**：当协议跨 actor 边界使用时需要
-* **默认参数**：让生产代码默认使用真实实现；只有测试需要指定模拟对象
-* **错误模拟**：设计具有可配置错误属性的模拟对象以测试故障路径
-* **仅模拟边界**：模拟外部依赖（文件系统、网络、API），而非内部类型
+- **Single Responsibility**: Each protocol should handle one concern — don't create "god protocols" with many methods
+- **Sendable conformance**: Required when protocols are used across actor boundaries
+- **Default parameters**: Let production code use real implementations by default; only tests need to specify mocks
+- **Error simulation**: Design mocks with configurable error properties for testing failure paths
+- **Only mock boundaries**: Mock external dependencies (file system, network, APIs), not internal types
 
-## 需要避免的反模式
+## Anti-Patterns to Avoid
 
-* 创建覆盖所有外部访问的单个大型协议
-* 模拟没有外部依赖的内部类型
-* 使用 `#if DEBUG` 条件语句代替适当的依赖注入
-* 与 actor 一起使用时忘记 `Sendable` 一致性
-* 过度设计：如果一个类型没有外部依赖，则不需要协议
+- Creating a single large protocol that covers all external access
+- Mocking internal types that have no external dependencies
+- Using `#if DEBUG` conditionals instead of proper dependency injection
+- Forgetting `Sendable` conformance when used with actors
+- Over-engineering: if a type has no external dependencies, it doesn't need a protocol
 
-## 何时使用
+## When to Use
 
-* 任何触及文件系统、网络或外部 API 的 Swift 代码
-* 测试在真实环境中难以触发的错误处理路径时
-* 构建需要在应用、测试和 SwiftUI 预览上下文中工作的模块时
-* 需要使用可测试架构的、采用 Swift 并发（actor、结构化并发）的应用
+- Any Swift code that touches file system, network, or external APIs
+- Testing error handling paths that are hard to trigger in real environments
+- Building modules that need to work in app, test, and SwiftUI preview contexts
+- Apps using Swift concurrency (actors, structured concurrency) that need testable architecture
+

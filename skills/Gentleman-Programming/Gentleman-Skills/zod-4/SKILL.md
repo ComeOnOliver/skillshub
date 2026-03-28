@@ -1,3 +1,14 @@
+---
+name: zod-4
+description: >
+  Zod 4 schema validation patterns.
+  Trigger: When using Zod for validation - breaking changes from v3.
+license: Apache-2.0
+metadata:
+  author: gentleman-programming
+  version: "1.0"
+---
+
 ## Breaking Changes from Zod 3
 
 ```typescript
@@ -203,3 +214,4 @@ function Form() {
 
 ## Keywords
 zod, validation, schema, typescript, forms, parsing
+

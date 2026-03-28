@@ -1,3 +1,10 @@
+---
+name: godial-automation
+description: "Automate Godial tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Godial Automation via Rube MCP
 
 Automate Godial operations through Composio's Godial toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

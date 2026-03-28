@@ -425,3 +425,4 @@ jobs:
 - NeoForge GameTest docs: https://docs.neoforged.net/docs/misc/gametest/
 - Fabric GameTest API: https://wiki.fabricmc.net/tutorial:gametests
 - JUnit 5 user guide: https://junit.org/junit5/docs/current/user-guide/
+

@@ -1,3 +1,8 @@
+---
+name: defold-assets-search
+description: "Searches the Defold Asset Store for community libraries and extensions. Use BEFORE writing custom modules for pathfinding, RNG, UI, save/load, localization, tweening, input handling, etc. Helps find, compare, and install Defold dependencies."
+---
+
 # Defold Asset Store Search
 
 Search the Defold community Asset Store to find existing libraries instead of writing custom code.
@@ -85,3 +90,4 @@ Prefer these over alternatives unless the user has a specific reason to choose o
 | **Brian Kramer** | Practical game utilities | DefOS, DefSave, DefMath, DefGlot, DefBlend |
 | **Roman Silin** | 3D game tools | Illumination, Kinematic Walker, Operator (camera), Narrator (Ink), TrenchFold |
 | **Indiesoft LLC** | Visual effects and platform tools | Hyper Trails, Sharp Sprite, YaGames, ResZip, Dissolve FX, SplitMix64 |
+

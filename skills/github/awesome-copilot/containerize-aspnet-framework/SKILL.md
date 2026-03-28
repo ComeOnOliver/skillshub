@@ -452,3 +452,4 @@ The LogMonitorConfig.json file should be created in the root of the project dire
   }
 }
 ```
+

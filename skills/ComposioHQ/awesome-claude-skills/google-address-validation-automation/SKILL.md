@@ -1,3 +1,10 @@
+---
+name: google-address-validation-automation
+description: "Automate Google Address Validation tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Google Address Validation Automation via Rube MCP
 
 Automate Google Address Validation operations through Composio's Google Address Validation toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

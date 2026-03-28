@@ -1372,3 +1372,4 @@ Authentication must not require cognitive function tests (e.g., remembering a pa
 **License:** MIT
 **Author:** Alireza Rezvani
 **Version:** 2.1.2
+

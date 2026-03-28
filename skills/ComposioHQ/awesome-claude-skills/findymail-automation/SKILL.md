@@ -1,3 +1,10 @@
+---
+name: findymail-automation
+description: "Automate Findymail tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Findymail Automation via Rube MCP
 
 Automate Findymail operations through Composio's Findymail toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

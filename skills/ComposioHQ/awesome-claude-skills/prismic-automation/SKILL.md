@@ -148,3 +148,4 @@ Example prompt: *"List all custom types in my Prismic repository"*
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

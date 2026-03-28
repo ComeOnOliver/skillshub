@@ -1,3 +1,10 @@
+---
+name: appsflyer-automation
+description: "Automate Appsflyer tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Appsflyer Automation via Rube MCP
 
 Automate Appsflyer operations through Composio's Appsflyer toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,3 +1,10 @@
+---
+name: appcircle-automation
+description: "Automate Appcircle tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Appcircle Automation via Rube MCP
 
 Automate Appcircle operations through Composio's Appcircle toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

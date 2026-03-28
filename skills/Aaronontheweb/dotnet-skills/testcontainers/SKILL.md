@@ -223,3 +223,4 @@ jobs:
 3. **Parallel execution** - TestContainers handles port conflicts automatically
 4. **Use lightweight images** - Alpine versions are smaller and faster
 5. **Cache images** - Docker will cache pulled images locally
+

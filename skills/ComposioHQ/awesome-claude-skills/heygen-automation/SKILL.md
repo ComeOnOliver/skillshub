@@ -1,3 +1,11 @@
+---
+name: HeyGen Automation
+description: "Automate AI video generation, avatar browsing, template-based video creation, and video status tracking through HeyGen's platform via Composio"
+requires:
+  mcp:
+    - rube
+---
+
 # HeyGen Automation
 
 Automate AI-powered video creation workflows -- browse avatars and templates, generate personalized videos from templates, track processing status, and retrieve shareable URLs -- all orchestrated through the Composio MCP integration.
@@ -111,3 +119,4 @@ Provide the `video_id` to receive a public URL for distribution.
 ---
 
 *Powered by [Composio](https://composio.dev)*
+

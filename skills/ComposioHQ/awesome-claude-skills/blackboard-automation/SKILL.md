@@ -1,3 +1,10 @@
+---
+name: blackboard-automation
+description: "Automate Blackboard tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Blackboard Automation via Rube MCP
 
 Automate Blackboard operations through Composio's Blackboard toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

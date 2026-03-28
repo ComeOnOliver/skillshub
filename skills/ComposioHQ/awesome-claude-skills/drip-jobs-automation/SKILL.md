@@ -1,3 +1,10 @@
+---
+name: drip-jobs-automation
+description: "Automate Drip Jobs tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Drip Jobs Automation via Rube MCP
 
 Automate Drip Jobs operations through Composio's Drip Jobs toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

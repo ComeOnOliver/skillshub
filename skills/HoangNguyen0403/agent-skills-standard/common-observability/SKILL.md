@@ -28,3 +28,4 @@ description: "Standards for structured logging, distributed tracing, and metrics
 
 ## References
 - [Observability Data Formats](references/observability-formats.md)
+

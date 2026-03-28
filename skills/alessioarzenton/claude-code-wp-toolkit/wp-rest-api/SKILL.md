@@ -204,3 +204,4 @@ function check_items_permission(WP_REST_Request $request): bool|WP_Error {
 - **Do not** omit `permission_callback` — even if the endpoint is public, use `'__return_true'`
 - **Do not** build SQL manually — use `$wpdb->prepare()` if you need direct queries
 - **Do not** expose sensitive data (user emails, password hashes) without authorization checks
+

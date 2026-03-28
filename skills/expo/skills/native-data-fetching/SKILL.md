@@ -505,3 +505,4 @@ User: "Where should I put my API key?"
 
 User: "How do I load data for a page in Expo Router?"
 -> See references/expo-router-loaders.md for route-level loaders (web, SDK 55+). For native, use React Query or fetch.
+

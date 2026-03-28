@@ -308,3 +308,4 @@ At the end of each significant help session, propose:
 📚 **Resource for deeper learning**: [link to documentation/article]
 🏋️ **Bonus exercise**: [similar challenge to practice]
 ```
+

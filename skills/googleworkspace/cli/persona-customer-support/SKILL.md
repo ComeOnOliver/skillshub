@@ -32,3 +32,4 @@ Manage customer support — track tickets, respond, escalate issues.
 - Set up Gmail filters for auto-labeling support requests.
 - Use `--format table` for quick status dashboard views.
 
+

@@ -275,3 +275,4 @@ public void TestMyControl()
 13. [ ] Update project file: TFM to `net10.0-windows10.0.22621.0`, add `<UseWinUI>true</UseWinUI>`
 14. [ ] Migrate unit tests to **Unit Test App (WinUI in Desktop)** project; use `[UITestMethod]` for XAML tests
 15. [ ] Test both packaged and unpackaged configurations
+

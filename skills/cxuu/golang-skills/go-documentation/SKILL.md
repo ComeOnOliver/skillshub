@@ -165,3 +165,4 @@ Examples appear in Godoc attached to the documented element.
 - **Testing examples**: See [go-testing](../go-testing/SKILL.md) when writing runnable `Example` test functions that appear in godoc
 - **Linting enforcement**: See [go-linting](../go-linting/SKILL.md) when using revive or other linters to enforce doc comment presence
 - **Style principles**: See [go-style-core](../go-style-core/SKILL.md) when balancing documentation verbosity against clarity and concision
+

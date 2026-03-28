@@ -19,3 +19,4 @@ Analyzes configuration files and provides recommendations for improvements.
 ## Usage
 
 Provide a configuration file path and receive analysis results.
+

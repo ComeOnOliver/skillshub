@@ -1,3 +1,10 @@
+---
+name: beeminder-automation
+description: "Automate Beeminder tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Beeminder Automation via Rube MCP
 
 Automate Beeminder operations through Composio's Beeminder toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

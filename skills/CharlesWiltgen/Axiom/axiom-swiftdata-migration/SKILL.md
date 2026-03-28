@@ -959,3 +959,4 @@ let container = try ModelContainer(
 **Targets** iOS 17+ (focus on iOS 26+ features)
 **Framework** SwiftData (Apple)
 **Swift** 5.9+
+

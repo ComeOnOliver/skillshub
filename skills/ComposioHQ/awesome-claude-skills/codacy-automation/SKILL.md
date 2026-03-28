@@ -1,3 +1,10 @@
+---
+name: codacy-automation
+description: "Automate Codacy tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Codacy Automation via Rube MCP
 
 Automate Codacy operations through Composio's Codacy toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

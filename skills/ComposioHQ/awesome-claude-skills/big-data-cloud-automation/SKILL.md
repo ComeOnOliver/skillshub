@@ -1,3 +1,10 @@
+---
+name: big-data-cloud-automation
+description: "Automate Big Data Cloud tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Big Data Cloud Automation via Rube MCP
 
 Automate Big Data Cloud operations through Composio's Big Data Cloud toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

@@ -1,46 +1,46 @@
 ---
 name: kotlin-testing
-description: 使用Kotest、MockK、协程测试、基于属性的测试和Kover覆盖率的Kotlin测试模式。遵循TDD方法论和地道的Kotlin实践。
+description: Kotlin testing patterns with Kotest, MockK, coroutine testing, property-based testing, and Kover coverage. Follows TDD methodology with idiomatic Kotlin practices.
 origin: ECC
 ---
 
-# Kotlin 测试模式
+# Kotlin Testing Patterns
 
-遵循 TDD 方法论，使用 Kotest 和 MockK 编写可靠、可维护测试的全面 Kotlin 测试模式。
+Comprehensive Kotlin testing patterns for writing reliable, maintainable tests following TDD methodology with Kotest and MockK.
 
-## 何时使用
+## When to Use
 
-* 编写新的 Kotlin 函数或类
-* 为现有 Kotlin 代码添加测试覆盖率
-* 实现基于属性的测试
-* 在 Kotlin 项目中遵循 TDD 工作流
-* 为代码覆盖率配置 Kover
+- Writing new Kotlin functions or classes
+- Adding test coverage to existing Kotlin code
+- Implementing property-based tests
+- Following TDD workflow in Kotlin projects
+- Configuring Kover for code coverage
 
-## 工作原理
+## How It Works
 
-1. **确定目标代码** — 找到要测试的函数、类或模块
-2. **编写 Kotest 规范** — 选择与测试范围匹配的规范样式（StringSpec、FunSpec、BehaviorSpec）
-3. **模拟依赖项** — 使用 MockK 来隔离被测单元
-4. **运行测试（红色阶段）** — 验证测试是否按预期失败
-5. **实现代码（绿色阶段）** — 编写最少的代码以使测试通过
-6. **重构** — 改进实现，同时保持测试通过
-7. **检查覆盖率** — 运行 `./gradlew koverHtmlReport` 并验证 80%+ 的覆盖率
+1. **Identify target code** — Find the function, class, or module to test
+2. **Write a Kotest spec** — Choose a spec style (StringSpec, FunSpec, BehaviorSpec) matching the test scope
+3. **Mock dependencies** — Use MockK to isolate the unit under test
+4. **Run tests (RED)** — Verify the test fails with the expected error
+5. **Implement code (GREEN)** — Write minimal code to pass the test
+6. **Refactor** — Improve the implementation while keeping tests green
+7. **Check coverage** — Run `./gradlew koverHtmlReport` and verify 80%+ coverage
 
-## 示例
+## Examples
 
-以下部分包含每个测试模式的详细、可运行示例：
+The following sections contain detailed, runnable examples for each testing pattern:
 
-### 快速参考
+### Quick Reference
 
-* **Kotest 规范** — [Kotest 规范样式](#kotest-规范样式) 中的 StringSpec、FunSpec、BehaviorSpec、DescribeSpec 示例
-* **模拟** — [MockK](#mockk) 中的 MockK 设置、协程模拟、参数捕获
-* **TDD 演练** — [Kotlin 的 TDD 工作流](#kotlin-的-tdd-工作流) 中 EmailValidator 的完整 RED/GREEN/REFACTOR 周期
-* **覆盖率** — [Kover 覆盖率](#kover-覆盖率) 中的 Kover 配置和命令
-* **Ktor 测试** — [Ktor testApplication 测试](#ktor-testapplication-测试) 中的 testApplication 设置
+- **Kotest specs** — StringSpec, FunSpec, BehaviorSpec, DescribeSpec examples in [Kotest Spec Styles](#kotest-spec-styles)
+- **Mocking** — MockK setup, coroutine mocking, argument capture in [MockK](#mockk)
+- **TDD walkthrough** — Full RED/GREEN/REFACTOR cycle with EmailValidator in [TDD Workflow for Kotlin](#tdd-workflow-for-kotlin)
+- **Coverage** — Kover configuration and commands in [Kover Coverage](#kover-coverage)
+- **Ktor testing** — testApplication setup in [Ktor testApplication Testing](#ktor-testapplication-testing)
 
-### Kotlin 的 TDD 工作流
+### TDD Workflow for Kotlin
 
-#### RED-GREEN-REFACTOR 周期
+#### The RED-GREEN-REFACTOR Cycle
 
 ```
 RED     -> Write a failing test first
@@ -49,7 +49,7 @@ REFACTOR -> Improve code while keeping tests green
 REPEAT  -> Continue with next requirement
 ```
 
-#### Kotlin 中逐步进行 TDD
+#### Step-by-Step TDD in Kotlin
 
 ```kotlin
 // Step 1: Define the interface/signature
@@ -105,9 +105,9 @@ fun validateEmail(email: String): Result<String> {
 // Step 6: Refactor if needed, verify tests still pass
 ```
 
-### Kotest 规范样式
+### Kotest Spec Styles
 
-#### StringSpec（最简单）
+#### StringSpec (Simplest)
 
 ```kotlin
 class CalculatorTest : StringSpec({
@@ -125,7 +125,7 @@ class CalculatorTest : StringSpec({
 })
 ```
 
-#### FunSpec（类似 JUnit）
+#### FunSpec (JUnit-like)
 
 ```kotlin
 class UserServiceTest : FunSpec({
@@ -151,7 +151,7 @@ class UserServiceTest : FunSpec({
 })
 ```
 
-#### BehaviorSpec（BDD 风格）
+#### BehaviorSpec (BDD Style)
 
 ```kotlin
 class OrderServiceTest : BehaviorSpec({
@@ -193,7 +193,7 @@ class OrderServiceTest : BehaviorSpec({
 })
 ```
 
-#### DescribeSpec（RSpec 风格）
+#### DescribeSpec (RSpec Style)
 
 ```kotlin
 class UserValidatorTest : DescribeSpec({
@@ -222,9 +222,9 @@ class UserValidatorTest : DescribeSpec({
 })
 ```
 
-### Kotest 匹配器
+### Kotest Matchers
 
-#### 核心匹配器
+#### Core Matchers
 
 ```kotlin
 import io.kotest.matchers.shouldBe
@@ -272,7 +272,7 @@ shouldNotThrow<Exception> {
 }
 ```
 
-#### 自定义匹配器
+#### Custom Matchers
 
 ```kotlin
 fun beActiveUser() = object : Matcher<User> {
@@ -289,7 +289,7 @@ user should beActiveUser()
 
 ### MockK
 
-#### 基本模拟
+#### Basic Mocking
 
 ```kotlin
 class UserServiceTest : FunSpec({
@@ -321,7 +321,7 @@ class UserServiceTest : FunSpec({
 })
 ```
 
-#### 协程模拟
+#### Coroutine Mocking
 
 ```kotlin
 class AsyncUserServiceTest : FunSpec({
@@ -349,7 +349,7 @@ class AsyncUserServiceTest : FunSpec({
 })
 ```
 
-#### 参数捕获
+#### Argument Capture
 
 ```kotlin
 test("save captures the user argument") {
@@ -364,7 +364,7 @@ test("save captures the user argument") {
 }
 ```
 
-#### 间谍和部分模拟
+#### Spy and Partial Mocking
 
 ```kotlin
 test("spy on real object") {
@@ -380,9 +380,9 @@ test("spy on real object") {
 }
 ```
 
-### 协程测试
+### Coroutine Testing
 
-#### 用于挂起函数的 runTest
+#### runTest for Suspend Functions
 
 ```kotlin
 import kotlinx.coroutines.test.runTest
@@ -413,7 +413,7 @@ class CoroutineServiceTest : FunSpec({
 })
 ```
 
-#### 测试 Flow
+#### Testing Flows
 
 ```kotlin
 import io.kotest.matchers.collections.shouldContainInOrder
@@ -485,9 +485,9 @@ class DispatcherTest : FunSpec({
 })
 ```
 
-### 基于属性的测试
+### Property-Based Testing
 
-#### Kotest 属性测试
+#### Kotest Property Testing
 
 ```kotlin
 import io.kotest.core.spec.style.FunSpec
@@ -527,7 +527,7 @@ class PropertyTest : FunSpec({
 })
 ```
 
-#### 自定义生成器
+#### Custom Generators
 
 ```kotlin
 val userArb: Arb<User> = Arb.bind(
@@ -551,9 +551,9 @@ val moneyArb: Arb<Money> = Arb.bind(
 }
 ```
 
-### 数据驱动测试
+### Data-Driven Testing
 
-#### Kotest 中的 withData
+#### withData in Kotest
 
 ```kotlin
 class ParserTest : FunSpec({
@@ -583,7 +583,7 @@ class ParserTest : FunSpec({
 })
 ```
 
-### 测试生命周期和固件
+### Test Lifecycle and Fixtures
 
 #### BeforeTest / AfterTest
 
@@ -627,7 +627,7 @@ class DatabaseTest : FunSpec({
 })
 ```
 
-#### Kotest 扩展
+#### Kotest Extensions
 
 ```kotlin
 // Reusable test extension
@@ -654,9 +654,9 @@ class UserRepositoryTest : FunSpec({
 })
 ```
 
-### Kover 覆盖率
+### Kover Coverage
 
-#### Gradle 配置
+#### Gradle Configuration
 
 ```kotlin
 // build.gradle.kts
@@ -684,7 +684,7 @@ kover {
 }
 ```
 
-#### 覆盖率命令
+#### Coverage Commands
 
 ```bash
 # Run tests with coverage
@@ -702,16 +702,16 @@ kover {
 # Windows: start build/reports/kover/html/index.html
 ```
 
-#### 覆盖率目标
+#### Coverage Targets
 
-| 代码类型 | 目标 |
+| Code Type | Target |
 |-----------|--------|
-| 关键业务逻辑 | 100% |
-| 公共 API | 90%+ |
-| 通用代码 | 80%+ |
-| 生成的 / 配置代码 | 排除 |
+| Critical business logic | 100% |
+| Public APIs | 90%+ |
+| General code | 80%+ |
+| Generated / config code | Exclude |
 
-### Ktor testApplication 测试
+### Ktor testApplication Testing
 
 ```kotlin
 class ApiRoutesTest : FunSpec({
@@ -748,7 +748,7 @@ class ApiRoutesTest : FunSpec({
 })
 ```
 
-### 测试命令
+### Testing Commands
 
 ```bash
 # Run all tests
@@ -776,28 +776,26 @@ class ApiRoutesTest : FunSpec({
 ./gradlew test --continuous
 ```
 
-### 最佳实践
+### Best Practices
 
-**应做：**
+**DO:**
+- Write tests FIRST (TDD)
+- Use Kotest's spec styles consistently across the project
+- Use MockK's `coEvery`/`coVerify` for suspend functions
+- Use `runTest` for coroutine testing
+- Test behavior, not implementation
+- Use property-based testing for pure functions
+- Use `data class` test fixtures for clarity
 
-* 先写测试（TDD）
-* 在整个项目中一致地使用 Kotest 的规范样式
-* 对挂起函数使用 MockK 的 `coEvery`/`coVerify`
-* 对协程测试使用 `runTest`
-* 测试行为，而非实现
-* 对纯函数使用基于属性的测试
-* 为清晰起见使用 `data class` 测试固件
+**DON'T:**
+- Mix testing frameworks (pick Kotest and stick with it)
+- Mock data classes (use real instances)
+- Use `Thread.sleep()` in coroutine tests (use `advanceTimeBy`)
+- Skip the RED phase in TDD
+- Test private functions directly
+- Ignore flaky tests
 
-**不应做：**
-
-* 混合使用测试框架（选择 Kotest 并坚持使用）
-* 模拟数据类（使用真实实例）
-* 在协程测试中使用 `Thread.sleep()`（改用 `advanceTimeBy`）
-* 跳过 TDD 中的红色阶段
-* 直接测试私有函数
-* 忽略不稳定的测试
-
-### 与 CI/CD 集成
+### Integration with CI/CD
 
 ```yaml
 # GitHub Actions example
@@ -823,4 +821,5 @@ test:
         token: ${{ secrets.CODECOV_TOKEN }}
 ```
 
-**记住**：测试就是文档。它们展示了你的 Kotlin 代码应如何使用。使用 Kotest 富有表现力的匹配器使测试可读，并使用 MockK 来清晰地模拟依赖项。
+**Remember**: Tests are documentation. They show how your Kotlin code is meant to be used. Use Kotest's expressive matchers to make tests readable and MockK for clean mocking of dependencies.
+

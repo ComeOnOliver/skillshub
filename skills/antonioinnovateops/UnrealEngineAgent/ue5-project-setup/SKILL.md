@@ -1,3 +1,8 @@
+---
+name: ue5-project-setup
+description: Scaffold and configure new Unreal Engine 5 projects with proper CLAUDE.md, .gitignore, Git LFS tracking, directory structure, and Epic coding conventions. Use this skill whenever someone mentions creating a new UE5 project, setting up a UE5 repo, initializing an Unreal project, configuring Git for Unreal, or writing a CLAUDE.md for a UE5 codebase. Also triggers for project organization, asset naming conventions, or module structure setup.
+---
+
 # UE5 Project Setup Skill
 
 Scaffolds a production-ready Unreal Engine 5 project with all the tooling, conventions, and configuration files needed for efficient AI-assisted development.
@@ -260,3 +265,4 @@ After running this skill, the user will have:
 - Git LFS configured for binary assets
 - CLAUDE.md tailored to their specific project architecture
 - A foundation ready for UE5 C++ and Blueprint development
+

@@ -432,3 +432,4 @@ Required CAPA elements:
 | Root cause analysis superficial | Inadequate investigation training |
 | Effectiveness not verified | No verification procedure |
 | Actions do not address root cause | Symptom treatment vs. cause elimination |
+

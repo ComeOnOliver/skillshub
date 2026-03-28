@@ -1,3 +1,10 @@
+---
+name: codeinterpreter-automation
+description: "Automate Codeinterpreter tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Codeinterpreter Automation via Rube MCP
 
 Automate Codeinterpreter operations through Composio's Codeinterpreter toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

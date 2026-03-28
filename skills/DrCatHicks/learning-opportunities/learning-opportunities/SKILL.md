@@ -1,3 +1,10 @@
+---
+name: learning-opportunities
+description: Facilitates deliberate skill development during AI-assisted coding. Offers interactive learning exercises after architectural work (new files, schema changes, refactors). Use when completing features, making design decisions, or when user asks to understand code better. Supports the user's stated goal of understanding design choices as learning opportunities.
+argument-hint: "[orient]"
+license: CC-BY-4.0
+---
+
 # Learning Opportunities
 
 > Invocation argument: $ARGUMENTS
@@ -202,3 +209,4 @@ If `orientation.md` exists, read it and run through the **Suggested exercise seq
 Before starting, give the user a one-sentence summary of what the orientation covers and ask if they want to proceed — consistent with the "always ask before starting" principle.
 
 After the exercise sequence, ask the user: "What's one thing about this codebase that surprised you or that you want to dig into further?" Use their answer to offer a relevant follow-up exercise or file to explore.
+

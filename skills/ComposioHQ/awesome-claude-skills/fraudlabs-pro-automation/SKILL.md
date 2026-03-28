@@ -1,3 +1,10 @@
+---
+name: fraudlabs-pro-automation
+description: "Automate Fraudlabs Pro tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Fraudlabs Pro Automation via Rube MCP
 
 Automate Fraudlabs Pro operations through Composio's Fraudlabs Pro toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

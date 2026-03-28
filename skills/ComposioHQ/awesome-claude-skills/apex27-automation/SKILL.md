@@ -1,3 +1,10 @@
+---
+name: apex27-automation
+description: "Automate Apex27 tasks via Rube MCP (Composio). Always search tools first for current schemas."
+requires:
+  mcp: [rube]
+---
+
 # Apex27 Automation via Rube MCP
 
 Automate Apex27 operations through Composio's Apex27 toolkit via Rube MCP.
@@ -82,3 +89,4 @@ session_id: "your_session_id"
 
 ---
 *Powered by [Composio](https://composio.dev)*
+

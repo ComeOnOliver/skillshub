@@ -1,3 +1,8 @@
+---
+name: angular-ssr
+description: Implement server-side rendering and hydration in Angular v20+ using @angular/ssr. Use for SSR setup, hydration strategies, prerendering static pages, and handling browser-only APIs. Triggers on SSR configuration, fixing hydration mismatches, prerendering routes, or making code SSR-compatible.
+---
+
 # Angular SSR
 
 Implement server-side rendering, hydration, and prerendering in Angular v20+.
@@ -428,3 +433,4 @@ app.listen(4000, () => {
 ```
 
 For advanced patterns, see [references/ssr-patterns.md](references/ssr-patterns.md).
+

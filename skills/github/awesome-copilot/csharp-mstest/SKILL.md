@@ -476,3 +476,4 @@ public TestContext TestContext { get; set; }
 - Use Moq or NSubstitute for mocking dependencies
 - Use interfaces to facilitate mocking
 - Mock dependencies to isolate units under test
+

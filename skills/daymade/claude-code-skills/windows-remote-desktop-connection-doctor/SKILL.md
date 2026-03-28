@@ -219,3 +219,4 @@ lsof -i UDP -n -P 2>/dev/null | grep -i "Windows"
 
 - [references/windows_app_log_analysis.md](references/windows_app_log_analysis.md) — Detailed log parsing patterns, error signatures, and comparison methodology
 - [references/avd_transport_protocols.md](references/avd_transport_protocols.md) — How AVD transport selection works, STUN/TURN/ICE overview, Shortpath architecture
+
