@@ -1,0 +1,243 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:22:44.581Z",
+    "slug": "alirezarezvani-agile-product-owner",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/product-team/agile-product-owner",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a27cce695d472023198bc7bd2dcbdae87c20a064e4dbb4435958210f1abc81b5",
+    "tree_hash": "eb002937ce102d7de92251be73d82034be4816efbe109d251bc48a315a034085"
+  },
+  "skill": {
+    "name": "agile-product-owner",
+    "description": "Agile product ownership toolkit for Senior Product Owner including INVEST-compliant user story generation, sprint planning, backlog management, and velocity tracking. Use for story writing, sprint planning, stakeholder communication, and agile ceremonies.",
+    "summary": "Agile product ownership toolkit for Senior Product Owner including INVEST-compliant user story gener...",
+    "icon": "🏃",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "agile",
+      "user-stories",
+      "sprint-planning",
+      "product-management"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 37 static findings are false positives. The scanner incorrectly flagged Python dictionary access (`.get()`), method definitions, list iterations, and YAML text as security threats. This is a pure Python user story generator with no cryptographic code, network access, or dangerous patterns. The SKILL.md code fences are documentation, not shell execution. This skill is safe to publish.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 914,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:22:44.581Z"
+  },
+  "content": {
+    "user_title": "Generate user stories and plan sprints",
+    "value_statement": "Transform product ideas into INVEST-compliant user stories with automated acceptance criteria. Plan sprints with capacity metrics and prioritize backlog items based on business value and complexity.",
+    "seo_keywords": [
+      "agile user story generator",
+      "sprint planning tool",
+      "INVEST criteria",
+      "backlog management",
+      "story point estimation",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "velocity tracking",
+      "product owner toolkit"
+    ],
+    "actual_capabilities": [
+      "Generate INVEST-compliant user stories from feature descriptions",
+      "Create automated acceptance criteria using Given-When-Then format",
+      "Plan sprints with capacity limits and stretch goals",
+      "Estimate story points based on complexity indicators",
+      "Prioritize backlog items by critical, high, medium, and low"
+    ],
+    "limitations": [
+      "Does not connect to external project management tools like Jira or Linear",
+      "Does not track sprint progress or burndown charts",
+      "Cannot import existing backlogs from files or APIs",
+      "Limited to predefined persona templates without customization"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Product Owners",
+        "title": "Backlog Refinement",
+        "description": "Break down large features into manageable user stories with clear acceptance criteria"
+      },
+      {
+        "target_user": "Scrum Masters",
+        "title": "Sprint Planning",
+        "description": "Calculate sprint capacity and select stories that fit within team velocity"
+      },
+      {
+        "target_user": "Development Teams",
+        "title": "Story Estimation",
+        "description": "Get consistent story point estimates based on complexity indicators"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Generate Stories",
+        "scenario": "Create stories from epic",
+        "prompt": "Generate user stories for a {feature_name} feature targeting {persona} users"
+      },
+      {
+        "title": "Acceptance Criteria",
+        "scenario": "Add acceptance criteria",
+        "prompt": "Write acceptance criteria for a story about {feature_description}"
+      },
+      {
+        "title": "Plan Sprint",
+        "scenario": "Plan sprint capacity",
+        "prompt": "Plan a sprint with {capacity} story points from this backlog: {story_list}"
+      },
+      {
+        "title": "Story Points",
+        "scenario": "Estimate complexity",
+        "prompt": "Estimate story points for: {feature_description} with these requirements: {requirements}"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate user stories for a payment integration feature",
+        "output": [
+          "USER STORY: PAY-001",
+          "Title: Process Payment",
+          "Priority: HIGH | Points: 8",
+          "Story: As a customer, I want to enter my payment details so that I can complete purchases securely",
+          "Acceptance Criteria:",
+          "1. Given user has cart items, When they enter valid payment, Then payment processes",
+          "2. Should validate card information before processing",
+          "3. Must show clear error when payment fails",
+          "4. Should complete within 5 seconds"
+        ]
+      },
+      {
+        "input": "Plan a sprint with 30 points capacity",
+        "output": [
+          "SPRINT CAPACITY: 30 points",
+          "Committed: 28 points (93.3%)",
+          "Stories: 4 committed + 1 stretch goal",
+          "COMMITTED:",
+          "[H] PAY-001: Process Payment (8pts)",
+          "[H] PAY-002: View Payment History (5pts)",
+          "[M] PAY-003: Download Receipt (3pts)",
+          "[M] PAY-004: Set Default Payment Method (5pts)",
+          "STRETCH:",
+          "[L] PAY-005: Payment Notifications (8pts)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Break epics into stories with single, independent deliverables",
+      "Use INVEST criteria to validate story quality before sprint planning",
+      "Balance sprint capacity with 10-20 percent buffer for unexpected issues"
+    ],
+    "anti_patterns": [
+      "Creating stories that depend on other stories without clear dependencies",
+      "Writing vague stories without clear acceptance criteria",
+      "Overcommitting to sprint capacity without accounting for technical debt"
+    ],
+    "faq": [
+      {
+        "question": "What is the INVEST criteria?",
+        "answer": "INVEST stands for Independent, Negotiable, Valuable, Estimable, Small, and Testable. These are quality standards for user stories."
+      },
+      {
+        "question": "How are story points calculated?",
+        "answer": "Points are estimated based on complexity indicators like feature type, integration needs, and technical requirements."
+      },
+      {
+        "question": "Can I customize persona templates?",
+        "answer": "The tool uses predefined personas. Edit the script to add custom personas for your specific use case."
+      },
+      {
+        "question": "Does this integrate with Jira?",
+        "answer": "The tool generates stories in text format. Copy output to Jira manually or use JSON output for imports."
+      },
+      {
+        "question": "What complexity words affect story points?",
+        "answer": "Simple, view, display reduce points. Create, edit increase points. Redesign, refactor, architect increase points significantly."
+      },
+      {
+        "question": "How do stretch goals work?",
+        "answer": "Stories up to 20 percent over capacity are marked as stretch goals for optional inclusion in the sprint."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "user_story_generator.py",
+          "type": "file",
+          "path": "scripts/user_story_generator.py",
+          "lines": 388
+        }
+      ]
+    },
+    {
+      "name": "eval_result.json",
+      "type": "file",
+      "path": "eval_result.json",
+      "lines": 214
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 32
+    }
+  ]
+}

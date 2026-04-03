@@ -1,0 +1,219 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:32:05.686Z",
+    "slug": "asmayaseen-operating-k8s-local",
+    "source_url": "https://github.com/Asmayaseen/hackathon-2/tree/main/.claude/skills/operating-k8s-local",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "97b059b8fc86f3b00fc8989fbaa363ddae49e96e28942f8317adfec5f0d5f036",
+    "tree_hash": "b3cef6fe8afe8c588830dbe20fa1f184629d3d794b08a4bfd886debaaf40244b"
+  },
+  "skill": {
+    "name": "operating-k8s-local",
+    "description": "Operates local Kubernetes clusters with Minikube for development and testing. Use when setting up local K8s, deploying applications locally, or debugging K8s issues. Covers Minikube, kubectl essentials, local image loading, and networking.",
+    "summary": "Operates local Kubernetes clusters with Minikube for development and testing",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Asmayaseen",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "kubernetes",
+      "minikube",
+      "kubectl",
+      "local-development",
+      "container-orchestration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is safe for publication. Static analysis detected 73 patterns but all are false positives from documentation content. The skill contains legitimate kubectl and minikube commands in markdown code blocks for educational purposes. The verification script only validates documentation structure with no security concerns. No actual executable code poses risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 269
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1103,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:32:05.686Z",
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "content": {
+    "user_title": "Operate Local Kubernetes Clusters with Minikube",
+    "value_statement": "Running Kubernetes locally is complex with cluster setup, networking, and image management challenges. This skill provides quick reference commands for Minikube and kubectl to streamline local development workflows.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "Kubernetes",
+      "Minikube",
+      "kubectl",
+      "local development",
+      "container orchestration",
+      "Docker",
+      "DevOps"
+    ],
+    "actual_capabilities": [
+      "Start and configure Minikube clusters with specific resource allocations",
+      "Enable and manage Minikube addons like ingress and metrics-server",
+      "Execute kubectl commands for resource management and debugging",
+      "Load local Docker images into Minikube clusters",
+      "Configure service access methods including NodePort, LoadBalancer, and port forwarding",
+      "Generate Kubernetes manifest files for deployments, services, and ingress"
+    ],
+    "limitations": [
+      "Requires Minikube and kubectl to be installed on the local system",
+      "Does not cover cloud-based Kubernetes deployments or production configurations",
+      "Focuses on single-node local clusters, not multi-node setups",
+      "Does not include advanced topics like Helm charts or operators"
+    ],
+    "use_cases": [
+      {
+        "title": "Local Application Development",
+        "description": "Developers can test containerized applications in a local Kubernetes environment before deploying to production.",
+        "target_user": "Software developers building microservices"
+      },
+      {
+        "title": "Learning Kubernetes Fundamentals",
+        "description": "Students and engineers can practice Kubernetes concepts like deployments, services, and ingress in a safe local environment.",
+        "target_user": "DevOps engineers learning Kubernetes"
+      },
+      {
+        "title": "Debugging Kubernetes Issues",
+        "description": "Engineers can reproduce and debug production issues locally with full access to logs, events, and cluster state.",
+        "target_user": "Platform engineers troubleshooting deployments"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start a Minikube Cluster",
+        "prompt": "Start a Minikube cluster with 8GB memory and 4 CPUs, then enable the ingress addon",
+        "scenario": "Beginning a new local development session"
+      },
+      {
+        "title": "Deploy Application from Local Image",
+        "prompt": "Point Docker to Minikube, build my app image locally, and deploy it using kubectl with imagePullPolicy Never",
+        "scenario": "Testing a newly built Docker image in Kubernetes"
+      },
+      {
+        "title": "Debug Failing Pod",
+        "prompt": "Show me why my pod named api-server is not starting, including events and logs from the previous container",
+        "scenario": "Investigating a CrashLoopBackOff error"
+      },
+      {
+        "title": "Expose Service Locally",
+        "prompt": "Create a NodePort service for my deployment and show me the URL to access it using minikube service",
+        "scenario": "Accessing a deployed application from the browser"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Start a Minikube cluster with 8GB memory and enable ingress",
+        "output": "Starting cluster with:\n  minikube start --memory=8192 --cpus=4\n\nCluster started successfully. Enabling ingress addon:\n  minikube addons enable ingress\n\nIngress addon enabled. Your cluster is ready for local development."
+      },
+      {
+        "input": "Why is my pod failing to start?",
+        "output": "Checking pod status and events:\n\nThe pod shows ImagePullBackOff error. The image my-app:latest is not found in Minikube's Docker registry.\n\nTo fix this:\n1. Point Docker to Minikube: eval $(minikube docker-env)\n2. Rebuild your image: docker build -t my-app:latest .\n3. Update your deployment to use imagePullPolicy: Never\n4. Reapply: kubectl apply -f deployment.yaml"
+      },
+      {
+        "input": "How do I access my service from my browser?",
+        "output": "Your service is type NodePort. Access it using:\n  minikube service my-service --url\n\nThis returns: http://192.168.49.2:30123\n\nOpen this URL in your browser to access your application."
+      }
+    ],
+    "best_practices": [
+      "Always use imagePullPolicy Never for local Docker images to avoid pulling from remote registries",
+      "Enable metrics-server addon before using kubectl top commands for resource monitoring",
+      "Run minikube tunnel in a separate terminal when using LoadBalancer services for stable access"
+    ],
+    "anti_patterns": [
+      "Do not use minikube delete to stop a cluster temporarily, use minikube stop to preserve state",
+      "Avoid building images outside Minikube Docker context without eval $(minikube docker-env) first",
+      "Do not commit manifests with imagePullPolicy Never to production repositories, it is for local use only"
+    ],
+    "faq": [
+      {
+        "question": "How do I use local Docker images in Minikube?",
+        "answer": "Run eval $(minikube docker-env) to point your Docker CLI to Minikube's Docker daemon. Then build your image and set imagePullPolicy Never in your deployment manifest."
+      },
+      {
+        "question": "Why can I not access my service from localhost?",
+        "answer": "Minikube runs in a VM or container with its own IP. Use minikube service <name> --url to get the accessible URL, or run minikube tunnel for LoadBalancer services."
+      },
+      {
+        "question": "How do I debug a pod that keeps crashing?",
+        "answer": "Use kubectl describe pod <name> to check events, and kubectl logs <name> --previous to see logs from the crashed container before it restarted."
+      },
+      {
+        "question": "What addons should I enable for local development?",
+        "answer": "Enable ingress for external access, metrics-server for resource monitoring with kubectl top, and storage-provisioner for persistent volume claims."
+      },
+      {
+        "question": "How do I reset my Minikube environment completely?",
+        "answer": "Run minikube delete to remove the cluster entirely, then minikube start to create a fresh cluster. This removes all deployed resources and configurations."
+      },
+      {
+        "question": "Can I run multiple Minikube clusters simultaneously?",
+        "answer": "Yes, use minikube start -p cluster-name to create named clusters. Switch between them using minikube profile cluster-name or kubectl config use-context."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 40
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 296
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:45:32.889Z",
+    "slug": "dnyoussef-when-setting-network-security-use-network-security-setup",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/specialized-tools/when-setting-network-security-use-network-security-setup",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9c96dcf23c6a696df7f110ad1b2e15444c3102e5fde190936c98c11f6eb0bb9a",
+    "tree_hash": "609ea24b2b99081fb8ccaca081129812dbeca04ca6c4860b74d316fb95aa3628"
+  },
+  "skill": {
+    "name": "when-setting-network-security-use-network-security-setup",
+    "description": "Configure Claude Code sandbox network isolation with trusted domains, custom access policies, and environment variables for secure network communication.",
+    "summary": "Configure Claude Code sandbox network isolation with trusted domains, custom access policies, and en...",
+    "icon": "🔒",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "network",
+      "security",
+      "sandbox",
+      "firewall",
+      "isolation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 49 static findings are FALSE POSITIVES. This skill contains only documentation with example templates in markdown code blocks. The 'weak cryptographic algorithm' detections are misidentified GraphViz DOT syntax and ASCII art diagrams. 'External command' detections are example bash scripts shown as documentation, never executed. This is a legitimate network security configuration guide.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "PROCESS.md",
+            "line_start": 5,
+            "line_end": 11
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 11,
+            "line_end": 23
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 23,
+            "line_end": 24
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 24,
+            "line_end": 25
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 25,
+            "line_end": 26
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 26,
+            "line_end": 27
+          },
+          {
+            "file": "README.md",
+            "line_start": 7,
+            "line_end": 19
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 8,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 136,
+            "line_end": 136
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 175
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 153,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 77
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 526,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:45:32.889Z"
+  },
+  "content": {
+    "user_title": "Configure sandbox network security",
+    "value_statement": "Claude Code sandbox needs secure network configuration to prevent unauthorized access while allowing trusted domains. This skill provides step-by-step guidance for configuring firewall rules, trusted domains, and access policies.",
+    "seo_keywords": [
+      "Claude Code network security",
+      "Claude network isolation",
+      "sandbox firewall configuration",
+      "trusted domains setup",
+      "Claude Code security",
+      "network access control",
+      "firewall rules Claude",
+      "Codex security setup",
+      "Claude Code sandbox",
+      "network security SOP"
+    ],
+    "actual_capabilities": [
+      "Audit network requirements and external dependencies",
+      "Design network security policies with whitelist approach",
+      "Implement firewall rules and DNS filtering",
+      "Configure environment variables for network settings",
+      "Test access controls and validate policies",
+      "Document network security configuration"
+    ],
+    "limitations": [
+      "Does not modify actual system firewall rules",
+      "Requires manual execution of configuration scripts",
+      "Cannot verify network policies without actual deployment"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security engineers",
+        "title": "Configure firewall rules",
+        "description": "Set up iptables firewall policies to control inbound and outbound network traffic for Claude Code sandbox."
+      },
+      {
+        "target_user": "DevOps teams",
+        "title": "Define trusted domains",
+        "description": "Create whitelist of trusted domains like GitHub, npmjs, and PyPI for secure external access."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Document security policies",
+        "description": "Generate comprehensive documentation for network security configuration and deployment procedures."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Setup",
+        "scenario": "Start network security",
+        "prompt": "Set up network security for Claude Code sandbox with trusted domains and firewall rules."
+      },
+      {
+        "title": "Trusted Domains",
+        "scenario": "Configure allowed domains",
+        "prompt": "Define trusted domains for Claude Code sandbox including Anthropic API, GitHub, npmjs, and PyPI."
+      },
+      {
+        "title": "Firewall Rules",
+        "scenario": "Configure firewall",
+        "prompt": "Configure iptables firewall to allow only HTTPS, HTTP, and SSH outbound traffic."
+      },
+      {
+        "title": "Complete Security",
+        "scenario": "Full security setup",
+        "prompt": "Implement complete network security setup: firewall rules, DNS filtering, rate limiting, and environment variables for Claude Code sandbox."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Set up network security for Claude Code sandbox with trusted domains and firewall rules.",
+        "output": [
+          "Network Security Configuration",
+          "Policy Mode: Whitelist (deny by default)",
+          "Trusted Domains: api.anthropic.com, github.com, npmjs.org, pypi.org, docker.io",
+          "Allowed Ports: Outbound 80, 443, 22 | Inbound 3000, 5000, 8000, 8080",
+          "Rate Limiting: 100 requests/minute, burst 150",
+          "DNS Filtering: Enabled with private IP blocking"
+        ]
+      },
+      {
+        "input": "Configure iptables firewall to allow only HTTPS, HTTP, and SSH outbound traffic.",
+        "output": [
+          "Firewall Configuration (iptables)",
+          "INPUT policy: DROP",
+          "OUTPUT policy: DROP",
+          "Allowed Outbound: TCP 443 (HTTPS), TCP 80 (HTTP), TCP 22 (SSH)",
+          "Allowed Inbound: TCP 3000, 5000, 8000, 8080",
+          "All other traffic: Blocked by default"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use whitelist approach - deny all traffic by default and explicitly allow trusted domains",
+      "Implement rate limiting to prevent abuse and protect external API endpoints",
+      "Regularly audit and update trusted domains as project requirements evolve"
+    ],
+    "anti_patterns": [
+      "Using blacklist approach instead of whitelist for network security",
+      "Allowing all outbound traffic without restrictions",
+      "Not testing firewall rules before deployment"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code on all platforms."
+      },
+      {
+        "question": "What ports should I allow?",
+        "answer": "Allow outbound 80, 443, 22 and inbound 3000, 5000, 8000, 8080 for development."
+      },
+      {
+        "question": "How do I integrate with CI/CD?",
+        "answer": "Save policy JSON files to version control and apply them during deployment pipeline."
+      },
+      {
+        "question": "Is my data sent externally?",
+        "answer": "This skill only configures policies. No data is sent externally by the skill itself."
+      },
+      {
+        "question": "What if network tests fail?",
+        "answer": "Check firewall rules allow the port, verify domain spelling, and ensure rate limits are not exceeded."
+      },
+      {
+        "question": "How is this different from cloud security groups?",
+        "answer": "This skill configures sandbox-level isolation. Use with cloud security groups for defense in depth."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 16
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 36
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 37
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 245
+    }
+  ]
+}

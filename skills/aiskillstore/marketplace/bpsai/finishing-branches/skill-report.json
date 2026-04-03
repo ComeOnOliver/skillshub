@@ -1,0 +1,293 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:49:41.972Z",
+    "slug": "bpsai-finishing-branches",
+    "source_url": "https://github.com/BPSAI/paircoder/tree/main/.claude/skills/finishing-branches",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b09311012545c9fcc1ea1e5c110848e1bc65870c0aca18fc54a85b145ca29d69",
+    "tree_hash": "f15105bd7f64337f1c8a7ea4905a67fa575626a189705d9c819f3ac96fec839d"
+  },
+  "skill": {
+    "name": "finishing-branches",
+    "description": "Use when work is complete and ready for integration, merge, or PR creation.",
+    "summary": "Use when work is complete and ready for integration, merge, or PR creation.",
+    "icon": "🔀",
+    "version": "1.0.0",
+    "author": "BPSAI",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "git",
+      "pull-requests",
+      "workflow",
+      "code-review",
+      "branch-management"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 26 static findings are false positives. This is a pure markdown documentation file containing git workflow guidance. The 'bash' code blocks are documentation examples showing standard git commands, not executable shell code. No cryptographic algorithms, C2 infrastructure, or actual external commands exist in this file. The skill is safe for marketplace publication.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 74
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 253,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:49:41.972Z"
+  },
+  "content": {
+    "user_title": "Finish branches for merge and PR creation",
+    "value_statement": "This skill provides a complete workflow for finishing feature branches. It guides you through pre-merge checks, security scans, code review, and automated PR creation.",
+    "seo_keywords": [
+      "finish branch",
+      "create pull request",
+      "git workflow",
+      "branch merge",
+      "code review",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "merge checklist",
+      "PR template"
+    ],
+    "actual_capabilities": [
+      "Run pre-merge checks including tests and linting",
+      "Perform security scans for leaked secrets",
+      "Review changes with git diff commands",
+      "Create pull requests using automated tools",
+      "Apply PR templates for consistent documentation",
+      "Clean up branches after merge"
+    ],
+    "limitations": [
+      "Does not execute commands automatically - user must run them",
+      "Requires bpsai-pair CLI tools to be installed for some commands",
+      "Does not resolve merge conflicts",
+      "Cannot create PRs without GitHub remote configured"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual developers",
+        "title": "Complete feature work",
+        "description": "Finish feature branches with proper checks before creating pull requests"
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Enforce merge standards",
+        "description": "Ensure all branches meet security and quality standards before integration"
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Streamline contributions",
+        "description": "Apply consistent PR templates and checklists across all contributions"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Complete current branch",
+        "scenario": "Ready to merge feature work",
+        "prompt": "Finish this branch. Run all checks, scan for secrets, review changes, and create a PR."
+      },
+      {
+        "title": "Quick merge",
+        "scenario": "Small change ready for merge",
+        "prompt": "Quick finish this branch. Run the quick finish commands and push to remote."
+      },
+      {
+        "title": "Security check",
+        "scenario": "Pre-merge security validation",
+        "prompt": "Run security scans on my staged changes. Check for any leaked secrets or credentials."
+      },
+      {
+        "title": "Create PR",
+        "scenario": "After passing all checks",
+        "prompt": "Create a pull request using the PR template. Include summary, changes, and testing notes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Finish this branch for merge",
+        "output": [
+          "✓ CI checks passed (tests + linting)",
+          "✓ Security scan complete (no secrets detected)",
+          "✓ Changes reviewed (no debug statements)",
+          "✓ PR created with template applied",
+          "✓ Branch ready for review"
+        ]
+      },
+      {
+        "input": "Run security scan on my changes",
+        "output": [
+          "✓ Scanning staged files for secrets",
+          "✓ No API keys detected",
+          "✓ No passwords found",
+          "✓ Scan complete - safe to commit"
+        ]
+      },
+      {
+        "input": "Create a PR for my feature",
+        "output": [
+          "✓ PR template applied",
+          "✓ Summary section filled",
+          "✓ Changes documented",
+          "✓ Testing checklist included",
+          "✓ PR ready for review"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always run security scans before committing sensitive changes",
+      "Use PR templates to ensure consistent documentation",
+      "Clean up local branches after successful merges"
+    ],
+    "anti_patterns": [
+      "Skipping pre-merge checks to save time",
+      "Creating PRs without testing locally first",
+      "Leaving debug statements or TODOs in committed code",
+      "Merging without reviewing the diff stat first"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill require?",
+        "answer": "Requires bpsai-pair CLI tools installed. Git and GitHub integration for PR creation."
+      },
+      {
+        "question": "Can I use this without bpsai-pair?",
+        "answer": "Yes, the commands shown are standard git patterns. The bpsai-pair commands are optional conveniences."
+      },
+      {
+        "question": "Does this create PRs on all platforms?",
+        "answer": "This skill focuses on GitHub. Other platforms may need different commands or integrations."
+      },
+      {
+        "question": "Is my code safe when running security scans?",
+        "answer": "Yes, secret scans run locally on your machine. No credentials or code are sent to external services."
+      },
+      {
+        "question": "What if tests fail during checks?",
+        "answer": "The skill will report failures. Fix the issues before proceeding with merge. Tests must pass."
+      },
+      {
+        "question": "How is this different from other PR tools?",
+        "answer": "This skill provides a complete workflow including pre-merge validation, not just PR creation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 75
+    }
+  ]
+}

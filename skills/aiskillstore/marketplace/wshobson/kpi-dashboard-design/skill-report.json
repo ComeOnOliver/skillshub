@@ -1,0 +1,323 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:59:32.374Z",
+    "slug": "wshobson-kpi-dashboard-design",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/business-analytics/skills/kpi-dashboard-design",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "440072dd17c35b12708563d3f22d26e907d67a30a68dd8a262fe3dc3db55b777",
+    "tree_hash": "b1ad17834fb45905e4f2b7bca5b0d6e4ec82aa0a64ec00ef5a9448d0a85f3449"
+  },
+  "skill": {
+    "name": "kpi-dashboard-design",
+    "description": "Design effective KPI dashboards with metrics selection, visualization best practices, and real-time monitoring patterns. Use when building business dashboards, selecting metrics, or designing data visualization layouts.",
+    "summary": "Design effective KPI dashboards with metrics selection, visualization best practices, and real-time ...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "NOASSERTION",
+    "category": "data",
+    "tags": [
+      "kpi",
+      "dashboard",
+      "metrics",
+      "analytics",
+      "visualization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guidance and static code examples. SQL and Python examples are embedded for reference only. No executable code, filesystem access, network calls, or credential access. Behavior matches stated purpose exactly.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 424
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 425,
+            "line_end": 425
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 426,
+            "line_end": 426
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 208
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 239
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 239,
+            "line_end": 303
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 303,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 404
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 603,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:59:32.374Z"
+  },
+  "content": {
+    "user_title": "Design KPI dashboards that drive decisions",
+    "value_statement": "Many dashboards overwhelm teams with unclear metrics and cluttered layouts. This skill guides KPI selection, visualization best practices, and dashboard patterns that focus attention on actionable insights.",
+    "seo_keywords": [
+      "KPI dashboard design",
+      "metrics selection",
+      "executive dashboard",
+      "data visualization",
+      "SaaS metrics",
+      "business analytics",
+      "dashboard layout",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Explain strategic, tactical, and operational KPI levels with update frequencies",
+      "Provide KPI lists for sales, marketing, product, and finance departments",
+      "Show dashboard layout patterns with ASCII wireframes and visual hierarchies",
+      "Include SQL examples for MRR, cohort retention, and CAC calculations",
+      "Provide a complete Streamlit dashboard code example with charts",
+      "List KPI dashboard do and do not practices for effective design"
+    ],
+    "limitations": [
+      "No live data connections or API calls to external systems",
+      "No automated alerting or real-time monitoring configuration",
+      "Examples require adaptation to your database schema and tools",
+      "No deployment, hosting, or BI tool setup instructions provided"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Executive leader",
+        "title": "Define executive KPI view",
+        "description": "Create a one-page summary with headline KPIs, trend indicators, and alert panels for monthly reviews."
+      },
+      {
+        "target_user": "Analytics manager",
+        "title": "Standardize KPI governance",
+        "description": "Align department KPIs using SMART criteria and establish consistent update frequencies."
+      },
+      {
+        "target_user": "Operations lead",
+        "title": "Design real-time monitoring",
+        "description": "Plan an operations center dashboard with system health, throughput metrics, and alert panels."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Starter KPI list",
+        "scenario": "New SaaS dashboard",
+        "prompt": "List 6 core KPIs for a SaaS executive dashboard and explain why each matters for decision making."
+      },
+      {
+        "title": "Department splits",
+        "scenario": "Sales and marketing views",
+        "prompt": "Create separate KPI sets for sales and marketing with recommended update frequency and intended audience."
+      },
+      {
+        "title": "Layout critique",
+        "scenario": "Improve an existing dashboard",
+        "prompt": "Review this dashboard outline and propose a clearer hierarchy with better alert placement and focus."
+      },
+      {
+        "title": "Advanced retention",
+        "scenario": "Cohort analysis planning",
+        "prompt": "Design a cohort retention analysis section with suggested visualizations and key questions to answer."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Outline an executive KPI dashboard for a subscription business.",
+        "output": [
+          "Headline KPIs: MRR, ARR, churn rate, NPS score, and active customers",
+          "Layout: KPI cards across top row, trend line in second row, product mix chart, alerts strip at bottom",
+          "Cadence: Monthly executive review with weekly manager drilldowns and daily operations view"
+        ]
+      },
+      {
+        "input": "What KPIs should I track for a marketing team?",
+        "output": [
+          "Acquisition metrics: CAC, CPA, lead volume, MQL conversion",
+          "Engagement metrics: website traffic, conversion rate, email metrics",
+          "ROI metrics: marketing ROI, campaign performance, channel attribution"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Limit dashboards to 5-7 key metrics aligned to specific business goals",
+      "Always show trends, targets, and comparisons for context and interpretation",
+      "Match update frequency to the decision cadence of each audience level"
+    ],
+    "anti_patterns": [
+      "Including vanity metrics that look impressive but have no actionability",
+      "Overcrowding the dashboard with too many charts and indicators",
+      "Hiding metric definitions, calculations, and data sources from viewers"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Claude, Codex, and Claude Code?",
+        "answer": "Yes. The guidance is entirely prompt-based and works in Claude, Codex, and Claude Code without any tool requirements."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides guidance, patterns, and code examples only. It does not create live data connections or deploy dashboards."
+      },
+      {
+        "question": "Can I use this with my existing BI tool?",
+        "answer": "Yes. Apply the KPI frameworks, metric lists, and layout patterns in Tableau, Looker, Power BI, or any custom app."
+      },
+      {
+        "question": "Does this skill access or store my data?",
+        "answer": "No. It is purely static guidance and example code. It never reads, writes, or transmits any user data."
+      },
+      {
+        "question": "What if the suggested KPIs do not fit my business model?",
+        "answer": "Adapt the framework and SMART criteria to your specific industry, goals, and available data sources."
+      },
+      {
+        "question": "How is this different from a downloadable dashboard template?",
+        "answer": "It explains the strategy, principles, and patterns behind effective dashboards rather than providing fixed layouts."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 427
+    }
+  ]
+}

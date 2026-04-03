@@ -1,0 +1,636 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:00:39.542Z",
+    "slug": "dnyoussef-when-managing-github-projects-use-github-project-management",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/github-integration/when-managing-github-projects-use-github-project-management",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7a710b14dd41a34287547ad3ad48f65765ba592a0dec7beb6d86324de88762c1",
+    "tree_hash": "d5a055d10b5ef65c2dc32b1104453a6e0015018fea0a3364b5c6661118c2a230"
+  },
+  "skill": {
+    "name": "when-managing-github-projects-use-github-project-management",
+    "description": "Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning. Coordinates planner, issue-tracker, and project-board-sync agents to automate issue triage, sprint planning, milestone tracking, and project board updates. Integrates with GitHub Projects v2 API for advanced automation, custom fields, and workflow orchestration. Use when managing development projects, coordinating team workflows, or automating project management tasks.",
+    "summary": "Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automat...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "github",
+      "project-management",
+      "automation",
+      "sprint-planning",
+      "issue-tracking"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown documentation and a GraphViz DOT diagram. The static scanner misinterpreted documentation examples and metadata as security threats. All 99 reported findings are FALSE POSITIVES caused by pattern-matching errors on documentation text, JSON metadata, and graph visualization syntax. No executable code, scripts, or actual command execution patterns exist in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 234
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 234,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 260
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 260,
+            "line_end": 264
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 264,
+            "line_end": 278
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 278,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 288
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 288,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 308
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 312
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 312,
+            "line_end": 318
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 318,
+            "line_end": 324
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 337
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 354
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 354,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 378
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 378,
+            "line_end": 384
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 384,
+            "line_end": 388
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 388,
+            "line_end": 401
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 405
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 405,
+            "line_end": 412
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 412,
+            "line_end": 418
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 418,
+            "line_end": 432
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 432,
+            "line_end": 436
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 436,
+            "line_end": 444
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 444,
+            "line_end": 452
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 452,
+            "line_end": 457
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 457,
+            "line_end": 470
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 470,
+            "line_end": 481
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 481,
+            "line_end": 487
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 487,
+            "line_end": 495
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 495,
+            "line_end": 501
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 501,
+            "line_end": 508
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 508,
+            "line_end": 512
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 512,
+            "line_end": 518
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 518,
+            "line_end": 522
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 522,
+            "line_end": 548
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 548,
+            "line_end": 549
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 549,
+            "line_end": 550
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 550,
+            "line_end": 551
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 551,
+            "line_end": 552
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 552,
+            "line_end": 553
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 553,
+            "line_end": 554
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 554,
+            "line_end": 555
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 555,
+            "line_end": 556
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 556,
+            "line_end": 557
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 557,
+            "line_end": 558
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 558,
+            "line_end": 559
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 559,
+            "line_end": 560
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 560,
+            "line_end": 561
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 353,
+            "line_end": 353
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 354
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 895,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:00:39.542Z"
+  },
+  "content": {
+    "user_title": "Automate GitHub project management workflows",
+    "value_statement": "Managing GitHub projects manually wastes time and creates inconsistent tracking. This skill coordinates intelligent agents to automate issue triage, sprint planning, milestone tracking, and board synchronization using GitHub Projects v2 API.",
+    "seo_keywords": [
+      "GitHub project management",
+      "Claude Code skill",
+      "issue tracking automation",
+      "sprint planning automation",
+      "GitHub Projects v2",
+      "automated triage",
+      "milestone tracking",
+      "Claude automation",
+      "Codex dev tools",
+      "agile project management"
+    ],
+    "actual_capabilities": [
+      "Automated issue triage with intelligent classification and routing",
+      "Sprint planning with capacity estimation and backlog composition",
+      "Milestone tracking and release coordination",
+      "Project board synchronization using GitHub Projects v2 API",
+      "Swarm-coordinated agent orchestration for multi-agent workflows",
+      "Custom field automation and workflow configuration"
+    ],
+    "limitations": [
+      "Requires external scripts (github-api.sh, project-api.sh) to be created separately",
+      "Depends on claude-flow MCP server for agent coordination features",
+      "Does not include built-in GitHub API authentication; users must configure their own credentials",
+      "Cannot access private repositories without proper GitHub token configuration"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Engineering managers",
+        "title": "Coordinate team sprints",
+        "description": "Plan and track development sprints with automated capacity planning, backlog composition, and daily status updates."
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Automate issue workflows",
+        "description": "Set up automated issue classification, labeling, assignment, and project board updates based on issue content."
+      },
+      {
+        "target_user": "Release managers",
+        "title": "Track release milestones",
+        "description": "Monitor milestone progress, identify delivery risks, generate stakeholder reports, and coordinate release activities."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start sprint planning",
+        "scenario": "Initialize a new sprint",
+        "prompt": "Use the GitHub project management skill to plan Sprint 42. Calculate team capacity, review the backlog, create the sprint milestone, and set up the sprint board with 6 team members."
+      },
+      {
+        "title": "Triage new issues",
+        "scenario": "Process incoming issues",
+        "prompt": "Run the automated issue triage workflow. Initialize a star swarm, monitor for new issues, classify issue #145 as bug/high severity, assign to frontend team, and update the project board."
+      },
+      {
+        "title": "Track release progress",
+        "scenario": "Monitor release health",
+        "prompt": "Generate a milestone progress report for v2.0.0 release. Identify any issues at risk of missing the deadline and create stakeholder update with risk mitigation recommendations."
+      },
+      {
+        "title": "Configure custom fields",
+        "scenario": "Set up project automation",
+        "prompt": "Configure GitHub Projects v2 custom fields for complexity scoring, priority calculation, and team assignment. Set up automated field updates based on issue classification."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run the automated issue triage workflow for a new bug report about login failure",
+        "output": [
+          "Issue #247 classified as: type=bug, severity=high, component=authentication",
+          "Labels applied: bug, high-priority, auth-module",
+          "Assigned to: @jsmith (authentication specialist)",
+          "Complexity rating: moderate (estimated 2 story points)",
+          "Added to Sprint 41 board in Triage column",
+          "Linked to related issue #189 (similar login bug)",
+          "Milestone: v2.1.0 - targeted for next release"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Initialize the star topology swarm before starting any project management workflow for proper agent coordination.",
+      "Run daily board sync operations to keep project boards accurate and maintain team trust in the automation.",
+      "Store classification and assignment decisions in memory using the github/triage and github/assignments namespaces for audit trails."
+    ],
+    "anti_patterns": [
+      "Skipping duplicate check before assigning issues leads to duplicated work and wasted team effort.",
+      "Overloading sprints beyond calculated capacity causes burnout and missed delivery commitments.",
+      "Failing to update board status after PR merges creates stale boards that no one trusts."
+    ],
+    "faq": [
+      {
+        "question": "Which Claude tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. It requires the claude-flow MCP server for agent coordination features."
+      },
+      {
+        "question": "What GitHub API permissions are needed?",
+        "answer": "A GitHub personal access token with repo and project scopes is required for full functionality."
+      },
+      {
+        "question": "Can this skill work with private repositories?",
+        "answer": "Yes, with proper GitHub token configuration. The token must have access to the private repositories."
+      },
+      {
+        "question": "Are my project data stored safely?",
+        "answer": "This skill only reads and writes to GitHub APIs. No data is stored externally or shared with third parties."
+      },
+      {
+        "question": "Why are scripts referenced but not included?",
+        "answer": "The scripts (github-api.sh, project-api.sh) are external utilities. Users create them based on the skill documentation."
+      },
+      {
+        "question": "How does this compare to GitHub Actions automation?",
+        "answer": "This skill provides AI-driven orchestration for project management. GitHub Actions handles CI/CD tasks. They complement each other."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "project-management-process.dot",
+      "type": "file",
+      "path": "project-management-process.dot",
+      "lines": 148
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 562
+    }
+  ]
+}

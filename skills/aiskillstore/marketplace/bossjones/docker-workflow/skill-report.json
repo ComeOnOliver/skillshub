@@ -1,0 +1,270 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:46:38.965Z",
+    "slug": "bossjones-docker-workflow",
+    "source_url": "https://github.com/bossjones/logging-lab/tree/main/.claude/skills/docker-workflow",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "164a4a80d21c87d92a420f3d2a33b2f6b9e3204f4a5133a46c883537b4195fec",
+    "tree_hash": "fd76d93fb38bd09fa59d653c1d90c54749fb0f30e37a6c017a547d6b54f44e5e"
+  },
+  "skill": {
+    "name": "docker-workflow",
+    "description": "Comprehensive Docker containerization workflow covering multi-stage builds, docker-compose orchestration, image optimization, debugging, and production best practices. Use when containerizing applications, setting up development environments, or deploying with Docker.",
+    "summary": "Comprehensive Docker containerization workflow covering multi-stage builds, docker-compose orchestra...",
+    "icon": "🐳",
+    "version": "1.0.0",
+    "author": "bossjones",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "docker",
+      "containerization",
+      "devops",
+      "deployment",
+      "orchestration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate Docker containerization documentation skill. All 178 static findings are false positives triggered by documentation examples and standard Docker configuration patterns. No malicious intent detected. The skill provides comprehensive guidance for multi-stage builds, docker-compose orchestration, and production deployment workflows.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/docker_helper.sh",
+            "line_start": 94,
+            "line_end": 94
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "examples/docker-compose.yml",
+            "line_start": 23,
+            "line_end": 24
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "examples/Dockerfile.multi-stage",
+            "line_start": 93,
+            "line_end": 99
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "examples/docker-compose.yml",
+            "line_start": 53,
+            "line_end": 54
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 2401,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:46:38.965Z"
+  },
+  "content": {
+    "user_title": "Containerize applications with Docker workflows",
+    "value_statement": "Docker containerization simplifies development and deployment by packaging applications with dependencies into portable containers. This skill provides professional workflows from development through production with optimization and debugging tools.",
+    "seo_keywords": [
+      "docker containerization",
+      "docker compose",
+      "multi-stage builds",
+      "docker optimization",
+      "container deployment",
+      "claude code docker",
+      "docker workflow",
+      "container orchestration",
+      "docker best practices",
+      "production deployment"
+    ],
+    "actual_capabilities": [
+      "Create multi-stage Dockerfiles for Node.js, Python, Go, Java, Rust applications",
+      "Set up docker-compose orchestration with health checks and networking configuration",
+      "Optimize Docker images to reduce size by 50-90 percent through best practices",
+      "Debug containers with inspection tools, log analysis, and health checks",
+      "Implement production deployment strategies with security hardening"
+    ],
+    "limitations": [
+      "Requires Docker and docker-compose installation on the host system",
+      "Examples use placeholder configurations that require customization for production use",
+      "Image optimization results vary depending on application type and dependencies"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Full-stack developers",
+        "title": "Containerize full-stack applications",
+        "description": "Package frontend, backend, and database into orchestrated containers with hot-reload for development and optimized builds for production."
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Set up production Docker workflows",
+        "description": "Implement multi-stage builds, security hardening, health checks, and deployment strategies for scalable containerized applications."
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Standardize development environments",
+        "description": "Create consistent development environments across team members with docker-compose, volume mounting, and environment-specific configurations."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create a Dockerfile",
+        "scenario": "Node.js application with React frontend",
+        "prompt": "Create a multi-stage Dockerfile for a Node.js application with a React frontend. Include build optimization, security best practices, and production-ready configuration."
+      },
+      {
+        "title": "Docker Compose Setup",
+        "scenario": "Multi-service application stack",
+        "prompt": "Set up docker-compose.yml for a web application with Node.js backend, PostgreSQL database, and Redis cache. Include health checks, networking, and volume configuration."
+      },
+      {
+        "title": "Optimize Docker Image",
+        "scenario": "Reduce image size and improve build time",
+        "prompt": "Optimize my existing Dockerfile to reduce image size by 50 percent or more. Use multi-stage builds, smaller base images, and layer caching strategies."
+      },
+      {
+        "title": "Debug Container Issues",
+        "scenario": "Container crashes or connectivity problems",
+        "prompt": "Help debug why my container keeps crashing. Show me how to inspect logs, check health status, verify network connectivity, and identify common issues."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a multi-stage Dockerfile for my Python Flask application",
+        "output": [
+          "Stage 1: Build dependencies with full Python image for compilation",
+          "Stage 2: Production runtime with slim image for smaller size",
+          "Non-root user created for security",
+          "Health check configured on port 8000",
+          "Image size reduced from 900MB to 150MB"
+        ]
+      },
+      {
+        "input": "Set up docker-compose for a Node.js API with PostgreSQL",
+        "output": [
+          "Frontend and backend services with health check dependencies",
+          "PostgreSQL with persistent volume and health verification",
+          "Redis cache for session storage and caching",
+          "Network isolation between frontend and backend services",
+          "Environment variable configuration with secrets support"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use specific image versions instead of latest tag for reproducible builds",
+      "Implement health checks in docker-compose for reliable service dependencies",
+      "Exclude sensitive files and build artifacts with comprehensive dockerignore"
+    ],
+    "anti_patterns": [
+      "Running containers as root user - always create and use non-root users",
+      "Copying entire codebase before installing dependencies - breaks layer caching",
+      "Using latest tags in production - always pin specific versions for stability"
+    ],
+    "faq": [
+      {
+        "question": "Why use multi-stage builds?",
+        "answer": "Multi-stage builds reduce final image size by 50-90 percent by excluding build dependencies and keeping only runtime requirements."
+      },
+      {
+        "question": "How do I debug a crashing container?",
+        "answer": "Use docker logs container-name to see error messages, then docker exec -it container-name sh to inspect the running container."
+      },
+      {
+        "question": "What is the difference between docker-compose.yml and override files?",
+        "answer": "docker-compose.yml defines base configuration. Override files like docker-compose.override.yml modify settings for specific environments."
+      },
+      {
+        "question": "How do I optimize Docker build speed?",
+        "answer": "Enable BuildKit with DOCKER_BUILDKIT=1, use cache mounts, order Dockerfile commands from least to most changing."
+      },
+      {
+        "question": "Should I use Alpine or Debian base images?",
+        "answer": "Alpine images are smaller but may have compatibility issues. Use Alpine for size-critical deployments, Debian for compatibility."
+      },
+      {
+        "question": "How do I handle secrets in Docker?",
+        "answer": "Use Docker secrets in Swarm mode, environment variables from secure sources, or external secret management tools."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "docker-compose.yml",
+          "type": "file",
+          "path": "examples/docker-compose.yml",
+          "lines": 396
+        },
+        {
+          "name": "Dockerfile.multi-stage",
+          "type": "file",
+          "path": "examples/Dockerfile.multi-stage",
+          "lines": 359
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "docker_helper.sh",
+          "type": "file",
+          "path": "scripts/docker_helper.sh",
+          "lines": 546
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 385
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 458
+    }
+  ]
+}

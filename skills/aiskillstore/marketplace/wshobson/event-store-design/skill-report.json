@@ -1,0 +1,286 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:51:41.272Z",
+    "slug": "wshobson-event-store-design",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/backend-development/skills/event-store-design",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "38358cba14492c2ac2d1b976525138f3937866d1980bcffdcfb7e6427446773e",
+    "tree_hash": "f1955ae2755174fcfc88353724c736807a8a187f3cc94deba7fc13e14a7ba64f"
+  },
+  "skill": {
+    "name": "event-store-design",
+    "description": "Design and implement event stores for event-sourced systems. Use when building event sourcing infrastructure, choosing event store technologies, or implementing event persistence patterns.",
+    "summary": "Design and implement event stores for event-sourced systems. Use when building event sourcing infras...",
+    "icon": "🗄️",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "event-sourcing",
+      "event-store",
+      "architecture",
+      "databases",
+      "backend"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing architectural guidance, technology comparisons, and code templates for event store design. No executable code, scripts, network calls, or external command execution. Static findings are false positives: C2 flag from GitHub URL, cryptographic flags from ASCII diagram characters, shell backticks from SQL identifiers.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 197,
+            "line_end": 197
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 433,
+            "line_end": 433
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 434,
+            "line_end": 434
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 435,
+            "line_end": 435
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 291
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 291,
+            "line_end": 354
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 354,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 414
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 414,
+            "line_end": 419
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 612,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:51:41.272Z"
+  },
+  "content": {
+    "user_title": "Design robust event stores for event sourcing",
+    "value_statement": "Event sourced systems fail without durable, ordered storage and clear access patterns. This skill guides you through schemas, storage options, and subscription design.",
+    "seo_keywords": [
+      "event store design",
+      "event sourcing",
+      "PostgreSQL event store",
+      "EventStoreDB",
+      "DynamoDB events",
+      "event store schema",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "backend architecture"
+    ],
+    "actual_capabilities": [
+      "Explain event store requirements and architecture patterns",
+      "Provide a PostgreSQL schema for events, snapshots, and checkpoints",
+      "Show an async Python event store template for append and read",
+      "Demonstrate EventStoreDB client usage and subscriptions",
+      "Outline a DynamoDB table design and access pattern",
+      "List best practices and anti patterns for event stores"
+    ],
+    "limitations": [
+      "Does not deploy or configure infrastructure",
+      "Does not provide production security hardening",
+      "Code examples are templates and require adaptation",
+      "Does not model business domains or aggregates"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend engineer",
+        "title": "Choose a storage backend",
+        "description": "Compare EventStoreDB, PostgreSQL, Kafka, and DynamoDB for an event sourced service."
+      },
+      {
+        "target_user": "Architect",
+        "title": "Design event store schema",
+        "description": "Define tables, indexes, and checkpointing for a new event sourced domain."
+      },
+      {
+        "target_user": "Team lead",
+        "title": "Review implementation plan",
+        "description": "Validate concurrency, ordering, and scaling choices before delivery."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Event store basics",
+        "scenario": "New to event sourcing design",
+        "prompt": "Explain the core requirements of an event store and how stream ordering works."
+      },
+      {
+        "title": "PostgreSQL schema",
+        "scenario": "Need a relational event store",
+        "prompt": "Provide a PostgreSQL schema with tables and indexes for events, snapshots, and subscription checkpoints."
+      },
+      {
+        "title": "Async Python template",
+        "scenario": "Build a simple store service",
+        "prompt": "Outline a Python async event store class with append, read stream, and read all methods."
+      },
+      {
+        "title": "Scale and optimize",
+        "scenario": "High throughput system",
+        "prompt": "Recommend strategies for scaling reads, subscriptions, snapshots, and global ordering in a large event store."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Design a PostgreSQL event store for an Order service",
+        "output": [
+          "Tables for events, snapshots, and subscription checkpoints",
+          "Indexes for stream queries, global position, and time filters",
+          "Guidance on optimistic concurrency and idempotency"
+        ]
+      },
+      {
+        "input": "How do I implement subscriptions with checkpointing",
+        "output": [
+          "A subscription checkpoints table to track last processed position",
+          "Query logic to resume from the last saved position",
+          "Example polling loop with batch processing"
+        ]
+      },
+      {
+        "input": "Compare EventStoreDB versus Kafka for event sourcing",
+        "output": [
+          "EventStoreDB offers per-stream queries and built-in projections",
+          "Kafka provides higher throughput but requires external stream grouping",
+          "Consider query patterns when choosing your backend"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use stream identifiers that include aggregate type",
+      "Implement optimistic concurrency checks for writes",
+      "Store correlation and causation metadata for tracing"
+    ],
+    "anti_patterns": [
+      "Updating or deleting events after append",
+      "Storing large payloads in event data",
+      "Ignoring backpressure in subscriptions"
+    ],
+    "faq": [
+      {
+        "question": "Which platforms can use this skill?",
+        "answer": "It applies to EventStoreDB, PostgreSQL, DynamoDB, and similar systems across languages."
+      },
+      {
+        "question": "What are the limits of the guidance?",
+        "answer": "It provides templates and patterns, not full production deployment or security hardening."
+      },
+      {
+        "question": "Can it integrate with existing databases?",
+        "answer": "Yes, it shows patterns for PostgreSQL and DynamoDB that can be adapted to current stacks."
+      },
+      {
+        "question": "Does it access or store my data?",
+        "answer": "No, it only provides documentation and example code snippets."
+      },
+      {
+        "question": "What if I see concurrency conflicts?",
+        "answer": "Check expected version logic, stream ordering, and retry strategy for optimistic concurrency."
+      },
+      {
+        "question": "How is it different from general database advice?",
+        "answer": "It focuses on event immutability, ordering, and subscriptions specific to event sourcing."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 436
+    }
+  ]
+}

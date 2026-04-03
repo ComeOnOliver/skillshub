@@ -1,0 +1,309 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:05:45.068Z",
+    "slug": "cycleaddict-subagent-driven-development",
+    "source_url": "https://github.com/Cycleaddict/generic-superpowers/tree/main/skills/subagent-driven-development",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "55e7a813c7858a87c2605a392d99d6e30364c8094ef2c0a06e36ec2d9906d816",
+    "tree_hash": "77d392c6ae1feb830348b6bebc975b2992fde9fc903d3b6c956db7f5efa6a0f7"
+  },
+  "skill": {
+    "name": "subagent-driven-development",
+    "description": "Use when executing implementation plans with independent tasks in the current session",
+    "summary": "Use when executing implementation plans with independent tasks in the current session",
+    "icon": "🔄",
+    "version": "1.0.0",
+    "author": "Cycleaddict",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "subagents",
+      "workflow",
+      "code-review",
+      "implementation",
+      "quality-assurance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt-based skill with no executable code. Contains only markdown files defining workflow methodology. No scripts, network access, filesystem operations, or command execution capabilities. Static scanner produced 47 false positives due to misclassification of Graphviz syntax as shell commands, version control terminology as cryptographic algorithms, and code review questions as reconnaissance.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "code-quality-reviewer-prompt.md",
+            "line_start": 9,
+            "line_end": 18
+          },
+          {
+            "file": "implementer-prompt.md",
+            "line_start": 5,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 165
+          },
+          {
+            "file": "spec-reviewer-prompt.md",
+            "line_start": 7,
+            "line_end": 61
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 107
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 599,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:05:45.068Z"
+  },
+  "content": {
+    "user_title": "Execute plans with subagent workflow",
+    "value_statement": "Implement complex projects by dispatching subagents for independent tasks. Each task gets two-stage review ensuring spec compliance and code quality. Stay in the same session for fast iteration.",
+    "seo_keywords": [
+      "subagent driven development",
+      "Claude implementation workflow",
+      "code review automation",
+      "spec compliance checking",
+      "code quality gates",
+      "AI development methodology",
+      "task-based implementation",
+      "parallel-safe development",
+      "Codex coding workflow",
+      "Claude Code automation"
+    ],
+    "actual_capabilities": [
+      "Dispatch implementer subagents for each independent task",
+      "Two-stage review workflow: spec compliance then code quality",
+      "Self-review before subagent reports back",
+      "Review loops until issues are resolved",
+      "Task completion tracking with TodoWrite",
+      "Final comprehensive review after all tasks complete"
+    ],
+    "limitations": [
+      "Requires pre-written implementation plan",
+      "Best for independent tasks not tightly coupled work",
+      "Must stay in same session for parallel sessions use executing-plans",
+      "More subagent invocations than manual execution"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Feature implementation",
+        "description": "Break down features into independent tasks and execute with quality gates at each step"
+      },
+      {
+        "target_user": "AI engineers",
+        "title": "Multi-file refactoring",
+        "description": "Safely refactor large codebases by dispatching isolated subagents with review checkpoints"
+      },
+      {
+        "target_user": "Technical leads",
+        "title": "Codebase auditing",
+        "description": "Review implementations against specifications with automated compliance checking"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Implement task",
+        "scenario": "Start a new implementation task",
+        "prompt": "Use implementer-prompt.md to dispatch an implementer subagent with full task text and context"
+      },
+      {
+        "title": "Check spec compliance",
+        "scenario": "Verify implementation matches requirements",
+        "prompt": "Use spec-reviewer-prompt.md to review whether implementation built what was requested"
+      },
+      {
+        "title": "Review code quality",
+        "scenario": "Assess code quality after spec compliance",
+        "prompt": "Use code-quality-reviewer-prompt.md to verify clean tested maintainable code"
+      },
+      {
+        "title": "Final review",
+        "scenario": "Review entire implementation after all tasks",
+        "prompt": "Dispatch final code reviewer for complete implementation assessment"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Implement the authentication feature using subagent-driven development. Plan is in docs/plans/auth-feature.md",
+        "output": [
+          "Creating TodoWrite with 5 tasks from plan",
+          "Dispatching implementer subagent for Task 1: User login endpoint",
+          "Spec compliance review: Passed",
+          "Code quality review: Approved",
+          "Marked Task 1 complete",
+          "Proceeding to Task 2: Session management"
+        ]
+      },
+      {
+        "input": "Refactor the data layer across 10 files following the architecture plan",
+        "output": [
+          "Extracted 10 independent refactoring tasks",
+          "Each task: implementer subagent runs tests self-reviews commits",
+          "Spec reviewer confirms only targeted changes",
+          "Code quality reviewer approves before task completion",
+          "All 10 tasks completed with consistent quality"
+        ]
+      },
+      {
+        "input": "Add unit tests for the payment processing module",
+        "output": [
+          "Created 4 test coverage tasks from requirements",
+          "Implementer subagents write tests with TDD approach",
+          "Spec reviewer verifies all acceptance criteria covered",
+          "Code quality reviewer checks test maintainability",
+          "Final review confirms complete test suite"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide full task text to subagents do not make them read files",
+      "Answer subagent questions before they proceed with implementation",
+      "Never skip review loops when issues are found by reviewer",
+      "Keep subagents in same session to avoid context switching"
+    ],
+    "anti_patterns": [
+      "Making subagents read the plan file instead of providing full text",
+      "Skipping spec compliance review before code quality review",
+      "Proceeding to next task while reviews have open issues",
+      "Accepting close enough on spec compliance when reviewer finds issues"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Works with Claude Codex and Claude Code. Uses the Task tool to dispatch subagents for development work."
+      },
+      {
+        "question": "How many subagent invocations per task?",
+        "answer": "Three: one implementer plus two reviewers spec and code quality. More thorough than single-pass approaches."
+      },
+      {
+        "question": "How does this integrate with other skills?",
+        "answer": "Use with writing-plans for plan creation and finishing-a-development-branch for final cleanup after all tasks."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "This is a prompt-only skill. It processes data within your current session and makes no external network calls."
+      },
+      {
+        "question": "What if a subagent fails or asks questions?",
+        "answer": "Answer questions clearly and completely. If subagent fails dispatch a new fix subagent with specific instructions."
+      },
+      {
+        "question": "How is this different from executing-plans skill?",
+        "answer": "Executing-plans uses parallel sessions. Subagent-driven stays in same session for continuous progress without handoffs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "code-quality-reviewer-prompt.md",
+      "type": "file",
+      "path": "code-quality-reviewer-prompt.md",
+      "lines": 21
+    },
+    {
+      "name": "implementer-prompt.md",
+      "type": "file",
+      "path": "implementer-prompt.md",
+      "lines": 79
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 241
+    },
+    {
+      "name": "spec-reviewer-prompt.md",
+      "type": "file",
+      "path": "spec-reviewer-prompt.md",
+      "lines": 62
+    }
+  ]
+}

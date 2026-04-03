@@ -1,0 +1,272 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:38:48.105Z",
+    "slug": "davila7-pymc-bayesian-modeling",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/pymc",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "00e19da749f7bb73c2f3e77a0f2702908bc3ead862d6f8becf107740e3d48a88",
+    "tree_hash": "fcf31469d9b13286739e080df24cf91dc04b21b0debee60f7fab691ebda952c4"
+  },
+  "skill": {
+    "name": "pymc-bayesian-modeling",
+    "description": "Bayesian modeling with PyMC. Build hierarchical models, MCMC (NUTS), variational inference, LOO/WAIC comparison, posterior checks, for probabilistic programming and inference.",
+    "summary": "Bayesian modeling with PyMC. Build hierarchical models, MCMC (NUTS), variational inference, LOO/WAIC...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "bayesian",
+      "statistics",
+      "pymc",
+      "machine-learning",
+      "inference"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate PyMC Bayesian modeling skill for scientific computing. All 384 static findings are FALSE POSITIVES caused by scanner misinterpretation of scientific computing patterns. The scanner incorrectly flags np.random.seed(42) as 'weak cryptography', markdown backticks as 'shell execution', and legitimate statistical terms like 'network' as 'C2 keywords'. No malicious code, network access, credential handling, or exfiltration patterns exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/model_diagnostics.py",
+            "line_start": 1,
+            "line_end": 160
+          },
+          {
+            "file": "scripts/model_comparison.py",
+            "line_start": 1,
+            "line_end": 100
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 3394,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:38:48.105Z"
+  },
+  "content": {
+    "user_title": "Build Bayesian models with PyMC",
+    "value_statement": "This skill provides tools for Bayesian statistical modeling using PyMC. It enables building hierarchical models, running MCMC sampling with NUTS, performing variational inference, and comparing models with LOO/WAIC metrics for principled uncertainty quantification.",
+    "seo_keywords": [
+      "PyMC Bayesian modeling",
+      "MCMC sampling",
+      "NUTS sampler",
+      "Bayesian inference",
+      "probabilistic programming",
+      "hierarchical models",
+      "variational inference",
+      "LOO model comparison",
+      "Claude Code",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Build Bayesian regression and hierarchical models with PyMC 5.x API",
+      "Run MCMC sampling using NUTS algorithm with diagnostics and convergence checks",
+      "Perform prior and posterior predictive checks for model validation",
+      "Compare models using LOO and WAIC information criteria",
+      "Generate diagnostic reports with trace plots, ESS, and R-hat statistics",
+      "Create posterior predictions and uncertainty intervals for new data"
+    ],
+    "limitations": [
+      "Requires PyMC, ArviZ, and NumPy installed in the environment",
+      "Does not include data preprocessing pipelines or feature engineering",
+      "Does not automate model selection or hyperparameter tuning",
+      "Models with high complexity may require manual reparameterization"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data scientists",
+        "title": "Uncertainty quantification",
+        "description": "Build models that quantify uncertainty in predictions through full posterior distributions rather than point estimates."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Hierarchical analysis",
+        "description": "Analyze grouped or nested data structures with partial pooling using hierarchical Bayesian models."
+      },
+      {
+        "target_user": "Analysts",
+        "title": "Model comparison",
+        "description": "Compare multiple model specifications using LOO cross-validation to select the best approach."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple regression",
+        "scenario": "Build a basic Bayesian linear regression",
+        "prompt": "Build a Bayesian linear regression model using PyMC to predict outcome y from predictors X. Include intercept, coefficients, and residual sigma. Run MCMC sampling with 4 chains and check diagnostics."
+      },
+      {
+        "title": "Hierarchical model",
+        "scenario": "Model grouped data with varying intercepts",
+        "prompt": "Create a hierarchical model for data with groups. Each group should have its own intercept while sharing a common slope. Use non-centered parameterization to avoid sampling issues."
+      },
+      {
+        "title": "Model comparison",
+        "scenario": "Compare different model specifications",
+        "prompt": "Compare three model specifications using LOO (leave-one-out cross-validation). Check Pareto-k values for reliability and report which model is preferred with evidence strength."
+      },
+      {
+        "title": "Diagnostics",
+        "scenario": "Check model convergence and sampling quality",
+        "prompt": "Run full diagnostics on my posterior samples including R-hat, effective sample size, divergences, and tree depth. Generate a diagnostic report with visualizations and flag any issues."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Build a Bayesian model to estimate the effect of treatment on outcome, accounting for age as a covariate.",
+        "output": [
+          "Created hierarchical model with treatment effect and age coefficient",
+          "Prior: Normal(0, 1) for both parameters",
+          "Sampled 4 chains with 2000 draws each",
+          "Diagnostics: R-hat < 1.01, ESS > 400 for all parameters",
+          "Treatment effect posterior: 2.3 [95% HDI: 1.8, 2.8]",
+          "Age coefficient posterior: 0.4 [95% HDI: 0.2, 0.6]"
+        ]
+      },
+      {
+        "input": "Compare a simple model with only the intercept to a model with predictors.",
+        "output": [
+          "Model 1 (intercept only): LOO = 245.2",
+          "Model 2 (with predictors): LOO = 178.4",
+          "Delta LOO = 66.8 (strong evidence for Model 2)",
+          "Pareto-k values < 0.7 for both models (LOO reliable)",
+          "Model 2 selected with posterior predictive check passing"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Standardize predictors before modeling to improve sampling efficiency and convergence",
+      "Use weakly informative priors (not flat) based on domain knowledge",
+      "Always run prior predictive checks before fitting to validate model specification",
+      "Check R-hat < 1.01, ESS > 400, and zero divergences before interpreting results"
+    ],
+    "anti_patterns": [
+      "Using flat Uniform(0, 1) priors on unbounded parameters can cause sampling problems",
+      "Ignoring divergences and continuing to interpret results without fixing sampling issues",
+      "Comparing models without computing log_likelihood during sampling",
+      "Using centered parameterization for hierarchical models causes slow sampling"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between NUTS and Metropolis sampling?",
+        "answer": "NUTS (No-U-Turn Sampler) is Hamiltonian Monte Carlo that automatically adapts step size. It is more efficient than Metropolis for continuous parameters and is the default in PyMC."
+      },
+      {
+        "question": "How many chains should I run?",
+        "answer": "Run at least 4 chains. More chains (8+) help detect multimodality but increase computation time. Check that all chains converge to the same distribution."
+      },
+      {
+        "question": "What does R-hat indicate?",
+        "answer": "R-hat measures chain convergence. Values below 1.01 indicate chains have mixed well. Values above 1.01 suggest chains have not converged and results are unreliable."
+      },
+      {
+        "question": "When should I use LOO vs WAIC?",
+        "answer": "LOO is generally preferred as it is more robust and provides Pareto-k diagnostics. Use WAIC when LOO fails (high Pareto-k values) or for comparison purposes."
+      },
+      {
+        "question": "How do I handle divergences?",
+        "answer": "Increase target_accept to 0.95-0.99, use non-centered parameterization for hierarchical models, add stronger priors, or check for model misspecification."
+      },
+      {
+        "question": "What is effective sample size (ESS)?",
+        "answer": "ESS measures how many independent samples you effectively have accounting for autocorrelation. Target ESS > 400 per chain for reliable parameter estimates."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "hierarchical_model_template.py",
+          "type": "file",
+          "path": "assets/hierarchical_model_template.py",
+          "lines": 334
+        },
+        {
+          "name": "linear_regression_template.py",
+          "type": "file",
+          "path": "assets/linear_regression_template.py",
+          "lines": 242
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "distributions.md",
+          "type": "file",
+          "path": "references/distributions.md",
+          "lines": 321
+        },
+        {
+          "name": "sampling_inference.md",
+          "type": "file",
+          "path": "references/sampling_inference.md",
+          "lines": 425
+        },
+        {
+          "name": "workflows.md",
+          "type": "file",
+          "path": "references/workflows.md",
+          "lines": 527
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "model_comparison.py",
+          "type": "file",
+          "path": "scripts/model_comparison.py",
+          "lines": 388
+        },
+        {
+          "name": "model_diagnostics.py",
+          "type": "file",
+          "path": "scripts/model_diagnostics.py",
+          "lines": 351
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 567
+    }
+  ]
+}

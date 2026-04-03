@@ -1,0 +1,321 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:37:59.859Z",
+    "slug": "davila7-generate-image",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/generate-image",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6373ccd8eb6ae1f10157f3cd8dd9c898b5ad70a86f82de9c1cde7ec1cb997508",
+    "tree_hash": "02ea649a1d21e873bfa234ae3ce9b3e390cdf436a8c953f5464d9294600eb125"
+  },
+  "skill": {
+    "name": "generate-image",
+    "description": "Generate or edit images using AI models (FLUX, Gemini). Use for general-purpose image generation including photos, illustrations, artwork, visual assets, concept art, and any image that is not a technical diagram or schematic. For flowcharts, circuits, pathways, and technical diagrams, use the scientific-schematics skill instead.",
+    "summary": "Generate or edit images using AI models (FLUX, Gemini) through OpenRouter API for creating photos, illustrations, artwork, and visual content.",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "image-generation",
+      "ai-art",
+      "flux",
+      "gemini",
+      "visual-content"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate image generation skill with standard API integration. Network access to openrouter.ai for image generation, filesystem access for reading input images and saving outputs, and .env file access for API key retrieval. All detected patterns align with expected functionality. Base64 encoding flagged as weak crypto is a false positive. Base64 is encoding, not encryption, and is used to decode API image responses. External command references in SKILL.md are documentation examples, not runtime execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 144,
+            "line_end": 144
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 111,
+            "line_end": 111
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 145,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 164
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 71,
+            "line_end": 71
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 79,
+            "line_end": 79
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 89,
+            "line_end": 89
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 102,
+            "line_end": 102
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 105,
+            "line_end": 105
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 106,
+            "line_end": 106
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 108,
+            "line_end": 108
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 110,
+            "line_end": 110
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 147,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 50
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1571,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:37:59.859Z"
+  },
+  "content": {
+    "user_title": "Generate AI Images with FLUX and Gemini",
+    "value_statement": "Creating visual assets requires specialized tools and design skills. This skill enables AI-powered image generation and editing through OpenRouter, supporting FLUX and Gemini models for creating photos, illustrations, artwork, and visual concepts.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "AI image generator",
+      "FLUX image generation",
+      "AI art generator",
+      "image editing AI",
+      "Gemini image model",
+      "OpenRouter images"
+    ],
+    "actual_capabilities": [
+      "Generate images from text prompts using FLUX or Gemini models through OpenRouter API",
+      "Edit existing images with AI-powered modifications including color and background changes",
+      "Save generated images in PNG format with automatic base64 decoding of API responses",
+      "Support multiple image generation models including black-forest-labs/flux.2-pro and google/gemini-3-pro"
+    ],
+    "limitations": [
+      "Requires valid OpenRouter API key configured in .env file",
+      "Image editing only supported on FLUX.2 Pro and Gemini 3 Pro models",
+      "Generation time varies by model, typically 5-30 seconds per image",
+      "No batch processing support, requires separate API calls for multiple images"
+    ],
+    "use_cases": [
+      {
+        "title": "Create visual assets for documents and presentations",
+        "description": "Generate professional illustrations and images for slides, reports, and documentation without external design tools.",
+        "target_user": "Researchers, technical writers, content creators"
+      },
+      {
+        "title": "Edit and enhance existing images",
+        "description": "Modify photos and images with AI-powered editing commands like color adjustments, background changes, or object modifications.",
+        "target_user": "Designers, marketers, developers"
+      },
+      {
+        "title": "Produce concept art and creative visuals",
+        "description": "Generate artistic illustrations, concept art, and creative visuals from textual descriptions for brainstorming and prototyping.",
+        "target_user": "Creative professionals, product teams"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Image Generation",
+        "prompt": "Generate an image of [describe your desired image in detail]. Output the result to [filename].png",
+        "scenario": "Simple image creation with default Gemini model"
+      },
+      {
+        "title": "FLUX Model Generation",
+        "prompt": "Use the FLUX.2 Pro model to generate: [detailed prompt]. Save as [filename].png",
+        "scenario": "When you prefer FLUX model for image generation"
+      },
+      {
+        "title": "Image Editing",
+        "prompt": "Edit the image at [input_path] by [describe modifications]. Save as [output_path].png",
+        "scenario": "Modifying an existing image with AI"
+      },
+      {
+        "title": "Creative Illustration",
+        "prompt": "Create a [style] illustration of [subject]. Save to [path]",
+        "scenario": "Generating styled creative imagery"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate a professional team collaboration scene for documentation",
+        "output": "AI generates and saves a team collaboration image to the specified output path as team_collaboration.png"
+      },
+      {
+        "input": "Edit photo.jpg to change the sky to sunset colors",
+        "output": "AI edits the image and saves with sunset-colored sky as edited_photo.png"
+      }
+    ],
+    "best_practices": [
+      "Be specific and detailed in prompts for better image quality",
+      "Use FLUX.2 Pro or Gemini 3 Pro models for editing capabilities",
+      "Save images with descriptive filenames for easy tracking"
+    ],
+    "anti_patterns": [
+      "Using vague prompts like make it look good instead of specific descriptions",
+      "Forgetting to configure OPENROUTER_API_KEY before running the skill",
+      "Trying to edit images with models that do not support editing"
+    ],
+    "faq": [
+      {
+        "question": "What API key do I need?",
+        "answer": "You need an OpenRouter API key. Get one at openrouter.ai/keys and add it to a .env file as OPENROUTER_API_KEY=your-key."
+      },
+      {
+        "question": "Which models support image editing?",
+        "answer": "Both google/gemini-3-pro-image-preview and black-forest-labs/flux.2-pro support image editing. The flux.2-flex model is generation only."
+      },
+      {
+        "question": "What image formats are supported?",
+        "answer": "Input images can be PNG, JPEG, GIF, or WebP. Generated images are saved as PNG files."
+      },
+      {
+        "question": "How long does generation take?",
+        "answer": "Generation typically takes 5-30 seconds depending on the model and complexity. FLUX models are generally faster than Gemini."
+      },
+      {
+        "question": "Can I use this for technical diagrams?",
+        "answer": "No. For flowcharts, circuits, and technical diagrams, use the scientific-schematics skill instead. This skill is for photos, illustrations, and artwork."
+      },
+      {
+        "question": "How much does it cost?",
+        "answer": "Costs vary by model. Check OpenRouter pricing at openrouter.ai/models before use. API costs are billed directly by OpenRouter."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "generate_image.py",
+          "type": "file",
+          "path": "scripts/generate_image.py",
+          "lines": 282
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 179
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:29:17.517Z",
+    "slug": "danielpodolsky-accessibility-fundamentals",
+    "source_url": "https://github.com/DanielPodolsky/mentor-spec/tree/main/.claude/skills/fundamentals/accessibility",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "767fb33d5bcf581c406c004bdf46a11cc84dba3a2ad2854baf4a41979f8f6233",
+    "tree_hash": "692befad48811888dd206f145420db2c0344a198dffccf709d92c127b1b9f150"
+  },
+  "skill": {
+    "name": "accessibility-fundamentals",
+    "description": "Auto-invoke when reviewing JSX with interactive elements, forms, buttons, or navigation. Enforces WCAG compliance and inclusive design.",
+    "summary": "Reviews JSX components for WCAG compliance. Checks keyboard accessibility, semantic HTML, ARIA labels, form labels, and focus management.",
+    "icon": "♿",
+    "version": "1.0.0",
+    "author": "DanielPodolsky",
+    "license": "MIT",
+    "tags": [
+      "accessibility",
+      "wcag",
+      "jsx",
+      "react",
+      "a11y"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 63 static findings are false positives. The scanner misinterpreted markdown code block delimiters as shell execution, ARIA attributes as cryptographic patterns, and CSS color hex values as IP addresses. This is a legitimate accessibility documentation skill containing only static guidance and code examples.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 982,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:30:00.000Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Review JSX for Accessibility",
+    "value_statement": "Many developers unintentionally create barriers for users with disabilities. This skill provides a systematic checklist for reviewing JSX components against WCAG guidelines, ensuring your code is inclusive and legally compliant.",
+    "seo_keywords": [
+      "accessibility",
+      "wcag",
+      "a11y",
+      "jsx accessibility",
+      "react accessibility",
+      "inclusive design",
+      "screen reader support",
+      "keyboard navigation",
+      "aria labels",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Reviews JSX components for keyboard accessibility (Tab, Enter, Space)",
+      "Validates semantic HTML usage (buttons vs div onClick)",
+      "Checks form labels and ARIA attributes for screen readers",
+      "Identifies missing alt text on images",
+      "Reviews focus management and visible focus indicators",
+      "Provides WCAG 2.1 compliance checklist for interactive elements"
+    ],
+    "limitations": [
+      "Does not run automated accessibility tests like axe-core",
+      "Cannot validate color contrast ratios (requires visual inspection)",
+      "Does not test with actual screen readers",
+      "Does not modify code automatically"
+    ],
+    "use_cases": [
+      {
+        "title": "Code Review for React Components",
+        "description": "Before merging pull requests, invoke this skill to verify new interactive components meet accessibility standards. Catches issues like missing labels, div-as-button anti-patterns, and poor focus management.",
+        "target_user": "Frontend developers and code reviewers"
+      },
+      {
+        "title": "Learning Inclusive Design Patterns",
+        "description": "New team members use this skill to understand accessibility requirements. The skill provides concrete examples of accessible vs inaccessible code patterns with explanations.",
+        "target_user": "Junior developers and onboarding engineers"
+      },
+      {
+        "title": "Accessibility Audit for Features",
+        "description": "Before launching new features, use this skill to verify compliance with accessibility requirements. Covers modals, forms, navigation menus, and dynamic content updates.",
+        "target_user": "QA engineers and product managers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick Component Check",
+        "prompt": "Review this JSX component for accessibility issues. Check for keyboard accessibility, proper form labels, semantic HTML, and screen reader support.",
+        "scenario": "When you have a single component to review quickly"
+      },
+      {
+        "title": "Form Accessibility Review",
+        "prompt": "Review this form component. Check that every input has a label, error messages are linked with aria-describedby, and required fields are marked appropriately.",
+        "scenario": "When reviewing form components with multiple inputs"
+      },
+      {
+        "title": "Modal Dialog Audit",
+        "prompt": "Check this modal component. Verify focus trapping works, escape key closes it, keyboard focus is managed, and it has proper ARIA attributes.",
+        "scenario": "When reviewing modal or dialog components"
+      },
+      {
+        "title": "Navigation Menu Review",
+        "prompt": "Review this navigation component. Check keyboard navigation works, active states are announced, and menu structure is semantic.",
+        "scenario": "When reviewing navigation, menus, or dropdowns"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "<div onClick={handleSubmit} className=\"submit-btn\">Submit</div>",
+        "output": "This element has accessibility issues:\n1. Not keyboard accessible - div elements don't respond to Enter/Space keys\n2. Not announced as a button by screen readers\n3. Missing semantic role\n\nFix: Use <button> element instead:\n<button onClick={handleSubmit} className=\"submit-btn\">Submit</button>"
+      },
+      {
+        "input": "<input type=\"email\" placeholder=\"Enter your email\" />",
+        "output": "This input lacks accessibility:\n1. No visible label - placeholder disappears when typing\n2. Screen readers cannot announce purpose\n\nFix options:\n<label>\n  Email\n  <input type=\"email\" placeholder=\"Enter your email\" />\n</label>\n\nOr:\n<label htmlFor=\"email\">Email</label>\n<input id=\"email\" type=\"email\" placeholder=\"Enter your email\" />"
+      },
+      {
+        "input": "<button><TrashIcon /></button>",
+        "output": "Icon-only buttons need accessible names:\n1. Screen readers announce as \"button\" with no context\n\nFix: Add aria-label:\n<button aria-label=\"Delete item\">\n  <TrashIcon aria-hidden=\"true\" />\n</button>"
+      }
+    ],
+    "best_practices": [
+      "Use native semantic elements (<button>, <a>, <input>) instead of divs with event handlers",
+      "Every form input must have a visible, associated label",
+      "All interactive elements must be keyboard accessible with visible focus states"
+    ],
+    "anti_patterns": [
+      "Using <div onClick> instead of <button> - breaks keyboard and screen reader support",
+      "Removing outline: none without replacement - leaves keyboard users lost",
+      "Using color alone to convey information - fails for colorblind users"
+    ],
+    "faq": [
+      {
+        "question": "What is the minimum color contrast ratio for text?",
+        "answer": "Normal text requires 4.5:1 contrast ratio against the background. Large text (18px bold or 24px regular) requires 3:1 ratio."
+      },
+      {
+        "question": "How do I make a modal accessible?",
+        "answer": "Trap focus within the modal while open, return focus to trigger element when closed, include Escape key to close, and add aria-modal=\"true\"."
+      },
+      {
+        "question": "What is the first rule of ARIA?",
+        "answer": "No ARIA is better than bad ARIA. Use native semantic HTML first. Only add ARIA when HTML cannot express what you need."
+      },
+      {
+        "question": "How do I test accessibility without tools?",
+        "answer": "Navigate your entire page using only Tab and keyboard. Verify you can complete all actions, focus is always visible, and you cannot get trapped."
+      },
+      {
+        "question": "What is focus-visible and when should I use it?",
+        "answer": "focus-visible shows focus indicators only when navigating by keyboard, hiding them for mouse users. Use :focus-visible for best of both worlds."
+      },
+      {
+        "question": "How do I make error messages accessible?",
+        "answer": "Link errors to inputs with aria-describedby, set aria-invalid=\"true\" on invalid inputs, and use role=\"alert\" or aria-live for announcements."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 287
+    }
+  ]
+}

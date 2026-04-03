@@ -1,0 +1,351 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:50:54.974Z",
+    "slug": "cloudai-x-optimizing-performance",
+    "source_url": "https://github.com/CloudAI-X/claude-workflow/tree/main/skills/optimizing-performance",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e57adf6ba6b3d56b9e4d6d7bdc21a3dc35528fd28cd08feebdd4c9af8369dc70",
+    "tree_hash": "dac05040469a580eb8d5836e9d5264225aeef4fb893ea3f59e8283c46437500f"
+  },
+  "skill": {
+    "name": "optimizing-performance",
+    "description": "Analyzes and optimizes application performance across frontend, backend, and database layers. Use when diagnosing slowness, improving load times, optimizing queries, reducing bundle size, or when asked about performance issues.",
+    "summary": "Analyzes and optimizes application performance across frontend, backend, and database layers. Use wh...",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "CloudAI-X",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "performance",
+      "optimization",
+      "profiling",
+      "web-vitals",
+      "database"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "scripts",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure markdown documentation skill containing instructional content and code examples for performance optimization. Contains no executable scripts, no file access operations, no network calls, and no system modifications. All 43 static findings are false positives: markdown backticks were confused for shell execution, metadata fields were flagged as C2 keywords, and legitimate documentation URLs were flagged as hardcoded URLs.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 136
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 136,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 213
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 220
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 399,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:50:54.974Z"
+  },
+  "content": {
+    "user_title": "Optimize application performance",
+    "value_statement": "Applications often suffer from slow load times and poor responsiveness. This skill provides a systematic approach to measure, identify, and fix performance bottlenecks across frontend, backend, and database layers.",
+    "seo_keywords": [
+      "performance optimization",
+      "profiling",
+      "web vitals",
+      "load time",
+      "Claude performance",
+      "Codex optimization",
+      "bundle size",
+      "database queries",
+      "caching",
+      "react performance"
+    ],
+    "actual_capabilities": [
+      "Guide baseline performance measurement using profilers and benchmarking tools",
+      "Identify bottlenecks across CPU, memory, I/O, and database layers",
+      "Apply frontend optimizations including bundle splitting and memoization",
+      "Optimize backend performance with database query improvements and caching strategies",
+      "Validate optimizations by comparing before and after metrics"
+    ],
+    "limitations": [
+      "Does not execute profiling tools directly - provides guidance for AI to use tools",
+      "Does not modify your codebase - recommends changes for you to apply",
+      "Does not access external monitoring services or APM tools"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Improve web vitals",
+        "description": "Reduce bundle size and improve React rendering performance for faster page loads"
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "Speed up API responses",
+        "description": "Identify slow database queries and implement caching to reduce latency"
+      },
+      {
+        "target_user": "Full-stack engineers",
+        "title": "Profile entire stack",
+        "description": "Diagnose end-to-end performance issues from browser to database"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick check",
+        "scenario": "General performance question",
+        "prompt": "My application is slow. Help me profile and identify the bottlenecks."
+      },
+      {
+        "title": "Frontend focus",
+        "scenario": "Web performance issue",
+        "prompt": "Our website has poor Core Web Vitals. Help us optimize LCP and CLS scores."
+      },
+      {
+        "title": "Database focus",
+        "scenario": "Slow queries",
+        "prompt": "Our database queries are taking too long. Help us identify and fix slow queries."
+      },
+      {
+        "title": "Complete optimization",
+        "scenario": "Full-stack review",
+        "prompt": "Do a complete performance audit of our application and create an optimization plan."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Our React app has slow rendering. Help us profile and fix it.",
+        "output": [
+          "Step 1: Profile using React DevTools Profiler or Chrome DevTools",
+          "Step 2: Identify components rendering unnecessarily",
+          "Step 3: Apply memoization with React.memo and useMemo",
+          "Step 4: Implement code splitting with lazy loading for heavy components",
+          "Step 5: Verify improvements with before/after comparison"
+        ]
+      },
+      {
+        "input": "Our database queries are timing out under load.",
+        "output": [
+          "Step 1: Enable slow query logging to identify problematic queries",
+          "Step 2: Use EXPLAIN to analyze query execution plans",
+          "Step 3: Look for missing indexes or N+1 query patterns",
+          "Step 4: Add database caching with Redis for frequently accessed data",
+          "Step 5: Implement query result pagination for large datasets"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always measure baseline performance before making any changes",
+      "Use the right profiling tool for each layer (CPU, memory, I/O, network)",
+      "Set specific performance targets based on industry benchmarks like Web Vitals"
+    ],
+    "anti_patterns": [
+      "Optimizing without data - making changes based on guesses rather than profiling",
+      "Focusing only on one layer while ignoring bottlenecks elsewhere",
+      "Applying optimizations without measuring to verify actual improvement"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill use for profiling?",
+        "answer": "It guides you to use built-in profilers like Node.js --prof, Python cProfile, Chrome DevTools, and Lighthouse."
+      },
+      {
+        "question": "What are good performance targets for APIs?",
+        "answer": "Target P50 latency under 100ms, P95 under 500ms, and P99 under 1 second with error rates below 0.1%."
+      },
+      {
+        "question": "Can this skill integrate with APM tools like New Relic?",
+        "answer": "This skill provides general guidance. For specific APM integration, ask about your particular tool."
+      },
+      {
+        "question": "Does this skill modify my production code?",
+        "answer": "No. It provides recommendations and code examples. You apply changes to your codebase."
+      },
+      {
+        "question": "What if my performance targets are not met?",
+        "answer": "Return to Step 2 and continue identifying bottlenecks. Performance optimization is iterative."
+      },
+      {
+        "question": "How is this different from a linter or build tool?",
+        "answer": "This skill provides strategic guidance for finding and fixing bottlenecks. Linters and build tools automate specific checks."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 223
+    }
+  ]
+}

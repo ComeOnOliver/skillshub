@@ -1,0 +1,309 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:16:31.436Z",
+    "slug": "smallnest-patchright-skill",
+    "source_url": "https://github.com/smallnest/patchright-skill/tree/main/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ce4f32160333d3a554e5523fa8f1c8d4167373577f8cf69a0a853eac9404fd37",
+    "tree_hash": "38eb35657a12e54f1eb7d0ef4b02b8b942cb4fb2d464f49bf5b5d82321ef1f1c"
+  },
+  "skill": {
+    "name": "patchright-skill",
+    "description": "Patchright-based browser automation with bot detection bypass. Use when Claude needs to interact with local web applications, test localhost/dev servers, take screenshots, or perform UI interactions on private networks. Ideal for QA automation, frontend debugging, E2E testing, and pre-deployment verification on local development environments.",
+    "summary": "Patchright-based browser automation with bot detection bypass. Use when Claude needs to interact wit...",
+    "icon": "🌐",
+    "version": "1.0.0",
+    "author": "smallnest",
+    "license": "See LICENSE.txt",
+    "category": "development",
+    "tags": [
+      "browser-automation",
+      "testing",
+      "local-dev",
+      "qa",
+      "debugging"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate browser automation skill using Patchright. All 201 static findings are false positives. The evaluate tool executes JavaScript in browser context for automation, screenshots are saved locally to files (no upload), hardcoded URLs are for documentation examples, and hidden file references are to standard skill installation paths. No credential exfiltration, data theft, or malicious patterns found. The skill intentionally restricts access to localhost and private IP addresses only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/executor.py",
+            "line_start": 79,
+            "line_end": 94
+          },
+          {
+            "file": "scripts/server.py",
+            "line_start": 70,
+            "line_end": 75
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/server.py",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "scripts/executor.py",
+            "line_start": 71,
+            "line_end": 76
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 67
+          },
+          {
+            "file": "reference.md",
+            "line_start": 10,
+            "line_end": 22
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 12,
+    "total_lines": 3075,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:16:31.436Z"
+  },
+  "content": {
+    "user_title": "Automate browser testing with Patchright",
+    "value_statement": "This skill enables automated browser interactions for local development and testing. It supports bot detection bypass to work with protected sites. Use it for QA automation, frontend debugging, and E2E testing on localhost and dev servers.",
+    "seo_keywords": [
+      "patchright",
+      "browser automation",
+      "claude",
+      "codex",
+      "claude-code",
+      "playwright",
+      "testing",
+      "local development",
+      "qa automation",
+      "e2e testing"
+    ],
+    "actual_capabilities": [
+      "Launch Chrome browser with stealth mode for bot detection bypass",
+      "Navigate to URLs including localhost and private IP addresses",
+      "Take screenshots of pages and save to local files",
+      "Click elements, type text, and interact with web pages programmatically",
+      "Execute JavaScript in browser context for custom automation logic",
+      "Maintain persistent browser sessions across multiple commands"
+    ],
+    "limitations": [
+      "Requires patchright library installation before use",
+      "Server mode must be started separately for persistent sessions",
+      "Only supports Google Chrome browser via Playwright",
+      "Bot detection bypass may not work on all websites"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend Developers",
+        "title": "Debug local applications",
+        "description": "Navigate local development servers, take screenshots, and verify UI changes after code edits."
+      },
+      {
+        "target_user": "QA Engineers",
+        "title": "Automate E2E tests",
+        "description": "Create automated test flows for login forms, navigation, and user interactions on dev environments."
+      },
+      {
+        "target_user": "DevOps Teams",
+        "title": "Verify deployments",
+        "description": "Check that applications render correctly on local builds before deployment to production."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Screenshot",
+        "scenario": "Capture local page",
+        "prompt": "Take a screenshot of http://localhost:3000 and save it to screenshot.png"
+      },
+      {
+        "title": "Form Interaction",
+        "scenario": "Fill and submit forms",
+        "prompt": "Navigate to the login page, type test credentials, click submit, and capture the result"
+      },
+      {
+        "title": "JavaScript Execution",
+        "scenario": "Run custom scripts",
+        "prompt": "Execute JavaScript to extract all text from elements matching .product-title on the current page"
+      },
+      {
+        "title": "Multi-Step Workflow",
+        "scenario": "Persistent session testing",
+        "prompt": "Start the browser server, navigate to the app, click through the main menu, and take screenshots at each step"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Take a screenshot of http://localhost:3000/login",
+        "output": [
+          "Screenshot saved to /path/to/screenshot.png",
+          "Page title: Login Page",
+          "URL: http://localhost:3000/login"
+        ]
+      },
+      {
+        "input": "Click the submit button and type into the password field",
+        "output": [
+          "Clicked selector: button[type=submit]",
+          "Filled selector: #password",
+          "Current URL: http://localhost:3000/dashboard"
+        ]
+      },
+      {
+        "input": "Get all product titles from the current page",
+        "output": [
+          "Status: success",
+          "Results: [Product A, Product B, Product C]",
+          "Count: 3"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use server mode for multi-step workflows to maintain browser session state",
+      "Test selectors in browser DevTools before using them in automation scripts",
+      "Add wait_for calls when pages have dynamic content loading"
+    ],
+    "anti_patterns": [
+      "Avoid using headless mode for visual debugging - it hides rendering issues",
+      "Do not skip wait_for calls on pages with lazy-loaded content",
+      "Avoid hardcoding absolute file paths - use relative paths for portability"
+    ],
+    "faq": [
+      {
+        "question": "What is Patchright?",
+        "answer": "Patchright is an undetected Playwright fork that bypasses bot detection on websites like Cloudflare and reCAPTCHA."
+      },
+      {
+        "question": "How do I start the server?",
+        "answer": "Run: python scripts/server.py start &. The server maintains browser sessions across multiple commands."
+      },
+      {
+        "question": "What browsers are supported?",
+        "answer": "Only Google Chrome via Playwrights Chrome channel is supported for bot detection bypass."
+      },
+      {
+        "question": "Can I use this for production websites?",
+        "answer": "Designed for localhost and dev servers. Bot bypass may work on some production sites but is not guaranteed."
+      },
+      {
+        "question": "How do I take a full page screenshot?",
+        "answer": "Use: screenshot with full_page=true parameter. Default captures only the viewport."
+      },
+      {
+        "question": "Can I execute custom JavaScript?",
+        "answer": "Yes, use the evaluate tool with your JavaScript code. Results are returned as JSON from the browser context."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "executor.py",
+          "type": "file",
+          "path": "scripts/executor.py",
+          "lines": 300
+        },
+        {
+          "name": "google_debug.py",
+          "type": "file",
+          "path": "scripts/google_debug.py",
+          "lines": 64
+        },
+        {
+          "name": "google_extract_results.py",
+          "type": "file",
+          "path": "scripts/google_extract_results.py",
+          "lines": 77
+        },
+        {
+          "name": "google_search.py",
+          "type": "file",
+          "path": "scripts/google_search.py",
+          "lines": 175
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "scripts/README.md",
+          "lines": 96
+        },
+        {
+          "name": "server.py",
+          "type": "file",
+          "path": "scripts/server.py",
+          "lines": 232
+        }
+      ]
+    },
+    {
+      "name": "evaluation_result.json",
+      "type": "file",
+      "path": "evaluation_result.json",
+      "lines": 235
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 23
+    },
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 189
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "lines": 2
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 225
+    }
+  ]
+}

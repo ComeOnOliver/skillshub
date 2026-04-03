@@ -1,0 +1,308 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:22:05.983Z",
+    "slug": "apeworx-writing-bots",
+    "source_url": "https://github.com/ApeWorX/skills/tree/main/silverback/writing-bots",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4887b4a0eb4efac3bcd29b5f6cd920f46be2bcfc644cfd8379901e56d2d2dbf1",
+    "tree_hash": "27b190f6b575d5865ba534347e271906a961a8b6bab4df649add74dd7f98f6d3"
+  },
+  "skill": {
+    "name": "writing-bots",
+    "description": "Write a bot to continuously listen and respond to events on a public blockchain network.",
+    "summary": "Write a bot to continuously listen and respond to events on a public blockchain network.",
+    "icon": "🤖",
+    "version": "1.0.0",
+    "author": "ApeWorX",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "blockchain",
+      "bot",
+      "ethereum",
+      "silverback",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure markdown prompt file providing guidance for designing blockchain bots using the Silverback SDK. All static findings are false positives. The scanner misidentified standard blockchain terminology (keccak256, sha256, mainnet) as cryptographic weaknesses, CLI documentation as command injection, and documentation URLs as network exfiltration. The skill contains no executable code and advises best practices including using environment variables and circuit breakers for safety.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 85
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 67
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 94,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:22:05.983Z"
+  },
+  "content": {
+    "user_title": "Create blockchain monitoring bots with Silverback",
+    "value_statement": "Creating blockchain bots requires understanding event-driven architecture and risk management. This skill guides AI assistants to help users design, implement, and deploy automated bots that respond to on-chain events.",
+    "seo_keywords": [
+      "blockchain bot",
+      "Silverback SDK",
+      "Ethereum automation",
+      "smart contract monitoring",
+      "event-driven bot",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "DeFi automation",
+      "crypto trading bot"
+    ],
+    "actual_capabilities": [
+      "Guide users through blockchain bot design patterns",
+      "Explain event handling for blocks, logs, and cron triggers",
+      "Advise on risk management and circuit breakers",
+      "Help configure environment-based safety limits",
+      "Describe state management for bot operations",
+      "Provide operational monitoring best practices"
+    ],
+    "limitations": [
+      "Does not execute blockchain transactions directly",
+      "Requires user to install Silverback CLI separately",
+      "Does not provide pre-built bot templates",
+      "Does not access blockchain networks directly"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DeFi developers",
+        "title": "Monitor DeFi protocols",
+        "description": "Build bots that track pool metrics and alert on unusual activity"
+      },
+      {
+        "target_user": "Crypto traders",
+        "title": "Automate trading responses",
+        "description": "Create bots that execute trades based on on-chain signals"
+      },
+      {
+        "target_user": "Protocol integrators",
+        "title": "Bridge and sync systems",
+        "description": "Design bots that sync blockchain state with external services"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple event monitor",
+        "scenario": "User wants basic blockchain monitoring",
+        "prompt": "Help me create a Silverback bot that listens for new blocks on Ethereum mainnet and logs block numbers and timestamps."
+      },
+      {
+        "title": "Event filter bot",
+        "scenario": "User needs smart contract event monitoring",
+        "prompt": "Design a bot that watches for specific smart contract events on Uniswap and sends Discord notifications when trades occur."
+      },
+      {
+        "title": "Risk-managed automation",
+        "scenario": "User needs safety controls",
+        "prompt": "Create a bot with circuit breaker protection and configurable limits via environment variables for automated trading."
+      },
+      {
+        "title": "Multi-chain aggregator",
+        "scenario": "Advanced user needs complex setup",
+        "prompt": "Build a bot that monitors multiple chains, tracks derived metrics, and triggers actions based on complex threshold conditions."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create a Silverback bot that monitors USDC transfers over 100,000",
+        "output": [
+          "Use the Silverback App template with a Block handler or Event handler",
+          "Filter Transfer events where value > 100000 USDC",
+          "Add Telegram notification in the handler callback",
+          "Set environment variable for bot identity: SILVERBACK_APP_ID",
+          "Use print debugging first to verify event detection",
+          "Add a CircuitBreaker for emergency shutdown capability",
+          "Run with: silverback run --network ethereum:mainnet"
+        ]
+      },
+      {
+        "input": "Design a bot that alerts me when a new pool is created on Uniswap",
+        "output": [
+          "Use the Event handler to listen for PoolCreated events from the Uniswap factory contract",
+          "Set up filtering for the specific factory address you want to monitor",
+          "Configure Discord or Telegram notifications in the callback",
+          "Set SILVERBACK_APP_ID environment variable for identification",
+          "Start with monitoring mode before enabling any automated actions",
+          "Test thoroughly using a testnet like Sepolia first"
+        ]
+      },
+      {
+        "input": "Create a trading bot with safety limits",
+        "output": [
+          "Implement a CircuitBreaker that triggers when daily volume exceeds your limit",
+          "Use environment variables for all configuration: MAX_DAILY_VOLUME, MIN_PROFIT_THRESHOLD",
+          "Start in dry-run mode until you verify the logic works correctly",
+          "Only enable signing capabilities after thorough testing on testnet",
+          "Monitor all transactions via logs before going to production"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with print debugging before adding automated actions",
+      "Use environment variables for all configurable limits and keys",
+      "Implement circuit breakers for emergency stop conditions",
+      "Test thoroughly before configuring production signer keys"
+    ],
+    "anti_patterns": [
+      "Skipping documentation checks for current SDK version",
+      "Running bots with production keys before testing",
+      "Ignoring error logs during initial deployment",
+      "Hardcoding private keys or secrets in bot code"
+    ],
+    "faq": [
+      {
+        "question": "Which blockchain networks does Silverback support?",
+        "answer": "Silverback supports any EVM-compatible network including Ethereum, Polygon, Arbitrum, and Optimism."
+      },
+      {
+        "question": "What programming language is used for Silverback bots?",
+        "answer": "Silverback bots are written in Python using the Ape framework for blockchain interaction."
+      },
+      {
+        "question": "How do I connect external services like Discord or Telegram?",
+        "answer": "Use Python client libraries in your event handlers to send messages via webhooks or bot APIs."
+      },
+      {
+        "question": "Is it safe to run bots with signing capabilities?",
+        "answer": "Only after thorough testing. Use environment variables for keys and implement circuit breakers for safety."
+      },
+      {
+        "question": "Why is my bot not receiving events?",
+        "answer": "Check network configuration, verify contract addresses, and review logs for connection or filter errors."
+      },
+      {
+        "question": "How does this compare to other blockchain automation tools?",
+        "answer": "Silverback offers full Python flexibility for custom logic whereas alternatives may have limited scripting."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 94
+    }
+  ]
+}

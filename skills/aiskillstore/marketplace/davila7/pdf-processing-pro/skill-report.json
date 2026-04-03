@@ -1,0 +1,254 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:45:23.042Z",
+    "slug": "davila7-pdf-processing-pro",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/document-processing/pdf-processing-pro",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0bff435055342a5b1b4cbf6ffef7479b242dbae97520e203773547e41d036ca7",
+    "tree_hash": "870ab6869edcccee8c4365d1b8e9ce2907f9f6021207d3ba724dca277a306aa8"
+  },
+  "skill": {
+    "name": "pdf-processing-pro",
+    "description": "Production-ready PDF processing with forms, tables, OCR, validation, and batch operations. Use when working with complex PDF workflows in production environments, processing large volumes of PDFs, or requiring robust error handling and validation.",
+    "summary": "Production-ready PDF processing with forms, tables, OCR, validation, and batch operations. Use when ...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "pdf",
+      "document",
+      "ocr",
+      "forms",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate PDF processing toolkit using standard Python libraries (pdfplumber, pypdf, pytesseract). All functionality is local file I/O for document processing. The 201 static findings are false positives caused by the scanner misinterpreting markdown code examples as executable code. The skill performs no network operations, reads no environment variables, and executes no unauthorized commands.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/analyze_form.py",
+            "line_start": 1,
+            "line_end": 308
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/analyze_form.py",
+            "line_start": 280,
+            "line_end": 284
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 2209,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:45:23.042Z"
+  },
+  "content": {
+    "user_title": "Extract and process PDF documents",
+    "value_statement": "Processing PDF documents manually takes too much time. This toolkit provides production-ready scripts for extracting text, handling forms, extracting tables, and performing OCR on scanned documents with batch processing support.",
+    "seo_keywords": [
+      "PDF processing Claude",
+      "PDF extraction Codex",
+      "PDF forms automation",
+      "OCR PDF Claude Code",
+      "table extraction PDF",
+      "batch PDF processing",
+      "document automation",
+      "PDF tool",
+      "pdfplumber",
+      "pypdf"
+    ],
+    "actual_capabilities": [
+      "Extract text from PDF documents with formatting preservation",
+      "Analyze and fill PDF forms with validation and error handling",
+      "Extract tables from PDFs with automatic column detection",
+      "Perform OCR on scanned PDFs using Tesseract",
+      "Process multiple PDFs in batch with parallel support",
+      "Validate PDF integrity and form data before processing"
+    ],
+    "limitations": [
+      "Does not modify PDF visual content or layout structure",
+      "Requires Tesseract installation for OCR features",
+      "Does not support encrypted or password-protected PDFs",
+      "XFA form formats are not supported by pypdf"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data analysts",
+        "title": "Extract report data",
+        "description": "Pull tables and text from financial reports and research documents for analysis in spreadsheets."
+      },
+      {
+        "target_user": "Administrative staff",
+        "title": "Process form submissions",
+        "description": "Automatically fill and validate PDF forms from application data or spreadsheet entries."
+      },
+      {
+        "target_user": "Legal professionals",
+        "title": "Digitize scanned contracts",
+        "description": "Convert scanned PDF contracts and agreements into searchable text documents."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Extract PDF text",
+        "scenario": "Get text from a document",
+        "prompt": "Use PDF Processing Pro to extract all text from [document.pdf] and save it to [output.txt] with formatting preserved."
+      },
+      {
+        "title": "Analyze form fields",
+        "scenario": "Understand form structure",
+        "prompt": "Use PDF Processing Pro to analyze [form.pdf] and output a JSON schema showing all form fields, their types, positions, and whether they are required."
+      },
+      {
+        "title": "Extract tables",
+        "scenario": "Get data from tables",
+        "prompt": "Use PDF Processing Pro to extract all tables from [report.pdf] and export them to [data.csv] with proper headers."
+      },
+      {
+        "title": "Batch process PDFs",
+        "scenario": "Handle multiple documents",
+        "prompt": "Use PDF Processing Pro to batch process all PDFs in [invoices/] directory. Extract text from each and save to [processed/] with the same filename but .txt extension."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Extract all text from monthly_report.pdf and save to output.txt",
+        "output": [
+          "Processing: monthly_report.pdf",
+          "Extracted 45 pages of text",
+          "Saved to output.txt (125KB)",
+          "Found 8 tables during extraction"
+        ]
+      },
+      {
+        "input": "Analyze form.pdf for all form fields",
+        "output": [
+          "Found 12 form fields:",
+          "- full_name: text, required, max_length: 100",
+          "- date_of_birth: text, required, format: MM/DD/YYYY",
+          "- email_newsletter: checkbox, not required",
+          "- preferred_contact: radio, required, options: [email, phone, mail]"
+        ]
+      },
+      {
+        "input": "Extract tables from quarterly_report.pdf to Excel",
+        "output": [
+          "Processing: quarterly_report.pdf",
+          "Found 5 tables across 12 pages",
+          "Exported Table_1 to Excel sheet (Revenue Data)",
+          "Exported Table_2 to Excel sheet (Expenses)",
+          "Exported Table_3 to Excel sheet (Headcount)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate PDF files before processing to catch errors early and fail fast",
+      "Use batch processing for multiple documents to improve efficiency and reduce overhead",
+      "Install Tesseract OCR system package before processing scanned documents",
+      "Test with sample PDFs first to verify output format meets requirements"
+    ],
+    "anti_patterns": [
+      "Processing password-protected PDFs without decrypting them first",
+      "Ignoring OCR confidence scores when working with scanned documents",
+      "Processing very large PDFs over 100MB without streaming or chunking",
+      "Skipping form field validation before filling forms with data"
+    ],
+    "faq": [
+      {
+        "question": "What PDF formats are supported?",
+        "answer": "Standard text-based PDFs, forms (AcroForms), and scanned documents via OCR. XFA dynamic forms are not supported."
+      },
+      {
+        "question": "What are the file size limits?",
+        "answer": "Small and medium PDFs under 50MB process efficiently. For larger files, process page by page or use streaming."
+      },
+      {
+        "question": "How do I integrate with existing tools?",
+        "answer": "Use the Python scripts directly in your codebase. Import pdfplumber or pypdf following documentation examples."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "All processing happens locally on your machine. No data is sent to any external servers or services."
+      },
+      {
+        "question": "OCR is not working. What do I do?",
+        "answer": "Install Tesseract OCR system package for your platform (macOS: brew install tesseract, Ubuntu: apt-get install tesseract-ocr)."
+      },
+      {
+        "question": "How does this compare to online PDF tools?",
+        "answer": "This tool runs entirely locally with no file size limits or upload restrictions. Data never leaves your machine."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "analyze_form.py",
+          "type": "file",
+          "path": "scripts/analyze_form.py",
+          "lines": 308
+        }
+      ]
+    },
+    {
+      "name": "FORMS.md",
+      "type": "file",
+      "path": "FORMS.md",
+      "lines": 611
+    },
+    {
+      "name": "OCR.md",
+      "type": "file",
+      "path": "OCR.md",
+      "lines": 138
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 297
+    },
+    {
+      "name": "TABLES.md",
+      "type": "file",
+      "path": "TABLES.md",
+      "lines": 627
+    }
+  ]
+}

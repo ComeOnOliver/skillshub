@@ -1,0 +1,323 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:13:04.177Z",
+    "slug": "92bilal26-summary-generator",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/summary-generator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "db324499f3a594e9aec8cfaa49e5866ff0d728a623616a00710285e905ee84f9",
+    "tree_hash": "266c090698d16119ac0b70c9725d47c98a566bbed63a35bb77403fb26aa277d0"
+  },
+  "skill": {
+    "name": "summary-generator",
+    "description": "This skill should be used when generating lesson summaries for educational content. It extracts key concepts, mental models, patterns, and common mistakes from lesson markdown files using a Socratic extraction process. Use this skill when a lesson file needs a `.summary.md` companion file, or when reviewing/refreshing existing summaries.",
+    "summary": "This skill should be used when generating lesson summaries for educational content. It extracts key ...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "92Bilal26",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "education",
+      "summaries",
+      "lesson-planning",
+      "knowledge-extraction",
+      "socratic"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and prompt instructions. No executable code, network calls, file system access, or environment variable reading. Pure prompt-based skill with zero risk factors. All 32 static findings are false positives triggered by markdown syntax (triple backticks for code blocks) and legitimate documentation text.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 153,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 169
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 350,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:13:04.177Z"
+  },
+  "content": {
+    "user_title": "Generate lesson summaries with Socratic extraction",
+    "value_statement": "Creating lesson summaries manually takes time and risks missing key insights. This skill uses a proven Socratic questioning framework to consistently extract core concepts, mental models, and practical patterns from any lesson file.",
+    "seo_keywords": [
+      "lesson summary generator",
+      "educational content summarization",
+      "Socratic questioning for learning",
+      "Claude Code skill",
+      "knowledge extraction framework",
+      "teaching documentation",
+      "lesson review tool",
+      "skill extraction AI",
+      "Claude Codex skill",
+      "educational AI assistant"
+    ],
+    "actual_capabilities": [
+      "Extract single core concept from any lesson using targeted questioning",
+      "Identify 2-3 reusable mental models and thinking frameworks",
+      "Map 2-4 actionable patterns and techniques from lesson content",
+      "Document 2-3 common mistakes students make with corrections",
+      "Build connection maps showing prerequisite and follow-up topics",
+      "Validate summaries against anti-patterns checklist"
+    ],
+    "limitations": [
+      "Only generates summaries for markdown lesson files",
+      "Requires the AI to read lesson content first before summarizing",
+      "Does not modify or edit existing summaries automatically",
+      "No support for non-educational content types"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Course developers",
+        "title": "Create companion summaries",
+        "description": "Generate .summary.md files for new lessons to provide quick reference guides for students."
+      },
+      {
+        "target_user": "Content reviewers",
+        "title": "Audit existing summaries",
+        "description": "Review and refresh outdated lesson summaries using the Socratic framework for quality."
+      },
+      {
+        "target_user": "Educators",
+        "title": "Extract key takeaways",
+        "description": "Pull essential concepts and patterns from lessons to share in study guides or quick references."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic summary request",
+        "scenario": "Generate a new summary",
+        "prompt": "Use the summary-generator skill to create a .summary.md file for this lesson. Read the lesson first, then apply the Socratic extraction process."
+      },
+      {
+        "title": "Review existing summary",
+        "scenario": "Audit lesson quality",
+        "prompt": "Use summary-generator to review this lesson and identify if any key concepts, mental models, or patterns are missing from the current summary."
+      },
+      {
+        "title": "Level-based summary",
+        "scenario": "Adjust for proficiency",
+        "prompt": "Generate a summary for this A2/B1/C1 level lesson using the summary-generator skill. Target the word count appropriate for the proficiency level."
+      },
+      {
+        "title": "Quick extraction",
+        "scenario": "Extract core elements",
+        "prompt": "Use the Socratic questions from summary-generator: What is the one thing students must remember? What mental models does this install? What patterns can they apply? What mistakes do they make?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate a summary for a Python functions lesson",
+        "output": [
+          "Core Concept: Functions are reusable blocks of code that perform specific tasks and can accept inputs and return outputs.",
+          "Key Mental Models: Input → Process → Output flow; DRY principle (Do Not Repeat Yourself); Function as contract between caller and implementation.",
+          "Critical Patterns: Define with def keyword; parameters for inputs; return statement for outputs; default argument values.",
+          "Common Mistakes: Forgetting to call the function; confusing print with return; not handling None returns.",
+          "Connections: Builds on: Variables and data types; Leads to: Classes and object-oriented programming."
+        ]
+      },
+      {
+        "input": "Create a summary for a git basics lesson at beginner level",
+        "output": [
+          "Core Concept: Git tracks changes to files over time, allowing you to save versions and collaborate with others.",
+          "Key Mental Models: Snapshot vs. save; Local repository as complete history; Staging area as review step before committing.",
+          "Critical Patterns: git init to start tracking; git add to stage changes; git commit to save version; git status to check state.",
+          "Common Mistakes: Committing without adding first; forgetting to write clear commit messages; committing sensitive data.",
+          "Connections: Builds on: Command line basics; Leads to: Branching and merging, remote repositories."
+        ]
+      },
+      {
+        "input": "Summarize a design patterns lesson for intermediate developers",
+        "output": [
+          "Core Concept: Design patterns are proven solutions to common software design problems that can be adapted to fit specific situations.",
+          "Key Mental Models: Problem-solution pairing; Pattern classification by purpose; Composition over inheritance.",
+          "Critical Patterns: Factory Method for object creation; Observer for event handling; Strategy for interchangeable algorithms.",
+          "Common Mistakes: Over-engineering with patterns where simple code suffices; applying patterns without understanding trade-offs.",
+          "Connections: Builds on: Object-oriented programming; Leads to: Architectural patterns, SOLID principles."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always read the full lesson file before applying the Socratic extraction questions",
+      "Validate each summary against the anti-patterns checklist before finalizing",
+      "Match summary length to the proficiency level specified in lesson frontmatter"
+    ],
+    "anti_patterns": [
+      "Including full explanations instead of pointing to concepts",
+      "Copying code examples instead of describing patterns",
+      "Using framework terminology that students should not see"
+    ],
+    "faq": [
+      {
+        "question": "What file formats does this skill support?",
+        "answer": "Only markdown lesson files with frontmatter. The skill reads content and outputs .summary.md files."
+      },
+      {
+        "question": "What proficiency levels can it handle?",
+        "answer": "All levels from A1-A2 (beginner) through C1-C2 (advanced) with appropriate word count targets."
+      },
+      {
+        "question": "Does it work with nested lesson structures?",
+        "answer": "Yes. The skill reads any markdown file and generates summaries regardless of directory structure."
+      },
+      {
+        "question": "Is lesson content stored or transmitted?",
+        "answer": "No. The AI processes lesson content in context only during the summary generation session."
+      },
+      {
+        "question": "What if the summary misses important concepts?",
+        "answer": "Run the skill again or use the Socratic questions directly to identify gaps in the generated summary."
+      },
+      {
+        "question": "How is this different from generic summarization tools?",
+        "answer": "Uses pedagogical Socratic questioning designed specifically for educational content with mental models and patterns."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 172
+    }
+  ]
+}

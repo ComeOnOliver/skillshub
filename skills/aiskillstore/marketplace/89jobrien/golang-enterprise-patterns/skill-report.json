@@ -1,0 +1,182 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:11:23.940Z",
+    "slug": "89jobrien-golang-enterprise-patterns",
+    "source_url": "https://github.com/89jobrien/steve/tree/main/steve/skills/golang-enterprise-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e260a79b8ebf66a1c89d90c3fb089d9cfb9f470bec89784655a949081472a3fa",
+    "tree_hash": "675fbc7c719ed33feab4e94ed19e9fda5b9613e7d2767085180f54e2375d0d60"
+  },
+  "skill": {
+    "name": "golang-enterprise-patterns",
+    "description": "Enterprise-level Go architecture patterns including clean architecture, hexagonal architecture, DDD, and production-ready application structure.",
+    "summary": "Enterprise Go architecture patterns for clean architecture, hexagonal architecture, DDD implementation, and production-ready code organization.",
+    "icon": "📦",
+    "version": "1.0.1",
+    "author": "Joseph OBrien",
+    "license": "MIT",
+    "tags": [
+      "golang",
+      "go",
+      "clean-architecture",
+      "hexagonal-architecture",
+      "ddd",
+      "enterprise",
+      "design-patterns"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing architectural guidance and Go code examples. Static findings are false positives triggered by documentation patterns. The skill does not contain executable code, scripts, or any mechanism for network calls, command execution, or credential access.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 943,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:11:23.940Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Apply Enterprise Go Architecture Patterns",
+    "value_statement": "Building maintainable Go applications requires proven architectural patterns. This skill provides clean architecture, hexagonal architecture, and DDD patterns to organize complex codebases for long-term success.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Go enterprise patterns",
+      "Clean architecture Go",
+      "Hexagonal architecture",
+      "Domain-Driven Design Go",
+      "Go architecture patterns",
+      "Golang best practices",
+      "Go project structure"
+    ],
+    "actual_capabilities": [
+      "Provide clean architecture guidance for Go applications with proper layer separation",
+      "Explain hexagonal architecture with ports and adapters pattern for dependency inversion",
+      "Guide Domain-Driven Design implementation including aggregates, value objects, and domain events",
+      "Show production-ready project structure with cmd, internal, and pkg organization",
+      "Demonstrate proper dependency injection patterns for testable Go code",
+      "Provide error handling patterns with custom error types and wrapping"
+    ],
+    "limitations": [
+      "Does not generate complete application boilerplate code",
+      "Does not provide implementation for specific frameworks or databases",
+      "Does not include deployment or infrastructure configuration",
+      "Does not cover performance optimization or concurrency patterns"
+    ],
+    "use_cases": [
+      {
+        "title": "Design New Enterprise Go Application",
+        "description": "Architect a new Go microservice or application using clean architecture principles with proper separation between domain, application, and infrastructure layers.",
+        "target_user": "Backend engineers designing new Go projects"
+      },
+      {
+        "title": "Refactor Monolithic Go Codebase",
+        "description": "Apply hexagonal architecture patterns to extract core business logic from infrastructure dependencies, making the codebase more testable and maintainable.",
+        "target_user": "Senior developers improving existing Go codebases"
+      },
+      {
+        "title": "Implement Domain-Driven Design",
+        "description": "Structure complex business domains using DDD patterns including aggregate roots, value objects, and domain events for clear domain boundaries.",
+        "target_user": "Architects implementing domain-driven systems"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New Project Structure",
+        "prompt": "Help me set up a new Go project structure using clean architecture. I need directories for cmd, internal with domain/application/infrastructure/interfaces layers, and pkg for shared libraries. Show me the recommended organization and explain the dependency flow.",
+        "scenario": "Setting up a new Go project with enterprise patterns"
+      },
+      {
+        "title": "DDD Aggregate Implementation",
+        "prompt": "I am implementing an order aggregate with DDD patterns. Create an Order aggregate root with proper invariants, value objects for money amounts, and domain events for state changes. Include error handling for invalid state transitions.",
+        "scenario": "Implementing DDD aggregates with proper encapsulation"
+      },
+      {
+        "title": "Port and Adapter Pattern",
+        "prompt": "Show me how to implement hexagonal architecture for a user management feature. Define driving ports for the API interface, driven ports for storage and notification, and create adapter implementations that depend on abstractions.",
+        "scenario": "Applying ports and adapters for dependency inversion"
+      },
+      {
+        "title": "Dependency Injection Setup",
+        "prompt": "Set up dependency injection for a Go application. Show manual constructor injection for UserService and OrderService, how to wire dependencies in main.go, and explain when to prefer manual DI over wire or other frameworks.",
+        "scenario": "Configuring dependency injection for testable code"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How should I organize a large Go codebase with multiple bounded contexts?",
+        "output": "For a large Go codebase, use clean architecture with clear layer separation:\n\n1. **cmd/** - Entry points (API servers, workers, CLIs)\n2. **internal/** - Private application code\n   - **domain/** - Business entities, interfaces, rules\n   - **application/** - Use cases, services\n   - **infrastructure/** - DB, messaging, external services\n   - **interfaces/** - HTTP handlers, gRPC servers\n3. **pkg/** - Shared libraries for reuse\n\nThe dependency rule: inner layers cannot depend on outer layers. Infrastructure implements interfaces defined in domain. This keeps business logic independent of frameworks."
+      },
+      {
+        "input": "What are the key differences between clean architecture and hexagonal architecture in Go?",
+        "output": "Clean architecture groups code by layer (domain, application, infrastructure, interfaces). Hexagonal architecture focuses on ports (interfaces) and adapters (implementations). Both achieve similar goals:\n\n- Clean: Layer-based organization with strict inward dependencies\n- Hexagonal: Port-based with primary (driving) and secondary (driven) adapters\n\nFor Go, clean architecture is more commonly used. The key principle: depend on abstractions, not concretions. Define interfaces in inner layers, implement in outer layers."
+      },
+      {
+        "input": "How do I prevent invalid state in my domain models?",
+        "output": "Make illegal states unrepresentable through type design:\n\n1. Use value types for invariants\n2. Private fields with validation in constructors\n3. Return errors for invalid operations\n4. Use domain events for state changes\n\nExample: Order status should be a custom type, not string. AddItem should check StatusPending before modifying. Submit should emit OrderSubmitted event. This prevents invalid transitions at compile time."
+      }
+    ],
+    "best_practices": [
+      "Keep the domain layer pure with no framework dependencies - this layer expresses business rules and should be testable without external dependencies",
+      "Use small, focused interfaces (interface segregation) - define the minimum contract needed rather than large interfaces",
+      "Apply dependency inversion - inner layers define interfaces, outer layers implement them - never let domain depend on infrastructure"
+    ],
+    "anti_patterns": [
+      "Putting business logic in HTTP handlers - this creates tight coupling between web framework and domain, making testing difficult",
+      "Skipping interface definitions - depending directly on concrete implementations prevents mocking and testing",
+      "Leaking infrastructure types to domain - importing database or framework types in domain layer breaks architectural boundaries"
+    ],
+    "faq": [
+      {
+        "question": "When should I use DDD vs simple CRUD?",
+        "answer": "Use DDD when you have complex business rules, multiple bounded contexts, or evolving domain logic. Simple CRUD with basic layering works for straightforward applications. DDD adds complexity that pays off when the domain itself is complex."
+      },
+      {
+        "question": "How do I structure a Go microservice with clean architecture?",
+        "answer": "Place all service code in internal/. cmd/ contains the main.go entry point. Each microservice should have its own domain, application, infrastructure, and interfaces layers. Shared code goes in pkg/ or a separate library."
+      },
+      {
+        "question": "Should I use wire for dependency injection in Go?",
+        "answer": "Wire is excellent for large applications with many dependencies. For smaller projects, manual constructor injection is simpler and sufficient. Consider manual DI first, then introduce wire when complexity justifies it."
+      },
+      {
+        "question": "How do I test code following clean architecture?",
+        "answer": "Test domain logic without external dependencies using mock implementations of ports. Application services can be tested with in-memory repository implementations. Integration tests verify adapters work correctly with real databases."
+      },
+      {
+        "question": "What is the difference between application and domain services?",
+        "answer": "Domain services contain pure business logic that does not fit within an aggregate. Application services coordinate between domain objects and handle use cases, transactions, and cross-cutting concerns like logging."
+      },
+      {
+        "question": "How do I handle errors in clean architecture?",
+        "answer": "Define domain error types with codes and messages. Wrap infrastructure errors with domain context using fmt.Errorf. Never leak infrastructure errors to upper layers. Use sentinel errors for recoverable conditions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 362
+    }
+  ]
+}

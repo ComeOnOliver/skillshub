@@ -1,0 +1,474 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:34:12.475Z",
+    "slug": "ariegoldkin-devops-deployment",
+    "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/tree/main/skills/devops-deployment",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ebce5b920943752d96321a370c126c4c7ca7b3ec522b446ce7636689e593c63d",
+    "tree_hash": "03b53b73f4a6bbaf77e67a9e8e911648d8bcb8c4a052fd92035eaee3c99a9f1a"
+  },
+  "skill": {
+    "name": "devops-deployment",
+    "description": "CI/CD pipelines, containerization, Kubernetes, and infrastructure as code patterns",
+    "summary": "CI/CD pipelines, containerization, Kubernetes, and infrastructure as code patterns",
+    "icon": "🚀",
+    "version": "1.0.0",
+    "author": "ArieGoldkin",
+    "license": "MIT",
+    "category": "Infrastructure & Deployment",
+    "tags": [
+      "CI/CD",
+      "deployment",
+      "Docker",
+      "Kubernetes",
+      "pipeline",
+      "infrastructure",
+      "GitOps",
+      "container",
+      "automation",
+      "release"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only declarative YAML and Terraform configuration templates for DevOps workflows. The static scanner flagged 66 potential issues, but ALL are false positives. The scanner misidentified markdown code formatting as shell execution, template placeholders as hardcoded secrets, and standard DevOps practices as security risks. Templates use proper security patterns including Kubernetes secrets references and GitHub Actions secrets injection.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "templates/argocd-application.yaml",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "templates/argocd-application.yaml",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "templates/Dockerfile",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "templates/terraform-aws.tf",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "templates/terraform-aws.tf",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "templates/terraform-aws.tf",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "templates/terraform-aws.tf",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "templates/terraform-aws.tf",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "templates/terraform-aws.tf",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "templates/terraform-aws.tf",
+            "line_start": 31,
+            "line_end": 31
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 179
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 179,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 185
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 185,
+            "line_end": 186
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "templates/docker-compose.yml",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "templates/docker-compose.yml",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "templates/github-actions-pipeline.yml",
+            "line_start": 99,
+            "line_end": 99
+          },
+          {
+            "file": "templates/k8s-manifests.yaml",
+            "line_start": 39,
+            "line_end": 39
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 953,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:34:12.475Z"
+  },
+  "content": {
+    "user_title": "Deploy applications with CI/CD pipelines and IaC templates",
+    "value_statement": "Setting up deployment infrastructure from scratch is complex and error-prone. This skill provides production-ready templates for Docker, Kubernetes, Terraform, and GitHub Actions workflows that you can customize for your environment.",
+    "seo_keywords": [
+      "DevOps deployment",
+      "CI/CD pipeline template",
+      "Docker container build",
+      "Kubernetes deployment",
+      "Terraform AWS infrastructure",
+      "GitHub Actions workflow",
+      "ArgoCD GitOps",
+      "Claude Code",
+      "Claude",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Generate multi-stage Dockerfiles with security hardening",
+      "Create Kubernetes manifests with rolling updates and resource limits",
+      "Build GitHub Actions CI/CD pipelines with 6 stages",
+      "Configure Terraform modules for AWS VPC, EKS, and RDS",
+      "Set up ArgoCD applications for GitOps workflows",
+      "Implement External Secrets with AWS Secrets Manager integration"
+    ],
+    "limitations": [
+      "Templates contain placeholders that you must replace with your values",
+      "Templates are starting points that need customization for your environment",
+      "Does not execute deployments or interact with live infrastructure directly"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Set up CI/CD pipelines",
+        "description": "Generate complete GitHub Actions workflows with lint, test, security scan, build, and deploy stages"
+      },
+      {
+        "target_user": "Backend Developers",
+        "title": "Containerize applications",
+        "description": "Create production-ready Dockerfiles and Kubernetes manifests with security best practices"
+      },
+      {
+        "target_user": "Platform Architects",
+        "title": "Define infrastructure as code",
+        "description": "Configure Terraform modules for AWS cloud resources including VPC, EKS clusters, and RDS databases"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "K8s deployment",
+        "scenario": "Create Kubernetes manifests for Node.js app",
+        "prompt": "Create Kubernetes deployment, service, and ingress manifests for a Node.js application. Include rolling update strategy, security context with non-root user, resource requests and limits, and health checks on port 3000."
+      },
+      {
+        "title": "Dockerfile",
+        "scenario": "Build production container image",
+        "prompt": "Create a multi-stage Dockerfile for a Node.js application using node:20-alpine base. Install production dependencies only in final stage, create non-root user with uid 1001, and include a health check endpoint."
+      },
+      {
+        "title": "GitHub Actions",
+        "scenario": "Build CI/CD pipeline",
+        "prompt": "Create a GitHub Actions workflow with lint, test, security scan, build, and deploy stages. Include npm audit, Trivy vulnerability scanning, Docker buildx with cache, and environment-gated deployment to staging and production."
+      },
+      {
+        "title": "Terraform AWS",
+        "scenario": "Provision cloud infrastructure",
+        "prompt": "Create Terraform configuration for AWS infrastructure including VPC with public and private subnets, EKS cluster with managed node groups, and RDS PostgreSQL instance with encryption and backup retention."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a Kubernetes deployment for a Node.js API with 3 replicas, rolling updates, and proper security settings",
+        "output": [
+          "Deployment with 3 replicas and rolling update strategy (maxSurge: 1, maxUnavailable: 0)",
+          "Security context: runAsNonRoot: true, runAsUser: 1001, allowPrivilegeEscalation: false",
+          "Resource limits: cpu 500m, memory 512Mi, requests: cpu 100m, memory 128Mi",
+          "Health checks: liveness probe on /health, readiness probe on /ready",
+          "Service type ClusterIP routing to port 3000",
+          "Ingress with nginx controller and TLS via cert-manager"
+        ]
+      },
+      {
+        "input": "Create a GitHub Actions workflow for a Node.js project with security scanning",
+        "output": [
+          "Lint stage with npm run lint and typecheck",
+          "Test stage with coverage reporting to Codecov",
+          "Security stage with npm audit and Trivy vulnerability scanner",
+          "Build stage with Docker buildx and GitHub container registry push",
+          "Deploy staging with environment protection rules",
+          "Deploy production with manual approval gate"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always review and customize template placeholders like image names, domains, and environment variables before use",
+      "Use External Secrets Operator or similar tools instead of embedding secrets in manifests",
+      "Test deployments in staging environment with the same configuration before production rollout"
+    ],
+    "anti_patterns": [
+      "Using latest image tag in production instead of pinned versions",
+      "Running containers as root user in Kubernetes pods",
+      "Skipping security scanning stages in CI/CD pipelines"
+    ],
+    "faq": [
+      {
+        "question": "Which CI/CD platforms are supported?",
+        "answer": "Templates use GitHub Actions as primary example. Patterns apply to GitLab CI, CircleCI, and other platforms with minimal changes."
+      },
+      {
+        "question": "Can I customize the deployment strategies?",
+        "answer": "Yes. Templates include rolling updates by default. You can modify to blue-green or canary by adjusting the strategy."
+      },
+      {
+        "question": "Does this skill scan for vulnerabilities?",
+        "answer": "GitHub Actions template includes npm audit and Trivy scanner. You can add Snyk, CodeQL, or other security tools."
+      },
+      {
+        "question": "How are secrets managed securely?",
+        "answer": "Use External Secrets Operator template to sync from AWS Secrets Manager, HashiCorp Vault, or Azure Key Vault."
+      },
+      {
+        "question": "What if deployments fail?",
+        "answer": "ArgoCD templates include self-healing and retry policies. GitHub Actions templates support environment protection rules."
+      },
+      {
+        "question": "How is this different from other tools?",
+        "answer": "This skill provides copy-paste ready templates that you own and control. Customize every aspect for your requirements."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "templates",
+      "type": "dir",
+      "path": "templates",
+      "children": [
+        {
+          "name": "argocd-application.yaml",
+          "type": "file",
+          "path": "templates/argocd-application.yaml",
+          "lines": 28
+        },
+        {
+          "name": "docker-compose.yml",
+          "type": "file",
+          "path": "templates/docker-compose.yml",
+          "lines": 50
+        },
+        {
+          "name": "Dockerfile",
+          "type": "file",
+          "path": "templates/Dockerfile",
+          "lines": 52
+        },
+        {
+          "name": "external-secrets.yaml",
+          "type": "file",
+          "path": "templates/external-secrets.yaml",
+          "lines": 23
+        },
+        {
+          "name": "github-actions-pipeline.yml",
+          "type": "file",
+          "path": "templates/github-actions-pipeline.yml",
+          "lines": 141
+        },
+        {
+          "name": "helm-values.yaml",
+          "type": "file",
+          "path": "templates/helm-values.yaml",
+          "lines": 45
+        },
+        {
+          "name": "k8s-manifests.yaml",
+          "type": "file",
+          "path": "templates/k8s-manifests.yaml",
+          "lines": 105
+        },
+        {
+          "name": "terraform-aws.tf",
+          "type": "file",
+          "path": "templates/terraform-aws.tf",
+          "lines": 92
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 187
+    }
+  ]
+}

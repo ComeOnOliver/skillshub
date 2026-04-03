@@ -1,0 +1,402 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:43:49.581Z",
+    "slug": "0xbigboss-go-best-practices",
+    "source_url": "https://github.com/0xBigBoss/claude-code/tree/main/.claude/skills/go-best-practices",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1c44e581c2a3bf1c578ca8e7f8b1dfeb02bf93329498e88227672d71d615f057",
+    "tree_hash": "f6b426a5d306e266f720475c4d4c1cd1a654ab0a8c75bca2860d675fe1da7f7c"
+  },
+  "skill": {
+    "name": "go-best-practices",
+    "description": "Provides Go patterns for type-first development with custom types, interfaces, functional options, and error handling. Must use when reading or writing Go files.",
+    "summary": "Provides Go patterns for type-first development with custom types, interfaces, functional options, a...",
+    "icon": "🔷",
+    "version": "1.0.0",
+    "author": "0xBigBoss",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "Go",
+      "programming",
+      "best-practices",
+      "type-system",
+      "patterns"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure markdown documentation skill containing only guidance for Go programming patterns. No executable code, network calls, filesystem access, or command execution capabilities exist. All 64 static findings are false positives: SHA256 content hashes in metadata were misidentified as cryptographic code, Go code examples using backticks for multi-line strings were misidentified as shell execution, and environment variable loading examples were misidentified as credential access. The previous audit on 2026-01-10 correctly assessed this as safe with no risk factors.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 178
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 179
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 179,
+            "line_end": 185
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 185,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 269
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 246,
+            "line_end": 246
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 248,
+            "line_end": 248
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 252,
+            "line_end": 252
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 448,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:43:49.580Z"
+  },
+  "content": {
+    "user_title": "Apply Go best practices for type-safe code",
+    "value_statement": "Go projects often suffer from runtime errors that could be caught at compile time. This skill provides patterns for type-first development, interfaces, functional options, and proper error handling to prevent bugs before they happen.",
+    "seo_keywords": [
+      "Go best practices",
+      "Go patterns",
+      "type-first development",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "Go interfaces",
+      "functional options Go",
+      "Go error handling",
+      "Go programming"
+    ],
+    "actual_capabilities": [
+      "Guide type-first development with custom types and structs",
+      "Define interfaces for behavior contracts",
+      "Implement functional options pattern for flexible configuration",
+      "Apply proper error handling with context and wrapping",
+      "Structure Go modules with cohesive package design",
+      "Create exhaustive switch statements with default error handling"
+    ],
+    "limitations": [
+      "Does not execute or test Go code",
+      "Does not provide compiler or tooling",
+      "Does not integrate with Go modules or dependencies",
+      "Does not generate complete project scaffolds"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Go developers",
+        "title": "Write type-safe Go code",
+        "description": "Design data structures and interfaces before implementation to make illegal states unrepresentable."
+      },
+      {
+        "target_user": "Backend engineers",
+        "title": "Build maintainable APIs",
+        "description": "Create clean error handling patterns and functional options for configurable server implementations."
+      },
+      {
+        "target_user": "AI assistants",
+        "title": "Generate idiomatic Go",
+        "description": "Follow established Go conventions when writing or reviewing Go code for any project."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic type design",
+        "scenario": "Designing a new data model",
+        "prompt": "Design a type-safe Go struct for a [entity] with proper custom types for domain primitives. Include validation at construction and proper error handling."
+      },
+      {
+        "title": "Interface definition",
+        "scenario": "Defining behavior contracts",
+        "prompt": "Define a Go interface for a [repository/service] that accepts context and returns typed results. Show how to accept interfaces and return structs."
+      },
+      {
+        "title": "Functional options",
+        "scenario": "Creating configurable constructors",
+        "prompt": "Implement a NewServer function using the functional options pattern with sensible defaults. Include examples for port, timeout, and custom configuration."
+      },
+      {
+        "title": "Complete implementation",
+        "scenario": "Building a full Go package",
+        "prompt": "Implement a complete Go package following type-first development: define types first, create interfaces, implement error wrapping with %w, and add table-driven tests."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a User type with email validation and proper error handling",
+        "output": [
+          "Define UserID as a custom string type to prevent ID confusion",
+          "Create User struct with embedded Timestamps for tracking",
+          "Implement NewUser function that validates email format",
+          "Use fmt.Errorf with %w for error wrapping",
+          "Add exhaustive switch with default error case"
+        ]
+      },
+      {
+        "input": "Create a server with custom port and timeout configuration",
+        "output": [
+          "Define ServerOption as a function type for configuration",
+          "Create WithPort and WithTimeout option functions",
+          "Implement NewServer with default values (port 8080, 30s timeout)",
+          "Apply all options in a loop for flexible configuration"
+        ]
+      },
+      {
+        "input": "Design an interface for a user repository",
+        "output": [
+          "Define UserRepository interface with GetByID and Save methods",
+          "Accept context.Context in each method for cancellation",
+          "Return typed results with (*User, error) signatures",
+          "Accept interfaces in functions, return concrete structs"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Define types and interfaces before implementation to let the compiler guide completeness.",
+      "Accept interfaces, return structs to maximize flexibility while controlling API surface.",
+      "Return new values instead of mutating inputs to make data flow explicit."
+    ],
+    "anti_patterns": [
+      "Using generic types like string or int instead of domain-specific custom types.",
+      "Returning errors without context using bare errors.New without wrapping.",
+      "Skipping default cases in switch statements, allowing silent failures."
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with Go 1.18+ generics?",
+        "answer": "Yes. The patterns focus on type-first development. Generics can complement custom types when appropriate."
+      },
+      {
+        "question": "What Go versions are supported?",
+        "answer": "Go 1.17 and later. Error wrapping with %w requires Go 1.13+."
+      },
+      {
+        "question": "Can this integrate with my existing Go project?",
+        "answer": "This is a prompt skill. It guides AI assistants working on your code but does not modify files directly."
+      },
+      {
+        "question": "Is any data sent to external servers?",
+        "answer": "No. This skill contains only documentation patterns. No network calls or data transmission occurs."
+      },
+      {
+        "question": "How does this compare to golangci-lint?",
+        "answer": "This skill provides design patterns. golangci-lint enforces code quality. Use both together."
+      },
+      {
+        "question": "Should I use this for every Go file?",
+        "answer": "Load this skill when working with Go files. The patterns apply to most Go code you write."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 270
+    }
+  ]
+}

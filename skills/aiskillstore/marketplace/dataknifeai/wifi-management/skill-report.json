@@ -1,0 +1,302 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:59:04.184Z",
+    "slug": "dataknifeai-wifi-management",
+    "source_url": "https://github.com/DataKnifeAI/unifi-network-mcp/tree/main/.github/skills/wifi-management",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7b3efcfa5694f1464b00c5ac4094899431ed4bb9057f06714c308d803a89e140",
+    "tree_hash": "ddfc13fbb0fcf2a5a6a6453e0bf797a219f68c04e8448b5a0cb6529db8d7a772"
+  },
+  "skill": {
+    "name": "wifi-management",
+    "description": "Monitor, analyze, and optimize WiFi networks and client connections. Track signal strength, analyze channel usage, and optimize band distribution.",
+    "summary": "Monitor, analyze, and optimize WiFi networks and client connections. Track signal strength, analyze ...",
+    "icon": "📶",
+    "version": "1.0.0",
+    "author": "DataKnifeAI",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "networking",
+      "wifi",
+      "unifi",
+      "monitoring",
+      "optimization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill with no executable code. Static findings are false positives: markdown backticks (code formatting) were misidentified as shell execution; WPA2/WPA3 protocol names were misidentified as weak crypto; source URL metadata is legitimate. No security risks present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 265,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:59:04.184Z"
+  },
+  "content": {
+    "user_title": "Monitor and Optimize UniFi WiFi Networks",
+    "value_statement": "Managing WiFi networks requires constant monitoring of multiple access points, client devices, and channel configurations. This skill provides unified access to UniFi network data, enabling quick analysis and optimization recommendations without switching between management interfaces.",
+    "seo_keywords": [
+      "WiFi management",
+      "UniFi network monitoring",
+      "Claude Code WiFi skill",
+      "wireless network optimization",
+      "signal strength analysis",
+      "channel utilization",
+      "client bandwidth tracking",
+      "access point monitoring",
+      "network troubleshooting",
+      "band distribution analysis"
+    ],
+    "actual_capabilities": [
+      "List all WiFi networks with security and status details",
+      "Track connected client devices and signal strength metrics",
+      "Analyze channel usage and identify interference patterns",
+      "Monitor access point performance and load distribution",
+      "Review band distribution between 2.4GHz and 5GHz networks",
+      "Generate optimization recommendations for WiFi infrastructure"
+    ],
+    "limitations": [
+      "Requires UniFi Network API access credentials",
+      "Cannot modify network configuration, read-only access only",
+      "Does not support non-UniFi network hardware"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Network Administrators",
+        "title": "Network Health Dashboard",
+        "description": "Quickly assess overall WiFi network status across all access points and identify issues requiring attention."
+      },
+      {
+        "target_user": "IT Support Teams",
+        "title": "Client Connectivity Issues",
+        "description": "Diagnose WiFi connectivity problems by analyzing signal strength and band distribution for specific clients."
+      },
+      {
+        "target_user": "Facility Managers",
+        "title": "Capacity Planning Reports",
+        "description": "Review client distribution patterns and access point load to plan infrastructure upgrades and expansions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "List All Networks",
+        "scenario": "Get complete WiFi network overview",
+        "prompt": "Show me all WiFi networks in my UniFi deployment with their security settings and status."
+      },
+      {
+        "title": "Signal Analysis",
+        "scenario": "Find clients with poor connectivity",
+        "prompt": "Which WiFi clients have signal strength below -70 dBm and may need attention."
+      },
+      {
+        "title": "Band Distribution",
+        "scenario": "Analyze frequency band usage",
+        "prompt": "Show me the distribution of clients across 2.4GHz and 5GHz bands. Are any bands overloaded?"
+      },
+      {
+        "title": "Optimization Plan",
+        "scenario": "Get performance recommendations",
+        "prompt": "Analyze channel utilization and band distribution. Suggest specific optimizations to improve overall WiFi performance."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me all WiFi networks and their status",
+        "output": [
+          "Found 4 WiFi networks: Office (5GHz, 42 clients), Guest (2.4GHz, 8 clients), IoT (2.4GHz, 15 clients), Development (5GHz, 6 clients)",
+          "All networks are online and functioning normally",
+          "Office network is operating at 72% capacity - consider load balancing",
+          "Guest network security: WPA2-Personal - recommend upgrading to WPA3"
+        ]
+      },
+      {
+        "input": "Which clients have poor signal strength",
+        "output": [
+          "3 clients have signal strength below -70 dBm: Conference Room Printer (-78 dBm), Warehouse Scanner (-82 dBm), Lobby Guest Device (-75 dBm)",
+          "All problematic clients are on 2.4GHz band",
+          "Recommendation: Add access point near warehouse area or move devices closer to existing APs"
+        ]
+      },
+      {
+        "input": "Analyze channel usage and suggest optimizations",
+        "output": [
+          "Channel 6 is 85% utilized on 2.4GHz - consider switching to channels 1 or 11 to avoid interference",
+          "5GHz channels show healthy distribution with no congestion",
+          "Band steering recommendation: Enable to push capable devices from 2.4GHz to 5GHz"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Monitor band distribution regularly to ensure balanced client load across 2.4GHz and 5GHz frequencies.",
+      "Track signal strength trends over time to identify coverage gaps before users report connectivity issues.",
+      "Review channel utilization weekly to optimize access point placement and reduce interference from neighboring networks."
+    ],
+    "anti_patterns": [
+      "Ignoring clients with consistently poor signal strength instead of investigating root causes.",
+      "Making channel changes without reviewing historical utilization data and neighbor network activity.",
+      "Allowing all devices to connect to 2.4GHz without band steering, causing congestion on the crowded frequency."
+    ],
+    "faq": [
+      {
+        "question": "What UniFi devices are supported?",
+        "answer": "Works with UniFi Network installations using UniFi Controller 6.x or later with API access enabled."
+      },
+      {
+        "question": "How many access points can this skill monitor?",
+        "answer": "The skill can monitor all access points configured in your UniFi controller without specific limits."
+      },
+      {
+        "question": "Does this skill modify network settings?",
+        "answer": "No. This skill provides read-only access to network data for monitoring and analysis purposes only."
+      },
+      {
+        "question": "Is my network data sent anywhere?",
+        "answer": "All data stays within your environment. The skill only queries your UniFi API locally or through your controller."
+      },
+      {
+        "question": "Why are some client statistics unavailable?",
+        "answer": "Clients must have recent network activity to appear in statistics. Dormant clients may show limited metrics."
+      },
+      {
+        "question": "How does this compare to the UniFi mobile app?",
+        "answer": "This skill provides programmatic access for automated monitoring and faster troubleshooting workflows in AI conversations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 88
+    }
+  ]
+}

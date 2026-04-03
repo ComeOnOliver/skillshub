@@ -1,0 +1,309 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:13:16.823Z",
+    "slug": "k-dense-ai-fda-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/fda-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "953adcd5e9ba43e9688259d088eb1261f0da667f07ce523297d58fd276ce54b7",
+    "tree_hash": "d93c5a1b817938aa28a2a4ebfaf86a84daa52bc10036f783774b5c5da278c1ef"
+  },
+  "skill": {
+    "name": "fda-database",
+    "description": "Query openFDA API for drugs, devices, adverse events, recalls, regulatory submissions (510k, PMA), substance identification (UNII), for FDA regulatory data analysis and safety research.",
+    "summary": "Query openFDA API for drugs, devices, adverse events, recalls, regulatory submissions (510k, PMA), s...",
+    "icon": "💊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "fda",
+      "drugs",
+      "medical-devices",
+      "pharmacovigilance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate API wrapper for the FDA's public openFDA API (api.fda.gov). All static findings are false positives: the 'CRITICAL' heuristic flagged code execution + network + credential access as suspicious, but this is standard API client behavior for authenticating with a legitimate government API. MD5 is used for cache key generation, not cryptographic security. Documentation code blocks were misidentified as shell commands. All network requests go to the official FDA API endpoint with no exfiltration or credential theft patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/fda_query.py",
+            "line_start": 1,
+            "line_end": 441
+          },
+          {
+            "file": "scripts/fda_examples.py",
+            "line_start": 1,
+            "line_end": 336
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/fda_query.py",
+            "line_start": 87,
+            "line_end": 87
+          },
+          {
+            "file": "scripts/fda_query.py",
+            "line_start": 135,
+            "line_end": 135
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/fda_query.py",
+            "line_start": 100,
+            "line_end": 100
+          },
+          {
+            "file": "scripts/fda_examples.py",
+            "line_start": 299,
+            "line_end": 299
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 4787,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:13:16.823Z"
+  },
+  "content": {
+    "user_title": "Query FDA drug and device databases",
+    "value_statement": "Access comprehensive FDA regulatory data including drug adverse events, medical device recalls, and safety information through the official openFDA API. Build pharmacovigilance and regulatory research workflows with Python.",
+    "seo_keywords": [
+      "fda database",
+      "openfda api",
+      "drug adverse events",
+      "medical device recall",
+      "claude code",
+      "claude",
+      "codex",
+      "pharmacovigilance",
+      "regulatory research"
+    ],
+    "actual_capabilities": [
+      "Query drug adverse events and labeling information from FDA databases",
+      "Search medical device recalls, 510k clearances, and adverse events",
+      "Look up food recalls and dietary supplement safety data",
+      "Access substance information including UNII codes and CAS numbers",
+      "Monitor veterinary drug adverse events by species and breed",
+      "Compare safety profiles across multiple drugs or devices"
+    ],
+    "limitations": [
+      "API rate limits apply (240 requests per minute, 1000 per day without key)",
+      "Only queries public FDA data; no access to confidential internal records",
+      "Historical data availability varies by endpoint and data category"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Pharmacovigilance researchers",
+        "title": "Drug safety monitoring",
+        "description": "Monitor adverse event reports and identify safety signals for medications"
+      },
+      {
+        "target_user": "Medical affairs professionals",
+        "title": "Device surveillance",
+        "description": "Track medical device adverse events and recall status for products"
+      },
+      {
+        "target_user": "Regulatory affairs teams",
+        "title": "Regulatory compliance",
+        "description": "Research approval pathways and compliance history for submissions"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic drug lookup",
+        "scenario": "Find drug information",
+        "prompt": "Use the FDA database skill to look up adverse events for aspirin and show the 5 most common reactions"
+      },
+      {
+        "title": "Device recall search",
+        "scenario": "Search device recalls",
+        "prompt": "Query the FDA database for medical device recalls involving pacemakers in the past year"
+      },
+      {
+        "title": "Comparative analysis",
+        "scenario": "Compare drug safety",
+        "prompt": "Compare adverse event rates between ibuprofen, naproxen, and aspirin using the FDA database"
+      },
+      {
+        "title": "Food safety monitoring",
+        "scenario": "Track allergen recalls",
+        "prompt": "Monitor food recalls related to undeclared peanuts and show the most recent 10 recalls"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find recalls for metformin diabetes medications",
+        "output": [
+          "Metformin recalls: 3 recent recalls found",
+          "Reason: NDMA impurity detection",
+          "Classification: Class II",
+          "Status: Ongoing"
+        ]
+      },
+      {
+        "input": "Show device adverse events for pacemakers",
+        "output": [
+          "Total adverse events: 15,432",
+          "Event types: Death (234), Injury (4,521), Malfunction (10,677)",
+          "Most common issue: Battery depletion"
+        ]
+      },
+      {
+        "input": "Look up UNII code for ibuprofen",
+        "output": [
+          "UNII: Y43UW15LVD",
+          "CAS Number: 15687-27-1",
+          "Molecular Formula: C13H18O2",
+          "Substance Class: chemical"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Set the FDA_API_KEY environment variable to increase rate limits from 1,000 to 120,000 requests per day",
+      "Use specific search terms and field queries for accurate results rather than broad wildcards",
+      "Implement caching for frequently accessed data to reduce API calls and improve performance"
+    ],
+    "anti_patterns": [
+      "Do not use overly broad wildcard searches that return excessive unrelated results",
+      "Avoid making rapid successive requests without rate limiting, which may trigger 429 errors",
+      "Do not assume all records contain all fields; always check field existence before accessing"
+    ],
+    "faq": [
+      {
+        "question": "Is an API key required?",
+        "answer": "No, the FDA API works without a key but has lower rate limits (1,000/day vs 120,000/day with a key)."
+      },
+      {
+        "question": "What data categories are available?",
+        "answer": "Drugs, devices, foods, animal/veterinary products, and chemical substances are supported."
+      },
+      {
+        "question": "How current is the data?",
+        "answer": "Data is updated regularly but may have a lag of days to weeks depending on the endpoint."
+      },
+      {
+        "question": "Can I download full datasets?",
+        "answer": "The API returns paginated results. For bulk data, consider downloading official FDA data files separately."
+      },
+      {
+        "question": "What are the rate limits?",
+        "answer": "240 requests per minute with or without a key. Daily limits are 1,000 without a key and 120,000 with a key."
+      },
+      {
+        "question": "Is this data suitable for clinical decisions?",
+        "answer": "This is public post-market surveillance data. Use official prescribing information for clinical decisions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "animal_veterinary.md",
+          "type": "file",
+          "path": "references/animal_veterinary.md",
+          "lines": 378
+        },
+        {
+          "name": "api_basics.md",
+          "type": "file",
+          "path": "references/api_basics.md",
+          "lines": 688
+        },
+        {
+          "name": "devices.md",
+          "type": "file",
+          "path": "references/devices.md",
+          "lines": 633
+        },
+        {
+          "name": "drugs.md",
+          "type": "file",
+          "path": "references/drugs.md",
+          "lines": 469
+        },
+        {
+          "name": "foods.md",
+          "type": "file",
+          "path": "references/foods.md",
+          "lines": 375
+        },
+        {
+          "name": "other.md",
+          "type": "file",
+          "path": "references/other.md",
+          "lines": 473
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "fda_examples.py",
+          "type": "file",
+          "path": "scripts/fda_examples.py",
+          "lines": 336
+        },
+        {
+          "name": "fda_query.py",
+          "type": "file",
+          "path": "scripts/fda_query.py",
+          "lines": 441
+        }
+      ]
+    },
+    {
+      "name": "evaluation.json",
+      "type": "file",
+      "path": "evaluation.json",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 518
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:36:51.775Z",
+    "slug": "composiohq-file-organizer",
+    "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/file-organizer",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "204276f2f60aba296e09c8cc7330c3887317318453546e27a04e1773ed4a8262",
+    "tree_hash": "8ac608c3d574f369b172f0a1a721f97ea1154ebca3b4d2a1dcabcb77cd4fec59"
+  },
+  "skill": {
+    "name": "file-organizer",
+    "description": "Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load and keeps your digital workspace tidy without manual effort.",
+    "summary": "Intelligently organizes your files and folders across your computer by understanding context, findin...",
+    "icon": "📁",
+    "version": "1.0.0",
+    "author": "ComposioHQ",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "file-management",
+      "organization",
+      "cleanup",
+      "productivity",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill (SKILL.md only) containing file organization instructions. All operations are standard filesystem commands (ls, find, mkdir, mv) initiated by user requests. The static scanner's cryptographic and external command detections are false positives - date patterns (YYYY-MM-DD) were misidentified as crypto algorithms, and bash command examples were misidentified as shell execution risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 178
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 223
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 223,
+            "line_end": 248
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 248,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 260
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 260,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 291
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 291,
+            "line_end": 292
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 292,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 317
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 328
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 328,
+            "line_end": 337
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 354
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 354,
+            "line_end": 361
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 361,
+            "line_end": 365
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 365,
+            "line_end": 368
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 368,
+            "line_end": 371
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 371,
+            "line_end": 374
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 374,
+            "line_end": 377
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 377,
+            "line_end": 380
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 380,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 386
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 386,
+            "line_end": 389
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 389,
+            "line_end": 392
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 392,
+            "line_end": 395
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 613,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:36:51.775Z"
+  },
+  "content": {
+    "user_title": "Organize files and folders intelligently",
+    "value_statement": "Messy folders waste time and create stress. This skill analyzes your files, finds duplicates, and organizes everything into logical structures based on type, purpose, and date.",
+    "seo_keywords": [
+      "file organizer",
+      "Claude",
+      "Claude Code",
+      "file management",
+      "duplicate finder",
+      "folder organization",
+      "download cleanup",
+      "file cleanup",
+      "digital organization",
+      "automation"
+    ],
+    "actual_capabilities": [
+      "Analyze folder structure and file types across directories",
+      "Find duplicate files by hash, name, or size",
+      "Suggest logical folder structures based on content",
+      "Move and rename files with user approval",
+      "Identify old files for archival",
+      "Create custom organization schemes by type, date, or purpose"
+    ],
+    "limitations": [
+      "Requires user confirmation before making any changes",
+      "Cannot access files without explicit directory paths from user",
+      "Does not delete files without user approval",
+      "Cannot organize files on remote servers or network drives"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Home users",
+        "title": "Tame messy downloads",
+        "description": "Clean up cluttered Downloads folders by sorting files into Documents, Images, and Archives automatically."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Structure project folders",
+        "description": "Organize project directories and separate active work from archived projects with consistent naming."
+      },
+      {
+        "target_user": "Professionals",
+        "title": "Manage document collections",
+        "description": "Find duplicate documents and organize work files from personal files across Documents folders."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick cleanup",
+        "scenario": "Clean Downloads folder",
+        "prompt": "Organize my Downloads folder. Move documents to Documents, images to Pictures, keep installers separate, and archive files older than 3 months."
+      },
+      {
+        "title": "Find duplicates",
+        "scenario": "Remove duplicate files",
+        "prompt": "Find all duplicate files in my Documents folder and show me which ones to keep and which to remove."
+      },
+      {
+        "title": "Restructure projects",
+        "scenario": "Organize project directories",
+        "prompt": "Review my ~/Projects directory and suggest a better structure. Separate active projects from archived ones."
+      },
+      {
+        "title": "Organize photos",
+        "scenario": "Sort photos by date",
+        "prompt": "Organize all photos in this folder by year and month based on when they were taken."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Organize my Downloads folder",
+        "output": [
+          "Analysis: 247 files found across 5 categories",
+          "Proposed structure: Work/, Personal/, Installers/, Archive/, ToSort/",
+          "Will move 89 documents to Work/Documents/",
+          "Will move 56 images to Personal/Photos/",
+          "Will identify 12 files older than 6 months for archival",
+          "Ready to proceed? (yes/no/modify)"
+        ]
+      },
+      {
+        "input": "Find duplicate files in Documents",
+        "output": [
+          "Found 23 sets of duplicates (156 MB total)",
+          "Set 1: proposal.pdf - 3 copies found",
+          "Keep: /Documents/proposal.pdf (most recent)",
+          "Delete 2 older copies? (yes/no for each)"
+        ]
+      },
+      {
+        "input": "Restructure my Projects folder",
+        "output": [
+          "Analysis: 45 projects found (12 active, 33 archived)",
+          "12 projects not touched since 2022 identified for archiving",
+          "4 duplicate project folders found",
+          "Proposed: Active/, Archive/ (by year), Templates/",
+          "Implement this structure? (yes/no/modify)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with one messy folder like Downloads to build confidence",
+      "Always confirm before deleting anything when prompted",
+      "Use consistent naming patterns like YYYY-MM-DD for important files"
+    ],
+    "anti_patterns": [
+      "Requesting organization of system directories without specifying the path",
+      "Skipping the confirmation step and letting changes happen automatically",
+      "Asking to delete files without reviewing what will be removed"
+    ],
+    "faq": [
+      {
+        "question": "Which operating systems are supported?",
+        "answer": "Works on macOS, Linux, and Windows with WSL. Uses standard command-line tools available on each platform."
+      },
+      {
+        "question": "How many files can it handle at once?",
+        "answer": "Performance varies by system. For best results, organize folders with up to a few thousand files at a time."
+      },
+      {
+        "question": "Does it integrate with other tools?",
+        "answer": "Runs as a Claude skill. Can work alongside file managers and backup tools but does not directly integrate with them."
+      },
+      {
+        "question": "Is my data safe during organization?",
+        "answer": "All changes require your explicit approval. Files are moved rather than deleted unless you specifically authorize removal."
+      },
+      {
+        "question": "Why is nothing happening when I ask?",
+        "answer": "Specify the exact folder path you want organized. The skill needs a target directory to begin analysis."
+      },
+      {
+        "question": "How is this different from manual organization?",
+        "answer": "Uses consistent rules and patterns to categorize files automatically. Suggests logical structures based on file types and content."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 434
+    }
+  ]
+}

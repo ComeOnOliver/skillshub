@@ -1,0 +1,293 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:31:41.096Z",
+    "slug": "barnhardt-enterprises-inc-shadcn-framer",
+    "source_url": "https://github.com/Barnhardt-Enterprises-Inc/quetrex-claude/tree/main/skills/shadcn-framer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "faf44a95386b9f83411cffce7488b2b79e2bed92d3ec6d5adb9e5f85a8fa6260",
+    "tree_hash": "f35a75a098bf1dc07eac8157645cbf79a365903b38cc88cdbf7082313744527d"
+  },
+  "skill": {
+    "name": "shadcn-framer",
+    "description": "ShadCN UI + Framer Motion patterns.",
+    "summary": "ShadCN UI + Framer Motion patterns.",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "Barnhardt-Enterprises-Inc",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "react",
+      "ui-components",
+      "animation",
+      "framer-motion",
+      "shadcn"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing TypeScript code examples for ShadCN UI and Framer Motion integration. All 31 static findings are false positives: shell command detections are TypeScript code blocks, crypto algorithm flags are animation variant names like 'hidden', and reconnaissance flags are animation state names like 'show'. No executable code, network calls, filesystem access, or external commands detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 10,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 169
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 208
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 385,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:31:41.096Z"
+  },
+  "content": {
+    "user_title": "Build animated ShadCN UI components with Framer Motion",
+    "value_statement": "Creating smooth animations for ShadCN UI components requires understanding Framer Motion patterns. This skill provides ready-to-use code patterns for fade-ins, hover effects, dialog animations, page transitions, and loading skeletons.",
+    "seo_keywords": [
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "ShadCN UI",
+      "Framer Motion",
+      "React animations",
+      "UI components",
+      "component patterns",
+      "animated interfaces"
+    ],
+    "actual_capabilities": [
+      "Create fade-in and fade-out animations for React components",
+      "Build animated lists with staggered transitions and exit animations",
+      "Implement page transitions with enter and exit effects",
+      "Add hover and tap effects to cards using spring physics",
+      "Create pulse animations for loading skeletons",
+      "Animate ShadCN Dialog components with scale and opacity effects"
+    ],
+    "limitations": [
+      "Does not provide pre-built components - only code patterns to copy",
+      "Does not include ShadCN installation or project setup automation",
+      "Does not handle complex animation state management beyond basic examples",
+      "No built-in accessibility checks for animated content"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend Developer",
+        "title": "Adding Animations to Dashboards",
+        "description": "Create engaging dashboard interfaces with animated cards, lists, and page transitions using ShadCN components."
+      },
+      {
+        "target_user": "UX Designer",
+        "title": "Prototyping Animated Interactions",
+        "description": "Rapidly prototype smooth animations for modal dialogs, hover states, and loading indicators in React projects."
+      },
+      {
+        "target_user": "Full-Stack Developer",
+        "title": "Enhancing User Interfaces",
+        "description": "Add professional polish to admin panels and content-heavy applications with minimal animation overhead."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Fade Animation",
+        "scenario": "Simple entry animation",
+        "prompt": "Create a fade-in animation for a React component using Framer Motion. Use 'use client' directive and animate opacity from 0 to 1 with a 0.3 second duration."
+      },
+      {
+        "title": "Animated List",
+        "scenario": "Staggered list items",
+        "prompt": "Build an animated list component that shows items one by one using Framer Motion staggerChildren. Include AnimatePresence for exit animations on list items."
+      },
+      {
+        "title": "Interactive Hover Card",
+        "scenario": "Card with scale on hover",
+        "prompt": "Create a hoverable card component that scales up slightly when hovered and scales down when tapped. Use spring transition with stiffness 300 and damping 20."
+      },
+      {
+        "title": "Animated Dialog",
+        "scenario": "Modal with scale effect",
+        "prompt": "Implement an animated ShadCN Dialog that scales from 0.95 to 1.0 with opacity fade when opening. Use AnimatePresence to handle the exit animation."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a button component with a loading skeleton animation",
+        "output": [
+          "Use motion.div with animate prop set to opacity array [0.5, 1, 0.5]",
+          "Set transition duration to 1.5 seconds with repeat: Infinity",
+          "Apply bg-muted background color and rounded corners",
+          "Accept optional className prop for custom styling"
+        ]
+      },
+      {
+        "input": "Add a staggered animation to a list of items",
+        "output": [
+          "Define container variants with staggerChildren transition value",
+          "Create item variants with hidden and show states",
+          "Pass variants prop to motion.ul component",
+          "Use AnimatePresence with motion.li exit prop for smooth removals"
+        ]
+      },
+      {
+        "input": "Create a smooth page transition animation",
+        "output": [
+          "Wrap page content in motion.div component",
+          "Set initial opacity to 0 and y position to 20",
+          "Animate to opacity 1 and y position 0",
+          "Add exit animation with negative y for leaving pages"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use 'use client' directive for Framer Motion components",
+      "Use AnimatePresence to properly unmount animated components with exit animations",
+      "Apply layout prop to motion elements for smooth reordering animations"
+    ],
+    "anti_patterns": [
+      "Avoid mixing multiple animation libraries in the same component",
+      "Do not animate expensive properties like filter or box-shadow excessively",
+      "Avoid removing 'use client' from components that use Framer Motion hooks"
+    ],
+    "faq": [
+      {
+        "question": "Which React frameworks are supported?",
+        "answer": "Works with Next.js 15 App Router and any React project supporting 'use client' directive."
+      },
+      {
+        "question": "What is the minimum Framer Motion version?",
+        "answer": "Requires Framer Motion v10 or later for all animation features to work correctly."
+      },
+      {
+        "question": "Can these patterns work with custom components?",
+        "answer": "Yes, Framer Motion patterns apply to any React component, not just ShadCN components."
+      },
+      {
+        "question": "Is any data stored or sent externally?",
+        "answer": "No, this skill is purely documentation-based with no network calls or data persistence."
+      },
+      {
+        "question": "Why is my animation not rendering?",
+        "answer": "Ensure the component uses 'use client' and that Framer Motion is properly imported and installed."
+      },
+      {
+        "question": "How does this compare to CSS animations?",
+        "answer": "Framer Motion provides declarative animations with physics-based springs, exit animations, and layout transitions that CSS cannot easily achieve."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 209
+    }
+  ]
+}

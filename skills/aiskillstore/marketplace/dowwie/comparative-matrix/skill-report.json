@@ -1,0 +1,279 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:20:53.218Z",
+    "slug": "dowwie-comparative-matrix",
+    "source_url": "https://github.com/Dowwie/agent_framework_study/tree/main/.claude/skills/comparative-matrix",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "80fdd9b075046018e854d55cc3eb756d9c48a9f7ecfa52bc16e042bc4b6eeafe",
+    "tree_hash": "4e57ff49f007a1b55cc8f44ef8b2f6f3cfe914f9131939743a2931bfb93d1389"
+  },
+  "skill": {
+    "name": "comparative-matrix",
+    "description": "Generate structured comparisons and decision matrices across analyzed frameworks. Use when (1) comparing multiple frameworks or approaches side-by-side, (2) making architectural decisions between alternatives, (3) creating best-of-breed selection documentation, (4) synthesizing findings from multiple analysis skills into actionable decisions, or (5) producing recommendation reports for technical stakeholders.",
+    "summary": "Generate structured comparisons and decision matrices across analyzed frameworks. Use when (1) compa...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "Dowwie",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "framework-comparison",
+      "decision-matrix",
+      "architectural-analysis",
+      "best-of-breed",
+      "recommendations"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a prompt-only documentation skill containing only markdown templates, decision heuristics in pseudo-code, and comparison frameworks. All 22 static findings are FALSE POSITIVES. The scanner misidentified Pydantic (a validation library) as a cryptographic algorithm, markdown code blocks showing template syntax as shell backtick execution, and skill integration documentation as system reconnaissance. No executable code, network calls, filesystem access, or command execution capabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 118
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 295,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:20:53.218Z"
+  },
+  "content": {
+    "user_title": "Generate framework comparison matrices",
+    "value_statement": "Technical teams need structured frameworks to compare multiple tools objectively when making architectural decisions. This skill synthesizes analysis outputs into decision matrices with clear recommendations and documented trade-offs for any framework comparison.",
+    "seo_keywords": [
+      "framework comparison",
+      "decision matrix",
+      "architectural decisions",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "best-of-breed analysis",
+      "technical recommendations",
+      "framework selection",
+      "trade-off documentation"
+    ],
+    "actual_capabilities": [
+      "Collects and normalizes analysis outputs from multiple frameworks into comparable formats",
+      "Generates structured comparison matrices across standardized dimensions",
+      "Applies decision heuristics based on scalability, developer experience, or production requirements",
+      "Documents recommendations with clear rationale and trade-off explanations",
+      "Produces structured output artifacts including summary tables and detailed analysis"
+    ],
+    "limitations": [
+      "Does not execute code or perform live framework testing",
+      "Requires input analysis from other skills to function effectively",
+      "Does not provide runtime performance benchmarks",
+      "Cannot access external documentation or APIs directly"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Architects",
+        "title": "Evaluate architectural options",
+        "description": "Compare multiple agent frameworks when designing new systems with specific requirements for scalability and maintainability."
+      },
+      {
+        "target_user": "Tech Leads",
+        "title": "Select best frameworks",
+        "description": "Create evidence-based recommendations for tool selection based on team skills, project constraints, and long-term maintainability."
+      },
+      {
+        "target_user": "Engineering Managers",
+        "title": "Document technical decisions",
+        "description": "Produce clear comparison documentation for stakeholders showing trade-offs and rationale behind framework selections."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Comparison",
+        "scenario": "Compare two frameworks",
+        "prompt": "Use comparative-matrix to compare [Framework A] and [Framework B] across these dimensions: typing approach, async model, state management, configuration style, and extensibility pattern."
+      },
+      {
+        "title": "Multi-Framework Analysis",
+        "scenario": "Evaluate three or more options",
+        "prompt": "Generate a best-of-breed matrix comparing [Framework A], [Framework B], and [Framework C] for [use case]. Focus on typing, async, state, config, and extensibility."
+      },
+      {
+        "title": "Production Readiness",
+        "scenario": "Assess production requirements",
+        "prompt": "Apply production-first heuristics to evaluate [framework] for mission-critical deployment. Document observability needs, error boundaries, and typing requirements."
+      },
+      {
+        "title": "Team Fit Assessment",
+        "scenario": "Match framework to team",
+        "prompt": "Use DX-first heuristics to compare frameworks for a small team doing rapid iteration. Consider learning curve, configuration style, and code complexity."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Compare LangChain and AutoGen for building multi-agent systems using comparative-matrix",
+        "output": [
+          "Best-of-Breed Matrix: Multi-Agent Framework Comparison",
+          "Key dimensions compared: Reasoning Pattern, Multi-Agent Coordination, Memory Strategy, Observability, Tool Interface",
+          "Recommendation: [Framework] with rationale based on your specific requirements",
+          "Trade-offs documented with justification"
+        ]
+      },
+      {
+        "input": "Generate a comparison matrix for React, Vue, and Svelte for a high-traffic dashboard application",
+        "output": [
+          "Summary table comparing state management, component model, and build performance",
+          "Detailed analysis of reactivity patterns for each framework",
+          "Production-first recommendation considering bundle size and runtime overhead",
+          "Trade-offs between developer experience and runtime performance documented"
+        ]
+      },
+      {
+        "input": "Compare PostgreSQL, MongoDB, and Redis for a real-time analytics platform",
+        "output": [
+          "Decision matrix across data consistency, query flexibility, and scalability",
+          "Analysis of each database type's strengths for different access patterns",
+          "Recommendation based on analytics workload characteristics",
+          "Known limitations and migration considerations documented"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide detailed analysis outputs from other skills as input for richer comparisons",
+      "Specify your decision criteria (scalability, DX, or production priorities) upfront",
+      "Review the trade-off log to ensure all compromises are understood before deciding"
+    ],
+    "anti_patterns": [
+      "Using this skill without prior framework analysis as input",
+      "Skipping the trade-off documentation when making final decisions",
+      "Ignoring the decision heuristics that match your project requirements"
+    ],
+    "faq": [
+      {
+        "question": "What inputs does this skill need?",
+        "answer": "Analysis outputs from other skills like architecture-synthesis work best as input data for comparisons."
+      },
+      {
+        "question": "What frameworks can it compare?",
+        "answer": "Any software frameworks. The skill uses flexible dimensions like typing, async, state, config, and extensibility."
+      },
+      {
+        "question": "Does it require network access?",
+        "answer": "No. This is a prompt-based skill that synthesizes text inputs without making external network calls."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "Yes. This skill only processes text locally within your AI conversation and does not store or transmit data externally."
+      },
+      {
+        "question": "How many frameworks can it compare at once?",
+        "answer": "The skill handles any number of frameworks. More inputs create larger matrices but maintain the same comparison structure."
+      },
+      {
+        "question": "How is this different from architecture-synthesis?",
+        "answer": "Comparative-matrix creates side-by-side framework comparisons. Architecture-synthesis designs new systems based on requirements."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 119
+    }
+  ]
+}

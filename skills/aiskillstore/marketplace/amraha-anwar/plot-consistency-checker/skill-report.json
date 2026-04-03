@@ -1,0 +1,216 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:49:24.630Z",
+    "slug": "amraha-anwar-plot-consistency-checker",
+    "source_url": "https://github.com/Amraha-Anwar/AIDD-30-days-challenge/tree/main/9th_Task/.claude/skills/plot-consistency-checker",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "476749214cc65c96bdb823107780bafd0ab301d60ade68fa9ce5dc88a1cf9a29",
+    "tree_hash": "6fb01888344d48a5cbbf5ea493cd98e097cd4bef781ee8c71e7bce408d0535a9"
+  },
+  "skill": {
+    "name": "plot-consistency-checker",
+    "description": "Reviews plot structure, story beats, logic flow, and narrative continuity to identify contradictions, plot holes, pacing issues, or unrealistic elements.",
+    "summary": "Reviews plot structure, story beats, logic flow, and narrative continuity to identify contradictions...",
+    "icon": "📖",
+    "version": "1.0.0",
+    "author": "Amraha-Anwar",
+    "license": "MIT",
+    "category": "writing",
+    "tags": [
+      "storytelling",
+      "plot-analysis",
+      "narrative-consistency",
+      "creative-writing",
+      "fiction-editing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure prompt-based skill containing only a SKILL.md instruction file with no executable code. All 11 static findings are false positives caused by the scanner misidentifying JSON field names and descriptive text (like 'magic systems' and 'source code') as cryptographic patterns. The source_url is metadata, not a network call. No network, filesystem, or command execution capabilities exist. The skill behavior matches the stated purpose exactly.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 217,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:49:24.630Z"
+  },
+  "content": {
+    "user_title": "Check story plot consistency and logic",
+    "value_statement": "Stories often contain plot holes, contradictions, or pacing issues that weaken reader engagement. This skill systematically reviews narrative elements to identify structural problems and provide specific fixes.",
+    "seo_keywords": [
+      "plot consistency checker",
+      "story plot analysis",
+      "plot hole detection",
+      "narrative consistency",
+      "fiction editing",
+      "story structure review",
+      "Claude Code skill",
+      "Claude skill",
+      "Codex skill",
+      "creative writing tools"
+    ],
+    "actual_capabilities": [
+      "Reviews plot structure and story beats for logical consistency",
+      "Identifies plot holes and unexplained coincidences",
+      "Checks character behavior against established motivations",
+      "Validates timeline and event sequencing",
+      "Flags pacing issues and missing transitions",
+      "Provides actionable fixes for each issue found"
+    ],
+    "limitations": [
+      "Requires user to provide plot summary, chapter outlines, or scene details",
+      "Cannot evaluate unpublished or unwritten story ideas without content",
+      "Does not analyze grammar, spelling, or prose style",
+      "Relies on information provided; incomplete inputs may yield limited results"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Fiction Authors",
+        "title": "Pre-publication review",
+        "description": "Authors review manuscripts for plot holes before querying agents or publishing."
+      },
+      {
+        "target_user": "Screenwriters",
+        "title": "Script consistency check",
+        "description": "Screenwriters verify cause-effect chains and character motivations in screenplay drafts."
+      },
+      {
+        "target_user": "Game Narrative Designers",
+        "title": "World-building validation",
+        "description": "Game designers ensure consistent rules for magic systems, technology, or politics across story content."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic plot review",
+        "scenario": "Quick story check",
+        "prompt": "Review this plot summary for plot holes, contradictions, and pacing issues. Provide a table with issue, explanation, and proposed fix."
+      },
+      {
+        "title": "Character arc analysis",
+        "scenario": "Character consistency check",
+        "prompt": "Analyze these character arcs against the plot events. Flag any moments where character actions contradict their established motivations. List each inconsistency with a suggested fix."
+      },
+      {
+        "title": "World-building audit",
+        "scenario": "Rule consistency check",
+        "prompt": "Validate this story against its world-building rules (magic, technology, politics). Identify any scenes that break internal logic and suggest how to reconcile them."
+      },
+      {
+        "title": "Full manuscript review",
+        "scenario": "Complete story analysis",
+        "prompt": "Review this full chapter outline with character arcs and world-building details. Check cause-effect flow, timeline consistency, transitions, and pacing. Output a comprehensive table of all issues with explanations and fixes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review this plot: A detective solves a murder using clues that were never mentioned before in the story.",
+        "output": [
+          "Issue: Deus Ex Machina Resolution — The detective solves the case using evidence never introduced to the reader.",
+          "Explanation: Readers feel cheated when solutions depend on information they could not have known. This breaks narrative contract.",
+          "Proposed Fix: Introduce the clue earlier in the story, perhaps as a seemingly irrelevant detail in an earlier scene that gains significance later."
+        ]
+      },
+      {
+        "input": "Check this story for character consistency: A pacifist hero suddenly kills the villain without hesitation in the final chapter.",
+        "output": [
+          "Issue: Character Behavior Inconsistency — The protagonist's sudden violent action contradicts their established pacifist values.",
+          "Explanation: This creates cognitive dissonance for readers and feels like character betrayal unless heavily foreshadowed.",
+          "Proposed Fix: Either add earlier scenes showing the hero's capacity for violence, or have them incapacitate rather than kill the villain."
+        ]
+      },
+      {
+        "input": "Review this fantasy magic system: Magic works one way in chapter 2 but the opposite way in chapter 8 without explanation.",
+        "output": [
+          "Issue: Internal Logic Violation — The magic system's rules changed between chapters without narrative justification.",
+          "Explanation: Fantasy and sci-fi stories require consistent internal rules. Breaking these rules creates reader confusion and breaks immersion.",
+          "Proposed Fix: Add a scene explaining why magic behaves differently, such as a different magical source, environmental factor, or training progression."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide complete context including character arcs, world rules, and chapter outlines for thorough analysis.",
+      "Focus on one specific aspect per review request for deeper analysis.",
+      "Iterate on fixes by asking for alternative solutions if the first suggestion does not fit your story."
+    ],
+    "anti_patterns": [
+      "Submitting incomplete fragments without key plot events or character motivations.",
+      "Expecting grammar or prose style feedback; this skill focuses on structure, not prose.",
+      "Skipping world-building rules when reviewing fantasy or science fiction stories."
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. Use in any conversational context where you discuss story content."
+      },
+      {
+        "question": "What input materials should I provide?",
+        "answer": "Provide plot summaries, chapter outlines, character arcs, and world-building rules for the most thorough review."
+      },
+      {
+        "question": "Can this check pacing as well?",
+        "answer": "Yes. The skill identifies pacing issues including scenes that move too fast, too slow, or have missing transitions."
+      },
+      {
+        "question": "Is my story data safe?",
+        "answer": "Yes. This is a prompt-only skill. No data is stored, transmitted, or accessed outside the conversation context."
+      },
+      {
+        "question": "Why did the review miss some issues?",
+        "answer": "The skill can only analyze what you provide. Incomplete input leads to limited results. Add full context for best coverage."
+      },
+      {
+        "question": "How is this different from general AI feedback?",
+        "answer": "This skill uses a structured framework with table-based output focused specifically on logical consistency rather than general writing advice."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 41
+    }
+  ]
+}

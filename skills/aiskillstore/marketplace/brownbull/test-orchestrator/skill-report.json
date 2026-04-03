@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:48:55.081Z",
+    "slug": "brownbull-test-orchestrator",
+    "source_url": "https://github.com/Brownbull/ayni_core/tree/main/.claude/skills/test-orchestrator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9ecb299b6d3e419afb4d5735d7d8e9a846faa7938e253071c88336fdfcc66e95",
+    "tree_hash": "b87966c7c1a3a6da1678528dd84e39f738fddecd892d89283fdedb680c0272f5"
+  },
+  "skill": {
+    "name": "test-orchestrator",
+    "description": "Coordinates testing strategy and execution across all test types. Use when creating test plans, implementing tests (unit/integration/E2E), or enforcing coverage requirements (80% minimum). Applies testing-requirements.md.",
+    "summary": "Coordinates testing strategy and execution across all test types. Use when creating test plans, impl...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "Brownbull",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "testing",
+      "quality-assurance",
+      "test-automation",
+      "qa",
+      "coverage"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure prompt-based skill defined entirely in SKILL.md. No executable code, scripts, network calls, or filesystem access beyond its own documentation. The skill defines testing coordination patterns and quality standards only. All 12 high-risk 'weak cryptographic algorithm' findings and 20 medium-risk 'external commands' findings are false positives - the scanner misidentified documentation strings and markdown formatting as security issues.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 169
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 176
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 176,
+            "line_end": 179
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 179,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 264
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 466,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:48:55.081Z"
+  },
+  "content": {
+    "user_title": "Coordinate testing strategy and execution",
+    "value_statement": "Testing quality and coverage vary across teams. Test Orchestrator provides systematic test planning, execution, and quality gates for consistent, reliable releases. Coordinates all testing activities with clear quality standards and automated enforcement.",
+    "seo_keywords": [
+      "test orchestrator",
+      "testing strategy",
+      "test automation",
+      "Claude Code",
+      "unit testing",
+      "integration testing",
+      "E2E testing",
+      "quality assurance",
+      "test coverage",
+      "CI/CD testing"
+    ],
+    "actual_capabilities": [
+      "Define test plans and test strategies for any component",
+      "Coordinate unit, integration, E2E, and performance testing",
+      "Enforce coverage thresholds (80% minimum for unit tests)",
+      "Block builds that fail quality gates",
+      "Generate quality metrics and coverage reports",
+      "Manage test data with fixtures, mocks, and factories"
+    ],
+    "limitations": [
+      "Does not execute tests directly - coordinates other test skills",
+      "Cannot modify production code or fix bugs automatically",
+      "Requires other skills for specific test implementations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "QA Engineers",
+        "title": "Create comprehensive test plans",
+        "description": "Define test scenarios, coverage goals, and assign tests to appropriate skill types for any feature."
+      },
+      {
+        "target_user": "Development Teams",
+        "title": "Enforce quality gates",
+        "description": "Block merges when coverage drops below thresholds and receive actionable failure feedback."
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Automate testing workflows",
+        "description": "Integrate test execution into CI/CD pipelines with parallel runs and automated reporting."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Plan new feature tests",
+        "scenario": "Start testing for a new feature",
+        "prompt": "Create a test plan for the [component name] feature. Include unit tests for all public methods (>80% coverage), integration tests for database operations and API calls, and E2E tests for the main user workflow."
+      },
+      {
+        "title": "Improve coverage",
+        "scenario": "Increase test coverage on existing code",
+        "prompt": "Analyze the current test coverage for [component]. Identify gaps in unit, integration, and E2E testing. Create a roadmap to reach 85% coverage with specific test scenarios for missing edge cases."
+      },
+      {
+        "title": "Debug test failures",
+        "scenario": "Investigate failing tests",
+        "prompt": "Review the test results for [component]. Identify patterns in failures, determine if tests are flaky or indicate real issues, and recommend fixes."
+      },
+      {
+        "title": "Set up CI testing",
+        "scenario": "Configure continuous integration testing",
+        "prompt": "Design a testing workflow for CI/CD integration. Define which tests run on each commit, which run nightly, and which require manual triggers. Specify quality gates that block deployment."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a test plan for the user authentication component",
+        "output": [
+          "Test Plan: User Authentication Component",
+          "Unit Tests (>85% coverage): login validation, session token generation, password hashing verification",
+          "Integration Tests: database user lookup, token storage, rate limiting (5 failures)",
+          "E2E Tests: complete login flow, logout cleanup, password reset email flow"
+        ]
+      },
+      {
+        "input": "Improve test coverage for the payment service",
+        "output": [
+          "Coverage Analysis: Current 65%, Gap: 35%",
+          "Priority 1: Add unit tests for payment calculation logic",
+          "Priority 2: Integration tests for payment gateway API",
+          "Priority 3: E2E tests for checkout workflow",
+          "Target: 80% coverage with 0 flaky tests"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Follow the AAA pattern (Arrange, Act, Assert) for clear, readable tests",
+      "Keep tests isolated with no dependencies on execution order",
+      "Use meaningful test names that describe what is being verified"
+    ],
+    "anti_patterns": [
+      "Avoid tests that depend on execution order or shared state",
+      "Do not test implementation details that may change frequently",
+      "Never ignore flaky tests - they erode trust in the test suite"
+    ],
+    "faq": [
+      {
+        "question": "Which testing frameworks are supported?",
+        "answer": "Test Orchestrator is framework-agnostic. Works with Jest, PyTest, Mocha, JUnit, Playwright, and Cypress."
+      },
+      {
+        "question": "What coverage thresholds are enforced?",
+        "answer": "Default thresholds are 80% for unit tests, 100% for API integration tests, and all critical paths for E2E."
+      },
+      {
+        "question": "How does it integrate with CI/CD pipelines?",
+        "answer": "Test Orchestrator emits structured events for test completion, coverage, and quality status that CI systems consume."
+      },
+      {
+        "question": "Is test data handled securely?",
+        "answer": "Test Orchestrator recommends fixtures and mocks for sensitive data. Never use production credentials in tests."
+      },
+      {
+        "question": "Tests are failing but code works. What now?",
+        "answer": "Check for flaky tests, race conditions, or external service dependencies. Use retries and proper mocking."
+      },
+      {
+        "question": "How does this differ from other test tools?",
+        "answer": "Test Orchestrator coordinates multiple test skills for strategy and planning rather than executing tests itself."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 273
+    }
+  ]
+}

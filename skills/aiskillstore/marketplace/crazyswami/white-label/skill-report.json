@@ -1,0 +1,284 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:27:18.906Z",
+    "slug": "crazyswami-white-label",
+    "source_url": "https://github.com/CrazySwami/wordpress-dev-skills/tree/main/skills/white-label",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9475024faaf15a4fecb9d292f80d2297b967ebb4ff7dac59cb16dbb1defae6be",
+    "tree_hash": "63b6f818f21498117711cf392a9b54c6d2834f5cfa35148a7b13dba37e3d3ad9"
+  },
+  "skill": {
+    "name": "white-label",
+    "description": "Complete WordPress white-labeling using FREE plugins only - ASE, Branda, White Label CMS, Admin Menu Editor. Covers login page branding, admin cleanup, security hardening, and client handoff preparation.",
+    "summary": "Complete WordPress white-labeling using FREE plugins only - ASE, Branda, White Label CMS, Admin Menu...",
+    "icon": "🏷️",
+    "version": "1.0.0",
+    "author": "CrazySwami",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "wordpress",
+      "branding",
+      "white-label",
+      "automation",
+      "client-handoff"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate WordPress white-labeling automation tool. Static scanner flagged documentation code examples as external commands, color hex codes as weak cryptographic algorithms, and standard WordPress API calls as system reconnaissance. All findings are false positives. The skill uses standard WP-CLI and Docker operations to configure legitimate WordPress plugins.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/apply-white-label.sh",
+            "line_start": 1,
+            "line_end": 85
+          },
+          {
+            "file": "scripts/configure-white-label.php",
+            "line_start": 1,
+            "line_end": 396
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/apply-white-label.sh",
+            "line_start": 35,
+            "line_end": 48
+          },
+          {
+            "file": "scripts/configure-white-label.php",
+            "line_start": 64,
+            "line_end": 89
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/apply-white-label.sh",
+            "line_start": 45,
+            "line_end": 45
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/configure-white-label.php",
+            "line_start": 68,
+            "line_end": 68
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [
+      {
+        "title": "External logo download without validation",
+        "description": "The script downloads logos from external URLs using download_url() for branding purposes. This is a legitimate feature but could download arbitrary files if config file is compromised.",
+        "locations": [
+          {
+            "file": "scripts/configure-white-label.php",
+            "line_start": 68,
+            "line_end": 72
+          }
+        ],
+        "mitigation": "Uses WordPress download_url() which includes sanitization. Risk is limited to config file access."
+      }
+    ],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1465,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:27:18.906Z"
+  },
+  "content": {
+    "user_title": "Automate WordPress White-Labeling for Clients",
+    "value_statement": "Manually configuring WordPress white-labeling plugins takes hours and is error-prone. This skill automates the entire process using free plugins, creating professional branded experiences in minutes.",
+    "seo_keywords": [
+      "wordpress white label",
+      "client branding automation",
+      "claude wordpress",
+      "white label cms",
+      "branda plugin",
+      "ase plugin",
+      "wordpress admin branding",
+      "claude code wordpress",
+      "client handoff automation",
+      "wordpress customization"
+    ],
+    "actual_capabilities": [
+      "Automates configuration of ASE, Branda, and White Label CMS plugins",
+      "Uploads and configures custom logos for login and admin areas",
+      "Sets custom login URLs for security hardening",
+      "Configures dashboard widgets, admin menus, and user permissions",
+      "Applies brand colors to login page and admin interface",
+      "Hides WordPress branding and replaces with client branding"
+    ],
+    "limitations": [
+      "Requires WordPress with WP-CLI access or Docker container",
+      "Only works with free plugins (ASE, Branda, White Label CMS)",
+      "Logo must be accessible via URL for download",
+      "Cannot modify plugin code or add premium features"
+    ],
+    "use_cases": [
+      {
+        "target_user": "WordPress developers",
+        "title": "Client Site Handoff",
+        "description": "Quickly brand WordPress sites before handing off to clients with professional login pages."
+      },
+      {
+        "target_user": "Web agencies",
+        "title": "Bulk WordPress Branding",
+        "description": "Apply consistent branding across multiple client sites using JSON configuration files."
+      },
+      {
+        "target_user": "Freelance developers",
+        "title": "Professional WordPress Setup",
+        "description": "Create polished, white-labeled WordPress experiences that hide default branding."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Setup",
+        "scenario": "Simple branding for a client",
+        "prompt": "White-label this WordPress site for ABC Company with blue colors (#2271b1) and logo from https://example.com/logo.png"
+      },
+      {
+        "title": "Security + Branding",
+        "scenario": "Secure and brand client site",
+        "prompt": "Set up white-labeling for Tech Solutions Inc with custom login URL /secure-portal and security hardening"
+      },
+      {
+        "title": "Agency Template",
+        "scenario": "Apply standard agency branding",
+        "prompt": "Apply our standard agency white-label config from agency-branding.json to container wordpress-client-1"
+      },
+      {
+        "title": "Custom Dashboard",
+        "scenario": "Create branded client dashboard",
+        "prompt": "Configure white-label CMS with custom welcome panel and quick links to Pages, Media, and Contact"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "White-label this site for Green Energy Co with green theme",
+        "output": [
+          "Uploaded logo to media library (ID: 123)",
+          "Configured White Label CMS with green color scheme",
+          "Set custom login URL: /green-energy-portal",
+          "Applied branding to login page with green background",
+          "Hidden WordPress admin bar logo",
+          "Configured dashboard with custom welcome message",
+          "White-label configuration complete!"
+        ]
+      },
+      {
+        "input": "Apply agency template to container wp-staging",
+        "output": [
+          "Copied configuration script to container",
+          "Applied ASE security settings (XML-RPC disabled, login URL configured)",
+          "Configured Branda login page branding",
+          "Set custom admin footer text",
+          "Configuration complete for wp-staging"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Test the configuration on a staging site before applying to production",
+      "Keep a backup of original WordPress settings before running automation",
+      "Use descriptive login URLs that clients can remember easily"
+    ],
+    "anti_patterns": [
+      "Do not use common login URLs like /login or /admin for security",
+      "Avoid uploading oversized logos that slow down the login page",
+      "Never hide essential admin menus that clients need for content management"
+    ],
+    "faq": [
+      {
+        "question": "Which plugins does this skill configure?",
+        "answer": "It configures ASE, Branda, White Label CMS, and Admin Menu Editor - all free WordPress plugins."
+      },
+      {
+        "question": "Can I use this with existing WordPress sites?",
+        "answer": "Yes, any WordPress site with WP-CLI access or Docker container works."
+      },
+      {
+        "question": "What if I do not have a logo URL?",
+        "answer": "Skip logo configuration or upload to media library first, then use the attachment ID."
+      },
+      {
+        "question": "Is it safe to change the login URL?",
+        "answer": "Yes, the skill uses ASE plugin to safely change login URLs while maintaining functionality."
+      },
+      {
+        "question": "Can I undo the white-labeling changes?",
+        "answer": "Changes modify WordPress options which can be reverted manually or by deactivating plugins."
+      },
+      {
+        "question": "Does this work with WordPress multisite?",
+        "answer": "Current implementation works best with single installations. Multisite may need per-site configuration."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "apply-white-label.sh",
+          "type": "file",
+          "path": "scripts/apply-white-label.sh",
+          "lines": 85
+        },
+        {
+          "name": "configure-white-label.php",
+          "type": "file",
+          "path": "scripts/configure-white-label.php",
+          "lines": 396
+        },
+        {
+          "name": "white-label-config.example.json",
+          "type": "file",
+          "path": "scripts/white-label-config.example.json",
+          "lines": 66
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 609
+    }
+  ]
+}

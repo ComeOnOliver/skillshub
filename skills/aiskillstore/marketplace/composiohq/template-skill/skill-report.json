@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:14:52.873Z",
+    "slug": "composiohq-template-skill",
+    "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/template-skill",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8ddbe2b8a92333a00fdd5929764e485e6d0f6de28ddaeb0d16c242325cf6947c",
+    "tree_hash": "bc7e2da8f755c1a4a6cd2b78def792fe4b6e1b3581a05f7ebcac4240b7f00251"
+  },
+  "skill": {
+    "name": "template-skill",
+    "description": "Replace with description of the skill and when Claude should use it.",
+    "summary": "Replace with description of the skill and when Claude should use it.",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "ComposioHQ",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "template",
+      "boilerplate",
+      "scaffold",
+      "skill-creation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation template with no executable code. The static findings are false positives triggered by benign text patterns in the JSON report file itself (metadata field names, version numbers, and content hash strings containing 'md5' substrings). No network calls, file system access, or runtime capabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 182,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:14:52.873Z"
+  },
+  "content": {
+    "user_title": "Create skills from template",
+    "value_statement": "This template provides a starting point for creating custom Claude skills. It includes a standardized format for defining skill metadata and instructions. Use this template to build new skills quickly.",
+    "seo_keywords": [
+      "Claude skill template",
+      "Claude Code skills",
+      "skill development",
+      "AI assistants",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "custom skills",
+      "prompt templates",
+      "skill creation"
+    ],
+    "actual_capabilities": [
+      "Provides standardized skill template format",
+      "Includes YAML frontmatter for metadata",
+      "Documents skill purpose and usage instructions",
+      "Serves as starting point for new skills"
+    ],
+    "limitations": [
+      "Template only - no functional code",
+      "Requires customization to become a working skill",
+      "Does not execute any actions",
+      "No runtime capabilities"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Skill developers",
+        "title": "Build new skills",
+        "description": "Start new skill projects with standardized structure and metadata format"
+      },
+      {
+        "target_user": "AI engineers",
+        "title": "Standardize templates",
+        "description": "Create consistent skill templates across your organization"
+      },
+      {
+        "target_user": "Contributors",
+        "title": "Submit skills",
+        "description": "Contribute new skills to skill marketplaces using proper format"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic template",
+        "scenario": "Start new skill",
+        "prompt": "Use the template-skill to create a new skill for [specific task]."
+      },
+      {
+        "title": "Custom metadata",
+        "scenario": "Define skill details",
+        "prompt": "Using template-skill format, create a skill with name [name], description [description], and category [category]."
+      },
+      {
+        "title": "Full customization",
+        "scenario": "Build complete skill",
+        "prompt": "Create a complete skill from template-skill that [describe skill purpose] with proper YAML frontmatter and detailed instructions."
+      },
+      {
+        "title": "Multiple skills",
+        "scenario": "Generate skill suite",
+        "prompt": "Generate three related skills using template-skill format for [related tasks]."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Use template-skill to create a skill for code review",
+        "output": [
+          "Skill name: code-review-assistant",
+          "Description: Reviews code and provides feedback",
+          "Category: coding",
+          "Instructions: Review the provided code and identify issues..."
+        ]
+      },
+      {
+        "input": "Create a skill for API documentation",
+        "output": [
+          "Skill name: api-doc-generator",
+          "Description: Generates documentation from API specs",
+          "Category: documentation",
+          "Instructions: Parse the API specification and create formatted documentation..."
+        ]
+      },
+      {
+        "input": "Build a skill for test generation",
+        "output": [
+          "Skill name: test-generator",
+          "Description: Creates unit tests from code",
+          "Category: testing",
+          "Instructions: Analyze the provided code and generate comprehensive unit tests..."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Fill in all required YAML frontmatter fields clearly",
+      "Provide specific instructions on when to use the skill",
+      "Include examples of effective prompts in the instructions",
+      "Test the skill with various inputs before publishing"
+    ],
+    "anti_patterns": [
+      "Leaving placeholder text in published skills",
+      "Omitting the YAML frontmatter or required fields",
+      "Creating skills without clear use cases",
+      "Skipping testing of skill instructions"
+    ],
+    "faq": [
+      {
+        "question": "What tools support this skill format?",
+        "answer": "This template works with Claude, Codex, and Claude Code. Check individual tool documentation for compatibility."
+      },
+      {
+        "question": "What are the file size limits?",
+        "answer": "Template files are minimal. Actual skills should keep instructions under reasonable length for best performance."
+      },
+      {
+        "question": "How do I integrate this with my workflow?",
+        "answer": "Copy the template file, customize the YAML frontmatter and instructions, then add to your skills directory."
+      },
+      {
+        "question": "Is my data safe with this template?",
+        "answer": "This template contains no executable code. No data is collected or transmitted. Only your custom content is used."
+      },
+      {
+        "question": "Why is my skill not working?",
+        "answer": "Ensure YAML frontmatter is valid, required fields are filled, and instructions are clear and specific."
+      },
+      {
+        "question": "How does this compare to other skill formats?",
+        "answer": "This template follows standard markdown with YAML frontmatter, compatible with most AI assistant skill systems."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 7
+    }
+  ]
+}

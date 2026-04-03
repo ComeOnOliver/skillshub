@@ -1,0 +1,330 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:05:02.904Z",
+    "slug": "egadams-voice-agent-expert",
+    "source_url": "https://github.com/EGAdams/planner/tree/main/.claude/skills/voice-agent-expert",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "014b0d5c44607e3491b0793da3f068a9a5b967acb537e326cc639e2b34f8c871",
+    "tree_hash": "7249018cec2beab4c1ffaa859bfd8cabca9372645b2f5cbbb6d3be42077f2411"
+  },
+  "skill": {
+    "name": "voice-agent-expert",
+    "description": "This skill is a practical, 'use-it-while-debugging' reference for getting a LiveKit + Letta voice agent working reliably.",
+    "summary": "This skill is a practical, 'use-it-while-debugging' reference for getting a LiveKit + Letta voice ag...",
+    "icon": "🎤",
+    "version": "1.0.0",
+    "author": "EGAdams",
+    "license": "MIT",
+    "category": "communication",
+    "tags": [
+      "voice",
+      "letta",
+      "livekit",
+      "webrtc",
+      "troubleshooting"
+    ],
+    "supported_tools": [
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "env_access",
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate voice agent diagnostic and management skill. All static findings represent standard service administration patterns for local development. Scripts only access localhost services, read user-configured environment files, and generate tokens for the user's own session. No external data transmission or credential exfiltration detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/diagnose_voice_system.py",
+            "line_start": 1,
+            "line_end": 125
+          },
+          {
+            "file": "scripts/generate_token.py",
+            "line_start": 1,
+            "line_end": 67
+          },
+          {
+            "file": "scripts/start_voice_system.py",
+            "line_start": 1,
+            "line_end": 102
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/diagnose_voice_system.py",
+            "line_start": 68,
+            "line_end": 69
+          },
+          {
+            "file": "scripts/start_voice_system.py",
+            "line_start": 61,
+            "line_end": 78
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/generate_token.py",
+            "line_start": 27,
+            "line_end": 34
+          },
+          {
+            "file": "scripts/start_voice_system.py",
+            "line_start": 60,
+            "line_end": 78
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/diagnose_voice_system.py",
+            "line_start": 9,
+            "line_end": 12
+          },
+          {
+            "file": "scripts/start_voice_system.py",
+            "line_start": 14,
+            "line_end": 18
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/start_voice_system.py",
+            "line_start": 85,
+            "line_end": 85
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Hardcoded absolute paths limit portability",
+        "description": "Scripts contain hardcoded absolute paths specific to the author's system (/home/adamsl/planner, /home/adamsl/ottomator-agents). Users must modify paths for their environment.",
+        "locations": [
+          {
+            "file": "scripts/diagnose_voice_system.py",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "scripts/diagnose_voice_system.py",
+            "line_start": 68,
+            "line_end": 69
+          },
+          {
+            "file": "scripts/generate_token.py",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "scripts/start_voice_system.py",
+            "line_start": 61,
+            "line_end": 61
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 1003,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:05:02.904Z"
+  },
+  "content": {
+    "user_title": "Fix voice agent issues instantly",
+    "value_statement": "Voice conversations with AI agents often fail due to duplicate processes and mode mismatches. This skill provides instant diagnostics and automated fixes for Letta voice agent systems.",
+    "seo_keywords": [
+      "voice agent",
+      "letta",
+      "livekit",
+      "webrtc",
+      "troubleshooting",
+      "claude code",
+      "ai voice",
+      "debugging",
+      "voice AI",
+      "Letta voice"
+    ],
+    "actual_capabilities": [
+      "Diagnose complete voice agent system health across all services",
+      "Generate LiveKit connection tokens automatically",
+      "Detect and kill duplicate voice agent processes",
+      "Start voice services with proper dependency checking",
+      "Validate environment variables and API keys"
+    ],
+    "limitations": [
+      "Requires specific Letta and LiveKit server setup",
+      "Scripts use hardcoded paths that need adjustment for your system",
+      "Only works with Python-based voice agents",
+      "Needs manual service startup for some components"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI developers",
+        "title": "Debug voice agent timeouts",
+        "description": "Quickly identify why your Letta voice agent is not responding or timing out during conversations."
+      },
+      {
+        "target_user": "System administrators",
+        "title": "Automate voice service startup",
+        "description": "Start voice services in correct order with dependency checks and duplicate prevention."
+      },
+      {
+        "target_user": "Voice AI users",
+        "title": "Fix audio cutting issues",
+        "description": "Resolve intermittent audio problems caused by duplicate voice agent processes."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic diagnostics",
+        "scenario": "Voice agent not responding",
+        "prompt": "Run a full diagnostic on my Letta voice agent system and tell me what is wrong"
+      },
+      {
+        "title": "Generate token",
+        "scenario": "Need connection token",
+        "prompt": "Generate a new LiveKit token for connecting to my voice agent"
+      },
+      {
+        "title": "Start services",
+        "scenario": "Services need restarting",
+        "prompt": "Start my voice agent system with all required services in the correct order"
+      },
+      {
+        "title": "Emergency restart",
+        "scenario": "Complete system failure",
+        "prompt": "Perform a complete restart of my voice agent system, killing any stuck processes"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Why is my voice agent timing out?",
+        "output": [
+          "Letta server is running on port 8283",
+          "Livekit server is running on port 7880",
+          "Voice agent is not running",
+          "Found 2 duplicate voice agent processes",
+          "Fix: Run restart script to kill duplicates and start fresh"
+        ]
+      },
+      {
+        "input": "Generate a token for testing",
+        "output": [
+          "LiveKit URL: ws://localhost:7880",
+          "Room: test-room",
+          "Token: [JWT token displayed]",
+          "Next steps: Open https://agents-playground.livekit.io/ and connect"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use dev mode for local testing, never start mode",
+      "Check for duplicate processes before troubleshooting",
+      "Use diagnostic script first to identify the root cause"
+    ],
+    "anti_patterns": [
+      "Starting voice agent directly without dependency checks",
+      "Using start mode for local development instead of dev mode",
+      "Ignoring duplicate process warnings in system logs"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with all Letta versions?",
+        "answer": "Designed for Letta with LiveKit integration. Requires specific voice agent setup with WebRTC support."
+      },
+      {
+        "question": "What are the system requirements?",
+        "answer": "Requires Letta server on port 8283, LiveKit server on port 7880, and Python voice agent with proper environment variables."
+      },
+      {
+        "question": "Can I integrate this with my existing voice setup?",
+        "answer": "Scripts use hardcoded paths that need adjustment. Modify environment file locations for your system."
+      },
+      {
+        "question": "Is my API key data safe?",
+        "answer": "Scripts only read existing environment files. No data is transmitted or stored externally."
+      },
+      {
+        "question": "Voice still cuts out after using scripts",
+        "answer": "Check browser WebSocket connections and microphone permissions. Ensure single voice agent process is running."
+      },
+      {
+        "question": "How does this compare to manual troubleshooting?",
+        "answer": "Automates common fixes like duplicate detection and service startup order, saving hours of manual debugging."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "diagnose_voice_system.py",
+          "type": "file",
+          "path": "scripts/diagnose_voice_system.py",
+          "lines": 125
+        },
+        {
+          "name": "generate_token.py",
+          "type": "file",
+          "path": "scripts/generate_token.py",
+          "lines": 67
+        },
+        {
+          "name": "start_voice_system.py",
+          "type": "file",
+          "path": "scripts/start_voice_system.py",
+          "lines": 102
+        }
+      ]
+    },
+    {
+      "name": "QUICK_REFERENCE.md",
+      "type": "file",
+      "path": "QUICK_REFERENCE.md",
+      "lines": 140
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 146
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 105
+    }
+  ]
+}

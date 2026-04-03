@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:08:37.069Z",
+    "slug": "activeinferenceinstitute-uv-package-manager",
+    "source_url": "https://github.com/ActiveInferenceInstitute/Journal-Utilities/tree/main/.claude/skills/uv-package-manager",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "93af120ee9d86e06ace1395022161ac44dfacc19cd623bd2a91138e837d8702d",
+    "tree_hash": "f9ac2e566ec50b51e8661b3fa9ff7124b0de2763bbbc49d033907c39c688c19e"
+  },
+  "skill": {
+    "name": "uv-package-manager",
+    "description": "Master the uv package manager for fast Python dependency management, virtual environments, and modern Python project workflows. Use when setting up Python projects, managing dependencies, or optimizing Python development workflows with uv.",
+    "summary": "Fast Python package management with uv - a Rust-based pip replacement",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "ActiveInferenceInstitute",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "python",
+      "package-manager",
+      "dependencies",
+      "virtual-environments",
+      "rust"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides comprehensive documentation for the uv Python package manager. All static findings are false positives from pattern matching in documentation examples. No executable code, network calls, or filesystem operations are present. Safe for publication.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2144,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:08:37.069Z"
+  },
+  "content": {
+    "user_title": "Master Python Package Management with uv",
+    "value_statement": "Python dependency management is slow and complex with traditional tools. This skill teaches you to use uv, a Rust-based package manager that is 10-100x faster than pip while maintaining full compatibility.",
+    "seo_keywords": [
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "Python package manager",
+      "uv package manager",
+      "pip replacement",
+      "Python dependencies",
+      "virtual environments",
+      "Python development",
+      "Rust Python tools"
+    ],
+    "actual_capabilities": [
+      "Provides comprehensive guidance on installing and configuring uv package manager",
+      "Teaches virtual environment creation and management with uv",
+      "Explains dependency management including adding, removing, and upgrading packages",
+      "Covers lockfile workflows for reproducible builds",
+      "Demonstrates CI/CD and Docker integration patterns",
+      "Includes migration guides from pip, poetry, and pip-tools"
+    ],
+    "limitations": [
+      "This skill provides documentation and guidance only, not automated package management",
+      "Users must have uv installed on their system to execute commands",
+      "Does not automatically troubleshoot environment-specific installation issues",
+      "Does not provide real-time package vulnerability scanning"
+    ],
+    "use_cases": [
+      {
+        "title": "Set Up a New Python Project",
+        "description": "Initialize a new Python project with uv, set up virtual environments, configure dependencies in pyproject.toml, and create lockfiles for reproducible builds.",
+        "target_user": "Python developers starting new projects"
+      },
+      {
+        "title": "Optimize CI/CD Pipeline Performance",
+        "description": "Integrate uv into GitHub Actions or other CI systems to speed up dependency installation by 10-100x, reduce build times, and leverage caching.",
+        "target_user": "DevOps engineers and platform teams"
+      },
+      {
+        "title": "Migrate from pip or Poetry",
+        "description": "Learn step-by-step migration paths from traditional tools like pip, pip-tools, or poetry to uv while maintaining compatibility and improving performance.",
+        "target_user": "Teams modernizing Python workflows"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Initialize New Project",
+        "prompt": "Help me set up a new Python project using uv with FastAPI and pytest",
+        "scenario": "Starting a new Python web application"
+      },
+      {
+        "title": "Configure Virtual Environment",
+        "prompt": "Show me how to create a virtual environment with uv using Python 3.12",
+        "scenario": "Setting up isolated development environment"
+      },
+      {
+        "title": "Manage Dependencies",
+        "prompt": "How do I add pandas and numpy to my project with uv and lock the versions?",
+        "scenario": "Adding data science libraries to a project"
+      },
+      {
+        "title": "Set Up Docker with uv",
+        "prompt": "Create an optimized Dockerfile for my Python app using uv for dependency management",
+        "scenario": "Containerizing a Python application"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I install uv on macOS?",
+        "output": "To install uv on macOS, you have several options:\n\n1. Using the official installer (recommended):\n   curl -LsSf https://astral.sh/uv/install.sh | sh\n\n2. Using Homebrew:\n   brew install uv\n\n3. Using pip (if Python is already installed):\n   pip install uv\n\nAfter installation, verify it with: uv --version"
+      },
+      {
+        "input": "Show me how to migrate from requirements.txt to uv",
+        "output": "To migrate from requirements.txt to uv:\n\n1. Initialize uv in your project:\n   uv init\n\n2. Import your existing dependencies:\n   uv add -r requirements.txt\n\n3. Create a lockfile for reproducibility:\n   uv lock\n\n4. Install dependencies:\n   uv sync\n\nThis creates a pyproject.toml with your dependencies and a uv.lock file for exact versions."
+      },
+      {
+        "input": "What is the fastest way to create a Python project with uv?",
+        "output": "The fastest way to create a Python project with uv:\n\n1. Initialize project: uv init my-project && cd my-project\n2. Pin Python version: uv python pin 3.12\n3. Add dependencies: uv add requests pandas\n4. Add dev tools: uv add --dev pytest black ruff\n5. Run your code: uv run python main.py\n\nThis creates a complete project structure with virtual environment, dependencies, and lockfile in seconds."
+      }
+    ],
+    "best_practices": [
+      "Always commit uv.lock files to version control for reproducible builds across teams",
+      "Use uv run instead of manually activating virtual environments for simpler workflows",
+      "Pin Python versions with .python-version file to ensure consistency across development environments"
+    ],
+    "anti_patterns": [
+      "Do not mix uv with pip for package installation as this can create dependency conflicts",
+      "Avoid manual virtual environment activation when uv run provides automatic environment management",
+      "Do not skip lockfile generation in production projects as this compromises reproducibility"
+    ],
+    "faq": [
+      {
+        "question": "Is uv compatible with existing pip and poetry projects?",
+        "answer": "Yes, uv is designed as a drop-in replacement for pip and can read existing requirements.txt files and pyproject.toml configurations. It supports both pip-style and poetry-style dependency specifications."
+      },
+      {
+        "question": "How much faster is uv compared to pip?",
+        "answer": "uv is typically 10-100x faster than pip depending on the operation. Installation speed improvements come from parallel downloads, a global cache, and Rust-based performance optimizations."
+      },
+      {
+        "question": "Does uv require Python to be installed?",
+        "answer": "No, uv can install Python interpreters for you. The uv binary is standalone and written in Rust, so it does not require an existing Python installation."
+      },
+      {
+        "question": "Can I use uv in CI/CD pipelines?",
+        "answer": "Yes, uv is excellent for CI/CD. Use the astral-sh/setup-uv action for GitHub Actions, or install via curl/pip in other systems. The --frozen flag ensures exact lockfile reproduction."
+      },
+      {
+        "question": "What is the difference between uv add and uv pip install?",
+        "answer": "uv add modifies your pyproject.toml and manages project dependencies, while uv pip install is a pip-compatible command for one-off installations. Use uv add for project dependencies and uv pip for quick testing."
+      },
+      {
+        "question": "How do I handle private package repositories with uv?",
+        "answer": "Configure custom package sources in pyproject.toml under the [tool.uv.sources] section. You can specify git repositories, local paths, or custom index URLs for private packages."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 832
+    }
+  ]
+}

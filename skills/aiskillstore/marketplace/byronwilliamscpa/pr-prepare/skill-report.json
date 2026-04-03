@@ -1,0 +1,233 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:42:19.521Z",
+    "slug": "byronwilliamscpa-pr-prepare",
+    "source_url": "https://github.com/ByronWilliamsCPA/fragrance-rater/tree/main/.claude/skills/pr-prepare",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9d76d591874df6ce60475bbb6dd6091b4d74bcb8ddf991e8a2d19e5637226c28",
+    "tree_hash": "5bc5826defa2ae4e94f8dbe02ede9f09e596d293667fd1cc64e3b5c5017cd50c"
+  },
+  "skill": {
+    "name": "pr-prepare",
+    "description": "Prepare pull request descriptions following project template. Activates on: prepare PR, create PR, pull request, ready for PR, draft PR, write PR",
+    "summary": "Prepare pull request descriptions following project template. Activates on: prepare PR, create PR, p...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "ByronWilliamsCPA",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "pull-request",
+      "git",
+      "documentation",
+      "github"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a documentation generator that provides workflow instructions for preparing PR descriptions. The static scanner flagged 56 issues, but ALL findings are FALSE POSITIVES. The scanner misinterpreted SHA256 cryptographic hashes as 'weak cryptographic algorithms,' standard git commands as 'shell execution threats,' and metadata URLs as 'network indicators.' The skill contains only documentation markdown with no actual code, no network calls, no data exfiltration, and no malicious functionality.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 39
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 345,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:42:19.521Z"
+  },
+  "content": {
+    "user_title": "Prepare pull request descriptions automatically",
+    "value_statement": "Writing clear PR descriptions takes time and consistency. This skill automatically gathers git context, analyzes changes, and generates standardized PR descriptions following conventional commit formats.",
+    "seo_keywords": [
+      "pull request template",
+      "PR description generator",
+      "Claude Code skill",
+      "git workflow",
+      "GitHub PR",
+      "conventional commits",
+      "documentation automation",
+      "code review preparation",
+      "Claude",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Gathers git context including status, branch, commits, and file changes",
+      "Analyzes modified components and their purpose",
+      "Generates PR descriptions using standardized templates",
+      "Suggests PR titles following conventional commit formats",
+      "Outputs ready-to-copy markdown for GitHub",
+      "Enforces consistent PR documentation standards"
+    ],
+    "limitations": [
+      "Does not push code or create PRs directly",
+      "Requires git repository with clean working state",
+      "Does not validate tests or linting automatically"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual developers",
+        "title": "Streamline PR workflow",
+        "description": "Generate consistent, professional PR descriptions without memorizing templates or running git commands manually"
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Enforce documentation standards",
+        "description": "Ensure all team PRs include standardized summaries, change lists, and impact assessments"
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Improve contribution quality",
+        "description": "Help contributors write clear PR descriptions that make code reviews faster and more effective"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic PR request",
+        "scenario": "Need PR description",
+        "prompt": "Prepare the PR for this branch. Include a summary, changes, impact, and testing notes."
+      },
+      {
+        "title": "Feature PR",
+        "scenario": "New feature ready",
+        "prompt": "Create a PR description for this feature branch. What components changed and what benefits does this provide?"
+      },
+      {
+        "title": "Bug fix PR",
+        "scenario": "Bug fix completed",
+        "prompt": "Prepare a PR describing this bug fix. Include what was broken, what changed, and how it was tested."
+      },
+      {
+        "title": "Complex PR",
+        "scenario": "Multiple changes",
+        "prompt": "Generate a comprehensive PR description. Analyze all changes, identify breaking impacts, and suggest testing requirements."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Prepare the PR for this feature branch",
+        "output": [
+          "Suggested Title: feat: add user authentication with OAuth2",
+          "",
+          "## Summary",
+          "Add OAuth2 authentication supporting Google and GitHub providers.",
+          "",
+          "## Changes",
+          "- auth/oauth.py: OAuth2 client with token refresh",
+          "- api/routes/auth.py: Login, logout, callback endpoints",
+          "- models/user.py: User model with OAuth fields",
+          "",
+          "## Impact",
+          "- Users can sign in with Google or GitHub",
+          "- Secure session management with httponly cookies",
+          "- No breaking changes"
+        ]
+      },
+      {
+        "input": "Prepare a PR for this bug fix",
+        "output": [
+          "Suggested Title: fix: resolve null pointer in user lookup",
+          "",
+          "## Summary",
+          "Fixed null pointer exception when looking up users that do not exist in the database.",
+          "",
+          "## Changes",
+          "- services/user.py: Added null check before accessing user properties",
+          "- tests/user_test.py: Added test cases for missing user scenarios",
+          "",
+          "## Impact",
+          "- Prevents crashes on invalid user lookups",
+          "- Graceful error handling for missing users",
+          "- No breaking changes to existing functionality"
+        ]
+      },
+      {
+        "input": "Create a PR description for the documentation updates",
+        "output": [
+          "Suggested Title: docs: update API documentation with new endpoints",
+          "",
+          "## Summary",
+          "Updated API documentation to include new authentication endpoints and rate limiting information.",
+          "",
+          "## Changes",
+          "- docs/api.md: Added new endpoint documentation",
+          "- docs/auth.md: Updated authentication flow diagrams",
+          "",
+          "## Impact",
+          "- Improved developer experience",
+          "- No code changes, only documentation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run the skill after completing changes but before pushing to ensure clean git status",
+      "Review the generated description and add any context-specific details",
+      "Use the conventional commit format for PR titles to maintain consistency"
+    ],
+    "anti_patterns": [
+      "Using the skill with uncommitted changes that are not part of the PR",
+      "Copying the output without reviewing for accuracy",
+      "Skipping the testing checklist items before creating the PR"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "The skill works with Claude and Claude Code. It requires access to run git commands in your repository."
+      },
+      {
+        "question": "What git commands are executed?",
+        "answer": "The skill runs git status, git log, and git diff to gather context about changes between your branch and the base branch."
+      },
+      {
+        "question": "Can I customize the PR template?",
+        "answer": "The template in the skill is a starting point. You can modify it for your project or request changes to the skill template."
+      },
+      {
+        "question": "Is my code data sent anywhere?",
+        "answer": "No. The skill runs locally and only reads your git repository. No data is transmitted to external services."
+      },
+      {
+        "question": "What if git commands fail?",
+        "answer": "Ensure you are in a git repository with changes to commit. The skill needs a clean working state or tracked changes."
+      },
+      {
+        "question": "How is this different from GitHub PR templates?",
+        "answer": "GitHub PR templates are static files. This skill dynamically generates descriptions based on your actual code changes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 150
+    }
+  ]
+}

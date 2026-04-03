@@ -1,0 +1,241 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:36:14.867Z",
+    "slug": "diet103-frontend-dev-guidelines",
+    "source_url": "https://github.com/diet103/claude-code-infrastructure-showcase/tree/main/.claude/skills/frontend-dev-guidelines",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "646f2fb6e25cef87f39de43363f0962d92b3c39f53ffd881fb7959e1338a4ae0",
+    "tree_hash": "07e8cbc2b62212f4f55b91d8265659cad85a21bd5169593a051339843a74387d"
+  },
+  "skill": {
+    "name": "frontend-dev-guidelines",
+    "description": "Frontend development guidelines for React/TypeScript applications. Modern patterns including Suspense, lazy loading, useSuspenseQuery, file organization with features directory, MUI v7 styling, TanStack Router, performance optimization, and TypeScript best practices. Use when creating components, pages, features, fetching data, styling, routing, or working with frontend code.",
+    "summary": "Frontend development guidelines for React/TypeScript applications. Modern patterns including Suspens...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "diet103",
+    "license": "MIT",
+    "tags": [
+      "react",
+      "typescript",
+      "frontend",
+      "mui",
+      "tanstack-router"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation skill containing frontend development guidelines for React and TypeScript applications. Static analysis detected code patterns within markdown documentation files. All findings are false positives as the patterns are code examples in documentation, not executable code. No security concerns identified.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 12,
+    "total_lines": 12036,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:36:14.867Z"
+  },
+  "content": {
+    "user_title": "Apply React TypeScript frontend guidelines",
+    "value_statement": "Frontend projects often lack consistent patterns leading to maintenance issues and bugs. This skill provides comprehensive guidelines for React and TypeScript applications including modern patterns, file organization, and best practices.",
+    "seo_keywords": [
+      "React guidelines",
+      "TypeScript frontend",
+      "MUI components",
+      "TanStack Router",
+      "React patterns",
+      "Claude Code",
+      "Codex",
+      "frontend development",
+      "React best practices"
+    ],
+    "actual_capabilities": [
+      "Provide guidelines for React component patterns including Suspense and lazy loading",
+      "Define file organization structure using features directory pattern",
+      "Specify TypeScript standards including type definitions and interfaces",
+      "Guide data fetching patterns using TanStack Query",
+      "Define styling approaches using MUI v7 theming",
+      "Establish routing patterns using TanStack Router"
+    ],
+    "limitations": [
+      "This is a guidelines skill that provides recommendations, not executable code",
+      "Does not generate complete applications or components on its own",
+      "Does not install dependencies or configure build tools",
+      "Assumes basic familiarity with React and TypeScript concepts"
+    ],
+    "use_cases": [
+      {
+        "title": "New React project setup",
+        "description": "Establish consistent patterns and structure when starting a new React TypeScript project with team-wide guidelines",
+        "target_user": "Tech leads and developers starting new frontend projects"
+      },
+      {
+        "title": "Code review and quality assurance",
+        "description": "Review existing frontend code against established guidelines to identify areas for improvement and consistency",
+        "target_user": "Code reviewers and quality assurance engineers"
+      },
+      {
+        "title": "Learning modern React patterns",
+        "description": "Learn current best practices for React development including Suspense, data fetching, and component organization",
+        "target_user": "Frontend developers learning modern React patterns"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Component creation",
+        "prompt": "Create a new React component following the frontend guidelines. The component should use TypeScript, include proper types, handle loading and error states, and follow the file organization patterns.",
+        "scenario": "Creating a new feature component with full guidelines"
+      },
+      {
+        "title": "Data fetching implementation",
+        "prompt": "Implement data fetching for a feature using TanStack Query with proper error handling, loading states, and cache management following the guidelines.",
+        "scenario": "Adding data fetching to an existing feature"
+      },
+      {
+        "title": "Routing configuration",
+        "prompt": "Set up routes for a new feature using TanStack Router including nested routes, parameters, and proper file structure following the guidelines.",
+        "scenario": "Configuring routes for a new module"
+      },
+      {
+        "title": "Code review against guidelines",
+        "prompt": "Review the following React TypeScript code against the frontend guidelines. Identify areas that need improvement and suggest specific changes to align with best practices.",
+        "scenario": "Reviewing code for guideline compliance"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a user profile component",
+        "output": "I will create a user profile component following the frontend guidelines:\n\n1. File structure: features/user/profile/\n2. Component with TypeScript interfaces\n3. Loading and error states using Suspense and error boundaries\n4. Data fetching with useSuspenseQuery\n5. MUI components for styling"
+      },
+      {
+        "input": "How should I organize my React project files?",
+        "output": "Following the frontend guidelines, organize your React project with a features directory pattern:\n\n- src/\n  - features/\n    - feature-name/\n      - components/\n      - hooks/\n      - types/\n      - utils/\n  - shared/\n    - components/\n    - hooks/\n    - types/\n  - routes/\n  - app/\n\nThis keeps related code together and promotes reusability."
+      }
+    ],
+    "best_practices": [
+      "Use TypeScript interfaces for all component props and data types to ensure type safety across the application",
+      "Organize code by feature using the features directory pattern rather than grouping by file type",
+      "Implement loading and error states using React Suspense and error boundaries for consistent user experience"
+    ],
+    "anti_patterns": [
+      "Avoid mixing unrelated feature code in shared directories as this creates tight coupling between features",
+      "Do not skip TypeScript type definitions for component props as this leads to runtime errors",
+      "Avoid putting business logic directly in components; extract to hooks and utilities for reusability"
+    ],
+    "faq": [
+      {
+        "question": "What React patterns does this skill cover?",
+        "answer": "The skill covers React Suspense, lazy loading with dynamic imports, component composition patterns, and state management approaches using modern React patterns."
+      },
+      {
+        "question": "Does this skill work with Next.js?",
+        "answer": "The guidelines focus on client-side React applications. Next.js has additional server-side considerations that are not covered by these guidelines."
+      },
+      {
+        "question": "Can I use these guidelines with other UI libraries?",
+        "answer": "The guidelines specify MUI v7 for styling, but the component patterns and TypeScript standards can be adapted to work with other UI component libraries."
+      },
+      {
+        "question": "How do I handle global state?",
+        "answer": "The guidelines recommend using TanStack Query for server state and React Context for simple client state. Complex global state should use dedicated state management libraries."
+      },
+      {
+        "question": "What testing approaches are recommended?",
+        "answer": "The guidelines do not specify testing frameworks, but recommend testing component behavior, hook outputs, and integration of data fetching patterns."
+      },
+      {
+        "question": "How do I add a new feature following these guidelines?",
+        "answer": "Create a new directory under features/ with subdirectories for components, hooks, types, and utils. Define routes in the routes/ directory and follow the component patterns for each feature."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "resources",
+      "type": "dir",
+      "path": "resources",
+      "children": [
+        {
+          "name": "common-patterns.md",
+          "type": "file",
+          "path": "resources/common-patterns.md",
+          "lines": 331
+        },
+        {
+          "name": "complete-examples.md",
+          "type": "file",
+          "path": "resources/complete-examples.md",
+          "lines": 872
+        },
+        {
+          "name": "component-patterns.md",
+          "type": "file",
+          "path": "resources/component-patterns.md",
+          "lines": 502
+        },
+        {
+          "name": "data-fetching.md",
+          "type": "file",
+          "path": "resources/data-fetching.md",
+          "lines": 767
+        },
+        {
+          "name": "file-organization.md",
+          "type": "file",
+          "path": "resources/file-organization.md",
+          "lines": 502
+        },
+        {
+          "name": "loading-and-error-states.md",
+          "type": "file",
+          "path": "resources/loading-and-error-states.md",
+          "lines": 501
+        },
+        {
+          "name": "performance.md",
+          "type": "file",
+          "path": "resources/performance.md",
+          "lines": 406
+        },
+        {
+          "name": "routing-guide.md",
+          "type": "file",
+          "path": "resources/routing-guide.md",
+          "lines": 364
+        },
+        {
+          "name": "styling-guide.md",
+          "type": "file",
+          "path": "resources/styling-guide.md",
+          "lines": 428
+        },
+        {
+          "name": "typescript-standards.md",
+          "type": "file",
+          "path": "resources/typescript-standards.md",
+          "lines": 418
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 399
+    }
+  ]
+}

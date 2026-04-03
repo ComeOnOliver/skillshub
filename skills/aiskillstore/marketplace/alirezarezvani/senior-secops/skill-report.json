@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:52:30.214Z",
+    "slug": "alirezarezvani-senior-secops",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering-team/senior-secops",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6ae91206d589edb781d286d76a9065ee643a637e152e2204af26d245e6717ee8",
+    "tree_hash": "e57585631afb86582d4b6b875e9870c5ff43df6d5fce29dcb3ef55243a71fd72"
+  },
+  "skill": {
+    "name": "senior-secops",
+    "description": "Comprehensive SecOps skill for application security, vulnerability management, compliance, and secure development practices. Includes security scanning, vulnerability assessment, compliance checking, and security automation. Use when implementing security controls, conducting security audits, responding to vulnerabilities, or ensuring compliance requirements.",
+    "summary": "Comprehensive SecOps skill for application security, vulnerability management, compliance, and secur...",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "security",
+      "compliance",
+      "vulnerability",
+      "audit",
+      "devsecops"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 78 static findings are FALSE POSITIVES. The analyzer misidentified markdown documentation code blocks (showing bash commands and TypeScript examples) as executable shell commands, and flagged placeholder code patterns as cryptographic/network threats. The actual Python scripts are legitimate scaffolding templates for security tooling with no malicious code, no network operations, and no unsanitized external command execution. This is a defensive security skill with safe, read-only scanning capabilities.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/compliance_checker.py",
+            "line_start": 1,
+            "line_end": 114
+          },
+          {
+            "file": "scripts/security_scanner.py",
+            "line_start": 1,
+            "line_end": 114
+          },
+          {
+            "file": "scripts/vulnerability_assessor.py",
+            "line_start": 1,
+            "line_end": 114
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 208
+          },
+          {
+            "file": "references/compliance_requirements.md",
+            "line_start": 20,
+            "line_end": 43
+          },
+          {
+            "file": "references/security_standards.md",
+            "line_start": 20,
+            "line_end": 43
+          },
+          {
+            "file": "references/vulnerability_management_guide.md",
+            "line_start": 20,
+            "line_end": 43
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/compliance_checker.py",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "scripts/security_scanner.py",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "scripts/vulnerability_assessor.py",
+            "line_start": 107,
+            "line_end": 107
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 1370,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:52:30.214Z"
+  },
+  "content": {
+    "user_title": "Automate security scanning and compliance checks",
+    "value_statement": "Security teams spend hours manually reviewing code and configurations for vulnerabilities. This SecOps skill provides automated security scanning, vulnerability assessment, and compliance checking tools to streamline security operations and ensure consistent coverage across codebases.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "security scanning",
+      "vulnerability assessment",
+      "compliance checking",
+      "SecOps automation",
+      "application security",
+      "security audit",
+      "devsecops"
+    ],
+    "actual_capabilities": [
+      "Scan codebases for security vulnerabilities and misconfigurations",
+      "Assess target systems for common security weaknesses",
+      "Verify compliance against security standards and frameworks",
+      "Generate security assessment reports in JSON format",
+      "Support multiple programming languages and frameworks",
+      "Provide security best practices and anti-patterns documentation"
+    ],
+    "limitations": [
+      "Does not perform penetration testing or exploit validation",
+      "Does not access external APIs or live services",
+      "Relies on user-provided target paths and configurations",
+      "Scanner scripts are scaffolding templates requiring full implementation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security Engineers",
+        "title": "Automate security assessments",
+        "description": "Run automated security scans on codebases to identify vulnerabilities before deployment."
+      },
+      {
+        "target_user": "DevSecOps Teams",
+        "title": "Integrate security into CI/CD",
+        "description": "Add security scanning steps to pipelines using the provided CLI tools and templates."
+      },
+      {
+        "target_user": "Compliance Officers",
+        "title": "Verify security controls",
+        "description": "Check systems against compliance requirements and generate audit documentation."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Security Scan",
+        "scenario": "Scan a project directory",
+        "prompt": "Use the senior-secops skill to scan my project at [path] for security vulnerabilities. Show me the findings and recommendations."
+      },
+      {
+        "title": "Compliance Check",
+        "scenario": "Verify compliance standards",
+        "prompt": "Run a compliance check on [target] to verify it meets security standards. Generate a report of any gaps."
+      },
+      {
+        "title": "Vulnerability Assessment",
+        "scenario": "Assess system security",
+        "prompt": "Use the vulnerability assessor to analyze [target] for security weaknesses. Provide a detailed findings report."
+      },
+      {
+        "title": "Security Review",
+        "scenario": "Full security audit",
+        "prompt": "Perform a complete security review using all senior-secops tools. Analyze [target], check compliance, and summarize risks."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Scan my React application for security issues",
+        "output": [
+          "Security scan complete for React application",
+          "Findings: 3 medium-risk issues identified",
+          "- Missing Content-Security-Policy header",
+          "- Potential XSS vulnerability in user input handling",
+          "- Outdated dependency: lodash version 4.17.19",
+          "Recommendations: Apply security headers, sanitize inputs, update dependencies"
+        ]
+      },
+      {
+        "input": "Check if my API meets compliance requirements",
+        "output": [
+          "Compliance check results for API endpoints",
+          "Status: 85% compliant (17/20 requirements met)",
+          "Gaps found:",
+          "- No rate limiting implemented on /api/users",
+          "- Missing request validation on POST /api/data",
+          "Action items: Add rate limiting middleware, implement request validation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run security scans early in the development cycle to catch issues before they reach production",
+      "Use the JSON output format for automated integration with CI/CD pipelines and dashboards",
+      "Review and implement the security best practices documented in the reference guides"
+    ],
+    "anti_patterns": [
+      "Skipping security scans due to time pressure and deploying vulnerable code to production",
+      "Ignoring low-severity findings that can accumulate into significant security debt",
+      "Using security tools only for compliance checks without acting on the findings"
+    ],
+    "faq": [
+      {
+        "question": "What programming languages does the scanner support?",
+        "answer": "The skill provides guidance for TypeScript, JavaScript, Python, Go, Swift, and Kotlin codebases."
+      },
+      {
+        "question": "Can I integrate this into GitHub Actions?",
+        "answer": "Yes. The CLI tools support JSON output that can be parsed and used in CI/CD pipeline steps."
+      },
+      {
+        "question": "Does the skill perform live penetration testing?",
+        "answer": "No. The tools perform static analysis and compliance checks, not active exploitation or penetration testing."
+      },
+      {
+        "question": "What compliance frameworks are supported?",
+        "answer": "The reference documentation covers general security standards. Specific framework validation requires user configuration."
+      },
+      {
+        "question": "How do I customize the security rules?",
+        "answer": "Modify the scanner scripts and configuration to add custom rules matching your security requirements."
+      },
+      {
+        "question": "Can I generate reports in formats other than JSON?",
+        "answer": "Currently only JSON output is supported. The output can be post-processed to other formats as needed."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "compliance_requirements.md",
+          "type": "file",
+          "path": "references/compliance_requirements.md",
+          "lines": 104
+        },
+        {
+          "name": "security_standards.md",
+          "type": "file",
+          "path": "references/security_standards.md",
+          "lines": 104
+        },
+        {
+          "name": "vulnerability_management_guide.md",
+          "type": "file",
+          "path": "references/vulnerability_management_guide.md",
+          "lines": 104
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "compliance_checker.py",
+          "type": "file",
+          "path": "scripts/compliance_checker.py",
+          "lines": 115
+        },
+        {
+          "name": "security_scanner.py",
+          "type": "file",
+          "path": "scripts/security_scanner.py",
+          "lines": 115
+        },
+        {
+          "name": "vulnerability_assessor.py",
+          "type": "file",
+          "path": "scripts/vulnerability_assessor.py",
+          "lines": 115
+        }
+      ]
+    },
+    {
+      "name": "evaluation_output.json",
+      "type": "file",
+      "path": "evaluation_output.json",
+      "lines": 205
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 210
+    }
+  ]
+}

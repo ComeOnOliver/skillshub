@@ -1,0 +1,290 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T03:08:30.549Z",
+    "slug": "davila7-torch-geometric",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/torch_geometric",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bc3dde02a617493f4e7d09145ec1d6cd6ee33c59353c7a403ba977ec9883734d",
+    "tree_hash": "77ac1b13648407fcad8c18058ddb13428e5ccf70fefdfa1339a8192811ecad97"
+  },
+  "skill": {
+    "name": "torch-geometric",
+    "description": "Graph Neural Networks (PyG). Node/graph classification, link prediction, GCN, GAT, GraphSAGE, heterogeneous graphs, molecular property prediction, for geometric deep learning.",
+    "summary": "Graph Neural Networks (PyG). Node/graph classification, link prediction, GCN, GAT, GraphSAGE, hetero...",
+    "icon": "🔗",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "deep learning",
+      "graphs",
+      "neural networks",
+      "pytorch"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate PyTorch Geometric documentation and utility skill containing 671 lines of documentation and 3 Python utility scripts. The extensive static findings (776 issues) are all false positives from the analyzer misinterpreting markdown code examples and PyTorch API calls. No actual command execution, credential access, or data exfiltration patterns exist in the codebase.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/benchmark_model.py",
+            "line_start": 144,
+            "line_end": 144
+          },
+          {
+            "file": "scripts/benchmark_model.py",
+            "line_start": 183,
+            "line_end": 183
+          },
+          {
+            "file": "scripts/create_gnn_template.py",
+            "line_start": 86,
+            "line_end": 86
+          },
+          {
+            "file": "scripts/visualize_graph.py",
+            "line_start": 276,
+            "line_end": 276
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 667,
+            "line_end": 670
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Scripts use /tmp for dataset caching",
+        "description": "Python scripts write benchmark datasets to /tmp directory for data caching. This is standard ML practice but represents filesystem write access.",
+        "locations": [
+          {
+            "file": "scripts/benchmark_model.py",
+            "line_start": 144,
+            "line_end": 144
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3796,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T03:08:30.549Z"
+  },
+  "content": {
+    "user_title": "Build Graph Neural Networks with PyTorch Geometric",
+    "value_statement": "Graph Neural Networks enable learning from irregular data structures like social networks and molecules. PyTorch Geometric provides a comprehensive toolkit for building, training, and evaluating GNNs with minimal boilerplate code.",
+    "seo_keywords": [
+      "PyTorch Geometric",
+      "Graph Neural Networks",
+      "GNN",
+      "node classification",
+      "graph classification",
+      "deep learning",
+      "geometric deep learning",
+      "molecular property prediction",
+      "Claude AI",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Implement GNN architectures including GCN, GAT, and GraphSAGE",
+      "Load benchmark datasets for node and graph classification",
+      "Train models on citation networks, molecular graphs, and social networks",
+      "Apply graph transforms for preprocessing and augmentation",
+      "Generate boilerplate code for common GNN architectures",
+      "Visualize graph structures and compute network statistics"
+    ],
+    "limitations": [
+      "Requires PyTorch and torch_geometric libraries to be installed",
+      "Does not include pre-trained model weights",
+      "Limited to single-machine training (no distributed training examples)"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Machine Learning Researchers",
+        "title": "Prototype GNN Architectures",
+        "description": "Experiment with different GNN layers and training strategies on benchmark datasets."
+      },
+      {
+        "target_user": "Data Scientists",
+        "title": "Analyze Network Data",
+        "description": "Apply graph learning to social networks, citation networks, and recommendation systems."
+      },
+      {
+        "target_user": "Computational Chemists",
+        "title": "Predict Molecular Properties",
+        "description": "Build models for drug discovery and molecular property prediction tasks."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Node Classification",
+        "scenario": "Load dataset and build model",
+        "prompt": "Help me build a Graph Convolutional Network for node classification on the Cora dataset using PyTorch Geometric. Include data loading, model definition, and training loop."
+      },
+      {
+        "title": "Graph Classification",
+        "scenario": "Classify molecular structures",
+        "prompt": "Create a Graph Isomorphism Network (GIN) for graph classification on the ENZYMES dataset. Show how to use DataLoader and global pooling."
+      },
+      {
+        "title": "Custom GNN Layer",
+        "scenario": "Implement message passing",
+        "prompt": "Help me implement a custom MessagePassing layer in PyTorch Geometric that uses attention-based aggregation over neighbor features."
+      },
+      {
+        "title": "Large-Scale Graphs",
+        "scenario": "Efficient training",
+        "prompt": "Show me how to use NeighborLoader for training GNNs on large-scale graphs like Reddit or OGB datasets with mini-batch processing."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Build a GCN model for node classification on the Cora dataset",
+        "output": [
+          "Created GCN with 2 convolutional layers (1433 input features → 16 hidden → 7 classes)",
+          "Loaded Cora dataset: 2708 nodes, 5429 edges, 7 classes",
+          "Training configuration: 200 epochs, learning rate 0.01, weight decay 5e-4",
+          "Expected test accuracy: approximately 75-80%"
+        ]
+      },
+      {
+        "input": "Create a Graph Attention Network for molecular property prediction",
+        "output": [
+          "Built GAT with 8 attention heads per layer",
+          "Using MoleculeNet dataset for toxicity prediction",
+          "Applied AddSelfLoops and NormalizeFeatures transforms",
+          "Model uses dropout 0.6 for regularization"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with GCNConv or GATConv for baseline models before exploring more complex architectures",
+      "Use NeighborLoader for large graphs to enable efficient mini-batch training",
+      "Apply transforms like NormalizeFeatures and AddSelfLoops during preprocessing for better results"
+    ],
+    "anti_patterns": [
+      "Using too many GNN layers without normalization (causes oversmoothing)",
+      "Training on the full graph without sampling for large datasets (memory issues)",
+      "Ignoring train/val/test split masks and using all labels for training"
+    ],
+    "faq": [
+      {
+        "question": "What datasets are available for node classification?",
+        "answer": "Planetoid (Cora, CiteSeer, PubMed), Coauthor (CS, Physics), Amazon (Computers, Photo), and OGBN datasets."
+      },
+      {
+        "question": "How many layers should my GNN have?",
+        "answer": "Most GNNs use 2-4 layers. Deeper networks risk oversmoothing. Use normalization and residual connections for deeper models."
+      },
+      {
+        "question": "Can I use PyTorch Geometric with heterogeneous graphs?",
+        "answer": "Yes. Use HeteroData for multi-type node/edge graphs and to_hetero() to convert existing models."
+      },
+      {
+        "question": "Is my data safe when using these scripts?",
+        "answer": "Yes. All scripts run locally and only access data you provide. No data is sent to external servers."
+      },
+      {
+        "question": "Why is my model not training effectively?",
+        "answer": "Check: 1) correct train/val/test masks, 2) learning rate and weight decay, 3) sufficient epochs, 4) graph connectivity."
+      },
+      {
+        "question": "How does PyTorch Geometric compare to other GNN libraries?",
+        "answer": "PyTorch Geometric offers the largest collection of GNN layers, transforms, and benchmark datasets with PyTorch integration."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "datasets_reference.md",
+          "type": "file",
+          "path": "references/datasets_reference.md",
+          "lines": 575
+        },
+        {
+          "name": "layers_reference.md",
+          "type": "file",
+          "path": "references/layers_reference.md",
+          "lines": 486
+        },
+        {
+          "name": "transforms_reference.md",
+          "type": "file",
+          "path": "references/transforms_reference.md",
+          "lines": 680
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "benchmark_model.py",
+          "type": "file",
+          "path": "scripts/benchmark_model.py",
+          "lines": 310
+        },
+        {
+          "name": "create_gnn_template.py",
+          "type": "file",
+          "path": "scripts/create_gnn_template.py",
+          "lines": 530
+        },
+        {
+          "name": "visualize_graph.py",
+          "type": "file",
+          "path": "scripts/visualize_graph.py",
+          "lines": 314
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 671
+    }
+  ]
+}

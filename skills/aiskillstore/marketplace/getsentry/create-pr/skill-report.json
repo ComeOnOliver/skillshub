@@ -1,0 +1,222 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:45:20.830Z",
+    "slug": "getsentry-create-pr",
+    "source_url": "https://github.com/getsentry/skills/tree/main/plugins/sentry-skills/skills/create-pr",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a2fe86403ac34b888be088d30b65e0382354c676123e642ce13ab5b89392648d",
+    "tree_hash": "2a88cf410d5017ae4b6b1a393cec7f1e3729b0fc8abd2e942bcfa3e55e85c823"
+  },
+  "skill": {
+    "name": "create-pr",
+    "description": "Create pull requests following Sentry conventions. Use when opening PRs, writing PR descriptions, or preparing changes for review. Follows Sentry's code review guidelines.",
+    "summary": "Create pull requests following Sentry conventions. Use when opening PRs, writing PR descriptions, or...",
+    "icon": "🔀",
+    "version": "1.0.0",
+    "author": "getsentry",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "github",
+      "pull-requests",
+      "code-review",
+      "git",
+      "cli"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure markdown documentation skill containing only guidance for creating pull requests using git and GitHub CLI. All 64 static findings are false positives: the scanner misidentified YAML frontmatter as cryptographic code, markdown code fences as shell execution, and documentation links as suspicious URLs. No executable code, scripts, or dangerous capabilities are present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 98
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 30
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 396,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:45:20.830Z"
+  },
+  "content": {
+    "user_title": "Create pull requests with Sentry conventions",
+    "value_statement": "This skill guides you through creating GitHub pull requests following Sentry engineering practices. It provides step-by-step instructions for branch verification, change analysis, and PR description writing. The skill ensures consistent PR formatting and helps teams maintain code review standards.",
+    "seo_keywords": [
+      "create-pr",
+      "pull request creation",
+      "github pr",
+      "claude code skill",
+      "code review",
+      "git workflow",
+      "github cli",
+      "sentry engineering",
+      "pr description template",
+      "conventional commits"
+    ],
+    "actual_capabilities": [
+      "Verifies branch state and remote status before PR creation",
+      "Analyzes commits and changes to understand PR scope",
+      "Writes structured PR descriptions following Sentry conventions",
+      "Creates pull requests using GitHub CLI (gh)",
+      "Adds reviewers to pull requests",
+      "Formats PR titles using conventional commit format"
+    ],
+    "limitations": [
+      "Requires GitHub CLI (gh) to be pre-installed and authenticated",
+      "Does not create branches or commit changes (use commit skill separately)",
+      "Cannot modify existing PRs after creation",
+      "Designed for GitHub only, not GitLab or Bitbucket"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Open source contributors",
+        "title": "Submit changes to repositories",
+        "description": "Create well-formatted pull requests following project conventions for faster review acceptance and clearer communication."
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Maintain consistent PR standards",
+        "description": "Ensure all team members follow the same PR structure and description format across the organization."
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Improve review efficiency",
+        "description": "Generate PRs with clear descriptions that explain the why behind changes and reduce review back-and-forth."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic PR creation",
+        "scenario": "Create a simple PR",
+        "prompt": "Use the create-pr skill to create a pull request for my current branch"
+      },
+      {
+        "title": "Add reviewers",
+        "scenario": "Request review from specific people",
+        "prompt": "Create a PR and add @username1 and @username2 as reviewers"
+      },
+      {
+        "title": "Document new feature",
+        "scenario": "Create PR for feature work",
+        "prompt": "Create a PR for my feature branch with a description explaining the new functionality and motivation"
+      },
+      {
+        "title": "Bug fix with issue",
+        "scenario": "Reference issue in description",
+        "prompt": "Create a PR for a bug fix that references issue SENTRY-1234 and explains the root cause"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a PR for my current changes",
+        "output": [
+          "Verified branch is up to date with main",
+          "Analyzed 3 commits in the PR",
+          "Created PR: feat(auth): Add OAuth2 login support",
+          "PR URL: https://github.com/org/repo/pull/123",
+          "Tip: Add reviewers with: gh pr edit --add-reviewer username"
+        ]
+      },
+      {
+        "input": "Create a PR with reviewers for my bug fix",
+        "output": [
+          "Verified branch is rebased on main",
+          "Analyzed 1 commit fixing the null response issue",
+          "Created PR: fix(api): Handle null response in user endpoint",
+          "Added reviewers: @dev-team/api-reviewers",
+          "Reference added: Fixes SENTRY-5678"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run the commit skill first to ensure all changes are committed before creating a PR",
+      "Keep PRs small and focused on a single feature or fix for faster reviews",
+      "Explain the why behind changes in the description, not just the what"
+    ],
+    "anti_patterns": [
+      "Bundling unrelated changes in a single PR",
+      "Leaving PR descriptions empty or with just a title",
+      "Skipping the branch verification step and creating PRs with uncommitted changes"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill require?",
+        "answer": "GitHub CLI (gh) must be installed and authenticated. Run gh auth login first."
+      },
+      {
+        "question": "Does this skill create branches?",
+        "answer": "No, this skill only creates pull requests. Use the commit skill to commit changes first."
+      },
+      {
+        "question": "Can I use this with GitLab or Bitbucket?",
+        "answer": "No, this skill is designed for GitHub only using the gh CLI tool."
+      },
+      {
+        "question": "Is my data safe when creating PRs?",
+        "answer": "Yes, this skill only reads git status and creates PRs via authenticated gh CLI."
+      },
+      {
+        "question": "What if my branch is behind main?",
+        "answer": "Rebase your branch on main first. The skill checks for this during verification."
+      },
+      {
+        "question": "How is this different from gh pr create directly?",
+        "answer": "This skill adds Sentry conventions, structured descriptions, and reviewer guidance."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 169
+    }
+  ]
+}

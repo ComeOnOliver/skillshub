@@ -1,0 +1,292 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-03-06T08:51:13.084Z",
+    "slug": "am-will-gemini-computer-use",
+    "source_url": "https://github.com/am-will/codex-skills/tree/main/skills/gemini-computer-use/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "428ca2696091f5205a79d9260dfb2d995cac1bb7bde7f794304d732e6da39e52",
+    "tree_hash": "943beddcd7cdf03e422176931d2d6ed671164e7b7629e6366d94d0b68b719be1"
+  },
+  "skill": {
+    "name": "gemini-computer-use",
+    "description": "Build and run Gemini 2.5 Computer Use browser-control agents with Playwright. Use when a user wants to automate web browser tasks via the Gemini Computer Use model, needs an agent loop (screenshot → function_call → action → function_response), or asks to integrate safety confirmation for risky UI actions.",
+    "summary": "Build and run Gemini 2.5 Computer Use browser-automation agents with Playwright for automated web interactions.",
+    "icon": "🖥️",
+    "version": "1.0.0",
+    "author": "am-will",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "gemini",
+      "browser-automation",
+      "playwright",
+      "computer-use",
+      "ai-agent"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 52 static findings are false positives. The skill is a legitimate browser automation tool using Gemini 2.5 Computer Use API with Playwright. Environment variable access is secure (API keys via os.getenv), network calls are to Google's legitimate API, and external command patterns are documentation examples in markdown/code blocks.",
+    "critical_findings": [],
+    "high_findings": [
+      {
+        "title": "Environment Variable Access",
+        "description": "Code accesses environment variables for API key configuration. This is SECURE pattern - keys are read from os.getenv, not hardcoded.",
+        "locations": [
+          {
+            "file": "scripts/computer_use_agent.py",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "scripts/computer_use_agent.py",
+            "line_start": 277,
+            "line_end": 277
+          }
+        ],
+        "confidence": 0.95,
+        "confidence_reasoning": "Confirmed secure pattern - os.getenv is the recommended way to handle API keys. No hardcoded secrets found."
+      }
+    ],
+    "medium_findings": [
+      {
+        "title": "Shell Command Documentation",
+        "description": "Static scanner flagged backticks in markdown and code blocks as shell execution. These are legitimate documentation and user command examples.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 16
+          },
+          {
+            "file": "references/google-computer-use.md",
+            "line_start": 3,
+            "line_end": 6
+          }
+        ],
+        "confidence": 0.9,
+        "confidence_reasoning": "Markdown backticks and bash code blocks are documentation, not unsafe command execution."
+      }
+    ],
+    "low_findings": [
+      {
+        "title": "Hardcoded Default URL",
+        "description": "Default start URL is hardcoded as google.com. This is a standard default for browser automation testing.",
+        "locations": [
+          {
+            "file": "scripts/computer_use_agent.py",
+            "line_start": 14,
+            "line_end": 14
+          }
+        ],
+        "confidence": 0.95,
+        "confidence_reasoning": "Legitimate default value, user can override via --start-url parameter."
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 475,
+    "audit_model": "claude",
+    "audited_at": "2026-03-06T08:51:13.084Z",
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ],
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/computer_use_agent.py",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 32
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 63
+          }
+        ]
+      }
+    ]
+  },
+  "content": {
+    "user_title": "Automate browser tasks with Gemini AI",
+    "value_statement": "This skill enables AI agents to control web browsers for automated tasks like form filling, data extraction, and web testing through Gemini 2.5 Computer Use model with Playwright.",
+    "seo_keywords": [
+      "gemini computer use",
+      "browser automation",
+      "playwright",
+      "ai browser control",
+      "claude code",
+      "codex",
+      "web automation",
+      "automated testing",
+      "ai agent",
+      "gemini 2.5"
+    ],
+    "actual_capabilities": [
+      "Control web browsers via Gemini 2.5 Computer Use API",
+      "Execute browser actions: click, type, scroll, navigate",
+      "Process screenshots and return function responses to the model",
+      "Integrate safety confirmation prompts for risky UI actions",
+      "Configure browser channels and custom executables"
+    ],
+    "limitations": [
+      "Requires a valid Gemini API key with Computer Use enabled",
+      "Limited to Playwright-supported browser actions only",
+      "Turn limit restricts the number of agent interaction cycles",
+      "No built-in persistent state between runs"
+    ],
+    "use_cases": [
+      {
+        "title": "Automated web form filling",
+        "description": "Fill out forms automatically by providing the target URL and field values to the AI agent.",
+        "target_user": "Developers automating repetitive form tasks"
+      },
+      {
+        "title": "Web data extraction",
+        "description": "Navigate websites and extract structured data based on AI understanding of page content.",
+        "target_user": "Data analysts gathering web data"
+      },
+      {
+        "title": "Browser-based testing",
+        "description": "Run automated browser tests that can adapt to UI changes using AI interpretation.",
+        "target_user": "QA engineers performing UI testing"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic page navigation",
+        "prompt": "Navigate to {url} and tell me the title of the main heading on the page.",
+        "scenario": "Simple information retrieval"
+      },
+      {
+        "title": "Form submission",
+        "prompt": "Go to {url}, fill in the email field with {email}, and click the submit button. Report any success message.",
+        "scenario": "Automated form submission"
+      },
+      {
+        "title": "Multi-step workflow",
+        "prompt": "Search for {query} on {search_engine}, click the first result, and extract the contact email if visible.",
+        "scenario": "Complex multi-step navigation"
+      },
+      {
+        "title": "Data extraction",
+        "prompt": "Navigate to {url}, scroll through the page, and list all product names and prices in a table format.",
+        "scenario": "E-commerce data scraping"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "python scripts/computer_use_agent.py --prompt 'Find the heading on example.com' --start-url 'https://example.com'",
+        "output": "Agent navigates to example.com, captures screenshot, AI analyzes it and returns: 'The main heading is: Example Domain'"
+      },
+      {
+        "input": "python scripts/computer_use_agent.py --prompt 'Click the login button' --start-url 'https://mysite.com'",
+        "output": "Agent identifies login button from screenshot, executes click action, returns updated screenshot showing login form"
+      }
+    ],
+    "best_practices": [
+      "Run in a sandboxed browser profile or container to isolate from sensitive data",
+      "Use the --exclude parameter to block risky actions like file downloads",
+      "Configure turn limits to prevent runaway agent loops"
+    ],
+    "anti_patterns": [
+      "Do not provide real credentials to the AI without user confirmation",
+      "Avoid running on production websites without rate limiting",
+      "Do not rely solely on AI for critical financial transactions"
+    ],
+    "faq": [
+      {
+        "question": "How do I get a Gemini API key?",
+        "answer": "Sign up for Google AI Studio and enable the Computer Use preview. Add your key to GEMINI_API_KEY environment variable."
+      },
+      {
+        "question": "Can this skill work with any website?",
+        "answer": "Most websites work, but some have bot detection or require authentication that AI cannot bypass."
+      },
+      {
+        "question": "Is browser automation safe?",
+        "answer": "It is safe when run in isolated environments. The skill includes safety confirmation prompts for risky actions."
+      },
+      {
+        "question": "What browser does this use?",
+        "answer": "By default it uses Playwright bundled Chromium. You can configure Chrome, Edge, or custom Chromium executables."
+      },
+      {
+        "question": "How do I limit what the AI can do?",
+        "answer": "Use the --exclude parameter to block specific actions like navigate, click_at, or type_text_at."
+      },
+      {
+        "question": "Can I run this headless?",
+        "answer": "Yes, add the --headless flag to run without a visible browser window."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "google-computer-use.md",
+          "type": "file",
+          "path": "references/google-computer-use.md",
+          "lines": 22
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "computer_use_agent.py",
+          "type": "file",
+          "path": "scripts/computer_use_agent.py",
+          "lines": 378
+        }
+      ]
+    },
+    {
+      "name": "env.example",
+      "type": "file",
+      "path": "env.example",
+      "lines": 11
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 64
+    }
+  ]
+}

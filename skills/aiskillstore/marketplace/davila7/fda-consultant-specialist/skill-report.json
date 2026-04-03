@@ -1,0 +1,334 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:16:45.420Z",
+    "slug": "davila7-fda-consultant-specialist",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/enterprise-communication/fda-consultant-specialist",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6a8ffe1dade67c3f9c1b2180bcbd6a61f880203bb964fa492b812b6abe2d00aa",
+    "tree_hash": "e292b1a488e4c93ca4a01ca6b69202cedf286ee032af28c520e8feb3ba4bb6af"
+  },
+  "skill": {
+    "name": "fda-consultant-specialist",
+    "description": "Senior FDA consultant and specialist for medical device companies including HIPAA compliance and requirement management. Provides FDA pathway expertise, QSR compliance, cybersecurity guidance, and regulatory submission support. Use for FDA submission planning, QSR compliance assessments, HIPAA evaluations, and FDA regulatory strategy development.",
+    "summary": "Senior FDA consultant and specialist for medical device companies including HIPAA compliance and req...",
+    "icon": "⚕️",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "legal",
+    "tags": [
+      "fda",
+      "regulatory",
+      "medical-devices",
+      "hipaa",
+      "compliance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt-based regulatory consulting skill containing only documentation and guidance. No file system access, network operations, or code execution capabilities. Supporting files are benign placeholders with no security implications.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 236
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 236,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 239
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 239,
+            "line_end": 242
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 244
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 244,
+            "line_end": 245
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 537,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:16:45.420Z"
+  },
+  "content": {
+    "user_title": "Navigate FDA regulations for medical devices",
+    "value_statement": "Medical device companies face complex FDA compliance requirements that delay market entry. This skill provides expert guidance on FDA pathways, QSR requirements, HIPAA compliance, and regulatory submission strategies.",
+    "seo_keywords": [
+      "fda consultant",
+      "medical device compliance",
+      "510k submission",
+      "hipaa compliance",
+      "qsr 21 cfr 820",
+      "fda regulatory",
+      "medical device fda",
+      "claude code",
+      "claude",
+      "codex"
+    ],
+    "actual_capabilities": [
+      "Analyze FDA regulatory pathways including 510(k), PMA, and De Novo classifications",
+      "Guide Quality System Regulation (QSR) 21 CFR 820 compliance implementation",
+      "Provide HIPAA compliance framework for medical devices handling PHI",
+      "Support FDA submission preparation and management processes",
+      "Assist with FDA inspection readiness and warning letter response"
+    ],
+    "limitations": [
+      "Cannot provide legal advice or act as a licensed attorney",
+      "Cannot file submissions directly to the FDA on your behalf",
+      "Does not replace formal regulatory affairs professionals for critical submissions",
+      "Guidance is based on published FDA guidance documents and may require verification"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Medical device startups",
+        "title": "Plan regulatory pathway",
+        "description": "Determine FDA submission requirements and optimal pathway for novel medical devices"
+      },
+      {
+        "target_user": "Quality assurance teams",
+        "title": "Assess QSR compliance",
+        "description": "Evaluate quality system requirements and prepare for FDA inspections"
+      },
+      {
+        "target_user": "Healthcare technology companies",
+        "title": "Implement HIPAA safeguards",
+        "description": "Develop compliance programs for devices handling protected health information"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Device classification",
+        "scenario": "New device regulatory pathway",
+        "prompt": "My medical device [describe device] is being developed for [intended use]. Help me determine the FDA regulatory pathway and classification requirements."
+      },
+      {
+        "title": "QSR compliance",
+        "scenario": "Quality system implementation",
+        "prompt": "We need to implement 21 CFR 820 design controls for our medical device. Walk me through the requirements for design input, output, verification, and validation."
+      },
+      {
+        "title": "HIPAA assessment",
+        "scenario": "Healthcare data protection",
+        "prompt": "Our medical device collects patient data. What HIPAA technical and administrative safeguards do we need to implement?"
+      },
+      {
+        "title": "Submission strategy",
+        "scenario": "FDA submission planning",
+        "prompt": "Prepare a comprehensive 510(k) submission checklist for our device, including required documentation, testing requirements, and timeline considerations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Our software as medical device (SaMD) needs FDA clearance for cardiac monitoring. What regulatory requirements apply?",
+        "output": [
+          "Device Classification: Likely Class II requiring 510(k) clearance",
+          "Key FDA Guidance: FDA SaMD guidance, clinical evaluation guidance, cybersecurity guidance",
+          "Documentation Requirements: Intended use statement, predicate comparison, software documentation per FDA guidance",
+          "Testing Needs: Bench testing, cybersecurity assessment, possibly clinical validation",
+          "Timeline: 6-12 months typical for 510(k) with software changes requiring robust documentation"
+        ]
+      },
+      {
+        "input": "We are preparing for our first FDA inspection. What should we focus on for QSR compliance?",
+        "output": [
+          "Design History File: Ensure complete documentation per 21 CFR 820.30",
+          "Management Controls: Quality policy, organizational structure, management review records",
+          "Document Controls: Approved procedures, change control, retention schedules",
+          "CAPA System: Investigation procedures, corrective actions, effectiveness checks",
+          "Personnel Training: Training records, competency documentation"
+        ]
+      },
+      {
+        "input": "What are the key differences between 510(k) and PMA submissions?",
+        "output": [
+          "510(k): Substantial equivalence to predicate device, 6-month review, Class I-II devices",
+          "PMA: Premarket approval with clinical evidence, 12-18+ month review, Class III devices",
+          "Evidence Level: 510(k) compares to existing devices, PMA requires independent safety and effectiveness data",
+          "Decision Process: 510(k) uses predicate comparison, PMA uses independent FDA scientific review"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Engage with FDA early through pre-submission meetings for novel devices",
+      "Maintain comprehensive design history files throughout development",
+      "Document all regulatory decisions and rationale for audit trails"
+    ],
+    "anti_patterns": [
+      "Assuming a predicate device is substantially equivalent without detailed comparison",
+      "Delaying compliance activities until late in development",
+      "Relying solely on this skill for critical regulatory decisions without professional oversight"
+    ],
+    "faq": [
+      {
+        "question": "What FDA submission pathways are available?",
+        "answer": "Three main pathways: 510(k) for substantial equivalence to predicates, PMA for high-risk devices requiring clinical evidence, and De Novo for novel low-to-moderate risk devices."
+      },
+      {
+        "question": "How long does FDA clearance take?",
+        "answer": "510(k) averages 6 months but can take longer. PMA takes 12-18+ months. Timeline depends on device complexity, FDA workload, and response to questions."
+      },
+      {
+        "question": "Can this skill file FDA submissions?",
+        "answer": "No. This skill provides guidance only. You must file submissions through the FDA eCopy system or use a regulatory affairs professional."
+      },
+      {
+        "question": "Does this skill provide legal advice?",
+        "answer": "No. This skill offers regulatory information and guidance but does not constitute legal advice. Consult qualified regulatory counsel for specific situations."
+      },
+      {
+        "question": "What is required for HIPAA compliance?",
+        "answer": "HIPAA requires administrative safeguards (policies, training), physical safeguards (facility access, device controls), and technical safeguards (encryption, access controls, audit logs)."
+      },
+      {
+        "question": "How does this compare to hiring a regulatory consultant?",
+        "answer": "This skill provides immediate regulatory guidance and information. Human consultants offer personalized strategy, represent you to FDA, and take legal responsibility for submissions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "example_asset.txt",
+          "type": "file",
+          "path": "assets/example_asset.txt",
+          "lines": 25
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 35
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "example.py",
+          "type": "file",
+          "path": "scripts/example.py",
+          "lines": 20
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 246
+    }
+  ]
+}

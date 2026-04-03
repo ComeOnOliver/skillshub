@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:42:17.522Z",
+    "slug": "artemisai-pdf",
+    "source_url": "https://github.com/ArtemisAI/code-execution-with-MCP/tree/main/skills/document-skills/pdf",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f2eecd1fff4eaf3a77a318cedd8f4138723273b87c5f31a896acdbd751ba3db4",
+    "tree_hash": "b22e4c5624524cd423a6fc10f2eab6c66304a3e582a6bfc1bfde714e3cf305c5"
+  },
+  "skill": {
+    "name": "pdf",
+    "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+    "summary": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/sp...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "ArtemisAI",
+    "license": "Proprietary. LICENSE.txt has complete terms",
+    "category": "documentation",
+    "tags": [
+      "pdf",
+      "document-processing",
+      "forms",
+      "pdf-manipulation",
+      "text-extraction"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate PDF manipulation skill containing 8 Python scripts for document processing. The 227 static findings are false positives: documentation examples showing command syntax are not actual shell execution; legitimate file I/O uses standard PDF libraries (pypdf, pdfplumber); cryptographic references are for PDF password protection; and flagged keywords like 'command' appear only in documentation context. No network calls, no command injection, no credential handling.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/fill_fillable_fields.py",
+            "line_start": 1,
+            "line_end": 115
+          },
+          {
+            "file": "scripts/check_bounding_boxes.py",
+            "line_start": 1,
+            "line_end": 71
+          },
+          {
+            "file": "scripts/extract_form_field_info.py",
+            "line_start": 1,
+            "line_end": 153
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/fill_fillable_fields.py",
+            "line_start": 12,
+            "line_end": 56
+          },
+          {
+            "file": "scripts/extract_form_field_info.py",
+            "line_start": 140,
+            "line_end": 145
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "User-specified file paths accessed",
+        "description": "Scripts accept file paths as command-line arguments for PDF processing. Expected behavior for document tools.",
+        "locations": [
+          {
+            "file": "scripts/fill_fillable_fields.py",
+            "line_start": 12,
+            "line_end": 12
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 2233,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:42:17.522Z"
+  },
+  "content": {
+    "user_title": "Process PDF documents",
+    "value_statement": "PDF documents require specialized tools for extraction, modification, and form filling. This skill provides comprehensive PDF processing capabilities including text extraction, table detection, document merging, splitting, and form field manipulation using Python libraries.",
+    "seo_keywords": [
+      "pdf",
+      "pdf processing",
+      "pdf extraction",
+      "pdf forms",
+      "claude",
+      "codex",
+      "claude code",
+      "document processing",
+      "merge pdf",
+      "split pdf"
+    ],
+    "actual_capabilities": [
+      "Extract text and tables from PDF documents",
+      "Merge multiple PDFs into a single document",
+      "Split PDFs into individual pages",
+      "Fill PDF forms with data (fillable and non-fillable)",
+      "Create new PDFs from scratch with text and images",
+      "Convert PDF pages to images for visual analysis"
+    ],
+    "limitations": [
+      "Requires Python libraries: pypdf, pdfplumber, reportlab, pdf2image",
+      "Cannot process password-protected PDFs without the password",
+      "OCR requires pytesseract installation for scanned documents",
+      "Form filling on non-fillable PDFs requires visual bounding box analysis"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Administrative professionals",
+        "title": "Automate form completion",
+        "description": "Fill out PDF forms programmatically using extracted field information and validation checks"
+      },
+      {
+        "target_user": "Data analysts",
+        "title": "Extract structured data",
+        "description": "Pull tables and text from PDF reports for spreadsheet analysis and data processing"
+      },
+      {
+        "target_user": "Document managers",
+        "title": "Organize document collections",
+        "description": "Merge, split, and reorganize PDF documents for efficient file management workflows"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Extract PDF text",
+        "scenario": "Get all text from a PDF document",
+        "prompt": "Extract all text from document.pdf and save it to a text file"
+      },
+      {
+        "title": "Merge PDFs",
+        "scenario": "Combine multiple PDFs into one",
+        "prompt": "Merge report1.pdf, report2.pdf, and report3.pdf into quarterly_report.pdf"
+      },
+      {
+        "title": "Fill PDF forms",
+        "scenario": "Complete a fillable PDF form",
+        "prompt": "Fill in application_form.pdf with the following data: name=John Smith, email=john@example.com, and save the completed form"
+      },
+      {
+        "title": "Process document batches",
+        "scenario": "Handle multiple PDF operations",
+        "prompt": "Extract tables from all PDFs in the /invoices directory and save each to a separate CSV file"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Extract text from report.pdf",
+        "output": [
+          "Extracted 15 pages from report.pdf",
+          "Saved text to report.txt (45,230 characters)",
+          "Found 3 tables on pages 5, 8, and 12"
+        ]
+      },
+      {
+        "input": "Merge all invoices into one file",
+        "output": [
+          "Combined 12 PDF files into merged_invoices.pdf",
+          "Total pages: 48",
+          "Used pypdf for document merging"
+        ]
+      },
+      {
+        "input": "Fill out the application form",
+        "output": [
+          "Identified 8 fillable form fields",
+          "Filled all fields with provided data",
+          "Saved to completed_application.pdf"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Validate PDF files before processing to handle corrupted or encrypted documents gracefully",
+      "Use bounding box validation when filling non-fillable PDF forms to ensure accurate placement",
+      "Process large PDFs in chunks to manage memory usage effectively"
+    ],
+    "anti_patterns": [
+      "Attempting to process password-protected PDFs without first obtaining the password",
+      "Skipping bounding box validation when filling non-fillable PDF forms",
+      "Processing extremely large PDFs without chunking or memory management"
+    ],
+    "faq": [
+      {
+        "question": "What Python libraries are required?",
+        "answer": "Install pypdf, pdfplumber, reportlab, and pdf2image using pip. OCR features need pytesseract."
+      },
+      {
+        "question": "What are the size limits for PDF processing?",
+        "answer": "Performance depends on available memory. Very large documents should be processed in sections."
+      },
+      {
+        "question": "Can this skill integrate with other tools?",
+        "answer": "Yes, Python scripts can be called from any AI tool or integrated into larger document processing workflows."
+      },
+      {
+        "question": "Is data from PDFs stored or transmitted?",
+        "answer": "No. All processing occurs locally. Files are read from and written to paths you specify."
+      },
+      {
+        "question": "Why did form filling fail?",
+        "answer": "Common causes include: PDF is encrypted, form fields are not properly detected, or bounding boxes overlap."
+      },
+      {
+        "question": "How does this compare to online PDF tools?",
+        "answer": "This skill runs locally for privacy, handles batch operations, and can be automated in AI workflows."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "check_bounding_boxes_test.py",
+          "type": "file",
+          "path": "scripts/check_bounding_boxes_test.py",
+          "lines": 227
+        },
+        {
+          "name": "check_bounding_boxes.py",
+          "type": "file",
+          "path": "scripts/check_bounding_boxes.py",
+          "lines": 71
+        },
+        {
+          "name": "check_fillable_fields.py",
+          "type": "file",
+          "path": "scripts/check_fillable_fields.py",
+          "lines": 13
+        },
+        {
+          "name": "convert_pdf_to_images.py",
+          "type": "file",
+          "path": "scripts/convert_pdf_to_images.py",
+          "lines": 36
+        },
+        {
+          "name": "create_validation_image.py",
+          "type": "file",
+          "path": "scripts/create_validation_image.py",
+          "lines": 42
+        },
+        {
+          "name": "extract_form_field_info.py",
+          "type": "file",
+          "path": "scripts/extract_form_field_info.py",
+          "lines": 153
+        },
+        {
+          "name": "fill_fillable_fields.py",
+          "type": "file",
+          "path": "scripts/fill_fillable_fields.py",
+          "lines": 115
+        },
+        {
+          "name": "fill_pdf_form_with_annotations.py",
+          "type": "file",
+          "path": "scripts/fill_pdf_form_with_annotations.py",
+          "lines": 108
+        }
+      ]
+    },
+    {
+      "name": "forms.md",
+      "type": "file",
+      "path": "forms.md",
+      "lines": 206
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 31
+    },
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 612
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 295
+    }
+  ]
+}

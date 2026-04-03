@@ -1,0 +1,193 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:10:08.141Z",
+    "slug": "89jobrien-devops-runbooks",
+    "source_url": "https://github.com/89jobrien/steve/tree/main/steve/skills/devops-runbooks",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e00179b9bb714a72009f207a06130e733bc8a664557bb274757067f7c9fe984f",
+    "tree_hash": "05c4fa9a4578cb0a5440c982e4108cfdce60ccd7c4d4aaf21705d4b74cd14481"
+  },
+  "skill": {
+    "name": "devops-runbooks",
+    "description": "Operational runbook and procedure documentation specialist. Use when creating incident response procedures, operational playbooks, or system maintenance guides.",
+    "summary": "Creates structured operational runbooks and incident response documentation for DevOps teams",
+    "icon": "📦",
+    "version": "1.0.1",
+    "author": "Joseph OBrien",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "runbooks",
+      "incident-response",
+      "documentation",
+      "operations",
+      "procedures"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides documentation templates for operational runbooks. All static findings are false positives - the detected patterns are placeholder text within markdown code blocks, not executable code. The skill contains no actual command execution, network access, or sensitive data handling. It is a pure documentation template for guiding users in creating their own runbooks.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 890,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:10:08.141Z"
+  },
+  "content": {
+    "user_title": "Create Professional DevOps Runbooks and Incident Guides",
+    "value_statement": "Operations teams need standardized runbooks for incident response and system maintenance. This skill generates structured runbook documentation with clear procedures, rollback steps, and escalation paths.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "runbook",
+      "incident response",
+      "operational procedures",
+      "DevOps documentation",
+      "system maintenance",
+      "troubleshooting guide",
+      "escalation procedures"
+    ],
+    "actual_capabilities": [
+      "Generate structured operational runbooks with standard sections and formatting",
+      "Create incident response procedures with clear step-by-step instructions",
+      "Document rollback procedures and troubleshooting guides for system operations",
+      "Define escalation paths and contact information for operational teams",
+      "Provide templates for verification steps and success criteria",
+      "Structure knowledge transfer documentation for on-call teams"
+    ],
+    "limitations": [
+      "Does not execute commands or interact with systems directly",
+      "Requires user input to fill in environment-specific details and credentials",
+      "Cannot validate if documented procedures work in actual systems",
+      "Does not automatically update runbooks when systems change"
+    ],
+    "use_cases": [
+      {
+        "title": "Incident Response Planning",
+        "description": "Create step-by-step incident response runbooks for on-call engineers handling production outages with clear verification steps and escalation procedures.",
+        "target_user": "DevOps Engineers"
+      },
+      {
+        "title": "System Maintenance Documentation",
+        "description": "Document routine maintenance procedures for database updates, deployment rollbacks, or infrastructure changes with rollback instructions.",
+        "target_user": "Site Reliability Engineers"
+      },
+      {
+        "title": "Knowledge Transfer for On-Call Teams",
+        "description": "Standardize operational knowledge into actionable runbooks for new team members joining on-call rotations or inheriting system ownership.",
+        "target_user": "Engineering Managers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Database Backup Runbook",
+        "prompt": "Create a runbook for performing daily database backups on a PostgreSQL production server",
+        "scenario": "New team member needs to perform routine database maintenance"
+      },
+      {
+        "title": "Service Restart Procedure",
+        "prompt": "Generate a runbook for restarting the payment processing service with zero downtime using blue-green deployment",
+        "scenario": "On-call engineer needs to restart a critical service safely"
+      },
+      {
+        "title": "Incident Response for High CPU",
+        "prompt": "Create an incident response runbook for when application servers reach 90% CPU utilization with investigation and mitigation steps",
+        "scenario": "Production alert fires during business hours"
+      },
+      {
+        "title": "Complete Disaster Recovery Runbook",
+        "prompt": "Generate a comprehensive disaster recovery runbook for restoring the entire production environment from backups including database, application servers, and configuration",
+        "scenario": "Major infrastructure failure requires full system restoration"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a runbook for restarting the web application",
+        "output": "A structured runbook document with overview, prerequisites, step-by-step restart procedure, verification commands, rollback steps, troubleshooting common errors, and escalation contacts organized into clear sections."
+      },
+      {
+        "input": "Generate incident response procedure for database connection failures",
+        "output": "A comprehensive incident runbook including severity classification, quick reference commands for checking connections, detailed investigation steps, resolution procedures, and post-incident review checklist."
+      },
+      {
+        "input": "Document the deployment rollback procedure",
+        "output": "A rollback runbook with clear prerequisites, commands for reverting to previous version, verification steps to confirm rollback success, and troubleshooting section for rollback failures."
+      }
+    ],
+    "best_practices": [
+      "Include expected output for each command to help operators verify success",
+      "Document rollback procedures immediately after each major step",
+      "Keep runbooks current by including last tested date and scheduling regular reviews"
+    ],
+    "anti_patterns": [
+      "Creating runbooks without testing the procedures in a staging environment first",
+      "Writing vague instructions like check the logs without specifying exact commands or log locations",
+      "Omitting escalation criteria and contact information for when procedures fail"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute the commands in the runbooks?",
+        "answer": "No. This skill generates documentation templates. It does not execute any commands or interact with systems. Users copy and adapt the procedures for their environments."
+      },
+      {
+        "question": "Can I customize the runbook template structure?",
+        "answer": "Yes. The generated runbooks follow a standard structure but you can modify sections, add custom fields, or adapt the format to match your team standards."
+      },
+      {
+        "question": "How do I keep runbooks updated as systems change?",
+        "answer": "Include a last updated date and testing schedule in each runbook. Regenerate or update runbooks after significant system changes and validate procedures in staging environments."
+      },
+      {
+        "question": "What level of detail should runbook commands include?",
+        "answer": "Commands should be copy-pasteable and include expected output. Provide enough context for someone unfamiliar with the system to execute safely with minimal interpretation."
+      },
+      {
+        "question": "How do I handle sensitive credentials in runbooks?",
+        "answer": "Reference credential locations like vault paths or secrets managers rather than including actual credentials. Document which systems and permissions are required in the prerequisites section."
+      },
+      {
+        "question": "Can this skill create runbooks for any type of system?",
+        "answer": "Yes. The template structure works for databases, applications, cloud infrastructure, or any operational system. You provide system-specific commands and the skill organizes them into the runbook format."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "RUNBOOK.template.md",
+          "type": "file",
+          "path": "references/RUNBOOK.template.md",
+          "lines": 270
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 57
+    }
+  ]
+}

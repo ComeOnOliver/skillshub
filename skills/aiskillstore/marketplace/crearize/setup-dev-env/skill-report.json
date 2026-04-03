@@ -1,0 +1,345 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:16:42.936Z",
+    "slug": "crearize-setup-dev-env",
+    "source_url": "https://github.com/Crearize/ProjectTemplate/tree/main/.claude/skills/setup-dev-env",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6aef42c63fc06633be93c0e4d0c63e649f576233e73bf72733f20373930fcd66",
+    "tree_hash": "f33a382c50c5a788b71dddf216fa1c9682831a5477a73e516c28e08a7e1d5ac6"
+  },
+  "skill": {
+    "name": "setup-dev-env",
+    "description": "開発環境セットアップスキル（依存関係インストール、DB初期化、環境変数設定）",
+    "summary": "開発環境セットアップスキル（依存関係インストール、DB初期化、環境変数設定）",
+    "icon": "🔧",
+    "version": "1.0.0",
+    "author": "Crearize",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "setup",
+      "environment",
+      "automation",
+      "development",
+      "devops"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing markdown documentation for development environment setup procedures. No executable code, scripts, or network operations exist. The bash commands shown are illustrative examples within code blocks, not runtime code. All static findings are false positives: hidden file references are read-only ls commands for verification, cryptographic algorithm alerts are scanner artifacts from Japanese text, and external command alerts are documentation code blocks that cannot be executed.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 126,
+            "line_end": 126
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 126,
+            "line_end": 126
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 133,
+            "line_end": 133
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 133,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 102
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 108
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 285,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:16:42.936Z"
+  },
+  "content": {
+    "user_title": "Set up development environments automatically",
+    "value_statement": "Manual development environment setup is time-consuming and error-prone. This skill automates dependency installation, database initialization, and environment configuration for consistent, reproducible development environments.",
+    "seo_keywords": [
+      "Claude Code development environment setup",
+      "automated dev environment",
+      "dependency installation automation",
+      "Flyway database migration",
+      "Docker Compose setup",
+      "Gradle build automation",
+      "pnpm package manager",
+      "development environment configuration",
+      "environment setup skill",
+      "DevOps automation"
+    ],
+    "actual_capabilities": [
+      "Checks Java, Node.js, pnpm, Docker, and Docker Compose versions",
+      "Installs backend dependencies using Gradle wrapper",
+      "Installs frontend dependencies using pnpm",
+      "Starts PostgreSQL database with Docker Compose",
+      "Runs Flyway database migrations",
+      "Verifies environment variable configuration files"
+    ],
+    "limitations": [
+      "Does not install runtime dependencies (Java, Node.js, Docker must be pre-installed)",
+      "Does not modify system settings or global configurations",
+      "Does not handle custom database schemas beyond Flyway migrations",
+      "Assumes standard project structure with backend and frontend directories"
+    ],
+    "use_cases": [
+      {
+        "target_user": "New team members",
+        "title": "Onboard quickly",
+        "description": "Get new developers productive on day one with automated, consistent environment setup"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Standardize environments",
+        "description": "Ensure all team members have identical development environments across machines"
+      },
+      {
+        "target_user": "Project leads",
+        "title": "Reduce setup time",
+        "description": "Eliminate manual environment configuration overhead for new project starts"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Full setup",
+        "scenario": "Initialize entire project",
+        "prompt": "Set up the complete development environment for this project using the setup-dev-env skill. Include backend dependencies, frontend dependencies, and database setup."
+      },
+      {
+        "title": "Backend only",
+        "scenario": "Backend development",
+        "prompt": "Set up only the backend development environment. Run Gradle build and verify database connectivity."
+      },
+      {
+        "title": "Database reset",
+        "scenario": "Reset database",
+        "prompt": "Reset the database environment using Docker Compose and run all Flyway migrations from scratch."
+      },
+      {
+        "title": "Quick verification",
+        "scenario": "Check environment",
+        "prompt": "Verify the current development environment status. Check all tool versions and confirm dependencies are properly installed."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Set up the complete development environment",
+        "output": [
+          "Backend: Java 21 confirmed, Gradle dependencies installed, build successful",
+          "Frontend: Node.js 20 confirmed, pnpm dependencies installed, build successful",
+          "Database: PostgreSQL started, Flyway migrations completed",
+          "Environment: backend/.env and frontend/.env.local verified",
+          "Ready to start: cd backend && ./gradlew bootRun or cd frontend && pnpm dev"
+        ]
+      },
+      {
+        "input": "Verify the current development environment status",
+        "output": [
+          "Java: Version 21.0.2 detected - meets requirement",
+          "Node.js: Version 20.10.0 detected - meets requirement",
+          "pnpm: Version 8.14.0 detected - meets requirement",
+          "Docker: Version 24.0.7 detected - meets requirement",
+          "Docker Compose: Version 2.23.3 detected - meets requirement",
+          "All required tools are properly installed"
+        ]
+      },
+      {
+        "input": "Reset the database environment",
+        "output": [
+          "Stopping existing database container",
+          "Starting fresh PostgreSQL container with Docker Compose",
+          "Waiting for database to become available",
+          "Running Flyway baseline migration",
+          "Running all migration scripts",
+          "Database reset complete and verified"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run the skill after cloning a fresh repository to ensure all dependencies are installed",
+      "Verify environment variables match between backend/.env and frontend/.env.local",
+      "Use the full setup workflow when onboarding new team members"
+    ],
+    "anti_patterns": [
+      "Running setup without checking pre-installed runtime versions first",
+      "Skipping database setup and expecting the application to work",
+      "Modifying environment files while the database container is running"
+    ],
+    "faq": [
+      {
+        "question": "What tools must be installed before running this skill?",
+        "answer": "Java 21+, Node.js 20+, pnpm, Docker, and Docker Compose must be pre-installed on your system."
+      },
+      {
+        "question": "Can I run only specific phases of the setup?",
+        "answer": "Yes, you can specify target parameters for backend-only, frontend-only, database-only, or both configurations."
+      },
+      {
+        "question": "Does this skill modify my global environment settings?",
+        "answer": "No, this skill only operates within the project directory and does not modify system-wide configurations."
+      },
+      {
+        "question": "Is my data safe when running database migrations?",
+        "answer": "Flyway migrations run on the Docker PostgreSQL container. Your existing local databases are not affected."
+      },
+      {
+        "question": "What if the build fails during setup?",
+        "answer": "The skill reports failures at each phase. Common fixes include verifying Java/Node versions and checking Docker is running."
+      },
+      {
+        "question": "How is this different from Docker Compose alone?",
+        "answer": "This skill orchestrates the entire workflow including dependency installation, builds, migrations, and verification."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 109
+    }
+  ]
+}

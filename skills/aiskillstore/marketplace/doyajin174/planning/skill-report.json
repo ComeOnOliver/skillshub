@@ -1,0 +1,298 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:52:26.350Z",
+    "slug": "doyajin174-planning",
+    "source_url": "https://github.com/Doyajin174/myskills/tree/main/.public/skills/planning",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2ac19903a0c93fe5523ce29bbdba7b287454352b913ea8b392047d7039229fd7",
+    "tree_hash": "087d4ab4fd1a6523b54808d8448eb47bcbc7fb18e2429be39775474d76ebfe19"
+  },
+  "skill": {
+    "name": "planning",
+    "description": "Transform ideas into actionable implementation plans. Combines Socratic questioning for requirements discovery with detailed task breakdown for zero-context engineers. Use before any feature development.",
+    "summary": "Transform ideas into actionable implementation plans. Combines Socratic questioning for requirements...",
+    "icon": "📋",
+    "version": "2.0",
+    "author": "Doyajin174",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "planning",
+      "task-management",
+      "project-planning",
+      "software-development",
+      "requirements"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only markdown documentation and planning templates. No executable code exists. All static findings are false positives: git commit message templates (feat: description) were misidentified as cryptographic algorithms; markdown code blocks were misidentified as shell execution; a GitHub source URL was misidentified as hardcoded network endpoint. Pure documentation skill with zero attack surface.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 116
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 321,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:52:26.350Z"
+  },
+  "content": {
+    "user_title": "Plan features with Socratic discovery",
+    "value_statement": "Starting development without a clear plan leads to scope creep and missed requirements. This skill guides you through structured discovery and breaks work into 2-5 minute tasks that any engineer can execute immediately.",
+    "seo_keywords": [
+      "planning skill",
+      "project planning",
+      "task breakdown",
+      "feature planning",
+      "requirements discovery",
+      "Socratic questioning",
+      "software development",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Guide Socratic questioning for requirements discovery",
+      "Generate structured implementation plans with markdown templates",
+      "Break features into bite-sized 2-5 minute tasks",
+      "Create test-first task specifications with commit messages",
+      "Document technical decisions and open questions",
+      "Produce ready-to-execute task lists for zero-context engineers"
+    ],
+    "limitations": [
+      "Does not execute code or modify files directly",
+      "Does not integrate with project management tools",
+      "Does not estimate timeline or resource requirements",
+      "Does not validate technical feasibility automatically"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Feature planning sessions",
+        "description": "Use before starting any feature to clarify requirements and create an executable task list."
+      },
+      {
+        "target_user": "Technical leads",
+        "title": "Architecture decision records",
+        "description": "Document technical choices and their trade-offs during the discovery phase."
+      },
+      {
+        "target_user": "Code contributors",
+        "title": "Onboarding task breakdown",
+        "description": "Break down complex features into small tasks that new contributors can pick up easily."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start planning",
+        "scenario": "Begin new feature planning",
+        "prompt": "I want to build [feature name]. Help me plan it using the planning skill."
+      },
+      {
+        "title": "Requirements discovery",
+        "scenario": "Clarify feature scope",
+        "prompt": "What is the core problem this feature solves? What constraints must we respect?"
+      },
+      {
+        "title": "Task breakdown",
+        "scenario": "Create implementation tasks",
+        "prompt": "Break down the [feature name] into 2-5 minute tasks. Include file paths and test code for each."
+      },
+      {
+        "title": "Plan review",
+        "scenario": "Validate planning output",
+        "prompt": "Review my plan for [feature name]. Are there any missing files or edge cases?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I want to build a user notification system for my web app",
+        "output": [
+          "Discovery Summary with core requirements and constraints",
+          "Technical decisions with trade-offs analysis",
+          "Open questions for further exploration",
+          "File structure with affected files",
+          "Bite-sized tasks with test code and commit messages"
+        ]
+      },
+      {
+        "input": "Plan a REST API for a todo list feature",
+        "output": [
+          "Goal statement and tech stack identification",
+          "Endpoint design decisions with justification",
+          "Task list organized by dependency order",
+          "Test specifications for each endpoint",
+          "Migration and integration task sequence"
+        ]
+      },
+      {
+        "input": "Break down a complex refactoring task",
+        "output": [
+          "Discovery phase with current state analysis",
+          "Risk assessment and rollback strategy",
+          "Phased migration approach with checkpoints",
+          "Individual tasks under 5 minutes each",
+          "Verification steps for each refactoring phase"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run discovery phase before writing any code to avoid rework",
+      "Keep each task under 5 minutes to enable parallel work",
+      "Include test code in every task for TDD workflow"
+    ],
+    "anti_patterns": [
+      "Skipping discovery and starting with implementation",
+      "Creating tasks larger than 5 minutes",
+      "Leaving open questions unresolved before execution"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. It uses standard MCP tools for file operations."
+      },
+      {
+        "question": "What is the maximum plan size?",
+        "answer": "Plans can be any length but should break work into small 2-5 minute tasks for parallel execution."
+      },
+      {
+        "question": "How does it integrate with my codebase?",
+        "answer": "The skill generates markdown plans with file paths. You then execute tasks using Claude or your IDE."
+      },
+      {
+        "question": "Is my project data safe?",
+        "answer": "This skill only generates templates. It does not read or store any project data externally."
+      },
+      {
+        "question": "Why are my tasks too large?",
+        "answer": "Split tasks until each takes 2-5 minutes. Include test code and commit message in every task."
+      },
+      {
+        "question": "How is this different from a PRD?",
+        "answer": "Plans focus on executable tasks with file paths and test code. PRDs describe what to build; plans describe how to build it."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 132
+    }
+  ]
+}

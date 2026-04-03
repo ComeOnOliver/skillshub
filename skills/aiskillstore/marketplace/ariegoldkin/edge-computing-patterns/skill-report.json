@@ -1,0 +1,218 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:16:06.266Z",
+    "slug": "ariegoldkin-edge-computing-patterns",
+    "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/tree/main/skills/edge-computing-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5579dd776f4e2dc2fbb60c6dff8ed1b7e600942ce7d19f44986def550cd1608d",
+    "tree_hash": "d9bb54c5dfed0b06be6ebbd5b6cc6e2c1f9eff67b72dd059a8a66c41863af207"
+  },
+  "skill": {
+    "name": "edge-computing-patterns",
+    "description": "Deploy to edge runtimes (Cloudflare Workers, Vercel Edge, Deno Deploy) for globally distributed, low-latency applications. Master edge middleware, streaming, and runtime constraints for 2025+ edge computing.",
+    "summary": "Deploy to edge runtimes (Cloudflare Workers, Vercel Edge, Deno Deploy) for globally distributed, low-latency applications. Master edge middleware, streaming, and runtime constraints.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "AI Agent Hub",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "edge-computing",
+      "cloudflare-workers",
+      "serverless",
+      "distributed-systems"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analysis flagged patterns in documentation code examples. All findings are false positives. The skill contains educational content about edge computing deployment with example code snippets in markdown. No actual command execution, credential exfiltration, or malicious behavior exists. Network access and env references are documentation references only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 233
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 123
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 901,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:16:06.266Z",
+    "risk_factors": [
+      "network",
+      "env_access"
+    ]
+  },
+  "content": {
+    "user_title": "Deploy to Edge Runtimes",
+    "value_statement": "Building applications for edge runtimes requires special patterns for low latency and global distribution. This skill provides proven deployment patterns for Cloudflare Workers, Vercel Edge, and Deno Deploy.",
+    "seo_keywords": [
+      "edge computing",
+      "Cloudflare Workers",
+      "Vercel Edge",
+      "Deno Deploy",
+      "serverless deployment",
+      "edge middleware",
+      "low latency",
+      "global distribution",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generate edge-ready middleware code for Cloudflare Workers",
+      "Create streaming response handlers for Vercel Edge runtime",
+      "Design data caching strategies for edge locations",
+      "Implement environment-specific configuration patterns",
+      "Build edge-compatible API routes with proper error handling"
+    ],
+    "limitations": [
+      "Does not provision edge infrastructure or cloud resources",
+      "Does not execute or deploy code to live edge networks",
+      "Does not configure DNS, domains, or edge certificates",
+      "Does not monitor or debug running edge functions"
+    ],
+    "use_cases": [
+      {
+        "title": "Build Low-Latency API Endpoints",
+        "description": "Create fast, globally distributed API endpoints that serve users from the nearest edge location, reducing latency for users worldwide.",
+        "target_user": "Backend developers building user-facing applications"
+      },
+      {
+        "title": "Implement Edge Caching Strategies",
+        "description": "Design caching layers at the edge to reduce origin server load and improve response times for static and dynamic content.",
+        "target_user": "DevOps engineers optimizing performance"
+      },
+      {
+        "title": "Deploy Serverless Functions",
+        "description": "Convert existing functions to edge-compatible patterns that run on serverless edge runtimes without managing servers.",
+        "target_user": "Full-stack developers transitioning to edge computing"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Edge Function",
+        "prompt": "Write a Cloudflare Worker that handles incoming requests, checks a cache, and returns a response. Include proper error handling.",
+        "scenario": "Creating a simple edge function with caching"
+      },
+      {
+        "title": "Edge Middleware Pattern",
+        "prompt": "Create edge middleware for Vercel that authenticates requests, adds caching headers, and handles CORS for an API route.",
+        "scenario": "Building middleware with authentication and caching"
+      },
+      {
+        "title": "Streaming Response Handler",
+        "prompt": "Write a Deno Deploy function that streams JSON data from an upstream API, transforms it, and sends it to the client incrementally.",
+        "scenario": "Implementing streaming responses at the edge"
+      },
+      {
+        "title": "Full Edge Application",
+        "prompt": "Design a complete edge application structure with routing, middleware, environment configuration, and error boundaries for production deployment.",
+        "scenario": "Architecting a production edge application"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a Cloudflare Worker that caches API responses",
+        "output": "```javascript\nexport default {\n  async fetch(request, env, ctx) {\n    const cacheKey = new Request(request.url, request);\n    const cache = caches.default;\n\n    let response = await cache.match(cacheKey);\n    if (response) return response;\n\n    response = await fetch(request);\n    ctx.waitUntil(cache.put(cacheKey, response.clone()));\n    return response;\n  }\n};\n```"
+      },
+      {
+        "input": "Write edge middleware for request authentication",
+        "output": "```javascript\nexport function authenticate(request) {\n  const authHeader = request.headers.get('Authorization');\n  if (!authHeader) {\n    return new Response('Unauthorized', { status: 401 });\n  }\n  // Validate token...\n  return null; // No error, request is valid\n}\n```"
+      }
+    ],
+    "best_practices": [
+      "Keep edge functions small and focused to minimize cold start times and memory usage",
+      "Use streaming responses for large payloads to improve time-to-first-byte",
+      "Implement proper error handling with fallback responses for degraded functionality"
+    ],
+    "anti_patterns": [
+      "Avoid synchronous operations that block the edge runtime event loop",
+      "Do not store local state in edge functions since instances may be recreated",
+      "Avoid making multiple sequential upstream requests when parallelization is possible"
+    ],
+    "faq": [
+      {
+        "question": "What edge runtimes does this skill support?",
+        "answer": "The skill covers patterns for Cloudflare Workers, Vercel Edge Functions, and Deno Deploy. Each runtime has unique constraints and capabilities."
+      },
+      {
+        "question": "How is edge computing different from traditional serverless?",
+        "answer": "Edge functions run closer to users in distributed data centers. They have stricter resource limits but offer lower latency by serving requests from nearby locations."
+      },
+      {
+        "question": "Can I use this skill for existing serverless functions?",
+        "answer": "Yes, the patterns help you adapt serverless code for edge constraints. You may need to refactor synchronous operations and external dependencies."
+      },
+      {
+        "question": "Does this skill deploy code to edge networks?",
+        "answer": "No, the skill generates edge-compatible code patterns. You must deploy the code yourself using your cloud provider's tooling."
+      },
+      {
+        "question": "What are the resource limits for edge runtimes?",
+        "answer": "Limits vary by provider. Cloudflare Workers typically allow 10-50ms CPU time and 128MB memory. Check your provider's documentation for current limits."
+      },
+      {
+        "question": "How do I handle secrets and environment variables?",
+        "answer": "Edge runtimes support environment-specific variables through provider dashboards. Never hardcode secrets in edge function source code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 234
+    }
+  ]
+}

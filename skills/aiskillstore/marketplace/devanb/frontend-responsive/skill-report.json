@@ -1,0 +1,253 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T03:21:49.713Z",
+    "slug": "devanb-frontend-responsive",
+    "source_url": "https://github.com/DevanB/lucidlog/tree/master/.claude/skills/frontend-responsive",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "25c82c384a71f20a35ef2867077dd33acc18463c07eff8ce46857d3bb15bfe73",
+    "tree_hash": "325c9973ce2da736af515bb0085b5ed4a936afe1142fcbdd5218176fa88c41fa"
+  },
+  "skill": {
+    "name": "frontend-responsive",
+    "description": "Implement mobile-first responsive designs with fluid layouts, breakpoints, relative units, and touch-friendly interfaces that work across all device sizes. Use this skill when writing or modifying React components (.tsx, .jsx files), when implementing CSS or Tailwind responsive utilities (sm:, md:, lg:, xl: breakpoints), when working on layout components, navigation menus, grid systems, when optimizing for mobile devices, tablets, or desktop screens, when implementing media queries, when ensuring touch-friendly UI elements, or when testing cross-device compatibility.",
+    "summary": "Implement mobile-first responsive designs with fluid layouts, breakpoints, relative units, and touch...",
+    "icon": "📱",
+    "version": "1.0.0",
+    "author": "DevanB",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "responsive-design",
+      "mobile-first",
+      "css",
+      "tailwindcss",
+      "ui-ux"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 46 static findings are false positives caused by pattern-matching without semantic context. The skill is pure markdown documentation with no executable code. False positives include hash values flagged as C2/crypto, CSS units (rem, em) flagged as cryptographic references, Tailwind breakpoints (md, lg) flagged, markdown backticks flagged as shell execution, and documentation keywords flagged as reconnaissance. The existing security audit confirms: 'Pure markdown-based skill containing only instructional guidance... No executable code, network access, filesystem operations, or external command execution capabilities detected.'",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 208,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T03:21:49.713Z"
+  },
+  "content": {
+    "user_title": "Implement mobile-first responsive designs",
+    "value_statement": "Building responsive web interfaces that work across all device sizes is challenging without clear guidelines. This skill provides AI assistants with specific guidance on implementing mobile-first responsive designs using fluid layouts, breakpoints, and touch-friendly patterns.",
+    "seo_keywords": [
+      "responsive design",
+      "mobile-first",
+      "responsive layouts",
+      "breakpoints",
+      "Tailwind CSS",
+      "flexbox",
+      "CSS grid",
+      "touch-friendly UI",
+      "Claude Code",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Generate mobile-first responsive layouts using CSS Grid and Flexbox",
+      "Apply Tailwind CSS responsive utility classes (sm:, md:, lg:, xl:, 2xl:)",
+      "Implement responsive typography that scales across breakpoints",
+      "Create touch-friendly UI elements with proper tap targets",
+      "Use relative units (rem, em, %, vh, vw) instead of fixed pixels",
+      "Test and optimize UI components for mobile, tablet, and desktop"
+    ],
+    "limitations": [
+      "Does not generate complete responsive websites from scratch",
+      "Does not provide design mockups or visual assets",
+      "Does not test designs on real devices or browsers",
+      "Assumes the AI already has access to the codebase being modified"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Building responsive React components",
+        "description": "Create or modify React components with responsive layouts that adapt seamlessly to any screen size."
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Implementing Tailwind responsive patterns",
+        "description": "Apply Tailwind CSS responsive utilities and breakpoints to style web interfaces with mobile-first approach."
+      },
+      {
+        "target_user": "UI/UX engineers",
+        "title": "Optimizing touch interactions",
+        "description": "Design touch-friendly interfaces with proper sizing, spacing, and interactive elements for mobile users."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic responsive component",
+        "scenario": "Creating a responsive card component",
+        "prompt": "Create a responsive card component that displays properly on mobile, tablet, and desktop screens."
+      },
+      {
+        "title": "Navigation menu",
+        "scenario": "Building adaptive navigation",
+        "prompt": "Build a responsive navigation menu that shows a hamburger menu on mobile and horizontal links on desktop."
+      },
+      {
+        "title": "Image handling",
+        "scenario": "Implementing responsive images",
+        "prompt": "Create responsive image handling that adapts to different screen sizes and resolutions."
+      },
+      {
+        "title": "Complex dashboard",
+        "scenario": "Multi-column responsive layout",
+        "prompt": "Build a responsive dashboard layout with grid that shows 1 column on mobile, 2 on tablet, and 4 on desktop."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a responsive button component for mobile devices",
+        "output": [
+          "Button with minimum 44x44px tap target for touch accessibility",
+          "Responsive padding using rem units (e.g., py-3 px-6)",
+          "Font size that scales appropriately (e.g., text-base or text-lg)",
+          "Active state feedback with visual touch indication",
+          "Mobile-first base styles with responsive overrides"
+        ]
+      },
+      {
+        "input": "Build a responsive navigation menu",
+        "output": [
+          "Hamburger menu implementation for mobile viewport",
+          "Horizontal link list visible on desktop breakpoints",
+          "CSS transition for menu open and close states",
+          "Touch-friendly tap targets for menu items",
+          "Proper z-index layering for mobile menu overlay"
+        ]
+      },
+      {
+        "input": "Create a responsive card grid layout",
+        "output": [
+          "Single column layout on mobile (<640px)",
+          "Two column layout on tablet (640px-1024px)",
+          "Three to four column layout on desktop (>1024px)",
+          "Fluid card widths using percentage or flex basis",
+          "Responsive gap spacing that adapts to viewport"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with mobile styles first and add breakpoints for larger screens using min-width approach",
+      "Use relative units (rem, em) for sizing to respect user font preferences and scaling",
+      "Ensure all interactive elements have minimum 44x44px tap targets for touch accessibility"
+    ],
+    "anti_patterns": [
+      "Using fixed pixel widths instead of fluid percentages or max-width constraints",
+      "Hiding content on mobile instead of adapting it for smaller screens",
+      "Forgetting to test touch targets and interactive element spacing on actual devices"
+    ],
+    "faq": [
+      {
+        "question": "What breakpoints does this skill use?",
+        "answer": "The skill follows Tailwind CSS breakpoints: sm (640px), md (768px), lg (1024px), xl (1280px), and 2xl (1536px)."
+      },
+      {
+        "question": "Does this skill work with custom CSS instead of Tailwind?",
+        "answer": "Yes. The principles apply to any CSS approach. It provides guidance on media queries, flexbox, grid, and relative units."
+      },
+      {
+        "question": "Can I use this skill for email templates?",
+        "answer": "Yes, but with limitations. Email clients have specific constraints. The skill can guide responsive patterns but email-specific CSS restrictions apply."
+      },
+      {
+        "question": "Is my code data sent anywhere?",
+        "answer": "No. This skill only provides guidance to the AI assistant. No code, content, or user data is transmitted externally."
+      },
+      {
+        "question": "Why is my responsive layout not working on mobile?",
+        "answer": "Common issues include: missing viewport meta tag, using fixed pixel widths, not testing on actual devices, or CSS specificity conflicts."
+      },
+      {
+        "question": "How is this different from other responsive design tools?",
+        "answer": "This skill guides AI assistants to write responsive code correctly from the start. It is not a design tool or testing framework but ensures best practices in generated code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 29
+    }
+  ]
+}

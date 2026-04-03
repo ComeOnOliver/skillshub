@@ -1,0 +1,238 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:47:43.819Z",
+    "slug": "charleskozel-coordinator",
+    "source_url": "https://github.com/CharlesKozel/Pentest-Agent-Evalulator/tree/main/agents/claude-tbug/skills/coordinator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "232ec67039e85d226d8c02f5f28c087dbe354d055347a3e25f810473bf133f22",
+    "tree_hash": "96160d37c9a1575f24bc04fe7c0f1a51712c10fdb416ff694582bb24bcd67e8f"
+  },
+  "skill": {
+    "name": "coordinator",
+    "description": "Autonomous penetration testing coordinator using ReAct methodology. Automatically activates when user provides a target IP or asks to start penetration testing. Orchestrates reconnaissance, exploitation, and privilege escalation until both user and root flags are captured. (project)",
+    "summary": "Autonomous penetration testing coordinator using ReAct methodology. Automatically activates when use...",
+    "icon": "🎯",
+    "version": "1.0.0",
+    "author": "CharlesKozel",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "penetration-testing",
+      "cybersecurity",
+      "automation",
+      "orchestration",
+      "react-methodology"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a strategic coordinator for authorized penetration testing in controlled environments (CTF, training). Static findings show documentation of attack techniques in AD_ATTACK_SUPPLEMENT.md and SKILL.md, but these are educational examples, not executable code. The skill delegates all execution to subagents and explicitly restricts usage to authorized environments like HackTheBox and VulnHub.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "AD_ATTACK_SUPPLEMENT.md",
+            "line_start": 77,
+            "line_end": 106
+          },
+          {
+            "file": "AD_ATTACK_SUPPLEMENT.md",
+            "line_start": 130,
+            "line_end": 171
+          },
+          {
+            "file": "AD_ATTACK_SUPPLEMENT.md",
+            "line_start": 191,
+            "line_end": 237
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [
+      {
+        "title": "Attack Technique Documentation",
+        "description": "The skill contains educational documentation of penetration testing techniques including Active Directory exploitation, password attacks, and privilege escalation methods. Intended for authorized environments (CTF, training).",
+        "locations": [
+          {
+            "file": "AD_ATTACK_SUPPLEMENT.md",
+            "line_start": 1,
+            "line_end": 564
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 196
+          }
+        ]
+      }
+    ],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 958,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:47:43.819Z"
+  },
+  "content": {
+    "user_title": "Automate Penetration Testing with Strategic Coordination",
+    "value_statement": "Manual penetration testing is time-consuming and requires deep expertise across multiple domains. This skill automates the entire process using a strategic coordinator that delegates tasks to specialized agents, ensuring comprehensive testing while you focus on high-level decisions.",
+    "seo_keywords": [
+      "penetration testing automation",
+      "Claude Code security",
+      "automated pentesting",
+      "cybersecurity orchestration",
+      "ReAct methodology",
+      "ethical hacking",
+      "vulnerability assessment",
+      "Claude security tools",
+      "penetration testing coordinator",
+      "security automation"
+    ],
+    "actual_capabilities": [
+      "Coordinates reconnaissance, exploitation, and privilege escalation phases",
+      "Delegates tasks to specialized exploration and general-purpose agents",
+      "Maintains persistent state tracking throughout penetration tests",
+      "Enforces completion criteria requiring both user and root flag capture",
+      "Implements ReAct methodology for systematic attack progression",
+      "Provides strategic decision-making for attack vector selection"
+    ],
+    "limitations": [
+      "Designed for controlled environments only (HackTheBox, VulnHub)",
+      "Requires proper authorization and ethical usage",
+      "Cannot execute attacks directly - only coordinates other agents",
+      "State management requires proper setup before use"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security professionals",
+        "title": "Automated CTF Solving",
+        "description": "Streamline capture-the-flag competitions by automating reconnaissance and exploitation."
+      },
+      {
+        "target_user": "Penetration testers",
+        "title": "Systematic Assessment",
+        "description": "Ensure comprehensive testing coverage through structured methodology."
+      },
+      {
+        "target_user": "Security researchers",
+        "title": "Educational Training",
+        "description": "Learn penetration testing through observation of automated attacks."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start Basic Pentest",
+        "scenario": "Begin penetration test on target IP",
+        "prompt": "Start penetration testing on target 10.10.10.1. Use systematic reconnaissance to discover services and vulnerabilities."
+      },
+      {
+        "title": "Resume Stuck Session",
+        "scenario": "Continue after hitting a dead end",
+        "prompt": "I've tried standard web exploitation but failed. Try alternative attack vectors including SMB, SSH, or service-specific exploits."
+      },
+      {
+        "title": "Privilege Escalation",
+        "scenario": "Already have user access, need root",
+        "prompt": "I have user access but need root privileges. Focus on privilege escalation techniques: sudo misconfigurations, SUID binaries, kernel exploits."
+      },
+      {
+        "title": "Advanced AD Attack",
+        "scenario": "Active Directory targeting",
+        "prompt": "Target is an Active Directory domain controller. Use AD-specific attacks: LDAP enumeration, Kerberoasting, AS-REP roasting, delegation attacks."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Start penetration test on 10.10.10.50",
+        "output": [
+          "Analyzing current state... Phase: reconnaissance",
+          "Delegating to Explore agent for comprehensive port scanning",
+          "Found services: SSH (22), HTTP (80), MySQL (3306)",
+          "Delegating exploitation agent to target HTTP service",
+          "Discovered file upload vulnerability in /uploads",
+          "Successfully captured user flag: a1b2c3d4...",
+          "Delegating privilege escalation agent",
+          "Root access achieved! Captured root flag: def456...",
+          "Mission complete - both flags captured"
+        ]
+      },
+      {
+        "input": "I have user access on Linux target",
+        "output": [
+          "Analyzing current state... Phase: privilege_escalation",
+          "Delegating agent to check sudo permissions",
+          "Found: user can run wget as root",
+          "Agent created reverse shell payload using sudo wget",
+          "Root access achieved! Captured root flag",
+          "Mission complete"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always read current state before making strategic decisions to avoid redundant efforts",
+      "Delegate complex tasks to appropriate specialized agents rather than attempting manual execution",
+      "Trust the automated hook system to enforce completion and prevent premature stopping"
+    ],
+    "anti_patterns": [
+      "Never attempt to execute technical tasks yourself - always delegate to specialized agents",
+      "Don't manually update state files - let the automated hooks handle state management",
+      "Never give up or declare a target unsolvable - the system enforces continued effort"
+    ],
+    "faq": [
+      {
+        "question": "Is this skill compatible with all Claude Code versions?",
+        "answer": "Yes, works with all Claude Code versions. Activates when you provide a target IP."
+      },
+      {
+        "question": "What are the limitations on target systems?",
+        "answer": "Designed for authorized testing environments like HackTheBox, VulnHub, or lab environments."
+      },
+      {
+        "question": "How does it integrate with other security tools?",
+        "answer": "Delegates to agents that utilize standard pentest tools like nmap, gobuster, and Metasploit."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Operates locally and only targets specified systems. Maintains state in local files."
+      },
+      {
+        "question": "What if the agent gets stuck during testing?",
+        "answer": "Implements infinite loop logic - tries alternative approaches indefinitely until success."
+      },
+      {
+        "question": "How does this compare to manual penetration testing?",
+        "answer": "Provides systematic, exhaustive testing that never gives up and follows structured methodologies."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "AD_ATTACK_SUPPLEMENT.md",
+      "type": "file",
+      "path": "AD_ATTACK_SUPPLEMENT.md",
+      "lines": 564
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 196
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:41:15.777Z",
+    "slug": "barnhardt-enterprises-inc-drizzle-orm-patterns",
+    "source_url": "https://github.com/Barnhardt-Enterprises-Inc/quetrex-plugin/tree/main/templates/skills/drizzle-orm-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7b64ddd72b0a1aec2a1703fad8c462f8e6d6f47ef8af49482aae4744a4b6264a",
+    "tree_hash": "9cf819741243d5aca344ffeb4027d6fbc3506983d892218fc6403b822d541299"
+  },
+  "skill": {
+    "name": "drizzle-orm-patterns",
+    "description": "This skill provides comprehensive Drizzle ORM patterns for PostgreSQL with Vercel Edge Runtime support. Drizzle is Quetrex's chosen ORM because it's edge-first, type-safe, and supports all deployme...",
+    "summary": "This skill provides comprehensive Drizzle ORM patterns for PostgreSQL with Vercel Edge Runtime suppo...",
+    "icon": "🗄️",
+    "version": "1.0.0",
+    "author": "Barnhardt-Enterprises-Inc",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "PostgreSQL",
+      "ORM",
+      "TypeScript",
+      "Edge Runtime",
+      "Database"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 931 static findings are FALSE POSITIVES. The static analyzer misidentified TypeScript template literals as shell commands, vulnerable code examples as actual exploits, and standard database patterns as sensitive data access. This is legitimate documentation with a defensive security validator tool that only reads files specified by the user. No malicious intent, no credential access, no data exfiltration, no persistence mechanisms.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "validate-queries.py",
+            "line_start": 1,
+            "line_end": 356
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "validate-queries.py",
+            "line_start": 43,
+            "line_end": 60
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "common-mistakes.md",
+            "line_start": 20,
+            "line_end": 120
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "edge-runtime.md",
+            "line_start": 40,
+            "line_end": 55
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 12,
+    "total_lines": 8458,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:41:15.777Z"
+  },
+  "content": {
+    "user_title": "Use Drizzle ORM patterns for PostgreSQL databases",
+    "value_statement": "Building type-safe database queries with Drizzle ORM can be complex. This skill provides complete patterns for queries, transactions, migrations, and edge deployment with automated security validation.",
+    "seo_keywords": [
+      "Drizzle ORM",
+      "PostgreSQL",
+      "TypeScript",
+      "Database patterns",
+      "Edge Runtime",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "ORM queries",
+      "Database migrations"
+    ],
+    "actual_capabilities": [
+      "Write type-safe queries with Drizzle ORM for PostgreSQL",
+      "Implement database transactions with rollback and isolation levels",
+      "Create and manage schema migrations with Drizzle Kit",
+      "Deploy to Vercel Edge Runtime with serverless PostgreSQL",
+      "Detect and prevent SQL injection vulnerabilities with validation script",
+      "Optimize performance with indexes, batch operations, and N+1 prevention"
+    ],
+    "limitations": [
+      "Requires Drizzle ORM and PostgreSQL database setup",
+      "Does not include runtime database connection management",
+      "Does not generate database schema automatically",
+      "Validator script requires Python 3 and TypeScript files to analyze"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developers",
+        "title": "Build type-safe database layers",
+        "description": "Create robust data access layers with Drizzle ORM patterns for production applications."
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Deploy edge-compatible database code",
+        "description": "Implement database operations that run in Vercel Edge Functions and serverless environments."
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Manage schema migrations safely",
+        "description": "Execute database migrations with rollback strategies and zero-downtime deployment patterns."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic query pattern",
+        "scenario": "Write a select query with filters",
+        "prompt": "Use the drizzle-orm-patterns skill to help me write a Drizzle ORM query that selects users where status equals 'active' and created_at is after January 1, 2024."
+      },
+      {
+        "title": "Transaction safety",
+        "scenario": "Implement multi-step operations",
+        "prompt": "Show me how to use Drizzle ORM transactions with proper rollback handling for creating a user and their profile together."
+      },
+      {
+        "title": "Edge deployment",
+        "scenario": "Deploy to serverless environment",
+        "prompt": "Help me configure Drizzle ORM for Vercel Edge Runtime with Neon serverless PostgreSQL."
+      },
+      {
+        "title": "Security validation",
+        "scenario": "Check code for vulnerabilities",
+        "prompt": "Use the validate-queries.py script to check my user-service.ts file for SQL injection risks and performance issues."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me write a Drizzle ORM query to get users with their orders",
+        "output": [
+          "Use a LEFT JOIN to fetch users with their orders:",
+          "```typescript",
+          "const usersWithOrders = await db",
+          "  .select({",
+          "    userId: users.id,",
+          "    userName: users.name,",
+          "    orderCount: count(orders.id),",
+          "  })",
+          "  .from(users)",
+          "  .leftJoin(orders, eq(users.id, orders.userId))",
+          "  .groupBy(users.id, users.name);",
+          "```",
+          "This avoids N+1 queries by using a single query with aggregation."
+        ]
+      },
+      {
+        "input": "How do I create a transaction that rolls back on failure",
+        "output": [
+          "Use db.transaction() with async callback and automatic rollback:",
+          "```typescript",
+          "await db.transaction(async (tx) => {",
+          "  const [user] = await tx.insert(users).values({ email, name }).returning();",
+          "  await tx.insert(profiles).values({ userId: user.id, bio });",
+          "  // If any operation fails, entire transaction rolls back",
+          "});",
+          "```",
+          "All operations succeed together or fail together."
+        ]
+      },
+      {
+        "input": "Validate my code for SQL injection risks",
+        "output": [
+          "Run the validator on your TypeScript files:",
+          "```bash",
+          "python3 validate-queries.py src/**/*.ts",
+          "```",
+          "The script checks for string interpolation in sql templates, N+1 queries, missing pagination, and type safety issues. Returns exit code 1 if errors found."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use parameterized queries with eq(), like(), and other operators instead of string interpolation",
+      "Add indexes on foreign keys and frequently queried columns for better performance",
+      "Keep transactions short and avoid external API calls inside transaction blocks"
+    ],
+    "anti_patterns": [
+      "Using string interpolation in sql templates which can lead to SQL injection",
+      "Querying inside loops causing N+1 performance problems",
+      "Using select() without specifying fields or limit in production code"
+    ],
+    "faq": [
+      {
+        "question": "Which PostgreSQL drivers work with Drizzle ORM?",
+        "answer": "Drizzle supports @neondatabase/serverless for Edge and WebSocket, pg for Node.js with connection pooling, and @vercel/postgres for Vercel deployments."
+      },
+      {
+        "question": "What are the limits of Edge Runtime transactions?",
+        "answer": "Edge functions have a 25-second timeout. Keep transactions under 1 second and avoid processing large datasets inside transactions."
+      },
+      {
+        "question": "How do I integrate with existing database schemas?",
+        "answer": "Define tables using pgTable() with column definitions. Drizzle can introspect existing databases or you can define schemas manually."
+      },
+      {
+        "question": "Is my data safe when using the validator script?",
+        "answer": "Yes. The validator is a static analysis tool that only reads TypeScript files. It does not connect to databases or transmit data externally."
+      },
+      {
+        "question": "Why is my query slow?",
+        "answer": "Common causes include missing indexes, N+1 queries, select * usage, and unoptimized joins. Use EXPLAIN ANALYZE to diagnose performance issues."
+      },
+      {
+        "question": "How does Drizzle compare to Prisma?",
+        "answer": "Drizzle is edge-compatible with zero dependencies, uses SQL-like syntax, and provides type inference without code generation. Prisma has an easier fluent API but is not edge-compatible."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "common-mistakes.md",
+      "type": "file",
+      "path": "common-mistakes.md",
+      "lines": 746
+    },
+    {
+      "name": "edge-runtime.md",
+      "type": "file",
+      "path": "edge-runtime.md",
+      "lines": 689
+    },
+    {
+      "name": "migrations.md",
+      "type": "file",
+      "path": "migrations.md",
+      "lines": 810
+    },
+    {
+      "name": "performance.md",
+      "type": "file",
+      "path": "performance.md",
+      "lines": 836
+    },
+    {
+      "name": "queries-complete.md",
+      "type": "file",
+      "path": "queries-complete.md",
+      "lines": 1331
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 338
+    },
+    {
+      "name": "relations.md",
+      "type": "file",
+      "path": "relations.md",
+      "lines": 1007
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 302
+    },
+    {
+      "name": "transactions.md",
+      "type": "file",
+      "path": "transactions.md",
+      "lines": 969
+    },
+    {
+      "name": "type-inference.md",
+      "type": "file",
+      "path": "type-inference.md",
+      "lines": 808
+    },
+    {
+      "name": "validate-queries.py",
+      "type": "file",
+      "path": "validate-queries.py",
+      "lines": 357
+    }
+  ]
+}

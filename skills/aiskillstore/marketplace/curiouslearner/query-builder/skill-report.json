@@ -1,0 +1,430 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:14:41.408Z",
+    "slug": "curiouslearner-query-builder",
+    "source_url": "https://github.com/CuriousLearner/devkit/tree/main/skills/query-builder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "33d4885affedb52ceacd1099106c03cfef298f4127b9148bb60d9d1fc6edf394",
+    "tree_hash": "dff7e320fd43aec601700fedba699c1277de446243527b7aae4890cbfec1a65a"
+  },
+  "skill": {
+    "name": "query-builder",
+    "description": "Interactive database query builder for generating optimized SQL and NoSQL queries.",
+    "summary": "Interactive database query builder for generating optimized SQL and NoSQL queries.",
+    "icon": "🗃️",
+    "version": "1.0.0",
+    "author": "CuriousLearner",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "sql",
+      "database",
+      "queries",
+      "optimization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt-based skill containing only markdown documentation and query examples. No executable code, network calls, or filesystem access. The skill provides AI guidance for generating database queries. All 116 static findings are false positives from SQL syntax and markdown formatting misidentification.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 209,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 234
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 234,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 280,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 284
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 284,
+            "line_end": 319
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 319,
+            "line_end": 322
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 322,
+            "line_end": 368
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 368,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 427
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 427,
+            "line_end": 430
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 430,
+            "line_end": 468
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 468,
+            "line_end": 473
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 473,
+            "line_end": 488
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 488,
+            "line_end": 491
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 491,
+            "line_end": 519
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 519,
+            "line_end": 522
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 522,
+            "line_end": 539
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 539,
+            "line_end": 544
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 544,
+            "line_end": 557
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 557,
+            "line_end": 560
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 560,
+            "line_end": 589
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 589,
+            "line_end": 592
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 592,
+            "line_end": 600
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 600,
+            "line_end": 605
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 605,
+            "line_end": 617
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 617,
+            "line_end": 620
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 620,
+            "line_end": 626
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 626,
+            "line_end": 629
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 629,
+            "line_end": 637
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 837,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:14:41.407Z"
+  },
+  "content": {
+    "user_title": "Build optimized database queries",
+    "value_statement": "Writing efficient database queries requires deep knowledge of SQL and NoSQL patterns. This skill generates optimized queries with proper parameterization and explains execution strategies for better performance.",
+    "seo_keywords": [
+      "SQL query builder",
+      "database queries",
+      "MongoDB queries",
+      "PostgreSQL",
+      "Prisma",
+      "TypeORM",
+      "query optimization",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generates SQL queries for PostgreSQL, MySQL, SQLite, and SQL Server",
+      "Creates NoSQL queries for MongoDB, DynamoDB, Redis, and Cassandra",
+      "Writes ORM queries using Prisma, TypeORM, SQLAlchemy, and Mongoose",
+      "Explains query execution and performance considerations",
+      "Provides parameterized queries to prevent SQL injection",
+      "Suggests indexes and optimization strategies"
+    ],
+    "limitations": [
+      "Does not connect to actual databases or execute queries",
+      "Cannot access your database schema without you providing it",
+      "Cannot modify existing database structures",
+      "Does not provide real-time performance monitoring"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developers",
+        "title": "Write complex JOIN queries",
+        "description": "Generate multi-table joins with proper filtering and aggregation for reporting features"
+      },
+      {
+        "target_user": "Data engineers",
+        "title": "Create aggregation pipelines",
+        "description": "Build MongoDB aggregation pipelines and window functions for analytics and data transformation"
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Generate ORM queries",
+        "description": "Create type-safe database queries using Prisma, TypeORM, or Mongoose with proper relations"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic query request",
+        "scenario": "Get data from database",
+        "prompt": "Get all active users with their email addresses created in the last 30 days"
+      },
+      {
+        "title": "Join queries",
+        "scenario": "Combine multiple tables",
+        "prompt": "Get users with their orders including order items and product details for completed orders"
+      },
+      {
+        "title": "ORM queries",
+        "scenario": "Use Prisma or TypeORM",
+        "prompt": "Write a Prisma query to find top 10 customers by total spending with their order counts"
+      },
+      {
+        "title": "Optimization review",
+        "scenario": "Improve existing query",
+        "prompt": "Optimize this query: SELECT * FROM orders WHERE YEAR(created_at) = 2024 AND status = 'active'"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Get all products with their category name where the product is in stock",
+        "output": [
+          "SELECT p.id, p.name, p.price, c.name as category_name",
+          "FROM products p",
+          "INNER JOIN categories c ON p.category_id = c.id",
+          "WHERE p.stock_count > 0 AND p.active = true",
+          "ORDER BY p.name ASC"
+        ]
+      },
+      {
+        "input": "Create a MongoDB aggregation to calculate daily revenue for the last 7 days",
+        "output": [
+          "db.orders.aggregate([",
+          "  { $match: { status: 'completed', createdAt: { $gte: 7 days ago } } },",
+          "  { $group: { _id: { $dateToString: { format: '%Y-%m-%d', date: '$createdAt' } }, dailyRevenue: { $sum: '$totalAmount' }, orderCount: { $sum: 1 } } },",
+          "  { $sort: { _id: -1 } }",
+          "])"
+        ]
+      },
+      {
+        "input": "Write a TypeORM query to find users with their order statistics",
+        "output": [
+          "const stats = await dataSource.getRepository(User)",
+          "  .createQueryBuilder('user')",
+          "  .leftJoin('user.orders', 'order')",
+          "  .select('user.id', 'userId')",
+          "  .addSelect('user.username', 'username')",
+          "  .addSelect('COUNT(order.id)', 'orderCount')",
+          "  .addSelect('COALESCE(SUM(order.totalAmount), 0)', 'totalSpent')",
+          "  .groupBy('user.id')",
+          "  .getRawMany();"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use parameterized queries with placeholders like $1 or ? instead of string interpolation",
+      "Specify only the columns you need instead of using SELECT *",
+      "Add appropriate indexes on columns used in WHERE, JOIN, and ORDER BY clauses"
+    ],
+    "anti_patterns": [
+      "Using string concatenation to build queries - this creates SQL injection vulnerabilities",
+      "Executing queries without LIMIT in production - always paginate large result sets",
+      "Using functions on indexed columns in WHERE clauses - this prevents index usage"
+    ],
+    "faq": [
+      {
+        "question": "Which databases are supported?",
+        "answer": "Supports PostgreSQL, MySQL, SQLite, SQL Server, MongoDB, DynamoDB, Redis, and Cassandra with their respective query syntax."
+      },
+      {
+        "question": "What ORMs work with this skill?",
+        "answer": "Prisma, TypeORM, Sequelize, SQLAlchemy, Django ORM, and Mongoose are all supported with example patterns."
+      },
+      {
+        "question": "Does this skill execute queries?",
+        "answer": "No. This skill generates query examples. You must copy and run the queries in your own database environment."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. The skill only generates text - it cannot access your databases, credentials, or any system resources."
+      },
+      {
+        "question": "How do I get better query suggestions?",
+        "answer": "Provide your table names, columns, and relationships. Include any specific filters or sorting requirements for optimal results."
+      },
+      {
+        "question": "How is this different from raw SQL generation?",
+        "answer": "The skill provides both raw SQL and ORM alternatives. ORM versions integrate directly with your code using your existing models."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 660
+    }
+  ]
+}

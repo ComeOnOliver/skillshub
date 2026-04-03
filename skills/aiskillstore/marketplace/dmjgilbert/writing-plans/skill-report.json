@@ -1,0 +1,330 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:05:36.984Z",
+    "slug": "dmjgilbert-writing-plans",
+    "source_url": "https://github.com/DMJGilbert/.config/tree/main/users/darren/config/claude/skills/writing-plans",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c838566bbb85384b6b228a21ca180c7e059cd8f2b4f6a0b05333e5c5084b343f",
+    "tree_hash": "731fa090c652a75e123b71a87c39497fe94147f281e2a05e978f21cd2aa2c053"
+  },
+  "skill": {
+    "name": "writing-plans",
+    "description": "Create detailed implementation plans with granular tasks. Use before implementing features or complex changes.",
+    "summary": "Create detailed implementation plans with granular tasks. Use before implementing features or comple...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "DMJGilbert",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "planning",
+      "tdd",
+      "implementation",
+      "task-breakdown",
+      "engineering"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation files with no executable code. The 33 static findings are false positives triggered by markdown backtick syntax and JSON structure misinterpreted as code execution or cryptographic patterns. No actual security risks exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 143
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 328,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:05:36.984Z"
+  },
+  "content": {
+    "user_title": "Write detailed implementation plans with TDD tasks",
+    "value_statement": "Engineers struggle to break complex features into manageable steps. This skill creates granular implementation plans with test-driven development built into every task.",
+    "seo_keywords": [
+      "implementation planning",
+      "TDD",
+      "task breakdown",
+      "engineering planning",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "software development",
+      "test-driven development",
+      "feature planning"
+    ],
+    "actual_capabilities": [
+      "Creates detailed implementation plans with granular 2-5 minute tasks",
+      "Follows test-driven development (TDD) principles for every task",
+      "Structures plans with clear goals, architecture, and file changes",
+      "Includes verification checklists for each task",
+      "Provides example plans for reference",
+      "Saves plans to organized directory structure"
+    ],
+    "limitations": [
+      "Requires manual execution of generated plans",
+      "Does not automatically create code or tests",
+      "Plans must be adapted to specific codebases",
+      "TDD approach may not fit all development styles"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Senior developers",
+        "title": "Plan complex feature implementation",
+        "description": "Break down multi-component features into testable tasks before writing code"
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Create onboarding tasks for new developers",
+        "description": "Generate step-by-step plans that junior developers can follow independently"
+      },
+      {
+        "target_user": "Project managers",
+        "title": "Estimate work with granular tasks",
+        "description": "Convert high-level requirements into detailed implementation steps"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic feature plan",
+        "scenario": "Adding a simple component or function",
+        "prompt": "Create an implementation plan for adding a password validation function that checks strength and returns specific error messages"
+      },
+      {
+        "title": "Multi-component feature",
+        "scenario": "Features spanning multiple files",
+        "prompt": "Plan the implementation of a user authentication system with login form, API endpoint, and session management"
+      },
+      {
+        "title": "Refactoring plan",
+        "scenario": "Improving existing code structure",
+        "prompt": "Create a plan to refactor a monolithic React component into smaller, reusable components"
+      },
+      {
+        "title": "Integration planning",
+        "scenario": "Adding third-party service integration",
+        "prompt": "Plan adding Stripe payment processing to an e-commerce application with webhooks"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a plan for adding user avatar upload functionality",
+        "output": [
+          "Plan: Add User Avatar Upload Feature",
+          "Goal: Allow users to upload and display profile avatars",
+          "Architecture: File upload with image processing and CDN storage",
+          "Tech Stack: React, Node.js, AWS S3, Sharp for image processing",
+          "Task 1: Create avatar upload API endpoint",
+          "Task 2: Write failing test for file validation",
+          "Task 3: Implement image resize service",
+          "Task 4: Create React upload component",
+          "Task 5: Add progress indicator",
+          "Each task includes specific files, steps, and verification criteria"
+        ]
+      },
+      {
+        "input": "Plan a database migration from MySQL to PostgreSQL",
+        "output": [
+          "Plan: Database Migration MySQL to PostgreSQL",
+          "Goal: Move all data and schemas from MySQL to PostgreSQL with zero downtime",
+          "Architecture: Dual-write during migration, read replica switchover",
+          "Tech Stack: PostgreSQL, MySQL, pgloader, application-level dual-write",
+          "Task 1: Audit existing MySQL schema and identify compatibility issues",
+          "Task 2: Create PostgreSQL schema with necessary adjustments",
+          "Task 3: Set up data synchronization pipeline",
+          "Task 4: Migrate historical data in batches",
+          "Task 5: Switch reads to PostgreSQL",
+          "Task 6: Verify all queries work correctly"
+        ]
+      },
+      {
+        "input": "Create a plan to add dark mode to a web application",
+        "output": [
+          "Plan: Add Dark Mode Support",
+          "Goal: Allow users to toggle between light and dark themes",
+          "Architecture: CSS custom properties with JavaScript theme toggle",
+          "Tech Stack: React, CSS custom properties, localStorage persistence",
+          "Task 1: Audit existing styles for hardcoded color values",
+          "Task 2: Define theme color palette in CSS variables",
+          "Task 3: Create ThemeContext for state management",
+          "Task 4: Build theme toggle component",
+          "Task 5: Apply dark theme styles to all components",
+          "Task 6: Add system preference detection"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always write tests before implementation code for true TDD",
+      "Keep tasks small enough to complete in 2-5 minutes",
+      "Verify each task independently before moving to the next",
+      "Commit after each completed task for clean git history"
+    ],
+    "anti_patterns": [
+      "Creating tasks that span multiple files or concerns",
+      "Skipping test verification steps to save time",
+      "Writing implementation before tests",
+      "Making tasks too large or vague to verify"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with non-TDD workflows?",
+        "answer": "Yes, you can adapt the plans by moving test creation after implementation if needed"
+      },
+      {
+        "question": "How detailed should the initial prompt be?",
+        "answer": "Provide the feature goal and any specific requirements. The skill will handle the technical details"
+      },
+      {
+        "question": "Can I use this with existing codebases?",
+        "answer": "Yes, specify your tech stack and the skill will adapt the plan to your architecture"
+      },
+      {
+        "question": "Is my plan data stored or shared?",
+        "answer": "No, plans are generated locally and saved to your specified directory only"
+      },
+      {
+        "question": "What if a task fails during execution?",
+        "answer": "Each task includes verification steps. If a test fails, fix it before continuing to the next task"
+      },
+      {
+        "question": "How does this compare to other planning tools?",
+        "answer": "This focuses on TDD implementation with granular tasks, unlike high-level project management tools"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 144
+    }
+  ]
+}

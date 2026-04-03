@@ -1,0 +1,322 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T03:35:11.604Z",
+    "slug": "diet103-backend-dev-guidelines",
+    "source_url": "https://github.com/diet103/claude-code-infrastructure-showcase/tree/main/.claude/skills/backend-dev-guidelines",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7129685d12fab4fd1b8b881c467a455583374c314e4d0d20f4940f69f77ae23b",
+    "tree_hash": "38743327e7724ff445c94cd3cb187abb3b40f752fda9f448fcd9b31c53f9c854"
+  },
+  "skill": {
+    "name": "backend-dev-guidelines",
+    "description": "Comprehensive backend development guide for Node.js/Express/TypeScript microservices. Use when creating routes, controllers, services, repositories, middleware, or working with Express APIs, Prisma database access, Sentry error tracking, Zod validation, unifiedConfig, dependency injection, or async patterns. Covers layered architecture (routes → controllers → services → repositories), BaseController pattern, error handling, performance monitoring, testing strategies, and migration from legacy patterns.",
+    "summary": "Comprehensive backend development guide for Node.js/Express/TypeScript microservices. Use when creat...",
+    "icon": "⚙️",
+    "version": "1.0.0",
+    "author": "diet103",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "nodejs",
+      "express",
+      "typescript",
+      "backend",
+      "microservices"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "env_access",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 555 static findings are FALSE POSITIVES. This is a documentation/guide skill containing educational code examples. The detected patterns (shell commands, environment variables, path traversal, crypto algorithms) are in markdown code blocks demonstrating best practices and anti-patterns. The skill actively promotes secure coding - it teaches AGAINST vulnerabilities like path traversal and weak cryptography, not exploits them.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "resources/architecture-overview.md",
+            "line_start": 1,
+            "line_end": 300
+          },
+          {
+            "file": "resources/configuration.md",
+            "line_start": 1,
+            "line_end": 270
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "resources/configuration.md",
+            "line_start": 8,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 151
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "resources/validation-patterns.md",
+            "line_start": 370,
+            "line_end": 430
+          },
+          {
+            "file": "resources/routing-and-controllers.md",
+            "line_start": 35,
+            "line_end": 70
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 5537,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T03:35:11.604Z"
+  },
+  "content": {
+    "user_title": "Apply backend development best practices",
+    "value_statement": "Create consistent, maintainable backend services with proven Node.js/Express/TypeScript patterns. This skill provides architectural guidance, code templates, and security-aware patterns for microservices development.",
+    "seo_keywords": [
+      "claude code backend guidelines",
+      "nodejs express typescript patterns",
+      "claude backend development",
+      "microservices architecture guide",
+      "claude code skill backend",
+      "express controller patterns",
+      "typescript backend templates",
+      "claude devops coding",
+      "claude codex backend",
+      "claude enterprise backend"
+    ],
+    "actual_capabilities": [
+      "Generate layered architecture code (routes → controllers → services → repositories)",
+      "Create BaseController classes with error handling patterns",
+      "Implement Zod validation schemas for input validation",
+      "Set up Prisma database access patterns with repository layer",
+      "Configure Sentry error tracking and performance monitoring",
+      "Apply dependency injection and async error handling patterns"
+    ],
+    "limitations": [
+      "Does not generate database migrations or schema changes",
+      "Does not deploy services or configure infrastructure",
+      "Focused on Node.js/Express/TypeScript - not other backends",
+      "Assumes existing unifiedConfig and PrismaService setup"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Developer",
+        "title": "New Feature Implementation",
+        "description": "Generate controller, service, and repository code following architectural patterns for new API endpoints."
+      },
+      {
+        "target_user": "Tech Lead",
+        "title": "Codebase Standardization",
+        "description": "Establish consistent patterns across multiple microservices with BaseController and unifiedConfig usage."
+      },
+      {
+        "target_user": "Full-Stack Developer",
+        "title": "Express API Development",
+        "description": "Build Express routes with proper middleware, validation, and error tracking integration."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create New Endpoint",
+        "scenario": "Add user CRUD endpoint",
+        "prompt": "Create a new /users/:id endpoint with UserController that extends BaseController, includes Zod validation, and proper error handling with Sentry."
+      },
+      {
+        "title": "Service Pattern",
+        "scenario": "Business logic service",
+        "prompt": "Generate a UserService with dependency injection pattern, including repository calls and async error handling wrapper."
+      },
+      {
+        "title": "Repository Pattern",
+        "scenario": "Database access layer",
+        "prompt": "Create a UserRepository pattern with PrismaService usage, transaction support, and query optimization examples."
+      },
+      {
+        "title": "Complete Feature",
+        "scenario": "Full-stack feature",
+        "prompt": "Generate complete feature with routes, BaseController, service with DI, repository layer, Zod validation schemas, and Jest tests."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a POST /posts endpoint with authentication",
+        "output": [
+          "Complete route definition with SSO middleware",
+          "BaseController with breadcrumb tracking",
+          "PostService with dependency injection",
+          "PostRepository with Prisma queries",
+          "Zod validation schema for post data",
+          "Error handling with Sentry capture"
+        ]
+      },
+      {
+        "input": "Convert legacy callback code to async/await",
+        "output": [
+          "Updated service methods with try/catch",
+          "AsyncErrorWrapper utility usage",
+          "Sentry error capture integration",
+          "Promise.all() for parallel operations",
+          "Proper error propagation to controller"
+        ]
+      },
+      {
+        "input": "Add input validation to existing endpoint",
+        "output": [
+          "Zod schema definition with type inference",
+          "Validation in controller before service call",
+          "400 status code on validation failure",
+          "Error details in response",
+          "Test cases for invalid input"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use layered architecture: routes delegate to controllers, controllers call services, services use repositories.",
+      "Always extend BaseController for consistent error handling, breadcrumbs, and Sentry integration.",
+      "Validate all input with Zod schemas before business logic - reject invalid data early."
+    ],
+    "anti_patterns": [
+      "Never put business logic in route handlers - delegate to controllers.",
+      "Never use process.env directly - use unifiedConfig for type safety and testing.",
+      "Never skip error handling - all async operations need try/catch with Sentry capture."
+    ],
+    "faq": [
+      {
+        "question": "What architecture pattern does this skill use?",
+        "answer": "Layered architecture with routes → controllers → services → repositories separation of concerns."
+      },
+      {
+        "question": "Can this skill generate tests?",
+        "answer": "Yes, includes Jest unit and integration test patterns with mocking strategies."
+      },
+      {
+        "question": "Does this skill work with other frameworks?",
+        "answer": "Focused on Express/Node.js/TypeScript - patterns adapt to similar frameworks."
+      },
+      {
+        "question": "How does this skill handle errors?",
+        "answer": "BaseController provides handleError, handleSuccess, withTransaction, and Sentry integration."
+      },
+      {
+        "question": "Can I use this for existing codebases?",
+        "answer": "Yes, provides refactoring guides from legacy patterns to modern architecture."
+      },
+      {
+        "question": "What validation library is used?",
+        "answer": "Zod for runtime TypeScript validation with type inference from schemas."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "resources",
+      "type": "dir",
+      "path": "resources",
+      "children": [
+        {
+          "name": "architecture-overview.md",
+          "type": "file",
+          "path": "resources/architecture-overview.md",
+          "lines": 452
+        },
+        {
+          "name": "async-and-errors.md",
+          "type": "file",
+          "path": "resources/async-and-errors.md",
+          "lines": 308
+        },
+        {
+          "name": "complete-examples.md",
+          "type": "file",
+          "path": "resources/complete-examples.md",
+          "lines": 639
+        },
+        {
+          "name": "configuration.md",
+          "type": "file",
+          "path": "resources/configuration.md",
+          "lines": 276
+        },
+        {
+          "name": "database-patterns.md",
+          "type": "file",
+          "path": "resources/database-patterns.md",
+          "lines": 225
+        },
+        {
+          "name": "middleware-guide.md",
+          "type": "file",
+          "path": "resources/middleware-guide.md",
+          "lines": 214
+        },
+        {
+          "name": "routing-and-controllers.md",
+          "type": "file",
+          "path": "resources/routing-and-controllers.md",
+          "lines": 757
+        },
+        {
+          "name": "sentry-and-monitoring.md",
+          "type": "file",
+          "path": "resources/sentry-and-monitoring.md",
+          "lines": 337
+        },
+        {
+          "name": "services-and-repositories.md",
+          "type": "file",
+          "path": "resources/services-and-repositories.md",
+          "lines": 790
+        },
+        {
+          "name": "testing-guide.md",
+          "type": "file",
+          "path": "resources/testing-guide.md",
+          "lines": 236
+        },
+        {
+          "name": "validation-patterns.md",
+          "type": "file",
+          "path": "resources/validation-patterns.md",
+          "lines": 755
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 303
+    }
+  ]
+}

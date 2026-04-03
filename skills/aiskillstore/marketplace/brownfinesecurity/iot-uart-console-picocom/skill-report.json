@@ -1,0 +1,241 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:59:22.436Z",
+    "slug": "brownfinesecurity-iot-uart-console-picocom",
+    "source_url": "https://github.com/BrownFineSecurity/picocom-claude-skill/tree/master/.claude/skills/picocom",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "256f71f2da9961dfc2576b6a149eac361f098729fc7882a252a9d54afb1602fb",
+    "tree_hash": "77ed060424ac2f134dc40a60ff0de0dfbb19c622b80c4b4aef47ab10cb90dd7c"
+  },
+  "skill": {
+    "name": "iot-uart-console-picocom",
+    "description": "Use picocom to interact with IoT device UART consoles for pentesting operations including device enumeration, vulnerability discovery, bootloader manipulation, and gaining root shells. Use when the user needs to interact with embedded devices, IoT hardware, or serial consoles.",
+    "summary": "Use picocom to interact with IoT device UART consoles for pentesting operations including device enu...",
+    "icon": "🔌",
+    "version": "1.0.0",
+    "author": "BrownFineSecurity",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "iot",
+      "embedded",
+      "pentesting",
+      "serial",
+      "uart"
+    ],
+    "supported_tools": [
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a legitimate security testing tool for authorized IoT device penetration testing via UART serial connections. The core implementation (serial_helper.py) uses pyserial for serial communication and logs all I/O to files. The extensive static findings are false positives: they detect pentesting documentation showing commands to run on target IoT devices via serial console, not malicious code execution on the host system. No network calls to external servers, credential theft, or host code execution capabilities were found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "serial_helper.py",
+            "line_start": 1,
+            "line_end": 518
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "serial_helper.py",
+            "line_start": 67,
+            "line_end": 76
+          },
+          {
+            "file": "serial_helper.py",
+            "line_start": 485,
+            "line_end": 486
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 640,
+            "line_end": 641
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 2275,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:59:22.436Z"
+  },
+  "content": {
+    "user_title": "Access IoT device serial consoles for security testing",
+    "value_statement": "IoT devices often expose UART serial consoles that provide direct access to firmware, bootloaders, and root shells. This skill enables security testers to connect to and interact with these consoles using picocom for authorized penetration testing and vulnerability research.",
+    "seo_keywords": [
+      "IoT UART console",
+      "picocom skill",
+      "serial console access",
+      "embedded device testing",
+      "UART penetration testing",
+      "IoT security testing",
+      "bootloader exploitation",
+      "device enumeration",
+      "Claude Code skill",
+      "embedded security"
+    ],
+    "actual_capabilities": [
+      "Connect to IoT devices via USB-to-serial adapters using picocom",
+      "Execute commands on target devices through a Python serial helper script",
+      "Detect device prompts and handle UART communication automatically",
+      "Log all serial I/O sessions for monitoring and documentation",
+      "Support for U-Boot bootloader interaction and root shell access",
+      "Batch command execution and interactive mode for flexible testing"
+    ],
+    "limitations": [
+      "Requires physical access to device UART pins via USB-to-serial adapter",
+      "Does not bypass hardware security or encrypted firmware",
+      "Authorized testing required - only test devices you own or have permission to assess",
+      "Skill does not perform automated exploitation - requires user guidance"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security researchers",
+        "title": "Firmware vulnerability research",
+        "description": "Extract and analyze firmware from IoT devices to discover security flaws and hardcoded credentials"
+      },
+      {
+        "target_user": "Penetration testers",
+        "title": "Device security assessment",
+        "description": "Conduct authorized security tests on embedded devices including privilege escalation and bootloader analysis"
+      },
+      {
+        "target_user": "Hardware hackers",
+        "title": "Device root shell access",
+        "description": "Gain shell access to IoT devices for debugging, customization, or security analysis"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic connection",
+        "scenario": "Connect to IoT device",
+        "prompt": "Connect to my IoT device at /dev/ttyUSB0 with 115200 baud and enumerate the system"
+      },
+      {
+        "title": "With logging",
+        "scenario": "Monitor session activity",
+        "prompt": "Run serial commands with logging to /tmp/device_enum.log so I can monitor the session in another terminal"
+      },
+      {
+        "title": "Bootloader access",
+        "scenario": "Access U-Boot bootloader",
+        "prompt": "Connect to the device and help me interrupt the boot process to access the U-Boot bootloader console"
+      },
+      {
+        "title": "Batch enumeration",
+        "scenario": "Automated device checks",
+        "prompt": "Run a batch of enumeration commands including uname, ifconfig, ps, and check for SUID binaries"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Connect to the IoT device and enumerate system information",
+        "output": [
+          "Connected to /dev/ttyUSB0 at 115200 baud",
+          "Detected prompt: User@[^>]+>",
+          "System information:",
+          "- Kernel: Linux 3.10.14 #1 SMP PREEMPT",
+          "- BusyBox available with 212 commands",
+          "- User: root (UID 0)",
+          "- Network: eth0 at 192.168.1.27"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use session logging to monitor serial I/O activity in real-time",
+      "Document all commands and findings for penetration testing reports",
+      "Verify you have explicit authorization before testing any device"
+    ],
+    "anti_patterns": [
+      "Do not test devices without proper authorization - this is illegal",
+      "Avoid making permanent modifications without backing up original configurations",
+      "Do not rely on default credentials as the only access method"
+    ],
+    "faq": [
+      {
+        "question": "What baud rate should I use?",
+        "answer": "115200 is the most common baud rate for IoT devices. Try 57600, 38400, 19200, or 9600 if output appears garbled."
+      },
+      {
+        "question": "How do I monitor what Claude is doing?",
+        "answer": "Use the --logfile option to write all I/O to a file, then run tail -f in another terminal to watch in real-time."
+      },
+      {
+        "question": "Is this skill safe to use?",
+        "answer": "Yes. The skill logs all activity and does not execute commands automatically. All commands require user approval."
+      },
+      {
+        "question": "What serial devices are supported?",
+        "answer": "The skill supports /dev/ttyUSB*, /dev/ttyACM*, and /dev/ttyS* device files for USB-to-serial adapters and built-in ports."
+      },
+      {
+        "question": "Does this work with all IoT devices?",
+        "answer": "Only devices with accessible UART console pins. Some devices may have protected bootloaders or require physical pin connection."
+      },
+      {
+        "question": "How is this different from other serial tools?",
+        "answer": "This skill provides a Python helper script with prompt detection, output cleaning, and session logging for reliable automation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples.md",
+      "type": "file",
+      "path": "examples.md",
+      "lines": 489
+    },
+    {
+      "name": "OBSERVING_SESSIONS.md",
+      "type": "file",
+      "path": "OBSERVING_SESSIONS.md",
+      "lines": 371
+    },
+    {
+      "name": "serial_helper.py",
+      "type": "file",
+      "path": "serial_helper.py",
+      "lines": 518
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 659
+    }
+  ]
+}

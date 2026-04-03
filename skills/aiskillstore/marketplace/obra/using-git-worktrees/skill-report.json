@@ -1,0 +1,228 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:52:19.756Z",
+    "slug": "obra-using-git-worktrees",
+    "source_url": "https://github.com/obra/superpowers/tree/main/skills/using-git-worktrees",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cb257781be507967bdee3c219d42f8e1a8694f86cab623bf769bd590d7f1a92d",
+    "tree_hash": "b91037bce50bd45232a3be4a7e079494dad8cd1634911c5f10eb6af1e4787297"
+  },
+  "skill": {
+    "name": "using-git-worktrees",
+    "description": "Use when starting feature work that needs isolation from current workspace or before executing implementation plans - creates isolated git worktrees with smart directory selection and safety verification",
+    "summary": "Use when starting feature work that needs isolation from current workspace or before executing imple...",
+    "icon": "🌳",
+    "version": "1.0.0",
+    "author": "obra",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "git",
+      "worktrees",
+      "isolation",
+      "branching"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is legitimate Git worktree management documentation. All 53 static findings are FALSE POSITIVES. The patterns detected (shell commands, filesystem paths) are standard git operations with hardcoded arguments in documentation format. The 'C2 keywords' alerts are triggered by common computing terms like 'command' and 'control' in version control context. The 'weak cryptographic algorithm' alerts misinterpret text content (SHA256 hashes, words like 'encrypt') as code. This skill teaches safe git practices with proper safety verification using git check-ignore.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 218
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 99
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 180
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 425,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:52:19.756Z"
+  },
+  "content": {
+    "user_title": "Create isolated git workspaces",
+    "value_statement": "Develop multiple features in parallel without git branch switching. This skill creates clean, isolated worktrees with automatic project setup and test baseline verification.",
+    "seo_keywords": [
+      "git worktrees",
+      "claude",
+      "claude-code",
+      "codex",
+      "isolated workspace",
+      "git branching",
+      "parallel development",
+      "feature isolation",
+      "git"
+    ],
+    "actual_capabilities": [
+      "Create isolated git worktrees in project-local or global directories",
+      "Auto-detect worktree directory from CLAUDE.md or user preference",
+      "Verify worktree directories are gitignored before creation",
+      "Auto-run project setup commands based on detected project type",
+      "Run test baseline verification after worktree creation",
+      "Report worktree location and test status for feature implementation"
+    ],
+    "limitations": [
+      "Requires git 2.5+ for worktree support",
+      "Cannot create worktrees from bare repositories",
+      "Global directory requires ~/.config/superpowers/worktrees to exist",
+      "Project setup assumes standard file patterns (package.json, Cargo.toml, go.mod)"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Coding Assistants",
+        "title": "Parallel Feature Development",
+        "description": "Work on multiple features simultaneously with clean isolation between workspaces"
+      },
+      {
+        "target_user": "Code Reviewers",
+        "title": "Isolated Review Branches",
+        "description": "Create temporary worktrees to test pull requests without affecting main workspace"
+      },
+      {
+        "target_user": "Development Teams",
+        "title": "Consistent Branch Setup",
+        "description": "Standardize worktree creation with automated setup and safety verification"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Worktree",
+        "scenario": "Start a new feature",
+        "prompt": "Create an isolated git worktree for implementing the login feature"
+      },
+      {
+        "title": "With Setup",
+        "scenario": "Start feature with auto-setup",
+        "prompt": "Set up a worktree for the API refactor. Use the existing .worktrees directory and auto-run npm install"
+      },
+      {
+        "title": "Global Location",
+        "scenario": "Project-local not available",
+        "prompt": "Create a worktree for the hotfix in the global worktrees directory"
+      },
+      {
+        "title": "With Verification",
+        "scenario": "Full safety checks",
+        "prompt": "Create a feature branch worktree, verify it is gitignored, run npm install, and verify the test baseline passes"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an isolated worktree for the user-auth feature",
+        "output": [
+          "Worktree ready at /projects/myapp/.worktrees/user-auth",
+          "Tests passing (47 tests, 0 failures)",
+          "Ready to implement user-auth feature"
+        ]
+      },
+      {
+        "input": "Set up worktree for refactoring in global directory",
+        "output": [
+          "Worktree ready at ~/.config/superpowers/worktrees/myapp/refactor/api-cleanup",
+          "Cargo test baseline: 234 passing, 0 failures",
+          "Workspace prepared for API refactoring"
+        ]
+      },
+      {
+        "input": "Create worktree with package.json detection",
+        "output": [
+          "Detected Node.js project",
+          "Running npm install",
+          "Test baseline: 156 passing, 2 skipped",
+          "Worktree ready for feature development"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always verify worktree directories are gitignored before creation",
+      "Use project-local directories (.worktrees/) when possible for proximity",
+      "Run test baseline to ensure worktree starts in a known good state",
+      "Follow the priority: existing directories > CLAUDE.md preference > user choice"
+    ],
+    "anti_patterns": [
+      "Skipping git check-ignore verification for project-local directories",
+      "Proceeding with worktree creation when tests fail without user consent",
+      "Hardcoding setup commands instead of auto-detecting project type",
+      "Assuming directory location without checking existing conventions"
+    ],
+    "faq": [
+      {
+        "question": "What is a git worktree?",
+        "answer": "Git worktrees create additional working trees that share the same repository, allowing parallel branch work without git checkout."
+      },
+      {
+        "question": "Why use project-local over global worktrees?",
+        "answer": "Project-local keeps worktrees with the codebase. Global works across projects but requires path navigation."
+      },
+      {
+        "question": "Does this work with any git project?",
+        "answer": "Requires git 2.5+. Works with all git hosting platforms including GitHub, GitLab, Bitbucket."
+      },
+      {
+        "question": "What happens if tests fail?",
+        "answer": "Reports failures and asks whether to proceed or investigate before starting feature work."
+      },
+      {
+        "question": "How does safety verification work?",
+        "answer": "Uses git check-ignore to confirm the worktree directory is gitignored, preventing accidental commits."
+      },
+      {
+        "question": "Can I customize the worktree location?",
+        "answer": "Yes, add worktree directory preference to CLAUDE.md or choose when prompted."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 218
+    }
+  ]
+}

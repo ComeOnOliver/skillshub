@@ -1,0 +1,373 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:07:19.216Z",
+    "slug": "dyai2025-testing-anti-patterns",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/testing-anti-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "15e48cfeec95719039034643767499a8101b7513305a2b57204e248d11a79e6e",
+    "tree_hash": "4b6d427959ebde12a07c3bec1747a17135825b24be3afa9dc9ddd77775543a53"
+  },
+  "skill": {
+    "name": "testing-anti-patterns",
+    "description": "Use when writing or changing tests, adding mocks, or tempted to add test-only methods to production code - prevents testing mock behavior, production pollution with test-only methods, and mocking without understanding dependencies",
+    "summary": "Use when writing or changing tests, adding mocks, or tempted to add test-only methods to production ...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "testing",
+      "tdd",
+      "mocking",
+      "best-practices",
+      "quality"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown guidance and TypeScript code examples about testing best practices. No executable code exists. All 50 static findings are false positives caused by the analyzer incorrectly flagging documentation text, code examples in markdown, and metadata fields as security issues. The skill cannot perform any actions that could pose security risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 178
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 203
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 234
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 234,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 246
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 246,
+            "line_end": 252
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 252,
+            "line_end": 289
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 485,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:07:19.216Z"
+  },
+  "content": {
+    "user_title": "Prevent Testing Anti-Patterns with TDD",
+    "value_statement": "Developers waste time writing tests that verify mocks instead of real behavior. This skill prevents five common testing anti-patterns by enforcing TDD principles and providing gate functions before each test decision.",
+    "seo_keywords": [
+      "testing anti-patterns",
+      "TDD",
+      "mock testing",
+      "Claude Code",
+      "test-driven development",
+      "software testing",
+      "mock behavior",
+      "integration tests",
+      "Claude testing",
+      "test best practices"
+    ],
+    "actual_capabilities": [
+      "Identifies 5 major testing anti-patterns with code examples",
+      "Provides gate functions to prevent anti-pattern decisions",
+      "Enforces TDD principles to avoid mock testing",
+      "Documents real vs mock behavior testing strategies",
+      "Includes TypeScript/JavaScript test examples",
+      "Guides refactoring of mock-heavy tests to real behavior"
+    ],
+    "limitations": [
+      "Only covers testing anti-patterns, not general testing",
+      "Examples focused on React/TypeScript testing",
+      "Requires understanding of mocking concepts",
+      "No automated enforcement, only guidance"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Fix React component testing",
+        "description": "Stop testing mock components and start testing real React component behavior with proper isolation strategies."
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "Clean up test-only code",
+        "description": "Remove test-only methods from production classes and move cleanup logic to proper test utilities."
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Establish testing standards",
+        "description": "Set team guidelines that prevent mock-heavy tests and promote integration testing where appropriate."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Review test for anti-patterns",
+        "scenario": "Before committing test code",
+        "prompt": "Review this test for anti-patterns: testing mock behavior, test-only methods, or mocking without understanding. Suggest improvements following TDD principles."
+      },
+      {
+        "title": "Fix mock-heavy tests",
+        "scenario": "Tests have too many mocks",
+        "prompt": "These tests are mostly mock setup. Help refactor to test real behavior or suggest if integration tests would be simpler."
+      },
+      {
+        "title": "Design test strategy",
+        "scenario": "Planning new feature tests",
+        "prompt": "Design a test strategy for this feature that avoids anti-patterns. What should we mock vs test with real implementations?"
+      },
+      {
+        "title": "Audit existing tests",
+        "scenario": "Legacy test cleanup",
+        "prompt": "Audit these test files for the five anti-patterns. Identify specific violations and provide refactoring examples."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review this test for anti-patterns: test('sidebar renders', () => { render(<Page />); expect(screen.getByTestId('sidebar-mock')).toBeInTheDocument(); });",
+        "output": [
+          "Found Anti-Pattern: Testing Mock Behavior",
+          "Problem: Asserting on mock element with test ID 'sidebar-mock'",
+          "Fix: Test real sidebar behavior instead",
+          "Solution: expect(screen.getByRole('navigation')).toBeInTheDocument()",
+          "Alternative: Remove mock and test actual Page component"
+        ]
+      },
+      {
+        "input": "These tests fail when I remove mocks. What is wrong?",
+        "output": [
+          "Root Cause: Tests are coupled to mock implementation details",
+          "Issue: Tests verify mock behavior, not real component behavior",
+          "Fix: Identify what real behavior the test should verify",
+          "Suggestion: Consider integration tests with real components",
+          "Consider: Refactor code to better isolate dependencies"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always test real behavior first, add mocks only when necessary for isolation",
+      "Run tests with real implementations before adding any mocks",
+      "Move test-only code to separate test utilities, never in production classes"
+    ],
+    "anti_patterns": [
+      "Testing that mocks exist rather than testing component behavior",
+      "Adding methods to production classes that are only used by tests",
+      "Creating partial mocks that don't mirror real API structures completely"
+    ],
+    "faq": [
+      {
+        "question": "Is this skill compatible with all testing frameworks?",
+        "answer": "Yes, the principles apply to Jest, Vitest, Mocha, and any framework using mocks. Examples use React Testing Library syntax."
+      },
+      {
+        "question": "What are the limitations of this approach?",
+        "answer": "Focuses on JavaScript/TypeScript testing. Requires understanding of mocking concepts and TDD principles for full benefit."
+      },
+      {
+        "question": "How does this integrate with existing test suites?",
+        "answer": "Use it to audit and refactor existing tests. Apply gate functions before writing new tests to prevent anti-patterns from the start."
+      },
+      {
+        "question": "Is my test data safe when using this skill?",
+        "answer": "Yes, this is documentation-only skill with no code execution. It only provides guidance and examples for writing better tests."
+      },
+      {
+        "question": "My tests keep breaking when I remove mocks. What should I do?",
+        "answer": "This indicates missing abstractions or overly coupled code. Consider integration tests or refactor to better isolate external dependencies."
+      },
+      {
+        "question": "How is this different from general testing best practices?",
+        "answer": "This skill specifically targets the five most common anti-patterns that even experienced developers create when not following TDD strictly."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 303
+    },
+    {
+      "name": "SKILL.zip",
+      "type": "file",
+      "path": "SKILL.zip"
+    }
+  ]
+}

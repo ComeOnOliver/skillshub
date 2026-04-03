@@ -1,0 +1,267 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:58:13.036Z",
+    "slug": "abejitsu-validate-requirements",
+    "source_url": "https://github.com/AbeJitsu/Game-Settings-Panel/tree/main/.claude/skills/validate-requirements",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bb0c3bf726530211700c06e56fa54349a5a65914a343981e3ec0a16c3c3eb2a4",
+    "tree_hash": "0389a834cf094226a858348fe618c0efd66d04bc84e3ae0b72b06852e401d99a"
+  },
+  "skill": {
+    "name": "validate-requirements",
+    "description": "Validate that input meets prerequisites based on the user's saved standards for the project type. Use at the start of any quality pipeline to ensure the user has provided sufficient requirements.",
+    "summary": "Validate that input meets prerequisites based on the user's saved standards for the project type. Us...",
+    "icon": "✓",
+    "version": "1.0.0",
+    "author": "AbeJitsu",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "validation",
+      "requirements",
+      "quality",
+      "standards",
+      "input-checking"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill with no executable code. Contains only markdown documentation defining how an AI should validate user input requirements. All 26 static findings are false positives: markdown code fences were misidentified as shell backticks, variable names with 'Rules' were flagged as crypto algorithms, and the GitHub source URL was flagged as hardcoded network address. Previous audit correctly classified this as safe with no dangerous patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 126
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 314,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:58:13.036Z"
+  },
+  "content": {
+    "user_title": "Validate requirements before generation",
+    "value_statement": "Poor requirements lead to poor outputs. This skill checks user input for completeness, clarity, and standards alignment before work begins. It acts as the first gate in a quality pipeline.",
+    "seo_keywords": [
+      "validate requirements",
+      "input validation",
+      "requirements checking",
+      "quality gate",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "standards validation",
+      "project prerequisites",
+      "input quality"
+    ],
+    "actual_capabilities": [
+      "Check input completeness against project standards",
+      "Verify requirements clarity and specificity",
+      "Validate expected formats and required context",
+      "Scan for missing critical information",
+      "Return structured validation results with actionable feedback"
+    ],
+    "limitations": [
+      "Does not modify or generate code itself",
+      "Cannot access external APIs or services",
+      "Relies on user having saved standards configuration",
+      "Provides validation only, does not perform the actual task"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Project managers",
+        "title": "Validate feature requests",
+        "description": "Ensure user stories and feature requests contain enough detail for development teams to act on."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Check code generation prompts",
+        "description": "Verify prompts include necessary context, constraints, and examples before code generation begins."
+      },
+      {
+        "target_user": "Content creators",
+        "title": "Validate content briefs",
+        "description": "Confirm content requests include topic, audience, format, and key points before writing starts."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic validation",
+        "scenario": "Validate any input",
+        "prompt": "Use validate-requirements to check if my input has enough information to proceed. Report any missing details."
+      },
+      {
+        "title": "Project-specific",
+        "scenario": "Check against project standards",
+        "prompt": "Validate my requirements against the project type standards. Tell me what I need to add or clarify."
+      },
+      {
+        "title": "Code request",
+        "scenario": "Validate code generation request",
+        "prompt": "Check if my code request includes: purpose, inputs, outputs, constraints, and examples. Suggest what is missing."
+      },
+      {
+        "title": "Content brief",
+        "scenario": "Validate content request",
+        "prompt": "Review my content brief for completeness: topic, audience, format, length, and key points to cover."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a dropdown component",
+        "output": [
+          "Status: Invalid",
+          "Issues found:",
+          "- Missing component purpose (where will it be used?)",
+          "- No props specified",
+          "- No behavior details (keyboard nav, open/close, etc.)",
+          "Recommendation: Ask user to provide more detail before generating"
+        ]
+      },
+      {
+        "input": "Write a blog post about AI",
+        "output": [
+          "Status: Invalid",
+          "Issues found:",
+          "- No specific AI topic mentioned",
+          "- Target audience not specified",
+          "- Required length not indicated",
+          "- No key points to cover"
+        ]
+      },
+      {
+        "input": "Create a REST API for user management with JWT authentication, POST and GET endpoints, input validation, and error handling",
+        "output": [
+          "Status: Valid",
+          "Issues: None",
+          "Summary: Requirements are clear, specific, and complete"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use this skill at the start of any quality pipeline to catch issues early",
+      "Be specific about what is missing rather than just marking as invalid",
+      "Ask clarifying questions when input is close to valid"
+    ],
+    "anti_patterns": [
+      "Skipping validation when you think requirements are obvious",
+      "Accepting vague inputs like fix this or improve that",
+      "Rejecting input without explaining what specific information is needed"
+    ],
+    "faq": [
+      {
+        "question": "What project types are supported?",
+        "answer": "Any project type with saved standards. The skill checks against standards.json for validation rules."
+      },
+      {
+        "question": "What happens if no standards exist?",
+        "answer": "The skill performs general validation to determine if enough information exists to proceed."
+      },
+      {
+        "question": "Can I integrate this with other skills?",
+        "answer": "Yes. Place it as the first step in a pipeline. It outputs structured results other skills can consume."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. This skill only reads user input and standards files. No data is sent externally."
+      },
+      {
+        "question": "Why was my input marked invalid?",
+        "answer": "The validation result includes specific issues. Review the issues array for what is missing."
+      },
+      {
+        "question": "How is this different from regular prompting?",
+        "answer": "It enforces consistent quality gates across all requests using your predefined project standards."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 134
+    }
+  ]
+}

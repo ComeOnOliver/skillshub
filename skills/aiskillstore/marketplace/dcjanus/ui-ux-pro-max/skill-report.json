@@ -1,0 +1,375 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:16:30.552Z",
+    "slug": "dcjanus-ui-ux-pro-max",
+    "source_url": "https://github.com/DCjanus/prompts/tree/master/skills/ui-ux-pro-max",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "032242592e2029e9b1eff9309d22c63d0a437fa420fdf8834c3b26efb19cd0be",
+    "tree_hash": "bbee40d9b2ca9ee56209817ebf11b51873fe69213829d16ac849fa76205ede6e"
+  },
+  "skill": {
+    "name": "ui-ux-pro-max",
+    "description": "UI/UX 设计情报库：50 种风格、21 套配色、50 组字体搭配、20 类图表、8 个技术栈（React、Next.js、Vue、Svelte、SwiftUI、React Native、Flutter、Tailwind）。动作：plan、build、create、design、implement、review、fix、improve、optimize、enhance、refactor、check UI/UX code。项目：website、landing page、dashboard、admin panel、e-commerce、SaaS、portfolio、blog、mobile app、.html、.tsx、.vue、.svelte。元素：button、modal、navbar、sidebar、card、table、form、chart。风格：glassmorphism、claymorphism、minimalism、brutalism、neumorphism、bento grid、dark mode、responsive、skeuomorphism、flat design。主题：color palette、accessibility、animation、layout、typography、font pairing、spacing、hover、shadow、gradient。",
+    "summary": "UI/UX 设计情报库：50 种风格、21 套配色、50 组字体搭配、20 类图表、8 个技术栈（React、Next.js、Vue、Svelte、SwiftUI、React Native、Flutt...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "DCjanus",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "ui-design",
+      "ux-design",
+      "frontend",
+      "design-systems",
+      "best-practices"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate UI/UX design knowledge base tool. All static findings are false positives caused by the scanner misidentifying design-related content. Hex color codes are misclassified as 'weak cryptographic algorithms', design terminology like 'controlled inputs' and 'monitoring' trigger false security keywords, and Google Fonts URLs are legitimate external references for a design resource.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "data/typography.csv",
+            "line_start": 2,
+            "line_end": 58
+          },
+          {
+            "file": "data/stacks/react.csv",
+            "line_start": 2,
+            "line_end": 55
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/core.py",
+            "line_start": 144,
+            "line_end": 148
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Google Fonts URLs in typography data files",
+        "description": "External Google Fonts URLs are present in typography data files. This is a legitimate design resource for font pairing recommendations.",
+        "locations": [
+          {
+            "file": "data/typography.csv",
+            "line_start": 2,
+            "line_end": 58
+          }
+        ]
+      },
+      {
+        "title": "Documentation URLs in framework guidelines",
+        "description": "External documentation URLs are present in framework CSV files. This is legitimate learning content for framework best practices.",
+        "locations": [
+          {
+            "file": "data/stacks/react.csv",
+            "line_start": 2,
+            "line_end": 55
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 21,
+    "total_lines": 1752,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:16:30.552Z"
+  },
+  "content": {
+    "user_title": "Generate professional UI/UX designs",
+    "value_statement": "Developers and designers need consistent, accessible, and visually appealing interfaces but lack comprehensive design knowledge. UI/UX Pro Max provides instant access to 50+ design styles, color palettes, typography pairings, and framework-specific best practices through simple keyword searches.",
+    "seo_keywords": [
+      "ui-design",
+      "ux-design",
+      "claude",
+      "codex",
+      "claude-code",
+      "tailwind",
+      "react",
+      "glassmorphism",
+      "design-system"
+    ],
+    "actual_capabilities": [
+      "Search and recommend UI design styles for any product type",
+      "Provide color palettes with hex codes for specific industries",
+      "Suggest typography pairings with Google Fonts imports",
+      "Recommend chart types and libraries for data visualization",
+      "Generate landing page patterns optimized for conversion",
+      "Provide framework-specific best practices for React, Vue, Next.js, and more"
+    ],
+    "limitations": [
+      "Does not generate actual code implementations - only provides design guidance",
+      "Does not validate accessibility compliance of user code",
+      "Does not access external design resources beyond embedded Google Fonts URLs",
+      "Search results are limited to pre-defined knowledge base content"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend Developers",
+        "title": "Implement design systems",
+        "description": "Quickly find framework-specific patterns and styling guidelines for consistent component development."
+      },
+      {
+        "target_user": "Product Designers",
+        "title": "Choose visual styles",
+        "description": "Discover appropriate design styles and color palettes for different product types and industries."
+      },
+      {
+        "target_user": "SaaS Founders",
+        "title": "Build landing pages",
+        "description": "Get conversion-optimized landing page patterns with color strategies and section ordering."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic design query",
+        "scenario": "Find color palette",
+        "prompt": "Find a color palette for a healthcare mobile app"
+      },
+      {
+        "title": "Framework guidance",
+        "scenario": "React best practices",
+        "prompt": "Show me React performance best practices for large lists"
+      },
+      {
+        "title": "Landing page pattern",
+        "scenario": "Conversion optimization",
+        "prompt": "Get a hero-centric landing page pattern for a B2B service"
+      },
+      {
+        "title": "Complete design system",
+        "scenario": "Full stack recommendation",
+        "prompt": "Give me a complete design system for a fintech dashboard including colors, typography, and UI style"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What color palette works for a luxury e-commerce brand?",
+        "output": [
+          "Primary: #1C1917 (Warm black)",
+          "Secondary: #44403C (Neutral brown)",
+          "CTA: #CA8A04 (Gold accent)",
+          "Background: #FAFAF9 (Off-white)",
+          "Notes: Premium colors with minimal accent, elegant and sophisticated aesthetic"
+        ]
+      },
+      {
+        "input": "What React pattern should I use for a form with complex state?",
+        "output": [
+          "Recommendation: useReducer for complex state",
+          "Do: Use reducer pattern when state has multiple related sub-values",
+          "Don't: Use multiple useState calls that update together",
+          "Example: useReducer(reducer, initialState)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Combine multiple search domains for comprehensive results (style + color + typography)",
+      "Use specific industry keywords to get targeted recommendations",
+      "Always check the UX guidelines domain to avoid common usability mistakes",
+      "Match the recommended UI style to your product type for cohesive design"
+    ],
+    "anti_patterns": [
+      "Using inconsistent color schemes across different sections",
+      "Ignoring accessibility guidelines when choosing styles",
+      "Applying decorative styles to functional elements",
+      "Forgetting to consider dark mode requirements"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill generate actual code?",
+        "answer": "No. The skill provides design recommendations and guidelines. You apply these to your own code."
+      },
+      {
+        "question": "Can I use the color palettes in commercial projects?",
+        "answer": "Yes. All hex color codes are provided for direct use in web and mobile projects."
+      },
+      {
+        "question": "Which frameworks are supported?",
+        "answer": "React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, and HTML with Tailwind."
+      },
+      {
+        "question": "How do I find the right design style?",
+        "answer": "Search by product type (e.g., fintech, healthcare) or desired aesthetic (e.g., minimalism, glassmorphism)."
+      },
+      {
+        "question": "Are accessibility guidelines included?",
+        "answer": "Yes. Each style and framework guideline includes accessibility considerations and WCAG notes."
+      },
+      {
+        "question": "How do I get Google Fonts URLs?",
+        "answer": "Search the typography domain to get font pairings with ready-to-use Google Fonts import statements."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "data",
+      "type": "dir",
+      "path": "data",
+      "children": [
+        {
+          "name": "stacks",
+          "type": "dir",
+          "path": "data/stacks",
+          "children": [
+            {
+              "name": "flutter.csv",
+              "type": "file",
+              "path": "data/stacks/flutter.csv",
+              "lines": 54
+            },
+            {
+              "name": "html-tailwind.csv",
+              "type": "file",
+              "path": "data/stacks/html-tailwind.csv",
+              "lines": 57
+            },
+            {
+              "name": "nextjs.csv",
+              "type": "file",
+              "path": "data/stacks/nextjs.csv",
+              "lines": 54
+            },
+            {
+              "name": "react-native.csv",
+              "type": "file",
+              "path": "data/stacks/react-native.csv",
+              "lines": 53
+            },
+            {
+              "name": "react.csv",
+              "type": "file",
+              "path": "data/stacks/react.csv",
+              "lines": 55
+            },
+            {
+              "name": "svelte.csv",
+              "type": "file",
+              "path": "data/stacks/svelte.csv",
+              "lines": 55
+            },
+            {
+              "name": "swiftui.csv",
+              "type": "file",
+              "path": "data/stacks/swiftui.csv",
+              "lines": 52
+            },
+            {
+              "name": "vue.csv",
+              "type": "file",
+              "path": "data/stacks/vue.csv",
+              "lines": 51
+            }
+          ]
+        },
+        {
+          "name": "charts.csv",
+          "type": "file",
+          "path": "data/charts.csv",
+          "lines": 26
+        },
+        {
+          "name": "colors.csv",
+          "type": "file",
+          "path": "data/colors.csv",
+          "lines": 97
+        },
+        {
+          "name": "landing.csv",
+          "type": "file",
+          "path": "data/landing.csv",
+          "lines": 31
+        },
+        {
+          "name": "products.csv",
+          "type": "file",
+          "path": "data/products.csv",
+          "lines": 97
+        },
+        {
+          "name": "prompts.csv",
+          "type": "file",
+          "path": "data/prompts.csv",
+          "lines": 25
+        },
+        {
+          "name": "styles.csv",
+          "type": "file",
+          "path": "data/styles.csv",
+          "lines": 59
+        },
+        {
+          "name": "typography.csv",
+          "type": "file",
+          "path": "data/typography.csv",
+          "lines": 58
+        },
+        {
+          "name": "ux-guidelines.csv",
+          "type": "file",
+          "path": "data/ux-guidelines.csv",
+          "lines": 100
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "core.py",
+          "type": "file",
+          "path": "scripts/core.py",
+          "lines": 237
+        },
+        {
+          "name": "search.py",
+          "type": "file",
+          "path": "scripts/search.py",
+          "lines": 62
+        }
+      ]
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "lines": 22
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 202
+    }
+  ]
+}

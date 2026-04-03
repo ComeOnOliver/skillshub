@@ -1,0 +1,342 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:30:01.364Z",
+    "slug": "davila7-citation-management",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/citation-management",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "06cb053f2a391c0c2a3f4f624d8a86d7031a71010f906019d3dbc90b99cf4d62",
+    "tree_hash": "b16277935a39c8e0a13dfac1f0ea02556ec9dd59d91244b6eec603c3e0e8dc5b"
+  },
+  "skill": {
+    "name": "citation-management",
+    "description": "Comprehensive citation management for academic research. Search Google Scholar and PubMed for papers, extract accurate metadata, validate citations, and generate properly formatted BibTeX entries. This skill should be used when you need to find papers, verify citation information, convert DOIs to BibTeX, or ensure reference accuracy in scientific writing.",
+    "summary": "Comprehensive citation management for academic research. Search Google Scholar and PubMed for papers...",
+    "icon": "📚",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "citations",
+      "academic",
+      "bibtex",
+      "research"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate academic citation management tool. All 1133 static findings are FALSE POSITIVEs. The tool makes legitimate API calls to academic services (CrossRef, PubMed, arXiv), reads credentials from environment variables (standard practice), and writes BibTeX files (expected functionality). No malicious behavior detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/search_pubmed.py",
+            "line_start": 20,
+            "line_end": 30
+          },
+          {
+            "file": "scripts/extract_metadata.py",
+            "line_start": 28,
+            "line_end": 32
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/search_pubmed.py",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1025,
+            "line_end": 1042
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/format_bibtex.py",
+            "line_start": 265,
+            "line_end": 287
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/search_pubmed.py",
+            "line_start": 28,
+            "line_end": 29
+          },
+          {
+            "file": "scripts/extract_metadata.py",
+            "line_start": 32,
+            "line_end": 32
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 15,
+    "total_lines": 8448,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:30:01.363Z"
+  },
+  "content": {
+    "user_title": "Manage academic citations with BibTeX",
+    "value_statement": "Managing citations manually is time-consuming and error-prone. This skill automates searching academic databases, extracting metadata from DOIs and PMIDs, validating citations, and generating publication-ready BibTeX entries.",
+    "seo_keywords": [
+      "citation management",
+      "BibTeX generator",
+      "Google Scholar",
+      "PubMed search",
+      "DOI to BibTeX",
+      "academic citations",
+      "research tools",
+      "Claude Code",
+      "Codex",
+      "metadata extraction"
+    ],
+    "actual_capabilities": [
+      "Search Google Scholar and PubMed with advanced filters",
+      "Extract metadata from DOI, PMID, arXiv ID, or URL",
+      "Generate and validate BibTeX entries automatically",
+      "Clean and format existing BibTeX files"
+    ],
+    "limitations": [
+      "Requires internet access for API calls to academic databases",
+      "Google Scholar search depends on third-party library availability",
+      "Does not integrate directly with reference managers like Zotero"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Graduate students",
+        "title": "Build research bibliographies",
+        "description": "Find papers, extract citations, and create properly formatted bibliographies for thesis or dissertation."
+      },
+      {
+        "target_user": "Academic researchers",
+        "title": "Validate reference accuracy",
+        "description": "Verify existing citations, check DOIs, and ensure bibliography quality before manuscript submission."
+      },
+      {
+        "target_user": "Scientific writers",
+        "title": "Automate citation workflows",
+        "description": "Streamline the process of finding, formatting, and managing citations for LaTeX documents."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick DOI conversion",
+        "scenario": "Convert a DOI to BibTeX",
+        "prompt": "Convert the DOI 10.1038/nature12345 to a properly formatted BibTeX entry."
+      },
+      {
+        "title": "Search PubMed",
+        "scenario": "Find recent papers on a topic",
+        "prompt": "Search PubMed for papers on machine learning in medical imaging published since 2020. Export the top 20 results to BibTeX format."
+      },
+      {
+        "title": "Validate bibliography",
+        "scenario": "Check citation accuracy",
+        "prompt": "Validate my bibliography file references.bib. Check for missing fields, broken DOIs, and duplicate entries. Generate a validation report."
+      },
+      {
+        "title": "Build comprehensive bibliography",
+        "scenario": "Create bibliography from search",
+        "description": "Search Google Scholar for seminal papers on transformer neural networks from 2017-2024, extract metadata for the top 50 cited papers, and generate a sorted BibTeX file.",
+        "prompt": "Search Google Scholar for seminal papers on transformer neural networks from 2017-2024, focusing on the most cited works. Extract complete metadata for the top 50 papers including DOI, author, title, journal, year, volume, pages, and citation count. Generate a sorted BibTeX file with citation keys in the format FirstAuthor2024keyword. Validate all entries for completeness and export to bibliography.bib."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Convert DOI 10.1038/s41586-021-03819-2 to BibTeX",
+        "output": [
+          "Successfully extracted metadata for: 'Highly accurate protein structure predictions for the human proteome'",
+          "Entry added to bibliography with key: 'Jumper2021",
+          "Generated BibTeX entry with all standard fields (author, title, journal, year, volume, pages, doi)"
+        ]
+      },
+      {
+        "input": "Search PubMed for COVID-19 vaccine research",
+        "output": [
+          "Found 523 papers matching your query",
+          "Top result: 'Safety and Efficacy of the COVID-19 Vaccine' - 1250 citations",
+          "Exported 50 results to covid_vaccine_research.bib",
+          "Validation: 48 valid entries, 2 missing journal fields"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate bibliographies before manuscript submission",
+      "Use DOIs instead of URLs for permanent citation links",
+      "Keep separate BibTeX files for different projects"
+    ],
+    "anti_patterns": [
+      "Manually typing BibTeX entries instead of using automated extraction",
+      "Ignoring validation warnings about broken DOIs",
+      "Using inconsistent citation key formats across a bibliography"
+    ],
+    "faq": [
+      {
+        "question": "Do I need an API key for PubMed searches?",
+        "answer": "No, but NCBI recommends one for higher rate limits. Set NCBI_API_KEY environment variable."
+      },
+      {
+        "question": "What citation styles are supported?",
+        "answer": "The tool generates standard BibTeX entries. Style formatting depends on your LaTeX document class."
+      },
+      {
+        "question": "Can I use this with LaTeX documents?",
+        "answer": "Yes, export BibTeX files and include them with \\bibliography{filename} in your document."
+      },
+      {
+        "question": "How accurate is metadata extraction?",
+        "answer": "CrossRef and PubMed provide authoritative metadata. Always spot-check extracted entries against original papers."
+      },
+      {
+        "question": "Does this work with arXiv papers?",
+        "answer": "Yes, the extract_metadata.py script supports arXiv IDs and queries the arXiv API."
+      },
+      {
+        "question": "How do I find duplicate citations?",
+        "answer": "Run validate_citations.py with --check-duplicates flag or use format_bibtex.py with --deduplicate option."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "bibtex_template.bib",
+          "type": "file",
+          "path": "assets/bibtex_template.bib",
+          "lines": 265
+        },
+        {
+          "name": "citation_checklist.md",
+          "type": "file",
+          "path": "assets/citation_checklist.md",
+          "lines": 387
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "bibtex_formatting.md",
+          "type": "file",
+          "path": "references/bibtex_formatting.md",
+          "lines": 909
+        },
+        {
+          "name": "citation_validation.md",
+          "type": "file",
+          "path": "references/citation_validation.md",
+          "lines": 795
+        },
+        {
+          "name": "google_scholar_search.md",
+          "type": "file",
+          "path": "references/google_scholar_search.md",
+          "lines": 726
+        },
+        {
+          "name": "metadata_extraction.md",
+          "type": "file",
+          "path": "references/metadata_extraction.md",
+          "lines": 871
+        },
+        {
+          "name": "pubmed_search.md",
+          "type": "file",
+          "path": "references/pubmed_search.md",
+          "lines": 840
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "doi_to_bibtex.py",
+          "type": "file",
+          "path": "scripts/doi_to_bibtex.py",
+          "lines": 205
+        },
+        {
+          "name": "extract_metadata.py",
+          "type": "file",
+          "path": "scripts/extract_metadata.py",
+          "lines": 570
+        },
+        {
+          "name": "format_bibtex.py",
+          "type": "file",
+          "path": "scripts/format_bibtex.py",
+          "lines": 350
+        },
+        {
+          "name": "search_google_scholar.py",
+          "type": "file",
+          "path": "scripts/search_google_scholar.py",
+          "lines": 283
+        },
+        {
+          "name": "search_pubmed.py",
+          "type": "file",
+          "path": "scripts/search_pubmed.py",
+          "lines": 399
+        },
+        {
+          "name": "validate_citations.py",
+          "type": "file",
+          "path": "scripts/validate_citations.py",
+          "lines": 498
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1082
+    }
+  ]
+}

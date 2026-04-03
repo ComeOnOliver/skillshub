@@ -1,0 +1,292 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:07:50.358Z",
+    "slug": "consiliency-docs-sources",
+    "source_url": "https://github.com/Consiliency/treesitter-chunker/tree/main/.ai-dev-kit/skills/docs-sources",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "63a6b1427247ac52387632b785d735c1bb40a4a32b088173ca5a1fd341d5c0f1",
+    "tree_hash": "0222e6336d8ca7a340f6241282c6ed264bc1f109ab83e49a2aa65727e744d4fc"
+  },
+  "skill": {
+    "name": "docs-sources",
+    "description": "Knowledge of documentation platforms and fetching strategies. Use when adding new documentation sources, determining fetch strategy for a docs site, detecting doc frameworks, or configuring the docs registry.",
+    "summary": "Knowledge of documentation platforms and fetching strategies. Use when adding new documentation sour...",
+    "icon": "book",
+    "version": "1.0.0",
+    "author": "Consiliency",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "documentation",
+      "fetching",
+      "framework-detection",
+      "registry"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation/knowledge skill with no executable code. All 463 static findings are FALSE POSITIVES. The scanner detected shell commands inside markdown code blocks (examples for users) and flagged them as potential security issues. There are no .py or .sh files, no actual network calls, no file system operations, and no cryptographic operations in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "cookbook/browser-strategy.md",
+            "line_start": 11,
+            "line_end": 90
+          },
+          {
+            "file": "cookbook/github-strategy.md",
+            "line_start": 11,
+            "line_end": 107
+          },
+          {
+            "file": "reference/framework-detection.md",
+            "line_start": 9,
+            "line_end": 263
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 205
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 209
+          },
+          {
+            "file": "cookbook/browser-strategy.md",
+            "line_start": 13,
+            "line_end": 106
+          },
+          {
+            "file": "reference/registry-examples.md",
+            "line_start": 12,
+            "line_end": 264
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 1741,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:07:50.358Z"
+  },
+  "content": {
+    "user_title": "Add documentation sources efficiently",
+    "value_statement": "This skill provides knowledge about 20+ documentation platforms and their fetch strategies. It helps you detect documentation frameworks, select the right fetching approach, and configure registry entries for new documentation sources.",
+    "seo_keywords": [
+      "documentation sources",
+      "docs fetching",
+      "framework detection",
+      "documentation registry",
+      "llms.txt",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Docusaurus",
+      "MkDocs",
+      "Mintlify"
+    ],
+    "actual_capabilities": [
+      "Detects 20+ documentation frameworks from config files",
+      "Selects appropriate fetch strategy based on doc platform",
+      "Provides step-by-step workflow for adding new sources",
+      "Configures registry entries for documentation sources",
+      "Maps libraries to their official documentation URLs"
+    ],
+    "limitations": [
+      "Does not execute fetch commands - provides guidance only",
+      "Does not store or cache documentation content",
+      "Requires another skill or tool to actually fetch doc content",
+      "Knowledge is framework-based, not URL-specific"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI assistant developers",
+        "title": "Add new doc sources",
+        "description": "Add new documentation sources to an AI assistant's knowledge base with correct strategy selection."
+      },
+      {
+        "target_user": "Documentation engineers",
+        "title": "Detect doc frameworks",
+        "description": "Identify documentation framework type from config files and choose optimal fetch strategy."
+      },
+      {
+        "target_user": "AI Code users",
+        "title": "Configure documentation registry",
+        "description": "Set up registry entries for custom or internal documentation with proper strategy configuration."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Add a doc source",
+        "scenario": "Adding new documentation",
+        "prompt": "I need to add documentation from {url}. Use the docs-sources skill to detect the framework and determine the best fetch strategy."
+      },
+      {
+        "title": "Detect framework",
+        "scenario": "Identifying doc type",
+        "prompt": "Help me detect what documentation framework this site uses. The URL is {url}. Check for common config files."
+      },
+      {
+        "title": "Configure registry",
+        "scenario": "Setting up registry entry",
+        "prompt": "Create a registry entry for {library_name} documentation at {url}. Use the appropriate strategy from docs-sources."
+      },
+      {
+        "title": "Debug fetch issues",
+        "scenario": "Troubleshooting fetch failures",
+        "prompt": "My curl command is returning less than 1KB for {url}. The docs-sources skill should help identify if this is JS-rendered and suggest browser automation."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Add React documentation",
+        "output": [
+          "Detected: React with llms.txt support",
+          "Strategy: llmstxt (AI-native format)",
+          "Registry: Add to docs registry with strategy 'llmstxt'",
+          "Fetch: Use llms.txt endpoint directly"
+        ]
+      },
+      {
+        "input": "What framework is this",
+        "output": [
+          "Found: mint.json config file",
+          "Framework: Mintlify",
+          "Strategy: github_raw (preferred)",
+          "Config: Fetch from repo root at mint.json"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always check for AI-native docs (llms.txt) before other strategies",
+      "Prefer raw GitHub content over web scraping when repo is available",
+      "Test fetch with curl before using browser automation",
+      "Use browser automation only when curl returns incomplete data"
+    ],
+    "anti_patterns": [
+      "Using web crawl for docs with llms.txt available",
+      "Skipping framework detection and using wrong strategy",
+      "Fetching rendered HTML when raw markdown is available",
+      "Using browser automation without trying curl first"
+    ],
+    "faq": [
+      {
+        "question": "What strategies does this skill support?",
+        "answer": "Supports llmstxt, github_raw, openapi, web_sitemap, browser_crawl, and web_crawl strategies."
+      },
+      {
+        "question": "How do I add a new documentation source?",
+        "answer": "Identify the URL, detect the framework, select strategy, configure registry entry, validate fetch works."
+      },
+      {
+        "question": "What is the priority order?",
+        "answer": "First check llms.txt, then GitHub raw, then OpenAPI, then sitemap, then browser automation as last resort."
+      },
+      {
+        "question": "Does this skill fetch content?",
+        "answer": "No, this skill provides knowledge and guidance. Another skill or tool is needed to actually fetch content."
+      },
+      {
+        "question": "How does framework detection work?",
+        "answer": "Checks for config files like docs.yml, docusaurus.config.js, mkdocs.yml, mint.json based on framework patterns."
+      },
+      {
+        "question": "What if curl fails?",
+        "answer": "Check response size. If less than 1KB, site is likely JS-rendered. Use browser automation strategy as fallback."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "cookbook",
+      "type": "dir",
+      "path": "cookbook",
+      "children": [
+        {
+          "name": "browser-strategy.md",
+          "type": "file",
+          "path": "cookbook/browser-strategy.md",
+          "lines": 156
+        },
+        {
+          "name": "github-strategy.md",
+          "type": "file",
+          "path": "cookbook/github-strategy.md",
+          "lines": 164
+        },
+        {
+          "name": "llmstxt-strategy.md",
+          "type": "file",
+          "path": "cookbook/llmstxt-strategy.md",
+          "lines": 86
+        },
+        {
+          "name": "openapi-strategy.md",
+          "type": "file",
+          "path": "cookbook/openapi-strategy.md",
+          "lines": 157
+        },
+        {
+          "name": "sitemap-strategy.md",
+          "type": "file",
+          "path": "cookbook/sitemap-strategy.md",
+          "lines": 155
+        }
+      ]
+    },
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "reference",
+      "children": [
+        {
+          "name": "framework-detection.md",
+          "type": "file",
+          "path": "reference/framework-detection.md",
+          "lines": 265
+        },
+        {
+          "name": "registry-examples.md",
+          "type": "file",
+          "path": "reference/registry-examples.md",
+          "lines": 310
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 221
+    }
+  ]
+}

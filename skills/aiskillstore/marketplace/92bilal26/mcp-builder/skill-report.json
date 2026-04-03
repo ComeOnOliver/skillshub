@@ -1,0 +1,322 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:44:28.513Z",
+    "slug": "92bilal26-mcp-builder",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/mcp-builder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c0bd02483acbb365fbbc2370e6b68beba048e5267398a27ceb7332f6cc29b008",
+    "tree_hash": "410f66f34072b2dbffd3a3a91572d50c92d14eb8561a79a088dbae2bda7a3600"
+  },
+  "skill": {
+    "name": "mcp-builder",
+    "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+    "summary": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact wi...",
+    "icon": "🔧",
+    "version": "1.0.0",
+    "author": "92Bilal26",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "coding",
+    "tags": [
+      "mcp",
+      "api-integration",
+      "python",
+      "typescript",
+      "development-tools"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate documentation and development guide skill for building MCP servers. The Python scripts (connections.py, evaluation.py) are development tools for testing user-created MCP servers. Network access is limited to Anthropic API and local MCP server connections. Environment variables are used securely for API key management. All capabilities align with the stated purpose.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 1,
+            "line_end": 374
+          },
+          {
+            "file": "scripts/connections.py",
+            "line_start": 1,
+            "line_end": 152
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 43
+          },
+          {
+            "file": "reference/python_mcp_server.md",
+            "line_start": 42,
+            "line_end": 43
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 340,
+            "line_end": 344
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "reference/evaluation.md",
+            "line_start": 430,
+            "line_end": 436
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 144
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 3863,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:44:28.513Z"
+  },
+  "content": {
+    "user_title": "Build MCP servers for LLM tool integration",
+    "value_statement": "This guide helps developers create high-quality MCP servers that enable AI models to interact with external APIs and services. Covers Python FastMCP and TypeScript SDK patterns with best practices for tool design.",
+    "seo_keywords": [
+      "mcp server",
+      "model context protocol",
+      "claude integration",
+      "api integration",
+      "python fastmcp",
+      "typescript mcp",
+      "codex tools",
+      "claude-code development",
+      "llm tools",
+      "mcp sdk"
+    ],
+    "actual_capabilities": [
+      "Guides MCP server project setup for Python and TypeScript",
+      "Provides tool implementation patterns with Pydantic and Zod validation",
+      "Includes evaluation framework for testing MCP server effectiveness",
+      "Documents MCP protocol specification and transport mechanisms",
+      "Covers best practices for tool naming, pagination, and error handling"
+    ],
+    "limitations": [
+      "Does not execute user code - provides guidance only",
+      "Does not access external APIs directly - documents integration patterns",
+      "Requires users to implement their own MCP server code",
+      "Evaluation scripts require Anthropic API key for testing"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Developers",
+        "title": "Integrate external APIs",
+        "description": "Build MCP servers that expose external APIs as tools for AI models to use in tasks."
+      },
+      {
+        "target_user": "Platform Engineers",
+        "title": "Standardize LLM tool interfaces",
+        "description": "Create consistent, well-documented MCP servers for internal services and APIs."
+      },
+      {
+        "target_user": "ML Engineers",
+        "title": "Test MCP server quality",
+        "description": "Use evaluation framework to assess whether AI models can effectively use your MCP server."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create MCP Server",
+        "scenario": "Build new MCP integration",
+        "prompt": "Help me create an MCP server for [SERVICE_NAME] API. Use [Python/TypeScript]. The API has endpoints for [LIST KEY OPERATIONS]."
+      },
+      {
+        "title": "Add New Tool",
+        "scenario": "Extend existing MCP server",
+        "prompt": "Add a new tool called [TOOL_NAME] to my existing [LANGUAGE] MCP server. It should [DESCRIPTION OF FUNCTIONALITY]."
+      },
+      {
+        "title": "Improve Documentation",
+        "scenario": "Enhance tool descriptions",
+        "prompt": "Review my MCP server tools and improve the descriptions for clarity. Current tools: [LIST TOOLS]."
+      },
+      {
+        "title": "Create Evaluation",
+        "scenario": "Test MCP server quality",
+        "prompt": "Create 10 evaluation questions for my [SERVICE] MCP server that test whether AI models can answer complex questions using the available tools."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an MCP server for GitHub integration using Python FastMCP",
+        "output": [
+          "Project structure with src/tools/ and src/services/ directories",
+          "Tool implementation with @mcp.tool decorator and Pydantic models",
+          "Authentication setup using environment variables",
+          "Example tools: list_repos, create_issue, search_code"
+        ]
+      },
+      {
+        "input": "Build a TypeScript MCP server for Slack with proper error handling",
+        "output": [
+          "McpServer initialization with version and name",
+          "Zod schemas for input validation with descriptions",
+          "Error handling with actionable error messages",
+          "Transport configuration for stdio or HTTP"
+        ]
+      },
+      {
+        "input": "Create evaluation questions for my JIRA MCP server",
+        "output": [
+          "Question: Find all high-priority bugs created last month with no assignee",
+          "Question: Count open issues by label in project [NAME]",
+          "Question: Identify the most active reviewers in Q4 2024"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use descriptive tool names with service prefixes like github_create_issue to avoid conflicts",
+      "Implement pagination with limit parameters to avoid overwhelming AI context windows",
+      "Return both structured JSON data and human-readable Markdown responses"
+    ],
+    "anti_patterns": [
+      "Avoid generic tool names like get_data that lack service context",
+      "Do not return excessive data without pagination or filtering options",
+      "Avoid vague error messages that do not suggest next steps"
+    ],
+    "faq": [
+      {
+        "question": "What programming languages does this skill support?",
+        "answer": "Python FastMCP and TypeScript MCP SDK are fully documented. Other languages may work but lack guidance."
+      },
+      {
+        "question": "Do I need an API key to use this skill?",
+        "answer": "No API key is needed to read the guides. Testing MCP servers with the evaluation script requires an Anthropic API key."
+      },
+      {
+        "question": "Can I use this to build production MCP servers?",
+        "answer": "Yes, the guides cover production-ready patterns including error handling, pagination, and authentication."
+      },
+      {
+        "question": "How are tools authenticated?",
+        "answer": "The documentation covers using environment variables for API keys in server implementations."
+      },
+      {
+        "question": "What transport methods are supported?",
+        "answer": "stdio for local servers, Streamable HTTP for remote servers. SSE is documented but not recommended."
+      },
+      {
+        "question": "How do I test if my MCP server works well?",
+        "answer": "Use the evaluation framework to create test questions that verify AI models can effectively use your tools."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "reference",
+      "children": [
+        {
+          "name": "evaluation.md",
+          "type": "file",
+          "path": "reference/evaluation.md",
+          "lines": 602
+        },
+        {
+          "name": "mcp_best_practices.md",
+          "type": "file",
+          "path": "reference/mcp_best_practices.md",
+          "lines": 250
+        },
+        {
+          "name": "node_mcp_server.md",
+          "type": "file",
+          "path": "reference/node_mcp_server.md",
+          "lines": 970
+        },
+        {
+          "name": "python_mcp_server.md",
+          "type": "file",
+          "path": "reference/python_mcp_server.md",
+          "lines": 719
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "connections.py",
+          "type": "file",
+          "path": "scripts/connections.py",
+          "lines": 152
+        },
+        {
+          "name": "evaluation.py",
+          "type": "file",
+          "path": "scripts/evaluation.py",
+          "lines": 374
+        },
+        {
+          "name": "example_evaluation.xml",
+          "type": "file",
+          "path": "scripts/example_evaluation.xml",
+          "lines": 23
+        },
+        {
+          "name": "requirements.txt",
+          "type": "file",
+          "path": "scripts/requirements.txt",
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 237
+    }
+  ]
+}

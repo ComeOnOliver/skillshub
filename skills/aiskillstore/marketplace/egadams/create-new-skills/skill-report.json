@@ -1,0 +1,235 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:54:39.021Z",
+    "slug": "egadams-create-new-skills",
+    "source_url": "https://github.com/EGAdams/planner/tree/main/.claude/skills/meta-skill",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e56121bcfa32d82fd91fd6bc6d012e9f9927b8af7bea9695724fc537e7c69e7c",
+    "tree_hash": "9efeeffb668ac479cd8f09c2991ceeee1991d59ad82e4f1364fd6fb3b8075f93"
+  },
+  "skill": {
+    "name": "create-new-skills",
+    "description": "Creates new Agent Skills for Claude Code following best practices and documentation. Use when the user wants to create a new skill, extend Claude's capabilities, or package domain expertise into a reusable skill.",
+    "summary": "Creates new Agent Skills for Claude Code following best practices and documentation. Use when the us...",
+    "icon": "🛠️",
+    "version": "1.0.0",
+    "author": "EGAdams",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "skill-creation",
+      "claude-code",
+      "agent-skills",
+      "meta-skill",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only meta-skill. Contains no executable code, no network calls, no file writes, and no sensitive data access. All 347 static findings are false positives: markdown code blocks flagged as shell execution, documentation URLs as hardcoded endpoints, standard paths as hidden file access, and blog text containing common words as cryptographic patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": []
+      },
+      {
+        "factor": "network",
+        "evidence": []
+      },
+      {
+        "factor": "filesystem",
+        "evidence": []
+      },
+      {
+        "factor": "env_access",
+        "evidence": []
+      },
+      {
+        "factor": "external_commands",
+        "evidence": []
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1588,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:54:39.021Z"
+  },
+  "content": {
+    "user_title": "Create custom Agent Skills",
+    "value_statement": "Claude needs domain expertise to perform specialized tasks. This skill provides a step-by-step workflow for packaging your knowledge into reusable Agent Skills that Claude discovers and uses automatically. Transform general-purpose Claude into a specialist for your workflows.",
+    "seo_keywords": [
+      "Claude Code skills",
+      "create Agent Skills",
+      "Claude AI customization",
+      "Claude Code plugin",
+      "skill development",
+      "Claude automation",
+      "meta-skill",
+      "Claude expertise packaging",
+      "Claude productivity",
+      "Claude Code extensions"
+    ],
+    "actual_capabilities": [
+      "Guides users through 8-step skill creation workflow",
+      "Creates SKILL.md files with YAML frontmatter and instructions",
+      "Organizes supporting files including scripts, templates, and documentation",
+      "Teaches progressive disclosure architecture for efficient context usage"
+    ],
+    "limitations": [
+      "Does not execute code or run scripts directly",
+      "Only provides guidance, users must create files themselves",
+      "Focused on Claude Code only, not Claude.ai or API"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Team leads",
+        "title": "Package team workflows",
+        "description": "Capture team conventions into shared skills distributed via git for automatic team access."
+      },
+      {
+        "target_user": "Domain experts",
+        "title": "Share specialized knowledge",
+        "description": "Package domain expertise into skills that extend Claude with specialized industry capabilities."
+      },
+      {
+        "target_user": "Plugin developers",
+        "title": "Build distributable skills",
+        "description": "Create skills bundled with plugins for distribution to other Claude Code users."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New skill",
+        "scenario": "Creating a basic skill",
+        "prompt": "Create a new skill called [skill-name] that [does what]. Where should I put the files and what structure should I use?"
+      },
+      {
+        "title": "Skill structure",
+        "scenario": "Understanding skill anatomy",
+        "prompt": "What are the required parts of a SKILL.md file? Explain the YAML frontmatter and body structure."
+      },
+      {
+        "title": "With scripts",
+        "scenario": "Adding executable scripts",
+        "prompt": "Create a skill that includes a Python script. How do I reference the script from SKILL.md and make it executable?"
+      },
+      {
+        "title": "Multi-file",
+        "scenario": "Organizing complex skills",
+        "prompt": "My skill has too much content for one file. How do I split it into multiple files and use progressive disclosure?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a skill that helps with Python code reviews",
+        "output": [
+          "Create directory structure in .claude/skills/python-code-review/",
+          "Write SKILL.md with name, description, and allowed-tools (Read, Grep, Glob)",
+          "Add instructions section with review workflow",
+          "Add examples showing single file and multi-file review scenarios",
+          "Test by asking Claude to review a Python file"
+        ]
+      },
+      {
+        "input": "Build a skill for analyzing CSV data",
+        "output": [
+          "Define scope with user (statistics, visualizations, output format)",
+          "Create directory with scripts/ and templates/ subdirectories",
+          "Write SKILL.md referencing analysis scripts",
+          "Add examples for basic statistics and visualization generation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Include both what the skill does AND when to use it in the description for better discovery",
+      "Keep instructions focused under 5k tokens and split complex content into linked files",
+      "Use the allowed-tools field to restrict tool access for security-sensitive skills"
+    ],
+    "anti_patterns": [
+      "Using vague descriptions like 'helps with data' instead of specific use cases and trigger words",
+      "Combining unrelated tasks into one skill instead of creating focused, composable skills",
+      "Putting all content in SKILL.md without using progressive disclosure for advanced topics"
+    ],
+    "faq": [
+      {
+        "question": "What platforms support this skill?",
+        "answer": "This skill creates skills for Claude Code. Pre-built Agent Skills work on Claude.ai and API while custom skills are Claude Code specific."
+      },
+      {
+        "question": "How many skills can I create?",
+        "answer": "There is no practical limit. Progressive disclosure means only relevant skill metadata loads at startup, keeping context efficient."
+      },
+      {
+        "question": "Can I share skills with my team?",
+        "answer": "Yes. Project skills in .claude/skills/ are shared via git. Personal skills in ~/.claude/skills/ stay on your machine."
+      },
+      {
+        "question": "Is this skill safe to use?",
+        "answer": "Yes. This is a documentation-only meta-skill that provides guidance without executing code or accessing sensitive data."
+      },
+      {
+        "question": "Why is my skill not being used?",
+        "answer": "Check that the description is specific and includes trigger words. Verify YAML frontmatter is valid and file is in the correct location."
+      },
+      {
+        "question": "How is this different from prompts?",
+        "answer": "Skills load on-demand and persist across sessions. Prompts are one-off instructions that must be repeated each conversation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "docs",
+      "type": "dir",
+      "path": "docs",
+      "children": [
+        {
+          "name": "blog_equipping_agents_with_skills.md",
+          "type": "file",
+          "path": "docs/blog_equipping_agents_with_skills.md",
+          "lines": 81
+        },
+        {
+          "name": "claude_code_agent_skills_overview.md",
+          "type": "file",
+          "path": "docs/claude_code_agent_skills_overview.md",
+          "lines": 309
+        },
+        {
+          "name": "claude_code_agent_skills.md",
+          "type": "file",
+          "path": "docs/claude_code_agent_skills.md",
+          "lines": 599
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 403
+    }
+  ]
+}

@@ -1,0 +1,332 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:07:22.304Z",
+    "slug": "0xraduan-skill-builder",
+    "source_url": "https://github.com/0xRaduan/personal-os/tree/master/skills/skill-builder",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6e53a5de6a952df607e2ce0def607b51d644ccb569a29750e65d556362fe6d3c",
+    "tree_hash": "3d951a717ccf026e7f0637e04b52dbae042371d425fce87a725b7751c8bd6443"
+  },
+  "skill": {
+    "name": "skill-builder",
+    "description": "Interactive skill creation assistant that guides users through building new Agent Skills for Claude Code. Use when creating new skills, building custom capabilities, or when the user runs /new-skill command. Helps design skill structure, craft descriptions, create scripts, and organize supporting files.",
+    "summary": "Interactive skill creation assistant for building Claude Code Agent Skills",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "0xRaduan",
+    "license": "MIT",
+    "tags": [
+      "skill-development",
+      "claude-code",
+      "agent-skills",
+      "scaffolding",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands",
+      "filesystem",
+      "env_access",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The detected patterns (eval, shell commands, hidden file access) are in documentation files (REFERENCE.md, SKILL.md) that explain skill development concepts. The skill-builder is a legitimate tool for scaffolding Claude Code skills using template-based code generation. No malicious intent or actual security risks found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "REFERENCE.md",
+            "line_start": 553,
+            "line_end": 553
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 1144,
+            "line_end": 1144
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 1145,
+            "line_end": 1145
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "REFERENCE.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "REFERENCE.md",
+            "line_start": 22,
+            "line_end": 39
+          },
+          {
+            "file": "REFERENCE.md",
+            "line_start": 39,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 74
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "REFERENCE.md",
+            "line_start": 863,
+            "line_end": 863
+          },
+          {
+            "file": "REFERENCE.md",
+            "line_start": 872,
+            "line_end": 872
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 161
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "REFERENCE.md",
+            "line_start": 565,
+            "line_end": 565
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Hardcoded URL in documentation",
+        "description": "Documentation files contain hardcoded URL references. These are standard documentation links, not data exfiltration endpoints.",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 4329,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:07:22.304Z"
+  },
+  "content": {
+    "user_title": "Build custom Agent Skills",
+    "value_statement": "Users struggle to create new Agent Skills for Claude Code due to unclear structure requirements. This skill provides an interactive guided workflow that scaffolds skill files, generates valid JSON schemas, and produces production-ready skill templates.",
+    "seo_keywords": [
+      "Claude Code skill builder",
+      "Agent Skills creation",
+      "Claude skill development",
+      "Claude Code customization",
+      "Claude Codex skills",
+      "Skill scaffolding tool",
+      "Claude Agent extensions",
+      "Claude Code CLI skills"
+    ],
+    "actual_capabilities": [
+      "Guides users through interactive skill creation workflow with prompts",
+      "Scaffolds complete skill directory structure with required files",
+      "Generates valid skill-report.json with security audit and content fields",
+      "Creates SKILL.md documentation with usage instructions and examples",
+      "Produces REFERENCE.md with implementation details and code examples"
+    ],
+    "limitations": [
+      "Does not execute user code or install dependencies automatically",
+      "Limited to local skill development, cannot publish to remote registries",
+      "Does not validate external API keys or credentials",
+      "Skill templates are fixed, cannot customize beyond provided options"
+    ],
+    "use_cases": [
+      {
+        "title": "Create a new productivity skill",
+        "description": "A developer wants to build a custom skill for automating daily standup updates. The skill-builder walks them through defining the skill name, description, supported tools, and generates the complete skill structure with working templates.",
+        "target_user": "Software developers building custom Claude Code capabilities"
+      },
+      {
+        "title": "Generate skill documentation",
+        "description": "A user has written a skill but needs proper SKILL.md documentation. The skill-builder generates professional documentation with prompt templates, use cases, FAQs, and output examples.",
+        "target_user": "Skill authors needing documentation automation"
+      },
+      {
+        "title": "Learn skill development patterns",
+        "description": "A new Claude Code user wants to understand how skills are structured. The skill-builder creates example skills that serve as learning templates showing proper file organization and content requirements.",
+        "target_user": "Claude Code beginners learning skill development"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create a basic skill",
+        "prompt": "Help me create a new skill called [skill-name] that helps with [task-description]. Use the skill-builder to scaffold the complete structure.",
+        "scenario": "Starting a new skill project from scratch"
+      },
+      {
+        "title": "Generate skill documentation",
+        "prompt": "Generate SKILL.md documentation for my existing skill. The skill provides [capability-description] and uses [tools-list].",
+        "scenario": "Adding documentation to an existing skill"
+      },
+      {
+        "title": "Create a complex multi-file skill",
+        "prompt": "Build a comprehensive skill with multiple prompt templates, use cases, and security audit documentation. The skill should handle [complex-workflow-description].",
+        "scenario": "Creating an advanced skill with full marketplace metadata"
+      },
+      {
+        "title": "Clone and modify an existing skill",
+        "prompt": "Use the skill-builder to create a new skill based on my specifications. I need a [skill-type] skill for [use-case] with support for [tools].",
+        "scenario": "Customizing skill generation for specific requirements"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a skill for generating commit messages from git diffs",
+        "output": [
+          "Created skill: git-commit-helper",
+          "Files generated:",
+          "- SKILL.md (documentation with usage examples)",
+          "- REFERENCE.md (implementation guide)",
+          "- skill-report.json (marketplace metadata)",
+          "Ready to use with: /git-commit-helper"
+        ]
+      },
+      {
+        "input": "Build a skill that summarizes Pull Request changes",
+        "output": [
+          "Created skill: pr-summarizer",
+          "Generated files:",
+          "- SKILL.md (with prompt templates for PR analysis)",
+          "- REFERENCE.md (with code examples)",
+          "- skill-report.json (with security audit section)",
+          "Configure supported tools in skill config"
+        ]
+      },
+      {
+        "input": "Create a documentation generator skill",
+        "output": [
+          "Created skill: doc-generator",
+          "Skill structure ready:",
+          "- 3 prompt templates (basic, detailed, API docs)",
+          "- 2 use cases for different users",
+          "- Complete marketplace content",
+          "Run /doc-generator to start"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the skill-builder when starting any new skill to ensure proper structure and complete metadata",
+      "Review the generated SKILL.md and customize the prompt templates for your specific use case",
+      "Run security audits on generated skills before publishing to ensure safe tool usage"
+    ],
+    "anti_patterns": [
+      "Using the skill-builder for one-off scripts that do not need full skill structure",
+      "Skipping the security audit section when publishing skills to the marketplace",
+      "Modifying generated files manually without understanding the skill schema requirements"
+    ],
+    "faq": [
+      {
+        "question": "What files does the skill-builder create?",
+        "answer": "The skill-builder creates three essential files: SKILL.md (documentation with usage instructions), REFERENCE.md (implementation details), and skill-report.json (marketplace metadata with security audit)."
+      },
+      {
+        "question": "Can I modify the generated templates?",
+        "answer": "Yes, all generated files are plain Markdown and JSON. You can edit them freely after generation to customize the skill for your needs."
+      },
+      {
+        "question": "Does the skill-builder execute code?",
+        "answer": "No, the skill-builder only generates files and provides guidance. It does not install dependencies, execute scripts, or make network requests."
+      },
+      {
+        "question": "How do I publish a generated skill?",
+        "answer": "After generating the skill, review the skill-report.json for completeness, ensure the security audit passes, and follow the standard Claude Code skill publication process."
+      },
+      {
+        "question": "What tools can my skill support?",
+        "answer": "Generated skills can support claude, codex, and claude-code tools. The skill-builder helps you configure which tools are available based on your skill's purpose."
+      },
+      {
+        "question": "Can I create skills for others to use?",
+        "answer": "Yes, the skill-builder produces complete, publishable skills with proper documentation. Share the generated skill files so others can install and use them with Claude Code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "REFERENCE.md",
+      "type": "file",
+      "path": "REFERENCE.md",
+      "lines": 1015
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 411
+    }
+  ]
+}

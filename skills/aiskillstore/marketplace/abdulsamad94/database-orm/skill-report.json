@@ -1,0 +1,200 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:47:25.977Z",
+    "slug": "abdulsamad94-database-orm",
+    "source_url": "https://github.com/AbdulSamad94/Hackhaton-SpecsKitPlus/tree/master/.claude/skills/database",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "dc3938d73bd6c9ff7e7780c05125a8baa771ab96021a09bebdd5e9a7bdfa87c8",
+    "tree_hash": "c43e5020eff7f3d9b2a1f6a03c789b3f821461095f5a801177cbc4de83096008"
+  },
+  "skill": {
+    "name": "database-orm",
+    "description": "Interact with NeonDB Postgres databases using Drizzle ORM. Query, insert, update, and delete data with type-safe operations.",
+    "summary": "Database operations with NeonDB Postgres and Drizzle ORM",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "AbdulSamad94",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "database",
+      "postgres",
+      "neondb",
+      "drizzle-orm",
+      "sql"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides documentation for database operations using Drizzle ORM with NeonDB Postgres. Static analysis flagged multiple false positives including C2 keywords (the word drizzle from Drizzle ORM) and cryptographic patterns (md file extensions). The only legitimate risk factor is environment variable access for DATABASE_URL, which is standard practice for database connections. All code examples are TypeScript snippets in documentation, not executable malicious code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Environment Variable Access for Database Connection",
+        "description": "The skill documentation shows process.env.DATABASE_URL being accessed for database connection initialization. This is standard practice for database ORMs and poses minimal risk as it only reads configuration, does not expose secrets externally, and is necessary for the skill's intended functionality.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 508,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:47:25.977Z"
+  },
+  "content": {
+    "user_title": "Manage NeonDB Postgres with Drizzle ORM",
+    "value_statement": "Database operations are complex and error-prone when done manually. This skill provides guidance on using Drizzle ORM with NeonDB Postgres for type-safe database queries, schema management, and migrations.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "database",
+      "postgres",
+      "neondb",
+      "drizzle orm",
+      "sql",
+      "typescript",
+      "serverless database"
+    ],
+    "actual_capabilities": [
+      "Provide guidance on setting up NeonDB Postgres connections with Drizzle ORM",
+      "Explain database schema definitions for users, sessions, accounts, and custom tables",
+      "Show examples of select, insert, update, and delete operations using Drizzle ORM",
+      "Document migration workflows using drizzle-kit for schema changes",
+      "Demonstrate type-safe database queries with TypeScript and Drizzle ORM syntax"
+    ],
+    "limitations": [
+      "Does not execute database operations directly, only provides documentation and guidance",
+      "Specific to NeonDB Postgres and Drizzle ORM, not compatible with other databases or ORMs",
+      "Requires DATABASE_URL environment variable to be configured by the user",
+      "Does not include authentication or authorization logic beyond schema examples"
+    ],
+    "use_cases": [
+      {
+        "title": "Set Up Database Connection",
+        "description": "Learn how to initialize a NeonDB Postgres connection using Drizzle ORM with the serverless driver for your TypeScript application.",
+        "target_user": "Backend developers setting up new projects"
+      },
+      {
+        "title": "Define Database Schemas",
+        "description": "Understand how to create type-safe schema definitions for authentication tables and application-specific data models using Drizzle ORM.",
+        "target_user": "Full-stack developers building data models"
+      },
+      {
+        "title": "Perform Database Queries",
+        "description": "Get examples of common database operations including selecting records with filters, inserting new data, and using Drizzle ORM query methods.",
+        "target_user": "Developers implementing CRUD operations"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic: Show Database Connection Setup",
+        "prompt": "Show me how to set up a NeonDB Postgres connection with Drizzle ORM",
+        "scenario": "Starting a new project and need to configure database access"
+      },
+      {
+        "title": "Intermediate: Query User Records",
+        "prompt": "How do I query the users table to find a user by email using Drizzle ORM?",
+        "scenario": "Implementing user lookup functionality in an authentication flow"
+      },
+      {
+        "title": "Intermediate: Insert New Records",
+        "prompt": "Show me how to insert a new record into the analyses table",
+        "scenario": "Adding new application data to the database"
+      },
+      {
+        "title": "Advanced: Run Database Migrations",
+        "prompt": "What is the workflow for generating and applying schema migrations with drizzle-kit?",
+        "scenario": "Updating database schema in production safely"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me how to set up a NeonDB Postgres connection with Drizzle ORM",
+        "output": "To set up a NeonDB Postgres connection with Drizzle ORM, create a file at db/index.ts with the following configuration. First, import the neon driver and drizzle. Then initialize the SQL client using your DATABASE_URL environment variable. Finally, create and export the Drizzle database instance for use throughout your application."
+      },
+      {
+        "input": "How do I query the users table to find a user by email?",
+        "output": "To query the users table by email, import the database instance and the users schema. Use the select method with a where clause and the eq operator from drizzle-orm. The query will return an array of matching user records with full type safety."
+      }
+    ],
+    "best_practices": [
+      "Store database credentials in environment variables, never hardcode connection strings in source code",
+      "Use Drizzle ORM type-safe query methods instead of raw SQL to prevent injection vulnerabilities",
+      "Generate and test migrations in development before applying them to production databases"
+    ],
+    "anti_patterns": [
+      "Do not expose DATABASE_URL or other connection strings in client-side code or API responses",
+      "Avoid running database migrations directly in production without testing in a staging environment first",
+      "Do not bypass Drizzle ORM query builders with raw SQL unless absolutely necessary for complex queries"
+    ],
+    "faq": [
+      {
+        "question": "What is NeonDB and why use it?",
+        "answer": "NeonDB is a serverless Postgres database platform. It provides automatic scaling, branching for development workflows, and pay-per-use pricing. It works well with edge functions and serverless applications."
+      },
+      {
+        "question": "What is Drizzle ORM?",
+        "answer": "Drizzle ORM is a TypeScript ORM for SQL databases. It provides type-safe database queries, schema definitions, and migrations. It has minimal overhead and generates efficient SQL queries."
+      },
+      {
+        "question": "Do I need to install additional packages?",
+        "answer": "Yes, you need to install three packages: drizzle-orm for the ORM functionality, @neondatabase/serverless for the NeonDB driver, and drizzle-kit for migration tooling."
+      },
+      {
+        "question": "How do I configure the DATABASE_URL?",
+        "answer": "Get your database connection string from the NeonDB dashboard. Add it to your environment variables file as DATABASE_URL. The format is postgres://user:password@host/database with SSL parameters for NeonDB."
+      },
+      {
+        "question": "Can I use this skill with other databases?",
+        "answer": "This skill is specific to NeonDB Postgres with Drizzle ORM. Drizzle ORM supports other databases like MySQL and SQLite, but you would need different drivers and connection configurations."
+      },
+      {
+        "question": "How do I handle database migrations?",
+        "answer": "Use drizzle-kit to generate migration files from schema changes. Run drizzle-kit generate to create migration SQL files, then apply them with drizzle-kit push or a custom migration script in your deployment pipeline."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 47
+    }
+  ]
+}

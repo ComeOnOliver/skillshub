@@ -1,0 +1,181 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:47:10.029Z",
+    "slug": "dnyoussef-slash-command-encoder",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/slash-command-encoder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "38bba15a6902dc0c8bd04ca45efa4620954efd87799da7dd7b72b4fec24d4f09",
+    "tree_hash": "d19eabc579855548b87dbe16bfce74d084432551b9f41f823ef5c7744c281d0a"
+  },
+  "skill": {
+    "name": "slash-command-encoder",
+    "description": "Creates ergonomic slash commands for fast access to micro-skills, cascades, and agents with auto-discovery, intelligent routing, parameter validation, and command chaining.",
+    "summary": "Create ergonomic slash commands with auto-discovery and intelligent routing",
+    "icon": "📦",
+    "version": "2.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "commands",
+      "interface",
+      "automation",
+      "productivity",
+      "workflow"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 159 static findings are false positives. The detected patterns appear in documentation examples only, not executable code. The skill contains only a SKILL.md documentation file with command examples using backticks for formatting. No actual scripts, network calls, or filesystem operations are present.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2199,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:47:10.029Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Create Fast Slash Commands for AI Workflows",
+    "value_statement": "Transform repetitive AI tasks into fast, scriptable slash commands. This skill generates ergonomic command interfaces for micro-skills, cascades, and agents with automatic discovery, parameter validation, and intelligent routing.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "slash commands",
+      "command line interface",
+      "workflow automation",
+      "productivity tools",
+      "command builder",
+      "AI automation",
+      "developer tools"
+    ],
+    "actual_capabilities": [
+      "Generate slash command interfaces for existing skills and workflows",
+      "Auto-discover installed skills and create command catalogs",
+      "Design parameter validation schemas with type checking",
+      "Create command chaining patterns for composable workflows",
+      "Generate comprehensive help documentation and auto-completion",
+      "Map commands to micro-skills, cascades, and agent invocations"
+    ],
+    "limitations": [
+      "Does not execute commands directly, only generates command definitions",
+      "Requires manual integration with CLI systems",
+      "Command validation schemas need testing with actual use cases",
+      "Auto-discovery patterns are conceptual and need implementation"
+    ],
+    "use_cases": [
+      {
+        "title": "Power User Workflow Shortcuts",
+        "description": "Create fast slash commands for daily development tasks like code audits, testing pipelines, and deployment workflows to replace repetitive natural language prompts.",
+        "target_user": "Software developers who perform repeated operations"
+      },
+      {
+        "title": "Team Command Standardization",
+        "description": "Build consistent command interfaces across team skills and tools to enable scriptable automation and reduce onboarding time for new team members.",
+        "target_user": "DevOps teams managing shared workflows"
+      },
+      {
+        "title": "Multi-Model Command Routing",
+        "description": "Design commands that intelligently route tasks to optimal AI models based on context size, task type, and performance requirements.",
+        "target_user": "AI engineers orchestrating multiple model backends"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Command Creation",
+        "prompt": "Create a slash command /validate-api that takes a file path and validates it against an OpenAPI schema",
+        "scenario": "Simple command for a single micro-skill"
+      },
+      {
+        "title": "Command with Parameters",
+        "prompt": "Design /analyze-code command with --language, --strict, and --output flags that routes to a code analysis skill",
+        "scenario": "Command with multiple optional parameters"
+      },
+      {
+        "title": "Command Pipeline",
+        "prompt": "Create chained commands /extract-data | /validate | /transform that process data through multiple stages",
+        "scenario": "Sequential workflow composition"
+      },
+      {
+        "title": "Full Skill Catalog",
+        "prompt": "Generate a complete command catalog for all skills in ~/.claude/skills/ with auto-completion and help documentation",
+        "scenario": "Comprehensive skill-to-command mapping"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create /audit-pipeline command for code quality workflow",
+        "output": "Command definition with name, parameters (target directory, --phase flag, --output option), routing to audit-pipeline cascade, parameter validation schema, usage examples, and help documentation showing sequential phases (theater detection, functionality audit, style audit)."
+      },
+      {
+        "input": "Design /agent-rca command for root cause analysis",
+        "output": "Agent invocation command with required task description parameter, optional --context and --depth flags, routing configuration to root-cause-analyzer agent, auto-completion for depth values (shallow, normal, deep), and example usage patterns."
+      },
+      {
+        "input": "Generate command catalog for installed skills",
+        "output": "Comprehensive catalog organized by category showing 14 commands: audit commands (theater-detect, functionality-audit, style-audit, audit-pipeline), multi-model commands (gemini-megacontext, codex-auto, etc.), agent commands (agent-rca), and skill creation commands, each with brief descriptions and parameter summaries."
+      }
+    ],
+    "best_practices": [
+      "Use verb-noun naming pattern for clarity and limit positional parameters to maximum three",
+      "Include comprehensive help text and example usage for every command",
+      "Design commands to be composable with pipe-friendly input/output interfaces"
+    ],
+    "anti_patterns": [
+      "Creating commands for one-off exploratory tasks better suited to natural language",
+      "Using complex parameter structures that reduce command typing speed",
+      "Generating commands without validation schemas that lead to runtime errors"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute commands or just generate definitions?",
+        "answer": "This skill generates command definitions, documentation, and routing configurations. The actual command execution requires integration with Claude Code CLI or similar command systems."
+      },
+      {
+        "question": "How does auto-discovery of skills work?",
+        "answer": "The skill designs patterns to scan SKILL.md files in standard directories, extract metadata like name and parameters, and generate corresponding command definitions with proper routing."
+      },
+      {
+        "question": "Can commands route to different AI models?",
+        "answer": "Yes, commands can include --model flags to explicitly select Claude, Gemini, or Codex, or use auto-routing logic that selects optimal models based on task characteristics like context size."
+      },
+      {
+        "question": "What is command chaining and how does it work?",
+        "answer": "Command chaining connects multiple commands with pipes or operators to create workflows. Each command accepts input from previous steps and passes output to next steps using standard interfaces."
+      },
+      {
+        "question": "Are the generated commands compatible with Claude Code?",
+        "answer": "Commands follow Claude Code patterns and can be registered by creating command definition files in the .claude/commands directory with proper metadata and routing information."
+      },
+      {
+        "question": "How do I add parameter validation to commands?",
+        "answer": "Define validation schemas specifying parameter types (string, number, file_path, enum), required flags, default values, and custom validation functions that check values before command execution."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 688
+    }
+  ]
+}

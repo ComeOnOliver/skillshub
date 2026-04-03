@@ -1,0 +1,261 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:18:14.485Z",
+    "slug": "lxfater-nano-image-generator",
+    "source_url": "https://github.com/lxfater/nano-image-generator-skill/tree/main/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d950ddcfecf634438c709d63029b08c98d9c92106bf970542ab5280b139ba1ab",
+    "tree_hash": "46abc6fe60cbed24eb09ea4d60a40bda3a2336958318000d12664d80463c41a9"
+  },
+  "skill": {
+    "name": "nano-image-generator",
+    "description": "Generate images using Nano Banana Pro (Gemini 3 Pro Preview). Use when creating app icons, logos, UI graphics, marketing banners, social media images, illustrations, diagrams, or any visual assets. Supports reference images for style transfer and character consistency. Triggers include phrases like 'generate an image', 'create a graphic', 'make an icon', 'design a logo', 'create a banner', 'same style as', 'keep the style', or any request needing visual content.",
+    "summary": "Generate images using Nano Banana Pro (Gemini 3 Pro Preview). Use when creating app icons, logos, UI...",
+    "icon": "🖼️",
+    "version": "1.0.0",
+    "author": "lxfater",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "image-generation",
+      "gemini",
+      "ai-art",
+      "design",
+      "graphics"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a legitimate image generation tool using Google's Gemini API. The static analyzer flagged 217 issues, but nearly all are false positives from documentation files containing code examples in markdown. The actual executable code (generate_image.py) contains only legitimate API calls to Google's Gemini service with no malicious behavior.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 23,
+            "line_end": 24
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 144,
+            "line_end": 147
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 73,
+            "line_end": 78
+          },
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 265,
+            "line_end": 268
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/generate_image.py",
+            "line_start": 37,
+            "line_end": 45
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 922,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:18:14.485Z"
+  },
+  "content": {
+    "user_title": "Generate images using Gemini 3 Pro with style references",
+    "value_statement": "Creating visual assets for projects often requires expensive design tools or manual illustration. This skill enables instant image generation using Google Gemini 3 Pro Preview API with support for reference images to maintain consistent style and character appearance across multiple assets.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "image generation",
+      "Gemini API",
+      "AI art",
+      "design automation",
+      "style transfer",
+      "visual assets",
+      "graphic design",
+      "app icons"
+    ],
+    "actual_capabilities": [
+      "Generate images from text descriptions using Gemini 3 Pro Preview API",
+      "Support up to 14 reference images for style transfer and character consistency",
+      "Output images in multiple aspect ratios including square, portrait, landscape, and cinematic formats",
+      "Create images at 1K, 2K, or 4K resolution",
+      "Automatically detect and save images in correct format including PNG, JPEG, WebP, and GIF",
+      "Process style references to maintain visual consistency across image series"
+    ],
+    "limitations": [
+      "Requires manual API key configuration by editing Python source code",
+      "Maximum 14 reference images per generation request",
+      "Text rendering within generated images may be imperfect",
+      "Specific brand logos may not reproduce exactly due to API limitations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Mobile app developers",
+        "title": "Create app icons and launch graphics",
+        "description": "Generate app icons, splash screens, and promotional graphics in appropriate aspect ratios for iOS and Android stores."
+      },
+      {
+        "target_user": "Content creators",
+        "title": "Design social media visual assets",
+        "description": "Create consistent visual content for platforms with specific format requirements like Instagram posts and YouTube thumbnails."
+      },
+      {
+        "target_user": "Web developers",
+        "title": "Generate website hero images and banners",
+        "description": "Produce high-resolution hero banners, background images, and UI graphics matching brand guidelines using reference images."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic image generation",
+        "scenario": "Create a simple graphic",
+        "prompt": "Generate an image of a friendly robot mascot waving, flat design style, purple gradient background"
+      },
+      {
+        "title": "Specific aspect ratio",
+        "scenario": "Social media content",
+        "prompt": "Create a website hero banner for a productivity app with abstract geometric shapes in blue and white, 16:9 aspect ratio"
+      },
+      {
+        "title": "Style transfer",
+        "scenario": "Match existing design",
+        "prompt": "Generate a new character illustration in the same visual style as the reference image, keeping the color palette and artistic approach"
+      },
+      {
+        "title": "Character consistency",
+        "scenario": "Series of related images",
+        "prompt": "Show the same character from the reference image in a forest setting with warm lighting, maintaining character appearance and proportions"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate an app icon for a weather app, minimalist cloud and sun design, blue gradient",
+        "output": [
+          "Image saved to specified output path",
+          "Square 1:1 aspect ratio suitable for app stores",
+          "PNG format with transparent or gradient background",
+          "Resolution matches requested size (1K, 2K, or 4K)"
+        ]
+      },
+      {
+        "input": "Create a marketing banner with the same style as my brand image, 21:9 cinematic ratio",
+        "output": [
+          "Wide cinematic banner matching reference image style",
+          "Visual elements inherit color palette from reference",
+          "High-resolution output suitable for web headers",
+          "Consistent brand aesthetic maintained across assets"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Include specific style descriptors in prompts such as flat design, photorealistic, watercolor, or minimalist to guide output",
+      "Use reference images when generating multiple related assets to maintain visual consistency across a project or campaign",
+      "Specify aspect ratios that match your target platform requirements such as 1:1 for app icons or 16:9 for web banners"
+    ],
+    "anti_patterns": [
+      "Avoid requesting complex text rendering within images as AI generation handles text poorly; overlay text separately instead",
+      "Do not expect exact reproduction of specific brand logos or copyrighted characters; use for inspiration and original designs",
+      "Avoid using more than 14 reference images as the API will truncate the list and ignore additional references"
+    ],
+    "faq": [
+      {
+        "question": "How do I configure my Gemini API key?",
+        "answer": "Edit scripts/generate_image.py and replace YOUR_GEMINI_API_KEY_HERE in the get_api_key function with your actual key from aistudio.google.com/apikey"
+      },
+      {
+        "question": "What image formats are supported for output?",
+        "answer": "The skill automatically detects and saves images in PNG, JPEG, WebP, or GIF format based on what the Gemini API returns"
+      },
+      {
+        "question": "Can I use this to maintain character consistency across multiple images?",
+        "answer": "Yes, generate your first character image then use it as a reference image with --ref flag for subsequent generations to maintain appearance"
+      },
+      {
+        "question": "What aspect ratios are available?",
+        "answer": "Supports 1:1, 2:3, 3:2, 3:4, 4:3, 4:5, 5:4, 9:16, 16:9, and 21:9 aspect ratios for various use cases from icons to cinematic banners"
+      },
+      {
+        "question": "How do reference images work for style transfer?",
+        "answer": "Add reference images using --ref flag; the model analyzes visual style, colors, and artistic approach to apply similar aesthetics to new generations"
+      },
+      {
+        "question": "Is there a cost to using this skill?",
+        "answer": "The skill itself is free, but you need a Gemini API key which may have usage costs depending on Google's pricing for the API"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "generate_image.py",
+          "type": "file",
+          "path": "scripts/generate_image.py",
+          "lines": 277
+        }
+      ]
+    },
+    {
+      "name": "README_CN.md",
+      "type": "file",
+      "path": "README_CN.md",
+      "lines": 131
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 131
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 146
+    }
+  ]
+}

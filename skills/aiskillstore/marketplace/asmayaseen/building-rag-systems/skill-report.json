@@ -1,0 +1,1056 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:42:59.131Z",
+    "slug": "asmayaseen-building-rag-systems",
+    "source_url": "https://github.com/Asmayaseen/hackathon-2/tree/main/.claude/skills/building-rag-systems",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0febde2c95e074dc2eb2ab839745cabe7b9b8d057434c6ffdab4371eddeaa621",
+    "tree_hash": "96facc7553e53d22f25570b63be36d036bc2b5c05d831350c67af7170d4709bb"
+  },
+  "skill": {
+    "name": "building-rag-systems",
+    "description": "Build production RAG systems with semantic chunking, incremental indexing, and filtered retrieval.\nUse when implementing document ingestion pipelines, vector search with Qdrant, or context-aware\nretrieval. Covers chunking strategies, change detection, payload indexing, and context expansion.\nNOT when doing simple similarity search without production requirements.\n",
+    "summary": "Build production RAG systems with semantic chunking, incremental indexing, and filtered retrieval.\nU...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Asmayaseen",
+    "license": "MIT",
+    "tags": [
+      "building-rag-systems",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "env_access",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": false,
+    "summary": "AI analysis failed after multiple attempts - MANUAL REVIEW REQUIRED before publishing. This skill cannot be auto-published until reviewed by a human.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 5,
+            "line_end": 16
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 16,
+            "line_end": 20
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 20,
+            "line_end": 40
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 40,
+            "line_end": 44
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 44,
+            "line_end": 72
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 72,
+            "line_end": 76
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 76,
+            "line_end": 179
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 179,
+            "line_end": 183
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 183,
+            "line_end": 222
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 222,
+            "line_end": 226
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 226,
+            "line_end": 295
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 295,
+            "line_end": 299
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 299,
+            "line_end": 355
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 355,
+            "line_end": 359
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 359,
+            "line_end": 392
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 5,
+            "line_end": 24
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 24,
+            "line_end": 28
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 28,
+            "line_end": 60
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 64,
+            "line_end": 100
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 100,
+            "line_end": 104
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 104,
+            "line_end": 177
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 177,
+            "line_end": 181
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 181,
+            "line_end": 198
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 198,
+            "line_end": 202
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 202,
+            "line_end": 245
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 245,
+            "line_end": 249
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 249,
+            "line_end": 273
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 273,
+            "line_end": 277
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 277,
+            "line_end": 335
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 335,
+            "line_end": 341
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 341,
+            "line_end": 342
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 342,
+            "line_end": 343
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 343,
+            "line_end": 344
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 344,
+            "line_end": 345
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 345,
+            "line_end": 346
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 346,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 186,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 236
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 236,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 288
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 288,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 348
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 229,
+            "line_end": 229
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [
+      {
+        "title": "Ruby/shell backtick execution",
+        "description": "Ruby/shell backtick execution detected in code",
+        "locations": [
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 5,
+            "line_end": 16
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 16,
+            "line_end": 20
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 20,
+            "line_end": 40
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 40,
+            "line_end": 44
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 44,
+            "line_end": 72
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 72,
+            "line_end": 76
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 76,
+            "line_end": 179
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 179,
+            "line_end": 183
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 183,
+            "line_end": 222
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 222,
+            "line_end": 226
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 226,
+            "line_end": 295
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 295,
+            "line_end": 299
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 299,
+            "line_end": 355
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 355,
+            "line_end": 359
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 359,
+            "line_end": 392
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 5,
+            "line_end": 24
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 24,
+            "line_end": 28
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 28,
+            "line_end": 60
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 64,
+            "line_end": 100
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 100,
+            "line_end": 104
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 104,
+            "line_end": 177
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 177,
+            "line_end": 181
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 181,
+            "line_end": 198
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 198,
+            "line_end": 202
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 202,
+            "line_end": 245
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 245,
+            "line_end": 249
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 249,
+            "line_end": 273
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 273,
+            "line_end": 277
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 277,
+            "line_end": 335
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 335,
+            "line_end": 341
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 341,
+            "line_end": 342
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 342,
+            "line_end": 343
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 343,
+            "line_end": 344
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 344,
+            "line_end": 345
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 345,
+            "line_end": 346
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 346,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 186,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 236
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 236,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 288
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 288,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 348
+          }
+        ]
+      },
+      {
+        "title": "Generic API/secret keys",
+        "description": "Generic API/secret keys detected in code",
+        "locations": [
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 229,
+            "line_end": 229
+          }
+        ]
+      },
+      {
+        "title": "Certificate/key files",
+        "description": "Certificate/key files detected in code",
+        "locations": [
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 344,
+            "line_end": 344
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 345,
+            "line_end": 345
+          }
+        ]
+      },
+      {
+        "title": "System reconnaissance",
+        "description": "System reconnaissance detected in code",
+        "locations": [
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 111,
+            "line_end": 111
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 119,
+            "line_end": 119
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 128,
+            "line_end": 128
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 128,
+            "line_end": 130
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 306,
+            "line_end": 306
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 306,
+            "line_end": 308
+          },
+          {
+            "file": "references/ingestion-patterns.md",
+            "line_start": 366,
+            "line_end": 366
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 211,
+            "line_end": 211
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 222,
+            "line_end": 222
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 222,
+            "line_end": 223
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 230,
+            "line_end": 230
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 230,
+            "line_end": 232
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 234,
+            "line_end": 234
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 234,
+            "line_end": 235
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 242,
+            "line_end": 242
+          },
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 242,
+            "line_end": 244
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 117,
+            "line_end": 117
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 117,
+            "line_end": 117
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 163,
+            "line_end": 163
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 163,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 246
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 258
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 267
+          }
+        ]
+      },
+      {
+        "title": "C2 keywords",
+        "description": "C2 keywords detected in code",
+        "locations": [
+          {
+            "file": "references/retrieval-patterns.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 11,
+            "line_end": 11
+          }
+        ]
+      },
+      {
+        "title": "Hardcoded URL",
+        "description": "Hardcoded URL detected in code",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "title": "Hidden file access",
+        "description": "Hidden file access detected in code",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "title": "Weak cryptographic algorithm",
+        "description": "Weak cryptographic algorithm detected in code",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 122,
+            "line_end": 122
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 131,
+            "line_end": 131
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 136,
+            "line_end": 136
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 141,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          }
+        ]
+      },
+      {
+        "title": "[HEURISTIC] DANGEROUS COMBINATION: Code execution + Network + Credential access",
+        "description": "[HEURISTIC] DANGEROUS COMBINATION: Code execution + Network + Credential access detected in code",
+        "locations": [
+          {
+            "file": "multiple",
+            "line_start": 1,
+            "line_end": 1
+          }
+        ]
+      },
+      {
+        "title": "[HEURISTIC] SUSPICIOUS COMBINATION: Filesystem + Credentials + Network",
+        "description": "[HEURISTIC] SUSPICIOUS COMBINATION: Filesystem + Credentials + Network detected in code",
+        "locations": [
+          {
+            "file": "multiple",
+            "line_start": 1,
+            "line_end": 1
+          }
+        ]
+      }
+    ],
+    "files_scanned": 5,
+    "total_lines": 1383,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:42:59.131Z"
+  },
+  "content": {
+    "user_title": "Building Rag Systems",
+    "value_statement": "An AI skill for Claude, Codex, and Claude Code",
+    "seo_keywords": [
+      "building-rag-systems",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "actual_capabilities": [],
+    "limitations": [],
+    "use_cases": [],
+    "prompt_templates": [],
+    "output_examples": [],
+    "best_practices": [],
+    "anti_patterns": [],
+    "faq": []
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "ingestion-patterns.md",
+          "type": "file",
+          "path": "references/ingestion-patterns.md",
+          "lines": 399
+        },
+        {
+          "name": "retrieval-patterns.md",
+          "type": "file",
+          "path": "references/retrieval-patterns.md",
+          "lines": 354
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 25
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 353
+    }
+  ]
+}

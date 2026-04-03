@@ -1,0 +1,320 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:25:19.934Z",
+    "slug": "dnyoussef-agentdb-persistent-memory-patterns",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/agentdb/when-implementing-persistent-memory-use-agentdb-memory",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f5c47d1be6863eaa010720e7c516fd2fdf4b93f6c81a3cd4bdd2a23ba45929e6",
+    "tree_hash": "bfe667a15cc650fd7877a711291cdf3e86348a8ff22c9a1aadf6ac40793bb623"
+  },
+  "skill": {
+    "name": "agentdb-persistent-memory-patterns",
+    "description": "Implement persistent memory patterns for AI agents using AgentDB - session memory, long-term storage, pattern learning, and context management for stateful agents, chat systems, and intelligent assistants",
+    "summary": "Implement persistent memory patterns for AI agents using AgentDB - session memory, long-term storage...",
+    "icon": "🧠",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "agentdb",
+    "tags": [
+      "agentdb",
+      "memory",
+      "persistence",
+      "context-management",
+      "vector-database"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing implementation guides and TypeScript code examples for AgentDB memory management. No executable code, network calls, or file system access. Static findings are false positives from pattern-matching scanner misinterpreting documentation text as security threats.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "PROCESS.md",
+            "line_start": 7,
+            "line_end": 25
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 25,
+            "line_end": 29
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 29,
+            "line_end": 42
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 42,
+            "line_end": 46
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 46,
+            "line_end": 59
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 59,
+            "line_end": 63
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 63,
+            "line_end": 72
+          },
+          {
+            "file": "README.md",
+            "line_start": 14,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 143
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "PROCESS.md",
+            "line_start": 88,
+            "line_end": 88
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 157
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 567,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:25:19.934Z"
+  },
+  "content": {
+    "user_title": "Build AI Agent Memory Systems with AgentDB",
+    "value_statement": "AI agents forget everything between sessions. This skill shows you how to build persistent memory systems using AgentDB, enabling your agents to remember conversations, learn patterns, and maintain context across interactions.",
+    "seo_keywords": [
+      "AgentDB",
+      "AI memory",
+      "persistent memory",
+      "Claude Code",
+      "agent memory patterns",
+      "context management",
+      "vector database",
+      "session memory",
+      "long-term storage",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Design 3-layer memory architecture (episodic, semantic, procedural)",
+      "Implement session memory with TTL management",
+      "Build long-term memory consolidation",
+      "Create pattern learning algorithms",
+      "Optimize memory retrieval for sub-50ms performance"
+    ],
+    "limitations": [
+      "Requires AgentDB database setup and configuration",
+      "Basic TypeScript or JavaScript knowledge needed",
+      "6-8 hours required for complete implementation",
+      "Memory capacity depends on AgentDB configuration"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI developers",
+        "title": "Stateful Chatbots",
+        "description": "Build chatbots that remember user preferences and conversation history across sessions"
+      },
+      {
+        "target_user": "Agent builders",
+        "title": "Learning Agents",
+        "description": "Create agents that learn from interactions and improve performance over time"
+      },
+      {
+        "target_user": "System architects",
+        "title": "Context-Aware Systems",
+        "description": "Design systems that maintain context across multiple interactions and workflows"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Memory Architecture Design",
+        "scenario": "Starting a new agent project",
+        "prompt": "Help me design a memory architecture for my AI agent using AgentDB. I need episodic memory for conversations, semantic memory for facts, and procedural memory for learned skills."
+      },
+      {
+        "title": "Session Memory Implementation",
+        "scenario": "Building chat functionality",
+        "prompt": "Show me how to implement session memory in AgentDB that stores conversation history and expires after 24 hours of inactivity."
+      },
+      {
+        "title": "Pattern Learning Setup",
+        "scenario": "Adding learning capabilities",
+        "prompt": "I want my agent to learn from user interactions. How do I implement pattern learning with clustering in AgentDB?"
+      },
+      {
+        "title": "Memory Optimization",
+        "scenario": "Performance tuning",
+        "prompt": "My agent memory queries are slow. Help me optimize retrieval speed with caching and indexing in AgentDB."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I store user preferences in AgentDB memory?",
+        "output": [
+          "Create episodic memory store with 768-dimensional embeddings",
+          "Store preference with embedding: 'User prefers dark theme'",
+          "Set TTL for 24-hour persistence with time-based consolidation",
+          "Retrieve with similarity search on 'user preferences' query",
+          "Expected performance: sub-50ms retrieval time"
+        ]
+      },
+      {
+        "input": "Set up long-term memory for my customer support agent",
+        "customer": "Support agent developers",
+        "output": [
+          "Design 3-layer memory: episodic for conversations, semantic for knowledge, procedural for resolution patterns",
+          "Configure importance-based consolidation to preserve valuable insights",
+          "Implement HNSW indexing for fast similarity search across millions of memories",
+          "Add caching layer to reduce latency for frequently accessed memories"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use appropriate memory types: episodic for events, semantic for facts, procedural for skills",
+      "Implement TTL-based expiration to manage memory size and relevance",
+      "Test memory retrieval performance with realistic data volumes before deployment"
+    ],
+    "anti_patterns": [
+      "Storing all data as single memory type reduces retrieval accuracy and relevance",
+      "Skipping memory consolidation leads to unbounded storage growth over time",
+      "Hardcoding memory limits prevents scalability and dynamic resource allocation"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with all AgentDB versions?",
+        "answer": "Works with AgentDB 2.0 and later versions with memory extension enabled"
+      },
+      {
+        "question": "What is the maximum memory size?",
+        "answer": "Limited by your AgentDB configuration, typically supports millions of vectors"
+      },
+      {
+        "question": "Can I integrate with existing databases?",
+        "answer": "Yes, AgentDB supports hybrid storage combining vector and traditional databases"
+      },
+      {
+        "question": "Is user data secure in memory?",
+        "answer": "AgentDB provides encryption at rest and in transit for sensitive data"
+      },
+      {
+        "question": "What if memory retrieval is slow?",
+        "answer": "Use HNSW indexing and caching layers to achieve sub-50ms retrieval times"
+      },
+      {
+        "question": "How does this compare to Redis or MongoDB?",
+        "answer": "AgentDB combines vector similarity search with traditional storage optimized for AI memory patterns"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 80
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 89
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 50
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 158
+    }
+  ]
+}

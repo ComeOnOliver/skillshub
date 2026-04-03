@@ -1,0 +1,352 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:10:54.409Z",
+    "slug": "wshobson-memory-safety-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/systems-programming/skills/memory-safety-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3f63d46526210ba649d45e6193640c8213ff685b257d97478d80560a46adb0d9",
+    "tree_hash": "f32e37259a011008869fefcf755600140624321ddc4d6b9831f164fbfb19877e"
+  },
+  "skill": {
+    "name": "memory-safety-patterns",
+    "description": "Implement memory-safe programming with RAII, ownership, smart pointers, and resource management across Rust, C++, and C. Use when writing safe systems code, managing resources, or preventing memory bugs.",
+    "summary": "Implement memory-safe programming with RAII, ownership, smart pointers, and resource management acro...",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "memory-safety",
+      "systems-programming",
+      "rust",
+      "cpp",
+      "c"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "The skill is a static educational markdown guide containing code examples for memory safety patterns. It has no executable scripts, no runtime tool calls, no network behavior, and no file system access. All 67 static findings are false positives caused by the scanner pattern-matching on educational keywords in legitimate systems programming content.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 602,
+            "line_end": 602
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 603,
+            "line_end": 603
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 604,
+            "line_end": 604
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 524,
+            "line_end": 524
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 544,
+            "line_end": 544
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 209,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 313
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 313,
+            "line_end": 397
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 397,
+            "line_end": 401
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 438
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 438,
+            "line_end": 440
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 440,
+            "line_end": 463
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 463,
+            "line_end": 467
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 467,
+            "line_end": 508
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 508,
+            "line_end": 510
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 510,
+            "line_end": 566
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 566,
+            "line_end": 581
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 581,
+            "line_end": 586
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 586,
+            "line_end": 598
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 368,
+            "line_end": 368
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 781,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:10:54.409Z"
+  },
+  "content": {
+    "user_title": "Apply memory safety patterns in systems code",
+    "value_statement": "Memory bugs cause crashes and security flaws in systems code. This skill teaches RAII, ownership, and resource management patterns in Rust, C++, and C.",
+    "seo_keywords": [
+      "memory safety patterns",
+      "RAII",
+      "ownership model",
+      "smart pointers",
+      "resource management",
+      "Rust safety",
+      "C++ memory safety",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Explain RAII for files, mutexes, and transactions in C++",
+      "Show smart pointer usage with unique_ptr, shared_ptr, and weak_ptr",
+      "Describe Rust ownership, borrowing, lifetimes, and interior mutability",
+      "Provide C cleanup patterns using goto cleanup and opaque pointers",
+      "Outline bounds checking and safe container access in C++ and Rust",
+      "Describe data race prevention with atomics, mutexes, and locks"
+    ],
+    "limitations": [
+      "Does not analyze or modify your codebase automatically",
+      "Does not execute compilers, sanitizers, or external tools",
+      "Does not provide build system or CI configuration",
+      "Does not guarantee correctness without human review"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Systems developer",
+        "title": "Prevent memory bugs",
+        "description": "Apply RAII and ownership patterns to reduce leaks and use after free errors."
+      },
+      {
+        "target_user": "C++ engineer",
+        "title": "Modernize resource handling",
+        "description": "Replace raw pointers with smart pointers and safer container access."
+      },
+      {
+        "target_user": "Rust learner",
+        "title": "Understand ownership rules",
+        "description": "Learn borrowing, lifetimes, and safe shared ownership patterns."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Learn RAII basics",
+        "scenario": "New to C++ resource management",
+        "prompt": "Explain RAII with a short C++ example for file and mutex handling. Keep it concise and practical."
+      },
+      {
+        "title": "Pick smart pointers",
+        "scenario": "Designing shared ownership",
+        "prompt": "For a tree with parent and child links, recommend smart pointers and explain how to avoid cycles."
+      },
+      {
+        "title": "Map to Rust",
+        "scenario": "Porting C++ patterns to Rust",
+        "prompt": "Show how a C++ RAII class maps to Rust ownership, borrowing, and Drop. Provide a brief example."
+      },
+      {
+        "title": "Prevent data races",
+        "scenario": "Designing concurrent access",
+        "prompt": "Recommend a data race prevention approach in C++ and Rust for a shared counter and map."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Summarize safe resource management options in C, C++, and Rust.",
+        "output": [
+          "C: use goto cleanup blocks or explicit create and destroy functions",
+          "C++: use RAII with destructors and smart pointers",
+          "Rust: rely on ownership, borrowing, and Drop semantics"
+        ]
+      },
+      {
+        "input": "When should I use unique_ptr versus shared_ptr?",
+        "output": [
+          "Use unique_ptr when a single owner controls the lifetime",
+          "Use shared_ptr when multiple owners must share the resource",
+          "Prefer unique_ptr with move semantics over shared_ptr when possible"
+        ]
+      },
+      {
+        "input": "How does Rust prevent use-after-free?",
+        "output": [
+          "The compiler tracks ownership and enforces single owner by default",
+          "References (borrows) have checked lifetimes",
+          "Memory is freed automatically when the owner goes out of scope"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Tie resource lifetime to scope using RAII or ownership",
+      "Prefer safe containers and bounds checked access",
+      "Use sanitizers and static analysis during development"
+    ],
+    "anti_patterns": [
+      "Using raw pointers without clear ownership rules",
+      "Returning references to stack local data",
+      "Ignoring compiler warnings about unsafe access"
+    ],
+    "faq": [
+      {
+        "question": "Is this skill compatible with Claude, Codex, and Claude Code?",
+        "answer": "Yes. It provides guidance and examples that work across these platforms."
+      },
+      {
+        "question": "What are the limits of the guidance?",
+        "answer": "It teaches patterns and examples but does not validate your specific code."
+      },
+      {
+        "question": "Can it integrate with my build or CI system?",
+        "answer": "No. It only offers recommendations and command examples."
+      },
+      {
+        "question": "Does it access my files or data?",
+        "answer": "No. The skill contains static text and code examples only."
+      },
+      {
+        "question": "What if I still see memory errors?",
+        "answer": "Use sanitizers or debuggers and review ownership and lifetime rules."
+      },
+      {
+        "question": "How does it compare to a linter or sanitizer?",
+        "answer": "It teaches patterns, while linters and sanitizers detect issues in real code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 605
+    }
+  ]
+}

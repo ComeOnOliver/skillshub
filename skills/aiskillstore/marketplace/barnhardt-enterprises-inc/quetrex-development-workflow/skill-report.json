@@ -1,0 +1,346 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T14:56:50.183Z",
+    "slug": "barnhardt-enterprises-inc-quetrex-development-workflow",
+    "source_url": "https://github.com/Barnhardt-Enterprises-Inc/quetrex-plugin/tree/main/templates/skills/quetrex-development-workflow",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "14d4e29ae0153dce23a404f370b7fdbe8ad93d42eee394658aaf2402e8190afe",
+    "tree_hash": "d3aa1ef282715b925a493bcb3c2e06623d0ff0c75ace6e72813a3d6b72a5b6a8"
+  },
+  "skill": {
+    "name": "quetrex-development-workflow",
+    "description": "Bootstrap new Claude Code sessions with complete Quetrex project context and enable efficient issue-driven development for AI agent automation.",
+    "summary": "Quetrex project context loader for Claude Code sessions with AI agent workflow automation",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Barnhardt-Enterprises-Inc",
+    "license": "MIT",
+    "tags": [
+      "workflow",
+      "development",
+      "automation",
+      "project-management",
+      "claude-code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill with no executable code. Static findings are false positives triggered by bash command examples in markdown documentation. No actual command execution, credential access, or cryptographic operations present. All critical and high-severity findings dismissed after evaluation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 334
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 338,
+            "line_end": 347
+          }
+        ]
+      }
+    ],
+    "critical_findings": [
+      {
+        "title": "Windows SAM database access",
+        "description": "Pattern 'SAM' detected in filenames and text. Static analyzer misidentified 'ARCHITECTURE-INTELLIGENCE-SYSTEM.md' as Windows SAM database. No actual SAM database access exists.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 360,
+            "line_end": 360
+          }
+        ],
+        "verdict": "FALSE_POSITIVE",
+        "reasoning": "The word 'SAM' appears in documentation filenames. No Windows SAM database code, credentials, or system access is present. Pattern matching false positive."
+      },
+      {
+        "title": "Dangerous combination: Code execution + Network + Credential access",
+        "description": "Heuristic detected combination of command documentation, network references, and credential mentions.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 408
+          }
+        ],
+        "verdict": "FALSE_POSITIVE",
+        "reasoning": "The skill is documentation-only. GitHub CLI commands and Claude Code CLI references are documented examples in markdown. No actual execution, credential exfiltration, or network calls occur. Network reference is source_url field."
+      }
+    ],
+    "high_findings": [
+      {
+        "title": "Weak cryptographic algorithm usage",
+        "description": "Pattern detected suggesting weak cryptographic algorithms.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 264,
+            "line_end": 264
+          }
+        ],
+        "verdict": "FALSE_POSITIVE",
+        "reasoning": "Static analyzer misidentified 'Claude Sonnet 4.5' and version strings as weak crypto algorithms. The content is documentation text describing AI models, not cryptographic code."
+      }
+    ],
+    "medium_findings": [
+      {
+        "title": "Shell command examples in documentation",
+        "description": "Bash command examples with backtick-style patterns found in SKILL.md documentation.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 320
+          }
+        ],
+        "verdict": "FALSE_POSITIVE",
+        "reasoning": "Commands are in fenced code blocks (```bash ... ```), not executable backticks. This is standard documentation practice for developer skills. No command injection risk as there is no executable code."
+      }
+    ],
+    "low_findings": [
+      {
+        "title": "Hardcoded source URL",
+        "description": "Source URL field contains GitHub repository URL.",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ],
+        "verdict": "TRUE_POSITIVE",
+        "reasoning": "The URL is the legitimate source_url metadata field pointing to the GitHub repository. This is expected and required metadata, not a security risk."
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1227,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T14:56:50.183Z"
+  },
+  "content": {
+    "user_title": "Set up Quetrex development workflow",
+    "value_statement": "Managing Quetrex project context across Claude Code sessions is complex. This skill provides standardized workflows, command references, and AI agent automation patterns for efficient project development.",
+    "seo_keywords": [
+      "Quetrex",
+      "Claude Code",
+      "development workflow",
+      "AI agent automation",
+      "GitHub Actions",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "project management",
+      "workflow automation"
+    ],
+    "actual_capabilities": [
+      "Provide project context setup commands for new Claude Code sessions",
+      "Document GitHub CLI commands for issue and PR management",
+      "Explain AI agent automation workflow with GitHub Actions",
+      "Define quality enforcement patterns with 6-layer defense system",
+      "Reference critical project files and their purposes"
+    ],
+    "limitations": [
+      "This skill provides documentation only, it does not execute commands automatically",
+      "Does not create issues or PRs directly, only documents how to do so",
+      "Does not manage credentials or authentication for GitHub or other services",
+      "Does not run tests, build projects, or modify code"
+    ],
+    "use_cases": [
+      {
+        "title": "New session bootstrap",
+        "description": "At the start of a new Claude Code session, load project context and query pending AI-feature issues to understand what work is ready for automation.",
+        "target_user": "Developers starting new work sessions"
+      },
+      {
+        "title": "Issue creation for AI agents",
+        "description": "Create well-structured GitHub issues with ai-feature label to trigger automated agent workflows for feature implementation.",
+        "target_user": "Project maintainers and team leads"
+      },
+      {
+        "title": "Quality standard reference",
+        "description": "Look up TDD workflow patterns, test coverage requirements, and 6-layer defense system documentation to maintain code quality.",
+        "target_user": "Quality-focused developers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start new development session",
+        "prompt": "Load the quetrex-development-workflow skill. Query what AI-feature issues are pending and show me the current project status from .quetrex/status.yml.",
+        "scenario": "Beginning a new work session on the Quetrex project"
+      },
+      {
+        "title": "Create AI agent issue",
+        "prompt": "Help me create a GitHub issue for an AI agent to work on. I want to add cost tracking display to project cards. Include acceptance criteria, relevant files, and testing requirements.",
+        "scenario": "Preparing work for AI agent automation"
+      },
+      {
+        "title": "Review recent work",
+        "prompt": "Show me the GitHub PRs from the AI agent bot merged recently. What features were completed?",
+        "description": "Show me the GitHub PRs from the AI agent bot merged recently. What features were completed?",
+        "target_user": "Checking completed AI agent work"
+      },
+      {
+        "title": "Debug failed automation",
+        "prompt": "Check recent GitHub Actions workflow runs for the AI agent. Show me any failed runs with their logs.",
+        "description": "Check recent GitHub Actions workflow runs for the AI agent. Show me any failed runs with their logs.",
+        "scenario": "Investigating automation failures"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Load quetrex-development-workflow and show me the pending AI-feature issues",
+        "output": [
+          "## Quetrex Development Workflow",
+          "",
+          "### Pending AI-Feature Issues",
+          "",
+          "You can query pending issues with:",
+          "```bash",
+          "gh issue list --label 'ai-feature' --state open",
+          "```",
+          "",
+          "### Key Resources",
+          "- CLAUDE.md - Project context",
+          "- .quetrex/status.yml - Current roadmap",
+          "- docs/PROJECT-CHECKLIST.md - Task tracking"
+        ]
+      },
+      {
+        "input": "How do I create an issue for an AI agent to work on?",
+        "output": [
+          "## Creating AI Agent Issues",
+          "",
+          "### Steps",
+          "1. Use the AI Feature Request template:",
+          "   ```bash",
+          "   gh issue create --template ai-feature.md --label ai-feature",
+          "   ```",
+          "",
+          "2. Add the ai-feature label to trigger GitHub Actions automation",
+          "",
+          "3. The agent worker will pick up the issue and create a PR",
+          "",
+          "### Required Fields",
+          "- Summary of the feature",
+          "- Acceptance criteria (checkboxes)",
+          "- Relevant files and patterns to follow",
+          "- Testing requirements"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run the context loader at the start of every new session to get accurate project state",
+      "Follow the TDD workflow pattern: write tests first, then implement code",
+      "Use the 6-layer defense system to maintain code quality standards"
+    ],
+    "anti_patterns": [
+      "Combining multiple unrelated tasks in a single AI agent issue",
+      "Skipping acceptance criteria when creating issues",
+      "Working without first loading the project context and checking pending issues"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute commands automatically?",
+        "answer": "No. This skill provides documentation, command references, and workflow guidance. Commands shown in documentation are examples that you run manually when needed."
+      },
+      {
+        "question": "How do I trigger AI agent automation?",
+        "answer": "Create a GitHub issue using the ai-feature.md template and add the ai-feature label. GitHub Actions will trigger the agent worker automatically."
+      },
+      {
+        "question": "What is the 6-layer defense system?",
+        "answer": "A quality enforcement system including PreToolUse hooks, PostToolUse hooks, Stop hooks, TypeScript strict mode, test coverage requirements, and CI/CD validation."
+      },
+      {
+        "question": "Where is project context stored?",
+        "answer": "Project context is stored in CLAUDE.md (session context), .quetrex/memory/ (architectural patterns), and .quetrex/status.yml (current roadmap state)."
+      },
+      {
+        "question": "How do I check what work is ready for AI agents?",
+        "answer": "Query GitHub issues with: gh issue list --label ai-feature --state open. Only issues with this label will be processed by AI agents."
+      },
+      {
+        "question": "What quality gates must pass before merging?",
+        "answer": "Tests must meet coverage thresholds (75% overall, 90% for services), all CI checks must pass, and TypeScript strict mode must validate without errors."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 408
+    }
+  ]
+}

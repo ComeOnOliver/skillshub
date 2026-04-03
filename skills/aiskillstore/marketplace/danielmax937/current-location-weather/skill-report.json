@@ -1,0 +1,236 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:28:33.978Z",
+    "slug": "danielmax937-current-location-weather",
+    "source_url": "https://github.com/DanielMax937/pocker/tree/main/current-location-weather/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c36415ff0558f264b2e98508c6cd894764bb73d091756f60ead55f3c45136648",
+    "tree_hash": "3975c128001faaa6ca04844a3675fadc3e4ee19e8f1c11c6e6fb7aeeaf9b5c1e"
+  },
+  "skill": {
+    "name": "current-location-weather",
+    "description": "Get current weather conditions for a location using IP-based geolocation or specified city names. This skill detects your location automatically and fetches real-time weather data including temperature, humidity, wind conditions, and forecasts.",
+    "summary": "Get current weather conditions with automatic location detection or manual city input",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DanielMax937",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "weather",
+      "geolocation",
+      "ip-detection",
+      "climate",
+      "forecast"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill makes legitimate network requests to public weather APIs (ip-api.com and wttr.in) for geolocation and weather data. All static findings for weak cryptography and command execution are false positives caused by documentation examples in markdown backticks and JSON field names. The Python script uses only standard library functions with proper error handling and no user input injection risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/get_weather.py",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "scripts/get_weather.py",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "scripts/get_weather.py",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "scripts/get_weather.py",
+            "line_start": 68,
+            "line_end": 69
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "HTTP endpoint for geolocation",
+        "description": "The IP geolocation service uses HTTP instead of HTTPS (line 24). While this is a read-only public API with no sensitive data transmission, HTTPS would be preferred. The weather API correctly uses HTTPS.",
+        "locations": [
+          {
+            "file": "scripts/get_weather.py",
+            "line_start": 24,
+            "line_end": 24
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 651,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:28:33.978Z",
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "content": {
+    "user_title": "Get Real-Time Weather for Any Location",
+    "value_statement": "Need to check weather conditions quickly without opening multiple apps or websites? This skill automatically detects your location and provides current weather data including temperature, humidity, wind speed, and conditions in seconds.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "weather",
+      "forecast",
+      "temperature",
+      "geolocation",
+      "IP detection",
+      "climate data",
+      "current conditions"
+    ],
+    "actual_capabilities": [
+      "Automatically detect user location based on IP address using free geolocation APIs",
+      "Fetch current weather data for detected or manually specified locations worldwide",
+      "Display temperature in Celsius and Fahrenheit with feels-like values",
+      "Show humidity, wind speed, wind direction, UV index, visibility, and cloud cover",
+      "Output weather data in human-readable text format or structured JSON format",
+      "Handle network errors gracefully with informative error messages"
+    ],
+    "limitations": [
+      "Requires active internet connection to access geolocation and weather APIs",
+      "IP-based location detection provides city-level accuracy, not precise coordinates",
+      "Depends on external free services (ip-api.com and wttr.in) which may have rate limits or downtime",
+      "Does not provide extended forecasts or historical weather data"
+    ],
+    "use_cases": [
+      {
+        "title": "Quick Morning Weather Check",
+        "description": "Developers and remote workers can quickly check weather conditions before starting their day without leaving the terminal or IDE.",
+        "target_user": "Developers and terminal users"
+      },
+      {
+        "title": "Travel Planning Assistant",
+        "description": "Check weather conditions for multiple cities when planning trips by specifying different locations with the location flag.",
+        "target_user": "Travelers and trip planners"
+      },
+      {
+        "title": "Automation and Scripting",
+        "description": "Integrate weather data into scripts, dashboards, or applications using the JSON output format for programmatic access.",
+        "target_user": "System administrators and automation engineers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check Current Weather",
+        "prompt": "What is the weather like right now?",
+        "scenario": "Get weather for your current location automatically"
+      },
+      {
+        "title": "Weather for Specific City",
+        "prompt": "What is the weather in Tokyo, Japan?",
+        "scenario": "Check weather conditions for a specific city anywhere in the world"
+      },
+      {
+        "title": "Detailed Weather Information",
+        "prompt": "Give me detailed weather information including temperature, humidity, wind speed, and UV index.",
+        "scenario": "Get comprehensive weather data with all available metrics"
+      },
+      {
+        "title": "Multiple Location Comparison",
+        "prompt": "Compare the weather in New York, London, and Sydney.",
+        "scenario": "Check weather for multiple cities to compare conditions across different locations"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What's the weather like?",
+        "output": "Based on your IP location in San Francisco, United States, the current weather is partly cloudy with a temperature of 15 degrees Celsius (59 degrees Fahrenheit). The humidity is 72 percent with southwest winds at 10 kilometers per hour."
+      },
+      {
+        "input": "What is the weather in Paris, France?",
+        "output": "In Paris, France, the current conditions are light rain with a temperature of 12 degrees Celsius (54 degrees Fahrenheit). The feels-like temperature is 10 degrees Celsius. Humidity is at 85 percent with winds from the northwest at 15 kilometers per hour. The UV index is 2."
+      },
+      {
+        "input": "Is it raining in London?",
+        "output": "In London, the current weather condition is overcast with no rain. The temperature is 14 degrees Celsius with 78 percent humidity and light winds from the west."
+      }
+    ],
+    "best_practices": [
+      "Use the location flag when you need weather for a specific city rather than relying on IP-based detection for accuracy",
+      "Request JSON format output when integrating weather data into scripts or applications for easier parsing",
+      "Check weather conditions during morning routines or before outdoor activities for better planning"
+    ],
+    "anti_patterns": [
+      "Do not rely on IP-based location for precise coordinates as it only provides city-level accuracy",
+      "Avoid making rapid repeated requests to prevent potential rate limiting from the free API services",
+      "Do not expect extended forecasts or historical data as this skill only provides current conditions"
+    ],
+    "faq": [
+      {
+        "question": "How accurate is the automatic location detection?",
+        "answer": "The IP-based location detection provides city-level accuracy. For more precise results, use the location flag to specify your exact city or area."
+      },
+      {
+        "question": "Do I need an API key to use this skill?",
+        "answer": "No API key is required. This skill uses free public APIs (ip-api.com for geolocation and wttr.in for weather data) that do not require authentication."
+      },
+      {
+        "question": "Can I get weather forecasts for future days?",
+        "answer": "No, this skill only provides current weather conditions. It does not include extended forecasts or future predictions."
+      },
+      {
+        "question": "What happens if I have no internet connection?",
+        "answer": "The skill requires an active internet connection to fetch weather data. Without connectivity, it will return a network error message."
+      },
+      {
+        "question": "Can I get weather for multiple cities at once?",
+        "answer": "You need to make separate requests for each city by using the location flag with different city names."
+      },
+      {
+        "question": "What weather metrics are included in the output?",
+        "answer": "The skill provides temperature, feels-like temperature, weather condition, humidity, wind speed and direction, UV index, visibility, atmospheric pressure, and cloud cover percentage."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "get_weather.py",
+          "type": "file",
+          "path": "scripts/get_weather.py",
+          "lines": 157
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 77
+    }
+  ]
+}

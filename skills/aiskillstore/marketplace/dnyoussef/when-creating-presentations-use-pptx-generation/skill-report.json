@@ -1,0 +1,328 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:56:03.771Z",
+    "slug": "dnyoussef-when-creating-presentations-use-pptx-generation",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/utilities/when-creating-presentations-use-pptx-generation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "74db539095495a085159e57d7cedfff9dd873c87d8c59e3992f9248b54f7b36b",
+    "tree_hash": "e32212b22419241639938fcad917de711dba3b6f9fba36ec297d34e2ec05081f"
+  },
+  "skill": {
+    "name": "when-creating-presentations-use-pptx-generation",
+    "description": "Enterprise-grade PowerPoint deck generation using evidence-based prompting, workflow enforcement, constraint-based design",
+    "summary": "Generate professional PowerPoint presentations with WCAG 2.1 AA accessibility compliance, data visualizations, and consistent design systems",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "presentation",
+      "pptx",
+      "powerpoint",
+      "slides",
+      "accessibility",
+      "data-visualization",
+      "wcag"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 101 static findings are false positives from naive pattern matching. The scanner misidentified markdown code fences as Ruby backticks, keyword matches in documentation as weak cryptographic algorithms, and metadata fields as hidden file access. This is a legitimate presentation generation skill using pptxgenjs library with no malicious code or dangerous patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 258
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 258,
+            "line_end": 261
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 261,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 298
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 298,
+            "line_end": 312
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 312,
+            "line_end": 342
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 342,
+            "line_end": 345
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 345,
+            "line_end": 355
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 355,
+            "line_end": 371
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 371,
+            "line_end": 374
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 374,
+            "line_end": 391
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 391,
+            "line_end": 394
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 394,
+            "line_end": 408
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 410,
+            "line_end": 410
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 411,
+            "line_end": 417
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 386,
+            "line_end": 386
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1480,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:56:03.771Z",
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "content": {
+    "user_title": "Generate Professional PowerPoint Presentations",
+    "value_statement": "Create polished, accessible presentations with consistent branding, data visualizations, and WCAG 2.1 AA compliance. This skill automates slide generation for board decks, business reviews, and technical reports.",
+    "seo_keywords": [
+      "PowerPoint generation",
+      "PPT creation",
+      "slide deck builder",
+      "presentation automation",
+      "accessibility compliance",
+      "WCAG AA",
+      "data visualization",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generate PowerPoint presentations from structured content outlines",
+      "Apply consistent design systems with colors, fonts, and layouts",
+      "Create data visualizations including charts and tables",
+      "Ensure WCAG 2.1 AA accessibility compliance",
+      "Add speaker notes and alt text for screen readers",
+      "Export accessibility reports with quality metrics"
+    ],
+    "limitations": [
+      "Requires pptxgenjs library dependency",
+      "Complex animations and transitions not supported",
+      "Template-based designs must be pre-defined",
+      "Image placement limited to basic positioning"
+    ],
+    "use_cases": [
+      {
+        "title": "Board Deck Creation",
+        "description": "Generate executive-level board presentations with consistent branding, data-driven insights, and professional formatting for board meetings.",
+        "target_user": "Executives and administrative assistants"
+      },
+      {
+        "title": "Quarterly Business Reviews",
+        "description": "Create data-rich quarterly reviews with charts, metrics, and trend analysis visualizations that communicate business performance clearly.",
+        "target_user": "Business analysts and managers"
+      },
+      {
+        "title": "Technical Documentation Slides",
+        "description": "Convert technical documentation into accessible slide decks with code examples, architecture diagrams, and accessibility compliance.",
+        "target_user": "Technical writers and developers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Presentation Request",
+        "prompt": "Create a PowerPoint presentation about {topic} with {slide_count} slides. Include an executive summary, key points, and a conclusion.",
+        "scenario": "Simple presentation creation for a single topic"
+      },
+      {
+        "title": "Data-Driven Report",
+        "prompt": "Generate a presentation from the data in {data_file}. Create {n} slides with charts showing trends, a summary dashboard, and recommendations based on the analysis.",
+        "scenario": "Creating presentations from data files or datasets"
+      },
+      {
+        "title": "Board-Level Deck",
+        "prompt": "Build a professional board deck with {section_count} sections: agenda, executive summary, financial overview, strategic initiatives, risk assessment, and Q&A. Use corporate branding with WCAG 2.1 AA compliance.",
+        "scenario": "Creating formal board presentations with multiple sections"
+      },
+      {
+        "title": "Multi-Section Technical Report",
+        "prompt": "Transform the technical report at {doc_path} into a {slide_count}-slide presentation. Include title slide, agenda, executive summary, main sections with supporting data visualizations, conclusions, and speaker notes for each slide.",
+        "scenario": "Converting existing documents into structured presentations"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a 5-slide presentation about Q4 sales performance with charts showing revenue growth.",
+        "output": [
+          "Slide 1: Title - 'Q4 Sales Performance Review'",
+          "Slide 2: Agenda with 4 talking points",
+          "Slide 3: Executive Summary - 3 key metrics",
+          "Slide 4: Revenue chart - Bar chart showing monthly revenue",
+          "Slide 5: Conclusions and next steps"
+        ]
+      },
+      {
+        "input": "Build a board deck for annual strategy meeting with financial overview.",
+        "output": [
+          "Slide 1: Company Annual Strategy Meeting - [Year]",
+          "Slide 2: Agenda with 6 items",
+          "Slide 3: Executive Summary - 5 key highlights",
+          "Slide 4: Financial Overview - 3 charts (revenue, profit, cash flow)",
+          "Slide 5: Strategic Initiatives - 4 priority areas",
+          "Slide 6: Risk Assessment - Matrix with 4 risks",
+          "Slide 7: Q&A"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide clear content outlines with designated slide types before generation",
+      "Define design system early including colors, fonts, and layout constraints",
+      "Review accessibility report after generation to ensure WCAG compliance",
+      "Add speaker notes for complex slides to guide presentation delivery"
+    ],
+    "anti_patterns": [
+      "Requesting complex animations or embedded videos that exceed pptxgenjs capabilities",
+      "Skipping the design system phase results in inconsistent visual quality",
+      "Generating more than 40 slides reduces audience engagement",
+      "Ignoring accessibility checks creates barriers for users with disabilities"
+    ],
+    "faq": [
+      {
+        "question": "What file formats does this skill output?",
+        "answer": "The primary output is a .pptx PowerPoint file. It also generates an accessibility-report.json with compliance metrics and documentation.md with generation details."
+      },
+      {
+        "question": "Does the generated presentation include speaker notes?",
+        "answer": "Yes, speaker notes are automatically added based on the slide content and can be customized in the content structure."
+      },
+      {
+        "question": "How is accessibility ensured?",
+        "answer": "The skill validates color contrast ratios (4.5:1 minimum), checks for alt text on images, verifies reading order, and generates an accessibility compliance report."
+      },
+      {
+        "question": "Can I use custom templates?",
+        "answer": "Yes, you can define custom design systems with specific colors, fonts, layouts, and slide templates that will be applied consistently across all slides."
+      },
+      {
+        "question": "What chart types are supported?",
+        "answer": "Common chart types including bar, line, pie, and scatter plots are supported through the pptxgenjs library."
+      },
+      {
+        "question": "Is there a limit on slide count?",
+        "answer": "The skill supports 30+ slides. For optimal audience engagement, presentations with 40 or fewer slides are recommended."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 49
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 71
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 44
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 441
+    }
+  ]
+}

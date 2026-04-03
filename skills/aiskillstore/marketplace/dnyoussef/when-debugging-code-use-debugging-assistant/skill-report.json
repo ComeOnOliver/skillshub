@@ -1,0 +1,259 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T03:43:50.457Z",
+    "slug": "dnyoussef-when-debugging-code-use-debugging-assistant",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/debugging/when-debugging-code-use-debugging-assistant",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "966b7e277b898facfb98d2ddd27cda85e80cf398b9b409fa5f934177813ce40e",
+    "tree_hash": "79d3f73542a5bd2f8ebc1a59933a51a29de6c7832b91c5b29f068e76b2493799"
+  },
+  "skill": {
+    "name": "when-debugging-code-use-debugging-assistant",
+    "description": "Intelligent debugging workflow that systematically identifies symptoms, performs root cause analysis, generates fixes with explanations, validates solutions, and prevents regressions through compre...",
+    "summary": "Intelligent debugging workflow that systematically identifies symptoms, performs root cause analysis...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "debugging",
+      "bug-fix",
+      "testing",
+      "root-cause-analysis",
+      "development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate debugging assistant skill. The static analyzer flagged 408 findings, but nearly all are false positives from documentation patterns (markdown backticks mistaken for shell execution) and JSON schema property names (mistaken for cryptographic algorithms). The shell script uses standard development commands (git, npx) for local debugging session management with no malicious network activity or credential exfiltration.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "slash-command-debugging-assistant.sh",
+            "line_start": 147,
+            "line_end": 175
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "slash-command-debugging-assistant.sh",
+            "line_start": 43,
+            "line_end": 61
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "claude-flow Package Dependency",
+        "description": "Shell script executes npx claude-flow commands which require the claude-flow package to be installed for full functionality",
+        "locations": [
+          {
+            "file": "slash-command-debugging-assistant.sh",
+            "line_start": 147,
+            "line_end": 175
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3662,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T03:43:50.457Z"
+  },
+  "content": {
+    "user_title": "Debug code systematically with 5-phase analysis",
+    "value_statement": "Finding bugs in complex codebases wastes valuable development time. This skill provides a structured 5-phase debugging workflow that identifies root causes and validates fixes automatically.",
+    "seo_keywords": [
+      "debugging assistant",
+      "Claude Code",
+      "bug fix",
+      "root cause analysis",
+      "Claude",
+      "Codex",
+      "automated testing",
+      "code debugging",
+      "error analysis",
+      "regression prevention"
+    ],
+    "actual_capabilities": [
+      "Executes systematic 5-phase debugging workflow from symptom to prevention",
+      "Performs root cause analysis using binary search and data flow tracing",
+      "Generates multiple fix approaches with trade-off evaluation",
+      "Validates fixes through automated test execution",
+      "Stores debugging session state for resume and reporting",
+      "Integrates with git for change history analysis"
+    ],
+    "limitations": [
+      "Requires claude-flow package to be installed for full functionality",
+      "Depends on project having testable code structure",
+      "Cannot debug hardware or network infrastructure issues",
+      "Performance profiling requires additional tooling configuration"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developer",
+        "title": "Fix runtime errors systematically",
+        "description": "When you encounter TypeError or undefined errors, use this skill to trace the execution path and identify the exact cause."
+      },
+      {
+        "target_user": "QA Engineer",
+        "title": "Investigate intermittent test failures",
+        "description": "Analyze race conditions and timing-dependent bugs that cause tests to fail randomly using the root cause analysis phase."
+      },
+      {
+        "target_user": "Tech Lead",
+        "title": "Reduce bug recurrence in codebase",
+        "description": "Use the regression prevention phase to add permanent test coverage and documentation that prevents bugs from returning."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple Bug Report",
+        "scenario": "Report a basic error you encountered",
+        "prompt": "/debug-assist \"Users getting undefined error when clicking submit button\""
+      },
+      {
+        "title": "File-Specific Debug",
+        "scenario": "Debug an error in a known file",
+        "prompt": "/debug-assist --file src/auth.js \"Cannot read property name of undefined at login\""
+      },
+      {
+        "title": "Log Analysis",
+        "scenario": "Analyze errors from log files",
+        "prompt": "/debug-assist --log error.log \"Server crashes randomly under high load\""
+      },
+      {
+        "title": "Interactive Session",
+        "scenario": "Complex bug requiring guided investigation",
+        "prompt": "/debug-assist --interactive --profile \"API response degraded from 100ms to 2 seconds\""
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Debug the TypeError in our user authentication module",
+        "output": [
+          "Phase 1 Complete: Identified TypeError at auth.js line 45 when user object is undefined",
+          "Phase 2 Complete: Root cause is missing await on async getUserById call",
+          "Phase 3 Complete: Generated fix adding await keyword and null validation",
+          "Phase 4 Complete: All 247 tests passing, no regressions detected",
+          "Phase 5 Complete: Added permanent test case for null user scenario"
+        ]
+      },
+      {
+        "input": "Shopping cart items randomly disappear for some users",
+        "output": [
+          "Classification: Race condition, intermittent frequency, high severity",
+          "Root Cause: Concurrent cart updates without synchronization causing lost updates",
+          "Fix Applied: Implemented optimistic locking with version checking",
+          "Validation: Concurrent update test suite added, all scenarios passing"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always provide exact error messages and stack traces for faster root cause identification",
+      "Let the skill complete all 5 phases before applying fixes to ensure proper validation",
+      "Use the interactive mode for complex bugs that require iterative investigation"
+    ],
+    "anti_patterns": [
+      "Skipping the validation phase to save time often leads to incomplete fixes",
+      "Providing vague descriptions like fix my code instead of specific error details",
+      "Ignoring the regression prevention phase allows the same bugs to return later"
+    ],
+    "faq": [
+      {
+        "question": "What types of bugs can this skill help with?",
+        "answer": "This skill handles runtime errors, null pointer exceptions, race conditions, memory leaks, async issues, and performance problems in most programming languages."
+      },
+      {
+        "question": "Does this skill modify my code automatically?",
+        "answer": "The skill generates fixes and presents them for review. You control whether to apply the suggested changes to your codebase."
+      },
+      {
+        "question": "How long does the debugging process take?",
+        "answer": "Most bugs are resolved within 15-45 minutes. Complex distributed system issues may take longer depending on reproduction difficulty."
+      },
+      {
+        "question": "What if the skill cannot identify the root cause?",
+        "answer": "The skill will escalate complex issues with a detailed analysis report and recommendations for manual investigation or architectural review."
+      },
+      {
+        "question": "Can I resume a debugging session later?",
+        "answer": "Yes. Session state is stored in memory. Use the --status flag to check progress and --report to generate a summary of findings."
+      },
+      {
+        "question": "Does this work with any programming language?",
+        "answer": "Yes. The debugging methodology is language-agnostic. Test execution commands can be configured in .debug-config.json for your project."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "mcp-debugging-assistant.json",
+      "type": "file",
+      "path": "mcp-debugging-assistant.json",
+      "lines": 562
+    },
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 186
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 888
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 271
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 459
+    },
+    {
+      "name": "slash-command-debugging-assistant.sh",
+      "type": "file",
+      "path": "slash-command-debugging-assistant.sh",
+      "lines": 517
+    },
+    {
+      "name": "subagent-debugging-assistant.md",
+      "type": "file",
+      "path": "subagent-debugging-assistant.md",
+      "lines": 508
+    }
+  ]
+}

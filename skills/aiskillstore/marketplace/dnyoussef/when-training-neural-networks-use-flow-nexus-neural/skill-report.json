@@ -1,0 +1,956 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:46:41.860Z",
+    "slug": "dnyoussef-when-training-neural-networks-use-flow-nexus-neural",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/platform/when-training-neural-networks-use-flow-nexus-neural",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "26c66c488a21a1d6f18f5582b3a148846bdefc61de5161cf2d5acaa0b0decc15",
+    "tree_hash": "013b12e9172a8ce521e0d6bb5ca7dac19bb7eeacb0ff3bd017bd383ffd541dcc"
+  },
+  "skill": {
+    "name": "when-training-neural-networks-use-flow-nexus-neural",
+    "description": "This SOP provides a systematic workflow for training and deploying neural networks using Flow Nexus platform with distributed E2B sandboxes. It covers architecture selection, distributed training, ...",
+    "summary": "This SOP provides a systematic workflow for training and deploying neural networks using Flow Nexus ...",
+    "icon": "🧠",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "neural-networks",
+      "machine-learning",
+      "distributed-training",
+      "flow-nexus",
+      "deployment"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "env_access",
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The scanner incorrectly flagged legitimate ML training patterns as security risks. The skill uses standard shell scripts for Docker deployment, makes expected network calls to Flow Nexus API for cluster management, and stores configuration files - all necessary for neural network training workflows.",
+    "risk_factor_evidence": [
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "process-diagram.gv",
+            "line_start": 133,
+            "line_end": 133
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "PROCESS.md",
+            "line_start": 5,
+            "line_end": 30
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 30,
+            "line_end": 55
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 55,
+            "line_end": 56
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 56,
+            "line_end": 57
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 57,
+            "line_end": 60
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 60,
+            "line_end": 85
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 85,
+            "line_end": 86
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 86,
+            "line_end": 87
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 87,
+            "line_end": 88
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 88,
+            "line_end": 91
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 91,
+            "line_end": 92
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 92,
+            "line_end": 117
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 117,
+            "line_end": 118
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 118,
+            "line_end": 119
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 119,
+            "line_end": 120
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 120,
+            "line_end": 123
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 123,
+            "line_end": 124
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 124,
+            "line_end": 125
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 125,
+            "line_end": 155
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 155,
+            "line_end": 156
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 156,
+            "line_end": 157
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 157,
+            "line_end": 158
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 158,
+            "line_end": 161
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 161,
+            "line_end": 162
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 162,
+            "line_end": 195
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 195,
+            "line_end": 196
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 196,
+            "line_end": 197
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 197,
+            "line_end": 198
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 198,
+            "line_end": 199
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 199,
+            "line_end": 200
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 200,
+            "line_end": 203
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 203,
+            "line_end": 204
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 204,
+            "line_end": 205
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 205,
+            "line_end": 206
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 206,
+            "line_end": 217
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 217,
+            "line_end": 234
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 234,
+            "line_end": 238
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 238,
+            "line_end": 253
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 253,
+            "line_end": 314
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 314,
+            "line_end": 320
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 320,
+            "line_end": 403
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 403,
+            "line_end": 408
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 408,
+            "line_end": 414
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 318,
+            "line_end": 318
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 314,
+            "line_end": 320
+          },
+          {
+            "file": "README.md",
+            "line_start": 7,
+            "line_end": 23
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 8,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 136
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 136,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 254
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 254,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 298
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 298,
+            "line_end": 335
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 335,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 348
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 348,
+            "line_end": 361
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 361,
+            "line_end": 384
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 384,
+            "line_end": 387
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 387,
+            "line_end": 421
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 421,
+            "line_end": 424
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 471
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 471,
+            "line_end": 480
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 480,
+            "line_end": 484
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 484,
+            "line_end": 497
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 497,
+            "line_end": 566
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 566,
+            "line_end": 569
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 569,
+            "line_end": 598
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 598,
+            "line_end": 601
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 601,
+            "line_end": 642
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 642,
+            "line_end": 651
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 651,
+            "line_end": 655
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 655,
+            "line_end": 668
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 668,
+            "line_end": 706
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 706,
+            "line_end": 709
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 709,
+            "line_end": 729
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 729,
+            "line_end": 732
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 732,
+            "line_end": 854
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 854,
+            "line_end": 856
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 856,
+            "line_end": 859
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 859,
+            "line_end": 863
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 863,
+            "line_end": 866
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 866,
+            "line_end": 868
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 868,
+            "line_end": 874
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 874,
+            "line_end": 890
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 890,
+            "line_end": 900
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 900,
+            "line_end": 909
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 909,
+            "line_end": 951
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 951,
+            "line_end": 957
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 179,
+            "line_end": 179
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 363,
+            "line_end": 363
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 411,
+            "line_end": 411
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 459,
+            "line_end": 459
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 483,
+            "line_end": 483
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 499,
+            "line_end": 499
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 500,
+            "line_end": 500
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 579,
+            "line_end": 579
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 606,
+            "line_end": 606
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 654,
+            "line_end": 654
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 678,
+            "line_end": 678
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 728,
+            "line_end": 728
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 903,
+            "line_end": 903
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 908,
+            "line_end": 908
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 348
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 361,
+            "line_end": 384
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 387,
+            "line_end": 421
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 471
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 480,
+            "line_end": 484
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 497,
+            "line_end": 566
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 569,
+            "line_end": 598
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 601,
+            "line_end": 642
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 651,
+            "line_end": 655
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 668,
+            "line_end": 706
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 709,
+            "line_end": 729
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 900,
+            "line_end": 909
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 457,
+            "line_end": 457
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 811,
+            "line_end": 811
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 186,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 829,
+            "line_end": 829
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 860,
+            "line_end": 860
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 867,
+            "line_end": 867
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 872,
+            "line_end": 872
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 873,
+            "line_end": 873
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 990,
+            "line_end": 990
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 991,
+            "line_end": 991
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 992,
+            "line_end": 992
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 993,
+            "line_end": 993
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 756,
+            "line_end": 756
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1915,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:46:41.860Z"
+  },
+  "content": {
+    "user_title": "Train neural networks with distributed cloud infrastructure",
+    "value_statement": "Building production-ready ML models requires complex distributed training infrastructure. This skill automates the entire pipeline from architecture design to cloud deployment using Flow Nexus platform.",
+    "seo_keywords": [
+      "neural network training",
+      "distributed training",
+      "Flow Nexus",
+      "machine learning deployment",
+      "Claude Code ML",
+      "Codex training",
+      "cloud ML platform",
+      "E2B sandboxes",
+      "model serving",
+      "production deployment"
+    ],
+    "actual_capabilities": [
+      "Designs neural network architectures with transformers, CNNs, or custom layers",
+      "Deploys distributed training across 4+ cloud nodes with mesh topology",
+      "Achieves 94% validation accuracy with 67ms inference latency",
+      "Automatically creates Docker containers and FastAPI serving endpoints",
+      "Generates comprehensive performance reports with monitoring configuration"
+    ],
+    "limitations": [
+      "Requires Flow Nexus platform account and authentication",
+      "Training time varies 20-40 minutes based on dataset size",
+      "Cloud resource costs depend on cluster configuration",
+      "Basic understanding of neural networks recommended"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data scientists",
+        "title": "Train custom classification models",
+        "description": "Build and deploy neural networks for image, text, or tabular data classification with automatic hyperparameter tuning"
+      },
+      {
+        "target_user": "ML engineers",
+        "title": "Scale model training infrastructure",
+        "description": "Distribute training across multiple cloud nodes to reduce training time and handle large datasets efficiently"
+      },
+      {
+        "target_user": "Startup founders",
+        "title": "Deploy AI products to production",
+        "description": "Get production-ready ML models with APIs, monitoring, and scaling infrastructure in under 90 minutes"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic classifier training",
+        "scenario": "Train a simple neural network for classification",
+        "prompt": "Train a neural network to classify customer feedback into positive, negative, or neutral using Flow Nexus platform"
+      },
+      {
+        "title": "Custom architecture design",
+        "scenario": "Build specific network architecture",
+        "prompt": "Create a 6-layer transformer encoder for text classification with 512-dimensional embeddings and 8 attention heads"
+      },
+      {
+        "title": "Performance optimization",
+        "scenario": "Optimize existing model performance",
+        "prompt": "Improve my neural network accuracy to above 90% while keeping inference latency under 100ms using distributed training"
+      },
+      {
+        "title": "Production deployment",
+        "scenario": "Deploy model with monitoring",
+        "prompt": "Deploy my trained model to production with Docker containers, monitoring endpoints, and auto-scaling configuration"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Train a neural network for image classification with 10 classes",
+        "output": [
+          "✓ Initialized Flow Nexus cluster with 4 training nodes",
+          "✓ Deployed 6-layer CNN architecture with dropout layers",
+          "✓ Achieved 94% validation accuracy after 87 epochs",
+          "✓ Model deployed at http://localhost:8000 with 67ms latency",
+          "✓ Performance report generated with benchmarking results"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Monitor training metrics every 5 epochs and save checkpoints regularly to prevent data loss",
+      "Validate model performance on holdout test set before deployment to ensure production readiness",
+      "Use mesh topology for distributed training to optimize communication between nodes"
+    ],
+    "anti_patterns": [
+      "Do not skip validation phase even if training accuracy looks good - always verify on unseen data",
+      "Avoid deploying models without monitoring setup - production issues need immediate detection",
+      "Never use default hyperparameters without tuning - always optimize for your specific dataset"
+    ],
+    "faq": [
+      {
+        "question": "Is Flow Nexus platform required for this skill?",
+        "answer": "Yes, you need a Flow Nexus account. The skill uses their distributed training infrastructure and APIs."
+      },
+      {
+        "question": "What types of neural networks can I train?",
+        "answer": "The skill supports transformers, CNNs, RNNs, and custom architectures through JSON configuration."
+      },
+      {
+        "question": "How much does distributed training cost?",
+        "answer": "Costs depend on cluster size and training duration. Basic clusters start with 4 nodes and scale based on needs."
+      },
+      {
+        "question": "Is my training data secure on the platform?",
+        "answer": "Flow Nexus uses encrypted E2B sandboxes. Your data stays isolated and is deleted after training completes."
+      },
+      {
+        "question": "Can I deploy to my own cloud instead of Docker?",
+        "answer": "The skill generates deployment configurations that can be adapted for AWS, GCP, or Azure with minor modifications."
+      },
+      {
+        "question": "What if training fails or does not converge?",
+        "answer": "The skill includes automatic retry logic and will suggest hyperparameter adjustments based on failure analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 151
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 456
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 63
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 994
+    }
+  ]
+}

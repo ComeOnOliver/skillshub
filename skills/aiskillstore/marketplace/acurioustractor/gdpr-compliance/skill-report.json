@@ -1,0 +1,359 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:16:34.905Z",
+    "slug": "acurioustractor-gdpr-compliance",
+    "source_url": "https://github.com/Acurioustractor/empathy-ledger-v2/tree/main/.claude/skills/local/gdpr-compliance",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "75eb83b48174b24e8594a79169f2335727548b88f090a1e0c765b356eb249ddb",
+    "tree_hash": "dec59b8738d4c320b9fea6f46c016f414d1e56d3ad2fac01084c45ba980f9dcd"
+  },
+  "skill": {
+    "name": "gdpr-compliance",
+    "description": "This skill provides comprehensive guidance for implementing and reviewing GDPR-compliant features in Empathy Ledger.",
+    "summary": "This skill provides comprehensive guidance for implementing and reviewing GDPR-compliant features in...",
+    "icon": "🔒",
+    "version": "1.0.0",
+    "author": "Acurioustractor",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "gdpr",
+      "privacy",
+      "compliance",
+      "data-protection",
+      "legal"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 57 static findings are FALSE POSITIVES. This skill contains only documentation with TypeScript and SQL code examples. No executable code, scripts, network calls, filesystem access, environment variables, or command execution paths exist. The static scanner misinterpreted documentation patterns including markdown code blocks and TypeScript interface definitions as security issues. The skill-report.json file already correctly assessed this as safe documentation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 117
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 136
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 136,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 189
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 381,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:16:34.905Z"
+  },
+  "content": {
+    "user_title": "Implement GDPR data compliance",
+    "value_statement": "Developers need clear guidance on implementing data subject rights and consent management. This skill provides ready-to-use TypeScript interfaces, SQL schemas, and code review checklists for GDPR compliance in web applications.",
+    "seo_keywords": [
+      "gdpr compliance",
+      "data privacy",
+      "article 15 right of access",
+      "data subject rights",
+      "consent management",
+      "data portability",
+      "claude code skill",
+      "claude ai skill",
+      "codex ai skill",
+      "legal compliance"
+    ],
+    "actual_capabilities": [
+      "Documents GDPR Article 15-20 data subject rights with implementation patterns",
+      "Provides TypeScript interfaces for consent records and data export",
+      "Includes SQL schemas for deletion requests and anonymization tracking",
+      "Offers code review checklist for GDPR compliance verification",
+      "Details API endpoints for data export, deletion requests, and consent withdrawal"
+    ],
+    "limitations": [
+      "Skill is documentation-only and does not execute compliance operations",
+      "Does not provide legal advice or certification",
+      "Requires developer implementation following provided patterns"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Developers",
+        "title": "Build data rights APIs",
+        "description": "Implement user data export, deletion workflows, and consent management endpoints using TypeScript patterns"
+      },
+      {
+        "target_user": "Data Engineers",
+        "title": "Design compliance schemas",
+        "description": "Create database tables for deletion requests, audit logs, and anonymization tracking"
+      },
+      {
+        "target_user": "Security Auditors",
+        "title": "Verify GDPR coverage",
+        "description": "Review code against compliance checklist covering all GDPR data subject rights"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Export User Data",
+        "scenario": "Implement data portability",
+        "prompt": "How do I implement Article 20 data portability to let users export their personal data in JSON format?"
+      },
+      {
+        "title": "Delete User Account",
+        "scenario": "Handle deletion requests",
+        "prompt": "Show me the complete workflow for handling GDPR Article 17 right to erasure including 30-day processing window"
+      },
+      {
+        "title": "Track Consent",
+        "scenario": "Manage user consent",
+        "prompt": "How should I implement consent capture, verification, and withdrawal tracking for story sharing?"
+      },
+      {
+        "title": "Review Compliance",
+        "scenario": "Audit code changes",
+        "prompt": "Create a code review checklist to verify new features meet GDPR requirements for data collection, consent, and audit logging"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I implement consent withdrawal for a story?",
+        "output": [
+          "POST to /api/stories/[id]/consent/withdraw triggers:",
+          "Set consent_withdrawn_at timestamp",
+          "Revoke all embed tokens",
+          "Mark all distributions as revoked",
+          "Send webhook notifications",
+          "Queue external takedown requests",
+          "Create audit log entries"
+        ]
+      },
+      {
+        "input": "Show me the database schema for deletion tracking",
+        "output": [
+          "deletion_requests table includes:",
+          "id (UUID primary key), user_id, tenant_id",
+          "request_type (anonymize_story or delete_account)",
+          "status (pending, processing, completed)",
+          "Timestamps: requested_at, processed_at, completed_at"
+        ]
+      },
+      {
+        "input": "What consent fields should I track?",
+        "output": [
+          "ConsentRecord interface includes:",
+          "has_consent (boolean) - initial consent given",
+          "consent_verified (boolean) - verification completed",
+          "consent_method - written, verbal, or digital",
+          "consent_date - when consent was provided",
+          "consent_witness_id - for verbal consent verification"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Capture consent before any data processing with method and timestamp recorded",
+      "Implement 30-day deletion window for Article 17 compliance",
+      "Anonymize audit trails rather than deleting them to maintain security logs"
+    ],
+    "anti_patterns": [
+      "Deleting user data without proper audit trail preservation",
+      "Processing personal data without documented lawful basis",
+      "Failing to provide machine-readable format for data portability"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. All tools can read the documentation and apply patterns."
+      },
+      {
+        "question": "What GDPR articles are covered?",
+        "answer": "Articles 15-20 including right of access, rectification, erasure, and data portability."
+      },
+      {
+        "question": "Does this skill execute compliance operations?",
+        "answer": "No. This is documentation-only. You must implement the patterns yourself in your codebase."
+      },
+      {
+        "question": "Is the data handled securely?",
+        "answer": "The skill itself touches no data. It only provides patterns. Your implementation must secure data."
+      },
+      {
+        "question": "Can I use this for legal compliance certification?",
+        "answer": "No. This provides technical patterns only. Consult legal counsel for actual compliance certification."
+      },
+      {
+        "question": "How does this compare to privacy-by-design frameworks?",
+        "answer": "This skill implements GDPR-specific requirements. Privacy-by-design is a broader architectural approach."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 203
+    }
+  ]
+}

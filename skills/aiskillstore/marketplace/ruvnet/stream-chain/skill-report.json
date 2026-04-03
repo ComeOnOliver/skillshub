@@ -1,0 +1,671 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:56:15.429Z",
+    "slug": "ruvnet-stream-chain",
+    "source_url": "https://github.com/ruvnet/claude-flow/tree/main/.claude/skills/stream-chain",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b323291502d776e5b7e2d55b7998189cadddcda89fc7b467088cb5f3b6043eb7",
+    "tree_hash": "74082a40b65b564bbf3a8d51c426279ec4a6bd5bcabe87ed5c58adcbf16cbec8"
+  },
+  "skill": {
+    "name": "stream-chain",
+    "description": "Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows",
+    "summary": "Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows",
+    "icon": "🔗",
+    "version": "1.0.0",
+    "author": "ruvnet",
+    "license": "MIT",
+    "category": "workflow",
+    "tags": [
+      "streaming",
+      "pipeline",
+      "chaining",
+      "multi-agent",
+      "workflow"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 118 static findings are false positives. This is a pure documentation file (SKILL.md) containing only markdown documentation for a CLI workflow orchestration tool. There is no executable code, no scripts, no network calls, no filesystem access, no environment variable reads, and no command execution capabilities. The static scanner incorrectly flagged markdown code fences as shell execution, hex strings as C2 indicators, and common words as cryptographic references.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 168,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 187,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 208
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 225
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 225
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 227
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 227
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 239
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 239,
+            "line_end": 241
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 241,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 303
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 303,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 316
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 316,
+            "line_end": 324
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 330
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 330,
+            "line_end": 337
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 361
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 361,
+            "line_end": 370
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 370,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 375
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 375,
+            "line_end": 377
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 377,
+            "line_end": 382
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 382,
+            "line_end": 388
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 388,
+            "line_end": 400
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 400,
+            "line_end": 405
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 405,
+            "line_end": 410
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 410,
+            "line_end": 416
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 416,
+            "line_end": 424
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 434
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 434,
+            "line_end": 440
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 440,
+            "line_end": 448
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 448,
+            "line_end": 454
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 454,
+            "line_end": 459
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 459,
+            "line_end": 469
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 469,
+            "line_end": 471
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 471,
+            "line_end": 475
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 475,
+            "line_end": 477
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 477,
+            "line_end": 479
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 479,
+            "line_end": 485
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 485,
+            "line_end": 488
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 488,
+            "line_end": 514
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 514,
+            "line_end": 525
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 525,
+            "line_end": 529
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 529,
+            "line_end": 537
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 537,
+            "line_end": 541
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 541,
+            "line_end": 549
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 549,
+            "line_end": 563
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 563,
+            "line_end": 563
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 742,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:56:15.429Z"
+  },
+  "content": {
+    "user_title": "Chain multi-agent workflows with streaming data flow",
+    "value_statement": "Building complex multi-step AI workflows is difficult when each step cannot easily receive context from previous results. Stream-Chain enables sophisticated pipelines where each agent's output automatically flows into the next step, supporting custom chains and predefined battle-tested workflows.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "stream chain",
+      "multi-agent pipeline",
+      "workflow automation",
+      "sequential processing",
+      "data transformation",
+      "agent orchestration",
+      "chaining"
+    ],
+    "actual_capabilities": [
+      "Execute custom prompt sequences where each step receives full context from previous outputs",
+      "Run predefined pipelines for analysis, refactoring, testing, and optimization",
+      "Configure timeout settings and debug modes for complex workflows",
+      "Define reusable custom pipelines in configuration files",
+      "Integrate with swarm coordination for multi-agent scenarios",
+      "Store chain context in memory for cross-session persistence"
+    ],
+    "limitations": [
+      "Requires minimum 2 prompts for custom chains",
+      "Context limited to approximately 100K tokens per step",
+      "Per-step timeout defaults to 30 seconds but can be configured",
+      "No built-in error recovery for failed intermediate steps"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Multi-step code development",
+        "description": "Build features through sequential steps: implement, validate, test, and document with full context flow"
+      },
+      {
+        "target_user": "Security Engineers",
+        "title": "Automated security audits",
+        "description": "Run security scanning chains that identify, categorize, and propose fixes for vulnerabilities"
+      },
+      {
+        "target_user": "Data Engineers",
+        "title": "Data transformation pipelines",
+        "description": "Process data through extraction, normalization, validation, and reporting stages"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic chain",
+        "scenario": "Simple two-step workflow",
+        "prompt": "Use stream-chain to run \"Write a sorting function\" \"Add unit tests to the function\""
+      },
+      {
+        "title": "Analysis pipeline",
+        "scenario": "Codebase assessment",
+        "prompt": "Run the analysis pipeline to examine the codebase structure and identify improvement areas"
+      },
+      {
+        "title": "Refactor workflow",
+        "scenario": "Code improvement",
+        "prompt": "Execute the refactor pipeline to identify code smells and create a prioritized improvement plan"
+      },
+      {
+        "title": "Custom security chain",
+        "scenario": "Security review",
+        "prompt": "Run a custom chain: \"Scan for SQL injection risks\" \"Identify authentication flaws\" \"Generate security test cases\" with 60 second timeout"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run stream-chain pipeline analysis on the current project",
+        "output": [
+          "Structure Analysis: Mapped 5 main components",
+          "Issue Detection: Found 12 improvement areas (3 critical, 5 medium, 4 low)",
+          "Recommendations: Generated actionable report with prioritization"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use clear, specific prompts that build logically on previous outputs",
+      "Configure appropriate timeouts based on task complexity (30-120 seconds)",
+      "Include verification steps to validate intermediate results before continuing"
+    ],
+    "anti_patterns": [
+      "Using vague prompts like \"check security\" instead of specific targets",
+      "Skipping validation steps after complex transformations",
+      "Setting timeouts too low for analysis-heavy tasks"
+    ],
+    "faq": [
+      {
+        "question": "What tools support stream-chain?",
+        "answer": "Claude, Codex, and Claude Code all support stream-chain workflows through claude-flow CLI"
+      },
+      {
+        "question": "How many steps can a chain have?",
+        "answer": "Chains support unlimited steps but context is limited to approximately 100K tokens per step"
+      },
+      {
+        "question": "Can I combine stream-chain with other skills?",
+        "answer": "Yes, stream-chain integrates with swarm coordination and memory management for advanced workflows"
+      },
+      {
+        "question": "Is data sent externally?",
+        "answer": "Stream-chain operates within the AI tool's environment; no external data transmission occurs"
+      },
+      {
+        "question": "What if a step fails?",
+        "answer": "Currently failed steps terminate the chain; configure timeouts appropriately and include validation steps"
+      },
+      {
+        "question": "How does stream-chain differ from swarm?",
+        "answer": "Stream-chain runs steps sequentially with full context flow; swarm runs agents in parallel for concurrent execution"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 564
+    }
+  ]
+}

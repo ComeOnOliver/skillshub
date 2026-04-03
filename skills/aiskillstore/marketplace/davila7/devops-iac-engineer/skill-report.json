@@ -1,0 +1,392 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:38:50.059Z",
+    "slug": "davila7-devops-iac-engineer",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/development/devops-iac-engineer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e2d648b812e6cf70b87698e543ea6632d3d60414dd5f1bdeac26d3534c9175ef",
+    "tree_hash": "1daa51bb64c5bbde8a27fb799b029687138fc4d669ac3ce500fad64f82afa510"
+  },
+  "skill": {
+    "name": "devops-iac-engineer",
+    "description": "Implements infrastructure as code using Terraform, Kubernetes, and cloud platforms. Designs scalable architectures, CI/CD pipelines, and observability solutions. Provides security-first DevOps practices and site reliability engineering guidance.",
+    "summary": "Implements infrastructure as code using Terraform, Kubernetes, and cloud platforms. Designs scalable...",
+    "icon": "🏗️",
+    "version": "1.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "terraform",
+      "kubernetes",
+      "cloud-infrastructure",
+      "cicd",
+      "devsecops"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate DevOps/IaC engineering skill. The 618 static findings are overwhelmingly FALSE POSITIVES triggered by documentation patterns. Shell command examples in markdown (kubectl, terraform), security terminology (MD5, SHA1 in 'never use' contexts), and placeholder IPs in example configs were incorrectly flagged. The skill provides infrastructure templates, K8s manifest generation, and GitOps tooling - all standard DevOps workflows with no malicious intent.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "README.md",
+            "line_start": 18,
+            "line_end": 100
+          },
+          {
+            "file": "reference/terraform.md",
+            "line_start": 6,
+            "line_end": 710
+          },
+          {
+            "file": "reference/kubernetes.md",
+            "line_start": 20,
+            "line_end": 960
+          },
+          {
+            "file": "reference/cicd.md",
+            "line_start": 7,
+            "line_end": 670
+          },
+          {
+            "file": "reference/security.md",
+            "line_start": 23,
+            "line_end": 650
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "examples/terraform/main.tf",
+            "line_start": 24,
+            "line_end": 53
+          },
+          {
+            "file": "examples/pipelines/github-actions.yml",
+            "line_start": 109,
+            "line_end": 135
+          },
+          {
+            "file": "reference/cicd.md",
+            "line_start": 37,
+            "line_end": 468
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/devops_utils.py",
+            "line_start": 1,
+            "line_end": 423
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 16,
+    "total_lines": 7532,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:38:50.059Z"
+  },
+  "content": {
+    "user_title": "Build cloud infrastructure with Terraform and Kubernetes",
+    "value_statement": "DevOps teams struggle to manage complex cloud infrastructure across multiple environments. This skill provides ready-to-use Terraform templates, Kubernetes configurations, and CI/CD pipelines that follow industry best practices for security, scalability, and observability.",
+    "seo_keywords": [
+      "DevOps IaC Engineer",
+      "Terraform templates",
+      "Kubernetes deployment",
+      "CI/CD pipeline templates",
+      "cloud infrastructure automation",
+      "AWS Azure GCP infrastructure",
+      "infrastructure as code",
+      "GitOps workflows",
+      "Claude DevOps skill",
+      "Claode Codex infrastructure"
+    ],
+    "actual_capabilities": [
+      "Generate production-ready Terraform configurations for multi-cloud infrastructure",
+      "Create Kubernetes deployments with health checks, autoscaling, and RBAC policies",
+      "Design CI/CD pipelines with GitOps workflows using ArgoCD or Flux",
+      "Implement observability stacks with Prometheus, Grafana, and structured logging",
+      "Apply security best practices including secrets management and least privilege",
+      "Generate infrastructure diagrams and documentation from code"
+    ],
+    "limitations": [
+      "Does not execute infrastructure changes directly - generates code for review",
+      "Does not access cloud provider APIs for real-time state assessment",
+      "Does not replace domain expertise for complex architecture decisions",
+      "Requires user to review and validate all generated configurations before deployment"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Create production Terraform modules",
+        "description": "Generate reusable Terraform modules for VPCs, databases, and Kubernetes clusters following security best practices."
+      },
+      {
+        "target_user": "Platform Teams",
+        "title": "Set up GitOps deployment pipelines",
+        "description": "Configure ArgoCD or Flux with automated sync policies, health checks, and progressive delivery strategies."
+      },
+      {
+        "target_user": "SRE Engineers",
+        "title": "Implement observability and alerting",
+        "description": "Design monitoring dashboards, alerting rules, and runbooks for critical services with SLI/SLO definitions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Terraform setup",
+        "scenario": "Create AWS infrastructure",
+        "prompt": "Generate a Terraform configuration for a production-ready AWS VPC with public and private subnets across three availability zones. Include security groups for an application load balancer and EKS cluster."
+      },
+      {
+        "title": "K8s deployment",
+        "scenario": "Deploy containerized application",
+        "prompt": "Create a Kubernetes deployment manifest for a Python web application. Include readiness and liveness probes, resource limits, horizontal pod autoscaling, and configmap for configuration."
+      },
+      {
+        "title": "CI/CD pipeline",
+        "scenario": "Build GitOps pipeline",
+        "prompt": "Design a GitHub Actions workflow that validates Terraform code with tfsec, scans Docker images for vulnerabilities, and deploys to Kubernetes using ArgoCD. Include approval gates for production."
+      },
+      {
+        "title": "Multi-cloud security",
+        "scenario": "Implement security controls",
+        "prompt": "Create a security baseline for multi-cloud infrastructure. Include IAM policies with least privilege, secrets management using External Secrets Operator, and network policies that enforce zero-trust principles."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a Terraform module for an S3 bucket with encryption and versioning enabled",
+        "output": [
+          "Terraform S3 Module Generated",
+          "✓ Bucket configuration with server-side encryption (AES256)",
+          "✓ Versioning enabled for durability",
+          "✓ Public access blocked by default",
+          "✓ Lifecycle rules for transition to Glacier",
+          "✓ Cost allocation tags for tracking"
+        ]
+      },
+      {
+        "input": "Set up monitoring for a microservices application on Kubernetes",
+        "output": [
+          "Observability Stack Created",
+          "✓ Prometheus ServiceMonitor for each service",
+          "✓ Grafana dashboard with request rate and error rate",
+          "✓ AlertManager rules for SLO violations",
+          "✓ Structured logging with correlation IDs",
+          "✓ Distributed tracing via Jaeger integration"
+        ]
+      },
+      {
+        "input": "Design a disaster recovery plan for production workloads",
+        "output": [
+          "DR Strategy Documented",
+          "✓ Multi-region deployment architecture defined",
+          "✓ RTO: 1 hour, RPO: 15 minutes specified",
+          "✓ Database replication topology configured",
+          "✓ Backup schedule and retention policy defined",
+          "✓ Runbook for failover procedure created"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use remote state with locking (S3 + DynamoDB for AWS) to prevent concurrent modifications and ensure state durability",
+      "Implement infrastructure immutability - replace resources rather than modify in-place to ensure reproducibility",
+      "Separate environments (dev/staging/prod) with distinct state files and restrict prod access to automated pipelines only"
+    ],
+    "anti_patterns": [
+      "Never hardcode credentials or secrets in Terraform files - use secret managers or environment variables",
+      "Avoid creating monolithic Terraform configurations - split by domain to enable independent deployments and faster iterations",
+      "Do not skip drift detection - regularly run terraform plan to identify differences between desired and actual state"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill deploy infrastructure to my cloud account?",
+        "answer": "No. This skill generates Terraform and Kubernetes code for you to review and deploy. You maintain full control over when and how infrastructure changes are applied."
+      },
+      {
+        "question": "Which cloud providers are supported?",
+        "answer": "AWS, Azure, and GCP are fully supported. The skill includes provider-specific configurations, best practices, and optimization strategies for each platform."
+      },
+      {
+        "question": "How does this skill handle secrets and credentials?",
+        "answer": "The skill follows security best practices by demonstrating external secrets management, IRSA patterns, and never hardcoding credentials. All generated configurations use secure secret injection methods."
+      },
+      {
+        "question": "Can I use this for existing infrastructure?",
+        "answer": "Yes. The skill can help you create Terraform configurations for existing resources using import commands, and generate policies for brownfield environments."
+      },
+      {
+        "question": "Does this integrate with specific CI/CD tools?",
+        "answer": "GitHub Actions, GitLab CI, Jenkins, and ArgoCD workflows are all covered. Templates include validation, security scanning, and deployment stages."
+      },
+      {
+        "question": "What Kubernetes versions are supported?",
+        "answer": "Kubernetes 1.26 through 1.30 are supported. The skill generates manifests compatible with modern API versions and includes schema validation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "kubernetes",
+          "type": "dir",
+          "path": "examples/kubernetes",
+          "children": [
+            {
+              "name": "complete-app.yaml",
+              "type": "file",
+              "path": "examples/kubernetes/complete-app.yaml",
+              "lines": 233
+            }
+          ]
+        },
+        {
+          "name": "pipelines",
+          "type": "dir",
+          "path": "examples/pipelines",
+          "children": [
+            {
+              "name": "github-actions.yml",
+              "type": "file",
+              "path": "examples/pipelines/github-actions.yml",
+              "lines": 170
+            }
+          ]
+        },
+        {
+          "name": "terraform",
+          "type": "dir",
+          "path": "examples/terraform",
+          "children": [
+            {
+              "name": "main.tf",
+              "type": "file",
+              "path": "examples/terraform/main.tf",
+              "lines": 125
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "reference",
+      "children": [
+        {
+          "name": "cicd.md",
+          "type": "file",
+          "path": "reference/cicd.md",
+          "lines": 696
+        },
+        {
+          "name": "cloud_platforms.md",
+          "type": "file",
+          "path": "reference/cloud_platforms.md",
+          "lines": 696
+        },
+        {
+          "name": "kubernetes.md",
+          "type": "file",
+          "path": "reference/kubernetes.md",
+          "lines": 995
+        },
+        {
+          "name": "observability.md",
+          "type": "file",
+          "path": "reference/observability.md",
+          "lines": 560
+        },
+        {
+          "name": "security.md",
+          "type": "file",
+          "path": "reference/security.md",
+          "lines": 662
+        },
+        {
+          "name": "templates.md",
+          "type": "file",
+          "path": "reference/templates.md",
+          "lines": 920
+        },
+        {
+          "name": "terraform.md",
+          "type": "file",
+          "path": "reference/terraform.md",
+          "lines": 726
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "devops_utils.py",
+          "type": "file",
+          "path": "scripts/devops_utils.py",
+          "lines": 423
+        }
+      ]
+    },
+    {
+      "name": "DIRECTORY_STRUCTURE.md",
+      "type": "file",
+      "path": "DIRECTORY_STRUCTURE.md",
+      "lines": 235
+    },
+    {
+      "name": "IMPLEMENTATION_GUIDE.md",
+      "type": "file",
+      "path": "IMPLEMENTATION_GUIDE.md",
+      "lines": 397
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 231
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 130
+    }
+  ]
+}

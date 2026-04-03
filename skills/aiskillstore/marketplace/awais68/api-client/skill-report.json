@@ -1,0 +1,266 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:41:11.683Z",
+    "slug": "awais68-api-client",
+    "source_url": "https://github.com/Awais68/hackathon-2-phase-ii-full-stack-web-app/tree/main/.claude/skills/api-client",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "46efe4c5af441103eeeb3fd9c96d06c67f29c4edc266d8b74d284daa6d753367",
+    "tree_hash": "8e6156b6c74244a6bdaaac28f90c3143c740df1402be952781739f674d01b64b"
+  },
+  "skill": {
+    "name": "api-client",
+    "description": "Use when setting up API clients - TanStack Query, Axios, JWT token management, error handling, or response parsing.\nNOT when plain fetch calls, non-API data handling, or unrelated UI logic.\nTriggers: \"API client\", \"data fetching\", \"JWT token\", \"error handling\", \"paginated list\", \"TanStack Query\".\n",
+    "summary": "Set up API clients with TanStack Query and Axios. Includes JWT token management, error handling, type-safe responses with Zod, and offline support.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Awais68",
+    "license": "MIT",
+    "tags": [
+      "api",
+      "data-fetching",
+      "jwt",
+      "tanstack-query",
+      "axios"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate API client skill with standard patterns for TanStack Query and Axios integration. Static scanner produced multiple false positives: SHA256 hashes and HTTP status codes were flagged as crypto/C2 patterns; template literals and ternary operators were flagged as shell backticks; environment variable documentation was flagged as sensitive access. All findings are benign code patterns for API client implementation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 153,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 737,
+            "line_end": 740
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 729,
+            "line_end": 729
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 733
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 729,
+            "line_end": 732
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1664,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:41:11.683Z",
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "content": {
+    "user_title": "Set up API clients with TanStack Query",
+    "value_statement": "Building API clients requires careful handling of authentication tokens, error states, and type-safe responses. This skill provides expert guidance for implementing robust API clients using TanStack Query and Axios with JWT interceptors, global error handling, and offline detection.",
+    "seo_keywords": [
+      "API client",
+      "TanStack Query",
+      "Axios",
+      "JWT token",
+      "data fetching",
+      "React Query",
+      "API error handling",
+      "type-safe API",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Configure TanStack Query with proper caching, stale time, and retry strategies",
+      "Create Axios instances with JWT token interceptors for authentication",
+      "Implement global error handling with toast notifications for all HTTP status codes",
+      "Build type-safe API responses using Zod schema validation",
+      "Add offline detection and AbortController support for cancelable requests",
+      "Implement optimistic updates with rollback for better user experience"
+    ],
+    "limitations": [
+      "Does not generate GraphQL API clients or mutations",
+      "Does not handle WebSocket connections or real-time updates",
+      "Does not include authentication backend implementation",
+      "Does not generate server-side API endpoints"
+    ],
+    "use_cases": [
+      {
+        "title": "Full-stack developers building React applications",
+        "description": "Set up a complete API client layer with TanStack Query and Axios including JWT authentication, error handling, and type-safe responses for a React/Next.js application.",
+        "target_user": "Full-stack developers working on React applications that need reliable data fetching"
+      },
+      {
+        "title": "Teams implementing authentication flows",
+        "description": "Add JWT token management to API clients with automatic token refresh, 401 handling, and redirect to login on session expiry.",
+        "target_user": "Development teams implementing secure authentication and authorization"
+      },
+      {
+        "title": "Applications requiring robust error handling",
+        "description": "Implement comprehensive error handling that displays user-friendly messages for different HTTP status codes with toast notifications.",
+        "target_user": "Applications that need graceful error handling and user feedback"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic API client setup",
+        "prompt": "Set up a TanStack Query configuration and Axios API client for my Next.js app. Include JWT token attachment via interceptors and a global error handler with toast notifications.",
+        "scenario": "Setting up the foundation for API communication"
+      },
+      {
+        "title": "Type-safe data fetching",
+        "prompt": "Create type-safe API hooks using Zod schemas for response validation. Include a useApi hook for GET requests and useApiMutation for POST/PUT/DELETE operations with error handling.",
+        "scenario": "Adding type safety to API interactions"
+      },
+      {
+        "title": "Pagination and infinite queries",
+        "prompt": "Implement paginated data fetching with infinite scroll using TanStack Query useInfiniteQuery. Include proper type definitions and error states.",
+        "scenario": "Building paginated list views with infinite scrolling"
+      },
+      {
+        "title": "Offline support and optimistic updates",
+        "prompt": "Add offline detection and optimistic updates to my API hooks. Include rollback on error and AbortController for cancelable requests.",
+        "scenario": "Adding resilience and better user experience to data mutations"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Set up an API client with JWT authentication",
+        "output": [
+          "Created lib/apiClient.ts with Axios instance and JWT interceptors",
+          "Created lib/queryClient.ts with TanStack Query configuration",
+          "Added request interceptor to attach Bearer tokens from auth store",
+          "Added response interceptor to handle 401 and refresh tokens",
+          "Implemented automatic redirect to login on token expiry"
+        ]
+      },
+      {
+        "input": "Create a type-safe hook for fetching student data",
+        "output": [
+          "Created StudentSchema with Zod for validation",
+          "Implemented useApi hook with type-safe generics",
+          "Added error handling with toast notifications",
+          "Included proper loading and error states"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Configure appropriate staleTime and gcTime for caching to reduce unnecessary API calls",
+      "Use Zod schemas for runtime type validation of API responses",
+      "Implement AbortController for all async operations to prevent race conditions",
+      "Add retry with exponential backoff for failed requests"
+    ],
+    "anti_patterns": [
+      "Avoid hardcoding API URLs directly in components; use environment variables",
+      "Do not skip error handling; always provide user feedback for failed requests",
+      "Avoid mutating response data directly; use Zod schemas for validation"
+    ],
+    "faq": [
+      {
+        "question": "What libraries does this skill use for API clients?",
+        "answer": "This skill uses TanStack Query (React Query) v5 for data fetching and caching, and Axios for HTTP requests. It also uses Zod for type-safe response validation."
+      },
+      {
+        "question": "How does JWT authentication work with this skill?",
+        "answer": "The skill creates an Axios instance with request interceptors that attach the JWT token from your auth store to all requests. Response interceptors handle 401 errors and can refresh tokens automatically."
+      },
+      {
+        "question": "Can I use this with plain fetch instead of Axios?",
+        "answer": "This skill is designed for TanStack Query with Axios. While TanStack Query can work with fetch, Axios provides better interceptor support for JWT handling and is the recommended approach for this skill."
+      },
+      {
+        "question": "How does error handling work?",
+        "answer": "The skill implements a global error handler that displays toast notifications for different HTTP status codes. It handles 400, 401, 403, 404, 429, 500, and other errors with user-friendly messages."
+      },
+      {
+        "question": "What environment variables are needed?",
+        "answer": "Set NEXT_PUBLIC_API_URL in your .env.local file to configure the API base URL. Example: NEXT_PUBLIC_API_URL=https://api.yourapp.com"
+      },
+      {
+        "question": "Does this skill support pagination?",
+        "answer": "Yes, the skill includes patterns for both offset-based pagination and infinite scrolling using useInfiniteQuery with proper type definitions and error handling."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 741
+    }
+  ]
+}

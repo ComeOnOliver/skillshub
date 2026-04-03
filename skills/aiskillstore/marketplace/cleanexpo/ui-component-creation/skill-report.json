@@ -1,0 +1,290 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:45:14.698Z",
+    "slug": "cleanexpo-ui-component-creation",
+    "source_url": "https://github.com/CleanExpo/Unite-Hub/tree/main/.claude/skills/ui-component-creation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2a172ee05cffc6e20be965385fecdd601eb6b6de49b33f7f254e4d3e1af5d6ad",
+    "tree_hash": "305a0f47bec4a72f3c9798b737e1e8fc4982bcd8f2be8efeb2f89a6c2ba694f1"
+  },
+  "skill": {
+    "name": "ui-component-creation",
+    "description": "Creates UI components using shadcn/ui and design system patterns",
+    "summary": "Creates UI components using shadcn/ui and design system patterns",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "CleanExpo",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "ui",
+      "components",
+      "shadcn",
+      "accessibility",
+      "design-system"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure markdown documentation skill containing only guidelines for creating UI components. No executable code, scripts, network calls, or file system operations exist beyond reading documentation. The static analyzer findings are completely erroneous - the skill is safe and contains no security risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 70
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 262,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:45:14.698Z"
+  },
+  "content": {
+    "user_title": "Create UI Components with shadcn/ui Patterns",
+    "value_statement": "Generate consistent, accessible UI components that follow design system guidelines. Ensures visual distinctiveness, brand alignment, and accessibility compliance for every component.",
+    "seo_keywords": [
+      "UI component creation",
+      "shadcn/ui",
+      "React components",
+      "accessible UI",
+      "design system",
+      "Tailwind CSS",
+      "Claude Code",
+      "Claude AI",
+      "component patterns",
+      "React 19"
+    ],
+    "actual_capabilities": [
+      "Generate React 19 components with shadcn/ui patterns",
+      "Apply design tokens for consistent theming",
+      "Implement accessibility attributes and ARIA labels",
+      "Add responsive breakpoints and all interaction states",
+      "Follow brand guidelines for visual distinctiveness"
+    ],
+    "limitations": [
+      "Requires existing shadcn/ui component library installation",
+      "Requires access to DESIGN-SYSTEM.md for token definitions",
+      "Does not create new design tokens or modify design system"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend Developers",
+        "title": "Build Consistent Components",
+        "description": "Create new React components that match existing design patterns and brand guidelines"
+      },
+      {
+        "target_user": "UI Designers",
+        "title": "Translate Designs to Code",
+        "description": "Convert design specifications into accessible, production-ready component code"
+      },
+      {
+        "target_user": "Full-Stack Engineers",
+        "title": "Rapid Prototyping",
+        "description": "Quickly scaffold UI components with proper structure and accessibility built-in"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Component",
+        "scenario": "Create simple card component",
+        "prompt": "Create a card component using shadcn/ui patterns. Use the design system tokens for colors and spacing. Include title and description props."
+      },
+      {
+        "title": "Form Component",
+        "scenario": "Create form with input fields",
+        "prompt": "Create a form component with text input and submit button. Apply focus states, error handling, and accessibility labels. Use design tokens."
+      },
+      {
+        "title": "Interactive Component",
+        "scenario": "Create modal with states",
+        "prompt": "Create a modal component with open, close, and loading states. Include keyboard navigation and ARIA attributes. Match brand colors."
+      },
+      {
+        "title": "Complex Dashboard Widget",
+        "scenario": "Create data display component",
+        "prompt": "Create a dashboard widget showing metrics with chart placeholder, trend indicator, and action buttons. Handle all responsive breakpoints and accessibility requirements."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a user profile card component with avatar, name, role, and contact button",
+        "output": [
+          "UserProfileCard component with avatar, name, role, bio props",
+          "Uses bg-bg-card, text-text-primary, text-text-secondary tokens",
+          "Button with accent-500 brand color for primary action",
+          "Accessible with proper ARIA labels and focus states",
+          "Responsive with md: and lg: breakpoints"
+        ]
+      },
+      {
+        "input": "Create a settings form with toggle switches and save button",
+        "output": [
+          "SettingsForm with toggle components for each preference",
+          "Each toggle has label, checked state, and aria-label",
+          "Save button with loading state and error handling",
+          "Uses design tokens for all styling"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always read DESIGN-SYSTEM.md before generating any UI component",
+      "Use design tokens (bg-bg-card, text-text-primary) instead of raw colors",
+      "Include all interaction states: hover, focus, active, disabled"
+    ],
+    "anti_patterns": [
+      "Using raw colors like bg-white instead of design tokens",
+      "Skipping accessibility attributes for keyboard users",
+      "Ignoring responsive breakpoints on complex layouts"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Compatible with Claude, Codex, and Claude Code. Works with any AI assistant that can read markdown guidelines."
+      },
+      {
+        "question": "Does this create a full page or individual components?",
+        "answer": "Creates individual UI components. For full pages, compose multiple components following the same patterns."
+      },
+      {
+        "question": "Can I use this with custom design systems?",
+        "answer": "Yes. Replace design token references with your own CSS variables or utility classes."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill only generates code patterns. No user data is collected, stored, or transmitted."
+      },
+      {
+        "question": "Why must I read DESIGN-SYSTEM.md first?",
+        "answer": "The design system file contains brand-specific color tokens and spacing values for consistency."
+      },
+      {
+        "question": "How is this different from plain shadcn/ui?",
+        "answer": "Adds brand guidelines, accessibility requirements, responsive patterns, and quality gates."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 84
+    }
+  ]
+}

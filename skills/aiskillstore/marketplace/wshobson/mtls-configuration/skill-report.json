@@ -1,0 +1,327 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:35:17.796Z",
+    "slug": "wshobson-mtls-configuration",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/cloud-infrastructure/skills/mtls-configuration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3290a088696754d8e595c87bc8ced7e32231310d4c8972a99bc1e341919aafdf",
+    "tree_hash": "57cf8a691c636750958807312e0805fb5b64d97114d3bf36f54c6d1974a61a32"
+  },
+  "skill": {
+    "name": "mtls-configuration",
+    "description": "Configure mutual TLS (mTLS) for zero-trust service-to-service communication. Use when implementing zero-trust networking, certificate management, or securing internal service communication.",
+    "summary": "Configure mutual TLS (mTLS) for zero-trust service-to-service communication. Use when implementing z...",
+    "icon": "🔐",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "mtls",
+      "zero-trust",
+      "istio",
+      "linkerd",
+      "certificates"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing YAML templates and guidance for mTLS configuration. All 58 static findings are false positives triggered by markdown documentation patterns (backticks for inline code), file paths in example YAML configs, and algorithm names in security documentation. No executable code, network calls, file access, or command execution capabilities exist. The skill does not generate, store, or transmit any certificates or keys.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 345,
+            "line_end": 345
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 198
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 260
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 260,
+            "line_end": 264
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 264,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 304
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 304,
+            "line_end": 308
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 325
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 527,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:35:17.796Z"
+  },
+  "content": {
+    "user_title": "Configure mTLS for zero-trust networking",
+    "value_statement": "Secure service-to-service communication with mutual TLS authentication. This skill provides ready-to-use templates for Istio, Linkerd, SPIFFE, and cert-manager to implement zero-trust security in Kubernetes environments.",
+    "seo_keywords": [
+      "mtls configuration",
+      "zero-trust security",
+      "Istio mTLS",
+      "Linkerd mutual TLS",
+      "SPIFFE certificates",
+      "service mesh security",
+      "Kubernetes TLS",
+      "mutual authentication",
+      "Claude",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generate Istio PeerAuthentication and DestinationRule YAML for strict mTLS",
+      "Create cert-manager Certificate resources with automatic rotation",
+      "Configure SPIFFE/SPIRE workload identity for Kubernetes",
+      "Set up Linkerd automatic mTLS with Server and Authorization policies",
+      "Debug TLS handshake issues with istioctl and linkerd commands",
+      "Implement certificate rotation strategies for production clusters"
+    ],
+    "limitations": [
+      "Does not generate or store actual certificates or private keys",
+      "Does not modify cluster configurations directly",
+      "Requires existing service mesh installation (Istio, Linkerd, or SPIFFE)",
+      "Does not replace infrastructure-as-code tools like Terraform or Helm"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Platform Engineers",
+        "title": "Deploy service mesh security",
+        "description": "Configure mesh-wide mTLS policies and certificate management for multi-tenant Kubernetes clusters"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Debug mTLS failures",
+        "description": "Diagnose and resolve TLS handshake failures between services using istioctl and kubectl commands"
+      },
+      {
+        "target_user": "Security Architects",
+        "title": "Implement zero-trust architecture",
+        "description": "Design and document certificate hierarchies and mTLS requirements for compliance with PCI-DSS or HIPAA"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Enable strict mTLS",
+        "scenario": "Configure mesh-wide mTLS",
+        "prompt": "Enable strict mTLS across my Istio mesh in the production namespace. Create PeerAuthentication and DestinationRule resources for namespace-level enforcement."
+      },
+      {
+        "title": "Cert-manager integration",
+        "scenario": "Set up automatic certificate issuance",
+        "prompt": "Configure cert-manager to issue workload certificates for my Istio services with 24-hour duration and automatic renewal before expiry."
+      },
+      {
+        "title": "SPIFFE workload identity",
+        "scenario": "Deploy SPIRE for identity",
+        "prompt": "Create SPIRE Server and Agent configurations for workload identity in a multi-cluster Kubernetes environment with example.org trust domain."
+      },
+      {
+        "title": "Debug TLS handshake",
+        "scenario": "Diagnose mTLS failures",
+        "prompt": "My Istio services cannot communicate. Use istioctl commands to check peer authentication status, destination rules, and debug TLS handshake errors."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Enable strict mTLS for my Istio mesh in the production namespace",
+        "output": [
+          "Created PeerAuthentication resource in istio-system namespace with STRICT mode",
+          "Applied mesh-wide mTLS requiring mutual authentication for all services",
+          "Added DestinationRule using ISTIO_MUTUAL mode for automatic certificate management",
+          "Note: Existing connections will be rejected until clients update their configurations",
+          "Use 'istioctl authn tls-check' to verify mTLS status after deployment"
+        ]
+      },
+      {
+        "input": "Configure cert-manager for automatic workload certificates with 24-hour rotation",
+        "output": [
+          "Created ClusterIssuer named 'istio-ca' for certificate signing",
+          "Generated Certificate resource with 24-hour duration and 8-hour renewBefore",
+          "Specified commonName and dnsNames for service identity",
+          "Configured server auth and client auth certificate usages",
+          "Secret 'my-service-tls' will be created automatically when Certificate is issued"
+        ]
+      },
+      {
+        "input": "Set up SPIRE for workload identity in my Kubernetes cluster",
+        "output": [
+          "Created ConfigMap for SPIRE Server with sqlite3 datastore",
+          "Configured k8s_psat node attestor with demo-cluster service account allow list",
+          "Set UpstreamAuthority plugin with disk-based bootstrap credentials",
+          "Generated DaemonSet for SPIRE Agent with socket volume mount",
+          "Trust domain configured as 'example.org'"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with PERMISSIVE mode during migration, then transition to STRICT after validating all services",
+      "Use short-lived certificates (24 hours or less) with automatic rotation for workload identities",
+      "Monitor certificate expiry and set up alerts to prevent service disruptions"
+    ],
+    "anti_patterns": [
+      "Disabling mTLS for convenience in production environments",
+      "Using self-signed certificates without a proper CA hierarchy",
+      "Ignoring certificate expiry dates or skipping rotation planning"
+    ],
+    "faq": [
+      {
+        "question": "Which service mesh platforms are supported?",
+        "answer": "Istio, Linkerd, and SPIFFE/SPIRE are fully covered. Templates include PeerAuthentication, DestinationRule, Server, and SPIRE configurations."
+      },
+      {
+        "question": "What certificate validity periods are recommended?",
+        "answer": "Use 24-hour certificates for workloads with automatic renewal. Root CA certificates can have longer validity with proper rotation planning."
+      },
+      {
+        "question": "How does this skill integrate with existing tools?",
+        "answer": "This skill generates YAML manifests. Apply them with kubectl or integrate with GitOps tools like ArgoCD or Flux."
+      },
+      {
+        "question": "Is my certificate data safe?",
+        "answer": "This skill does not generate, store, or transmit any certificates. All certificate data is handled by your cluster's cert-manager or CA infrastructure."
+      },
+      {
+        "question": "Why are my services failing after enabling mTLS?",
+        "answer": "Check if services support mTLS, verify DestinationRules are applied, and ensure sidecar proxies have reloaded. Use PERMISSIVE mode during migration."
+      },
+      {
+        "question": "How is this different from standard TLS?",
+        "answer": "mTLS requires both client and server to present certificates. This provides bidirectional authentication for zero-trust service-to-service communication."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 348
+    }
+  ]
+}

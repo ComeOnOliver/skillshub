@@ -1,0 +1,326 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:03:13.241Z",
+    "slug": "0xkynz-python-fastapi",
+    "source_url": "https://github.com/0xkynz/codekit/tree/main/templates/skills/python-fastapi",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b3edd48e62f120be055ee17296b88b1936c372ff03db9ed2cbaadb0bdd28d246",
+    "tree_hash": "3e72ba07022d67640fa07e8c297ba64d63669e0a66481df94e120556f69f5760"
+  },
+  "skill": {
+    "name": "python-fastapi",
+    "description": "Python FastAPI development with uv package manager, modular project structure, SQLAlchemy ORM, and production-ready patterns.",
+    "summary": "Python FastAPI development with uv, SQLAlchemy, async patterns, and production-ready architecture.",
+    "icon": "🐍",
+    "version": "1.0.0",
+    "author": "0xkynz",
+    "license": "MIT",
+    "tags": [
+      "fastapi",
+      "python",
+      "uv",
+      "sqlalchemy",
+      "api"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static scanner flagged patterns from documentation examples including connection strings and shell commands. All findings are false positives - the skill contains template code for FastAPI development with no malicious intent or actual credential exposure.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 206
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 94
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 175
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 516,
+            "line_end": 526
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 659,
+            "line_end": 678
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [
+      {
+        "title": "Weak cryptographic algorithm references",
+        "description": "Scanner flagged keywords related to password hashing and JWT authentication. These are standard secure patterns (bcrypt/scrypt) used in the template's authentication module. No weak algorithms detected.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 186
+          }
+        ]
+      },
+      {
+        "title": "Database connection string patterns",
+        "description": "Example connection strings with placeholder values (user:pass@localhost) appear in configuration documentation. These are legitimate template examples, not actual credentials.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 183
+          }
+        ]
+      }
+    ],
+    "medium_findings": [
+      {
+        "title": "Shell command documentation",
+        "description": "The skill documents shell commands for uv package manager and development setup. These are standard documentation patterns for build tools, not dynamic code execution.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 114
+          }
+        ]
+      }
+    ],
+    "low_findings": [
+      {
+        "title": "Environment configuration documentation",
+        "description": "Documentation references .env files and python-dotenv for configuration. Standard practice for Python applications, not a security vulnerability.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 33
+          }
+        ]
+      },
+      {
+        "title": "Hardcoded URL in install script",
+        "description": "The uv installer URL (astral.sh) is a legitimate, official source for the package manager.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 94
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1549,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:00:00.000Z",
+    "risk_factors": [
+      "scripts",
+      "network",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "content": {
+    "user_title": "Build Python APIs with FastAPI",
+    "value_statement": "Building Python APIs requires modern patterns for async handling, database integration, and project organization. This skill provides production-ready FastAPI templates using uv package manager, SQLAlchemy ORM, and feature-based architecture for scalable API development.",
+    "seo_keywords": [
+      "FastAPI",
+      "Python API",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "uv package manager",
+      "SQLAlchemy",
+      "async Python",
+      "Pydantic",
+      "REST API"
+    ],
+    "actual_capabilities": [
+      "Generate modular FastAPI project structure with feature-based architecture",
+      "Create SQLAlchemy 2.0 async models with Pydantic v2 schemas",
+      "Set up uv package manager for fast Python dependency management",
+      "Implement authentication patterns with JWT and password hashing",
+      "Configure async database sessions with PostgreSQL and SQLite for testing",
+      "Generate Alembic migration files for database schema changes"
+    ],
+    "limitations": [
+      "Does not generate frontend code or web UI components",
+      "Does not provision cloud infrastructure or container configurations",
+      "Does not include authentication provider integration beyond basic JWT",
+      "Does not generate GraphQL APIs or WebSocket handlers"
+    ],
+    "use_cases": [
+      {
+        "title": "Create a new FastAPI backend service",
+        "description": "Scaffold a complete FastAPI project with async SQLAlchemy, configuration management, and layered architecture for production deployment.",
+        "target_user": "Backend developers building new Python API services"
+      },
+      {
+        "title": "Add database models to existing FastAPI project",
+        "description": "Generate feature modules with repository pattern, services layer, and Pydantic schemas for CRUD operations.",
+        "target_user": "Developers extending FastAPI applications with database integration"
+      },
+      {
+        "title": "Set up testing and development workflow",
+        "description": "Configure pytest with async test clients, in-memory SQLite databases, and development commands using uv package manager.",
+        "target_user": "DevOps engineers establishing Python development standards"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create basic FastAPI project",
+        "prompt": "Create a new FastAPI project structure using uv package manager with async SQLAlchemy 2.0. Include configuration with pydantic-settings, database connection, and a basic health check endpoint.",
+        "scenario": "Starting a new FastAPI API project from scratch"
+      },
+      {
+        "title": "Add user authentication module",
+        "prompt": "Add a complete auth feature module to the FastAPI project with JWT token creation, password hashing using bcrypt, login endpoint, and protected route dependency.",
+        "scenario": "Implementing user authentication in FastAPI"
+      },
+      {
+        "title": "Create CRUD API for resource",
+        "prompt": "Generate a feature module for a \"items\" resource with repository pattern, service layer, Pydantic schemas, and full CRUD endpoints (list, get, create, update, delete).",
+        "scenario": "Building REST API endpoints for a data model"
+      },
+      {
+        "title": "Set up async database testing",
+        "prompt": "Configure pytest with async test client, in-memory SQLite database, fixtures for database sessions, and example integration tests for the user service.",
+        "scenario": "Setting up testing infrastructure for FastAPI application"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a basic FastAPI project with async SQLAlchemy",
+        "output": [
+          "Generated pyproject.toml with uv configuration",
+          "Created src/app/main.py with FastAPI app and CORS middleware",
+          "Created src/app/config.py with pydantic-settings",
+          "Created src/app/database.py with async engine and session maker",
+          "Created src/app/api/router.py for route aggregation",
+          "Added .env.example with database and app settings"
+        ]
+      },
+      {
+        "input": "Add a users feature with CRUD endpoints",
+        "output": [
+          "Created src/app/features/users/models.py with User SQLAlchemy model",
+          "Created src/app/features/users/schemas.py with Pydantic schemas",
+          "Created src/app/features/users/repository.py with async query methods",
+          "Created src/app/features/users/services.py with business logic",
+          "Created src/app/features/users/api.py with REST endpoints",
+          "Added tests/features/users/test_users.py with pytest fixtures"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use feature-based modular architecture to organize code by domain rather than technical layer",
+      "Implement async/await throughout the application using SQLAlchemy async sessions and asyncpg",
+      "Separate concerns: routes handle HTTP, services contain business logic, repositories handle data access",
+      "Use Pydantic v2 for all request/response validation with ConfigDict for ORM integration"
+    ],
+    "anti_patterns": [
+      "Avoid mixing business logic in route handlers - delegate to service layer",
+      "Do not use synchronous database calls in async FastAPI endpoints",
+      "Avoid tight coupling between features - use dependency injection for cross-cutting concerns",
+      "Do not hardcode secrets or connection strings in source files - use environment variables"
+    ],
+    "faq": [
+      {
+        "question": "What is the uv package manager and why use it?",
+        "answer": "uv is a fast, Rust-based Python package manager that replaces pip and pipenv. It offers significantly faster dependency installation and better caching. This skill uses uv for all Python tooling."
+      },
+      {
+        "question": "How does the feature-based architecture work?",
+        "answer": "Instead of organizing files by type (all models together, all routes together), feature-based architecture groups all code for a feature in one directory. Each feature has its own api, schemas, services, models, and utils."
+      },
+      {
+        "question": "What database support is included?",
+        "answer": "The template supports PostgreSQL with asyncpg for production and SQLite with aiosqlite for testing. SQLAlchemy 2.0 async patterns are used throughout for non-blocking database operations."
+      },
+      {
+        "question": "How is authentication implemented?",
+        "answer": "Basic JWT authentication is demonstrated with password hashing using bcrypt. The skill includes utilities for token creation, password hashing, and protected route dependencies using FastAPI Depends."
+      },
+      {
+        "question": "Can I use this for GraphQL APIs?",
+        "answer": "This skill focuses on REST APIs. For GraphQL, you would need to add Strawberry or Ariadne separately. The SQLAlchemy models and Pydantic schemas can be reused with a GraphQL framework."
+      },
+      {
+        "question": "How do I run tests?",
+        "answer": "Tests use pytest with httpx AsyncClient for testing async endpoints. The conftest.py includes fixtures for in-memory SQLite database and async session management. Run tests with 'uv run pytest -v'."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 710
+    }
+  ]
+}

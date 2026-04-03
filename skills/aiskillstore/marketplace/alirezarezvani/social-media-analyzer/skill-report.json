@@ -1,0 +1,241 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:56:06.077Z",
+    "slug": "alirezarezvani-social-media-analyzer",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/marketing-skill/social-media-analyzer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "10d1bdc13dcfad0aae9761fa57b89bdf87e42a6097f055fb246bf46fc49ab745",
+    "tree_hash": "416fca384be7f4ffa907bae85a1eb993dd35c838bb45518b82ae363335d57b2d"
+  },
+  "skill": {
+    "name": "social-media-analyzer",
+    "description": "Analyzes social media campaign performance across platforms with engagement metrics, ROI calculations, and audience insights for data-driven marketing decisions",
+    "summary": "Analyzes social media campaign performance across platforms with engagement metrics, ROI calculation...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "analytics",
+      "marketing",
+      "social-media",
+      "roi-tracking",
+      "engagement"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 26 static findings are false positives. Scanner misidentified docstrings as crypto code, markdown backticks as shell execution, and marketing terminology as system reconnaissance. Code contains only benign Python arithmetic for engagement and ROI calculations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "analyze_performance.py",
+            "line_start": 1,
+            "line_end": 5
+          },
+          {
+            "file": "calculate_metrics.py",
+            "line_start": 1,
+            "line_end": 5
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 977,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:56:06.077Z"
+  },
+  "content": {
+    "user_title": "Analyze Social Media Campaign Performance",
+    "value_statement": "Marketing teams need to quantify campaign effectiveness across multiple platforms. This skill calculates engagement rates, ROI, and cost efficiency metrics to deliver data-backed optimization recommendations.",
+    "seo_keywords": [
+      "social media analytics",
+      "engagement rate calculator",
+      "ROI tracking",
+      "marketing campaign analysis",
+      "Facebook analytics",
+      "Instagram insights",
+      "Twitter metrics",
+      "LinkedIn engagement",
+      "TikTok performance",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Calculate engagement rate from likes, comments, shares, saves, and reach data",
+      "Compute click-through rate, cost per engagement, and return on ad spend",
+      "Compare performance against industry benchmarks for Facebook, Instagram, Twitter, LinkedIn, and TikTok",
+      "Identify top performing posts and content types by engagement metrics",
+      "Generate actionable recommendations for campaign optimization",
+      "Analyze audience insights including demographics and peak engagement times"
+    ],
+    "limitations": [
+      "Cannot access social media APIs directly; requires manual data export",
+      "Industry benchmarks are general guidelines that vary by niche and audience",
+      "Historical performance does not guarantee future results"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Marketing Agencies",
+        "title": "Client Performance Reports",
+        "description": "Generate comprehensive performance reports for client campaigns with ROI breakdown and benchmarking insights."
+      },
+      {
+        "target_user": "Small Business Owners",
+        "title": "Campaign ROI Tracking",
+        "description": "Calculate return on ad spend and identify which content drives the most engagement."
+      },
+      {
+        "target_user": "Content Strategists",
+        "title": "Content Performance Analysis",
+        "description": "Compare engagement across platforms and identify high-performing content patterns."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Campaign Analysis",
+        "scenario": "Analyze Instagram campaign data",
+        "prompt": "Analyze this Instagram campaign data and tell me which posts performed best based on engagement rate."
+      },
+      {
+        "title": "ROI Calculation",
+        "scenario": "Calculate campaign ROI",
+        "prompt": "Calculate the ROI on this Facebook ad campaign with $1,200 spend and these click metrics."
+      },
+      {
+        "title": "Cross-Platform Comparison",
+        "scenario": "Compare platform performance",
+        "prompt": "Compare our engagement rates across Instagram, Facebook, and LinkedIn for the last month."
+      },
+      {
+        "title": "Full Performance Report",
+        "scenario": "Generate comprehensive report",
+        "prompt": "Run a complete analysis on this campaign data including benchmarks, top posts, and optimization recommendations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze this Instagram campaign with 3 posts: Post 1 has 342 likes, 28 comments, 15 shares, 45 saves, 5200 reach, 8500 impressions, 120 clicks. Post 2 has 587 likes, 42 comments, 31 shares, 68 saves, 8900 reach, 12400 impressions, 215 clicks. Post 3 has 298 likes, 19 comments, 12 shares, 34 saves, 4100 reach, 6800 impressions, 95 clicks.",
+        "output": [
+          "Top performer: Post 2 with 8.21% engagement rate (above Instagram benchmark of 1.22%)",
+          "Average engagement rate: 6.14% (excellent performance vs industry)",
+          "Click-through rate: 1.74% (above average)",
+          "Cost per engagement: $0.09 (efficient)",
+          "Recommendation: Replicate video content strategy and posting time from post 2"
+        ]
+      },
+      {
+        "input": "Calculate ROI for Facebook campaign with $500 spend. Total engagements: 2500, total clicks: 120.",
+        "output": [
+          "Cost per engagement: $0.20",
+          "Cost per click: $4.17",
+          "Estimated value at $2.50 per engagement: $6,250",
+          "ROI: 1150%",
+          "Campaign is highly efficient - consider scaling budget"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide complete metrics including likes, comments, shares, saves, reach, impressions, and clicks for accurate analysis",
+      "Compare metrics within the same time periods for fair platform comparisons",
+      "Consider platform-specific benchmarks when evaluating performance (Instagram differs from LinkedIn)"
+    ],
+    "anti_patterns": [
+      "Analyzing campaigns without specifying the platform (each has different benchmarks)",
+      "Comparing organic and paid metrics together without separation",
+      "Drawing conclusions from fewer than 10 posts (insufficient data for reliable insights)"
+    ],
+    "faq": [
+      {
+        "question": "What data do I need to provide?",
+        "answer": "Provide platform name, likes, comments, shares, saves, reach, impressions, clicks, and ad spend amount."
+      },
+      {
+        "question": "Which platforms are supported?",
+        "answer": "Facebook, Instagram, Twitter, LinkedIn, and TikTok with platform-specific benchmarks."
+      },
+      {
+        "question": "How is engagement rate calculated?",
+        "answer": "Engagement rate equals total engagements divided by reach, multiplied by 100."
+      },
+      {
+        "question": "Can I analyze historical data?",
+        "answer": "Yes, provide campaign data with dates and the skill will analyze past performance trends."
+      },
+      {
+        "question": "Does this connect to social APIs?",
+        "answer": "No, this skill analyzes data you provide. Connect to platform APIs separately for data export."
+      },
+      {
+        "question": "How accurate are the benchmarks?",
+        "answer": "Benchmarks are general industry averages. Your niche and audience may have different baseline expectations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "analyze_performance.py",
+      "type": "file",
+      "path": "analyze_performance.py",
+      "lines": 181
+    },
+    {
+      "name": "calculate_metrics.py",
+      "type": "file",
+      "path": "calculate_metrics.py",
+      "lines": 148
+    },
+    {
+      "name": "eval_result.json",
+      "type": "file",
+      "path": "eval_result.json",
+      "lines": 195
+    },
+    {
+      "name": "expected_output.json",
+      "type": "file",
+      "path": "expected_output.json",
+      "lines": 62
+    },
+    {
+      "name": "HOW_TO_USE.md",
+      "type": "file",
+      "path": "HOW_TO_USE.md",
+      "lines": 40
+    },
+    {
+      "name": "sample_input.json",
+      "type": "file",
+      "path": "sample_input.json",
+      "lines": 43
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 71
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:58:42.690Z",
+    "slug": "dnyoussef-when-creating-skill-template-use-skill-builder",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/utilities/when-creating-skill-template-use-skill-builder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "95abea3e2fe09bc1cc13f58adcd655946fa22868d49c87e5854d13565a1f150c",
+    "tree_hash": "1c77a40b3190777f71ed632e220a09e70bee7225f09c6cafc383ec81b1d11787"
+  },
+  "skill": {
+    "name": "when-creating-skill-template-use-skill-builder",
+    "description": "Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization",
+    "summary": "Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "utilities",
+    "tags": [
+      "skill-creation",
+      "templates",
+      "yaml",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static security findings are false positives. The skill is a documentation template generator. Detected patterns are markdown code blocks, YAML frontmatter, and documentation examples - not executable code with security implications.",
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 746,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T19:00:00.000Z",
+    "risk_factors": [],
+    "risk_factor_evidence": []
+  },
+  "content": {
+    "user_title": "Create Claude Code Skill Templates",
+    "value_statement": "Creating Claude Code skills from scratch requires consistent structure, YAML metadata, and documentation. This skill automates template generation with best practices so you can focus on implementation.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "skill template",
+      "skill generator",
+      "YAML frontmatter",
+      "Claude Code skill",
+      "skill creation",
+      "skill builder",
+      "automation"
+    ],
+    "actual_capabilities": [
+      "Generates complete skill directory structure with SKILL.md, README.md, PROCESS.md, and process-diagram.gv",
+      "Creates valid YAML frontmatter with all required metadata fields",
+      "Implements progressive disclosure with 5-phase workflow (Design, Generate, Implement, Test, Document)",
+      "Produces GraphViz process diagrams for visual workflow representation",
+      "Adds memory patterns and hooks integration for skill state management",
+      "Includes validation criteria and success metrics for each phase"
+    ],
+    "limitations": [
+      "Requires claude-flow@alpha dependency for skill execution",
+      "Does not execute generated skills - only creates templates",
+      "Does not validate external dependencies or prerequisites",
+      "Best for utilities, development, testing, and machine-learning categories"
+    ],
+    "use_cases": [
+      {
+        "title": "New Skill Development",
+        "description": "Generate a complete skill template with proper structure, YAML frontmatter, and documentation when starting a new Claude Code skill project.",
+        "target_user": "Skill developers creating reusable Claude Code capabilities"
+      },
+      {
+        "title": "Skill Library Standardization",
+        "description": "Ensure all skills in a team or organization follow consistent naming conventions, directory structure, and documentation patterns.",
+        "target_user": "Team leads and organizations maintaining skill collections"
+      },
+      {
+        "title": "Rapid Prototyping",
+        "description": "Quickly scaffold a skill template with placeholder values that can be customized for specific use cases and requirements.",
+        "target_user": "Prototypers and developers exploring new skill ideas"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Template Generation",
+        "prompt": "Use the when-creating-skill-template-use-skill-builder skill to create a new skill called 'when-parsing-json-use-json-helper' in the utilities category. The skill should help Claude parse and validate JSON structures.",
+        "scenario": "Creating a simple skill template for JSON processing"
+      },
+      {
+        "title": "Multi-Phase Workflow",
+        "prompt": "Generate a skill template with 5 phases using when-creating-skill-template-use-skill-builder. The skill should be named 'when-testing-api-use-automated-tester' and include phases for setup, execution, validation, and reporting.",
+        "scenario": "Creating a complex multi-phase testing skill"
+      },
+      {
+        "title": "Team Standardization",
+        "prompt": "Create a skill template that follows team conventions. Use when-creating-skill-template-use-skill-builder to generate 'when-documenting-code-use-markdown-writer' with complete documentation including usage examples and troubleshooting.",
+        "scenario": "Standardizing skill documentation across a team"
+      },
+      {
+        "title": "Custom Integration",
+        "prompt": "Generate a skill template with custom phases and agents. The skill 'when-processing-images-use-batch-handler' should integrate with memory patterns for session state and include pre-task and post-task hooks.",
+        "scenario": "Creating a skill with custom integration requirements"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a skill template for 'when-validating-input-use-form-checker' in the utilities category",
+        "output": [
+          "Generated SKILL.md with YAML frontmatter, overview, 5 phases, and validation criteria",
+          "Created README.md with quick start guide and usage examples",
+          "Produced PROCESS.md with detailed workflow breakdown",
+          "Generated process-diagram.gv with GraphViz visualization of the 5-phase process"
+        ]
+      },
+      {
+        "input": "Generate a skill template with memory integration and hooks",
+        "output": [
+          "SKILL.md includes memory schema for session-based data storage",
+          "Hooks integration examples for pre-task and post-task automation",
+          "Script templates for bash automation within each phase",
+          "Completion report generation with validation status"
+        ]
+      },
+      {
+        "input": "Create a skill template following naming convention",
+        "output": [
+          "Skill name follows 'when-[condition]-use-[skill-name]' pattern",
+          "YAML frontmatter includes all required fields (name, version, description, category, tags, agents)",
+          "File structure matches expected layout (SKILL.md, README.md, PROCESS.md, process-diagram.gv)",
+          "Validation criteria defined for each phase with success metrics"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the when-creating-skill-template-use-skill-builder skill at the start of any new skill project to ensure consistent structure from the beginning",
+      "Follow the 5-phase workflow (Design, Generate, Implement, Test, Document) for comprehensive skill development",
+      "Include specific validation criteria for each phase to ensure skills meet quality standards before deployment",
+      "Leverage the generated memory patterns to maintain session state and data continuity across skill phases"
+    ],
+    "anti_patterns": [
+      "Manually creating skill files without using the template generator - leads to inconsistent structure and missing metadata",
+      "Skipping the documentation phase - makes skills difficult for others to understand and use",
+      "Omitting validation criteria - results in skills that pass initial testing but fail in production scenarios",
+      "Ignoring the YAML frontmatter requirements - causes skills to fail validation and integration checks"
+    ],
+    "faq": [
+      {
+        "question": "What files does this skill generate?",
+        "answer": "The skill generates four files: SKILL.md (main specification with YAML frontmatter and phase details), README.md (quick start guide), PROCESS.md (detailed workflow documentation), and process-diagram.gv (GraphViz visualization of the process)."
+      },
+      {
+        "question": "Do I need any dependencies to use generated skills?",
+        "answer": "Generated skills require claude-flow@alpha as a dependency. This is automatically included in the YAML frontmatter templates. Ensure your environment has this package installed."
+      },
+      {
+        "question": "Can I customize the number of phases in the generated template?",
+        "answer": "The default template includes 5 phases (Design, Generate, Implement, Test, Document). You can modify the phase structure in the generated SKILL.md file to match your specific requirements."
+      },
+      {
+        "question": "What naming convention should I follow for skill names?",
+        "answer": "Skills should follow the pattern 'when-[condition]-use-[skill-name]'. For example: 'when-parsing-json-use-json-helper' or 'when-testing-api-use-automated-tester'."
+      },
+      {
+        "question": "How does the memory pattern system work?",
+        "answer": "Generated skills include a memory schema that stores session data, phase results, and completion status. This enables skills to maintain state across multiple interactions and recover from interruptions."
+      },
+      {
+        "question": "Can I integrate generated skills with other Claude Code skills?",
+        "answer": "Yes. Generated skills support integration patterns with other skills through the cascade system and can be chained in workflows. The SKILL.md template includes integration examples for SPARC and cascade patterns."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 53
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 152
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 43
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 498
+    }
+  ]
+}

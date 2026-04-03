@@ -1,0 +1,219 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:20:56.360Z",
+    "slug": "k-dense-ai-cellxgene-census",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/cellxgene-census",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b354c9b8899ff4ca030d8732378c144dcf0bfab47c7361dd45ac2b8d6a3ca50b",
+    "tree_hash": "57fdcfdb283f4815507bf39707b933b676b6418260985a4f785a74c8f25a4ca5"
+  },
+  "skill": {
+    "name": "cellxgene-census",
+    "description": "Query the CELLxGENE Census (61M+ cells) programmatically. Use when you need expression data across tissues, diseases, or cell types from the largest curated single-cell atlas. Best for population-scale queries, reference atlas comparisons. For analyzing your own data use scanpy or scvi-tools.",
+    "summary": "Query the CELLxGENE Census (61M+ cells) programmatically for single-cell genomics data across tissues, diseases, and cell types.",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Unknown",
+    "tags": [
+      "single-cell",
+      "genomics",
+      "bioinformatics",
+      "gene-expression",
+      "cell-biology"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 228 static findings are FALSE POSITIVEs. The scanner detected patterns in markdown documentation that are not actual security vulnerabilities. External command detections are backticks in code blocks. C2 keyword detections are the substring 'C2' in 'CELLxGENE'. Cryptographic algorithm detections are documentation patterns. System reconnaissance detections are the word 'reconnaissance' in documentation text. The skill is safe for publication.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 3343,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:20:56.360Z"
+  },
+  "content": {
+    "user_title": "Query CELLxGENE Census Data",
+    "value_statement": "Researchers need access to large-scale single-cell genomics data for disease research and drug discovery. This skill provides programmatic access to 61 million cells from the CELLxGENE Census, enabling population-scale queries without downloading entire datasets.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "single-cell genomics",
+      "CELLxGENE",
+      "gene expression",
+      "cell type analysis",
+      "bioinformatics",
+      "scRNA-seq",
+      "cell atlas"
+    ],
+    "actual_capabilities": [
+      "Query 61M+ single cells by cell type, tissue, disease, or organism",
+      "Retrieve gene expression matrices for specified filters",
+      "Integrate Census data with scanpy for downstream analysis",
+      "Train machine learning models using PyTorch with Census data",
+      "Perform out-of-core processing for large-scale queries"
+    ],
+    "limitations": [
+      "Cannot analyze user-provided local datasets (use scanpy or scvi-tools instead)",
+      "Query results must fit in memory or use out-of-core processing",
+      "Limited to data available in the CELLxGENE Census (does not include all single-cell datasets)",
+      "Requires internet connection to access Census API"
+    ],
+    "use_cases": [
+      {
+        "title": "Explore Cell Types in a Tissue",
+        "description": "Query the Census to discover all cell types present in a specific tissue, such as brain or lung, along with cell type frequencies.",
+        "target_user": "Biologists investigating tissue composition"
+      },
+      {
+        "title": "Analyze Gene Expression Markers",
+        "description": "Query expression levels of specific genes (CD4, CD8A, FOXP3) across cell types and diseases to identify marker genes.",
+        "target_user": "Researchers studying gene expression patterns"
+      },
+      {
+        "title": "Train Cell Type Classifiers",
+        "description": "Use Census data with PyTorch to train machine learning models for cell type classification tasks.",
+        "target_user": "Data scientists building ML models for single-cell analysis"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Cell Query",
+        "prompt": "Find all cells of type [CELL_TYPE] in the [TISSUE] tissue from the CELLxGENE Census. Return the cell count and metadata.",
+        "scenario": "Simple query to find cells matching basic criteria"
+      },
+      {
+        "title": "Multi-Gene Expression Analysis",
+        "prompt": "Query gene expression for [GENE1], [GENE2], and [GENE3] across all cell types in the [DISEASE] dataset. Show expression patterns.",
+        "scenario": "Analyzing marker gene expression across conditions"
+      },
+      {
+        "title": "Cross-Tissue Comparison",
+        "prompt": "Compare [CELL_TYPE] cells across [TISSUE1], [TISSUE2], and [TISSUE3] tissues. What genes are differentially expressed?",
+        "scenario": "Comparing cell behavior across anatomical locations"
+      },
+      {
+        "title": "Machine Learning Dataset Creation",
+        "prompt": "Create a training dataset from Census for [CELL_TYPE] classification. Include [COLUMNS] metadata and gene expression data.",
+        "scenario": "Preparing data for ML model training"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find all T cells in lung tissue from COVID-19 patients",
+        "output": [
+          "Found 45,230 cells matching criteria:",
+          "Cell types: CD4-positive T cell (18,200), CD8-positive T cell (12,450), regulatory T cell (8,230), NK T cell (6,350)",
+          "Datasets: 12 datasets contributed data",
+          "Top tissues: lung (45,230), lymph node (12,100), spleen (8,450)"
+        ]
+      },
+      {
+        "input": "What genes are expressed in neurons?",
+        "output": [
+          "Query returned 2.1M neuron cells across 245 datasets",
+          "Top expressed genes (mean expression):",
+          "  - SNAP25: 8.4",
+          "  - SYP: 7.2",
+          "  - MAP2: 6.8",
+          "  - NEUROD1: 5.9",
+          "  - ELavl3: 5.4"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always filter for is_primary_data == True to avoid duplicate cells in results",
+      "Specify census_version explicitly for reproducible research",
+      "Estimate query size before loading large datasets to prevent memory issues"
+    ],
+    "anti_patterns": [
+      "Do not query without filters - always specify tissue, cell type, or disease criteria",
+      "Do not load all Census data at once - use filters and column selection to reduce data transfer",
+      "Do not ignore the is_primary_data flag - it prevents counting duplicate cells"
+    ],
+    "faq": [
+      {
+        "question": "What is the CELLxGENE Census?",
+        "answer": "The CELLxGENE Census is a standardized, versioned collection of single-cell genomics data containing 61+ million cells from human and mouse. It provides programmatic access to gene expression matrices, metadata, and embeddings."
+      },
+      {
+        "question": "How is this different from scanpy or scvi-tools?",
+        "answer": "This skill queries external Census data. Use scanpy or scvi-tools when analyzing your own local datasets. The Census is ideal for reference atlas comparisons and population-scale queries."
+      },
+      {
+        "question": "What organisms are available?",
+        "answer": "The Census contains data from Homo sapiens (human) and Mus musculus (mouse). Query using organism='Homo sapiens' or organism='Mus musculus'."
+      },
+      {
+        "question": "How do I filter queries effectively?",
+        "answer": "Use obs_value_filter for cell metadata and var_value_filter for gene metadata. Combine conditions with 'and' or 'or'. Use 'in' for multiple values."
+      },
+      {
+        "question": "What if my query is too large for memory?",
+        "answer": "Use the axis_query() method with iterative batch processing. This enables out-of-core processing for queries exceeding available RAM."
+      },
+      {
+        "question": "How do I ensure reproducible results?",
+        "answer": "Always specify the census_version parameter when opening the Census, such as census_version='2023-07-25'. This locks your analysis to a specific data release."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "census_schema.md",
+          "type": "file",
+          "path": "references/census_schema.md",
+          "lines": 183
+        },
+        {
+          "name": "common_patterns.md",
+          "type": "file",
+          "path": "references/common_patterns.md",
+          "lines": 352
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 511
+    }
+  ]
+}

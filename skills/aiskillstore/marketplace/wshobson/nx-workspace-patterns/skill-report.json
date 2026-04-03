@@ -1,0 +1,361 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:51:28.418Z",
+    "slug": "wshobson-nx-workspace-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/developer-essentials/skills/nx-workspace-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f01d42bfafd09335193bb1346f0a7aa7d60d332753c9ca89e53968ccfd34cd9d",
+    "tree_hash": "889980e9da511ed66b67035f573ff52bf0fd34a8ce09e821d606a7b4c7e1bd87"
+  },
+  "skill": {
+    "name": "nx-workspace-patterns",
+    "description": "Configure and optimize Nx monorepo workspaces. Use when setting up Nx, configuring project boundaries, optimizing build caching, or implementing affected commands.",
+    "summary": "Configure and optimize Nx monorepo workspaces. Use when setting up Nx, configuring project boundarie...",
+    "icon": "🧩",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "nx",
+      "monorepo",
+      "ci",
+      "caching",
+      "architecture"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only static documentation and configuration templates for Nx workspaces. All 41 static findings are false positives: network URLs are legitimate metadata/doc links, external commands are example bash commands in documentation code blocks, path traversal sequences are standard relative paths in JSON config examples, and cryptographic alerts are misidentified schema file paths. The skill has no executable code, no file operations, no data handling, and no network access capability.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 450,
+            "line_end": 450
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 451,
+            "line_end": 451
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 452,
+            "line_end": 452
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 266
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 266,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 301
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 301,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 326
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 326,
+            "line_end": 330
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 330,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 377
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 377,
+            "line_end": 408
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 408,
+            "line_end": 412
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 412,
+            "line_end": 431
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 102
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 629,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:51:28.418Z"
+  },
+  "content": {
+    "user_title": "Configure Nx workspace patterns",
+    "value_statement": "Nx workspaces can become slow and inconsistent without clear standards. This skill provides templates to set boundaries, caching, and affected workflows for monorepo optimization.",
+    "seo_keywords": [
+      "Nx workspace patterns",
+      "Nx monorepo",
+      "Nx caching",
+      "module boundaries",
+      "affected commands",
+      "CI optimization",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Provide nx.json template with cacheable operations and target defaults",
+      "Provide project.json template for web app build, serve, test, and lint targets",
+      "Provide ESLint module boundary rules using @nx/enforce-module-boundaries",
+      "Provide custom generator example for feature libraries",
+      "Provide GitHub Actions CI workflow using affected commands",
+      "Provide remote caching examples for Nx Cloud and S3"
+    ],
+    "limitations": [
+      "Does not execute Nx commands or modify files",
+      "Does not validate existing workspace configuration",
+      "Templates require adaptation to specific project paths and tags",
+      "Does not manage cloud credentials or secrets"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Platform engineer",
+        "title": "Set up new Nx workspace",
+        "description": "Apply recommended structure, tags, and caching defaults for a new monorepo with proper boundaries."
+      },
+      {
+        "target_user": "DevOps engineer",
+        "title": "Optimize CI pipelines",
+        "description": "Use affected commands and caching patterns to reduce build times and resource usage."
+      },
+      {
+        "target_user": "Tech lead",
+        "title": "Enforce architecture rules",
+        "description": "Define module boundaries to prevent circular dependencies and maintain clean architecture."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic nx.json setup",
+        "scenario": "Create new Nx workspace",
+        "prompt": "Give me a minimal nx.json with cacheable operations for build, test, lint, and e2e with target defaults."
+      },
+      {
+        "title": "React project configuration",
+        "scenario": "Configure React web app",
+        "prompt": "Create a project.json for a React app with webpack executor for build, serve, test, and lint targets."
+      },
+      {
+        "title": "Module boundary enforcement",
+        "scenario": "Set up dependency rules",
+        "prompt": "Create ESLint rules that enforce app→feature→ui→util dependency hierarchy with scope restrictions."
+      },
+      {
+        "title": "CI optimization workflow",
+        "scenario": "Speed up GitHub Actions",
+        "prompt": "Build a GitHub Actions workflow that uses nx affected commands for lint, test, build, and e2e in parallel."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I need to set up module boundaries for my Nx monorepo",
+        "output": [
+          "Define library types: feature, ui, data-access, util, shell",
+          "Create ESLint rules enforcing type:app can only import from feature, ui, data-access, util",
+          "Restrict type:ui to only depend on ui and util libraries",
+          "Add scope-based boundaries to isolate web, api, and shared code"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use consistent tags and enforce them with module boundaries from day one",
+      "Enable caching and affected commands early to maximize CI performance gains",
+      "Keep libraries focused with single responsibility and clear documentation"
+    ],
+    "anti_patterns": [
+      "Creating circular dependencies between libraries that violate the hierarchy",
+      "Running full test suites when nx affected could test only changed code",
+      "Over-granularizing into too many tiny libraries without clear purpose"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with current Nx versions?",
+        "answer": "Yes, the patterns target modern Nx workspaces using project.json configuration format."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides templates and guidance only, not automated file changes or validation."
+      },
+      {
+        "question": "Can I integrate this with existing CI?",
+        "answer": "Yes, the workflow examples work with any CI system that can run nx commands."
+      },
+      {
+        "question": "Does it access my data or secrets?",
+        "answer": "No, it does not read files, environment variables, or make network calls."
+      },
+      {
+        "question": "What should I check if Nx commands fail?",
+        "answer": "Verify Nx version compatibility, project.json paths, and cache directory permissions."
+      },
+      {
+        "question": "How does this compare to official Nx docs?",
+        "answer": "It condenses common patterns into ready-to-use templates for faster setup."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 453
+    }
+  ]
+}

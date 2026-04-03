@@ -1,0 +1,310 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:27:52.085Z",
+    "slug": "davila7-pufferlib",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/pufferlib",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8550a4a276dd5c9f007377bfaa2659eb853ca67cc5b68db783323b006d8fa490",
+    "tree_hash": "51535673e598f57e7a8faa5b7c63f41a0e7ce5f1456c2b37d025b9804ec8a085"
+  },
+  "skill": {
+    "name": "pufferlib",
+    "description": "This skill should be used when working with reinforcement learning tasks including high-performance RL training, custom environment development, vectorized parallel simulation, multi-agent systems, or integration with existing RL environments (Gymnasium, PettingZoo, Atari, Procgen, etc.). Use this skill for implementing PPO training, creating PufferEnv environments, optimizing RL performance, or developing policies with CNNs/LSTMs.",
+    "summary": "This skill should be used when working with reinforcement learning tasks including high-performance ...",
+    "icon": "🧠",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "scientific",
+    "tags": [
+      "reinforcement-learning",
+      "machine-learning",
+      "pytorch",
+      "parallel-simulation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate reinforcement learning library template and documentation. All 325 static findings are FALSE POSITIVES triggered by markdown documentation containing code examples. The scanner misinterpreted backtick characters in markdown code blocks as Ruby shell execution, environment variable references as credential access, and standard ML training patterns as suspicious behavior. This is a standard ML library with no malicious code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 60
+          },
+          {
+            "file": "references/training.md",
+            "line_start": 13,
+            "line_end": 42
+          },
+          {
+            "file": "references/environments.md",
+            "line_start": 19,
+            "line_end": 119
+          },
+          {
+            "file": "references/integration.md",
+            "line_start": 11,
+            "line_end": 598
+          },
+          {
+            "file": "references/policies.md",
+            "line_start": 11,
+            "line_end": 634
+          },
+          {
+            "file": "references/vectorization.md",
+            "line_start": 28,
+            "line_end": 544
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/train_template.py",
+            "line_start": 231,
+            "line_end": 232
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 428,
+            "line_end": 429
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 3979,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:27:52.085Z"
+  },
+  "content": {
+    "user_title": "Train RL agents with PufferLib",
+    "value_statement": "Training reinforcement learning agents requires managing complex parallel simulations and implementing efficient PPO algorithms. PufferLib provides high-performance vectorized environments and optimized training to achieve millions of steps per second.",
+    "seo_keywords": [
+      "PufferLib",
+      "reinforcement learning",
+      "PPO training",
+      "Claude Code",
+      "PyTorch",
+      "vectorized environments",
+      "multi-agent RL",
+      "Gymnasium",
+      "PettingZoo",
+      "machine learning"
+    ],
+    "actual_capabilities": [
+      "Create vectorized parallel environments for millions of steps per second",
+      "Implement PPO training with LSTM policies using PuffeRL algorithm",
+      "Build custom PufferEnv environments with single-agent and multi-agent support",
+      "Integrate with Gymnasium, PettingZoo, Atari, Procgen, and other RL frameworks",
+      "Develop CNN, LSTM, and multi-input neural network policies",
+      "Run distributed multi-GPU training with torchrun"
+    ],
+    "limitations": [
+      "Requires PyTorch and CUDA-capable GPU for optimal performance",
+      "Python-based environments limited to 100k-500k steps per second without C optimization",
+      "Custom environments must follow PufferEnv API for vectorization compatibility"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML researchers",
+        "title": "Fast RL experimentation",
+        "description": "Prototype and test reinforcement learning algorithms with high-throughput parallel environments"
+      },
+      {
+        "target_user": "Game AI developers",
+        "title": "Train game-playing agents",
+        "description": "Develop agents for Atari, Procgen, and custom game environments using PPO"
+      },
+      {
+        "target_user": "Robotics engineers",
+        "title": "Sim-to-real policy transfer",
+        "description": "Train policies in vectorized simulators and deploy to physical systems"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick environment test",
+        "scenario": "Test an existing RL environment",
+        "prompt": "Use PufferLib to create a vectorized environment for procgen-coinrun with 256 parallel environments and run a quick evaluation to measure steps per second"
+      },
+      {
+        "title": "Custom environment",
+        "scenario": "Create a custom PufferEnv",
+        "prompt": "Help me create a custom PufferEnv environment for a grid-world navigation task with discrete actions and vector observations"
+      },
+      {
+        "title": "Train with PPO",
+        "scenario": "Set up PPO training loop",
+        "prompt": "Write a complete training script using PuffeRL with a CNN policy for image observations, including checkpoint saving and Weights & Biases logging"
+      },
+      {
+        "title": "Multi-agent training",
+        "scenario": "Train collaborative agents",
+        "prompt": "Create a multi-agent training setup using PettingZoo environment with shared policy across agents, configured for 128 parallel environments"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a vectorized CartPole environment and train a policy",
+        "output": [
+          "Created 256 parallel CartPole environments",
+          "Policy: MLP with 256 hidden units, ReLU activations",
+          "Training at 1.2M steps per second on GPU",
+          "Episode 100: Mean reward = 485.2",
+          "Checkpoint saved: checkpoints/checkpoint_100.pt"
+        ]
+      },
+      {
+        "input": "Build a custom multi-agent environment",
+        "output": [
+          "Defined MultiAgentEnvironment with 4 cooperative agents",
+          "Observation space: position, goal, other agent positions",
+          "Action space: 5 discrete actions per agent",
+          "Tested with 10-step episodes successfully"
+        ]
+      },
+      {
+        "input": "Integrate an Atari game environment",
+        "output": [
+          "Wrapped atari-pong environment with PufferLib vectorization",
+          "Configured 256 parallel environments",
+          "Image observations: 84x84 grayscale",
+          "Ready for PPO training with CNN policy"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with smaller num_envs (64-128) for debugging, then scale to 256+ for production training",
+      "Use torch.compile with mode reduce-overhead for 10-20 percent faster training on PyTorch 2.0+",
+      "Profile environment performance before training to identify bottlenecks with shared memory buffers"
+    ],
+    "anti_patterns": [
+      "Avoid excessive wrapper nesting as each wrapper adds overhead to environment step calls",
+      "Do not allocate new arrays inside environment step methods - use pre-allocated buffers for zero-copy operations",
+      "Avoid running training without checkpointing - resume capability is critical for long-running experiments"
+    ],
+    "faq": [
+      {
+        "question": "Which Python and PyTorch versions are supported?",
+        "answer": "Python 3.8+ and PyTorch 1.13+ recommended. PyTorch 2.0+ enables torch.compile for faster training."
+      },
+      {
+        "question": "What is the maximum throughput achievable?",
+        "answer": "Pure Python environments: 100k-500k SPS. C-based environments: 100M+ SPS. Training with Python env: 1-4M total SPS."
+      },
+      {
+        "question": "How does PufferLib integrate with existing Gymnasium environments?",
+        "answer": "Use pufferlib.emulate() to wrap any Gymnasium environment or pufferlib.make(gym-EnvName) for direct access."
+      },
+      {
+        "question": "Is my training data safe?",
+        "answer": "PufferLib runs entirely locally. Only wandb/neptune loggers optionally send metrics to external services when configured."
+      },
+      {
+        "question": "Why is my training slow on CPU?",
+        "answer": "RL training requires GPU for neural network inference. Use device=cuda and ensure CUDA is available."
+      },
+      {
+        "question": "How does PufferLib compare to Stable-Baselines3?",
+        "answer": "PufferLib prioritizes throughput (1M+ SPS) over simplicity. SB3 is easier to use but slower. PufferLib suits research requiring rapid experimentation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "environments.md",
+          "type": "file",
+          "path": "references/environments.md",
+          "lines": 509
+        },
+        {
+          "name": "integration.md",
+          "type": "file",
+          "path": "references/integration.md",
+          "lines": 622
+        },
+        {
+          "name": "policies.md",
+          "type": "file",
+          "path": "references/policies.md",
+          "lines": 654
+        },
+        {
+          "name": "training.md",
+          "type": "file",
+          "path": "references/training.md",
+          "lines": 361
+        },
+        {
+          "name": "vectorization.md",
+          "type": "file",
+          "path": "references/vectorization.md",
+          "lines": 558
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "env_template.py",
+          "type": "file",
+          "path": "scripts/env_template.py",
+          "lines": 341
+        },
+        {
+          "name": "train_template.py",
+          "type": "file",
+          "path": "scripts/train_template.py",
+          "lines": 240
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 431
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:14:17.384Z",
+    "slug": "allra-fintech-allra-database-schema",
+    "source_url": "https://github.com/Allra-Fintech/allra-ai-skills/tree/main/backend-plugin/skills/database-schema",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e9ba83add7da5afc3f0af6415f64694d3ba664718f86760b064c49284acce143",
+    "tree_hash": "46036efef4a1db85128a7726d60824f9060847b4f2edd7e371c6f46a97c50db9"
+  },
+  "skill": {
+    "name": "allra-database-schema",
+    "description": "Allra 데이터베이스 설계 및 QueryDSL 사용 규칙. Use when creating JPA entities, writing QueryDSL queries, or adding @Transactional annotations.",
+    "summary": "Allra 데이터베이스 설계 및 QueryDSL 사용 규칙. Use when creating JPA entities, writing QueryDSL queries, or addin...",
+    "icon": "🗄️",
+    "version": "1.0.0",
+    "author": "Allra-Fintech",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "database",
+      "jpa",
+      "querydsl",
+      "spring-boot",
+      "java"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing coding standards and guidelines for Java/Spring Boot database development. All 46 static findings are false positives caused by the scanner misidentifying code examples in markdown documentation as executable code, and hash/metadata values triggering pattern matches. No actual executable code, no file system access, no network calls, and no system modifications.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 142
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 176
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 176,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 260
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 260,
+            "line_end": 283
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 489,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:14:17.384Z"
+  },
+  "content": {
+    "user_title": "Apply database design standards",
+    "value_statement": "Inconsistent database code causes bugs and maintenance issues. This skill provides Allra backend coding standards for JPA entities, QueryDSL queries, and transaction management to ensure consistency.",
+    "seo_keywords": [
+      "database schema",
+      "JPA entity",
+      "QueryDSL",
+      "Spring Boot",
+      "Java",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "transaction management",
+      "backend standards"
+    ],
+    "actual_capabilities": [
+      "Provides JPA entity design guidelines with annotations and naming conventions",
+      "Defines QueryDSL repository patterns with Support interface structure",
+      "Specifies @Transactional usage with readOnly optimization",
+      "Establishes DTO projection rules using @QueryProjection",
+      "Includes code review checklist for database-related code"
+    ],
+    "limitations": [
+      "Does not generate actual database schema code",
+      "Does not execute or validate database queries",
+      "Specific to Allra backend conventions - may require adaptation",
+      "Does not cover database migration or schema evolution"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developers",
+        "title": "Create database entities",
+        "description": "Generate JPA entities following Allra naming conventions and annotation patterns"
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Review database code",
+        "description": "Validate QueryDSL queries and transaction annotations against team standards"
+      },
+      {
+        "target_user": "New team members",
+        "title": "Learn team conventions",
+        "description": "Understand Allra backend database patterns and best practices quickly"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create JPA entity",
+        "scenario": "Generate a new entity",
+        "prompt": "Create a JPA entity for [entity_name] with fields [field_list] following Allra database schema conventions. Include proper @Table, @Column annotations, @CreatedDate, @LastModifiedDate, and use @QueryProjection for DTOs."
+      },
+      {
+        "title": "Write QueryDSL query",
+        "scenario": "Build a query with QueryDSL",
+        "prompt": "Write a QueryDSL query using the Support pattern to fetch [data_requirements] from [entity]. Follow Allra conventions: @QueryProjection for DTOs, proper repository structure, and From clause placement."
+      },
+      {
+        "title": "Add transaction support",
+        "scenario": "Annotate service methods",
+        "prompt": "Add @Transactional annotations to this service class. Use readOnly=true for pure read operations and regular @Transactional for methods with writes or modifications."
+      },
+      {
+        "title": "Review database code",
+        "scenario": "Audit existing code",
+        "prompt": "Review this repository or service code against Allra database schema standards. Check: JPA entity annotations, QueryDSL usage, transaction annotations, lazy loading, and naming conventions. Report any violations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a User JPA entity with email, name, and status fields",
+        "output": [
+          "Generated User entity with @Entity, @Table, @Id, @GeneratedValue annotations",
+          "Added @Column with nullable, unique, length constraints",
+          "Included @Enumerated(EnumType.STRING) for status field",
+          "Applied @CreatedDate and @LastModifiedDate for audit fields",
+          "Used @NoArgsConstructor(access = AccessLevel.PROTECTED)",
+          "Note: Add @QueryProjection to DTO for QueryDSL support"
+        ]
+      },
+      {
+        "input": "Add @Transactional to my UserService class",
+        "output": [
+          "Applied @Transactional(readOnly=true) to findAllUsers() method",
+          "Applied @Transactional to createUser() for write operations",
+          "Applied @Transactional to activateUser() for read-modify operations",
+          "Ensured all public methods have explicit transaction annotations"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use lazy loading (FetchType.LAZY) for all entity relationships",
+      "Apply @QueryProjection to DTOs used with QueryDSL queries",
+      "Place QueryDSL implementations in the entity's repository following the Support pattern",
+      "Annotate all service methods explicitly with @Transactional"
+    ],
+    "anti_patterns": [
+      "Avoid direct injection of RepositorySupport implementation classes",
+      "Do not use eager loading (FetchType.EAGER) by default",
+      "Do not omit @Transactional on service methods",
+      "Avoid putting query logic in the wrong repository based on FROM clause"
+    ],
+    "faq": [
+      {
+        "question": "Which tools work with this skill?",
+        "answer": "Claude, Codex, and Claude Code. The skill provides guidelines that work with any Java/Spring Boot development."
+      },
+      {
+        "question": "What versions are supported?",
+        "answer": "Java 17+, Spring Boot 3.2+, JPA/Hibernate, and QueryDSL. Testcontainers is optional."
+      },
+      {
+        "question": "Does it generate code?",
+        "answer": "No. This skill provides standards and conventions. You use the prompts to request code generation."
+      },
+      {
+        "question": "Is this mandatory or flexible?",
+        "answer": "Core rules are mandatory for Allra projects. Guidelines marked as optional can be adapted per project needs."
+      },
+      {
+        "question": "Can I use this for non-Allra projects?",
+        "answer": "Yes. The patterns are general Java/Spring Boot best practices but reflect Allra-specific conventions."
+      },
+      {
+        "question": "What databases are supported?",
+        "answer": "Maria, MySQL, and other JPADB, PostgreSQL-compatible databases. The skill includes MariaDB compatibility notes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 309
+    }
+  ]
+}

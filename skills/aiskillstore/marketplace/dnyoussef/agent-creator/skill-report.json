@@ -1,0 +1,384 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:30:32.789Z",
+    "slug": "dnyoussef-agent-creator",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/agent-creator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9ec14dd3e051c13b4d956fc4d23c09886f5277db4f6fa0b7b67e711e5f8abd0a",
+    "tree_hash": "bbf31a3fb10ca3bc97d041f9579e0a230ce76be3971d984f0a84c3ab907f1b6e"
+  },
+  "skill": {
+    "name": "agent-creator",
+    "description": "Creates specialized AI agents with optimized system prompts using the official 4-phase SOP methodology from Desktop .claude-flow, combined with evidence-based prompting techniques and Claude Agent SDK implementation. Use this skill when creating production-ready agents for specific domains, workflows, or tasks requiring consistent high-quality performance with deeply embedded domain knowledge.",
+    "summary": "Creates specialized AI agents with optimized system prompts using the official 4-phase SOP methodology",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "tags": [
+      "agent-creation",
+      "system-prompts",
+      "prompt-engineering",
+      "claude-code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analysis flagged 81 potential issues in documentation and diagram files. All findings are false positives: DOT files contain GraphViz workflow diagrams, SKILL.md is documentation with no executable code, and metadata fields triggered false positives. The skill is a prompt/documentation skill for agent creation with no actual security risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 223
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 223,
+            "line_end": 236
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 236,
+            "line_end": 240
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 240,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 285
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 285,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 296
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 319
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 319,
+            "line_end": 322
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 322,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 328
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 328,
+            "line_end": 332
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 332,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 348
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 348,
+            "line_end": 353
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 353,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 369
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 369,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 450
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 450,
+            "line_end": 482
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 482,
+            "line_end": 486
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 486,
+            "line_end": 513
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 513,
+            "line_end": 614
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1463,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:30:32.789Z",
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "content": {
+    "user_title": "Create Specialized AI Agents",
+    "value_statement": "Building AI agents with consistent, high-quality performance requires deep domain knowledge and optimized system prompts. This skill provides a structured 4-phase methodology to create production-ready agents with embedded expertise.",
+    "seo_keywords": [
+      "Claude Code agent creation",
+      "system prompt optimization",
+      "Claude agent SDK",
+      "prompt engineering",
+      "AI agent development",
+      "Claude Codex",
+      "Claude",
+      "specialized AI agents",
+      "SOP methodology",
+      "agent workflow"
+    ],
+    "actual_capabilities": [
+      "Creates AI agents using the official 4-phase SOP methodology from Desktop .claude-flow",
+      "Develops optimized system prompts with evidence-based prompting techniques",
+      "Implements agents using Claude Agent SDK for production deployments",
+      "Embeds deep domain knowledge into agent system prompts",
+      "Defines agent workflows, toolsets, and constraints for specific tasks",
+      "Validates agent configurations against best practices"
+    ],
+    "limitations": [
+      "Does not execute agent code - only generates agent configurations and prompts",
+      "Does not install or manage dependencies for created agents",
+      "Does not integrate with external APIs or services directly",
+      "Requires manual review and testing of generated agent prompts"
+    ],
+    "use_cases": [
+      {
+        "title": "Build Domain-Specific Research Agents",
+        "description": "Create AI agents optimized for specific research domains like legal document review, scientific literature analysis, or market research. The agent embeds domain-specific terminology, constraints, and workflow patterns.",
+        "target_user": "Researchers and knowledge workers"
+      },
+      {
+        "title": "Develop Code Review Automation Agents",
+        "description": "Generate specialized agents for code review tasks with embedded coding standards, language-specific rules, and security scanning patterns. Agents follow consistent review workflows.",
+        "target_user": "Software engineers and DevOps teams"
+      },
+      {
+        "title": "Create Customer Support Workflow Agents",
+        "description": "Build agents trained on support scripts, knowledge base content, and escalation procedures. These agents handle common queries with consistent responses and proper handoff logic.",
+        "target_user": "Support team leads and operations managers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Agent Creation",
+        "prompt": "Create a new AI agent named [agent-name] for [task-description]. Use the 4-phase SOP methodology to define its system prompt with embedded domain knowledge about [domain-area].",
+        "scenario": "Starting a new agent project from scratch"
+      },
+      {
+        "title": "Agent with Tools",
+        "prompt": "Design an agent that can [primary-capability]. Include tools for [tool-list]. Define the agent constraints and response formats for [use-case].",
+        "scenario": "Creating an agent with specific tool requirements"
+      },
+      {
+        "title": "Multi-Phase Agent Workflow",
+        "prompt": "Create an agent that follows this workflow: Phase 1 [phase-1-description], Phase 2 [phase-2-description], Phase 3 [phase-3-description]. Embed evidence-based prompting for quality outputs.",
+        "scenario": "Building complex multi-step agent workflows"
+      },
+      {
+        "title": "Production-Ready Agent",
+        "prompt": "Generate a production-ready Claude Code agent with: name=[agent-name], purpose=[purpose], constraints=[constraints], escalation-rules=[rules]. Include error handling and validation prompts.",
+        "scenario": "Preparing agents for deployment"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a code review agent for JavaScript projects",
+        "output": [
+          "Agent Name: js-code-reviewer",
+          "System Prompt: You are an expert JavaScript code reviewer...",
+          "Constraints: [list]",
+          "Workflow Phases: [description]"
+        ]
+      },
+      {
+        "input": "Build a research agent for medical literature",
+        "output": [
+          "Agent Name: medical-lit-researcher",
+          "System Prompt: You are a medical research specialist...",
+          "Evidence Standards: [requirements]",
+          "Citation Format: [specification]"
+        ]
+      },
+      {
+        "input": "Design an agent for customer onboarding",
+        "output": [
+          "Agent Name: onboarding-guide",
+          "System Prompt: You help new customers get started...",
+          "Step Workflow: [process]",
+          "Escalation Triggers: [conditions]"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Define clear agent boundaries and constraints before generating the system prompt",
+      "Use evidence-based prompting to embed verifiable domain knowledge",
+      "Test agent responses with edge cases before deployment"
+    ],
+    "anti_patterns": [
+      "Avoid creating agents without defined escalation paths for unknown inputs",
+      "Do not skip the 4-phase methodology for complex agent requirements",
+      "Avoid overloading agents with too many conflicting constraints"
+    ],
+    "faq": [
+      {
+        "question": "What is the 4-phase SOP methodology?",
+        "answer": "The 4-phase SOP methodology structures agent creation into four phases: analysis, design, implementation, and validation. Each phase adds layers of domain knowledge and constraints to the system prompt."
+      },
+      {
+        "question": "Can I use this skill with Claude Code?",
+        "answer": "Yes. This skill is compatible with Claude Code and generates agents using Claude Agent SDK patterns. The output includes ready-to-use configuration files."
+      },
+      {
+        "question": "Does this skill execute code?",
+        "answer": "No. This skill generates agent configurations, system prompts, and documentation. You must manually implement and test the generated agent code."
+      },
+      {
+        "question": "What makes evidence-based prompting different?",
+        "answer": "Evidence-based prompting requires agents to cite sources and verify claims. This improves response quality and makes agent outputs auditable and trustworthy."
+      },
+      {
+        "question": "Can I modify generated prompts?",
+        "answer": "Yes. All generated prompts are templates meant for customization. Review and adjust constraints, workflows, and domain knowledge for your specific use case."
+      },
+      {
+        "question": "How do I deploy created agents?",
+        "answer": "Export the generated system prompt and configuration. Deploy using your preferred method: Claude Code, custom integration, or Claude Agent SDK deployment pipeline."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "agent-creator-process.dot",
+      "type": "file",
+      "path": "agent-creator-process.dot",
+      "lines": 95
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 659
+    }
+  ]
+}

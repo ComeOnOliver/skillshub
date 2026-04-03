@@ -1,0 +1,324 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:52:51.826Z",
+    "slug": "daronvee-skills-factory",
+    "source_url": "https://github.com/DaronVee/ccgg-skills-factory/tree/master/skills-factory",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cc850a0759e5a0a8eb85772798f4ba3adf2ad02739b0e3e075f6cd6ece373b52",
+    "tree_hash": "2c47363289339f068329756c1fe6a19cd9e2d5913bf21b18f2ace775d9bc63ac"
+  },
+  "skill": {
+    "name": "skills-factory",
+    "description": "Meta-skill for creating production-ready Claude Code skills using evaluation-driven development, progressive disclosure patterns, comprehensive validation, and two-Claude iterative methodology",
+    "summary": "Meta-skill for creating production-ready Claude Code skills using evaluation-driven development, pro...",
+    "icon": "🏭",
+    "version": "1.1.0",
+    "author": "DaronVee",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "skill-development",
+      "workflows",
+      "validation",
+      "deployment",
+      "best-practices"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate meta-skill for creating Claude Code skills. All 911 static findings are FALSE POSITIVES: documentation code examples (backticks for markdown formatting), filesystem path references in guides, and utility script operations. No network access, no credential handling, no obfuscation. Python scripts perform standard file operations (create, copy, zip) to user-specified directories only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 1,
+            "line_end": 376
+          },
+          {
+            "file": "scripts/comprehensive_validate.py",
+            "line_start": 1,
+            "line_end": 572
+          },
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 1,
+            "line_end": 235
+          },
+          {
+            "file": "scripts/quick_validate.py",
+            "line_start": 1,
+            "line_end": 65
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 206,
+            "line_end": 235
+          },
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 78,
+            "line_end": 81
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/SKILL.md",
+            "line_start": 74,
+            "line_end": 188
+          },
+          {
+            "file": "references/DEPLOYMENT_GUIDE.md",
+            "line_start": 15,
+            "line_end": 707
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 12,
+    "total_lines": 5660,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:52:51.826Z"
+  },
+  "content": {
+    "user_title": "Create Production-Ready Claude Code Skills",
+    "value_statement": "Building Claude Code skills from scratch requires understanding YAML structure, progressive disclosure, validation patterns, and deployment strategies. Skills Factory provides templates, validation scripts, and comprehensive guides so you can create effective skills faster.",
+    "seo_keywords": [
+      "Claude Code skills",
+      "skill development",
+      "evaluation-driven development",
+      "progressive disclosure",
+      "skill validation",
+      "skill deployment",
+      "workflow patterns",
+      "Claude",
+      "Claude Code",
+      "AI skill creation"
+    ],
+    "actual_capabilities": [
+      "Initialize new skill directories with YAML templates",
+      "Validate skill structure with quick or comprehensive checks",
+      "Package skills into zip files for distribution",
+      "Install skills to personal or project locations",
+      "Apply evaluation-driven development methodology",
+      "Use two-Claude iterative testing methodology"
+    ],
+    "limitations": [
+      "Does not execute arbitrary code or make network requests",
+      "Requires manual trigger based on description keywords",
+      "Skills do not sync across Claude surfaces automatically",
+      "Does not generate skill content automatically"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Skill Developers",
+        "title": "Create New Skills",
+        "description": "Initialize skill directories with proper YAML frontmatter, progressive disclosure structure, and validation scripts"
+      },
+      {
+        "target_user": "Team Leads",
+        "title": "Standardize Team Skills",
+        "description": "Establish consistent skill patterns across your team with validation rules and deployment workflows"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Package and Deploy Skills",
+        "description": "Package skills for distribution across Claude Code, Claude.ai, Claude Desktop, and Claude API"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create New Skill",
+        "scenario": "Initialize a new skill",
+        "prompt": "Create a new skill named api-helper using Skills Factory. Initialize it in my personal skills directory."
+      },
+      {
+        "title": "Validate Skill",
+        "scenario": "Check skill structure",
+        "prompt": "Validate my skill at ~/.claude/skills/pdf-processor using comprehensive validation. Show me any errors."
+      },
+      {
+        "title": "Package Skill",
+        "scenario": "Prepare for distribution",
+        "prompt": "Package my-data-skill for distribution. Install it to personal skills and create a zip file for Claude.ai upload."
+      },
+      {
+        "title": "Apply Best Practices",
+        "scenario": "Improve existing skill",
+        "prompt": "Review my skill at ./my-skill and suggest improvements based on Skills Factory best practices."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a new skill called api-documenter using Skills Factory",
+        "output": [
+          "Created skill directory: ~/.claude/skills/api-documenter/",
+          "Created SKILL.md with YAML frontmatter template",
+          "Created scripts/ directory with example script",
+          "Created references/ directory with API reference template",
+          "Next steps: Edit SKILL.md to complete TODO items"
+        ]
+      },
+      {
+        "input": "Validate my skill at ./pdf-processor using comprehensive validation",
+        "output": [
+          "Validating pdf-processor/...",
+          "[OK] YAML frontmatter structure valid",
+          "[OK] Naming conventions met (hyphen-case)",
+          "[OK] Description length within limits",
+          "[OK] Progressive disclosure pattern correct",
+          "[WARNING] No examples found in body content",
+          "2 validations passed, 1 warning"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with evaluation-driven development: define test scenarios before building your skill",
+      "Apply progressive disclosure: keep SKILL.md under 200 lines, move details to references/",
+      "Use validation scripts at every checkpoint to catch errors early"
+    ],
+    "anti_patterns": [
+      "Don't skip validation: always run comprehensive_validate.py before deploying",
+      "Don't over-complicate: simple skills with clear triggers work better than complex ones",
+      "Don't forget trigger terms: include specific action verbs and use cases in your description"
+    ],
+    "faq": [
+      {
+        "question": "What surfaces support skills?",
+        "answer": "Claude Code, Claude.ai, Claude Desktop, and Claude API each require separate skill deployment."
+      },
+      {
+        "question": "How big can a skill be?",
+        "answer": "Keep SKILL.md under 200 lines for optimal triggering. Reference files can be loaded when needed."
+      },
+      {
+        "question": "How do I share skills with my team?",
+        "answer": "Commit skills to .claude/skills/ in git repo. Share zip packages for Claude.ai/Desktop."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "Yes. Skills Factory only creates and validates skill files. Makes no network calls or credential access."
+      },
+      {
+        "question": "Why is my skill not triggering?",
+        "answer": "Check that YAML frontmatter is valid and description includes specific trigger terms."
+      },
+      {
+        "question": "How is this different from skill-creator?",
+        "answer": "Skills Factory focuses on production quality with validation, two-Claude iteration, and deployment."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "DEPLOYMENT_GUIDE.md",
+          "type": "file",
+          "path": "references/DEPLOYMENT_GUIDE.md",
+          "lines": 729
+        },
+        {
+          "name": "EVALUATION_GUIDE.md",
+          "type": "file",
+          "path": "references/EVALUATION_GUIDE.md",
+          "lines": 336
+        },
+        {
+          "name": "TROUBLESHOOTING.md",
+          "type": "file",
+          "path": "references/TROUBLESHOOTING.md",
+          "lines": 931
+        },
+        {
+          "name": "TWO_CLAUDE_METHODOLOGY.md",
+          "type": "file",
+          "path": "references/TWO_CLAUDE_METHODOLOGY.md",
+          "lines": 531
+        },
+        {
+          "name": "VALIDATION_PATTERNS.md",
+          "type": "file",
+          "path": "references/VALIDATION_PATTERNS.md",
+          "lines": 693
+        },
+        {
+          "name": "WORKFLOW_PATTERNS.md",
+          "type": "file",
+          "path": "references/WORKFLOW_PATTERNS.md",
+          "lines": 549
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "comprehensive_validate.py",
+          "type": "file",
+          "path": "scripts/comprehensive_validate.py",
+          "lines": 572
+        },
+        {
+          "name": "init_skill.py",
+          "type": "file",
+          "path": "scripts/init_skill.py",
+          "lines": 376
+        },
+        {
+          "name": "package_skill.py",
+          "type": "file",
+          "path": "scripts/package_skill.py",
+          "lines": 235
+        },
+        {
+          "name": "quick_validate.py",
+          "type": "file",
+          "path": "scripts/quick_validate.py",
+          "lines": 65
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 342
+    }
+  ]
+}

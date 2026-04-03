@@ -1,0 +1,258 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:59:33.500Z",
+    "slug": "dami-randle-persona-testing",
+    "source_url": "https://github.com/Dami-Randle/logidocs-certify/tree/main/.claude/skills/persona-testing",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9c7a9d7273ca024a08d8a1e1704d1287d760d5287f19414cf83c6e9285c8720f",
+    "tree_hash": "764ede7269a502c22285221695ea327bba0ef76db6d92ea90ace0dcdc1cb6253"
+  },
+  "skill": {
+    "name": "persona-testing",
+    "description": "Test LogiDocs Certify features from customer persona perspectives. Use when the user wants to test features as a customer, get simulated feedback, review UI from user perspective, or mentions \"test as Aftrac\", \"test as Sirius\", \"customer feedback\", \"user testing\", or \"persona review\".",
+    "summary": "Test LogiDocs Certify features from customer persona perspectives. Use when the user wants to test f...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "Dami-Randle",
+    "license": "MIT",
+    "category": "testing",
+    "tags": [
+      "persona-testing",
+      "ux-review",
+      "customer-feedback",
+      "testing-methodology"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure prompt-based skill containing only markdown documentation with persona descriptions, testing scenarios, and report templates. The static findings are false positives: hash identifiers were misidentified as cryptographic code, backtick characters in markdown code blocks were misidentified as shell execution, and URL fields in JSON metadata were misidentified as network calls. No executable code, network calls, or filesystem access beyond reading its own file exists.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 110
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 288,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:59:33.500Z"
+  },
+  "content": {
+    "user_title": "Test LogiDocs features from customer perspectives",
+    "value_statement": "Teams need to validate software features from real customer viewpoints before release. This skill provides structured persona-based testing using two distinct customer profiles to identify UX issues, friction points, and missing features early.",
+    "seo_keywords": [
+      "persona testing",
+      "customer feedback simulation",
+      "LogiDocs testing",
+      "user testing methodology",
+      "UX review",
+      "product testing",
+      "customer perspective testing",
+      "Claude Code testing",
+      "Aftrac persona",
+      "Sirius persona"
+    ],
+    "actual_capabilities": [
+      "Test features from two distinct customer personas (Aftrac end user and Sirius consultant)",
+      "Generate simulated customer feedback with realistic expectations and pain points",
+      "Review UI and UX from different user expertise levels and use cases",
+      "Create structured persona testing reports with actionable recommendations",
+      "Evaluate features against specific compliance workflows (CE/UKCA marking and ISO standards)",
+      "Identify friction points before actual customer feedback arrives"
+    ],
+    "limitations": [
+      "Only provides testing methodology and persona context for LogiDocs Certify",
+      "Does not execute actual browser automation or user testing",
+      "Cannot access real customer data or actual user sessions",
+      "Limited to predefined persona scenarios listed in the skill documentation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Product managers",
+        "title": "Validate features before release",
+        "description": "Test new features from customer perspectives to catch issues before they reach real users."
+      },
+      {
+        "target_user": "UX designers",
+        "title": "Review interface from user views",
+        "description": "Evaluate how different customer types navigate features and where confusion occurs."
+      },
+      {
+        "target_user": "QA teams",
+        "title": "Supplement automated testing",
+        "description": "Add persona-based feedback to testing cycles for comprehensive coverage."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic feature review",
+        "scenario": "Test a single feature",
+        "prompt": "Test the [feature name] page from [Aftrac/Sirius] perspective. What would they notice first? What works well? Where would they struggle?"
+      },
+      {
+        "title": "End-to-end workflow test",
+        "scenario": "Test complete user journey",
+        "prompt": "Review the [workflow name] from [Aftrac/Sirius] perspective. Walk through each step as this persona. Identify where they would get confused or frustrated."
+      },
+      {
+        "title": "Feedback simulation",
+        "scenario": "Generate realistic responses",
+        "prompt": "Generate feedback [Aftrac/Sirius] would give after using [specific feature] for 20 minutes. Include what they like, what confuses them, and what they wish existed."
+      },
+      {
+        "title": "Comparative analysis",
+        "scenario": "Compare both personas",
+        "prompt": "Compare how Aftrac and Sirius would approach [task]. What different expectations and needs does each have? How should the UI accommodate both?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Test the document upload page from Aftrac's perspective.",
+        "output": [
+          "**First Impressions**\n- Clear upload area is immediately visible\n- Progress indicator is helpful but could be more prominent\n\n**Positive Observations**\n- Bulk upload works smoothly\n- Auto-categorization saves time\n\n**Friction Points**\n- Certification expiry warnings are hidden in submenu\n- Missing guidance for first-time upload\n\n**In Character Quote**\n> 'I just want to upload my supplier certs and know what to do next. The upload is fine but I'm not sure what happens after.'"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Define clear testing objectives before invoking persona testing",
+      "Use both personas (Aftrac and Sirius) to capture different user needs",
+      "Document friction points with specific page locations and user actions"
+    ],
+    "anti_patterns": [
+      "Using only one persona when both perspectives add value",
+      "Skipping the structured report format after testing",
+      "Testing without a specific feature or workflow in mind"
+    ],
+    "faq": [
+      {
+        "question": "Which persona should I choose first?",
+        "answer": "Start with Aftrac for basic functionality, then Sirius for advanced features."
+      },
+      {
+        "question": "Can this skill automate browser testing?",
+        "answer": "No, this is a methodology skill for structured persona-based review."
+      },
+      {
+        "question": "What makes the two personas different?",
+        "answer": "Aftrac is an end user with limited expertise. Sirius is a consultant with deep ISO knowledge."
+      },
+      {
+        "question": "How detailed are the reports?",
+        "answer": "Reports include first impressions, positives, friction points, and in-character quotes."
+      },
+      {
+        "question": "Can I add custom personas?",
+        "answer": "This skill supports only the defined Aftrac and Sirius personas."
+      },
+      {
+        "question": "How does this compare to real user testing?",
+        "answer": "Persona testing catches obvious issues early. Real user testing is still essential for final validation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 113
+    }
+  ]
+}

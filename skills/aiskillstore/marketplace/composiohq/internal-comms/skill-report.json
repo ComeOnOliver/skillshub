@@ -1,0 +1,281 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:45:10.181Z",
+    "slug": "composiohq-internal-comms",
+    "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/internal-comms",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6c5721a4357fd5a6aacef9cf1f8cc197425a0f0d5c9e341b3449448e6d307679",
+    "tree_hash": "4f7a035039277cd7f68dbe545d7e754cff85603d24bba08978f5ebe32583a903"
+  },
+  "skill": {
+    "name": "internal-comms",
+    "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+    "summary": "A set of resources to help me write all kinds of internal communications, using the formats that my ...",
+    "icon": "💬",
+    "version": "1.0.0",
+    "author": "ComposioHQ",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "communication",
+    "tags": [
+      "internal communications",
+      "company updates",
+      "templates",
+      "newsletter",
+      "faq"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure prompt-based skill containing only markdown template files for formatting internal communications. No executable code, scripts, network calls, or system access capabilities. All 28 static findings are false positives caused by pattern matching on benign text. The skill only reads its own documentation files to guide communication formatting.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "LICENSE.txt",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "LICENSE.txt",
+            "line_start": 196,
+            "line_end": 196
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 601,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:45:10.181Z"
+  },
+  "content": {
+    "user_title": "Write Internal Company Communications",
+    "value_statement": "Claude needs consistent formats for writing internal communications. This skill provides templates and guidelines for common formats like 3P updates, company newsletters, and FAQ responses. Use these formats whenever asked to write internal company updates.",
+    "seo_keywords": [
+      "internal communications",
+      "3P updates",
+      "company newsletter",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "FAQ responses",
+      "status reports",
+      "leadership updates",
+      "project updates"
+    ],
+    "actual_capabilities": [
+      "Write 3P updates (Progress, Plans, Problems) for leadership",
+      "Create company-wide newsletters with structured sections",
+      "Draft FAQ responses to common employee questions",
+      "Format general internal communications with proper tone",
+      "Apply consistent formatting across communication types"
+    ],
+    "limitations": [
+      "Does not access company tools directly - relies on user-provided information",
+      "Does not send communications - only generates draft content",
+      "Does not track or monitor communication responses"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Team leads",
+        "title": "Weekly 3P Updates",
+        "description": "Summarize team progress, plans, and blockers for leadership and stakeholders."
+      },
+      {
+        "target_user": "Communications team",
+        "title": "Company Newsletters",
+        "description": "Create monthly summaries of company news, announcements, and milestones."
+      },
+      {
+        "target_user": "HR and leadership",
+        "title": "FAQ Document creation",
+        "description": "Draft answers to frequently asked questions across the organization."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Weekly team update",
+        "scenario": "Team progress report",
+        "prompt": "Write a 3P update for the Engineering team covering last week and next week. Focus on shipped features, upcoming priorities, and any blockers."
+      },
+      {
+        "title": "Monthly company news",
+        "scenario": "Company-wide summary",
+        "prompt": "Create a company newsletter summarizing the past month. Include announcements, milestones, and external press mentions."
+      },
+      {
+        "title": "Answer employee questions",
+        "scenario": "FAQ documentation",
+        "prompt": "Identify common questions employees might have about the new remote work policy and draft clear, professional answers."
+      },
+      {
+        "title": "General announcement",
+        "scenario": "Non-standard communication",
+        "prompt": "Write an announcement about the upcoming holiday schedule. Target audience is all employees. Keep it clear and concise."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Write a 3P update for the Product team this week.",
+        "output": [
+          "📦 Product Team (Jan 1-7)",
+          "Progress: Shipped feature X with 95% adoption, completed user research study with 50 participants, launched beta for Y.",
+          "Plans: Begin Z development, conduct A/B tests for B, finalize Q2 roadmap.",
+          "Problems: Waiting on design specs for C, hiring slowdown impacting roadmap velocity."
+        ]
+      },
+      {
+        "input": "Create a company newsletter for January.",
+        "output": [
+          "📢 Company Announcements",
+          "- New leadership structure announced by CEO",
+          "- Q1 goals published on company wiki",
+          "",
+          "🎯 Progress on Priorities",
+          "- Feature X shipped to 100% of users",
+          "- Hiring goal: 20 new engineers onboarded",
+          "",
+          "👥 Leadership Updates",
+          "- Town hall recording available in #announcements"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Ask for clarification on team name, time period, and specific focus areas before writing.",
+      "Keep each section to 1-3 sentences for executive-readability.",
+      "Include relevant metrics and data points in progress updates."
+    ],
+    "anti_patterns": [
+      "Using overly long paragraphs instead of concise bullet points.",
+      "Including information only relevant to small subgroups.",
+      "Duplicating information already communicated in other channels."
+    ],
+    "faq": [
+      {
+        "question": "Does this skill connect to my company tools?",
+        "answer": "No. The skill provides formatting templates only. You provide the content and information from your tools."
+      },
+      {
+        "question": "What communication formats are supported?",
+        "answer": "3P updates, company newsletters, FAQ responses, and general internal communications are supported."
+      },
+      {
+        "question": "Can I customize the templates?",
+        "answer": "Yes. Modify the files in the examples/ directory to match your company specific formats and tone."
+      },
+      {
+        "question": "Is my data sent anywhere?",
+        "answer": "No. This skill only processes content locally. No data is transmitted to external servers."
+      },
+      {
+        "question": "What if my format is not supported?",
+        "answer": "Use the general-comms.md template and ask for clarification on audience, tone, and formatting requirements."
+      },
+      {
+        "question": "How does this compare to other writing skills?",
+        "answer": "This skill focuses specifically on internal company communications with industry-standard formats like 3P updates."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "3p-updates.md",
+          "type": "file",
+          "path": "examples/3p-updates.md",
+          "lines": 47
+        },
+        {
+          "name": "company-newsletter.md",
+          "type": "file",
+          "path": "examples/company-newsletter.md",
+          "lines": 66
+        },
+        {
+          "name": "faq-answers.md",
+          "type": "file",
+          "path": "examples/faq-answers.md",
+          "lines": 30
+        },
+        {
+          "name": "general-comms.md",
+          "type": "file",
+          "path": "examples/general-comms.md",
+          "lines": 16
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 33
+    }
+  ]
+}

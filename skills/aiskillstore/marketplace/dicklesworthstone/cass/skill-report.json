@@ -1,0 +1,209 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:08:15.928Z",
+    "slug": "dicklesworthstone-cass",
+    "source_url": "https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/tree/main/skills/cass",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c1e1ff44ba56af587f1cb935ab3bc4ec13b3cbbafa9d819bdeacafe1725d4813",
+    "tree_hash": "f566c8bc2d0cc82cec8e8839ab769bd787a76c9d2a3ca2522a352c39fc4b1348"
+  },
+  "skill": {
+    "name": "cass",
+    "description": "Coding Agent Session Search - unified CLI/TUI to index and search local coding agent history from Claude Code, Codex, Gemini, Cursor, Aider, ChatGPT, Pi-Agent, Factory, and more. Purpose-built for AI agent consumption with robot mode.",
+    "summary": "Unified CLI/TUI to index and search local coding agent history from Claude Code, Codex, Gemini, Cursor, and other AI coding tools.",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "Dicklesworthstone",
+    "license": "MIT",
+    "tags": [
+      "search",
+      "indexing",
+      "cli",
+      "development",
+      "history"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate developer tool for indexing and searching coding agent session history. Static findings are false positives: shell backticks in documentation examples, AES-256-GCM encryption documentation, and standard dev path access for indexing. No malicious intent detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 950
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 933,
+            "line_end": 937
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 583
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 4496,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:08:15.928Z"
+  },
+  "content": {
+    "user_title": "Search your coding agent history",
+    "value_statement": "Developers lose track of solutions found by AI coding assistants. This tool indexes sessions from Claude Code, Codex, Gemini, Cursor, and 8+ other agents into a unified searchable database.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "coding agent",
+      "session search",
+      "AI development",
+      "agent history",
+      "code search"
+    ],
+    "actual_capabilities": [
+      "Index sessions from 11+ AI coding agents (Claude Code, Codex, Gemini CLI, Cursor, Aider, ChatGPT, and more)",
+      "Search across all agent sessions with JSON output designed for AI consumption",
+      "Export conversations to markdown, HTML, or JSON format",
+      "Connect remote machines via SSH to search sessions across multiple computers",
+      "Timeline view to review daily or weekly agent activity"
+    ],
+    "limitations": [
+      "Requires local agent session data to be present on disk",
+      "ChatGPT v2/v3 encryption requires keychain access for indexing",
+      "Semantic search requires manual model installation",
+      "TUI mode blocks terminal; must use --robot flag for automation"
+    ],
+    "use_cases": [
+      {
+        "title": "Find past solutions",
+        "description": "Search your entire agent history to find solutions you discovered before. Query by error message, function name, or concept.",
+        "target_user": "Developers working with AI coding assistants"
+      },
+      {
+        "title": "Cross-agent research",
+        "description": "Compare how different AI agents approached the same problem. See patterns in their solutions and learn from their different strategies.",
+        "target_user": "AI researchers and power users"
+      },
+      {
+        "title": "Team handoff",
+        "description": "Share relevant past sessions with team members. Export context so the next agent understands what has already been tried.",
+        "target_user": "Development teams using multiple AI tools"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic search",
+        "prompt": "Search my agent sessions for solutions related to #{query}. Use cass search \"#{query}\" --robot --limit 10 --days 30. Report any relevant code patterns or commands that worked.",
+        "scenario": "When you need to find how you solved a similar problem before"
+      },
+      {
+        "title": "Error resolution",
+        "prompt": "Find all sessions where I dealt with #{error_type}. Use cass search \"#{error_type}\" --robot --fields summary. Show me the approaches that succeeded.",
+        "scenario": "When encountering a new error and wanting to see past solutions"
+      },
+      {
+        "title": "Timeline review",
+        "prompt": "Show me my agent activity for today. Use cass timeline --today --json --group-by hour. Summarize what I worked on.",
+        "scenario": "When reviewing daily progress or documenting work"
+      },
+      {
+        "title": "Agent comparison",
+        "prompt": "Compare how Claude Code and Cursor handled #{topic}. Search both agents separately and show me their different approaches.",
+        "scenario": "When comparing strategies across different AI coding tools"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search for TypeScript typing patterns",
+        "output": "Found 3 relevant sessions:\n1. Claude Code: Created interface for API response (src/api/types.ts:15)\n2. Cursor: Added type guards for user input (lib/validation.ts:42)\n3. Aider: Refactored to use discriminated unions (types/events.ts:8)"
+      },
+      {
+        "input": "Review today's activity",
+        "output": "Timeline (Today - 6 hours of activity):\n09:00-10:00: Database schema design (Claude Code)\n10:00-11:00: API endpoint implementation (Cursor)\n11:00-12:00: Authentication tests (Aider)"
+      }
+    ],
+    "best_practices": [
+      "Run cass index --full after installing to ensure complete session coverage",
+      "Use --robot flag for all AI-to-AI interactions to get structured JSON output",
+      "Enable watch mode (cass index --watch) for real-time indexing during development",
+      "Configure remote sources to search sessions from all your development machines"
+    ],
+    "anti_patterns": [
+      "Running cass without --robot flag in automated workflows (blocks terminal)",
+      "Skipping regular indexing after agent session data changes",
+      "Using imprecise search terms that return too many unrelated results",
+      "Ignoring the --limit flag when working with limited token budgets"
+    ],
+    "faq": [
+      {
+        "question": "Which agents does CASS support?",
+        "answer": "CASS supports Claude Code, Codex, Gemini CLI, Cline, OpenCode, Amp, Cursor, ChatGPT, Aider, Pi-Agent, and Factory (Droid). Each agent's sessions are stored in their native format and location."
+      },
+      {
+        "question": "How does robot mode differ from TUI mode?",
+        "answer": "Robot mode (--robot flag) outputs structured JSON designed for AI consumption. TUI mode launches an interactive terminal interface for human users. Always use --robot in automated workflows."
+      },
+      {
+        "question": "Can CASS search remote machines?",
+        "answer": "Yes, CASS supports remote sources via SSH. Run cass sources setup to discover hosts from ~/.ssh/config, then sync sessions from remote machines to search locally."
+      },
+      {
+        "question": "What happens to encrypted ChatGPT sessions?",
+        "answer": "ChatGPT v2/v3 uses AES-256-GCM encryption with keys stored in the macOS keychain. CASS can only index these if keychain access is granted. Legacy v1 sessions are unencrypted and indexed automatically."
+      },
+      {
+        "question": "Does CASS send data to the cloud?",
+        "answer": "No, CASS is a local-only tool. All indexing and searching happens on your machine. Semantic search models must be installed manually and never downloaded automatically."
+      },
+      {
+        "question": "How much disk space does indexing require?",
+        "answer": "CASS uses SQLite for the index (typically 10-50MB for extensive histories) and stores minimal metadata. Your original agent session files remain unchanged."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 950
+    }
+  ]
+}

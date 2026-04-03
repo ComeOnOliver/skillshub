@@ -1,0 +1,423 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:21:55.173Z",
+    "slug": "k-dense-ai-clinical-reports",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinical-reports",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3d910dd9e1361d0cae49f0df79753c774f281882d2eb05e5a4ce0be0a67a1cee",
+    "tree_hash": "53621d975c6c7513c65925562cb72271f17cdb28fd567db5850f5d0e2b60529e"
+  },
+  "skill": {
+    "name": "clinical-reports",
+    "description": "Write comprehensive clinical reports including case reports (CARE guidelines), diagnostic reports (radiology/pathology/lab), clinical trial reports (ICH-E3, SAE, CSR), and patient documentation (SOAP, H&P, discharge summaries). Full support with templates, regulatory compliance (HIPAA, FDA, ICH-GCP), and validation tools.",
+    "summary": "Write comprehensive clinical reports including case reports (CARE guidelines), diagnostic reports (r...",
+    "icon": "🩺",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT License",
+    "category": "data",
+    "tags": [
+      "healthcare",
+      "clinical documentation",
+      "medical writing",
+      "HIPAA compliance",
+      "regulatory"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate clinical documentation skill with no security concerns. All static findings are false positives caused by the scanner misinterpreting markdown documentation content. The 'weak cryptographic algorithm' detections are legitimate mentions of HIPAA compliance terms in documentation. The 'Ruby/shell backtick execution' detections are markdown code formatting syntax (`) not actual shell commands. The Python scripts are safe utilities that read files, parse regex patterns, and generate compliance reports with no command injection, credential access, or data exfiltration.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 49
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/format_adverse_events.py",
+            "line_start": 86,
+            "line_end": 87
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 32,
+    "total_lines": 12249,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:21:55.173Z"
+  },
+  "content": {
+    "user_title": "Write Clinical Reports with Compliance",
+    "value_statement": "Clinical documentation requires precision and regulatory compliance. This skill provides templates and validation tools for case reports, diagnostic reports, clinical trial documentation, and patient notes following HIPAA, FDA, and ICH-GCP standards.",
+    "seo_keywords": [
+      "clinical reports",
+      "medical writing",
+      "HIPAA compliance",
+      "clinical documentation",
+      "case report",
+      "SOAP notes",
+      "clinical trial",
+      "diagnostic reports",
+      "Claude",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generate clinical case reports following CARE guidelines for journal publication",
+      "Write diagnostic reports including radiology, pathology, and laboratory reports",
+      "Create clinical trial documentation with SAE reports and CSR templates",
+      "Produce patient documentation including SOAP notes, H&P, and discharge summaries",
+      "Validate reports for HIPAA compliance and de-identification of 18 PHI identifiers",
+      "Apply regulatory compliance standards including FDA, ICH-GCP, and HIPAA requirements"
+    ],
+    "limitations": [
+      "Does not provide medical advice or clinical decision support",
+      "Does not access external patient records or medical databases",
+      "Does not validate clinical accuracy of medical content",
+      "Templates require user to input accurate clinical information"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Medical Researchers",
+        "title": "Write Case Reports",
+        "description": "Generate CARE-compliant case reports for journal publication with proper de-identification and medical terminology."
+      },
+      {
+        "target_user": "Clinical Trial Managers",
+        "title": "Document Trial Data",
+        "description": "Create ICH-E3 compliant clinical study reports and SAE documentation for regulatory submissions."
+      },
+      {
+        "target_user": "Healthcare Providers",
+        "title": "Document Patient Care",
+        "description": "Write SOAP notes, discharge summaries, and clinical documentation following professional standards."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Case Report",
+        "scenario": "Start a case report",
+        "prompt": "Write a clinical case report template following CARE guidelines for a patient with [condition]."
+      },
+      {
+        "title": "SAE Documentation",
+        "scenario": "Document adverse event",
+        "prompt": "Create a serious adverse event report template for a [type] event in a clinical trial participant."
+      },
+      {
+        "title": "SOAP Note",
+        "scenario": "Write progress note",
+        "prompt": "Write a SOAP note for a patient presenting with [symptoms] including subjective, objective, assessment, and plan sections."
+      },
+      {
+        "title": "HIPAA Review",
+        "scenario": "Check compliance",
+        "prompt": "Review this clinical document for HIPAA compliance and identify any of the 18 PHI identifiers that need de-identification."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Write a case report template for a patient with atypical pneumonia",
+        "output": [
+          "Title section with case report designation",
+          "Patient information section with de-identification placeholders",
+          "Timeline of clinical progression",
+          "Diagnostic assessment with differential diagnosis",
+          "Treatment interventions and outcomes",
+          "Discussion with literature context"
+        ]
+      },
+      {
+        "input": "Create an SAE report template for a serious adverse event",
+        "output": [
+          "Study protocol and subject identification (de-identified)",
+          "Event narrative with timeline and severity assessment",
+          "Causality relationship evaluation to study drug",
+          "Regulatory reporting timeline requirements",
+          "Expectedness determination per investigator brochure"
+        ]
+      },
+      {
+        "input": "Write a SOAP note for chest pain evaluation",
+        "output": [
+          "Subjective: Patient complaints, HPI, relevant history",
+          "Objective: Vital signs, physical exam findings by system",
+          "Assessment: Primary diagnosis with differential considerations",
+          "Plan: Diagnostic tests, medications, follow-up schedule"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always remove or alter the 18 HIPAA identifiers before sharing clinical documentation outside your organization.",
+      "Follow the appropriate guidelines (CARE, ICH-E3, ACR, CAP) for each report type to ensure regulatory compliance.",
+      "Validate all clinical reports for completeness before submission to journals or regulatory agencies."
+    ],
+    "anti_patterns": [
+      "Do not include actual patient names, dates, or identifying information in draft reports.",
+      "Do not skip the de-identification step when preparing case reports for publication.",
+      "Do not use prohibited medical abbreviations that could cause documentation errors."
+    ],
+    "faq": [
+      {
+        "question": "What report types are supported?",
+        "answer": "Case reports, diagnostic reports (radiology, pathology, lab), clinical trial reports (SAE, CSR), and patient documentation (SOAP, H&P, discharge summaries)."
+      },
+      {
+        "question": "How does HIPAA compliance work?",
+        "answer": "The skill includes tools to scan for 18 PHI identifiers and templates designed to facilitate proper de-identification of patient information."
+      },
+      {
+        "question": "Can I use this for FDA submissions?",
+        "answer": "Yes, the clinical trial documentation follows ICH-E3 guidelines and FDA requirements for regulatory submissions."
+      },
+      {
+        "question": "What guidelines are followed?",
+        "answer": "CARE for case reports, ACR/CAP for diagnostic reports, ICH-E3 for clinical trials, and HIPAA for privacy compliance."
+      },
+      {
+        "question": "Does this validate medical accuracy?",
+        "answer": "No, the skill provides templates and structure but does not validate clinical content or medical accuracy of entered information."
+      },
+      {
+        "question": "What validation tools are included?",
+        "answer": "Scripts for checking de-identification, validating CARE/ICH-E3 compliance, formatting adverse events, and verifying terminology standards."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "case_report_template.md",
+          "type": "file",
+          "path": "assets/case_report_template.md",
+          "lines": 353
+        },
+        {
+          "name": "clinical_trial_csr_template.md",
+          "type": "file",
+          "path": "assets/clinical_trial_csr_template.md",
+          "lines": 354
+        },
+        {
+          "name": "clinical_trial_sae_template.md",
+          "type": "file",
+          "path": "assets/clinical_trial_sae_template.md",
+          "lines": 360
+        },
+        {
+          "name": "consult_note_template.md",
+          "type": "file",
+          "path": "assets/consult_note_template.md",
+          "lines": 306
+        },
+        {
+          "name": "discharge_summary_template.md",
+          "type": "file",
+          "path": "assets/discharge_summary_template.md",
+          "lines": 454
+        },
+        {
+          "name": "hipaa_compliance_checklist.md",
+          "type": "file",
+          "path": "assets/hipaa_compliance_checklist.md",
+          "lines": 396
+        },
+        {
+          "name": "history_physical_template.md",
+          "type": "file",
+          "path": "assets/history_physical_template.md",
+          "lines": 306
+        },
+        {
+          "name": "lab_report_template.md",
+          "type": "file",
+          "path": "assets/lab_report_template.md",
+          "lines": 310
+        },
+        {
+          "name": "pathology_report_template.md",
+          "type": "file",
+          "path": "assets/pathology_report_template.md",
+          "lines": 250
+        },
+        {
+          "name": "quality_checklist.md",
+          "type": "file",
+          "path": "assets/quality_checklist.md",
+          "lines": 339
+        },
+        {
+          "name": "radiology_report_template.md",
+          "type": "file",
+          "path": "assets/radiology_report_template.md",
+          "lines": 319
+        },
+        {
+          "name": "soap_note_template.md",
+          "type": "file",
+          "path": "assets/soap_note_template.md",
+          "lines": 254
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "case_report_guidelines.md",
+          "type": "file",
+          "path": "references/case_report_guidelines.md",
+          "lines": 571
+        },
+        {
+          "name": "clinical_trial_reporting.md",
+          "type": "file",
+          "path": "references/clinical_trial_reporting.md",
+          "lines": 694
+        },
+        {
+          "name": "data_presentation.md",
+          "type": "file",
+          "path": "references/data_presentation.md",
+          "lines": 531
+        },
+        {
+          "name": "diagnostic_reports_standards.md",
+          "type": "file",
+          "path": "references/diagnostic_reports_standards.md",
+          "lines": 630
+        },
+        {
+          "name": "medical_terminology.md",
+          "type": "file",
+          "path": "references/medical_terminology.md",
+          "lines": 589
+        },
+        {
+          "name": "patient_documentation.md",
+          "type": "file",
+          "path": "references/patient_documentation.md",
+          "lines": 745
+        },
+        {
+          "name": "peer_review_standards.md",
+          "type": "file",
+          "path": "references/peer_review_standards.md",
+          "lines": 586
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "references/README.md",
+          "lines": 237
+        },
+        {
+          "name": "regulatory_compliance.md",
+          "type": "file",
+          "path": "references/regulatory_compliance.md",
+          "lines": 578
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "check_deidentification.py",
+          "type": "file",
+          "path": "scripts/check_deidentification.py",
+          "lines": 347
+        },
+        {
+          "name": "compliance_checker.py",
+          "type": "file",
+          "path": "scripts/compliance_checker.py",
+          "lines": 79
+        },
+        {
+          "name": "extract_clinical_data.py",
+          "type": "file",
+          "path": "scripts/extract_clinical_data.py",
+          "lines": 103
+        },
+        {
+          "name": "format_adverse_events.py",
+          "type": "file",
+          "path": "scripts/format_adverse_events.py",
+          "lines": 104
+        },
+        {
+          "name": "generate_report_template.py",
+          "type": "file",
+          "path": "scripts/generate_report_template.py",
+          "lines": 164
+        },
+        {
+          "name": "terminology_validator.py",
+          "type": "file",
+          "path": "scripts/terminology_validator.py",
+          "lines": 134
+        },
+        {
+          "name": "validate_case_report.py",
+          "type": "file",
+          "path": "scripts/validate_case_report.py",
+          "lines": 335
+        },
+        {
+          "name": "validate_trial_report.py",
+          "type": "file",
+          "path": "scripts/validate_trial_report.py",
+          "lines": 90
+        }
+      ]
+    },
+    {
+      "name": "evaluation_output.json",
+      "type": "file",
+      "path": "evaluation_output.json",
+      "lines": 230
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1133
+    }
+  ]
+}

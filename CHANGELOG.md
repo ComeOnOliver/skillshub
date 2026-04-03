@@ -1,3 +1,20 @@
+## [0.2.1] - 2026-04-03
+
+### Data Import — Batch 8
+- **4 new repos imported:**
+  - `secondsky/claude-skills` — 212 skills (production-tested Claude Code skills)
+  - `Harmeet10000/skills` — 151 skills
+  - `happycapy-ai/Happycapy-skills` — 43 skills
+  - `aiskillstore/marketplace` — 4,392 skills (455 unique owners)
+- **Total: 4,798 new skills** from 4 new repos
+- **New totals: ~15,000+ published skills from 245+ repos**
+
+### Fixes
+- Fix ESM compatibility in seed script (`__dirname` → `import.meta.url`)
+- Fix seed script crash on non-directory entries in skills folder
+- Fix missing `name` field when creating repos in seed script
+- Add `skills/majiayu000/` to `.gitignore` (223K skills — too large for git, DB-only import planned)
+
 ## [0.2.0] - 2026-03-19
 
 ### Resolve Algorithm v2

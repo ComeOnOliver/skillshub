@@ -1,0 +1,216 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:10:15.544Z",
+    "slug": "0xkynz-data-visualization",
+    "source_url": "https://github.com/0xkynz/codekit/tree/main/templates/skills/data-visualization",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "52cbc5c8cc2a57c63e02b7d7890ea81f23656e94e9900fba4a8b6513897c4603",
+    "tree_hash": "398910413223684ed171c6223f612e356fcb6dd7707fd4ef44efda6484fde81b"
+  },
+  "skill": {
+    "name": "data-visualization",
+    "description": "Create charts, graphs, and visualizations from data. Use when the user needs to visualize data, create charts, or generate reports with graphics.",
+    "summary": "Create charts, graphs, and visualizations from data. Use when the user needs to visualize data, crea...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "0xkynz",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "data visualization",
+      "charts",
+      "matplotlib",
+      "python",
+      "analytics"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. This is a pure documentation-based skill containing only a SKILL.md file with example Python code snippets for data visualization. No executable code, network calls, cryptographic operations, or system commands exist. The flagged patterns were matched against metadata in skill-report.json and markdown formatting in SKILL.md.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 21
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 234,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:10:15.544Z"
+  },
+  "content": {
+    "user_title": "Create charts and data visualizations with Python",
+    "value_statement": "Communicating data insights visually requires choosing the right chart type and mastering multiple libraries. This skill guides you through creating professional visualizations using matplotlib, seaborn, plotly, and altair.",
+    "seo_keywords": [
+      "data visualization",
+      "charts",
+      "graphs",
+      "matplotlib",
+      "plotly",
+      "seaborn",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "Python visualization"
+    ],
+    "actual_capabilities": [
+      "Generate line charts, bar charts, pie charts, scatter plots, histograms, and heatmaps",
+      "Create visualizations using matplotlib, seaborn, plotly, and altair libraries",
+      "Build multi-axis plots and subplot grids for complex datasets",
+      "Apply custom themes, annotations, and styling to charts",
+      "Export visualizations to PNG, SVG, and PDF formats"
+    ],
+    "limitations": [
+      "Cannot access external databases or APIs directly",
+      "Generates code that must be executed locally by the user",
+      "Does not create real-time or streaming visualizations",
+      "Limited to code generation without interactive dashboard hosting"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data Analysts",
+        "title": "Generate statistical charts",
+        "description": "Create distribution plots, correlation heatmaps, and trend visualizations for analysis reports and presentations."
+      },
+      {
+        "target_user": "Software Developers",
+        "title": "Integrate charts into applications",
+        "description": "Generate Python visualization code for embedding in data pipelines, notebooks, and web applications."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Create publication-ready figures",
+        "description": "Produce clear, professional charts formatted for academic papers and research documentation."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple line chart",
+        "scenario": "Visualize trends over time",
+        "prompt": "Create a matplotlib line chart showing monthly values with title, axis labels, and grid lines."
+      },
+      {
+        "title": "Distribution histogram",
+        "scenario": "Show data spread",
+        "prompt": "Generate a seaborn histogram with KDE overlay showing the distribution of values. Include appropriate labels."
+      },
+      {
+        "title": "Interactive scatter plot",
+        "scenario": "Explore data relationships",
+        "prompt": "Build a plotly scatter plot with hover tooltips showing correlation between two variables. Enable zoom and pan."
+      },
+      {
+        "title": "Multi-chart dashboard",
+        "scenario": "Combine multiple views",
+        "prompt": "Create a matplotlib figure with four subplots: heatmap, bar chart, line chart, and box plot using consistent styling."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a bar chart comparing quarterly revenue",
+        "output": [
+          "Bar chart with quarters on x-axis",
+          "Revenue values on y-axis with currency labels",
+          "Title: Quarterly Revenue Comparison",
+          "Color gradient from light to dark blue",
+          "Value labels displayed above each bar"
+        ]
+      },
+      {
+        "input": "Show temperature distribution for the year",
+        "output": [
+          "Histogram with 20 bins showing temperature frequency",
+          "KDE curve overlay for smooth distribution",
+          "X-axis labeled with temperature in Celsius",
+          "Y-axis showing count of observations",
+          "Mean and median lines annotated"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Match chart type to your data structure and the insight you want to communicate",
+      "Include clear titles, axis labels, and legends for self-explanatory visualizations",
+      "Use colorblind-friendly palettes for accessibility"
+    ],
+    "anti_patterns": [
+      "Using 3D effects for simple data comparisons which distorts perception",
+      "Including too many data series in one chart causing visual clutter",
+      "Omitting axis labels or units making charts difficult to interpret"
+    ],
+    "faq": [
+      {
+        "question": "Which library should I use for my visualization?",
+        "answer": "Use matplotlib for static charts, seaborn for statistics, plotly for interactive web charts, and altair for declarative specifications."
+      },
+      {
+        "question": "What export formats are available?",
+        "answer": "PNG for web images, SVG for scalable graphics, and PDF for print and publication-quality output."
+      },
+      {
+        "question": "Can this skill connect to my database?",
+        "answer": "No. You provide data as input. The skill generates code that processes data you specify in your local environment."
+      },
+      {
+        "question": "Is my data stored or transmitted?",
+        "answer": "No. Your data stays local. The skill only generates Python code that runs on your machine."
+      },
+      {
+        "question": "Why do I get code instead of an image?",
+        "answer": "The skill generates Python code you run locally. This gives you full control over dependencies and execution."
+      },
+      {
+        "question": "Can I create animated charts?",
+        "answer": "Yes. Request matplotlib animations or plotly animated charts. The generated code will include animation frames."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 54
+    }
+  ]
+}

@@ -1,0 +1,667 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:09:12.107Z",
+    "slug": "dyai2025-testing-skills-with-subagents",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/testing-skills-with-subagents",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "986aadf868bd0c98e979b8b56014e265634e0e65e8f241dc650f8b7d3af18b64",
+    "tree_hash": "ceec984662051947f34516e0c3ed7d1e1a9731eca567cc5e434978b2feb32fb3"
+  },
+  "skill": {
+    "name": "testing-skills-with-subagents",
+    "description": "Use when creating or editing skills, before deployment, to verify they work under pressure and resist rationalization - applies RED-GREEN-REFACTOR cycle to process documentation by running baseline without skill, writing to address failures, iterating to close loopholes",
+    "summary": "Use when creating or editing skills, before deployment, to verify they work under pressure and resis...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "skill-development",
+      "testing",
+      "tdd",
+      "quality-assurance",
+      "process-documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown files. No code execution, no file writes, no network calls, no external commands. All 111 static findings are FALSE POSITIVEs - the scanner misinterpreted markdown documentation examples, file path references, and metadata hashes as security issues.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 8,
+            "line_end": 19
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 19,
+            "line_end": 22
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 22,
+            "line_end": 36
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 36,
+            "line_end": 39
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 39,
+            "line_end": 47
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 47,
+            "line_end": 50
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 50,
+            "line_end": 53
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 53,
+            "line_end": 62
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 62,
+            "line_end": 70
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 70,
+            "line_end": 73
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 73,
+            "line_end": 75
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 75,
+            "line_end": 78
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 78,
+            "line_end": 81
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 81,
+            "line_end": 84
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 84,
+            "line_end": 85
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 85,
+            "line_end": 86
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 86,
+            "line_end": 89
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 89,
+            "line_end": 92
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 92,
+            "line_end": 94
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 94,
+            "line_end": 95
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 95,
+            "line_end": 97
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 97,
+            "line_end": 107
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 107,
+            "line_end": 113
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 113,
+            "line_end": 116
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 116,
+            "line_end": 122
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 122,
+            "line_end": 123
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 123,
+            "line_end": 132
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 132,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 252
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 252,
+            "line_end": 288
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 288,
+            "line_end": 292
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 292,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 307
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 81,
+            "line_end": 81
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 84,
+            "line_end": 84
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 85,
+            "line_end": 85
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 92,
+            "line_end": 92
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 94,
+            "line_end": 94
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 95,
+            "line_end": 95
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 122,
+            "line_end": 122
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 123,
+            "line_end": 123
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 81,
+            "line_end": 81
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 84,
+            "line_end": 84
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 85,
+            "line_end": 85
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 92,
+            "line_end": 92
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 94,
+            "line_end": 94
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 95,
+            "line_end": 95
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 122,
+            "line_end": 122
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 123,
+            "line_end": 123
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 151
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 771,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:09:12.107Z"
+  },
+  "content": {
+    "user_title": "Test AI Skills Before Deployment",
+    "value_statement": "Skills fail under pressure when agents find rationalizations to skip them. This skill applies TDD principles to skill development, ensuring skills enforce discipline even when agents want to bypass them. Create bulletproof skills that resist rationalization.",
+    "seo_keywords": [
+      "Claude skill testing",
+      "skill development",
+      "TDD for AI",
+      "RED-GREEN-REFACTOR",
+      "Claude Code skills",
+      "process documentation",
+      "skill validation",
+      "AI quality assurance",
+      "rationalization resistance",
+      "Claude Codex"
+    ],
+    "actual_capabilities": [
+      "Create pressure test scenarios with combined time, sunk cost, and authority pressures",
+      "Run baseline tests without skill to reveal natural agent failures and rationalizations",
+      "Apply GREEN phase to write skills addressing specific documented failures",
+      "REFACTOR phase to close loopholes by adding counters for each rationalization type",
+      "Use meta-testing to diagnose why skills fail and improve their clarity",
+      "Verify skills remain compliant under maximum pressure before deployment"
+    ],
+    "limitations": [
+      "Only tests skills with rules that can be violated - not suitable for reference-only skills",
+      "Requires the TDD skill as prerequisite background knowledge",
+      "Does not test pure reference skills without behavioral rules",
+      "Testing requires running actual agent scenarios - not automated"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Skill Authors",
+        "title": "Validate New Skills",
+        "description": "Before deploying a new skill, verify it prevents the specific failures it was designed to address."
+      },
+      {
+        "target_user": "Quality Engineers",
+        "title": "Stress Test Discipline Skills",
+        "description": "Test skills that enforce processes like TDD, testing requirements, or code review compliance."
+      },
+      {
+        "target_user": "Process Owners",
+        "title": "Bulletproof Critical Workflows",
+        "description": "Ensure critical process skills resist rationalization when speed and shortcuts tempt agents."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Run Baseline Test",
+        "scenario": "Test skill without deployment",
+        "prompt": "Run this scenario WITHOUT the [skill-name] skill active: [insert pressure scenario]. Document exactly what the agent does and their rationalizations verbatim."
+      },
+      {
+        "title": "Verify Compliance",
+        "scenario": "Test with skill active",
+        "prompt": "Run this scenario WITH the [skill-name] skill active: [insert pressure scenario]. Does the agent follow the rules? What justifications do they provide?"
+      },
+      {
+        "title": "Find Loopholes",
+        "scenario": "Discover new rationalizations",
+        "prompt": "Run [scenario] under maximum pressure. Agent violated the skill? Document their exact rationalization - this reveals a loophole to close."
+      },
+      {
+        "title": "Meta-Test Clarity",
+        "scenario": "Diagnose skill failure",
+        "prompt": "Agent chose [wrong option] despite having the skill. Ask: How could the skill be written to make compliance crystal clear? Add their suggestion verbatim."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Test my new TDD enforcement skill with a scenario where agent spent 3 hours coding and forgot tests",
+        "output": [
+          "RED Phase Result: Agent chose to write tests after, rationalizing 'I already manually tested it'",
+          "GREEN Phase: Skill updated with 'Delete means delete' principle",
+          "REFACTOR Result: New loophole found - 'I'm following the spirit not the letter'",
+          "Final verification: Agent complies under pressure, cites skill directly"
+        ]
+      },
+      {
+        "input": "Validate my code review skill by testing scenarios where senior developer overrides quality rules",
+        "output": [
+          "Baseline Test: Agent accepted override without pushing back, rationalizing 'senior knows best'",
+          "Skill Updated: Added explicit 'Authority does not override process' section",
+          "Pressure Test: Agent now cites skill when pressured, says 'I should follow the process'",
+          "Meta-Test Result: 'Skill was clear about when to escalate vs comply'"
+        ]
+      },
+      {
+        "input": "Test my commit message skill with a scenario where agent wants to skip conventional commits under deadline",
+        "output": [
+          "RED Phase: Agent rationalized 'just this once won't hurt' and committed without conventional format",
+          "GREEN Phase: Added 'No exceptions' section with explicit 'just this once is how habits form'",
+          "REFACTOR Phase: Agent still tried 'quick fix' - added 'speed is not an excuse' counter",
+          "Final GREEN: Agent refuses under deadline pressure, cites skill directly"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always run baseline tests without the skill first - you cannot fix what you have not observed",
+      "Combine 3+ pressures in scenarios (time, sunk cost, exhaustion, authority) to reveal real rationalizations",
+      "Document exact agent rationalizations verbatim - generic fixes do not close specific loopholes"
+    ],
+    "anti_patterns": [
+      "Skipping RED phase and writing skill based on assumptions rather than observed failures",
+      "Using single-pressure scenarios that agents easily resist - real pressure combines multiple factors",
+      "Stopping after first GREEN pass - continue REFACTOR until no new rationalizations emerge"
+    ],
+    "faq": [
+      {
+        "question": "Is this skill compatible with Claude, Codex, and Claude Code?",
+        "answer": "Works with Claude and Claude Code. Skills are Claude-specific and may not function in Codex environments."
+      },
+      {
+        "question": "What makes a skill worth testing?",
+        "answer": "Test skills that have compliance costs, enforce discipline, or contradict immediate goals like speed over quality."
+      },
+      {
+        "question": "Can I integrate this with CI/CD pipelines?",
+        "answer": "This skill requires human judgment to run agent scenarios. It is a manual testing methodology, not automated."
+      },
+      {
+        "question": "Does this skill access or modify my files?",
+        "answer": "No file modifications occur. The skill is purely documentation for running mental test scenarios on agents."
+      },
+      {
+        "question": "Why did the agent ignore a clear skill?",
+        "answer": "Agents rationalize under pressure. Use meta-testing to diagnose: was it unclear, not seen, or deliberately ignored?"
+      },
+      {
+        "question": "How is this different from regular TDD?",
+        "answer": "Same RED-GREEN-REFACTOR cycle, but tests are agent pressure scenarios and 'code' is skill documentation text."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "CLAUDE_MD_TESTING.md",
+          "type": "file",
+          "path": "examples/CLAUDE_MD_TESTING.md",
+          "lines": 190
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 388
+    },
+    {
+      "name": "SKILL.zip",
+      "type": "file",
+      "path": "SKILL.zip"
+    }
+  ]
+}

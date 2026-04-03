@@ -1,0 +1,326 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:58:55.731Z",
+    "slug": "alirezarezvani-tech-stack-evaluator",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering-team/tech-stack-evaluator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ffdc15c08e3e48fed12fbd423b1620deeefb3c7193d908216ac06192f0791280",
+    "tree_hash": "caca9f62b822fa7127c88a54530229561da4c582abcf546d75ec3f83360c4496"
+  },
+  "skill": {
+    "name": "tech-stack-evaluator",
+    "description": "Comprehensive technology stack evaluation and comparison tool with TCO analysis, security assessment, and intelligent recommendations for engineering teams",
+    "summary": "Comprehensive technology stack evaluation and comparison tool with TCO analysis, security assessment...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "category": "engineering",
+    "tags": [
+      "technology evaluation",
+      "TCO analysis",
+      "security assessment",
+      "migration planning",
+      "cloud comparison"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 219 static findings are false positives. The scanner detected benign documentation patterns including security terminology, code block formatting, and technology names. No actual code execution, network requests, or credential access exists. Uses Python standard library only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "stack_comparator.py",
+            "line_start": 1,
+            "line_end": 50
+          },
+          {
+            "file": "security_assessor.py",
+            "line_start": 1,
+            "line_end": 50
+          },
+          {
+            "file": "format_detector.py",
+            "line_start": 1,
+            "line_end": 50
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "report_generator.py",
+            "line_start": 444,
+            "line_end": 461
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "report_generator.py",
+            "line_start": 38,
+            "line_end": 38
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 16,
+    "total_lines": 5387,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:58:55.731Z"
+  },
+  "content": {
+    "user_title": "Evaluate Technology Stacks with Data-Driven Analysis",
+    "value_statement": "Engineering teams need objective technology decisions but lack tools to compare frameworks, cloud providers, and stacks comprehensively. This skill provides weighted scoring, TCO analysis, security assessment, and migration planning with confidence scores.",
+    "seo_keywords": [
+      "technology stack evaluator",
+      "Claude skill",
+      "framework comparison tool",
+      "TCO analysis",
+      "cloud provider comparison",
+      "migration planning tool",
+      "security assessment",
+      "Claude Code skill",
+      "technology decision matrix",
+      "React vs Vue comparison"
+    ],
+    "actual_capabilities": [
+      "Compare frameworks and languages head-to-head with weighted scoring matrices",
+      "Calculate total cost of ownership including hidden costs like technical debt",
+      "Assess security posture and compliance readiness for GDPR, SOC2, HIPAA",
+      "Analyze migration complexity with effort estimates and risk assessment",
+      "Evaluate cloud providers with workload-specific cost and feature analysis",
+      "Generate executive summaries with confidence scores and recommendations"
+    ],
+    "limitations": [
+      "Ecosystem metrics are point-in-time snapshots from public databases",
+      "TCO calculations use industry defaults when specific data is unavailable",
+      "Cannot evaluate closed-source or internal tools without data access",
+      "Recommendations assume provided context is accurate and complete"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Engineering Managers",
+        "title": "Compare Frameworks for New Project",
+        "description": "Evaluate React vs Vue vs Angular for a SaaS dashboard with team skill considerations."
+      },
+      {
+        "target_user": "DevOps Leads",
+        "title": "Analyze Cloud Migration Costs",
+        "description": "Calculate 5-year TCO for AWS vs Azure including licensing, training, and scaling."
+      },
+      {
+        "target_user": "Security Officers",
+        "title": "Assess Stack Compliance Readiness",
+        "description": "Analyze Express.js plus MongoDB stack for SOC2 and GDPR compliance gaps."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick Comparison",
+        "scenario": "Simple framework comparison",
+        "prompt": "Compare React vs Vue for building a SaaS dashboard. Focus on developer experience and ecosystem."
+      },
+      {
+        "title": "Stack Evaluation",
+        "scenario": "Complete technology assessment",
+        "prompt": "Evaluate our tech stack for a real-time collaboration platform: Next.js, Node.js, PostgreSQL, WebSockets, AWS. Include TCO analysis and security assessment."
+      },
+      {
+        "title": "Migration Analysis",
+        "scenario": "Legacy to modern migration",
+        "prompt": "Assess migration from Angular.js to React. Our codebase has 50,000 lines, 200 components, and an 8-person team. Need zero-downtime migration."
+      },
+      {
+        "title": "Cloud Comparison",
+        "scenario": "Multi-provider cost analysis",
+        "prompt": "Compare AWS vs Azure vs GCP for ML workloads. Priorities: GPU availability 40%, cost 30%, ecosystem 20%, support 10%. Team has 5 ML engineers."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Compare React vs Vue for a SaaS dashboard",
+        "output": [
+          "Recommendation: React (78% confidence)",
+          "Top strengths: Larger ecosystem, stronger corporate backing, higher job market demand",
+          "Key concerns: Steeper learning curve, more complex state management",
+          "Best for: Performance (React), Developer Experience (Vue)"
+        ]
+      },
+      {
+        "input": "Calculate TCO for AWS vs Azure with 50 EC2 instances",
+        "output": [
+          "5-Year Total TCO: AWS $1.2M, Azure $1.1M",
+          "Key cost drivers: Infrastructure hosting, developer maintenance time",
+          "Hidden costs: Technical debt, vendor lock-in risk",
+          "Recommendation: Azure for cost optimization, AWS for ecosystem maturity"
+        ]
+      },
+      {
+        "input": "Assess security of Express.js plus MongoDB for SOC2 compliance",
+        "output": [
+          "Security Score: 72/100 (Grade C)",
+          "SOC2 Readiness: Mostly Ready (75%) - Minor gaps in audit logging",
+          "Missing features: Encryption at rest, MFA support",
+          "Recommendations: Implement audit logging, enable encryption, add MFA"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide specific use cases and constraints for accurate recommendations",
+      "Include team size, skill levels, and timeline constraints",
+      "Request specific report sections for focused analysis",
+      "Validate TCO assumptions against your actual costs"
+    ],
+    "anti_patterns": [
+      "Using for trivial decisions between nearly identical tools",
+      "Ignoring confidence scores when making final decisions",
+      "Accepting recommendations without validating assumptions",
+      "Comparing more than 5 technologies at once"
+    ],
+    "faq": [
+      {
+        "question": "How current is the ecosystem data?",
+        "answer": "Uses current public data from GitHub, npm, and CVE databases. Metrics are point-in-time snapshots."
+      },
+      {
+        "question": "Can I compare more than 2 technologies?",
+        "answer": "Yes, supports comparing 2-5 technologies. More than 5 reduces actionability."
+      },
+      {
+        "question": "What if I lack data for TCO analysis?",
+        "answer": "The skill uses industry-standard defaults. Provide what you know and it fills reasonable estimates."
+      },
+      {
+        "question": "How does confidence scoring work?",
+        "answer": "Based on score gaps between options, data completeness, and requirement clarity."
+      },
+      {
+        "question": "Can I export reports?",
+        "answer": "Yes, generates markdown reports that can be saved or exported for documentation."
+      },
+      {
+        "question": "What compliance standards are supported?",
+        "answer": "GDPR, SOC2, HIPAA, and PCI-DSS with feature checklists and gap analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "ecosystem_analyzer.py",
+      "type": "file",
+      "path": "ecosystem_analyzer.py",
+      "lines": 502
+    },
+    {
+      "name": "evaluation_output.json",
+      "type": "file",
+      "path": "evaluation_output.json",
+      "lines": 236
+    },
+    {
+      "name": "expected_output_comparison.json",
+      "type": "file",
+      "path": "expected_output_comparison.json",
+      "lines": 83
+    },
+    {
+      "name": "format_detector.py",
+      "type": "file",
+      "path": "format_detector.py",
+      "lines": 431
+    },
+    {
+      "name": "HOW_TO_USE.md",
+      "type": "file",
+      "path": "HOW_TO_USE.md",
+      "lines": 336
+    },
+    {
+      "name": "migration_analyzer.py",
+      "type": "file",
+      "path": "migration_analyzer.py",
+      "lines": 588
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 560
+    },
+    {
+      "name": "report_generator.py",
+      "type": "file",
+      "path": "report_generator.py",
+      "lines": 461
+    },
+    {
+      "name": "sample_input_structured.json",
+      "type": "file",
+      "path": "sample_input_structured.json",
+      "lines": 40
+    },
+    {
+      "name": "sample_input_tco.json",
+      "type": "file",
+      "path": "sample_input_tco.json",
+      "lines": 43
+    },
+    {
+      "name": "sample_input_text.json",
+      "type": "file",
+      "path": "sample_input_text.json",
+      "lines": 5
+    },
+    {
+      "name": "security_assessor.py",
+      "type": "file",
+      "path": "security_assessor.py",
+      "lines": 519
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 430
+    },
+    {
+      "name": "stack_comparator.py",
+      "type": "file",
+      "path": "stack_comparator.py",
+      "lines": 390
+    },
+    {
+      "name": "tco_calculator.py",
+      "type": "file",
+      "path": "tco_calculator.py",
+      "lines": 459
+    }
+  ]
+}

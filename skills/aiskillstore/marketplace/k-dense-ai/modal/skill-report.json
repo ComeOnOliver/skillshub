@@ -1,0 +1,375 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:33:18.527Z",
+    "slug": "k-dense-ai-modal",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/modal",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3b63eb5289ec47af408b1cd8c53cdc741b435cae9933570c1daec1479e540828",
+    "tree_hash": "74593e374db278af3bc9da3b953ea253a278526dcd8e167ca2a8a91044192405"
+  },
+  "skill": {
+    "name": "modal",
+    "description": "Run Python code in the cloud with serverless containers, GPUs, and autoscaling. Use when deploying ML models, running batch processing jobs, scheduling compute-intensive tasks, or serving APIs that require GPU acceleration or dynamic scaling.",
+    "summary": "Run Python code in the cloud with serverless containers, GPUs, and autoscaling. Use when deploying M...",
+    "icon": "☁️",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Apache-2.0 license",
+    "category": "data",
+    "tags": [
+      "cloud",
+      "python",
+      "gpu",
+      "serverless",
+      "machine-learning"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill for Modal, a legitimate serverless cloud computing platform. All 572 static findings are FALSE POSITIVES. The scanner misinterprets Markdown documentation code examples as executable code. Patterns flagged include CLI commands in documentation (modal run, modal deploy), environment variable documentation, and legitimate Modal API patterns. No malicious code, credential exfiltration, or actual security vulnerabilities exist. This skill contains only documentation files teaching users how to properly use the Modal platform.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 240
+          },
+          {
+            "file": "references/getting-started.md",
+            "line_start": 11,
+            "line_end": 13
+          },
+          {
+            "file": "references/secrets.md",
+            "line_start": 17,
+            "line_end": 29
+          },
+          {
+            "file": "references/scaling.md",
+            "line_start": 12,
+            "line_end": 16
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 380,
+            "line_end": 380
+          },
+          {
+            "file": "references/getting-started.md",
+            "line_start": 5,
+            "line_end": 5
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 197
+          },
+          {
+            "file": "references/getting-started.md",
+            "line_start": 15,
+            "line_end": 15
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 213
+          },
+          {
+            "file": "references/secrets.md",
+            "line_start": 37,
+            "line_end": 44
+          },
+          {
+            "file": "references/secrets.md",
+            "line_start": 50,
+            "line_end": 54
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 14,
+    "total_lines": 6111,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:33:18.527Z"
+  },
+  "content": {
+    "user_title": "Run Python code in the cloud",
+    "value_statement": "Modal is a serverless platform for running Python code in the cloud. It provides instant access to GPUs, automatic scaling, and pay-per-use billing. Deploy ML models, run batch processing jobs, and serve APIs without managing infrastructure.",
+    "seo_keywords": [
+      "modal cloud platform",
+      "serverless python",
+      "gpu computing",
+      "claude code modal",
+      "claude modal integration",
+      "machine learning deployment",
+      "batch processing cloud",
+      "python autoscaling",
+      "modal api",
+      "cloud gpu access"
+    ],
+    "actual_capabilities": [
+      "Deploy Python functions to serverless cloud containers with automatic scaling",
+      "Access GPUs (T4, L4, A10, A100, H100, H200, B200) for ML workloads",
+      "Run batch processing jobs with parallel execution across thousands of containers",
+      "Create scheduled jobs and cron tasks for automated workflows",
+      "Serve web APIs and webhooks with automatic HTTPS endpoints",
+      "Manage secrets and environment variables securely for cloud functions"
+    ],
+    "limitations": [
+      "Requires Modal account and authentication token for cloud access",
+      "Only supports Python functions and applications, not other languages",
+      "Network calls and data transfer may incur additional costs beyond compute",
+      "Cold start latency may occur for functions that scale to zero"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML Engineers",
+        "title": "Deploy ML models for inference",
+        "description": "Deploy trained models (LLMs, image classifiers) to production with GPU acceleration and auto-scaling for variable traffic."
+      },
+      {
+        "target_user": "Data Scientists",
+        "title": "Run batch processing jobs",
+        "description": "Process large datasets in parallel across multiple containers. Process thousands of files or data rows simultaneously."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Execute GPU compute tasks",
+        "description": "Run computationally intensive research tasks on H100 or A100 GPUs. Schedule training jobs and long-running computations."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic GPU Deployment",
+        "scenario": "Deploy a Python function with GPU access",
+        "prompt": "Create a Modal app that runs a Python function on an L40S GPU. The function should load a HuggingFace model and return predictions. Use an appropriate container image with torch and transformers installed."
+      },
+      {
+        "title": "Batch Processing",
+        "scenario": "Process multiple files in parallel",
+        "prompt": "Set up a Modal function that processes CSV files in parallel. The function should read files from an S3 bucket, apply transformations, and save results. Use CPU parallelism with multiple cores."
+      },
+      {
+        "title": "Scheduled Jobs",
+        "scenario": "Automate recurring compute tasks",
+        "prompt": "Create a Modal scheduled function that runs daily at 2 AM. The function should refresh cached data from an API and update model weights stored in a Modal Volume."
+      },
+      {
+        "title": "Web API",
+        "scenario": "Serve predictions via HTTP endpoint",
+        "prompt": "Build a Modal web endpoint that accepts POST requests with input data. The endpoint should run inference using a deployed model and return predictions. Include proper error handling and authentication."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Deploy a Python function that summarizes text using a HuggingFace model on GPU",
+        "output": [
+          "✓ Created Modal app with L40S GPU access",
+          "✓ Built container image with transformers and torch",
+          "✓ Deployed web endpoint for text summarization",
+          "✓ Endpoint available at https://your-app.modal.run"
+        ]
+      },
+      {
+        "input": "Run a batch job to process 1000 images in parallel",
+        "output": [
+          "✓ Created worker function with 4 CPU cores and 8GB memory",
+          "✓ Configured parallel processing across 50 containers",
+          "✓ Processed 1000 images in ~8 minutes",
+          "✓ Results saved to Modal Volume at /data/output/"
+        ]
+      },
+      {
+        "input": "Schedule daily model retraining at midnight",
+        "output": [
+          "✓ Created scheduled function with cron expression '0 0 * * *'",
+          "✓ Configured GPU (A100) for training computations",
+          "✓ Set up secret management for API credentials",
+          "✓ Training logs available in Modal dashboard"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Pin all Python package versions in image definitions to ensure reproducible builds and deployments",
+      "Use separate Modal Secrets for different environments (dev, staging, production) to prevent credential leakage",
+      "Configure appropriate min_containers to reduce cold start latency for latency-sensitive endpoints"
+    ],
+    "anti_patterns": [
+      "Hardcoding API keys or credentials directly in function code instead of using Modal Secrets",
+      "Importing heavy dependencies at module scope instead of inside function bodies, slowing down container startup",
+      "Using sequential loops for batch processing instead of .map() for parallel execution across containers"
+    ],
+    "faq": [
+      {
+        "question": "How much does Modal cost?",
+        "answer": "Modal offers pay-per-use pricing. You only pay for compute time used. New users receive $30/month in free credits. GPU instances and larger containers cost more."
+      },
+      {
+        "question": "What GPU types are available?",
+        "answer": "Modal provides T4, L4, A10, A100, A100-80GB, L40S, H100, H200, and B200 GPUs. Different models offer various price-performance tradeoffs for inference versus training."
+      },
+      {
+        "question": "How do I authenticate with Modal?",
+        "answer": "Run 'modal token new' to open a browser login. This stores credentials in ~/.modal.toml. Alternatively, set MODAL_TOKEN_ID and MODAL_TOKEN_SECRET environment variables."
+      },
+      {
+        "question": "Can I run long-running jobs?",
+        "answer": "Yes, but default timeout is 5 minutes. Increase with timeout parameter up to 24 hours. For longer jobs, consider breaking work into chunks or using scheduled jobs."
+      },
+      {
+        "question": "How does autoscaling work?",
+        "answer": "Modal automatically scales containers from zero to max_containers based on incoming requests. Set min_containers to keep warm for low-latency endpoints. Use buffer_containers for burst handling."
+      },
+      {
+        "question": "What Python versions are supported?",
+        "answer": "Modal supports Python 3.8 through 3.12. Specify python_version in image definition. Python 3.11 or 3.12 recommended for best performance with ML workloads."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 35
+        },
+        {
+          "name": "examples.md",
+          "type": "file",
+          "path": "references/examples.md",
+          "lines": 434
+        },
+        {
+          "name": "functions.md",
+          "type": "file",
+          "path": "references/functions.md",
+          "lines": 275
+        },
+        {
+          "name": "getting-started.md",
+          "type": "file",
+          "path": "references/getting-started.md",
+          "lines": 93
+        },
+        {
+          "name": "gpu.md",
+          "type": "file",
+          "path": "references/gpu.md",
+          "lines": 169
+        },
+        {
+          "name": "images.md",
+          "type": "file",
+          "path": "references/images.md",
+          "lines": 262
+        },
+        {
+          "name": "resources.md",
+          "type": "file",
+          "path": "references/resources.md",
+          "lines": 130
+        },
+        {
+          "name": "scaling.md",
+          "type": "file",
+          "path": "references/scaling.md",
+          "lines": 231
+        },
+        {
+          "name": "scheduled-jobs.md",
+          "type": "file",
+          "path": "references/scheduled-jobs.md",
+          "lines": 304
+        },
+        {
+          "name": "secrets.md",
+          "type": "file",
+          "path": "references/secrets.md",
+          "lines": 181
+        },
+        {
+          "name": "volumes.md",
+          "type": "file",
+          "path": "references/volumes.md",
+          "lines": 304
+        },
+        {
+          "name": "web-endpoints.md",
+          "type": "file",
+          "path": "references/web-endpoints.md",
+          "lines": 338
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 383
+    }
+  ]
+}

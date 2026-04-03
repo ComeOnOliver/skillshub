@@ -1,0 +1,225 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:53:24.568Z",
+    "slug": "davila7-pathml",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/pathml",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "36e2c50ced8efa2156267f8faa2f7ebf3e98e47a52c8eccb70e2186f9f6f9883",
+    "tree_hash": "a44b6b9f8f67d248d3540675a5fd2f8530920f746b77d8bdc0de920701c5f864"
+  },
+  "skill": {
+    "name": "pathml",
+    "description": "Computational pathology toolkit for analyzing whole-slide images (WSI) and multiparametric imaging data. Use this skill when working with histopathology slides, H&E stained images, multiplex immunofluorescence (CODEX, Vectra), spatial proteomics, nucleus detection/segmentation, tissue graph construction, or training ML models on pathology data. Supports 160+ slide formats including Aperio SVS, NDPI, DICOM, OME-TIFF for digital pathology workflows.",
+    "summary": "Computational pathology toolkit for whole-slide image analysis and machine learning",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "pathology",
+      "medical-imaging",
+      "machine-learning",
+      "bioinformatics",
+      "image-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation skill providing reference materials for the PathML Python library. All 566 static findings are false positives from code examples in markdown documentation files, not executable code. No actual security risks identified.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 9303,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:53:24.568Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Analyze Medical Pathology Images with PathML Library",
+    "value_statement": "Working with computational pathology requires specialized tools for whole-slide image analysis. This skill provides comprehensive reference documentation for PathML, enabling you to load gigapixel pathology images, preprocess H&E stains, train machine learning models, and analyze spatial proteomics data.",
+    "seo_keywords": [
+      "pathml",
+      "computational pathology",
+      "whole-slide imaging",
+      "medical image analysis",
+      "digital pathology",
+      "histopathology",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "machine learning",
+      "bioinformatics"
+    ],
+    "actual_capabilities": [
+      "Load and process whole-slide images in 160+ proprietary formats including Aperio SVS, NDPI, DICOM, and OME-TIFF",
+      "Build preprocessing pipelines with stain normalization, tissue detection, and artifact filtering for H&E images",
+      "Train and deploy deep learning models for nucleus segmentation and classification using HoVer-Net and HACTNet",
+      "Analyze multiparametric imaging data from CODEX, Vectra, and multiplex immunofluorescence platforms",
+      "Construct spatial graphs representing cellular relationships for graph neural network applications",
+      "Manage large pathology datasets with efficient HDF5 storage and batch processing workflows"
+    ],
+    "limitations": [
+      "Provides reference documentation only - requires PathML Python library to be installed separately",
+      "Focuses on PathML library syntax and workflows - does not teach general pathology concepts",
+      "Code examples assume familiarity with Python, PyTorch, and basic image processing concepts",
+      "Does not include pre-trained models or sample datasets - users must obtain these separately"
+    ],
+    "use_cases": [
+      {
+        "title": "Research Scientists",
+        "description": "Pathology researchers analyzing whole-slide images for cancer detection, cell classification, or spatial biology studies can reference PathML workflows for loading proprietary slide formats, preprocessing tissue images, and training custom deep learning models.",
+        "target_user": "Computational biology researchers"
+      },
+      {
+        "title": "Bioinformaticians",
+        "description": "Bioinformatics teams building digital pathology pipelines can leverage PathML documentation to design reproducible preprocessing workflows, manage large-scale datasets with HDF5 storage, and integrate spatial proteomics data from multiplex imaging platforms.",
+        "target_user": "Bioinformatics engineers"
+      },
+      {
+        "title": "Machine Learning Engineers",
+        "description": "ML engineers developing pathology AI models can reference PathML APIs for creating custom PyTorch DataLoaders, implementing tile-based analysis strategies, and deploying models with ONNX for efficient inference on gigapixel images.",
+        "target_user": "ML practitioners in healthcare"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Load Whole-Slide Image",
+        "prompt": "How do I load an Aperio SVS whole-slide image and generate tiles at level 1 with 256x256 pixel size?",
+        "scenario": "Basic image loading for a beginner getting started with PathML"
+      },
+      {
+        "title": "Preprocessing Pipeline",
+        "prompt": "Create a preprocessing pipeline that performs tissue detection, Macenko stain normalization, and artifact removal for H&E images",
+        "scenario": "Intermediate workflow for standardizing pathology images"
+      },
+      {
+        "title": "Train Nucleus Segmentation Model",
+        "prompt": "Show me how to train a HoVer-Net model for nucleus detection on a custom pathology dataset with PyTorch DataLoaders",
+        "scenario": "Advanced machine learning workflow for custom model training"
+      },
+      {
+        "title": "CODEX Spatial Analysis",
+        "prompt": "Analyze CODEX multiparametric imaging data: segment cells with Mesmer, quantify marker expression, and export to AnnData format",
+        "scenario": "Expert workflow for spatial proteomics analysis"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I load an SVS file in PathML?",
+        "output": "To load an Aperio SVS whole-slide image, use the SlideData class:\n\nfrom pathml.core import SlideData\n\nwsi = SlideData.from_slide(\"path/to/slide.svs\")\n\nThis automatically detects the file format and creates a unified interface. Generate tiles with:\n\nwsi.generate_tiles(level=1, tile_size=256, stride=256)\n\nSee references/image_loading.md for 160+ supported formats including NDPI, DICOM, and OME-TIFF."
+      },
+      {
+        "input": "What preprocessing transforms are available for H&E images?",
+        "output": "PathML provides several H&E-specific transforms:\n\n- StainNormalizationHE: Macenko or Vahadane stain normalization\n- TissueDetectionHE: Otsu thresholding for tissue segmentation\n- NucleusDetectionHE: Laplacian of Gaussian nucleus detection\n- LabelArtifactTileHE: Artifact detection and labeling\n\nCombine them in a Pipeline:\n\npipeline = Pipeline([\n  TissueDetectionHE(),\n  StainNormalizationHE(target='normalize')\n])\npipeline.run(wsi)\n\nSee references/preprocessing.md for the complete transform catalog."
+      },
+      {
+        "input": "How do I analyze CODEX multiparametric data?",
+        "output": "For CODEX analysis:\n\n1. Load CODEX slide: slide = CODEXSlide(\"path/to/codex_dir\")\n2. Collapse multi-run data: slide.collapse_channels()\n3. Segment cells: pipeline = Pipeline([SegmentMesmer()])\n4. Quantify markers: slide.quantify_markers()\n5. Export: adata = slide.to_anndata()\n\nThis creates single-cell data in AnnData format with marker expression and spatial coordinates. See references/multiparametric.md for Vectra and MERFISH workflows."
+      }
+    ],
+    "best_practices": [
+      "Always check the references/ directory for detailed API documentation before asking general questions about PathML capabilities",
+      "Specify the exact PathML class names and module paths when asking for code examples to get accurate syntax",
+      "For debugging PathML errors, provide the full error traceback and relevant code context including import statements and data shapes"
+    ],
+    "anti_patterns": [
+      "Do not ask the skill to install PathML or system dependencies - it only provides reference documentation",
+      "Avoid requesting general pathology tutorials or medical advice - the skill focuses on PathML library usage only",
+      "Do not expect the skill to have access to your local files or datasets - you must describe your data structure explicitly"
+    ],
+    "faq": [
+      {
+        "question": "What image formats does PathML support?",
+        "answer": "PathML supports 160+ proprietary whole-slide image formats through OpenSlide and bioformats backends, including Aperio SVS, Hamamatsu NDPI, Leica SCN, Zeiss ZVI, DICOM WSI, OME-TIFF, and many others. See references/image_loading.md for the complete format list and backend selection."
+      },
+      {
+        "question": "How do I handle gigapixel images efficiently?",
+        "answer": "PathML uses tile-based processing to handle gigapixel images. Generate tiles at appropriate pyramid levels with generate_tiles(), process tiles in batches, and store results in HDF5 format for efficient random access. The Pipeline framework automatically handles parallel processing with multiprocessing or Dask backends."
+      },
+      {
+        "question": "Can PathML work with immunofluorescence and CODEX data?",
+        "answer": "Yes, PathML has specialized support for multiparametric imaging including CODEX, Vectra, and MERFISH platforms. Use CODEXSlide or VectraSlide classes to load multi-channel data, apply cell segmentation with Mesmer models, quantify marker expression, and export to AnnData format. See references/multiparametric.md for detailed workflows."
+      },
+      {
+        "question": "What machine learning models are available?",
+        "answer": "PathML includes pre-built implementations of HoVer-Net for nucleus segmentation and classification, and HACTNet for hierarchical cell-type classification. You can also train custom PyTorch models using PathML's DataLoader classes and tile-based dataset management. Models support ONNX export for deployment."
+      },
+      {
+        "question": "How do I normalize H&E stain variations?",
+        "answer": "Use the StainNormalizationHE transform with either Macenko or Vahadane methods. This compensates for staining variations across slides by normalizing to a reference stain matrix. Apply it in your preprocessing pipeline: Pipeline([StainNormalizationHE(target='normalize', stain_estimation_method='macenko')])."
+      },
+      {
+        "question": "Is this skill for Claude Code or the PathML software?",
+        "answer": "This skill provides reference documentation for using the PathML Python library within Claude Code conversations. It helps you write PathML code, understand APIs, and design computational pathology workflows. You must install the PathML library separately to execute the code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "data_management.md",
+          "type": "file",
+          "path": "references/data_management.md",
+          "lines": 743
+        },
+        {
+          "name": "graphs.md",
+          "type": "file",
+          "path": "references/graphs.md",
+          "lines": 654
+        },
+        {
+          "name": "image_loading.md",
+          "type": "file",
+          "path": "references/image_loading.md",
+          "lines": 449
+        },
+        {
+          "name": "machine_learning.md",
+          "type": "file",
+          "path": "references/machine_learning.md",
+          "lines": 726
+        },
+        {
+          "name": "multiparametric.md",
+          "type": "file",
+          "path": "references/multiparametric.md",
+          "lines": 687
+        },
+        {
+          "name": "preprocessing.md",
+          "type": "file",
+          "path": "references/preprocessing.md",
+          "lines": 723
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 161
+    }
+  ]
+}

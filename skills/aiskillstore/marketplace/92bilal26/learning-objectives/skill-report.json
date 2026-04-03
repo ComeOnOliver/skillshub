@@ -1,0 +1,453 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:42:38.706Z",
+    "slug": "92bilal26-learning-objectives",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/learning-objectives",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e7c45aa4702307e800bbfe8cf8f21982b2e750f682a9a8062bda379e33915e57",
+    "tree_hash": "1e868111630eaae164339095966cbd6c29573f8ec344861e27438f1b7d001753"
+  },
+  "skill": {
+    "name": "learning-objectives",
+    "description": "Generate measurable learning outcomes aligned with Bloom's taxonomy and CEFR proficiency levels for educational content.\nUse this skill when educators need to define what students will achieve, create learning objectives\nfor curriculum planning, or ensure objectives are specific and testable rather than vague.\nThis skill helps break down complex topics into progressively building learning goals with clear\nassessment methods and success criteria.\n",
+    "summary": "Generate measurable learning outcomes aligned with Bloom's taxonomy and CEFR proficiency levels for ...",
+    "icon": "📚",
+    "version": "2.1.0",
+    "author": "92Bilal26",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "curriculum",
+      "education",
+      "bloom's-taxonomy",
+      "learning-design",
+      "cefr"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure educational content skill for generating learning objectives. All 158 static findings are FALSE POSITIVES. The analyzer flagged 'C2' as a malware indicator but it refers to CEFR C2 language proficiency level. Backticks flagged as Ruby execution are markdown code formatting. Educational documentation about Bloom's taxonomy contains no cryptographic code, network operations, or command execution. The Python validation script uses only standard libraries (json, yaml, re) for file parsing with no system modifications.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 27,
+            "line_end": 35
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 35,
+            "line_end": 120
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 120,
+            "line_end": 130
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 130,
+            "line_end": 133
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 133,
+            "line_end": 145
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 145,
+            "line_end": 148
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 148,
+            "line_end": 164
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 164,
+            "line_end": 167
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 167,
+            "line_end": 183
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 183,
+            "line_end": 186
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 186,
+            "line_end": 198
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 198,
+            "line_end": 226
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 226,
+            "line_end": 232
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 232,
+            "line_end": 239
+          },
+          {
+            "file": "reference/prerequisite-analysis.md",
+            "line_start": 239,
+            "line_end": 241
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 168,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 213
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 240
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 240,
+            "line_end": 254
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 254,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 269
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 279
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 279,
+            "line_end": 330
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 330,
+            "line_end": 338
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 338,
+            "line_end": 417
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 417,
+            "line_end": 506
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 506,
+            "line_end": 544
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 544,
+            "line_end": 550
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 550,
+            "line_end": 590
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 2110,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:42:38.706Z"
+  },
+  "content": {
+    "user_title": "Create measurable learning objectives",
+    "value_statement": "Educators struggle to write specific, testable learning outcomes. This skill generates measurable objectives aligned with Bloom's taxonomy and CEFR levels, ensuring learners know exactly what they will achieve and how success will be measured.",
+    "seo_keywords": [
+      "learning objectives",
+      "Bloom's taxonomy",
+      "CEFR levels",
+      "curriculum planning",
+      "educational outcomes",
+      "learning design",
+      "skill development",
+      "Claude Code",
+      "Claude",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Generate learning objectives using measurable action verbs aligned to Bloom's taxonomy",
+      "Map objectives to CEFR proficiency levels for international portability",
+      "Identify prerequisite knowledge chains for progressive skill building",
+      "Design assessment methods matched to cognitive complexity levels",
+      "Validate learning objective files for measurability and completeness"
+    ],
+    "limitations": [
+      "Does not create actual assessments or exercises, only defines assessment methods",
+      "Does not evaluate learner performance or provide feedback",
+      "Does not integrate with learning management systems",
+      "Requires user to provide topic, target audience, and learning context"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Curriculum designers",
+        "title": "Design complete curricula",
+        "description": "Create progressive learning objective sequences for courses from beginner to advanced levels"
+      },
+      {
+        "target_user": "Technical educators",
+        "title": "Structure programming lessons",
+        "description": "Define clear, testable outcomes for coding tutorials, workshops, and certification programs"
+      },
+      {
+        "target_user": "AI content creators",
+        "title": "Build AI-native curricula",
+        "description": "Design learning objectives that include three-role AI partnership outcomes for working with AI"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic objective request",
+        "scenario": "Create simple learning objectives",
+        "prompt": "Create 3-5 learning objectives for teaching [TOPIC] to [BEGINNER/INTERMEDIATE/ADVANCED] learners. Include prerequisites, assessment methods, and success criteria."
+      },
+      {
+        "title": "Full curriculum mapping",
+        "scenario": "Design comprehensive course structure",
+        "prompt": "Design a full learning objective set for a [TIME] unit on [TOPIC]. Include objectives at Remember, Understand, Apply, and Analyze levels with CEFR mapping."
+      },
+      {
+        "title": "AI-native objectives",
+        "scenario": "Include AI co-learning outcomes",
+        "prompt": "Create learning objectives for [TOPIC] that include three-role AI partnership outcomes (AI as Teacher, Student, and Co-Worker) per Section IIb framework."
+      },
+      {
+        "title": "Validation request",
+        "scenario": "Check existing objectives",
+        "prompt": "Review these learning objectives for measurability and alignment. Identify vague language, suggest specific action verbs, and verify Bloom's level matching."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create learning objectives for teaching Python list comprehensions to beginners in a 1-hour lesson",
+        "output": [
+          "LO-C1-001: Define list comprehension and identify its basic syntax (Remember level)",
+          "LO-C1-002: Explain how list comprehension replaces for loop patterns (Understand level)",
+          "LO-C1-003: Implement list comprehensions to filter and transform data (Apply level)",
+          "LO-C1-004: Compare list comprehension with traditional loops for efficiency (Analyze level)",
+          "Each objective includes: context, prerequisites, assessment method, success criteria, CEFR mapping"
+        ]
+      },
+      {
+        "input": "Create learning objectives for implementing OAuth authentication with AI co-learning",
+        "output": [
+          "LO-AUTH-001: Implement OAuth authentication working with AI as co-learning partner",
+          "AI as Teacher: Learn refresh token rotation pattern from AI suggestion",
+          "AI as Student: Guide AI through security requirements via clear specification",
+          "AI as Co-Worker: Iterate on session management approach together",
+          "Assessment: Show implementation AND what you learned from AI"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with the end in mind: define what learners should DO, not what you will teach",
+      "Use specific action verbs from Bloom's taxonomy rather than vague terms like understand or know",
+      "Progress from lower to higher Bloom's levels within each topic to build cognitive scaffolding"
+    ],
+    "anti_patterns": [
+      "Using vague verbs like understand or know without specifying what that means in practice",
+      "Skipping prerequisites and assuming learners have foundational knowledge",
+      "Jumping from Remember level directly to Create level without intermediate scaffolding"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between Bloom's levels and CEFR levels?",
+        "answer": "Bloom's levels measure cognitive complexity. CEFR levels measure language proficiency difficulty. Use both together for complete objective mapping."
+      },
+      {
+        "question": "How many objectives should I create for a one-hour lesson?",
+        "answer": "Plan for 3-5 objectives. Focus on 1-2 Bloom's levels per session. Fewer, well-designed objectives work better than many shallow ones."
+      },
+      {
+        "question": "Can I use this skill with the exercise-designer skill?",
+        "answer": "Yes. Use learning-objectives first to define outcomes, then exercise-designer to create practice activities aligned to each objective."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill is prompt-based with no file access, network calls, or external dependencies. Learning objectives are processed in-memory only."
+      },
+      {
+        "question": "What makes a learning objective measurable?",
+        "answer": "A measurable objective uses specific action verbs, defines context, includes success criteria, and answers what learners will do and how success is measured."
+      },
+      {
+        "question": "How does this skill compare to writing objectives manually?",
+        "answer": "The skill provides structured frameworks (Bloom's, CEFR, prerequisites) and validation to catch vague language. It speeds up drafting while ensuring pedagogical alignment."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "reference",
+      "children": [
+        {
+          "name": "assessment-methods.md",
+          "type": "file",
+          "path": "reference/assessment-methods.md",
+          "lines": 304
+        },
+        {
+          "name": "blooms-taxonomy-programming.md",
+          "type": "file",
+          "path": "reference/blooms-taxonomy-programming.md",
+          "lines": 283
+        },
+        {
+          "name": "prerequisite-analysis.md",
+          "type": "file",
+          "path": "reference/prerequisite-analysis.md",
+          "lines": 328
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "validate-objectives.py",
+          "type": "file",
+          "path": "scripts/validate-objectives.py",
+          "lines": 277
+        }
+      ]
+    },
+    {
+      "name": "templates",
+      "type": "dir",
+      "path": "templates",
+      "children": [
+        {
+          "name": "learning-objective-template.yml",
+          "type": "file",
+          "path": "templates/learning-objective-template.yml",
+          "lines": 77
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 618
+    }
+  ]
+}

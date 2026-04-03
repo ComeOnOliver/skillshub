@@ -1,0 +1,297 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:13:43.290Z",
+    "slug": "autumnsgrove-api-designer",
+    "source_url": "https://github.com/AutumnsGrove/ClaudeSkills/tree/master/api-designer",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9be949f1507d1066b3a6a2792656d59cccf43a03dd8809939ac1e515800b5c2e",
+    "tree_hash": "38dc180ee0debc6553ca50a6f29804a39b0e5df36f71c28dedeb879017c43091"
+  },
+  "skill": {
+    "name": "api-designer",
+    "description": "Design and document RESTful and GraphQL APIs with OpenAPI/Swagger specifications, authentication patterns, versioning strategies, and best practices. Use for: (1) Creating API specifications, (2) Designing REST endpoints, (3) GraphQL schema design, (4) API authentication and authorization, (5) API versioning strategies, (6) Documentation generation",
+    "summary": "Design and document RESTful and GraphQL APIs with OpenAPI/Swagger specifications, authentication pat...",
+    "icon": "🔌",
+    "version": "1.0.0",
+    "author": "AutumnsGrove",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "api-design",
+      "openapi",
+      "rest",
+      "graphql",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 661 static findings are FALSE POSITIVES. The skill is a documentation/reference guide for API design containing markdown guides, OpenAPI examples, and a local Python utility. No network operations, no credential access, no command execution. The static analyzer incorrectly flagged cryptographic algorithm names (RS256, HS256) in documentation as 'weak crypto', backticks in markdown as 'shell execution', and REST endpoint paths as 'system reconnaissance'.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/api_helper.py",
+            "line_start": 1,
+            "line_end": 410
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/api_helper.py",
+            "line_start": 75,
+            "line_end": 75
+          },
+          {
+            "file": "scripts/api_helper.py",
+            "line_start": 288,
+            "line_end": 288
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 5375,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:13:43.290Z"
+  },
+  "content": {
+    "user_title": "Design and document RESTful and GraphQL APIs",
+    "value_statement": "This skill provides comprehensive guidance for designing, documenting, and implementing modern APIs. It covers both REST and GraphQL paradigms with industry best practices, authentication patterns, and versioning strategies for production-ready API designs.",
+    "seo_keywords": [
+      "api design",
+      "openapi specification",
+      "rest api",
+      "graphql api",
+      "api documentation",
+      "api authentication",
+      "api versioning",
+      "claude code",
+      "claude",
+      "codex"
+    ],
+    "actual_capabilities": [
+      "Create OpenAPI 3.0 specifications and Swagger documentation",
+      "Design REST endpoints with proper URL structure and HTTP methods",
+      "Define GraphQL schemas with types, queries, mutations, and resolvers",
+      "Implement OAuth 2.0, JWT, and API key authentication patterns",
+      "Plan API versioning strategies for backward compatibility",
+      "Generate consistent error responses and pagination patterns"
+    ],
+    "limitations": [
+      "Does not generate working API code or server implementations",
+      "Does not validate API security against production requirements",
+      "Does not integrate with live API testing tools",
+      "Does not generate client SDKs from specifications"
+    ],
+    "use_cases": [
+      {
+        "target_user": "API Developers",
+        "title": "Create API specifications",
+        "description": "Design REST or GraphQL APIs with comprehensive OpenAPI documentation and authentication patterns."
+      },
+      {
+        "target_user": "Backend Engineers",
+        "title": "Document existing APIs",
+        "description": "Generate OpenAPI specifications from existing APIs and create interactive documentation."
+      },
+      {
+        "target_user": "Technical Writers",
+        "title": "Write API documentation",
+        "description": "Learn best practices for writing clear API documentation with code examples and error guides."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Design REST API",
+        "scenario": "Create user management endpoints",
+        "prompt": "Design a REST API for user management with endpoints for registration, login, profile management, and password reset. Include proper HTTP methods, status codes, and error response formats."
+      },
+      {
+        "title": "Create OpenAPI spec",
+        "scenario": "Generate blog API documentation",
+        "prompt": "Create an OpenAPI 3.0 specification for a blog API including posts, comments, and tags. Include authentication with JWT and pagination for collections."
+      },
+      {
+        "title": "Design GraphQL schema",
+        "scenario": "Build e-commerce schema",
+        "prompt": "Design a GraphQL schema for an e-commerce application with products, categories, shopping cart, and orders. Include proper input types and pagination."
+      },
+      {
+        "title": "Plan API versioning",
+        "scenario": "Version breaking changes",
+        "prompt": "Plan an API versioning strategy for introducing breaking changes to an existing v1 API. Should I use URL versioning (e.g., /v2/users) or header versioning (e.g., Accept: application/vnd.api.v2+json)? Include deprecation notices, migration paths, and backward compatibility considerations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Design authentication endpoints for a REST API with OAuth 2.0",
+        "output": [
+          "POST /auth/register - Create new user account with email and password",
+          "POST /auth/login - Authenticate and receive access token with refresh token",
+          "POST /auth/logout - Invalidate refresh token and end session",
+          "POST /auth/refresh - Exchange valid refresh token for new access token",
+          "GET /auth/me - Return current authenticated user profile",
+          "Use JWT bearer tokens with RS256 signing algorithm"
+        ]
+      },
+      {
+        "input": "Create pagination pattern for large API collections",
+        "output": [
+          "Cursor-based pagination recommended for large datasets",
+          "Include nextCursor and hasMore fields in response",
+          "Offset-based pagination for smaller, predictable result sets",
+          "Always include total count when possible",
+          "Limit default to 20, maximum to 100 items per page"
+        ]
+      },
+      {
+        "input": "Design error response format for REST API",
+        "output": [
+          "Include error code, message, and detailed field-level errors",
+          "Add request ID for troubleshooting and correlation",
+          "Include timestamp in ISO 8601 UTC format",
+          "Use appropriate HTTP status codes: 400, 401, 403, 404, 422, 429, 500",
+          "Never expose sensitive data or stack traces in error responses"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use consistent naming conventions, URL structures, and error response formats across all endpoints",
+      "Implement proper authentication and rate limiting to protect API resources",
+      "Document all endpoints with OpenAPI specifications including examples and error codes"
+    ],
+    "anti_patterns": [
+      "Avoid using verbs in URLs - REST APIs should use nouns for resources",
+      "Do not expose implementation details or sensitive data in error responses",
+      "Avoid deep URL nesting beyond 2 levels - use query parameters instead"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between REST and GraphQL?",
+        "answer": "REST uses fixed endpoints with specific HTTP methods while GraphQL uses a single endpoint with flexible queries. REST is simpler for basic CRUD, GraphQL is better for complex data requirements."
+      },
+      {
+        "question": "How do I version my API without breaking clients?",
+        "answer": "Use URL versioning like /v1/users or header versioning. Add new fields without removing existing ones. Provide deprecation warnings before removing endpoints."
+      },
+      {
+        "question": "What authentication method should I use?",
+        "answer": "OAuth 2.0 for user-facing apps, JWT bearer tokens for APIs, API keys for simple service-to-service authentication. Always use HTTPS."
+      },
+      {
+        "question": "How do I handle pagination in REST APIs?",
+        "answer": "Cursor-based pagination for large real-time datasets. Offset-based for smaller datasets. Include metadata with total count, limits, and pagination cursors."
+      },
+      {
+        "question": "What status codes should I use?",
+        "answer": "200 for success, 201 for created, 204 for no content, 400 for bad request, 401 for unauthorized, 403 for forbidden, 404 for not found, 429 for rate limits, 500 for server errors."
+      },
+      {
+        "question": "How do I document my API?",
+        "answer": "Use OpenAPI 3.0 specification with descriptions, examples, and parameter details. Include authentication requirements, error codes, and response schemas for each endpoint."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "graphql_schema.graphql",
+          "type": "file",
+          "path": "examples/graphql_schema.graphql",
+          "lines": 561
+        },
+        {
+          "name": "openapi_spec.yaml",
+          "type": "file",
+          "path": "examples/openapi_spec.yaml",
+          "lines": 764
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "authentication.md",
+          "type": "file",
+          "path": "references/authentication.md",
+          "lines": 485
+        },
+        {
+          "name": "common-patterns.md",
+          "type": "file",
+          "path": "references/common-patterns.md",
+          "lines": 668
+        },
+        {
+          "name": "rest_best_practices.md",
+          "type": "file",
+          "path": "references/rest_best_practices.md",
+          "lines": 926
+        },
+        {
+          "name": "versioning-strategies.md",
+          "type": "file",
+          "path": "references/versioning-strategies.md",
+          "lines": 649
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "api_helper.py",
+          "type": "file",
+          "path": "scripts/api_helper.py",
+          "lines": 410
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 78
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 559
+    }
+  ]
+}

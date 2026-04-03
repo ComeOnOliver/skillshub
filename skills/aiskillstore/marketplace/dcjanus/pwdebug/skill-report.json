@@ -1,0 +1,341 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T19:44:22.298Z",
+    "slug": "dcjanus-pwdebug",
+    "source_url": "https://github.com/DCjanus/prompts/tree/master/skills/pwdebug",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5295cc61f062d489c80140e1789ff7a016cf5f7a650282ec76b80bc928ced612",
+    "tree_hash": "e51c8cb723f1be69387d544e223bfb5fca1e876678a999869c6cf364bade9d5a"
+  },
+  "skill": {
+    "name": "pwdebug",
+    "description": "Command line tool for debugging web applications using Playwright to control a browser instance. Navigate pages, execute JavaScript, take screenshots, pick elements, and monitor console logs across multiple sessions.",
+    "summary": "Debug web applications using Playwright browser automation from the command line.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DCjanus",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "playwright",
+      "browser-automation",
+      "debugging",
+      "web-development",
+      "chromium"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a legitimate browser automation tool using Playwright for web debugging. The detected patterns (subprocess spawning, network access, filesystem operations) are all expected behaviors for a browser debugging tool. The skill launches Chromium with CDP debugging enabled, connects to localhost only, and stores state files in user cache directory. No malicious intent detected, but the capability to execute arbitrary JavaScript in web pages and spawn browser processes requires user awareness.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 25,
+            "line_end": 30
+          },
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 32,
+            "line_end": 40
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 114,
+            "line_end": 119
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 72,
+            "line_end": 72
+          },
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 121,
+            "line_end": 121
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/pwdebug/state.py",
+            "line_start": 11,
+            "line_end": 13
+          },
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 224,
+            "line_end": 224
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [
+      {
+        "title": "Browser Process Spawning",
+        "description": "The skill spawns a Chromium browser process using subprocess.Popen with user-controllable arguments via --arg flag. While intended for legitimate browser debugging, additional browser arguments could potentially be exploited. The process is launched in a new session and runs persistently until stopped.",
+        "locations": [
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 114,
+            "line_end": 119
+          }
+        ]
+      },
+      {
+        "title": "Arbitrary JavaScript Execution",
+        "description": "The evaluate command allows execution of arbitrary JavaScript expressions in the browser context. While this is the intended functionality for debugging, users should be aware that malicious code could be executed if the skill is misused or if user input is not properly validated by the calling agent.",
+        "locations": [
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 201,
+            "line_end": 203
+          }
+        ]
+      }
+    ],
+    "low_findings": [
+      {
+        "title": "Localhost Network Access",
+        "description": "The skill makes HTTP requests to localhost (127.0.0.1) on port 9222 for Chrome DevTools Protocol communication. This is expected behavior for browser automation and poses no security risk as it only connects to the locally-running browser instance.",
+        "locations": [
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 72,
+            "line_end": 80
+          },
+          {
+            "file": "scripts/pwdebug.py",
+            "line_start": 121,
+            "line_end": 121
+          }
+        ]
+      },
+      {
+        "title": "Cache Directory File Storage",
+        "description": "The skill stores browser state and console logs in the user cache directory (~/.cache/pwdebug/). This is appropriate for temporary debugging data and follows standard conventions for cache storage.",
+        "locations": [
+          {
+            "file": "scripts/pwdebug/state.py",
+            "line_start": 11,
+            "line_end": 13
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 1504,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T19:44:22.298Z"
+  },
+  "content": {
+    "user_title": "Debug Web Apps with Playwright Browser Automation",
+    "value_statement": "Manual browser debugging through DevTools can be time-consuming and difficult to automate. This skill provides a command-line interface to control Chromium with Playwright, enabling automated navigation, JavaScript execution, screenshots, element selection, and console log monitoring for efficient web development workflows.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Playwright",
+      "browser automation",
+      "web debugging",
+      "Chromium",
+      "CDP",
+      "JavaScript execution",
+      "screenshot automation"
+    ],
+    "actual_capabilities": [
+      "Launch and control a persistent Chromium browser instance via Chrome DevTools Protocol",
+      "Navigate to URLs and create new browser tabs programmatically",
+      "Execute arbitrary JavaScript expressions in the browser context and retrieve results",
+      "Take full-page or viewport screenshots and save them to temporary directory",
+      "Interactively select DOM elements with visual highlighting and extract element information",
+      "Monitor and log browser console messages to local JSONL file for analysis"
+    ],
+    "limitations": [
+      "Only supports Chromium browser (Firefox and WebKit are not supported)",
+      "Requires Playwright to be installed with browser binaries before use",
+      "Browser state is stored in user cache directory and shared across sessions",
+      "Interactive element picker requires a headed (non-headless) browser for visual feedback"
+    ],
+    "use_cases": [
+      {
+        "title": "Automated Web Testing",
+        "description": "Developers can use this skill to automate repetitive web testing tasks by navigating to test pages, executing JavaScript assertions, capturing screenshots of different states, and verifying console output without manual intervention.",
+        "target_user": "QA engineers and web developers"
+      },
+      {
+        "title": "Frontend Debugging Sessions",
+        "description": "Frontend developers debugging complex JavaScript applications can maintain a persistent browser session, execute diagnostic code snippets, inspect DOM elements, and monitor console logs across multiple debugging iterations without restarting the browser.",
+        "target_user": "Frontend developers"
+      },
+      {
+        "title": "Web Scraping and Data Extraction",
+        "description": "Data analysts can use the element picker to identify target elements on web pages, extract their properties and structure, and build automated scraping scripts based on the discovered selectors and page structure.",
+        "target_user": "Data analysts and automation engineers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start Browser and Navigate",
+        "prompt": "Start the Playwright browser in headed mode and navigate to https://example.com in a new tab",
+        "scenario": "Beginning a new debugging session"
+      },
+      {
+        "title": "Execute JavaScript and Capture Result",
+        "prompt": "Execute the JavaScript expression 'document.querySelectorAll(\"a\").length' and tell me how many links are on the page",
+        "scenario": "Analyzing page structure"
+      },
+      {
+        "title": "Screenshot and Element Selection",
+        "prompt": "Take a full-page screenshot of the current page, then help me select the login button using the picker",
+        "scenario": "Visual debugging workflow"
+      },
+      {
+        "title": "Monitor Console Logs",
+        "prompt": "Start watching console logs, then navigate to https://myapp.com/dashboard and show me the last 50 log entries after the page loads",
+        "scenario": "Advanced debugging with log analysis"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Take a screenshot of the current page",
+        "output": "/tmp/screenshot-20260121-194422.png"
+      },
+      {
+        "input": "Execute JavaScript to get the page title",
+        "output": "Example Domain"
+      },
+      {
+        "input": "Show me the browser status",
+        "output": [
+          "Browser service is running",
+          "PID: 12345",
+          "Browser type: chromium",
+          "CDP endpoint: http://127.0.0.1:9222"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start the browser service once at the beginning of your session and reuse it across multiple commands to avoid startup overhead",
+      "Use headless mode for automated scripts and headed mode for interactive debugging with the element picker",
+      "Stop the browser service when done to free system resources and clean up the persistent session"
+    ],
+    "anti_patterns": [
+      "Starting a new browser instance for every single operation instead of reusing the persistent session",
+      "Forgetting to stop the browser service, leaving orphaned Chromium processes running in the background",
+      "Using the element picker in headless mode where visual feedback is not available to the user"
+    ],
+    "faq": [
+      {
+        "question": "How do I install Playwright browsers before using this skill?",
+        "answer": "Run 'playwright install chromium' in your terminal to download the Chromium browser binary that Playwright needs to control."
+      },
+      {
+        "question": "Can I use this skill with Firefox or Safari?",
+        "answer": "No, this skill currently only supports Chromium browser. Firefox and WebKit support is not implemented in the current version."
+      },
+      {
+        "question": "Where are browser data and logs stored?",
+        "answer": "Browser session state is stored in ~/.cache/pwdebug/server.json, browser profile in ~/.cache/pwdebug/profile/, and console logs in ~/.cache/pwdebug/console.log.jsonl."
+      },
+      {
+        "question": "What happens if I forget to stop the browser service?",
+        "answer": "The Chromium process will continue running in the background. You can use the status command to check if it is running and the stop command to terminate it."
+      },
+      {
+        "question": "Can I pass custom browser arguments when starting?",
+        "answer": "Yes, use the --arg flag when running the start command to pass additional Chromium command-line arguments, such as --arg=--disable-gpu or --arg=--window-size=1920,1080."
+      },
+      {
+        "question": "Is it safe to execute JavaScript from untrusted sources?",
+        "answer": "No, the evaluate command executes arbitrary JavaScript in the browser context. Only execute code from trusted sources to avoid security risks like data exfiltration or system compromise."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "pwdebug",
+          "type": "dir",
+          "path": "scripts/pwdebug",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "scripts/pwdebug/__init__.py",
+              "lines": 2
+            },
+            {
+              "name": "browser.py",
+              "type": "file",
+              "path": "scripts/pwdebug/browser.py",
+              "lines": 59
+            },
+            {
+              "name": "picker.py",
+              "type": "file",
+              "path": "scripts/pwdebug/picker.py",
+              "lines": 119
+            },
+            {
+              "name": "state.py",
+              "type": "file",
+              "path": "scripts/pwdebug/state.py",
+              "lines": 95
+            }
+          ]
+        },
+        {
+          "name": "pwdebug.py",
+          "type": "file",
+          "path": "scripts/pwdebug.py",
+          "lines": 312
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 67
+    }
+  ]
+}

@@ -1,0 +1,148 @@
+{
+  "skill_name": "conventional-git",
+  "metadata": {
+    "eval_methodology": "adversarial — each eval has a trap the model falls into without the skill",
+    "without_skill_runner_note": "When running without-skill evals, disable ALL skills from this plugin AND any external git-related skills (e.g., gh-cli). External git skills may compensate for missing conventional-git guidance and inflate without-skill scores."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I use git worktrees to isolate my feature branches. Create a branch name for implementing OAuth login.",
+      "trap": "Without the skill, the model naturally echoes 'worktree' from the prompt into the branch name (e.g., feat/worktree-oauth-login). The skill explicitly forbids 'worktree' in branch names.",
+      "expected_output": "A branch name like feat/oauth-login — does NOT contain 'worktree'. May include an explanation of why worktree should not appear in branch names.",
+      "files": [],
+      "assertions": [
+        { "id": "1.1", "description": "branch name does NOT contain the word 'worktree'" },
+        { "id": "1.2", "description": "branch name starts with 'feat/'" },
+        { "id": "1.3", "description": "branch name is entirely lowercase and uses hyphens only (no underscores, no special chars except '/')" },
+        { "id": "1.4", "description": "response explains why 'worktree' should not appear in branch names (it is a local checkout mechanism, not a branch concept)" },
+        { "id": "1.5", "description": "branch name description part is 50 characters or fewer" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm working on GitHub issue #87 to fix the login race condition. Give me the branch name.",
+      "trap": "Without the skill, the model omits the issue number and outputs fix/login-race-condition. The skill requires prefixing with the issue number when one exists.",
+      "expected_output": "fix/87-login-race-condition — issue number comes BEFORE the description, not after.",
+      "files": [],
+      "assertions": [
+        { "id": "2.1", "description": "branch name includes the issue number '87'" },
+        { "id": "2.2", "description": "issue number '87' appears BEFORE the description (e.g., fix/87-login, not fix/login-87)" },
+        { "id": "2.3", "description": "branch name starts with 'fix/'" },
+        { "id": "2.4", "description": "branch name is entirely lowercase and uses hyphens only" },
+        { "id": "2.5", "description": "branch name description part (after the issue number) is 50 characters or fewer" }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I'm adding authentication to the app. I just created a UserAuthService class. Write the commit.",
+      "trap": "Without the skill, the model echoes the gerund from the prompt into the scope: feat(adding-authentication): or feat(user-auth-service):. The skill's Common Mistakes table says scope must be a noun, not a verb.",
+      "expected_output": "feat(auth): add user auth service — scope is a short noun, not a gerund or verb phrase.",
+      "files": [],
+      "assertions": [
+        { "id": "3.1", "description": "scope does NOT end in '-ing' (no gerund like 'adding', 'implementing', 'creating')" },
+        { "id": "3.2", "description": "scope does NOT contain 'adding', 'implementing', or 'creating' as part of the scope name" },
+        { "id": "3.3", "description": "scope is a short noun (e.g., 'auth', 'user', 'authentication') — 1-2 words max" },
+        { "id": "3.4", "description": "type is 'feat'" },
+        { "id": "3.5", "description": "description uses imperative mood (e.g., 'add', 'implement', 'create') — not past tense" },
+        { "id": "3.6", "description": "description starts with lowercase letter" }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "We always squash-merge PRs on this project. Our PR title for this branch is 'Add user dashboard feature'. What should I know before merging?",
+      "trap": "Without the skill, the model discusses squash merging in general (commits collapse into one) but does NOT warn that the PR title becomes the single commit message and must follow Conventional Commits format — a silent changelog-breaking failure.",
+      "expected_output": "Warn that the PR title becomes the commit message after squash, flag that 'Add user dashboard feature' does not follow Conventional Commits format (missing type prefix), and suggest a corrected title.",
+      "files": [],
+      "assertions": [
+        { "id": "4.1", "description": "warns that the PR title becomes the single commit message after squash merge" },
+        { "id": "4.2", "description": "explicitly states the PR title must follow Conventional Commits format" },
+        { "id": "4.3", "description": "flags that 'Add user dashboard feature' is invalid because it lacks a type prefix" },
+        { "id": "4.4", "description": "suggests a corrected PR title using Conventional Commits format (e.g., 'feat: add user dashboard')" }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "I fixed the null pointer crash reported in issue #42. Write the commit message.",
+      "trap": "Without the skill, the model often embeds the issue reference in the subject line (e.g., 'fix: resolve #42 null pointer crash'). The skill requires closing keywords to appear in the footer only, to keep the subject clean and parseable.",
+      "expected_output": "Subject line is clean (no #42 in subject). 'Closes #42' or equivalent appears in the footer, separated by a blank line.",
+      "files": [],
+      "assertions": [
+        { "id": "5.1", "description": "subject line does NOT contain '#42', 'close', 'closes', 'fix', 'fixes', or 'resolve' referencing the issue number" },
+        { "id": "5.2", "description": "'Closes #42' or equivalent closing keyword + reference appears in the footer (separated from body or subject by a blank line)" },
+        { "id": "5.3", "description": "subject line uses imperative mood" },
+        { "id": "5.4", "description": "type is 'fix'" },
+        { "id": "5.5", "description": "subject line does not end with a trailing period" }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I upgraded all npm packages to their latest versions. Write the commit message.",
+      "trap": "Without the skill, the model almost universally writes 'chore: upgrade npm dependencies'. The skill maps dependencies to the 'build' type (build system, deps), not 'chore'.",
+      "expected_output": "build: upgrade npm dependencies (or similar) — type is 'build', NOT 'chore'.",
+      "files": [],
+      "assertions": [
+        { "id": "6.1", "description": "type is 'build'" },
+        { "id": "6.2", "description": "type is NOT 'chore'" },
+        { "id": "6.3", "description": "description uses imperative mood" },
+        { "id": "6.4", "description": "description starts with lowercase letter" },
+        { "id": "6.5", "description": "no trailing period at end of subject line" }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "I ran `git revert abc1234f` which reverted the JWT implementation commit. Format the commit message for this revert.",
+      "trap": "Without the skill, the model rewrites the body with a custom explanation (e.g., 'Reverted due to instability'). The skill says revert commits SHOULD include 'This reverts commit <hash>.' — the git-generated text must not be stripped.",
+      "expected_output": "revert: revert JWT implementation — body contains 'This reverts commit abc1234f.' (the git-generated phrasing, not a custom rewrite).",
+      "files": [],
+      "assertions": [
+        { "id": "7.1", "description": "type is 'revert'" },
+        { "id": "7.2", "description": "body includes the phrase 'This reverts commit' (standard git-generated phrasing)" },
+        { "id": "7.3", "description": "commit hash 'abc1234f' is referenced in the body" },
+        { "id": "7.4", "description": "description uses imperative mood" },
+        { "id": "7.5", "description": "no trailing period at end of subject line" }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "We completely redesigned the config file format. Old config files no longer work. Write the commit message.",
+      "trap": "Without the skill, models often describe the breaking change in the body only ('Note: this is a breaking change') without using '!' or a BREAKING CHANGE: footer. The skill explicitly states body-only descriptions are invisible to changelog tools.",
+      "expected_output": "Commit uses '!' after type/scope AND/OR 'BREAKING CHANGE:' in footer. Does NOT rely solely on body text to signal the breaking change.",
+      "files": [],
+      "assertions": [
+        { "id": "8.1", "description": "commit includes '!' after type/scope (e.g., 'feat!:' or 'refactor!:') OR includes 'BREAKING CHANGE:' in the footer" },
+        { "id": "8.2", "description": "does NOT rely solely on body text to signal the breaking change (body-only phrases like 'Note: breaking change' without ! or footer are insufficient)" },
+        { "id": "8.3", "description": "type is NOT 'fix' (a config redesign is feat/refactor, not a fix)" },
+        { "id": "8.4", "description": "description uses imperative mood" },
+        { "id": "8.5", "description": "description starts with lowercase letter" }
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "I'm on branch feat/payment-integration. While implementing the payment feature, I discovered and fixed a small bug in the existing checkout flow. Should I use 'fix:' or 'feat:' for the commit, and is there anything else I should consider?",
+      "trap": "Without the skill, the model says 'use fix: for the bug' without flagging the one-concern-per-branch principle. The skill teaches that mixing concerns on a feature branch obscures the changelog.",
+      "expected_output": "Either recommends a separate fix/ branch for the bug, or explicitly discusses the tradeoff — must explain that mixing concerns obscures the changelog.",
+      "files": [],
+      "assertions": [
+        { "id": "9.1", "description": "does NOT simply say 'use fix: for the bug' without any discussion of the concern-mixing problem" },
+        { "id": "9.2", "description": "either recommends creating a separate fix/ branch for the bug, OR explicitly discusses the tradeoff of mixing concerns on a feature branch" },
+        { "id": "9.3", "description": "explains that mixing concerns (feat + fix) on one branch obscures the changelog" },
+        { "id": "9.4", "description": "if advising to keep the fix on the feature branch, explains the scope/type implications (not just 'use fix:')" }
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "My commit in the 'backend' repo fixes an issue in the 'frontend' repo (issue #99, owned by GitHub org 'acme'). Write the commit footer to automatically close it on GitHub.",
+      "trap": "Without the skill, the model outputs wrong cross-repo formats: 'Closes frontend#99' (missing owner) or 'Closes acme#99' (missing repo) or plain '#99' (closes in current repo). The skill documents the correct GitHub format: owner/repo#number.",
+      "expected_output": "Footer contains 'Closes acme/frontend#99' — the full owner/repo#number cross-repo format.",
+      "files": [],
+      "assertions": [
+        { "id": "10.1", "description": "footer uses 'Closes', 'Fixes', 'Resolves', or equivalent keyword (case-insensitive)" },
+        { "id": "10.2", "description": "issue reference uses the full 'owner/repo#number' format (e.g., 'acme/frontend#99')" },
+        { "id": "10.3", "description": "does NOT use just '#99' (ambiguous — would close an issue in the current repo, not the frontend repo)" },
+        { "id": "10.4", "description": "does NOT use just 'frontend#99' (missing owner — not a valid GitHub cross-repo reference)" },
+        { "id": "10.5", "description": "the closing reference is placed in the footer, not the subject line" }
+      ]
+    }
+  ]
+}

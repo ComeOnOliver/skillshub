@@ -1,0 +1,299 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:52:11.901Z",
+    "slug": "dami-randle-accessibility-check",
+    "source_url": "https://github.com/Dami-Randle/logidocs-certify/tree/main/.claude/skills/accessibility-check",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f4dc2b7c378175e6971604d04cba00ceda0b33d1b8c5badb0e6aa169848542cb",
+    "tree_hash": "fc0cd299151654b14a40d1de59a80e755195646eebf39ccf1e649c6e48ec42db"
+  },
+  "skill": {
+    "name": "accessibility-check",
+    "description": "Evaluate accessibility and WCAG compliance of UI components and pages. Use when the user asks to \"check accessibility\", \"audit a11y\", \"WCAG review\", \"screen reader test\", or needs to verify inclusive design practices.",
+    "summary": "Evaluate accessibility and WCAG compliance of UI components and pages. Use when the user asks to \"ch...",
+    "icon": "♿",
+    "version": "1.0.0",
+    "author": "Dami-Randle",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "accessibility",
+      "wcag",
+      "ui-review",
+      "compliance",
+      "a11y"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing WCAG 2.1 guidelines and accessibility audit templates. No executable code, network calls, filesystem access, or external commands are present. The skill operates solely through prompt-based content delivery. All 42 static findings are false positives from the scanner misinterpreting markdown formatting and documentation content as security threats.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 73
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 172
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 350,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:52:11.900Z"
+  },
+  "content": {
+    "user_title": "Check accessibility compliance",
+    "value_statement": "This skill evaluates UI components and pages against WCAG 2.1 guidelines. It identifies accessibility issues and provides specific fixes. Use it to ensure your interfaces are usable by people with disabilities.",
+    "seo_keywords": [
+      "accessibility audit",
+      "WCAG compliance",
+      "Claude Code accessibility",
+      "a11y checker",
+      "screen reader test",
+      "keyboard navigation",
+      "color contrast",
+      "ARIA labels",
+      "inclusive design"
+    ],
+    "actual_capabilities": [
+      "Evaluate UI components against WCAG 2.1 Level A and AA criteria",
+      "Identify missing alt text, labels, and semantic HTML issues",
+      "Check color contrast ratios for readability",
+      "Review keyboard navigation and focus indicators",
+      "Provide code examples for common accessibility fixes",
+      "Generate structured accessibility audit reports"
+    ],
+    "limitations": [
+      "Cannot run automated testing tools like axe-core or pa11y",
+      "Cannot test actual screen reader output or keyboard navigation",
+      "Requires manual verification of automated audit results",
+      "Does not perform visual testing across zoom levels"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Code review accessibility",
+        "description": "Review React components for WCAG compliance before merging pull requests"
+      },
+      {
+        "target_user": "UX designers",
+        "title": "Design system audit",
+        "description": "Audit component libraries for accessibility gaps and inclusive design issues"
+      },
+      {
+        "target_user": "QA testers",
+        "title": "Compliance verification",
+        "description": "Verify products meet accessibility requirements for legal compliance"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick component check",
+        "scenario": "Check a single UI component",
+        "prompt": "Check accessibility of this button component. Is it keyboard accessible? Does it have proper focus states?"
+      },
+      {
+        "title": "Form validation",
+        "scenario": "Audit form accessibility",
+        "prompt": "Audit this form for accessibility issues. Check labels, error messages, and keyboard navigation."
+      },
+      {
+        "title": "Full page review",
+        "scenario": "Comprehensive page audit",
+        "prompt": "Perform a WCAG 2.1 AA accessibility audit of this page. Check perceivable, operable, understandable, and robust criteria."
+      },
+      {
+        "title": "Integration check",
+        "scenario": "Combined with UX audit",
+        "prompt": "Run both the accessibility check and UX audit on this dashboard. Focus on contrast, navigation, and ARIA usage."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Check accessibility of this button: <button class=\"btn\">Click me</button>",
+        "output": [
+          "Issues Found: Missing accessible name, no focus styles visible",
+          "Fix: Add aria-label or text content, ensure visible focus indicator with 2px outline",
+          "WCAG Criteria: 2.4.7 Focus Visible, 4.1.2 Name Role Value",
+          "Code Example: <button class=\"btn\" aria-label=\"Submit form\">Click me</button>"
+        ]
+      },
+      {
+        "input": "Audit this form for WCAG compliance: <input type=\"email\" placeholder=\"Email\" />",
+        "output": [
+          "Issues: Missing explicit label element, placeholder is not accessible name",
+          "Fix: Add <label> element with htmlFor matching input id",
+          "WCAG Criteria: 1.3.1 Info and Relationships, 3.3.2 Labels or Instructions",
+          "Passes keyboard navigation test"
+        ]
+      },
+      {
+        "input": "Check color contrast of text with #999 color on #fff background",
+        "output": [
+          "Contrast ratio: 2.5:1 (fails WCAG AA)",
+          "WCAG 1.4.3 requires minimum 4.5:1 for normal text",
+          "Fix: Change text color to #595959 for 7:1 ratio",
+          "Use color contrast checker tool to verify"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run accessibility checks before every feature release",
+      "Combine automated testing tools with manual keyboard testing",
+      "Include people with disabilities in user testing when possible"
+    ],
+    "anti_patterns": [
+      "Using placeholder text instead of proper form labels",
+      "Relying solely on color to convey information",
+      "Skipping accessibility testing until the end of development"
+    ],
+    "faq": [
+      {
+        "question": "What WCAG levels does this skill check?",
+        "answer": "This skill covers WCAG 2.1 Level A and Level AA criteria, the standard targets for most compliance requirements."
+      },
+      {
+        "question": "Does this replace automated testing tools?",
+        "answer": "No. This skill provides guidelines and code reviews. Use axe-core or pa11y for automated testing in your CI pipeline."
+      },
+      {
+        "question": "Can I use this with Playwright tests?",
+        "answer": "Yes. The skill references Playwright integration for automated accessibility testing alongside manual review."
+      },
+      {
+        "question": "Is my code data safe?",
+        "answer": "Yes. This skill only reviews code you provide. No data is stored or transmitted to external services."
+      },
+      {
+        "question": "Why did my accessibility audit fail?",
+        "answer": "Common causes include missing alt text, low color contrast, missing form labels, and missing focus indicators. Review the specific issues listed."
+      },
+      {
+        "question": "How does this compare to manual testing?",
+        "answer": "This skill identifies code-level issues. Manual keyboard and screen reader testing catches runtime behavior that code review cannot."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 174
+    }
+  ]
+}

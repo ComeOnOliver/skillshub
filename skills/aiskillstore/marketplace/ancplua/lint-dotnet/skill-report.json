@@ -1,0 +1,289 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:12:27.538Z",
+    "slug": "ancplua-lint-dotnet",
+    "source_url": "https://github.com/ANcpLua/ancplua-claude-plugins/tree/main/plugins/dotnet-architecture-lint/skills/dotnet-architecture-lint",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "07a77767f598a5e47d082a1a90dd29d046afe03e094ce6e25b07442a245d6155",
+    "tree_hash": "d9fe51106e698bbc35198688cfc67a164d47453a2c2e166dd644c4c277c801be"
+  },
+  "skill": {
+    "name": "lint-dotnet",
+    "description": "Run .NET architecture linter to check for MSBuild/CPM violations",
+    "summary": "Run .NET architecture linter to check for MSBuild/CPM violations",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "ANcpLua",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      ".NET",
+      "MSBuild",
+      "architecture",
+      "CPM",
+      "linter"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 24 static findings are FALSE POSITIVES. The analyzer misidentified markdown documentation examples as executable code and cryptographic metadata hashes as weak algorithms. This is a documentation-only skill that references an external bash script for linting .NET architecture patterns. No actual execution, network calls, or file access occurs within the skill files.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 122,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 27
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 229,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:12:27.538Z"
+  },
+  "content": {
+    "user_title": "Lint .NET architecture rules",
+    "value_statement": ".NET projects often have inconsistent build patterns that cause maintenance problems. This skill runs an automated linter to check for MSBuild violations and Central Package Management issues before they cause problems in your codebase.",
+    "seo_keywords": [
+      ".NET linter",
+      "MSBuild",
+      "Central Package Management",
+      "architecture lint",
+      "Claude Code",
+      "Directory.Packages.props",
+      "Version.props",
+      "package references",
+      ".NET Core",
+      "NuGet"
+    ],
+    "actual_capabilities": [
+      "Check for hardcoded versions in Directory.Packages.props",
+      "Validate Version.props import locations",
+      "Ensure Version.props is a symlink not copied",
+      "Detect inline PackageReference Version attributes"
+    ],
+    "limitations": [
+      "Only checks MSBuild and XML patterns in .props and .csproj files",
+      "Does not fix violations automatically",
+      "Requires .NET project structure with standard layout",
+      "Does not validate package versions against NuGet feeds"
+    ],
+    "use_cases": [
+      {
+        "target_user": ".NET Developers",
+        "title": "Validate project structure",
+        "description": "Check that your .NET project follows established architecture patterns before committing code changes"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Enforce build standards",
+        "description": "Run as part of CI pipelines to ensure all projects maintain consistent build patterns across teams"
+      },
+      {
+        "target_user": "Tech Leads",
+        "title": "Review architecture compliance",
+        "description": "Audit repositories for consistent use of Central Package Management and proper version handling conventions"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic lint",
+        "scenario": "Run architecture check",
+        "prompt": "/lint-dotnet"
+      },
+      {
+        "title": "Lint with output",
+        "scenario": "Check current directory",
+        "prompt": "/lint-dotnet to check for any MSBuild violations in this project"
+      },
+      {
+        "title": "Fix guidance",
+        "scenario": "After violations found",
+        "prompt": "/lint-dotnet and explain how to fix the violations that are reported"
+      },
+      {
+        "title": "Full validation",
+        "scenario": "Pre-commit check",
+        "prompt": "/lint-dotnet to validate that all .NET architecture rules are satisfied before I commit"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "/lint-dotnet",
+        "output": [
+          "CLEAN: All rules passed",
+          "No violations found. Safe to proceed.",
+          "Directory.Packages.props uses $(VariableName) format",
+          "Version.props imported only in allowed files"
+        ]
+      },
+      {
+        "input": "/lint-dotnet",
+        "output": [
+          "RULE_A violation detected",
+          "Directory.Packages.props line 5: Hardcoded Version=\"1.2.3\" found",
+          "Fix: Replace with $(PackageNameVersion) and define in Version.props",
+          "RULE_G violation detected",
+          "MyApp.csproj line 12: Inline Version attribute on PackageReference",
+          "Fix: Remove Version attr and add to Directory.Packages.props"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run /lint-dotnet before committing .NET projects to catch architecture violations early in development",
+      "Use Central Package Management for all version references to ensure consistency across solutions",
+      "Keep Version.props as a symlink in consumer repositories, never copy the file directly"
+    ],
+    "anti_patterns": [
+      "Hardcoding versions like Version=\"1.2.3\" directly in Directory.Packages.props instead of using variables",
+      "Importing Version.props from arbitrary .props files outside the allowed list",
+      "Copying Version.props instead of symlinking it in downstream repositories"
+    ],
+    "faq": [
+      {
+        "question": "What versions of .NET does this support?",
+        "answer": "This linter checks MSBuild patterns compatible with .NET Core 3.1 and all newer .NET versions including .NET 5 and beyond."
+      },
+      {
+        "question": "Does this linter modify files?",
+        "answer": "No. The linter only reads project files and reports violations. It does not automatically fix any issues."
+      },
+      {
+        "question": "Can I integrate this into my CI pipeline?",
+        "answer": "Yes. The underlying script runs from bash and requires only the .NET SDK installed on your CI agents."
+      },
+      {
+        "question": "Does this send any data externally?",
+        "answer": "No. The linter runs entirely locally and only reads project files on your machine without network access."
+      },
+      {
+        "question": "What rules are currently implemented?",
+        "answer": "RULE_A checks hardcoded versions, RULE_B checks import locations, RULE_C checks symlinks, RULE_G checks inline version attributes."
+      },
+      {
+        "question": "How is this different from dotnet format?",
+        "answer": "dotnet format styles code for formatting. This linter enforces architectural patterns like Central Package Management and version handling conventions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 56
+    }
+  ]
+}

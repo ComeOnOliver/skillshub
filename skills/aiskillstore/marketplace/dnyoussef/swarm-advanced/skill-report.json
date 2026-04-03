@@ -1,0 +1,203 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:48:26.410Z",
+    "slug": "dnyoussef-swarm-advanced",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/swarm-advanced",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "66f7f300e5e8b59c05cb0a51211689c8d56f6b250299bae616856a07d3f33a2a",
+    "tree_hash": "eaacbc9adbedc5ab3f0413a9481741c47652297d6e88b7ab615fa87e75a5e253"
+  },
+  "skill": {
+    "name": "swarm-advanced",
+    "description": "Advanced swarm orchestration patterns for research, development, testing, and complex distributed workflows using Claude Flow MCP tools",
+    "summary": "Master advanced multi-agent coordination patterns for distributed research and development",
+    "icon": "📦",
+    "version": "2.0.0",
+    "author": "Claude Flow Team",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "swarm",
+      "orchestration",
+      "distributed",
+      "parallel",
+      "claude",
+      "claude-code",
+      "mcp",
+      "agents"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is documentation-only with no executable code. Static analyzer detected 92 patterns but all high-severity findings are false positives. The skill contains educational examples and patterns for using Claude Flow MCP tools for swarm orchestration. No security risks identified.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Documentation References to External URLs",
+        "description": "The skill documentation includes legitimate references to GitHub documentation URLs for Claude Flow project. These are informational references only and pose no security risk.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 963,
+            "line_end": 966
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1933,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:48:26.410Z"
+  },
+  "content": {
+    "user_title": "Orchestrate Advanced Multi-Agent Swarms with Claude Flow",
+    "value_statement": "Coordinate multiple AI agents to tackle complex tasks through distributed workflows. This skill teaches advanced swarm orchestration patterns for research, development, testing, and analysis using Claude Flow MCP tools.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "swarm orchestration",
+      "multi-agent systems",
+      "distributed workflows",
+      "parallel processing",
+      "MCP tools",
+      "agent coordination",
+      "AI automation",
+      "workflow patterns"
+    ],
+    "actual_capabilities": [
+      "Initialize and configure swarm topologies including mesh, hierarchical, star, and ring patterns",
+      "Spawn and coordinate specialized agents for research, development, testing, and analysis tasks",
+      "Execute parallel and sequential workflows with task orchestration and dependency management",
+      "Implement fault tolerance, error handling, and auto-recovery mechanisms for agent swarms",
+      "Monitor swarm health and performance with real-time metrics and analytics",
+      "Manage memory and state across agents with persistence and backup capabilities"
+    ],
+    "limitations": [
+      "Requires Claude Flow MCP server to be installed and configured",
+      "Documentation-only skill with patterns and examples but no executable implementation",
+      "Advanced skill requiring understanding of distributed systems and agent coordination concepts",
+      "Performance depends on Claude Flow installation and system resources available"
+    ],
+    "use_cases": [
+      {
+        "title": "Research Team Automation",
+        "description": "Coordinate multiple research agents to gather information from web sources, academic databases, and data repositories, then synthesize findings into comprehensive reports.",
+        "target_user": "Researchers and analysts"
+      },
+      {
+        "title": "Full-Stack Development Workflows",
+        "description": "Orchestrate development teams with specialized agents for backend, frontend, database, testing, and deployment to build complete applications with automated quality assurance.",
+        "target_user": "Software developers and engineering teams"
+      },
+      {
+        "title": "Comprehensive Quality Assurance",
+        "description": "Deploy testing swarms with unit, integration, end-to-end, performance, and security testing agents running in parallel to validate application quality across all dimensions.",
+        "target_user": "QA engineers and DevOps teams"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Initialize Research Swarm",
+        "prompt": "Set up a research swarm with mesh topology to investigate [TOPIC]. I need agents for web research, academic search, data analysis, and report writing.",
+        "scenario": "Starting a new research project requiring information from multiple sources"
+      },
+      {
+        "title": "Create Development Team",
+        "prompt": "Initialize a hierarchical development swarm with 8 agents to build a REST API. Include backend developer, frontend developer, database engineer, testers, code reviewer, technical writer, and DevOps engineer.",
+        "scenario": "Beginning a full-stack application development project"
+      },
+      {
+        "title": "Launch Testing Swarm",
+        "prompt": "Start a star topology testing swarm to validate the application. Run unit tests, integration tests, e2e tests, performance tests, and security scans in parallel.",
+        "scenario": "Running comprehensive quality assurance before production deployment"
+      },
+      {
+        "title": "Deploy Analysis Swarm",
+        "prompt": "Create a mesh analysis swarm with code analyzer, security analyzer, performance profiler, and architecture analyzer to audit the codebase and generate a comprehensive report.",
+        "scenario": "Conducting deep technical analysis of an existing codebase"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Initialize research swarm to investigate quantum computing trends in 2026",
+        "output": "Swarm initialized with mesh topology and 6 agents. Research agents gathering data from academic papers, tech blogs, and industry reports. Analysis agents identifying patterns and trends. Synthesis agent compiling findings. Expected completion: comprehensive research report with key findings, trend analysis, and expert insights."
+      },
+      {
+        "input": "Create development swarm to build authentication API with JWT",
+        "output": "Hierarchical swarm created with System Architect coordinating 7 specialist agents. Backend Developer implementing JWT authentication endpoints. Database Engineer designing user schema. Frontend Developer building login interface. QA Engineer writing test suites. Code Reviewer checking security best practices. Technical Writer creating API documentation. DevOps Engineer configuring CI/CD pipeline."
+      },
+      {
+        "input": "Launch testing swarm for comprehensive quality check",
+        "output": [
+          "Star topology testing swarm active with 7 agents",
+          "Unit Test Coordinator: 245 tests passing, 98% coverage",
+          "Integration Tester: API endpoints validated, all contracts passing",
+          "E2E Tester: Critical user flows verified successfully",
+          "Performance Tester: Average response time 120ms, no bottlenecks detected",
+          "Security Tester: No vulnerabilities found, dependencies up to date",
+          "Test Analyst: Overall quality score 95/100, ready for deployment"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Choose appropriate topology for your workflow: mesh for research and collaboration, hierarchical for structured development, star for testing and centralized coordination, ring for sequential pipeline processing",
+      "Implement robust error handling and fault tolerance strategies with auto-recovery mechanisms to ensure swarm reliability during long-running operations",
+      "Use memory namespaces and persistence to organize agent state, enable cross-session communication, and create checkpoints for complex workflows"
+    ],
+    "anti_patterns": [
+      "Avoid creating too many agents for simple tasks as coordination overhead can exceed the benefits of parallelization",
+      "Do not use parallel execution for tasks with complex dependencies as this leads to race conditions and inconsistent results",
+      "Never skip monitoring and health checks for production swarms as silent failures can cascade and cause difficult-to-debug issues"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between swarm topologies?",
+        "answer": "Mesh topology enables peer-to-peer agent communication for flexible collaboration. Hierarchical has a coordinator agent directing subordinates for structured workflows. Star topology has central coordination with parallel agent execution. Ring topology creates sequential processing chains."
+      },
+      {
+        "question": "How do I install Claude Flow MCP tools?",
+        "answer": "Install Claude Flow globally with npm install -g claude-flow@alpha, then add the MCP server using claude mcp add claude-flow npx claude-flow@alpha mcp start. Verify installation by checking available MCP tools in Claude Code."
+      },
+      {
+        "question": "Can I use this skill without MCP tools installed?",
+        "answer": "The skill provides CLI fallback commands using npx claude-flow that work without MCP server configuration. However, MCP tools provide better integration and more advanced features for swarm orchestration."
+      },
+      {
+        "question": "How many agents should I use for a typical workflow?",
+        "answer": "Start with 3 to 6 agents for most workflows. Research swarms work well with 4 to 6 agents. Development teams typically need 6 to 8 agents. Testing swarms can use 5 to 7 agents. Scale up only if parallelization benefits exceed coordination overhead."
+      },
+      {
+        "question": "How does memory persistence work across swarm sessions?",
+        "answer": "Use memory_persist tool to enable cross-session state. Organize data with namespaces for different swarms. Set appropriate TTL values for temporary data. Create regular backups and state snapshots for important checkpoints."
+      },
+      {
+        "question": "What happens if an agent fails during execution?",
+        "answer": "Enable fault tolerance with daa_fault_tolerance tool for auto-recovery. Monitor swarm health with swarm_status. Analyze errors with error_analysis tool. Implement retry logic for critical operations. Use state snapshots to recover from failures."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 974
+    }
+  ]
+}

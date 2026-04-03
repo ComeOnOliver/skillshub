@@ -1,0 +1,261 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T14:45:29.162Z",
+    "slug": "01000001-01001110-jira-workflow",
+    "source_url": "https://github.com/01000001-01001110/agent-jira-skills/tree/main/jira-safe/jira-workflow",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ceed974cc33e576804ec47c1b7ca0edb9509543b806e661ae5db16cc26ec5bf7",
+    "tree_hash": "96fa89a8e9799071b2a3b2060fda554458d4dadb3da090a9465122c93a0b3c2f"
+  },
+  "skill": {
+    "name": "jira-workflow",
+    "description": "Orchestrate Jira workflows end-to-end. Use when building stories with approvals, transitioning items through lifecycle states, or syncing task completion with Jira.",
+    "summary": "Orchestrate Jira workflows end-to-end. Create user stories, transition issues through states, and sync task completion with Jira status.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "01000001-01001110",
+    "license": "MIT",
+    "tags": [
+      "jira",
+      "workflow",
+      "agile",
+      "project-management",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate Jira workflow automation skill. Static findings are false positives: GitHub URL flagged as C2, Base64 encoding for HTTP Basic Auth flagged as weak cryptography, and JavaScript template literals flagged as shell execution. All patterns are standard for Jira API integration.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 174
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 209,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 412,
+            "line_end": 412
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 474,
+            "line_end": 474
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 149
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 659,
+            "line_end": 659
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 663,
+            "line_end": 663
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 671,
+            "line_end": 671
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 678,
+            "line_end": 678
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2127,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T14:45:29.162Z"
+  },
+  "content": {
+    "user_title": "Automate Jira Story Workflows",
+    "value_statement": "Managing Jira stories manually wastes time and creates tracking gaps. This skill automates the complete Jira workflow lifecycle from story creation with approvals to state transitions and completion sync.",
+    "seo_keywords": [
+      "Jira workflow automation",
+      "Claude Code skill",
+      "story creation automation",
+      "Agile project management",
+      "Atlassian Jira integration",
+      "issue tracking automation",
+      "sprint management tool",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Create user stories with SAFe format and acceptance criteria",
+      "Transition Jira issues through workflow states (To Do, Progressing, Done)",
+      "Add implementation details and comments to Jira issues",
+      "Sync Claude Code task completion with Jira status updates"
+    ],
+    "limitations": [
+      "Works only with Jira Cloud REST API v3",
+      "Requires Jira API token authentication via environment variables",
+      "Designed for Next-Gen (Team-managed) Jira projects",
+      "Does not support Jira Server or Data Center installations"
+    ],
+    "use_cases": [
+      {
+        "title": "Developer Progress Tracking",
+        "description": "Developers use this skill to track their work by creating Jira stories before starting tasks and transitioning issues as work progresses. Each story captures the full development lifecycle from planning to completion.",
+        "target_user": "Software developers"
+      },
+      {
+        "title": "Project Manager Story Management",
+        "description": "Project managers create consistent user stories in SAFe format, get stakeholder approvals, and track sprint progress. The skill integrates with TodoWrite to maintain alignment between planning and execution.",
+        "target_user": "Project managers"
+      },
+      {
+        "title": "QA Team Issue Tracking",
+        "description": "QA team members transition issues to review states, add testing notes as comments, and mark items as done after validation. This creates a complete audit trail of testing activities in Jira.",
+        "target_user": "QA engineers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create a Jira Story",
+        "prompt": "Use the jira-workflow skill to create a new story with this requirement: [describe your feature or task]. Use SAFe format with user story, acceptance criteria in Given/When/Then format, and definition of done. Present it to me for approval before creating it.",
+        "scenario": "When you need to track new work in Jira"
+      },
+      {
+        "title": "Track Work Progress",
+        "prompt": "Use jira-workflow to start work on [issue key]. Transition it to Progressing state and update TodoWrite to mark this task as in_progress.",
+        "scenario": "When starting work on a Jira issue"
+      },
+      {
+        "title": "Complete and Sync",
+        "prompt": "Use jira-workflow to complete [issue key]. Add a comment with implementation details including files modified, commits made, and any notes. Then update TodoWrite to mark this task as completed.",
+        "scenario": "When finishing work on a Jira issue"
+      },
+      {
+        "title": "Full Sprint Sync",
+        "prompt": "Review my TodoWrite todos and sync completed items with Jira. For each completed todo, transition the corresponding Jira issue to Done and add implementation comments. Report what was synced.",
+        "scenario": "When syncing multiple completed tasks"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a Jira story for adding user login functionality",
+        "output": [
+          "## Proposed Jira Story",
+          "Summary: As a website user, I want to log in with email and password, so that I can access my personalized dashboard.",
+          "Category: authentication",
+          "Complexity: medium",
+          "Acceptance Criteria:",
+          "  Scenario: Successful login",
+          "    GIVEN: User is on login page",
+          "    WHEN: User enters valid credentials",
+          "    THEN: User is redirected to dashboard",
+          "Do you want me to create this in Jira?"
+        ]
+      },
+      {
+        "input": "Start work on SCRUM-100",
+        "output": [
+          "Started: SCRUM-100",
+          "Transitioned to Progressing state",
+          "TodoWrite updated to in_progress"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always get user approval before creating Jira issues to ensure alignment on requirements",
+      "Query available transitions first since workflow states vary by issue type and current state",
+      "Add implementation comments to Jira for audit trail and team visibility"
+    ],
+    "anti_patterns": [
+      "Creating Jira issues without user approval can lead to misalignment",
+      "Skipping transition queries and hardcoding state names may fail on custom workflows",
+      "Not syncing with TodoWrite breaks the connection between planning and execution"
+    ],
+    "faq": [
+      {
+        "question": "What environment variables are required?",
+        "answer": "Set JIRA_EMAIL, JIRA_API_TOKEN, JIRA_BASE_URL, JIRA_PROJECT_KEY, and optionally JIRA_BOARD_ID in your environment."
+      },
+      {
+        "question": "Does this work with Classic Jira projects?",
+        "answer": "This skill is designed for Next-Gen (Team-managed) projects. Classic projects may require different field mappings for epics."
+      },
+      {
+        "question": "How does authentication work?",
+        "answer": "The skill uses HTTP Basic Auth with Base64-encoded email and API token sent over HTTPS to Jira's REST API."
+      },
+      {
+        "question": "Can I create epics with this skill?",
+        "answer": "Yes, by setting the appropriate issuetype in the API call. The skill documentation shows story creation as the primary example."
+      },
+      {
+        "question": "What workflow states are supported?",
+        "answer": "The skill supports querying all available transitions for any issue. Common states include To Do, Progressing, In Review, and Done."
+      },
+      {
+        "question": "Does this integrate with Claude Code tools?",
+        "answer": "Yes, the skill works with TodoWrite for task tracking and can present approval prompts using AskUserQuestion."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 702
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:04:21.224Z",
+    "slug": "wshobson-angular-migration",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/framework-migration/skills/angular-migration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "79924a90014d9f5376d400e6e292f460916e75a74997d464eb61ee56770c4d3b",
+    "tree_hash": "f61a4369b188a1f59b7a7e6d7c7ebc6576e5f42fb40701601fa44dbf04889812"
+  },
+  "skill": {
+    "name": "angular-migration",
+    "description": "Migrate from AngularJS to Angular using hybrid mode, incremental component rewriting, and dependency injection updates. Use when upgrading AngularJS applications, planning framework migrations, or modernizing legacy Angular code.",
+    "summary": "Migrate from AngularJS to Angular using hybrid mode, incremental component rewriting, and dependency...",
+    "icon": "🅰️",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "angular",
+      "migration",
+      "legacy",
+      "frontend"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown files with educational code examples. No executable code, no network operations, no file system access. All static findings are false positives: markdown code block delimiters (```) misinterpreted as shell backticks, and JSON text fields with keywords triggering false pattern matches.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": []
+      },
+      {
+        "factor": "network",
+        "evidence": []
+      },
+      {
+        "factor": "filesystem",
+        "evidence": []
+      },
+      {
+        "factor": "env_access",
+        "evidence": []
+      },
+      {
+        "factor": "external_commands",
+        "evidence": []
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 587,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:04:21.224Z"
+  },
+  "content": {
+    "user_title": "Plan an AngularJS to Angular migration",
+    "value_statement": "Legacy AngularJS code blocks modern features and maintenance. This skill provides a clear, incremental migration path with hybrid patterns and best practices.",
+    "seo_keywords": [
+      "AngularJS migration",
+      "Angular upgrade",
+      "ngUpgrade hybrid app",
+      "component conversion",
+      "dependency injection update",
+      "routing migration",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "legacy Angular modernization"
+    ],
+    "actual_capabilities": [
+      "Explain big bang, incremental, and vertical slice migration strategies",
+      "Provide hybrid app bootstrap patterns using UpgradeModule",
+      "Show controller, directive, and service conversions to Angular",
+      "Detail dependency injection upgrade and downgrade patterns",
+      "Outline routing and forms migration examples"
+    ],
+    "limitations": [
+      "Does not run code analysis or modify source files",
+      "Does not generate project-specific migration scripts",
+      "Does not validate build or test results",
+      "Does not replace official Angular CLI guidance"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend lead",
+        "title": "Migration roadmap",
+        "description": "Create a phased plan and decide between hybrid or full rewrite."
+      },
+      {
+        "target_user": "AngularJS maintainer",
+        "title": "Component conversion guide",
+        "description": "Convert controllers and directives into Angular components."
+      },
+      {
+        "target_user": "Project manager",
+        "title": "Effort estimation",
+        "description": "Draft a realistic timeline with phases and milestones."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Migration overview",
+        "scenario": "Small AngularJS app upgrade",
+        "prompt": "Give a simple migration plan for a small AngularJS app, including strategy choice and key risks."
+      },
+      {
+        "title": "Hybrid bootstrap",
+        "scenario": "Large app needs ngUpgrade",
+        "prompt": "Provide steps to set up a hybrid AngularJS and Angular app with ngUpgrade and manual bootstrap."
+      },
+      {
+        "title": "Directive to component",
+        "scenario": "Convert a directive",
+        "prompt": "Explain how to convert an AngularJS directive with isolated scope to an Angular component with inputs and outputs."
+      },
+      {
+        "title": "Full migration plan",
+        "scenario": "Enterprise app with multiple teams",
+        "prompt": "Create a phased migration plan with vertical slices, DI changes, routing migration, and testing guidance."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I need a phased plan to migrate a medium AngularJS app with minimal downtime.",
+        "output": [
+          "Choose a hybrid strategy with ngUpgrade for side-by-side operation",
+          "Start by migrating shared services and utilities to TypeScript",
+          "Convert routing to Angular Router while maintaining AngularJS routes",
+          "Migrate one feature at a time with continuous testing",
+          "Remove AngularJS dependencies during final cleanup phase"
+        ]
+      },
+      {
+        "input": "How do I convert an AngularJS service that uses $http to Angular HttpClient?",
+        "output": [
+          "Replace $http with HttpClient from @angular/common/http",
+          "Convert promise-based .then() calls to RxJS Observable .subscribe()",
+          "Use @Injectable decorator and providedIn root for DI",
+          "Keep the service interface similar to reduce downstream changes"
+        ]
+      },
+      {
+        "input": "What are the differences between AngularJS and Angular dependency injection?",
+        "output": [
+          "Angular uses constructor injection with @Inject decorators",
+          "Replace factory/service factories with @Injectable classes",
+          "Use downgradeInjectable for Angular services used by AngularJS",
+          "Use upgradeInjection for AngularJS services used by Angular"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with services to reduce UI churn during migration",
+      "Migrate incrementally with continuous testing at each step",
+      "Adopt TypeScript and Angular style guide from the beginning"
+    ],
+    "anti_patterns": [
+      "Migrating UI components before core services are migrated",
+      "Mixing AngularJS and Angular patterns within a single component",
+      "Skipping hybrid app setup and comprehensive testing"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with all AngularJS versions?",
+        "answer": "It targets AngularJS 1.x and Angular 2+ migration patterns."
+      },
+      {
+        "question": "What are the main limits of this skill?",
+        "answer": "It provides guidance and examples, not automated code changes."
+      },
+      {
+        "question": "Can I integrate this with my existing build tools?",
+        "answer": "Yes, use it alongside your current CLI and build pipeline."
+      },
+      {
+        "question": "Does it access my source code or data?",
+        "answer": "No, it only provides guidance and examples."
+      },
+      {
+        "question": "What if my hybrid app fails to bootstrap?",
+        "answer": "Check UpgradeModule setup, manual bootstrap order, and strictDi settings."
+      },
+      {
+        "question": "How does this compare to a full rewrite?",
+        "answer": "It emphasizes incremental migration to reduce risk and downtime."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 411
+    }
+  ]
+}

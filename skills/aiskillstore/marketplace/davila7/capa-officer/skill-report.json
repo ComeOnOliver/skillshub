@@ -1,0 +1,245 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:16:10.114Z",
+    "slug": "davila7-capa-officer",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/enterprise-communication/capa-officer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5aa981b34d74c72b402044b3756fd8c37dff982b9c819b4b2ee0732d6445760e",
+    "tree_hash": "9519eb278edaed73bf914085bf17b23483d42e0e49550649a11a1b0ffeabbdb7"
+  },
+  "skill": {
+    "name": "capa-officer",
+    "description": "Senior CAPA Officer specialist for managing Corrective and Preventive Actions within Quality Management Systems. Provides CAPA process management, root cause analysis, effectiveness verification, and continuous improvement coordination. Use for CAPA investigations, corrective action planning, preventive action implementation, and CAPA system optimization.",
+    "summary": "Senior CAPA Officer specialist for managing Corrective and Preventive Actions within Quality Managem...",
+    "icon": "🎯",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "communication",
+    "tags": [
+      "quality-management",
+      "capa",
+      "root-cause-analysis",
+      "regulatory-compliance",
+      "continuous-improvement"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation-based skill with no executable code, network operations, or credential access. All static findings are false positives triggered by documentation text. The skill contains only placeholder files and quality management guidance documentation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/example.py",
+            "line_start": 1,
+            "line_end": 20
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 498,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:16:10.113Z"
+  },
+  "content": {
+    "user_title": "Manage CAPA Processes Expertly",
+    "value_statement": "Quality management teams struggle to consistently close CAPAs with sustainable corrective actions. This skill provides expert-level guidance on CAPA lifecycle management, root cause analysis techniques, effectiveness verification, and regulatory compliance to ensure lasting quality improvements.",
+    "seo_keywords": [
+      "CAPA management",
+      "Corrective Action",
+      "Preventive Action",
+      "Root Cause Analysis",
+      "Quality Management System",
+      "ISO 13485",
+      "FDA compliance",
+      "Claude AI",
+      "Claude Code",
+      "continuous improvement"
+    ],
+    "actual_capabilities": [
+      "Lead CAPA processes from initiation through effectiveness verification",
+      "Apply root cause analysis techniques including 5 Why, Fishbone, and Fault Tree",
+      "Develop corrective and preventive action plans with success criteria",
+      "Ensure regulatory compliance with ISO 13485, FDA 21 CFR, and EU MDR",
+      "Conduct trend analysis and CAPA performance metrics reporting",
+      "Integrate CAPA activities with quality system and risk management processes"
+    ],
+    "limitations": [
+      "Provides guidance only; does not execute actions in external systems",
+      "Cannot access your organizations actual CAPA data or quality management system",
+      "Requires human judgment for final decisions on corrective actions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Quality Engineers",
+        "title": "Lead CAPA Investigations",
+        "description": "Guide investigation teams through root cause analysis and corrective action planning for quality issues."
+      },
+      {
+        "target_user": "Compliance Managers",
+        "title": "Prepare for Audits",
+        "description": "Ensure CAPA documentation meets regulatory requirements and supports inspection readiness."
+      },
+      {
+        "target_user": "Continuous Improvement Specialists",
+        "title": "Identify Improvement Trends",
+        "description": "Analyze CAPA patterns to drive systemic quality improvements across the organization."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start CAPA Investigation",
+        "scenario": "New quality issue identified",
+        "prompt": "A [type of issue] has been identified in [process area]. Help me initiate a CAPA investigation including problem statement, investigation team recommendations, appropriate root cause analysis methodology, and key data to collect."
+      },
+      {
+        "title": "Apply 5 Why Analysis",
+        "scenario": "Simple root cause investigation",
+        "prompt": "Help me conduct a 5 Why analysis for [describe the issue]. Walk through each level of why to identify the root cause and suggest corrective actions for each level."
+      },
+      {
+        "title": "Design Fishbone Diagram",
+        "scenario": "Multi-factor problem analysis",
+        "prompt": "Guide me through creating a Fishbone Ishikawa diagram for [complex quality issue]. Identify major categories to investigate and help me brainstorm potential causes under each category."
+      },
+      {
+        "title": "Analyze CAPA Trends",
+        "scenario": "Monthly review preparation",
+        "prompt": "Help me analyze our CAPA data to identify patterns. What trends should I look for? How do I categorize CAPAs by root cause type? What systemic issues might be hiding in this data?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "We had a customer complaint about product contamination. Help us manage this CAPA.",
+        "output": [
+          "CAPA Initiation Recommended - Customer contamination complaints require formal investigation.",
+          "Problem Statement Template: Contamination detected in [batch/lot] on [date]. Customer reported [specific issue].",
+          "Investigation Team: Quality Assurance Lead, Manufacturing Supervisor, Regulatory Affairs.",
+          "Recommended RCA Method: Fishbone Diagram for multiple factors including equipment, personnel, materials, environment.",
+          "Immediate Actions: Quarantine affected batch, notify quality engineering, document in CAPA system."
+        ]
+      },
+      {
+        "input": "Our CAPA cycle time has increased to 45 days on average. How can we improve?",
+        "output": [
+          "Key areas to investigate: Investigation completeness, approval bottlenecks, resource allocation, and effectiveness verification delays.",
+          "Recommended Actions: Streamline root cause analysis with decision trees, establish clear escalation triggers, pre-define success metrics before implementation.",
+          "Metrics to Track: Days in each phase, first-time effectiveness rate, overdue CAPA percentage, and root cause recurrence."
+        ]
+      },
+      {
+        "input": "We are preparing for an FDA inspection. What CAPA documentation do we need?",
+        "output": [
+          "Required Documentation: CAPA investigation records, root cause analysis documentation, action plans with assignments, effectiveness verification data.",
+          "Key Focus Areas: Evidence of systematic approach, linkage between root cause and actions, measurable success criteria, and trending analysis.",
+          "Common Findings: Missing root cause evidence, unclear success criteria, inadequate effectiveness verification, and lack of preventive actions."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Document all investigation activities with dates, participants, and findings to support regulatory inspections.",
+      "Select the appropriate root cause analysis methodology based on problem complexity and risk level.",
+      "Verify CAPA effectiveness through measurable criteria before closure, and track recurrence rates."
+    ],
+    "anti_patterns": [
+      "Jumping to solutions without completing thorough root cause analysis.",
+      "Closing CAPAs without verifying effectiveness through data-driven assessments.",
+      "Focusing only on immediate causes without identifying systemic root causes."
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools is this skill compatible with?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. The prompts and frameworks are tool-agnostic."
+      },
+      {
+        "question": "What regulatory standards does this skill cover?",
+        "answer": "It covers ISO 13485 Clause 8.5, FDA 21 CFR 820.100, and EU MDR Article 10.9 requirements."
+      },
+      {
+        "question": "Does this skill integrate with our QMS software?",
+        "answer": "No, this skill provides expert guidance. You must apply recommendations to your QMS manually."
+      },
+      {
+        "question": "Is our CAPA data kept private?",
+        "answer": "Yes, this skill only processes data you share in the conversation. Nothing is stored externally."
+      },
+      {
+        "question": "Why are our CAPAs staying open too long?",
+        "answer": "Common causes include inadequate root analysis, unclear success criteria, resource gaps, and missing verification steps."
+      },
+      {
+        "question": "How is this different from general problem-solving skills?",
+        "answer": "This skill specializes in CAPA-specific workflows, regulatory requirements, and quality management frameworks."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "example_asset.txt",
+          "type": "file",
+          "path": "assets/example_asset.txt",
+          "lines": 25
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 35
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "example.py",
+          "type": "file",
+          "path": "scripts/example.py",
+          "lines": 20
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 191
+    }
+  ]
+}

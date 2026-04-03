@@ -1,0 +1,267 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:42:19.659Z",
+    "slug": "dwsy-project-planner",
+    "source_url": "https://github.com/Dwsy/agent/tree/main/skills/project-planner",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5a60f822a92e18e65207111df5071e22300ead5cced70991409fd68674ae9b9b",
+    "tree_hash": "8711c6174478c3cd0ea3ecebeea075a973e87b581c4664c2cebc2a9b94b5d74f"
+  },
+  "skill": {
+    "name": "project-planner",
+    "description": "Comprehensive project planning and documentation generator for software projects. Creates structured requirements documents, system design documents, and task breakdown plans with implementation tracking. Use when starting a new project, defining specifications, creating technical designs, or breaking down complex systems into implementable tasks. Supports user story format, acceptance criteria, component design, API specifications, and hierarchical task decomposition with requirement traceability.",
+    "summary": "Comprehensive project planning and documentation generator for software projects. Creates structured...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "Dwsy",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "project-planning",
+      "documentation",
+      "requirements",
+      "design",
+      "templates"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation and template generation skill. The static analyzer flagged 332 potential issues, but ALL findings are false positives. The 'Windows SAM database' detection is a misclassification of the word 'system' in documentation templates. 'Weak cryptographic algorithm' flags are triggered by legitimate references to standard security practices (AES, HTTPS, JWT) in architectural documentation. The 'Ruby/shell backtick execution' detections are triggered by markdown code formatting (backticks), not actual shell commands. No malicious intent or actual security vulnerabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/generate_project_docs.py",
+            "line_start": 1,
+            "line_end": 50
+          },
+          {
+            "file": "scripts/validate_documents.py",
+            "line_start": 1,
+            "line_end": 50
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/generate_project_docs.py",
+            "line_start": 757,
+            "line_end": 761
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3874,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:42:19.659Z"
+  },
+  "content": {
+    "user_title": "Plan software projects with structured documentation",
+    "value_statement": "Software projects often lack clear requirements and implementation plans, leading to scope creep and missed deadlines. This skill generates comprehensive requirements documents, system designs, and task breakdowns with traceability matrices to ensure nothing is overlooked during development.",
+    "seo_keywords": [
+      "project planning skill",
+      "requirements documentation",
+      "system design generator",
+      "task breakdown tool",
+      "software architecture templates",
+      "Claude project planner",
+      "Codex documentation generator",
+      "Claude Code skill"
+    ],
+    "actual_capabilities": [
+      "Generates requirements documents with user stories and measurable acceptance criteria",
+      "Creates system design documents with component maps and data flow diagrams",
+      "Produces implementation plans with hierarchical task decomposition",
+      "Provides domain-specific templates for web apps, microservices, data pipelines, and trading systems",
+      "Supports requirement traceability across requirements, design, and tasks"
+    ],
+    "limitations": [
+      "Does not execute code or interact with external systems",
+      "Does not generate actual implementation code",
+      "Does not validate existing code or project files",
+      "Does not integrate with project management tools"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers starting new projects",
+        "title": "New project kickoff",
+        "description": "Generate complete planning documents for new software projects with requirements, architecture, and task breakdown."
+      },
+      {
+        "target_user": "System architects designing complex systems",
+        "title": "System architecture planning",
+        "description": "Create detailed component designs, data flow diagrams, and integration specifications for complex systems."
+      },
+      {
+        "target_user": "Technical leads managing development",
+        "title": "Implementation task tracking",
+        "description": "Break down features into atomic, traceable tasks with dependencies and acceptance criteria."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New project setup",
+        "scenario": "Starting a new software project",
+        "prompt": "Generate requirements, design, and implementation plan documents for a [PROJECT TYPE] called [NAME] that will [CORE PURPOSE]. Include [KEY FEATURES] as main requirements."
+      },
+      {
+        "title": "Feature requirements",
+        "scenario": "Adding requirements for a new feature",
+        "prompt": "Add a new requirement to my requirements document for [FEATURE]. Create a user story with acceptance criteria and link it to existing components."
+      },
+      {
+        "title": "Architecture design",
+        "scenario": "Designing system components",
+        "prompt": "Create a component map and data flow diagram for a [SYSTEM TYPE] with [NUMBER] main components: [LIST COMPONENTS]. Include integration points with [EXTERNAL SYSTEMS]."
+      },
+      {
+        "title": "Task breakdown",
+        "scenario": "Breaking down implementation work",
+        "prompt": "Generate an implementation plan for requirement REQ-[NUMBER]. Break it down into phases, tasks, and subtasks with dependencies and estimated hours."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate requirements for a task management API",
+        "output": [
+          "Requirements Document with user stories for creating, updating, and tracking tasks",
+          "Acceptance criteria using SHALL language with measurable conditions",
+          "Component map showing API layer, service layer, and database integration"
+        ]
+      },
+      {
+        "input": "Create design for a real-time chat system",
+        "output": [
+          "Architecture diagram with WebSocket connections and message queues",
+          "Data flow specifications for message routing and persistence",
+          "Integration points for external notification services"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Define clear boundaries and scope before generating documents to avoid feature creep",
+      "Use measurable acceptance criteria with specific performance targets and time limits",
+      "Trace every task back to requirements to ensure complete feature coverage"
+    ],
+    "anti_patterns": [
+      "Generating documents without understanding project scope and constraints",
+      "Using vague acceptance criteria like 'fast' or 'user-friendly' without metrics",
+      "Skipping the design phase and jumping directly to implementation tasks"
+    ],
+    "faq": [
+      {
+        "question": "What document types does this skill generate?",
+        "answer": "This skill generates three core documents: requirements documents, system design documents, and implementation task plans."
+      },
+      {
+        "question": "Can I customize the templates for my domain?",
+        "answer": "Yes. The skill includes domain-specific templates for trading systems, microservices, data pipelines, and other system types."
+      },
+      {
+        "question": "Does this skill write actual code?",
+        "answer": "No. This skill generates documentation templates and plans. Implementation code must be written separately."
+      },
+      {
+        "question": "How do I link requirements to implementation tasks?",
+        "answer": "Use the requirement ID format (REQ-1, REQ-2) and reference them in task metadata using the templates provided."
+      },
+      {
+        "question": "What format do the output documents use?",
+        "answer": "All documents are generated in Markdown format for easy editing and version control compatibility."
+      },
+      {
+        "question": "Can I use this skill for existing projects?",
+        "answer": "Yes. You can generate documentation for existing projects by providing current system details and architecture."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "requirements-template.md",
+          "type": "file",
+          "path": "assets/requirements-template.md",
+          "lines": 84
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "domain-templates.md",
+          "type": "file",
+          "path": "references/domain-templates.md",
+          "lines": 1380
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "generate_project_docs.py",
+          "type": "file",
+          "path": "scripts/generate_project_docs.py",
+          "lines": 802
+        },
+        {
+          "name": "validate_documents.py",
+          "type": "file",
+          "path": "scripts/validate_documents.py",
+          "lines": 326
+        }
+      ]
+    },
+    {
+      "name": "plugin.json",
+      "type": "file",
+      "path": "plugin.json",
+      "lines": 13
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 151
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 857
+    }
+  ]
+}

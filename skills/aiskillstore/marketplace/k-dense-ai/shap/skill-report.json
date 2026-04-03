@@ -1,0 +1,263 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:07:00.400Z",
+    "slug": "k-dense-ai-shap",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/shap",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7edfcbc102c21c1dbe7cb9eabafefab37ccde5add0f3875f17a275910e46c5fb",
+    "tree_hash": "33a1aba7bfca65a076e50cac5121c1c4f9f1fa5d841f49a0e021098a766f03ec"
+  },
+  "skill": {
+    "name": "shap",
+    "description": "Model interpretability and explainability using SHAP (SHapley Additive exPlanations). Use this skill when explaining machine learning model predictions, computing feature importance, generating SHAP plots (waterfall, beeswarm, bar, scatter, force, heatmap), debugging models, analyzing model bias or fairness, comparing models, or implementing explainable AI. Works with tree-based models (XGBoost, LightGBM, Random Forest), deep learning (TensorFlow, PyTorch), linear models, and any black-box model.",
+    "summary": "Model interpretability and explainability using SHAP (SHapley Additive exPlanations). Use this skill...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "data",
+    "tags": [
+      "machine-learning",
+      "model-interpretation",
+      "explainable-ai",
+      "feature-importance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill with no executable code. All 295 static findings are false positives: markdown code blocks flagged as shell backticks, 'SHAP' acronym flagged as SHA cryptographic algorithm, GitHub URL path component flagged as C2, and standard documentation URLs. This is a pure reference guide for the SHAP machine learning library.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 82
+          },
+          {
+            "file": "references/explainers.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "references/explainers.md",
+            "line_start": 16,
+            "line_end": 20
+          },
+          {
+            "file": "references/plots.md",
+            "line_start": 15,
+            "line_end": 15
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 558,
+            "line_end": 558
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 559,
+            "line_end": 559
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 4006,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:07:00.400Z"
+  },
+  "content": {
+    "user_title": "Explain model predictions with SHAP",
+    "value_statement": "Machine learning models often act as black boxes. SHAP provides a unified framework to explain any model prediction by computing feature contributions using Shapley values from game theory. Use this skill to visualize feature importance, debug model behavior, and implement explainable AI.",
+    "seo_keywords": [
+      "SHAP explainability",
+      "feature importance",
+      "model interpretation",
+      "explainable AI",
+      "XGBoost explanation",
+      "SHAP values",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "machine learning transparency"
+    ],
+    "actual_capabilities": [
+      "Compute SHAP values for tree-based models (XGBoost, LightGBM, Random Forest)",
+      "Generate SHAP visualizations (waterfall, beeswarm, bar, scatter, force, heatmap)",
+      "Explain deep learning model predictions with DeepExplainer and GradientExplainer",
+      "Analyze model bias and fairness across demographic groups",
+      "Debug models by identifying unexpected feature importance patterns",
+      "Compare feature importance across multiple models"
+    ],
+    "limitations": [
+      "KernelExplainer is slow for large datasets; prefer tree or deep explainers when possible",
+      "SHAP shows correlation, not causation; validate interpretations with domain expertise",
+      "Very high-dimensional datasets may require sampling or dimensionality reduction first"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data Scientists",
+        "title": "Debug model behavior",
+        "description": "Identify why models make errors by examining SHAP values for misclassified samples and detecting data leakage."
+      },
+      {
+        "target_user": "ML Engineers",
+        "title": "Add explanations to APIs",
+        "description": "Integrate SHAP explanations into production prediction services with feature attribution for each prediction."
+      },
+      {
+        "target_user": "Domain Experts",
+        "title": "Validate model fairness",
+        "description": "Check for biased predictions across demographic groups by comparing SHAP values for protected attributes."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic SHAP explanation",
+        "scenario": "Generate feature importance plot",
+        "prompt": "Generate a SHAP beeswarm plot to show feature importance for my XGBoost model trained on my tabular dataset. Show the top 15 most important features with their value distributions."
+      },
+      {
+        "title": "Individual prediction",
+        "scenario": "Explain single prediction",
+        "prompt": "Explain why my model predicted a specific outcome for a single sample. Generate a waterfall plot showing how each feature contributed to the prediction."
+      },
+      {
+        "title": "Model comparison",
+        "scenario": "Compare multiple models",
+        "prompt": "Compare feature importance between my Random Forest and XGBoost models using SHAP. Show which features are ranked differently between the two models."
+      },
+      {
+        "title": "Fairness analysis",
+        "scenario": "Check for bias",
+        "prompt": "Analyze my model for potential bias across gender and age groups. Compare SHAP values for the protected attributes and identify if any proxies exist."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Explain my XGBoost model's predictions for customer churn",
+        "output": [
+          "Top drivers of churn: Contract Type (0.25), Monthly Charges (0.18), Tenure (0.15)",
+          "Customers without annual contracts are 25% more likely to churn",
+          "Higher monthly charges increase churn probability when tenure is low",
+          "Loyal customers (36+ months) have 60% lower churn risk"
+        ]
+      },
+      {
+        "input": "Why was this loan application denied",
+        "output": [
+          "Key factors reducing approval probability: High debt-to-income ratio (-0.22), Short employment history (-0.15), Low credit utilization ratio (-0.12)",
+          "Positive factors: Stable income (+0.08), Good payment history (+0.05)",
+          "Missing factors: No recent credit inquiries helped slightly (+0.03)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use TreeExplainer for tree-based models instead of KernelExplainer for faster computation",
+      "Start with global plots (beeswarm, bar) to understand overall patterns before examining individual predictions",
+      "Select 50-1000 representative background samples for accurate SHAP value computation"
+    ],
+    "anti_patterns": [
+      "Using KernelExplainer for tree models when TreeExplainer is available (much slower)",
+      "Interpreting SHAP values as causal relationships without domain validation",
+      "Ignoring model output type (log-odds vs probability) when interpreting SHAP values"
+    ],
+    "faq": [
+      {
+        "question": "What is SHAP?",
+        "answer": "SHAP (SHapley Additive exPlanations) is a game-theoretic approach to explain model predictions by computing each feature's contribution using Shapley values."
+      },
+      {
+        "question": "Which explainer should I use?",
+        "answer": "Use TreeExplainer for XGBoost/LightGBM, DeepExplainer for neural networks, LinearExplainer for linear models, and KernelExplainer only as a last resort."
+      },
+      {
+        "question": "Why are my SHAP values slow to compute?",
+        "answer": "KernelExplainer is slow. Switch to a specialized explainer for your model type or sample your data to 100-1000 rows for visualization."
+      },
+      {
+        "question": "What do positive and negative SHAP values mean?",
+        "answer": "Positive SHAP values push predictions higher; negative values push predictions lower. The magnitude shows the strength of each feature's impact."
+      },
+      {
+        "question": "Can SHAP detect data leakage?",
+        "answer": "Yes. Unexpectedly high feature importance on certain features may indicate data leakage or problematic features that should be removed."
+      },
+      {
+        "question": "Does SHAP work with all model types?",
+        "answer": "Yes. SHAP works with any model through KernelExplainer, but specialized explainers (Tree, Deep, Linear) are much faster and recommended."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "explainers.md",
+          "type": "file",
+          "path": "references/explainers.md",
+          "lines": 340
+        },
+        {
+          "name": "plots.md",
+          "type": "file",
+          "path": "references/plots.md",
+          "lines": 508
+        },
+        {
+          "name": "theory.md",
+          "type": "file",
+          "path": "references/theory.md",
+          "lines": 450
+        },
+        {
+          "name": "workflows.md",
+          "type": "file",
+          "path": "references/workflows.md",
+          "lines": 606
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 566
+    }
+  ]
+}

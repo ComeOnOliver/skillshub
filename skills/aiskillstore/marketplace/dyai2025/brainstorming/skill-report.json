@@ -1,0 +1,181 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T19:39:18.830Z",
+    "slug": "dyai2025-brainstorming",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/brainstorming",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9568bca01b1ac7163e2fd57903be48737190ff2b51bc6f9b06b5d117e962a6af",
+    "tree_hash": "c4575ae305a3f56bbe3fd5e12c0f8900e908d8f1c51536b38954d0606c643f15"
+  },
+  "skill": {
+    "name": "brainstorming",
+    "description": "Use when creating or developing anything, before writing code or implementation plans - refines rough ideas into fully-formed designs through structured Socratic questioning, alternative exploration, and incremental validation",
+    "summary": "Transform rough ideas into fully-formed designs through structured questioning and validation",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "brainstorming",
+      "design",
+      "planning",
+      "architecture",
+      "ideation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill for brainstorming methodology with no executable code. All 43 static findings are false positives from pattern matching against documentation content. The skill contains only markdown documentation describing a structured design process.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 710,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T19:39:18.830Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Transform Ideas into Designs with Structured Brainstorming",
+    "value_statement": "Many developers struggle to turn rough ideas into clear designs before coding. This skill guides you through structured questioning, alternative exploration, and incremental validation to refine concepts into implementation-ready designs.",
+    "seo_keywords": [
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "brainstorming",
+      "design methodology",
+      "architecture planning",
+      "idea refinement",
+      "structured questioning",
+      "design validation",
+      "software design"
+    ],
+    "actual_capabilities": [
+      "Guide structured brainstorming sessions using Socratic questioning methodology",
+      "Present multiple architectural approaches with trade-off analysis",
+      "Validate designs incrementally through phased feedback collection",
+      "Integrate with using-git-worktrees and writing-plans skills for implementation handoff",
+      "Use AskUserQuestion tool for structured decision-making with clear options"
+    ],
+    "limitations": [
+      "Does not write code or create implementation artifacts directly",
+      "Requires active user participation and decision-making throughout the process",
+      "Focuses on design methodology rather than domain-specific technical guidance",
+      "Effectiveness depends on user engagement with questioning and validation phases"
+    ],
+    "use_cases": [
+      {
+        "title": "Feature Architecture Planning",
+        "description": "Software engineers use this skill before implementing new features to explore architectural options, evaluate trade-offs, and validate design decisions with structured feedback loops.",
+        "target_user": "Software Engineers"
+      },
+      {
+        "title": "Product Design Refinement",
+        "description": "Product managers use this skill to transform initial product ideas into detailed specifications by systematically exploring constraints, success criteria, and alternative approaches.",
+        "target_user": "Product Managers"
+      },
+      {
+        "title": "Technical Solution Design",
+        "description": "Technical leads use this skill to facilitate design discussions, evaluate multiple implementation strategies, and build consensus through incremental design presentation and validation.",
+        "target_user": "Technical Leads"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start Basic Brainstorming Session",
+        "prompt": "Help me brainstorm a design for adding user authentication to my web application",
+        "scenario": "Beginning a new feature design process"
+      },
+      {
+        "title": "Explore Multiple Approaches",
+        "prompt": "I want to add caching to my API but I am not sure which approach to use. Can you help me explore options?",
+        "scenario": "Evaluating architectural alternatives"
+      },
+      {
+        "title": "Refine Existing Concept",
+        "prompt": "I have a rough idea for a notification system. Help me refine it into a complete design before I start coding.",
+        "scenario": "Converting rough ideas into detailed designs"
+      },
+      {
+        "title": "Validate Complex Design",
+        "prompt": "I need to design a microservices architecture for order processing. Walk me through the design process with validation at each step.",
+        "scenario": "Designing complex systems with incremental validation"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me brainstorm a design for adding user authentication",
+        "output": "I am using the brainstorming skill to refine your idea into a design. Let me start by understanding your requirements. What is the primary authentication method you want to support for your users?"
+      },
+      {
+        "input": "I want to add caching but not sure which approach",
+        "output": "I am using the brainstorming skill to explore caching options with you. Let me propose three architectural approaches: 1) In-memory caching with Redis (scalable, requires infrastructure, fast access), 2) Application-level caching (simple setup, limited scalability, no external dependencies), 3) CDN-based caching (global distribution, higher cost, best for static content). Which approach resonates with your needs?"
+      }
+    ],
+    "best_practices": [
+      "Use the AskUserQuestion tool for presenting structured choices with clear trade-offs during understanding and exploration phases",
+      "Present designs incrementally in 200 to 300 word sections and validate each section before proceeding to maintain alignment",
+      "Always propose 2 to 3 alternative approaches before settling on a final design to ensure comprehensive option evaluation"
+    ],
+    "anti_patterns": [
+      "Asking multiple questions simultaneously instead of one focused question at a time during the understanding phase",
+      "Proceeding to implementation planning before completing design validation and receiving explicit user approval",
+      "Using open-ended questions for decisions that have clear mutually exclusive options instead of structured AskUserQuestion tool"
+    ],
+    "faq": [
+      {
+        "question": "When should I use this brainstorming skill?",
+        "answer": "Use this skill before writing code or creating implementation plans when you have a rough idea that needs refinement. It is most valuable for feature design, architecture decisions, or any situation where exploring alternatives would improve the final outcome."
+      },
+      {
+        "question": "How does this skill differ from regular planning?",
+        "answer": "This skill focuses on ideation and design refinement through structured questioning and alternative exploration. It precedes planning by helping you arrive at a validated design. After brainstorming completes, you can use the writing-plans skill for implementation planning."
+      },
+      {
+        "question": "Can I skip phases if I already know what I want?",
+        "answer": "The skill allows flexible progression, but exploring alternatives in Phase 2 often reveals better approaches even when you think you know the solution. You can move quickly through phases but should not skip the alternative exploration entirely."
+      },
+      {
+        "question": "What happens after the design is validated?",
+        "answer": "After design validation, the skill can invoke the using-git-worktrees skill to set up an isolated workspace, then use the writing-plans skill to create a detailed implementation plan in that workspace."
+      },
+      {
+        "question": "Does this skill write any code?",
+        "answer": "No, this skill does not write code. It focuses exclusively on design methodology and refinement. Code writing happens during implementation after you use the writing-plans skill to create an implementation plan."
+      },
+      {
+        "question": "How does the AskUserQuestion tool integration work?",
+        "answer": "The skill uses the AskUserQuestion tool during understanding and exploration phases to present structured choices with descriptions and trade-offs. This ensures clear decision-making and prevents vague responses when evaluating alternatives."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 157
+    },
+    {
+      "name": "SKILL.zip",
+      "type": "file",
+      "path": "SKILL.zip"
+    }
+  ]
+}

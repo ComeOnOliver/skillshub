@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:16:50.246Z",
+    "slug": "92bilal26-tool-selection-framework",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/tool-selection-framework",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d925e54548bf307892552b48143e1a590cb7bf01bf0aecaec2e3fd61b98e45ba",
+    "tree_hash": "9c23035d45d16ddacb680440acf714f0440ca8444622dca6b4b74914a809dc5c"
+  },
+  "skill": {
+    "name": "tool-selection-framework",
+    "description": "Design systematic decision frameworks for selecting appropriate AI tools (Claude Code vs Gemini CLI)\nbased on context requirements, codebase size, reasoning depth needs, and task complexity. Use this\nskill when starting projects with unclear tool requirements, optimizing context-constrained workflows,\nor designing multi-phase strategies that leverage multiple tools' strengths. This skill helps match\ntool capabilities to task characteristics, preventing wasted context and ensuring optimal resource\nallocation.\n",
+    "summary": "Design systematic decision frameworks for selecting appropriate AI tools (Claude Code vs Gemini CLI)...",
+    "icon": "🎯",
+    "version": "1.0.0",
+    "author": "92Bilal26",
+    "license": "MIT",
+    "category": "intelligence-design",
+    "tags": [
+      "tool-selection",
+      "decision-framework",
+      "context-optimization",
+      "ai-productivity",
+      "resource-allocation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only instructional content about AI tool selection methodology. No executable code, scripts, network calls, filesystem access, or external command execution. All 57 static findings are false positives triggered by legitimate documentation patterns: 'algorithm' in 'decision algorithm', 'command' in 'command-line tools', backticks in code block examples, 'system' in 'systematic' and 'codebase system', 'network' in 'network of tools'.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 254
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 254,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 313
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 313,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 397
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 397,
+            "line_end": 403
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 403,
+            "line_end": 428
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 428,
+            "line_end": 443
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 443,
+            "line_end": 467
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 467,
+            "line_end": 497
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 497,
+            "line_end": 522
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 522,
+            "line_end": 534
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 534,
+            "line_end": 559
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 559,
+            "line_end": 567
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 567,
+            "line_end": 594
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 594,
+            "line_end": 616
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 616,
+            "line_end": 622
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 819,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:16:50.246Z"
+  },
+  "content": {
+    "user_title": "Select optimal AI development tools",
+    "value_statement": "Choosing the wrong AI tool wastes context, increases costs, and slows development. This framework provides systematic decision criteria to match tool capabilities (Claude Code, Gemini CLI) to your specific task requirements, ensuring optimal resource allocation and project success.",
+    "seo_keywords": [
+      "Claude Code tool selection",
+      "Gemini CLI vs Claude",
+      "AI development tool framework",
+      "context window optimization",
+      "codebase size analysis",
+      "multi-phase AI workflow",
+      "Claude Code limitations",
+      "tool decision matrix",
+      "AI productivity framework",
+      "Claude Codex tool selection"
+    ],
+    "actual_capabilities": [
+      "Analyzes codebase size to recommend appropriate context window (up to 500K+ lines)",
+      "Distinguishes between exploration tasks (broad understanding) and focused implementation",
+      "Evaluates reasoning depth requirements (architectural decisions vs pattern matching)",
+      "Designs multi-phase workflows using Gemini for exploration and Claude Code for implementation",
+      "Balances cost, performance, and time sensitivity based on project constraints",
+      "Creates decision matrices matching tool capabilities to task characteristics"
+    ],
+    "limitations": [
+      "Does not execute code or interact with development environments directly",
+      "Cannot access your codebase to perform measurements without explicit prompts",
+      "Provides recommendations only; final tool selection remains with user",
+      "Framework assumes Claude Code (200K context) and Gemini CLI (2M context) as primary tools"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Enterprise developers",
+        "title": "Large codebase tool strategy",
+        "description": "Design multi-phase workflows for codebases exceeding 500K lines using Gemini exploration followed by Claude Code implementation."
+      },
+      {
+        "target_user": "Technical architects",
+        "title": "Context optimization planning",
+        "description": "Evaluate project requirements to select tools that maximize reasoning depth while staying within context budgets."
+      },
+      {
+        "target_user": "Independent developers",
+        "title": "Cost-effective tool selection",
+        "description": "Match small-to-medium projects (<100K lines) to Claude Code for lower cost without sacrificing capability."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic project assessment",
+        "scenario": "Starting a new project",
+        "prompt": "My project has approximately [X] lines of code. I need to [task description]. Help me select the appropriate AI tool using the framework."
+      },
+      {
+        "title": "Large codebase exploration",
+        "scenario": "Understanding unfamiliar codebase",
+        "prompt": "I am working with a [X]-line legacy codebase that I do not understand. I need to [goal]. Design a multi-phase workflow using Gemini for exploration and Claude Code for implementation."
+      },
+      {
+        "title": "Time-critical decisions",
+        "scenario": "Production bug fix",
+        "prompt": "Production is down. I have a [X]-line codebase and need to fix a specific bug quickly. Should I use Claude Code or Gemini? Recommend based on time-critical workflow."
+      },
+      {
+        "title": "Cost optimization review",
+        "scenario": "Budget-constrained project",
+        "prompt": "I am working on a [X]-line project with limited budget. My task is [description]. Help me minimize cost while still completing the work effectively using the framework."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "My 800K-line legacy system needs authentication migration. I need deep reasoning for security-critical changes. Help me select tools.",
+        "output": [
+          "RECOMMENDATION: Multi-phase workflow (Gemini explore → Claude Code implement)",
+          "RATIONALE: 800K lines exceeds Claude Code 200K context, but security migration requires deep reasoning Claude Code provides",
+          "WORKFLOW: Phase 1 (Gemini): Load full codebase, map authentication across all modules, generate 15K-token summary. Phase 2 (Claude Code): Load summary, implement migration module-by-module with deep security reasoning",
+          "EXPECTED OUTCOME: Comprehensive system understanding from Gemini + security-focused implementation from Claude Code"
+        ]
+      },
+      {
+        "input": "I have a 25K-line Flask API and need to add a new authentication endpoint. What tool should I use?",
+        "output": [
+          "RECOMMENDATION: Claude Code exclusively",
+          "RATIONALE: 25K lines fits comfortably in 200K context, focused task does not need 2M context, Claude Code provides deep reasoning for architectural decisions",
+          "WORKFLOW: Load Foundation (10K tokens), load API routes and models (20K tokens), implement endpoint with 170K tokens available",
+          "EXPECTED OUTCOME: Fast implementation with proper architectural decisions at lower cost"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Measure codebase size using tools like cloc before making tool selection decisions",
+      "Default to Claude Code for most tasks under 100K lines; Gemini is overkill for small projects",
+      "Document tool selection rationale in decisions.md for future reference and team alignment"
+    ],
+    "anti_patterns": [
+      "Using Gemini CLI for a 10K-line project (wastes context, increases cost, slower iteration)",
+      "Using Claude Code to explore a 1M-line monolith (insufficient context causes frustration)",
+      "Ignoring task type and using a single tool for both exploration and implementation phases"
+    ],
+    "faq": [
+      {
+        "question": "What codebase size triggers Gemini CLI selection?",
+        "answer": "Codebases over 500K lines require Gemini for exploration due to Claude Code 200K context limit."
+      },
+      {
+        "question": "When should I use Claude Code over Gemini CLI?",
+        "answer": "Use Claude Code for focused implementation, deep reasoning, time-critical tasks, and codebases under 100K lines."
+      },
+      {
+        "question": "Can I use both tools in a single project?",
+        "answer": "Yes. Multi-phase workflow is recommended for large codebases: Gemini for exploration, Claude Code for implementation."
+      },
+      {
+        "question": "How does this framework handle cost optimization?",
+        "answer": "Claude Code is lower cost per session for smaller contexts. Use Claude Code for iterative work, Gemini strategically."
+      },
+      {
+        "question": "Does this skill work with other AI coding tools?",
+        "answer": "Framework focuses on Claude Code and Gemini CLI but decision methodology applies to any AI development tool."
+      },
+      {
+        "question": "What if my project requirements change mid-workflow?",
+        "answer": "Re-run the assessment using the six-question framework. The framework is iterative."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 642
+    }
+  ]
+}

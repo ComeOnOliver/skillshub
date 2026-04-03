@@ -1,0 +1,237 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:23:06.239Z",
+    "slug": "hylarucoder-clean-code-reviewer",
+    "source_url": "https://github.com/hylarucoder/skills-for-vibe-coder/tree/main/skills/clean-code-reviewer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0274595ae94780f5216050e430d61c70095138378303d7244769f1b170602a69",
+    "tree_hash": "ace1a959c2b4fc4d3076b86db407ee6f6f7820da2a62364c3c5c2f5f08300387"
+  },
+  "skill": {
+    "name": "clean-code-reviewer",
+    "description": "Analyze code quality based on \"Clean Code\" principles. Identify naming, function size, duplication, over-engineering, and magic number issues with severity ratings and refactoring suggestions. Use when the user requests code review, quality check, refactoring advice, Clean Code analysis, code smell detection, or mentions terms like 代码体检, 代码质量, 重构检查.",
+    "summary": "Analyze code quality based on \"Clean Code\" principles. Identify naming, function size, duplication, ...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "hylarucoder",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "code-review",
+      "clean-code",
+      "refactoring",
+      "code-quality"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 121 static findings are FALSE POSITIVES. This skill contains only documentation (markdown files) with educational code examples. The static analyzer misidentified TypeScript/JavaScript code examples inside markdown code fences as security threats. No executable code, network calls, or file system operations exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 174
+          },
+          {
+            "file": "references/detailed-examples.md",
+            "line_start": 16,
+            "line_end": 283
+          },
+          {
+            "file": "references/language-patterns.md",
+            "line_start": 14,
+            "line_end": 261
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 127
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 2019,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:23:06.239Z"
+  },
+  "content": {
+    "user_title": "Review code quality with Clean Code principles",
+    "value_statement": "Code reviews help identify maintainability issues before they become technical debt. This skill provides AI assistants with systematic guidelines to evaluate code across seven key dimensions including naming, functions, duplication, and project conventions.",
+    "seo_keywords": [
+      "code review",
+      "clean code",
+      "code quality",
+      "refactoring",
+      "code smells",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "naming conventions",
+      "software maintainability"
+    ],
+    "actual_capabilities": [
+      "Review code for naming issues like vague variable names",
+      "Check function size and parameter count against thresholds",
+      "Identify duplicate code patterns (DRY violations)",
+      "Detect over-engineering and dead code (YAGNI violations)",
+      "Flag magic numbers without explanations",
+      "Assess code clarity and nesting depth"
+    ],
+    "limitations": [
+      "Does not execute or test code functionality",
+      "Cannot validate business logic correctness",
+      "Does not analyze performance or security vulnerabilities",
+      "Relies on user-provided code context for accurate analysis"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Pre-commit code review",
+        "description": "Review pull requests before merge to catch maintainability issues early"
+      },
+      {
+        "target_user": "Tech leads",
+        "title": "Legacy code assessment",
+        "description": "Systematically evaluate existing codebase technical debt and prioritize refactoring"
+      },
+      {
+        "target_user": "AI assistants",
+        "title": "Automated code feedback",
+        "description": "Provide consistent code quality feedback in development workflows"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic review",
+        "scenario": "Review a single file",
+        "prompt": "Use /clean-code-reviewer to analyze my code and identify issues with naming, functions, and code duplication."
+      },
+      {
+        "title": "Module review",
+        "scenario": "Review by module",
+        "prompt": "Use /clean-code-reviewer --scope=components to review all UI components for naming and structure issues."
+      },
+      {
+        "title": "Convention check",
+        "scenario": "Check project conventions",
+        "prompt": "Use /clean-code-reviewer --dimension=conventions to verify import ordering and naming consistency."
+      },
+      {
+        "title": "Parallel team review",
+        "scenario": "Multi-agent parallel review",
+        "prompt": "Split the codebase using /clean-code-reviewer with parallel agents by language (TypeScript, Python, Go)."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review my codebase for code quality issues",
+        "output": [
+          "Found 3 high severity issues:",
+          "• users.ts:23 - Vague naming: 'temp' instead of 'temporaryFilePath'",
+          "• orders.ts:45 - Function exceeds 100 lines (145 lines)",
+          "• utils.ts:89 - Duplicate validation logic (similar to utils.ts:112)",
+          "Medium severity: 2 magic numbers without constants",
+          "Low severity: 1 import ordering issue"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide the codebase context and CLAUDE.md or AGENTS.md for project-specific conventions",
+      "Use severity levels to prioritize issues for the development team",
+      "Combine parallel agents by dimension and by module for large codebases"
+    ],
+    "anti_patterns": [
+      "Requesting functional changes instead of implementation improvements",
+      "Ignoring project-specific conventions defined in documentation",
+      "Flagging every issue as high severity dilutes important findings"
+    ],
+    "faq": [
+      {
+        "question": "What languages does this skill support?",
+        "answer": "TypeScript, JavaScript, Python, and Go examples are provided. Principles apply broadly."
+      },
+      {
+        "question": "Does this skill execute the code?",
+        "answer": "No, this is a static analysis review based on code patterns and conventions."
+      },
+      {
+        "question": "How are severity levels determined?",
+        "answer": "High impacts maintainability immediately, medium has improvement space, low is optional."
+      },
+      {
+        "question": "Can I customize the thresholds?",
+        "answer": "Yes, reference project conventions from CLAUDE.md or AGENTS.md for customization."
+      },
+      {
+        "question": "Does it check security issues?",
+        "answer": "No, focus is on code quality and maintainability, not security vulnerabilities."
+      },
+      {
+        "question": "How to handle large codebases?",
+        "answer": "Use parallel agents split by dimension, module, language, or file type for efficiency."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "detailed-examples.md",
+          "type": "file",
+          "path": "references/detailed-examples.md",
+          "lines": 293
+        },
+        {
+          "name": "language-patterns.md",
+          "type": "file",
+          "path": "references/language-patterns.md",
+          "lines": 262
+        }
+      ]
+    },
+    {
+      "name": "evaluation-output.json",
+      "type": "file",
+      "path": "evaluation-output.json",
+      "lines": 633
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 177
+    }
+  ]
+}

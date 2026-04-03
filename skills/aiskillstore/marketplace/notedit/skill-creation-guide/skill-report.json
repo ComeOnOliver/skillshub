@@ -1,0 +1,275 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:27:09.736Z",
+    "slug": "notedit-skill-creation-guide",
+    "source_url": "https://github.com/notedit/happy-coding-agent/tree/main/skills/skill-creation-guide",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "511974cc0dadaf887552fa53b2d93af7f1848c4dcbce9db08162262fea249b6f",
+    "tree_hash": "941e7648b128350083b44699cb1ca4cf52c35b7f610fab772208f57f6eea341a"
+  },
+  "skill": {
+    "name": "skill-creation-guide",
+    "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+    "summary": "Guide for creating effective skills. This skill should be used when users want to create a new skill...",
+    "icon": "🛠️",
+    "version": "1.0.0",
+    "author": "notedit",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "documentation",
+    "tags": [
+      "skill-development",
+      "claude-code",
+      "plugin-authoring",
+      "workflow-automation",
+      "ai-extensions"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation and tooling skill containing three Python utility scripts for initializing, validating, and packaging skills. Scripts perform standard filesystem operations (directory creation, file writing, zip packaging) with no network access, no credential handling, and no external process execution. All 161 static findings are false positives - the scanner misidentified documentation patterns, markdown code formatting, and standard library usage as security issues.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 205,
+            "line_end": 271
+          },
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 66,
+            "line_end": 82
+          },
+          {
+            "file": "scripts/quick_validate.py",
+            "line_start": 14,
+            "line_end": 19
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 357
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 1402,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:27:09.736Z"
+  },
+  "content": {
+    "user_title": "Create Skills for Claude and Claude Code",
+    "value_statement": "Creating skills for AI assistants requires understanding modular design, resource organization, and distribution formats. This guide provides step-by-step instructions for building skills that extend Claude with specialized knowledge and workflows.",
+    "seo_keywords": [
+      "skill creation guide",
+      "Claude skills",
+      "Claude Code skills",
+      "AI plugin development",
+      "skill authoring",
+      "prompt engineering",
+      "workflow automation",
+      "specialized AI agents",
+      "domain expertise skills",
+      "AI extensions"
+    ],
+    "actual_capabilities": [
+      "Follow a 6-step process to create skills from concept to packaged .skill file",
+      "Structure skills with proper directories for scripts, references, and assets",
+      "Apply progressive disclosure design to manage context efficiently",
+      "Use validation scripts to ensure skills meet technical requirements",
+      "Package skills into distributable .skill files for sharing"
+    ],
+    "limitations": [
+      "Does not execute user workflows or access external APIs",
+      "Does not provide pre-built skill templates beyond the initialization script",
+      "Does not install or manage skills in the AI environment",
+      "Focuses on skill creation structure rather than specific domain knowledge"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Plugin Developers",
+        "title": "Build Shareable Skills",
+        "description": "Create modular skills that extend Claude capabilities and can be shared with other users through the skill marketplace."
+      },
+      {
+        "target_user": "Team Leads",
+        "title": "Standardize Team Workflows",
+        "description": "Package company-specific workflows, coding standards, and domain knowledge into reusable skills for consistent AI assistance."
+      },
+      {
+        "target_user": "AI Enthusiasts",
+        "title": "Customize AI Behavior",
+        "description": "Design personal skills that encode specialized knowledge, templates, or procedures for recurring tasks."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New Skill from Scratch",
+        "scenario": "Creating a new skill",
+        "prompt": "Help me create a new skill called my-pdf-helper for processing PDF documents. Walk me through the 6-step skill creation process."
+      },
+      {
+        "title": "Validate Existing Skill",
+        "scenario": "Checking skill structure",
+        "prompt": "Review the skill at path/to/skill and validate that it follows the proper structure with SKILL.md frontmatter, scripts, references, and assets directories."
+      },
+      {
+        "title": "Apply Design Patterns",
+        "scenario": "Structuring complex skills",
+        "prompt": "I am building a skill that supports multiple cloud providers. Help me apply progressive disclosure design and organize provider-specific details into reference files."
+      },
+      {
+        "title": "Package for Distribution",
+        "scenario": "Preparing skill for sharing",
+        "prompt": "I have completed my skill at path/to/my-skill. Guide me through validating and packaging it into a .skill file for distribution."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create a new skill for processing PDF documents",
+        "output": [
+          "Here is your 6-step plan for creating a PDF processing skill:",
+          "1. Define concrete examples: PDF text extraction, form filling, page rotation",
+          "2. Plan reusable resources: scripts/rotate_pdf.py, references/schemas.md, assets/templates/",
+          "3. Run init_skill.py to initialize the skill structure",
+          "4. Edit SKILL.md with YAML frontmatter and workflow instructions",
+          "5. Add scripts, references, and assets as planned",
+          "6. Run package_skill.py to create the distributable .skill file"
+        ]
+      },
+      {
+        "input": "I want to create a skill for my team that encodes our coding standards",
+        "output": [
+          "Here is how to create a team coding standards skill:",
+          "1. Gather concrete examples of your standards in action",
+          "2. Plan resources: references/style-guide.md, assets/rule-config.json",
+          "3. Initialize with init_skill.py my-team-standards --path skills/",
+          "4. Update SKILL.md with description and core principles",
+          "5. Add reference documentation and configuration examples",
+          "6. Validate and package with the validation scripts"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep SKILL.md concise - include only what Claude needs at trigger time, move detailed documentation to references/",
+      "Use progressive disclosure - load reference files only when Claude determines they are needed for the task",
+      "Structure reference files with one level depth from SKILL.md and include table of contents for files over 100 lines"
+    ],
+    "anti_patterns": [
+      "Including redundant information in both SKILL.md and reference files bloats the context window",
+      "Creating deeply nested reference directories makes content harder to discover",
+      "Using verbose explanations when concise examples would communicate the intent more clearly"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support skills?",
+        "answer": "Skills work with Claude, Codex, and Claude Code. Check individual tool documentation for specific skill installation methods."
+      },
+      {
+        "question": "What is the maximum size for a skill?",
+        "answer": "SKILL.md body should stay under 500 lines. Reference files can be larger since they load only when needed."
+      },
+      {
+        "question": "How do I integrate skills with my existing workflows?",
+        "answer": "Skills are loaded alongside the system prompt. They trigger based on metadata description matching the user's request."
+      },
+      {
+        "question": "Is my data safe when using skills?",
+        "answer": "Skills are passive guidance. This skill contains no network access or data collection. Other skills should be audited individually."
+      },
+      {
+        "question": "Why is my skill validation failing?",
+        "answer": "Check that SKILL.md has valid YAML frontmatter with name and description, the skill name uses hyphen-case, and description is under 1024 characters."
+      },
+      {
+        "question": "How is this different from prompts or commands?",
+        "answer": "Skills are modular packages with bundled resources like scripts and reference files. They persist across sessions and can be shared with other users."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "output-patterns.md",
+          "type": "file",
+          "path": "references/output-patterns.md",
+          "lines": 83
+        },
+        {
+          "name": "workflows.md",
+          "type": "file",
+          "path": "references/workflows.md",
+          "lines": 28
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "init_skill.py",
+          "type": "file",
+          "path": "scripts/init_skill.py",
+          "lines": 304
+        },
+        {
+          "name": "package_skill.py",
+          "type": "file",
+          "path": "scripts/package_skill.py",
+          "lines": 111
+        },
+        {
+          "name": "quick_validate.py",
+          "type": "file",
+          "path": "scripts/quick_validate.py",
+          "lines": 95
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 357
+    }
+  ]
+}

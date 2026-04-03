@@ -1,0 +1,335 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:22:36.013Z",
+    "slug": "k-dense-ai-research-lookup",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/research-lookup",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f0759bea54a2846288c3bd4c861f124a9ddb24e853646ac2acca28fafdc722f8",
+    "tree_hash": "e4ff3f5e429a81a7c40be2a9864b50106869ba5fa08a4c2abf317ed2dc2dc945"
+  },
+  "skill": {
+    "name": "research-lookup",
+    "description": "Look up current research information using Perplexity Sonar Pro Search or Sonar Reasoning Pro models through OpenRouter. Automatically selects the best model based on query complexity. Search academic papers, recent studies, technical documentation, and general research information with citations.",
+    "summary": "Look up current research information using Perplexity Sonar Pro Search or Sonar Reasoning Pro models...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "research",
+    "tags": [
+      "academic",
+      "literature",
+      "citations",
+      "scientific",
+      "papers"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "env_access",
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate academic research tool that makes API calls to OpenRouter for literature searches. All 146 static findings are false positives: (1) API key environment reads are standard authentication for OPENROUTER_API_KEY, (2) network calls target the legitimate OpenRouter API endpoint, (3) 'external commands' flagged in SKILL.md are documentation examples showing command syntax, not runtime code execution, and (4) 'weak cryptographic algorithm' mentions are ML architecture names (transformer, RNN) misidentified as cryptographic algorithms. No malicious patterns detected after intent analysis.",
+    "risk_factor_evidence": [
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 44,
+            "line_end": 46
+          },
+          {
+            "file": "scripts/lookup.py",
+            "line_start": 152,
+            "line_end": 155
+          },
+          {
+            "file": "scripts/examples.py",
+            "line_start": 133,
+            "line_end": 136
+          },
+          {
+            "file": "scripts/examples.py",
+            "line_start": 152,
+            "line_end": 152
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 48,
+            "line_end": 53
+          },
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 88,
+            "line_end": 88
+          },
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 102,
+            "line_end": 102
+          },
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 110,
+            "line_end": 110
+          },
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 191,
+            "line_end": 191
+          },
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 323,
+            "line_end": 323
+          },
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 341,
+            "line_end": 341
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/research_lookup.py",
+            "line_start": 371,
+            "line_end": 371
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 114
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 2314,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:22:36.013Z"
+  },
+  "content": {
+    "user_title": "Search Academic Literature and Research Papers",
+    "value_statement": "Finding current academic research requires searching multiple databases and evaluating source quality. This tool searches scholarly literature through Perplexity Sonar models with automatic model selection based on query complexity and citation-focused results.",
+    "seo_keywords": [
+      "research lookup",
+      "academic search",
+      "literature review",
+      "scientific papers",
+      "citation finder",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "Perplexity",
+      "OpenRouter"
+    ],
+    "actual_capabilities": [
+      "Search academic papers and scholarly literature using Perplexity Sonar models",
+      "Automatic model selection between fast lookup and deep reasoning modes",
+      "Extract and format citations with DOI links and source attribution",
+      "Prioritize high-impact journals and highly-cited papers in results",
+      "Batch multiple research queries with rate limiting",
+      "Filter by publication timeframe and venue quality"
+    ],
+    "limitations": [
+      "Requires OPENROUTER_API_KEY for access to Perplexity models",
+      "Cannot access paywalled full-text content directly",
+      "May miss very recent papers not yet indexed in databases",
+      "Dependent on OpenRouter service availability and rate limits"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Researchers",
+        "title": "Literature Review Assistant",
+        "description": "Gather current research for manuscripts and stay current with recent developments in your field."
+      },
+      {
+        "target_user": "Students",
+        "title": "Academic Source Finder",
+        "description": "Find credible academic sources for essays and papers with proper citations."
+      },
+      {
+        "target_user": "Technical Writers",
+        "title": "Technical Documentation Lookup",
+        "description": "Look up specifications, protocols, and methodologies for technical documentation."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Search",
+        "scenario": "Find recent papers",
+        "prompt": "Research the latest advances in [TOPIC] from 2024. List key papers with citations."
+      },
+      {
+        "title": "Comparative Analysis",
+        "scenario": "Compare methods",
+        "prompt": "Compare [METHOD_A] versus [METHOD_B] for [APPLICATION]. Include pros, cons, and relevant studies."
+      },
+      {
+        "title": "Deep Analysis",
+        "scenario": "Analyze mechanisms",
+        "prompt": "Explain the mechanism of [PHENOMENON] and identify key papers that established this understanding."
+      },
+      {
+        "title": "Citation Finding",
+        "scenario": "Find foundational papers",
+        "prompt": "Find the most influential foundational papers on [TOPIC] that every researcher should know."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Recent advances in mRNA vaccine technology 2024",
+        "output": [
+          "Key Findings: Summary of 5 major research advances from 2024",
+          "Top Paper: Smith et al. 2024, Nature Medicine (cited 200+ times)",
+          "Venue: Nature Medicine (Tier 1)",
+          "DOI: https://doi.org/10.xxxx/xxxx",
+          "4 additional high-impact citations included"
+        ]
+      },
+      {
+        "input": "Compare transformer versus RNN for sequence modeling",
+        "output": [
+          "Transformer models show superior parallelization and long-range dependency handling",
+          "RNNs offer lower computational overhead for short sequences",
+          "Key Study: Vaswani et al. 2017 (Attention Is All You Need) - 50,000+ citations",
+          "Performance benchmarks across multiple NLP tasks included"
+        ]
+      },
+      {
+        "input": "Western blot protocol for protein detection",
+        "output": [
+          "Step-by-step protocol from recent Nature Methods review",
+          "Required reagents and equipment listed",
+          "Common pitfalls and troubleshooting tips provided",
+          "Reference to seminal antibody validation paper"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use specific query terms including timeframe and research type for best results",
+      "Use reasoning keywords like compare, analyze, or explain for complex queries",
+      "Verify all citations against primary sources before including in manuscripts",
+      "Break complex research questions into multiple focused queries"
+    ],
+    "anti_patterns": [
+      "Do not use vague queries like tell me about AI - be specific about topic and scope",
+      "Do not rely solely on AI-generated summaries - always verify with primary sources",
+      "Do not use for circumventing paywalls or accessing restricted content",
+      "Do not present AI-generated content as original research without proper attribution"
+    ],
+    "faq": [
+      {
+        "question": "What models does this skill use?",
+        "answer": "It uses Perplexity Sonar Pro Search for fast lookups and Sonar Reasoning Pro for complex analytical queries."
+      },
+      {
+        "question": "How does automatic model selection work?",
+        "answer": "Queries with reasoning keywords like compare, analyze, or explain trigger the deep reasoning model automatically."
+      },
+      {
+        "question": "What API key do I need?",
+        "answer": "Set the OPENROUTER_API_KEY environment variable with your OpenRouter API credentials."
+      },
+      {
+        "question": "What sources does it prioritize?",
+        "answer": "Peer-reviewed journals, high-impact venues like Nature and Science, and highly-cited papers are prioritized."
+      },
+      {
+        "question": "Can I save research results to a file?",
+        "answer": "Use the --output flag to save results to a file, or --json for JSON format output."
+      },
+      {
+        "question": "How many citations does it return?",
+        "answer": "The skill returns 5-10 high-quality citations with full bibliographic information and DOI links when available."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "examples.py",
+          "type": "file",
+          "path": "scripts/examples.py",
+          "lines": 175
+        },
+        {
+          "name": "lookup.py",
+          "type": "file",
+          "path": "scripts/lookup.py",
+          "lines": 188
+        },
+        {
+          "name": "research_lookup.py",
+          "type": "file",
+          "path": "scripts/research_lookup.py",
+          "lines": 475
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 230
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 508
+    }
+  ]
+}

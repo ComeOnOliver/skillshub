@@ -1,0 +1,296 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:38:40.128Z",
+    "slug": "davila7-writing-skills",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/development/writing-skills",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8d0b984df9e43873b32effc60fe6b8309e90b3e30a7ad9919036a2076ddf616a",
+    "tree_hash": "41705138ed7981f4d1497f7fdf36d0c633158d29c34ca6ce30b5a2756d1d53a0"
+  },
+  "skill": {
+    "name": "writing-skills",
+    "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+    "summary": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "skill-authoring",
+      "documentation",
+      "testing",
+      "tdd",
+      "ai-training"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation skill for skill authoring methodology. Static analysis flagged 521 patterns in markdown files showing code examples (not executable) and documentation references. The only executable file (render-graphs.js) is a legitimate helper script for rendering Graphviz diagrams. No network access, no credential handling, no data exfiltration. All static findings are false positives from documentation examples.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "anthropic-best-practices.md",
+            "line_start": 32,
+            "line_end": 43
+          },
+          {
+            "file": "examples/CLAUDE_MD_TESTING.md",
+            "line_start": 8,
+            "line_end": 25
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "render-graphs.js",
+            "line_start": 1,
+            "line_end": 169
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "render-graphs.js",
+            "line_start": 120,
+            "line_end": 120
+          },
+          {
+            "file": "render-graphs.js",
+            "line_start": 131,
+            "line_end": 146
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Script executes external command",
+        "description": "render-graphs.js uses execSync to run Graphviz dot command for diagram rendering. Purpose is legitimate (visualizing skill flowcharts), output is restricted to skill subdirectory.",
+        "locations": [
+          {
+            "file": "render-graphs.js",
+            "line_start": 72,
+            "line_end": 76
+          },
+          {
+            "file": "render-graphs.js",
+            "line_start": 112,
+            "line_end": 118
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3189,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:38:40.127Z"
+  },
+  "content": {
+    "user_title": "Create and test AI skills with TDD",
+    "value_statement": "Skills fail when not tested under pressure. This skill applies test-driven development to skill authoring, teaching you to verify skills work before deployment and close rationalization loopholes before users encounter them.",
+    "seo_keywords": [
+      "Claude skill authoring",
+      "writing skills for AI",
+      "test-driven development skills",
+      "Claude Code documentation",
+      "AI skill testing",
+      "skill creation guide",
+      "TDD for documentation",
+      "Claude prompt engineering",
+      "skill documentation best practices"
+    ],
+    "actual_capabilities": [
+      "Apply RED-GREEN-REFACTOR cycle to skill creation",
+      "Create pressure scenarios that test skill compliance",
+      "Document agent rationalizations and close loopholes",
+      "Write skills that resist rationalization under pressure",
+      "Structure skill documentation for discoverability",
+      "Use persuasion principles effectively in documentation"
+    ],
+    "limitations": [
+      "Does not install or configure Claude Code itself",
+      "Does not write code to user projects without explicit prompts",
+      "Graphviz renderer requires graphviz to be installed separately",
+      "Does not provide pre-built skills or templates"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Skill authors",
+        "title": "Create verifiable skills",
+        "description": "Document proven techniques so future Claude instances find and apply them correctly"
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Standardize documentation",
+        "description": "Establish consistent skill authoring practices across your organization"
+      },
+      {
+        "target_user": "Power users",
+        "title": "Refine existing skills",
+        "description": "Test deployed skills under pressure and close rationalization loopholes"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create new skill",
+        "scenario": "Document a technique you use frequently",
+        "prompt": "Use writing-skills to create a skill for [technique name]. Apply TDD: first run baseline scenarios WITHOUT the skill to see how agents fail, then write skill content that addresses those failures."
+      },
+      {
+        "title": "Test existing skill",
+        "scenario": "Verify a skill works under pressure",
+        "prompt": "Use testing-skills-with-subagents to test the [skill-name] skill. Create 3+ pressure scenarios combining time pressure, sunk cost, and authority. Document exact rationalizations."
+      },
+      {
+        "title": "Close loopholes",
+        "scenario": "Fix skill that failed testing",
+        "prompt": "Use writing-skills to refactor the [skill-name] skill. Agent rationalized by [specific excuse]. Add explicit counter with no exceptions rule and update rationalization table."
+      },
+      {
+        "title": "Add flowchart",
+        "scenario": "Visualize decision process",
+        "prompt": "Create a Graphviz flowchart showing [decision process] using the graphviz-conventions.dot style. Render it using render-graphs.js to SVG for documentation."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a skill for handling async race conditions in tests",
+        "output": [
+          "1. Write failing test: Run scenario WITHOUT skill to capture baseline behavior",
+          "2. Document failures: Note exactly how agent fails and rationalizes",
+          "3. Write skill: Address specific failures with concrete counters",
+          "4. Verify: Re-run scenarios WITH skill, apply 3+ pressures",
+          "5. Refactor: Add explicit anti-rationalization rules and rationalization table"
+        ]
+      },
+      {
+        "input": "Test why our TDD skill keeps getting ignored",
+        "output": [
+          "RED phase: Run TDD scenarios WITHOUT skill - document all rationalizations",
+          "Common excuses: 'Already tested manually', 'Just this once', 'Deadline pressure'",
+          "GREEN phase: Write counters for each rationalization type",
+          "REFACTOR: Test again, find new holes, add counters iteratively"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always test skills under combined pressures (time + sunk cost + exhaustion) before deploying",
+      "Write skill content BEFORE testing - the iron law: no skill without a failing test first",
+      "Close loopholes explicitly: forbid specific workarounds, do not just state rules"
+    ],
+    "anti_patterns": [
+      "Writing skill content before running baseline scenarios (skips RED phase)",
+      "Using single-pressure tests (agents resist single pressure, break under multiple)",
+      "Vague skill descriptions that summarize workflow instead of listing triggering conditions"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Claude and Claude Code?",
+        "answer": "Yes. Skills work with both platforms. Test with all models you plan to use."
+      },
+      {
+        "question": "What is the file size limit for skills?",
+        "answer": "Keep SKILL.md under 500 lines. Split heavy reference material into separate files."
+      },
+      {
+        "question": "Can I reference other skills from my skill?",
+        "answer": "Yes. Use REQUIRED SUB-SKILL or REQUIRED BACKGROUND markers to link related skills."
+      },
+      {
+        "question": "Is my data safe when using these skills?",
+        "answer": "Yes. Skills only read documentation files. Helper scripts write to skill subdirectories only."
+      },
+      {
+        "question": "Why do skills need pressure testing?",
+        "answer": "Agents under pressure find loopholes. Pressure scenarios reveal rationalizations to close."
+      },
+      {
+        "question": "How is this different from writing code documentation?",
+        "answer": "Skills must resist rationalization. TDD for documentation ensures agents follow rules under pressure."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "CLAUDE_MD_TESTING.md",
+          "type": "file",
+          "path": "examples/CLAUDE_MD_TESTING.md",
+          "lines": 190
+        }
+      ]
+    },
+    {
+      "name": "anthropic-best-practices.md",
+      "type": "file",
+      "path": "anthropic-best-practices.md",
+      "lines": 1151
+    },
+    {
+      "name": "graphviz-conventions.dot",
+      "type": "file",
+      "path": "graphviz-conventions.dot",
+      "lines": 172
+    },
+    {
+      "name": "persuasion-principles.md",
+      "type": "file",
+      "path": "persuasion-principles.md",
+      "lines": 188
+    },
+    {
+      "name": "render-graphs.js",
+      "type": "file",
+      "path": "render-graphs.js",
+      "lines": 169
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 655
+    },
+    {
+      "name": "testing-skills-with-subagents.md",
+      "type": "file",
+      "path": "testing-skills-with-subagents.md",
+      "lines": 385
+    }
+  ]
+}

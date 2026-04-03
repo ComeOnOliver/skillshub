@@ -1,0 +1,360 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:59:27.061Z",
+    "slug": "wshobson-data-storytelling",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/business-analytics/skills/data-storytelling",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "37073a4167346705fb618ff3ffd7080e9aaab1d3ec6862babbf102133ebfd374",
+    "tree_hash": "7d560c64e7142b758d686435abda683687e3438981f9542fd322e6e8b46205d7"
+  },
+  "skill": {
+    "name": "data-storytelling",
+    "description": "Transform data into compelling narratives using visualization, context, and persuasive structure. Use when presenting analytics to stakeholders, creating data reports, or building executive presentations.",
+    "summary": "Transform data into compelling narratives using visualization, context, and persuasive structure. Us...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "storytelling",
+      "analytics",
+      "presentations",
+      "reports",
+      "visuals"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure markdown documentation skill containing only narrative frameworks, templates, and writing techniques. No executable code, file access, network activity, or system permissions present. The static analyzer misidentified markdown syntax (backticks, code blocks) as code execution patterns. All 48 flagged findings are false positives caused by the analyzer failing to distinguish documentation from executable code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 421,
+            "line_end": 421
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 422,
+            "line_end": 422
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 423,
+            "line_end": 423
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 168,
+            "line_end": 174
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 186,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 239
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 239,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 352
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 352,
+            "line_end": 364
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 364,
+            "line_end": 368
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 368,
+            "line_end": 386
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 386,
+            "line_end": 390
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 390,
+            "line_end": 401
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 599,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:59:27.061Z"
+  },
+  "content": {
+    "user_title": "Craft data stories that drive decisions",
+    "value_statement": "Data insights often fail to move stakeholders without a clear narrative. This skill provides frameworks and templates to turn metrics into persuasive stories that inspire action and drive decisions.",
+    "seo_keywords": [
+      "data storytelling",
+      "executive presentation",
+      "analytics narrative",
+      "business reporting",
+      "visualization guidance",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "stakeholder communication",
+      "insight framing"
+    ],
+    "actual_capabilities": [
+      "Provides narrative arc and story structure with setup, conflict, resolution framework",
+      "Offers three data story frameworks: problem-solution, trend story, and comparison story",
+      "Includes visualization techniques like progressive reveal, contrast, and annotation",
+      "Supplies presentation templates for executive summaries and one-page dashboard stories",
+      "Gives headline formulas, transition phrases, and uncertainty handling examples"
+    ],
+    "limitations": [
+      "Does not generate charts, graphs, or visualizations",
+      "Requires user to supply accurate metrics and business context",
+      "Does not validate statistical significance or causality claims",
+      "No automated slide or document file creation capability"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Analytics manager",
+        "title": "Executive update story",
+        "description": "Turn quarterly metrics into a concise narrative for leadership presentations"
+      },
+      {
+        "target_user": "Product marketer",
+        "title": "Investor narrative",
+        "description": "Frame traction data into a persuasive story for investor updates"
+      },
+      {
+        "target_user": "Business analyst",
+        "title": "Insight report",
+        "description": "Structure data reports with clear findings, implications, and actions"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple data story",
+        "scenario": "Beginner summary for manager",
+        "prompt": "Use the problem-solution framework to tell a story about churn. Here are the metrics: churn 8.5 percent, industry average 5 percent, 500 customers left last quarter."
+      },
+      {
+        "title": "Trend narrative",
+        "scenario": "Quarterly review",
+        "prompt": "Create a trend story for Q4 performance. Include hook, context, key insight, and recommendation. Metrics: MRR grew from 1.2M to 1.6M, trial to paid conversion from 8 to 15 percent."
+      },
+      {
+        "title": "Comparison decision",
+        "scenario": "Market expansion choice",
+        "prompt": "Build a comparison story for EMEA vs APAC market expansion. Use weighted factors: market size 25, growth rate 30, competition 20, ease of entry 25. Provide a recommendation."
+      },
+      {
+        "title": "Executive summary",
+        "scenario": "One-slide narrative",
+        "prompt": "Draft an executive summary slide with key insight, supporting data, business implication, and budget ask. Insight: customers who complete onboarding in week one have 3x higher LTV. Budget request: 75K."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Summarize our Q4 revenue story with a clear recommendation",
+        "output": [
+          "Headline: Q4 revenue rose 33 percent after self-serve pricing changes",
+          "Key insight: Self-serve combined with success calls drove 3x higher expansion rate",
+          "Recommendation: Double down on hybrid model and target 1.8M MRR by Q2"
+        ]
+      },
+      {
+        "input": "Our customer churn increased to 8.5 percent",
+        "output": [
+          "Headline: Losing 2.4M annually to preventable churn",
+          "Root cause: 73 percent of churners left within first 90 days",
+          "Solution: Implement 14-day onboarding sequence to reduce early churn by 40 percent"
+        ]
+      },
+      {
+        "input": "Create a comparison between our two product lines",
+        "output": [
+          "Product A: Higher margin at 65 percent but slower growth at 5 percent annually",
+          "Product B: Lower margin at 40 percent but faster growth at 25 percent annually",
+          "Recommendation: Invest in Product B for market share while maintaining Product A for profitability"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Lead with the key insight before showing supporting details",
+      "Use visuals and contrasts to highlight patterns and changes",
+      "End every story with a specific action or clear decision request"
+    ],
+    "anti_patterns": [
+      "Listing metrics without a narrative arc or story structure",
+      "Burying the main insight at the end of the presentation",
+      "Using technical jargon without considering audience vocabulary"
+    ],
+    "faq": [
+      {
+        "question": "Is it compatible with Claude, Codex, and Claude Code?",
+        "answer": "Yes. It is a text-based guidance skill that works in any chat interface."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It does not analyze data files or produce charts. It guides structure and wording only."
+      },
+      {
+        "question": "Can it integrate with my BI tools?",
+        "answer": "No direct integration exists. Use outputs from your BI tool as inputs to the prompts."
+      },
+      {
+        "question": "How is my data handled?",
+        "answer": "The skill accesses no files or networks. You control what data you provide in prompts."
+      },
+      {
+        "question": "What if the story feels generic?",
+        "answer": "Add specific metrics, audience goals, and a concrete decision to improve relevance."
+      },
+      {
+        "question": "How does this compare to automated slide generators?",
+        "answer": "It provides narrative structure and wording guidance, not automated slide creation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 424
+    }
+  ]
+}

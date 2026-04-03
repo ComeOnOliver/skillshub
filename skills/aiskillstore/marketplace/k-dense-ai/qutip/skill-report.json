@@ -1,0 +1,262 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:02:33.478Z",
+    "slug": "k-dense-ai-qutip",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/qutip",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9025692fa2d0cde853e73bb2e67a58fc244696f83aecc6b4d76ca8b709f3244c",
+    "tree_hash": "725a1b1eed2e0d3eec15a940d4fa45944bbb9ad3e1f3889c5241b68e4eccbbbd"
+  },
+  "skill": {
+    "name": "qutip",
+    "description": "Quantum physics simulation library for open quantum systems. Use when studying master equations, Lindblad dynamics, decoherence, quantum optics, or cavity QED. Best for physics research, open system dynamics, and educational simulations. NOT for circuit-based quantum computing—use qiskit, cirq, or pennylane for quantum algorithms and hardware execution.",
+    "summary": "Quantum physics simulation library for open quantum systems. Use when studying master equations, Lin...",
+    "icon": "⚛️",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "BSD-3-Clause license",
+    "category": "research",
+    "tags": [
+      "quantum",
+      "physics",
+      "simulation",
+      "scientific",
+      "qutip"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing markdown files with QuTiP code examples. All 405 static findings are FALSE POSITIVES from the analyzer misinterpreting markdown syntax as security patterns. No executable code, network calls, file system access, or external commands exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "references/visualization.md",
+            "line_start": 171,
+            "line_end": 199
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 53
+          },
+          {
+            "file": "references/core_concepts.md",
+            "line_start": 1,
+            "line_end": 50
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 312,
+            "line_end": 315
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 4476,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:02:33.478Z"
+  },
+  "content": {
+    "user_title": "Simulate quantum physics with QuTiP",
+    "value_statement": "Quantum systems require specialized simulation tools. QuTiP provides solvers for open quantum systems with master equations, Lindblad dynamics, and decoherence. Use this skill to model quantum optics, cavity QED, and dissipative quantum processes.",
+    "seo_keywords": [
+      "qutip",
+      "quantum simulation",
+      "quantum physics",
+      "Lindblad dynamics",
+      "open quantum systems",
+      "decoherence",
+      "quantum optics",
+      "Cla",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Solve unitary dynamics with sesolve for closed quantum systems",
+      "Model open quantum systems with mesolve including dissipation",
+      "Compute quantum trajectories with mcsolve for Monte Carlo wavefunction",
+      "Calculate Wigner functions and Bloch sphere visualizations",
+      "Analyze entanglement measures, fidelity, and entropy",
+      "Simulate Floquet theory and HEOM for non-Markovian dynamics"
+    ],
+    "limitations": [
+      "Does not support circuit-based quantum computing (use qiskit, cirq, or pennylane)",
+      "Hilbert space dimension limits apply based on computational resources",
+      "Requires qutip-qip package for quantum gates and circuit operations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Physics researchers",
+        "title": "Open system quantum dynamics",
+        "description": "Model decoherence and dissipation in quantum optics experiments using master equation solvers."
+      },
+      {
+        "target_user": "Graduate students",
+        "title": "Educational quantum simulations",
+        "description": "Visualize quantum states on Bloch spheres and explore entanglement dynamics."
+      },
+      {
+        "target_user": "Quantum engineers",
+        "title": "Cavity QED modeling",
+        "description": "Simulate atom-cavity interactions with Jaynes-Cummings model and photon statistics."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic quantum state",
+        "scenario": "Create a simple quantum state",
+        "prompt": "Show me how to create a Fock state and a coherent state in QuTiP, then calculate the Wigner function for the coherent state."
+      },
+      {
+        "title": "Open system evolution",
+        "scenario": "Simulate dissipative dynamics",
+        "prompt": "Simulate a damped harmonic oscillator in QuTiP using mesolve with a collapse operator for energy dissipation. Plot the photon number decay over time."
+      },
+      {
+        "title": "Entanglement analysis",
+        "scenario": "Measure quantum correlations",
+        "prompt": "Create a two-qubit Bell state in QuTiP and track how entanglement decays under local dephasing. Calculate concurrence over time."
+      },
+      {
+        "title": "Advanced quantum optics",
+        "scenario": "Complex quantum system",
+        "prompt": "Implement the Jaynes-Cummings model in QuTiP with cavity decay and atomic spontaneous emission. Show vacuum Rabi oscillations and photon number dynamics."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a thermal state in QuTiP with average photon number 2",
+        "output": [
+          "Created thermal density matrix for N=10 Hilbert space",
+          "Average photon number n_avg=2.0",
+          "Von Neumann entropy calculated: S = 0.92",
+          "Visualized Fock distribution showing thermal photon statistics"
+        ]
+      },
+      {
+        "input": "Simulate quantum state evolution under Lindblad master equation",
+        "output": [
+          "Hamiltonian: sigmaz() with omega = 1.0",
+          "Collapse operators: sqrt(0.1) * destroy(N)",
+          "Time evolution: 0 to 10 with 200 time points",
+          "Final expectation value <n> = 1.47 (decayed from initial 3.0)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with small Hilbert space dimensions and increase until results converge",
+      "Use sesolve for pure states when dissipation is not needed for faster simulations",
+      "Store only expectation values using e_ops instead of all states to reduce memory"
+    ],
+    "anti_patterns": [
+      "Do not use QuTiP for circuit-based quantum computing (use qiskit, cirq, or pennylane)",
+      "Avoid excessive Hilbert space dimensions without checking convergence",
+      "Do not ignore numerical warnings about stiffness; adjust tolerances or solver method"
+    ],
+    "faq": [
+      {
+        "question": "What solvers does QuTiP support?",
+        "answer": "QuTiP provides sesolve for unitary evolution, mesolve for master equations, mcsolve for quantum trajectories, and specialized solvers like brmesolve and fmmesolve."
+      },
+      {
+        "question": "How do I visualize quantum states?",
+        "answer": "Use Bloch sphere for qubit states, Wigner function for continuous variable states, and matrix_histogram for operator visualizations."
+      },
+      {
+        "question": "Can QuTiP simulate quantum circuits?",
+        "answer": "No. For circuit-based quantum computing, use qiskit, cirq, or pennylane. QuTiP focuses on continuous variable and open system dynamics."
+      },
+      {
+        "question": "How do I model dissipation?",
+        "answer": "Add collapse operators to mesolve. Each collapse operator represents a dissipation channel with its decay rate."
+      },
+      {
+        "question": "What is the difference between sesolve and mesolve?",
+        "answer": "sesolve solves the Schrödinger equation for pure states. mesolve solves the master equation for mixed states with dissipation."
+      },
+      {
+        "question": "How do I analyze entanglement?",
+        "answer": "Use concurrence for two qubits, entropy_vn for von Neumann entropy, and negativity for continuous variable entanglement."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "advanced.md",
+          "type": "file",
+          "path": "references/advanced.md",
+          "lines": 556
+        },
+        {
+          "name": "analysis.md",
+          "type": "file",
+          "path": "references/analysis.md",
+          "lines": 524
+        },
+        {
+          "name": "core_concepts.md",
+          "type": "file",
+          "path": "references/core_concepts.md",
+          "lines": 294
+        },
+        {
+          "name": "time_evolution.md",
+          "type": "file",
+          "path": "references/time_evolution.md",
+          "lines": 349
+        },
+        {
+          "name": "visualization.md",
+          "type": "file",
+          "path": "references/visualization.md",
+          "lines": 432
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 318
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:42:34.682Z",
+    "slug": "pytorch-docstring",
+    "source_url": "https://github.com/pytorch/pytorch/tree/main/.claude/skills/docstring",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6d9c190e093a218b4fc1613530fadaad295ebd2bc72e14d4cad2ec140de2c829",
+    "tree_hash": "bb75744e5f67f9bff484dc15535f8a2c4186c7430395271b75a1543aebc898c9"
+  },
+  "skill": {
+    "name": "docstring",
+    "description": "Write docstrings for PyTorch functions and methods following PyTorch conventions. Use when writing or updating docstrings in PyTorch code.",
+    "summary": "Generate PyTorch-compliant docstrings with Sphinx formatting, mathematical notation, and cross-references.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "pytorch",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "pytorch",
+      "docstring",
+      "sphinx",
+      "documentation",
+      "python"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation guide for writing PyTorch docstrings. Static analysis flagged 180 patterns as potential risks, but all findings are false positives. The detected patterns are markdown backticks and reStructuredText syntax used for documentation examples, not executable code or security threats. No network access, filesystem operations, or command execution is present in the actual skill implementation.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 2299,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:42:34.682Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Generate PyTorch Documentation with Standards Compliance",
+    "value_statement": "Writing consistent documentation for PyTorch functions is challenging due to complex formatting requirements and Sphinx conventions. This skill provides comprehensive guidance for creating PyTorch-compliant docstrings with proper mathematical notation, cross-references, and structure.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "PyTorch documentation",
+      "Sphinx docstrings",
+      "Python documentation",
+      "reStructuredText",
+      "API documentation",
+      "machine learning docs",
+      "code documentation"
+    ],
+    "actual_capabilities": [
+      "Generate Sphinx-formatted docstrings following PyTorch conventions",
+      "Create proper function signatures with type annotations and default values",
+      "Format mathematical expressions using LaTeX notation in documentation",
+      "Add cross-references to classes, functions, and methods using Sphinx roles",
+      "Structure documentation sections including Args, Returns, and Examples",
+      "Apply consistent formatting for optional parameters and default values"
+    ],
+    "limitations": [
+      "Guidance is specific to PyTorch project conventions and may not apply to other projects",
+      "Does not automatically generate docstrings from code analysis",
+      "Requires understanding of Sphinx and reStructuredText syntax to use effectively",
+      "Does not validate mathematical formulas or LaTeX expressions"
+    ],
+    "use_cases": [
+      {
+        "title": "PyTorch Core Contributor",
+        "description": "Write standardized docstrings for new neural network layers and operations being added to PyTorch core library.",
+        "target_user": "PyTorch maintainer"
+      },
+      {
+        "title": "PyTorch Extension Developer",
+        "description": "Document custom PyTorch functions and modules with professional documentation that matches official PyTorch style.",
+        "target_user": "Library developer"
+      },
+      {
+        "title": "Research Code Documentation",
+        "description": "Create clear API documentation for machine learning research code that uses PyTorch conventions for better collaboration.",
+        "target_user": "ML researcher"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Function Docstring",
+        "prompt": "Write a docstring for a PyTorch function named relu that takes an input tensor and an optional inplace boolean parameter",
+        "scenario": "Beginner creating simple docstring"
+      },
+      {
+        "title": "Docstring with Mathematical Formula",
+        "prompt": "Create a docstring for a softmax function that includes the mathematical formula and explains temperature parameter",
+        "scenario": "Intermediate user adding math notation"
+      },
+      {
+        "title": "Complete Convolution Docstring",
+        "prompt": "Write a full docstring for conv2d with all parameters, tensor shape documentation, cross-references to Conv2d class, and usage examples",
+        "scenario": "Advanced user documenting complex function"
+      },
+      {
+        "title": "Method with Keyword Arguments",
+        "prompt": "Generate a docstring for a tensor creation method that has keyword args for dtype, device, and requires_grad with proper formatting",
+        "scenario": "Expert documenting tensor methods"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Write a docstring for the abs function",
+        "output": "Here is a PyTorch-compliant docstring for the abs function:\n\nabs(input, *, out=None) -> Tensor\n\nComputes the absolute value of each element in input.\n\nArgs:\n    input (Tensor): the input tensor\n\nKeyword args:\n    out (Tensor, optional): the output tensor. Default: None\n\nExample::\n    >>> torch.abs(torch.tensor([-1, -2, 3]))\n    tensor([1, 2, 3])"
+      },
+      {
+        "input": "Add a docstring with cross-reference to Conv2d class",
+        "output": "I will add proper Sphinx cross-references:\n\nSee :class:`~torch.nn.Conv2d` for details and output shape.\n\nThis convolution layer is also available as :class:`~torch.nn.Conv2d` which provides additional functionality such as bias and weight initialization."
+      }
+    ],
+    "best_practices": [
+      "Always use raw strings with r\"\"\" prefix to prevent issues with LaTeX backslashes in mathematical formulas",
+      "Include concrete examples in the Examples section showing typical usage with actual tensor shapes and operations",
+      "Use Sphinx cross-references with tilde prefix to link related classes and show only the final component name"
+    ],
+    "anti_patterns": [
+      "Using regular strings instead of raw strings, which causes problems with backslashes in mathematical notation",
+      "Omitting default values in parameter documentation, making it unclear which arguments are optional",
+      "Writing examples without showing tensor shapes, leaving users uncertain about expected input dimensions"
+    ],
+    "faq": [
+      {
+        "question": "When should I use the tilde prefix in Sphinx cross-references?",
+        "answer": "Use the tilde prefix in cross-references like :class:`~torch.nn.Conv2d` when you want to display only the last component. This shows Conv2d instead of the full path torch.nn.Conv2d."
+      },
+      {
+        "question": "How do I document tensor shapes in PyTorch docstrings?",
+        "answer": "Use LaTeX math notation with :math: directive. For example, :math:`(N, C, H, W)` for batch, channels, height, width. Use text command for labels like :math:`(\\text{batch}, \\text{channels})`."
+      },
+      {
+        "question": "What is the difference between Args and Keyword args sections?",
+        "answer": "Args documents positional and regular parameters. Keyword args documents keyword-only arguments that come after the asterisk in function signatures, such as dtype, device, and requires_grad."
+      },
+      {
+        "question": "Should the function signature line end with a period?",
+        "answer": "No, the first line containing the function signature should not end with a period. Only subsequent description sentences should end with periods."
+      },
+      {
+        "question": "How do I document in-place operations?",
+        "answer": "For in-place operations ending with underscore, reference the original function using :meth: or :func:. Example: In-place version of :meth:`~Tensor.abs`."
+      },
+      {
+        "question": "What formatting should I use for inline code in docstrings?",
+        "answer": "Use double backticks for inline code. Write ``None``, ``True``, or ``False`` with double backticks, not single quotes or single backticks."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "audit_output.json",
+      "type": "file",
+      "path": "audit_output.json",
+      "lines": 138
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 360
+    }
+  ]
+}

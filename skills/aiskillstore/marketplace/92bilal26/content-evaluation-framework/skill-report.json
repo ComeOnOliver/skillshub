@@ -1,0 +1,398 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:24:45.655Z",
+    "slug": "92bilal26-content-evaluation-framework",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/content-evaluation-framework",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "294282734f7878f809fd0cf1b2bb34747727cb877bef1d15e6dbd7f4036a704e",
+    "tree_hash": "d813fda08d2d16ede8463b194fe24548119a16b687810995d3c424b7aa73bb62"
+  },
+  "skill": {
+    "name": "content-evaluation-framework",
+    "description": "This skill should be used when evaluating the quality of book chapters, lessons, or educational content. It provides a systematic 6-category rubric with weighted scoring (Technical Accuracy 30%, Pedagogical Effectiveness 25%, Writing Quality 20%, Structure & Organization 15%, AI-First Teaching 10%, Constitution Compliance Pass/Fail) and multi-tier assessment (Excellent/Good/Needs Work/Insufficient). Use this during iterative drafting, after content completion, on-demand review requests, or before validation phases.",
+    "summary": "This skill should be used when evaluating the quality of book chapters, lessons, or educational cont...",
+    "icon": "📚",
+    "version": "2.1.0",
+    "author": "92Bilal26",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "content-evaluation",
+      "education",
+      "quality-assurance",
+      "rubric",
+      "teaching"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt-based documentation skill containing only evaluation rubrics, checklists, and templates. Static findings are false positives: mathematical formulas (SKILL.md:62-65) use inline code formatting for documentation, security requirement text (constitution-checklist.md:160, 162, 284) references best practices, and GitHub URLs (skill-report.json:6) are legitimate source references. No executable code, network access, file system modification, or external command execution capabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/constitution-checklist.md",
+            "line_start": 381,
+            "line_end": 381
+          },
+          {
+            "file": "references/constitution-checklist.md",
+            "line_start": 381,
+            "line_end": 381
+          },
+          {
+            "file": "references/constitution-checklist.md",
+            "line_start": 402,
+            "line_end": 402
+          },
+          {
+            "file": "references/evaluation-template.md",
+            "line_start": 39,
+            "line_end": 45
+          },
+          {
+            "file": "references/evaluation-template.md",
+            "line_start": 45,
+            "line_end": 390
+          },
+          {
+            "file": "references/evaluation-template.md",
+            "line_start": 390,
+            "line_end": 397
+          },
+          {
+            "file": "references/evaluation-template.md",
+            "line_start": 397,
+            "line_end": 412
+          },
+          {
+            "file": "references/evaluation-template.md",
+            "line_start": 412,
+            "line_end": 413
+          },
+          {
+            "file": "references/evaluation-template.md",
+            "line_start": 413,
+            "line_end": 414
+          },
+          {
+            "file": "references/rubric-details.md",
+            "line_start": 736,
+            "line_end": 736
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 241
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 241,
+            "line_end": 242
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 255,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 269
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 2221,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:24:45.655Z"
+  },
+  "content": {
+    "user_title": "Evaluate Educational Content Quality",
+    "value_statement": "Content creators need systematic, objective quality assessment to improve educational materials. This skill provides a 6-category weighted rubric with evidence-based scoring to consistently evaluate and improve book chapters and lessons.",
+    "seo_keywords": [
+      "content evaluation",
+      "educational quality",
+      "rubric assessment",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "lesson review",
+      "chapter quality",
+      "pedagogical assessment",
+      "teaching standards"
+    ],
+    "actual_capabilities": [
+      "Evaluate educational content across 6 weighted categories (Technical Accuracy 30%, Pedagogical Effectiveness 25%, Writing Quality 20%, Structure 15%, AI-First Teaching 10%, Constitution Compliance Pass/Fail)",
+      "Apply multi-tier scoring (Excellent 90-100%, Good 75-89%, Needs Work 50-74%, Insufficient <50%)",
+      "Check constitutional compliance against core principles with pass/fail gate",
+      "Generate structured evaluation reports with prioritized improvement recommendations",
+      "Conduct iterative drafting reviews, completion reviews, and pre-validation quality gates"
+    ],
+    "limitations": [
+      "Does not execute or test code examples - only reviews documentation",
+      "Does not replace human editorial judgment - provides framework for consistent assessment",
+      "Constitution alignment specific to CoLearning Python project methodology",
+      "Does not modify or edit content - only evaluates and recommends"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Content Authors",
+        "title": "Mid-Draft Feedback",
+        "description": "Get early quality checkpoints on partial drafts to catch foundational issues before completion."
+      },
+      {
+        "target_user": "Quality Reviewers",
+        "title": "Completion Assessment",
+        "description": "Conduct comprehensive evaluation of completed lessons against publication standards."
+      },
+      {
+        "target_user": "Curriculum Developers",
+        "title": "Pre-Validation Gate",
+        "description": "Verify content meets minimum quality thresholds before entering SDD validation phase."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Evaluation Request",
+        "scenario": "Evaluate a lesson file",
+        "prompt": "Use the Content Evaluation Framework to evaluate [file_path]. Check constitution compliance first, then score each category using the rubric. Report overall tier and specific improvement recommendations."
+      },
+      {
+        "title": "Quick Spot Check",
+        "scenario": "Specific section review",
+        "prompt": "Evaluate the [specific section] section of [file_path] for [Technical Accuracy/Pedagogical Effectiveness/Writing Quality]. Highlight any issues and suggest improvements."
+      },
+      {
+        "title": "Constitution Gate Check",
+        "scenario": "Compliance verification",
+        "prompt": "Run a constitution compliance check on [file_path] using the constitution-checklist.md. Report pass/fail status with specific violations if any."
+      },
+      {
+        "title": "Publication Readiness",
+        "scenario": "Final quality gate",
+        "prompt": "Conduct a full evaluation of [file_path] against publication standards. Calculate weighted score, verify all quality gates pass, and provide actionable next steps for final approval."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Evaluate this lesson file: apps/learn-app/docs/chapter-3/lesson-2.md",
+        "output": [
+          "Overall Verdict: Good (81.55%)",
+          "Constitution Compliance: Pass",
+          "Technical Accuracy: Good (80%) - Code works, minor type hint gaps",
+          "Pedagogical Effectiveness: Excellent (92%) - Strong scaffolding, great exercises",
+          "AI-First Teaching: Needs Work (65%) - AI exercises present but weak guidance",
+          "Key Improvement: Strengthen AI exercise guidance section (lines 45-52)"
+        ]
+      },
+      {
+        "input": "Check constitution compliance on chapter-5.md",
+        "output": [
+          "Principle 1 (AI-First Teaching): Pass",
+          "Principle 3 (Python 3.13+): Pass",
+          "Principle 4 (Test-First): Partial - Add test examples",
+          "NEVER Rules: Pass",
+          "Overall: Conditional Pass - Address test examples before publication"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with constitution compliance check before weighted evaluation - it is a gate that blocks publication if failed",
+      "Provide specific evidence (quotes, line numbers) for every score rather than subjective judgments",
+      "Prioritize recommendations by impact: critical blocking issues first, then important, then enhancement opportunities"
+    ],
+    "anti_patterns": [
+      "Skipping constitution compliance check and jumping straight to weighted scoring",
+      "Providing vague feedback like 'improve clarity' without specifying which sentences need work",
+      "Rating content Good when it should be Needs Work to avoid difficult feedback conversations"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools are compatible with this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. Designed for AI-assisted content development workflows."
+      },
+      {
+        "question": "What is the minimum score for publication?",
+        "answer": "Minimum 75% (Good tier) overall with no category below 50%. Constitution compliance is a required gate."
+      },
+      {
+        "question": "How long does an evaluation take?",
+        "answer": "Full evaluation takes 15-30 minutes. Quick spot checks take 5-10 minutes for specific sections."
+      },
+      {
+        "question": "Does this skill modify the content files?",
+        "answer": "No. This skill only evaluates and generates reports with recommendations. It does not edit or modify files."
+      },
+      {
+        "question": "What if constitution compliance fails?",
+        "answer": "Stop immediately and report specific violations. Content must be revised before proceeding regardless of weighted scores."
+      },
+      {
+        "question": "How is this different from general editing?",
+        "answer": "Provides consistent, rubric-based assessment across all content. Unlike subjective editing, it uses weighted categories and evidence-based scoring."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "constitution-checklist.md",
+          "type": "file",
+          "path": "references/constitution-checklist.md",
+          "lines": 499
+        },
+        {
+          "name": "evaluation-template.md",
+          "type": "file",
+          "path": "references/evaluation-template.md",
+          "lines": 443
+        },
+        {
+          "name": "rubric-details.md",
+          "type": "file",
+          "path": "references/rubric-details.md",
+          "lines": 803
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 276
+    }
+  ]
+}

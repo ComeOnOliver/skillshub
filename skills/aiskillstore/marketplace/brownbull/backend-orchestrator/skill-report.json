@@ -1,0 +1,313 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:31:55.671Z",
+    "slug": "brownbull-backend-orchestrator",
+    "source_url": "https://github.com/Brownbull/ayni_core/tree/main/.claude/skills/backend-orchestrator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a4241cfa7481a85c14f23a849bc3f941dd6de67cb08c2063bd0ef5e274c3cceb",
+    "tree_hash": "0339500b8668413c088fee8194afeba3d2fc579357da2bb7df8ce6d26a5b6dd7"
+  },
+  "skill": {
+    "name": "backend-orchestrator",
+    "description": "Coordinates backend development tasks (APIs, services, databases). Use when implementing REST APIs, business logic, data models, or service integrations. Applies backend-standard.md for quality gates.",
+    "summary": "Coordinates backend development tasks (APIs, services, databases). Use when implementing REST APIs, ...",
+    "icon": "🔧",
+    "version": "1.0.0",
+    "author": "Brownbull",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "backend",
+      "api",
+      "database",
+      "orchestration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and orchestration instructions. SKILL.md is a pure markdown file with no executable code. The static scanner flagged markdown code blocks and JSON metadata as dangerous patterns, but these are documentation examples and field names, not actual security vulnerabilities. The skill teaches security best practices including encryption, input validation, and SQL injection prevention.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 202
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 385,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:31:55.671Z"
+  },
+  "content": {
+    "user_title": "Coordinate Backend Development Tasks",
+    "value_statement": "Managing backend development across APIs, databases, and services requires coordination. This skill orchestrates all backend tasks while enforcing quality standards and best practices.",
+    "seo_keywords": [
+      "backend orchestrator",
+      "Claude backend development",
+      "Codex backend",
+      "Claude Code backend",
+      "API management",
+      "database orchestration",
+      "REST API development",
+      "service coordination",
+      "backend standards",
+      "API design"
+    ],
+    "actual_capabilities": [
+      "Design and manage REST API endpoints with versioning and authentication",
+      "Coordinate database schema design, migrations, and query optimization",
+      "Implement service layer patterns with third-party integrations",
+      "Apply backend quality standards to all development tasks",
+      "Monitor task execution and validate results against security checks",
+      "Communicate with frontend and data orchestrators for integration"
+    ],
+    "limitations": [
+      "Does not execute code or modify running systems directly",
+      "Requires Claude Code environment to be installed and configured",
+      "Does not directly access databases or deploy applications",
+      "Coordinates other skills but does not replace database or API skills"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Full-stack developers",
+        "title": "Coordinate API and Database Work",
+        "description": "Manage backend tasks across multiple services while maintaining code quality and consistency."
+      },
+      {
+        "target_user": "Backend engineers",
+        "title": "Enforce Backend Standards",
+        "description": "Apply standardized patterns for API design, database operations, and security requirements."
+      },
+      {
+        "target_user": "Technical leads",
+        "title": "Orchestrate Service Integrations",
+        "description": "Coordinate complex backend workflows including third-party services and data pipelines."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create New API",
+        "scenario": "Build a REST endpoint",
+        "prompt": "Use backend-orchestrator to create a new REST API endpoint for [resource]. Include proper versioning, authentication, and validation."
+      },
+      {
+        "title": "Database Migration",
+        "scenario": "Modify database schema",
+        "prompt": "Use backend-orchestrator to design a database migration for [table]. Include rollback plan and index optimization."
+      },
+      {
+        "title": "Service Integration",
+        "scenario": "Add third-party service",
+        "prompt": "Use backend-orchestrator to integrate [service] with our backend. Implement error handling and circuit breaker pattern."
+      },
+      {
+        "title": "Backend Code Review",
+        "scenario": "Review backend implementation",
+        "prompt": "Use backend-orchestrator to review the backend code at [path]. Check for security, performance, and quality standard compliance."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Use backend-orchestrator to create a user authentication API endpoint",
+        "output": [
+          "Created endpoint: POST /api/v1/auth/login",
+          "Added input validation and rate limiting",
+          "Implemented JWT token generation",
+          "Database query optimized with index on email",
+          "Security checks: SQL injection prevention, XSS protection",
+          "Test coverage: 85% unit tests, 90% integration tests"
+        ]
+      },
+      {
+        "input": "Use backend-orchestrator to design a database migration for the orders table",
+        "output": [
+          "Designed migration to add order_status and customer_id columns",
+          "Created index on customer_id for faster lookups",
+          "Included rollback script for safety",
+          "Added foreign key constraint to customers table",
+          "Migration tested with sample data"
+        ]
+      },
+      {
+        "input": "Use backend-orchestrator to integrate a payment gateway service",
+        "output": [
+          "Implemented service wrapper for payment provider API",
+          "Added circuit breaker pattern for resilience",
+          "Created webhook handler for payment notifications",
+          "Configured retry logic with exponential backoff",
+          "Added unit tests covering success and failure scenarios"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate input before database operations to prevent injection attacks",
+      "Use parameterized queries instead of string concatenation for database access",
+      "Implement proper error handling with consistent response formats across all endpoints"
+    ],
+    "anti_patterns": [
+      "Hardcoding configuration or secrets directly in source code files",
+      "Putting business logic directly in API controllers instead of service layer",
+      "Skipping database migrations rollback testing before deployment"
+    ],
+    "faq": [
+      {
+        "question": "What databases does this skill support?",
+        "answer": "The skill works with any database through orchestration patterns. Actual database operations depend on installed database skills."
+      },
+      {
+        "question": "Does this skill modify my production database?",
+        "answer": "No. The skill only coordinates tasks and validates standards. It does not directly access or modify databases."
+      },
+      {
+        "question": "How does this integrate with frontend development?",
+        "answer": "The skill communicates with frontend orchestrator to agree on API contracts, request formats, and error standards."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill is purely prompt-based with no executable code. It cannot access or exfiltrate any data."
+      },
+      {
+        "question": "Why is my API response time slow?",
+        "answer": "Check database queries for missing indexes. The skill enforces less than 200ms response time targets. Review query optimization guidelines."
+      },
+      {
+        "question": "How is this different from other backend tools?",
+        "answer": "This is an orchestration layer that coordinates other backend skills while enforcing quality standards and patterns."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 211
+    }
+  ]
+}

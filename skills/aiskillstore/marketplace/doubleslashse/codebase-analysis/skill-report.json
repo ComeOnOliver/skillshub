@@ -1,0 +1,214 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T19:21:52.136Z",
+    "slug": "doubleslashse-codebase-analysis",
+    "source_url": "https://github.com/DoubleslashSE/claude-workflows/tree/main/Plugins/business-analyst/skills/codebase-analysis",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "40a0f36f29298439ba39deeb938b03c8632ac19349689c727cf641a12eba6bf0",
+    "tree_hash": "43a563a31b74b32de966fb65a04fdfdbddc26bea4457c789f1f69310a90c03c2"
+  },
+  "skill": {
+    "name": "codebase-analysis",
+    "description": "Techniques for analyzing existing codebases to reverse-engineer requirements and understand business logic. Use when conducting brownfield analysis or understanding existing system capabilities.",
+    "summary": "Reverse-engineer requirements and understand business logic from existing codebases through systematic analysis techniques.",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "DoubleslashSE",
+    "license": "MIT",
+    "tags": [
+      "code-analysis",
+      "reverse-engineering",
+      "business-analysis",
+      "domain-modeling",
+      "architecture"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The flagged patterns are markdown code fences and shell command examples in documentation. This skill provides legitimate code analysis techniques for reverse-engineering business requirements. No actual executable code with security risks was found.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1782,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T19:21:52.136Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Analyze codebases to extract requirements",
+    "value_statement": "Understanding legacy systems is time-consuming and error-prone. This skill provides structured techniques to reverse-engineer business requirements, domain models, and technical specifications from existing codebases, enabling faster onboarding and more accurate documentation.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "codebase analysis",
+      "code analysis",
+      "reverse engineering",
+      "business requirements",
+      "domain modeling",
+      "brownfield analysis"
+    ],
+    "actual_capabilities": [
+      "Map project structure and identify architectural patterns",
+      "Extract domain models, entities, and their relationships from code",
+      "Identify business rules, validation logic, and workflows",
+      "Document API endpoints and integration points",
+      "Analyze authorization patterns and user permissions",
+      "Generate domain model and business rule documentation"
+    ],
+    "limitations": [
+      "Cannot access external systems or databases for live data",
+      "Analysis is limited to available source code files",
+      "Does not capture undocumented tribal knowledge or context",
+      "Cannot replace stakeholder interviews for complete requirements"
+    ],
+    "use_cases": [
+      {
+        "title": "Onboard to legacy projects faster",
+        "description": "New developers use this skill to understand existing system architecture, domain models, and business rules without relying on outdated or missing documentation.",
+        "target_user": "Software developers"
+      },
+      {
+        "title": "Create accurate system documentation",
+        "description": "Business analysts extract precise requirements and domain knowledge from code to create current-state documentation for migration or modernization projects.",
+        "target_user": "Business analysts"
+      },
+      {
+        "title": "Prepare for system migrations",
+        "description": "Technical architects analyze integration points and data flows to plan migration strategies and identify dependencies between systems.",
+        "target_user": "Technical architects"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic codebase overview",
+        "prompt": "Analyze this codebase to understand its structure and architecture. Identify the main components, architectural patterns used, and key domain entities. List the top 5 things every developer should understand about this system.",
+        "scenario": "Quick onboarding to a new codebase"
+      },
+      {
+        "title": "Extract business rules",
+        "prompt": "Find and document all business rules, validation logic, and constraints in this codebase. Group them by entity or feature and explain where each rule is enforced in the code.",
+        "scenario": "Understanding business logic"
+      },
+      {
+        "title": "Map integrations and data flows",
+        "prompt": "Identify all external integrations, API endpoints, and data flows in this system. Document what data enters and leaves the system, and how authentication and authorization are handled.",
+        "scenario": "Understanding system boundaries"
+      },
+      {
+        "title": "Complete domain model documentation",
+        "prompt": "Generate comprehensive domain model documentation including entities, relationships, value objects, aggregates, and business rules. Use the format from the skill patterns to document each entity with attributes, relationships, and constraints.",
+        "scenario": "Creating formal documentation"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze this codebase and extract the domain model",
+        "output": [
+          "## Domain Model Overview",
+          "",
+          "### Core Entities",
+          "- **Order**: Aggregate root representing customer orders",
+          "- **Customer**: Entity with billing and shipping information",
+          "- **Product**: Product catalog entity with pricing",
+          "- **Payment**: Transaction entity linked to orders",
+          "",
+          "### Key Relationships",
+          "- Order has many OrderItems (1:N)",
+          "- Order belongs to one Customer (N:1)",
+          "- Payment belongs to one Order (N:1)",
+          "",
+          "### Business Rules",
+          "- Order total must equal sum of item totals",
+          "- Status transitions: Draft → Submitted → Approved → Shipped → Delivered",
+          "- Customer must have valid payment method before order submission"
+        ]
+      },
+      {
+        "input": "Find all API endpoints and their permissions",
+        "output": [
+          "## API Endpoints",
+          "",
+          "| Method | Endpoint | Controller | Permissions |",
+          "|--------|----------|------------|-------------|",
+          "| POST | /api/orders | OrderController | Authenticated users |",
+          "| GET | /api/orders/{id} | OrderController | Order owner or Admin |",
+          "| PUT | /api/orders/{id}/status | OrderController | Admin only |",
+          "| GET | /api/products | ProductController | Public |",
+          "| POST | /api/payments | PaymentController | Authenticated users |",
+          "",
+          "### Authentication Pattern: JWT Bearer tokens",
+          "### Authorization: Role-based with resource-level checks"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start analysis from entry points like main() or API controllers and follow dependencies outward",
+      "Use test files to understand expected behavior and edge cases",
+      "Cross-reference code with any existing documentation to identify gaps",
+      "Focus on domain layer and business services for core requirements"
+    ],
+    "anti_patterns": [
+      "Skipping the domain model and focusing only on technical details",
+      "Assuming code comments are always accurate without verification",
+      "Overlooking integration points with external systems",
+      "Documenting without verifying behavior through test analysis"
+    ],
+    "faq": [
+      {
+        "question": "How long does a full codebase analysis take?",
+        "answer": "Analysis time varies by codebase size and complexity. A typical mid-sized project takes 30-60 minutes. Large monorepos may require multiple analysis sessions focused on specific components."
+      },
+      {
+        "question": "Can this skill analyze compiled binaries?",
+        "answer": "No, this skill analyzes source code only. Decompiled code or binaries do not preserve the full context needed for accurate business requirement extraction."
+      },
+      {
+        "question": "What programming languages are supported?",
+        "answer": "The skill works with any language but is optimized for statically-typed languages like C#, Java, and TypeScript where domain models are clearly defined through types and classes."
+      },
+      {
+        "question": "How accurate is the extracted documentation?",
+        "answer": "Documentation accuracy depends on code quality and comments. The skill captures what the code actually does, which may differ from original intent if bugs exist. Always verify critical findings."
+      },
+      {
+        "question": "Does this skill work with microservices architectures?",
+        "answer": "Yes. The skill identifies service boundaries, API contracts, and inter-service communication patterns. Analysis of each service should be done separately for comprehensive results."
+      },
+      {
+        "question": "Can I use this for security audits?",
+        "answer": "The skill identifies authentication and authorization patterns but is not a security audit tool. Use dedicated security analysis tools for vulnerability assessment and penetration testing."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "patterns.md",
+      "type": "file",
+      "path": "patterns.md",
+      "lines": 376
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 273
+    }
+  ]
+}

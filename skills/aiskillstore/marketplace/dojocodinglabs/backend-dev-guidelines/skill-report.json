@@ -1,0 +1,337 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:13:26.937Z",
+    "slug": "dojocodinglabs-backend-dev-guidelines",
+    "source_url": "https://github.com/DojoCodingLabs/claude-code-waypoint/tree/main/.claude/skills/backend-dev-guidelines",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1c6e7078044f0ee59f9b91ffc0fdf37cd54c07a67a10991a3aaf8f6d68e5cd37",
+    "tree_hash": "5da2d8f917c0fd6977cb364f05965daeb6907c9c7ff34764d49ee1ef6475aa47"
+  },
+  "skill": {
+    "name": "backend-dev-guidelines",
+    "description": "Comprehensive backend development guide for Supabase Edge Functions + PostgreSQL. Use when working with Supabase (database, auth, storage, realtime), Edge Functions, PostgreSQL, Row-Level Security (RLS), Resend email, Stripe payments, or TypeScript backend patterns. Covers database design, auth flows, Edge Function patterns, RLS policies, email integration, payment processing, and deployment to Supabase.",
+    "summary": "Comprehensive backend development guide for Supabase Edge Functions + PostgreSQL. Use when working w...",
+    "icon": "⚙️",
+    "version": "1.0.0",
+    "author": "DojoCodingLabs",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "supabase",
+      "backend",
+      "edge-functions",
+      "postgresql",
+      "typescript"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guidance files. Static scanner flagged 755 issues but all are false positives caused by pattern-matching on code examples within documentation. Previous Claude audit confirmed no security concerns. All code examples demonstrate legitimate security best practices for Supabase backends.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "resources/architecture-overview.md",
+            "line_start": 21,
+            "line_end": 621
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 253
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "resources/architecture-overview.md",
+            "line_start": 88,
+            "line_end": 88
+          },
+          {
+            "file": "resources/configuration.md",
+            "line_start": 125,
+            "line_end": 125
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "resources/architecture-overview.md",
+            "line_start": 201,
+            "line_end": 201
+          },
+          {
+            "file": "resources/architecture-overview.md",
+            "line_start": 353,
+            "line_end": 353
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 15,
+    "total_lines": 6692,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:13:26.937Z"
+  },
+  "content": {
+    "user_title": "Build Supabase backends with Edge Functions",
+    "value_statement": "Writing backend code for Supabase can be complex with many moving parts. This skill provides ready-to-use patterns for Edge Functions, database design, Row-Level Security, and integrations so you can ship faster with fewer bugs.",
+    "seo_keywords": [
+      "Claude Code",
+      "Supabase",
+      "Edge Functions",
+      "PostgreSQL",
+      "TypeScript backend",
+      "Row-Level Security",
+      "backend development",
+      "serverless functions",
+      "API development",
+      "Deno"
+    ],
+    "actual_capabilities": [
+      "Provides Supabase Edge Function patterns with Deno runtime",
+      "Shows PostgreSQL schema design with Row-Level Security policies",
+      "Demonstrates JWT authentication and authorization patterns",
+      "Covers Zod validation for type-safe input handling",
+      "Includes Resend email and Stripe payment integration examples",
+      "Offers controller, service, and repository layer patterns"
+    ],
+    "limitations": [
+      "Does not provide executable code or scripts to run",
+      "Requires Supabase account and CLI for local development",
+      "Skill is a guide, not a replacement for understanding underlying technologies",
+      "Examples are scaffold templates that need customization for production use"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Full-stack developers",
+        "title": "Build serverless APIs",
+        "description": "Create Supabase Edge Functions for your web or mobile application with proper auth and validation."
+      },
+      {
+        "target_user": "Backend engineers",
+        "title": "Design secure databases",
+        "description": "Design PostgreSQL schemas with Row-Level Security to enforce data access policies at the database level."
+      },
+      {
+        "target_user": "Product teams",
+        "title": "Integrate payments and email",
+        "description": "Add Stripe subscription handling and Resend transactional emails to your application."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New Edge Function",
+        "scenario": "Creating an API endpoint",
+        "prompt": "Create a new Supabase Edge Function called create-user that validates input with Zod, verifies the JWT token, and inserts a record into the users table with RLS policies."
+      },
+      {
+        "title": "Database Schema",
+        "scenario": "Designing database tables",
+        "prompt": "Design a PostgreSQL schema for a posts table with user ownership, published status, and proper indexes. Include RLS policies for read and write access."
+      },
+      {
+        "title": "Auth Middleware",
+        "scenario": "Adding authentication",
+        "prompt": "Add JWT verification to an existing Edge Function and implement role-based access control using custom claims in the user metadata."
+      },
+      {
+        "title": "Stripe Integration",
+        "scenario": "Processing payments",
+        "prompt": "Create a Stripe webhook handler Edge Function that verifies the signature, handles checkout.session.completed events, and updates user subscription status in the database."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an Edge Function for creating blog posts",
+        "output": [
+          "Deno.serve handler with CORS preflight handling",
+          "Zod schema for title, content, and optional tags",
+          "JWT verification via supabase.auth.getUser()",
+          "Database insert with user_id from authenticated user",
+          "RLS policy ensures users can only insert their own posts",
+          "Proper error handling with status codes (400, 401, 500)",
+          "Success response with 201 status and created post data"
+        ]
+      },
+      {
+        "input": "Set up Row-Level Security for a table",
+        "output": [
+          "ALTER TABLE table ENABLE ROW LEVEL SECURITY",
+          "CREATE POLICY for SELECT using auth.uid() = user_id",
+          "CREATE POLICY for INSERT with CHECK auth.uid() = user_id",
+          "CREATE INDEX on columns used in RLS policies",
+          "Test policies with different user roles"
+        ]
+      },
+      {
+        "input": "Validate user signup input",
+        "output": [
+          "Zod schema with email, password, username fields",
+          "Email format validation with regex",
+          "Password minimum length and complexity checks",
+          "Username uniqueness check against database",
+          "Return clear error messages for each validation failure"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always verify JWT tokens at the start of every Edge Function to prevent unauthorized access",
+      "Enable Row-Level Security on ALL tables containing user data for database-level protection",
+      "Validate all input with Zod schemas before any database operations or business logic",
+      "Use environment variables for all secrets and API keys - never hardcode credentials in code"
+    ],
+    "anti_patterns": [
+      "Skipping JWT verification in production Edge Functions exposes your API to unauthorized access",
+      "Disabling RLS to simplify development defeats the purpose of Supabase security features",
+      "Using console.error for error handling instead of proper HTTP responses breaks client integration",
+      "Bypassing the Supabase client to query the database directly circumvents RLS protections"
+    ],
+    "faq": [
+      {
+        "question": "What Supabase features does this skill cover?",
+        "answer": "Edge Functions, PostgreSQL database, Row-Level Security, Auth, Storage, and Realtime subscriptions."
+      },
+      {
+        "question": "Can I use these patterns with regular Express servers?",
+        "answer": "Yes. Many patterns (validation, services, repositories) work with any Node.js backend framework."
+      },
+      {
+        "question": "Does this skill require Supabase CLI?",
+        "answer": "Supabase CLI is recommended for local development and testing Edge Functions before deployment."
+      },
+      {
+        "question": "Is my data safe with the examples shown?",
+        "answer": "The examples emphasize security best practices including RLS, JWT verification, and environment variable secrets."
+      },
+      {
+        "question": "Why use Edge Functions instead of a traditional server?",
+        "answer": "Edge Functions scale automatically, run globally at edge locations, and integrate tightly with Supabase services."
+      },
+      {
+        "question": "How does this compare to using the Supabase JavaScript client?",
+        "answer": "Edge Functions run server-side for operations that require elevated permissions or secret API keys."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "resources",
+      "type": "dir",
+      "path": "resources",
+      "children": [
+        {
+          "name": "architecture-overview.md",
+          "type": "file",
+          "path": "resources/architecture-overview.md",
+          "lines": 636
+        },
+        {
+          "name": "async-and-errors.md",
+          "type": "file",
+          "path": "resources/async-and-errors.md",
+          "lines": 308
+        },
+        {
+          "name": "complete-examples.md",
+          "type": "file",
+          "path": "resources/complete-examples.md",
+          "lines": 639
+        },
+        {
+          "name": "configuration.md",
+          "type": "file",
+          "path": "resources/configuration.md",
+          "lines": 276
+        },
+        {
+          "name": "database-and-rls.md",
+          "type": "file",
+          "path": "resources/database-and-rls.md",
+          "lines": 238
+        },
+        {
+          "name": "database-patterns.md",
+          "type": "file",
+          "path": "resources/database-patterns.md",
+          "lines": 225
+        },
+        {
+          "name": "edge-functions-guide.md",
+          "type": "file",
+          "path": "resources/edge-functions-guide.md",
+          "lines": 647
+        },
+        {
+          "name": "middleware-guide.md",
+          "type": "file",
+          "path": "resources/middleware-guide.md",
+          "lines": 214
+        },
+        {
+          "name": "routing-and-controllers.md",
+          "type": "file",
+          "path": "resources/routing-and-controllers.md",
+          "lines": 757
+        },
+        {
+          "name": "sentry-and-monitoring.md",
+          "type": "file",
+          "path": "resources/sentry-and-monitoring.md",
+          "lines": 337
+        },
+        {
+          "name": "services-and-repositories.md",
+          "type": "file",
+          "path": "resources/services-and-repositories.md",
+          "lines": 790
+        },
+        {
+          "name": "testing-guide.md",
+          "type": "file",
+          "path": "resources/testing-guide.md",
+          "lines": 236
+        },
+        {
+          "name": "validation-patterns.md",
+          "type": "file",
+          "path": "resources/validation-patterns.md",
+          "lines": 755
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 382
+    }
+  ]
+}

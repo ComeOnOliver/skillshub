@@ -1,0 +1,254 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:12:23.869Z",
+    "slug": "benderfendor-skill-creator",
+    "source_url": "https://github.com/BenderFendor/Thesis/tree/main/.github/skills/.system/skill-creator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a8ad7af48dc10b28559c59e56e838f5cb932e2c7d03a06fc3b2dd9ab771a4765",
+    "tree_hash": "1ec95d3ccdda7be1b8de271451c34c11d9f69abb35fdafdb88f07b29324436d1"
+  },
+  "skill": {
+    "name": "skill-creator",
+    "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Codex's capabilities with specialized knowledge, workflows, or tool integrations.",
+    "summary": "Guide for creating effective skills that extend Codex capabilities",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "BenderFendor",
+    "license": "MIT",
+    "tags": [
+      "skill-development",
+      "codex",
+      "claude-code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analysis flagged 146 potential issues but all findings are false positives. The scanner misidentified documentation text in SKILL.md and license.txt as code patterns. The skill is a legitimate skill-creation guide with helper scripts for generating skill templates. No actual security risks present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 1,
+            "line_end": 328
+          },
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 1,
+            "line_end": 112
+          },
+          {
+            "file": "scripts/quick_validate.py",
+            "line_start": 1,
+            "line_end": 96
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 217,
+            "line_end": 279
+          },
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 14,
+            "line_end": 69
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 2401,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:12:23.869Z",
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "content": {
+    "user_title": "Create skills for Codex",
+    "value_statement": "Creating skills from scratch requires understanding skill anatomy, structure, and best practices. This skill provides step-by-step guidance for building effective skills that extend Codex capabilities with specialized knowledge and workflows.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "skill development",
+      "skill creator",
+      "Codex skills",
+      "AI skill building",
+      "workflow automation",
+      "specialized AI agents"
+    ],
+    "actual_capabilities": [
+      "Guides users through the skill creation process with six defined steps",
+      "Explains skill anatomy including SKILL.md structure and bundled resources",
+      "Provides template generation for new skills via init_skill.py script",
+      "Includes packaging validation via package_skill.py for skill distribution",
+      "Teaches progressive disclosure design for context-efficient skills",
+      "Covers best practices for naming, structuring, and documenting skills"
+    ],
+    "limitations": [
+      "Does not execute user code or interact with external systems",
+      "Does not provide pre-built skill templates beyond basic initialization",
+      "Does not validate skills against external quality standards",
+      "Does not include skill marketplace integration or publishing"
+    ],
+    "use_cases": [
+      {
+        "title": "Build your first Codex skill",
+        "description": "New users learning to extend Codex can follow this guide to create their first skill. The skill covers naming conventions, file structure, and essential documentation patterns.",
+        "target_user": "New Codex users wanting to create custom skills"
+      },
+      {
+        "title": "Design complex workflow skills",
+        "description": "Experienced developers can use the progressive disclosure patterns to structure multi-step workflow skills that efficiently use context while providing comprehensive guidance.",
+        "target_user": "Advanced developers building domain-specific skills"
+      },
+      {
+        "title": "Package skills for distribution",
+        "description": "Skill developers can validate and package their skills using the provided scripts. The packaging process checks skill structure and creates distributable .skill files.",
+        "target_user": "Skill authors preparing skills for sharing"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create a basic skill",
+        "prompt": "Help me create a new skill called [skill-name] for [use-case-description]. Follow the skill-creator guide to initialize the skill structure and create the SKILL.md documentation.",
+        "scenario": "Initializing a new skill from scratch"
+      },
+      {
+        "title": "Structure multi-domain skills",
+        "prompt": "I want to create a skill that supports multiple domains like [domain-1], [domain-2], and [domain-3]. How should I organize the SKILL.md and references to use progressive disclosure effectively?",
+        "scenario": "Organizing skills with multiple domains or frameworks"
+      },
+      {
+        "title": "Add bundled resources",
+        "prompt": "My skill needs [script-reference/assets-reference] to handle [specific-functionality]. How do I include these bundled resources and when should Codex load them?",
+        "scenario": "Adding scripts, references, or assets to a skill"
+      },
+      {
+        "title": "Package and validate",
+        "prompt": "I've finished developing my skill. Guide me through the packaging process using package_skill.py and help me understand what validation checks are performed.",
+        "scenario": "Preparing a completed skill for distribution"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create a skill for PDF processing",
+        "output": "To create a PDF processing skill, I will guide you through the process using the skill-creator workflow.\n\nFirst, let me understand your needs: What specific PDF operations should this skill support? For example: merging, splitting, extracting text, rotating, or form filling?\n\nOnce we define the scope, we can initialize the skill structure with the appropriate bundled resources."
+      },
+      {
+        "input": "What goes in SKILL.md versus references/",
+        "description": "Example explaining file organization",
+        "output": "SKILL.md should contain:\n- YAML frontmatter with name and description\n- Essential workflow guidance\n- Links to reference files\n- Core procedural instructions\n\nReferences/ should contain:\n- Detailed API documentation\n- Comprehensive examples\n- Schema definitions\n- Extended guides\n\nThe key principle: Keep SKILL.md lean (under 500 lines) and move detailed content to references that are loaded only when needed."
+      },
+      {
+        "input": "How do I name my skill?",
+        "description": "Skill naming conventions",
+        "output": "Skill naming follows these rules:\n1. Use lowercase letters, digits, and hyphens only\n2. Example: \"My New Skill\" becomes \"my-new-skill\"\n3. Prefer short, verb-led phrases like \"pdf-processor\"\n4. Namespace by tool when helpful like \"gh-address-comments\"\n5. The skill folder name must match the normalized name"
+      }
+    ],
+    "best_practices": [
+      "Keep SKILL.md concise and under 500 lines using progressive disclosure to defer detailed content to reference files",
+      "Include bundled resources only when code is repeatedly rewritten or deterministic execution is required",
+      "Write descriptions that clearly explain both what the skill does and when to trigger it, including specific file types or scenarios",
+      "Test bundled scripts before including them to ensure they work correctly in various environments"
+    ],
+    "anti_patterns": [
+      "Including README.md, INSTALLATION_GUIDE.md, or other auxiliary documentation files that duplicate information",
+      "Loading all reference material into context at once instead of using conditional loading based on user needs",
+      "Creating deeply nested reference structures that make it difficult to discover relevant content",
+      "Writing verbose explanations when concise examples would communicate the same information more efficiently"
+    ],
+    "faq": [
+      {
+        "question": "What is the minimum required structure for a skill?",
+        "answer": "A skill requires only a SKILL.md file with YAML frontmatter containing name and description fields. Bundled resources like scripts, references, and assets are optional but recommended for complex skills requiring deterministic execution or detailed documentation."
+      },
+      {
+        "question": "When should I use scripts versus references?",
+        "answer": "Use scripts for code that needs deterministic execution or is repeatedly rewritten. Use references for documentation that Codex should read to inform its process. Scripts can execute without loading into context, while references are loaded as needed."
+      },
+      {
+        "question": "How do I decide between high, medium, or low freedom in my instructions?",
+        "answer": "Use low freedom (specific scripts) when operations are fragile and consistency is critical. Use medium freedom (parameterized scripts) when some variation is acceptable. Use high freedom (text instructions) when multiple valid approaches exist and context should guide the approach."
+      },
+      {
+        "question": "What validation does package_skill.py perform?",
+        "answer": "The packaging script validates YAML frontmatter format and required fields, checks skill naming conventions and directory structure, verifies description completeness, and ensures proper file organization and resource references before creating the .skill package."
+      },
+      {
+        "question": "How do I trigger a skill in Codex?",
+        "answer": "Skills are triggered based on their name and description in the YAML frontmatter. Write a clear description that includes specific triggers, file types, or scenarios that should activate the skill. Codex reads these fields to determine when to use each skill."
+      },
+      {
+        "question": "Can I update an existing skill using this guide?",
+        "answer": "Yes, the skill-creator guide applies to both creating new skills and updating existing ones. Skip the initialization step and proceed directly to editing the skill contents. The packaging step validates your changes before distribution."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "init_skill.py",
+          "type": "file",
+          "path": "scripts/init_skill.py",
+          "lines": 328
+        },
+        {
+          "name": "package_skill.py",
+          "type": "file",
+          "path": "scripts/package_skill.py",
+          "lines": 112
+        },
+        {
+          "name": "quick_validate.py",
+          "type": "file",
+          "path": "scripts/quick_validate.py",
+          "lines": 96
+        }
+      ]
+    },
+    {
+      "name": "license.txt",
+      "type": "file",
+      "path": "license.txt",
+      "lines": 203
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 363
+    }
+  ]
+}

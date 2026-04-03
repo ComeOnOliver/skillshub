@@ -1,0 +1,631 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:13:48.632Z",
+    "slug": "dyai2025-pptx",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/document-skills/pptx",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b6f25545bfb358739f1532f793458b5dbc87ee009933cb7c306b2d951ab6617f",
+    "tree_hash": "48e700acfe21016c9cf5c14a3a2640ca2b1b8b7f4947a1889acf723da281c1e9"
+  },
+  "skill": {
+    "name": "pptx",
+    "description": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx files) for: (1) Creating new presentations, (2) Modifying or editing content, (3) Working with layouts, (4) Adding comments or speaker notes, or any other presentation tasks",
+    "summary": "Presentation creation, editing, and analysis. When Claude needs to work with presentations (.pptx fi...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "Proprietary. LICENSE.txt has complete terms",
+    "category": "office",
+    "tags": [
+      "presentations",
+      "powerpoint",
+      "office",
+      "documents",
+      "slides"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate PowerPoint manipulation skill. The static analyzer flagged 1207 potential issues, but most are false positives: (1) Shell command examples in documentation were flagged as code execution, (2) OOXML schema files were flagged for cryptographic references that are part of the spec, (3) XML namespace syntax was flagged as obfuscation. The actual risk is limited to external command execution for PDF/image conversion which requires user-provided filenames and is validated before use.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/thumbnail.py",
+            "line_start": 219,
+            "line_end": 231
+          },
+          {
+            "file": "scripts/thumbnail.py",
+            "line_start": 237,
+            "line_end": 241
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "ooxml/scripts/unpack.py",
+            "line_start": 14,
+            "line_end": 24
+          },
+          {
+            "file": "ooxml/scripts/pack.py",
+            "line_start": 13,
+            "line_end": 20
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [
+      {
+        "title": "External command execution for PDF conversion",
+        "description": "thumbnail.py invokes LibreOffice (soffice) and pdftoppm via subprocess for PDF and image conversion. User-provided filenames are passed as arguments but are validated before use.",
+        "locations": [
+          {
+            "file": "scripts/thumbnail.py",
+            "line_start": 219,
+            "line_end": 241
+          }
+        ]
+      }
+    ],
+    "low_findings": [
+      {
+        "title": "Filesystem access for presentation processing",
+        "description": "Scripts access filesystem to read/write PowerPoint files, extract ZIP archives, and process temporary files. All operations are restricted to user-specified paths.",
+        "locations": [
+          {
+            "file": "ooxml/scripts/unpack.py",
+            "line_start": 14,
+            "line_end": 24
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 57,
+    "total_lines": 27075,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:13:48.631Z"
+  },
+  "content": {
+    "user_title": "Create and edit PowerPoint presentations with precision",
+    "value_statement": "Stop wrestling with PowerPoint's limitations. This skill converts HTML designs to pixel-perfect slides and edits existing presentations with surgical precision. Create professional presentations faster than ever.",
+    "seo_keywords": [
+      "powerpoint creation",
+      "pptx editing",
+      "presentation automation",
+      "html to powerpoint",
+      "Claude presentations",
+      "Claude Code office",
+      "slide generation",
+      "OOXML editing",
+      "pptxgenjs",
+      "office documents"
+    ],
+    "actual_capabilities": [
+      "Convert HTML/CSS slides to PowerPoint with exact positioning",
+      "Edit existing presentations by modifying OOXML directly",
+      "Extract and replace text while preserving formatting",
+      "Create thumbnail grids for visual presentation analysis",
+      "Validate presentation XML against Office schemas",
+      "Rearrange, duplicate, and delete slides programmatically"
+    ],
+    "limitations": [
+      "Requires LibreOffice installation for PDF conversion features",
+      "HTML-to-PPTX conversion needs Playwright for rendering",
+      "Complex animations and transitions not supported",
+      "Limited to web-safe fonts for cross-platform compatibility"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Business analysts",
+        "title": "Automated report presentations",
+        "description": "Convert data visualizations and charts from web dashboards directly into executive-ready PowerPoint slides with proper branding and layout."
+      },
+      {
+        "target_user": "Marketing teams",
+        "title": "Template-based pitch decks",
+        "description": "Rapidly create customized pitch decks by mixing and matching slides from existing templates while maintaining consistent branding."
+      },
+      {
+        "target_user": "Educators and trainers",
+        "title": "Curriculum slide generation",
+        "description": "Build educational presentations from HTML content with proper formatting, images, and interactive elements converted to static slides."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create from HTML",
+        "scenario": "You have HTML content that needs to become a presentation",
+        "prompt": "Convert this HTML to a PowerPoint presentation using html2pptx: [HTML content]. Ensure all text is in proper tags and create a 16:9 presentation."
+      },
+      {
+        "title": "Edit existing presentation",
+        "scenario": "Need to update text in an existing PowerPoint file",
+        "prompt": "Extract the text inventory from presentation.pptx, then replace the title on slide 0 with 'New Title' and update bullet points on slide 2."
+      },
+      {
+        "title": "Template-based creation",
+        "scenario": "Create new presentation using existing template",
+        "prompt": "Use template.pptx to create a new presentation. Create an inventory of available slides, then select appropriate layouts for a 5-slide presentation about [topic]."
+      },
+      {
+        "title": "Batch thumbnail generation",
+        "scenario": "Need visual overview of multiple presentations",
+        "prompt": "Create thumbnail grids for all PPTX files in this directory with 4 columns each, saved as 'overview-[filename].jpg' for quick review."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a presentation from this HTML about quarterly results",
+        "output": [
+          "Created presentation with 8 slides from HTML",
+          "Added charts to placeholder areas",
+          "Applied consistent 16:9 formatting",
+          "Generated thumbnails for review",
+          "Saved as quarterly-results.pptx"
+        ]
+      },
+      {
+        "input": "Update the speaker notes on slides 3 and 5 in this presentation",
+        "output": [
+          "Unpacked presentation XML structure",
+          "Located speaker notes in ppt/notesSlides/",
+          "Updated notesSlide3.xml and notesSlide5.xml",
+          "Validated XML structure after edits",
+          "Repacked presentation successfully"
+        ]
+      },
+      {
+        "input": "Create thumbnail grid for template analysis",
+        "output": [
+          "Processed 24 slides from template.pptx",
+          "Created 2 thumbnail grids (6 columns each)",
+          "Saved as thumbnails-1.jpg and thumbnails-2.jpg",
+          "Identified 5 title layouts and 8 content layouts"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate HTML dimensions match PowerPoint layout before conversion",
+      "Use placeholder divs with class='placeholder' for chart/table insertion points",
+      "Rasterize complex visuals (gradients, SVG icons) as PNGs before HTML conversion",
+      "Test presentations in PowerPoint after creation to verify formatting"
+    ],
+    "anti_patterns": [
+      "Don't use manual bullet symbols (•, -, *) in HTML - use proper ul/ol tags",
+      "Never apply backgrounds or borders to text elements - only use div elements",
+      "Avoid CSS gradients in HTML - pre-render as PNG images instead",
+      "Don't skip validation after OOXML editing - always run validate.py"
+    ],
+    "faq": [
+      {
+        "question": "Which PowerPoint features are supported?",
+        "answer": "Full text formatting, images, shapes, charts, tables, and layouts. Animations and advanced transitions are not supported."
+      },
+      {
+        "question": "Can I use custom fonts?",
+        "answer": "Only web-safe fonts (Arial, Times, Verdana, etc.) are recommended for cross-platform compatibility."
+      },
+      {
+        "question": "How do I add charts to presentations?",
+        "answer": "Create placeholder divs in HTML with class='placeholder', then use PptxGenJS to add charts after HTML conversion."
+      },
+      {
+        "question": "Is LibreOffice required?",
+        "answer": "Only for PDF conversion features. Core PowerPoint creation and editing works without it."
+      },
+      {
+        "question": "Can I edit existing presentations?",
+        "answer": "Yes, unpack the PPTX to XML, edit the files directly, then repack. Always validate after changes."
+      },
+      {
+        "question": "What is the maximum presentation size?",
+        "answer": "Limited by available system memory. Large presentations may require processing in batches."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "ooxml",
+      "type": "dir",
+      "path": "ooxml",
+      "children": [
+        {
+          "name": "schemas",
+          "type": "dir",
+          "path": "ooxml/schemas",
+          "children": [
+            {
+              "name": "ecma",
+              "type": "dir",
+              "path": "ooxml/schemas/ecma",
+              "children": [
+                {
+                  "name": "fouth-edition",
+                  "type": "dir",
+                  "path": "ooxml/schemas/ecma/fouth-edition"
+                }
+              ]
+            },
+            {
+              "name": "ISO-IEC29500-4_2016",
+              "type": "dir",
+              "path": "ooxml/schemas/ISO-IEC29500-4_2016",
+              "children": [
+                {
+                  "name": "dml-chart.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+                  "lines": 1500
+                },
+                {
+                  "name": "dml-chartDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+                  "lines": 147
+                },
+                {
+                  "name": "dml-diagram.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+                  "lines": 1086
+                },
+                {
+                  "name": "dml-lockedCanvas.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+                  "lines": 12
+                },
+                {
+                  "name": "dml-main.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+                  "lines": 3082
+                },
+                {
+                  "name": "dml-picture.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+                  "lines": 24
+                },
+                {
+                  "name": "dml-spreadsheetDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+                  "lines": 186
+                },
+                {
+                  "name": "dml-wordprocessingDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+                  "lines": 288
+                },
+                {
+                  "name": "pml.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/pml.xsd",
+                  "lines": 1677
+                },
+                {
+                  "name": "shared-additionalCharacteristics.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+                  "lines": 29
+                },
+                {
+                  "name": "shared-bibliography.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+                  "lines": 145
+                },
+                {
+                  "name": "shared-commonSimpleTypes.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+                  "lines": 175
+                },
+                {
+                  "name": "shared-customXmlDataProperties.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+                  "lines": 26
+                },
+                {
+                  "name": "shared-customXmlSchemaProperties.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+                  "lines": 19
+                },
+                {
+                  "name": "shared-documentPropertiesCustom.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+                  "lines": 60
+                },
+                {
+                  "name": "shared-documentPropertiesExtended.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+                  "lines": 57
+                },
+                {
+                  "name": "shared-documentPropertiesVariantTypes.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+                  "lines": 196
+                },
+                {
+                  "name": "shared-math.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+                  "lines": 583
+                },
+                {
+                  "name": "shared-relationshipReference.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+                  "lines": 26
+                },
+                {
+                  "name": "sml.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/sml.xsd",
+                  "lines": 4440
+                },
+                {
+                  "name": "vml-main.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+                  "lines": 571
+                },
+                {
+                  "name": "vml-officeDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+                  "lines": 510
+                },
+                {
+                  "name": "vml-presentationDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+                  "lines": 13
+                },
+                {
+                  "name": "vml-spreadsheetDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+                  "lines": 109
+                },
+                {
+                  "name": "vml-wordprocessingDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+                  "lines": 97
+                },
+                {
+                  "name": "wml.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/wml.xsd",
+                  "lines": 3647
+                },
+                {
+                  "name": "xml.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/xml.xsd",
+                  "lines": 117
+                }
+              ]
+            },
+            {
+              "name": "mce",
+              "type": "dir",
+              "path": "ooxml/schemas/mce",
+              "children": [
+                {
+                  "name": "mc.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/mce/mc.xsd",
+                  "lines": 76
+                }
+              ]
+            },
+            {
+              "name": "microsoft",
+              "type": "dir",
+              "path": "ooxml/schemas/microsoft",
+              "children": [
+                {
+                  "name": "wml-2010.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-2010.xsd",
+                  "lines": 561
+                },
+                {
+                  "name": "wml-2012.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-2012.xsd",
+                  "lines": 68
+                },
+                {
+                  "name": "wml-2018.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-2018.xsd",
+                  "lines": 15
+                },
+                {
+                  "name": "wml-cex-2018.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-cex-2018.xsd",
+                  "lines": 21
+                },
+                {
+                  "name": "wml-cid-2016.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-cid-2016.xsd",
+                  "lines": 14
+                },
+                {
+                  "name": "wml-sdtdatahash-2020.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+                  "lines": 5
+                },
+                {
+                  "name": "wml-symex-2015.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-symex-2015.xsd",
+                  "lines": 9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scripts",
+          "type": "dir",
+          "path": "ooxml/scripts",
+          "children": [
+            {
+              "name": "validation",
+              "type": "dir",
+              "path": "ooxml/scripts/validation",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/__init__.py",
+                  "lines": 16
+                },
+                {
+                  "name": "base.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/base.py",
+                  "lines": 952
+                },
+                {
+                  "name": "docx.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/docx.py",
+                  "lines": 275
+                },
+                {
+                  "name": "pptx.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/pptx.py",
+                  "lines": 316
+                },
+                {
+                  "name": "redlining.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/redlining.py",
+                  "lines": 280
+                }
+              ]
+            },
+            {
+              "name": "pack.py",
+              "type": "file",
+              "path": "ooxml/scripts/pack.py",
+              "lines": 160
+            },
+            {
+              "name": "unpack.py",
+              "type": "file",
+              "path": "ooxml/scripts/unpack.py",
+              "lines": 30
+            },
+            {
+              "name": "validate.py",
+              "type": "file",
+              "path": "ooxml/scripts/validate.py",
+              "lines": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "html2pptx.js",
+          "type": "file",
+          "path": "scripts/html2pptx.js",
+          "lines": 979
+        },
+        {
+          "name": "inventory.py",
+          "type": "file",
+          "path": "scripts/inventory.py",
+          "lines": 1021
+        },
+        {
+          "name": "rearrange.py",
+          "type": "file",
+          "path": "scripts/rearrange.py",
+          "lines": 232
+        },
+        {
+          "name": "replace.py",
+          "type": "file",
+          "path": "scripts/replace.py",
+          "lines": 386
+        },
+        {
+          "name": "thumbnail.py",
+          "type": "file",
+          "path": "scripts/thumbnail.py",
+          "lines": 451
+        }
+      ]
+    },
+    {
+      "name": "html2pptx.md",
+      "type": "file",
+      "path": "html2pptx.md",
+      "lines": 625
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 31
+    },
+    {
+      "name": "ooxml.md",
+      "type": "file",
+      "path": "ooxml.md",
+      "lines": 427
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 484
+    }
+  ]
+}

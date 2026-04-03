@@ -1,0 +1,1009 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:51:55.684Z",
+    "slug": "bytedance-create-node",
+    "source_url": "https://github.com/bytedance/flowgram.ai/tree/main/.claude/skills/create-node",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "155cbb033bb3d29d94da63cce29e4493ad34b1a79a252a94013741f45d40d6e4",
+    "tree_hash": "20eed0218915dc08d511bbe23f18a9cf45b4174e6e5ea51849f040fc32622d52"
+  },
+  "skill": {
+    "name": "create-node",
+    "description": "用于在 FlowGram demo-free-layout 中创建新的自定义节点，支持简单节点（自动表单）和复杂节点（自定义 UI）",
+    "summary": "用于在 FlowGram demo-free-layout 中创建新的自定义节点，支持简单节点（自动表单）和复杂节点（自定义 UI）",
+    "icon": "🔧",
+    "version": "1.0.0",
+    "author": "bytedance",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "flowgram",
+      "node",
+      "workflow",
+      "custom-node"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and TypeScript/React templates for creating custom workflow nodes. All 194 static findings are false positives triggered by pattern detection in markdown code blocks and template placeholders. No network calls, file I/O with user input, command execution, or credential access exist. The skill uses safe patterns including nanoid for ID generation and standard relative imports.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 392,
+            "line_end": 392
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 393,
+            "line_end": 393
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 394,
+            "line_end": 394
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 275,
+            "line_end": 275
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 275,
+            "line_end": 275
+          },
+          {
+            "file": "templates/complex-node/components/custom-component.tsx",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "templates/complex-node/components/custom-component.tsx",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "templates/complex-node/components/custom-component.tsx",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "templates/complex-node/components/custom-component.tsx",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "templates/complex-node/components/custom-component.tsx",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "templates/complex-node/components/custom-component.tsx",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "templates/complex-node/form-meta.tsx",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "templates/complex-node/form-meta.tsx",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "templates/complex-node/form-meta.tsx",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "templates/complex-node/index.tsx",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "templates/complex-node/index.tsx",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "templates/complex-node/index.tsx",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "templates/complex-node/index.tsx",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "templates/complex-node/index.tsx",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "templates/complex-node/types.tsx",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "templates/complex-node/types.tsx",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "templates/simple-node/index.ts",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "templates/simple-node/index.ts",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "templates/simple-node/index.ts",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "templates/simple-node/index.ts",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "templates/simple-node/index.ts",
+            "line_start": 9,
+            "line_end": 9
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 117
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 117
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 186,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 203
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 209,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 241
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 241,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 276,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 314
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 314,
+            "line_end": 318
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 318,
+            "line_end": 332
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 332,
+            "line_end": 336
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 336,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 360
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 360,
+            "line_end": 360
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 360,
+            "line_end": 362
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 362,
+            "line_end": 362
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 362,
+            "line_end": 364
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 364,
+            "line_end": 364
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 364,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 380
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 380,
+            "line_end": 381
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 381,
+            "line_end": 382
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 382,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 387
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 387,
+            "line_end": 388
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 388,
+            "line_end": 398
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 398,
+            "line_end": 410
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 410,
+            "line_end": 420
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 420,
+            "line_end": 421
+          },
+          {
+            "file": "templates/complex-node/index.tsx",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "templates/complex-node/index.tsx",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 21,
+            "line_end": 32
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 32,
+            "line_end": 36
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 36,
+            "line_end": 47
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 47,
+            "line_end": 53
+          },
+          {
+            "file": "templates/README.md",
+            "line_start": 53,
+            "line_end": 69
+          },
+          {
+            "file": "templates/simple-node/index.ts",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "templates/simple-node/index.ts",
+            "line_start": 31,
+            "line_end": 31
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 993,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:51:55.684Z"
+  },
+  "content": {
+    "user_title": "Create custom workflow nodes in FlowGram",
+    "value_statement": "Creating custom nodes for FlowGram workflows requires understanding complex data structures and form configurations. This skill provides ready-to-use templates and step-by-step guidance for building both simple auto-form nodes and complex custom UI nodes.",
+    "seo_keywords": [
+      "FlowGram",
+      "workflow node",
+      "custom node",
+      "visual workflow",
+      "Claude Code",
+      "node development",
+      "React components",
+      "JSON Schema",
+      "form builder",
+      "workflow automation"
+    ],
+    "actual_capabilities": [
+      "Generate simple node templates with automatic form rendering from JSON Schema",
+      "Generate complex node templates with custom React form components",
+      "Define node inputs, outputs, and form field configurations",
+      "Register new node types in FlowGram workflow system",
+      "Use built-in components like PromptEditorWithVariables and VariableSelector",
+      "Follow best practices for single-responsibility node design"
+    ],
+    "limitations": [
+      "Works only with FlowGram demo-free-layout project structure",
+      "Does not execute or test created nodes automatically",
+      "Requires manual copying of template files to project directory",
+      "Does not generate node execution logic (runtime behavior)"
+    ],
+    "use_cases": [
+      {
+        "target_user": "FlowGram plugin developers",
+        "title": "Build custom node types",
+        "description": "Create specialized nodes for your workflow platform with custom inputs, outputs, and form layouts"
+      },
+      {
+        "target_user": "Enterprise workflow architects",
+        "title": "Extend workflow capabilities",
+        "description": "Design domain-specific nodes for database queries, API calls, or custom business logic"
+      },
+      {
+        "target_user": "React developers learning FlowGram",
+        "title": "Learn node development patterns",
+        "description": "Understand FlowGram node structure through working templates and comprehensive documentation"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create simple node",
+        "scenario": "Generate a basic workflow node",
+        "prompt": "Use create-node skill to create a simple database query node with auto-form. The node should have connection string, query timeout, and SQL query fields."
+      },
+      {
+        "title": "Create complex node",
+        "scenario": "Build custom UI node",
+        "prompt": "Use create-node skill to create a complex email sender node with custom form layout, recipient selector, and template preview component."
+      },
+      {
+        "title": "Add node registration",
+        "scenario": "Register new node type",
+        "prompt": "Help me register a new webhook node type in the constants.ts file and node index.ts for the FlowGram demo-free-layout project."
+      },
+      {
+        "title": "Debug node issues",
+        "scenario": "Fix form rendering problems",
+        "prompt": "My custom node form is not displaying correctly. The schema is defined but fields appear empty. Help me troubleshoot using FlowGram patterns."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a simple LLM node with model name, temperature, and prompt fields",
+        "output": [
+          "Template created at apps/demo-free-layout/src/nodes/llm/index.ts",
+          "Node type: WorkflowNodeType.LLM",
+          "Form fields: model (Select), temperature (number), prompt (prompt-editor)",
+          "Ready for testing with rush dev:demo-free-layout"
+        ]
+      },
+      {
+        "input": "Create a complex HTTP request node with custom form for URL, method, headers, and body",
+        "output": [
+          "Complex node template copied to apps/demo-free-layout/src/nodes/http/",
+          "Custom form-meta.tsx created with form layout",
+          "Components folder ready for custom UI components",
+          "Update constants.ts and index.ts to register the node type"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use JSON Schema with clear descriptions and validation rules for all form fields",
+      "Define required fields in the schema to prevent incomplete node configurations",
+      "Handle readonly state in custom components for non-editable workflow views"
+    ],
+    "anti_patterns": [
+      "Do not manually manage form state when Field component binding is available",
+      "Do not skip the required array in schema definitions for essential fields",
+      "Do not mix simple node templates when custom UI layouts are needed"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between simple and complex nodes?",
+        "answer": "Simple nodes use automatic form generation from JSON Schema. Complex nodes use custom React components for full UI control."
+      },
+      {
+        "question": "Where should I copy the generated template files?",
+        "answer": "Copy to apps/demo-free-layout/src/nodes/{node-name}/ directory for each new custom node."
+      },
+      {
+        "question": "Does this skill execute the created node code?",
+        "answer": "No. This skill only generates template files. You must run rush dev:demo-free-layout to test the node."
+      },
+      {
+        "question": "What icons are supported for custom nodes?",
+        "answer": "SVG, JPG, and PNG formats are supported. Place icons in apps/demo-free-layout/src/assets/ with naming convention icon-{node-name}.svg"
+      },
+      {
+        "question": "How do I use variable references in form fields?",
+        "answer": "Set field type to 'template' in inputsValues and use formComponent: 'prompt-editor' in inputs schema for variable-aware fields."
+      },
+      {
+        "question": "Can I use this skill with fixed-layout projects?",
+        "answer": "This skill targets demo-free-layout. Fixed-layout projects may have different node registration patterns. Check project documentation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "templates",
+      "type": "dir",
+      "path": "templates",
+      "children": [
+        {
+          "name": "complex-node",
+          "type": "dir",
+          "path": "templates/complex-node",
+          "children": [
+            {
+              "name": "components",
+              "type": "dir",
+              "path": "templates/complex-node/components",
+              "children": [
+                {
+                  "name": "custom-component.tsx",
+                  "type": "file",
+                  "path": "templates/complex-node/components/custom-component.tsx",
+                  "lines": 54
+                }
+              ]
+            },
+            {
+              "name": "form-meta.tsx",
+              "type": "file",
+              "path": "templates/complex-node/form-meta.tsx",
+              "lines": 42
+            },
+            {
+              "name": "index.tsx",
+              "type": "file",
+              "path": "templates/complex-node/index.tsx",
+              "lines": 52
+            },
+            {
+              "name": "types.tsx",
+              "type": "file",
+              "path": "templates/complex-node/types.tsx",
+              "lines": 20
+            }
+          ]
+        },
+        {
+          "name": "simple-node",
+          "type": "dir",
+          "path": "templates/simple-node",
+          "children": [
+            {
+              "name": "index.ts",
+              "type": "file",
+              "path": "templates/simple-node/index.ts",
+              "lines": 96
+            }
+          ]
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "templates/README.md",
+          "lines": 70
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 425
+    }
+  ]
+}

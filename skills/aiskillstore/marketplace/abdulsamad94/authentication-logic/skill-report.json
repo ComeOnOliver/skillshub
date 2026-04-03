@@ -1,0 +1,287 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:08:30.471Z",
+    "slug": "abdulsamad94-authentication-logic",
+    "source_url": "https://github.com/AbdulSamad94/Hackhaton-SpecsKitPlus/tree/master/.claude/skills/auth",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "feb98d9b58b3615dd23778ed0ddf97293e35e3aabde7150c42f8c16a2e869cda",
+    "tree_hash": "b858b24f2c34baaf549c2933be131d4cb4b4a175b8391f6daf803e81c666093e"
+  },
+  "skill": {
+    "name": "authentication-logic",
+    "description": "Guide to using Better Auth for client and server-side authentication.",
+    "summary": "Guide to using Better Auth for client and server-side authentication.",
+    "icon": "🔐",
+    "version": "1.0.0",
+    "author": "AbdulSamad94",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "authentication",
+      "better-auth",
+      "nextjs",
+      "security",
+      "user-management"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill. All 25 static findings are false positives. The scanner misidentified markdown code block delimiters (backticks) as shell execution, security recommendations as vulnerabilities, and metadata fields as credential access. No actual executable code, network calls, file system operations, or credential handling exists in this skill. The content is purely educational documentation for the Better Auth library.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 56
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 237,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:08:30.471Z"
+  },
+  "content": {
+    "user_title": "Implement authentication with Better Auth",
+    "value_statement": "Building secure user authentication requires understanding both client and server-side patterns. This skill provides a practical guide to implementing authentication using Better Auth in Next.js applications with clear code examples.",
+    "seo_keywords": [
+      "Better Auth",
+      "authentication",
+      "Next.js auth",
+      "user authentication",
+      "session management",
+      "social login",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "secure auth"
+    ],
+    "actual_capabilities": [
+      "Configure Better Auth client and server instances",
+      "Implement email and social sign-in with Better Auth",
+      "Protect API routes using session validation",
+      "Integrate AuthBar component for user avatars and login buttons",
+      "Use Server Actions with authentication",
+      "Handle session state in client components"
+    ],
+    "limitations": [
+      "Does not include authentication middleware configuration",
+      "Does not cover database adapter setup",
+      "Does not provide custom authentication provider implementation",
+      "Does not include OAuth provider configuration details"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Full-stack developers",
+        "title": "Add auth to Next.js apps",
+        "description": "Implement secure user authentication in Next.js applications using Better Auth patterns."
+      },
+      {
+        "target_user": "Frontend engineers",
+        "title": "Build auth UI components",
+        "description": "Create login forms, sign-out buttons, and user avatar displays in client components."
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "Protect API endpoints",
+        "description": "Secure server-side routes and actions by validating user sessions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic sign-in setup",
+        "scenario": "Add email authentication",
+        "prompt": "How do I set up email sign-in using Better Auth in a Next.js client component?"
+      },
+      {
+        "title": "Social login",
+        "scenario": "Add Google authentication",
+        "prompt": "Show me how to implement Google social sign-in with Better Auth and handle the callback."
+      },
+      {
+        "title": "Server protection",
+        "scenario": "Secure API routes",
+        "prompt": "How do I protect a Next.js API route using auth.api.getSession?"
+      },
+      {
+        "title": "Auth UI integration",
+        "scenario": "Display user state",
+        "prompt": "Create an AuthBar component that shows user avatar when signed in and login button when signed out."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I sign in a user with email and password using Better Auth?",
+        "output": [
+          "Import authClient from your auth client file",
+          "Call authClient.signIn.email() with email and password",
+          "The method returns a promise that resolves on success",
+          "Handle errors for invalid credentials",
+          "Redirect user or update UI after successful sign-in"
+        ]
+      },
+      {
+        "input": "How do I check if a user is authenticated on the server side?",
+        "output": [
+          "Import auth from your server auth file",
+          "Import headers from next/headers",
+          "Call auth.api.getSession with headers",
+          "Check if session exists",
+          "Return 401 Unauthorized if session is null"
+        ]
+      },
+      {
+        "input": "How do I implement Google social login?",
+        "output": [
+          "Use authClient.signIn.social() with provider set to google",
+          "Provide a callbackURL for redirect after auth",
+          "Configure Google OAuth credentials in your auth config",
+          "Handle the OAuth callback automatically by Better Auth"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate sessions on the server side before granting access to protected resources",
+      "Use environment variables for sensitive authentication configuration",
+      "Implement proper error handling for authentication failures"
+    ],
+    "anti_patterns": [
+      "Storing authentication tokens in localStorage without proper encryption",
+      "Skipping server-side session validation for protected routes",
+      "Hardcoding OAuth credentials directly in source code"
+    ],
+    "faq": [
+      {
+        "question": "What databases does Better Auth support?",
+        "answer": "Better Auth supports multiple adapters including PostgreSQL, MySQL, MongoDB, SQLite, and Drizzle ORM."
+      },
+      {
+        "question": "Can I use Better Auth with React Server Components?",
+        "answer": "Yes, Better Auth provides server-side APIs that work seamlessly with React Server Components and Server Actions."
+      },
+      {
+        "question": "How long do Better Auth sessions last?",
+        "answer": "Session duration is configurable. Default sessions persist until expiration or user signs out."
+      },
+      {
+        "question": "Is user data stored securely?",
+        "answer": "Better Auth encrypts sensitive data and works with your database adapter's security features."
+      },
+      {
+        "question": "Why is my session returning null?",
+        "answer": "Check that cookies are being passed correctly using headers() and that the session has not expired."
+      },
+      {
+        "question": "How does Better Auth compare to NextAuth.js?",
+        "answer": "Better Auth offers simpler configuration, better TypeScript support, and more flexible plugin architecture."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 57
+    }
+  ]
+}

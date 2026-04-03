@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:09:05.723Z",
+    "slug": "doc-coauthoring",
+    "source_url": "https://github.com/anthropics/skills/tree/main/skills/doc-coauthoring",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "official",
+    "content_hash": "b32381e692b3773a2c37bdce7b1adf084aaaaedfcae15e6d2d7a9f5662f2369b",
+    "tree_hash": "732c4208c9938d93948b164b9954d8fc2e8ea10a70f17999e26fc18e57fb6a29"
+  },
+  "skill": {
+    "name": "doc-coauthoring",
+    "description": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This workflow helps users efficiently transfer context, refine content through iteration, and verify the doc works for readers. Trigger when user mentions writing docs, creating proposals, drafting specs, or similar documentation tasks.",
+    "summary": "Guide users through a structured workflow for co-authoring documentation. Use when user wants to wri...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "anthropics",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "documentation",
+      "writing",
+      "workflow",
+      "collaboration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Official skill from anthropics/skills repository containing only procedural workflow guidance. The skill guides users through documentation creation without executing any code. Risk factors (network, filesystem) are benign - file creation is limited to documentation files created with user input, and network references only describe integration options without making actual calls.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 80
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 144
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 1,
+    "total_lines": 376,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:09:05.723Z"
+  },
+  "content": {
+    "user_title": "Start structured doc co-authoring",
+    "value_statement": "Complex documents fail when context and structure are weak. This workflow guides you through context gathering, drafting, and reader testing stages to create documents that work for readers.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "documentation workflow",
+      "technical spec writing",
+      "decision doc",
+      "proposal drafting",
+      "reader testing",
+      "doc coauthoring"
+    ],
+    "actual_capabilities": [
+      "Guide users through three-stage workflow: context gathering, refinement, and reader testing",
+      "Ask structured questions about audience, impact, constraints, and document purpose",
+      "Create document scaffolds with section placeholders for iterative drafting",
+      "Facilitate section-by-section brainstorming, curation, and refinement",
+      "Run reader testing to predict questions and identify gaps before publication"
+    ],
+    "limitations": [
+      "Does not access external documents without integrations enabled",
+      "Requires user input for all content and decisions",
+      "Does not verify facts, links, or technical accuracy",
+      "Reader testing with sub-agents only available on supported platforms"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Product manager",
+        "title": "Draft a PRD",
+        "description": "Build a product requirements document with goals, scope, and key decisions through guided sections."
+      },
+      {
+        "target_user": "Engineer",
+        "title": "Write a technical spec",
+        "description": "Capture architecture decisions, trade-offs, and implementation steps with structured prompts and refinement."
+      },
+      {
+        "target_user": "Team lead",
+        "title": "Create a decision doc",
+        "description": "Document options, rationale, and risks with iterative drafting and reader testing validation."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start a document",
+        "scenario": "You need a structured plan",
+        "prompt": "Guide me through your doc co-authoring workflow for a technical spec. Ask context questions and build the section outline."
+      },
+      {
+        "title": "Draft a section",
+        "scenario": "You have an outline",
+        "prompt": "We are drafting the Approach section. Ask clarifying questions, brainstorm options, then draft the section content."
+      },
+      {
+        "title": "Refine a section",
+        "scenario": "You need targeted edits",
+        "prompt": "Refine my proposal section after I choose what to keep and remove. Use iterative edits until it is clear."
+      },
+      {
+        "title": "Reader testing",
+        "scenario": "You want a fresh reader check",
+        "prompt": "Run reader testing on my document. Predict reader questions and report any gaps that need fixes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me draft a decision doc for migrating our API gateway",
+        "output": [
+          "Initial context questions about audience, impact, and constraints",
+          "Proposed document structure with section placeholders",
+          "Drafted core decision section after brainstorming and curation",
+          "Predicted reader questions to validate clarity and identify gaps"
+        ]
+      },
+      {
+        "input": "Guide me through creating a product requirements document",
+        "output": [
+          "Clarifying questions about target users, success metrics, and timeline",
+          "Suggested section structure for a comprehensive PRD",
+          "Brainstormed feature list with user story options",
+          "Refined goals section with acceptance criteria"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide a focused context dump before drafting begins",
+      "Start with the section that has the most uncertainty",
+      "Use reader testing to discover hidden assumptions and ambiguities"
+    ],
+    "anti_patterns": [
+      "Skipping context gathering and jumping directly to a full draft",
+      "Editing the document without sharing changes back for feedback",
+      "Ignoring reader testing when multiple stakeholders will read the document"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Claude, Codex, and Claude Code?",
+        "answer": "Yes, the workflow skill is designed to work across all Claude platform products."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It relies entirely on your input and does not verify facts or external data."
+      },
+      {
+        "question": "Can it integrate with external docs or chat tools?",
+        "answer": "It can use connected tools when available; otherwise you must paste content directly."
+      },
+      {
+        "question": "How is my data handled?",
+        "answer": "Content stays in the session unless you connect external tools or integrations."
+      },
+      {
+        "question": "What if the draft feels too generic?",
+        "answer": "Provide more specific context and request additional refinement cycles until it matches your needs."
+      },
+      {
+        "question": "How does it compare to freeform drafting?",
+        "answer": "It adds structured steps, iterative refinement, and reader testing to reduce gaps and improve clarity."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 376
+    }
+  ]
+}

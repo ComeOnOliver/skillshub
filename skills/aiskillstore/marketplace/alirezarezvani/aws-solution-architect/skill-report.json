@@ -1,0 +1,293 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:29:47.089Z",
+    "slug": "alirezarezvani-aws-solution-architect",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering-team/aws-solution-architect",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "166d2f98aba818f7dffbd6f50646dce23212e7b380a195272cb126ff680d97d0",
+    "tree_hash": "5d2f5de9f9e65f0b82ea22b5c24441aad7a6fe695096b3d2be3c1ddb1966ddfe"
+  },
+  "skill": {
+    "name": "aws-solution-architect",
+    "description": "Expert AWS solution architecture for startups focusing on serverless, scalable, and cost-effective cloud infrastructure with modern DevOps practices and infrastructure-as-code",
+    "summary": "Expert AWS solution architecture for startups focusing on serverless, scalable, and cost-effective c...",
+    "icon": "🏗️",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "aws",
+      "cloud-architecture",
+      "serverless",
+      "infrastructure-as-code",
+      "cost-optimization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The skill generates AWS infrastructure templates locally without network calls or external commands. Detected patterns are standard AWS terminology (Cognito service), IAM policy version dates, and documentation examples for CLI tools. No credential exfiltration, no command injection, no malicious behavior.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "HOW_TO_USE.md",
+            "line_start": 8,
+            "line_end": 35
+          },
+          {
+            "file": "HOW_TO_USE.md",
+            "line_start": 155,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 71
+          },
+          {
+            "file": "serverless_stack.py",
+            "line_start": 254,
+            "line_end": 313
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "HOW_TO_USE.md",
+            "line_start": 285,
+            "line_end": 290
+          },
+          {
+            "file": "HOW_TO_USE.md",
+            "line_start": 307,
+            "line_end": 308
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 344
+          },
+          {
+            "file": "serverless_stack.py",
+            "line_start": 210,
+            "line_end": 210
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "serverless_stack.py",
+            "line_start": 294,
+            "line_end": 294
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3021,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:29:47.089Z"
+  },
+  "content": {
+    "user_title": "Design scalable AWS serverless architectures",
+    "value_statement": "Design production-ready AWS architectures with serverless patterns, cost optimization strategies, and infrastructure-as-code templates. Generate CloudFormation, CDK, and Terraform configurations for deployment.",
+    "seo_keywords": [
+      "aws solution architect",
+      "claude code skill",
+      "serverless architecture",
+      "cloudformation template",
+      "terraform aws",
+      "aws cdk",
+      "cost optimization aws",
+      "claude aws",
+      "codex aws",
+      "lambda architecture"
+    ],
+    "actual_capabilities": [
+      "Generate architecture patterns for serverless, microservices, and three-tier applications",
+      "Create production-ready CloudFormation, AWS CDK, and Terraform templates",
+      "Analyze AWS spending and recommend cost optimization strategies",
+      "Design multi-region high availability and disaster recovery architectures",
+      "Provide compliance guidance for HIPAA, SOC 2, and GDPR requirements"
+    ],
+    "limitations": [
+      "Does not execute or deploy infrastructure - generates templates only",
+      "Requires AWS account and manual deployment by the user",
+      "Cannot access real AWS resources or billing data without user input",
+      "Recommendations are based on best practices, not live resource analysis"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Startup Founders",
+        "title": "Design MVP architecture",
+        "description": "Create cost-effective serverless architecture for launch with auto-scaling and minimal operational overhead"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Generate IaC templates",
+        "description": "Produce CloudFormation, CDK, or Terraform configurations for production deployment pipelines"
+      },
+      {
+        "target_user": "CTOs",
+        "title": "Optimize cloud costs",
+        "description": "Analyze spending patterns and receive actionable recommendations to reduce AWS bills by 20-40%"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Architecture",
+        "scenario": "Design simple serverless API",
+        "prompt": "Design a serverless API backend for a mobile app with 100k users using Lambda, API Gateway, and DynamoDB"
+      },
+      {
+        "title": "Cost Optimization",
+        "scenario": "Reduce monthly spending",
+        "prompt": "Analyze my AWS setup and recommend ways to reduce costs by 30%. I am currently spending $2000/month on EC2 and RDS"
+      },
+      {
+        "title": "Infrastructure as Code",
+        "scenario": "Generate IaC templates",
+        "prompt": "Generate a CloudFormation template for a three-tier web application with auto-scaling, RDS, and ElastiCache"
+      },
+      {
+        "title": "Event-Driven Architecture",
+        "scenario": "Build microservices platform",
+        "prompt": "Design an event-driven microservices architecture using EventBridge, Step Functions, and SQS for an e-commerce platform"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Design a serverless backend for a SaaS platform with 10k users",
+        "output": [
+          "Architecture pattern: Serverless Web Application",
+          "Services: S3 + CloudFront, API Gateway + Lambda, DynamoDB, Cognito",
+          "Estimated monthly cost: $50-150 USD",
+          "Key components: Auto-scaling, pay-per-use pricing, high availability"
+        ]
+      },
+      {
+        "input": "Generate Terraform configuration for my app",
+        "output": [
+          "Terraform resources: DynamoDB table, Cognito user pool, Lambda function, API Gateway, IAM roles",
+          "Provider configuration: AWS region, variable definitions",
+          "Security settings: Encryption at rest, point-in-time recovery, least privilege IAM policies"
+        ]
+      },
+      {
+        "input": "How can I reduce my $5000/month AWS bill?",
+        "output": [
+          "Priority actions: Release idle EC2 instances ($200/month), consolidate NAT Gateways ($45/month), enable S3 lifecycle policies ($50/month)",
+          "Short-term: Purchase Reserved Instances for predictable workloads (30% savings)",
+          "Medium-term: Migrate to Aurora Serverless for variable databases (40% savings)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with serverless patterns for MVPs to minimize costs and operational overhead",
+      "Use infrastructure-as-code (CloudFormation, CDK, or Terraform) for all deployments",
+      "Implement multi-layer security: VPC isolation, IAM least privilege, encryption at rest and in transit"
+    ],
+    "anti_patterns": [
+      "Avoid over-engineering early - do not build for 10M users when you have 100",
+      "Do not use On-Demand pricing for predictable workloads - use Savings Plans or Reserved Instances",
+      "Never hardcode credentials - use IAM roles and AWS Secrets Manager instead"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill deploy resources to my AWS account?",
+        "answer": "No. The skill generates infrastructure-as-code templates that you manually deploy using AWS CLI or console."
+      },
+      {
+        "question": "What AWS services are supported?",
+        "answer": "Lambda, API Gateway, DynamoDB, S3, CloudFront, Cognito, RDS, ECS Fargate, EventBridge, Step Functions, and 20+ other services."
+      },
+      {
+        "question": "Can this analyze my current AWS spending?",
+        "answer": "Yes, provide your resource inventory and monthly spend, and the skill will recommend specific cost optimizations."
+      },
+      {
+        "question": "Does this work with multi-cloud setups?",
+        "answer": "Primarily AWS-focused. Terraform templates can be adapted for Azure or GCP with manual modifications."
+      },
+      {
+        "question": "What compliance frameworks are covered?",
+        "answer": "HIPAA for healthcare, SOC 2 for security, GDPR for EU data residency, and PCI-DSS for payments."
+      },
+      {
+        "question": "How do I deploy the generated templates?",
+        "answer": "Use AWS CLI for CloudFormation, npm/CDK CLI for CDK stacks, or Terraform CLI. Each template includes instructions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "architecture_designer.py",
+      "type": "file",
+      "path": "architecture_designer.py",
+      "lines": 809
+    },
+    {
+      "name": "cost_optimizer.py",
+      "type": "file",
+      "path": "cost_optimizer.py",
+      "lines": 347
+    },
+    {
+      "name": "expected_output.json",
+      "type": "file",
+      "path": "expected_output.json",
+      "lines": 56
+    },
+    {
+      "name": "HOW_TO_USE.md",
+      "type": "file",
+      "path": "HOW_TO_USE.md",
+      "lines": 309
+    },
+    {
+      "name": "sample_input.json",
+      "type": "file",
+      "path": "sample_input.json",
+      "lines": 19
+    },
+    {
+      "name": "serverless_stack.py",
+      "type": "file",
+      "path": "serverless_stack.py",
+      "lines": 664
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 345
+    }
+  ]
+}

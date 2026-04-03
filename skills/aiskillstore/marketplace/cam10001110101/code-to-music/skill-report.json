@@ -1,0 +1,290 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:03:33.204Z",
+    "slug": "cam10001110101-code-to-music",
+    "source_url": "https://github.com/Cam10001110101/claude-skills-base/tree/main/mnt/skills/examples/code-to-music",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9603036ba442d311d500cbc9d3da0b320e3ca67c1eea14bd87aba3395cb3c29b",
+    "tree_hash": "c85135ce6f1a20f1a817607f042d296ca8fcc11c1983b17c9c7fb7c69134b350"
+  },
+  "skill": {
+    "name": "code-to-music",
+    "description": "Tools, patterns, and utilities for creating music with code. Output as a .mp3 file with realistic instrument sounds. Write custom compositions to bring creativity to life through music. This skill should be used whenever the user asks for music to be created. Never use this skill for replicating songs, beats, riffs, or other sensitive works. The skill is not suitable for vocal/lyrical music, audio mixing/mastering (reverb, EQ, compression), real-time MIDI playback, or professional studio recording quality.",
+    "summary": "Tools, patterns, and utilities for creating music with code. Output as a .mp3 file with realistic in...",
+    "icon": "🎵",
+    "version": "1.0.0",
+    "author": "Cam10001110101",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "music",
+      "audio",
+      "midi",
+      "composition",
+      "creative"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "scripts",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate music generation skill using standard audio libraries. All 202 static findings are FALSE POSITIVES caused by music terminology being misinterpreted as security patterns. No network calls, no credential access, no data exfiltration. All file operations are for local MIDI/audio files only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/midi_render.py",
+            "line_start": 132,
+            "line_end": 133
+          },
+          {
+            "file": "scripts/midi_render.py",
+            "line_start": 108,
+            "line_end": 108
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/midi_utils.py",
+            "line_start": 1,
+            "line_end": 10
+          },
+          {
+            "file": "scripts/audio_validate.py",
+            "line_start": 1,
+            "line_end": 22
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 289
+          },
+          {
+            "file": "electronic-music-pipeline.md",
+            "line_start": 25,
+            "line_end": 30
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 2150,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:03:33.204Z"
+  },
+  "content": {
+    "user_title": "Generate original music with code",
+    "value_statement": "Transform creative ideas into original music compositions. Create algorithmic melodies, chords, and rhythms programmatically. Export finished pieces as MP3 files with realistic instrument sounds.",
+    "seo_keywords": [
+      "Claude music generation",
+      "code to music",
+      "MIDI composition",
+      "algorithmic music",
+      "FluidSynth",
+      "music21",
+      "Claude Code music",
+      "programmatic audio",
+      "instrumental music",
+      "MP3 export"
+    ],
+    "actual_capabilities": [
+      "Compose music programmatically using music21 library for algorithmic composition",
+      "Set MIDI instruments and velocities using mido for proper sound mapping",
+      "Render MIDI to audio using FluidSynth with general MIDI soundfonts",
+      "Convert audio to MP3 format with pydub for portable output",
+      "Validate audio quality including clipping, silence, and dynamic range checks",
+      "Extract and modify MIDI structures from existing files for analysis"
+    ],
+    "limitations": [
+      "Instrumental music only - no vocals, lyrics, or singing",
+      "MIDI-based synthesis using soundfonts - not studio recording quality",
+      "No real-time playback - files render to disk before listening"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Content creators",
+        "title": "Original background music",
+        "description": "Generate unique instrumental tracks for videos, games, or presentations without copyright concerns."
+      },
+      {
+        "target_user": "Music students",
+        "title": "Learn music theory",
+        "description": "Explore chord progressions, scales, and arrangements through code-based composition experiments."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Audio in applications",
+        "description": "Add procedurally generated music to apps, games, or creative projects through programmatic composition."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple melody",
+        "scenario": "Create a basic melody",
+        "prompt": "Create a simple piano melody in C major at 120 BPM. Export as my_melody.mp3."
+      },
+      {
+        "title": "With chords",
+        "scenario": "Add harmonic backing",
+        "prompt": "Compose a jazz piece with piano, bass, and drums. Use ii-V-I chord progression. Export as jazz_piece.mp3."
+      },
+      {
+        "title": "Full arrangement",
+        "scenario": "Multi-instrument composition",
+        "prompt": "Create an orchestral piece with strings, brass, and woodwinds. Include a crescendo in the middle section. Export as orchestral.mp3."
+      },
+      {
+        "title": "Custom structure",
+        "scenario": "From JSON structure",
+        "prompt": "Render this music structure to MP3: read structure.json and create output.mp3 with the specified instruments and notes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a relaxing ambient piece with pads and soft textures",
+        "output": [
+          "An MP3 file with atmospheric synthesizer pads",
+          "Layered chord textures in the background",
+          "Soft attack and long sustain on all notes",
+          "No drums - peaceful and spacious arrangement"
+        ]
+      },
+      {
+        "input": "Write an upbeat house track with driving bass and crisp drums",
+        "output": [
+          "A 4-on-floor kick pattern at 124 BPM",
+          "Syncopated synth bass following chord roots",
+          "Layered percussion with shakers, congas, and claps",
+          "Fade-out ending with gradual element removal"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use music theory - real chord progressions and proper voice leading create better compositions",
+      "Set appropriate velocities - lead instruments 90-105, background 50-65, drums 70-90",
+      "Choose the right pipeline - traditional for orchestral/acoustic, electronic for synth-based music"
+    ],
+    "anti_patterns": [
+      "Hardcoding melodies - generate notes algorithmically for variety and uniqueness",
+      "Using default velocity 64 - instruments will sound flat and lifeless without proper dynamics",
+      "Forgetting mido program numbers - tracks will default to piano sound instead of selected instrument"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools work with this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. Use Claude for creative composition and complex music theory."
+      },
+      {
+        "question": "How long does rendering take?",
+        "answer": "Most pieces render in 5-30 seconds. Complex arrangements with many instruments may take longer."
+      },
+      {
+        "question": "Can I use my own soundfonts?",
+        "answer": "Yes. Point to your custom .sf2 file when initializing FluidSynth. FluidR3_GM is the default."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "All processing is local. No audio data is sent anywhere. Files are created only in locations you specify."
+      },
+      {
+        "question": "Why does my MIDI sound like piano?",
+        "answer": "Music21 instrument classes do not set MIDI program numbers. You must use mido to insert program_change messages."
+      },
+      {
+        "question": "How is this different from text-to-music AI?",
+        "answer": "This skill generates music through code - you control every note, instrument, and timing directly."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "scripts/__init__.py",
+          "lines": 1
+        },
+        {
+          "name": "audio_validate.py",
+          "type": "file",
+          "path": "scripts/audio_validate.py",
+          "lines": 208
+        },
+        {
+          "name": "midi_render.py",
+          "type": "file",
+          "path": "scripts/midi_render.py",
+          "lines": 206
+        },
+        {
+          "name": "midi_utils.py",
+          "type": "file",
+          "path": "scripts/midi_utils.py",
+          "lines": 121
+        }
+      ]
+    },
+    {
+      "name": "electronic-music-pipeline.md",
+      "type": "file",
+      "path": "electronic-music-pipeline.md",
+      "lines": 260
+    },
+    {
+      "name": "install.sh",
+      "type": "file",
+      "path": "install.sh",
+      "lines": 65
+    },
+    {
+      "name": "requirements.txt",
+      "type": "file",
+      "path": "requirements.txt",
+      "lines": 6
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 822
+    },
+    {
+      "name": "traditional-music-pipeline.md",
+      "type": "file",
+      "path": "traditional-music-pipeline.md",
+      "lines": 198
+    }
+  ]
+}

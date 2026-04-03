@@ -1,0 +1,248 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:39:43.354Z",
+    "slug": "abdul-haseeb360-api-jwt-authenticator",
+    "source_url": "https://github.com/Abdul-Haseeb360/Hackathon-II-AI-Native-Systems/tree/main/.claude/skills/api-jwt-authenticator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2119b57bc10c8abfd2e1e6158b3ca0591c82f434033799e94d6b1e3959e22474",
+    "tree_hash": "385c8b9e03c6a6cb4e56a4398c573fe832f8fb247cfaa1a92549f9392c44d5e1"
+  },
+  "skill": {
+    "name": "api-jwt-authenticator",
+    "description": "A conceptual skill for securing FastAPI REST APIs with JWT authentication",
+    "summary": "A conceptual skill for securing FastAPI REST APIs with JWT authentication",
+    "icon": "🔐",
+    "version": "1.0.0",
+    "author": "Claude",
+    "license": "MIT",
+    "category": "Security",
+    "tags": [
+      "fastapi",
+      "jwt",
+      "authentication",
+      "security",
+      "api"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill providing conceptual guidance for implementing JWT authentication in FastAPI APIs. Contains no executable code, no network calls, no filesystem operations, and no external command execution. The static analysis findings are false positives triggered by security-related terminology in documentation (JWT, authorization, tokens, roles) and metadata fields. The skill-report.json explicitly classifies this as safe with no risk factors. All 27 static findings are dismissed as keyword-pattern false positives.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 72
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 314,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:39:43.354Z"
+  },
+  "content": {
+    "user_title": "Secure FastAPI APIs with JWT Authentication",
+    "value_statement": "FastAPI APIs need secure authentication to protect endpoints and user data. This skill provides guidance on implementing JWT token validation, user identity verification, and role-based access control for REST APIs.",
+    "seo_keywords": [
+      "JWT authentication",
+      "FastAPI security",
+      "API authentication",
+      "token-based auth",
+      "REST API security",
+      "Claude JWT",
+      "Codex authentication",
+      "Claite Code security",
+      "Python JWT",
+      "FastAPI JWT"
+    ],
+    "actual_capabilities": [
+      "Extract and validate JWT tokens from Authorization headers",
+      "Verify token signatures and check expiration claims",
+      "Implement user-specific access control and authorization",
+      "Configure role-based access control (RBAC) for endpoints",
+      "Handle authentication errors with proper HTTP status codes",
+      "Integrate JWT authentication with FastAPI dependency injection"
+    ],
+    "limitations": [
+      "This is a conceptual skill providing implementation guidance, not a ready-to-use library",
+      "Does not include actual token generation or user database code",
+      "Requires user to implement the described patterns in their own codebase"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Developers",
+        "title": "Secure API Endpoints",
+        "description": "Protect FastAPI endpoints requiring authenticated user access with JWT token validation and user identity verification."
+      },
+      {
+        "target_user": "Security Engineers",
+        "title": "Implement Access Control",
+        "description": "Enforce role-based access control policies ensuring users can only access resources they are authorized to view."
+      },
+      {
+        "target_user": "API Architects",
+        "title": "Design Auth Systems",
+        "description": "Architect stateless authentication patterns for microservices using JWT tokens with proper security considerations."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic JWT Protection",
+        "scenario": "Protect an endpoint requiring authentication",
+        "prompt": "Use the API JWT Authenticator skill to add JWT authentication to a FastAPI endpoint. Extract the Bearer token from the Authorization header, validate the signature using a secret key, verify expiration, and return user info or 401 error."
+      },
+      {
+        "title": "User-Specific Access",
+        "scenario": "Restrict resource access to owner",
+        "prompt": "Apply the JWT Authenticator pattern to ensure users can only access their own resources. Extract user_id from token payload, compare with resource owner, and return 403 if they do not match."
+      },
+      {
+        "title": "Role-Based Permissions",
+        "scenario": "Add role-based access control",
+        "prompt": "Implement role-based access control using the JWT Authenticator skill. Define admin, moderator, and user roles in token claims. Create dependencies that verify user role before allowing endpoint access."
+      },
+      {
+        "title": "Complete Auth System",
+        "scenario": "Build full authentication flow",
+        "prompt": "Design a complete JWT authentication system for FastAPI following best practices from the API JWT Authenticator skill. Include token generation endpoint, protected routes, error handling, and production security considerations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Add JWT authentication to my FastAPI user profile endpoint",
+        "output": [
+          "JWT token extracted from Authorization header",
+          "Token signature validated with secret key",
+          "Token expiration verified (not expired)",
+          "User identity extracted from token payload",
+          "User profile returned for authenticated request",
+          "401 Unauthorized returned for invalid token"
+        ]
+      },
+      {
+        "input": "Create admin-only endpoint using role-based access",
+        "output": [
+          "User role extracted from JWT token payload",
+          "Role compared against required 'admin' permission",
+          "Admin user granted access to sensitive endpoint",
+          "Non-admin user receives 403 Forbidden response",
+          "Authentication audit logged for security monitoring"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use HTTPS in production to prevent token interception during transmission",
+      "Store secret keys in environment variables or secure vaults, never in source code",
+      "Set appropriate token expiration times to limit exposure windows for compromised tokens"
+    ],
+    "anti_patterns": [
+      "Do not expose raw JWT tokens in URLs or server logs as this enables token theft",
+      "Avoid storing sensitive information in JWT payloads since tokens can be decoded by anyone",
+      "Never skip token signature verification even in development or testing environments"
+    ],
+    "faq": [
+      {
+        "question": "What Python libraries work with this skill?",
+        "answer": "Use python-jose for JWT encoding/decoding and passlib for password hashing. Both integrate well with FastAPI dependencies."
+      },
+      {
+        "question": "How long should JWT tokens last?",
+        "answer": "Access tokens typically expire in 15-30 minutes for security. Use refresh tokens for longer sessions with proper rotation."
+      },
+      {
+        "question": "Can I use this with microservices?",
+        "answer": "Yes. JWT is ideal for stateless microservices. Share secret keys or use public key cryptography for token verification across services."
+      },
+      {
+        "question": "Is my token data encrypted?",
+        "answer": "JWT tokens are signed, not encrypted. Anyone can decode the payload. Never include sensitive data like passwords in tokens."
+      },
+      {
+        "question": "Why is my token validation failing?",
+        "answer": "Check that clock time is synchronized on your server, verify the secret key matches exactly, and ensure tokens include required claims."
+      },
+      {
+        "question": "How does this compare to session-based auth?",
+        "answer": "JWT is stateless and scales horizontally across services. Sessions require server storage but offer immediate revocation. Choose based on architecture needs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 136
+    }
+  ]
+}

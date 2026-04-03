@@ -1,0 +1,305 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:47:53.900Z",
+    "slug": "k-dense-ai-scientific-visualization",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-visualization",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "aa862d5ad6a8cb191e9f8515b0d88c7e89a097a55d52fed9dd674353cc5d4939",
+    "tree_hash": "75868890ab50eb1543ca4b30f86f08d0797cbd5008ae0eceecd44314700d6a4c"
+  },
+  "skill": {
+    "name": "scientific-visualization",
+    "description": "Meta-skill for publication-ready figures. Use when creating journal submission figures requiring multi-panel layouts, significance annotations, error bars, colorblind-safe palettes, and specific journal formatting (Nature, Science, Cell). Orchestrates matplotlib/seaborn/plotly with publication styles. For quick exploration use seaborn or plotly directly.",
+    "summary": "Meta-skill for publication-ready figures. Use when creating journal submission figures requiring mul...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "research",
+    "tags": [
+      "visualization",
+      "matplotlib",
+      "scientific",
+      "publication",
+      "accessibility"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 309 static findings are false positives. The scanner misidentifies hex color codes (#E69F00, etc.) as cryptographic hashes, markdown code blocks as shell execution, and configuration variables as certificate files. This is a legitimate scientific visualization library with matplotlib styling, color palettes, and figure export utilities. No actual security risks exist - the skill only manipulates local figure files and contains no network calls, external commands, or credential handling.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/figure_export.py",
+            "line_start": 1,
+            "line_end": 344
+          },
+          {
+            "file": "scripts/style_presets.py",
+            "line_start": 1,
+            "line_end": 417
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/style_presets.py",
+            "line_start": 319,
+            "line_end": 319
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 3894,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:47:53.900Z"
+  },
+  "content": {
+    "user_title": "Create Publication-Ready Scientific Figures",
+    "value_statement": "Scientific visualization transforms data into clear, accurate figures for publication. This skill ensures your figures meet journal standards while being accessible to all readers, including those with color blindness.",
+    "seo_keywords": [
+      "scientific visualization",
+      "matplotlib",
+      "seaborn",
+      "plotly",
+      "publication figures",
+      "colorblind friendly",
+      "journal formatting",
+      "Claude Code",
+      "research visualization",
+      "data plotting"
+    ],
+    "actual_capabilities": [
+      "Generate publication-ready figures with proper DPI and vector formats",
+      "Apply journal-specific styling for Nature, Science, Cell, PLOS, and IEEE",
+      "Use colorblind-friendly palettes automatically",
+      "Create multi-panel figures with consistent styling",
+      "Add statistical annotations and error bars correctly",
+      "Export figures in PDF, EPS, SVG, TIFF, and PNG formats"
+    ],
+    "limitations": [
+      "Requires matplotlib, seaborn, and plotly installations",
+      "Focused on 2D static figures for print publication",
+      "Journal specifications should be verified before submission"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Research Scientists",
+        "title": "Create Journal-Quality Figures",
+        "description": "Generate publication-ready figures that meet specific journal requirements for manuscripts and grant applications"
+      },
+      {
+        "target_user": "Graduate Students",
+        "title": "Learn Scientific Visualization",
+        "description": "Master best practices for creating clear, accessible figures for theses and presentations"
+      },
+      {
+        "target_user": "Data Analysts",
+        "title": "Standardize Figure Production",
+        "description": "Automate figure generation with consistent styling across multiple projects and teams"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Publication Plot",
+        "scenario": "Create a simple line plot for a paper",
+        "prompt": "Create a publication-quality line plot of my data with error bars, proper labels with units, and save as PDF. Use the Okabe-Ito color palette for accessibility."
+      },
+      {
+        "title": "Multi-Panel Figure",
+        "scenario": "Combine multiple plots into one figure",
+        "prompt": "Create a 4-panel figure (2x2 layout) comparing different experimental conditions. Label panels A-D, use consistent styling, and ensure the figure fits Nature's single column width."
+      },
+      {
+        "title": "Statistical Comparison",
+        "scenario": "Show group differences with statistics",
+        "prompt": "Create a box plot comparing three treatment groups with individual data points overlaid. Add significance markers and use colorblind-safe colors. Include sample sizes."
+      },
+      {
+        "title": "Journal-Specific Formatting",
+        "scenario": "Format for a specific journal",
+        "prompt": "Configure matplotlib for Cell journal requirements and create a heatmap with proper colormap. Ensure the figure meets their dimension and font requirements."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a publication-ready bar chart comparing control vs treatment groups with error bars",
+        "output": [
+          "Applied Nature journal styling with 85mm single-column width",
+          "Used Okabe-Ito colorblind-safe palette (orange #E69F00 for control, blue #0072B2 for treatment)",
+          "Added error bars showing 95% confidence intervals",
+          "Set font to Arial 8pt for labels, 6pt for tick labels",
+          "Saved as both PDF (vector) and PNG (300 DPI) formats",
+          "Figure includes individual data points with jitter for transparency"
+        ]
+      },
+      {
+        "input": "Create a 2x2 multi-panel figure for a manuscript with consistent styling",
+        "output": [
+          "Configured figure at 183mm width for double-column publication",
+          "Used GridSpec for flexible 2x2 panel layout",
+          "Applied consistent Okabe-Ito colors across all panels",
+          "Added bold panel labels (A, B, C, D) in uppercase",
+          "Saved as PDF for submission and PNG for presentation",
+          "Removed top and right spines for clean appearance"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always test figures in grayscale to ensure accessibility without color",
+      "Include sample sizes (n) and error bar definitions in figure captions",
+      "Use vector formats (PDF, EPS) for plots; use TIFF only for images"
+    ],
+    "anti_patterns": [
+      "Never use JPEG format for scientific figures - it creates compression artifacts",
+      "Avoid red-green color combinations that are invisible to 8% of men with color blindness",
+      "Do not use 3D effects or unnecessary decorations that distort data perception"
+    ],
+    "faq": [
+      {
+        "question": "What file format should I use for my figures?",
+        "answer": "Use vector formats (PDF or EPS) for plots and graphs. Use TIFF or PNG for microscopy images. Never use JPEG for scientific figures."
+      },
+      {
+        "question": "How do I ensure my figures are colorblind-friendly?",
+        "answer": "Use the built-in Okabe-Ito palette, test figures in grayscale, and add redundant encoding like line styles or markers."
+      },
+      {
+        "question": "What is the minimum font size for publication figures?",
+        "answer": "At final print size, use minimum 7-9 pt for axis labels and 6-8 pt for tick labels. Arial or Helvetica work best."
+      },
+      {
+        "question": "How do I create multi-panel figures?",
+        "answer": "Use matplotlib GridSpec for flexible layouts, label panels with bold letters, and ensure consistent styling across panels."
+      },
+      {
+        "question": "Can I use this for any journal?",
+        "answer": "Yes, includes configurations for Nature, Science, Cell, PLOS, ACS, and IEEE. Custom dimensions can be set for other journals."
+      },
+      {
+        "question": "What statistical information should I include?",
+        "answer": "Always show error bars (specify SD, SEM, or CI), include sample sizes (n), and mark statistical significance clearly."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "color_palettes.py",
+          "type": "file",
+          "path": "assets/color_palettes.py",
+          "lines": 198
+        },
+        {
+          "name": "nature.mplstyle",
+          "type": "file",
+          "path": "assets/nature.mplstyle",
+          "lines": 64
+        },
+        {
+          "name": "presentation.mplstyle",
+          "type": "file",
+          "path": "assets/presentation.mplstyle",
+          "lines": 62
+        },
+        {
+          "name": "publication.mplstyle",
+          "type": "file",
+          "path": "assets/publication.mplstyle",
+          "lines": 69
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "color_palettes.md",
+          "type": "file",
+          "path": "references/color_palettes.md",
+          "lines": 349
+        },
+        {
+          "name": "journal_requirements.md",
+          "type": "file",
+          "path": "references/journal_requirements.md",
+          "lines": 321
+        },
+        {
+          "name": "matplotlib_examples.md",
+          "type": "file",
+          "path": "references/matplotlib_examples.md",
+          "lines": 621
+        },
+        {
+          "name": "publication_guidelines.md",
+          "type": "file",
+          "path": "references/publication_guidelines.md",
+          "lines": 206
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "figure_export.py",
+          "type": "file",
+          "path": "scripts/figure_export.py",
+          "lines": 344
+        },
+        {
+          "name": "style_presets.py",
+          "type": "file",
+          "path": "scripts/style_presets.py",
+          "lines": 417
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 190
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 779
+    }
+  ]
+}

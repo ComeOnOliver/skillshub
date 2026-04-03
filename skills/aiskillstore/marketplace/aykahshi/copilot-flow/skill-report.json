@@ -1,0 +1,216 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:57:49.735Z",
+    "slug": "aykahshi-copilot-flow",
+    "source_url": "https://github.com/Aykahshi/copilot-mcp-tool/tree/main/plugins/copilot-flow/skills/copilot-flow-integration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3462d6db5799ac2577396c00f937491248e6f3cbb256892217bf2c55d2da2fb8",
+    "tree_hash": "8b7737e9e51faa190e23d7e36038b6f19239833b3d34cf36fa857461076b3ed7"
+  },
+  "skill": {
+    "name": "copilot-flow",
+    "description": "AI collaboration workflow plugin - Implements automated collaborative development process between Claude and Copilot through structured 5-stage workflow",
+    "summary": "Automated 5-stage AI collaboration workflow for coordinated development between Claude and Copilot",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Aykahshi",
+    "license": "MIT",
+    "tags": [
+      "ai-collaboration",
+      "workflow-automation",
+      "claude",
+      "copilot",
+      "development-process"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The skill is a legitimate AI collaboration workflow orchestrator that coordinates development tasks between Claude and Copilot. Static scanner detected patterns in metadata fields (hash values, URLs) and documentation file references that do not represent security risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 87
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 629,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:57:49.735Z",
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "content": {
+    "user_title": "Orchestrate AI Collaboration Workflows",
+    "value_statement": "This skill enables structured collaboration between Claude and Copilot through a 5-stage workflow that handles requirements analysis, architecture design, code implementation, quality review, and final delivery.",
+    "seo_keywords": [
+      "Claude",
+      "Copilot",
+      "Claude Code",
+      "AI collaboration workflow",
+      "development automation",
+      "code review automation",
+      "structured development",
+      "project management",
+      "architecture design",
+      "code implementation"
+    ],
+    "actual_capabilities": [
+      "Orchestrates a 5-stage AI collaboration workflow between Claude and Copilot",
+      "Analyzes requirements and creates structured development plans",
+      "Generates architecture designs using Copilot recommendations",
+      "Implements code following collaborative design specifications",
+      "Performs automated code quality reviews and security assessments",
+      "Delivers complete packages with documentation and integration"
+    ],
+    "limitations": [
+      "Requires copilot-mcp-server skill for design and review phases",
+      "Does not execute code directly - relies on Claude for implementation",
+      "Full workflow requires user confirmation before execution",
+      "State persistence depends on claude-mem integration"
+    ],
+    "use_cases": [
+      {
+        "title": "Enterprise Development Teams",
+        "description": "Coordinate AI-assisted development across multiple team members with standardized workflows, automated code reviews, and consistent documentation practices.",
+        "target_user": "Development teams building complex applications"
+      },
+      {
+        "title": "Code Review Automation",
+        "description": "Automate the code review process by leveraging Copilot for quality assessment and Claude for implementing improvements based on feedback.",
+        "target_user": "QA engineers and technical leads"
+      },
+      {
+        "title": "New Developer Onboarding",
+        "description": "Guide new team members through structured development workflows with clear stages for learning and contributing to projects.",
+        "target_user": "Software developers learning new codebases"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Full Workflow Request",
+        "prompt": "執行 copilot-flow 實現[具體功能描述]",
+        "scenario": "Start a complete 5-stage workflow for a new feature"
+      },
+      {
+        "title": "Analysis Phase",
+        "prompt": "/copilot-flow:analyze [分析現有代碼庫並提出改進建議]",
+        "scenario": "Break down requirements for a feature or improvement"
+      },
+      {
+        "title": "Review Phase",
+        "prompt": "/copilot-flow:review [審查指定檔案的安全性]",
+        "scenario": "Request code review for specific files or modules"
+      },
+      {
+        "title": "Resume from Stage",
+        "prompt": "從 /copilot-flow:[stage_name] 恢復工作流程",
+        "scenario": "Continue a workflow from a specific stage after interruption"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "執行 copilot-flow 實現用戶認證系統",
+        "output": [
+          "## Stage 1: Analysis Complete",
+          "Requirements identified:",
+          "- User registration with email verification",
+          "- JWT-based authentication",
+          "- Password reset functionality",
+          "",
+          "## Stage 2: Design Complete",
+          "Architecture: REST API with JWT tokens",
+          "- POST /auth/register",
+          "- POST /auth/login",
+          "- POST /auth/refresh",
+          "- POST /auth/logout"
+        ]
+      },
+      {
+        "input": "/copilot-flow:review 審查 auth.js 檔案",
+        "output": [
+          "## Code Review Report",
+          "File: auth.js",
+          "",
+          "Security Findings:",
+          "- [HIGH] Missing rate limiting on login endpoint",
+          "- [MEDIUM] Consider adding CSRF protection",
+          "",
+          "Quality Score: 8/10",
+          "Recommendations: Implement rate limiting middleware"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with clear, specific requirements before initiating the workflow",
+      "Review stage outputs before confirming progression to the next stage",
+      "Use individual stage commands for targeted tasks rather than full workflow",
+      "Preserve workflow state files to enable recovery after interruptions"
+    ],
+    "anti_patterns": [
+      "Skipping stages in full workflow mode without reviewing intermediate outputs",
+      "Modifying stage output files manually before workflow completion",
+      "Running stages out of sequence without understanding dependencies",
+      "Ignoring review recommendations without evaluating their validity"
+    ],
+    "faq": [
+      {
+        "question": "What skills are required for copilot-flow to work?",
+        "answer": "This skill requires copilot-mcp-server for design and review phases, and claude-mem for workflow state persistence. Ensure these skills are installed before using copilot-flow."
+      },
+      {
+        "question": "Can I execute individual stages independently?",
+        "answer": "Yes, each stage can be executed independently using slash commands like /copilot-flow:analyze, /copilot-flow:design, /copilot-flow:implement, /copilot-flow:review, and /copilot-flow:deliver."
+      },
+      {
+        "question": "How does the workflow handle interruptions?",
+        "answer": "The workflow maintains state in .claude/workflow-state.json. After interruption, you can resume from the last completed stage or restart from a specific stage using /copilot-flow:[stage-name]."
+      },
+      {
+        "question": "What triggers activate this skill?",
+        "answer": "The skill activates with phrases like '請 Copilot 協助' (Please ask Copilot), '詢問 Copilot' (Ask Copilot), '執行 copilot-flow' (Execute copilot-flow), or commands starting with 'copilot-flow:' or 'c-flow:'."
+      },
+      {
+        "question": "Does this skill execute code directly?",
+        "answer": "No, the skill orchestrates the workflow but does not execute code itself. Claude handles implementation phases using file system tools, while Copilot provides design and review recommendations."
+      },
+      {
+        "question": "What output files are generated?",
+        "answer": "The workflow generates analysis-result.md, architecture-design.md, implementation-report.md, code-review-report.md, and a complete delivery package in the delivery/ directory."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 156
+    }
+  ]
+}

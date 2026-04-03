@@ -1,0 +1,278 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:14:06.548Z",
+    "slug": "k-dense-ai-literature-review",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/literature-review",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c8bf7cdb23747293834f277144ffe1848170c00265afef0bed1531dfa989b249",
+    "tree_hash": "eb547010e1376bd19bbe5f18ddd998ca640e11c0f6b4bb09db206f25372eb202"
+  },
+  "skill": {
+    "name": "literature-review",
+    "description": "Conduct comprehensive, systematic literature reviews using multiple academic databases (PubMed, arXiv, bioRxiv, Semantic Scholar, etc.). This skill should be used when conducting systematic literature reviews, meta-analyses, research synthesis, or comprehensive literature searches across biomedical, scientific, and technical domains. Creates professionally formatted markdown documents and PDFs with verified citations in multiple citation styles (APA, Nature, Vancouver, etc.).",
+    "summary": "Conduct comprehensive, systematic literature reviews using multiple academic databases (PubMed, arXi...",
+    "icon": "📚",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "research",
+    "tags": [
+      "literature",
+      "research",
+      "academic",
+      "citations",
+      "pdf"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This literature-review skill is a legitimate academic research tool. Static analysis flagged 178 potential security issues, but all findings are false positives. The external_command patterns are documentation examples of standard academic tools (pandoc, xelatex, gget). Network requests target legitimate academic APIs (CrossRef, DOI resolution, PubMed). Filesystem operations write search results and verification reports. No malicious intent, data exfiltration, or command injection vectors detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/generate_pdf.py",
+            "line_start": 46,
+            "line_end": 91
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/verify_citations.py",
+            "line_start": 32,
+            "line_end": 47
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/search_databases.py",
+            "line_start": 296,
+            "line_end": 296
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 2637,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:14:06.547Z"
+  },
+  "content": {
+    "user_title": "Conduct systematic literature reviews",
+    "value_statement": "Conducting literature reviews manually wastes hours searching databases and formatting citations. This skill automates systematic literature reviews by searching PubMed, arXiv, bioRxiv, and Semantic Scholar, verifying all citations, and generating professional PDFs.",
+    "seo_keywords": [
+      "literature review",
+      "systematic review",
+      "academic research",
+      "citation verification",
+      "PubMed search",
+      "research synthesis",
+      "Claude",
+      "Claude Code",
+      "meta-analysis",
+      "scholarly databases"
+    ],
+    "actual_capabilities": [
+      "Search multiple academic databases including PubMed, arXiv, bioRxiv, and Semantic Scholar",
+      "Verify DOIs and retrieve metadata from CrossRef for accurate citations",
+      "Deduplicate search results across databases using DOI matching",
+      "Generate professional PDFs with academic formatting and citation styles",
+      "Create PRISMA flow diagrams and search strategy documentation",
+      "Format citations in APA, Nature, Vancouver, Chicago, and IEEE styles"
+    ],
+    "limitations": [
+      "Requires external tools (pandoc, LaTeX) installed for PDF generation",
+      "Network access required for database searches and citation verification APIs",
+      "Manual screening of abstracts and full-text articles still required",
+      "Citation counts may not be available for all papers or databases"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Graduate students",
+        "title": "Thesis literature review chapters",
+        "description": "Conduct comprehensive literature searches for dissertation background sections with verified citations and professional formatting."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Systematic review publications",
+        "description": "Perform systematic reviews following PRISMA guidelines with multi-database searches, deduplication, and quality assessment."
+      },
+      {
+        "target_user": "Medical professionals",
+        "title": "Evidence-based medicine reviews",
+        "description": "Synthesize clinical evidence from PubMed and medical databases for treatment decisions and clinical guidelines."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic literature search",
+        "scenario": "Find recent papers on a topic",
+        "prompt": "Search PubMed and bioRxiv for recent papers (2020-2024) about CRISPR gene therapy for sickle cell disease. Focus on clinical trials and review articles."
+      },
+      {
+        "title": "Systematic review",
+        "scenario": "Conduct a full systematic review",
+        "prompt": "Perform a systematic review on the efficacy of mRNA vaccines for cancer immunotherapy. Search PubMed, bioRxiv, and arXiv. Include only peer-reviewed articles and preprints from 2018-2024."
+      },
+      {
+        "title": "Citation verification",
+        "scenario": "Verify references in a document",
+        "prompt": "Verify all DOIs and format citations in my literature review document using APA style. Generate a verification report showing any failed citations."
+      },
+      {
+        "title": "Generate PDF",
+        "scenario": "Create professional output",
+        "prompt": "Convert my literature review markdown to a PDF with Nature citation style, table of contents, and section numbering. Check that all dependencies are installed first."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search PubMed for CRISPR sickle cell studies from 2020-2024",
+        "output": [
+          "Found 47 relevant papers in PubMed",
+          "Top result: 'CRISPR-Cas9 gene editing for sickle cell disease' (2023) - 156 citations",
+          "Search saved to crispr_sickle_cell_pubmed.json",
+          "Use --deduplicate flag when combining with other databases"
+        ]
+      },
+      {
+        "input": "Verify citations in my literature review document",
+        "output": [
+          "Total DOIs found: 23",
+          "Verified: 22 (95.7%)",
+          "Failed: 1 (DOI: 10.xxx/yyy - does not resolve)",
+          "Verification report saved to literature_review_citation_report.json"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always verify citations with verify_citations.py before finalizing your review document",
+      "Search at least 3 different databases to ensure comprehensive literature coverage",
+      "Include visual elements like PRISMA flow diagrams for systematic review transparency"
+    ],
+    "anti_patterns": [
+      "Do not rely on a single database - this leads to incomplete literature coverage",
+      "Avoid study-by-study summaries - organize findings thematically instead",
+      "Never skip citation verification - unverified citations damage academic credibility"
+    ],
+    "faq": [
+      {
+        "question": "Which databases should I search?",
+        "answer": "For biomedical topics: PubMed, bioRxiv, and Semantic Scholar. For physics and CS: arXiv and Semantic Scholar. Always use at least 3 databases."
+      },
+      {
+        "question": "How do I handle duplicate papers across databases?",
+        "answer": "Use the --deduplicate flag in search_databases.py. It removes duplicates by DOI first, then by title matching as a fallback."
+      },
+      {
+        "question": "What citation styles are supported?",
+        "answer": "APA, Nature, Vancouver, Chicago, and IEEE styles are supported. Use the --citation-style flag when generating PDFs."
+      },
+      {
+        "question": "Do I need to install anything?",
+        "answer": "For PDF generation, install pandoc and LaTeX. Database searches use web APIs and require no additional installation."
+      },
+      {
+        "question": "How does citation verification work?",
+        "answer": "The script extracts DOIs from your document, checks they resolve correctly via doi.org, retrieves metadata from CrossRef, and formats citations properly."
+      },
+      {
+        "question": "Can I include preprints in my review?",
+        "answer": "Yes, bioRxiv and arXiv preprints are supported. Always note that preprints are not peer-reviewed and verify findings carefully."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "review_template.md",
+          "type": "file",
+          "path": "assets/review_template.md",
+          "lines": 413
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "citation_styles.md",
+          "type": "file",
+          "path": "references/citation_styles.md",
+          "lines": 167
+        },
+        {
+          "name": "database_strategies.md",
+          "type": "file",
+          "path": "references/database_strategies.md",
+          "lines": 451
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "generate_pdf.py",
+          "type": "file",
+          "path": "scripts/generate_pdf.py",
+          "lines": 177
+        },
+        {
+          "name": "search_databases.py",
+          "type": "file",
+          "path": "scripts/search_databases.py",
+          "lines": 304
+        },
+        {
+          "name": "verify_citations.py",
+          "type": "file",
+          "path": "scripts/verify_citations.py",
+          "lines": 223
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 639
+    }
+  ]
+}

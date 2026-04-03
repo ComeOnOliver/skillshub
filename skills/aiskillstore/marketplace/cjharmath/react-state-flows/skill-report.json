@@ -1,0 +1,366 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:09:31.385Z",
+    "slug": "cjharmath-react-state-flows",
+    "source_url": "https://github.com/CJHarmath/claude-agents-skills/tree/main/skills/react-state-flows",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "caea95eb5ffa984ddbf798b1b53944f60c4a27a38e9cbadd11c22d2258db9b8f",
+    "tree_hash": "3ddbaeb1b3051f587da94c40e8f88dd85d8e99d0618a5de854f323b2c07fd96f"
+  },
+  "skill": {
+    "name": "react-state-flows",
+    "description": "Complex multi-step operations in React. Use when implementing flows with multiple async steps, state machine patterns, or debugging flow ordering issues. Works for both React web and React Native.",
+    "summary": "Complex multi-step operations in React. Use when implementing flows with multiple async steps, state...",
+    "icon": "🔄",
+    "version": "1.0.0",
+    "author": "CJHarmath",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "react",
+      "state-management",
+      "patterns",
+      "async",
+      "debugging"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only markdown documentation with TypeScript code examples. No executable code, network calls, file system access, environment variables, or external commands detected. All 46 static findings are false positives caused by over-broad keyword matching.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 176
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 176,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 242
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 283
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 283,
+            "line_end": 291
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 291,
+            "line_end": 296
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 315
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 533,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:09:31.385Z"
+  },
+  "content": {
+    "user_title": "Implement complex React state flows",
+    "value_statement": "Multi-step React operations with async dependencies are prone to ordering bugs and missing preconditions. This skill provides patterns and checklists for implementing robust state machine patterns in React web and React Native applications.",
+    "seo_keywords": [
+      "React state flows",
+      "React state machine",
+      "async state management",
+      "React multi-step forms",
+      "Zustand flow patterns",
+      "React debugging",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "React Native state"
+    ],
+    "actual_capabilities": [
+      "Documents state machine patterns for React multi-step flows",
+      "Shows preconditions and postconditions for each flow step",
+      "Provides explicit flow implementation patterns with validation",
+      "Demonstrates flow state tracking for UI feedback",
+      "Includes integration testing patterns for flow verification"
+    ],
+    "limitations": [
+      "Does not execute code or interact with files",
+      "Does not install or configure state management libraries",
+      "Does not generate project files or boilerplate code"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Build checkout flows",
+        "description": "Implement multi-step checkout or payment flows with proper state transitions and error handling"
+      },
+      {
+        "target_user": "React Native developers",
+        "title": "Create mobile workflows",
+        "description": "Design async workflows for mobile apps with loading states and progress feedback"
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Debug state issues",
+        "description": "Diagnose and fix race conditions and ordering bugs in complex React state management"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic flow pattern",
+        "scenario": "Getting started with state flows",
+        "prompt": "How do I implement a multi-step flow in React with proper state transitions?"
+      },
+      {
+        "title": "Async dependencies",
+        "scenario": "Handling dependent async operations",
+        "prompt": "Show me how to handle async operations with dependencies in React where each step depends on the previous one"
+      },
+      {
+        "title": "Error handling",
+        "scenario": "Recovering from flow failures",
+        "prompt": "How do I implement error handling for each step in a multi-step flow with proper state tracking?"
+      },
+      {
+        "title": "State machine decision",
+        "scenario": "Choosing between custom and XState",
+        "prompt": "When should I use XState versus custom state flow patterns for my React application?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I implement a multi-step checkout flow in React?",
+        "output": [
+          "Define explicit states: IDLE → VALIDATING → PROCESSING_PAYMENT → CONFIRMING → COMPLETE or ERROR",
+          "Document preconditions for each transition before implementing",
+          "Validate postconditions after each step to ensure state integrity",
+          "Use a flow object pattern to organize multi-step async operations",
+          "Track current step in a store for UI feedback during processing",
+          "Write integration tests covering happy path and error scenarios at each step"
+        ]
+      },
+      {
+        "input": "How can I debug race conditions in my async React state?",
+        "output": [
+          "Log each state transition with a unique flow ID",
+          "Await each async step before proceeding to the next",
+          "Validate postconditions after each step completes",
+          "Track which step failed in error state for better debugging",
+          "Use explicit flow objects to make execution order clear"
+        ]
+      },
+      {
+        "input": "When should I switch from custom state patterns to XState?",
+        "output": [
+          "Consider XState when your flow exceeds 6 states",
+          "Use XState for complex branching or parallel states",
+          "Choose XState when you need visualization and debugging tools",
+          "For simpler flows, explicit step patterns are more readable",
+          "XState helps when state machine is shared across multiple team members"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Sketch the state diagram before implementation to identify all states and transitions",
+      "Log each step with a flow ID for debugging complex multi-step operations",
+      "Validate postconditions after each async step before proceeding to the next"
+    ],
+    "anti_patterns": [
+      "Scattering flow logic across multiple functions without explicit ordering",
+      "Skipping precondition checks before async operations",
+      "Missing error handling at individual steps in multi-step flows"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with Redux and Redux Toolkit?",
+        "answer": "Yes. The patterns apply to any state management. Redux users can use Redux Toolkit with createAsyncThunk for async flows."
+      },
+      {
+        "question": "What is the maximum number of steps supported?",
+        "answer": "There is no hard limit. The skill recommends XState when flows exceed 6 states with complex branching."
+      },
+      {
+        "question": "Can I integrate this with React Query?",
+        "answer": "Yes. Combine flow patterns with React Query for data fetching while managing overall flow state separately."
+      },
+      {
+        "question": "Does this skill store or transmit any data?",
+        "answer": "No. This is a documentation-only skill. It contains no code that accesses files, networks, or storage."
+      },
+      {
+        "question": "Why is my flow showing race conditions?",
+        "answer": "Ensure you await each async step and validate postconditions before proceeding. Log flow IDs to trace execution order."
+      },
+      {
+        "question": "How is this different from XState?",
+        "answer": "XState provides a formal state machine library with visualization. These patterns offer a lighter-weight approach for simpler flows."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 356
+    }
+  ]
+}

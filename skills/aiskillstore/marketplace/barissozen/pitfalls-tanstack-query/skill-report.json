@@ -1,0 +1,243 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:20:52.054Z",
+    "slug": "barissozen-pitfalls-tanstack-query",
+    "source_url": "https://github.com/BarisSozen/claude/tree/main/.claude/skills/pitfalls-tanstack-query",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2e86466f487c4ea129715f196ecf71f1231d7e0f570df56cecef3fc5a5ccae2f",
+    "tree_hash": "7dbe1f2f35328ad6d31c21fea6c8c865a4deb2a5135579e522102dd674552339"
+  },
+  "skill": {
+    "name": "pitfalls-tanstack-query",
+    "description": "TanStack Query v5 patterns and common pitfalls. Use when implementing data fetching, cache invalidation, or debugging stale data issues. Triggers on: useQuery, useMutation, queryKey, invalidate, TanStack, React Query.",
+    "summary": "TanStack Query v5 patterns and common pitfalls. Use when implementing data fetching, cache invalidat...",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "BarisSozen",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "TanStack Query",
+      "React Query",
+      "data fetching",
+      "React",
+      "caching"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing markdown and TypeScript code examples. All 16 static findings are false positives: TypeScript template literals were misidentified as shell commands, API patterns were misidentified as cryptographic code, and metadata fields were misidentified as network/filesystem access. No executable code, network calls, or file system operations exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 93
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 276,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:20:52.054Z"
+  },
+  "content": {
+    "user_title": "Debug TanStack Query Issues",
+    "value_statement": "TanStack Query v5 introduces breaking changes and subtle caching behaviors that cause bugs. This skill provides proven patterns and anti-patterns for correct data fetching, mutations, and cache invalidation.",
+    "seo_keywords": [
+      "TanStack Query",
+      "React Query",
+      "useQuery",
+      "useMutation",
+      "queryKey",
+      "cache invalidation",
+      "React",
+      "data fetching",
+      "Claude Code",
+      "debugging"
+    ],
+    "actual_capabilities": [
+      "Review useQuery implementations for correct patterns",
+      "Check mutations for proper cache invalidation",
+      "Identify stale data issues in React components",
+      "Verify queryKey deduplication with full URL paths",
+      "Migrate from v4 to v5 patterns (isPending vs isLoading)"
+    ],
+    "limitations": [
+      "Does not execute code or run tests",
+      "Does not access external APIs or databases",
+      "Does not modify your codebase",
+      "Does not handle server-side rendering concerns"
+    ],
+    "use_cases": [
+      {
+        "target_user": "React developers",
+        "title": "Debug Data Fetching",
+        "description": "Fix data fetching bugs in React components using TanStack Query"
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Review Code Quality",
+        "description": "Review pull requests that use TanStack Query for common mistakes"
+      },
+      {
+        "target_user": "Teams migrating",
+        "title": "Migrate to v5",
+        "description": "Identify v4 patterns that need updating to v5"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Review",
+        "scenario": "Check a simple useQuery",
+        "prompt": "Review this useQuery implementation for correct TanStack Query v5 patterns. Check queryKey structure, queryFn, and options:"
+      },
+      {
+        "title": "Mutation Check",
+        "scenario": "Validate mutation invalidation",
+        "prompt": "Check this useMutation for proper cache invalidation. Does it invalidate the correct queries on success?"
+      },
+      {
+        "title": "Optimistic Update",
+        "scenario": "Implement optimistic UI update",
+        "prompt": "Show me the correct pattern for optimistic updates with rollback in TanStack Query v5. Include onMutate, onError, and onSettled handlers."
+      },
+      {
+        "title": "Migration Guide",
+        "scenario": "Upgrade from v4 to v5",
+        "prompt": "Identify all v4 patterns in this code that need updating to v5. Specifically look for isLoading that should be isPending."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review my useQuery implementation for TanStack Query v5",
+        "output": [
+          "QueryKey uses full URL path for proper deduplication",
+          "queryFn correctly fetches from matching endpoint",
+          "StaleTime configured appropriately for your use case",
+          "Consider adding refetchOnWindowFocus if needed for live data"
+        ]
+      },
+      {
+        "input": "Why is my data stale after mutations?",
+        "output": [
+          "Missing queryClient.invalidateQueries in onSuccess handler",
+          "Add onSuccess callback to invalidate relevant queries",
+          "Verify queryKey matches exactly between fetch and invalidation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use full URL paths in queryKeys like ['/api/strategies', id] for proper deduplication",
+      "Always invalidate relevant queries in onSuccess of useMutation to keep cache fresh",
+      "Use isPending instead of isLoading for mutation state checks in v5"
+    ],
+    "anti_patterns": [
+      "Short queryKeys like ['strategy'] that prevent proper deduplication across components",
+      "Forgetting to call queryClient.invalidateQueries after mutations causing stale data",
+      "Using isLoading instead of isPending for mutation state checks in v5"
+    ],
+    "faq": [
+      {
+        "question": "What TanStack Query versions are supported?",
+        "answer": "This skill focuses on TanStack Query v5. Some v4 patterns are covered for migration guidance."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides pattern guidance and code review but does not execute or modify your actual codebase."
+      },
+      {
+        "question": "Does this skill integrate with other tools?",
+        "answer": "It works with any React project using TanStack Query. No additional setup required."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. This is a prompt-based skill that never accesses your files or makes network calls."
+      },
+      {
+        "question": "Why is my data stale after mutations?",
+        "answer": "Likely missing queryClient.invalidateQueries in onSuccess. The skill can identify and fix this pattern."
+      },
+      {
+        "question": "How does this compare to React Query v4?",
+        "answer": "v5 renamed isLoading to isPending and changed some default behaviors. This skill identifies v4 patterns needing updates."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 101
+    }
+  ]
+}

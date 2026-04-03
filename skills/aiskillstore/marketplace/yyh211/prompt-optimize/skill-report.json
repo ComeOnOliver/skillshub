@@ -1,0 +1,255 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:09:48.327Z",
+    "slug": "yyh211-prompt-optimize",
+    "source_url": "https://github.com/YYH211/Claude-meta-skill/tree/main/prompt-optimize",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b4f809f1b1f7337e1d19abd0781c89180588b03ddf95d0dc2a1ba3258f135964",
+    "tree_hash": "ff375cb5804d31c124d79eacb40216b086daa51ae16852965cdd0d6e00b7ae7d"
+  },
+  "skill": {
+    "name": "prompt-optimize",
+    "description": "Expert prompt engineering skill that transforms Claude into \"Alpha-Prompt\" - a master prompt engineer who collaboratively crafts high-quality prompts through flexible dialogue. Activates when user asks to \"optimize prompt\", \"improve system instruction\", \"enhance AI instruction\", or mentions prompt engineering tasks.",
+    "summary": "Expert prompt engineering skill that transforms Claude into \"Alpha-Prompt\" - a master prompt enginee...",
+    "icon": "🎯",
+    "version": "1.0.0",
+    "author": "YYH211",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "prompt engineering",
+      "AI instructions",
+      "prompt optimization",
+      "system instructions"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt-based skill with no executable code. Contains only YAML frontmatter and markdown documentation defining Claude's behavior as a prompt engineering consultant. All 28 static findings are false positives: cryptographic and command execution patterns were incorrectly matched to documentation text, example dialogues in markdown code blocks, and JSON metadata. No scripts, network calls, filesystem access, or command execution capabilities.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 214
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 231
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 417,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:09:48.327Z"
+  },
+  "content": {
+    "user_title": "Optimize Prompts with Expert Guidance",
+    "value_statement": "Users often struggle to write effective prompts that get the best results from AI. This skill transforms Claude into a prompt engineering expert who collaborates through dialogue to craft high-quality prompts tailored to specific use cases.",
+    "seo_keywords": [
+      "prompt optimization",
+      "prompt engineering",
+      "Claude prompts",
+      "AI instruction design",
+      "system instructions",
+      "few-shot prompting",
+      "CoT prompting",
+      "prompt templates",
+      "Claude Code",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Transforms Claude into a prompt engineering consultant called Alpha-Prompt",
+      "Collaborates through dialogue to understand user needs",
+      "Suggests advanced techniques like Chain-of-Thought and Tree-of-Thought",
+      "Provides security recommendations for public-facing AI roles",
+      "Delivers optimized prompts with design rationale explanation"
+    ],
+    "limitations": [
+      "Does not execute or test prompts automatically",
+      "Does not access external prompt libraries or databases",
+      "Does not integrate with third-party prompt management tools",
+      "Only works when user explicitly requests prompt optimization"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Developers",
+        "title": "Create Production Prompts",
+        "description": "Design robust prompts for AI applications, agents, and automation workflows with security best practices built in."
+      },
+      {
+        "target_user": "Content Creators",
+        "title": "Generate Consistent Output",
+        "description": "Craft prompts that produce reliable, high-quality content for articles, marketing copy, and creative writing."
+      },
+      {
+        "target_user": "Business Users",
+        "title": "Automate Workflows",
+        "description": "Develop prompts for task automation, data analysis, and report generation tailored to specific business needs."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple Optimization",
+        "scenario": "Quick prompt improvement",
+        "prompt": "Help me optimize this prompt: [INSERT YOUR PROMPT]. What improvements would make it more effective?"
+      },
+      {
+        "title": "Add Structure",
+        "scenario": "Structuring output format",
+        "prompt": "I need a prompt that makes AI output structured data. Help me design it with XML tags and clear field definitions."
+      },
+      {
+        "title": "Advanced Architecture",
+        "scenario": "Complex reasoning tasks",
+        "prompt": "Create a multi-step prompt architecture for complex analysis. Include Chain-of-Thought reasoning and self-consistency checks."
+      },
+      {
+        "title": "Secure Public Role",
+        "scenario": "Public-facing AI assistant",
+        "prompt": "Design a prompt for a public chatbot that resists prompt injection attacks and maintains role boundaries safely."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me optimize this prompt: You are a helpful assistant that summarizes documents.",
+        "output": [
+          "Your current prompt is very generic. Let me help you elevate it.",
+          "I recommend adding: specific role definition, output structure, example demonstrations, and clear constraints.",
+          "What type of documents will this handle, and what format do you need the summaries in?"
+        ]
+      },
+      {
+        "input": "Create a prompt for a customer service chatbot",
+        "output": [
+          "For public-facing chatbots, security is crucial. I recommend adding instruction fencing, role boundaries, and refusal strategies.",
+          "Would you like me to design a prompt with defensive measures against prompt injection attacks?"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide context about your use case so the expert can suggest appropriate techniques.",
+      "Iterate through the dialogue rather than expecting a complete solution immediately.",
+      "Ask for design rationale to understand why certain techniques improve results."
+    ],
+    "anti_patterns": [
+      "Using the skill for tasks unrelated to prompt engineering wastes the specialized expertise.",
+      "Not providing examples makes it harder to tailor prompts to your specific needs.",
+      "Skipping the security review for public-facing applications can lead to vulnerabilities."
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code when you request prompt optimization."
+      },
+      {
+        "question": "How complex can the prompts get?",
+        "answer": "The skill handles everything from simple instructions to advanced architectures like CoT and ReAct."
+      },
+      {
+        "question": "Can this integrate with my existing prompt library?",
+        "answer": "No, this skill focuses on collaborative design rather than managing external prompt repositories."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes, this is a prompt engineering skill with no network calls or data transmission of any kind."
+      },
+      {
+        "question": "Why is my prompt not improving?",
+        "answer": "Provide more context about your use case, desired output format, and any constraints you need."
+      },
+      {
+        "question": "How is this different from asking Claude directly?",
+        "answer": "This skill activates specialized expertise in prompt engineering techniques and best practices."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 243
+    }
+  ]
+}

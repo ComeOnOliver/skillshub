@@ -1,0 +1,455 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:33:17.226Z",
+    "slug": "cjharmath-rn-observability",
+    "source_url": "https://github.com/CJHarmath/claude-agents-skills/tree/main/skills/rn-observability",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a0804ab735e187c499f4ab89fc1b8911cfd79a3d992421242aa7113409e6f96a",
+    "tree_hash": "1e4b2358518b2b34aa56e54689465ec77ee50a3af08397812d398de91275a768"
+  },
+  "skill": {
+    "name": "rn-observability",
+    "description": "Logging, error messages, and debugging patterns for React Native. Use when adding logging, designing error messages, debugging production issues, or improving code observability.",
+    "summary": "Logging, error messages, and debugging patterns for React Native. Use when adding logging, designing...",
+    "icon": "👁️",
+    "version": "1.0.0",
+    "author": "CJHarmath",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "react-native",
+      "logging",
+      "debugging",
+      "observability",
+      "error-handling"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown patterns and code examples. No executable code, no file system access, no network calls, no external commands. All 75 static findings are false positives caused by the scanner misinterpreting documentation syntax (backticks for code blocks, Object.keys() method calls, YAML frontmatter) as security threats. This is a documentation-only skill providing observability guidance.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 228
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 228,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 255,
+            "line_end": 262
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 262,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 284
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 284,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 351
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 351,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 365
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 546,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:33:17.226Z"
+  },
+  "content": {
+    "user_title": "Add observability to React Native",
+    "value_statement": "Silent failures create debugging nightmares. Use logging patterns, error message design, and structured debugging techniques to diagnose production issues fast.",
+    "seo_keywords": [
+      "React Native logging",
+      "React Native debugging",
+      "observability",
+      "error handling",
+      "structured logging",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "debugging patterns",
+      "production debugging"
+    ],
+    "actual_capabilities": [
+      "Generate structured logging functions with context objects",
+      "Design error messages with diagnostic information",
+      "Implement flow tracing for multi-step operations",
+      "Add state snapshots for debugging complex flows",
+      "Create assertion helpers with visibility",
+      "Integrate production error reporting services"
+    ],
+    "limitations": [
+      "Does not execute code or access file systems",
+      "Does not connect to external logging services",
+      "Does not modify existing code automatically",
+      "Provides patterns only, user must implement"
+    ],
+    "use_cases": [
+      {
+        "target_user": "React Native developers",
+        "title": "Add logging to new features",
+        "description": "Generate observability code for new features with structured logging and proper error handling"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Debug production issues",
+        "description": "Apply debugging patterns to diagnose issues using logs, flow traces, and state snapshots"
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "Design error messages",
+        "description": "Create error messages that include diagnostic context for faster resolution"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic logging setup",
+        "scenario": "Add logging to a new React Native function",
+        "prompt": "Generate a structured logger for React Native with debug, info, warn, and error levels. Include a logging wrapper that respects environment. Use rn-observability patterns."
+      },
+      {
+        "title": "Error handling",
+        "scenario": "Design error messages with context",
+        "prompt": "Write error handling for a data fetch function using rn-observability patterns. Include function name, what failed, relevant state, and possible cause."
+      },
+      {
+        "title": "Flow tracing",
+        "scenario": "Trace multi-step async operations",
+        "prompt": "Implement flow tracing for a multi-step operation in React Native. Use flow IDs, step logging, and error capturing. Follow rn-observability patterns."
+      },
+      {
+        "title": "Secure logging",
+        "scenario": "Handle sensitive data in logs",
+        "prompt": "Create a secure logging utility that redacts sensitive fields like passwords, tokens, and API keys before logging. Use rn-observability patterns."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Add logging to this function that saves user answers",
+        "output": [
+          "logger.info('[saveAnswer] Saving answer', { questionId, value, skillArea })",
+          "logger.warn('[saveAnswer] Dropping answer - skill area not in retake set', { questionId, skillArea })",
+          "throw new Error('[saveAnswer] No answers found. Check completed and new answer counts.')"
+        ]
+      },
+      {
+        "input": "How should I design error messages for my API calls?",
+        "output": [
+          "Include the function name and what operation failed",
+          "Add relevant state like response status or input values",
+          "Provide a hypothesis about possible causes",
+          "Example: '[fetchUser] User fetch failed. Status: 404, UserId: 123. User may not exist.'"
+        ]
+      },
+      {
+        "input": "Create a flow trace for a checkout process",
+        "output": [
+          "Generate unique flow ID at start: flowId: `checkout-${Date.now()}`",
+          "Log each step: '[checkout:${flowId}] Step 1: Validating cart'",
+          "Include flowId in all logs for correlation",
+          "On error: log full context and rethrow with flowId preserved"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Log every early return with why it returned and relevant context",
+      "Include function name, diagnostic state, and hypothesis in error messages",
+      "Use flow IDs to trace multi-step operations across async boundaries",
+      "Redact sensitive data before logging to prevent credential exposure"
+    ],
+    "anti_patterns": [
+      "Silent early returns without logging why execution stopped",
+      "Generic error messages without diagnostic context",
+      "Console.log without structured data for searching",
+      "Logging sensitive data like passwords, tokens, or API keys"
+    ],
+    "faq": [
+      {
+        "question": "Which React Native versions are supported?",
+        "answer": "Patterns work with React Native 0.70+ using modern TypeScript and async/await patterns."
+      },
+      {
+        "question": "What logging levels should I use?",
+        "answer": "Error for exceptions, warn for unexpected conditions, info for business events, debug for diagnostics."
+      },
+      {
+        "question": "Can this integrate with Sentry or Crashlytics?",
+        "answer": "Yes. Use the captureError pattern to send errors to services while maintaining local logging."
+      },
+      {
+        "question": "Is sensitive data safe with these patterns?",
+        "answer": "Yes when using the secureLogger pattern with redaction for keys like password, token, and apiKey."
+      },
+      {
+        "question": "Why are my logs not appearing in production?",
+        "answer": "Check log levels. Production typically uses warn/error only. Use captureError for production visibility."
+      },
+      {
+        "question": "How is this different from React Native Debugger?",
+        "answer": "This provides code patterns for persistent observability. Debugger is for interactive debugging sessions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 368
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:45:19.841Z",
+    "slug": "jrc1883-research-merge",
+    "source_url": "https://github.com/jrc1883/popkit-claude/tree/main/packages/popkit-research/skills/pop-research-merge/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a60ad8698f177797d418afb86496e17ce4d1cd6bc1e1f2830a92cda7717ac5ff",
+    "tree_hash": "e562b249a09ddbf3556db9662ec675f81f66d9d1750406e009b6741077c6eb71"
+  },
+  "skill": {
+    "name": "research-merge",
+    "description": "Processes research branches from Claude Code Web sessions - merges content, moves docs to docs/research/, and creates GitHub issues. Use when /popkit:next detects research branches or when manually processing research from mobile sessions. Do NOT use for regular feature branches - only for branches matching claude/research-* or containing research documentation.",
+    "summary": "Processes research branches from Claude Code Web sessions - merges content, moves docs to docs/resea...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "jrc1883",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "research",
+      "git",
+      "github",
+      "documentation",
+      "merge"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate research management skill that handles git operations for research branches. The static scanner produced numerous false positives due to pattern matching heuristics that do not apply to this context. All git commands are hardcoded strings for legitimate repository operations. File system access is limited to reading markdown research documents and writing merged output. No credentials are accessed or exfiltrated. The skill is safe for publication.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 180
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/detect_conflicts.py",
+            "line_start": 81,
+            "line_end": 83
+          },
+          {
+            "file": "scripts/detect_conflicts.py",
+            "line_start": 124,
+            "line_end": 127
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1188,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:45:19.841Z"
+  },
+  "content": {
+    "user_title": "Merge Research Branches Automatically",
+    "value_statement": "Research branches pile up and become difficult to manage. This skill automatically detects, merges, and organizes research findings from Claude Code Web sessions into actionable GitHub issues.",
+    "seo_keywords": [
+      "Claude Code",
+      "research management",
+      "git merge",
+      "GitHub issues",
+      "documentation",
+      "branch cleanup",
+      "Claude",
+      "research workflow",
+      "knowledge management",
+      "PopKit"
+    ],
+    "actual_capabilities": [
+      "Detects research branches matching claude/research-* pattern",
+      "Squash-merges research content to main branch",
+      "Moves research docs to docs/research/ directory",
+      "Creates GitHub issues from research findings",
+      "Cleans up remote branches after processing",
+      "Detects duplicate and conflicting research findings"
+    ],
+    "limitations": [
+      "Requires GitHub CLI (gh) for issue creation",
+      "Only processes branches with research documentation",
+      "Cannot handle merge conflicts automatically",
+      "Needs clean working directory before merging"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers using Claude Code Web",
+        "title": "Process Research from Mobile Sessions",
+        "description": "Merge research branches created during mobile coding sessions into organized documentation with GitHub tracking"
+      },
+      {
+        "target_user": "Research teams",
+        "title": "Consolidate Research Findings",
+        "description": "Combine multiple research notes into unified documents while detecting duplicates and conflicts"
+      },
+      {
+        "target_user": "Project managers",
+        "title": "Track Research Progress",
+        "description": "Automatically create GitHub issues from research findings to ensure insights are acted upon"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Research Merge",
+        "scenario": "You have research branches to process",
+        "prompt": "Use the research-merge skill to detect and process any research branches in my repository"
+      },
+      {
+        "title": "Merge Specific Research",
+        "scenario": "You know which research branch to merge",
+        "prompt": "Merge the research branch about [topic] and create a GitHub issue with the findings"
+      },
+      {
+        "title": "Research Cleanup",
+        "scenario": "Clean up old research branches",
+        "prompt": "Scan for research branches older than 30 days and help me decide which to merge or delete"
+      },
+      {
+        "title": "Conflict Resolution",
+        "scenario": "Multiple research notes have conflicting findings",
+        "prompt": "Detect conflicts between these research files and help resolve them before merging"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Process my research branches",
+        "output": [
+          "Found 3 research branches:",
+          "- research-claude-code-v2 (5 commits, 2 docs)",
+          "- research-performance (3 commits, 1 doc)",
+          "- research-ui-components (8 commits, 3 docs)",
+          "",
+          "Created GitHub issue #142: [Research] Claude Code v2.0.65 Features",
+          "Moved 2 docs to docs/research/",
+          "Deleted remote branch: research-claude-code-v2"
+        ]
+      },
+      {
+        "input": "Merge research about database optimization",
+        "output": [
+          "Detected branch: claude/research-db-optimization-abc123",
+          "Research topic: Database Query Optimization",
+          "1 documentation file found",
+          "",
+          "Merged content to main branch",
+          "Created issue #89: [Research] Database Query Optimization",
+          "Branch deleted successfully"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Review research content before merging to ensure quality and accuracy",
+      "Use descriptive titles in research documents for better issue generation",
+      "Include implementation tasks in research docs to create actionable issues"
+    ],
+    "anti_patterns": [
+      "Merging research without reviewing the content first",
+      "Creating research branches without proper documentation",
+      "Ignoring merge conflicts instead of resolving them manually"
+    ],
+    "faq": [
+      {
+        "question": "What triggers research branch detection?",
+        "answer": "The skill runs when /popkit:next detects branches matching claude/research-* pattern, or when invoked manually"
+      },
+      {
+        "question": "Can I merge research without creating GitHub issues?",
+        "answer": "Yes, choose Merge only option to squash-merge content without creating an issue"
+      },
+      {
+        "question": "What happens to the original branch after merging?",
+        "answer": "The remote branch is automatically deleted, but you can skip this step if needed"
+      },
+      {
+        "question": "How does conflict detection work?",
+        "answer": "The skill analyzes text similarity and looks for contradictory statements like should vs should not"
+      },
+      {
+        "question": "Where are research documents moved?",
+        "answer": "Research docs are organized into docs/research/ directory with standardized naming"
+      },
+      {
+        "question": "What if I do not have GitHub CLI installed?",
+        "answer": "The skill will skip issue creation and notify you - the merge will still complete successfully"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "detect_conflicts.py",
+          "type": "file",
+          "path": "scripts/detect_conflicts.py",
+          "lines": 209
+        },
+        {
+          "name": "merge_findings.py",
+          "type": "file",
+          "path": "scripts/merge_findings.py",
+          "lines": 290
+        }
+      ]
+    },
+    {
+      "name": "workflows",
+      "type": "dir",
+      "path": "workflows",
+      "children": [
+        {
+          "name": "merge-workflow.json",
+          "type": "file",
+          "path": "workflows/merge-workflow.json",
+          "lines": 119
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 304
+    }
+  ]
+}

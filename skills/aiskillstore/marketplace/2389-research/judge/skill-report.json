@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:49:10.024Z",
+    "slug": "2389-research-judge",
+    "source_url": "https://github.com/2389-research/claude-plugins/tree/main/test-kitchen/skills/judge",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "22ea97b2617e4a391197e61afec63e1084312cfcae1c7ea90d675d7049fa0258",
+    "tree_hash": "0e23dc95a56451acd7b808a4ad76d8890d9f01dd384dee70c30df06c976fba5a"
+  },
+  "skill": {
+    "name": "judge",
+    "description": "Scoring framework for test-kitchen cookoff and omakase-off. Invoked at Phase 4 to evaluate implementations using 5-criteria scoring. Do not invoke directly - called by cookoff/omakase-off.",
+    "summary": "Scoring framework for test-kitchen cookoff and omakase-off. Invoked at Phase 4 to evaluate implement...",
+    "icon": "⚖️",
+    "version": "1.0.0",
+    "author": "2389-research",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "evaluation",
+      "scoring",
+      "comparison",
+      "testing",
+      "quality"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure markdown documentation file containing only scoring instructions. No executable code exists in the skill. All 24 static findings are FALSE POSITIVES - the static scanner misidentified plain text in JSON metadata and markdown documentation as security vulnerabilities. There is no network access, file system operations, or command execution capability. The skill only provides structured prompts for AI-assisted code evaluation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 129
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 351,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:49:10.024Z"
+  },
+  "content": {
+    "user_title": "Score and compare parallel code implementations",
+    "value_statement": "When multiple implementations compete in cookoff or omakase-off, the judge skill evaluates each using 5 criteria to pick the winner. This ensures quality decisions when parallel agents produce different results.",
+    "seo_keywords": [
+      "judge skill",
+      "Claude Code",
+      "implementation scoring",
+      "parallel evaluation",
+      "cookoff",
+      "omakase-off",
+      "quality assessment",
+      "test-kitchen",
+      "implementation comparison",
+      "code review"
+    ],
+    "actual_capabilities": [
+      "Scores implementations on 5 criteria: fitness, complexity, readability, robustness, maintainability",
+      "Fills out detailed scoring worksheets with checklist items",
+      "Applies hard gates: fitness delta >= 2 triggers auto-win, critical flaws eliminate impls",
+      "Produces winner selection with rationale and trade-off analysis",
+      "Works for both cookoff (same design, different implementations) and omakase (different approaches)"
+    ],
+    "limitations": [
+      "Not invoked directly - only called by cookoff or omakase-off skills",
+      "Requires implementations to already exist in context",
+      "Does not run tests or execute code - only evaluates code visible in conversation",
+      "Integer scores only - no half points or nuanced scoring"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Development teams using parallel implementation workflows",
+        "title": "Cookoff evaluation",
+        "description": "Score competing implementations of the same design to pick the best approach"
+      },
+      {
+        "target_user": "Architects exploring design alternatives",
+        "title": "Omakase-off comparison",
+        "description": "Evaluate different architectural approaches and select the optimal solution"
+      },
+      {
+        "target_user": "Quality assurance processes",
+        "title": "Automated quality gates",
+        "description": "Apply consistent scoring criteria across multiple implementations"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic scoring request",
+        "scenario": "When implementations are ready for evaluation",
+        "prompt": "Judge the implementations in context using the 5-criteria scoring framework. Fill out complete worksheets for each impl."
+      },
+      {
+        "title": "Cookoff evaluation",
+        "scenario": "After parallel agent implementations",
+        "prompt": "Run the judge skill on impl-1, impl-2, and impl-3 from the cookoff. Apply all scoring criteria and announce the winner."
+      },
+      {
+        "title": "Omakase comparison",
+        "scenario": "When comparing architectural variants",
+        "prompt": "Compare variant-a and variant-b using the judge skill. Note that these are different approaches, not different implementations of the same design."
+      },
+      {
+        "title": "Detailed analysis",
+        "scenario": "When comprehensive scoring is needed",
+        "prompt": "Provide complete scoring worksheets with all checklist items filled. Include feasibility checks and hard gate results. Explain trade-offs between all implementations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Judge the three implementations in context using the 5-criteria framework",
+        "output": [
+          "Gate Check: impl-1 4/4 tests pass design adherence Yes, impl-2 3/4 tests pass design adherence Yes, impl-3 4/4 tests pass design adherence No",
+          "Judge Scorecard: impl-1 21/25, impl-2 18/25, impl-3 15/25",
+          "Winner: impl-1 with best balance of readability and maintainability plus strong fitness score"
+        ]
+      },
+      {
+        "input": "Compare variant-a and variant-b for the API design",
+        "output": [
+          "Feasibility Check: variant-a OK, variant-b Flag - missing pagination on unbounded queries",
+          "Fitness for Purpose: variant-a 4/5, variant-b 4/5 - equal fitness triggers fitness gate",
+          "Winner: variant-a - fitness delta was zero so no auto-trigger, but superior robustness score decided"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Ensure all implementations are visible in context before invoking judge",
+      "Run fresh-eyes review on survivors before judge evaluation",
+      "Document the selection rationale for future reference"
+    ],
+    "anti_patterns": [
+      "Invoking judge directly - it should be called by cookoff or omakase-off",
+      "Skipping feasibility checks - they catch critical issues early",
+      "Using half-point scores - only integer scores 1-5 are valid"
+    ],
+    "faq": [
+      {
+        "question": "How is the winner determined?",
+        "answer": "Highest scoring implementation wins unless a hard gate triggers. Fitness gate auto-advances higher fitness impl. Critical flaws eliminate."
+      },
+      {
+        "question": "Can I invoke judge directly?",
+        "answer": "No. Judge is called automatically by cookoff or omakase-off at Phase 4. Direct invocation may produce incomplete results."
+      },
+      {
+        "question": "What happens if implementations have equal scores?",
+        "answer": "The skill does not specify tie-breaking. Review the worksheets to identify differences or request human judgment."
+      },
+      {
+        "question": "Does judge run tests?",
+        "answer": "No. Judge assumes tests already ran and results are available in context. It evaluates code and design, not test execution."
+      },
+      {
+        "question": "Can judge evaluate more than 3 implementations?",
+        "answer": "The format shows 3 columns but can be extended. The skill works for any number of implementations with columns added."
+      },
+      {
+        "question": "What is the difference between cookoff and omakase evaluation?",
+        "answer": "Cookoff compares implementations of same design. Omakase compares different architectural approaches. Scoring is same but interpretation differs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 178
+    }
+  ]
+}

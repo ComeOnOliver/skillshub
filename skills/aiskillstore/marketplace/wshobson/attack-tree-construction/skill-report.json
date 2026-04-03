@@ -1,0 +1,270 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:17:06.229Z",
+    "slug": "wshobson-attack-tree-construction",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/security-scanning/skills/attack-tree-construction",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5a32eb8ef2a716c4762f9157ee195a9361a9ab1d7313245894eaa7b102c59403",
+    "tree_hash": "33c0fd1a1701bc9bc4aff653a52fa30589f37470c2a6e044031ed1a573ded266"
+  },
+  "skill": {
+    "name": "attack-tree-construction",
+    "description": "Build comprehensive attack trees to visualize threat paths. Use when mapping attack scenarios, identifying defense gaps, or communicating security risks to stakeholders.",
+    "summary": "Build comprehensive attack trees to visualize threat paths. Use when mapping attack scenarios, ident...",
+    "icon": "🌳",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "attack-trees",
+      "threat-modeling",
+      "security-analysis",
+      "risk-assessment"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation and educational skill containing pure templates for threat modeling. All 72 static findings are false positives triggered by legitimate security terminology in educational content. The skill has no executable code, no network calls, no file access, and no external command execution. The content describes attack concepts purely for defensive planning purposes.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 683,
+            "line_end": 683
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 684,
+            "line_end": 684
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 685,
+            "line_end": 685
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 255,
+            "line_end": 418
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 418,
+            "line_end": 422
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 422,
+            "line_end": 509
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 509,
+            "line_end": 513
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 513,
+            "line_end": 663
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 859,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:17:06.229Z"
+  },
+  "content": {
+    "user_title": "Build attack trees for security planning",
+    "value_statement": "Threat paths are hard to map and explain. This skill provides structured attack tree templates and analysis guidance for clearer risk communication and defense planning.",
+    "seo_keywords": [
+      "attack tree",
+      "threat modeling",
+      "security analysis",
+      "risk assessment",
+      "Mermaid diagram",
+      "PlantUML",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Define OR, AND, and leaf nodes for attack trees",
+      "Assign cost, skill, time, and detection attributes to attacks",
+      "Build trees using a fluent builder pattern example",
+      "Export tree structures to JSON, Mermaid, and PlantUML text",
+      "Analyze paths to find easiest, cheapest, and stealthiest routes"
+    ],
+    "limitations": [
+      "Provides templates and examples, not an executable tool",
+      "Requires manual entry of nodes and attributes",
+      "Does not collect or validate real system data",
+      "No direct integration with ticketing or threat intel feeds"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security architect",
+        "title": "Model system threats",
+        "description": "Create attack trees to evaluate design risks and plan defensive investments."
+      },
+      {
+        "target_user": "Penetration tester",
+        "title": "Plan test paths",
+        "description": "Map likely attack paths to focus testing on the highest impact routes."
+      },
+      {
+        "target_user": "Risk manager",
+        "title": "Explain stakeholder risk",
+        "description": "Summarize attacker goals and mitigations for non technical audiences."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple tree outline",
+        "scenario": "Beginner mapping a scenario",
+        "prompt": "Create a simple attack tree for unauthorized access to a web app. Provide a root goal, two sub goals, and leaf attacks."
+      },
+      {
+        "title": "Add attack attributes",
+        "scenario": "Need cost and difficulty",
+        "prompt": "Build an attack tree for data exfiltration and assign difficulty, cost, detection risk, and time for each leaf."
+      },
+      {
+        "title": "Mermaid diagram text",
+        "scenario": "Need a diagram output",
+        "prompt": "Generate Mermaid flowchart text for an account takeover attack tree with OR and AND nodes."
+      },
+      {
+        "title": "Mitigation priorities",
+        "scenario": "Advanced path analysis",
+        "prompt": "Given an attack tree, identify critical nodes and prioritize mitigations by coverage impact."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an attack tree for account takeover and highlight the easiest path.",
+        "output": [
+          "Root goal: Take over user account",
+          "Easiest path: Steal credentials via phishing",
+          "Top mitigations: Email filtering, security awareness training, MFA"
+        ]
+      },
+      {
+        "input": "Build an attack tree for data exfiltration from a database.",
+        "output": [
+          "Root goal: Exfiltrate sensitive data",
+          "Path 1: Direct database access via SQL injection",
+          "Path 2: Backup theft via compromised credentials",
+          "Path 3: Application layer data scraping",
+          "Highest priority mitigation: Input validation and least privilege access"
+        ]
+      },
+      {
+        "input": "Create a Mermaid diagram for cloud storage compromise.",
+        "output": [
+          "flowchart TD diagram showing root goal with OR branches",
+          "Sub-goals: Credential theft, API exploitation, misconfiguration abuse",
+          "Leaf nodes with color coding by difficulty level"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with a clear attacker goal and scope",
+      "Assign realistic attributes for each leaf attack",
+      "Review trees with experts and update regularly"
+    ],
+    "anti_patterns": [
+      "Building trees without assigning attack attributes",
+      "Ignoring insider and social engineering paths",
+      "Treating the tree as static once created"
+    ],
+    "faq": [
+      {
+        "question": "Which platforms are supported?",
+        "answer": "The skill is text based and works in Claude, Codex, and Claude Code."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides templates and analysis logic but does not run scans or collect real data."
+      },
+      {
+        "question": "Can it integrate with my tools?",
+        "answer": "It can export JSON, Mermaid, or PlantUML text for use in other tools."
+      },
+      {
+        "question": "Does it access my data?",
+        "answer": "No. The content has no file or network access behaviors."
+      },
+      {
+        "question": "What if the tree looks incomplete?",
+        "answer": "Add more sub goals, validate with experts, and iterate."
+      },
+      {
+        "question": "How is this different from a full threat model?",
+        "answer": "It focuses on attack paths, while threat models cover assets, controls, and risks."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 686
+    }
+  ]
+}

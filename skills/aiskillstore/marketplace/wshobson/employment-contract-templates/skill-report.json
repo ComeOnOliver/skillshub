@@ -1,0 +1,258 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:44:09.274Z",
+    "slug": "wshobson-employment-contract-templates",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/hr-legal-compliance/skills/employment-contract-templates",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cf572cbd99c127def87aa50084ae113bdee564e83d9eaa94b256c2ee995815e6",
+    "tree_hash": "78d85173f4f477b1209211ba1276dde4657b1d362f8e57e1990d56c5a211bd41"
+  },
+  "skill": {
+    "name": "employment-contract-templates",
+    "description": "Create employment contracts, offer letters, and HR policy documents following legal best practices. Use when drafting employment agreements, creating HR policies, or standardizing employment documentation.",
+    "summary": "Create employment contracts, offer letters, and HR policy documents following legal best practices. ...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "legal",
+    "tags": [
+      "hr",
+      "legal",
+      "templates",
+      "employment",
+      "compliance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and markdown template text for employment contracts. No executable code, scripts, network calls, or file system access operations exist. The static scanner flagged text patterns (e.g., 'tree', 'hash', ASCII diagrams, URLs) as potential threats, but all findings are false positives. The skill-report.json explicitly classifies this as 'safe' with zero risk factor evidence. This is a pure documentation skill providing employment document templates with appropriate legal disclaimers.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 504,
+            "line_end": 504
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 505,
+            "line_end": 505
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 506,
+            "line_end": 506
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 334
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 334,
+            "line_end": 338
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 338,
+            "line_end": 484
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 686,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:44:09.274Z"
+  },
+  "content": {
+    "user_title": "Generate Employment Contracts and HR Documents",
+    "value_statement": "Create legally sound employment documents quickly and consistently. This skill provides professionally drafted templates for contracts, offer letters, and HR policies that comply with employment law best practices.",
+    "seo_keywords": [
+      "employment contract templates",
+      "HR documents",
+      "offer letter generator",
+      "employment agreements",
+      "Claude legal documents",
+      "Codex templates",
+      "Claude Code HR",
+      "work contracts",
+      "employee handbook",
+      "legal document automation"
+    ],
+    "actual_capabilities": [
+      "Generate offer letters with compensation and benefits details",
+      "Create employment agreements with confidentiality and IP clauses",
+      "Draft employee handbook sections with policies and procedures",
+      "Include jurisdiction-specific legal considerations and disclaimers",
+      "Provide best practices for employment document creation"
+    ],
+    "limitations": [
+      "Templates require customization for specific jurisdictions",
+      "Does not constitute legal advice - counsel review recommended",
+      "Covers US employment law primarily - may need adaptation for other countries",
+      "Templates are starting points - not comprehensive legal documents"
+    ],
+    "use_cases": [
+      {
+        "target_user": "HR managers",
+        "title": "Standardize employment documentation",
+        "description": "Create consistent offer letters and contracts across your organization with proper legal language and company policies."
+      },
+      {
+        "target_user": "Small business owners",
+        "title": "Draft first employment agreements",
+        "description": "Generate professional employment contracts when hiring your first employees with appropriate legal protections."
+      },
+      {
+        "target_user": "Legal professionals",
+        "title": "Template starting points",
+        "description": "Use as foundation for customized employment documents, saving time on standard clauses and formatting."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Offer Letter",
+        "scenario": "Hiring a new employee",
+        "prompt": "Create an offer letter for a software engineer position with $120,000 salary, including standard benefits and at-will employment language."
+      },
+      {
+        "title": "Employment Contract",
+        "scenario": "Contractor to full-time conversion",
+        "prompt": "Draft an employment agreement for a senior designer including confidentiality, IP assignment, and 12-month non-compete clauses."
+      },
+      {
+        "title": "Employee Handbook Section",
+        "scenario": "Updating company policies",
+        "prompt": "Write a remote work policy section for an employee handbook covering equipment, hours, and communication expectations."
+      },
+      {
+        "title": "Custom Employment Document",
+        "scenario": "Special employment arrangement",
+        "prompt": "Create an employment contract for a part-time CFO including equity compensation, flexible hours, and specific termination clauses."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate an offer letter for a marketing manager with $95,000 salary and standard benefits",
+        "output": [
+          "Professional offer letter with company letterhead",
+          "Detailed compensation breakdown: $95,000 base salary",
+          "Benefits: health insurance, 401k with 4% match, 15 days PTO",
+          "Position details: Marketing Manager, reports to VP Marketing",
+          "At-will employment clause with acceptance instructions",
+          "Legal disclaimer stating this is not a contract"
+        ]
+      },
+      {
+        "input": "Create an employment contract for a software developer with non-compete and IP assignment clauses",
+        "output": [
+          "Formal employment agreement with defined term and at-will provisions",
+          "Confidentiality obligations covering trade secrets and proprietary information",
+          "IP assignment clause transferring work product to employer",
+          "Non-compete restriction: 12 months post-termination within geographic area",
+          "Non-solicitation clauses for customers and employees",
+          "Termination provisions with severance eligibility"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always customize templates for your specific jurisdiction and company requirements",
+      "Have legal counsel review all employment documents before use",
+      "Include appropriate disclaimers about at-will employment where applicable"
+    ],
+    "anti_patterns": [
+      "Using templates without jurisdiction-specific legal review",
+      "Copying competitor employment agreements directly",
+      "Making promises in offer letters that create implied contracts"
+    ],
+    "faq": [
+      {
+        "question": "Are these templates legally binding?",
+        "answer": "Templates are starting points that require customization. Always have legal counsel review before use to ensure compliance with local laws."
+      },
+      {
+        "question": "Which jurisdictions do these templates cover?",
+        "answer": "Templates are based on US employment law. International users must adapt for local regulations and employment standards."
+      },
+      {
+        "question": "Can I modify the generated documents?",
+        "answer": "Yes, templates are meant to be customized. Edit sections to match your company policies, compensation structure, and legal requirements."
+      },
+      {
+        "question": "How do I ensure data privacy when using these templates?",
+        "answer": "Remove all personal information from examples. Use placeholder text like [EMPLOYEE NAME] instead of real names in your prompts."
+      },
+      {
+        "question": "What if I need industry-specific clauses?",
+        "answer": "Add industry-specific language after generation. Templates provide standard employment terms that work across most industries."
+      },
+      {
+        "question": "How does this compare to hiring an employment lawyer?",
+        "answer": "This skill provides cost-effective templates for standard situations. Complex arrangements or high-risk hires still require professional legal advice."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 508
+    }
+  ]
+}

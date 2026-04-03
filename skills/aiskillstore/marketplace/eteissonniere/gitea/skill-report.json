@@ -1,0 +1,324 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:17:10.849Z",
+    "slug": "eteissonniere-gitea",
+    "source_url": "https://github.com/ETeissonniere/dotfiles/tree/master/config/claude/skills/gitea",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "38a99108fe010150fa8a34d3d99484d70150131927bcb1f8577b736400aa1ef6",
+    "tree_hash": "0028f37bd0d69eb1bbc7bb0d2b7dc76b68b8688df92198933e2f3283a19510a4"
+  },
+  "skill": {
+    "name": "gitea",
+    "description": "Gitea operations via tea CLI. Use when user mentions: gitea, tea, or when git remote shows a Gitea instance.",
+    "summary": "Gitea operations via tea CLI. Use when user mentions: gitea, tea, or when git remote shows a Gitea i...",
+    "icon": "🔧",
+    "version": "1.0.0",
+    "author": "ETeissonniere",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "gitea",
+      "git",
+      "cli",
+      "tea",
+      "repository"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guidance for using the tea CLI tool. No executable code, no network calls, no file system access. Static findings are false positives from scanner misclassifying metadata fields, hash values, and markdown code blocks as security issues.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 64
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 242,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:17:10.849Z"
+  },
+  "content": {
+    "user_title": "Use tea CLI for Gitea repositories",
+    "value_statement": "This skill provides guidance for interacting with Gitea instances using the tea command-line tool. It includes command references for pull requests, issues, and repository operations.",
+    "seo_keywords": [
+      "gitea",
+      "tea cli",
+      "claude",
+      "codex",
+      "claude-code",
+      "git",
+      "repository management",
+      "pull requests",
+      "issues",
+      "devops"
+    ],
+    "actual_capabilities": [
+      "Detect Gitea repositories from git remote configuration",
+      "Guide user authentication with tea login commands",
+      "Create, list, view, and merge pull requests",
+      "Create, list, view, close, and comment on issues",
+      "Clone and fork repositories via tea CLI"
+    ],
+    "limitations": [
+      "Requires tea CLI to be installed on the system",
+      "Requires valid Gitea authentication before operations",
+      "Does not provide tea installation instructions",
+      "Does not modify Gitea server configuration"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Manage CI pipelines",
+        "description": "Check pipeline status and trigger runs on Gitea CI systems"
+      },
+      {
+        "target_user": "Developers",
+        "title": "Handle pull requests",
+        "description": "Create, review, checkout, and merge PRs from the terminal"
+      },
+      {
+        "target_user": "Project Managers",
+        "title": "Track issues",
+        "description": "Create and manage issue tracking directly from command line"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "List open pull requests",
+        "scenario": "Viewing PRs",
+        "prompt": "List all open pull requests in this Gitea repository using tea pr list"
+      },
+      {
+        "title": "Create new issue",
+        "scenario": "Creating issue",
+        "prompt": "Create a new issue with title and description using tea issue create"
+      },
+      {
+        "title": "Check pipeline status",
+        "scenario": "CI checks",
+        "prompt": "Check the CI pipeline status before merging this pull request"
+      },
+      {
+        "title": "Fork repository",
+        "scenario": "Forking repo",
+        "prompt": "Fork this repository using tea repo fork command"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "List the open pull requests in this Gitea repository",
+        "output": [
+          "Pull Request #42: Add new authentication flow - open - created by alice",
+          "Pull Request #41: Fix memory leak in parser - open - created by bob",
+          "Pull Request #40: Update documentation - open - created by charlie"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Verify authentication with tea login list before performing operations",
+      "Use git status to check for uncommitted changes before creating PRs",
+      "Use -o json or -o yaml for machine-readable output in scripts"
+    ],
+    "anti_patterns": [
+      "Running tea commands without verifying authentication first",
+      "Creating PRs without checking for uncommitted local changes",
+      "Triggering new CI runs without checking current pipeline status"
+    ],
+    "faq": [
+      {
+        "question": "What is tea?",
+        "answer": "Tea is the official command-line client for Gitea. It allows you to interact with Gitea repositories from the terminal."
+      },
+      {
+        "question": "How do I install tea?",
+        "answer": "Download tea from the official Gitea website or install via package managers like Homebrew, Scoop, or Go."
+      },
+      {
+        "question": "Does this skill work with GitHub or GitLab?",
+        "answer": "No. This skill specifically detects Gitea instances. For GitHub, use the official GitHub skill instead."
+      },
+      {
+        "question": "Is my data safe with tea?",
+        "answer": "Tea stores authentication tokens locally. Always verify you are connecting to trusted Gitea instances before logging in."
+      },
+      {
+        "question": "Can I use tea for scripting?",
+        "answer": "Yes. Use the -o json or -o yaml flags to get machine-readable output suitable for scripts and automation."
+      },
+      {
+        "question": "What if tea commands fail?",
+        "answer": "Check authentication with tea login list, verify the remote URL points to a Gitea instance, and ensure tea is installed correctly."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 65
+    }
+  ]
+}

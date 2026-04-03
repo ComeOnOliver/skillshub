@@ -1,0 +1,378 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:09:46.940Z",
+    "slug": "cam10001110101-generative-art",
+    "source_url": "https://github.com/Cam10001110101/claude-skills-base/tree/main/mnt/skills/examples/generative-art",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "10edb04932834593d0073f324ee7bd53e850dc481ad268274a9eac7adcb3c2b5",
+    "tree_hash": "2d83d62c9c0c04b28c79ddd839a43fd0bca119273faf5c6a75e507a63a98f806"
+  },
+  "skill": {
+    "name": "generative-art",
+    "description": "Creating algorithmic, generative art using p5.js with seeded randomness and interactive parameter exploration.",
+    "summary": "Creating algorithmic, generative art using p5.js with seeded randomness and interactive parameter ex...",
+    "icon": "🎨",
+    "version": "0.1.0",
+    "author": "Cam10001110101",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "generative art",
+      "p5.js",
+      "algorithmic",
+      "creative",
+      "visualization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate generative art skill with zero security risks. All 61 static findings are false positives caused by pattern matching without semantic context. The skill creates browser-based p5.js artifacts using seeded randomness for reproducible art generation. No server-side code, file system access, or command execution capabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "README.md",
+            "line_start": 7,
+            "line_end": 14
+          },
+          {
+            "file": "README.md",
+            "line_start": 14,
+            "line_end": 31
+          },
+          {
+            "file": "README.md",
+            "line_start": 31,
+            "line_end": 42
+          },
+          {
+            "file": "README.md",
+            "line_start": 42,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 193
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 193,
+            "line_end": 203
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 227
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 280
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 280,
+            "line_end": 296
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 324
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 337
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 343
+          },
+          {
+            "file": "templates/generator_template.js",
+            "line_start": 133,
+            "line_end": 133
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 304,
+            "line_end": 304
+          },
+          {
+            "file": "templates/viewer.html",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "templates/viewer.html",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "templates/viewer.html",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "templates/viewer.html",
+            "line_start": 36,
+            "line_end": 36
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "templates/generator_template.js",
+            "line_start": 133,
+            "line_end": 133
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1660,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:09:46.940Z"
+  },
+  "content": {
+    "user_title": "Create generative art with seeded randomness",
+    "value_statement": "Generative art creation requires artistic vision and technical skill. This skill helps you create unique, reproducible generative art using p5.js with parameter controls for exploration. You can create flow fields, recursive patterns, particle systems, and more.",
+    "seo_keywords": [
+      "generative art",
+      "p5.js",
+      "algorithmic art",
+      "Claude generative art",
+      "Codex creative coding",
+      "Claude Code art generator",
+      "seeded randomness",
+      "Art Blocks style",
+      "interactive art",
+      "procedural art"
+    ],
+    "actual_capabilities": [
+      "Creates algorithmic philosophy documents explaining the computational approach",
+      "Generates self-contained HTML artifacts using p5.js",
+      "Implements seeded randomness for reproducible results",
+      "Provides interactive parameter controls for exploration",
+      "Supports color palette customization",
+      "Enables PNG export of generated art"
+    ],
+    "limitations": [
+      "Runs in browser context only via generated HTML artifacts",
+      "Cannot access local files or external APIs",
+      "Depends on p5.js library loaded from CDN",
+      "Limited to browser canvas-based visualization"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Digital artists",
+        "title": "Create unique generative pieces",
+        "description": "Generate one-of-a-kind algorithmic art with full control over parameters and seeds for reproducibility."
+      },
+      {
+        "target_user": "Creative developers",
+        "title": "Explore algorithmic aesthetics",
+        "description": "Experiment with flow fields, particle systems, and recursive patterns for creative coding projects."
+      },
+      {
+        "target_user": "Educators",
+        "title": "Demonstrate generative concepts",
+        "description": "Show students how algorithmic processes create visual art with interactive parameter exploration."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple flow field",
+        "scenario": "Create basic particle flow art",
+        "prompt": "Create a flow field generative art piece with 5000 particles, subtle noise-based movement, and a warm color palette including orange and earth tones."
+      },
+      {
+        "title": "Recursive structure",
+        "scenario": "Design branching patterns",
+        "prompt": "Generate recursive branching structures inspired by natural growth patterns. Use golden ratios, varied line weights, and a cool blue color palette."
+      },
+      {
+        "title": "Circle patterns",
+        "scenario": "Build geometric arrangements",
+        "prompt": "Create circle packing or Voronoi tessellation generative art. Include adjustable density and relaxation parameters with earth tone colors."
+      },
+      {
+        "title": "Custom philosophy",
+        "scenario": "Develop unique algorithmic art",
+        "prompt": "Create an original generative art piece based on this concept: [describe your concept]. First write an algorithmic philosophy document, then implement it with appropriate parameters."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a particle flow field with organic movement",
+        "output": [
+          "Generates an interactive HTML artifact with 5000 particles following noise-driven flow fields",
+          "Particles leave trails creating organic density patterns",
+          "Adjustable parameters include particle count, noise scale, flow speed, and trail opacity",
+          "Seed navigation allows exploration of different variations",
+          "Colors can be customized using palette pickers"
+        ]
+      },
+      {
+        "input": "Design a recursive tree with golden ratio proportions",
+        "output": [
+          "Creates a branching structure with recursive subdivision",
+          "Each branch follows golden ratio proportions with slight randomization",
+          "Line weights diminish with each recursion level",
+          "Color palette applies to branches with subtle variation",
+          "Seed control enables exploration of different tree variations"
+        ]
+      },
+      {
+        "input": "Build a circle packing visualization with relaxation",
+        "output": [
+          "Generates randomized circles that pack without overlap",
+          "Relaxation algorithm refines positions over multiple iterations",
+          "Color based on circle size and position",
+          "Adjustable density and radius parameters",
+          "Download individual variations as PNG files"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use specific seed values to reproduce your favorite variations",
+      "Adjust one parameter at a time to understand how each affects the output",
+      "Start with conservative parameter values and gradually experiment"
+    ],
+    "anti_patterns": [
+      "Using excessively high particle counts may slow down the browser",
+      "Avoid very high noise scale values which can create chaotic patterns",
+      "Do not expect the same output from different seeds - each seed creates unique art"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. The skill generates HTML artifacts that run in any browser."
+      },
+      {
+        "question": "Can I use my own colors?",
+        "answer": "Yes. The generated art includes color pickers for palette customization. You can adjust colors in real-time."
+      },
+      {
+        "question": "How do I save my favorite variations?",
+        "answer": "Use the Download PNG button to save the current canvas. For reproducibility, note the seed number."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "Yes. All code runs locally in your browser. No data is sent to external servers except loading p5.js from CDN."
+      },
+      {
+        "question": "Why does changing the seed create different art?",
+        "answer": "The skill uses seeded randomness. The same seed produces identical output. Different seeds create mathematically different but equally valid generative art."
+      },
+      {
+        "question": "How is this different from static image generation?",
+        "answer": "Generative art creates unique algorithmic outputs that can be explored interactively. Each run with a seed produces reproducible results you can modify and export."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "templates",
+      "type": "dir",
+      "path": "templates",
+      "children": [
+        {
+          "name": "generator_template.js",
+          "type": "file",
+          "path": "templates/generator_template.js",
+          "lines": 224
+        },
+        {
+          "name": "viewer.html",
+          "type": "file",
+          "path": "templates/viewer.html",
+          "lines": 736
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 67
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 433
+    }
+  ]
+}

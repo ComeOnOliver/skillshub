@@ -1,0 +1,274 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:46:36.641Z",
+    "slug": "7spade-skill-creator",
+    "source_url": "https://github.com/7Spade/ng-dragon/tree/main/.github/skills/skill-creator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "79affa03d7b1c159bc2e72cd96b06b34ee78fc9ca18f69ea33dc6cec0ea604a3",
+    "tree_hash": "15e6a1948fa55ed7a72631b5f03c5fcfe4862097b9c98c3713ecddbbebad06bc"
+  },
+  "skill": {
+    "name": "skill-creator",
+    "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+    "summary": "Guide for creating effective skills. This skill should be used when users want to create a new skill...",
+    "icon": "🛠️",
+    "version": "1.0.0",
+    "author": "7Spade",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "documentation",
+    "tags": [
+      "skill-development",
+      "template",
+      "workflow",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation and utility skill for creating other skills. It contains Python scripts for skill initialization, validation, and packaging. All scripts operate locally on the filesystem, create directories and files at user-specified paths, and make no network calls or external command executions. The extensive static findings are false positives caused by markdown code block markers being misidentified as shell backticks, and text patterns in documentation being misidentified as cryptographic terms.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 1,
+            "line_end": 304
+          },
+          {
+            "file": "scripts/quick_validate.py",
+            "line_start": 1,
+            "line_end": 95
+          },
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 1,
+            "line_end": 111
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 194,
+            "line_end": 271
+          },
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 19,
+            "line_end": 82
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 1400,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:46:36.641Z"
+  },
+  "content": {
+    "user_title": "Create custom skills for Claude",
+    "value_statement": "Building specialized skills for Claude requires understanding skill structure and best practices. This skill provides templates, validation tools, and step-by-step guidance for creating effective skills that extend Claude with domain expertise and custom workflows.",
+    "seo_keywords": [
+      "skill creator",
+      "Claude skills",
+      "AI skill development",
+      "custom skills",
+      "skill template",
+      "Claude Code",
+      "Claude Codex",
+      "workflow automation",
+      "domain expertise",
+      "skill packaging"
+    ],
+    "actual_capabilities": [
+      "Initialize new skill directories with SKILL.md template",
+      "Validate skill structure and frontmatter requirements",
+      "Package skills into distributable .skill files",
+      "Provide best practices for skill design and organization",
+      "Guide progressive disclosure patterns for context management",
+      "Document workflow and output patterns for effective skills"
+    ],
+    "limitations": [
+      "Does not execute user code or interact with external APIs",
+      "Cannot install skills into Claude automatically",
+      "Only provides guidance and templates, not runtime execution",
+      "Scripts must be run locally by the user"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Enthusiasts",
+        "title": "Build Custom Skills",
+        "description": "Create specialized skills to customize Claude for specific domains or tasks"
+      },
+      {
+        "target_user": "Team Leads",
+        "title": "Standardize Team Workflows",
+        "description": "Package team processes and best practices into reusable skills"
+      },
+      {
+        "target_user": "Enterprise Users",
+        "title": "Share Domain Knowledge",
+        "description": "Distribute company-specific knowledge and procedures across your organization"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create New Skill",
+        "scenario": "Initialize a skill project",
+        "prompt": "Use the skill-creator skill to help me create a new skill called [skill-name] for [use case]. Walk me through the skill creation process."
+      },
+      {
+        "title": "Validate Skill",
+        "scenario": "Check skill structure",
+        "prompt": "Validate my skill at [path] using the quick_validate script. Report any issues and how to fix them."
+      },
+      {
+        "title": "Package Skill",
+        "scenario": "Prepare for distribution",
+        "prompt": "Package my skill at [path] into a .skill file. Where should I put the output?"
+      },
+      {
+        "title": "Design Patterns",
+        "scenario": "Learn best practices",
+        "prompt": "Show me examples of effective skill structures from the workflow patterns and output patterns references."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create a skill for writing documentation",
+        "output": [
+          "Skill Name: documentation-writer",
+          "Created directory: skills/public/documentation-writer",
+          "Files generated: SKILL.md, scripts/example.py, references/api_reference.md, assets/example_asset.txt",
+          "Next steps: Edit SKILL.md with your documentation workflow and requirements"
+        ]
+      },
+      {
+        "input": "I need a skill for API documentation",
+        "output": [
+          "Skill Name: api-doc-helper",
+          "Structure: Workflow-based with references for different API types",
+          "Includes: scripts/ for generating docs, references/ for API specs",
+          "Ready to package after customizing the templates"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep SKILL.md concise and focused on what Claude needs to know",
+      "Use progressive disclosure to load detailed content only when needed",
+      "Include executable scripts for deterministic, repeatable operations"
+    ],
+    "anti_patterns": [
+      "Including redundant documentation that Claude already knows",
+      "Creating deeply nested reference files that are hard to discover",
+      "Adding user-facing documentation files like README inside the skill"
+    ],
+    "faq": [
+      {
+        "question": "What tools support .skill files?",
+        "answer": "Claude, Codex, and Claude Code can load .skill files to extend their capabilities."
+      },
+      {
+        "question": "What is the maximum size for a skill?",
+        "answer": "SKILL.md body should stay under 500 lines. Bundled resources have no practical limit."
+      },
+      {
+        "question": "Can I include Python dependencies?",
+        "answer": "Skills include scripts that run locally. Users must have required dependencies installed."
+      },
+      {
+        "question": "Is my data safe when using skills?",
+        "answer": "Skills only access files you explicitly provide. This skill makes no network calls."
+      },
+      {
+        "question": "Why is my validation failing?",
+        "answer": "Check that SKILL.md has valid YAML frontmatter with name and description."
+      },
+      {
+        "question": "How is this different from system prompts?",
+        "answer": "Skills are modular packages that can be shared and loaded on demand."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "output-patterns.md",
+          "type": "file",
+          "path": "references/output-patterns.md",
+          "lines": 83
+        },
+        {
+          "name": "workflows.md",
+          "type": "file",
+          "path": "references/workflows.md",
+          "lines": 28
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "init_skill.py",
+          "type": "file",
+          "path": "scripts/init_skill.py",
+          "lines": 304
+        },
+        {
+          "name": "package_skill.py",
+          "type": "file",
+          "path": "scripts/package_skill.py",
+          "lines": 111
+        },
+        {
+          "name": "quick_validate.py",
+          "type": "file",
+          "path": "scripts/quick_validate.py",
+          "lines": 95
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 357
+    }
+  ]
+}

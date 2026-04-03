@@ -1,0 +1,195 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:44:44.286Z",
+    "slug": "abdelstark-git-protocol",
+    "source_url": "https://github.com/AbdelStark/guts/tree/main/.claude/skills/git-protocol",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6479ec0a0eed41eb2967ac5faf255c4e239f887a5c70fb55a2f3d89557786688",
+    "tree_hash": "2c3d36a589e433e1673226b701390de3136fbb68b7641fb962d0236eb788777a"
+  },
+  "skill": {
+    "name": "git-protocol",
+    "description": "Git protocol implementation patterns using gitoxide for Guts repository operations",
+    "summary": "Implement Git repository operations with pure Rust using gitoxide library",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "AbdelStark",
+    "license": "MIT",
+    "tags": [
+      "git",
+      "gitoxide",
+      "version-control",
+      "repository"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. Ed25519 is strong modern crypto (misclassified as weak). Backticks are markdown code fences, not shell execution. Git protocol operations are legitimate repository functionality. No malicious patterns detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 261
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 705,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:44:44.286Z",
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "content": {
+    "user_title": "Implement Git Protocol Operations",
+    "value_statement": "This skill provides implementation patterns for Git repository operations using the pure-Rust gitoxide library. It enables safe and efficient Git operations without external git binary dependencies.",
+    "seo_keywords": [
+      "git protocol",
+      "gitoxide",
+      "git operations",
+      "version control",
+      "Claure",
+      "Codex",
+      "Claude Code",
+      "repository",
+      "commit",
+      "packfile"
+    ],
+    "actual_capabilities": [
+      "Open and create Git repositories using gitoxide",
+      "Read and write Git objects (blobs, trees, commits, tags)",
+      "Implement Smart HTTP protocol endpoints for git-upload-pack and git-receive-pack",
+      "Generate and parse Git packfiles",
+      "Manage Git references and refs with atomic operations",
+      "Extended commit handling with Ed25519 cryptographic signatures"
+    ],
+    "limitations": [
+      "This skill provides implementation patterns and documentation, not executable commands",
+      "Does not replace git CLI or provide direct git command execution",
+      "Requires gitoxide library integration into a Rust project",
+      "Not a standalone tool for end users"
+    ],
+    "use_cases": [
+      {
+        "title": "Build Git-powered Applications",
+        "description": "Developers can use these patterns to build applications that interact with Git repositories using the pure-Rust gitoxide library instead of invoking the git CLI.",
+        "target_user": "Rust developers building version control tools"
+      },
+      {
+        "title": "Implement Git Hosting Services",
+        "description": "Create Git server functionality with custom protocol handlers for git-upload-pack and git-receive-pack operations.",
+        "target_user": "Developers building Git hosting platforms"
+      },
+      {
+        "title": "Extend Git with Cryptographic Verification",
+        "description": "Add Ed25519 signature verification to Git commits for enhanced integrity and authentication in custom Git workflows.",
+        "target_user": "Security-conscious teams requiring cryptographic commit verification"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Open a Repository",
+        "prompt": "How do I open an existing Git repository or create a new one using gitoxide in Rust? Show me the code pattern.",
+        "scenario": "Need to work with a Git repository programmatically"
+      },
+      {
+        "title": "Read Git Objects",
+        "prompt": "Write Rust code to read Git objects (commits, trees, blobs) using gitoxide and decode their contents.",
+        "scenario": "Need to inspect repository history or file contents"
+      },
+      {
+        "title": "Implement Git HTTP Protocol",
+        "prompt": "Create HTTP endpoints for git-upload-pack and git-receive-pack using axum and gitoxide for a Git server.",
+        "scenario": "Building a Git HTTP server"
+      },
+      {
+        "title": "Generate Packfiles",
+        "prompt": "Show me how to generate Git packfiles containing specific objects using gitoxide for efficient data transfer.",
+        "scenario": "Need to implement Git clone or fetch functionality"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I create a new commit with gitoxide?",
+        "output": "Use the CommitBuilder pattern shown in the skill. First create a CommitRef with tree, parents, author, committer, and message. Then call write_object on the repository to persist the commit and get its ObjectId."
+      },
+      {
+        "input": "What is gitoxide?",
+        "output": "Gitoxide is a pure-Rust implementation of Git. It provides high-level crates like gix for operations, gix-object for object types, gix-hash for hashing, gix-pack for pack files, and gix-transport for protocol handling."
+      }
+    ],
+    "best_practices": [
+      "Use gitoxide's high-level gix crate for common Git operations instead of spawning git processes",
+      "Implement atomic reference updates using PreviousValue::MustExistAndMatch for safe concurrent operations",
+      "Verify Ed25519 signatures on commits when using cryptographic extensions for integrity"
+    ],
+    "anti_patterns": [
+      "Do not invoke git CLI commands when gitoxide provides equivalent functionality",
+      "Do not skip reference verification when accepting pushes",
+      "Do not expose raw packfile generation without proper authentication"
+    ],
+    "faq": [
+      {
+        "question": "What is gitoxide?",
+        "answer": "Gitoxide is a pure-Rust implementation of Git that provides safe, efficient Git operations without depending on the git binary."
+      },
+      {
+        "question": "Can this skill run git commands directly?",
+        "answer": "No. This skill provides implementation patterns and code examples for using gitoxide programmatically. It does not execute git commands."
+      },
+      {
+        "question": "What is Ed25519 used for in this skill?",
+        "answer": "Ed25519 provides cryptographic signatures for commits, enabling verification of commit authenticity and integrity beyond standard Git hashes."
+      },
+      {
+        "question": "What is the Smart HTTP protocol?",
+        "answer": "Smart HTTP is a Git protocol that uses HTTP POST requests for efficient clone, fetch, and push operations between clients and servers."
+      },
+      {
+        "question": "How does packfile generation work?",
+        "answer": "Packfiles bundle Git objects efficiently for transfer. Gitoxide can generate packfiles containing specific objects based on want/have negotiation."
+      },
+      {
+        "question": "Is this skill production-ready?",
+        "answer": "This skill provides patterns and examples. Production use requires proper integration, testing, and security review of the complete implementation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 290
+    }
+  ]
+}

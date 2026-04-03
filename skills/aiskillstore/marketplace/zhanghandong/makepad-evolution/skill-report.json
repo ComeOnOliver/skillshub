@@ -1,0 +1,224 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:11:49.056Z",
+    "slug": "zhanghandong-makepad-evolution",
+    "source_url": "https://github.com/ZhangHanDong/makepad-skills/tree/main/skills/makepad-evolution/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "85eeaebb51c620492f18dc89e71c3de00ee2dadeeb1a5b851c95387d02573def",
+    "tree_hash": "36f4dcf27b89712711236768f78a1d696cd687d7dae18d5d3b2d5fbd8c80f0c1"
+  },
+  "skill": {
+    "name": "makepad-evolution",
+    "description": "Self-improving skill system for Makepad development. Features self-evolution (accumulate knowledge), self-correction (fix errors automatically), self-validation (verify accuracy), usage feedback (track pattern health), version adaptation (multi-branch support), and personalization (adapt to project style). Use to continuously improve makepad-skills during development.",
+    "summary": "Self-improving skill system for Makepad development. Features self-evolution (accumulate knowledge),...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "ZhangHanDong",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "makepad",
+      "self-improvement",
+      "documentation",
+      "automation",
+      "learning"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 170 static findings are FALSE POSITIVES. SKILL.md is a pure documentation file containing markdown instructions with code examples. The static analyzer detected patterns in documentation (git commands in code blocks, file paths with dots, GitHub URLs) but these are not executable code. This is purely documentation content for a skill system. No network calls, no file operations, no command execution capabilities exist in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 178
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 376,
+            "line_end": 463
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1084,
+            "line_end": 1086
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2001,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:11:49.056Z"
+  },
+  "content": {
+    "user_title": "Evolve Makepad skills automatically",
+    "value_statement": "Managing Makepad skill documentation manually is time-consuming and error-prone. This skill enables Claude to automatically improve, validate, and personalize skill content based on development experience.",
+    "seo_keywords": [
+      "makepad",
+      "claude",
+      "claude code",
+      "codex",
+      "self-improving",
+      "documentation automation",
+      "skill evolution",
+      "auto-correction",
+      "version adaptation"
+    ],
+    "actual_capabilities": [
+      "Automatically detect Makepad version from Cargo.toml and adapt suggestions",
+      "Scan project code to personalize suggestions to match coding style",
+      "Self-correct skill content when suggested code causes compilation errors",
+      "Track pattern usage and success rates for health reporting",
+      "Document new patterns and solutions discovered during development",
+      "Validate all skill content against current Makepad API"
+    ],
+    "limitations": [
+      "Only works with Makepad projects, not other frameworks",
+      "Cannot modify code outside of skill documentation files",
+      "Self-evolution requires user confirmation before committing changes",
+      "Does not execute or test code, only documents patterns"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Makepad widget developers",
+        "title": "Build reusable pattern library",
+        "description": "Automatically capture and document widget patterns discovered during development for future reuse."
+      },
+      {
+        "target_user": "Multi-branch project teams",
+        "title": "Manage version differences",
+        "description": "Automatically detect which Makepad branch is in use and provide appropriate API guidance."
+      },
+      {
+        "target_user": "Skill maintainers",
+        "title": "Keep documentation accurate",
+        "description": "Automatically validate and correct skill content when outdated patterns cause errors."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start development session",
+        "scenario": "Begin working with Makepad",
+        "prompt": "Start a Makepad development session with version detection and project style scanning enabled."
+      },
+      {
+        "title": "Document a new pattern",
+        "scenario": "After solving a problem",
+        "prompt": "I discovered a useful pattern during development. Add it to makepad-patterns following the evolution process."
+      },
+      {
+        "title": "Validate skills",
+        "scenario": "Check documentation accuracy",
+        "prompt": "Validate makepad-skills against current Makepad version and report any outdated patterns."
+      },
+      {
+        "title": "Review pattern health",
+        "scenario": "Check usage statistics",
+        "prompt": "Show me pattern health report for makepad-skills and identify patterns that need review."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Validate makepad-skills against current Makepad version",
+        "output": [
+          "Validation Report: 3 issues found",
+          "- Pattern 8: Timer setup uses outdated API (dev branch only)",
+          "- makepad-troubleshooting: 2 broken code examples",
+          "- makepad-shaders: Missing shader example for current Makepad",
+          "Recommend: Run self-correction to fix these issues?"
+        ]
+      },
+      {
+        "input": "Show me pattern health report for makepad-skills",
+        "output": [
+          "Pattern Health Report:",
+          "- Pattern 1: Basic Widget - 96% success rate (Healthy)",
+          "- Pattern 5: Loading Button - 67% success rate (Needs Review)",
+          "- Pattern 8: Theme Switch - 0% success rate (Broken)",
+          "Patterns with low success rates should be reviewed and corrected."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Enable automatic version detection at session start for accurate API guidance",
+      "Use self-correction immediately when skill advice causes errors",
+      "Review pattern health reports regularly to identify broken patterns",
+      "Follow the evolution marker format when contributing new patterns"
+    ],
+    "anti_patterns": [
+      "Manually editing skill files without evolution markers",
+      "Ignoring pattern health warnings when success rates drop below 70%",
+      "Using outdated patterns without checking current Makepad version",
+      "Deleting patterns instead of marking them as deprecated with explanation"
+    ],
+    "faq": [
+      {
+        "question": "How does self-correction work?",
+        "answer": "When code from a skill causes an error, Claude automatically identifies the issue, finds the correct approach, and updates the skill file."
+      },
+      {
+        "question": "What version branches are supported?",
+        "answer": "The skill supports main (stable), dev (latest features), and rik (legacy) branches with automatic version detection and API adaptation."
+      },
+      {
+        "question": "Can I use this without Git?",
+        "answer": "Self-improvement features work locally, but evolution contributions require Git to track changes and create proper commit messages."
+      },
+      {
+        "question": "How is personalization stored?",
+        "answer": "Detected project style preferences are stored in the project's .claude/settings.json file for future sessions."
+      },
+      {
+        "question": "Does it run automatically?",
+        "answer": "Version detection, personalization, and self-correction run automatically. Self-evolution and validation require user prompts or confirmation."
+      },
+      {
+        "question": "What patterns are tracked?",
+        "answer": "The skill tracks all pattern usage from makepad-patterns, makepad-shaders, and makepad-troubleshooting with success and failure counts."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1087
+    }
+  ]
+}

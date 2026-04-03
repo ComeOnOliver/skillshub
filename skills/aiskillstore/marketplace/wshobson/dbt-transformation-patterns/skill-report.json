@@ -1,0 +1,407 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:06:36.036Z",
+    "slug": "wshobson-dbt-transformation-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/dbt-transformation-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bd1cfcd33c00f7f8acdd56548e632cd83edabb65f7d11d4addbc3630af7b3d98",
+    "tree_hash": "3aaa5e9308989dfcf288ed80d00c7cff45efad88cfeb0544a83dd3858e887502"
+  },
+  "skill": {
+    "name": "dbt-transformation-patterns",
+    "description": "Master dbt (data build tool) for analytics engineering with model organization, testing, documentation, and incremental strategies. Use when building data transformations, creating data models, or implementing analytics engineering best practices.",
+    "summary": "Master dbt (data build tool) for analytics engineering with model organization, testing, documentati...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "dbt",
+      "analytics-engineering",
+      "data-modeling",
+      "testing",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only SQL and YAML examples for dbt patterns. The static analyzer produced false positives: YAML frontmatter markers were flagged as shell backticks, Jinja2 template syntax was flagged as command execution, and normal dbt CLI commands were flagged as reconnaissance. All findings are dismissed. No executable code, network calls, file system access, or external command execution capabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 558,
+            "line_end": 558
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 559,
+            "line_end": 559
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 560,
+            "line_end": 560
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 561,
+            "line_end": 561
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 168,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 254
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 254,
+            "line_end": 322
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 322,
+            "line_end": 324
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 379
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 379,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 438
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 438,
+            "line_end": 442
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 442,
+            "line_end": 468
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 468,
+            "line_end": 472
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 472,
+            "line_end": 513
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 513,
+            "line_end": 517
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 517,
+            "line_end": 538
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 538,
+            "line_end": 551
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 740,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:06:36.036Z"
+  },
+  "content": {
+    "user_title": "Build dbt models with proven patterns",
+    "value_statement": "Building reliable dbt transformations can be slow without a clear structure. This skill provides layered model patterns, tests, and incremental strategies you can apply quickly.",
+    "seo_keywords": [
+      "dbt",
+      "analytics engineering",
+      "data modeling",
+      "incremental models",
+      "dbt testing",
+      "dbt documentation",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "ELT"
+    ],
+    "actual_capabilities": [
+      "Explain staging, intermediate, and marts layering with naming conventions",
+      "Provide dbt project structure and dbt_project.yml examples",
+      "Show incremental model configurations with merge, delete+insert, and insert_overwrite strategies",
+      "Define source, model, and test YAML patterns with unique and not_null checks",
+      "Share reusable macro examples for DRY SQL code",
+      "Provide dbt commands reference for run, test, and docs generation"
+    ],
+    "limitations": [
+      "Does not run dbt commands or validate results in your warehouse",
+      "Examples must be adapted to your specific warehouse and schema",
+      "No guidance for adapter-specific SQL features beyond standard patterns",
+      "Does not generate full project files automatically"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Analytics engineer",
+        "title": "Standardize model layers",
+        "description": "Adopt staging, intermediate, and marts patterns with consistent naming and structure."
+      },
+      {
+        "target_user": "Data lead",
+        "title": "Improve data quality",
+        "description": "Add source and model tests with clear documentation for governance."
+      },
+      {
+        "target_user": "New dbt user",
+        "title": "Start a dbt project",
+        "description": "Set up dbt_project.yml and a clear folder layout for models."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start with layering",
+        "scenario": "New to dbt model structure",
+        "prompt": "Explain a simple staging, intermediate, and marts layout for my dbt project with naming examples."
+      },
+      {
+        "title": "Add tests and docs",
+        "scenario": "Need quality checks for key models",
+        "prompt": "Draft YAML tests and documentation for a customer dimension and orders fact model."
+      },
+      {
+        "title": "Plan incremental model",
+        "scenario": "Large table needs incremental loads",
+        "prompt": "Suggest an incremental model config for payments with a safe incremental filter."
+      },
+      {
+        "title": "Refactor with macros",
+        "scenario": "Want to reduce repeated SQL",
+        "prompt": "Show a macro pattern to standardize currency conversion and schema naming in dbt."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a dbt structure for Stripe and Shopify data with staging and marts.",
+        "output": [
+          "Set up staging models for Stripe customers and payments with stg_ prefix",
+          "Add an intermediate model to aggregate payments by customer using int_ prefix",
+          "Create marts with dim_customers for dimensions and fct_orders for facts",
+          "Add YAML tests for unique and not_null on primary keys",
+          "Configure incremental processing for large payment tables"
+        ]
+      },
+      {
+        "input": "How do I test my dbt models?",
+        "output": [
+          "Add not_null and unique tests on all primary key columns",
+          "Use relationships tests to validate foreign key references",
+          "Add accepted_values tests for categorical columns like order_status",
+          "Use dbt_utils.expression_is_true for business rule validation",
+          "Configure freshness checks on source definitions"
+        ]
+      },
+      {
+        "input": "What are incremental models and when should I use them?",
+        "output": [
+          "Incremental models process only new or changed data since last run",
+          "Use when tables exceed 1 million rows to reduce runtime",
+          "Configure with unique_key to identify records and incremental_strategy for update logic",
+          "Use is_incremental() macro to filter incoming data",
+          "Supports merge, delete+insert, and insert_overwrite strategies"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use a staging layer to clean sources once and reuse downstream across all models",
+      "Add not_null and unique tests for every primary key column in your models",
+      "Document models and columns as you build them with clear descriptions"
+    ],
+    "anti_patterns": [
+      "Skip staging and join raw data directly into marts creates unmaintainable code",
+      "Hardcode dates or values instead of using vars for configuration breaks portability",
+      "Repeat logic across models instead of extracting to reusable macros increases maintenance"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with my dbt adapter?",
+        "answer": "Yes for general patterns, but SQL examples may need adapter-specific changes."
+      },
+      {
+        "question": "Are there limits on model size or count?",
+        "answer": "No limits are enforced; performance depends on your warehouse and project design."
+      },
+      {
+        "question": "Can I integrate this with existing dbt projects?",
+        "answer": "Yes, apply the patterns to current models and update tests and docs incrementally."
+      },
+      {
+        "question": "Does it access or store my data?",
+        "answer": "No, it provides guidance only and does not execute dbt or read your data."
+      },
+      {
+        "question": "What if incremental models produce duplicates?",
+        "answer": "Review your unique_key and incremental filter and ensure updates are covered."
+      },
+      {
+        "question": "How does this compare to dbt docs?",
+        "answer": "It is a concise pattern guide focused on practical structure and examples."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 562
+    }
+  ]
+}

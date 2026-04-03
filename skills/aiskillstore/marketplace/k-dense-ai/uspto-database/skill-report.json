@@ -1,0 +1,275 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:46:58.230Z",
+    "slug": "k-dense-ai-uspto-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/uspto-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9321bc0a60e32d1ab171ce5ddab2a168f7eef4d68aa18eff6d5b91c079e61951",
+    "tree_hash": "b6920d05f95c06903a20960609931a635587443c86ef4e30f155f880b510b450"
+  },
+  "skill": {
+    "name": "uspto-database",
+    "description": "Access USPTO APIs for patent/trademark searches, examination history (PEDS), assignments, citations, office actions, TSDR, for IP analysis and prior art searches.",
+    "summary": "Access USPTO APIs for patent/trademark searches, examination history (PEDS), assignments, citations,...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "patents",
+      "trademarks",
+      "uspto",
+      "ip-research",
+      "api"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate USPTO API client for patent and trademark research. Static findings are false positives: detected patterns in markdown files are documentation code examples, not executable code. The network+credential access pattern is standard API client behavior for accessing USPTO government services.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/patent_search.py",
+            "line_start": 70,
+            "line_end": 70
+          },
+          {
+            "file": "scripts/trademark_client.py",
+            "line_start": 55,
+            "line_end": 56
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/patent_search.py",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "scripts/trademark_client.py",
+            "line_start": 36,
+            "line_end": 36
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 2983,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:46:58.230Z"
+  },
+  "content": {
+    "user_title": "Search USPTO patents and trademarks",
+    "value_statement": "Access comprehensive USPTO patent and trademark databases. Search by keywords, inventors, or assignees. Retrieve examination history, assignments, citations, and office actions for IP research and prior art searches.",
+    "seo_keywords": [
+      "USPTO patent search",
+      "trademark lookup",
+      "patent database API",
+      "prior art search",
+      "IP research tool",
+      "patent examination history",
+      "trademark status check",
+      "Claude Code skill",
+      "patent citations",
+      "office actions API"
+    ],
+    "actual_capabilities": [
+      "Search patents by keywords, inventors, assignees, classifications, and dates using PatentSearch API",
+      "Retrieve trademark information and status using TSDR API",
+      "Access patent examination history (PEDS) including office actions and transaction history",
+      "Track patent and trademark assignments and ownership changes",
+      "Analyze patent citations (forward and backward) and office action details"
+    ],
+    "limitations": [
+      "Requires USPTO API key registration for full functionality",
+      "Rate limits apply (45 requests/minute for PatentSearch API)",
+      "PatentSearch data currently covers through June 30, 2025"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Patent attorneys",
+        "title": "Prior art searches",
+        "description": "Find prior art and analyze patent citations for patentability opinions and infringement cases."
+      },
+      {
+        "target_user": "IP researchers",
+        "title": "Examination history review",
+        "description": "Access full prosecution history including office actions, rejections, and applicant responses."
+      },
+      {
+        "target_user": " trademark professionals",
+        "title": "Trademark monitoring",
+        "description": "Check trademark status, ownership, and prosecution history for clearance and maintenance."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic patent search",
+        "scenario": "Find patents by keyword",
+        "prompt": "Search for patents related to [topic] filed in the last 2 years using the uspto-database skill."
+      },
+      {
+        "title": "Inventor lookup",
+        "scenario": "Find patents by inventor",
+        "prompt": "Find all patents filed by [inventor name] using the uspto-database skill and show their current status."
+      },
+      {
+        "title": "Trademark status",
+        "scenario": "Check trademark details",
+        "prompt": "Check the status and ownership history of trademark [serial/registration number] using uspto-database."
+      },
+      {
+        "title": "Full prosecution analysis",
+        "scenario": "Analyze patent prosecution",
+        "prompt": "Perform a comprehensive analysis of patent [number] including examination history, office actions, and assignments using uspto-database."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search for machine learning patents from Google filed in 2024",
+        "output": [
+          "Patent 11,987,654: Machine learning image recognition system",
+          "Patent 11,876,543: Neural network optimization method",
+          "Filing date: 2024-03-15",
+          "Assignee: Google LLC"
+        ]
+      },
+      {
+        "input": "Check trademark status for serial 87654321",
+        "output": [
+          "Mark: EXAMPLE MARK",
+          "Status: REGISTERED",
+          "Registration date: 2024-06-01",
+          "Owner: Example Corp",
+          "Goods: International Class 9 - Software"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Store your USPTO API key in the USPTO_API_KEY environment variable before use",
+      "Implement exponential backoff when hitting rate limits to avoid service disruptions",
+      "Use _text_* operators for text searches as they are more performant than _contains"
+    ],
+    "anti_patterns": [
+      "Do not hardcode API keys in scripts or share them in version control",
+      "Do not exceed the 45 requests/minute rate limit for PatentSearch API",
+      "Do not assume all fields are populated for every patent or trademark record"
+    ],
+    "faq": [
+      {
+        "question": "How do I get a USPTO API key?",
+        "answer": "Register at https://account.uspto.gov/api-manager/ for USPTO APIs or https://patentsview.org/api-v01-information-page for PatentSearch API."
+      },
+      {
+        "question": "What data does PatentSearch cover?",
+        "answer": "PatentSearch contains patent data through June 30, 2025. For older data or examination history, use PEDS."
+      },
+      {
+        "question": "Can I search trademarks by name?",
+        "answer": "Trademark search requires serial or registration number. Use TSDR for status and prosecution history by number."
+      },
+      {
+        "question": "What is PEDS?",
+        "answer": "PEDS (Patent Examination Data System) provides prosecution history including office actions, transactions, and status changes from 1981-present."
+      },
+      {
+        "question": "How many requests can I make?",
+        "answer": "PatentSearch has a 45 requests/minute rate limit. Implement backoff for rate limit errors."
+      },
+      {
+        "question": "Can I analyze patent citations?",
+        "answer": "Yes, use the Enriched Citation API documented in references/additional_apis.md for forward and backward citation analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "additional_apis.md",
+          "type": "file",
+          "path": "references/additional_apis.md",
+          "lines": 395
+        },
+        {
+          "name": "patentsearch_api.md",
+          "type": "file",
+          "path": "references/patentsearch_api.md",
+          "lines": 267
+        },
+        {
+          "name": "peds_api.md",
+          "type": "file",
+          "path": "references/peds_api.md",
+          "lines": 213
+        },
+        {
+          "name": "trademark_api.md",
+          "type": "file",
+          "path": "references/trademark_api.md",
+          "lines": 359
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "patent_search.py",
+          "type": "file",
+          "path": "scripts/patent_search.py",
+          "lines": 291
+        },
+        {
+          "name": "peds_client.py",
+          "type": "file",
+          "path": "scripts/peds_client.py",
+          "lines": 286
+        },
+        {
+          "name": "trademark_client.py",
+          "type": "file",
+          "path": "scripts/trademark_client.py",
+          "lines": 312
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 607
+    }
+  ]
+}

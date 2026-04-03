@@ -1,0 +1,176 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:14:44.319Z",
+    "slug": "cleanexpo-seo-leak",
+    "source_url": "https://github.com/CleanExpo/Unite-Hub/tree/main/.claude/skills/seo-leak",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c9d203cc943449c6e12913f1273dd2a801e66ad8930bc910ad47fd8b40497026",
+    "tree_hash": "9c382f130a941a1ffa5df8d9e110f48d2653d6a61f7b9ceef538745a82693baa"
+  },
+  "skill": {
+    "name": "seo-leak",
+    "description": "SEO intelligence engine for competitive analysis. Estimates Q*, P*, and T* signals, analyzes NavBoost and E-E-A-T factors, identifies ranking gaps, orchestrates audit workflows, and provides actionable SEO strategy recommendations.",
+    "summary": "Competitive SEO intelligence engine that analyzes Google ranking signals and provides actionable strategy recommendations.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "CleanExpo",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "seo",
+      "competitive-analysis",
+      "ranking-signals",
+      "content-strategy",
+      "search-optimization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static scanner detected 59 patterns, all confirmed as false positives. The HIGH-severity blocker findings for weak cryptographic algorithms are false positives triggered by the word 'hash' in SEO contexts (content hash, hashtags). The C2 keywords are false positives from legitimate SEO terms (network reconnaissance, signals). External command patterns are backticks in markdown code examples. This is a documentation-only skill with no executable code or security risks.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1235,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:14:44.319Z"
+  },
+  "content": {
+    "user_title": "Analyze SEO Competitive Intelligence and Ranking Gaps",
+    "value_statement": "Competing for search rankings requires understanding why competitors rank higher and what signals Google uses to evaluate content. This skill analyzes Google ranking signals, identifies content gaps, and provides data-driven recommendations to improve search visibility.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "SEO competitive analysis",
+      "ranking signals",
+      "content gap analysis",
+      "EEAT factors",
+      "search optimization strategy",
+      "Google ranking factors",
+      "competitive intelligence"
+    ],
+    "actual_capabilities": [
+      "Analyzes Google ranking signals including Query, Page, and Trust factors",
+      "Compares your content against top-ranking competitors to identify specific gaps",
+      "Evaluates EEAT signals including author credentials, site authority, and trust indicators",
+      "Provides data-driven keyword difficulty assessments with realistic timelines",
+      "Creates structured SEO audit frameworks covering technical, content, and authority factors",
+      "Generates actionable strategy recommendations based on current ranking position"
+    ],
+    "limitations": [
+      "Does not perform automated rank tracking or real-time SERP monitoring",
+      "Requires manual competitor URL input and cannot automatically discover competitors",
+      "Cannot access live backlink data or domain authority scores without API integration",
+      "Does not generate SEO-optimized content or automate link building campaigns"
+    ],
+    "use_cases": [
+      {
+        "title": "Keyword Difficulty Assessment",
+        "description": "Evaluate whether targeting a specific keyword is realistic given your site authority, competitor strength, and required resources.",
+        "target_user": "Marketing managers planning content strategy"
+      },
+      {
+        "title": "Competitor Gap Analysis",
+        "description": "Identify specific content elements, backlink advantages, and trust signals that enable competitors to outrank your pages.",
+        "target_user": "SEO specialists optimizing existing content"
+      },
+      {
+        "title": "EEAT Improvement Roadmap",
+        "description": "Assess your site expertise, authoritativeness, and trustworthiness signals compared to ranking competitors and create improvement plans.",
+        "target_user": "Content directors building topical authority"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Keyword Difficulty Check",
+        "prompt": "Should we target the keyword 'best project management software for startups'? What difficulty level is this and what would it take to rank?",
+        "scenario": "Quick assessment of whether a keyword is worth pursuing"
+      },
+      {
+        "title": "Detailed Competitor Gap Analysis",
+        "prompt": "Analyze why g2.com/categories/project-management ranks #1 for 'project management software' while our page at oursite.com/pm-tools ranks #15. What are the specific gaps in content, authority, and signals?",
+        "scenario": "Understanding why a competitor outranks you"
+      },
+      {
+        "title": "Content Upgrade Strategy",
+        "prompt": "Our article at oursite.com/remote-work-tools ranks position 8 for 'remote work tools'. What improvements do we need to reach position 1-3? Compare against the current top 3 ranking pages.",
+        "scenario": "Moving from page 1 to top 3 positions"
+      },
+      {
+        "title": "Comprehensive Site Audit Plan",
+        "prompt": "Create a full SEO audit plan for oursite.com targeting the project management software niche. Include technical, content, and authority assessment frameworks with competitive benchmarking.",
+        "scenario": "Planning a complete SEO overhaul"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Should we target 'best CRM software'?",
+        "output": "Keyword Difficulty Assessment:\n\nDifficulty Score: 85/100 (VERY HARD)\n\nTop 3 Competitors:\n1. hubspot.com - Domain Authority: Very High (15+ years, 200k+ backlinks)\n2. salesforce.com - Brand Authority: Extremely High (industry leader)\n3. g2.com - Review Authority: Very High (50k+ backlinks, user reviews)\n\nGap Analysis:\n- Content: Competitors have 5000+ word comparison guides with 20-30 products\n- Authority: Your site needs 10000+ quality backlinks (currently at 800)\n- Trust: Competitors have major media mentions and industry recognition\n\nRealistic Timeline: 24-36 months of consistent effort\n\nRecommendation: NOT YET. Start with long-tail keywords like 'best CRM for real estate agents' (difficulty: 42) to build authority first."
+      },
+      {
+        "input": "Why does competitor.com rank higher than us for 'email marketing tips'?",
+        "output": "Ranking Gap Analysis:\n\nPage Quality (P*) Gap:\n- Competitor: 4200 words, 12 sections, 15 images, 2 videos, updated monthly\n- Your Page: 1800 words, 5 sections, 6 images, no video, last updated 8 months ago\n- Gap: Need +2400 words, video content, fresh updates\n\nTrust (T*) Gap:\n- Competitor: 12k backlinks from 3k domains, cited in major publications\n- Your Site: 2.4k backlinks from 680 domains, limited media mentions\n- Gap: Need 200+ high-quality backlinks\n\nQuery Match (Q*) Gap:\n- Competitor covers both beginner and advanced tactics\n- Your content focuses only on basics\n- Gap: Add advanced strategies section\n\nAction Plan:\n1. Expand content to 4000+ words with advanced sections\n2. Create video tutorials (3-5 minutes each)\n3. Update monthly with fresh examples\n4. Earn 200 backlinks through guest posts and partnerships\n\nExpected Timeline: 6-9 months to reach page 1"
+      }
+    ],
+    "best_practices": [
+      "Start with realistic keyword targets based on your current domain authority and avoid competing directly against established industry leaders until you build topical authority.",
+      "Analyze the top 3 ranking pages thoroughly before creating content to ensure you understand what quality bar you need to exceed.",
+      "Track both ranking positions and user behavior signals like click-through rate and dwell time to identify optimization opportunities."
+    ],
+    "anti_patterns": [
+      "Targeting high-difficulty keywords without sufficient domain authority or backlink profile leads to wasted content creation effort.",
+      "Copying competitor content structure without adding unique value or differentiation fails to provide ranking advantages.",
+      "Ignoring EEAT signals like author credentials and citation sources reduces trust signals for important topics."
+    ],
+    "faq": [
+      {
+        "question": "How accurate are the keyword difficulty estimates?",
+        "answer": "The estimates are based on analyzing competitor content quality, backlink profiles, and domain authority. They provide directional guidance rather than precise predictions. Actual ranking success depends on execution quality and ongoing optimization."
+      },
+      {
+        "question": "Can this skill automatically track my rankings over time?",
+        "answer": "No, this skill analyzes ranking signals and competitive gaps but does not perform automated rank tracking. You will need separate rank tracking tools or manual SERP checks."
+      },
+      {
+        "question": "Does this replace SEO tools like Ahrefs or SEMrush?",
+        "answer": "No, this skill complements those tools by providing strategic analysis frameworks. It helps interpret data and create action plans but does not replace backlink databases or keyword research platforms."
+      },
+      {
+        "question": "How often should I run competitive gap analysis?",
+        "answer": "Run analysis when entering new keyword targets, when competitors change positions significantly, or quarterly for your core keywords to identify emerging threats."
+      },
+      {
+        "question": "What if my competitors have much higher domain authority?",
+        "answer": "The skill will recommend targeting less competitive long-tail keywords first to build topical authority before competing for high-difficulty terms."
+      },
+      {
+        "question": "Can this skill help with local SEO or just national rankings?",
+        "answer": "The frameworks apply to both local and national SEO, though local SEO requires additional factors like Google Business Profile optimization and local citations not covered in detail."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 630
+    }
+  ]
+}

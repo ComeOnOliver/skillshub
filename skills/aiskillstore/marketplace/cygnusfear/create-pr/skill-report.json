@@ -1,0 +1,466 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:23:27.841Z",
+    "slug": "cygnusfear-create-pr",
+    "source_url": "https://github.com/Cygnusfear/claude-stuff/tree/main/skills/create-pr",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "39a5c04dbdeee9a9f3a99b122f1421d8099317e6ca95fd82a026972febfcc2b5",
+    "tree_hash": "a800582cb7dffe6fc01349dec346136a4d32201ba8f7b573b2fd5d697e6fa86b"
+  },
+  "skill": {
+    "name": "create-pr",
+    "description": "Create a PR for this branch. ALWAYS links related issues and uses closing keywords to auto-close them on merge.",
+    "summary": "Create a PR for this branch. ALWAYS links related issues and uses closing keywords to auto-close the...",
+    "icon": "🔗",
+    "version": "1.0.0",
+    "author": "Cygnusfear",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "github",
+      "pull-requests",
+      "git",
+      "cli",
+      "workflow"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill providing GitHub PR creation guidance. All static findings are false positives: bash command examples were misidentified as shell execution, emoji commit message conventions triggered cryptographic false positives, and the source_url in metadata was flagged as a network finding. No executable code, network calls, or malicious intent exists.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "pr_guide.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "pr_guide.md",
+            "line_start": 69,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 208
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 76
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 152,
+            "line_end": 152
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 512,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:23:27.841Z"
+  },
+  "content": {
+    "user_title": "Create GitHub Pull Requests with Issue Links",
+    "value_statement": "Creating pull requests without issue links misses opportunities to close issues automatically and track work. This skill ensures every PR links related issues and uses closing keywords for seamless issue management.",
+    "seo_keywords": [
+      "GitHub pull request",
+      "create PR",
+      "issue linking",
+      "closing keywords",
+      "gh CLI",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "git workflow",
+      "PR template"
+    ],
+    "actual_capabilities": [
+      "Find and link related GitHub issues to pull requests",
+      "Use closing keywords (Closes, Fixes, Resolves) to auto-close issues",
+      "Generate PR descriptions with structured templates",
+      "Add Mermaid diagrams for visualizing complex changes"
+    ],
+    "limitations": [
+      "Requires GitHub CLI (gh) to be installed and authenticated",
+      "Only works with GitHub repositories, not other Git hosting platforms",
+      "Cannot create PRs without appropriate repository permissions",
+      "Does not handle merge conflict resolution"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Streamline PR creation",
+        "description": "Create well-documented pull requests that automatically close linked issues when merged"
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Enforce issue tracking",
+        "description": "Ensure all code changes trace back to documented issues for better audit trails"
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Standardize contributions",
+        "description": "Guide contributors to create PRs with proper issue references and descriptions"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic PR creation",
+        "scenario": "Create PR for current branch",
+        "prompt": "Use the create-pr skill to create a pull request for the current branch. Link any related issues and use closing keywords."
+      },
+      {
+        "title": "Multi-issue PR",
+        "scenario": "Close multiple issues",
+        "prompt": "Create a PR that closes issues #123 and #124. Include a summary of changes and key files modified."
+      },
+      {
+        "title": "Feature PR with diagram",
+        "scenario": "Visual architectural change",
+        "prompt": "Create a PR with a Mermaid sequence diagram showing the new authentication flow. Link the feature request issue."
+      },
+      {
+        "title": "Bug fix PR",
+        "scenario": "Document bug resolution",
+        "prompt": "Create a bug fix PR that references issue #456. Include before/after comparison and testing notes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a PR for this feature branch that closes issues #123 and #124",
+        "output": [
+          "Found 2 related issues: #123 (User authentication), #124 (Session management)",
+          "Generated PR title with conventional commit format",
+          "Added closing keywords: Closes #123, Closes #124",
+          "Included Key Changes section with file list",
+          "Added Testing notes section"
+        ]
+      },
+      {
+        "input": "Create a PR for the new authentication flow with a Mermaid diagram",
+        "output": [
+          "Created PR with title: feat: 🛡️🔐 Implement secure authentication flow",
+          "Added Mermaid sequence diagram showing client, auth service, database interactions",
+          "Linked issue #789 (New authentication system)",
+          "Used Fixes #789 to auto-close the issue on merge",
+          "Included architectural impact section"
+        ]
+      },
+      {
+        "input": "Create a bug fix PR for issue #456 about payment processing",
+        "output": [
+          "Created PR with title: fix: 💳💔 Resolve payment timeout issue",
+          "Referenced issue #456 in Related Issues section",
+          "Added before/after comparison showing the fix",
+          "Included testing notes: Manual testing passed, unit tests added",
+          "Listed 3 files changed with brief descriptions"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always link related issues before creating PRs to ensure traceability",
+      "Use closing keywords (Closes, Fixes) to auto-close issues when PRs merge",
+      "Include Mermaid diagrams for complex architectural changes"
+    ],
+    "anti_patterns": [
+      "Creating PRs without any issue references or closing keywords",
+      "Using vague PR titles like Fix bug or Update file",
+      "Omitting the related issues section from PR descriptions"
+    ],
+    "faq": [
+      {
+        "question": "Which GitHub hosting platforms does this skill support?",
+        "answer": "This skill supports GitHub only. It uses the gh CLI which is specific to GitHub repositories."
+      },
+      {
+        "question": "What closing keywords does GitHub recognize?",
+        "answer": "GitHub recognizes Closes, Fixes, and Resolves followed by an issue number. Example: Closes #123 closes the issue when the PR merges."
+      },
+      {
+        "question": "Can I use this skill without GitHub CLI installed?",
+        "answer": "No. This skill provides instructions for the gh CLI. You must have GitHub CLI installed and authenticated to create pull requests."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill only provides instructional guidance. It does not access files, execute code, or transmit data outside standard GitHub operations."
+      },
+      {
+        "question": "Why are my issues not closing after PR merge?",
+        "answer": "Ensure you used the correct format: Closes #123 or Fixes #456 in the PR body. The keyword must be uppercase and the issue number must be valid."
+      },
+      {
+        "question": "How is this different from GitHubs default PR template?",
+        "answer": "This skill adds intelligent issue linking, closing keywords, and Mermaid diagram guidance. It ensures issues close automatically and provides consistent PR structure."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "pr_guide.md",
+      "type": "file",
+      "path": "pr_guide.md",
+      "lines": 97
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 234
+    }
+  ]
+}

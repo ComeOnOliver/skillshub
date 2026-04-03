@@ -1,0 +1,270 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:16:48.525Z",
+    "slug": "k-dense-ai-market-research-reports",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/market-research-reports",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "16d035642329727e69ed00f2a595ab87efc978237354c0c93d3d6481686499d3",
+    "tree_hash": "43843bf77ef3cde3ced08729b792c1f453ce49f85cfe4e95bc19545936723c10"
+  },
+  "skill": {
+    "name": "market-research-reports",
+    "description": "Generate comprehensive market research reports (50+ pages) in the style of top consulting firms (McKinsey, BCG, Gartner). Features professional LaTeX formatting, extensive visual generation with scientific-schematics and generate-image, deep integration with research-lookup for data gathering, and multi-framework strategic analysis including Porter Five Forces, PESTLE, SWOT, TAM/SAM/SOM, and BCG Matrix.",
+    "summary": "Generate comprehensive market research reports (50+ pages) in the style of top consulting firms (McK...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "research",
+    "tags": [
+      "market analysis",
+      "business strategy",
+      "latex",
+      "visualization",
+      "consulting"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 527 static findings are FALSE POSITIVES. The scanner misinterpreted business terminology (SAM=Serviceable Addressable Market), LaTeX commands as cryptographic algorithms, markdown code blocks as shell commands, and standard file paths as path traversal. The only subprocess.run call uses hardcoded arguments to invoke sibling skills with no injection risk.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/generate_market_visuals.py",
+            "line_start": 375,
+            "line_end": 380
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 10949,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:16:48.525Z"
+  },
+  "content": {
+    "user_title": "Generate Market Research Reports",
+    "value_statement": "Create comprehensive 50+ page market research reports with professional LaTeX formatting. Generate strategic visuals, perform multi-framework analysis, and produce consulting-quality deliverables for business decisions.",
+    "seo_keywords": [
+      "market research reports",
+      "consulting firm reports",
+      "LaTeX reports",
+      "TAM SAM SOM analysis",
+      "Porter Five Forces",
+      "market analysis",
+      "business strategy",
+      "competitive landscape",
+      "Claude",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generate 50+ page professional market research reports in LaTeX/PDF format",
+      "Create 6-28 strategic visuals using scientific-schematics and generate-image skills",
+      "Perform multi-framework analysis including Porter Five Forces, PESTLE, SWOT, and BCG Matrix",
+      "Calculate and visualize TAM/SAM/SOM market sizing with concentric circle diagrams",
+      "Produce risk heatmaps, competitive positioning matrices, and executive summary infographics"
+    ],
+    "limitations": [
+      "Requires scientific-schematics and generate-image skills for visual generation",
+      "Report compilation requires LaTeX distribution (pdflatex) installed on system",
+      "Visual generation adds processing time based on number of diagrams requested",
+      "Market data must be provided or sourced via research-lookup skill integration"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Investment Analysts",
+        "title": "Investment Due Diligence Reports",
+        "description": "Produce comprehensive market analysis for investment decisions with competitive landscape and risk assessment."
+      },
+      {
+        "target_user": "Strategy Consultants",
+        "title": "Client Presentation Materials",
+        "description": "Generate consulting-quality deliverables with professional formatting and strategic framework analysis."
+      },
+      {
+        "target_user": "Business Development Teams",
+        "title": "Market Entry Strategy Documents",
+        "description": "Create detailed market sizing and opportunity analysis for new market entry decisions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Market Report",
+        "scenario": "Start a market research report",
+        "prompt": "Generate a market research report about the {industry} market. Include TAM/SAM/SOM analysis, competitive landscape, and strategic recommendations."
+      },
+      {
+        "title": "Full Strategic Analysis",
+        "scenario": "Comprehensive analysis with frameworks",
+        "prompt": "Create a comprehensive 50+ page market research report on {topic}. Include Porter's Five Forces, PESTLE analysis, SWOT assessment, and BCG Matrix positioning. Generate all core visuals."
+      },
+      {
+        "title": "Investment Focus Report",
+        "scenario": "Investment-oriented analysis",
+        "prompt": "Generate an investment-focused market research report for the {sector} industry. Include risk assessment, growth projections, competitive dynamics, and implementation roadmap."
+      },
+      {
+        "title": "Multi-Market Comparison",
+        "scenario": "Compare multiple markets",
+        "prompt": "Compare the {market1} and {market2} markets in a comprehensive report. Include market sizing, growth rates, regulatory environment, and strategic recommendations for market entry."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate a market research report on the electric vehicle charging infrastructure market in Europe.",
+        "output": [
+          "Professional LaTeX-formatted PDF report (50+ pages)",
+          "Market growth trajectory chart (2020-2034 projections)",
+          "TAM/SAM/SOM concentric circle diagram",
+          "Porter's Five Forces analysis with competitive dynamics",
+          "Risk heatmap with regulatory and market risks",
+          "Executive summary infographic"
+        ]
+      },
+      {
+        "input": "Create a comprehensive AI healthcare market report with all extended visuals.",
+        "output": [
+          "Full market research document with 27+ visualizations",
+          "PESTLE analysis covering regulatory, social, and technological factors",
+          "Customer journey map and technology roadmap",
+          "Competitive positioning matrix with major players",
+          "Implementation roadmap with timelines"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with core visuals (market growth, TAM/SAM/SOM, Five Forces) before generating additional diagrams",
+      "Use the --all flag only when comprehensive coverage is needed to save processing time",
+      "Provide specific market topics with industry context for more accurate visual prompts"
+    ],
+    "anti_patterns": [
+      "Requesting reports without specifying a clear market or industry focus",
+      "Generating all extended visuals without reviewing core analysis first",
+      "Using vague prompts like 'generate a report about technology' without market definition"
+    ],
+    "faq": [
+      {
+        "question": "What skills are required for visual generation?",
+        "answer": "scientific-schematics and generate-image skills must be available for visual generation."
+      },
+      {
+        "question": "Can I customize the report structure?",
+        "answer": "Yes, modify the LaTeX template or adjust prompts to focus on specific sections."
+      },
+      {
+        "question": "How long does visual generation take?",
+        "answer": "Core visuals take 2-5 minutes; full 27 visuals may take 10-15 minutes."
+      },
+      {
+        "question": "What output formats are supported?",
+        "answer": "Primary output is LaTeX compiled to PDF; figures are generated as PNG images."
+      },
+      {
+        "question": "Can I skip visual generation?",
+        "answer": "Yes, generate the report text first and add visuals incrementally as needed."
+      },
+      {
+        "question": "How are market projections calculated?",
+        "answer": "Provide your data or use research-lookup for sources; the skill generates visualization."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "FORMATTING_GUIDE.md",
+          "type": "file",
+          "path": "assets/FORMATTING_GUIDE.md",
+          "lines": 429
+        },
+        {
+          "name": "market_report_template.tex",
+          "type": "file",
+          "path": "assets/market_report_template.tex",
+          "lines": 1381
+        },
+        {
+          "name": "market_research.sty",
+          "type": "file",
+          "path": "assets/market_research.sty",
+          "lines": 565
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "data_analysis_patterns.md",
+          "type": "file",
+          "path": "references/data_analysis_patterns.md",
+          "lines": 549
+        },
+        {
+          "name": "report_structure_guide.md",
+          "type": "file",
+          "path": "references/report_structure_guide.md",
+          "lines": 1000
+        },
+        {
+          "name": "visual_generation_guide.md",
+          "type": "file",
+          "path": "references/visual_generation_guide.md",
+          "lines": 1078
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "generate_market_visuals.py",
+          "type": "file",
+          "path": "scripts/generate_market_visuals.py",
+          "lines": 530
+        }
+      ]
+    },
+    {
+      "name": "evaluation_output.json",
+      "type": "file",
+      "path": "evaluation_output.json",
+      "lines": 183
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 907
+    }
+  ]
+}

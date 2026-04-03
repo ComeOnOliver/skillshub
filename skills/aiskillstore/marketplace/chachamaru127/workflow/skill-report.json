@@ -1,0 +1,303 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:30:56.030Z",
+    "slug": "chachamaru127-workflow",
+    "source_url": "https://github.com/Chachamaru127/claude-code-harness/tree/main/skills/workflow",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9e48c9e150c862e1d6c03b0632e0e5fc0ae99019bf5d4926b1d0c3eb56224c56",
+    "tree_hash": "92381d592638df7c3d1166f36c5b938887a337ee2ca56fd74511c6793aa781fc"
+  },
+  "skill": {
+    "name": "workflow",
+    "description": "Manages workflow transitions including handoffs between PM and implementation roles, and auto-fixes review comments. Use when user mentions ハンドオフ, handoff, PMに報告, 実装役に渡して, レビュー指摘を自動修正, auto-fix. Triggers: ハンドオフ, handoff, PMに報告, 実装役に渡して, 完了報告, 自動修正, auto-fix. Do not use for 2-Agent setup - use 2agent skill instead.",
+    "summary": "Manages workflow transitions including handoffs between PM and implementation roles, and auto-fixes ...",
+    "icon": "🔄",
+    "version": "1.0.0",
+    "author": "Chachamaru127",
+    "license": "MIT",
+    "category": "workflow",
+    "tags": [
+      "workflow",
+      "handoff",
+      "pm",
+      "implementation",
+      "auto-fix"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a prompt-based workflow management skill containing only Markdown documentation templates. No executable code, no file access beyond standard tools, no network activity. Static findings are false positives triggered by markdown code block syntax (git commands in documentation examples) and legitimate content hashes (SHA256 in metadata). All functionality is documented and intended behavior for a 2-Agent workflow coordination skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "auto-fix/doc.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "handoff-to-impl/doc.md",
+            "line_start": 28,
+            "line_end": 50
+          },
+          {
+            "file": "handoff-to-impl/doc.md",
+            "line_start": 50,
+            "line_end": 56
+          },
+          {
+            "file": "handoff-to-impl/doc.md",
+            "line_start": 56,
+            "line_end": 57
+          },
+          {
+            "file": "handoff-to-pm/doc.md",
+            "line_start": 28,
+            "line_end": 54
+          },
+          {
+            "file": "handoff-to-pm/doc.md",
+            "line_start": 54,
+            "line_end": 60
+          },
+          {
+            "file": "handoff-to-pm/doc.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "handoff-to-pm/doc.md",
+            "line_start": 60,
+            "line_end": 61
+          },
+          {
+            "file": "handoff-to-pm/doc.md",
+            "line_start": 61,
+            "line_end": 61
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 426,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:30:56.030Z"
+  },
+  "content": {
+    "user_title": "Manage Workflow Handoffs and Auto-Fix Review Issues",
+    "value_statement": "Managing handoffs between PM and implementation roles requires consistent templates and clear communication. This skill provides structured handoff templates for task delegation and automated fix workflows for review comments.",
+    "seo_keywords": [
+      "workflow management",
+      "handoff template",
+      "PM implementation handoff",
+      "Claude Code workflow",
+      "auto-fix review",
+      "code review automation",
+      "2-agent workflow",
+      "task delegation",
+      "review comment fix",
+      "team collaboration"
+    ],
+    "actual_capabilities": [
+      "Generate structured handoff messages from PM to implementation role",
+      "Create completion reports from implementation to PM",
+      "Auto-fix code review issues automatically",
+      "Track task status in Plans.md with markers",
+      "Apply consistent formatting for all handoff documents",
+      "Preview and approve fixes before application"
+    ],
+    "limitations": [
+      "Requires Plans.md to exist for task tracking",
+      "Cannot make decisions about scope without user input",
+      "Git commands require git repository to be present",
+      "Does not execute fixes without user approval"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Project Managers",
+        "title": "Delegate Tasks to Dev Team",
+        "description": "Generate clear handoff documents with requirements and acceptance criteria for implementation teams."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Report Completed Work",
+        "description": "Create structured completion reports showing changes made and acceptance criteria met."
+      },
+      {
+        "target_user": "QA Engineers",
+        "title": "Auto-Fix Review Issues",
+        "description": "Automatically resolve code review findings for security, performance, and quality issues."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Delegate to Dev",
+        "scenario": "PM needs to hand off task",
+        "prompt": "このタスクを実装役Claudeに渡したい"
+      },
+      {
+        "title": "Report Completion",
+        "scenario": "Dev finished implementation",
+        "prompt": "PMに完了報告を書いて"
+      },
+      {
+        "title": "Fix Security Issues",
+        "scenario": "Security vulnerability found",
+        "prompt": "セキュリティ問題を修正して"
+      },
+      {
+        "title": "Fix Performance",
+        "scenario": "Performance issue found",
+        "prompt": "パフォーマンス問題を改善して"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "PMに完了報告を書いて",
+        "output": [
+          "## 完了報告（Impl Claude → PM Claude）",
+          "### 概要（1〜3行）",
+          "- ユーザー認証機能を実装完了",
+          "### 変更点（要点）",
+          "- 新規ユーザー登録・ログイン機能を追加",
+          "- パスワードハッシュ化とJWT認証を実装",
+          "### 変更ファイル",
+          "- src/auth/login.ts",
+          "- src/auth/register.ts",
+          "### 受け入れ基準",
+          "- [x] ユーザー登録機能 → ✅",
+          "- [x] ログイン機能 → ✅"
+        ]
+      },
+      {
+        "input": "このタスクを実装役Claudeに渡したい",
+        "output": [
+          "## タスク依頼（PM Claude → Impl Claude）",
+          "### 背景 / 目的",
+          "- ユーザー認証功能的実装",
+          "### 期待する成果",
+          "- ユーザー登録・ログイン機能が動作",
+          "### 受け入れ基準",
+          "- [ ] ユニットテスト全通過",
+          "- [ ] セキュリティ監査通過"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Update Plans.md with task status before and after handoffs",
+      "Include clear acceptance criteria in every handoff",
+      "Preview auto-fix changes before approving application",
+      "Use git commands to accurately report changes made"
+    ],
+    "anti_patterns": [
+      "Handoff without defined acceptance criteria",
+      "Auto-fixing without reviewing the proposed changes",
+      "Skipping the status update in Plans.md",
+      "Using handoffs for non-delegation purposes"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill require?",
+        "answer": "This skill uses Read, Write, Edit, and Bash tools. All are standard Claude Code tools with no special permissions."
+      },
+      {
+        "question": "Can this skill modify my code automatically?",
+        "answer": "Auto-fix will preview changes first. You must approve before any modifications are applied to your codebase."
+      },
+      {
+        "question": "Does this skill work with any git provider?",
+        "answer": "Yes. The handoff-to-pm sub-skill runs git status and git diff commands. These work with GitHub, GitLab, Bitbucket, and any git-compatible repository."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "Yes. This is a prompt-only skill. It generates text templates and does not send data anywhere. All processing happens locally in your Claude Code session."
+      },
+      {
+        "question": "Why is Plans.md required?",
+        "answer": "Plans.md tracks task status. The skill marks tasks as requested or complete. If Plans.md does not exist, you can create one or use the skill without status tracking."
+      },
+      {
+        "question": "How is this different from 2agent skill?",
+        "answer": "This skill handles handoffs and auto-fix. For actual 2-agent conversations where two Claude instances talk directly, use the separate 2agent skill."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "auto-fix",
+      "type": "dir",
+      "path": "auto-fix",
+      "children": [
+        {
+          "name": "doc.md",
+          "type": "file",
+          "path": "auto-fix/doc.md",
+          "lines": 43
+        }
+      ]
+    },
+    {
+      "name": "handoff-to-impl",
+      "type": "dir",
+      "path": "handoff-to-impl",
+      "children": [
+        {
+          "name": "doc.md",
+          "type": "file",
+          "path": "handoff-to-impl/doc.md",
+          "lines": 59
+        }
+      ]
+    },
+    {
+      "name": "handoff-to-pm",
+      "type": "dir",
+      "path": "handoff-to-pm",
+      "children": [
+        {
+          "name": "doc.md",
+          "type": "file",
+          "path": "handoff-to-pm/doc.md",
+          "lines": 63
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 35
+    }
+  ]
+}

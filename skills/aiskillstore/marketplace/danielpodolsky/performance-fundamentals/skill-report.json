@@ -1,0 +1,286 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:29:05.332Z",
+    "slug": "danielpodolsky-performance-fundamentals",
+    "source_url": "https://github.com/DanielPodolsky/mentor-spec/tree/main/.claude/skills/fundamentals/performance",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "86090d2804364776a0b211ad1db25b6a51b77f0f51b8930b4f4c26ee58618d02",
+    "tree_hash": "d418e8e3fc87fab7e5d538c8effbeddbe27cd4836711715f5756e89ac2748856"
+  },
+  "skill": {
+    "name": "performance-fundamentals",
+    "description": "Auto-invoke when reviewing loops, data fetching, rendering, database queries, or resource-intensive operations. Identifies N+1 queries, unnecessary re-renders, memory leaks, and scalability issues.",
+    "summary": "Auto-invoke when reviewing loops, data fetching, rendering, database queries, or resource-intensive ...",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "DanielPodolsky",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "performance",
+      "optimization",
+      "database",
+      "frontend",
+      "scalability"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing performance best practices and review guidelines. No executable code, network calls, or file system access detected. All 30 static findings are false positives triggered by technical keywords in performance documentation. The skill-report.json already contains a passing security audit confirming safe-to-publish status.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 136
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 136,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 160
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 355,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:29:05.332Z"
+  },
+  "content": {
+    "user_title": "Optimize Code Performance Automatically",
+    "value_statement": "Performance issues slow down applications and frustrate users. This skill automatically identifies optimization opportunities in your code. It reviews database queries, frontend rendering, API responses, and resource usage to find bottlenecks.",
+    "seo_keywords": [
+      "performance optimization",
+      "code review",
+      "database queries",
+      "React performance",
+      "N+1 queries",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "frontend optimization",
+      "scalability"
+    ],
+    "actual_capabilities": [
+      "Detects N+1 database query patterns in loops",
+      "Identifies unnecessary React component re-renders",
+      "Reviews API response size and optimization opportunities",
+      "Checks for memory leaks and missing cleanup in effects",
+      "Analyzes time and space complexity of algorithms",
+      "Suggests pagination, caching, and memoization strategies"
+    ],
+    "limitations": [
+      "Requires code context to be provided",
+      "Cannot automatically implement performance fixes",
+      "Identifies common patterns, may miss edge cases",
+      "Suggestions require developer review and implementation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developers",
+        "title": "Database Query Optimization",
+        "description": "Review API endpoints and data access patterns to eliminate N+1 queries and improve response times."
+      },
+      {
+        "target_user": "Frontend developers",
+        "title": "React Performance Review",
+        "description": "Analyze React components for unnecessary re-renders, memoization opportunities, and bundle size issues."
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Performance Checklist",
+        "description": "Ensure pull requests meet performance standards before merging into production codebases."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Database Review",
+        "scenario": "Reviewing API with multiple queries",
+        "prompt": "Review this API endpoint for database performance issues: [paste code]. Check for N+1 queries, missing indexes, and pagination opportunities."
+      },
+      {
+        "title": "React Component",
+        "scenario": "Analyzing React render performance",
+        "prompt": "Analyze this React component for performance issues: [paste code]. Look for unnecessary re-renders, missing memoization, and optimization opportunities."
+      },
+      {
+        "title": "Code Review",
+        "scenario": "General performance review",
+        "prompt": "Review this code for performance bottlenecks: [paste code]. Consider time complexity, memory usage, and scalability at 10k+ items."
+      },
+      {
+        "title": "API Optimization",
+        "scenario": "Reviewing API response structure",
+        "prompt": "Optimize this API response: [paste JSON]. Suggest field selection, pagination, compression, and caching strategies."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review this database query pattern",
+        "output": [
+          "Found N+1 query pattern: User.findAll() followed by Post.findByUserId() in loop",
+          "Solution: Use include/join to fetch posts in single query",
+          "Estimated improvement: 100x faster for 1000 users",
+          "Add index on user_id column in posts table"
+        ]
+      },
+      {
+        "input": "Analyze this React component",
+        "output": [
+          "Creating new function on every render in Child onClick prop",
+          "Fix: Wrap with useCallback or move component outside render",
+          "Expensive sort operation runs on every re-render",
+          "Fix: Wrap with useMemo to cache sorted result"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always check for N+1 queries when fetching related records in loops",
+      "Use pagination for any list endpoint that could exceed 100 items",
+      "Memoize expensive computations and callbacks to prevent unnecessary recalculation"
+    ],
+    "anti_patterns": [
+      "Fetching all records without pagination or limits",
+      "Creating new functions or objects inside render methods",
+      "Forgetting to clean up intervals, subscriptions, and event listeners"
+    ],
+    "faq": [
+      {
+        "question": "Which frameworks does this support?",
+        "answer": "Works with any framework. Examples include React, Vue, Node.js, Python, Ruby, and SQL databases."
+      },
+      {
+        "question": "How does it detect performance issues?",
+        "answer": "Analyzes code patterns against known anti-patterns like N+1 queries, missing memoization, and scalability bottlenecks."
+      },
+      {
+        "question": "Can it fix issues automatically?",
+        "answer": "No, it identifies issues and suggests solutions. Developers implement the optimizations based on recommendations."
+      },
+      {
+        "question": "What data does it access?",
+        "answer": "Only reviews code you paste or share. No file system access, network calls, or data collection."
+      },
+      {
+        "question": "How accurate are the suggestions?",
+        "answer": "Based on established performance patterns. Always test optimizations in your specific context before deploying."
+      },
+      {
+        "question": "Is this suitable for beginners?",
+        "answer": "Yes. Includes explanations and examples to help developers learn performance concepts and best practices."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 178
+    }
+  ]
+}

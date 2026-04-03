@@ -1,0 +1,399 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:38:36.951Z",
+    "slug": "barnhardt-enterprises-inc-tdd-enforcer",
+    "source_url": "https://github.com/Barnhardt-Enterprises-Inc/quetrex-plugin/tree/main/templates/skills/tdd-enforcer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d64ecb07f4df6d66db9d4852376c79e91a3c94416cfbae30937a182f53795989",
+    "tree_hash": "2b2f93f2148e22be7a9cd4b53c6ddc60366a847a354575749e786c9d6711f2fe"
+  },
+  "skill": {
+    "name": "tdd-enforcer",
+    "description": "Use when implementing new features. Enforces TDD workflow - write tests FIRST, then implementation. Ensures AAA pattern, proper coverage, and quality test design.",
+    "summary": "Use when implementing new features. Enforces TDD workflow - write tests FIRST, then implementation. ...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "Barnhardt-Enterprises-Inc",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "tdd",
+      "testing",
+      "test-driven-development",
+      "quality-assurance",
+      "code-quality"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 83 static findings are FALSE POSITIVES. This is a pure documentation skill containing only TypeScript code examples demonstrating TDD patterns. The scanner misinterpreted markdown code fences as shell backticks, bcrypt password hashing as weak crypto, Jest testing functions as system reconnaissance, and standard relative imports as path traversal. No executable code or malicious patterns exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 210
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 227
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 317
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 352
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 352,
+            "line_end": 364
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 364,
+            "line_end": 367
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 367,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 375
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 375,
+            "line_end": 379
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 379,
+            "line_end": 382
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 382,
+            "line_end": 409
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 409,
+            "line_end": 413
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 413,
+            "line_end": 419
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 419,
+            "line_end": 424
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 429
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 429,
+            "line_end": 432
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 432,
+            "line_end": 439
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 439,
+            "line_end": 442
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 442,
+            "line_end": 448
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 448,
+            "line_end": 451
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 451,
+            "line_end": 462
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 130
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 654,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:38:36.951Z"
+  },
+  "content": {
+    "user_title": "Enforce Test-Driven Development Workflow",
+    "value_statement": "Writing tests after code leads to gaps in test coverage and fragile tests. This skill guides the TDD cycle with clear phases: Red (write failing tests), Green (minimal implementation), and Refactor (improve code while tests stay green).",
+    "seo_keywords": [
+      "test-driven development",
+      "TDD workflow",
+      "Claude Code testing",
+      "unit testing patterns",
+      "AAA testing pattern",
+      "test coverage requirements",
+      "Claude testing",
+      "Codex testing",
+      "test-first development",
+      "software testing"
+    ],
+    "actual_capabilities": [
+      "Enforces Red-Green-Refactor TDD cycle",
+      "Requires AAA pattern (Arrange, Act, Assert) in all tests",
+      "Validates test coverage thresholds (75% overall, 90% business logic)",
+      "Guides writing descriptive test names that describe behavior",
+      "Provides examples for unit, integration, and E2E tests",
+      "Ensures tests fail before implementation (Red phase verification)"
+    ],
+    "limitations": [
+      "Does not execute tests or verify coverage directly",
+      "Cannot access project files to analyze existing tests",
+      "Does not run test commands like npm test",
+      "Only provides guidance through prompts and examples"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Build Test Coverage",
+        "description": "Developers implementing new features use TDD to create comprehensive test suites before writing implementation code."
+      },
+      {
+        "target_user": "Code Reviewers",
+        "title": "Validate Test Quality",
+        "description": "Reviewers verify that pull requests follow TDD principles with properly structured AAA tests and adequate coverage."
+      },
+      {
+        "target_user": "Teams Adopting TDD",
+        "title": "Learn TDD Practices",
+        "description": "Teams new to test-driven development follow the structured workflow to build test habits and write maintainable tests."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start TDD Session",
+        "scenario": "Begin feature implementation",
+        "prompt": "Use TDD workflow for this feature. First write failing tests that describe the expected behavior. Tests must use AAA pattern (Arrange, Act, Assert). Verify tests fail before writing implementation."
+      },
+      {
+        "title": "Write Unit Tests",
+        "scenario": "Create unit tests for service",
+        "prompt": "Write unit tests for this service following TDD. Create tests using describe blocks organized by method. Include tests for edge cases, error conditions, and success paths. Use AAA pattern and descriptive test names."
+      },
+      {
+        "title": "Verify Coverage",
+        "scenario": "Check coverage thresholds",
+        "prompt": "Review the test coverage requirements. Ensure business logic (src/services/) has 90%+ coverage, utilities have 90%+ coverage, and overall coverage is 75%+. Flag any code paths without test coverage."
+      },
+      {
+        "title": "Refactor Safely",
+        "scenario": "Improve code with green tests",
+        "prompt": "With all tests passing, refactor the code for quality. Remove duplication, improve naming, and enhance readability. Do not change behavior. All tests must remain green throughout refactoring."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Use TDD to implement user registration with email validation",
+        "output": [
+          "Creating tests first with AAA pattern",
+          "Test: should reject invalid email formats (Red)",
+          "Test: should create user with hashed password (Red)",
+          "Test: should return 400 for missing fields (Red)",
+          "Writing minimal implementation to pass tests (Green)",
+          "Refactoring for clarity while tests stay green"
+        ]
+      },
+      {
+        "input": "Write tests for authentication login flow",
+        "output": [
+          "Test: should return user and token for valid credentials (Red)",
+          "Test: should throw error for wrong password (Red)",
+          "Test: should hash password before saving (Red)",
+          "Minimal implementation passing all tests (Green)",
+          "Refactoring mock setup for reusability"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always write failing tests before implementation to confirm the test catches the missing feature",
+      "Use AAA pattern consistently: Arrange (setup), Act (execute), Assert (verify) in every test",
+      "Keep tests focused on behavior, not implementation details, to make refactoring easier"
+    ],
+    "anti_patterns": [
+      "Writing implementation before tests (defeats the purpose of TDD)",
+      "Testing implementation details instead of observable behavior",
+      "Creating giant tests that cover too many scenarios in one test case"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill support?",
+        "answer": "Works with Claude, Codex, and Claude Code. Provides guidance for any test framework."
+      },
+      {
+        "question": "What coverage thresholds does it enforce?",
+        "answer": "75% overall coverage required. Business logic and utilities require 90%+ coverage."
+      },
+      {
+        "question": "Can I use this with existing code?",
+        "answer": "Yes. Apply TDD for new features. For legacy code, write tests before making changes."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. This skill only provides guidance. It does not access files or execute code."
+      },
+      {
+        "question": "Why do tests need to fail first?",
+        "answer": "Failing tests confirm the test actually checks for the feature. If tests pass before implementation, they are not testing the right thing."
+      },
+      {
+        "question": "How is this different from general testing advice?",
+        "answer": "This enforces the strict TDD cycle: Red (failing tests), Green (minimal code), Refactor. Many guides skip the discipline of writing failing tests first."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 476
+    }
+  ]
+}

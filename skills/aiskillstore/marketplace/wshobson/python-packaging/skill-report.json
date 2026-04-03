@@ -1,0 +1,734 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:25:48.647Z",
+    "slug": "wshobson-python-packaging",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/python-development/skills/python-packaging",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "32b5ced7a2be0219a66827a6260426c00147f20bf050129bd85fe3f82260975a",
+    "tree_hash": "548dbe1950032f82980ef539be76b70a4ec6463e80b0a121e44994000f42485e"
+  },
+  "skill": {
+    "name": "python-packaging",
+    "description": "Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and publishing to PyPI. Use when packaging Python libraries, creating CLI tools, or distributing Python code.",
+    "summary": "Create distributable Python packages with proper project structure, setup.py/pyproject.toml, and pub...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "python",
+      "packaging",
+      "pypi",
+      "cli",
+      "release"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing educational content about Python packaging. No executable scripts, network calls, file access, or code execution paths present. All static findings are false positives: the scanner misidentified repository names as cryptographic algorithms, bash documentation examples as shell execution, and legitimate config file references as credential access attempts.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 214
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 437,
+            "line_end": 437
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 694,
+            "line_end": 694
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 694,
+            "line_end": 694
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 695,
+            "line_end": 695
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 695,
+            "line_end": 695
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 696,
+            "line_end": 696
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 696,
+            "line_end": 696
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 722,
+            "line_end": 722
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 727,
+            "line_end": 727
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 771,
+            "line_end": 771
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 775,
+            "line_end": 775
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 776,
+            "line_end": 776
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 779,
+            "line_end": 779
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 852,
+            "line_end": 852
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 853,
+            "line_end": 853
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 854,
+            "line_end": 854
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 855,
+            "line_end": 855
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 856,
+            "line_end": 856
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 857,
+            "line_end": 857
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 278
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 278,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 298
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 298,
+            "line_end": 301
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 301,
+            "line_end": 308
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 314
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 314,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 353
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 353,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 362
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 362,
+            "line_end": 405
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 405,
+            "line_end": 411
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 411,
+            "line_end": 425
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 425,
+            "line_end": 429
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 429,
+            "line_end": 441
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 441,
+            "line_end": 444
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 444,
+            "line_end": 458
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 458,
+            "line_end": 462
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 462,
+            "line_end": 497
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 497,
+            "line_end": 503
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 503,
+            "line_end": 511
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 511,
+            "line_end": 514
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 514,
+            "line_end": 529
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 529,
+            "line_end": 535
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 535,
+            "line_end": 547
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 547,
+            "line_end": 551
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 551,
+            "line_end": 567
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 567,
+            "line_end": 570
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 570,
+            "line_end": 574
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 574,
+            "line_end": 578
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 578,
+            "line_end": 587
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 587,
+            "line_end": 590
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 590,
+            "line_end": 603
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 603,
+            "line_end": 609
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 609,
+            "line_end": 617
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 617,
+            "line_end": 620
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 620,
+            "line_end": 627
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 627,
+            "line_end": 631
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 631,
+            "line_end": 644
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 644,
+            "line_end": 647
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 647,
+            "line_end": 648
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 648,
+            "line_end": 654
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 654,
+            "line_end": 663
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 663,
+            "line_end": 667
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 667,
+            "line_end": 685
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 685,
+            "line_end": 691
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 691,
+            "line_end": 702
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 702,
+            "line_end": 704
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 704,
+            "line_end": 708
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 708,
+            "line_end": 712
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 712,
+            "line_end": 726
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 726,
+            "line_end": 731
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 731,
+            "line_end": 736
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 736,
+            "line_end": 742
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 742,
+            "line_end": 765
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 765,
+            "line_end": 769
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 769,
+            "line_end": 780
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 780,
+            "line_end": 786
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 786,
+            "line_end": 818
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 818,
+            "line_end": 822
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 822,
+            "line_end": 832
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 445,
+            "line_end": 445
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 445,
+            "line_end": 445
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1047,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:25:48.647Z"
+  },
+  "content": {
+    "user_title": "Build Python packages for PyPI",
+    "value_statement": "Packaging a Python project often causes structure and metadata errors. This skill provides clear layouts, configuration examples, and publishing steps to create distributable packages.",
+    "seo_keywords": [
+      "Python packaging",
+      "pyproject.toml",
+      "PyPI",
+      "setuptools",
+      "build wheels",
+      "twine upload",
+      "CLI entry points",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Explain src and flat layouts for package structure",
+      "Provide pyproject.toml examples with PEP 517 and PEP 621 metadata",
+      "Show how to define CLI entry points using Click or argparse",
+      "Outline build and upload steps with build and twine",
+      "Share GitHub Actions workflow examples for publishing"
+    ],
+    "limitations": [
+      "Does not run build or upload commands",
+      "Does not generate or edit project files",
+      "Does not validate project specific metadata",
+      "Does not manage PyPI credentials"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Library author",
+        "title": "Package a reusable module",
+        "description": "Design a clean structure and metadata for a shared Python library."
+      },
+      {
+        "target_user": "CLI developer",
+        "title": "Ship a command line tool",
+        "description": "Define entry points and release a CLI package to PyPI."
+      },
+      {
+        "target_user": "Release manager",
+        "title": "Automate publishing",
+        "description": "Set up a release workflow with build and upload steps."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Starter package",
+        "scenario": "New package from scratch",
+        "prompt": "Provide a minimal src layout and pyproject.toml for a small Python library named acme-tools."
+      },
+      {
+        "title": "Add CLI entry point",
+        "scenario": "Expose a command line tool",
+        "prompt": "Show how to add a click based CLI entry point called acme to an existing package."
+      },
+      {
+        "title": "Build and publish",
+        "scenario": "Release to PyPI",
+        "prompt": "List the steps to build wheels and publish to TestPyPI and PyPI using twine."
+      },
+      {
+        "title": "CI release workflow",
+        "scenario": "Automated publishing",
+        "prompt": "Draft a GitHub Actions workflow that builds and uploads on release creation."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I need a simple pyproject.toml and folder layout for a library.",
+        "output": [
+          "Use a src layout with a package folder and tests.",
+          "Define build system and project metadata in pyproject.toml.",
+          "Add dependencies and optional dev tools.",
+          "Include README and LICENSE for packaging."
+        ]
+      },
+      {
+        "input": "How do I set up CLI commands for my package?",
+        "output": [
+          "Install Click as a dependency.",
+          "Create a cli.py module with click commands.",
+          "Define entry points in pyproject.toml section.",
+          "Install in editable mode to test commands."
+        ]
+      },
+      {
+        "input": "What are the steps to publish to PyPI?",
+        "output": [
+          "Build the package with python -m build.",
+          "Verify with twine check dist/*.",
+          "Upload to TestPyPI first for testing.",
+          "Upload to PyPI with twine upload dist/*."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use a src layout for safer imports",
+      "Test installs in a clean environment",
+      "Publish to TestPyPI before PyPI"
+    ],
+    "anti_patterns": [
+      "Publishing without verifying metadata",
+      "Relying on implicit setup.py defaults",
+      "Skipping wheel builds for release"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with modern Python packaging?",
+        "answer": "Yes, it focuses on pyproject.toml and PEP 517 and PEP 621 standards."
+      },
+      {
+        "question": "What can this skill not do?",
+        "answer": "It provides guidance and examples but does not execute builds or uploads."
+      },
+      {
+        "question": "Can it help with CI or GitHub Actions?",
+        "answer": "Yes, it includes an example workflow for publishing on release."
+      },
+      {
+        "question": "Does it collect or send my data?",
+        "answer": "No, the content contains no data collection or network actions."
+      },
+      {
+        "question": "What if my build fails?",
+        "answer": "Check build requirements, metadata fields, and run twine check on artifacts."
+      },
+      {
+        "question": "How does it compare with Poetry or Flit?",
+        "answer": "It documents multiple backends and explains when each is suitable."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 871
+    }
+  ]
+}

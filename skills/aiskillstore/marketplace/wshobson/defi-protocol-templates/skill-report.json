@@ -1,0 +1,331 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:15:38.934Z",
+    "slug": "wshobson-defi-protocol-templates",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/blockchain-web3/skills/defi-protocol-templates",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7f008969916205ec12154dde7a9d7eaee198fce53345fb3b6f3a73ba089bfe1d",
+    "tree_hash": "30c863547c58b26f2b9ad97cd041f268be4d0add801205092a9d4c09326732e7"
+  },
+  "skill": {
+    "name": "defi-protocol-templates",
+    "description": "Implement DeFi protocols with production-ready templates for staking, AMMs, governance, and lending systems. Use when building decentralized finance applications or smart contract protocols.",
+    "summary": "Implement DeFi protocols with production-ready templates for staking, AMMs, governance, and lending ...",
+    "icon": "🧩",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "defi",
+      "smart-contracts",
+      "solidity",
+      "templates",
+      "blockchain"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "scripts",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only Solidity code examples in markdown. No executable scripts, network calls, file system access, or environment variable harvesting detected. All 74 static findings are false positives caused by the scanner misinterpreting Solidity code syntax and markdown formatting as security threats.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 178
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 297
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 315,
+            "line_end": 315
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 316,
+            "line_end": 316
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 317
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 335,
+            "line_end": 335
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 336,
+            "line_end": 336
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 337
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 381,
+            "line_end": 381
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 389,
+            "line_end": 390
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 401
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 424
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 630,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:15:38.934Z"
+  },
+  "content": {
+    "user_title": "Build DeFi protocol contracts faster",
+    "value_statement": "You need solid DeFi contract templates but do not want to start from scratch. This skill provides ready-to-use structures for staking, AMMs, governance, and lending protocols that you can adapt quickly.",
+    "seo_keywords": [
+      "DeFi templates",
+      "Solidity staking",
+      "AMM smart contract",
+      "governance token",
+      "flash loan",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Ethereum",
+      "Web3 development"
+    ],
+    "actual_capabilities": [
+      "Provides a staking rewards contract with reward distribution logic",
+      "Provides a simple AMM with liquidity provision and swap functionality",
+      "Provides governance token and proposal voting system templates",
+      "Provides a flash loan provider and receiver example",
+      "Includes documentation for five DeFi protocol patterns"
+    ],
+    "limitations": [
+      "No tests or deployment scripts are included",
+      "Templates are unaudited and need review before production use",
+      "No price oracle or liquidation logic is provided",
+      "Referenced external docs and assets are not in this package"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Solidity developer",
+        "title": "Prototype a DeFi MVP",
+        "description": "Adapt staking and AMM templates to validate a new protocol idea quickly."
+      },
+      {
+        "target_user": "Startup founder",
+        "title": "Plan protocol scope",
+        "description": "Review governance and flash loan examples to define product requirements."
+      },
+      {
+        "target_user": "Security reviewer",
+        "title": "Compare baseline patterns",
+        "description": "Use templates as a baseline to spot missing controls in custom code."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Staking basics",
+        "scenario": "Start a simple staking contract",
+        "prompt": "Summarize the staking rewards template and list the key state variables and events."
+      },
+      {
+        "title": "AMM setup",
+        "scenario": "Understand AMM liquidity flow",
+        "prompt": "Explain how addLiquidity and swap work in the AMM template and note any math assumptions."
+      },
+      {
+        "title": "Governance flow",
+        "scenario": "Design a voting process",
+        "prompt": "Outline the governance proposal lifecycle in the template and list where custom logic should go."
+      },
+      {
+        "title": "Flash loan safety",
+        "scenario": "Review flash loan risks",
+        "prompt": "Identify security checks in the flash loan template and suggest two additional safeguards."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Explain the AMM template and list the main functions.",
+        "output": [
+          "The AMM tracks two token reserves and issues liquidity shares to providers.",
+          "Main functions are addLiquidity, removeLiquidity, and swap.",
+          "Prices follow a constant product model with a 0.3 percent fee on swaps."
+        ]
+      },
+      {
+        "input": "What does the staking contract reward calculation look like?",
+        "output": [
+          "The contract uses rewardPerTokenStored to track accumulated rewards per staked token.",
+          "When users stake or withdraw, pending rewards are calculated and distributed.",
+          "The formula multiplies time elapsed by reward rate divided by total supply."
+        ]
+      },
+      {
+        "input": "How do I create a governance proposal?",
+        "output": [
+          "Call the propose function with a description string.",
+          "You must hold tokens above the proposal threshold.",
+          "The proposal enters a voting period that lasts approximately three days."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Add comprehensive unit tests before deploying any adapted template",
+      "Use audited OpenZeppelin libraries for token and access control logic",
+      "Review math for overflow and rounding edge cases in production"
+    ],
+    "anti_patterns": [
+      "Deploying templates without a professional security audit",
+      "Skipping access control and pause mechanisms for critical functions",
+      "Ignoring token decimal handling and fee edge cases"
+    ],
+    "faq": [
+      {
+        "question": "What platforms are compatible?",
+        "answer": "Templates are Solidity based and work on EVM chains that support OpenZeppelin libraries."
+      },
+      {
+        "question": "What are the limits of these templates?",
+        "answer": "They are minimal examples without full oracle, liquidation, or upgrade proxy logic."
+      },
+      {
+        "question": "How do I integrate this with my project?",
+        "answer": "Copy the contract and adapt interfaces, parameters, and access control for your needs."
+      },
+      {
+        "question": "Does this skill access my data?",
+        "answer": "No. It contains static templates only with no data collection or external calls."
+      },
+      {
+        "question": "What if compilation fails?",
+        "answer": "Check Solidity version compatibility and ensure OpenZeppelin dependencies are installed."
+      },
+      {
+        "question": "How does this compare to full DeFi frameworks?",
+        "answer": "This is lighter and faster for prototyping but lacks complete production features."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 455
+    }
+  ]
+}

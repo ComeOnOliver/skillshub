@@ -1,0 +1,216 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:13:21.631Z",
+    "slug": "nexteacc-explain-expert",
+    "source_url": "https://github.com/nexteacc/skills_onme/tree/main/explain-expert/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3454bab498352d3a09af50d9e67a6e99a4ad6128144782a81bfb78ef236a9ac0",
+    "tree_hash": "d1edd1cde45e46796fc45c847136f44abbc51b01f142a85242ff32e65ca77ea2"
+  },
+  "skill": {
+    "name": "explain-expert",
+    "description": "Analyze codebases and provide technical overviews covering core components, interactions, deployment architecture, and runtime behavior. Use when the user asks for codebase analysis, project overview, technical architecture explanation, or system documentation.",
+    "summary": "Analyze codebases and provide technical overviews covering core components, interactions, deployment...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "nexteacc",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "analysis",
+      "documentation",
+      "architecture",
+      "codebase"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Prompt-only skill containing analysis framework instructions. No executable code, network operations, file writes, or external commands. Static analysis findings are false positives from naive pattern matching on documentation text. The skill is a legitimate documentation framework with no malicious patterns or harmful intent.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 17
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 358,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:13:21.631Z"
+  },
+  "content": {
+    "user_title": "Analyze codebase architecture and components",
+    "value_statement": "This skill provides a structured framework for analyzing codebases. It helps developers quickly understand unfamiliar projects by examining structure, dependencies, and architecture. The analysis covers components, interactions, deployment, and runtime behavior.",
+    "seo_keywords": [
+      "codebase analysis",
+      "technical documentation",
+      "architecture explanation",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "project overview",
+      "system documentation",
+      "component mapping",
+      "dependency analysis"
+    ],
+    "actual_capabilities": [
+      "Scan repository structure to identify main directories and entry points",
+      "Read configuration files like package.json and Docker files",
+      "Map external libraries and frameworks used in the project",
+      "Trace application execution flow and request handling",
+      "Describe component interactions and data flow",
+      "Summarize deployment architecture and infrastructure details"
+    ],
+    "limitations": [
+      "Does not modify code or files",
+      "Does not execute code or run tests",
+      "Does not provide implementation suggestions unless asked",
+      "Does not access external APIs or network resources"
+    ],
+    "use_cases": [
+      {
+        "target_user": "New developers",
+        "title": "Onboard to codebase",
+        "description": "New team members quickly understand project structure and architecture"
+      },
+      {
+        "target_user": "Technical writers",
+        "title": "Generate documentation",
+        "description": "Create initial technical documentation from codebase analysis"
+      },
+      {
+        "target_user": "Architects",
+        "title": "Review system design",
+        "description": "Understand existing system interactions and deployment patterns"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic overview",
+        "scenario": "Quick project scan",
+        "prompt": "Explain this codebase structure. What are the main components and how do they interact?"
+      },
+      {
+        "title": "Architecture deep dive",
+        "scenario": "Technical analysis",
+        "prompt": "Analyze the deployment architecture and runtime behavior of this application."
+      },
+      {
+        "title": "Dependency mapping",
+        "scenario": "Tech stack review",
+        "prompt": "What frameworks and libraries does this project use? Map the key dependencies."
+      },
+      {
+        "title": "Full documentation",
+        "scenario": "Complete analysis",
+        "prompt": "Provide comprehensive technical documentation including: repository structure, core components, component interactions, deployment setup, and runtime behavior."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Explain this codebase structure. What are the main components and how do they interact?",
+        "output": [
+          "Repository structure shows a standard layout with src/, tests/, and config/ directories",
+          "Main components: API server, database layer, and authentication service",
+          "Components communicate via REST APIs with dependency injection pattern",
+          "Entry point is index.js which initializes the Express server",
+          "Build process uses webpack for bundling and Docker for containerization"
+        ]
+      },
+      {
+        "input": "Analyze the deployment architecture and runtime behavior",
+        "output": [
+          "Application uses Docker for containerization with environment-specific configurations",
+          "Runtime starts with index.js which initializes the Express server and database connection",
+          "Request handling follows: client -> load balancer -> API gateway -> service layer -> database",
+          "Background tasks are managed by a job queue with Redis as the message broker"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start by scanning repository structure before diving into code details",
+      "Identify configuration files early to understand build and deployment requirements",
+      "Follow execution flow from entry point to understand request handling"
+    ],
+    "anti_patterns": [
+      "Avoid giving personal opinions on code quality unless asked",
+      "Do not suggest implementation changes during analysis",
+      "Do not skip reading configuration files before source code"
+    ],
+    "faq": [
+      {
+        "question": "What does this skill analyze?",
+        "answer": "It examines repository structure, configuration files, dependencies, components, and their interactions."
+      },
+      {
+        "question": "Does it modify my codebase?",
+        "answer": "No, this skill only reads files to provide analysis. It never writes or changes code."
+      },
+      {
+        "question": "Can it analyze any programming language?",
+        "answer": "Yes, the framework works for any codebase regardless of language or framework."
+      },
+      {
+        "question": "Does it run my code?",
+        "answer": "No, it reads files statically without executing any code or tests."
+      },
+      {
+        "question": "What output formats are supported?",
+        "answer": "Returns structured markdown descriptions suitable for documentation or further processing."
+      },
+      {
+        "question": "How long does analysis take?",
+        "answer": "Time varies with codebase size. The skill reads key files first then provides comprehensive overview."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "EVALUATION.json",
+      "type": "file",
+      "path": "EVALUATION.json",
+      "lines": 136
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 44
+    }
+  ]
+}

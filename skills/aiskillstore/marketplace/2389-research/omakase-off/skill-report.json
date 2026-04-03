@@ -1,0 +1,212 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:51:27.937Z",
+    "slug": "2389-research-omakase-off",
+    "source_url": "https://github.com/2389-research/claude-plugins/tree/main/test-kitchen/skills/omakase-off",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c1ac5852c4e75d61bd0ab601e77dce3e121b300c49d2f973ae74837f9f9419aa",
+    "tree_hash": "76cbcda7b7fb9307a6f34c53ac2278c1b7845c225957618e4bcd6bd1ecd8dc31"
+  },
+  "skill": {
+    "name": "omakase-off",
+    "description": "This skill should be used as the entry gate for build/create/implement requests. Triggers on \"build X\", \"create Y\", \"implement Z\", \"add feature\", \"try both approaches\", \"not sure which approach\". Offers brainstorm-together or omakase (chef's choice parallel exploration) options. Detects indecision during brainstorming to offer parallel exploration.",
+    "summary": "Entry gate for build requests. Offers collaborative brainstorming or parallel exploration of multiple implementation approaches with automated testing.",
+    "icon": "🍱",
+    "version": "1.0.0",
+    "author": "2389-research",
+    "license": "MIT",
+    "tags": [
+      "workflow",
+      "parallel-exploration",
+      "decision-making",
+      "development-orchestration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. External command patterns in documentation are example git commands. High-risk crypto and C2 patterns are regex false positives triggered by benign words. This is a legitimate workflow orchestration skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 140
+          },
+          {
+            "file": "references/detailed-workflow.md",
+            "line_start": 1,
+            "line_end": 228
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1345,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:51:27.937Z"
+  },
+  "content": {
+    "user_title": "Explore multiple solutions in parallel",
+    "value_statement": "Users often struggle to choose between implementation approaches. This skill detects indecision and offers parallel exploration of different approaches, letting tests determine the best solution.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "parallel exploration",
+      "implementation alternatives",
+      "omakase development",
+      "decision workflow",
+      "multiple approaches",
+      "development strategy",
+      "solution comparison"
+    ],
+    "actual_capabilities": [
+      "Detects build/create/implement requests and presents collaboration options",
+      "Identifies indecision during brainstorming through passive analysis",
+      "Generates multiple implementation approaches in parallel",
+      "Orchestrates git worktrees for isolated variant development",
+      "Runs automated scenario tests against all variants",
+      "Compares results and recommends the best approach"
+    ],
+    "limitations": [
+      "Does not execute code directly; orchestrates other skills",
+      "Relies on external skills for testing and code review",
+      "Cannot make architectural decisions without user input",
+      "Maximum of 5-6 variants to prevent combinatorial explosion"
+    ],
+    "use_cases": [
+      {
+        "title": "New project architecture decisions",
+        "description": "When starting a new project and unsure about technology choices (React vs Vue, SQL vs NoSQL), explore both in parallel with real tests.",
+        "target_user": "Developers starting new projects"
+      },
+      {
+        "title": "Refactoring trade-offs",
+        "description": "Evaluate different refactoring approaches by implementing variants and comparing their test results and code quality.",
+        "target_user": "Engineers modernizing existing codebases"
+      },
+      {
+        "title": "Feature implementation alternatives",
+        "description": "Compare different implementation strategies for complex features by running parallel experiments.",
+        "target_user": "Full-stack developers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic trigger",
+        "prompt": "I want to build a CLI todo app. Can you help me get started?",
+        "scenario": "User requests to build something new"
+      },
+      {
+        "title": "Indecision scenario",
+        "prompt": "Should I use JSON files or SQLite for storage? I'm not sure which is better.",
+        "scenario": "User expresses uncertainty about a technical decision"
+      },
+      {
+        "title": "Parallel exploration request",
+        "prompt": "I need to add authentication. Let's try both JWT and session-based approaches to see which works better.",
+        "scenario": "User explicitly wants to explore multiple approaches"
+      },
+      {
+        "title": "Complex project setup",
+        "prompt": "Build me a full-stack React app with a Node backend. I'm open to different approaches for the database and API style.",
+        "scenario": "Complex project with multiple architectural decisions"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I want to build a URL shortener service.",
+        "output": [
+          "Before we dive into the details, how would you like to approach this?",
+          "1. Brainstorm together - We'll explore requirements and design step by step",
+          "2. Omakase (chef's choice) - I'll generate multiple approaches, implement them in parallel, and let tests pick the winner"
+        ]
+      },
+      {
+        "input": "I'm not sure whether to use REST or GraphQL for my API.",
+        "output": [
+          "You seem flexible on the API style. Want to explore both?",
+          "I can implement REST and GraphQL variants in parallel, then run the same scenarios against both to see which performs better."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Let the skill detect indecision naturally during brainstorming rather than forcing parallel exploration upfront",
+      "Limit to 5-6 variants maximum to avoid combinatorial explosion",
+      "Always use scenario testing rather than manual verification for fair comparison"
+    ],
+    "anti_patterns": [
+      "Using omakase for trivial decisions like file naming or directory structure",
+      "Skipping cleanup of failed variant worktrees after selection",
+      "Running too many variants without focusing on the primary architectural axis"
+    ],
+    "faq": [
+      {
+        "question": "What triggers omakase-off?",
+        "answer": "The skill triggers on phrases like 'build X', 'create Y', 'implement Z', 'add feature', 'try both approaches', or expressions of uncertainty like 'not sure which approach'."
+      },
+      {
+        "question": "How many variants can I explore?",
+        "answer": "The skill recommends a maximum of 5-6 variants. This prevents combinatorial explosion while still allowing meaningful comparison of different approaches."
+      },
+      {
+        "question": "How are variants tested?",
+        "answer": "All variants run the same scenario tests. The skill uses the scenario-testing skill to create end-to-end tests that run against all variants equally."
+      },
+      {
+        "question": "What happens to the losing variants?",
+        "answer": "Losing variants are cleaned up by removing their git worktrees and branches. The result is documented in result.md for future reference."
+      },
+      {
+        "question": "Can I use this for small decisions?",
+        "answer": "No. The skill is designed for architectural decisions like storage engines or frameworks. Trivial decisions like file locations should be made normally."
+      },
+      {
+        "question": "What skills does this orchestrate?",
+        "answer": "It coordinates with brainstorming, writing-plans, git-worktrees, parallel-agents, scenario-testing, fresh-eyes, and finish-branch skills."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "detailed-workflow.md",
+          "type": "file",
+          "path": "references/detailed-workflow.md",
+          "lines": 228
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 140
+    }
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:49:31.900Z",
+    "slug": "awais68-error-handling",
+    "source_url": "https://github.com/Awais68/hackathon-2-phase-ii-full-stack-web-app/tree/main/.claude/skills/error-handling",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1a343dcf17788cf81526485beb5e3bf580cbe69a086889936063b538dcd3eac9",
+    "tree_hash": "3db126649188939c11d4c6c62e5c5d38deae6adda87e7d74d8e42ec2647a5537"
+  },
+  "skill": {
+    "name": "error-handling",
+    "description": "Use when implementing structured error handling in backend or frontend code.\nTriggers for: try-catch patterns, custom exception classes, global error handlers,\nerror logging, user-friendly error messages, or API error responses.\nNOT for: business logic validation (use domain exceptions) or unrelated error types.\n",
+    "summary": "Implement structured error handling patterns for FastAPI backends and React frontends with consistent error messages and logging.",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "Awais68",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "error-handling",
+      "exceptions",
+      "fastapi",
+      "react",
+      "logging"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides legitimate error handling patterns for FastAPI backends and React frontends. Static findings are false positives triggered by regex flags misidentified as cryptographic algorithms, backticks for markdown code formatting, and error code naming conventions. No malicious patterns confirmed.",
+    "files_scanned": 3,
+    "total_lines": 1398,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:49:31.900Z",
+    "risk_factors": [
+      "scripts",
+      "external_commands"
+    ],
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/verify.py",
+            "line_start": 1,
+            "line_end": 62
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 114
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": []
+  },
+  "content": {
+    "user_title": "Implement Structured Error Handling",
+    "value_statement": "Building robust error handling is challenging without consistent patterns. This skill provides ready-to-use exception hierarchies, try-catch patterns, global error handlers, and logging utilities for FastAPI and React applications.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "error handling",
+      "exception handling",
+      "FastAPI errors",
+      "React error boundary",
+      "structured logging",
+      "API error responses",
+      "try-catch patterns"
+    ],
+    "actual_capabilities": [
+      "Create custom exception hierarchies extending AppException for backend APIs",
+      "Implement global error handlers for FastAPI and React ErrorBoundary components",
+      "Generate user-friendly error messages separate from technical details",
+      "Set up structured JSON logging with correlation IDs for request tracing",
+      "Build frontend error mappers to translate API errors to user notifications",
+      "Configure API clients with proper error response handling"
+    ],
+    "limitations": [
+      "Does not handle business logic validation errors (use domain exceptions instead)",
+      "Does not integrate with specific observability platforms like Datadog or New Relic",
+      "Does not provide retry logic or circuit breaker patterns for external service calls",
+      "Does not include error monitoring or alerting configuration"
+    ],
+    "use_cases": [
+      {
+        "title": "Build Consistent API Error Responses",
+        "description": "Create a unified error response format across all API endpoints with custom exception classes, user-facing messages, and structured logging for easier debugging.",
+        "target_user": "Backend developers building FastAPI applications"
+      },
+      {
+        "title": "Handle Frontend API Errors Gracefully",
+        "description": "Implement error handling in React applications that displays user-friendly messages, handles network failures, and integrates with toast notifications.",
+        "target_user": "Frontend developers working with API integrations"
+      },
+      {
+        "title": "Debug Production Issues with Correlation IDs",
+        "description": "Set up structured logging that tracks requests across services using correlation IDs, making it easier to trace errors in distributed systems.",
+        "target_user": "Full-stack developers and DevOps engineers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create Custom Exception",
+        "prompt": "Create a custom exception class called {ExceptionName} that extends AppException for a FastAPI backend. It should accept {parameters} and return a {status_code} status code with a user-friendly message.",
+        "scenario": "When you need to add a new domain-specific error type"
+      },
+      {
+        "title": "Add Global Error Handler",
+        "prompt": "Add a global error handler to my FastAPI app that catches AppException and returns a consistent JSON response with error code, user message, and internal details in debug mode.",
+        "scenario": "When setting up error handling middleware"
+      },
+      {
+        "title": "Handle API Response Errors",
+        "prompt": "Create an error mapper function in TypeScript that translates API error responses into user-friendly messages. It should handle 401, 403, 404, 409, 422, 429, and 500 status codes.",
+        "scenario": "When building React error handling for API calls"
+      },
+      {
+        "title": "Implement Structured Error Logging",
+        "prompt": "Create a structured logger in Python that outputs JSON logs with timestamp, level, correlation ID, error type, message, and stack trace. Use contextvars for correlation ID tracking.",
+        "scenario": "When setting up application logging"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a custom exception for when a resource is not found",
+        "output": [
+          "class NotFoundError(AppException):",
+          "    \"\"\"Resource not found (404).\"\"\"",
+          "",
+          "    def __init__(self, resource: str, identifier: str):",
+          "        super().__init__(",
+          "            status_code=404,",
+          "            detail=f\"{resource} with id '{identifier}' not found\",",
+          "            user_message=f\"{resource} not found. Please check and try again.\",",
+          "        )"
+        ]
+      },
+      {
+        "input": "How should I format API error responses?",
+        "output": "{\n  \"error\": {\n    \"code\": \"STUDENT_NOT_FOUND\",\n    \"message\": \"Student not found. Please check and try again.\",\n    \"internal\": \"Student with id '12345' not found\"\n  }\n}"
+      },
+      {
+        "input": "Handle a fetch error in React and show a toast notification",
+        "output": "try {\n  const response = await fetch(url);\n  if (!response.ok) {\n    throw new ApiResponseError(\n      { code: \"FETCH_ERROR\", message: \"Failed to fetch data\" },\n      response.status\n    );\n  }\n  return response.json();\n} catch (error) {\n  if (error instanceof ApiResponseError) {\n    toast.error(error.userMessage);\n  } else {\n    toast.error(\"An unexpected error occurred.\");\n  }\n}"
+      }
+    ],
+    "best_practices": [
+      "Separate internal error details from user-facing messages to avoid leaking sensitive information",
+      "Use specific exception types rather than catching generic Exception to enable targeted error handling",
+      "Always log exceptions with correlation IDs to trace errors across distributed services"
+    ],
+    "anti_patterns": [
+      "Catching Exception or bare except clauses that swallow all errors without proper handling",
+      "Exposing stack traces or internal error details directly to users in production",
+      "Returning different error response formats across endpoints, making client error handling inconsistent"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between detail and user_message?",
+        "answer": "The detail field contains technical information for debugging (e.g., database errors, variable values). The user_message contains a friendly message safe to display to end users. Only expose detail in debug mode."
+      },
+      {
+        "question": "How do I handle validation errors in FastAPI?",
+        "answer": "Use the ValidationError exception class that extends AppException. FastAPI automatically returns 400 for Pydantic validation failures. For custom validation, raise your ValidationError with field name and reason."
+      },
+      {
+        "question": "Should I use try-catch or global handlers?",
+        "answer": "Use both. Global handlers catch unhandled exceptions at the top level. Try-catch blocks handle specific errors where they occur, allowing you to add context, retry, or transform the error before it propagates."
+      },
+      {
+        "question": "How do I track errors across microservices?",
+        "answer": "Use correlation IDs passed through request headers. Each service logs with the correlation ID from the request. This creates a trace ID that links logs across services for distributed debugging."
+      },
+      {
+        "question": "What status codes should I use for different error types?",
+        "answer": "400 for validation errors, 401 for authentication, 403 for authorization, 404 for not found, 409 for conflicts, 422 for unprocessable entities, 429 for rate limits, and 500 for server errors."
+      },
+      {
+        "question": "How do I handle errors in React Query?",
+        "answer": "Use the onError callback in useMutation or useQuery options. Pass ApiResponseError instances to show user-friendly messages. Use toast.error() or other notification systems to display errors to users."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 62
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 570
+    }
+  ]
+}

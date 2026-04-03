@@ -1,0 +1,232 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:44:04.533Z",
+    "slug": "k-dense-ai-gwas-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gwas-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5a8a6ba0d736efcde81e7d8fd24d959f237d6bc2fc70e391e1994fad7454a311",
+    "tree_hash": "245705be2ae2fdb37a8535cd47c2dc3fb444ad9c590c73c46454bba209191ebc"
+  },
+  "skill": {
+    "name": "gwas-database",
+    "description": "Query NHGRI-EBI GWAS Catalog for SNP-trait associations. Search variants by rs ID, disease/trait, gene, retrieve p-values and summary statistics, for genetic epidemiology and polygenic risk scores.",
+    "summary": "Query NHGRI-EBI GWAS Catalog for SNP-trait associations. Search variants by rs ID, disease/trait, ge...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "genetics",
+      "research",
+      "database",
+      "bioinformatics"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 353 static findings are FALSE POSITIVES. This is a documentation-only skill containing no executable code. The static analyzer incorrectly flags Markdown code block backticks as shell commands, genetic research p-value notation (e.g., p=5e-8) as cryptographic algorithms, and the slug 'k-dense' as C2 keywords. The skill documents legitimate API queries to the public NHGRI-EBI GWAS Catalog maintained by EBI and NHGRI.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 541
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 23,
+            "line_end": 785
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 604
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 28,
+            "line_end": 793
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/api_reference.md",
+            "line_start": 772,
+            "line_end": 772
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 3215,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:44:04.533Z"
+  },
+  "content": {
+    "user_title": "Query GWAS Catalog for SNP Trait Associations",
+    "value_statement": "Access comprehensive genome-wide association study data from the NHGRI-EBI GWAS Catalog. Search variants by rs ID, trait, or gene to retrieve p-values, effect sizes, and summary statistics for genetic research.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "GWAS",
+      "genetics",
+      "SNP",
+      "genome-wide association",
+      "EBI",
+      "NHGRI",
+      "bioinformatics"
+    ],
+    "actual_capabilities": [
+      "Query SNP-trait associations from the GWAS Catalog",
+      "Search variants by rs ID, disease trait, or gene symbol",
+      "Retrieve p-values, effect sizes, and odds ratios",
+      "Access summary statistics for genome-wide studies"
+    ],
+    "limitations": [
+      "API rate limits apply to excessive requests",
+      "Full summary statistics not available for all studies",
+      "Requires EFO trait identifiers for precise trait queries"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Genetic epidemiologists",
+        "title": "Find disease-associated variants",
+        "description": "Query the GWAS Catalog to identify genetic variants associated with specific diseases or traits for research studies."
+      },
+      {
+        "target_user": "Clinical researchers",
+        "title": "Build polygenic risk scores",
+        "description": "Retrieve significant SNP associations with p-values and effect sizes to develop polygenic risk prediction models."
+      },
+      {
+        "target_user": "Drug discovery scientists",
+        "title": "Identify drug targets",
+        "description": "Explore genetic associations between variants and traits to identify potential therapeutic targets and biomarkers."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Find variant associations",
+        "scenario": "Query by rs ID",
+        "prompt": "Show me all trait associations for the genetic variant rs7903146 including p-values and risk alleles."
+      },
+      {
+        "title": "Search by disease trait",
+        "scenario": "Query by trait name",
+        "prompt": "Find all genetic variants associated with type 2 diabetes from the GWAS Catalog with genome-wide significance."
+      },
+      {
+        "title": "Gene-centric analysis",
+        "scenario": "Query by gene symbol",
+        "prompt": "What variants in or near the TCF7L2 gene are associated with any traits in the GWAS Catalog?"
+      },
+      {
+        "title": "Summary statistics access",
+        "scenario": "Get full study data",
+        "prompt": "Retrieve the summary statistics for GWAS study GCST001234 including all tested variants and their effect sizes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me variants associated with body mass index",
+        "output": [
+          "Found 1,847 associations for body mass index (EFO_0004340)",
+          "Top variants with genome-wide significance (p < 5e-8):",
+          "rs1558902 (FTO gene) - p=1.3e-71, effect allele: A",
+          "rs1421085 (FTO gene) - p=4.4e-67, effect allele: T",
+          "Study sample size: 681,275 individuals across 88 studies"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use EFO trait identifiers for precise queries instead of free-text trait names",
+      "Implement rate limiting (0.1-0.5 second delays) between API requests",
+      "Cite the GWAS Catalog publication when using data in research"
+    ],
+    "anti_patterns": [
+      "Making rapid consecutive requests without delays (causes rate limiting)",
+      "Assuming all associations have the same population applicability",
+      "Using p-value thresholds lower than 5e-8 for initial discovery"
+    ],
+    "faq": [
+      {
+        "question": "What is the GWAS Catalog?",
+        "answer": "The NHGRI-EBI GWAS Catalog is a curated database of published genome-wide association studies containing SNP-trait associations."
+      },
+      {
+        "question": "Do I need an API key?",
+        "answer": "No. The GWAS Catalog APIs are open access and do not require authentication or API keys."
+      },
+      {
+        "question": "What is genome-wide significance?",
+        "answer": "Genome-wide significance is p < 5x10-8, the standard threshold for GWAS to account for multiple testing."
+      },
+      {
+        "question": "How do I find the EFO ID for a trait?",
+        "answer": "Search the EBI Ontology Lookup Service or use the GWAS Catalog web interface with the trait name."
+      },
+      {
+        "question": "Can I download full summary statistics?",
+        "answer": "Yes. Summary statistics are available via FTP download for studies that have deposited data."
+      },
+      {
+        "question": "What populations are represented in the data?",
+        "answer": "Ancestry information is provided in study metadata. Historically European-biased; newer studies include more diverse populations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 794
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 608
+    }
+  ]
+}

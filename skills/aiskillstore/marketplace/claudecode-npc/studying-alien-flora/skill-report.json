@@ -1,0 +1,283 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:16:40.918Z",
+    "slug": "claudecode-npc-studying-alien-flora",
+    "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star/tree/master/.claude/skills/alien-flora",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c6f2b5cefdd9d213e6af3ef3264412cdf7bee91e724997ef2565fdd4f37d2ee2",
+    "tree_hash": "45b1421b7cbb58768a6617ba635dfbbbc67de7046c24d775e1625b80b043014b"
+  },
+  "skill": {
+    "name": "studying-alien-flora",
+    "description": "奇异植物 - Stella深入研究盖亚星球的植物生态,发现既美丽又危险的外星植被,并尝试找到可利用的资源",
+    "summary": "奇异植物 - Stella深入研究盖亚星球的植物生态,发现既美丽又危险的外星植被,并尝试找到可利用的资源",
+    "icon": "🌿",
+    "version": "1.0.0",
+    "author": "ClaudeCode-NPC",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "roleplay",
+      "science-fiction",
+      "exploration",
+      "interactive-story",
+      "education"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure narrative roleplay template with zero executable code. All 27 static findings are false positives triggered by markdown formatting and Chinese-English bilingual narrative text. The skill contains only YAML frontmatter and story dialogue describing an interactive fiction scenario about alien plant exploration.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 255,
+            "line_end": 261
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 261,
+            "line_end": 298
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 298,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 341
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 573,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:16:40.918Z"
+  },
+  "content": {
+    "user_title": "Explore Alien Plant Life with Stella Chen",
+    "value_statement": "Players face difficult decisions about scientific research and survival on an alien world. This interactive story teaches botanical concepts through immersive dialogue where choices determine whether Stella makes breakthrough discoveries or dangerous mistakes.",
+    "seo_keywords": [
+      "alien flora roleplay",
+      "science fiction adventure",
+      "Claude interactive story",
+      "Codex narrative game",
+      "Claude Code roleplay",
+      "botanical exploration",
+      "astronaut simulation",
+      "text-based adventure",
+      "educational storytelling",
+      "bilingual roleplay"
+    ],
+    "actual_capabilities": [
+      "Guide scientific research decisions through branching narrative with three distinct endings",
+      "Explore four plant categories including bioluminescent flora, giant trees, strange fruits, and carnivorous species",
+      "Experience realistic botanical research methodology with microscopy, spectrum analysis, and chemical testing",
+      "Encounter danger scenarios including toxic substances and predatory plants with survival consequences",
+      "Learn real plant biology concepts integrated naturally into character dialogue",
+      "Interact with bilingual Chinese-English narrative dialogue that switches naturally between languages"
+    ],
+    "limitations": [
+      "No code execution or system integration - purely conversational roleplay experience",
+      "Pre-written story arc focused exclusively on plant exploration theme",
+      "Requires active user participation through dialogue choices to progress narrative",
+      "Single chapter that does not persist character state across sessions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Science fiction fans",
+        "title": "Immersive Alien Ecosystem Adventure",
+        "description": "Experience detailed xenobotany research through interactive storytelling where your choices shape scientific discoveries and survival outcomes"
+      },
+      {
+        "target_user": "Educators and students",
+        "title": "Learn Biology Through Interactive Fiction",
+        "description": "Teach or study plant biology concepts like photosynthesis, carnivory, and chemical analysis embedded in engaging narrative context"
+      },
+      {
+        "target_user": "Game designers and writers",
+        "title": "Study Branching Narrative Design",
+        "description": "Analyze professional interactive fiction structure including choice mechanics, consequence systems, and character voice consistency"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Begin Chapter Four",
+        "scenario": "Start the alien plant research story",
+        "prompt": "I want to begin Chapter 4: Studying Alien Flora. Have Stella introduce me to the plant research mission and present the first choice of what to study."
+      },
+      {
+        "title": "Study Bioluminescent Plants",
+        "scenario": "Choose to research glowing flora",
+        "prompt": "Tell Stella to investigate the bioluminescent plants. I want to see her conduct microscopy analysis and discover how they store solar energy."
+      },
+      {
+        "title": "Test Unknown Fruit Safety",
+        "scenario": "Decide whether to taste alien fruit",
+        "prompt": "Stella wants to know if the strange fruits are edible. Guide her through proper scientific testing protocols before making the risky choice to taste them."
+      },
+      {
+        "title": "Escape Carnivorous Plant",
+        "scenario": "Survive encounter with predatory flora",
+        "prompt": "A carnivorous plant with digestive enzymes is attacking Stella. Help her analyze its hunting behavior while avoiding the sticky vines and decide if we should collect samples."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What did you discover about the bioluminescent plants?",
+        "output": [
+          "Stella examines a glowing leaf sample under her portable microscope",
+          "She explains these plants have crystal-like organelles that act as prisms rather than chloroplasts",
+          "They store light energy from both suns during the day and release it at night",
+          "She successfully connects a leaf to her battery pack and generates measurable electrical current",
+          "She proposes cultivating a solar panel garden for natural lighting and device charging"
+        ]
+      },
+      {
+        "input": "Should we try eating the gradient-colored fruit?",
+        "output": [
+          "Stella reviews scanner data showing the gradient fruit has mostly water and vitamins",
+          "She acknowledges the risk versus reward considering her week of eating compressed rations",
+          "She explains proper scientific testing: skin contact test, small bite, juice extraction",
+          "She admits she knows option four is safest but worries about long-term vitamin C and protein deficiency",
+          "She asks for your advice on whether the survival benefits outweigh the unknown chemical risks"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Ask Stella detailed questions about her observations to trigger comprehensive scientific explanations and character development",
+      "Make deliberate choices that reflect your preferred balance between scientific ambition and safety precautions",
+      "Read her bilingual dialogue carefully as language-switching moments often emphasize emotional beats or technical concepts"
+    ],
+    "anti_patterns": [
+      "Avoid giving commands without engaging with the narrative context or Stella's personality and scientific expertise",
+      "Do not skip through dialogue quickly as branching consequences depend on understanding previous research findings",
+      "Avoid expecting general assistant behavior as this skill provides pre-scripted roleplay responses only"
+    ],
+    "faq": [
+      {
+        "question": "What platforms support this interactive story skill?",
+        "answer": "Compatible with Claude, Codex, and Claude Code as a roleplay prompt template. No special integrations required for any platform."
+      },
+      {
+        "question": "How long does a complete playthrough take?",
+        "answer": "Approximately 25 to 30 minutes to experience all exploration phases and reach one of three possible story endings."
+      },
+      {
+        "question": "Can I play other chapters in this story series?",
+        "answer": "Yes. This is Chapter 4 of a 12-chapter series. Recommended sequences include space-cooking-adventure, daily-science-routine, and ancient-ruins chapters."
+      },
+      {
+        "question": "Does this skill access my files or data?",
+        "answer": "No. This skill contains only text narrative content. No code execution, file access, network requests, or data collection occurs."
+      },
+      {
+        "question": "What happens if I make dangerous choices?",
+        "answer": "Stella will experience consequences like hallucination from toxic fruit or vine attacks from carnivorous plants, but the story is designed for her to survive and learn lessons."
+      },
+      {
+        "question": "Why does Stella switch between English and Chinese?",
+        "answer": "The bilingual dialogue reflects her character background and creates natural emotional emphasis. Chinese phrases often indicate cultural context or excitement moments."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 396
+    }
+  ]
+}

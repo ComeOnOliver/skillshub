@@ -1,0 +1,299 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:41:18.056Z",
+    "slug": "davila7-pdf",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/document-skills/pdf",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f2eecd1fff4eaf3a77a318cedd8f4138723273b87c5f31a896acdbd751ba3db4",
+    "tree_hash": "fb9cd77c344597b642c3a371b2f7c6bb22633f9de27a83d383e39246d99b968d"
+  },
+  "skill": {
+    "name": "pdf",
+    "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+    "summary": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/sp...",
+    "icon": "PDF",
+    "version": "1.0.1",
+    "author": "davila7",
+    "license": "Proprietary. LICENSE.txt has complete terms",
+    "category": "documentation",
+    "tags": [
+      "pdf",
+      "document",
+      "text-extraction",
+      "form-filling",
+      "pdf-processing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 228 static findings are FALSE POSITIVES. The skill contains legitimate PDF processing documentation and Python scripts. Findings are caused by markdown code formatting (backticks), PDF annotation syntax misidentified as crypto, and standard file I/O for document processing.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/fill_fillable_fields.py",
+            "line_start": 13,
+            "line_end": 14
+          },
+          {
+            "file": "scripts/extract_form_field_info.py",
+            "line_start": 141,
+            "line_end": 141
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/check_fillable_fields.py",
+            "line_start": 1,
+            "line_end": 13
+          },
+          {
+            "file": "scripts/fill_fillable_fields.py",
+            "line_start": 1,
+            "line_end": 115
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 2230,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:41:18.056Z"
+  },
+  "content": {
+    "user_title": "Process PDF documents efficiently",
+    "value_statement": "Manual PDF processing is time-consuming and error-prone. This skill provides programmatic access to extract text, merge documents, fill forms, and convert files using Python libraries.",
+    "seo_keywords": [
+      "PDF processing",
+      "Claude PDF",
+      "text extraction",
+      "form filling",
+      "PDF manipulation",
+      "merge PDFs",
+      "split PDFs",
+      "table extraction",
+      "document automation",
+      "Codex PDF"
+    ],
+    "actual_capabilities": [
+      "Extract text and tables from PDF documents",
+      "Merge multiple PDFs into a single file",
+      "Split PDFs into individual pages",
+      "Fill PDF forms with text annotations",
+      "Convert PDF pages to images",
+      "Create PDFs from scratch with ReportLab"
+    ],
+    "limitations": [
+      "Cannot process encrypted PDFs without passwords",
+      "Scanned documents require OCR for text extraction",
+      "Complex form layouts may need manual validation",
+      "Image quality depends on source PDF resolution"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data analysts",
+        "title": "Extract table data",
+        "description": "Pull structured tables from research papers and reports into spreadsheets for analysis."
+      },
+      {
+        "target_user": "Administrative staff",
+        "title": "Automate form filling",
+        "description": "Batch process fillable PDF forms by mapping data from JSON configurations."
+      },
+      {
+        "target_user": "Legal professionals",
+        "title": "Organize case documents",
+        "description": "Merge and split legal documents, extract key text passages, and create standardized reports."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Extract text",
+        "scenario": "Pull text from a PDF",
+        "prompt": "Extract all text from {filename.pdf} and save it to {output.txt}"
+      },
+      {
+        "title": "Merge documents",
+        "scenario": "Combine PDF files",
+        "prompt": "Merge {file1.pdf}, {file2.pdf}, and {file3.pdf} into a single document named {combined.pdf}"
+      },
+      {
+        "title": "Fill forms",
+        "scenario": "Complete PDF forms",
+        "prompt": "Fill the PDF form at {form.pdf} using the field values in {values.json}. Save the result as {filled.pdf}"
+      },
+      {
+        "title": "Extract tables",
+        "scenario": "Pull data from tables",
+        "prompt": "Extract all tables from {document.pdf} and save them to an Excel spreadsheet with each table on a separate sheet"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Extract text from quarterly_report.pdf",
+        "output": [
+          "Successfully extracted text from 24 pages",
+          "Saved to quarterly_report.txt (45,678 characters)",
+          "Found 8 tables on pages 5, 12, 18-20"
+        ]
+      },
+      {
+        "input": "Merge contract1.pdf, contract2.pdf, and appendix.pdf",
+        "output": [
+          "Merged 3 documents into combined_contract.pdf",
+          "Total pages: 47",
+          "All bookmarks and links preserved"
+        ]
+      },
+      {
+        "input": "Fill application_form.pdf with data from applicant.json",
+        "output": [
+          "Filled 12 form fields",
+          "Saved to application_filled.pdf",
+          "Validated all field values successfully"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Verify PDF form fields exist before filling by running check_fillable_fields.py",
+      "Use validation images to confirm bounding box accuracy for non-fillable forms",
+      "Test with a small subset of files before batch processing large document sets"
+    ],
+    "anti_patterns": [
+      "Processing password-protected PDFs without verifying encryption first",
+      "Skipping validation steps when filling non-fillable form annotations",
+      "Assuming all scanned PDFs contain extractable text without OCR"
+    ],
+    "faq": [
+      {
+        "question": "Can this skill process scanned PDFs?",
+        "answer": "Scanned PDFs require OCR. Use pytesseract to convert images to text first."
+      },
+      {
+        "question": "What PDF form types are supported?",
+        "answer": "Supports text fields, checkboxes, radio groups, and choice fields in fillable PDF forms."
+      },
+      {
+        "question": "How do I fill non-fillable PDF forms?",
+        "answer": "Convert to images, create fields.json with bounding boxes, then use fill_pdf_form_with_annotations.py."
+      },
+      {
+        "question": "Is my data safe when processing PDFs?",
+        "answer": "Yes. All processing happens locally. No data is sent to external servers."
+      },
+      {
+        "question": "Why are my annotations not visible in the PDF viewer?",
+        "answer": "Some viewers require you to show annotations or may need the file to be saved with specific flags."
+      },
+      {
+        "question": "How does this compare to Adobe Acrobat?",
+        "answer": "This skill provides programmatic control for automation. For one-time manual tasks, Adobe may be simpler."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "check_bounding_boxes_test.py",
+          "type": "file",
+          "path": "scripts/check_bounding_boxes_test.py",
+          "lines": 227
+        },
+        {
+          "name": "check_bounding_boxes.py",
+          "type": "file",
+          "path": "scripts/check_bounding_boxes.py",
+          "lines": 71
+        },
+        {
+          "name": "check_fillable_fields.py",
+          "type": "file",
+          "path": "scripts/check_fillable_fields.py",
+          "lines": 13
+        },
+        {
+          "name": "convert_pdf_to_images.py",
+          "type": "file",
+          "path": "scripts/convert_pdf_to_images.py",
+          "lines": 36
+        },
+        {
+          "name": "create_validation_image.py",
+          "type": "file",
+          "path": "scripts/create_validation_image.py",
+          "lines": 42
+        },
+        {
+          "name": "extract_form_field_info.py",
+          "type": "file",
+          "path": "scripts/extract_form_field_info.py",
+          "lines": 153
+        },
+        {
+          "name": "fill_fillable_fields.py",
+          "type": "file",
+          "path": "scripts/fill_fillable_fields.py",
+          "lines": 115
+        },
+        {
+          "name": "fill_pdf_form_with_annotations.py",
+          "type": "file",
+          "path": "scripts/fill_pdf_form_with_annotations.py",
+          "lines": 108
+        }
+      ]
+    },
+    {
+      "name": "forms.md",
+      "type": "file",
+      "path": "forms.md",
+      "lines": 206
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 31
+    },
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 612
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 295
+    }
+  ]
+}

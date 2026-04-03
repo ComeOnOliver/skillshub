@@ -1,0 +1,283 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:46:03.520Z",
+    "slug": "dimon94-verification-before-completion",
+    "source_url": "https://github.com/Dimon94/cc-devflow/tree/main/.claude/skills/verification-before-completion",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bf2604acb928313aa775b85c55f60eb4afa3a749de4e0466f4be6bcfef2dc4a7",
+    "tree_hash": "565ed0ca454bfd0041d76185b8dc175b588536b3a211d3f765898dfd8eb7e0c7"
+  },
+  "skill": {
+    "name": "verification-before-completion",
+    "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+    "summary": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - req...",
+    "icon": "✓",
+    "version": "1.0.0",
+    "author": "Dimon94",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "quality-assurance",
+      "workflow",
+      "verification",
+      "discipline",
+      "testing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown text. No executable code, file operations, network calls, or command execution. Static findings are false positives caused by the scanner misinterpreting JSON source_url fields and markdown code block formatting as actual code patterns. All 29 reported findings can be dismissed.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 138
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 337,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:46:03.520Z"
+  },
+  "content": {
+    "user_title": "Verify before claiming completion",
+    "value_statement": "AI agents often claim success without actual verification. This skill prevents false completion claims by requiring fresh verification commands and evidence before any success assertion. It enforces discipline to run actual tests, show exit codes, and document proof.",
+    "seo_keywords": [
+      "verification skill",
+      "completion verification",
+      "CLAUDE",
+      "Codex",
+      "Claude Code",
+      "AI workflow",
+      "quality assurance",
+      "test verification",
+      "build verification",
+      "development workflow"
+    ],
+    "actual_capabilities": [
+      "Identifies appropriate verification commands for each claim type",
+      "Requires running fresh commands with full output capture",
+      "Validates exit codes and pass/fail counts before completion",
+      "Prevents rationalization of skipped verification",
+      "Documents evidence in structured verification format",
+      "Integrates with CC-DevFlow exit gates"
+    ],
+    "limitations": [
+      "Does not execute verification commands itself",
+      "Does not integrate with specific CI/CD systems",
+      "Requires user or AI agent to run commands manually",
+      "Applies only to AI agent workflow discipline"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Prevent false test completion",
+        "description": "Never claim tests pass without showing fresh test output and exit codes as evidence"
+      },
+      {
+        "target_user": "QA engineers",
+        "title": "Verify before QA sign-off",
+        "description": "Require full build and lint verification before marking development tasks complete"
+      },
+      {
+        "target_user": "AI agent developers",
+        "title": "Add verification discipline",
+        "description": "Prevent AI agents from claiming completion without actual verification evidence"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Verify tests pass",
+        "scenario": "Before claiming tests pass",
+        "prompt": "Run the full test suite with fresh output. Show the exit code, count of passed and failed tests. Only claim 'tests pass' if exit code is 0 with 0 failures."
+      },
+      {
+        "title": "Verify build succeeds",
+        "scenario": "Before claiming build complete",
+        "prompt": "Run the build command and capture full output. Show any errors and confirm artifacts were created. Quote the relevant output as evidence."
+      },
+      {
+        "title": "Verify lint clean",
+        "scenario": "Before claiming lint passes",
+        "prompt": "Run the linter and show the output with problem count. Claim 'no lint errors' only if 0 problems were found."
+      },
+      {
+        "title": "Flow exit gate",
+        "scenario": "Before exiting development flow",
+        "prompt": "Identify all required verification commands for this flow stage. Run each one fresh, capture full output, verify success criteria, and document evidence before proceeding."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run verification for this task",
+        "output": [
+          "Verification Evidence",
+          "Command: npm test",
+          "Exit Code: 0",
+          "Output Summary: 42 tests passed, 0 failed, 85% coverage",
+          "Conclusion: All tests pass. Ready for commit."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always run verification commands fresh without relying on cached or previous results",
+      "Show the actual command output with exit codes as evidence, not just beliefs",
+      "Apply the same verification standard regardless of change size or complexity"
+    ],
+    "anti_patterns": [
+      "Claiming 'tests pass' without running the test suite or showing output",
+      "Skipping verification 'just this once' for seemingly trivial changes",
+      "Trusting that 'CI will catch it' instead of verifying locally first"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools are supported?",
+        "answer": "Compatible with Claude, Codex, and Claude Code. Works as a prompt-based discipline guide."
+      },
+      {
+        "question": "Does this skill run commands automatically?",
+        "answer": "No. This skill provides guidelines for when and how to run verification. The AI agent must execute commands."
+      },
+      {
+        "question": "Can I customize verification commands?",
+        "answer": "Yes. The skill provides common examples. Replace with project-specific commands like pytest, go test, or maven."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "Yes. This is a prompt-only skill with no code execution, file access, or network calls. It only provides workflow guidance."
+      },
+      {
+        "question": "What if verification fails?",
+        "answer": "The skill requires showing the failure evidence. Fix the issues and re-run verification until all criteria pass."
+      },
+      {
+        "question": "How does this compare to other verification tools?",
+        "answer": "Unlike automated testing tools, this skill enforces behavioral discipline in AI agents before claiming completion."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 159
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:22:01.004Z",
+    "slug": "barissozen-pitfalls-websocket",
+    "source_url": "https://github.com/BarisSozen/claude/tree/main/.claude/skills/pitfalls-websocket",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c391161a72340b4b33a57845a68a4c5074b28ec464f11aae20b5769e82c25630",
+    "tree_hash": "dd3908da25b35ccd560584fe4797bdd2e9175ca26ca2d772cb61db5844dd2970"
+  },
+  "skill": {
+    "name": "pitfalls-websocket",
+    "description": "WebSocket server and client patterns with heartbeat and reconnection. Use when implementing real-time features, debugging connection issues, or reviewing WebSocket code. Triggers on: WebSocket, wss, heartbeat, reconnect, real-time.",
+    "summary": "WebSocket server and client patterns with heartbeat and reconnection. Use when implementing real-tim...",
+    "icon": "🔌",
+    "version": "1.0.0",
+    "author": "BarisSozen",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "websocket",
+      "real-time",
+      "networking",
+      "typescript"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only TypeScript code examples for educational purposes. No executable code, file system access, network calls, or command execution capabilities. All static findings are false positives caused by the scanner misinterpreting code examples in markdown documentation as executable patterns. The previous audit (skill-report.json) correctly identified this as safe.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 71
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 116
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 302,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:22:01.004Z"
+  },
+  "content": {
+    "user_title": "Implement WebSocket servers with best practices",
+    "value_statement": "WebSocket implementations often fail silently due to missing heartbeat or reconnection logic. This skill provides verified patterns for robust real-time connections that survive network issues and handle message validation correctly.",
+    "seo_keywords": [
+      "websocket",
+      "real-time",
+      "heartbeat",
+      "reconnection",
+      "typescript",
+      "ws",
+      "websocket-server",
+      "websocket-client",
+      "claude",
+      "claude-code"
+    ],
+    "actual_capabilities": [
+      "Review WebSocket server implementation for common pitfalls",
+      "Add ping-pong heartbeat pattern to detect dead connections",
+      "Implement client reconnection with exponential backoff",
+      "Validate WebSocket message formats and types",
+      "Debug connection drops and reconnection issues"
+    ],
+    "limitations": [
+      "Does not write code for you - provides patterns and review guidance",
+      "Does not test running WebSocket servers",
+      "Does not configure deployment environments or load balancers"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Developer",
+        "title": "Build production WebSocket server",
+        "description": "Create WebSocket server with heartbeat, proper message handling, and connection lifecycle management"
+      },
+      {
+        "target_user": "Full Stack Developer",
+        "title": "Implement resilient client",
+        "description": "Build WebSocket client that reconnects automatically after network interruptions"
+      },
+      {
+        "target_user": "Code Reviewer",
+        "title": "Audit real-time code",
+        "description": "Review WebSocket implementation for missing heartbeat, error handling, or reconnection logic"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check Server Setup",
+        "scenario": "Verify WebSocket server configuration",
+        "prompt": "Review my WebSocket server code. Check if it shares the HTTP port, has heartbeat implemented, and handles client connections correctly."
+      },
+      {
+        "title": "Add Heartbeat",
+        "scenario": "Add ping-pong to detect dead connections",
+        "prompt": "Add heartbeat ping-pong mechanism to my WebSocket server. Show how to detect dead connections and terminate them gracefully."
+      },
+      {
+        "title": "Client Reconnect",
+        "scenario": "Implement reconnection logic",
+        "prompt": "Implement WebSocket client reconnection with exponential backoff. Include connection state tracking and error logging."
+      },
+      {
+        "title": "Message Validation",
+        "scenario": "Validate incoming messages",
+        "prompt": "Review my WebSocket message handling. Add proper JSON parsing, type validation, and error responses for invalid messages."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review my WebSocket server code",
+        "output": [
+          "✓ Server shares HTTP port correctly",
+          "✗ Missing heartbeat - add ping interval every 30 seconds",
+          "✗ No reconnection logic for clients",
+          "✓ Message parsing includes try-catch for invalid JSON",
+          "Recommendation: Add ws.isAlive flag and pong handler to detect dead connections"
+        ]
+      },
+      {
+        "input": "Add heartbeat to my WebSocket server",
+        "output": [
+          "Added ping-pong heartbeat with 30-second interval",
+          "Implemented isAlive flag to track connection health",
+          "Added terminate() for dead connections",
+          "Included pong handler to reset isAlive on response"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use same port for WebSocket server and HTTP server to simplify deployment",
+      "Implement heartbeat every 30 seconds to detect stale connections early",
+      "Reset reconnection attempt counter on successful connection",
+      "Validate and type all incoming messages before processing"
+    ],
+    "anti_patterns": [
+      "Skipping heartbeat - leads to ghost connections consuming resources",
+      "No reconnection logic - clients stay disconnected after network issues",
+      "Processing raw messages without validation - security risk"
+    ],
+    "faq": [
+      {
+        "question": "What tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. Uses natural language understanding for code review."
+      },
+      {
+        "question": "What are the connection timeout limits?",
+        "answer": "Heartbeat interval defaults to 30 seconds. Maximum reconnection delay is capped at 30 seconds."
+      },
+      {
+        "question": "Can I integrate with existing WebSocket libraries?",
+        "answer": "Patterns work with ws, Socket.io, and native WebSocket. Concepts apply to any WebSocket implementation."
+      },
+      {
+        "question": "Is my WebSocket data stored or logged?",
+        "answer": "No. This skill only reviews code you share. No data is stored or transmitted."
+      },
+      {
+        "question": "Why do connections drop unexpectedly?",
+        "answer": "Common causes: missing heartbeat causing timeout, load balancer idle timeout, network interruption, or server restart."
+      },
+      {
+        "question": "How does this compare to Socket.io?",
+        "answer": "Socket.io provides built-in reconnection. This skill helps when building custom WebSocket solutions or migrating from Socket.io."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 125
+    }
+  ]
+}

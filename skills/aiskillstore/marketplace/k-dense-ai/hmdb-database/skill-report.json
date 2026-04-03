@@ -1,0 +1,238 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:46:07.078Z",
+    "slug": "k-dense-ai-hmdb-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/hmdb-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b64bdbefd48b69ff898f21a56db16b036fbcdd51a0497317888887178bc213c6",
+    "tree_hash": "1b6e689bcccfac5bab741d16d3c2e9f7fb6cbdaa7e2cec8e682cffe2cd17be88"
+  },
+  "skill": {
+    "name": "hmdb-database",
+    "description": "Access Human Metabolome Database (220K+ metabolites). Search by name/ID/structure, retrieve chemical properties, biomarker data, NMR/MS spectra, pathways, for metabolomics and identification.",
+    "summary": "Access Human Metabolome Database (220K+ metabolites). Search by name/ID/structure, retrieve chemical...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "HMDB is offered to the public as a freely available resource. Use and re-distribution of the data, in whole or in part, for commercial purposes requires explicit permission of the authors and explicit acknowledgment of the source material (HMDB) and the original publication (see the HMDB citing page). We ask that users who download significant portions of the database cite the HMDB paper in any resulting publications.",
+    "category": "data",
+    "tags": [
+      "metabolomics",
+      "bioinformatics",
+      "chemical-database",
+      "metabolites"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill with no executable code. All 129 static findings are FALSE POSITIVES caused by markdown formatting patterns being misidentified as security issues. The backticks detected are markdown inline code spans (e.g., `accession`, `smiles`, `inchi`), not Ruby/shell command execution. The 'weak cryptographic algorithm' detections are chemical identifiers (InChI/InChIKey), not encryption. The hardcoded URLs are legitimate HMDB database endpoints essential to the skill's function. No code, network calls, file system access, or command execution exists.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": []
+      },
+      {
+        "factor": "network",
+        "evidence": []
+      },
+      {
+        "factor": "filesystem",
+        "evidence": []
+      },
+      {
+        "factor": "env_access",
+        "evidence": []
+      },
+      {
+        "factor": "external_commands",
+        "evidence": []
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1203,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:46:07.078Z"
+  },
+  "content": {
+    "user_title": "Search Human Metabolome Database",
+    "value_statement": "This skill provides access to the Human Metabolome Database containing over 220,000 metabolite entries. Researchers can search by chemical name, structure, or ID to retrieve properties, spectra, and biomarker data for metabolomics studies.",
+    "seo_keywords": [
+      "HMDB database",
+      "human metabolome",
+      "metabolomics",
+      "Claude Code",
+      "metabolite search",
+      "chemical database",
+      "biomarker data",
+      "NMR spectra",
+      "MS spectra",
+      "Cheminformatics"
+    ],
+    "actual_capabilities": [
+      "Search HMDB by metabolite name, accession ID, or chemical identifier",
+      "Retrieve chemical properties including SMILES, InChI, and molecular weight",
+      "Access NMR and MS spectral data for metabolite identification",
+      "Look up biomarker associations and concentration ranges in biological fluids",
+      "Explore metabolic pathways and enzyme associations"
+    ],
+    "limitations": [
+      "HMDB does not provide a public REST API for programmatic access",
+      "Downloaded datasets require local parsing (XML, CSV, SDF formats)",
+      "Commercial use requires explicit permission from HMDB authors"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Metabolomics Researchers",
+        "title": "Identify Unknown Metabolites",
+        "description": "Match experimental MS or NMR spectra against HMDB reference libraries to identify unknown compounds in samples."
+      },
+      {
+        "target_user": "Clinical Chemists",
+        "title": "Find Biomarker Associations",
+        "description": "Search for metabolites associated with specific diseases and review concentration ranges for diagnostic applications."
+      },
+      {
+        "target_user": "Bioinformatics Analysts",
+        "title": "Cross-Reference Chemical IDs",
+        "description": "Map HMDB entries to external databases like KEGG, PubChem, and ChEBI for integrated pathway analysis."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Metabolite Search",
+        "scenario": "Find a metabolite by name",
+        "prompt": "Find information about {metabolite_name} in HMDB. Include its chemical formula, molecular weight, and SMILES string."
+      },
+      {
+        "title": "Biomarker Search",
+        "scenario": "Find disease-associated metabolites",
+        "prompt": "Search HMDB for metabolites that serve as biomarkers for {disease_name}. List their concentration ranges in relevant biofluids."
+      },
+      {
+        "title": "Spectral Matching",
+        "scenario": "Match experimental spectra",
+        "prompt": "Find HMDB metabolites with NMR spectra matching a 600 MHz proton NMR. Which compounds have peaks in the 7-8 ppm aromatic region?"
+      },
+      {
+        "title": "Pathway Integration",
+        "scenario": "Link to pathway databases",
+        "prompt": "Find the SMPDB pathway IDs for metabolites in the {pathway_name} pathway. Cross-reference with KEGG pathway identifiers."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find information about caffeine including its HMDB ID, molecular weight, and whether it is a known biomarker.",
+        "output": [
+          "HMDB ID: HMDB0001854 (Caffeine)",
+          "Chemical Formula: C8H10N4O2",
+          "Molecular Weight: 194.19 g/mol",
+          "SMILES: CN1C=NC2=C1C(=O)N(C(=O)N2C)C",
+          "Status: Detected in blood, urine, saliva",
+          "Biomarker Status: No - not currently listed as a disease biomarker",
+          "Biospecimen Locations: Blood, Urine, Saliva, Breast Milk",
+          "Concentration in Urine: Typically 0.1-10 mg/L (varies by caffeine intake)"
+        ]
+      },
+      {
+        "input": "Search for metabolites that are biomarkers for diabetes and show their normal and abnormal concentration ranges in blood.",
+        "output": [
+          "Several HMDB metabolites are associated with diabetes biomarker status:",
+          "1. Glucose (HMDB0000122) - Elevated in diabetic conditions",
+          "2. HbA1c (HMDB0000741) - Key diabetes monitoring biomarker",
+          "3. Fructosamine (HMDB0002044) - Short-term glucose control indicator",
+          "Typical blood concentration ranges will be shown with age and condition considerations."
+        ]
+      },
+      {
+        "input": "What metabolic pathways involve cholesterol and what are the associated SMPDB pathway IDs?",
+        "output": [
+          "Cholesterol (HMDB0000067) is involved in multiple pathways:",
+          "1. Steroid Biosynthesis (SMP0000001)",
+          "2. Bile Acid Biosynthesis (SMP0000012)",
+          "3. Lipid Metabolism (SMP0000035)",
+          "Each pathway shows associated enzymes, reactions, and cross-references to KEGG."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always cite HMDB in publications using the format recommended in their documentation",
+      "Note the HMDB version (currently v5.0) in your research for reproducibility",
+      "Download complete datasets for large-scale analysis rather than making repeated web queries"
+    ],
+    "anti_patterns": [
+      "Do not attempt web scraping against HMDB - contact them for API access instead",
+      "Do not assume all fields are populated for every metabolite (concentration data is sparse)",
+      "Do not confuse predicted spectral data with experimental data without checking the quality indicators"
+    ],
+    "faq": [
+      {
+        "question": "How do I access HMDB programmatically?",
+        "answer": "HMDB does not offer a public REST API. Contact eponine@ualberta.ca for academic access or use the R hmdbQuery package."
+      },
+      {
+        "question": "What file formats can I download?",
+        "answer": "HMDB offers XML, SDF, FASTA, TXT, CSV, and TSV formats for different types of data including structures and spectra."
+      },
+      {
+        "question": "How many metabolites are in HMDB?",
+        "answer": "HMDB version 5.0 contains over 220,000 metabolite entries with 130+ data fields per compound."
+      },
+      {
+        "question": "Can I use HMDB for commercial purposes?",
+        "answer": "Commercial use requires explicit permission. Contact samackay@ualberta.ca to request a commercial license."
+      },
+      {
+        "question": "What identifiers can I search with?",
+        "answer": "Search by HMDB accession number, metabolite name, synonyms, SMILES, InChI, InChIKey, or KEGG/PubChem cross-references."
+      },
+      {
+        "question": "Does HMDB include spectral data?",
+        "answer": "Yes, NMR (1H, 13C, 2D), MS, MS-MS, GC-MS, and LC-MS spectra are available for many metabolites."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "hmdb_data_fields.md",
+          "type": "file",
+          "path": "references/hmdb_data_fields.md",
+          "lines": 268
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 196
+    }
+  ]
+}

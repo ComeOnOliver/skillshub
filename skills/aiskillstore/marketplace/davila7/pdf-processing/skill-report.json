@@ -1,0 +1,389 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:42:44.822Z",
+    "slug": "davila7-pdf-processing",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/document-processing/pdf-processing",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "27a4b88f213607a4d5097eeb8d6c4d9f8dc3bc355d6011863ffb99747686eb01",
+    "tree_hash": "21579ecd5a167818f62a7cd635f507feac15e5937bb741cba1143f0fd4f423b1"
+  },
+  "skill": {
+    "name": "pdf-processing",
+    "description": "Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files or when the user mentions PDFs, forms, or document extraction.",
+    "summary": "Extract text and tables from PDF files, fill forms, merge documents. Use when working with PDF files...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "pdf",
+      "document-processing",
+      "text-extraction",
+      "data-extraction"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill providing Python code examples for legitimate PDF processing. All 42 static findings are FALSE POSITIVES: scanner misidentified markdown code fences as shell backticks and PDF form field values as cryptographic algorithms. Prior audit in skill-report.json confirmed safe status with no findings.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "FORMS.md",
+            "line_start": 11,
+            "line_end": 22
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 22,
+            "line_end": 28
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 28,
+            "line_end": 48
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 48,
+            "line_end": 54
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 54,
+            "line_end": 68
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 68,
+            "line_end": 74
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 74,
+            "line_end": 102
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 102,
+            "line_end": 107
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 107,
+            "line_end": 112
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 112,
+            "line_end": 115
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 115,
+            "line_end": 127
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 127,
+            "line_end": 130
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 130,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 142
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "FORMS.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "FORMS.md",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 117
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 475,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:42:44.822Z"
+  },
+  "content": {
+    "user_title": "Extract and process PDF documents",
+    "value_statement": "PDF documents contain valuable data but are difficult to process programmatically. This skill provides code patterns to extract text, tables, and form data from PDFs using Python libraries like pdfplumber and pypdf.",
+    "seo_keywords": [
+      "PDF processing",
+      "PDF text extraction",
+      "Claude PDF skill",
+      "table extraction from PDF",
+      "PDF form filling",
+      "merge PDF files",
+      "split PDF documents",
+      "pypdf",
+      "pdfplumber",
+      "document automation"
+    ],
+    "actual_capabilities": [
+      "Extract text content from PDF pages using pdfplumber",
+      "Detect and extract tables from PDF documents automatically",
+      "Fill PDF form fields with values programmatically",
+      "Merge multiple PDF files into a single document",
+      "Split PDFs to extract specific pages or page ranges",
+      "Convert PDFs to images and perform OCR on scanned documents"
+    ],
+    "limitations": [
+      "Cannot extract text from scanned PDFs without OCR (requires pytesseract)",
+      "Processing large PDFs may require memory optimization",
+      "Complex multi-layer PDFs may have limited extraction accuracy",
+      "Some encrypted or password-protected PDFs require decryption first"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data Analysts",
+        "title": "Extract tabular data from reports",
+        "description": "Pull tables from financial reports and research papers for analysis in spreadsheets or databases."
+      },
+      {
+        "target_user": "Administrative Staff",
+        "title": "Automate form completion",
+        "description": "Fill out PDF forms with data from spreadsheets or databases for batch processing."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Build document pipelines",
+        "description": "Create workflows to process incoming PDF documents for storage, analysis, or further processing."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic text extraction",
+        "scenario": "Get text from a PDF file",
+        "prompt": "Extract all text from myfile.pdf and save it to output.txt"
+      },
+      {
+        "title": "Table extraction",
+        "scenario": "Pull tables from a report",
+        "prompt": "Find and extract all tables from report.pdf and save them to a CSV file"
+      },
+      {
+        "title": "Form filling",
+        "scenario": "Fill out a PDF application",
+        "prompt": "Fill the fields in application_form.pdf with name=John Smith, email=john@email.com, address=123 Main St"
+      },
+      {
+        "title": "Document assembly",
+        "scenario": "Combine PDF documents",
+        "prompt": "Merge chapter1.pdf, chapter2.pdf, and chapter3.pdf into book.pdf"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Extract text from contract.pdf",
+        "output": [
+          "File: contract.pdf",
+          "Pages: 12",
+          "Extracted text length: 4,521 characters",
+          "First page preview: This Agreement is entered into..."
+        ]
+      },
+      {
+        "input": "Extract tables from quarterly_report.pdf",
+        "output": [
+          "Found 3 tables on page 1",
+          "Table 1: Revenue by Region (4 columns x 5 rows)",
+          "Table 2: Quarterly Growth (2 columns x 4 rows)",
+          "Tables saved to quarterly_report_tables.csv"
+        ]
+      },
+      {
+        "input": "Merge invoice1.pdf and invoice2.pdf",
+        "output": [
+          "Merged 2 PDF files",
+          "Total pages: 8",
+          "Output saved to merged_invoices.pdf"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Test extraction on sample files before processing large batches",
+      "Validate extracted data matches the original PDF visually",
+      "Handle exceptions gracefully for corrupted or password-protected files"
+    ],
+    "anti_patterns": [
+      "Assuming all PDFs contain extractable text (scanned images need OCR)",
+      "Processing entire documents when only specific pages are needed",
+      "Skipping error handling for file access or format issues"
+    ],
+    "faq": [
+      {
+        "question": "What PDF libraries does this skill support?",
+        "answer": "pdfplumber for text and table extraction, pypdf for manipulation, pdf2image for conversion, pytesseract for OCR."
+      },
+      {
+        "question": "Can I extract text from scanned PDFs?",
+        "answer": "Yes, but you need pytesseract and Tesseract OCR installed. Regular pdfplumber cannot read scanned images."
+      },
+      {
+        "question": "What formats can I export extracted data to?",
+        "answer": "Plain text, CSV, JSON, or directly to databases using Python libraries like pandas."
+      },
+      {
+        "question": "Is my data safe when processing PDFs?",
+        "answer": "Yes, all processing happens locally on your machine. No data is sent to external services."
+      },
+      {
+        "question": "Why does extraction fail on some PDFs?",
+        "answer": "Common causes include scanned images requiring OCR, password protection, corrupted files, or non-standard encoding."
+      },
+      {
+        "question": "How does this compare to commercial PDF tools?",
+        "answer": "This provides code-based automation. Commercial tools offer GUIs but require manual steps for each document."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "FORMS.md",
+      "type": "file",
+      "path": "FORMS.md",
+      "lines": 144
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 150
+    }
+  ]
+}

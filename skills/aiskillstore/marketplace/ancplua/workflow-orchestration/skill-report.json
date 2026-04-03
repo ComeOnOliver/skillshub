@@ -1,0 +1,408 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:31:16.770Z",
+    "slug": "ancplua-workflow-orchestration",
+    "source_url": "https://github.com/ANcpLua/ancplua-claude-plugins/tree/main/agents/workflow-orchestrator/skills/workflow-orchestration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "757f7667545f7986bbee718a402a76f96eb5dc0d0a61f2dcd04868bedbe06f95",
+    "tree_hash": "64fd6ee6b283357f6ffee0e6104d625de89604c0a5d2a56822fd5af5337630d8"
+  },
+  "skill": {
+    "name": "workflow-orchestration",
+    "description": "Coordinates multi-step CI/CD pipelines by chaining autonomous-ci, code-review, smart-commit, and jules-integration plugins. Use when executing validation-to-PR workflows or recovering from CI failures.",
+    "summary": "Coordinates multi-step CI/CD pipelines by chaining autonomous-ci, code-review, smart-commit, and jul...",
+    "icon": "🔄",
+    "version": "1.0.0",
+    "author": "ANcpLua",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "workflow",
+      "ci-cd",
+      "automation",
+      "orchestration",
+      "pipeline"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation file (290 lines) describing workflow orchestration processes. It contains no executable code, scripts, network calls, or file system operations. The static findings are all false positives: backticks in markdown documentation are formatting syntax, not code execution; references to git commands and scripts are documentation examples, not actual operations. This skill orchestrates other skills but has no direct execution capabilities.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 223
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 223,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 225
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 234
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 234,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 266
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 266,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 281
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 470,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:31:16.770Z"
+  },
+  "content": {
+    "user_title": "Orchestrate CI/CD pipelines with chained plugins",
+    "value_statement": "Managing multi-step development workflows requires coordinating multiple plugins and maintaining state awareness. This skill provides structured pipelines that chain validation, code review, commit generation, and PR creation into cohesive workflows with human approval gates.",
+    "seo_keywords": [
+      "Claude workflow automation",
+      "Claude Code CI/CD orchestration",
+      "multi-step pipeline automation",
+      "plugin chaining workflow",
+      "PR creation automation",
+      "CI failure recovery",
+      "validation-to-commit pipeline",
+      "development workflow coordination"
+    ],
+    "actual_capabilities": [
+      "Executes pre-commit validation pipelines with autonomous-ci and code-review",
+      "Generates conventional commit messages via smart-commit integration",
+      "Creates pull requests through jules-integration delegation",
+      "Diagnoses and recovers from CI failures using systematic debugging",
+      "Maintains state awareness through CHANGELOG.md and git state analysis",
+      "Requires human approval before commits and PR creation"
+    ],
+    "limitations": [
+      "Does not install or configure required plugins (autonomous-ci, code-review, smart-commit must be pre-installed)",
+      "Cannot execute code or modify files directly without invoking other skills",
+      "Requires manual approval for critical operations (commits, PR creation)"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Validate code before commit",
+        "description": "Run validation, security review, and generate commit messages automatically before committing changes"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Recover from CI failures",
+        "description": "Diagnose CI failures, identify root causes, and apply fixes using systematic debugging approaches"
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Automate PR creation",
+        "description": "Chain validation, review, and PR delegation into a single workflow with quality gates and human approval"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Pre-commit validation",
+        "scenario": "Validate changes before committing",
+        "prompt": "Run the pre-commit pipeline using the workflow-orchestration skill. Validate with local-validate.sh, run code review, and generate a commit message."
+      },
+      {
+        "title": "Create pull request",
+        "scenario": "Prepare and create a PR",
+        "prompt": "Execute the full PR creation pipeline. Run validation, review, generate commit, get my approval, then delegate to Jules to create the PR."
+      },
+      {
+        "title": "Fix CI failure",
+        "scenario": "Diagnose and recover from CI failure",
+        "prompt": "The CI just failed. Use the CI-recover pipeline to diagnose the issue, identify the root cause, and fix it using systematic debugging."
+      },
+      {
+        "title": "Full workflow audit",
+        "scenario": "Review pending changes and plan execution",
+        "prompt": "Read CHANGELOG.md and git status to understand current context. Then run the appropriate workflow-orchestration pipeline for my pending changes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run the pre-commit pipeline for my changes",
+        "output": [
+          "Phase 1 Complete: Context gathered (CHANGELOG.md reviewed, git status: 5 files changed)",
+          "Phase 2 Complete: Validation passed (local-validate.sh - all checks green)",
+          "Phase 3 Complete: Code review passed (no critical issues, 2 warnings noted)",
+          "Phase 4 Complete: Commit message generated",
+          "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━",
+          "Generated commit message:",
+          "feat(agent): add workflow orchestrator for CI/CD pipelines",
+          "",
+          "Human approval required before commit",
+          "Files: +230 / -12 across 5 files"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always run local-validate.sh before claiming pipeline completion to ensure quality gates pass",
+      "Read CHANGELOG.md before starting to understand pending work and avoid duplicate efforts",
+      "Require human approval at critical decision points rather than automating commits autonomously"
+    ],
+    "anti_patterns": [
+      "Skipping validation checks and proceeding directly to commit without running local-validate.sh",
+      "Bypassing human approval gates for commits or PR creation",
+      "Modifying files directly without following the documented pipeline stages"
+    ],
+    "faq": [
+      {
+        "question": "Which Claude tools support this skill?",
+        "answer": "This skill works with Claude and Claude Code. It invokes other plugins like autonomous-ci and code-review which must be installed separately."
+      },
+      {
+        "question": "What are the rate limits or usage quotas?",
+        "answer": "No specific limits exist. Pipeline execution speed depends on external plugins and CI system response times."
+      },
+      {
+        "question": "How does it integrate with existing plugins?",
+        "answer": "The skill orchestrates by invoking other skills (autonomous-ci, code-review, smart-commit, jules-integration). Each plugin must be installed and configured."
+      },
+      {
+        "question": "Is my code or data accessed externally?",
+        "answer": "No. This skill only reads local files (CHANGELOG.md, git state) and coordinates other local skills. No data leaves your environment."
+      },
+      {
+        "question": "What if a pipeline step fails?",
+        "answer": "The skill provides structured error handling. Validation failures stop the pipeline. Review failures report issues and continue. CI recovery uses systematic debugging with retry logic."
+      },
+      {
+        "question": "How does this compare to manual workflows?",
+        "answer": "This skill automates coordination but keeps humans in the loop for approvals. It ensures consistent execution of validation, review, and documentation steps."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 291
+    }
+  ]
+}

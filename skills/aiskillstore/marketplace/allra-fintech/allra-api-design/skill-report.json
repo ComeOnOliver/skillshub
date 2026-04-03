@@ -1,0 +1,360 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:11:09.995Z",
+    "slug": "allra-fintech-allra-api-design",
+    "source_url": "https://github.com/Allra-Fintech/allra-ai-skills/tree/main/backend-plugin/skills/api-design",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1a12199121918ebd7dd4917d6dbef71b047d15c3384fb4c80adb30f14cfa8af4",
+    "tree_hash": "48d5f6b3f71675b1f48c1a3474c38dc86e7a96c8aecb98c9981591c646b1db26"
+  },
+  "skill": {
+    "name": "allra-api-design",
+    "description": "Allra 백엔드 API 설계 및 패키지 구조 규칙. Use when creating REST APIs, DTOs, or organizing backend code structure.",
+    "summary": "Allra 백엔드 API 설계 및 패키지 구조 규칙. Use when creating REST APIs, DTOs, or organizing backend code structur...",
+    "icon": "🔌",
+    "version": "1.0.0",
+    "author": "Allra-Fintech",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "Java",
+      "Spring Boot",
+      "API Design",
+      "REST",
+      "Backend"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only API design guidelines. Static scanner produced false positives: 36 'weak cryptographic algorithm' flags are Java 'record' class definitions; 31 'shell backtick execution' flags are markdown code formatting; 5 'system reconnaissance' flags are Spring @PathVariable annotations. No executable code, network access, file system access, or external commands.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 236
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 236,
+            "line_end": 240
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 240,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 268
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 446,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:11:09.995Z"
+  },
+  "content": {
+    "user_title": "Design REST APIs with Allra standards",
+    "value_statement": "This skill provides standardized API design guidelines for Java Spring Boot developers. It defines consistent package structures, DTO naming conventions, and REST endpoint patterns to ensure uniformity across backend projects.",
+    "seo_keywords": [
+      "Allra API Design",
+      "Java Spring Boot API",
+      "REST API standards",
+      "DTO naming conventions",
+      "package structure guidelines",
+      "Claude API design",
+      "Codex backend standards",
+      "Spring Boot REST patterns",
+      "API controller best practices",
+      "Java backend development"
+    ],
+    "actual_capabilities": [
+      "Define domain-driven package structures with api, dto, entity, repository, and service layers",
+      "Apply consistent DTO naming conventions for request, response, and internal DTOs",
+      "Create RESTful API endpoints following standard HTTP method conventions",
+      "Implement Bean Validation on request DTOs with proper annotations",
+      "Use Java records for simple DTO classes",
+      "Structure error responses with standardized error codes and messages"
+    ],
+    "limitations": [
+      "Focused specifically on Java Spring Boot projects only",
+      "Does not generate actual code implementations",
+      "Assumes familiarity with Java and Spring Boot fundamentals",
+      "Does not cover database-specific optimizations or query performance"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Java Developers",
+        "title": "New Spring Boot Projects",
+        "description": "Start new Spring Boot projects with consistent API design patterns and package structures from the beginning"
+      },
+      {
+        "target_user": "API Architects",
+        "title": "Team Standardization",
+        "description": "Establish unified API design standards across multiple development teams for consistency"
+      },
+      {
+        "target_user": "Junior Developers",
+        "title": "Learning API Best Practices",
+        "description": "Learn proper REST API design, DTO patterns, and package organization through documented guidelines"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create New API",
+        "scenario": "Generate user registration endpoint",
+        "prompt": "Create a new REST API endpoint for user registration following Allra API Design standards. Include package structure, request/response DTOs, controller, and service layer."
+      },
+      {
+        "title": "Design DTOs",
+        "scenario": "Design data transfer objects",
+        "prompt": "Design appropriate DTOs for a product management API following Allra conventions. Include request DTOs, response DTOs, and internal event DTOs using Java records."
+      },
+      {
+        "title": "Review API Structure",
+        "scenario": "Validate existing API implementation",
+        "prompt": "Review my current API package structure and suggest improvements based on Allra API Design standards. Check DTO naming, layer separation, and REST conventions."
+      },
+      {
+        "title": "Error Handling",
+        "scenario": "Implement error responses",
+        "prompt": "Create a standardized error response structure for my Spring Boot API following Allra conventions, including error codes, messages, and details field."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a user login API endpoint with email and password validation",
+        "output": [
+          "Package structure: user/api/UserController.java, user/dto/request/LoginRequest.java, user/dto/response/LoginResponse.java",
+          "LoginRequest uses Java record with @NotBlank @Email validation on email field",
+          "LoginResponse returns userId and accessToken on successful authentication",
+          "Controller maps POST /api/v1/users/login with proper error handling"
+        ]
+      },
+      {
+        "input": "Design a product management API with CRUD operations",
+        "output": [
+          "Domain package: product/ with api, dto, request, response, entity, repository, service layers",
+          "Request DTOs: CreateProductRequest, UpdateProductRequest with validation annotations",
+          "Response DTOs: ProductResponse, ProductListResponse using Java records",
+          "REST endpoints: GET /products, POST /products, PUT /products/{id}, DELETE /products/{id}"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use domain-driven package structures with clear layer separation between api, dto, entity, repository, and service",
+      "Prefer Java records over classes for simple DTOs to reduce boilerplate code",
+      "Apply consistent naming: OperationRequest, OperationResponse, and internal OperationDto suffixes"
+    ],
+    "anti_patterns": [
+      "Mixing request and response DTOs in the same class instead of separating them",
+      "Using generic names like UserDTO instead of specific names like UserSignUpRequest",
+      "Skipping Bean Validation on request DTOs, leading to unvalidated input reaching services"
+    ],
+    "faq": [
+      {
+        "question": "Which Java and Spring Boot versions are supported?",
+        "answer": "This skill targets Java 17+ and Spring Boot 3.2+ with support for JPA/Hibernate, QueryDSL, and JWT."
+      },
+      {
+        "question": "Can this skill generate complete working code?",
+        "answer": "No, this skill provides design guidelines and patterns. You will need to implement the actual business logic in service layers."
+      },
+      {
+        "question": "Does this work with frameworks other than Spring Boot?",
+        "answer": "The standards are specifically designed for Spring Boot. Other frameworks like Quarkus or Micronaut may require adjustments."
+      },
+      {
+        "question": "Is my project data sent to external servers?",
+        "answer": "No, this is a pure prompt skill. No code executes and no data leaves your environment during usage."
+      },
+      {
+        "question": "How do I customize standards for my project?",
+        "answer": "Review the notes marked with '참고' throughout the guide. Adapt package names and version conventions to match your project requirements."
+      },
+      {
+        "question": "How does this compare to other API design skills?",
+        "answer": "This skill focuses specifically on Allra team conventions with emphasis on Java records and domain-driven package organization."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 269
+    }
+  ]
+}

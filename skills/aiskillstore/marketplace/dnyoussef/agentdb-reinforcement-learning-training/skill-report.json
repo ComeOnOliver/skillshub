@@ -1,0 +1,630 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:26:24.621Z",
+    "slug": "dnyoussef-agentdb-reinforcement-learning-training",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/agentdb/when-training-rl-agents-use-agentdb-learning",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5cb86bbbbc640ee8743280ce15a039449015cc65551e19f206bd0c5c47373392",
+    "tree_hash": "4d9e45047f2ff216c855d64aa8ab067ff8f61cf2da308ed6f1bf6d2857fd9579"
+  },
+  "skill": {
+    "name": "agentdb-reinforcement-learning-training",
+    "description": "Train AI agents using AgentDB's 9 reinforcement learning algorithms including Q-Learning, DQN, PPO, and Actor-Critic. Build self-learning agents, implement RL training loops with experience replay, and deploy optimized models to production.",
+    "summary": "Train AI agents using AgentDB's 9 reinforcement learning algorithms including Q-Learning, DQN, PPO, ...",
+    "icon": "🤖",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "agentdb",
+    "tags": [
+      "agentdb",
+      "reinforcement-learning",
+      "neural-networks",
+      "ai-training",
+      "q-learning"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is pure documentation providing instructional guidance for RL training. All 119 static findings are FALSE POSITIVES. The scanner misidentified RL hyperparameters (gamma, alpha, beta) as cryptographic algorithms and TypeScript code examples as shell commands. No executable code, scripts, or malicious components exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "PROCESS.md",
+            "line_start": 9,
+            "line_end": 29
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 29,
+            "line_end": 35
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 35,
+            "line_end": 51
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 51,
+            "line_end": 57
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 57,
+            "line_end": 78
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 78,
+            "line_end": 81
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 81,
+            "line_end": 87
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 87,
+            "line_end": 114
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 114,
+            "line_end": 120
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 120,
+            "line_end": 138
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 138,
+            "line_end": 150
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 150,
+            "line_end": 151
+          },
+          {
+            "file": "README.md",
+            "line_start": 14,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 169
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 176
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 176,
+            "line_end": 193
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 193,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 261
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 261,
+            "line_end": 264
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 264,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 276,
+            "line_end": 279
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 279,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 296
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 303
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 303,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 385
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 395
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 395,
+            "line_end": 401
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 415
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 415,
+            "line_end": 418
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 418,
+            "line_end": 439
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 439,
+            "line_end": 442
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 442,
+            "line_end": 458
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 458,
+            "line_end": 461
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 461,
+            "line_end": 473
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 473,
+            "line_end": 476
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 476,
+            "line_end": 485
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 485,
+            "line_end": 502
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 502,
+            "line_end": 504
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 504,
+            "line_end": 507
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 507,
+            "line_end": 553
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 553,
+            "line_end": 556
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 556,
+            "line_end": 569
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 569,
+            "line_end": 572
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 572,
+            "line_end": 602
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 602,
+            "line_end": 605
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 605,
+            "line_end": 613
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 613,
+            "line_end": 630
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 630,
+            "line_end": 637
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 637,
+            "line_end": 640
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 640,
+            "line_end": 671
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 671,
+            "line_end": 674
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 674,
+            "line_end": 687
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 687,
+            "line_end": 690
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 690,
+            "line_end": 724
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 724,
+            "line_end": 727
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 727,
+            "line_end": 735
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 735,
+            "line_end": 747
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 747,
+            "line_end": 777
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 777,
+            "line_end": 781
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 781,
+            "line_end": 815
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 748,
+            "line_end": 748
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "PROCESS.md",
+            "line_start": 152,
+            "line_end": 152
+          },
+          {
+            "file": "README.md",
+            "line_start": 54,
+            "line_end": 54
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 731,
+            "line_end": 731
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 842,
+            "line_end": 842
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 843,
+            "line_end": 843
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 844,
+            "line_end": 844
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 845,
+            "line_end": 845
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1353,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:26:24.621Z"
+  },
+  "content": {
+    "user_title": "Train RL agents with AgentDB",
+    "value_statement": "Building self-learning AI agents requires implementing complex reinforcement learning algorithms. This skill provides a complete 5-phase framework for training autonomous agents using AgentDB's 9 RL algorithms including Q-Learning, DQN, PPO, and SAC with proven training, validation, and deployment workflows.",
+    "seo_keywords": [
+      "Claude Code reinforcement learning",
+      "AgentDB Q-Learning training",
+      "Claude Code RL agents",
+      "PPO implementation",
+      "DQN training framework",
+      "Claude Code SAC algorithm",
+      "neural network training",
+      "AI agent deployment"
+    ],
+    "actual_capabilities": [
+      "Initialize AgentDB learning environment with 512-dimension embeddings",
+      "Configure 9 RL algorithms: Q-Learning, SARSA, DQN, Actor-Critic, PPO, Decision Transformer, A2C, TD3, SAC",
+      "Implement experience replay with prioritized buffer up to 100K experiences",
+      "Train agents with monitoring for reward, loss, and exploration rate",
+      "Validate trained agents against random baseline with 100 evaluation episodes",
+      "Export production models to ONNX, TensorFlow, or PyTorch with INT8 quantization"
+    ],
+    "limitations": [
+      "Requires AgentDB learning module installation before use",
+      "Training duration depends on environment complexity and episode count",
+      "GPU recommended for neural network-based algorithms (DQN, PPO, SAC)",
+      "Production deployment requires additional API setup"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML Engineers",
+        "title": "Train autonomous agents",
+        "description": "Build self-learning agents that optimize behavior through trial and error experience."
+      },
+      {
+        "target_user": "AI Researchers",
+        "title": "Benchmark RL algorithms",
+        "description": "Compare Q-Learning, PPO, SAC, and other algorithms on custom environments."
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Deploy RL to production",
+        "description": "Export trained models to ONNX and create inference APIs with monitoring."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick Start",
+        "scenario": "Start basic RL training",
+        "prompt": "when-training-rl-agents-use-agentdb-learning with DQN algorithm for grid-world environment, train for 1000 episodes"
+      },
+      {
+        "title": "Custom Environment",
+        "scenario": "Use custom environment",
+        "prompt": "when-training-rl-agents-use-agentdb-learning with custom continuous state space, configure SAC algorithm for robot control task"
+      },
+      {
+        "title": "Benchmarking",
+        "scenario": "Compare algorithms",
+        "prompt": "when-training-rl-agents-use-agentdb-learning benchmark all 9 RL algorithms on cart-pole environment and generate comparison report"
+      },
+      {
+        "title": "Production Deployment",
+        "scenario": "Deploy trained model",
+        "prompt": "when-training-rl-agents-use-agentdb-learning export trained DQN agent to production with Express API endpoint and latency monitoring"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Train RL agent with DQN for grid-world",
+        "output": [
+          "Phase 1: Installed agentdb-learning and initialized database",
+          "Phase 2: Configured DQN with 128-unit hidden layers, prioritized replay buffer",
+          "Phase 3: Trained for 10000 episodes, reward converged from -50 to +95",
+          "Phase 4: Validated 94% success rate vs 12% random baseline",
+          "Phase 5: Exported to ONNX with INT8 quantization"
+        ]
+      },
+      {
+        "input": "Configure SAC algorithm for continuous control task",
+        "output": [
+          "Selected Soft Actor-Critic algorithm for maximum entropy RL",
+          "Configured twin critics for stable Q-value estimation",
+          "Set temperature coefficient for exploration-exploitation balance",
+          "Training with automatic entropy adjustment enabled"
+        ]
+      },
+      {
+        "input": "Benchmark all 9 RL algorithms on cart-pole",
+        "output": [
+          "Ran 1000 episodes for each algorithm with same hyperparameters",
+          "DQN achieved 92% success rate in 2.5 hours",
+          "PPO achieved 89% success rate in 3 hours",
+          "SAC achieved 94% success rate in 4 hours (best overall)",
+          "Q-Learning baseline achieved 45% (limited by function approximation)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with simpler algorithms like Q-Learning before complex ones like SAC",
+      "Monitor exploration rate decay to ensure balanced exploration-exploitation",
+      "Save checkpoints every 1000 episodes to resume training if interrupted",
+      "Validate against random baseline to confirm meaningful learning occurred"
+    ],
+    "anti_patterns": [
+      "Training without validation episodes leads to overfitting",
+      "Setting exploration decay too fast causes suboptimal policies",
+      "Ignoring replay buffer size limits causes memory issues",
+      "Deploying without inference latency monitoring causes production issues"
+    ],
+    "faq": [
+      {
+        "question": "Which algorithm should I start with?",
+        "answer": "Q-Learning for discrete actions, DQN for complex state spaces, PPO for balanced performance across tasks."
+      },
+      {
+        "question": "How long does training typically take?",
+        "answer": "Simple grid-world converges in 1-2 hours. Complex environments may require 6-10 hours with GPU acceleration."
+      },
+      {
+        "question": "Can I use this with existing AgentDB?",
+        "answer": "Yes, install agentdb-learning package and initialize with your existing AgentDB instance for seamless integration."
+      },
+      {
+        "question": "Is my training data safe?",
+        "answer": "All training happens locally. Experience replay stores data in your local AgentDB instance with optional persistence."
+      },
+      {
+        "question": "Why is my agent not learning?",
+        "answer": "Check reward function design, reduce exploration decay rate, increase replay buffer warmup, and verify state space normalization."
+      },
+      {
+        "question": "How does this compare to other RL frameworks?",
+        "answer": "AgentDB Learning integrates vector storage with RL training, enabling memory-augmented agents that leverage semantic search."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 106
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 153
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 55
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 846
+    }
+  ]
+}

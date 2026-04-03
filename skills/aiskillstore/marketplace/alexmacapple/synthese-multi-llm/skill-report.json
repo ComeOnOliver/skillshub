@@ -1,0 +1,378 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:20:51.145Z",
+    "slug": "alexmacapple-synthese-multi-llm",
+    "source_url": "https://github.com/Alexmacapple/Synthese-Council/tree/main/skills/synthese-multi-llm",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8a2eb0564b2e9eb8d8a05d588c44e4e6d451a1d9e21a95a9c9c9f935d2ef9113",
+    "tree_hash": "f50d10e05fc7396f801243415ea68e997f77f6c8d90932c6e4a44e5cab01ef8c"
+  },
+  "skill": {
+    "name": "synthese-multi-llm",
+    "description": "Synthèse co-fabriquée par un conseil de 3 LLMs (Claude, Gemini, Codex). Ce skill devrait être utilisé quand l'utilisateur demande une synthèse robuste, traçable et vérifiée. Il orchestre trois modèles avec des rôles experts distincts (Extracteur, Critique, Architecte) pour produire une synthèse fidèle au texte source, avec contrôle des glissements sémantiques et trail d'audit complet.",
+    "summary": "Synthèse co-fabriquée par un conseil de 3 LLMs (Claude, Gemini, Codex). Ce skill devrait être utilis...",
+    "icon": "⚖️",
+    "version": "2.2",
+    "author": "Alexmacapple",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "summarization",
+      "multi-llm",
+      "council",
+      "orchestration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate multi-LLM orchestration tool for text summarization. The static analyzer's 588 findings are overwhelmingly false positives. The 'weak cryptographic algorithm' findings are markdown documentation being misidentified. 'Shell backtick execution' findings are markdown code formatting. 'API/secret keys' findings are proper environment variable access patterns. The critical heuristics are triggered by legitimate subprocess execution for CLI model calls and API interactions with proper credential handling. No evidence of malicious intent, data exfiltration, or harmful patterns found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/synthese.py",
+            "line_start": 1229,
+            "line_end": 1242
+          },
+          {
+            "file": "scripts/synthese.py",
+            "line_start": 1299,
+            "line_end": 1320
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/synthese.py",
+            "line_start": 836,
+            "line_end": 848
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/synthese.py",
+            "line_start": 708,
+            "line_end": 720
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/backends/anthropic_backend.py",
+            "line_start": 106,
+            "line_end": 108
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 22,
+    "total_lines": 9013,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:20:51.145Z"
+  },
+  "content": {
+    "user_title": "Generate robust summaries with multi-LLM council",
+    "value_statement": "Get reliable, verified summaries by having Claude, Gemini, and Codex analyze your text from different perspectives. The council detects semantic shifts and measures agreement to ensure accuracy.",
+    "seo_keywords": [
+      "Claude",
+      "Gemini",
+      "Codex",
+      "multi-LLM",
+      "summarization",
+      "text synthesis",
+      "council pattern",
+      "AI collaboration",
+      "semantic verification"
+    ],
+    "actual_capabilities": [
+      "Orchestrates 3 LLMs with distinct expert roles for balanced analysis",
+      "Detects semantic shifts and measures convergence between models",
+      "Generates complete audit trails of the synthesis process",
+      "Works with 1-3 models depending on availability"
+    ],
+    "limitations": [
+      "Requires at least one CLI or API key to function",
+      "Processing time increases with number of models used",
+      "Quality depends on source text clarity and proper framing"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Knowledge workers",
+        "title": "Create verified summaries",
+        "description": "Generate reliable summaries of reports, articles, or documents with built-in verification"
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Validate understanding",
+        "description": "Check your interpretation of complex texts against multiple AI perspectives"
+      },
+      {
+        "target_user": "Teams",
+        "title": "Improve document quality",
+        "description": "Produce consistent summaries adapted to different audiences and purposes"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick summary",
+        "scenario": "Short text summarization",
+        "prompt": "Synthétise ce texte avec le conseil en 5 lignes"
+      },
+      {
+        "title": "Formal report",
+        "scenario": "Executive briefing preparation",
+        "prompt": "Crée une synthèse formelle de ce rapport pour le comité de direction"
+      },
+      {
+        "title": "Critical review",
+        "scenario": "Verify existing summary",
+        "prompt": "Analyse cette synthèse et vérifie si des glissements sémantiques sont présents"
+      },
+      {
+        "title": "Multi-source",
+        "scenario": "Comprehensive document analysis",
+        "prompt": "Fais une synthèse complète avec le conseil en mode pédagogique"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Synthétise cet article sur les énergies renouvelables",
+        "output": [
+          "Points clés identifiés : transition énergétique, solaire, éolien",
+          "Convergence entre experts : 85% d'accord",
+          "Points de vigilance signalés : coût initial des infrastructures"
+        ]
+      },
+      {
+        "input": "Vérifie cette synthèse d'un rapport financier",
+        "output": [
+          "Analyse critique : aucun glissement sémantique détecté",
+          "Faits principaux préservés : revenus +15%, pertes réduites",
+          "Recommandation : synthèse valide et fidèle au source"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide clear framing parameters (recipient, purpose, length) for better results",
+      "Check convergence scores below 70% for potential interpretation issues",
+      "Review audit trails when accuracy is critical"
+    ],
+    "anti_patterns": [
+      "Using vague prompts without framing loses the council advantage",
+      "Ignoring low convergence scores can lead to unreliable summaries",
+      "Skipping the audit trail defeats traceability benefits"
+    ],
+    "faq": [
+      {
+        "question": "What models are supported?",
+        "answer": "Claude CLI, Gemini CLI, and Codex CLI are supported. Works with any available combination from 1 to 3 models."
+      },
+      {
+        "question": "How does the council process work?",
+        "answer": "Three rounds: extraction, cross-critique, and final synthesis. Each model contributes a unique perspective."
+      },
+      {
+        "question": "What is convergence score?",
+        "answer": "A percentage (0-100%) measuring agreement between experts. Above 90% means strong consensus, below 50% signals major disagreements."
+      },
+      {
+        "question": "Are API keys required?",
+        "answer": "API keys are needed only for direct API backends. CLI-based usage works with standard CLI authentication."
+      },
+      {
+        "question": "What does the audit trail contain?",
+        "answer": "Full JSON record including source text, parameters, all expert responses, convergence scores, and final synthesis."
+      },
+      {
+        "question": "Can I use fewer than 3 models?",
+        "answer": "Yes, the skill adapts to available models. One model skips critique, two models have limited convergence checking."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "cadrage.md",
+          "type": "file",
+          "path": "references/cadrage.md",
+          "lines": 148
+        },
+        {
+          "name": "configuration.md",
+          "type": "file",
+          "path": "references/configuration.md",
+          "lines": 137
+        },
+        {
+          "name": "couches-semiotiques.md",
+          "type": "file",
+          "path": "references/couches-semiotiques.md",
+          "lines": 92
+        },
+        {
+          "name": "glissements.md",
+          "type": "file",
+          "path": "references/glissements.md",
+          "lines": 140
+        },
+        {
+          "name": "metrics.md",
+          "type": "file",
+          "path": "references/metrics.md",
+          "lines": 149
+        },
+        {
+          "name": "troubleshooting.md",
+          "type": "file",
+          "path": "references/troubleshooting.md",
+          "lines": 221
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "backends",
+          "type": "dir",
+          "path": "scripts/backends",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "scripts/backends/__init__.py",
+              "lines": 71
+            },
+            {
+              "name": "anthropic_backend.py",
+              "type": "file",
+              "path": "scripts/backends/anthropic_backend.py",
+              "lines": 321
+            },
+            {
+              "name": "base.py",
+              "type": "file",
+              "path": "scripts/backends/base.py",
+              "lines": 227
+            },
+            {
+              "name": "cli_backend.py",
+              "type": "file",
+              "path": "scripts/backends/cli_backend.py",
+              "lines": 305
+            }
+          ]
+        },
+        {
+          "name": "config.py",
+          "type": "file",
+          "path": "scripts/config.py",
+          "lines": 534
+        },
+        {
+          "name": "convergence.py",
+          "type": "file",
+          "path": "scripts/convergence.py",
+          "lines": 519
+        },
+        {
+          "name": "pedagogy.py",
+          "type": "file",
+          "path": "scripts/pedagogy.py",
+          "lines": 599
+        },
+        {
+          "name": "retry.py",
+          "type": "file",
+          "path": "scripts/retry.py",
+          "lines": 611
+        },
+        {
+          "name": "sanitize.py",
+          "type": "file",
+          "path": "scripts/sanitize.py",
+          "lines": 385
+        },
+        {
+          "name": "synthese.py",
+          "type": "file",
+          "path": "scripts/synthese.py",
+          "lines": 3584
+        }
+      ]
+    },
+    {
+      "name": "wrappers",
+      "type": "dir",
+      "path": "wrappers",
+      "children": [
+        {
+          "name": "claude_wrapper.sh",
+          "type": "file",
+          "path": "wrappers/claude_wrapper.sh",
+          "lines": 69
+        },
+        {
+          "name": "ollama_wrapper.sh",
+          "type": "file",
+          "path": "wrappers/ollama_wrapper.sh",
+          "lines": 65
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "wrappers/README.md",
+          "lines": 147
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 220
+    },
+    {
+      "name": "synthese.config.yaml",
+      "type": "file",
+      "path": "synthese.config.yaml",
+      "lines": 47
+    }
+  ]
+}

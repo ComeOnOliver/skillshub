@@ -1,0 +1,212 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:52:16.915Z",
+    "slug": "curiouslearner-code-formatter",
+    "source_url": "https://github.com/CuriousLearner/devkit/tree/main/skills/code-formatter",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "566a6899b739ef0eb5d9566a3932d16a835352cbbc9c7b965063704f0812a2c8",
+    "tree_hash": "0fbb1a5e07387d2cc83f0e48c3e377d7a104055731f529a0658c567ada28a3da"
+  },
+  "skill": {
+    "name": "code-formatter",
+    "description": "Automatically format code across multiple languages with opinionated configurations.",
+    "summary": "Automatically format code across multiple languages with opinionated configurations.",
+    "icon": "✨",
+    "version": "1.0.0",
+    "author": "CuriousLearner",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "code formatting",
+      "code style",
+      "prettier",
+      "linting",
+      "development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 14 static findings are false positives. The scanner misidentified metadata URLs as network threats, git tree hashes as C2 communication, and benign text descriptions (including tool names like Black and Prettier) as cryptographic algorithms. This is a prompt-only skill containing only AI instructions in SKILL.md with no executable code, file operations, network calls, or command execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 42
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 238,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:52:16.915Z"
+  },
+  "content": {
+    "user_title": "Format code across multiple languages",
+    "value_statement": "Inconsistent code formatting slows down code reviews and increases merge conflicts. This skill formats code across 10+ languages using opinionated best practices and existing project configurations.",
+    "seo_keywords": [
+      "code formatter",
+      "code formatting",
+      "Prettier",
+      "Black formatter",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "code style",
+      "linter",
+      "code beautifier"
+    ],
+    "actual_capabilities": [
+      "Detect and format JavaScript, TypeScript, Python, Go, Rust, and Java code",
+      "Format CSS, SCSS, LESS, HTML, JSON, YAML, and Markdown files",
+      "Respect existing project formatting configurations like .prettierrc and .editorconfig",
+      "Apply language-specific best practices and popular style guides such as PEP 8",
+      "Report formatting changes and style decisions made during formatting",
+      "Check formatting without making changes to preview modifications"
+    ],
+    "limitations": [
+      "Does not execute external formatters like Prettier or Black directly",
+      "Provides AI instructions for conceptual code formatting",
+      "Cannot modify files on disk without separate file-writing capabilities",
+      "Does not install or configure formatter tools in your project"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Standardize team code style",
+        "description": "Ensure consistent formatting across a codebase following established style guides like PEP 8 and Google Style Guide."
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Quick format validation",
+        "description": "Check if code follows project style conventions and suggest formatting improvements during reviews."
+      },
+      {
+        "target_user": "Open source contributors",
+        "title": "Match project conventions",
+        "description": "Format contributions to match the existing code style of an unfamiliar open source project."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Format current directory",
+        "scenario": "Format all code in current project",
+        "prompt": "Format all code files in this directory using appropriate styles for each language detected."
+      },
+      {
+        "title": "Format specific path",
+        "scenario": "Format files in a specific folder",
+        "prompt": "Format the src/ directory. Check for existing config files first and apply their rules."
+      },
+      {
+        "title": "Check only mode",
+        "scenario": "Check formatting without changes",
+        "prompt": "Check code formatting without making changes. Report which files would be modified and what changes would be made."
+      },
+      {
+        "title": "Format by language",
+        "scenario": "Format specific language files",
+        "prompt": "Format all Python files in this project using Black style. Respect pyproject.toml if present."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Format the src/components directory",
+        "output": [
+          "Formatted 5 JavaScript files using 2-space indent",
+          "Applied StandardJS style (no semicolons)",
+          "Added trailing commas to multi-line objects",
+          "Respected existing .prettierrc configuration"
+        ]
+      },
+      {
+        "input": "Format all Python files with check-only mode",
+        "output": [
+          "Found 12 Python files requiring formatting",
+          "Would fix 847 line length violations",
+          "Would add 234 trailing commas to multi-line definitions",
+          "Respected pyproject.toml Black configuration"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Let the skill detect existing config files first before applying defaults",
+      "Specify the target path or language when invoking the skill",
+      "Use check-only mode to preview changes before applying them",
+      "Respect .gitignore patterns to skip vendor and generated directories"
+    ],
+    "anti_patterns": [
+      "Running without checking for existing project configuration",
+      "Formatting entire vendor or node_modules directories",
+      "Expecting the skill to install formatter tools automatically",
+      "Using on binary or lock files without checking file type"
+    ],
+    "faq": [
+      {
+        "question": "Which languages are supported?",
+        "answer": "JavaScript, TypeScript, Python, Go, Rust, Java, CSS, SCSS, LESS, HTML, JSON, YAML, and Markdown."
+      },
+      {
+        "question": "Does this install Prettier or Black?",
+        "answer": "No. This is a prompt skill that instructs an AI on formatting concepts. You need separate tools installed."
+      },
+      {
+        "question": "How does it handle project configs?",
+        "answer": "The skill checks for .prettierrc, .editorconfig, pyproject.toml, and other config files first."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. This skill only contains AI instructions. No files are read, written, or sent externally."
+      },
+      {
+        "question": "Can it format specific file types only?",
+        "answer": "Yes. Use --language python or specify the language to format only matching files."
+      },
+      {
+        "question": "How is this different from Prettier?",
+        "answer": "Prettier is a tool that formats files on disk. This skill provides AI prompts to apply formatting concepts."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 60
+    }
+  ]
+}

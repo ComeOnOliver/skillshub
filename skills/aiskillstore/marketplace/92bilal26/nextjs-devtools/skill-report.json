@@ -1,0 +1,289 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:18:48.757Z",
+    "slug": "92bilal26-nextjs-devtools",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/nextjs-devtools",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "12184502441d777ba301032333f79e43ff6363ef8d0004808fccd2a62981905f",
+    "tree_hash": "98ed1ccc5280bdec21b382fb62679826f82873c0a66b07b8b17f211ba6288af0"
+  },
+  "skill": {
+    "name": "nextjs-devtools",
+    "description": "Next.js development tooling via MCP. Inspect routes, components, build info, and debug Next.js apps.\nUse when working on Next.js applications, debugging routing, or inspecting app structure.\nNOT for general React or non-Next.js projects.\n",
+    "summary": "Inspect routes, components, and build info in Next.js apps via MCP server",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "92Bilal26",
+    "license": "MIT",
+    "tags": [
+      "nextjs",
+      "react",
+      "debugging",
+      "development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate Next.js development tooling. Static analyzer flagged Python f-strings as cryptographic patterns and subprocess.Popen as dangerous. These are false positives. The skill spawns a trusted MCP server package for Next.js inspection utilities.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/mcp-client.py",
+            "line_start": 204,
+            "line_end": 204
+          },
+          {
+            "file": "scripts/start-server.sh",
+            "line_start": 8,
+            "line_end": 8
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/mcp-client.py",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "scripts/mcp-client.py",
+            "line_start": 146,
+            "line_end": 146
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/mcp-client.py",
+            "line_start": 337,
+            "line_end": 337
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "External command execution",
+        "description": "The skill spawns the Next.js devtools MCP server process using subprocess.Popen and npx. This is legitimate behavior for an MCP client skill, spawning trusted npm package 'next-devtools-mcp@latest'. Arguments come from skill configuration, not user input.",
+        "locations": [
+          {
+            "file": "scripts/mcp-client.py",
+            "line_start": 204,
+            "line_end": 212
+          },
+          {
+            "file": "scripts/start-server.sh",
+            "line_start": 8,
+            "line_end": 8
+          }
+        ]
+      },
+      {
+        "title": "HTTP network access",
+        "description": "The MCP client uses urllib for HTTP transport to communicate with MCP servers. This is standard MCP protocol behavior and expected for skills that use HTTP transport.",
+        "locations": [
+          {
+            "file": "scripts/mcp-client.py",
+            "line_start": 33,
+            "line_end": 34
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 1412,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:18:48.757Z"
+  },
+  "content": {
+    "user_title": "Inspect Next.js Routes and Components",
+    "value_statement": "Debugging Next.js applications is time-consuming without visibility into routes, components, and build configuration. This skill provides MCP-based tools to inspect app structure, list routes, examine components, and view build info directly from Claude.",
+    "seo_keywords": [
+      "Next.js debugging",
+      "Next.js routes",
+      "React components",
+      "Next.js build config",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "MCP",
+      "Model Context Protocol"
+    ],
+    "actual_capabilities": [
+      "List all routes in a Next.js application including API routes",
+      "Get detailed information about specific routes including handlers and parameters",
+      "List all React components used in the application",
+      "Retrieve build configuration and optimization settings",
+      "Read next.config.js settings and environment variables"
+    ],
+    "limitations": [
+      "Requires Next.js project with .next directory or after running next build",
+      "Does not modify or write to the Next.js application",
+      "Only works with Next.js projects, not standalone React apps",
+      "MCP server must be available via npx or running server process"
+    ],
+    "use_cases": [
+      {
+        "title": "Explore Unknown Next.js Projects",
+        "description": "When joining a new Next.js codebase, use this skill to quickly understand the route structure, component organization, and build configuration without reading every file manually.",
+        "target_user": "Frontend developers joining existing projects"
+      },
+      {
+        "title": "Debug Route Matching Issues",
+        "description": "When routes are not matching as expected, use list-routes and get-route-info to verify which routes are registered and what handlers exist for specific paths.",
+        "target_user": "Developers debugging routing issues"
+      },
+      {
+        "title": "Review Build Configuration",
+        "description": "Before deployment or when troubleshooting build issues, inspect the actual build configuration being used including webpack settings, optimization flags, and environment variables.",
+        "target_user": "DevOps engineers and build managers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "List All Application Routes",
+        "prompt": "Use the nextjs-devtools skill to list all routes in this Next.js application. Show me the route paths and their types (page, api, layout).",
+        "scenario": "Quick overview of application structure"
+      },
+      {
+        "title": "Inspect Specific Route Details",
+        "prompt": "Use nextjs-devtools to get details about the route at /[path]. Show me the file handler, parameters, and any dynamic segment patterns.",
+        "scenario": "Debugging dynamic route matching"
+      },
+      {
+        "title": "Find Component Usage",
+        "prompt": "Use the skill to list all React components in this application. Group them by where they are used (pages, layouts, or shared components).",
+        "scenario": "Understanding component architecture"
+      },
+      {
+        "title": "Check Build Configuration",
+        "prompt": "Run get-build-info and get-config to show me the current build configuration. Pay attention to webpack customizations, image optimization settings, and experimental features.",
+        "scenario": "Reviewing build settings before deployment"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "List all routes in this Next.js application",
+        "output": [
+          "Routes found:",
+          "/ (page) - Home page",
+          "/about (page) - About page",
+          "/api/users (api) - User API endpoint",
+          "/api/auth (api) - Authentication API",
+          "/dashboard/[id] (page) - Dynamic dashboard route",
+          "/docs/[...slug] (page) - Catch-all documentation route"
+        ]
+      },
+      {
+        "input": "Get details for the /api/users route",
+        "output": [
+          "Route: /api/users",
+          "Type: API Route",
+          "Handler: GET, POST",
+          "File: pages/api/users.ts",
+          "Parameters: None",
+          "Body Parse: Yes"
+        ]
+      },
+      {
+        "input": "List all components in this application",
+        "output": [
+          "Components found:",
+          "- Button (shared/components/Button.tsx)",
+          "- Navbar (shared/components/Navbar.tsx)",
+          "- UserCard (features/users/UserCard.tsx)",
+          "- DashboardLayout (layouts/DashboardLayout.tsx)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run next build before inspecting build info to ensure .next directory exists",
+      "Start the MCP server once and reuse it for multiple queries to reduce startup overhead",
+      "Use get-route-info after list-routes to understand specific route handlers and parameters"
+    ],
+    "anti_patterns": [
+      "Using this skill on non-Next.js projects (will not find routes or build info)",
+      "Expecting real-time updates without restarting the MCP server after code changes",
+      "Running list-components on very large applications without filtering may produce extensive output"
+    ],
+    "faq": [
+      {
+        "question": "What is Next.js DevTools?",
+        "answer": "Next.js DevTools is an MCP server that provides tools for inspecting Next.js applications. It can list routes, components, build configuration, and next.config.js settings."
+      },
+      {
+        "question": "Do I need to install anything?",
+        "answer": "The skill uses npx to run next-devtools-mcp@latest automatically. No global installation is required. Ensure you have Node.js and npm installed."
+      },
+      {
+        "question": "How does this skill connect to Next.js DevTools?",
+        "answer": "The skill includes an MCP client script that can spawn the Next.js DevTools server via npx (stdio transport) or connect to a running server via HTTP."
+      },
+      {
+        "question": "What is the difference between stdio and HTTP transport?",
+        "answer": "Stdio spawns a new server process for each command. HTTP connects to a persistent server. HTTP is faster for multiple queries but requires starting the server first with start-server.sh."
+      },
+      {
+        "question": "Why is my build info empty?",
+        "answer": "Build info requires the .next directory. Run next build in your project before using get-build-info. Some settings may not appear in development mode."
+      },
+      {
+        "question": "Can this modify my Next.js application?",
+        "answer": "No. This skill is read-only. It only inspects routes, components, and configuration without making any changes to your application files."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "mcp-client.py",
+          "type": "file",
+          "path": "scripts/mcp-client.py",
+          "lines": 491
+        },
+        {
+          "name": "start-server.sh",
+          "type": "file",
+          "path": "scripts/start-server.sh",
+          "lines": 11
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 103
+    }
+  ]
+}

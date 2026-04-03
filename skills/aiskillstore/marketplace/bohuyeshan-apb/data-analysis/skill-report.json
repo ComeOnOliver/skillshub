@@ -1,0 +1,269 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:19:53.264Z",
+    "slug": "bohuyeshan-apb-data-analysis",
+    "source_url": "https://github.com/BOHUYESHAN-APB/N-T-AI/tree/main/backend/app/skills/common/data_analysis_skill",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "00766226d99f113472d5f82a192c608df725976ac86788c068020c8a08b0193e",
+    "tree_hash": "a612929d1bb959b426e06db6376142de1f1c2d69369edbf7df69ee99eaa246a9"
+  },
+  "skill": {
+    "name": "data-analysis",
+    "description": "A skill for analyzing data using Python (pandas) and generating professional visualizations (matplotlib/seaborn).",
+    "summary": "Generate data analysis code and visualizations using Python pandas and matplotlib in sandbox environments",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "BOHUYESHAN-APB",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "data-analysis",
+      "visualization",
+      "python",
+      "pandas",
+      "Claude Code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "The skill generates Python code for data analysis but does not execute it directly. Static findings flagged API key access and string operations, but all patterns are false positives. The skill reads configuration from environment variables for OpenAI API access, which is standard practice for LLM-based code generation. No actual command execution occurs within the skill code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/code_generator.py",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "scripts/code_generator.py",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "scripts/code_generator.py",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "scripts/code_generator.py",
+            "line_start": 46,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 32
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/code_generator.py",
+            "line_start": 10,
+            "line_end": 12
+          },
+          {
+            "file": "scripts/code_generator.py",
+            "line_start": 14,
+            "line_end": 19
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Environment Variable Access for API Configuration",
+        "description": "The skill reads OPENAI_API_KEY and OPENAI_BASE_URL from environment variables to configure the OpenAI client. This is standard practice for API integration and does not pose a security risk as the skill does not transmit these values to unauthorized endpoints.",
+        "locations": [
+          {
+            "file": "scripts/code_generator.py",
+            "line_start": 11,
+            "line_end": 12
+          },
+          {
+            "file": "scripts/code_generator.py",
+            "line_start": 16,
+            "line_end": 17
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 626,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:19:53.264Z",
+    "risk_factors": [
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "content": {
+    "user_title": "Generate Data Analysis and Visualization Code",
+    "value_statement": "Data analysis often requires custom Python code for specific datasets and visualization needs. This skill uses AI to generate tailored pandas and matplotlib code that processes your data and creates professional charts in sandbox environments.",
+    "seo_keywords": [
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "data analysis",
+      "Python pandas",
+      "data visualization",
+      "matplotlib",
+      "seaborn",
+      "chart generation",
+      "code generation"
+    ],
+    "actual_capabilities": [
+      "Generate Python code for data analysis using pandas library",
+      "Create visualization code with matplotlib and seaborn",
+      "Apply professional styling and color palettes to charts",
+      "Parse and extract Python code blocks from AI responses",
+      "Configure OpenAI API client for code generation tasks",
+      "Support multiple chart types including bar, line, scatter, pie, and heatmap"
+    ],
+    "limitations": [
+      "Does not execute generated code directly, requires external sandbox environment",
+      "Depends on OpenAI API availability and configuration",
+      "Generated code quality depends on the clarity of input requirements",
+      "Limited to pandas and matplotlib ecosystem, no support for other visualization libraries"
+    ],
+    "use_cases": [
+      {
+        "title": "Business Analytics Dashboard",
+        "description": "Generate Python code to process sales data from CSV files and create multi-panel dashboards with revenue trends, regional comparisons, and product performance charts.",
+        "target_user": "Business analysts and data scientists"
+      },
+      {
+        "title": "Research Data Visualization",
+        "description": "Create publication-ready charts from experimental data with consistent professional styling and color schemes that match academic standards.",
+        "target_user": "Academic researchers and scientists"
+      },
+      {
+        "title": "Automated Report Generation",
+        "description": "Build scripts that automatically analyze datasets and generate visual summaries for recurring reports without manual coding effort.",
+        "target_user": "Data engineers and automation developers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Chart Generation",
+        "prompt": "Generate code to create a bar chart showing monthly sales from a CSV file with columns: month, revenue",
+        "scenario": "Simple visualization for beginners"
+      },
+      {
+        "title": "Multi-Variable Analysis",
+        "prompt": "Create a scatter plot with regression line showing the relationship between advertising spend and sales, colored by region",
+        "scenario": "Analyzing correlations in business data"
+      },
+      {
+        "title": "Time Series Visualization",
+        "prompt": "Build a line chart with multiple series showing daily temperature, humidity, and pressure over the past month with professional styling",
+        "scenario": "Environmental data monitoring"
+      },
+      {
+        "title": "Advanced Statistical Plot",
+        "prompt": "Generate a heatmap showing correlations between 10 different product categories, with annotations and a custom color palette matching corporate branding",
+        "scenario": "Complex data exploration for presentations"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a bar chart showing quarterly revenue",
+        "output": "Generated Python script imports pandas and matplotlib, loads data, creates a styled bar chart with labeled axes and saves output to chart_output.png"
+      },
+      {
+        "input": "Plot temperature trends over time with error bars",
+        "output": "Complete Python code with pandas data processing, matplotlib time series plot with confidence intervals, and professional theme applied"
+      },
+      {
+        "input": "Build a pie chart showing market share distribution",
+        "output": "Python script that calculates percentages, creates a pie chart with custom colors from the professional palette, and exports high-resolution image"
+      }
+    ],
+    "best_practices": [
+      "Provide clear data context including column names, data types, and sample values for accurate code generation",
+      "Specify exact chart type and styling requirements to get code that matches your needs on first generation",
+      "Review generated code in a sandbox environment before using it with sensitive data to verify correctness"
+    ],
+    "anti_patterns": [
+      "Using vague requirements like 'analyze my data' without specifying the analysis type or visualization needed",
+      "Executing generated code without reviewing it first, which may lead to unexpected errors or incorrect results",
+      "Requesting complex multi-step analyses in a single prompt instead of breaking them into smaller, testable components"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute the Python code it generates?",
+        "answer": "No, this skill only generates Python code. You need to execute the code in a separate sandbox environment with pandas and matplotlib installed."
+      },
+      {
+        "question": "What chart types are supported?",
+        "answer": "The skill can generate code for bar charts, line charts, scatter plots, pie charts, heatmaps, and other matplotlib and seaborn visualizations."
+      },
+      {
+        "question": "Do I need an OpenAI API key to use this skill?",
+        "answer": "Yes, the skill requires OpenAI API credentials configured through environment variables or the skill configuration to generate code using GPT-4."
+      },
+      {
+        "question": "Can I customize the visual style of generated charts?",
+        "answer": "Yes, the skill includes a professional theme with custom color palettes. You can specify styling requirements in your prompts."
+      },
+      {
+        "question": "What format does the generated code output?",
+        "answer": "The generated code saves visualizations as PNG files with high DPI resolution suitable for reports and presentations."
+      },
+      {
+        "question": "Is this skill safe to use with sensitive data?",
+        "answer": "The skill sends data context to OpenAI API for code generation. Avoid including sensitive data in prompts if you have data privacy concerns."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "code_generator.py",
+          "type": "file",
+          "path": "scripts/code_generator.py",
+          "lines": 51
+        },
+        {
+          "name": "visualizer.py",
+          "type": "file",
+          "path": "scripts/visualizer.py",
+          "lines": 30
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 39
+    }
+  ]
+}

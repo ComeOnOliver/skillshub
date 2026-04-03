@@ -1,0 +1,332 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:17:53.759Z",
+    "slug": "0xdarkmatter-security-patterns",
+    "source_url": "https://github.com/0xDarkMatter/claude-mods/tree/main/skills/security-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b71786fd0663c74d4d527d1a939a140b58a46cb4ce5ae79f394d2c6c52405224",
+    "tree_hash": "0533bc3fcfb3a8e369ad5f83fec76cd66e7370388aa58f291ba9a14256db6a28"
+  },
+  "skill": {
+    "name": "security-patterns",
+    "description": "Security patterns and OWASP guidelines. Triggers on: security review, OWASP, XSS, SQL injection, CSRF, authentication, authorization, secrets management, input validation, secure coding.",
+    "summary": "Security patterns and OWASP guidelines. Triggers on: security review, OWASP, XSS, SQL injection, CSR...",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "0xDarkMatter",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "security",
+      "owasp",
+      "authentication",
+      "authorization",
+      "secure-coding"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem",
+      "env_access",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate security documentation skill containing educational patterns. The static analyzer flagged 326 issues, but all are false positives triggered by code examples in markdown documentation. The skill provides OWASP Top 10 reference, authentication patterns, input validation examples, and security scanning scripts. No malicious behavior confirmed.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/auth-patterns.md",
+            "line_start": 1,
+            "line_end": 323
+          },
+          {
+            "file": "references/crypto-patterns.md",
+            "line_start": 1,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 183
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/auth-patterns.md",
+            "line_start": 173,
+            "line_end": 175
+          },
+          {
+            "file": "references/secure-headers.md",
+            "line_start": 8,
+            "line_end": 229
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/security-scan.sh",
+            "line_start": 26,
+            "line_end": 74
+          },
+          {
+            "file": "scripts/dependency-audit.sh",
+            "line_start": 19,
+            "line_end": 81
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 143
+          },
+          {
+            "file": "references/auth-patterns.md",
+            "line_start": 52,
+            "line_end": 66
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/security-scan.sh",
+            "line_start": 1,
+            "line_end": 89
+          },
+          {
+            "file": "scripts/dependency-audit.sh",
+            "line_start": 1,
+            "line_end": 91
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 1820,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:17:53.759Z"
+  },
+  "content": {
+    "user_title": "Apply OWASP security patterns",
+    "value_statement": "Write secure code by applying proven security patterns. This skill provides OWASP Top 10 guidelines, authentication patterns, input validation, and security headers implementation.",
+    "seo_keywords": [
+      "security patterns",
+      "OWASP Top 10",
+      "secure coding",
+      "authentication patterns",
+      "XSS prevention",
+      "SQL injection",
+      "security headers",
+      "Claude Code security",
+      "Codex security",
+      "secrets management"
+    ],
+    "actual_capabilities": [
+      "Provide OWASP Top 10 vulnerability prevention guidelines",
+      "Show input validation and output encoding patterns",
+      "Implement authentication and authorization best practices",
+      "Generate security header configurations",
+      "Create secrets management patterns using environment variables",
+      "Run security scan scripts to detect vulnerabilities"
+    ],
+    "limitations": [
+      "Does not execute actual security scans on external code",
+      "Does not provide penetration testing or exploit verification",
+      "Does not access external vulnerability databases",
+      "Patterns are guidance, not a replacement for security review"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Secure coding guidance",
+        "description": "Apply OWASP patterns when writing authentication, authorization, and data validation code."
+      },
+      {
+        "target_user": "Security engineers",
+        "title": "Security documentation",
+        "description": "Generate security headers, encryption patterns, and compliance documentation for applications."
+      },
+      {
+        "target_user": "DevOps teams",
+        "title": "Secrets management",
+        "description": "Implement environment-based secrets handling and security scanning in CI/CD pipelines."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "OWASP reference",
+        "scenario": "Get OWASP Top 10 summary",
+        "prompt": "Show me the OWASP Top 10 with prevention methods for each vulnerability."
+      },
+      {
+        "title": "Input validation",
+        "scenario": "Learn validation patterns",
+        "prompt": "Show me input validation patterns to prevent SQL injection and XSS attacks."
+      },
+      {
+        "title": "Security headers",
+        "scenario": "Configure security headers",
+        "prompt": "Generate Content-Security-Policy and security headers for a Python Flask application."
+      },
+      {
+        "title": "Auth patterns",
+        "scenario": "Implement authentication",
+        "prompt": "Show secure password hashing, JWT token handling, and session management patterns."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I prevent SQL injection?",
+        "output": [
+          "Use parameterized queries: db.execute('SELECT * WHERE name = ?', [query])",
+          "Never interpolate user input into SQL strings",
+          "Validate input type, length, and format before processing",
+          "Use ORM abstractions when available"
+        ]
+      },
+      {
+        "input": "Generate security headers for Express.js",
+        "output": [
+          "Content-Security-Policy: default-src 'self'; script-src 'self'",
+          "X-Content-Type-Options: nosniff",
+          "X-Frame-Options: DENY",
+          "Strict-Transport-Security: max-age=31536000; includeSubDomains"
+        ]
+      },
+      {
+        "input": "Show me password hashing best practices",
+        "output": [
+          "Use bcrypt with cost factor 12 or higher",
+          "Never use MD5 or SHA1 for password hashing",
+          "Verify passwords with constant-time comparison",
+          "Store only hashed passwords, never plaintext"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate and sanitize user input on the server side, never trust client-side validation alone",
+      "Use parameterized queries for database operations to prevent SQL injection attacks",
+      "Store secrets in environment variables or dedicated secrets managers, never hardcode credentials"
+    ],
+    "anti_patterns": [
+      "Using string concatenation or f-strings to build SQL queries with user input",
+      "Storing API keys, passwords, or tokens directly in source code files",
+      "Using innerHTML to insert user-generated content without proper escaping"
+    ],
+    "faq": [
+      {
+        "question": "What security patterns does this skill cover?",
+        "answer": "OWASP Top 10, authentication, authorization, input validation, output encoding, secrets management, and HTTP security headers."
+      },
+      {
+        "question": "Can this skill scan my code for vulnerabilities?",
+        "answer": "It provides patterns and scripts for security scanning but does not directly analyze your codebase."
+      },
+      {
+        "question": "What languages are supported?",
+        "answer": "Patterns are language-agnostic with examples in Python, JavaScript, Bash, and configuration formats."
+      },
+      {
+        "question": "Does this skill perform penetration testing?",
+        "answer": "No, this skill provides security guidance and patterns, not active security testing or exploitation."
+      },
+      {
+        "question": "How do I implement CSP?",
+        "answer": "Set Content-Security-Policy header with default-src 'self' and restrictive directives for scripts, styles, and connections."
+      },
+      {
+        "question": "What is the recommended password hashing algorithm?",
+        "answer": "Use bcrypt, argon2, or scrypt with appropriate cost factors. Avoid MD5, SHA1, and SHA256 for passwords."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "auth-patterns.md",
+          "type": "file",
+          "path": "references/auth-patterns.md",
+          "lines": 323
+        },
+        {
+          "name": "crypto-patterns.md",
+          "type": "file",
+          "path": "references/crypto-patterns.md",
+          "lines": 303
+        },
+        {
+          "name": "owasp-detailed.md",
+          "type": "file",
+          "path": "references/owasp-detailed.md",
+          "lines": 330
+        },
+        {
+          "name": "secure-headers.md",
+          "type": "file",
+          "path": "references/secure-headers.md",
+          "lines": 241
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "dependency-audit.sh",
+          "type": "file",
+          "path": "scripts/dependency-audit.sh",
+          "lines": 91
+        },
+        {
+          "name": "security-scan.sh",
+          "type": "file",
+          "path": "scripts/security-scan.sh",
+          "lines": 90
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 183
+    }
+  ]
+}

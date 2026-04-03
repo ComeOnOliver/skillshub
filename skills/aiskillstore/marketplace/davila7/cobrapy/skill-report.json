@@ -1,0 +1,283 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:51:34.959Z",
+    "slug": "davila7-cobrapy",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/cobrapy",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bf2a00dce425f581bbf29c229359da5fd5bf9d8be7fde5635e1c828c4f27b2da",
+    "tree_hash": "bc3046e45529de3c15b65d983d2cf43a9b238816fa37b0f4969cddc2f80ceea1"
+  },
+  "skill": {
+    "name": "cobrapy",
+    "description": "Constraint-based metabolic modeling (COBRA). FBA, FVA, gene knockouts, flux sampling, SBML models, for systems biology and metabolic engineering analysis.",
+    "summary": "Constraint-based metabolic modeling (COBRA). FBA, FVA, gene knockouts, flux sampling, SBML models, f...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "scientific",
+    "tags": [
+      "metabolic-modeling",
+      "systems-biology",
+      "flux-analysis",
+      "fba",
+      "metabolic-engineering"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guides and Python code examples for the COBRApy metabolic modeling library. All static findings are false positives: backticks are markdown code formatting, imports are documentation examples, and scientific terminology was misidentified as security patterns. No executable scripts, network calls, file access, or external commands exist in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "references/api_quick_reference.md",
+            "line_start": 185,
+            "line_end": 310
+          },
+          {
+            "file": "references/workflows.md",
+            "line_start": 290,
+            "line_end": 290
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 122
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 454
+          },
+          {
+            "file": "references/api_quick_reference.md",
+            "line_start": 9,
+            "line_end": 636
+          },
+          {
+            "file": "references/workflows.md",
+            "line_start": 9,
+            "line_end": 429
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 457,
+            "line_end": 457
+          },
+          {
+            "file": "references/api_quick_reference.md",
+            "line_start": 655,
+            "line_end": 655
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 1904,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:51:34.959Z"
+  },
+  "content": {
+    "user_title": "Analyze metabolic models with COBRApy",
+    "value_statement": "Constraint-based reconstruction and analysis of metabolic models enables prediction of cellular behavior. Perform Flux Balance Analysis, gene knockout studies, and production optimization for metabolic engineering research.",
+    "seo_keywords": [
+      "cobrapy",
+      "metabolic modeling",
+      "flux balance analysis",
+      "FBA",
+      "FVA",
+      "systems biology",
+      "metabolic engineering",
+      "gene knockout",
+      "flux sampling",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Perform Flux Balance Analysis (FBA) to predict metabolic fluxes",
+      "Run Flux Variability Analysis (FVA) to determine reaction flexibility",
+      "Conduct gene and reaction deletion studies for essentiality analysis",
+      "Calculate production envelopes for metabolic engineering optimization",
+      "Sample feasible flux spaces to explore metabolic capabilities",
+      "Build and modify genome-scale metabolic models from scratch"
+    ],
+    "limitations": [
+      "Requires installation of cobrapy Python library and linear programming solver",
+      "Does not perform dynamic metabolic simulations",
+      "Does not include pre-built models beyond test models",
+      "Does not provide wet-lab experimental execution"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Systems Biologists",
+        "title": "Predict cellular growth rates",
+        "description": "Simulate metabolic fluxes in genome-scale models to predict growth rates under different conditions."
+      },
+      {
+        "target_user": "Metabolic Engineers",
+        "title": "Design production strains",
+        "description": "Identify gene knockouts and medium conditions to optimize production of target metabolites."
+      },
+      {
+        "target_user": "Bioinformatics Researchers",
+        "title": "Analyze gene essentiality",
+        "description": "Screen single and double gene deletions to identify essential genes and synthetic lethal pairs."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Load model and run FBA",
+        "scenario": "Basic metabolic simulation",
+        "prompt": "Load the E. coli model and run Flux Balance Analysis to predict the growth rate and identify the active metabolic pathways."
+      },
+      {
+        "title": "Gene knockout screen",
+        "scenario": "Essentiality analysis",
+        "prompt": "Perform a single gene deletion analysis on the E. coli model to identify essential genes that reduce growth below 1% of wild-type."
+      },
+      {
+        "title": "Flux variability analysis",
+        "scenario": "Reaction flexibility study",
+        "prompt": "Run Flux Variability Analysis at 90% optimality on the central carbon metabolism reactions to understand flux flexibility."
+      },
+      {
+        "title": "Production optimization",
+        "scenario": "Strain design workflow",
+        "prompt": "Design a production strain for acetate by calculating the production envelope, identifying beneficial gene knockouts, and simulating the modified strain."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Load the E. coli model and run FBA to predict growth rate",
+        "output": [
+          "Model loaded: E. coli genome-scale model (iJO1366)",
+          "Reactions: 2,583 | Metabolites: 1,825 | Genes: 1,397",
+          "Baseline growth rate: 0.982 /h",
+          "Key active pathways: Glycolysis, TCA cycle, oxidative phosphorylation",
+          "Top fluxes: BIOMASS (0.98), ATPM (20.0), EX_o2_e (-15.0)"
+        ]
+      },
+      {
+        "input": "Find essential genes through knockout analysis",
+        "output": [
+          "Single gene deletion analysis complete",
+          "Essential genes (growth < 1%): 138 genes identified",
+          "Severely impaired (1-50%): 241 genes",
+          "Key essential genes: b0008, b0009, b0010 (amino acid biosynthesis)",
+          "Top essential pathway: Central carbon metabolism"
+        ]
+      },
+      {
+        "input": "Calculate production envelope for acetate",
+        "output": [
+          "Production envelope generated for EX_ac_e",
+          "Maximum acetate yield: 16.2 mmol/gDW/h",
+          "Optimal growth at 50% of maximum acetate production",
+          "Carbon yield efficiency: 0.67 g acetate / g glucose"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Validate model feasibility with slim_optimize() before running full analyses",
+      "Use context managers for temporary modifications to avoid state issues",
+      "Check solution status after optimization to ensure results are optimal",
+      "Run loopless FVA when thermodynamic feasibility is important"
+    ],
+    "anti_patterns": [
+      "Running optimization without checking solution status first",
+      "Modifying reaction bounds directly without using context managers",
+      "Forgetting to reset objective function between different analyses",
+      "Using standard FVA when loopless FVA is required for thermodynamic consistency"
+    ],
+    "faq": [
+      {
+        "question": "Which solvers does COBRApy support?",
+        "answer": "COBRApy supports GLPK (open source), CPLEX, Gurobi, and SCIP solvers. GLPK is bundled for basic use."
+      },
+      {
+        "question": "What model formats can I import?",
+        "answer": "COBRApy supports SBML, JSON, YAML, and MATLAB format files. SBML is the recommended standard."
+      },
+      {
+        "question": "Can I run analyses in parallel?",
+        "answer": "Yes. Functions like double_gene_deletion and flux sampling support parallel processing via processes parameter."
+      },
+      {
+        "question": "How do I ensure numerical stability?",
+        "answer": "Validate samples with sampler.validate(), use appropriate tolerances, and check solution status after each optimization."
+      },
+      {
+        "question": "What are the memory requirements for large models?",
+        "answer": "Genome-scale models require 2-4GB RAM. Consider batch processing for memory-intensive operations."
+      },
+      {
+        "question": "How does this compare to other tools like KBase?",
+        "answer": "COBRApy offers programmatic access and customization for analysis pipelines. Web tools provide interfaces but less flexibility."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_quick_reference.md",
+          "type": "file",
+          "path": "references/api_quick_reference.md",
+          "lines": 656
+        },
+        {
+          "name": "workflows.md",
+          "type": "file",
+          "path": "references/workflows.md",
+          "lines": 594
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 458
+    }
+  ]
+}

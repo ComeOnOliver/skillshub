@@ -1,0 +1,611 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:30:57.535Z",
+    "slug": "atman36-testing-strategy",
+    "source_url": "https://github.com/Atman36/AI-Vibe-Prompts/tree/main/.claude/skills/workflow/testing-strategy",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1e5d6b8636b957d2427a46dce8f75ea5423a6a42f7c5c843212f9d14f1c0cb66",
+    "tree_hash": "1b5ec6b34b869a85424b6008969faf2b33ca1ab0314ec9f9b08ada805d7fb4f5"
+  },
+  "skill": {
+    "name": "testing-strategy",
+    "description": "Comprehensive testing strategy using Vitest for unit/integration tests and Playwright for E2E tests with best practices and coverage targets",
+    "summary": "Comprehensive testing strategy using Vitest for unit/integration tests and Playwright for E2E tests ...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "AI-Vibe-Prompts",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "testing",
+      "vitest",
+      "playwright",
+      "quality",
+      "tdd",
+      "e2e"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only Markdown guidance for testing practices. Contains no executable code, scripts, or network calls. All 101 static findings are false positives: Markdown formatting backticks misidentified as shell execution, JSON field names misidentified as cryptographic algorithms, and environment variable access in test configuration misidentified as credential access.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 176,
+            "line_end": 176
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 294
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 197
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 197,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 254
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 254,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 284
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 284,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 337
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 342
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 342,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 352
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 352,
+            "line_end": 355
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 355,
+            "line_end": 360
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 360,
+            "line_end": 363
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 363,
+            "line_end": 375
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 375,
+            "line_end": 380
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 380,
+            "line_end": 398
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 398,
+            "line_end": 401
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 401
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 402
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 402,
+            "line_end": 403
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 403,
+            "line_end": 403
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 403,
+            "line_end": 408
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 408,
+            "line_end": 447
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 447,
+            "line_end": 452
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 452,
+            "line_end": 461
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 461,
+            "line_end": 464
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 464,
+            "line_end": 473
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 473,
+            "line_end": 478
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 478,
+            "line_end": 486
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 486,
+            "line_end": 489
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 489,
+            "line_end": 499
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 499,
+            "line_end": 502
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 502,
+            "line_end": 516
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 516,
+            "line_end": 520
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 520,
+            "line_end": 521
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 521,
+            "line_end": 522
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 522,
+            "line_end": 526
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 526,
+            "line_end": 539
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 192
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 725,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:30:57.535Z"
+  },
+  "content": {
+    "user_title": "Create comprehensive testing strategy",
+    "value_statement": "Developers struggle to implement consistent testing practices across projects. This skill provides structured guidance for unit, integration, and E2E testing using Vitest and Playwright with clear coverage targets and best practices.",
+    "seo_keywords": [
+      "testing strategy",
+      "Vitest",
+      "Playwright",
+      "unit testing",
+      "integration testing",
+      "E2E testing",
+      "test coverage",
+      "Claude Code",
+      "Claude",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Guide implementation of unit tests with Vitest and React Testing Library",
+      "Set up integration tests for component interactions and API calls",
+      "Configure Playwright for end-to-end browser testing",
+      "Define coverage targets (80%+ lines, 80% functions, 75% branches)",
+      "Apply AAA pattern and test naming conventions",
+      "Create CI/CD testing workflows with GitHub Actions"
+    ],
+    "limitations": [
+      "Does not execute tests directly - provides guidance only",
+      "Does not install dependencies or configure project files",
+      "Does not generate test files automatically",
+      "Requires user to implement recommended patterns in their codebase"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Set up React testing",
+        "description": "Configure Vitest with React Testing Library and achieve 80% coverage on component tests"
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Create E2E test suite",
+        "description": "Build Playwright tests for critical user flows like authentication and checkout"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Automate testing in CI",
+        "description": "Configure GitHub Actions to run tests and upload coverage reports on every push"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic test setup",
+        "scenario": "Start testing a new project",
+        "prompt": "Help me set up testing with Vitest and React Testing Library for my React project. I want to achieve 80% code coverage."
+      },
+      {
+        "title": "E2E testing",
+        "scenario": "Add browser tests",
+        "prompt": "Create a Playwright test for user registration and login flows. Include assertions for page navigation and success messages."
+      },
+      {
+        "title": "Coverage improvement",
+        "scenario": "Increase test coverage",
+        "prompt": "My project has 60% test coverage. Identify low-coverage areas and suggest tests to reach 80% coverage on lines and functions."
+      },
+      {
+        "title": "CI integration",
+        "scenario": "Automate testing pipeline",
+        "prompt": "Set up GitHub Actions workflow that runs Vitest with coverage, uploads reports to Codecov, and runs Playwright tests on push."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Set up Vitest testing for my React component with proper mocking",
+        "output": [
+          "Install dependencies: vitest, @testing-library/react, @testing-library/jest-dom",
+          "Create vitest.config.ts with jsdom environment and coverage thresholds",
+          "Write unit test with AAA pattern (Arrange, Act, Assert)",
+          "Mock external API calls using vi.mock()",
+          "Add assertions for rendering and user interactions",
+          "Run coverage report to verify 80%+ threshold"
+        ]
+      },
+      {
+        "input": "Create Playwright test for user login flow",
+        "output": [
+          "Write test.spec.ts with test.describe for grouping",
+          "Navigate to login page using page.goto()",
+          "Fill email and password fields with test credentials",
+          "Assert successful navigation to dashboard after submit",
+          "Include logout flow verification"
+        ]
+      },
+      {
+        "input": "How should I distribute my tests across the testing pyramid?",
+        "output": [
+          "70% Unit Tests: Fast, isolated tests for individual functions and components",
+          "20% Integration Tests: Moderate speed tests for component interactions and API calls",
+          "10% E2E Tests: Slow, expensive tests for critical user flows only",
+          "Prioritize fast feedback for common changes, slow tests for stable features"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Follow the testing pyramid: 70% unit tests, 20% integration tests, 10% E2E tests",
+      "Use descriptive test names that explain what and when (not just 'works' or 'test 1')",
+      "Mock external dependencies to keep tests fast and isolated"
+    ],
+    "anti_patterns": [
+      "Testing implementation details instead of behavior",
+      "Writing multiple unrelated assertions in a single test",
+      "Skipping error state and edge case testing",
+      "Running full E2E suite on every code change instead of using unit tests for fast feedback"
+    ],
+    "faq": [
+      {
+        "question": "Which tools does this skill support?",
+        "answer": "Vitest for unit/integration tests and Playwright for end-to-end browser testing."
+      },
+      {
+        "question": "What coverage targets should I aim for?",
+        "answer": "Minimum 80% lines, 80% functions, 75% branches. Critical paths should reach 100%."
+      },
+      {
+        "question": "Can I use this with other test frameworks?",
+        "answer": "The skill focuses on Vitest and Playwright but principles apply to Jest and Cypress with minor adjustments."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill provides only documentation guidance. It reads no files and sends no data externally."
+      },
+      {
+        "question": "Why are my tests failing in CI but passing locally?",
+        "answer": "Check for environment differences, timing issues, or mocked dependencies that behave differently in CI. Use consistent setup and fake timers."
+      },
+      {
+        "question": "How is this different from Jest?",
+        "answer": "Vitest shares Jest API but runs faster with Vite, supports TypeScript natively, and works better with modern frameworks."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 544
+    }
+  ]
+}

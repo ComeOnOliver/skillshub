@@ -1,0 +1,427 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:03:33.904Z",
+    "slug": "cjharmath-web-navigation",
+    "source_url": "https://github.com/CJHarmath/claude-agents-skills/tree/main/skills/web-navigation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "dcfb76e7c2a4a3f14a54f70407de56cd07c10c9b35d11f3b28e0c39efbc82f60",
+    "tree_hash": "315125c96095a4ae44a0c94ad7e8d96940b6b11953a8512c9a709ae834485bd1"
+  },
+  "skill": {
+    "name": "web-navigation",
+    "description": "Navigation and routing patterns for React web applications. Use when implementing React Router, Next.js routing, deep links, or handling navigation state.",
+    "summary": "Navigation and routing patterns for React web applications. Use when implementing React Router, Next...",
+    "icon": "🧭",
+    "version": "1.0.0",
+    "author": "CJHarmath",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "react",
+      "routing",
+      "nextjs",
+      "react-router"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown content with React Router and Next.js code examples. The static scanner flagged 62 false positives triggered by TypeScript template literals (backticks in code blocks), routing terminology, and URL patterns being misinterpreted as security threats. No executable code, network calls, file system access, or external command execution exists in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 239
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 239,
+            "line_end": 249
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 249,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 260
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 260,
+            "line_end": 273
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 273,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 330
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 330,
+            "line_end": 334
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 334,
+            "line_end": 362
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 362,
+            "line_end": 370
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 370,
+            "line_end": 381
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 381,
+            "line_end": 385
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 398
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 398,
+            "line_end": 404
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 404,
+            "line_end": 458
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 458,
+            "line_end": 464
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 464,
+            "line_end": 492
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 492,
+            "line_end": 500
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 500,
+            "line_end": 504
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 504,
+            "line_end": 513
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 513,
+            "line_end": 517
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 517,
+            "line_end": 541
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 541,
+            "line_end": 550
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 550,
+            "line_end": 550
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 550,
+            "line_end": 552
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 729,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:03:33.904Z"
+  },
+  "content": {
+    "user_title": "Implement web navigation patterns",
+    "value_statement": "Building React applications requires proper routing and navigation patterns. This skill provides ready-to-use code examples for React Router v6 and Next.js App Router including nested routes, dynamic segments, and programmatic navigation.",
+    "seo_keywords": [
+      "react router",
+      "react navigation",
+      "next.js routing",
+      "claude code web navigation",
+      "react-router-dom",
+      "next.js app router",
+      "deep linking",
+      "react navigation patterns",
+      "claude web navigation",
+      "codex react routing"
+    ],
+    "actual_capabilities": [
+      "React Router v6 setup with BrowserRouter, Routes, and Route components",
+      "Next.js App Router file-based routing patterns",
+      "Nested routes and layout implementations",
+      "Dynamic route parameters with useParams and useSearchParams",
+      "Programmatic navigation with useNavigate and router.push",
+      "Navigation guards for protected routes and unsaved changes"
+    ],
+    "limitations": [
+      "Contains only documentation and code examples - no runtime execution",
+      "Does not include complete working application code",
+      "Focuses on client-side routing patterns only"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Build React navigation",
+        "description": "Implement navigation architecture in React applications using React Router or Next.js"
+      },
+      {
+        "target_user": "Full-stack engineers",
+        "title": "Add deep linking support",
+        "description": "Create shareable URLs with dynamic parameters and query strings for React applications"
+      },
+      {
+        "target_user": "UI engineers",
+        "title": "Structure route hierarchies",
+        "description": "Design nested layouts and shared navigation components for React applications"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic routing setup",
+        "scenario": "Setting up routes",
+        "prompt": "Show me how to set up basic routing with React Router v6 including a home page, about page, and 404 fallback"
+      },
+      {
+        "title": "Dynamic routes",
+        "scenario": "URL parameters",
+        "prompt": "How do I create dynamic routes in Next.js App Router that capture URL parameters like /users/:id"
+      },
+      {
+        "title": "Nested layouts",
+        "scenario": "Dashboard structure",
+        "prompt": "Create a nested route structure in React Router with a dashboard layout containing sidebar and child routes"
+      },
+      {
+        "title": "Navigation guards",
+        "scenario": "Protected routes",
+        "prompt": "Implement navigation guards to protect routes that require authentication in React Router"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Set up React Router with nested routes for a dashboard",
+        "output": [
+          "• BrowserRouter wraps entire app",
+          "• DashboardLayout contains shared Sidebar and Outlet for children",
+          "• Nested routes use path='settings' (relative to parent)",
+          "• NavLink provides automatic active styling via className callback"
+        ]
+      },
+      {
+        "input": "Create dynamic route for user profiles in Next.js",
+        "output": [
+          "• File structure: app/users/[id]/page.tsx",
+          "• Access params.id for user identifier",
+          "• Optional searchParams for query filtering",
+          "• generateStaticParams for static generation at build time"
+        ]
+      },
+      {
+        "input": "Implement navigation guard for unsaved changes",
+        "output": [
+          "• useBlocker hook monitors navigation attempts",
+          "• Check currentLocation vs nextLocation when isDirty",
+          "• blocker.proceed() allows navigation, blocker.reset() cancels",
+          "• Dialog component handles user confirmation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use URL parameters instead of component state for shareable deep links",
+      "Implement loading and error boundaries for async route data",
+      "Use navigation guards to prevent unsaved form data loss"
+    ],
+    "anti_patterns": [
+      "Using window.location for navigation instead of router.navigate",
+      "Storing critical application state that should survive page refresh",
+      "Forgetting scroll restoration for single-page applications"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with both React Router and Next.js?",
+        "answer": "Yes. It provides patterns for React Router v6 and Next.js App Router with code examples for each."
+      },
+      {
+        "question": "What versions of React Router are supported?",
+        "answer": "The skill covers React Router v6 patterns including useNavigate, useParams, and nested routes."
+      },
+      {
+        "question": "Can I use these patterns with TypeScript?",
+        "answer": "All code examples use TypeScript syntax including proper type annotations for hooks and components."
+      },
+      {
+        "question": "Is this skill safe to use in production?",
+        "answer": "This skill contains documentation only. The code patterns shown follow official React Router and Next.js documentation."
+      },
+      {
+        "question": "Does this skill require any dependencies?",
+        "answer": "No dependencies required. The skill provides reference patterns only - install react-router-dom or use Next.js built-in routing."
+      },
+      {
+        "question": "How does this compare to reading official docs?",
+        "answer": "This skill curates common patterns with working code examples. Use official docs for complete API reference and edge cases."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 554
+    }
+  ]
+}

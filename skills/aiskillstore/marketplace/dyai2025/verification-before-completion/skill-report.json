@@ -1,0 +1,297 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:18:12.520Z",
+    "slug": "dyai2025-verification-before-completion",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/verification-before-completion",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "963f6b63d58d88e029181126528a1c720f76c4f8cfaec3532ece14795aef5b77",
+    "tree_hash": "0692b8b071f24e4eacb785ea75cf18dca7bdc9d885929184c34917682782d6a6"
+  },
+  "skill": {
+    "name": "verification-before-completion",
+    "description": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - requires running verification commands and confirming output before making any success claims; evidence before assertions always",
+    "summary": "Use when about to claim work is complete, fixed, or passing, before committing or creating PRs - req...",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "quality-assurance",
+      "verification",
+      "workflow",
+      "best-practices",
+      "validation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only markdown documentation with behavioral instructions for AI assistants. The static scanner misinterpreted documentation examples and formatting as executable code. All reported findings are false positives - there is no actual code, no external commands, no network operations, and no cryptographic operations in this skill. The source_url at skill-report.json:6 is legitimate metadata, and backtick-formatted examples in SKILL.md are documentation, not shell execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 106
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 323,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:18:12.520Z"
+  },
+  "content": {
+    "user_title": "Verify work before claiming completion",
+    "value_statement": "AI assistants often claim work is complete without running verification commands. This skill enforces evidence-based verification by requiring fresh command output before any success claims, preventing false completion reports.",
+    "seo_keywords": [
+      "verification skill",
+      "completion verification",
+      "test verification",
+      "CLAUDE.md skill",
+      "Claude Code verification",
+      "code quality",
+      "workflow automation",
+      "build verification",
+      "CI/CD validation",
+      "software quality"
+    ],
+    "actual_capabilities": [
+      "Requires running verification commands before claiming tests pass",
+      "Demands fresh command output as evidence for all success claims",
+      "Prevents premature completion statements without proof",
+      "Validates build status with actual exit codes",
+      "Enforces red-green regression test cycles",
+      "Blocks satisfaction expressions until verification completes"
+    ],
+    "limitations": [
+      "Does not execute verification commands itself",
+      "Does not integrate with specific CI/CD systems",
+      "Does not provide custom verification commands for your project",
+      "Enforces behavior but cannot prevent all false claims"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Pre-commit verification",
+        "description": "Run tests, linters, and builds before committing code changes"
+      },
+      {
+        "target_user": "QA Engineers",
+        "title": "Bug fix validation",
+        "description": "Verify bug fixes by reproducing the original issue and confirming resolution"
+      },
+      {
+        "target_user": "Project Managers",
+        "title": "Sprint completion checks",
+        "description": "Validate all acceptance criteria are met with actual test results"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Test completion check",
+        "scenario": "Verify tests pass",
+        "prompt": "Are the tests passing? Show me the full test command output with the pass/fail counts."
+      },
+      {
+        "title": "Build verification",
+        "scenario": "Confirm build success",
+        "prompt": "Run the build command and show me the exit code and any error output."
+      },
+      {
+        "title": "Bug fix validation",
+        "scenario": "Verify bug is fixed",
+        "prompt": "Reproduce the original bug scenario and confirm the issue is resolved. Show me the command and its output."
+      },
+      {
+        "title": "PR readiness review",
+        "scenario": "Check PR requirements",
+        "prompt": "Review all PR requirements and verify each one with actual test results or build output."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Is the feature complete?",
+        "output": [
+          "I cannot claim completion until I verify. Running test suite: npm test",
+          "Test output: 42/42 tests passed, 0 failures, 0 skipped",
+          "Running build: npm run build",
+          "Build output: Build successful, exit code 0",
+          "All verification complete. Feature is ready with test and build evidence."
+        ]
+      },
+      {
+        "input": "Did the bug fix work?",
+        "output": [
+          "Let me reproduce the bug scenario to verify. Running the original failing command",
+          "Bug scenario output: Command completed successfully, no error produced",
+          "The issue is resolved - the original error no longer occurs"
+        ]
+      },
+      {
+        "input": "Can I merge this PR?",
+        "output": [
+          "Running full test suite: npm test",
+          "Test output: All 156 tests passing",
+          "Running build: npm run build",
+          "Build output: Success, exit code 0",
+          "Linting: No errors found",
+          "All checks pass. PR is ready for merge."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always run the full verification command fresh when claiming success",
+      "Read the complete output including exit codes and failure counts",
+      "Report actual status with evidence rather than assumptions"
+    ],
+    "anti_patterns": [
+      "Claiming tests pass without running the test command",
+      "Saying work looks correct without verification output",
+      "Trusting agent success reports without independent verification"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Works with Claude, Claude Code, and Codex. Applies to any AI coding assistant that can run shell commands."
+      },
+      {
+        "question": "Does this skill run tests automatically?",
+        "answer": "No. The skill instructs the AI to run verification commands, but the AI must actually execute them."
+      },
+      {
+        "question": "Can I customize the verification commands?",
+        "answer": "The skill provides a framework. You specify the relevant commands for your project such as npm test or npm run build."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "Yes. This is a prompt-based skill with no file access, network calls, or external code execution."
+      },
+      {
+        "question": "What if tests are slow to run?",
+        "answer": "The skill requires verification regardless of time. Skipping verification defeats the purpose of the discipline."
+      },
+      {
+        "question": "How is this different from regular testing?",
+        "answer": "Regular testing runs tests. This skill enforces the discipline of running verification before making any completion claims."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 140
+    },
+    {
+      "name": "SKILL.zip",
+      "type": "file",
+      "path": "SKILL.zip"
+    }
+  ]
+}

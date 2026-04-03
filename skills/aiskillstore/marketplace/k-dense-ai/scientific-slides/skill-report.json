@@ -1,0 +1,353 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:46:10.701Z",
+    "slug": "k-dense-ai-scientific-slides",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-slides",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3f1b1fd3c18dc6cb8b195144cf54c7e31cdf181199ed6db9f223f7c3c364407c",
+    "tree_hash": "24005bb1df82c97447612ffce16b42e31bb5741d5afc68715af8fed03397a081"
+  },
+  "skill": {
+    "name": "scientific-slides",
+    "description": "Build slide decks and presentations for research talks. Use this for making PowerPoint slides, conference presentations, seminar talks, research presentations, thesis defense slides, or any scientific talk. Provides slide structure, design templates, timing guidance, and visual validation. Works with PowerPoint and LaTeX Beamer.",
+    "summary": "Build slide decks and presentations for research talks. Use this for making PowerPoint slides, confe...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "research",
+    "tags": [
+      "presentations",
+      "scientific",
+      "visualization",
+      "ai-generated",
+      "latex"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "The skill is a legitimate scientific presentation tool. Static findings are primarily false positives from documentation patterns. Network access is for documented AI image generation with user-provided API keys. Subprocess calls are for local PDF/image operations. No malicious intent or data exfiltration patterns found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/generate_slide_image_ai.py",
+            "line_start": 227,
+            "line_end": 232
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/generate_slide_image.py",
+            "line_start": 132,
+            "line_end": 133
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/generate_slide_image_ai.py",
+            "line_start": 178,
+            "line_end": 191
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/slides_to_pdf.py",
+            "line_start": 145,
+            "line_end": 176
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 19,
+    "total_lines": 20460,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:46:10.701Z"
+  },
+  "content": {
+    "user_title": "Create scientific presentations with AI",
+    "value_statement": "This skill helps researchers create professional presentations for conferences, seminars, and thesis defenses. It provides slide templates, design guidance, and AI-powered image generation for PowerPoint and LaTeX Beamer formats.",
+    "seo_keywords": [
+      "scientific presentations",
+      "conference slides",
+      "thesis defense",
+      "AI presentation generator",
+      "LaTeX Beamer",
+      "PowerPoint slides",
+      "scientific talks",
+      "research presentations",
+      "Claude",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generate complete presentation slides using AI image generation",
+      "Create LaTeX Beamer presentations with provided templates",
+      "Validate presentations for timing, slide count, and design quality",
+      "Convert slide images to PDF for distribution",
+      "Provide design guidance for scientific presentations"
+    ],
+    "limitations": [
+      "Requires OpenRouter API key for AI slide generation features",
+      "Does not create editable PowerPoint files directly (generates images)",
+      "Design templates require customization for specific use cases"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Researchers",
+        "title": "Conference presentation",
+        "description": "Generate slides for academic conferences with proper citations and professional design"
+      },
+      {
+        "target_user": "Graduate students",
+        "title": "Thesis defense",
+        "description": "Create comprehensive defense presentations with structured narrative and visual aids"
+      },
+      {
+        "target_user": "Scientists",
+        "title": "Seminar talks",
+        "description": "Build detailed seminar presentations with LaTeX Beamer for mathematical content"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic slide",
+        "scenario": "Create a single presentation slide",
+        "prompt": "Create a presentation slide titled [TITLE] with these key points: [POINTS]. Use a [COLOR] color scheme with modern design."
+      },
+      {
+        "title": "With citations",
+        "scenario": "Add research citations to a slide",
+        "prompt": "Create a slide titled [TITLE] with content about [TOPIC]. Include citations at bottom: (Author et al., YEAR; Author2 et al., YEAR2)."
+      },
+      {
+        "title": "Consistent style",
+        "scenario": "Match previous slide styling",
+        "prompt": "Create a slide titled [TITLE] with [CONTENT]. FORMATTING GOAL: Match attached slide style exactly - same colors, fonts, and design."
+      },
+      {
+        "title": "Visual figure",
+        "scenario": "Generate a figure for embedding",
+        "prompt": "Generate a professional diagram showing [CONCEPT]. Modern flat design, suitable for scientific presentations. Output just the visual."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a title slide for a machine learning conference presentation",
+        "output": [
+          "Professional 16:9 slide with title text",
+          "Subtitle with conference name",
+          "Modern color scheme with clean typography",
+          "Generous white space and visual hierarchy"
+        ]
+      },
+      {
+        "input": "Generate a results slide comparing two datasets",
+        "output": [
+          "Side-by-side comparison visualization",
+          "Clear labels and axis descriptions",
+          "Professional chart design with accessible colors",
+          "Key findings highlighted in bullet points"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Plan your narrative arc before generating slides - follow the story structure: hook, context, problem, approach, results, implications",
+      "Maintain visual consistency by attaching previous slides and reusing formatting goals across all slides",
+      "Use research-lookup to find proper citations and add 3-5 citations in introduction and discussion sections"
+    ],
+    "anti_patterns": [
+      "Creating text-heavy slides with more than 6 bullet points per slide - violates visual-first design principle",
+      "Using default PowerPoint or Beamer themes without customization - looks generic and unprofessional",
+      "Skipping practice sessions - always practice with timer at least 3 times before presentation"
+    ],
+    "faq": [
+      {
+        "question": "Does this create editable PowerPoint files?",
+        "answer": "It generates slide images for PDF workflow. For editable PPTX, use --visual-only flag and combine with PPTX skill."
+      },
+      {
+        "question": "What API key do I need?",
+        "answer": "An OpenRouter API key for AI image generation. Get one at openrouter.ai/keys and set OPENROUTER_API_KEY environment variable."
+      },
+      {
+        "question": "Can I use this without AI generation?",
+        "answer": "Yes. Use the LaTeX Beamer templates and validation scripts without requiring API keys for local workflow."
+      },
+      {
+        "question": "What presentation formats are supported?",
+        "answer": "PDF workflow (AI-generated slides), PowerPoint (via generated images), and LaTeX Beamer (native templates)."
+      },
+      {
+        "question": "How many slides for a 15-minute talk?",
+        "answer": "Target 15-18 slides following the one-slide-per-minute guideline. Adjust for complexity - simple slides take less time."
+      },
+      {
+        "question": "Does it include citations and references?",
+        "answer": "The skill integrates with research-lookup for finding papers. You add citations to prompts, and AI includes them on generated slides."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "beamer_template_conference.tex",
+          "type": "file",
+          "path": "assets/beamer_template_conference.tex",
+          "lines": 408
+        },
+        {
+          "name": "beamer_template_defense.tex",
+          "type": "file",
+          "path": "assets/beamer_template_defense.tex",
+          "lines": 907
+        },
+        {
+          "name": "beamer_template_seminar.tex",
+          "type": "file",
+          "path": "assets/beamer_template_seminar.tex",
+          "lines": 871
+        },
+        {
+          "name": "powerpoint_design_guide.md",
+          "type": "file",
+          "path": "assets/powerpoint_design_guide.md",
+          "lines": 663
+        },
+        {
+          "name": "timing_guidelines.md",
+          "type": "file",
+          "path": "assets/timing_guidelines.md",
+          "lines": 598
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "beamer_guide.md",
+          "type": "file",
+          "path": "references/beamer_guide.md",
+          "lines": 1020
+        },
+        {
+          "name": "data_visualization_slides.md",
+          "type": "file",
+          "path": "references/data_visualization_slides.md",
+          "lines": 709
+        },
+        {
+          "name": "presentation_structure.md",
+          "type": "file",
+          "path": "references/presentation_structure.md",
+          "lines": 643
+        },
+        {
+          "name": "slide_design_principles.md",
+          "type": "file",
+          "path": "references/slide_design_principles.md",
+          "lines": 850
+        },
+        {
+          "name": "talk_types_guide.md",
+          "type": "file",
+          "path": "references/talk_types_guide.md",
+          "lines": 688
+        },
+        {
+          "name": "visual_review_workflow.md",
+          "type": "file",
+          "path": "references/visual_review_workflow.md",
+          "lines": 776
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "generate_slide_image_ai.py",
+          "type": "file",
+          "path": "scripts/generate_slide_image_ai.py",
+          "lines": 764
+        },
+        {
+          "name": "generate_slide_image.py",
+          "type": "file",
+          "path": "scripts/generate_slide_image.py",
+          "lines": 141
+        },
+        {
+          "name": "pdf_to_images.py",
+          "type": "file",
+          "path": "scripts/pdf_to_images.py",
+          "lines": 222
+        },
+        {
+          "name": "slides_to_pdf.py",
+          "type": "file",
+          "path": "scripts/slides_to_pdf.py",
+          "lines": 236
+        },
+        {
+          "name": "validate_presentation.py",
+          "type": "file",
+          "path": "scripts/validate_presentation.py",
+          "lines": 404
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 139
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1156
+    }
+  ]
+}

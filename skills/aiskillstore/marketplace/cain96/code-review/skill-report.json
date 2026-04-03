@@ -1,0 +1,386 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:25:28.360Z",
+    "slug": "cain96-code-review",
+    "source_url": "https://github.com/Cain96/dotfiles/tree/main/dot_config/claude/skills/code-review",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c6e5da5ce6e9e12eca4c5eff30bba86a116215168a6074e10209d1a92344aff9",
+    "tree_hash": "492a807d9d5fd2d2e95a6a87671759bd831a7cf975a136b2744865ff25de2a25"
+  },
+  "skill": {
+    "name": "code-review",
+    "description": "Automated code review analyzing security, performance, maintainability, and test coverage. Activated during code reviews or when conducting analysis.",
+    "summary": "Automated code review analyzing security, performance, maintainability, and test coverage. Activated...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "Cain96",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "code review",
+      "security analysis",
+      "code quality",
+      "automated review"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "scripts",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill with no executable code. Restricted to Read, Grep, Glob tools per allowed-tools directive. Static findings are all false positives triggered by documentation references to security concepts, bash script examples, and external resource links. The skill only analyzes code - it does not execute, transmit data, or access credentials.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 146,
+            "line_end": 146
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 411,
+            "line_end": 411
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 412,
+            "line_end": 412
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 413,
+            "line_end": 413
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 414,
+            "line_end": 414
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 280
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 280,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 308
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 330
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 330,
+            "line_end": 337
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 353
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 353,
+            "line_end": 363
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 363,
+            "line_end": 366
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 366,
+            "line_end": 396
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 593,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:25:28.360Z"
+  },
+  "content": {
+    "user_title": "Review code for security and quality issues",
+    "value_statement": "Manual code reviews are time-consuming and often inconsistent. This skill provides automated analysis of code security, performance, maintainability, and test coverage to improve code quality systematically.",
+    "seo_keywords": [
+      "code review",
+      "AI code review",
+      "security analysis",
+      "Claude Code",
+      "code quality",
+      "automated review",
+      "software testing",
+      "bug detection",
+      "code optimization",
+      "developer tools"
+    ],
+    "actual_capabilities": [
+      "Analyze code for security vulnerabilities including SQL injection, XSS, and hardcoded secrets",
+      "Identify performance issues such as N+1 queries, memory leaks, and inefficient algorithms",
+      "Evaluate code maintainability by checking complexity, duplication, and documentation gaps",
+      "Assess test coverage and identify missing test cases for critical paths",
+      "Generate structured review feedback with severity priorities",
+      "Provide code examples showing fixes for common issues"
+    ],
+    "limitations": [
+      "Cannot execute code or run live tests",
+      "Cannot access external APIs or services",
+      "Cannot modify files or apply fixes automatically",
+      "Review quality depends on code context provided"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Pre-commit code analysis",
+        "description": "Review pull requests for security issues before merging to catch vulnerabilities early."
+      },
+      {
+        "target_user": "Tech Leads",
+        "title": "Code quality standards",
+        "description": "Enforce consistent review criteria across teams with standardized security and performance checklists."
+      },
+      {
+        "target_user": "Open Source Maintainers",
+        "title": "Contribution review automation",
+        "description": "Automate initial review of contributions to identify issues before human review."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick Security Scan",
+        "scenario": "Scan code for security issues",
+        "prompt": "Review this code for security vulnerabilities. Check for SQL injection, XSS, hardcoded secrets, and authentication issues. List findings by severity."
+      },
+      {
+        "title": "Performance Review",
+        "scenario": "Analyze performance bottlenecks",
+        "prompt": "Analyze this code for performance issues. Look for N+1 queries, memory leaks, and inefficient algorithms. Suggest specific improvements."
+      },
+      {
+        "title": "Full Code Audit",
+        "scenario": "Comprehensive review",
+        "prompt": "Conduct a comprehensive code review covering security, performance, maintainability, and test coverage. Use the standard review format with priority ratings."
+      },
+      {
+        "title": "Test Gap Analysis",
+        "scenario": "Evaluate test coverage",
+        "prompt": "Review this code and identify missing test coverage. Focus on edge cases, error handling, and critical business logic paths."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review this code for security issues",
+        "output": [
+          "Security Analysis Results",
+          "No critical vulnerabilities found",
+          "Warning: Input validation missing for user-generated content (line 89)",
+          "Recommendation: Add sanitization for user input using a validation library"
+        ]
+      },
+      {
+        "input": "Analyze this function for performance issues",
+        "output": [
+          "Performance Analysis Results",
+          "N+1 query detected in user posts retrieval (line 45)",
+          "Fix: Use eager loading with JOIN to reduce database queries",
+          "Estimated improvement: 80% faster execution"
+        ]
+      },
+      {
+        "input": "Check test coverage for this module",
+        "output": [
+          "Test Coverage Assessment",
+          "Current coverage: 75% (target: 85%)",
+          "Missing: Error handling tests for network timeout",
+          "Missing: Edge case tests for empty array input",
+          "Recommendation: Add 3 test cases to meet target"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide specific file paths and line numbers for all findings",
+      "Prioritize issues by severity (critical, high, medium, low)",
+      "Include code examples showing both problematic and fixed implementations"
+    ],
+    "anti_patterns": [
+      "Making absolute judgments without explaining the reasoning",
+      "Flagging style preferences as security or performance issues",
+      "Providing vague suggestions without actionable improvement steps"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute the code it reviews?",
+        "answer": "No. This skill only reads and analyzes code using Read, Grep, and Glob tools. It cannot execute code."
+      },
+      {
+        "question": "What programming languages are supported?",
+        "answer": "The skill works with any language that can be read as text. The documentation uses TypeScript examples broadly."
+      },
+      {
+        "question": "Can this skill automatically fix issues?",
+        "answer": "No. This skill identifies and reports issues with suggestions, but does not modify files automatically."
+      },
+      {
+        "question": "Is my code data safe?",
+        "answer": "Yes. The skill only reads code through allowed tools and does not transmit data externally."
+      },
+      {
+        "question": "Why are my review results different from linters?",
+        "answer": "This skill provides contextual analysis beyond static linting. It considers business logic and edge cases."
+      },
+      {
+        "question": "How does this compare to other AI tools?",
+        "answer": "This skill is designed for code review with structured output. It complements other tools with human-readable analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 415
+    }
+  ]
+}

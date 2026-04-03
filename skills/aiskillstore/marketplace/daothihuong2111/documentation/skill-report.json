@@ -1,0 +1,412 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:45:22.919Z",
+    "slug": "daothihuong2111-documentation",
+    "source_url": "https://github.com/DaoThiHuong2111/codeh-cli/tree/main/.claude/skills/documentation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "77ef9bb100540dd56ab54ba479acbe8c5751e053e4bd8b73f2c8fd87c4490923",
+    "tree_hash": "2f6fb531b63d2c8a69f65cc3878775aa336246ef489f0c4bacd3b4bb2e5fb097"
+  },
+  "skill": {
+    "name": "documentation",
+    "description": "Enforces documentation standards and structure for this project. This skill should be used when creating, updating, or organizing documentation to ensure compliance with project rules, prevent redundancy, and maintain screen-based organization. Activates when user asks to create/update docs or when documentation needs to be generated.",
+    "summary": "Enforces documentation standards and structure for this project. This skill should be used when crea...",
+    "icon": "docs",
+    "version": "1.0.0",
+    "author": "DaoThiHuong2111",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "documentation",
+      "standards",
+      "templates",
+      "workflows"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 805 static findings are false positives. The analyzer flagged markdown documentation showing example shell commands and technical keywords as security risks. Actual shell scripts are legitimate documentation utilities using standard Unix tools.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 187
+          },
+          {
+            "file": "references/rules.md",
+            "line_start": 10,
+            "line_end": 346
+          },
+          {
+            "file": "assets/templates/architecture.md",
+            "line_start": 3,
+            "line_end": 140
+          },
+          {
+            "file": "scripts/README.md",
+            "line_start": 19,
+            "line_end": 322
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 28,
+    "total_lines": 4872,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:45:22.919Z"
+  },
+  "content": {
+    "user_title": "Enforce Documentation Standards",
+    "value_statement": "Managing documentation at scale leads to duplicated content and inconsistent structures. This skill provides section-level editing tools, templates, and workflows to maintain clean, DRY documentation that stays in sync with code.",
+    "seo_keywords": [
+      "documentation management",
+      "documentation standards",
+      "Claude documentation",
+      "Claude Code documentation",
+      "documentation templates",
+      "section-level editing",
+      "DRY documentation",
+      "code documentation",
+      "developer documentation"
+    ],
+    "actual_capabilities": [
+      "Search documentation without loading full files into context",
+      "Extract, update, or delete specific sections by heading",
+      "Apply consistent templates for screen, feature, and architecture docs",
+      "Detect and consolidate duplicate documentation",
+      "Validate files against project documentation rules",
+      "Split large files exceeding 500 lines into logical sections"
+    ],
+    "limitations": [
+      "Designed for markdown documentation only",
+      "Cannot process binary or non-text file formats",
+      "Templates assume screen-based project structure",
+      "Scripts require bash and standard Unix utilities"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Project maintainers",
+        "title": "Standardize new documentation",
+        "description": "Apply consistent templates and structure when adding new feature or screen documentation."
+      },
+      {
+        "target_user": "Documentation leads",
+        "title": "Find and fix duplicates",
+        "description": "Detect redundant content across docs and consolidate into single authoritative sources."
+      },
+      {
+        "target_user": "Developer experience teams",
+        "title": "Maintain documentation at scale",
+        "description": "Enforce size limits, code references, and DRY principles across growing codebases."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create screen docs",
+        "scenario": "New feature screen needs documentation",
+        "prompt": "Create documentation for the new {screen-name} screen following the project templates. Check for existing docs first."
+      },
+      {
+        "title": "Update related docs",
+        "scenario": "Code change affects existing docs",
+        "prompt": "Find all documentation related to {feature-name} and update the affected sections to match the code changes."
+      },
+      {
+        "title": "Check for duplicates",
+        "scenario": "Before creating new documentation",
+        "prompt": "Search for existing documentation about {topic}. If duplicates exist, consolidate them instead of creating new files."
+      },
+      {
+        "title": "Split large files",
+        "scenario": "Documentation file exceeds size limits",
+        "prompt": "Check docs/screens/{screen-name}/README.md line count. If over 450 lines, split into focused sub-files."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create documentation for a new Settings screen",
+        "output": [
+          "Checking for existing documentation about 'Settings'...",
+          "Creating directory: docs/screens/settings",
+          "Using template: assets/templates/screen-readme.md",
+          "Using template: assets/templates/screen-technical.md",
+          "Validating against: references/rules.md"
+        ]
+      },
+      {
+        "input": "Find duplicate documentation about user authentication",
+        "output": [
+          "Searching docs/ for 'authentication'...",
+          "Found duplicate sections in docs/architecture/security.md and docs/guides/auth.md",
+          "Recommendation: Consolidate into docs/architecture/authentication.md"
+        ]
+      },
+      {
+        "input": "Check documentation quality for the Home screen",
+        "output": [
+          "docs/screens/home/README.md: 245 lines - OK",
+          "docs/screens/home/technical.md: 380 lines - OK",
+          "docs/screens/home/features.md: 89 lines - OK",
+          "All files pass validation: DRY principle, code references, size limits"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always search for existing documentation before creating new files",
+      "Use section-level scripts to minimize context usage when making targeted updates",
+      "Validate every new or modified file against references/rules.md before committing"
+    ],
+    "anti_patterns": [
+      "Creating duplicate documentation instead of updating existing files",
+      "Leaving files over 500 lines without splitting into focused sub-files",
+      "Omitting file:line references when documenting code behavior"
+    ],
+    "faq": [
+      {
+        "question": "What file formats does this skill support?",
+        "answer": "Markdown files (.md) with standard heading structure for section-level operations."
+      },
+      {
+        "question": "How does section-level editing work?",
+        "answer": "Scripts identify sections by markdown headings (H2, H3) and operate on content blocks between them."
+      },
+      {
+        "question": "What happens if a file exceeds 500 lines?",
+        "answer": "The skill detects oversized files and recommends splitting into focused sub-files by topic."
+      },
+      {
+        "question": "Can this skill work with documentation outside the docs/ folder?",
+        "answer": "Yes, scripts accept custom directories as parameters for flexibility."
+      },
+      {
+        "question": "How are duplicates detected?",
+        "answer": "The doc-find-duplicates.sh script compares file content and section headings for similarity."
+      },
+      {
+        "question": "What tools are required for the scripts?",
+        "answer": "Standard Unix utilities: grep, find, wc, stat, sed, sort, comm. Available on most systems."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "templates",
+          "type": "dir",
+          "path": "assets/templates",
+          "children": [
+            {
+              "name": "architecture.md",
+              "type": "file",
+              "path": "assets/templates/architecture.md",
+              "lines": 161
+            },
+            {
+              "name": "guide.md",
+              "type": "file",
+              "path": "assets/templates/guide.md",
+              "lines": 170
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "assets/templates/README.md",
+              "lines": 42
+            },
+            {
+              "name": "screen-features.md",
+              "type": "file",
+              "path": "assets/templates/screen-features.md",
+              "lines": 100
+            },
+            {
+              "name": "screen-flows.md",
+              "type": "file",
+              "path": "assets/templates/screen-flows.md",
+              "lines": 130
+            },
+            {
+              "name": "screen-readme.md",
+              "type": "file",
+              "path": "assets/templates/screen-readme.md",
+              "lines": 103
+            },
+            {
+              "name": "screen-technical.md",
+              "type": "file",
+              "path": "assets/templates/screen-technical.md",
+              "lines": 163
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "workflows",
+          "type": "dir",
+          "path": "references/workflows",
+          "children": [
+            {
+              "name": "add-examples.md",
+              "type": "file",
+              "path": "references/workflows/add-examples.md",
+              "lines": 228
+            },
+            {
+              "name": "consolidate-duplicates.md",
+              "type": "file",
+              "path": "references/workflows/consolidate-duplicates.md",
+              "lines": 162
+            },
+            {
+              "name": "create-screen.md",
+              "type": "file",
+              "path": "references/workflows/create-screen.md",
+              "lines": 137
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "references/workflows/README.md",
+              "lines": 84
+            },
+            {
+              "name": "review-quarterly.md",
+              "type": "file",
+              "path": "references/workflows/review-quarterly.md",
+              "lines": 243
+            },
+            {
+              "name": "split-large-file.md",
+              "type": "file",
+              "path": "references/workflows/split-large-file.md",
+              "lines": 199
+            },
+            {
+              "name": "update-existing.md",
+              "type": "file",
+              "path": "references/workflows/update-existing.md",
+              "lines": 133
+            }
+          ]
+        },
+        {
+          "name": "examples.md",
+          "type": "file",
+          "path": "references/examples.md",
+          "lines": 596
+        },
+        {
+          "name": "rules.md",
+          "type": "file",
+          "path": "references/rules.md",
+          "lines": 356
+        },
+        {
+          "name": "structure.md",
+          "type": "file",
+          "path": "references/structure.md",
+          "lines": 417
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "doc-delete-section.sh",
+          "type": "file",
+          "path": "scripts/doc-delete-section.sh",
+          "lines": 58
+        },
+        {
+          "name": "doc-find-duplicates.sh",
+          "type": "file",
+          "path": "scripts/doc-find-duplicates.sh",
+          "lines": 59
+        },
+        {
+          "name": "doc-get-section.sh",
+          "type": "file",
+          "path": "scripts/doc-get-section.sh",
+          "lines": 56
+        },
+        {
+          "name": "doc-insert-after.sh",
+          "type": "file",
+          "path": "scripts/doc-insert-after.sh",
+          "lines": 81
+        },
+        {
+          "name": "doc-list-sections.sh",
+          "type": "file",
+          "path": "scripts/doc-list-sections.sh",
+          "lines": 35
+        },
+        {
+          "name": "doc-metadata.sh",
+          "type": "file",
+          "path": "scripts/doc-metadata.sh",
+          "lines": 55
+        },
+        {
+          "name": "doc-search.sh",
+          "type": "file",
+          "path": "scripts/doc-search.sh",
+          "lines": 22
+        },
+        {
+          "name": "doc-update-section.sh",
+          "type": "file",
+          "path": "scripts/doc-update-section.sh",
+          "lines": 83
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "scripts/README.md",
+          "lines": 325
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 213
+    }
+  ]
+}

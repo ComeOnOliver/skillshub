@@ -1,0 +1,232 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:08:00.649Z",
+    "slug": "bossjones-uvicorn",
+    "source_url": "https://github.com/bossjones/logging-lab/tree/main/.claude/skills/uvicorn",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "09014871be20a80b244cb5888d1e3248f3be25e8fc807addbffff2da0c67431f",
+    "tree_hash": "1a7bb20fea2cdd04ab2796e3b1f156c6bc8bd644c1256b137d751e9ea11bb665"
+  },
+  "skill": {
+    "name": "uvicorn",
+    "description": "ASGI server for Python web applications - Fast, production-ready server for async frameworks",
+    "summary": "ASGI server for Python web applications - Fast, production-ready server for async frameworks",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "bossjones",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "uvicorn",
+      "asgi",
+      "python",
+      "web-server",
+      "fastapi"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing example commands and configurations for Uvicorn ASGI server. All 98 static findings are FALSE POSITIVES. The analyzer incorrectly flagged documentation examples as security issues. The skill has no executable code, no network connections, no credential handling, and no command injection vectors.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 227
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 207
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 148
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 681,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:08:00.649Z"
+  },
+  "content": {
+    "user_title": "Run Uvicorn ASGI servers",
+    "value_statement": "This skill provides documentation and examples for running Python ASGI applications with Uvicorn. It covers development servers with hot reload, production deployment with workers, SSL configuration, and Docker integration.",
+    "seo_keywords": [
+      "uvicorn",
+      "asgi server",
+      "python web server",
+      "fastapi server",
+      "starlette server",
+      "async python",
+      "claude code",
+      "claude",
+      "codex"
+    ],
+    "actual_capabilities": [
+      "Run ASGI applications with uvicorn command",
+      "Configure host, port, and binding options",
+      "Enable hot reload for development",
+      "Set up multi-worker production deployment",
+      "Configure SSL certificates for HTTPS",
+      "Deploy with Docker and Docker Compose"
+    ],
+    "limitations": [
+      "Documentation-only skill, does not execute code",
+      "Requires uvicorn to be installed in the environment",
+      "Does not generate application code",
+      "Does not handle deployment infrastructure beyond examples"
+    ],
+    "use_cases": [
+      {
+        "target_user": "FastAPI Developers",
+        "title": "Run FastAPI with hot reload",
+        "description": "Start a FastAPI development server with automatic reload on file changes"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Deploy Python web services",
+        "description": "Configure production deployment with multiple workers and SSL certificates"
+      },
+      {
+        "target_user": "Docker Users",
+        "title": "Containerize ASGI applications",
+        "description": "Create Docker configurations for running uvicorn in containers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Server",
+        "scenario": "Start a simple uvicorn server",
+        "prompt": "How do I run my FastAPI app with uvicorn?"
+      },
+      {
+        "title": "Development Mode",
+        "scenario": "Enable auto-reload",
+        "prompt": "How do I enable hot reload for uvicorn during development?"
+      },
+      {
+        "title": "Production Setup",
+        "scenario": "Configure for production",
+        "prompt": "What are the best settings for running uvicorn in production?"
+      },
+      {
+        "title": "Docker Deployment",
+        "scenario": "Container deployment",
+        "prompt": "How do I deploy uvicorn with Docker and Docker Compose?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I run uvicorn with SSL?",
+        "output": [
+          "Use the --ssl-keyfile and --ssl-certfile flags:",
+          "uv run uvicorn main:app --ssl-keyfile=./key.pem --ssl-certfile=./cert.pem",
+          "Key points:",
+          "key.pem: Path to your private key file",
+          "cert.pem: Path to your SSL certificate file",
+          "Both files must be readable by the uvicorn process"
+        ]
+      },
+      {
+        "input": "How do I deploy with Docker?",
+        "output": [
+          "Use this Dockerfile:",
+          "FROM python:3.12-slim",
+          "WORKDIR /app",
+          "COPY requirements.txt .",
+          "RUN pip install -r requirements.txt",
+          "COPY . .",
+          "CMD [uvicorn, main:app, --host, 0.0.0.0, --port, 8000]",
+          "Then use Docker Compose to map port 8000 and enable hot reload with volumes."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use --reload only in development, never in production",
+      "Set workers=4 or higher for production to utilize multiple CPU cores",
+      "Bind to 0.0.0.0 in containers to accept connections from all interfaces"
+    ],
+    "anti_patterns": [
+      "Running with --reload in production creates security and performance issues",
+      "Using 127.0.0.1 in containers prevents external access to the service",
+      "Not specifying --log-level makes troubleshooting difficult"
+    ],
+    "faq": [
+      {
+        "question": "What is the default port for uvicorn?",
+        "answer": "Uvicorn defaults to port 8000. Change it with --port 8000 or the UVICORN_PORT environment variable."
+      },
+      {
+        "question": "Can I use uvicorn with Django?",
+        "answer": "Yes, use Django Channels or ASGI mode. Run with daphne main:asgi or configure Django for ASGI."
+      },
+      {
+        "question": "How many workers do I need?",
+        "answer": "Use 1 worker per CPU core. The formula --workers $(nproc) maximizes throughput for CPU-bound apps."
+      },
+      {
+        "question": "What is the difference between reload and workers?",
+        "answer": "Reload watches files and restarts on changes. Workers run multiple processes. They cannot be used together."
+      },
+      {
+        "question": "How do I enable access logs?",
+        "answer": "Use --access-log flag or set UVICORN_ACCESS_LOG=true. Logs request details to stdout."
+      },
+      {
+        "question": "Can I run uvicorn programmatically?",
+        "answer": "Yes, import uvicorn and use uvicorn.run() or create Config and Server objects for fine-grained control."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "evaluation.json",
+      "type": "file",
+      "path": "evaluation.json",
+      "lines": 234
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 232
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:59:12.128Z",
+    "slug": "wshobson-git-advanced-workflows",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/developer-essentials/skills/git-advanced-workflows",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f7ca1dad6451c7e0f53c1fe95de82f12ae67883412a3d6f7615eef174fedaa05",
+    "tree_hash": "93d54df298124f5b209ccec25b3767a7035acc20526cfa683a485a39b7b6ec31"
+  },
+  "skill": {
+    "name": "git-advanced-workflows",
+    "description": "Master advanced Git workflows including rebasing, cherry-picking, bisect, worktrees, and reflog to maintain clean history and recover from any situation. Use when managing complex Git histories, collaborating on feature branches, or troubleshooting repository issues.",
+    "summary": "Master advanced Git workflows including rebasing, cherry-picking, bisect, worktrees, and reflog to m...",
+    "icon": "🧭",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "git",
+      "version-control",
+      "workflow",
+      "collaboration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing pure instructional content about Git workflows. No executable code, network calls, file access, or environment variable reads were found. All content is educational text explaining Git commands. Static findings are false positives triggered by documentation patterns, hash identifiers, and markdown code blocks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 179
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 179,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 208
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 228
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 228,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 263
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 263,
+            "line_end": 277
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 277,
+            "line_end": 283
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 283,
+            "line_end": 298
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 298,
+            "line_end": 304
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 304,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 329
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 329,
+            "line_end": 338
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 338,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 391
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 45
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 213
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 227
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 574,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:59:12.128Z"
+  },
+  "content": {
+    "user_title": "Master advanced Git workflows and recovery",
+    "value_statement": "Advanced Git history tasks can be risky and time consuming. This skill provides clear guidance for rebase, cherry-pick, bisect, worktrees, and reflog recovery.",
+    "seo_keywords": [
+      "Git workflows",
+      "interactive rebase",
+      "cherry-pick",
+      "git bisect",
+      "git worktree",
+      "reflog recovery",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Explain interactive rebase operations and options",
+      "Provide cherry-pick commands for single commits or ranges",
+      "Describe manual and automated git bisect steps",
+      "Guide git worktree creation, listing, and cleanup",
+      "Outline reflog recovery for lost commits or branches"
+    ],
+    "limitations": [
+      "Does not run Git commands or inspect repositories",
+      "Cannot resolve merge conflicts without user details",
+      "Does not validate project specific branching policies",
+      "No automation for cleanup scripts or hooks"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developer",
+        "title": "Clean feature branch history",
+        "description": "Prepare a linear commit history before opening a pull request."
+      },
+      {
+        "target_user": "Release engineer",
+        "title": "Backport a hotfix safely",
+        "description": "Apply one fix across multiple release branches with cherry-pick steps."
+      },
+      {
+        "target_user": "QA engineer",
+        "title": "Locate a regression commit",
+        "description": "Use bisect steps to find the commit that introduced a bug."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Rebase basics",
+        "scenario": "Clean last five commits before PR",
+        "prompt": "Show the exact interactive rebase steps to squash and reword my last five commits safely."
+      },
+      {
+        "title": "Cherry-pick a fix",
+        "scenario": "Apply a hotfix to release/2.0",
+        "prompt": "Explain how to cherry-pick a specific commit onto release/2.0 and how to continue after conflicts."
+      },
+      {
+        "title": "Bisect with tests",
+        "scenario": "Find the first bad commit",
+        "prompt": "Give a step by step git bisect workflow using a test command to locate a regression."
+      },
+      {
+        "title": "Worktrees and recovery",
+        "scenario": "Parallel work and lost commits",
+        "prompt": "Describe how to use worktrees for parallel branches and how to recover a lost commit with reflog."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I reset to the wrong commit and lost work. How do I recover it?",
+        "output": [
+          "Run git reflog and identify the commit before the reset",
+          "Create a recovery branch at that commit hash",
+          "Verify changes and continue work from the recovery branch"
+        ]
+      },
+      {
+        "input": "How do I apply a security fix to three release branches at once?",
+        "output": [
+          "Create fix on main branch first",
+          "Check out each release branch and cherry-pick the fix commit",
+          "Handle any conflicts per branch",
+          "Test each branch before pushing"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Create a backup branch before risky history edits",
+      "Use --force-with-lease when rewriting shared history",
+      "Keep commits small and descriptive for easier recovery"
+    ],
+    "anti_patterns": [
+      "Rebasing public branches used by collaborators",
+      "Force pushing without checking remote updates",
+      "Running bisect with a dirty working directory"
+    ],
+    "faq": [
+      {
+        "question": "Is this skill compatible with all Git versions?",
+        "answer": "It works with modern Git versions that support rebase, bisect, worktree, and reflog."
+      },
+      {
+        "question": "Does it change my repository automatically?",
+        "answer": "No. It provides guidance only and does not run commands or modify files."
+      },
+      {
+        "question": "Can it integrate with my CI or scripts?",
+        "answer": "It can suggest steps, but it does not execute or configure CI pipelines."
+      },
+      {
+        "question": "Does it access my data or credentials?",
+        "answer": "No. It does not read files, environment variables, or network resources."
+      },
+      {
+        "question": "What if I cannot resolve a conflict?",
+        "answer": "Share the conflict details and current status to get targeted steps."
+      },
+      {
+        "question": "How is this different from basic Git help?",
+        "answer": "It focuses on advanced workflows like bisect, reflog recovery, and worktrees."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 401
+    }
+  ]
+}

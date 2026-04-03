@@ -1,0 +1,296 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:14:04.780Z",
+    "slug": "k-dense-ai-pyopenms",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pyopenms",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e494b432c91c7a5ecf25aff26d684e6ca4cce974618a1e1fff61fd1d1144418c",
+    "tree_hash": "1f69c828ad3b8585ca4ffb53f2faeac28bc44e352fa0e6e3ebd1f726d86c6a93"
+  },
+  "skill": {
+    "name": "pyopenms",
+    "description": "Complete mass spectrometry analysis platform. Use for proteomics workflows feature detection, peptide identification, protein quantification, and complex LC-MS/MS pipelines. Supports extensive file formats and algorithms. Best for proteomics, comprehensive MS data processing. For simple spectral comparison and metabolite ID use matchms.",
+    "summary": "Complete mass spectrometry analysis platform. Use for proteomics workflows feature detection, peptid...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "3 clause BSD license",
+    "category": "data",
+    "tags": [
+      "mass-spectrometry",
+      "proteomics",
+      "data-analysis",
+      "scientific"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only markdown documentation files with Python code examples. The static analyzer incorrectly flagged markdown syntax patterns as security threats. All 295 static findings are false positives. No executable code exists in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": []
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 205
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": []
+      },
+      {
+        "factor": "env_access",
+        "evidence": []
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 214
+          },
+          {
+            "file": "references/data_structures.md",
+            "line_start": 13,
+            "line_end": 497
+          },
+          {
+            "file": "references/feature_detection.md",
+            "line_start": 22,
+            "line_end": 410
+          },
+          {
+            "file": "references/file_io.md",
+            "line_start": 39,
+            "line_end": 349
+          },
+          {
+            "file": "references/identification.md",
+            "line_start": 23,
+            "line_end": 422
+          },
+          {
+            "file": "references/metabolomics.md",
+            "line_start": 11,
+            "line_end": 482
+          },
+          {
+            "file": "references/signal_processing.md",
+            "line_start": 11,
+            "line_end": 433
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 4192,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:14:04.780Z"
+  },
+  "content": {
+    "user_title": "Analyze mass spectrometry data",
+    "value_statement": "Process proteomics and metabolomics data with comprehensive mass spectrometry tools. This skill provides access to OpenMS algorithms for file format handling, spectral processing, feature detection, and peptide identification workflows.",
+    "seo_keywords": [
+      "pyopenms",
+      "mass spectrometry",
+      "proteomics",
+      "Claude Code",
+      "Claude Codex",
+      "peptide identification",
+      "feature detection",
+      "LC-MS/MS",
+      "data analysis",
+      "metabolomics"
+    ],
+    "actual_capabilities": [
+      "Read and write mass spectrometry file formats including mzML, mzXML, and idXML",
+      "Process raw spectral data with smoothing, filtering, and normalization algorithms",
+      "Detect and link features across spectra for quantitative analysis",
+      "Perform peptide and protein identification with FDR filtering",
+      "Export data to pandas DataFrames for downstream analysis",
+      "Handle FASTA sequence files and TraML transition lists"
+    ],
+    "limitations": [
+      "Requires pyopenms package installation which has complex dependencies",
+      "Does not include search engine binaries (Comet, Mascot, MSGFPlus must be installed separately)",
+      "Limited to documented OpenMS functionality, no custom algorithm extension"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Proteomics researchers",
+        "title": "Quantitative proteomics",
+        "description": "Process LC-MS/MS datasets to identify and quantify proteins across multiple samples"
+      },
+      {
+        "target_user": "Bioinformaticians",
+        "title": "Pipeline development",
+        "description": "Build automated mass spectrometry data processing pipelines with Python"
+      },
+      {
+        "target_user": "Metabolomics scientists",
+        "title": "Metabolite analysis",
+        "description": "Perform untargeted metabolomics preprocessing and feature annotation"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic file loading",
+        "scenario": "Load mass spectrometry data",
+        "prompt": "How do I load an mzML file and access the spectra and chromatograms using pyopenms?"
+      },
+      {
+        "title": "Feature detection",
+        "scenario": "Detect peaks in data",
+        "prompt": "Show me how to detect features in centroided mass spectrometry data using the FeatureFinder in pyopenms."
+      },
+      {
+        "title": "Peptide identification",
+        "scenario": "Identify peptides from spectra",
+        "prompt": "How do I load identification results from an idXML file and apply false discovery rate filtering in pyopenms?"
+      },
+      {
+        "title": "Advanced workflows",
+        "scenario": "Build complete analysis pipeline",
+        "prompt": "Create a complete pyopenms workflow that loads mzML data, processes spectra, detects features, and exports results to a pandas DataFrame."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Load an mzML file and show me the first spectrum",
+        "output": [
+          "Use MSExperiment to hold the data and MzMLFile to load it",
+          "Access spectra via iteration or getSpectrum(index) method",
+          "Extract m/z and intensity values with get_peaks() which returns numpy arrays",
+          "Get metadata like MS level and retention time with getMSLevel() and getRT()"
+        ]
+      },
+      {
+        "input": "How do I apply signal processing to my spectra?",
+        "output": [
+          "Use GaussFilter or SavitzkyGolayFilter for smoothing",
+          "Set parameters with getParameters() and setValue()",
+          "Apply with filterExperiment() method",
+          "Consider normalization with LinearNormalizer before processing"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use IndexedMzMLFileLoader for large files to avoid loading entire dataset into memory",
+      "Apply appropriate signal processing (smoothing, filtering) before feature detection",
+      "Validate file existence with os.path.exists() before loading data"
+    ],
+    "anti_patterns": [
+      "Loading very large mzML files entirely into memory without using streaming or indexed access",
+      "Skipping quality control steps before downstream analysis",
+      "Ignoring instrument metadata that may affect data interpretation"
+    ],
+    "faq": [
+      {
+        "question": "What file formats does pyopenms support?",
+        "answer": "mzML, mzXML, mzData, idXML, mzIdentML, pepXML, protXML, featureXML, consensusXML, mzTab, FASTA, and TraML."
+      },
+      {
+        "question": "How do I install pyopenms?",
+        "answer": "Use uv: uv pip install pyopenms. Requires Python 3.8+ and has C++ dependency requirements."
+      },
+      {
+        "question": "Can pyopenms run without OpenMS installed?",
+        "answer": "No, pyopenms is a Python wrapper around the OpenMS C++ library which must be available on the system."
+      },
+      {
+        "question": "Does pyopenms include search engines?",
+        "answer": "No, pyopenms integrates with search engines but you must install them separately (Comet, Mascot, MSGFPlus, etc.)."
+      },
+      {
+        "question": "How do I export data to pandas?",
+        "answer": "Use the get_df() method on FeatureMap, ConsensusMap, or other data containers to export directly to DataFrames."
+      },
+      {
+        "question": "What is the difference between pyopenms and matchms?",
+        "answer": "pyopenms is comprehensive for proteomics workflows. Use matchms for simple spectral comparison and metabolite identification."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "data_structures.md",
+          "type": "file",
+          "path": "references/data_structures.md",
+          "lines": 498
+        },
+        {
+          "name": "feature_detection.md",
+          "type": "file",
+          "path": "references/feature_detection.md",
+          "lines": 411
+        },
+        {
+          "name": "file_io.md",
+          "type": "file",
+          "path": "references/file_io.md",
+          "lines": 350
+        },
+        {
+          "name": "identification.md",
+          "type": "file",
+          "path": "references/identification.md",
+          "lines": 423
+        },
+        {
+          "name": "metabolomics.md",
+          "type": "file",
+          "path": "references/metabolomics.md",
+          "lines": 483
+        },
+        {
+          "name": "signal_processing.md",
+          "type": "file",
+          "path": "references/signal_processing.md",
+          "lines": 434
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 217
+    }
+  ]
+}

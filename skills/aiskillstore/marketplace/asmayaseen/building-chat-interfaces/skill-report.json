@@ -1,0 +1,231 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:31:12.786Z",
+    "slug": "asmayaseen-building-chat-interfaces",
+    "source_url": "https://github.com/Asmayaseen/hackathon-2/tree/main/.claude/skills/building-chat-interfaces",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d430ed366d9ed049a61f9ef25996755c7e52254a2bfb4602e41cc7cf873d8cd7",
+    "tree_hash": "711d46dd13cdffdc253b74de0570c3977664a105c83efb69d760a611c567c506"
+  },
+  "skill": {
+    "name": "building-chat-interfaces",
+    "description": "Build AI chat interfaces with custom backends, authentication, and context injection.\nUse when integrating chat UI with AI agents, adding auth to chat, injecting user/page context,\nor implementing httpOnly cookie proxies. Covers ChatKitServer, useChatKit, and MCP auth patterns.\nNOT when building simple chatbots without persistence or custom agent integration.\n",
+    "summary": "Build AI chat interfaces with custom backends, authentication, and context injection.\nUse when integ...",
+    "icon": "💬",
+    "version": "1.0.0",
+    "author": "Asmayaseen",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "chat",
+      "ai",
+      "ChatKit",
+      "authentication",
+      "backend"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing code examples for ChatKit integration. All static findings are false positives: the scanner flagged markdown code block delimiters as shell commands, legitimate AI terminology as C2 keywords, and RS256 (a strong algorithm) as weak crypto. No actual command execution, no credential exfiltration, no malicious network calls. The verification script only checks file existence.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/verify.py",
+            "line_start": 1,
+            "line_end": 21
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 909,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:31:12.786Z"
+  },
+  "content": {
+    "user_title": "Build AI chat interfaces",
+    "value_statement": "Creating AI chat interfaces requires custom backends, authentication, and context injection. This skill provides production-ready patterns for ChatKitServer, useChatKit hooks, and httpOnly cookie proxies to build secure chat experiences.",
+    "seo_keywords": [
+      "chat interface",
+      "AI chat",
+      "ChatKit",
+      "Claude",
+      "Claude Code",
+      "Next.js",
+      "authentication",
+      "context injection",
+      "SSE streaming",
+      "web components"
+    ],
+    "actual_capabilities": [
+      "Extend ChatKitServer with custom agent integration and response handling",
+      "Configure useChatKit with custom fetch interceptor for authentication headers",
+      "Implement httpOnly cookie proxy for Next.js API routes",
+      "Inject user and page context into chat requests for personalized responses",
+      "Set up database persistence with connection pool warmup",
+      "Pass authentication tokens to MCP tools via system prompt"
+    ],
+    "limitations": [
+      "Does not include built-in chat UI components",
+      "Requires external ChatKit SDK packages to be installed",
+      "Authentication patterns assume existing auth provider"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Full-stack developers",
+        "title": "Build chat backend",
+        "description": "Create ChatKitServer with custom agent for AI-powered conversations"
+      },
+      {
+        "target_user": "Frontend engineers",
+        "title": "Integrate chat UI",
+        "description": "Connect React frontend to backend with auth and context injection"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Set up auth proxy",
+        "description": "Configure Next.js API route to proxy httpOnly cookies securely"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic chat server",
+        "scenario": "Create simple ChatKit server",
+        "prompt": "Create a ChatKitServer class that extends ChatKitServer with a custom respond() method. Include conversation history loading and basic agent integration."
+      },
+      {
+        "title": "Auth interceptor",
+        "scenario": "Add authentication to frontend",
+        "prompt": "Configure useChatKit with a custom fetch function that adds X-User-ID header and injects userInfo/pageContext into request metadata."
+      },
+      {
+        "title": "Cookie proxy",
+        "scenario": "Handle httpOnly cookies",
+        "prompt": "Create a Next.js API route at /api/chatkit that reads auth_token from httpOnly cookies and proxies requests to the ChatKit backend with Bearer token."
+      },
+      {
+        "title": "Context injection",
+        "scenario": "Pass user context",
+        "prompt": "Show how to extract user metadata and page context from request and inject into the agent system prompt for personalized responses."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Build a ChatKit backend with authentication",
+        "output": [
+          "Backend: Custom ChatKitServer class with respond() method",
+          "JWT validation via JWKS endpoint",
+          "Database connection pool with warmup",
+          "User context extraction from request metadata",
+          "Frontend: useChatKit with custom fetch for auth headers",
+          "Script loading detection for web components"
+        ]
+      },
+      {
+        "input": "Create a Next.js API proxy for httpOnly cookies",
+        "output": [
+          "Server-side route that reads httpOnly cookies",
+          "Bearer token added to Authorization header",
+          "SSE streaming response handling",
+          "Error handling for unauthenticated requests"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Extend ChatKitServer base class instead of replacing core protocol handling",
+      "Include conversation history as string in system prompt for agent context",
+      "Pre-warm database connections on startup to avoid first-request delay"
+    ],
+    "anti_patterns": [
+      "Hardcoding authentication tokens in frontend code",
+      "Skipping script loading detection causing render failures",
+      "Not filtering store operations by user_id in multi-tenant scenarios"
+    ],
+    "faq": [
+      {
+        "question": "What ChatKit packages do I need?",
+        "answer": "Backend: chatkit-sdk and agents. Frontend: @openai/chatkit-react for React hooks."
+      },
+      {
+        "question": "How do I handle httpOnly cookies?",
+        "answer": "Create a Next.js server-side API route that reads cookies and adds Authorization header to backend requests."
+      },
+      {
+        "question": "Can I use this without ChatKit?",
+        "answer": "Patterns apply generally. Core concepts work with any chat backend using HTTP/SSE streaming."
+      },
+      {
+        "question": "Is my data safe with these patterns?",
+        "answer": "Yes. Patterns include proper auth, user isolation via RequestContext, and secure cookie handling."
+      },
+      {
+        "question": "Why is first request slow?",
+        "answer": "Database connection pool cold start. Add pool warmup on startup with SELECT 1 query."
+      },
+      {
+        "question": "How does this compare to simple chatbots?",
+        "answer": "This skill covers enterprise patterns: auth, persistence, context injection, not basic stateless chatbots."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "chatkit-integration-patterns.md",
+          "type": "file",
+          "path": "references/chatkit-integration-patterns.md",
+          "lines": 159
+        },
+        {
+          "name": "nextjs-httponly-proxy.md",
+          "type": "file",
+          "path": "references/nextjs-httponly-proxy.md",
+          "lines": 165
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 21
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 345
+    }
+  ]
+}

@@ -1,0 +1,245 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:47:19.128Z",
+    "slug": "k-dense-ai-pydeseq2",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pydeseq2",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "62c9c5da568897784def5726abf6a996c857a50eaccac36cdf24f7accfa99827",
+    "tree_hash": "f08a026c3f7f82f1ad52b2471c6619dd0558d12d6674b2e03e5934ce759b43b6"
+  },
+  "skill": {
+    "name": "pydeseq2",
+    "description": "Differential gene expression analysis (Python DESeq2). Identify DE genes from bulk RNA-seq counts, Wald tests, FDR correction, volcano/MA plots, for RNA-seq analysis.",
+    "summary": "Differential gene expression analysis (Python DESeq2). Identify DE genes from bulk RNA-seq counts, W...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "data",
+    "tags": [
+      "bioinformatics",
+      "rna-seq",
+      "differential-expression",
+      "genomics",
+      "statistics"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 429 static findings are false positives. The 'weak cryptographic algorithm' flags incorrectly match 'DES' in 'DESeq2' (a statistical method name, not cryptography). The 'external_commands' flags misinterpret markdown code fences as shell execution. Filesystem access is standard data I/O for bioinformatics workflows. Network access involves only documentation URLs. This is a legitimate scientific computing skill with no malicious code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/run_deseq2_analysis.py",
+            "line_start": 180,
+            "line_end": 185
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 213
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 553,
+            "line_end": 556
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1961,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:47:19.128Z"
+  },
+  "content": {
+    "user_title": "Analyze RNA-seq differential gene expression with PyDESeq2",
+    "value_statement": "PyDESeq2 enables differential gene expression analysis from bulk RNA-seq count data. Perform statistical testing, multiple comparison correction, and generate publication-ready volcano and MA plots for your genomics research.",
+    "seo_keywords": [
+      "PyDESeq2",
+      "RNA-seq analysis",
+      "differential expression",
+      "Claude bioinformatics",
+      "gene expression analysis",
+      "bulk RNA-seq",
+      "Wald test",
+      "FDR correction",
+      "volcano plot",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Load and validate RNA-seq count matrices from CSV or TSV files",
+      "Perform DESeq2 normalization, dispersion fitting, and statistical testing",
+      "Execute Wald tests with automatic multiple testing correction",
+      "Apply apeGLM log fold change shrinkage for visualization",
+      "Generate volcano and MA plots for result visualization",
+      "Export results as CSV files for downstream analysis"
+    ],
+    "limitations": [
+      "Requires count matrix in samples × genes orientation (transpose if needed)",
+      "Minimum 10 total counts per gene recommended for filtering",
+      "Designed for bulk RNA-seq data, not single-cell applications",
+      "Python 3.10-3.11 required for compatibility"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bioinformatician",
+        "title": "Compare treated vs control",
+        "description": "Identify differentially expressed genes between experimental conditions using proper statistical testing and FDR correction for publication-ready results."
+      },
+      {
+        "target_user": "Graduate student",
+        "title": "RNA-seq thesis analysis",
+        "description": "Process RNA-seq count data, perform differential expression analysis, and generate publication-quality figures for thesis or research papers."
+      },
+      {
+        "target_user": "Research scientist",
+        "title": "Batch RNA-seq processing",
+        "description": "Automate differential expression analysis across multiple conditions or timepoints using the included command-line script."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic DE analysis",
+        "scenario": "User has count and metadata files",
+        "prompt": "Load my RNA-seq data from counts.csv and metadata.csv, then perform differential expression analysis comparing treated vs control samples using PyDESeq2"
+      },
+      {
+        "title": "Multi-factor design",
+        "scenario": "User needs batch effect correction",
+        "prompt": "Analyze my RNA-seq data accounting for batch effects using design formula ~batch + condition, then test for treatment vs control differences"
+      },
+      {
+        "title": "Generate visualizations",
+        "scenario": "User wants publication plots",
+        "prompt": "Run PyDESeq2 analysis on my data and create volcano and MA plots highlighting significant genes with padj < 0.05"
+      },
+      {
+        "title": "Advanced filtering",
+        "scenario": "User has specific requirements",
+        "prompt": "Load RNA-seq data, filter genes with fewer than 20 total counts, use multi-factor design ~age + sex + condition, and identify genes with |log2FC| > 1 and padj < 0.01"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze my RNA-seq data and show top differentially expressed genes",
+        "output": [
+          "Analysis complete. Found 847 significant genes (padj < 0.05)",
+          "Top upregulated genes:",
+          "  - GeneX: log2FC = 4.2, padj = 1.3e-15",
+          "  - GeneY: log2FC = 3.8, padj = 2.7e-12",
+          "  - GeneZ: log2FC = 3.5, padj = 5.1e-11",
+          "Top downregulated genes:",
+          "  - GeneA: log2FC = -3.9, padj = 8.2e-14",
+          "  - GeneB: log2FC = -3.1, padj = 3.4e-10",
+          "Results saved to deseq2_results.csv"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always transpose count matrix if genes are rows (use .T to get samples × genes format)",
+      "Filter low-count genes before analysis to improve statistical power",
+      "Use adjusted p-values (padj) not raw p-values for determining significance",
+      "Check that sample names match exactly between counts and metadata files"
+    ],
+    "anti_patterns": [
+      "Never use raw p-values for multiple testing - always use FDR-corrected padj values",
+      "Do not apply LFC shrinkage before statistical testing - use after for visualization only",
+      "Avoid complex multi-factor designs without sufficient sample size per condition",
+      "Never transpose metadata - only transpose count matrix if needed"
+    ],
+    "faq": [
+      {
+        "question": "Why do I get an index mismatch error?",
+        "answer": "Sample names in counts and metadata files do not match. Ensure both files use identical sample identifiers in the same format."
+      },
+      {
+        "question": "Should I transpose my count matrix?",
+        "answer": "If your CSV has genes as rows and samples as columns, transpose with .T to get the required samples × genes format."
+      },
+      {
+        "question": "What is the difference between pvalue and padj?",
+        "answer": "pvalue is the raw statistical p-value; padj is the FDR-corrected value for multiple testing. Use padj < 0.05 for significance."
+      },
+      {
+        "question": "When should I use LFC shrinkage?",
+        "answer": "Apply LFC shrinkage after statistical testing for visualization, ranking genes, or creating heatmaps. Do not use for significance determination."
+      },
+      {
+        "question": "How do I handle batch effects in my analysis?",
+        "answer": "Include batch in your design formula as ~batch + condition. This controls for technical variation while testing biological differences."
+      },
+      {
+        "question": "Why are no genes significant in my analysis?",
+        "answer": "Check your sample size, effect sizes, and biological variability. Small studies or subtle effects may yield few significant genes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 229
+        },
+        {
+          "name": "workflow_guide.md",
+          "type": "file",
+          "path": "references/workflow_guide.md",
+          "lines": 583
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "run_deseq2_analysis.py",
+          "type": "file",
+          "path": "scripts/run_deseq2_analysis.py",
+          "lines": 354
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 559
+    }
+  ]
+}

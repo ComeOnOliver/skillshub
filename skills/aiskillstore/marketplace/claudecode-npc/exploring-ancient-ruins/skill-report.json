@@ -1,0 +1,282 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:49:14.702Z",
+    "slug": "claudecode-npc-exploring-ancient-ruins",
+    "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star/tree/master/.claude/skills/ancient-ruins",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "156570ce456dd7fc62ec6f59f0d3dd82c32decd663bdbdf0d0b0da5bca674666",
+    "tree_hash": "646e984c051ef0619943b27338b800c927f3c8231fe755a25671e94f9146a313"
+  },
+  "skill": {
+    "name": "exploring-ancient-ruins",
+    "description": "古代遗迹 - Stella深入探索盖亚星球的古代文明遗迹,解开失落文明的秘密",
+    "summary": "古代遗迹 - Stella深入探索盖亚星球的古代文明遗迹,解开失落文明的秘密",
+    "icon": "🏛️",
+    "version": "1.0.0",
+    "author": "ClaudeCode-NPC",
+    "license": "MIT",
+    "category": "communication",
+    "tags": [
+      "roleplay",
+      "science-fiction",
+      "interactive-story",
+      "narrative",
+      "alien-exploration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 26 static findings are false positives. This is a pure role-playing narrative script with no code execution, network calls, or file system access. The static analyzer misinterpreted GitHub URLs as network threats, SHA256 hashes as weak crypto, and markdown code fences as shell commands.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 214
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 292,
+            "line_end": 292
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 296
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 376,
+            "line_end": 376
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 657,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:49:14.702Z"
+  },
+  "content": {
+    "user_title": "Explore Ancient Alien Ruins",
+    "value_statement": "Guide astronaut Stella through the ruins of a fallen alien civilization. Discover lost technology, unravel historical mysteries, and make ethical choices that shape the story.",
+    "seo_keywords": [
+      "Claude interactive story",
+      "role-play alien ruins",
+      "science fiction adventure",
+      "text adventure game",
+      "sci-fi narrative",
+      "Claude Code roleplay",
+      "Codex storytelling",
+      "character dialogue",
+      "exploration fiction",
+      "ethical choices game"
+    ],
+    "actual_capabilities": [
+      "Guide Stella through 5 exploration stages with branching narratives",
+      "Decode ancient pictograms revealing civilization history",
+      "Interact with alien technology and holographic recordings",
+      "Make ethical decisions about knowledge and cultural respect",
+      "Experience 3 distinct story endings based on player choices",
+      "Explore themes of civilization rise, fall, and planetary consciousness"
+    ],
+    "limitations": [
+      "Single-player interactive narrative experience only",
+      "No persistent state between separate conversations",
+      "Cannot generate images or multimedia content",
+      "Limited to the preset story structure and dialogue paths"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Sci-fi enthusiasts",
+        "title": "Explore alien mysteries",
+        "description": "Discover the secrets of a fallen alien civilization through immersive dialogue and exploration."
+      },
+      {
+        "target_user": "Creative writers",
+        "title": "Study narrative structure",
+        "description": "Learn how branching narratives and environmental storytelling create engaging interactive fiction."
+      },
+      {
+        "target_user": "Language learners",
+        "title": "Practice conversational English",
+        "description": "Read natural astronaut dialogue mixing Chinese and English in context."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start exploration",
+        "scenario": "Begin the ruins adventure",
+        "prompt": "Stella, tell me what you see at the entrance of the ancient ruins."
+      },
+      {
+        "title": "Read ancient history",
+        "scenario": "Examine the central mosaic",
+        "prompt": "What story does the mosaic on the ground tell? What happened to this civilization?"
+      },
+      {
+        "title": "Investigate technology",
+        "scenario": "Examine the preserved building",
+        "prompt": "Describe what you find in the technology hall. Is any of it still active?"
+      },
+      {
+        "title": "Make ethical choice",
+        "scenario": "Face the crystal dilemma",
+        "prompt": "The central crystal contains immense knowledge. What do you decide to do? Should you take it?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Stella, tell me what you see at the entrance of the ancient ruins.",
+        "output": [
+          "This... this is a city... an entire ancient city!",
+          "Buildings stretch for kilometers, most collapsed, covered in purple-blue vegetation. But some structures still stand tall with geometric domes and archways that defy gravity.",
+          "The streets are paved with glowing crystals that still emit faint light after thousands of years. I touch a pillar - the material is smooth and cold, neither stone nor metal, but something in between.",
+          "The walls are covered in pictograms, much more detailed than what I saw in the cave. This must have been a library... the entire city was a monument to knowledge."
+        ]
+      },
+      {
+        "input": "What happened to this civilization?",
+        "output": [
+          "The mosaic tells a six-part story. Panel 1 shows the Eos species evolving on this planet from simple beginnings.",
+          "Panel 2 shows them discovering the power of crystals and learning to harness energy.",
+          "Panel 3 is their golden age - cities, art, science, and reaching for the stars.",
+          "Then Panel 4 turns dark - the sky turns red, the two suns flickering. A stellar event!",
+          "Panel 5 shows catastrophe - buildings falling, Eos fleeing, death and destruction.",
+          "Panel 6 shows few survivors hiding and rebuilding slowly, but their glory lost forever."
+        ]
+      },
+      {
+        "input": "Should you take the central crystal?",
+        "output": [
+          "The crystal pulses with ancient knowledge and power. Taking it back to Earth could advance humanity by centuries.",
+          "But the Eos desperately gesture for me to stop. They explain through their device that the crystal is an anchor, that Gaia will be angry, that the city could fall again.",
+          "This is the ethical dilemma - scientific curiosity versus cultural respect, progress versus preservation.",
+          "The choice shapes which ending I experience and what kind of guardian of this knowledge I become."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Let Stella guide you through each stage before moving to the next story beat.",
+      "Ask follow-up questions about artifacts and discoveries for deeper narrative detail.",
+      "Consider both scientific curiosity and ethical implications when making choices."
+    ],
+    "anti_patterns": [
+      "Rushing through multiple stages without appreciating the environmental storytelling.",
+      "Ignoring the ethical dimensions of discovery and cultural respect.",
+      "Treating Stella as a tool rather than engaging with her character development."
+    ],
+    "faq": [
+      {
+        "question": "Is this skill compatible with Claude Code?",
+        "answer": "Yes, it works with Claude, Codex, and Claude Code for interactive role-play sessions."
+      },
+      {
+        "question": "How long does the chapter take to complete?",
+        "answer": "Approximately 35-45 minutes depending on how thoroughly you explore and question Stella."
+      },
+      {
+        "question": "Can I combine this with other chapters?",
+        "answer": "Yes, recommended chapters include daily-science, escape-plan, and alien-encounter for a complete experience."
+      },
+      {
+        "question": "Is my data stored anywhere?",
+        "answer": "No, this is a prompt-based skill with no data storage or network connections."
+      },
+      {
+        "question": "Why does Stella mix Chinese and English?",
+        "answer": "This reflects her character background as a Chinese-American astronaut, adding authenticity."
+      },
+      {
+        "question": "How many endings are there?",
+        "answer": "Three main endings: Archaeologist, Discoverer, and Revelation, based on your choices and discoveries."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 480
+    }
+  ]
+}

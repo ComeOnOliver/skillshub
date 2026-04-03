@@ -1,0 +1,291 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:06:31.120Z",
+    "slug": "davidopdebeeck-plan-feature",
+    "source_url": "https://github.com/DavidOpDeBeeck/guessimate/tree/master/.claude/skills/plan-feature",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1c6d26a261e8252f12f07a3c639a6f32476ab10770975322530c14081daae244",
+    "tree_hash": "76f7ab044ad591ecfce26f5fe423d81d1309a6579ae225fec4d50fe30c8995bb"
+  },
+  "skill": {
+    "name": "plan-feature",
+    "description": "Plan a new feature with analysis, design, and implementation steps. Use when the user asks to plan a feature or run /plan-feature.",
+    "summary": "Plan a new feature with analysis, design, and implementation steps. Use when the user asks to plan a...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "DavidOpDeBeeck",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "planning",
+      "architecture",
+      "design",
+      "analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt-based skill containing only markdown documentation for feature planning workflows. All 48 static findings are FALSE POSITIVES: backticks flagged as shell execution are markdown formatting, 'hash' references in metadata are data integrity fields, and 'weak crypto' flags target legitimate terminology. No executable code, network calls, or file system modifications beyond normal AI assistant operations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 199
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 375,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:06:31.120Z"
+  },
+  "content": {
+    "user_title": "Plan new features with structured analysis and design",
+    "value_statement": "Software teams need structured approaches to plan new features, but manually gathering requirements and designing architecture takes significant time. This skill provides a systematic workflow for analyzing requirements, exploring existing codebase patterns, and creating actionable implementation plans saved to persistent markdown files.",
+    "seo_keywords": [
+      "feature planning",
+      "software architecture",
+      "implementation planning",
+      "Claude Code skill",
+      "code analysis",
+      "design documentation",
+      "task breakdown",
+      "agile planning",
+      "project management",
+      "documentation"
+    ],
+    "actual_capabilities": [
+      "Gather feature requirements through clarifying questions",
+      "Analyze existing codebase for patterns and integration points",
+      "Design solution across backend, frontend, and cross-cutting concerns",
+      "Create ordered implementation tasks with dependencies",
+      "Save plans to .claude/plans/ directory as markdown files",
+      "Present design decisions and wait for user approval"
+    ],
+    "limitations": [
+      "Does not execute code or modify files without user approval",
+      "Does not access external services or APIs",
+      "Does not generate tests or implementation code directly",
+      "Does not perform build or deployment operations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Architects",
+        "title": "Design Feature Architecture",
+        "description": "Analyze codebase structure and design clean architectural solutions before implementation begins"
+      },
+      {
+        "target_user": "Development Teams",
+        "title": "Break Down Features",
+        "description": "Convert high-level feature requests into atomic, testable tasks ordered by dependencies"
+      },
+      {
+        "target_user": "Project Managers",
+        "title": "Document Technical Plans",
+        "description": "Create persistent markdown plans that capture requirements, design decisions, and implementation roadmap"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New Feature Request",
+        "scenario": "Planning a new feature",
+        "prompt": "Plan the following feature: [describe feature]"
+      },
+      {
+        "title": "Complex Feature Analysis",
+        "scenario": "Analyzing complex requirements",
+        "prompt": "I need to plan a complex feature. Ask me clarifying questions to understand the requirements first."
+      },
+      {
+        "title": "Feature Extension",
+        "scenario": "Extending existing functionality",
+        "prompt": "Plan how to extend the existing [feature name] with [new capability]. Analyze the current implementation first."
+      },
+      {
+        "title": "Quick Feature Scoping",
+        "scenario": "Rapid feature scoping",
+        "prompt": "Run /plan-feature to create an implementation plan for: [feature name]. Focus on affected modules and key tasks."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Plan a feature to add custom voting decks",
+        "output": [
+          "Created plan file: .claude/plans/custom-voting-decks.md",
+          "Affected modules: api, guessimate-lobby, guessimate-ui",
+          "Key decisions: Store decks at lobby level, provide preset templates",
+          "Implementation tasks: 1) Add Deck value object 2) Add CreateCustomDeckCommand 3) Implement deck storage 4) Create UI component 5) Add tests"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with clear feature names and acceptance criteria before invoking the skill",
+      "Review the generated plan and provide feedback before implementation begins",
+      "Use the saved markdown plans as reference documentation for future maintenance"
+    ],
+    "anti_patterns": [
+      "Invoking the skill without first defining the feature scope or goal",
+      "Skipping clarifying questions when requirements are ambiguous",
+      "Proceeding to implementation without user approval of the plan"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill work with?",
+        "answer": "Compatible with Claude, Codex, and Claude Code. Uses TodoWrite for task lists and file writing capabilities."
+      },
+      {
+        "question": "How detailed are the implementation tasks?",
+        "answer": "Tasks are atomic and testable, broken down by module and layer with clear ordering based on dependencies."
+      },
+      {
+        "question": "Can I customize the output format?",
+        "answer": "The skill follows a standard markdown template. You can request specific sections or formatting in your prompt."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "This is a prompt-based skill. It only reads project files for analysis and writes plans to your local .claude/plans/ directory."
+      },
+      {
+        "question": "Why is my plan not being saved?",
+        "answer": "Ensure you have permission to write to the .claude/plans/ directory. The skill requires explicit user approval before writing files."
+      },
+      {
+        "question": "How is this different from just asking Claude?",
+        "answer": "This skill enforces a systematic planning methodology including requirements gathering, codebase analysis, and structured task breakdown."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 200
+    }
+  ]
+}

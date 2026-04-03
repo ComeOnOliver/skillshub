@@ -1,0 +1,301 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:09:02.973Z",
+    "slug": "danielpodolsky-database-fundamentals",
+    "source_url": "https://github.com/DanielPodolsky/mentor-spec/tree/main/.claude/skills/fundamentals/database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c6782afd8f907f8a60bc64e0a0d89ba6052696948c753b0432524577e663354f",
+    "tree_hash": "e79db5e0bfdda3aaba6f23e46c285cb9abca56d802498b7d339184513776be7d"
+  },
+  "skill": {
+    "name": "database-fundamentals",
+    "description": "Auto-invoke when reviewing schema design, database queries, ORM usage, or migrations. Enforces normalization, indexing awareness, query optimization, and migration safety.",
+    "summary": "Auto-invoke when reviewing schema design, database queries, ORM usage, or migrations. Enforces norma...",
+    "icon": "🗄️",
+    "version": "1.0.0",
+    "author": "DanielPodolsky",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "database",
+      "SQL",
+      "schema-design",
+      "query-optimization",
+      "ORM"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill with no executable code. Static findings are false positives caused by database terminology triggering security pattern matching. The content_hash field, backtick characters in SQL code examples, and terms like 'hash' (normalization) are incorrectly flagged as security issues. This skill only provides educational database best practices.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 223
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 401,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:09:02.972Z"
+  },
+  "content": {
+    "user_title": "Review database code with best practices",
+    "value_statement": "Database mistakes cause slow applications and data loss. This skill provides comprehensive review checklists for schema design, queries, ORM patterns, and migrations.",
+    "seo_keywords": [
+      "database review",
+      "schema design",
+      "SQL optimization",
+      "query performance",
+      "database migrations",
+      "ORM patterns",
+      "index strategy",
+      "normalization",
+      "Claude Code",
+      "PostgreSQL"
+    ],
+    "actual_capabilities": [
+      "Review schema design for normalization and data type choices",
+      "Check queries for N+1 problems and missing pagination",
+      "Recommend indexes for frequently queried columns",
+      "Verify migration safety and rollback options",
+      "Identify SQL injection vulnerabilities in string concatenation"
+    ],
+    "limitations": [
+      "Does not execute queries or connect to databases",
+      "Does not generate migration files or schema definitions",
+      "Cannot test query performance on live databases"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developers",
+        "title": "Review ORM model definitions",
+        "description": "Check foreign key relationships, data types, and proper indexing on ORM models"
+      },
+      {
+        "target_user": "Junior developers",
+        "title": "Learn query optimization",
+        "description": "Understand why SELECT * and N+1 queries cause problems and how to fix them"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Validate migration safety",
+        "description": "Ensure migrations can be rolled back and will not cause data loss"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Schema review",
+        "scenario": "Review new database schema",
+        "prompt": "Review this database schema for normalization issues, missing primary keys, and improper data types"
+      },
+      {
+        "title": "Query optimization",
+        "scenario": "Improve slow query",
+        "prompt": "Analyze these queries for performance issues including missing indexes and N+1 problems"
+      },
+      {
+        "title": "Migration safety",
+        "scenario": "Check migration safety",
+        "prompt": "Check if this migration can be safely rolled back without data loss"
+      },
+      {
+        "title": "ORM patterns",
+        "scenario": "Review ORM implementation",
+        "prompt": "Review this ORM code for best practices including eager loading and parameterized queries"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review this query for optimization: SELECT * FROM orders WHERE user_id = ?",
+        "output": [
+          "- SELECT * returns unnecessary columns. Specify only needed fields.",
+          "- Missing index on user_id column for faster lookups.",
+          "- Consider adding pagination with LIMIT for large result sets.",
+          "- Recommended: SELECT id, status, total FROM orders WHERE user_id = ? LIMIT 50"
+        ]
+      },
+      {
+        "input": "Check this migration for safety: ALTER TABLE users DROP COLUMN email",
+        "output": [
+          "- This migration is NOT reversible. Dropping columns permanently deletes data.",
+          "- Consider a safer approach: Add new column, migrate data, then rename.",
+          "- Recommended: Add email_new, copy data, use new column, drop old in separate migration."
+        ]
+      },
+      {
+        "input": "Review our schema for normalization issues",
+        "output": [
+          "- Issue found: Address fields (city, state, zip) repeated across tables.",
+          "- Recommendation: Create separate addresses table with foreign key relationship.",
+          "- Current design causes update anomalies when addresses change."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use parameterized queries to prevent SQL injection attacks",
+      "Add indexes for columns used in WHERE, JOIN, and ORDER BY clauses",
+      "Test migrations on production-like data before deployment"
+    ],
+    "anti_patterns": [
+      "Using SELECT * instead of specifying required columns",
+      "Executing queries inside loops (N+1 problem)",
+      "Writing migrations that cannot be rolled back"
+    ],
+    "faq": [
+      {
+        "question": "Which database systems are supported?",
+        "answer": "This skill covers general SQL principles that apply to PostgreSQL, MySQL, SQLite, and other relational databases."
+      },
+      {
+        "question": "Does this work with NoSQL databases like MongoDB?",
+        "answer": "Some concepts like indexing and query optimization apply, but schema normalization and foreign keys are SQL-specific."
+      },
+      {
+        "question": "Can this generate migration files?",
+        "answer": "No, this skill reviews existing code and migrations. It does not generate or execute database schema changes."
+      },
+      {
+        "question": "Is data safe when using this skill?",
+        "answer": "Yes. This skill only reviews text/code. It never connects to databases or executes queries."
+      },
+      {
+        "question": "What if queries still run slowly after applying recommendations?",
+        "answer": "Use EXPLAIN ANALYZE on your database to identify specific bottlenecks. Complex queries may need query planning or caching."
+      },
+      {
+        "question": "How is this different from a linter?",
+        "answer": "Linters check syntax. This skill reviews design decisions like schema structure, relationships, and migration strategy."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 224
+    }
+  ]
+}

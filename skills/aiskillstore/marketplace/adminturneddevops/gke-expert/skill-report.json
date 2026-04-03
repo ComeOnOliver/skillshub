@@ -1,0 +1,255 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:39:10.711Z",
+    "slug": "adminturneddevops-gke-expert",
+    "source_url": "https://github.com/AdminTurnedDevOps/agentic-demo-repo/tree/main/agentregistry/gke-expert/gke-expert/skills/gke-expert",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0bb4cc7a0a15fc9aabf1c0598cbe833b222fdafb5d86d6790f57bb228f0962bd",
+    "tree_hash": "82ff58ef1b52bb4b30fcc9512f6d6ab6cd727d4711a45c5062c6141aa98e0ae6"
+  },
+  "skill": {
+    "name": "gke-expert",
+    "description": "Expert guidance for Google Kubernetes Engine (GKE) operations including cluster management, workload deployment, scaling, monitoring, troubleshooting, and optimization. Use when working with GKE clusters, Kubernetes deployments on GCP, container orchestration, or when users need help with kubectl commands, GKE networking, autoscaling, workload identity, or GKE-specific features like Autopilot, Binary Authorization, or Config Sync.",
+    "summary": "Expert guidance for Google Kubernetes Engine (GKE) operations including cluster management, workload...",
+    "icon": "☸️",
+    "version": "1.0.0",
+    "author": "AdminTurnedDevOps",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "kubernetes",
+      "gke",
+      "google-cloud",
+      "container-orchestration",
+      "gcp"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing GKE operational guidance. Static scanner detected 36 issues but all are false positives: 'weak crypto' triggers were SHA256 file hashes (skill-report.json), YAML keywords, and docstrings; 'hardcoded URLs' are official GCP/K8s documentation links; 'shell invocation' is a legitimate kubectl debug command example. The skill has no network access, no file I/O beyond templates, and no credential handling.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/hello_world.py",
+            "line_start": 1,
+            "line_end": 143
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 206
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 191
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 597,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:39:10.711Z"
+  },
+  "content": {
+    "user_title": "Get expert GKE guidance",
+    "value_statement": "Managing GKE clusters requires knowledge of GCP APIs, kubectl commands, and Kubernetes best practices. This skill provides ready-to-use workflows, YAML templates, and troubleshooting steps for common GKE scenarios.",
+    "seo_keywords": [
+      "GKE",
+      "Google Kubernetes Engine",
+      "kubernetes",
+      "kubectl",
+      "gcloud",
+      "claude",
+      "codex",
+      "claude-code",
+      "container orchestration",
+      "GCP"
+    ],
+    "actual_capabilities": [
+      "Create GKE clusters using Autopilot or Standard mode with proper configuration",
+      "Generate Kubernetes deployment manifests, services, and ingress YAML templates",
+      "Configure autoscaling, workload identity, and security contexts for workloads",
+      "Troubleshoot pod failures, service issues, and performance bottlenecks",
+      "Apply security best practices including PodDisruptionBudgets and security contexts",
+      "Optimize costs using Autopilot, Spot VMs, and right-sizing recommendations"
+    ],
+    "limitations": [
+      "Cannot execute commands or access actual GKE clusters",
+      "Cannot create or modify GCP resources directly",
+      "Cannot access external documentation beyond provided references",
+      "Assumes user has appropriate GCP permissions and kubectl access configured"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Deploy production workloads",
+        "description": "Set up GKE clusters with proper autoscaling, security contexts, and cost controls for production applications."
+      },
+      {
+        "target_user": "Platform Engineers",
+        "title": "Build GKE standards",
+        "description": "Establish cluster management patterns, workload identity configurations, and GitOps workflows for teams."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Debug container issues",
+        "description": "Diagnose pod crashes, service connectivity problems, and resource constraints using kubectl commands."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create GKE cluster",
+        "scenario": "Set up a new Autopilot cluster",
+        "prompt": "Create an Autopilot GKE cluster in us-central1 region using the regular release channel. Show the gcloud command and required authentication steps."
+      },
+      {
+        "title": "Deploy application",
+        "scenario": "Deploy a web service",
+        "prompt": "Generate a Kubernetes deployment YAML for a Python web app. Include resource requests, liveness probe, and security context that runs as non-root."
+      },
+      {
+        "title": "Configure autoscaling",
+        "scenario": "Enable horizontal pod autoscaling",
+        "prompt": "Set up HPA for my existing deployment targeting 70 percent CPU utilization with 2 to 100 replicas. Also show how to enable cluster autoscaling."
+      },
+      {
+        "title": "Troubleshoot crash",
+        "scenario": "Diagnose CrashLoopBackOff",
+        "prompt": "My pod is in CrashLoopBackOff status. What kubectl commands should I run to diagnose the issue and what are common causes and fixes?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a Standard GKE cluster named my-cluster with autoscaling in us-east1-b",
+        "output": [
+          "Create cluster: gcloud container clusters create my-cluster --zone=us-east1-b --num-nodes=3 --enable-autoscaling --min-nodes=2 --max-nodes=10",
+          "Authenticate: gcloud container clusters get-credentials my-cluster --zone=us-east1-b",
+          "Verify: kubectl config get-contexts && kubectl cluster-info",
+          "For production, consider adding: --enable-shielded-nodes --enable-dataplane-v2"
+        ]
+      },
+      {
+        "input": "How do I configure workload identity for my GKE cluster",
+        "output": [
+          "Enable workload identity on cluster: gcloud container clusters update CLUSTER_NAME --workload-pool=PROJECT_ID.svc.id.goog",
+          "Create GCP service account: gcloud iam service-accounts create GSA_NAME",
+          "Create K8s service account: kubectl create serviceaccount KSA_NAME",
+          "Bind them with IAM policy and annotate the K8s service account with the GCP service account email."
+        ]
+      },
+      {
+        "input": "Generate a secure deployment YAML with best practices",
+        "output": [
+          "Create Deployment with security context: runAsNonRoot true, runAsUser 1000, allowPrivilegeEscalation false, readOnlyRootFilesystem true, drop all capabilities",
+          "Add resource requests and limits for CPU and memory",
+          "Include liveness and readiness probes",
+          "Use specific image tags or digests, not latest"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always authenticate with gcloud container clusters get-credentials after creating a cluster",
+      "Use workload identity instead of service account keys for secure GCP access from pods",
+      "Apply PodDisruptionBudgets to prevent disruption of critical workloads during node maintenance"
+    ],
+    "anti_patterns": [
+      "Running containers as root user or with privileged access",
+      "Hardcoding image tags instead of using specific versions or digest references",
+      "Skipping resource requests and limits which leads to poor scheduling and potential node resource exhaustion"
+    ],
+    "faq": [
+      {
+        "question": "What GKE modes are supported?",
+        "answer": "Both Autopilot recommended for most workloads and Standard mode for specific node requirements are covered."
+      },
+      {
+        "question": "What kubectl operations does this skill support?",
+        "answer": "Cluster authentication, deployments, services, autoscaling, troubleshooting pods, and resource monitoring."
+      },
+      {
+        "question": "Can this skill execute commands on my cluster?",
+        "answer": "No. The skill provides guidance and example commands. You must execute kubectl and gcloud commands yourself."
+      },
+      {
+        "question": "Is my cluster data accessed or stored?",
+        "answer": "No. This skill runs locally and never connects to your GKE clusters or GCP projects."
+      },
+      {
+        "question": "What if commands fail?",
+        "answer": "Check your GCP permissions, ensure kubectl is configured, and verify cluster status with gcloud container clusters list."
+      },
+      {
+        "question": "How does this compare to other K8s skills?",
+        "answer": "This skill focuses specifically on GKE features like Autopilot, workload identity, and GCP integration patterns."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "hello_world.py",
+          "type": "file",
+          "path": "scripts/hello_world.py",
+          "lines": 143
+        }
+      ]
+    },
+    {
+      "name": "Dockerfile",
+      "type": "file",
+      "path": "Dockerfile",
+      "lines": 3
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 21
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 219
+    }
+  ]
+}

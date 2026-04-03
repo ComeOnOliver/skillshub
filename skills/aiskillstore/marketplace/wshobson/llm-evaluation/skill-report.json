@@ -1,0 +1,329 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:09:52.769Z",
+    "slug": "wshobson-llm-evaluation",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/llm-evaluation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c332ab07734534754a8153ac6e940a22431e86ba7c15eea2230a8352be5f38f2",
+    "tree_hash": "4400e1d5ab106004f4db79e0af68bdc34ba1e268bdebc05bde559870cf7fab7f"
+  },
+  "skill": {
+    "name": "llm-evaluation",
+    "description": "Implement comprehensive evaluation strategies for LLM applications using automated metrics, human feedback, and benchmarking. Use when testing LLM performance, measuring AI application quality, or establishing evaluation frameworks.",
+    "summary": "Implement comprehensive evaluation strategies for LLM applications using automated metrics, human fe...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "llm",
+      "evaluation",
+      "metrics",
+      "benchmarking",
+      "testing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only static documentation (SKILL.md) with no executable files. All static findings are false positives: markdown code block backticks were misidentified as Ruby/shell command execution, and JSON metadata fields were misclassified as cryptographic issues. The skill provides evaluation guidance only with no data access, network activity, or command execution capability.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 187,
+            "line_end": 214
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 286
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 286,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 314
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 314,
+            "line_end": 366
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 366,
+            "line_end": 371
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 371,
+            "line_end": 404
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 404,
+            "line_end": 409
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 409,
+            "line_end": 441
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 649,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:09:52.769Z"
+  },
+  "content": {
+    "user_title": "Build reliable LLM evaluation plans",
+    "value_statement": "You need consistent ways to measure LLM quality and regressions. This skill provides metrics, human review guidance, and testing frameworks for reliable AI assessment.",
+    "seo_keywords": [
+      "LLM evaluation",
+      "automated metrics",
+      "human evaluation",
+      "LLM judge",
+      "A/B testing",
+      "benchmarking",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "regression testing"
+    ],
+    "actual_capabilities": [
+      "Lists automated metrics for generation, classification, and retrieval tasks",
+      "Defines human evaluation dimensions and annotation forms",
+      "Provides LLM-as-judge prompts for pointwise and pairwise scoring",
+      "Describes A/B testing with significance and effect sizes",
+      "Explains regression detection using baselines",
+      "Outlines benchmarking workflows and result aggregation"
+    ],
+    "limitations": [
+      "No runnable evaluation scripts are included in this directory",
+      "External libraries are required for example metric implementations",
+      "No datasets or benchmarks are bundled with the skill",
+      "No tool-specific integration steps are provided"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML engineer",
+        "title": "Regression gate in CI",
+        "description": "Design an evaluation checklist and thresholds to block model changes that reduce quality."
+      },
+      {
+        "target_user": "Product manager",
+        "title": "Model comparison brief",
+        "description": "Compare two model options using human ratings and automated scores for a decision memo."
+      },
+      {
+        "target_user": "Researcher",
+        "title": "Benchmark study plan",
+        "description": "Create a benchmarking plan with datasets, metrics, and reporting structure."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Starter evaluation plan",
+        "scenario": "New chatbot feature",
+        "prompt": "Create a basic evaluation plan with 3 automated metrics and 2 human criteria for a customer support chatbot."
+      },
+      {
+        "title": "Metric selection guide",
+        "scenario": "Summarization task",
+        "prompt": "Recommend metrics for summarization, explain what each captures, and note one limitation per metric."
+      },
+      {
+        "title": "LLM judge prompt",
+        "scenario": "Two prompt variants",
+        "prompt": "Draft a pairwise LLM judge prompt to compare response A and B for accuracy, helpfulness, and clarity."
+      },
+      {
+        "title": "A/B test analysis",
+        "scenario": "Production experiment",
+        "prompt": "Describe a statistical testing plan for A/B evaluation, including sample size guidance and effect size reporting."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Propose an evaluation plan for a RAG assistant.",
+        "output": [
+          "Automated metrics: MRR, NDCG, Precision at K",
+          "Human ratings: accuracy, relevance, helpfulness",
+          "LLM judge: pairwise comparison for final answers",
+          "Regression rule: fail if accuracy drops more than 5 percent"
+        ]
+      },
+      {
+        "input": "What metrics should I use to evaluate a summarization model?",
+        "output": [
+          "ROUGE for n-gram overlap with reference summaries",
+          "BERTScore for semantic similarity using embeddings",
+          "Factuality score to verify claims against source text",
+          "Human readability assessment for coherence and fluency"
+        ]
+      },
+      {
+        "input": "How do I detect if my model is regressing?",
+        "output": [
+          "Store baseline scores from a reference model or previous version",
+          "Compare new model scores against baseline on same test set",
+          "Flag metrics where relative change exceeds your threshold",
+          "Run statistical significance test to confirm real differences"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use multiple metrics and human review together",
+      "Test with representative and diverse data",
+      "Track baselines and statistical significance"
+    ],
+    "anti_patterns": [
+      "Relying on a single metric",
+      "Testing on training data",
+      "Ignoring variance in small samples"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Claude and Codex?",
+        "answer": "Yes, the guidance is model agnostic and applies to Claude, Codex, Claude Code, and other LLMs."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides guidance and examples but no executable evaluation pipeline in this directory."
+      },
+      {
+        "question": "How do I integrate with my stack?",
+        "answer": "Map the metrics and workflows to your existing evaluation or CI tools."
+      },
+      {
+        "question": "Does it access or store my data?",
+        "answer": "No, it is static documentation and does not read or transmit data."
+      },
+      {
+        "question": "What if scores are unstable?",
+        "answer": "Increase sample size, review variance, and add human validation before decisions."
+      },
+      {
+        "question": "How is this different from a benchmark list?",
+        "answer": "It combines metrics, human review, and testing strategy rather than only listing benchmarks."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 472
+    }
+  ]
+}

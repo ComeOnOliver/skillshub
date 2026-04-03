@@ -1,0 +1,753 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:53:49.877Z",
+    "slug": "alirezarezvani-senior-data-engineer",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering-team/senior-data-engineer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "47443a66dba421d32f6e8208e24305574eb4015f7ba85f34075bdc86d5c10bbd",
+    "tree_hash": "2d99f74732f1cbdc1157d341487848525c326525cbb21d6654c83418e5cef5f7"
+  },
+  "skill": {
+    "name": "senior-data-engineer",
+    "description": "World-class data engineering skill for building scalable data pipelines, ETL/ELT systems, and data infrastructure. Expertise in Python, SQL, Spark, Airflow, dbt, Kafka, and modern data stack. Includes data modeling, pipeline orchestration, data quality, and DataOps. Use when designing data architectures, building data pipelines, optimizing data workflows, or implementing data governance.",
+    "summary": "World-class data engineering skill for building scalable data pipelines, ETL/ELT systems, and data i...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "tags": [
+      "senior-data-engineer",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": false,
+    "summary": "AI analysis failed after multiple attempts - MANUAL REVIEW REQUIRED before publishing. This skill cannot be auto-published until reviewed by a human.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "marketplace_content.json",
+            "line_start": 132,
+            "line_end": 138
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 138,
+            "line_end": 162
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 162,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 185
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 185,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 192
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [
+      {
+        "title": "Ruby/shell backtick execution",
+        "description": "Ruby/shell backtick execution detected in code",
+        "locations": [
+          {
+            "file": "marketplace_content.json",
+            "line_start": 132,
+            "line_end": 138
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 138,
+            "line_end": 162
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 162,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 185
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 185,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 192
+          }
+        ]
+      },
+      {
+        "title": "Weak cryptographic algorithm",
+        "description": "Weak cryptographic algorithm detected in code",
+        "locations": [
+          {
+            "file": "marketplace_content.json",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 54,
+            "line_end": 54
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 84,
+            "line_end": 84
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 90,
+            "line_end": 90
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 96,
+            "line_end": 96
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 192,
+            "line_end": 192
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 198,
+            "line_end": 198
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 198,
+            "line_end": 198
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 204,
+            "line_end": 204
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 210,
+            "line_end": 210
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 216,
+            "line_end": 216
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 236,
+            "line_end": 236
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 236,
+            "line_end": 236
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 239,
+            "line_end": 239
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 249,
+            "line_end": 249
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 253,
+            "line_end": 253
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 254,
+            "line_end": 254
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 255,
+            "line_end": 255
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 258,
+            "line_end": 258
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 258,
+            "line_end": 258
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 264,
+            "line_end": 264
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 269,
+            "line_end": 269
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 280,
+            "line_end": 280
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 281,
+            "line_end": 281
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 283,
+            "line_end": 283
+          },
+          {
+            "file": "marketplace_content.json",
+            "line_start": 284,
+            "line_end": 284
+          },
+          {
+            "file": "references/data_modeling_patterns.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/data_modeling_patterns.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "references/data_modeling_patterns.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "references/data_modeling_patterns.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "references/data_pipeline_architecture.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/data_pipeline_architecture.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "references/data_pipeline_architecture.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "references/data_pipeline_architecture.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "references/dataops_best_practices.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/dataops_best_practices.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "references/dataops_best_practices.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "references/dataops_best_practices.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "scripts/data_quality_validator.py",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "scripts/etl_performance_optimizer.py",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "scripts/pipeline_orchestrator.py",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 106,
+            "line_end": 106
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 227,
+            "line_end": 227
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 248,
+            "line_end": 248
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 319,
+            "line_end": 319
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 328,
+            "line_end": 328
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 337,
+            "line_end": 337
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 337,
+            "line_end": 337
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 342,
+            "line_end": 342
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 347,
+            "line_end": 347
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 351,
+            "line_end": 351
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 352,
+            "line_end": 352
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 352,
+            "line_end": 352
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 353,
+            "line_end": 353
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 358,
+            "line_end": 358
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 359,
+            "line_end": 359
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 380,
+            "line_end": 380
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 415,
+            "line_end": 415
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 423,
+            "line_end": 423
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 90
+          }
+        ]
+      },
+      {
+        "title": "System reconnaissance",
+        "description": "System reconnaissance detected in code",
+        "locations": [
+          {
+            "file": "marketplace_content.json",
+            "line_start": 264,
+            "line_end": 264
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 389,
+            "line_end": 389
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 401,
+            "line_end": 401
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 404,
+            "line_end": 404
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 406,
+            "line_end": 406
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 409,
+            "line_end": 409
+          }
+        ]
+      },
+      {
+        "title": "Network reconnaissance",
+        "description": "Network reconnaissance detected in code",
+        "locations": [
+          {
+            "file": "references/data_modeling_patterns.md",
+            "line_start": 21,
+            "line_end": 22
+          },
+          {
+            "file": "references/data_pipeline_architecture.md",
+            "line_start": 21,
+            "line_end": 22
+          },
+          {
+            "file": "references/dataops_best_practices.md",
+            "line_start": 21,
+            "line_end": 22
+          }
+        ]
+      },
+      {
+        "title": "Hardcoded URL",
+        "description": "Hardcoded URL detected in code",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "files_scanned": 9,
+    "total_lines": 1555,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:53:49.877Z"
+  },
+  "content": {
+    "user_title": "Senior Data Engineer",
+    "value_statement": "An AI skill for Claude, Codex, and Claude Code",
+    "seo_keywords": [
+      "senior-data-engineer",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "actual_capabilities": [],
+    "limitations": [],
+    "use_cases": [],
+    "prompt_templates": [],
+    "output_examples": [],
+    "best_practices": [],
+    "anti_patterns": [],
+    "faq": []
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "data_modeling_patterns.md",
+          "type": "file",
+          "path": "references/data_modeling_patterns.md",
+          "lines": 81
+        },
+        {
+          "name": "data_pipeline_architecture.md",
+          "type": "file",
+          "path": "references/data_pipeline_architecture.md",
+          "lines": 81
+        },
+        {
+          "name": "dataops_best_practices.md",
+          "type": "file",
+          "path": "references/dataops_best_practices.md",
+          "lines": 81
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "data_quality_validator.py",
+          "type": "file",
+          "path": "scripts/data_quality_validator.py",
+          "lines": 101
+        },
+        {
+          "name": "etl_performance_optimizer.py",
+          "type": "file",
+          "path": "scripts/etl_performance_optimizer.py",
+          "lines": 101
+        },
+        {
+          "name": "pipeline_orchestrator.py",
+          "type": "file",
+          "path": "scripts/pipeline_orchestrator.py",
+          "lines": 101
+        }
+      ]
+    },
+    {
+      "name": "marketplace_content.json",
+      "type": "file",
+      "path": "marketplace_content.json",
+      "lines": 288
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 227
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:59:02.340Z",
+    "slug": "hmohamed01-powershell-expert",
+    "source_url": "https://github.com/hmohamed01/powershell-expert/tree/main/powershell-expert",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c142ea22a482f8670690b8bca68e86ec2ff28133a5b78c9e27eeaa6cfbf262c4",
+    "tree_hash": "7ac86c4065ea01fda69dcff023ff73857b1bbad060762b8a3f809422cde7cb64"
+  },
+  "skill": {
+    "name": "powershell-expert",
+    "description": "Develop PowerShell scripts, tools, modules, and GUIs following Microsoft best practices. Use when writing PowerShell code, creating Windows Forms/WPF interfaces, working with PowerShell Gallery modules, or needing cmdlet/module recommendations. Covers script development, parameter design, pipeline handling, error management, and GUI creation patterns. Verifies module availability and cmdlet syntax against live documentation when accuracy is critical.",
+    "summary": "Develop PowerShell scripts, tools, modules, and GUIs following Microsoft best practices. Use when wr...",
+    "icon": "terminal",
+    "version": "1.0.0",
+    "author": "hmohamed01",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "powershell",
+      "windows",
+      "scripting",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation and reference skill containing PowerShell code examples and best practices. All static findings are FALSE POSITIVES - the security scanner misinterpreted markdown documentation containing PowerShell examples as executed code. The skill contains no malicious patterns, only educational content about PowerShell development.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 255
+          },
+          {
+            "file": "references/best-practices.md",
+            "line_start": 1,
+            "line_end": 301
+          },
+          {
+            "file": "references/gui-development.md",
+            "line_start": 1,
+            "line_end": 477
+          },
+          {
+            "file": "references/powershellget.md",
+            "line_start": 1,
+            "line_end": 304
+          },
+          {
+            "file": "scripts/Search-Gallery.ps1",
+            "line_start": 1,
+            "line_end": 142
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 1778,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:59:02.340Z"
+  },
+  "content": {
+    "user_title": "Create PowerShell scripts and modules",
+    "value_statement": "This skill provides expert guidance for PowerShell development including script templates, best practices for parameters and error handling, Windows Forms and WPF GUI creation patterns, and PowerShell Gallery integration for module management.",
+    "seo_keywords": [
+      "powershell",
+      "powershell scripting",
+      "claude code",
+      "claude",
+      "codex",
+      "windows automation",
+      "powershell modules",
+      "powershell gallery",
+      "windows forms",
+      "wpf gui"
+    ],
+    "actual_capabilities": [
+      "Creates production-quality PowerShell scripts with proper structure, parameters, and error handling",
+      "Develops Windows Forms and WPF GUIs with controls, events, and layout patterns",
+      "Searches and manages PowerShell Gallery modules using PSResourceGet",
+      "Implements pipeline support and splatting for clean, efficient PowerShell code",
+      "Applies Microsoft best practices for naming conventions and code style"
+    ],
+    "limitations": [
+      "This is a guidance skill and does not execute PowerShell code directly",
+      "GUI development examples are Windows-only due to System.Windows.Forms dependency",
+      "Requires PowerShell 5.1 or newer for full feature compatibility"
+    ],
+    "use_cases": [
+      {
+        "target_user": "System administrators",
+        "title": "Automate Windows tasks",
+        "description": "Create scripts to automate user management, file operations, and system configuration tasks."
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Build deployment tools",
+        "description": "Develop module-based tools for infrastructure automation and environment configuration."
+      },
+      {
+        "target_user": "PowerShell developers",
+        "title": "Improve script quality",
+        "description": "Apply best practices for error handling, pipeline support, and module design patterns."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Script template",
+        "scenario": "Generate a function",
+        "prompt": "Create a PowerShell function named Get-ServerInfo that accepts a ComputerName parameter, connects via CIM, and returns OS version, disk space, and memory info."
+      },
+      {
+        "title": "GUI development",
+        "scenario": "Create a form",
+        "prompt": "Write a Windows Forms PowerShell script that creates a login dialog with username and password fields, OK and Cancel buttons, and validates inputs before closing."
+      },
+      {
+        "title": "Module help",
+        "scenario": "Find PowerShell modules",
+        "prompt": "Find PowerShell modules on the Gallery for Azure resource management. Include module name, version, and install command."
+      },
+      {
+        "title": "Best practices",
+        "scenario": "Review script patterns",
+        "prompt": "Review this PowerShell script for best practices: does it use proper naming, error handling, pipeline support, and WhatIf/Confirm parameters?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a function to copy files with progress",
+        "output": [
+          "Use Copy-Item with -Filter and -Recurse for directory copies",
+          "Implement Write-Progress for visual feedback during long operations",
+          "Add -Force parameter to overwrite existing files",
+          "Support WhatIf/Confirm for safe previews of destructive operations"
+        ]
+      },
+      {
+        "input": "Build a simple settings dialog",
+        "output": [
+          "Create System.Windows.Forms.Form with FixedDialog style",
+          "Add Label, TextBox, and Button controls",
+          "Use ShowDialog() for modal behavior",
+          "Return dialog result and user input via script-scoped variables"
+        ]
+      },
+      {
+        "input": "Find modules for REST API calls",
+        "output": [
+          "Microsoft.PowerShell.WebRequests.Native HTTP cmdlets built into PowerShell",
+          "Invoke-RestMethod and Invoke-WebRequest for API calls",
+          "No external module needed for basic REST operations"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use Verb-Noun naming with approved verbs from Get-Verb and PascalCase for all identifiers",
+      "Implement proper error handling with try/catch blocks and specific exception types",
+      "Support common parameters like -WhatIf, -Confirm, -Verbose, and -ErrorAction"
+    ],
+    "anti_patterns": [
+      "Avoid using generic noun names like Get-Data or Set-Config without specificity",
+      "Do not skip error handling or use -ErrorAction SilentlyContinue without logging",
+      "Avoid mixing Write-Host with Write-Output in functions that produce pipeline output"
+    ],
+    "faq": [
+      {
+        "question": "What PowerShell version is required?",
+        "answer": "The skill targets PowerShell 5.1 and newer. Some features like PSResourceGet require PowerShell 7+."
+      },
+      {
+        "question": "Does this run PowerShell code?",
+        "answer": "No. This skill provides guidance, templates, and best practices. It does not execute or install code."
+      },
+      {
+        "question": "Can I create GUIs for Linux?",
+        "answer": "Windows Forms and WPF examples require Windows. For cross-platform GUIs, consider web-based approaches."
+      },
+      {
+        "question": "How do I verify module recommendations?",
+        "answer": "The skill includes a Search-Gallery.ps1 helper script. Always verify modules exist on PowerShell Gallery before installing."
+      },
+      {
+        "question": "What about script execution policy?",
+        "answer": "The skill does not modify execution policy. Users must run Set-ExecutionPolicy or use -Bypass to run scripts."
+      },
+      {
+        "question": "Can this help with module publishing?",
+        "answer": "Yes. The references/powershellget.md file covers publishing modules to the PowerShell Gallery."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "best-practices.md",
+          "type": "file",
+          "path": "references/best-practices.md",
+          "lines": 326
+        },
+        {
+          "name": "gui-development.md",
+          "type": "file",
+          "path": "references/gui-development.md",
+          "lines": 487
+        },
+        {
+          "name": "powershellget.md",
+          "type": "file",
+          "path": "references/powershellget.md",
+          "lines": 305
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "Search-Gallery.ps1",
+          "type": "file",
+          "path": "scripts/Search-Gallery.ps1",
+          "lines": 142
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 255
+    }
+  ]
+}

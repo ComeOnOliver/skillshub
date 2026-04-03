@@ -1,0 +1,283 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:35:26.987Z",
+    "slug": "k-dense-ai-dask",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/dask",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9f4030854b157f47187551cecb843267b5e1177f2f057d078e91342298669611",
+    "tree_hash": "56f1730539c1721c1e44c86782d61ed2427a66f2e17796f1fe8d9a9711c41f27"
+  },
+  "skill": {
+    "name": "dask",
+    "description": "Distributed computing for larger-than-RAM pandas/NumPy workflows. Use when you need to scale existing pandas/NumPy code beyond memory or across clusters. Best for parallel file processing, distributed ML, integration with existing pandas code. For out-of-core analytics on single machine use vaex; for in-memory speed use polars.",
+    "summary": "Distributed computing for larger-than-RAM pandas/NumPy workflows. Use when you need to scale existin...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "BSD-3-Clause license",
+    "category": "data",
+    "tags": [
+      "python",
+      "distributed-computing",
+      "parallel",
+      "data-science",
+      "pandas"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill with no executable code. All 448 static findings are false positives. The analyzer misinterpreted markdown inline code formatting (backticks like `dask.compute()`) as shell execution, and flagged legitimate computing terms like 'md5', 'command', 'control', 'connect' as security threats. This is standard Dask library documentation teaching parallel computing patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 286
+          },
+          {
+            "file": "references/arrays.md",
+            "line_start": 1,
+            "line_end": 498
+          },
+          {
+            "file": "references/bags.md",
+            "line_start": 1,
+            "line_end": 500
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/bags.md",
+            "line_start": 103,
+            "line_end": 103
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 5369,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:35:26.987Z"
+  },
+  "content": {
+    "user_title": "Scale pandas and NumPy with Dask distributed computing",
+    "value_statement": "Process datasets larger than available RAM using parallel computing. Transform single-machine pandas and NumPy workflows to run across multiple cores or distributed clusters without rewriting your code.",
+    "seo_keywords": [
+      "Dask distributed computing",
+      "parallel pandas",
+      "NumPy at scale",
+      "out-of-core analytics",
+      "Clau",
+      "Codex",
+      "Claude Code",
+      "bigger-than-memory data",
+      "Dask DataFrames",
+      "Dask Arrays"
+    ],
+    "actual_capabilities": [
+      "Scale pandas operations to datasets exceeding RAM using Dask DataFrames",
+      "Process NumPy arrays too large for memory with blocked algorithms",
+      "Parallelize Python computations across multiple cores or machines",
+      "Build task graphs for lazy evaluation and efficient computation",
+      "Process unstructured data with Dask Bags before converting to structured formats",
+      "Choose appropriate schedulers (threads, processes, distributed) for different workloads"
+    ],
+    "limitations": [
+      "Not a replacement for learning Dask API fundamentals",
+      "Cannot execute code - provides documentation and guidance only",
+      "Does not provision or manage Dask clusters automatically",
+      "Assumes users have Dask installed and basic Python knowledge"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data scientists",
+        "title": "Scale pandas workflows",
+        "description": "Transform pandas code to handle datasets larger than RAM by switching import and using Dask DataFrames with minimal code changes."
+      },
+      {
+        "target_user": "ML engineers",
+        "title": "Parallel model training",
+        "description": "Distribute data preprocessing and model inference across multiple workers using Dask Futures for hyperparameter sweeps."
+      },
+      {
+        "target_user": "Research scientists",
+        "title": "Process large arrays",
+        "description": "Work with scientific datasets from HDF5 or Zarr files that exceed memory using Dask Arrays with chunked operations."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic DataFrame scaling",
+        "scenario": "Scale pandas to larger data",
+        "prompt": "Show me how to convert my pandas DataFrame code to use Dask for datasets that exceed RAM, including reading multiple CSV files and performing groupby operations."
+      },
+      {
+        "title": "Array chunking",
+        "scenario": "Process NumPy arrays at scale",
+        "prompt": "Explain how to create and process Dask Arrays from HDF5 or Zarr files with optimal chunk sizes, including how to choose chunk sizes and perform reductions."
+      },
+      {
+        "title": "Parallel futures",
+        "scenario": "Build custom parallel workflows",
+        "prompt": "Demonstrate how to use Dask Futures for dynamic task submission, including setting up a local cluster, scattering large data, and gathering results from dependent tasks."
+      },
+      {
+        "title": "Performance optimization",
+        "scenario": "Debug slow Dask computations",
+        "prompt": "Help me optimize my Dask workflow - I want to understand how to choose the right scheduler, identify bottlenecks using the dashboard, and fix memory issues from incorrect chunk sizing."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I read multiple CSV files and combine them into one Dask DataFrame?",
+        "output": [
+          "Use dd.read_csv with a glob pattern to read multiple files: ddf = dd.read_csv('data/2024-*.csv')",
+          "The read_csv function is lazy - it builds a task graph without loading data",
+          "After combining, perform operations like groupby and aggregations lazily",
+          "Call .compute() only when you need the final results"
+        ]
+      },
+      {
+        "input": "When should I use Dask Arrays vs Dask DataFrames?",
+        "output": [
+          "Use Arrays for numeric data that fits NumPy operations - scientific computing, image processing, matrix operations",
+          "Use DataFrames for tabular data with named columns - database-like operations, CSV processing, structured data",
+          "Bags handle unstructured data like text and JSON before converting to Arrays or DataFrames",
+          "Futures give fine-grained control for dynamic, interactive parallel workflows"
+        ]
+      },
+      {
+        "input": "How do I avoid memory errors with Dask?",
+        "output": [
+          "Choose chunk sizes of approximately 100 MB per chunk or 10 chunks per core",
+          "Never load data into pandas first then convert - use Dask readers directly",
+          "Avoid calling .compute() repeatedly in loops - use dask.compute() for multiple results at once",
+          "Use the dashboard to monitor memory usage and identify problematic tasks"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Let Dask handle data loading from the start - avoid creating pandas objects locally before converting to Dask collections",
+      "Target 100 MB chunk sizes and 10 chunks per worker core for balanced parallelism and memory usage",
+      "Use map_partitions or map_blocks to fuse multiple operations into single tasks and reduce scheduling overhead"
+    ],
+    "anti_patterns": [
+      "Calling .compute() inside loops creates separate task graphs for each iteration - use dask.compute(*computations) instead",
+      "Loading entire datasets into pandas before handing to Dask defeats the purpose - use Dask readers directly",
+      "Using the threaded scheduler for pure Python code (text processing, custom functions) - switch to processes to avoid GIL contention"
+    ],
+    "faq": [
+      {
+        "question": "What is Dask?",
+        "answer": "Dask is a Python library for parallel and distributed computing that scales pandas and NumPy workflows to larger datasets."
+      },
+      {
+        "question": "Do I need a cluster to use Dask?",
+        "answer": "No - Dask works on a single machine using multiple cores. Distributed clusters are optional for very large workloads."
+      },
+      {
+        "question": "How much memory do I need for Dask?",
+        "answer": "Dask handles datasets larger than RAM by processing in chunks. Aim for 10 chunks per worker core at ~100 MB each."
+      },
+      {
+        "question": "Can I use Dask with pandas?",
+        "answer": "Yes - Dask DataFrames mimic the pandas API. Many pandas operations work directly with minimal or no code changes."
+      },
+      {
+        "question": "What scheduler should I choose?",
+        "answer": "Threads work best for pandas/NumPy (releases GIL). Use processes for pure Python code. Use synchronous for debugging."
+      },
+      {
+        "question": "Does Dask replace pandas?",
+        "answer": "No - Dask extends pandas for larger data. For data fitting in memory, pandas alone is simpler and faster."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "arrays.md",
+          "type": "file",
+          "path": "references/arrays.md",
+          "lines": 498
+        },
+        {
+          "name": "bags.md",
+          "type": "file",
+          "path": "references/bags.md",
+          "lines": 469
+        },
+        {
+          "name": "best-practices.md",
+          "type": "file",
+          "path": "references/best-practices.md",
+          "lines": 278
+        },
+        {
+          "name": "dataframes.md",
+          "type": "file",
+          "path": "references/dataframes.md",
+          "lines": 369
+        },
+        {
+          "name": "futures.md",
+          "type": "file",
+          "path": "references/futures.md",
+          "lines": 542
+        },
+        {
+          "name": "schedulers.md",
+          "type": "file",
+          "path": "references/schedulers.md",
+          "lines": 505
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 456
+    }
+  ]
+}

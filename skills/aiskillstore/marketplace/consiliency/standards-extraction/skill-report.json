@@ -1,0 +1,425 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:03:47.660Z",
+    "slug": "consiliency-standards-extraction",
+    "source_url": "https://github.com/Consiliency/treesitter-chunker/tree/main/.ai-dev-kit/skills/standards-extraction",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f5029caa2f9fc3e92d6191a02a6bec2432b37afcf32730b0f68e74627fc5c3e2",
+    "tree_hash": "c3aecd2d26839e04b918ffd5ea27f7f5669c2ee47e7ffc48a0044f16a37b0369"
+  },
+  "skill": {
+    "name": "standards-extraction",
+    "description": "Extract coding standards and conventions from CONTRIBUTING.md, .editorconfig, linter configs. Use for onboarding and ensuring consistent contributions.",
+    "summary": "Extract coding standards and conventions from CONTRIBUTING.md, .editorconfig, linter configs. Use fo...",
+    "icon": "📐",
+    "version": "1.0.0",
+    "author": "Consiliency",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "coding-standards",
+      "onboarding",
+      "contributing",
+      "conventions",
+      "linting"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill with zero executable code. Static findings are false positives triggered by documentation examples containing code snippets and metadata hashes. All 57 flagged patterns are benign documentation content.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "cookbook/README.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 239
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 239,
+            "line_end": 244
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 244,
+            "line_end": 245
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 208
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 449,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:03:47.660Z"
+  },
+  "content": {
+    "user_title": "Extract coding standards from project configs",
+    "value_statement": "New contributors often guess coding conventions instead of following established project standards. This skill parses CONTRIBUTING.md, linter configs, and editor settings to return a complete standards summary for consistent contributions.",
+    "seo_keywords": [
+      "Claude coding standards",
+      "Codex style guide extraction",
+      "Claude Code contributor guidelines",
+      "ESLint config parser",
+      "Prettier settings extraction",
+      "project conventions",
+      "CONTRIBUTING.md parser",
+      "onboarding automation"
+    ],
+    "actual_capabilities": [
+      "Parse CONTRIBUTING.md for commit formats and branch naming rules",
+      "Extract formatting rules from .editorconfig and Prettier configs",
+      "Read ESLint, Ruff, and other linter configuration settings",
+      "Check for git hooks in .husky and pre-commit configs",
+      "Compile all standards into structured JSON output"
+    ],
+    "limitations": [
+      "Only reads standard config file formats (JSON, YAML, TOML, INI)",
+      "Does not execute linting or formatting tools",
+      "Requires AI agent to have file system access to target project",
+      "Cannot validate that code actually follows extracted rules"
+    ],
+    "use_cases": [
+      {
+        "target_user": "New developers",
+        "title": "Onboard to codebase",
+        "description": "Get complete list of coding conventions before writing first line of code"
+      },
+      {
+        "target_user": "Maintainers",
+        "title": "Audit project standards",
+        "description": "Verify all project standards are documented and accessible in one place"
+      },
+      {
+        "target_user": "AI coding assistants",
+        "title": "Follow project conventions",
+        "description": "Ensure AI-generated code matches established project style guidelines"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic extraction",
+        "scenario": "Extract all coding standards",
+        "prompt": "Use the standards-extraction skill to parse all config files in this project and return the coding standards summary."
+      },
+      {
+        "title": "Formatting focus",
+        "scenario": "Get formatting rules only",
+        "prompt": "Extract only the formatting rules (indentation, line length, quotes, semicolons) from this project's .editorconfig and Prettier config."
+      },
+      {
+        "title": "Linting rules",
+        "scenario": "Get linting configuration",
+        "prompt": "Parse the ESLint and linter configurations in this project and list the key enabled rules and extended configs."
+      },
+      {
+        "title": "Full contribution guide",
+        "scenario": "Complete standards for PRs",
+        "prompt": "Extract the complete contribution guidelines including commit message format, branch naming, PR requirements, and testing expectations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Use standards-extraction to parse the project config files",
+        "output": [
+          "Commit format: Conventional (feat:, fix:, chore:)",
+          "Branch naming: type/description pattern",
+          "Indentation: 2 spaces",
+          "Line length: 100 characters",
+          "Quotes: single",
+          "Semicolons: required",
+          "Linter: ESLint with next/core-web-vitals",
+          "Pre-commit hooks: lint-staged, prettier"
+        ]
+      },
+      {
+        "input": "Show me the contribution guidelines",
+        "output": [
+          "Commit message format: Conventional Commits",
+          "Branch naming: feature/*, fix/*, chore/*",
+          "PR requirements: tests + review required",
+          "Testing expectations: unit tests pass before PR"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run extraction on the target project root directory for complete results",
+      "Combine with code review skills to validate contributions match standards",
+      "Use extracted rules as input for automated linting in CI pipelines"
+    ],
+    "anti_patterns": [
+      "Skipping CONTRIBUTING.md because it might be outdated",
+      "Assuming generic coding standards without checking project configs",
+      "Reporting formatting rules that contradict actual config files"
+    ],
+    "faq": [
+      {
+        "question": "Which config files does this skill support?",
+        "answer": "Supports ESLint, Prettier, Ruff, EditorConfig, .husky, pre-commit, pyproject.toml, and common markdown contribution guides."
+      },
+      {
+        "question": "Does this skill execute any code on my system?",
+        "answer": "No. This is a prompt-based skill that provides instructions. It does not run executables or access files directly."
+      },
+      {
+        "question": "Can I use this with Claude Code CLI?",
+        "answer": "Yes. The skill works with Claude, Codex, and Claude Code. File access depends on the tool you use."
+      },
+      {
+        "question": "What output formats are available?",
+        "answer": "Supports JSON, markdown, and toon formats. Use the OUTPUT_FORMAT variable to specify your preference."
+      },
+      {
+        "question": "Does this send data to external servers?",
+        "answer": "No. This skill only provides instructions to the AI. No network calls are made by the skill itself."
+      },
+      {
+        "question": "How is this different from running eslint --print-config?",
+        "answer": "This skill reads config files and contribution guides to explain standards. It does not run the actual tools or validate code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "cookbook",
+      "type": "dir",
+      "path": "cookbook",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "cookbook/README.md",
+          "lines": 12
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 247
+    }
+  ]
+}

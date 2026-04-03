@@ -1,0 +1,472 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:21:22.934Z",
+    "slug": "clionegohan-spec-workflow",
+    "source_url": "https://github.com/Clionegohan/YoRuH-Resonance-Archive-C4-Sync-/tree/main/atdd-sdd/.claude/skills/spec-workflow",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0b81de8c0678c72ff06a87029423b9981ff2e08db62d22214325c3e1432dbcdb",
+    "tree_hash": "8a37a323128ade4352c66620043a3c7aa9fe13b8feb41347ee7e6d53f310dd56"
+  },
+  "skill": {
+    "name": "spec-workflow",
+    "description": "仕様駆動開発（SDD）ワークフローを自動発動で強制。Subtask開始時にAC確認、TDD実行、完了時にACチェックを実施。スコープ外実装を禁止。Use when implementing features, creating new functionality, or when \"実装して\", \"作成して\", \"開発して\" keywords appear.",
+    "summary": "仕様駆動開発（SDD）ワークフローを自動発動で強制。Subtask開始時にAC確認、TDD実行、完了時にACチェックを実施。スコープ外実装を禁止。Use when implementing featu...",
+    "icon": "🔄",
+    "version": "1.0.0",
+    "author": "Clionegohan",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "sdd",
+      "tdd",
+      "workflow",
+      "agile",
+      "spec-driven"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains ONLY documentation and workflow guidance in Markdown format. No executable code, scripts, or network calls exist. All static findings are FALSE POSITIVES: code examples are illustrative pseudocode in Markdown fences, not shell commands; hash identifiers flagged as cryptographic algorithms are content metadata; example dialogues flagged as C2 keywords are user assistance examples; path references are legitimate documentation links. The skill is a pure prompt-based workflow enforcer.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 307
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 186,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 234
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 234,
+            "line_end": 234
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 234,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 263
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 263,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 276,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 319
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 319,
+            "line_end": 329
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 329,
+            "line_end": 335
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 335,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 354
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 354,
+            "line_end": 368
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 550,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:21:22.934Z"
+  },
+  "content": {
+    "user_title": "Enforce Spec-Driven Development Workflow",
+    "value_statement": "Development teams struggle to maintain consistent methodology across features. This skill automates TDD enforcement, acceptance criteria validation, and scope management for every implementation task.",
+    "seo_keywords": [
+      "spec-driven development",
+      "SDD workflow",
+      "TDD automation",
+      "acceptance criteria",
+      "Claude Code",
+      "Codex",
+      "test-driven development",
+      "agile workflow",
+      "feature implementation",
+      "scope management"
+    ],
+    "actual_capabilities": [
+      "Automatically activates when implementation keywords are detected",
+      "Validates acceptance criteria before starting implementation",
+      "Enforces Red-Green-Refactor TDD cycle",
+      "Verifies all AC requirements before task completion",
+      "Manages scope to prevent feature creep",
+      "Integrates with branch and PR skills automatically"
+    ],
+    "limitations": [
+      "Requires pre-defined Subtask files with acceptance criteria",
+      "Does not create specifications (use /spec skill instead)",
+      "Only supports projects following EPIC-Story-Subtask structure",
+      "Workflow is enforced for each task individually"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual developers",
+        "title": "Maintain development discipline",
+        "description": "Follow TDD methodology consistently for every feature implementation"
+      },
+      {
+        "target_user": "Agile teams",
+        "title": "Standardize workflow",
+        "description": "Enforce acceptance criteria and scope boundaries across team members"
+      },
+      {
+        "target_user": "Technical leads",
+        "title": "Quality gate enforcement",
+        "description": "Ensure all implementations meet AC requirements before PR creation"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start subtask",
+        "scenario": "Begin new implementation task",
+        "prompt": "実装して/spec-workflow：specs/{epic-id}/{story-id}/{subtask-id}.mdを読んでACを確認。ユーザーに「このACで進めますか？」と聞いてからTDDサイクルを開始して。"
+      },
+      {
+        "title": "Resume work",
+        "scenario": "Continue interrupted task",
+        "prompt": "spec-workflowで継続：現在のSubtaskの進捗を確認して。次にACのどの項目から再開すべきか建議して。"
+      },
+      {
+        "title": "Scope check",
+        "scenario": "Verify request scope",
+        "prompt": "spec-workflow：依頼された機能が現在のSubtaskのACに含まれているか確認。スコープ外なら提案のみにして。"
+      },
+      {
+        "title": "Complete task",
+        "scenario": "Finish and verify",
+        "prompt": "spec-workflowで完了処理：AC全項目の達成状況を確認。テストが全て通過していることを確認してから/subprでPR作成を提案して。"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "実装して：specs/001-user-auth/001-01-login/001-01-01-basic-login.md",
+        "output": [
+          "Subtaskファイルを読み込みました",
+          "AC確認：5項目のAcceptance Criteriaを検出",
+          "以下のACで実装を進めます。よろしいですか？",
+          "- 正しい認証情報でログイン成功",
+          "- 誤った認証情報でエラー表示"
+        ]
+      },
+      {
+        "input": "CI/CDも設定して",
+        "output": [
+          "CI/CD設定は現在のSubtaskのACに含まれていません",
+          "対応案：1. 現在のSubtaskでは実装しない（推奨）",
+          "2. 新規Subtaskとして定義する",
+          "どちらを選択しますか？"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Break down requirements into clear acceptance criteria before implementation",
+      "Write failing tests first, then implement minimum code to pass",
+      "Verify each acceptance criterion is satisfied before completing"
+    ],
+    "anti_patterns": [
+      "Implementing features not defined in acceptance criteria",
+      "Skipping test writing phase",
+      "Completing tasks without AC verification"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Compatible with Claude, Codex, and Claude Code platforms."
+      },
+      {
+        "question": "How does it activate?",
+        "answer": "Automatically triggers when implementation keywords like 実装して or create are used."
+      },
+      {
+        "question": "What happens if AC is unclear?",
+        "answer": "Skill prompts you to clarify ambiguous acceptance criteria before proceeding."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "Prompt-based skill only. No file access, network calls, or code execution."
+      },
+      {
+        "question": "How does it integrate with other skills?",
+        "answer": "Automatically calls /branch for branches and /pr for pull requests during workflow."
+      },
+      {
+        "question": "How is this different from /spec?",
+        "answer": "/spec handles upstream specification drafting. This skill handles downstream implementation following those specs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 369
+    }
+  ]
+}

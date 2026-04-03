@@ -1,0 +1,376 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:19:22.480Z",
+    "slug": "doyajin174-error-handling",
+    "source_url": "https://github.com/Doyajin174/myskills/tree/main/.public/skills/error-handling",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "13e47f34c6ddbcea3554639eb412f9e4f211848bd28d84df615a7154a7bc90c2",
+    "tree_hash": "ac7d668ad9a3f0907bb211503baafa45a24a13ee0881fc63f350d8a6b7a50cd1"
+  },
+  "skill": {
+    "name": "error-handling",
+    "description": "Enforce proper error handling patterns. Use when writing async code, API calls, or user-facing features. Covers try-catch, error boundaries, graceful degradation, and user feedback.",
+    "summary": "Enforce proper error handling patterns. Use when writing async code, API calls, or user-facing featu...",
+    "icon": "⚠️",
+    "version": "1.0.0",
+    "author": "Doyajin174",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "error-handling",
+      "async",
+      "best-practices",
+      "react",
+      "patterns"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation skill containing only markdown guidance for error handling best practices. The static scanner flagged 48 pattern matches, but all findings are FALSE POSITIVES. SKILL.md contains educational code examples demonstrating proper error handling patterns (try-catch, error boundaries, async error management). No executable code, network calls, credential access, or file system operations exist beyond reading the documentation itself. The skill-report.json already correctly assessed this as safe with risk_level: 'safe'.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 415,
+            "line_end": 415
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 416,
+            "line_end": 416
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 252
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 252,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 276,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 328
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 328,
+            "line_end": 334
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 334,
+            "line_end": 352
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 352,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 363
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 363,
+            "line_end": 367
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 367,
+            "line_end": 387
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 372
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 594,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:19:22.480Z"
+  },
+  "content": {
+    "user_title": "Implement error handling patterns in code",
+    "value_statement": "Poor error handling leads to silent failures, frustrated users, and hard-to-debug issues. This skill provides patterns and best practices for robust error handling in async code, API calls, and React components.",
+    "seo_keywords": [
+      "error handling",
+      "try-catch",
+      "error boundaries",
+      "async error handling",
+      "graceful degradation",
+      "React error handling",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "error patterns"
+    ],
+    "actual_capabilities": [
+      "Prevents empty catch blocks with mandatory logging",
+      "Creates user-friendly error messages that avoid technical jargon",
+      "Implements React Error Boundaries to isolate component failures",
+      "Provides graceful degradation patterns for partial failures",
+      "Defines custom error classes for different error types",
+      "Handles Promise errors and async operations safely"
+    ],
+    "limitations": [
+      "Does not execute error handling code - provides guidance only",
+      "Does not integrate with specific error tracking services",
+      "Does not auto-generate error handling code from specifications"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "React Error Boundaries",
+        "description": "Add error boundaries to React components to prevent crashes from spreading across the UI."
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "API Error Handling",
+        "description": "Handle API failures with proper error types, user messages, and logging strategies."
+      },
+      {
+        "target_user": "All developers",
+        "title": "Async Error Patterns",
+        "description": "Manage Promise rejections and async operations with fallbacks and retry logic."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Error Handling",
+        "scenario": "Add error handling to async function",
+        "prompt": "Add proper error handling to this function. Include try-catch with logging, user-friendly error messages, and fallback behavior."
+      },
+      {
+        "title": "Error Boundary Setup",
+        "scenario": "Wrap React component with boundary",
+        "prompt": "Create an Error Boundary component and wrap the following components. Provide a user-friendly fallback UI and error logging."
+      },
+      {
+        "title": "Custom Error Classes",
+        "scenario": "Define error types for API",
+        "prompt": "Define custom error classes for different API error scenarios including NetworkError, NotFoundError, and ValidationError with appropriate status codes."
+      },
+      {
+        "title": "Graceful Degradation",
+        "scenario": "Add fallback layers to feature",
+        "prompt": "Implement graceful degradation for this feature. Add multiple fallback layers: primary source, secondary source, cached data."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Add error handling to a data fetching function",
+        "output": [
+          "Catch specific error types (NetworkError, NotFoundError)",
+          "Log errors for debugging with full context",
+          "Show user-friendly message without technical details",
+          "Return fallback data when primary source fails",
+          "Optionally trigger error tracking service"
+        ]
+      },
+      {
+        "input": "Create error boundary for dashboard components",
+        "output": [
+          "Wrap chart and table components with Error Boundary",
+          "Implement fallback UI with retry button",
+          "Log errors to error tracking service",
+          "Isolate failures to prevent app-wide crash"
+        ]
+      },
+      {
+        "input": "Handle multiple Promise operations safely",
+        "output": [
+          "Use Promise.allSettled instead of Promise.all",
+          "Check status for fulfilled or rejected results",
+          "Process successful results independently",
+          "Log individual failures for debugging"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Never leave catch blocks empty - always log errors at minimum",
+      "Distinguish between error types and handle each appropriately",
+      "Show users friendly messages - never expose technical error details"
+    ],
+    "anti_patterns": [
+      "Empty catch blocks that silently ignore all errors",
+      "Exposing raw error messages or stack traces to users",
+      "Using generic error messages that do not guide users to resolution"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. It provides error handling guidance for any coding task."
+      },
+      {
+        "question": "Does this skill integrate with error tracking services?",
+        "answer": "The skill shows patterns for error tracking integration but does not connect to specific services like Sentry or Rollbar."
+      },
+      {
+        "question": "What error types are covered?",
+        "answer": "The skill covers network errors, validation errors, authentication errors, not found errors, and general application errors with custom classes."
+      },
+      {
+        "question": "Is this skill safe to use?",
+        "answer": "Yes. This is a prompt-based documentation skill with no executable code. It only provides coding guidance."
+      },
+      {
+        "question": "How does it handle async code?",
+        "answer": "The skill includes patterns for Promise error handling, async/await error catching, and Promise.allSettled for multiple concurrent operations."
+      },
+      {
+        "question": "What React patterns are included?",
+        "answer": "React Error Boundary implementation, component-level error isolation, fallback UI components, and error logging in component lifecycle methods."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 417
+    }
+  ]
+}

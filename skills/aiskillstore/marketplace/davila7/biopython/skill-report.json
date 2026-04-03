@@ -1,0 +1,230 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:02:13.806Z",
+    "slug": "davila7-biopython",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/biopython",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "709cb6782c06d91c56a8dfd03d43c80a6ef556c135e4b9dbdb74ed050f4aefd8",
+    "tree_hash": "d9a00e3f21c9dd025b86df9d59877b981f43b10c845e21d1c8dea1356856b73a"
+  },
+  "skill": {
+    "name": "biopython",
+    "description": "Primary Python toolkit for molecular biology. Preferred for Python-based PubMed/NCBI queries (Bio.Entrez), sequence manipulation, file parsing (FASTA, GenBank, FASTQ, PDB), advanced BLAST workflows, structures, phylogenetics. For quick BLAST, use gget. For direct REST API, use pubmed-database.",
+    "summary": "Comprehensive Python bioinformatics toolkit for molecular biology research",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "bioinformatics",
+      "molecular-biology",
+      "genomics",
+      "protein-analysis",
+      "ncbi"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains educational documentation for the Biopython library. All 538 static findings are false positives - the scanner detected code patterns within markdown documentation examples (Python code in triple backticks). The skill provides reference materials and usage guides for legitimate bioinformatics tasks. No executable code, network calls, or security risks are present.",
+    "risk_factors": [],
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 8783,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:02:13.806Z"
+  },
+  "content": {
+    "user_title": "Master Biopython for Molecular Biology Research",
+    "value_statement": "Working with biological sequences, protein structures, or genomic data requires specialized tools. This skill provides comprehensive Biopython documentation to help you parse FASTA files, query NCBI databases, run BLAST searches, analyze protein structures, and perform phylogenetic analysis using Python.",
+    "seo_keywords": [
+      "Biopython",
+      "Claude Code",
+      "Claude",
+      "bioinformatics",
+      "molecular biology",
+      "genomics",
+      "protein analysis",
+      "sequence alignment",
+      "NCBI Entrez",
+      "BLAST"
+    ],
+    "actual_capabilities": [
+      "Parse and convert biological file formats including FASTA, GenBank, FASTQ, PDB, and mmCIF",
+      "Query NCBI databases programmatically using Bio.Entrez for PubMed, GenBank, and Protein records",
+      "Perform sequence alignments with customizable parameters and substitution matrices",
+      "Run and parse BLAST searches against local or remote databases",
+      "Analyze protein 3D structures from PDB files including distance calculations and structure manipulation",
+      "Create and visualize phylogenetic trees using various formats like Newick and PhyloXML"
+    ],
+    "limitations": [
+      "Requires Biopython library installation and Python environment setup",
+      "NCBI database access requires email configuration and respects API rate limits",
+      "Structural analysis features depend on availability of PDB structure files",
+      "Does not execute code directly, provides documentation and guidance only"
+    ],
+    "use_cases": [
+      {
+        "title": "Genomic Data Analysis",
+        "description": "Parse large FASTA files to extract sequences, calculate GC content, and convert between file formats for downstream analysis pipelines.",
+        "target_user": "Bioinformatics researchers"
+      },
+      {
+        "title": "Literature and Database Mining",
+        "description": "Query PubMed and GenBank databases programmatically to retrieve research articles, gene sequences, and protein information for systematic reviews.",
+        "target_user": "Computational biologists"
+      },
+      {
+        "title": "Protein Structure Analysis",
+        "description": "Load PDB files to analyze protein structures, calculate atomic distances, identify binding sites, and visualize molecular conformations.",
+        "target_user": "Structural biologists"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Parse FASTA File",
+        "prompt": "Help me read a FASTA file called sequences.fasta and print the ID and length of each sequence",
+        "scenario": "Basic sequence file parsing"
+      },
+      {
+        "title": "Search PubMed Database",
+        "prompt": "Show me how to search PubMed for articles about CRISPR published in the last 2 years using Bio.Entrez",
+        "scenario": "Database querying with date filters"
+      },
+      {
+        "title": "Perform Sequence Alignment",
+        "prompt": "I need to perform a pairwise global alignment between two protein sequences using the BLOSUM62 matrix",
+        "scenario": "Sequence comparison and analysis"
+      },
+      {
+        "title": "Analyze Protein Structure",
+        "prompt": "Load a PDB file and calculate the distance between the alpha carbons of residues 50 and 100 in chain A",
+        "scenario": "Advanced structural bioinformatics"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I convert a GenBank file to FASTA format?",
+        "output": "Use Bio.SeqIO.convert() to convert between formats. Here is the code:\n\nfrom Bio import SeqIO\nSeqIO.convert(\"input.gb\", \"genbank\", \"output.fasta\", \"fasta\")\n\nThis single line reads the GenBank file and writes all sequences to FASTA format."
+      },
+      {
+        "input": "Show me how to search for a gene in GenBank",
+        "output": "You can search GenBank using Bio.Entrez.esearch(). First set your email, then search:\n\nfrom Bio import Entrez\nEntrez.email = \"your.email@example.com\"\n\nhandle = Entrez.esearch(db=\"nucleotide\", term=\"insulin[Gene] AND human[Organism]\")\nresult = Entrez.read(handle)\nprint(result[\"IdList\"])\n\nThis returns a list of GenBank IDs matching your search."
+      },
+      {
+        "input": "How can I calculate the GC content of a DNA sequence?",
+        "output": "Use the GC() function from Bio.SeqUtils:\n\nfrom Bio.Seq import Seq\nfrom Bio.SeqUtils import GC\n\nseq = Seq(\"ATGCGATCGATCG\")\ngc_content = GC(seq)\nprint(f\"GC content: {gc_content:.2f}%\")\n\nThis calculates the percentage of G and C nucleotides in your sequence."
+      }
+    ],
+    "best_practices": [
+      "Always set Entrez.email before accessing NCBI databases to comply with usage policies",
+      "Use API keys for NCBI access to increase rate limits from 3 to 10 requests per second",
+      "Close file handles properly after reading to prevent resource leaks"
+    ],
+    "anti_patterns": [
+      "Making rapid sequential NCBI queries without respecting rate limits can result in IP blocking",
+      "Forgetting to specify the correct file format when parsing can cause parsing errors",
+      "Modifying sequence objects without understanding immutability can lead to unexpected results"
+    ],
+    "faq": [
+      {
+        "question": "What Python version does Biopython require?",
+        "answer": "Biopython 1.85 requires Python 3 and NumPy. Install using pip or uv with the command: uv pip install biopython"
+      },
+      {
+        "question": "How do I get an NCBI API key?",
+        "answer": "Create an NCBI account and navigate to Account Settings to generate an API key. Set it using Entrez.api_key to increase rate limits."
+      },
+      {
+        "question": "Can I run BLAST searches locally?",
+        "answer": "Yes, Biopython supports both remote NCBI BLAST and local BLAST searches if you have BLAST+ installed and local databases configured."
+      },
+      {
+        "question": "What file formats does Biopython support?",
+        "answer": "Biopython supports FASTA, GenBank, FASTQ, PDB, mmCIF, Stockholm, Clustal, Phylip, Newick, and many other biological file formats through Bio.SeqIO and Bio.AlignIO."
+      },
+      {
+        "question": "Is this skill suitable for beginners?",
+        "answer": "Yes, the skill provides examples ranging from basic file parsing to advanced structural analysis. Start with the sequence_io.md reference for beginner-friendly examples."
+      },
+      {
+        "question": "Does this skill execute Python code?",
+        "answer": "No, this skill provides documentation and guidance. Claude Code will help you write and execute the Python code in your environment based on these references."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "advanced.md",
+          "type": "file",
+          "path": "references/advanced.md",
+          "lines": 578
+        },
+        {
+          "name": "alignment.md",
+          "type": "file",
+          "path": "references/alignment.md",
+          "lines": 363
+        },
+        {
+          "name": "blast.md",
+          "type": "file",
+          "path": "references/blast.md",
+          "lines": 456
+        },
+        {
+          "name": "databases.md",
+          "type": "file",
+          "path": "references/databases.md",
+          "lines": 485
+        },
+        {
+          "name": "phylogenetics.md",
+          "type": "file",
+          "path": "references/phylogenetics.md",
+          "lines": 567
+        },
+        {
+          "name": "sequence_io.md",
+          "type": "file",
+          "path": "references/sequence_io.md",
+          "lines": 286
+        },
+        {
+          "name": "structure.md",
+          "type": "file",
+          "path": "references/structure.md",
+          "lines": 565
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 438
+    }
+  ]
+}

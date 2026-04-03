@@ -1,0 +1,290 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:12:24.213Z",
+    "slug": "k-dense-ai-research-grants",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/research-grants",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5f98fd3d445e8e1ce053fbd9a1a83eb655cd4957b0cbff5340d43b0f2f374ea6",
+    "tree_hash": "ffecbd932f5e1b7c6e8ccb397c0854baedd24a49f0dafccdfe18658c6d6d67fe"
+  },
+  "skill": {
+    "name": "research-grants",
+    "description": "Write competitive research proposals for NSF, NIH, DOE, DARPA, and Taiwan NSTC. Agency-specific formatting, review criteria, budget preparation, broader impacts, significance statements, innovation narratives, and compliance with submission requirements.",
+    "summary": "Write competitive research proposals for NSF, NIH, DOE, DARPA, and Taiwan NSTC. Agency-specific form...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "research",
+    "tags": [
+      "grant-writing",
+      "research-funding",
+      "academic-writing",
+      "nsf",
+      "nih"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 306 static findings are false positives. This is a pure documentation skill containing markdown templates and guidelines for research grant writing. The scanner incorrectly flagged: (1) academic terminology as cryptographic algorithms, (2) education acronyms (REU, LSAMP) as Windows SAM database, (3) federal website URLs as hardcoded C2 URLs, (4) markdown code formatting backticks as shell execution. No executable code, network calls, or malicious patterns exist. The skill-report.json correctly identifies risk_level: safe.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/darpa_guidelines.md",
+            "line_start": 11,
+            "line_end": 11
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 48
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 7080,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:12:24.213Z"
+  },
+  "content": {
+    "user_title": "Write winning research grant proposals",
+    "value_statement": "Securing research funding is highly competitive with strict agency-specific requirements. This skill provides expert guidance for writing compelling proposals that meet NSF, NIH, DOE, DARPA, and NSTC standards while maximizing your chances of success.",
+    "seo_keywords": [
+      "research grants",
+      "NSF proposals",
+      "NIH R01",
+      "grant writing",
+      "research funding",
+      "academic writing",
+      "Claude Code",
+      "federal grants",
+      "DARPA",
+      "broader impacts"
+    ],
+    "actual_capabilities": [
+      "Generate agency-specific proposal templates for NSF, NIH, DOE, DARPA, NSTC",
+      "Write compelling broader impacts and significance statements",
+      "Create detailed budget justifications with proper formatting",
+      "Develop specific aims pages with testable hypotheses",
+      "Structure research methodologies and timeline plans"
+    ],
+    "limitations": [
+      "Cannot access real funding databases or submission portals",
+      "Requires user to provide research content and preliminary data",
+      "Does not guarantee funding success - depends on research quality",
+      "Must integrate with scientific-schematics skill for required visual elements"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Graduate students and postdocs",
+        "title": "Write first research proposal",
+        "description": "Get structured guidance for writing fellowship or small grant proposals with proper formatting and compelling narratives."
+      },
+      {
+        "target_user": "Faculty researchers",
+        "title": "Maximize funding success rate",
+        "description": "Create competitive R01, NSF CAREER, or multi-institutional proposals that meet all agency requirements and review criteria."
+      },
+      {
+        "target_user": "Research administrators",
+        "title": "Ensure compliance and quality",
+        "description": "Review proposals for agency-specific formatting, budget alignment, and completeness before submission."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic grant help",
+        "scenario": "First-time proposal writer",
+        "prompt": "Help me write an NSF proposal for [your research topic]. What are the key sections I need to include?"
+      },
+      {
+        "title": "Specific aims review",
+        "scenario": "NIH R01 application",
+        "prompt": "Review my NIH Specific Aims page: [paste your aims]. Are they specific, testable, and aligned with review criteria?"
+      },
+      {
+        "title": "Broader impacts",
+        "scenario": "NSF proposal section",
+        "prompt": "Help me write compelling broader impacts for my [field] research that addresses NSF's review criteria."
+      },
+      {
+        "title": "Agency selection",
+        "scenario": "Multi-agency funding options",
+        "prompt": "My research is about [topic]. Should I apply to NSF, NIH, DOE, or DARPA? Compare their priorities and requirements."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me write an NSF proposal for AI in climate modeling",
+        "output": [
+          "Project Summary: AI-driven climate models offer transformative potential...",
+          "Intellectual Merit: Novel neural architecture reduces prediction errors by 35%...",
+          "Broader Impacts: Open-source tools will train 500+ researchers...",
+          "Research Plan: Year 1 - Data collection and model development...",
+          "Budget: $450K over 3 years with 2 graduate students..."
+        ]
+      },
+      {
+        "input": "Review my NIH Specific Aims for a cancer research project",
+        "output": [
+          "Aim 1: Well-structured with clear hypothesis. Consider adding more preliminary data...",
+          "Aim 2: Strong rationale but timeline may be too ambitious...",
+          "Aim 3: Good innovation angle. Could connect more explicitly to clinical translation...",
+          "Overall: Strong framework. Recommend adding innovation statement connecting to NIH mission."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with specific aims - they drive the entire proposal structure and must be testable",
+      "Address review criteria explicitly - make it easy for reviewers to score you highly",
+      "Include mandatory visual elements using scientific-schematics skill for competitiveness"
+    ],
+    "anti_patterns": [
+      "Writing generic proposals without agency-specific tailoring",
+      "Waiting until deadline week to start - good proposals need months of development",
+      "Ignoring broader impacts section (for NSF) or treating it as an afterthought"
+    ],
+    "faq": [
+      {
+        "question": "Which agency should I apply to?",
+        "answer": "NSF funds basic science, NIH funds biomedical research, DOE funds energy science, DARPA funds high-risk defense research. Match your research to their missions."
+      },
+      {
+        "question": "How long should my proposal be?",
+        "answer": "NSF: 15 pages, NIH R01: 12 pages for Research Strategy, DOE/DARPA: varies by program. Always check the specific solicitation."
+      },
+      {
+        "question": "Do I need preliminary data?",
+        "answer": "NIH R01s typically need substantial preliminary data. NSF may need some for high-risk proposals. DARPA wants proof-of-concept. Tailor to agency expectations."
+      },
+      {
+        "question": "How do I handle broader impacts?",
+        "answer": "NSF requires specific, measurable broader impacts activities. Do not just list generic outreach - show institutional commitment, partnerships, and assessment plans."
+      },
+      {
+        "question": "What is the most important section?",
+        "answer": "Specific Aims/Project Summary - these frame everything else. If reviewers are not excited by page 1, they will not read further."
+      },
+      {
+        "question": "How do I improve my success rate?",
+        "answer": "Talk to program officers early, study successful proposals, get external reviews, address all review criteria explicitly, and resubmit with improvements."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "budget_justification_template.md",
+          "type": "file",
+          "path": "assets/budget_justification_template.md",
+          "lines": 454
+        },
+        {
+          "name": "nih_specific_aims_template.md",
+          "type": "file",
+          "path": "assets/nih_specific_aims_template.md",
+          "lines": 167
+        },
+        {
+          "name": "nsf_project_summary_template.md",
+          "type": "file",
+          "path": "assets/nsf_project_summary_template.md",
+          "lines": 93
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "broader_impacts.md",
+          "type": "file",
+          "path": "references/broader_impacts.md",
+          "lines": 393
+        },
+        {
+          "name": "darpa_guidelines.md",
+          "type": "file",
+          "path": "references/darpa_guidelines.md",
+          "lines": 637
+        },
+        {
+          "name": "doe_guidelines.md",
+          "type": "file",
+          "path": "references/doe_guidelines.md",
+          "lines": 587
+        },
+        {
+          "name": "nih_guidelines.md",
+          "type": "file",
+          "path": "references/nih_guidelines.md",
+          "lines": 852
+        },
+        {
+          "name": "nsf_guidelines.md",
+          "type": "file",
+          "path": "references/nsf_guidelines.md",
+          "lines": 571
+        },
+        {
+          "name": "nstc_guidelines.md",
+          "type": "file",
+          "path": "references/nstc_guidelines.md",
+          "lines": 734
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "references/README.md",
+          "lines": 286
+        },
+        {
+          "name": "specific_aims_guide.md",
+          "type": "file",
+          "path": "references/specific_aims_guide.md",
+          "lines": 459
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 957
+    }
+  ]
+}

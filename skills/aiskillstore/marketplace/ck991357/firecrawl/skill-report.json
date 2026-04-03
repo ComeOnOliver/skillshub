@@ -1,0 +1,438 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:16:16.650Z",
+    "slug": "ck991357-firecrawl",
+    "source_url": "https://github.com/CK991357/gemini-chat/tree/main/src/skills/firecrawl",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "df25c9160677cc9f58d78c7e941a8a0539480367d455889e65e353e46258f332",
+    "tree_hash": "129ecd7dc981d9a85bc8de3776ffab6c1196eb80ef4bbab2883dea4db58051cd"
+  },
+  "skill": {
+    "name": "firecrawl",
+    "description": "多功能网页抓取和数据提取工具，支持同步抓取、搜索、网站地图获取和异步爬取",
+    "summary": "多功能网页抓取和数据提取工具，支持同步抓取、搜索、网站地图获取和异步爬取",
+    "icon": "🕸️",
+    "version": "1.0",
+    "author": "CK991357",
+    "license": "MIT",
+    "category": "web-crawling",
+    "tags": [
+      "web-scraping",
+      "data-extraction",
+      "crawling",
+      "automation",
+      "firecrawl"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation for the Firecrawl MCP tool interface. No executable code, scripts, or network operations are present. The SKILL.md file describes how to call various web scraping modes (scrape, search, map, crawl, extract, check_status) through a structured MCP interface. All static findings are false positives triggered by documentation content being misinterpreted as malicious patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 127,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 119
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 117
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 119
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 296,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:16:16.650Z"
+  },
+  "content": {
+    "user_title": "Extract web data with Firecrawl",
+    "value_statement": "Manual web scraping requires writing code and handling anti-bot measures. Firecrawl provides a unified interface to scrape websites, search the web, extract structured data, and crawl entire sites with async job support.",
+    "seo_keywords": [
+      "Firecrawl",
+      "web scraping",
+      "data extraction",
+      "web crawling",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "MCP",
+      "automation",
+      "markdown extraction"
+    ],
+    "actual_capabilities": [
+      "Scrape single web pages and extract content as markdown or HTML",
+      "Search the web for information with result limits",
+      "Map website structures by extracting sitemap URLs",
+      "Crawl entire websites asynchronously with pagination limits",
+      "Extract structured data from URLs using custom prompts and schemas",
+      "Check async job status for crawl and extract operations"
+    ],
+    "limitations": [
+      "Cannot scrape websites with strong anti-bot protection",
+      "No JavaScript rendering for dynamic single-page applications",
+      "Rate limits depend on the underlying Firecrawl API plan"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Researchers",
+        "title": "Gather research sources",
+        "description": "Extract content from multiple web pages for literature reviews and data collection"
+      },
+      {
+        "target_user": "Content creators",
+        "title": "Build content datasets",
+        "description": "Aggregate information from competitor websites or news sources for analysis"
+      },
+      {
+        "target_user": "Developers",
+        "title": "Automate data pipelines",
+        "description": "Extract structured data from web sources to feed into applications and workflows"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Scrape a webpage",
+        "scenario": "Get page content",
+        "prompt": "Use Firecrawl to scrape {url} and return the content in markdown format."
+      },
+      {
+        "title": "Search the web",
+        "scenario": "Find current information",
+        "prompt": "Search for {topic} using Firecrawl and show me the top {number} results."
+      },
+      {
+        "title": "Map a website",
+        "scenario": "Discover site structure",
+        "prompt": "Get the sitemap for {url} using Firecrawl map mode to see what pages are available."
+      },
+      {
+        "title": "Extract structured data",
+        "scenario": "Parse specific fields",
+        "prompt": "Extract structured data from {urls} using this schema: {schema}. Prompt: {instructions}."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Scrape the Firecrawl documentation page",
+        "output": [
+          "Title: Firecrawl Documentation",
+          "Key sections: Getting Started, API Reference, Examples",
+          "URL: https://docs.firecrawl.dev/",
+          "Content preview: Firecrawl makes it easy to scrape websites"
+        ]
+      },
+      {
+        "input": "Search for latest AI news",
+        "output": [
+          "Found 5 results about AI developments",
+          "Sources include tech news sites and research blogs",
+          "Content includes recent breakthroughs and industry updates"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use scrape mode for single pages and crawl mode for multiple pages with limits",
+      "Check async job status before attempting to retrieve results",
+      "Always include URL protocols (http:// or https://) in parameters"
+    ],
+    "anti_patterns": [
+      "Calling extract with a single URL instead of an array of URLs",
+      "Omitting the mode parameter or placing parameters at the top level",
+      "Using crawl without a limit on large websites"
+    ],
+    "faq": [
+      {
+        "question": "Which modes return immediate results?",
+        "answer": "Scrape, search, and map are synchronous and return results immediately. Crawl and extract return a job_id for status polling."
+      },
+      {
+        "question": "What formats can I extract content in?",
+        "answer": "Scrape supports markdown and HTML formats. Markdown is the default and recommended for most use cases."
+      },
+      {
+        "question": "How do I check if my crawl job completed?",
+        "answer": "Use check_status mode with the job_id returned from crawl or extract operations to retrieve results."
+      },
+      {
+        "question": "Is my scraping data stored anywhere?",
+        "answer": "Data handling depends on your Firecrawl API provider. Consult their privacy policy for storage details."
+      },
+      {
+        "question": "Why is my crawl returning no results?",
+        "answer": "Check that the URL is accessible, the domain allows crawling, and you have sufficient API credits or rate limits."
+      },
+      {
+        "question": "How is this different from Tavily search?",
+        "answer": "Firecrawl focuses on direct website scraping and crawling, while Tavily specializes in search engine queries with optimized results."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 119
+    }
+  ]
+}

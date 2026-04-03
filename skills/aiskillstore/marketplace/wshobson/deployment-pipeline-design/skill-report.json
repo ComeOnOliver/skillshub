@@ -1,0 +1,397 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:23:13.656Z",
+    "slug": "wshobson-deployment-pipeline-design",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/cicd-automation/skills/deployment-pipeline-design",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b451f0b519cc2f0e3422227c5759abfda1eacdf3065209b69dc0023c232e0e0d",
+    "tree_hash": "13371e76b568200bcd4f6613b4599488eff0050bf8dac983fc50aae15b096fae"
+  },
+  "skill": {
+    "name": "deployment-pipeline-design",
+    "description": "Design multi-stage CI/CD pipelines with approval gates, security checks, and deployment orchestration. Use when architecting deployment workflows, setting up continuous delivery, or implementing GitOps practices.",
+    "summary": "Design multi-stage CI/CD pipelines with approval gates, security checks, and deployment orchestratio...",
+    "icon": "🚀",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "ci/cd",
+      "deployment",
+      "pipelines",
+      "gitops",
+      "devops"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown explanations and YAML/JSON example snippets. All static findings are false positives triggered by example code patterns in documentation. No executable scripts, network calls, filesystem access, or credential handling code exists. The skill is a reference guide for CI/CD architecture patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 260,
+            "line_end": 260
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 297,
+            "line_end": 297
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 284
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 284,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 311
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 311,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 335
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 335,
+            "line_end": 348
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 348,
+            "line_end": 352
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 352,
+            "line_end": 353
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 353,
+            "line_end": 357
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 357,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 342,
+            "line_end": 342
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 335,
+            "line_end": 348
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 180
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 533,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:23:13.656Z"
+  },
+  "content": {
+    "user_title": "Design secure CI/CD pipelines",
+    "value_statement": "Many teams deploy without clear stages or approvals and face risky releases. This skill gives proven pipeline structures and rollout strategies to improve safety and speed.",
+    "seo_keywords": [
+      "CI/CD pipeline design",
+      "deployment workflow",
+      "GitOps practices",
+      "approval gates",
+      "release strategies",
+      "DevOps automation",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Defines standard CI/CD stages and ordering for multi-environment pipelines",
+      "Provides approval gate patterns for GitHub Actions, GitLab CI, and Azure Pipelines",
+      "Explains deployment strategies including rolling, blue-green, canary, and feature flags",
+      "Includes a multi-stage pipeline example with build, test, deploy, and verify steps",
+      "Outlines rollback and monitoring practices for safer releases"
+    ],
+    "limitations": [
+      "Provides design guidance and examples, not runnable automation scripts",
+      "Referenced assets and reference files are not included in this directory",
+      "Examples assume external tools like kubectl, trivy, and Argo Rollouts",
+      "Does not configure or manage secrets stores"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps engineer",
+        "title": "Multi-stage pipeline plan",
+        "description": "Create a staged CI/CD design with approvals and safety checks for production releases."
+      },
+      {
+        "target_user": "Platform engineer",
+        "title": "Standardize deployment strategy",
+        "description": "Select rolling, blue-green, or canary strategies for consistent platform releases."
+      },
+      {
+        "target_user": "Engineering manager",
+        "title": "Release governance guide",
+        "description": "Define approval gates and verification steps for controlled production changes."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Starter pipeline",
+        "scenario": "New team needs basic CI/CD flow",
+        "prompt": "Draft a simple multi-stage CI/CD pipeline for a web app with build, test, staging, approval, and production deploy."
+      },
+      {
+        "title": "Approval gate design",
+        "scenario": "Require manual approval before production",
+        "prompt": "Propose approval gate patterns for GitHub Actions and Azure Pipelines, including who approves and when."
+      },
+      {
+        "title": "Strategy selection",
+        "scenario": "Choose a rollout approach for production",
+        "prompt": "Compare rolling, blue-green, and canary strategies for a high-traffic API and recommend one."
+      },
+      {
+        "title": "Full pipeline blueprint",
+        "scenario": "Advanced multi-environment pipeline",
+        "prompt": "Design a full CI/CD pipeline with security scans, staging tests, approval, canary deploy, verification, and rollback."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Design a CI/CD pipeline with approval and rollback for a Kubernetes service.",
+        "output": [
+          "Stages: Source, Build, Test, Staging Deploy, Integration Tests, Approval, Production Deploy, Verify, Rollback",
+          "Approval: Manual gate after staging with a named approver group",
+          "Deployment: Canary rollout with stepwise traffic shifts and health checks"
+        ]
+      },
+      {
+        "input": "How do I implement blue-green deployment for a database-backed application?",
+        "output": [
+          "Create parallel production environments (blue=current, green=new)",
+          "Deploy green version alongside blue with identical infrastructure",
+          "Run smoke tests against green before switching traffic",
+          "Keep blue running for instant rollback if issues arise"
+        ]
+      },
+      {
+        "input": "What metrics should I track to measure deployment success?",
+        "output": [
+          "Deployment frequency: how often you deploy to production",
+          "Lead time: time from code commit to production deployment",
+          "Change failure rate: percentage of deployments causing failures",
+          "Mean time to recovery: how quickly you restore service after incidents"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Fail fast with quick tests before long-running jobs",
+      "Use environment parity between staging and production",
+      "Automate rollback based on health checks and error rates"
+    ],
+    "anti_patterns": [
+      "Skipping approval gates for high-risk production changes",
+      "Deploying without post-deploy verification or monitoring",
+      "Using a single stage for build, test, and deploy"
+    ],
+    "faq": [
+      {
+        "question": "What platforms does this work with?",
+        "answer": "The examples cover GitHub Actions, GitLab CI, and Azure Pipelines, and the concepts apply to most CI/CD systems."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides guidance and examples only and does not execute or configure pipelines."
+      },
+      {
+        "question": "Can it integrate with existing tools?",
+        "answer": "Yes, the patterns align with common tools like Kubernetes, Argo Rollouts, and security scanners."
+      },
+      {
+        "question": "Does it access my data or secrets?",
+        "answer": "No, it is static documentation and does not access files, secrets, or networks."
+      },
+      {
+        "question": "What if my pipeline fails?",
+        "answer": "Use the rollback and verification guidance to isolate issues and restore a stable release."
+      },
+      {
+        "question": "How is this different from a template skill?",
+        "answer": "This focuses on architecture decisions and tradeoffs rather than providing runnable templates."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 360
+    }
+  ]
+}

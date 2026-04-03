@@ -1,0 +1,321 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:30:13.913Z",
+    "slug": "wshobson-istio-traffic-management",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/cloud-infrastructure/skills/istio-traffic-management",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0c346de80427de946c4c60deaf4005e58c7992d55acb0036c3b78ea1eb3e3f22",
+    "tree_hash": "57ca98c81b65feccf527ca67e540528c177e1c99b51086b98df3938eec3075ce"
+  },
+  "skill": {
+    "name": "istio-traffic-management",
+    "description": "Configure Istio traffic management including routing, load balancing, circuit breakers, and canary deployments. Use when implementing service mesh traffic policies, progressive delivery, or resilience patterns.",
+    "summary": "Configure Istio traffic management including routing, load balancing, circuit breakers, and canary d...",
+    "icon": "🕸️",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "istio",
+      "service-mesh",
+      "traffic-management",
+      "canary",
+      "resilience"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only static documentation with YAML configuration templates for Istio traffic management. No executable code, data access, network communication, or file manipulation is present. The 57 static findings are all false positives caused by YAML field names being misinterpreted as cryptographic terms, code block markers being flagged as shell backticks, and hash values being flagged as weak algorithms.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 324
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 325,
+            "line_end": 325
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 261
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 261,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 288
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 288,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 319
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 502,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:30:13.913Z"
+  },
+  "content": {
+    "user_title": "Configure Istio traffic management fast",
+    "value_statement": "Managing Istio traffic policies across services is complex and error prone. This skill provides ready templates and guidance for routing, canary rollouts, and resilience controls.",
+    "seo_keywords": [
+      "Istio traffic management",
+      "service mesh routing",
+      "VirtualService",
+      "DestinationRule",
+      "canary deployment",
+      "circuit breaker policy",
+      "Istio gateway",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generate VirtualService routing with header and path matches",
+      "Define DestinationRule subsets for versioned services",
+      "Set weighted splits for canary and stable traffic",
+      "Provide circuit breaker and outlier detection policies",
+      "Configure retries, timeouts, and traffic mirroring",
+      "Create Gateway and ingress routing examples"
+    ],
+    "limitations": [
+      "Does not apply manifests to a cluster",
+      "Requires Istio CRDs and control plane already installed",
+      "Does not validate policies against live mesh state",
+      "No runtime telemetry or rollout automation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Platform engineer",
+        "title": "Standardize mesh routing",
+        "description": "Generate consistent VirtualService and DestinationRule patterns for team services."
+      },
+      {
+        "target_user": "SRE",
+        "title": "Harden service resilience",
+        "description": "Define retries, timeouts, and circuit breakers to reduce cascading failures."
+      },
+      {
+        "target_user": "Release manager",
+        "title": "Run safe canaries",
+        "description": "Create weighted splits for stable and canary versions during rollouts."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic routing",
+        "scenario": "Single service with version subsets",
+        "prompt": "Create a VirtualService and DestinationRule for reviews with v1 and v2 subsets. Route header end-user jason to v2 and others to v1."
+      },
+      {
+        "title": "Canary rollout",
+        "scenario": "Progressive delivery setup",
+        "prompt": "Generate Istio manifests for my-service with stable and canary subsets. Use 90 percent stable and 10 percent canary."
+      },
+      {
+        "title": "Resilience policy",
+        "scenario": "Circuit breaker with retries",
+        "prompt": "Provide a DestinationRule with connection pools and outlier detection for my-service. Add a VirtualService with retries and timeouts."
+      },
+      {
+        "title": "Ingress gateway",
+        "scenario": "TLS ingress routing",
+        "prompt": "Create a Gateway for *.example.com with TLS and a VirtualService that routes /api/v1 to api-service on port 8080."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Set up a 95 5 canary for payments with stable and canary subsets",
+        "output": [
+          "VirtualService routes payments with 95 percent stable and 5 percent canary",
+          "DestinationRule defines stable and canary subsets with version labels",
+          "Notes on adjusting weights during the rollout"
+        ]
+      },
+      {
+        "input": "Configure circuit breakers for my-api with max connections and outlier detection",
+        "output": [
+          "DestinationRule sets connection pool limits and outlier detection thresholds",
+          "Circuit breaker triggers after 5 consecutive 5xx errors",
+          "Ejection removes unhealthy instances for 30 seconds base time"
+        ]
+      },
+      {
+        "input": "Add retries and timeouts to the ratings service VirtualService",
+        "output": [
+          "VirtualService includes 3 retry attempts with 3 second per-try timeout",
+          "Timeout set to 10 seconds per request",
+          "Retries trigger on connect-failure, refused-stream, unavailable, and cancelled"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use clear version labels for subsets",
+      "Set conservative timeouts and retry limits",
+      "Start canaries with small traffic weights"
+    ],
+    "anti_patterns": [
+      "Mirroring traffic to production targets",
+      "Unlimited retries without backoff",
+      "Skipping outlier detection on critical paths"
+    ],
+    "faq": [
+      {
+        "question": "Which Istio versions are supported",
+        "answer": "Templates use networking v1beta1 APIs that are supported in recent Istio releases."
+      },
+      {
+        "question": "What can this skill not do",
+        "answer": "It does not deploy resources or validate policies against a live cluster."
+      },
+      {
+        "question": "Can I integrate this with CI or GitOps",
+        "answer": "Yes, you can generate manifests and apply them in your existing pipelines."
+      },
+      {
+        "question": "Does it collect or send my data",
+        "answer": "No, it only provides static guidance and templates without data collection."
+      },
+      {
+        "question": "What if routing rules do not apply",
+        "answer": "Use istioctl analyze and proxy-config commands to inspect config and endpoints."
+      },
+      {
+        "question": "How is this different from Kubernetes Ingress",
+        "answer": "It adds mesh-aware routing, traffic shaping, and resilience policies."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 326
+    }
+  ]
+}

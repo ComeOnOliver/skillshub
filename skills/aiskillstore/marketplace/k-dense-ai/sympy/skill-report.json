@@ -1,0 +1,312 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:26:33.894Z",
+    "slug": "k-dense-ai-sympy",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/sympy",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "abe14a6dbbf9a917ce27b284975c9283545f0981ef8ef65f9c740fa61ca909c7",
+    "tree_hash": "85c7043506c5ac3f289c3b24fd726c0f3aa252e6909bdcb6c4900508cd040581"
+  },
+  "skill": {
+    "name": "sympy",
+    "description": "Use this skill when working with symbolic mathematics in Python. This skill should be used for symbolic computation tasks including solving equations algebraically, performing calculus operations (derivatives, integrals, limits), manipulating algebraic expressions, working with matrices symbolically, physics calculations, number theory problems, geometry computations, and generating executable code from mathematical expressions. Apply this skill when the user needs exact symbolic results rather than numerical approximations, or when working with mathematical formulas that contain variables and parameters.",
+    "summary": "Use this skill when working with symbolic mathematics in Python. This skill should be used for symbo...",
+    "icon": "Σ",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "https://github.com/sympy/sympy/blob/master/LICENSE",
+    "category": "data",
+    "tags": [
+      "mathematics",
+      "symbolic computation",
+      "python",
+      "calculus",
+      "algebra"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 497 static findings are FALSE POSITIVES. This skill is pure documentation for the SymPy symbolic mathematics library. The detected patterns (backticks, imports, eval, file operations) are legitimate documentation elements: markdown code formatting, Python code examples showing SymPy features like lambdify and srepr, and file export for mathematical results. No malicious behavior present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "references/advanced-topics.md",
+            "line_start": 463,
+            "line_end": 466
+          },
+          {
+            "file": "references/code-generation-printing.md",
+            "line_start": 205,
+            "line_end": 205
+          },
+          {
+            "file": "references/core-capabilities.md",
+            "line_start": 206,
+            "line_end": 206
+          },
+          {
+            "file": "references/physics-mechanics.md",
+            "line_start": 235,
+            "line_end": 239
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "references/core-capabilities.md",
+            "line_start": 10,
+            "line_end": 15
+          },
+          {
+            "file": "references/code-generation-printing.md",
+            "line_start": 9,
+            "line_end": 23
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/code-generation-printing.md",
+            "line_start": 395,
+            "line_end": 395
+          },
+          {
+            "file": "references/code-generation-printing.md",
+            "line_start": 516,
+            "line_end": 516
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 494,
+            "line_end": 494
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 495,
+            "line_end": 495
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 5806,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:26:33.894Z"
+  },
+  "content": {
+    "user_title": "Solve symbolic math problems with SymPy",
+    "value_statement": "Need exact mathematical results instead of numerical approximations. This skill provides comprehensive guidance for symbolic algebra, calculus, equation solving, matrix operations, and physics calculations using Python SymPy library.",
+    "seo_keywords": [
+      "SymPy",
+      "symbolic mathematics",
+      "Python math",
+      "equation solving",
+      "calculus",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "matrix operations",
+      "algebra"
+    ],
+    "actual_capabilities": [
+      "Solve algebraic and differential equations symbolically",
+      "Perform calculus operations: derivatives, integrals, limits, series expansion",
+      "Work with matrices: eigenvalues, determinants, linear systems",
+      "Generate executable code from mathematical expressions (Python, C, Fortran)",
+      "Calculate physics problems: mechanics, quantum, vectors, units",
+      "Explore advanced topics: number theory, geometry, combinatorics, statistics"
+    ],
+    "limitations": [
+      "Symbolic computation can be slow for very complex expressions",
+      "Not all integrals have closed-form symbolic solutions",
+      "Requires understanding of symbolic mathematics concepts",
+      "Numerical libraries needed for high-performance computing"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Engineers and physicists",
+        "title": "Derive equations of motion",
+        "description": "Set up Lagrangian mechanics problems and derive equations of motion symbolically"
+      },
+      {
+        "target_user": "Data scientists",
+        "title": "Symbolic feature engineering",
+        "description": "Create symbolic expressions for mathematical transformations before numerical evaluation"
+      },
+      {
+        "target_user": "Students and educators",
+        "title": "Learn symbolic computation",
+        "description": "Explore step-by-step mathematical derivations, simplifications, and solution verification"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic equation solving",
+        "scenario": "Solve an algebraic equation",
+        "prompt": "Solve the quadratic equation x^2 - 5x + 6 = 0 and verify the solutions"
+      },
+      {
+        "title": "Calculus operations",
+        "scenario": "Compute derivative or integral",
+        "prompt": "Find the derivative of sin(x^2) and then compute the definite integral from 0 to pi"
+      },
+      {
+        "title": "Matrix operations",
+        "scenario": "Eigenvalue computation",
+        "prompt": "Find the eigenvalues and eigenvectors of matrix [[1, 2], [2, 1]]"
+      },
+      {
+        "title": "Code generation",
+        "scenario": "Convert expression to numerical function",
+        "prompt": "Convert the expression x^2 + sin(x) to a NumPy function for numerical evaluation"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Solve x^2 - 4 = 0 for x",
+        "output": [
+          "Solutions: x = -2, x = 2",
+          "Method: solveset(x**2 - 4, x)",
+          "The equation has two real solutions"
+        ]
+      },
+      {
+        "input": "Find derivative of sin(x^2)",
+        "output": [
+          "Derivative: 2*x*cos(x^2)",
+          "Method: diff(sin(x**2), x)",
+          "Use integrate() for the integral"
+        ]
+      },
+      {
+        "input": "Find eigenvalues of [[1, 2], [2, 1]]",
+        "output": [
+          "Eigenvalues: 3, -1",
+          "Eigenvectors: [1, 1], [1, -1]",
+          "Matrix is diagonalizable: True"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Define symbols with assumptions (positive=True, integer=True) to improve simplification",
+      "Use lambdify() to create fast numerical functions from symbolic expressions",
+      "Use Rational() or S() for exact arithmetic instead of floating-point numbers",
+      "Choose appropriate solvers: solveset for algebra, linsolve for linear systems, dsolve for ODEs"
+    ],
+    "anti_patterns": [
+      "Using floating-point numbers (0.5) instead of Rational(1, 2) for exact results",
+      "Using subs() and evalf() in loops instead of lambdify() for performance",
+      "Forgetting to define symbols with symbols() before using them",
+      "Skipping assumptions when working with constrained variables (positive, real, integer)"
+    ],
+    "faq": [
+      {
+        "question": "What is symbolic vs numerical computation?",
+        "answer": "SymPy maintains exact symbolic expressions like sqrt(2) while numerical methods approximate as 1.414. Symbolic gives exact results."
+      },
+      {
+        "question": "When should I use lambdify()?",
+        "answer": "Use lambdify() when you need to evaluate a symbolic expression many times with numerical data. It converts expressions to fast NumPy functions."
+      },
+      {
+        "question": "How do I solve differential equations?",
+        "answer": "Use dsolve() from sympy. Define your function with symbols('f', cls=Function), then call dsolve(Derivative(f(x), x) - f(x), f(x))."
+      },
+      {
+        "question": "What are symbol assumptions?",
+        "answer": "Assumptions like positive=True, real=True, integer=True help SymPy simplify expressions correctly. sqrt(x**2) returns x only if x is positive."
+      },
+      {
+        "question": "How do I generate C/Fortran code?",
+        "answer": "Use sympy.utilities.codegen.codegen() to generate compilable C or Fortran code from symbolic expressions for performance-critical applications."
+      },
+      {
+        "question": "Can SymPy handle matrices with symbolic entries?",
+        "answer": "Yes, SymPy supports symbolic matrices. You can compute determinants, eigenvalues, inverses, and solve systems with symbols as matrix elements."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "advanced-topics.md",
+          "type": "file",
+          "path": "references/advanced-topics.md",
+          "lines": 636
+        },
+        {
+          "name": "code-generation-printing.md",
+          "type": "file",
+          "path": "references/code-generation-printing.md",
+          "lines": 600
+        },
+        {
+          "name": "core-capabilities.md",
+          "type": "file",
+          "path": "references/core-capabilities.md",
+          "lines": 349
+        },
+        {
+          "name": "matrices-linear-algebra.md",
+          "type": "file",
+          "path": "references/matrices-linear-algebra.md",
+          "lines": 527
+        },
+        {
+          "name": "physics-mechanics.md",
+          "type": "file",
+          "path": "references/physics-mechanics.md",
+          "lines": 593
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 500
+    }
+  ]
+}

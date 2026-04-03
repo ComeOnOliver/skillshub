@@ -1,0 +1,608 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:28:19.992Z",
+    "slug": "89jobrien-url-analysis",
+    "source_url": "https://github.com/89jobrien/steve/tree/main/steve/skills/url-analysis",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d60feb8783d50ae3a6eb429c3d873fc46a9e7ffe7feb7ee982fc84a124121e69",
+    "tree_hash": "27b08dcc77eeec229b6e0dbc3bdeeb83f30ab78627d74feb6fe7db95a919c925"
+  },
+  "skill": {
+    "name": "url-analysis",
+    "description": "URL validation and contextual analysis specialist. Use when validating links, analyzing URL context, extracting links from content, or ensuring link appropriateness. Combines technical validation with content analysis.",
+    "summary": "URL validation and contextual analysis specialist. Use when validating links, analyzing URL context,...",
+    "icon": "📦",
+    "version": "1.0.1",
+    "author": "Joseph OBrien",
+    "license": "MIT",
+    "tags": [
+      "url-analysis",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": false,
+    "summary": "AI analysis failed after multiple attempts - MANUAL REVIEW REQUIRED before publishing. This skill cannot be auto-published until reviewed by a human.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/validate-urls.py",
+            "line_start": 13,
+            "line_end": 16
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/validate-urls.py",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "scripts/validate-urls.py",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 160,
+            "line_end": 160
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 162,
+            "line_end": 162
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 163,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 148
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 154
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [
+      {
+        "title": "Dynamic import() expression",
+        "description": "Dynamic import() expression detected in code",
+        "locations": [
+          {
+            "file": "scripts/validate-urls.py",
+            "line_start": 13,
+            "line_end": 16
+          }
+        ]
+      },
+      {
+        "title": "Python HTTP libraries",
+        "description": "Python HTTP libraries detected in code",
+        "locations": [
+          {
+            "file": "scripts/validate-urls.py",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "scripts/validate-urls.py",
+            "line_start": 60,
+            "line_end": 60
+          }
+        ]
+      },
+      {
+        "title": "Weak cryptographic algorithm",
+        "description": "Weak cryptographic algorithm detected in code",
+        "locations": [
+          {
+            "file": "scripts/validate-urls.py",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 90,
+            "line_end": 90
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 90,
+            "line_end": 90
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 105,
+            "line_end": 105
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 108,
+            "line_end": 108
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 109,
+            "line_end": 109
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 121,
+            "line_end": 121
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 126,
+            "line_end": 126
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 131,
+            "line_end": 131
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 138,
+            "line_end": 138
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 148,
+            "line_end": 148
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 148,
+            "line_end": 148
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 169,
+            "line_end": 169
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 170,
+            "line_end": 170
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 177,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 161
+          }
+        ]
+      },
+      {
+        "title": "System reconnaissance",
+        "description": "System reconnaissance detected in code",
+        "locations": [
+          {
+            "file": "scripts/validate-urls.py",
+            "line_start": 52,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 128
+          }
+        ]
+      },
+      {
+        "title": "Hardcoded URL",
+        "description": "Hardcoded URL detected in code",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 160,
+            "line_end": 160
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 162,
+            "line_end": 162
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 163,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 148
+          }
+        ]
+      },
+      {
+        "title": "Ruby/shell backtick execution",
+        "description": "Ruby/shell backtick execution detected in code",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 154
+          }
+        ]
+      },
+      {
+        "title": "Network reconnaissance",
+        "description": "Network reconnaissance detected in code",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 22
+          }
+        ]
+      }
+    ],
+    "files_scanned": 3,
+    "total_lines": 521,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:28:19.992Z"
+  },
+  "content": {
+    "user_title": "Url Analysis",
+    "value_statement": "An AI skill for Claude, Codex, and Claude Code",
+    "seo_keywords": [
+      "url-analysis",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "actual_capabilities": [],
+    "limitations": [],
+    "use_cases": [],
+    "prompt_templates": [],
+    "output_examples": [],
+    "best_practices": [],
+    "anti_patterns": [],
+    "faq": []
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "validate-urls.py",
+          "type": "file",
+          "path": "scripts/validate-urls.py",
+          "lines": 122
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 173
+    }
+  ]
+}

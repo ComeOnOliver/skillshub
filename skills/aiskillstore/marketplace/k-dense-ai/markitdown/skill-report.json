@@ -1,0 +1,296 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:20:17.356Z",
+    "slug": "k-dense-ai-markitdown",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/markitdown",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a8fdb4ffc1566139fb0c29b8656417c65a213bf7b7423c26e4bff5fab21c2f29",
+    "tree_hash": "9a027cdfef3bb8a0b538fa0f14cbb8a7b5ff9630a0fd2744df26e783c2767e1b"
+  },
+  "skill": {
+    "name": "markitdown",
+    "description": "Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), audio (with transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPubs and more.",
+    "summary": "Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), a...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "documentation",
+    "tags": [
+      "document-conversion",
+      "markdown",
+      "pdf",
+      "office-documents"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static findings are false positives. The scanner incorrectly flagged markdown code blocks (using backticks) as shell execution, and legitimate document conversion patterns as suspicious. The skill is a Microsoft tool for converting documents to Markdown with expected file I/O and API access.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/batch_convert.py",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "scripts/convert_literature.py",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "scripts/convert_with_ai.py",
+            "line_start": 130,
+            "line_end": 130
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/convert_with_ai.py",
+            "line_start": 96,
+            "line_end": 96
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/convert_with_ai.py",
+            "line_start": 217,
+            "line_end": 217
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 4355,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:20:17.356Z"
+  },
+  "content": {
+    "user_title": "Convert documents to Markdown",
+    "value_statement": "Converting documents to Markdown makes them token-efficient and easy to process for AI models. MarkItDown supports 15+ formats including PDF, DOCX, PPTX, XLSX, images, audio, and web pages.",
+    "seo_keywords": [
+      "MarkItDown",
+      "document conversion",
+      "Markdown converter",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "PDF to Markdown",
+      "DOCX converter",
+      "office documents",
+      "OCR"
+    ],
+    "actual_capabilities": [
+      "Convert PDF, DOCX, PPTX, XLSX to Markdown",
+      "Extract text from images using OCR",
+      "Transcribe audio files to text",
+      "Fetch YouTube video transcriptions",
+      "AI-enhanced image descriptions via OpenRouter",
+      "Batch process multiple files"
+    ],
+    "limitations": [
+      "Requires MarkItDown Python package installation",
+      "AI features need OpenRouter API key",
+      "OCR requires tesseract installation",
+      "Complex formatting may not fully translate"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Researchers",
+        "title": "Convert papers to Markdown",
+        "description": "Transform PDF research papers into clean Markdown for AI analysis and literature review workflows."
+      },
+      {
+        "target_user": "Content creators",
+        "title": "Process office documents",
+        "description": "Convert Word docs, PowerPoint slides, and Excel sheets to Markdown for content repurposing."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Batch convert archives",
+        "description": "Process multiple document formats in batch for pipeline integration and documentation automation."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic PDF conversion",
+        "scenario": "Convert a research paper",
+        "prompt": "Use MarkItDown to convert research_paper.pdf to Markdown and save the output to paper.md"
+      },
+      {
+        "title": "Batch processing",
+        "scenario": "Convert multiple files",
+        "prompt": "Convert all PDF files in the papers/ directory to Markdown files in the markdown_output/ directory using MarkItDown"
+      },
+      {
+        "title": "AI-enhanced slides",
+        "scenario": "Convert PowerPoint with AI",
+        "prompt": "Use MarkItDown with OpenRouter to convert presentation.pptx. Configure Claude Sonnet to describe the slide images in detail."
+      },
+      {
+        "title": "YouTube transcription",
+        "scenario": "Extract video transcript",
+        "prompt": "Convert the YouTube video at https://www.youtube.com/watch?v=VIDEO_ID to Markdown transcript using MarkItDown"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Convert research_paper.pdf to Markdown",
+        "output": [
+          "# Research Paper Title",
+          "## Abstract",
+          "Paper content extracted...",
+          "## References",
+          "Bibliography extracted..."
+        ]
+      },
+      {
+        "input": "Convert spreadsheet.xlsx to Markdown",
+        "output": [
+          "# Data Summary",
+          "| Column A | Column B |",
+          "| -------- | -------- |",
+          "| Value 1  | Value 2   |"
+        ]
+      },
+      {
+        "input": "Convert presentation.pptx with AI descriptions",
+        "output": [
+          "# Slide 1: Introduction",
+          "![AI-generated description: Bar chart showing...]",
+          "Slide text content..."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Install MarkItDown with all features using pip install markitdown[all]",
+      "Use AI-enhanced mode with Claude Sonnet for detailed image descriptions in presentations",
+      "Organize converted files with meaningful filenames and directory structure"
+    ],
+    "anti_patterns": [
+      "Do not use for converting confidential documents without reviewing the security implications",
+      "Do not expose API keys in shared scripts or version control",
+      "Do not assume all formatting will perfectly translate from complex PDFs"
+    ],
+    "faq": [
+      {
+        "question": "What file formats are supported?",
+        "answer": "PDF, DOCX, PPTX, XLSX, images (OCR), audio (transcription), HTML, CSV, JSON, XML, ZIP, EPUB, and YouTube URLs."
+      },
+      {
+        "question": "Do I need an API key?",
+        "answer": "Basic conversion works without API keys. AI image descriptions require an OpenRouter API key."
+      },
+      {
+        "question": "How does OCR work?",
+        "answer": "MarkItDown uses tesseract for OCR on images. Install with pip install markitdown[all] or separately."
+      },
+      {
+        "question": "Can I convert password protected files?",
+        "answer": "No. MarkItDown cannot convert password-protected or encrypted documents."
+      },
+      {
+        "question": "Is this suitable for legal documents?",
+        "answer": "Conversion preserves content but may not maintain exact formatting. Review output for accuracy in critical use cases."
+      },
+      {
+        "question": "How does batch conversion work?",
+        "answer": "Use the batch_convert.py script to process multiple files with parallel workers for efficiency."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "example_usage.md",
+          "type": "file",
+          "path": "assets/example_usage.md",
+          "lines": 464
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 400
+        },
+        {
+          "name": "file_formats.md",
+          "type": "file",
+          "path": "references/file_formats.md",
+          "lines": 543
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "batch_convert.py",
+          "type": "file",
+          "path": "scripts/batch_convert.py",
+          "lines": 229
+        },
+        {
+          "name": "convert_literature.py",
+          "type": "file",
+          "path": "scripts/convert_literature.py",
+          "lines": 284
+        },
+        {
+          "name": "convert_with_ai.py",
+          "type": "file",
+          "path": "scripts/convert_with_ai.py",
+          "lines": 244
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 490
+    }
+  ]
+}

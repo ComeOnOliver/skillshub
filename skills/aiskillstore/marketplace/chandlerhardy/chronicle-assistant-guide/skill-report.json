@@ -1,0 +1,531 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:28:14.035Z",
+    "slug": "chandlerhardy-chronicle-assistant-guide",
+    "source_url": "https://github.com/ChandlerHardy/chronicle/tree/main/chronicle-skills/chronicle-assistant-guide",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c69e540c29e1c1d512f9e4b2ec28ccd7e08ab645408c8b44c48f8ebda9af8727",
+    "tree_hash": "48ef4b7f28fb0d7ee4baad23c6e2421c622f24063d20c374fd87a81fe677056c"
+  },
+  "skill": {
+    "name": "chronicle-assistant-guide",
+    "description": "Project-agnostic guidance for AI assistants using Chronicle. Provides search-first directives, best practices, and workflow patterns across ALL Chronicle-tracked projects. Works with or without MCP server.",
+    "summary": "Project-agnostic guidance for AI assistants using Chronicle. Provides search-first directives, best ...",
+    "icon": "📖",
+    "version": "1.0.0",
+    "author": "ChandlerHardy",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "chronicle",
+      "workflow",
+      "best-practices",
+      "session-tracking",
+      "guidance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guidance. No executable code, file access, network calls, or command execution capabilities. All 90 static findings are false positives triggered by pattern-matching on documentation text.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 157,
+            "line_end": 157
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 157,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 357,
+            "line_end": 357
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 357,
+            "line_end": 357
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 359
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 168,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 203
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 244
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 244,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 279
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 279,
+            "line_end": 284
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 284,
+            "line_end": 292
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 292,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 314
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 314,
+            "line_end": 317
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 324
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 354
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 354,
+            "line_end": 357
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 357,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 376
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 376,
+            "line_end": 385
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 385
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 386
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 568,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:28:14.035Z"
+  },
+  "content": {
+    "user_title": "Learn Chronicle best practices",
+    "value_statement": "Chronicle tracks every AI session, creating a searchable history of your work. This guide provides essential directives for AI assistants to leverage past sessions, avoid repeated mistakes, and follow proven workflows.",
+    "seo_keywords": [
+      "Chronicle",
+      "AI assistant guide",
+      "session tracking",
+      "MCP tools",
+      "Claude Code",
+      "workflow best practices",
+      "AI session documentation",
+      "developer productivity",
+      "session history",
+      "context retrieval"
+    ],
+    "actual_capabilities": [
+      "Search past Chronicle sessions for context before implementing features",
+      "Use MCP tools for fast structured queries when available",
+      "Fall back to CLI commands when MCP server is unavailable",
+      "Check project roadmap and milestones before starting work",
+      "Debug issues by searching for similar past problems",
+      "Understand session relationships and project history"
+    ],
+    "limitations": [
+      "Does not execute Chronicle commands - only provides guidance",
+      "Requires Chronicle to be installed and configured",
+      "MCP server must be running for fastest tool access",
+      "Cannot create or modify sessions - only reads existing data"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI assistants",
+        "title": "Search before implementing",
+        "description": "Search past sessions to avoid repeating mistakes and learn from previous solutions"
+      },
+      {
+        "target_user": "Project contributors",
+        "title": "Understand project history",
+        "description": "Review session summaries to understand how features were implemented"
+      },
+      {
+        "target_user": "Debuggers",
+        "title": "Find similar past issues",
+        "description": "Search for error messages to discover how similar problems were solved"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Get started with Chronicle",
+        "scenario": "Learning Chronicle basics",
+        "prompt": "How do I use Chronicle to search past sessions and understand project context?"
+      },
+      {
+        "title": "Search for context",
+        "scenario": "Before implementing a feature",
+        "prompt": "Search Chronicle for information about implementing authentication features"
+      },
+      {
+        "title": "Debug with history",
+        "scenario": "Debugging an issue",
+        "prompt": "Search Chronicle for information about MCP server hangs or freezes"
+      },
+      {
+        "title": "View roadmap",
+        "scenario": "Checking project status",
+        "prompt": "Show me the current roadmap and milestones for this project"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I use Chronicle to search past sessions?",
+        "output": [
+          "Before implementing anything, search Chronicle first. This saves time by finding solutions already discovered in past sessions.",
+          "With MCP: Use mcp__chronicle__search_sessions(query=\"your keywords\", limit=5)",
+          "With CLI: Run chronicle search \"your keywords\" --limit 5",
+          "Check related sessions in search results for full context and solutions"
+        ]
+      },
+      {
+        "input": "What is the current project roadmap?",
+        "output": [
+          "Check the roadmap to see current milestones and next steps before starting new work.",
+          "With MCP: Use mcp__chronicle__get_roadmap(days=7)",
+          "With CLI: Run chronicle roadmap --days 7",
+          "Review in-progress milestones to understand project priorities"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always search Chronicle before implementing features or debugging issues",
+      "Use MCP tools for fast structured responses when available, fall back to CLI",
+      "Read session summaries to understand past approaches and avoid repeated mistakes"
+    ],
+    "anti_patterns": [
+      "Jumping straight into implementation without searching for related past work",
+      "Ignoring related sessions in search results",
+      "Forgetting to check the roadmap before creating new milestones"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. MCP tools require Chronicle MCP server running."
+      },
+      {
+        "question": "Does this skill execute commands?",
+        "answer": "No. It provides guidance only. Chronicle must be installed separately to execute commands."
+      },
+      {
+        "question": "How does MCP differ from CLI?",
+        "answer": "MCP provides fast structured JSON responses under 10ms. CLI uses subprocess calls around 100ms but works everywhere."
+      },
+      {
+        "question": "Is my session data stored safely?",
+        "answer": "Chronicle stores sessions locally in ~/.ai-session/ directory. No data is sent to external servers."
+      },
+      {
+        "question": "What if MCP server is not available?",
+        "answer": "All functionality works via CLI commands. Chronicle searches, roadmap, and sessions all support CLI fallback."
+      },
+      {
+        "question": "How is this different from other skills?",
+        "answer": "This skill is project-agnostic and works across ALL Chronicle-tracked projects with universal directives."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 391
+    }
+  ]
+}

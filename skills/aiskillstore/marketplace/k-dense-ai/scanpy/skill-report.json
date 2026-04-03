@@ -1,0 +1,287 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:23:36.695Z",
+    "slug": "k-dense-ai-scanpy",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scanpy",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d79bbca68819e047a0d160d791be3cb9492136716617004860f00081b6b947f1",
+    "tree_hash": "d285452b32df9655282857f1e647ab32c960f887f83949113f4af42d7507e9f9"
+  },
+  "skill": {
+    "name": "scanpy",
+    "description": "Standard single-cell RNA-seq analysis pipeline. Use for QC, normalization, dimensionality reduction (PCA/UMAP/t-SNE), clustering, differential expression, and visualization. Best for exploratory scRNA-seq analysis with established workflows. For deep learning models use scvi-tools; for data format questions use anndata.",
+    "summary": "Standard single-cell RNA-seq analysis pipeline. Use for QC, normalization, dimensionality reduction ...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "SD-3-Clause license",
+    "category": "data",
+    "tags": [
+      "single-cell",
+      "rna-seq",
+      "bioinformatics",
+      "visualization",
+      "machine-learning"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 228 static findings are false positives. This is a legitimate scientific computing skill for single-cell RNA-seq analysis. The scanner incorrectly flagged: markdown inline code formatting (backticks), file I/O functions for data reading, directory creation operations, and git tree hashes as C2 indicators. No malicious patterns, network exfiltration, or command injection risks exist after human evaluation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "assets/analysis_template.py",
+            "line_start": 260,
+            "line_end": 260
+          },
+          {
+            "file": "scripts/qc_analysis.py",
+            "line_start": 67,
+            "line_end": 67
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 370,
+            "line_end": 372
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 39
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 7,
+            "line_end": 24
+          },
+          {
+            "file": "references/plotting_guide.md",
+            "line_start": 8,
+            "line_end": 28
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 3003,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:23:36.695Z"
+  },
+  "content": {
+    "user_title": "Analyze single-cell RNA-seq data",
+    "value_statement": "Single-cell RNA sequencing generates complex datasets requiring specialized analysis. This skill provides a complete workflow for quality control, dimensionality reduction, clustering, and visualization of single-cell gene expression data.",
+    "seo_keywords": [
+      "scanpy",
+      "single-cell RNA-seq",
+      "single-cell analysis",
+      "bioinformatics",
+      "scRNA-seq",
+      "cell clustering",
+      "UMAP",
+      "t-SNE",
+      "Claude Code",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Load and preprocess single-cell data from 10X, h5ad, CSV formats",
+      "Perform quality control and filter low-quality cells and genes",
+      "Apply dimensionality reduction techniques including PCA, UMAP, and t-SNE",
+      "Identify cell clusters using Leiden and Louvain algorithms",
+      "Find marker genes and annotate cell types from gene expression",
+      "Generate publication-quality visualizations of single-cell data"
+    ],
+    "limitations": [
+      "Requires existing scanpy installation and dependencies",
+      "Processes local files only, no direct database connections",
+      "Does not include deep learning models (use scvi-tools for those)",
+      "Performance scales with available memory for large datasets"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bioinformatics researchers",
+        "title": "Exploratory scRNA-seq analysis",
+        "description": "Analyze single-cell gene expression datasets to identify cell types, states, and populations."
+      },
+      {
+        "target_user": "Computational biologists",
+        "title": "Marker gene discovery",
+        "description": "Identify differentially expressed genes between clusters and characterize cell populations."
+      },
+      {
+        "target_user": "Data scientists",
+        "title": "Visualization pipelines",
+        "description": "Generate UMAP, t-SNE, and other dimensionality reduction plots for publications."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Load and inspect data",
+        "scenario": "New single-cell dataset",
+        "prompt": "Load my single-cell data from data.h5ad and show me the basic structure including cell and gene counts."
+      },
+      {
+        "title": "QC and filtering",
+        "scenario": "Quality control workflow",
+        "prompt": "Run quality control on my dataset, filter cells with less than 200 genes or more than 5% mitochondrial reads, and generate QC plots."
+      },
+      {
+        "title": "Cluster and annotate",
+        "scenario": "Cell type identification",
+        "prompt": "Perform clustering at resolution 0.5, generate UMAP visualization, and identify marker genes for each cluster."
+      },
+      {
+        "title": "Full analysis",
+        "scenario": "Complete pipeline",
+        "prompt": "Run a complete scanpy workflow: QC, normalization, highly variable genes, PCA, neighbors, UMAP, Leiden clustering at resolution 0.8, and save results."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Load my single-cell data and perform quality control",
+        "output": [
+          "Loaded 3,245 cells x 20,000 genes",
+          "QC metrics: mean 1,542 genes per cell, 4.2% mitochondrial reads",
+          "After filtering: 2,987 cells x 15,432 genes (92% cells retained)",
+          "Saved QC violin plots to figures/qc_violin.pdf"
+        ]
+      },
+      {
+        "input": "Run complete clustering and annotation workflow",
+        "output": [
+          "Identified 12 cell clusters using Leiden algorithm",
+          "Generated UMAP visualization colored by cluster",
+          "Top marker genes identified for each cluster",
+          "Cell types annotated based on known marker expression"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always save raw counts before filtering: adata.raw = adata",
+      "Validate clustering by checking known marker gene expression",
+      "Save intermediate results to avoid re-running long workflows"
+    ],
+    "anti_patterns": [
+      "Skipping quality control steps before downstream analysis",
+      "Using default clustering resolution without testing multiple values",
+      "Not visualizing data before and after filtering steps"
+    ],
+    "faq": [
+      {
+        "question": "What file formats does scanpy support?",
+        "answer": "Scanpy supports h5ad, 10X Genomics MTX, HDF5, CSV, loom, and text files."
+      },
+      {
+        "question": "How many neighbors should I use for UMAP?",
+        "answer": "Default is 10-30 neighbors. Lower values preserve local structure; higher values capture global patterns."
+      },
+      {
+        "question": "Leiden vs Louvain clustering?",
+        "answer": "Leiden is recommended as it produces better-quality clusters and is more efficient than Louvain."
+      },
+      {
+        "question": "How many PCs should I use?",
+        "answer": "Check the PCA variance ratio plot. Use PCs before the elbow, typically 30-50 for datasets with high variability."
+      },
+      {
+        "question": "What is the mitochondrial threshold?",
+        "answer": "Typical threshold is 5-20%. Lower thresholds remove more cells; validate with known cell type markers."
+      },
+      {
+        "question": "How to annotate cell types?",
+        "answer": "Use known marker genes for cell types. Visualize expression on UMAP and compare cluster marker genes to reference databases."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "analysis_template.py",
+          "type": "file",
+          "path": "assets/analysis_template.py",
+          "lines": 296
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 252
+        },
+        {
+          "name": "plotting_guide.md",
+          "type": "file",
+          "path": "references/plotting_guide.md",
+          "lines": 353
+        },
+        {
+          "name": "standard_workflow.md",
+          "type": "file",
+          "path": "references/standard_workflow.md",
+          "lines": 207
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "qc_analysis.py",
+          "type": "file",
+          "path": "scripts/qc_analysis.py",
+          "lines": 201
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 386
+    }
+  ]
+}

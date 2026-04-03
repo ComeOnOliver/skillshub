@@ -1,0 +1,206 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:31:42.503Z",
+    "slug": "dicklesworthstone-ubs",
+    "source_url": "https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/tree/main/skills/ubs",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "48d0e73c36fd39a969506a8172c6421af95252d10dce5055f9e59997a30b1e5a",
+    "tree_hash": "8b312af134d8f062ac4b15ed5ea0c499a0f14476f5895263611a262a1248a288"
+  },
+  "skill": {
+    "name": "ubs",
+    "description": "Ultimate Bug Scanner - Pre-commit static analysis for AI coding workflows. 18 detection categories, 8 languages, 4-layer analysis engine. The AI agent's quality gate.",
+    "summary": "Static analysis tool that scans code for bugs before commit. Catches null safety, async issues, security holes, and memory leaks across 8 languages.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Dicklesworthstone",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "static-analysis",
+      "code-quality",
+      "security-scanning",
+      "pre-commit",
+      "bug-detection"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is documentation-only for the UBS static analysis tool. All 122 static findings are false positives from code examples in the markdown documentation showing bash commands and installation instructions. No executable code is present. The skill requires users to install the external UBS tool via curl, which is standard for CLI tool installation. Risk level is low due to external command dependency.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 262,
+            "line_end": 264
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 266,
+            "line_end": 268
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "External Tool Installation via Curl",
+        "description": "The skill documentation instructs users to install the UBS tool using curl to download and execute a bash script from GitHub. This is a standard installation pattern for CLI tools but requires user trust in the external repository. The installation is not automatic and requires explicit user action.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 262,
+            "line_end": 268
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1585,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:31:42.503Z"
+  },
+  "content": {
+    "user_title": "Scan Code for Bugs Before Every Commit",
+    "value_statement": "AI agents write code fast but can introduce bugs like null pointer errors, missing await statements, and security vulnerabilities. UBS provides pre-commit static analysis across 8 languages to catch these issues in seconds before they reach production.",
+    "seo_keywords": [
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "static analysis",
+      "bug scanner",
+      "pre-commit hooks",
+      "code quality",
+      "security scanning",
+      "null safety",
+      "AI coding"
+    ],
+    "actual_capabilities": [
+      "Scan JavaScript, TypeScript, Python, Go, Rust, Java, C++, Ruby, and Swift for common bugs",
+      "Detect 18 categories of issues including null safety, security vulnerabilities, async/await problems, and memory leaks",
+      "Integrate with git pre-commit hooks and AI coding agent workflows",
+      "Generate reports in text, JSON, JSONL, SARIF, and HTML formats",
+      "Run focused scans on staged files or specific file paths in under 1 second",
+      "Compare scan results against baselines to detect regressions"
+    ],
+    "limitations": [
+      "Requires external installation of the UBS tool and dependencies like ast-grep and ripgrep",
+      "Cannot fix bugs automatically, only detects and reports them",
+      "May produce false positives that require manual review and suppression",
+      "Performance degrades on very large codebases over 200K lines"
+    ],
+    "use_cases": [
+      {
+        "title": "Pre-Commit Quality Gate",
+        "description": "Install UBS as a git pre-commit hook to automatically scan staged files before every commit. Exit code 1 blocks the commit until critical issues are fixed.",
+        "target_user": "Solo developers and teams using AI coding assistants"
+      },
+      {
+        "title": "CI/CD Pipeline Integration",
+        "description": "Run UBS in strict mode during continuous integration to enforce code quality standards. Generate SARIF reports for GitHub code scanning integration.",
+        "target_user": "DevOps engineers setting up automated testing pipelines"
+      },
+      {
+        "title": "AI Agent Code Review",
+        "description": "Configure Claude Code, Cursor, or other AI agents to automatically run UBS after file writes. Get instant feedback on null safety, security, and async issues.",
+        "target_user": "Developers using AI coding agents for rapid prototyping"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Scan Staged Files Before Commit",
+        "prompt": "Run UBS on my staged git files and show me any critical issues",
+        "scenario": "You have made changes and want to check them before committing"
+      },
+      {
+        "title": "Full Project Security Scan",
+        "prompt": "Run a complete security scan of my project using UBS and highlight any XSS, injection, or hardcoded secret issues",
+        "scenario": "You want to audit your entire codebase for security vulnerabilities"
+      },
+      {
+        "title": "Check Specific File",
+        "prompt": "Run UBS on src/components/UserProfile.tsx and check for null safety and async/await issues",
+        "scenario": "You just wrote a new component and want quick feedback"
+      },
+      {
+        "title": "Generate CI Report",
+        "prompt": "Run UBS in CI mode with JSON output and save the results to .ubs/latest.json",
+        "scenario": "You are setting up automated quality checks in your build pipeline"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run UBS on my staged files",
+        "output": "Scanning 3 files (247 lines)...\n\nNull Safety (2 errors)\n  src/api.ts:42:5 - Unguarded property access on potentially null object\n  💡 Use optional chaining: user?.profile?.email\n  \nAsync/Await (1 error)\n  src/handlers.ts:18:3 - Missing await on promise-returning function\n  💡 Add await: await fetchData()\n\nExit code: 1"
+      },
+      {
+        "input": "Run a security scan on my project",
+        "output": "Scanning 47 files (12,483 lines)...\n\nSecurity (3 errors)\n  src/utils.ts:91:7 - Dangerous use of innerHTML with unsanitized data\n  💡 Use textContent or sanitize with DOMPurify\n  \n  config.ts:15:1 - Hardcoded API key detected\n  💡 Move to environment variable\n  \n  auth.ts:203:5 - SQL query vulnerable to injection\n  💡 Use parameterized queries\n\nExit code: 1"
+      }
+    ],
+    "best_practices": [
+      "Run UBS on staged files only during development for fast feedback loops under 1 second",
+      "Use strict mode with fail-on-warning in CI/CD pipelines to enforce quality standards",
+      "Investigate each finding before suppressing with ubs:ignore comments to avoid masking real bugs"
+    ],
+    "anti_patterns": [
+      "Running full project scans on every file write instead of scoping to changed files",
+      "Ignoring all findings from a category without reviewing each instance individually",
+      "Using --no-verify to bypass pre-commit hooks instead of fixing or properly suppressing issues"
+    ],
+    "faq": [
+      {
+        "question": "How do I install UBS on my system?",
+        "answer": "Run the installation command from the documentation which downloads the UBS script from GitHub. You may also need to install dependencies like ast-grep and ripgrep using ubs doctor --fix."
+      },
+      {
+        "question": "Can UBS automatically fix the bugs it finds?",
+        "answer": "No, UBS only detects and reports bugs. You must manually review each finding and apply the suggested fix. This ensures you understand the issue and avoid incorrect automated fixes."
+      },
+      {
+        "question": "How do I integrate UBS with Claude Code?",
+        "answer": "UBS can create a file write hook at .claude/hooks/on-file-write.sh that automatically runs scans when files are modified. You can also manually invoke UBS via prompts like run UBS on this file."
+      },
+      {
+        "question": "What should I do if UBS reports too many false positives?",
+        "answer": "First verify each finding is truly a false positive. Then use inline suppression comments like ubs:ignore or ubs:ignore-next-line. You can also skip entire categories with the --skip flag."
+      },
+      {
+        "question": "Does UBS work with all programming languages?",
+        "answer": "UBS supports JavaScript, TypeScript, Python, Go, Rust, Java, C++, Ruby, and Swift. It will skip files in other languages during scans."
+      },
+      {
+        "question": "How fast is UBS on large codebases?",
+        "answer": "UBS processes about 10,000 lines per second. Small projects under 5K lines scan in under 1 second. Large projects with 200K lines take about 12 seconds. Use --staged or file paths to scan only changed code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 320
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:43:24.668Z",
+    "slug": "davila7-molfeat",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/molfeat",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ed604bb0efbdb52aa5d8c91919b760a727ed0ec3aaa363ef7bb3705447bfd5af",
+    "tree_hash": "ac727f25ac5dc529b21492ffdd0d238a5fbacbaa3e01a44688d6b88962ea5ef3"
+  },
+  "skill": {
+    "name": "molfeat",
+    "description": "Molecular featurization for ML (100+ featurizers). ECFP, MACCS, descriptors, pretrained models (ChemBERTa), convert SMILES to features, for QSAR and molecular ML.",
+    "summary": "Convert molecular structures to ML-ready numerical representations using 100+ featurizers for QSAR modeling, virtual screening, and cheminformatics.",
+    "icon": "⚗️",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "tags": [
+      "chemistry",
+      "machine-learning",
+      "molecular-featurization",
+      "cheminformatics",
+      "QSAR"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 389 static findings are false positives. The skill is a legitimate cheminformatics library for molecular featurization. Scanner detections are triggered by documentation code blocks and chemical terminology (e.g., C2 as carbon count, desc2D as 2D descriptors). No malicious code patterns found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/api_reference.md",
+            "line_start": 7,
+            "line_end": 424
+          },
+          {
+            "file": "references/available_featurizers.md",
+            "line_start": 266,
+            "line_end": 289
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 7,
+            "line_end": 723
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 498
+          }
+        ],
+        "verdict": "FALSE_POSITIVE",
+        "reasoning": "All findings are in markdown documentation files. Scanner flags bash code blocks (```bash) as 'shell backtick execution'. These are legitimate documentation examples showing installation commands and Python code. No actual shell execution occurs in the skill."
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/examples.md",
+            "line_start": 549,
+            "line_end": 549
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 396,
+            "line_end": 396
+          }
+        ],
+        "verdict": "FALSE_POSITIVE",
+        "reasoning": "Documentation examples showing Python code for saving and loading configuration files. These are example patterns in markdown documentation, not actual filesystem operations in executable code."
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 502,
+            "line_end": 505
+          }
+        ],
+        "verdict": "FALSE_POSITIVE",
+        "reasoning": "URL references to official documentation (GitHub, PyPI, molfeat-docs). These are legitimate documentation links, not network operations for data exfiltration or malicious connections."
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 5318,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:43:24.668Z"
+  },
+  "content": {
+    "user_title": "Generate molecular features for ML",
+    "value_statement": "Building machine learning models for molecular data requires converting chemical structures to numerical representations. Molfeat provides 100+ featurizers including ECFP, MACCS, descriptors, and pretrained transformers like ChemBERTa to streamline QSAR modeling and virtual screening.",
+    "seo_keywords": [
+      "molecular featurization",
+      "molecular fingerprints",
+      "ECFP",
+      "MACCS keys",
+      "ChemBERTa",
+      "QSAR modeling",
+      "virtual screening",
+      "cheminformatics",
+      "molecular machine learning",
+      "SMILES featurization",
+      "RDKit descriptors",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Convert SMILES strings to numerical feature vectors using 100+ featurizers",
+      "Generate molecular fingerprints (ECFP, MACCS, MAP4, Avalon, and 10+ more)",
+      "Compute molecular descriptors (RDKit 2D, Mordred, 1800+ properties)",
+      "Apply pretrained deep learning models (ChemBERTa, ChemGPT, Graphormer, GIN)",
+      "Build scikit-learn compatible featurization pipelines with parallel processing",
+      "Save and reload featurizer configurations for reproducible ML workflows"
+    ],
+    "limitations": [
+      "Requires RDKit for core molecular operations and most calculators",
+      "Pretrained deep learning models need additional dependencies (torch, transformers)",
+      "Does not perform molecular dynamics or 3D structure optimization",
+      "Valid SMILES input required; invalid chemical structures return errors or None"
+    ],
+    "use_cases": [
+      {
+        "title": "Build QSAR prediction models",
+        "description": "Convert molecular datasets to numerical features using ECFP or descriptors, then train Random Forest, SVM, or XGBoost models for property prediction.",
+        "target_user": "Computational chemists and drug discovery researchers"
+      },
+      {
+        "title": "Screen compound libraries",
+        "description": "Featurize large molecular databases and apply trained classifiers to identify promising drug candidates through virtual screening.",
+        "target_user": "Pharmaceutical data scientists"
+      },
+      {
+        "title": "Find similar molecules",
+        "description": "Generate fingerprints for query molecules and database compounds, then compute similarity scores for structure-based searching.",
+        "target_user": "Medicinal chemists and cheminformaticians"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic molecular featurization",
+        "prompt": "Use molfeat to convert this list of SMILES to ECFP fingerprints with radius 3 and 2048 bits:\n\n{smit_list}",
+        "scenario": "Converting molecules to fingerprints for ML"
+      },
+      {
+        "title": "Multiple featurizer comparison",
+        "prompt": "Compare ECFP, MACCS, and RDKit 2D descriptors using molfeat on this dataset. Show the shape of the output features for each:\n\n{smiles_list}",
+        "scenario": "Evaluating different featurization approaches"
+      },
+      {
+        "title": "QSAR model pipeline",
+        "prompt": "Build a complete molfeat + scikit-learn pipeline using ECFP fingerprints to predict logP values for this dataset. Include cross-validation:\n\n{smiles_and_values}",
+        "scenario": "Training a QSAR regression model"
+      },
+      {
+        "title": "Pretrained transformer embeddings",
+        "prompt": "Use molfeat's ChemBERTa pretrained transformer to generate molecular embeddings for virtual screening. Apply the model with parallel processing:\n\n{large_smiles_list}",
+        "scenario": "Generating deep learning embeddings for large-scale screening"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Featurize ['CCO', 'CC(=O)O', 'c1ccccc1'] using ECFP4 with radius 2",
+        "output": "Features shape: (3, 2048)\n\nFirst molecule (Ethanol, CCO):\n- Non-zero bits: 156\n- Bit density: 7.6%\n\nSecond molecule (Acetic acid, CC(=O)O):\n- Non-zero bits: 189\n- Bit density: 9.2%\n\nThird molecule (Benzene, c1ccccc1):\n- Non-zero bits: 248\n- Bit density: 12.1%"
+      },
+      {
+        "input": "Compare featurizer dimensions for MACCS, ECFP, and RDKit 2D",
+        "output": "Featurizer Dimensions:\n- MACCS keys: 167 dimensions (very fast)\n- ECFP4: 2048 dimensions (fast, general purpose)\n- RDKit 2D descriptors: 200+ dimensions (interpretable)\n- Mordred: 1800+ dimensions (comprehensive)\n- ChemBERTa: 768 dimensions (deep learning)"
+      }
+    ],
+    "best_practices": [
+      "Use parallel processing (n_jobs=-1) for batch featurization to utilize all CPU cores",
+      "Cache pretrained transformer models to avoid re-downloading on repeated use",
+      "Save featurizer configurations with to_state_yaml_file() for reproducible research"
+    ],
+    "anti_patterns": [
+      "Processing molecules one at a time in a loop instead of using batch processing",
+      "Using deep learning models for small datasets when fingerprints would suffice",
+      "Ignoring invalid SMILES without logging, which hides data quality issues"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between calculators and transformers in molfeat?",
+        "answer": "Calculators (molfeat.calc) process single molecules and return feature vectors. Transformers (molfeat.trans) wrap calculators for batch processing with scikit-learn compatibility and parallelization. Use calculators for custom loops, transformers for pipelines."
+      },
+      {
+        "question": "Which featurizer should I start with for QSAR modeling?",
+        "answer": "ECFP4 (Extended-Connectivity Fingerprint with radius 2) is the most popular starting point. It captures circular substructures around each atom and works well with most ML algorithms. For interpretable models, try RDKit 2D descriptors."
+      },
+      {
+        "question": "How do I handle large datasets with molfeat?",
+        "answer": "Use MoleculeTransformer with n_jobs=-1 for parallel processing. For very large datasets, process in chunks using a generator pattern. Enable ignore_errors=True to skip invalid molecules. Cache pretrained models to avoid repeated downloads."
+      },
+      {
+        "question": "Can molfeat be used with scikit-learn pipelines?",
+        "answer": "Yes. MoleculeTransformer is a scikit-learn compatible transformer. You can include it directly in Pipeline objects alongside classifiers or regressors for end-to-end workflows from SMILES to predictions."
+      },
+      {
+        "question": "What pretrained models are available in molfeat?",
+        "answer": "Molfeat includes ChemBERTa (77M compounds), ChemGPT (autoregressive), Graphormer (quantum chemistry), and GIN models. See available models with ModelStore().available_models or search by name."
+      },
+      {
+        "question": "How do I save and reload a featurizer configuration?",
+        "answer": "Use transformer.to_state_yaml_file('config.yml') to save. Reload with MoleculeTransformer.from_state_yaml_file('config.yml'). This preserves all parameters for reproducible results across sessions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 429
+        },
+        {
+          "name": "available_featurizers.md",
+          "type": "file",
+          "path": "references/available_featurizers.md",
+          "lines": 334
+        },
+        {
+          "name": "examples.md",
+          "type": "file",
+          "path": "references/examples.md",
+          "lines": 724
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 506
+    }
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:07:37.968Z",
+    "slug": "cleanexpo-competitor-analysis",
+    "source_url": "https://github.com/CleanExpo/Unite-Hub/tree/main/.claude/skills/competitor-analysis",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "057842d1f9c8e9c028dca49e84dbbb8a6d85bbbeeb9a51a6a5882efc9ef08050",
+    "tree_hash": "214e89e9778ed7942d3bec0d3a54cfe42d018fee9018164d28886700a8a93f64"
+  },
+  "skill": {
+    "name": "competitor-analysis",
+    "description": "Analyze competitor website structures, messaging patterns, and unique features. Use when researching competition, identifying gaps, or informing content strategy.",
+    "summary": "Analyze competitor websites to understand structure, messaging, and unique features for gap analysis and strategic positioning.",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "CleanExpo",
+    "license": "MIT",
+    "tags": [
+      "market-research",
+      "competitive-intelligence",
+      "business-analysis",
+      "website-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 13 static findings evaluated as false positives. The skill is a legitimate business research tool that uses standard web scraping tools to analyze competitor websites. Detected patterns (URLs in metadata, backticks in markdown, text patterns flagged as cryptographic) are benign documentation and configuration elements with no security implications.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 109
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 378,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:07:37.968Z",
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "content": {
+    "user_title": "Analyze competitor websites for strategic insights",
+    "value_statement": "Understanding competitor positioning is essential for strategic business decisions. This skill provides a systematic framework to analyze competitor websites, extract actionable insights, and identify market opportunities.",
+    "seo_keywords": [
+      "competitor analysis",
+      "competitive intelligence",
+      "market research",
+      "website analysis",
+      "gap analysis",
+      "business strategy",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "web scraping"
+    ],
+    "actual_capabilities": [
+      "Analyze competitor website page structures including hero sections, value propositions, and CTAs",
+      "Extract headlines, messaging patterns, and trust signals from competitor pages",
+      "Identify unique features and interactive elements that differentiate competitors",
+      "Perform systematic gap analysis to identify opportunities for differentiation",
+      "Rank competitors by market presence (national, regional, local, emerging)",
+      "Generate structured JSON reports with competitor insights for strategic planning"
+    ],
+    "limitations": [
+      "Analysis is limited to publicly accessible website content only",
+      "Cannot access password-protected pages, login areas, or gated content",
+      "Results reflect website content at the time of analysis and may change",
+      "Generated insights should be verified against current competitor offerings"
+    ],
+    "use_cases": [
+      {
+        "title": "Pre-redesign competitive research",
+        "description": "Analyze competitor websites before a website redesign project to understand industry standards, identify best practices, and find differentiation opportunities.",
+        "target_user": "Marketing teams and web designers"
+      },
+      {
+        "title": "Market entry strategy",
+        "description": "Research existing competitors when entering a new market or geographic region to understand local competition, pricing models, and messaging strategies.",
+        "target_user": "Business strategists and product managers"
+      },
+      {
+        "title": "Quarterly competitive review",
+        "description": "Conduct regular competitive analysis to track competitor changes, new feature launches, and messaging shifts over time.",
+        "target_user": "Business analysts and consultants"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick competitor snapshot",
+        "prompt": "Analyze [competitor website URL] for their homepage structure, main value propositions, and key unique features. List their primary CTAs and trust signals.",
+        "scenario": "Getting a quick overview of a competitor"
+      },
+      {
+        "title": "Detailed page-by-page analysis",
+        "prompt": "Perform a complete analysis of [competitor URL]. Cover their homepage, about page, services, and pricing pages. Extract section order, headlines, CTAs, and trust signals from each.",
+        "scenario": "Deep dive into a specific competitor"
+      },
+      {
+        "title": "Multi-competitor comparison",
+        "prompt": "Analyze these three competitors: [URL 1], [URL 2], [URL 3]. Compare their messaging patterns, unique features, and trust signals. Identify gaps in the market that none address.",
+        "scenario": "Comparing multiple competitors for strategic gaps"
+      },
+      {
+        "title": "Gap analysis report",
+        "prompt": "After analyzing [list competitor URLs], create a gap analysis report. Identify features, trust signals, and messaging themes that competitors have that we lack. Prioritize recommendations by potential impact.",
+        "scenario": "Generating actionable strategic recommendations"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze https://examplecompetitor.com for their homepage structure and unique features.",
+        "output": "## Competitor Analysis: Example Competitor\n\n### Homepage Structure\n1. **Hero Section** - Strong value proposition with \"Save 50%\" headline\n2. **Social Proof** - \"Trusted by 10,000+ customers\" with logo grid\n3. **How It Works** - 3-step process with icons\n4. **Features** - 6 key benefits with screenshots\n5. **Testimonials** - 8 customer quotes with photos\n6. **Pricing** - 3 tiers starting at $29\n7. **FAQ** - 8 common questions\n8. **CTA** - \"Get Started Free\" button\n\n### Unique Features\n- Free calculator tool on homepage\n- Live chat widget with human support\n- Interactive feature comparison table\n\n### Trust Signals\n- SOC 2 certification badge\n- 4.9 star rating from 2,000+ reviews\n- Money-back guarantee\n\n### Recommended Actions\n- Add calculator tool to increase engagement\n- Consider similar trust badge placement\n- Review pricing strategy against their tiers"
+      },
+      {
+        "input": "Compare three competitors and identify market gaps.",
+        "output": "## Competitive Landscape Analysis\n\n### Competitor Comparison Matrix\n\n| Feature | Comp A | Comp B | Comp C |\n|---------|--------|--------|--------|\n| Free trial | 14 days | 7 days | No |\n| Live chat | Yes | No | Yes |\n| API access | Yes | No | No |\n| Mobile app | iOS only | Both | No |\n\n### Identified Gaps\n1. **No competitor offers annual discounts** - Potential differentiation opportunity\n2. **Limited integrations** - All lack Zapier connectivity\n3. **No white-label option** - B2B opportunity unaddressed\n\n### Strategic Recommendations\n- Add annual plan with 20% discount to capture price-sensitive customers\n- Build Zapier integration for workflow automation\n- Develop white-label product for agency partners"
+      }
+    ],
+    "best_practices": [
+      "Analyze patterns, not content. Focus on why competitor structures work rather than copying their specific text or designs.",
+      "Document analysis dates. Websites change frequently, so record when you analyzed each competitor for future reference.",
+      "Prioritize insights by strategic impact. Not all gaps are equally valuable—focus on opportunities that align with your strengths."
+    ],
+    "anti_patterns": [
+      "Copying competitor content directly. This raises legal and ethical issues and misses the point of competitive analysis.",
+      "Analyzing only direct competitors. Emerging players and adjacent market entrants often reveal bigger disruption risks.",
+      "Treating analysis as a one-time activity. Markets evolve continuously, so competitive analysis should be an ongoing practice."
+    ],
+    "faq": [
+      {
+        "question": "What websites can this skill analyze?",
+        "answer": "The skill can analyze any publicly accessible website. It cannot access password-protected pages, login areas, admin dashboards, or content behind paywalls."
+      },
+      {
+        "question": "How detailed is the analysis?",
+        "answer": "The analysis covers page structure, headlines, CTAs, trust signals, unique features, and messaging patterns. Each page type (homepage, about, services, pricing) has a specific framework for evaluation."
+      },
+      {
+        "question": "Can I use this for international competitors?",
+        "answer": "Yes. The skill works with any website regardless of geographic location. Consider language differences if analyzing non-English sites."
+      },
+      {
+        "question": "How often should I run competitor analysis?",
+        "answer": "For fast-moving markets, quarterly analysis is recommended. For stable markets, bi-annual updates may suffice. Always analyze after major competitor announcements or product launches."
+      },
+      {
+        "question": "Does this skill track competitors over time?",
+        "answer": "The skill provides point-in-time analysis. For historical tracking, save your analysis reports and compare them against new analyses periodically."
+      },
+      {
+        "question": "What tools does this skill use?",
+        "answer": "The skill uses web browsing tools (Playwright, Exa) to navigate and extract content from competitor websites. No local scripts or command execution is involved."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 130
+    }
+  ]
+}

@@ -1,0 +1,200 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:03:01.535Z",
+    "slug": "consiliency-docs-navigation",
+    "source_url": "https://github.com/Consiliency/treesitter-chunker/tree/main/.ai-dev-kit/skills/docs-navigation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c33173baccd2676a93926964c7cdac676e912448118778825181f2a9b41762a2",
+    "tree_hash": "8334e8ef870c5e06cb5ee328e6025b7966915f654dea2fd548d3540e4f5ce575"
+  },
+  "skill": {
+    "name": "docs-navigation",
+    "description": "Navigate hierarchical ai-docs indexes to find documentation. Check local docs FIRST for speed and curated context before web searching. Covers Claude Code, BAML, MCP, and other tracked libraries.",
+    "summary": "Navigate hierarchical documentation indexes efficiently with minimal token usage",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Consiliency",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "documentation",
+      "navigation",
+      "search",
+      "knowledge-management",
+      "context-optimization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and navigation instructions. All 128 static findings are false positives from pattern matching against documentation examples. The backtick patterns are TOON format syntax and documentation examples, not shell execution. The MD5 patterns match file extensions and markdown references. No executable code, network access, or filesystem operations are present.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1829,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:03:01.535Z"
+  },
+  "content": {
+    "user_title": "Navigate Documentation Hierarchies Efficiently",
+    "value_statement": "Searching documentation wastes tokens and time loading irrelevant content. This skill teaches Claude to navigate hierarchical documentation indexes, loading only specific pages needed for your task while minimizing context window usage.",
+    "seo_keywords": [
+      "Claude Code documentation",
+      "documentation navigation",
+      "hierarchical search",
+      "context optimization",
+      "token efficiency",
+      "knowledge management",
+      "Claude skill",
+      "Codex integration",
+      "BAML docs",
+      "MCP documentation"
+    ],
+    "actual_capabilities": [
+      "Navigate hierarchical documentation indexes starting from appropriate levels based on known context",
+      "Match task keywords against index metadata to find relevant documentation pages",
+      "Load specific documentation pages instead of full contexts to minimize token usage",
+      "Follow navigation protocols through multi-level indexes from categories to specific pages",
+      "Identify when full-context loading is justified versus targeted page loading"
+    ],
+    "limitations": [
+      "Requires documentation to be structured in the specific hierarchical index format with TOON files",
+      "Only covers libraries and frameworks that have been indexed in the ai-docs system",
+      "Does not create or update documentation indexes, only navigates existing ones",
+      "Effectiveness depends on quality and completeness of index metadata and keywords"
+    ],
+    "use_cases": [
+      {
+        "title": "Find Specific API Documentation",
+        "description": "Developers need to understand how to use a specific library feature like error handling or streaming responses. Navigate from library index to section index to specific page, loading only 400-800 tokens instead of 15000 token full contexts.",
+        "target_user": "Software developers integrating third-party libraries"
+      },
+      {
+        "title": "Discover Relevant Libraries",
+        "description": "Technical writers exploring which libraries solve specific problems like structured LLM outputs or tool integration. Start at category index to scan library descriptions and keywords, then drill into promising candidates.",
+        "target_user": "Technical architects evaluating technology options"
+      },
+      {
+        "title": "Comprehensive Migration Planning",
+        "description": "Engineering teams migrating codebases between frameworks need deep understanding of target library. Justify loading full-context documentation when comprehensive knowledge is required for major architectural changes.",
+        "target_user": "Engineering leads planning major refactoring projects"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Find Specific Feature Documentation",
+        "prompt": "I need to understand how to configure retry logic in BAML. Navigate the documentation indexes to find the relevant page.",
+        "scenario": "Looking up specific functionality in a known library"
+      },
+      {
+        "title": "Discover Library by Capability",
+        "prompt": "What libraries in the ai-docs system handle structured outputs from LLMs? Start at the category index and identify candidates.",
+        "scenario": "Finding libraries that solve a particular problem"
+      },
+      {
+        "title": "Load Related Documentation Pages",
+        "prompt": "I am implementing error handling with timeouts and fallbacks in BAML. Navigate to find all relevant pages on these topics.",
+        "scenario": "Gathering multiple related documentation pages for complex task"
+      },
+      {
+        "title": "Verify Full Context Is Needed",
+        "prompt": "I am migrating our entire application to use MCP for tool integration. Should I load the full context or navigate to specific pages?",
+        "scenario": "Determining appropriate documentation loading strategy for scope"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I configure BAML streaming?",
+        "output": "Following navigation protocol: Start at libraries/baml index, check common tasks section which points to guide/streaming page. Load single page at libraries/baml/guide/pages/streaming.toon. Total tokens: approximately 600 versus 15000 for full context."
+      },
+      {
+        "input": "Which library handles type-safe database access?",
+        "output": "Starting at libraries category index, scanning keywords. Prisma library matches with keywords: database, orm, typescript. Navigate to libraries/prisma index for section details. Found relevant documentation without loading full contexts."
+      }
+    ],
+    "best_practices": [
+      "Always start navigation at the appropriate index level based on what you know rather than guessing file paths",
+      "Match your task keywords against index metadata including descriptions, keywords, and purpose fields before loading pages",
+      "Load specific pages that address your task instead of full-context files unless doing comprehensive migrations or tutorials"
+    ],
+    "anti_patterns": [
+      "Loading full-context files for simple questions wastes 95 percent of tokens on irrelevant information",
+      "Guessing at file paths instead of reading indexes causes you to miss better documentation pages that exist",
+      "Loading everything just in case fills your context window with unnecessary content reducing space for actual work"
+    ],
+    "faq": [
+      {
+        "question": "When should I load full-context documentation files?",
+        "answer": "Load full-context only for comprehensive tutorials, major migrations, or initial deep learning of an entire library. For specific questions or features, navigate to individual pages which use 95 percent fewer tokens."
+      },
+      {
+        "question": "What is the TOON format used in index files?",
+        "answer": "TOON is a compact tabular format for structured metadata. Index files use TOON to list items with fields like id, name, description, keywords, and paths in a token-efficient format for navigation."
+      },
+      {
+        "question": "How do I know which index level to start at?",
+        "answer": "If you know nothing, start at root index. If you know the category, start at category index. If you know the library name, start at library index. If you know library and section, start at section index. The skill includes a lookup table for this."
+      },
+      {
+        "question": "What libraries are covered in the ai-docs system?",
+        "answer": "The skill mentions coverage for Claude Code, BAML, MCP, and other tracked libraries. Check the libraries category index to see the current list of indexed documentation with descriptions and keywords."
+      },
+      {
+        "question": "Can this skill work with my custom documentation?",
+        "answer": "This skill requires documentation structured in the specific hierarchical format with index files at each level. You would need to create indexes following the same structure for your custom documentation."
+      },
+      {
+        "question": "How does keyword matching work across index levels?",
+        "answer": "Extract keywords from your task, then scan index files for matches in description, keywords, and purpose fields. Drill down through matching paths from category to library to section to page, verifying relevance at each level."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "cookbook",
+      "type": "dir",
+      "path": "cookbook",
+      "children": [
+        {
+          "name": "keyword-matching.md",
+          "type": "file",
+          "path": "cookbook/keyword-matching.md",
+          "lines": 84
+        },
+        {
+          "name": "level-selection.md",
+          "type": "file",
+          "path": "cookbook/level-selection.md",
+          "lines": 79
+        },
+        {
+          "name": "page-loading.md",
+          "type": "file",
+          "path": "cookbook/page-loading.md",
+          "lines": 84
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 262
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:06:29.752Z",
+    "slug": "obra-writing-skills",
+    "source_url": "https://github.com/obra/superpowers/tree/main/skills/writing-skills",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f5442553d2e9cc79a428f7587eaf538a5c22eddd250bd2c1f03d78d60f0bc848",
+    "tree_hash": "e26677e00951d49e17a16fdf05339e23912e43553af91494cd9d0da48fbf5cff"
+  },
+  "skill": {
+    "name": "writing-skills",
+    "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+    "summary": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "obra",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "tdd",
+      "testing",
+      "skills",
+      "documentation",
+      "quality"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 525 static findings are false positives. The skill is legitimate documentation for creating AI skills using TDD principles. External command patterns in markdown files are documentation code examples. Weak crypto patterns show what NOT to do. C2 keywords are legitimate references. render-graphs.js is a benign utility for rendering graphviz diagrams.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "anthropic-best-practices.md",
+            "line_start": 32,
+            "line_end": 32
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "render-graphs.js",
+            "line_start": 16,
+            "line_end": 16
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3155,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:06:29.751Z"
+  },
+  "content": {
+    "user_title": "Create Test-Driven AI Skills with Pressure Testing",
+    "value_statement": "Build bulletproof AI skills using Test-Driven Development principles. Write tests first, watch them fail, then create skills that pass under pressure from subagents.",
+    "seo_keywords": [
+      "AI skills",
+      "TDD",
+      "Claude skills",
+      "Codex skills",
+      "Claude Code",
+      "test-driven development",
+      "skill testing",
+      "pressure testing",
+      "documentation",
+      "quality assurance"
+    ],
+    "actual_capabilities": [
+      "Create skills using RED-GREEN-REFACTOR TDD cycle",
+      "Test skills with pressure scenarios before deployment",
+      "Write searchable skill descriptions optimized for AI discovery",
+      "Build rationalization tables to close loopholes",
+      "Generate flowchart visualizations from graphviz diagrams"
+    ],
+    "limitations": [
+      "Requires understanding of TDD principles first",
+      "Skills must be tested before deployment - no exceptions",
+      "Documentation-focused, not for executable code",
+      "Testing process can be time-intensive"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI developers creating reusable skills",
+        "title": "Build Tested Documentation Skills",
+        "description": "Create skills that other AI agents will actually follow under pressure, not just read and ignore."
+      },
+      {
+        "target_user": "Teams standardizing AI workflows",
+        "title": "Enforce Best Practices Across AI Agents",
+        "description": "Document proven techniques that all team AIs must follow, tested against rationalization scenarios."
+      },
+      {
+        "target_user": "Quality assurance engineers",
+        "title": "Verify AI Skill Compliance",
+        "description": "Test existing skills to ensure they work correctly when agents are under time or pressure constraints."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create New Skill",
+        "scenario": "Building a debugging skill",
+        "prompt": "Help me create a skill for systematic debugging using TDD. First, write pressure scenarios where agents skip steps under time pressure."
+      },
+      {
+        "title": "Test Existing Skill",
+        "scenario": "Verifying skill compliance",
+        "prompt": "Test if my authentication skill works when agents face sunk cost pressure. Create scenarios where they might skip security checks."
+      },
+      {
+        "title": "Optimize Skill Discovery",
+        "scenario": "Improving skill searchability",
+        "prompt": "Review my skill description and suggest keywords that future Claude instances would search for when facing race conditions."
+      },
+      {
+        "title": "Close Rationalization Loopholes",
+        "scenario": "Bulletproofing discipline skills",
+        "prompt": "My TDD skill has gaps - agents still write code first sometimes. Help me identify and close all rationalization loopholes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a skill for handling async race conditions",
+        "output": [
+          "SKILL.md with RED-GREEN-REFACTOR structure",
+          "Pressure scenarios testing time pressure rationalizations",
+          "Rationalization table addressing 'it works already' excuses",
+          "Search-optimized description with race condition keywords"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always test skills under pressure before deployment - no exceptions",
+      "Write description that focuses on WHEN to use, not what the skill does",
+      "Build rationalization tables from actual test failures, not hypotheticals"
+    ],
+    "anti_patterns": [
+      "Creating skills without testing them first under pressure scenarios",
+      "Writing narrative examples that are too specific to one situation",
+      "Including workflow summaries in skill descriptions that agents might follow instead of reading the full skill"
+    ],
+    "faq": [
+      {
+        "question": "Why must I test skills before deployment?",
+        "answer": "Untested skills always have gaps. Testing reveals rationalizations agents use to skip your rules under pressure."
+      },
+      {
+        "question": "What is the difference between skills and CLAUDE.md?",
+        "answer": "Skills are reusable techniques across projects. CLAUDE.md contains project-specific conventions and context."
+      },
+      {
+        "question": "How many pressure scenarios should I test?",
+        "answer": "Minimum 3 scenarios combining different pressures: time + confidence, sunk cost + works already, authority + speed bias."
+      },
+      {
+        "question": "Can I skip testing for simple skills?",
+        "answer": "No exceptions. Simple skills break in simple ways. Testing takes 15 minutes, fixing broken skills takes hours."
+      },
+      {
+        "question": "Why not use @ links to reference other skills?",
+        "answer": "@ links force-load skills immediately, burning 200k+ context. Use skill names without @ to let agents choose when to load."
+      },
+      {
+        "question": "How do I make skills discoverable?",
+        "answer": "Use concrete error messages, symptoms, and tool names in descriptions. Think what agents would search for when facing the problem."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "CLAUDE_MD_TESTING.md",
+          "type": "file",
+          "path": "examples/CLAUDE_MD_TESTING.md",
+          "lines": 190
+        }
+      ]
+    },
+    {
+      "name": "anthropic-best-practices.md",
+      "type": "file",
+      "path": "anthropic-best-practices.md",
+      "lines": 1151
+    },
+    {
+      "name": "graphviz-conventions.dot",
+      "type": "file",
+      "path": "graphviz-conventions.dot",
+      "lines": 172
+    },
+    {
+      "name": "persuasion-principles.md",
+      "type": "file",
+      "path": "persuasion-principles.md",
+      "lines": 188
+    },
+    {
+      "name": "render-graphs.js",
+      "type": "file",
+      "path": "render-graphs.js",
+      "lines": 169
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 656
+    },
+    {
+      "name": "testing-skills-with-subagents.md",
+      "type": "file",
+      "path": "testing-skills-with-subagents.md",
+      "lines": 385
+    }
+  ]
+}

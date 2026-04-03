@@ -1,0 +1,289 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T03:04:35.973Z",
+    "slug": "diversioteam-backend-ralph-plan",
+    "source_url": "https://github.com/DiversioTeam/agent-skills-marketplace/tree/main/plugins/plan-directory/skills/backend-ralph-plan",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2fbac8522c17b3b521f3e9d47ea5a9a99b564ec74e6aca5ad20fbee72bee43f2",
+    "tree_hash": "6dafdfcf0754e1464cd0e3fbac459e5837ba9b8760e025d95dd8e4601b98d627"
+  },
+  "skill": {
+    "name": "backend-ralph-plan",
+    "description": "Create a structured plan directory with Ralph Wiggum Loop integration for backend Django projects. Generates PLAN.md (task index), task files, and RALPH-PROMPT.md (the actual prompt for ralph-loop). Use for rigorous, iterative implementation requiring quality gates and verification.\n",
+    "summary": "Create a structured plan directory with Ralph Wiggum Loop integration for backend Django projects. G...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "DiversioTeam",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "django",
+      "backend",
+      "planning",
+      "ralph-loop",
+      "development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill that generates markdown planning files for Django backend projects. All 290 static findings are FALSE POSITIVES: the 'backtick execution' patterns are markdown code block syntax (not Ruby execution), 'reconnaissance' patterns are normal text in task dependencies, 'weak cryptographic algorithm' and 'obfuscation' are false pattern matches in YAML frontmatter and JSON metadata. No executable code, no network calls, no malicious patterns. This skill only creates text files.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 222
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/quality-gates.md",
+            "line_start": 20,
+            "line_end": 147
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 1557,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T03:04:35.973Z"
+  },
+  "content": {
+    "user_title": "Create Django Backend Implementation Plans",
+    "value_statement": "This skill creates structured implementation plans with quality gates for Django projects. Use it to break down complex backend features into Ralph Loop-compatible tasks with built-in verification steps.",
+    "seo_keywords": [
+      "Django planning",
+      "backend development",
+      "Claude Code",
+      "Ralph Loop",
+      "implementation plan",
+      "quality gates",
+      "iterative development",
+      "Django Ninja",
+      "Python testing",
+      "task breakdown"
+    ],
+    "actual_capabilities": [
+      "Creates PLAN.md with structured task breakdown and tracking tables",
+      "Generates RALPH-PROMPT.md for Ralph Loop execution",
+      "Defines quality gates (lint, test, coverage, types, Django checks)",
+      "Tracks task dependencies and execution order",
+      "Includes Django-specific tooling configuration",
+      "Produces task files with checklists, tests, and completion criteria"
+    ],
+    "limitations": [
+      "Designed specifically for Django backend projects",
+      "Requires Ralph Wiggum Loop skill for execution",
+      "Needs existing Django project structure with tests configured",
+      "Best suited for multi-task features, not single quick tasks"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Django developers",
+        "title": "Build User Preference APIs",
+        "description": "Create complete user preference systems with models, services, APIs, and caching using templates."
+      },
+      {
+        "target_user": "Technical leads",
+        "title": "Plan Backend Features",
+        "description": "Break down multi-week implementations into tasks with clear quality criteria and dependencies."
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Standardize Quality Gates",
+        "description": "Ensure consistent verification steps across all backend feature development with automated checks."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic API Planning",
+        "scenario": "Create a plan for a REST API",
+        "prompt": "Create a backend plan for a notification service API with email and push notifications. Use 'notifications' as slug and 'optino_app/' as Django app path."
+      },
+      {
+        "title": "Service Integration",
+        "scenario": "Plan third-party integrations",
+        "prompt": "Plan a Stripe payment integration with webhook handling using 'payment-gateway' as slug and 'payments/' module path."
+      },
+      {
+        "title": "Data Processing",
+        "scenario": "Build data pipeline features",
+        "prompt": "Create a plan for a CSV import/export system with validation and processing queues. Use slug 'data-import'."
+      },
+      {
+        "title": "Advanced Caching",
+        "scenario": "Implement performance optimizations",
+        "prompt": "Plan a multi-layer caching system with Redis and database optimization for high-traffic API endpoints."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a user preferences API with theme settings and notification preferences",
+        "output": [
+          "Created PLAN.md with 4 structured tasks",
+          "Generated RALPH-PROMPT.md with Django-specific commands",
+          "Defined quality gates for ruff, pytest, and coverage",
+          "Set up task dependencies (model → service → API → cache)",
+          "Ready to run with: /plan-directory:run user-preferences"
+        ]
+      },
+      {
+        "input": "Plan a payment gateway integration with Stripe webhooks",
+        "output": [
+          "Generated 6-task plan for payment processing",
+          "Included webhook handler tasks with signature verification",
+          "Set up test configuration with mock Stripe responses",
+          "Defined quality gates including security checks",
+          "Ready for Ralph Loop execution"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep tasks focused with 4-8 checklist items for optimal Ralph iteration cycles",
+      "Use specific test filters to isolate feature tests and reduce execution time",
+      "Add orientation tasks when working with unfamiliar codebases",
+      "Configure project-specific wrapper commands in the tooling section"
+    ],
+    "anti_patterns": [
+      "Creating tasks with more than 10 checklist items (too complex for single iteration)",
+      "Skipping dependency mapping between tasks (causes Ralph to get stuck)",
+      "Using generic completion promises instead of plan-specific ones",
+      "Forgetting to configure project-specific tool commands"
+    ],
+    "faq": [
+      {
+        "question": "What is Ralph Wiggum Loop?",
+        "answer": "Ralph Loop is an iterative pattern where Claude repeatedly executes the same prompt, seeing previous work via git history."
+      },
+      {
+        "question": "Can I use this for non-Django projects?",
+        "answer": "This skill is Django-specific. Other frameworks would need their own planning templates and quality gates."
+      },
+      {
+        "question": "How do I run the generated plan?",
+        "answer": "Use '/plan-directory:run <slug>' to execute the RALPH-PROMPT.md with Ralph Loop integration."
+      },
+      {
+        "question": "What if tests fail during execution?",
+        "answer": "Ralph will attempt to fix issues. The plan includes verification steps that must pass before proceeding to next task."
+      },
+      {
+        "question": "Can I customize the quality gates?",
+        "answer": "Yes, configure lint, format, type check, and test commands to match your project's tooling setup."
+      },
+      {
+        "question": "How does task tracking work?",
+        "answer": "Ralph updates PLAN.md after each task, marking status and filling quality gate results in the tracker table."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "user-preferences",
+          "type": "dir",
+          "path": "examples/user-preferences",
+          "children": [
+            {
+              "name": "001-preferences-model.md",
+              "type": "file",
+              "path": "examples/user-preferences/001-preferences-model.md",
+              "lines": 64
+            },
+            {
+              "name": "002-preferences-service.md",
+              "type": "file",
+              "path": "examples/user-preferences/002-preferences-service.md",
+              "lines": 62
+            },
+            {
+              "name": "003-api-endpoints.md",
+              "type": "file",
+              "path": "examples/user-preferences/003-api-endpoints.md",
+              "lines": 61
+            },
+            {
+              "name": "004-caching-layer.md",
+              "type": "file",
+              "path": "examples/user-preferences/004-caching-layer.md",
+              "lines": 59
+            },
+            {
+              "name": "PLAN.md",
+              "type": "file",
+              "path": "examples/user-preferences/PLAN.md",
+              "lines": 112
+            },
+            {
+              "name": "RALPH-PROMPT.md",
+              "type": "file",
+              "path": "examples/user-preferences/RALPH-PROMPT.md",
+              "lines": 146
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "plan-template.md",
+          "type": "file",
+          "path": "references/plan-template.md",
+          "lines": 114
+        },
+        {
+          "name": "quality-gates.md",
+          "type": "file",
+          "path": "references/quality-gates.md",
+          "lines": 223
+        },
+        {
+          "name": "ralph-prompt-template.md",
+          "type": "file",
+          "path": "references/ralph-prompt-template.md",
+          "lines": 187
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 262
+    }
+  ]
+}

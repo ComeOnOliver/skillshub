@@ -1,0 +1,288 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:12:01.443Z",
+    "slug": "automattic-wp-wpcli-and-ops",
+    "source_url": "https://github.com/Automattic/agent-skills/tree/trunk/skills/wp-wpcli-and-ops",
+    "source_ref": "trunk",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3f76c8fce78a1db1ed2dcb0273bba9b30b0231ce191bd63279a289151af3e726",
+    "tree_hash": "e39ebd381ad4c73623cc0e510fd6a31bdb9fefe3f324de0e88930b758fae94e1"
+  },
+  "skill": {
+    "name": "wp-wpcli-and-ops",
+    "description": "Use when working with WP-CLI (wp) for WordPress operations: safe search-replace, db export/import, plugin/theme/user/content management, cron, cache flushing, multisite, and scripting/automation with wp-cli.yml.",
+    "summary": "Use when working with WP-CLI (wp) for WordPress operations: safe search-replace, db export/import, p...",
+    "icon": "⚙️",
+    "version": "1.0.0",
+    "author": "Automattic",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "wordpress",
+      "wpcli",
+      "operations",
+      "site-management",
+      "maintenance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analysis flagged 118 patterns, primarily false positives from documentation examples. The backtick patterns are markdown code blocks in reference docs, not executable Ruby code. The 'weak crypto' alerts are false positives from MD5 mentions in WordPress contexts (checksums, not authentication). The external command patterns in scripts/wpcli_inspect.mjs are legitimate WP-CLI wrapper functionality for a WordPress operations skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/wpcli_inspect.mjs",
+            "line_start": 1,
+            "line_end": 100
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "WP-CLI External Command Execution",
+        "description": "Script spawns WP-CLI commands as intended functionality for WordPress operations skill",
+        "locations": [
+          {
+            "file": "scripts/wpcli_inspect.mjs",
+            "line_start": 22,
+            "line_end": 22
+          }
+        ],
+        "type": "external_commands",
+        "severity": "low",
+        "mitigation": "This is expected behavior for a WordPress CLI management skill. Commands are structured through WP-CLI interface."
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 676,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:12:01.443Z"
+  },
+  "content": {
+    "user_title": "Manage WordPress Sites with WP-CLI Commands",
+    "value_statement": "WordPress site management requires command-line expertise and knowledge of best practices. This skill provides WP-CLI command guidance, operational procedures, and troubleshooting workflows for WordPress administrators.",
+    "seo_keywords": [
+      "WordPress",
+      "WP-CLI",
+      "Claude",
+      "Claude Code",
+      "site management",
+      "WordPress operations",
+      "CLI automation",
+      "WordPress maintenance",
+      "database operations",
+      "plugin management"
+    ],
+    "actual_capabilities": [
+      "Generate WP-CLI commands for plugin, theme, and core management",
+      "Provide database search-replace operations with safety checks",
+      "Guide cache management and cron job configuration",
+      "Assist with WordPress multisite network operations",
+      "Recommend debugging procedures using WP-CLI tools",
+      "Advise on safe automation practices for WordPress maintenance"
+    ],
+    "limitations": [
+      "Does not execute commands directly on WordPress installations",
+      "Requires WP-CLI to be installed on target system",
+      "Cannot access live WordPress database or filesystem",
+      "Provides guidance only, user must verify commands before execution"
+    ],
+    "use_cases": [
+      {
+        "target_user": "WordPress developers",
+        "title": "Automate Plugin Updates Across Sites",
+        "description": "Generate safe batch update commands with backup procedures for managing plugins across multiple WordPress installations."
+      },
+      {
+        "target_user": "System administrators",
+        "title": "Database Migration and URL Changes",
+        "description": "Create search-replace commands for site migrations and domain changes while preserving serialized data integrity."
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "WordPress Performance Optimization",
+        "description": "Configure caching strategies, optimize database tables, and automate maintenance tasks using WP-CLI workflows."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check Site Health",
+        "scenario": "Verify WordPress installation status",
+        "prompt": "What WP-CLI commands should I use to check the health of my WordPress site including plugin status, database integrity, and core files?"
+      },
+      {
+        "title": "Safe Plugin Update",
+        "scenario": "Update plugins with backup",
+        "prompt": "Help me create a safe procedure for updating all plugins on my WordPress site using WP-CLI with proper backup and rollback steps."
+      },
+      {
+        "title": "Domain Migration",
+        "scenario": "Change site URL in database",
+        "prompt": "I need to migrate my WordPress site from oldsite.com to newsite.com. What WP-CLI search-replace commands do I need with safety checks?"
+      },
+      {
+        "title": "Multisite Network Setup",
+        "scenario": "Convert to WordPress multisite",
+        "prompt": "Guide me through converting my single WordPress site to multisite network using WP-CLI including database conversion and configuration steps."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me how to safely update all plugins",
+        "output": [
+          "Create full site backup before proceeding",
+          "Check current plugin status: wp plugin list",
+          "Update all plugins: wp plugin update --all",
+          "Verify site functionality after updates",
+          "Enable maintenance mode during update process"
+        ]
+      },
+      {
+        "input": "How do I search and replace URLs in my database?",
+        "output": [
+          "Backup database first using wp db export",
+          "Dry run command: wp search-replace 'old.com' 'new.com' --dry-run",
+          "Review affected tables and row counts",
+          "Execute: wp search-replace 'old.com' 'new.com' --skip-columns=guid",
+          "Clear cache after completion: wp cache flush"
+        ]
+      },
+      {
+        "input": "Debug slow cron jobs on my WordPress site",
+        "output": [
+          "List all scheduled events: wp cron event list",
+          "Check for stuck or overdue cron jobs",
+          "Test specific event: wp cron event run <hook>",
+          "Review cron schedule intervals and frequencies",
+          "Consider server-level cron for high-traffic sites"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always create complete backups before running database modification commands",
+      "Use dry-run flags to preview changes before executing search-replace operations",
+      "Test WP-CLI commands on staging environments before production execution"
+    ],
+    "anti_patterns": [
+      "Running search-replace commands without backup or dry-run preview",
+      "Executing plugin updates during high-traffic periods without maintenance mode",
+      "Modifying production databases without testing commands on staging copy first"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute WP-CLI commands automatically?",
+        "answer": "No, it provides command guidance and procedures. You must execute commands manually on your WordPress installation."
+      },
+      {
+        "question": "Do I need WP-CLI installed to use this skill?",
+        "answer": "Yes, WP-CLI must be installed on your server. This skill generates commands for you to run using your WP-CLI installation."
+      },
+      {
+        "question": "Can this skill access my WordPress database?",
+        "answer": "No, it provides command guidance only. You execute commands through your own WP-CLI installation with your credentials."
+      },
+      {
+        "question": "Is this safe for production WordPress sites?",
+        "answer": "The skill emphasizes safety practices including backups and dry-runs. Always test on staging before production."
+      },
+      {
+        "question": "Does this work with WordPress multisite?",
+        "answer": "Yes, it includes specific guidance for multisite network operations and site management commands."
+      },
+      {
+        "question": "What version of WP-CLI is required?",
+        "answer": "Commands are compatible with WP-CLI 2.0 and later. Some features may require specific WP-CLI package versions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "automation.md",
+          "type": "file",
+          "path": "references/automation.md",
+          "lines": 31
+        },
+        {
+          "name": "cron-and-cache.md",
+          "type": "file",
+          "path": "references/cron-and-cache.md",
+          "lines": 24
+        },
+        {
+          "name": "debugging.md",
+          "type": "file",
+          "path": "references/debugging.md",
+          "lines": 18
+        },
+        {
+          "name": "multisite.md",
+          "type": "file",
+          "path": "references/multisite.md",
+          "lines": 23
+        },
+        {
+          "name": "packages-and-updates.md",
+          "type": "file",
+          "path": "references/packages-and-updates.md",
+          "lines": 23
+        },
+        {
+          "name": "safety.md",
+          "type": "file",
+          "path": "references/safety.md",
+          "lines": 31
+        },
+        {
+          "name": "search-replace.md",
+          "type": "file",
+          "path": "references/search-replace.md",
+          "lines": 41
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "wpcli_inspect.mjs",
+          "type": "file",
+          "path": "scripts/wpcli_inspect.mjs",
+          "lines": 91
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 124
+    }
+  ]
+}

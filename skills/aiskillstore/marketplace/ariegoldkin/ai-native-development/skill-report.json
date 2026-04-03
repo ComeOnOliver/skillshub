@@ -1,0 +1,317 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:18:05.903Z",
+    "slug": "ariegoldkin-ai-native-development",
+    "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/tree/main/skills/ai-native-development",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "127be8aebd7bf9c6820445c35b1e61a792061d43eb73bfbe112b788c77da4c0d",
+    "tree_hash": "506acb5ba48582d858d91c84cd34963fd975356a2f942e6b8f09f061ec28ddda"
+  },
+  "skill": {
+    "name": "ai-native-development",
+    "description": "Build AI-first applications with RAG pipelines, embeddings, vector databases, agentic workflows, and LLM integration. Master prompt engineering, function calling, streaming responses, and cost optimization for 2025+ AI development.",
+    "summary": "Build AI-first applications with RAG pipelines, embeddings, vector databases, agentic workflows, and...",
+    "icon": "🤖",
+    "version": "1.0.0",
+    "author": "AI Agent Hub",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "ai",
+      "llm",
+      "rag",
+      "embeddings",
+      "vector-database",
+      "agents",
+      "langchain",
+      "2025"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "env_access",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is educational/reference content for AI-native development patterns. Static scanner flagged 401 patterns, but all are FALSE POSITIVES. The flagged patterns (eval, process.env, backticks, grep commands) are legitimate documentation and template code for building AI agents. No malicious intent, data exfiltration, or unauthorized credential access found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 442
+          },
+          {
+            "file": "references/agentic-workflows.md",
+            "line_start": 1,
+            "line_end": 100
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "templates/agent-workflow-template.ts",
+            "line_start": 8,
+            "line_end": 8
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "references/agentic-workflows.md",
+            "line_start": 88,
+            "line_end": 89
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 4783,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:18:05.903Z"
+  },
+  "content": {
+    "user_title": "Build AI-First Applications",
+    "value_statement": "Building AI-native applications requires understanding RAG pipelines, agentic workflows, and vector databases. This skill provides proven patterns for integrating LLMs, implementing semantic search, and creating autonomous agents that reason and take action.",
+    "seo_keywords": [
+      "ai-native development",
+      "rag pipelines",
+      "llm integration",
+      "vector databases",
+      "agentic workflows",
+      "claude",
+      "codex",
+      "claude code",
+      "embeddings",
+      "semantic search"
+    ],
+    "actual_capabilities": [
+      "Implement RAG pipelines with citations and hybrid search",
+      "Build autonomous agents using ReAct and function calling patterns",
+      "Configure vector databases for semantic search and embeddings",
+      "Optimize AI costs through caching and model selection",
+      "Set up observability for LLM applications with LangSmith and LangFuse"
+    ],
+    "limitations": [
+      "Does not include pre-built vector database infrastructure",
+      "Does not provide API keys or LLM credentials",
+      "Requires separate setup for production deployment"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Build RAG Chatbots",
+        "description": "Create intelligent chatbots that retrieve relevant context from your documents before generating responses."
+      },
+      {
+        "target_user": "AI Engineers",
+        "title": "Design Agent Systems",
+        "description": "Build multi-agent systems where specialized agents collaborate on complex reasoning tasks."
+      },
+      {
+        "target_user": "Product Teams",
+        "title": "Add Semantic Search",
+        "description": "Implement semantic search capabilities that understand meaning beyond keyword matching."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic RAG Query",
+        "scenario": "Retrieve context and answer",
+        "prompt": "Use the RAG pipeline to answer this question based on our knowledge base. Include citations for each claim."
+      },
+      {
+        "title": "Agent Task",
+        "scenario": "Autonomous reasoning and action",
+        "prompt": "Complete this task by reasoning step by step. Use available tools to gather information as needed."
+      },
+      {
+        "title": "Multi-Agent",
+        "scenario": "Coordinating specialized agents",
+        "prompt": "Coordinate these three agents: researcher, analyst, and communicator to complete this complex task."
+      },
+      {
+        "title": "Cost-Optimized",
+        "scenario": "Efficient model selection",
+        "prompt": "Analyze this request and use the appropriate model tier. For simple questions use the faster model."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How does our return policy work?",
+        "output": [
+          "Retrieved 3 relevant documents from knowledge base",
+          "Generated answer citing sources [1] and [2]",
+          "Total tokens: 450, Estimated cost: $0.002"
+        ]
+      },
+      {
+        "input": "Research the latest AI regulations and summarize key points",
+        "output": [
+          "Task assigned to Researcher agent",
+          "Gathered information from web search",
+          "Created summary with 5 key regulatory points",
+          "Final output: Concise briefing document"
+        ]
+      },
+      {
+        "input": "Find similar products to this description",
+        "output": [
+          "Converted product description to embedding vector",
+          "Queried vector database for similar items",
+          "Found 10 semantically similar products",
+          "Sorted by relevance score, top match: 94% similarity"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep context windows under 75% of model limits and implement sliding windows for long conversations",
+      "Use hybrid search combining semantic and keyword matching for better retrieval quality",
+      "Validate LLM outputs against retrieved context to reduce hallucinations and improve accuracy"
+    ],
+    "anti_patterns": [
+      "Including sensitive information or secrets in prompts sent to external LLMs",
+      "Using a single monolithic prompt for complex tasks instead of decomposing into agent steps",
+      "Ignoring token usage and costs without monitoring or budget controls"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between RAG and fine-tuning?",
+        "answer": "RAG retrieves relevant documents at query time while fine-tuning updates model weights. RAG is cheaper and allows real-time knowledge updates."
+      },
+      {
+        "question": "Which vector database should I choose?",
+        "answer": "Pinecone offers managed simplicity, Chroma is great for self-hosted, Qdrant provides high performance in Rust. Choose based on your infrastructure."
+      },
+      {
+        "question": "How do I prevent agents from running too long?",
+        "answer": "Set max_iterations limits, implement timeouts, and add budget controls. Monitor iteration counts and cost per task."
+      },
+      {
+        "question": "What is the ReAct pattern?",
+        "answer": "ReAct combines Reasoning and Acting. Agents think aloud, take actions, observe results, and iterate until reaching conclusions."
+      },
+      {
+        "question": "How do I handle tool security?",
+        "answer": "Validate all tool inputs, implement rate limits, use separate credentials per tool, and log all tool executions for audit."
+      },
+      {
+        "question": "When should I use streaming responses?",
+        "answer": "Use streaming for any user-facing interaction. It reduces perceived latency and improves user experience significantly."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "checklists",
+      "type": "dir",
+      "path": "checklists",
+      "children": [
+        {
+          "name": "ai-implementation-checklist.md",
+          "type": "file",
+          "path": "checklists/ai-implementation-checklist.md",
+          "lines": 278
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "chatbot-with-rag-example.ts",
+          "type": "file",
+          "path": "examples/chatbot-with-rag-example.ts",
+          "lines": 70
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "agentic-workflows.md",
+          "type": "file",
+          "path": "references/agentic-workflows.md",
+          "lines": 572
+        },
+        {
+          "name": "function-calling.md",
+          "type": "file",
+          "path": "references/function-calling.md",
+          "lines": 616
+        },
+        {
+          "name": "observability.md",
+          "type": "file",
+          "path": "references/observability.md",
+          "lines": 606
+        },
+        {
+          "name": "rag-patterns.md",
+          "type": "file",
+          "path": "references/rag-patterns.md",
+          "lines": 501
+        },
+        {
+          "name": "vector-databases.md",
+          "type": "file",
+          "path": "references/vector-databases.md",
+          "lines": 451
+        }
+      ]
+    },
+    {
+      "name": "templates",
+      "type": "dir",
+      "path": "templates",
+      "children": [
+        {
+          "name": "agent-workflow-template.ts",
+          "type": "file",
+          "path": "templates/agent-workflow-template.ts",
+          "lines": 430
+        },
+        {
+          "name": "rag-pipeline-template.ts",
+          "type": "file",
+          "path": "templates/rag-pipeline-template.ts",
+          "lines": 371
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 624
+    }
+  ]
+}

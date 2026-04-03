@@ -1,0 +1,234 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:13:57.570Z",
+    "slug": "21pounder-code-review",
+    "source_url": "https://github.com/21pounder/terminalAgent/tree/main/deepresearch/.claude/skills/code-review",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "65f64dae3f23fb31104cf325f29f35e9c1a1ba2359c2e75cf05b96632d725b0a",
+    "tree_hash": "3d1fb35efacc183e7465743ac4e0e338cb68c5da29cc61095791d0420255ad67"
+  },
+  "skill": {
+    "name": "code-review",
+    "description": "Use this skill when user asks to \"review code\", \"check for issues\", \"analyze code quality\", \"find bugs\", or wants feedback on code implementation.",
+    "summary": "Use this skill when user asks to \"review code\", \"check for issues\", \"analyze code quality\", \"find bu...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "21pounder",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "code review",
+      "quality assurance",
+      "security analysis",
+      "bug detection",
+      "code quality"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 16 static findings are FALSE POSITIVES. The static analyzer misidentified security documentation examples as actual vulnerabilities. The skill is a pure prompt-based code review assistant with Read, Glob, and Grep tools only. No network access, command execution, or environment variable access. The findings are legitimate security guidance examples (SQL injection, weak crypto, XSS) showing what to look for during code review - not actual implementation of those patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 31
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 277,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:13:57.570Z"
+  },
+  "content": {
+    "user_title": "Review code for quality and security",
+    "value_statement": "Manual code review is time-consuming and error-prone. This skill provides systematic code analysis using Claude to identify bugs, security vulnerabilities, performance issues, and quality concerns across files or entire directories.",
+    "seo_keywords": [
+      "code review",
+      "Claude Code",
+      "code quality",
+      "security analysis",
+      "bug detection",
+      "code review automation",
+      "static analysis",
+      "code audit",
+      "programming assistance",
+      "developer tools"
+    ],
+    "actual_capabilities": [
+      "Read and analyze single files or entire codebases",
+      "Identify security vulnerabilities (injection, XSS, auth issues)",
+      "Detect performance bottlenecks and inefficiencies",
+      "Check code style consistency and best practices",
+      "Prioritize findings by severity (Critical, High, Medium, Low)",
+      "Provide specific line numbers with improvement suggestions"
+    ],
+    "limitations": [
+      "Does not modify code automatically - only provides recommendations",
+      "Cannot execute code to test runtime behavior",
+      "Analysis is based on static code inspection only",
+      "Cannot access external APIs or services for verification"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Development Teams",
+        "title": "Pre-commit Code Review",
+        "description": "Review pull requests and code changes before merging to catch issues early in the development cycle."
+      },
+      {
+        "target_user": "Security Engineers",
+        "title": "Security Vulnerability Scan",
+        "description": "Scan codebases for common security vulnerabilities and weak authentication patterns."
+      },
+      {
+        "target_user": "Junior Developers",
+        "title": "Learning Code Patterns",
+        "description": "Understand coding best practices and anti-patterns through constructive feedback on their code."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic File Review",
+        "scenario": "Review a single file",
+        "prompt": "Review the file at [filepath] for code quality, bugs, and potential improvements."
+      },
+      {
+        "title": "Security Focus",
+        "scenario": "Security audit",
+        "prompt": "Perform a security review of [filepath]. Focus on injection vulnerabilities, authentication issues, and data sanitization."
+      },
+      {
+        "title": "Directory Analysis",
+        "scenario": "Multi-file review",
+        "prompt": "Review all files in the [directory] directory. Check for code consistency, duplicate patterns, and architectural issues."
+      },
+      {
+        "title": "Performance Check",
+        "scenario": "Optimize code",
+        "prompt": "Analyze [filepath] for performance bottlenecks, inefficient algorithms, and memory usage issues."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review src/auth.ts for security issues",
+        "output": [
+          "Security Review Summary: 3 issues found",
+          "HIGH: SQL injection risk on line 45 - user input concatenated directly into query",
+          "MEDIUM: Weak password hashing detected on line 78 - consider using bcrypt instead of MD5",
+          "LOW: Missing rate limiting on authentication endpoints",
+          "Recommendations included with code examples"
+        ]
+      },
+      {
+        "input": "Review src/utils/ for code quality",
+        "output": [
+          "Code Quality Review: 5 issues found",
+          "HIGH: Duplicate validation logic in functions on lines 12 and 67",
+          "MEDIUM: Inconsistent error handling across files",
+          "LOW: Variable naming could be more descriptive",
+          "MEDIUM: Consider extracting common helper functions",
+          "LOW: Missing JSDoc comments on exported functions"
+        ]
+      },
+      {
+        "input": "Analyze src/performance/api.ts for bottlenecks",
+        "output": [
+          "Performance Analysis: 2 critical issues found",
+          "CRITICAL: N+1 query pattern on line 23 - database call inside loop",
+          "HIGH: Missing cache layer causing repeated expensive computations on line 45",
+          "MEDIUM: Consider lazy loading for large data structures",
+          "Recommendations with code samples provided"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide specific file paths and line numbers for each issue",
+      "Include concrete code examples when suggesting fixes",
+      "Prioritize findings by severity to help teams focus on critical issues first"
+    ],
+    "anti_patterns": [
+      "Reviewing too much code at once - focus on manageable chunks",
+      "Using vague language without specific line references",
+      "Only pointing out problems without suggesting improvements"
+    ],
+    "faq": [
+      {
+        "question": "What programming languages are supported?",
+        "answer": "Claude Code supports most major languages. The skill works with any language Claude can read and understand."
+      },
+      {
+        "question": "What is the maximum file size or line count for analysis?",
+        "answer": "Very large files may be truncated. For best results, review individual files under 2000 lines at a time."
+      },
+      {
+        "question": "How does this integrate with my existing workflow?",
+        "answer": "You can invoke this skill through Claude Code CLI using /code-review command with a file path or directory."
+      },
+      {
+        "question": "Is my code data safe?",
+        "answer": "Yes. This skill only reads files locally. No code is sent to external services or stored permanently."
+      },
+      {
+        "question": "Can this skill fix the issues it finds?",
+        "answer": "No. This skill provides recommendations and suggestions. You must manually apply the fixes to your codebase."
+      },
+      {
+        "question": "How is this different from linters and static analyzers?",
+        "answer": "This skill provides human-like analysis including architectural concerns, logic errors, and contextual recommendations that go beyond automated rules."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 99
+    }
+  ]
+}

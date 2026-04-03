@@ -1,0 +1,201 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:56:12.829Z",
+    "slug": "anthropics-applying-brand-guidelines",
+    "source_url": "https://github.com/anthropics/claude-cookbooks/tree/main/skills/custom_skills/applying-brand-guidelines",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "843b63baf789771416f70d5cd89412631977bb256e559bdd3e93861529384b7d",
+    "tree_hash": "b93d6b469da23da3d4d779d4a1c4d958d5bb40950e8c338e362b42ea0d3f021a"
+  },
+  "skill": {
+    "name": "applying-brand-guidelines",
+    "description": "This skill applies consistent corporate branding and styling to all generated documents including colors, fonts, layouts, and messaging",
+    "summary": "Apply consistent corporate brand standards to documents with color palettes, fonts, and formatting guidelines",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "anthropics",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "branding",
+      "design",
+      "formatting",
+      "documents",
+      "style guide"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is safe for publication. All static analysis findings are false positives from pattern matching on documentation content. The skill contains only Python utility classes for formatting document configurations and validation scripts. No code execution, network access, file system manipulation, or credential handling detected. The skill provides branding guidelines and utility functions for applying corporate style standards to documents.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1512,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:56:12.829Z"
+  },
+  "content": {
+    "user_title": "Apply Corporate Brand Guidelines to Documents",
+    "value_statement": "Maintaining consistent brand identity across documents is time consuming and error prone. This skill provides instant access to corporate brand standards including color palettes, typography, formatting rules, and validation tools to ensure all documents meet professional brand guidelines.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "brand guidelines",
+      "corporate branding",
+      "document formatting",
+      "style guide",
+      "brand identity",
+      "design system",
+      "brand compliance"
+    ],
+    "actual_capabilities": [
+      "Provide complete corporate brand guidelines including color codes, fonts, and formatting standards",
+      "Generate brand compliant formatting configurations for Excel, PowerPoint, and PDF documents",
+      "Validate document content against brand guidelines for colors, fonts, tone, and messaging",
+      "Apply consistent header, footer, and layout standards across document types",
+      "Calculate brand compliance scores and provide specific correction recommendations",
+      "Reference official brand standards for logo usage, data presentation, and accessibility requirements"
+    ],
+    "limitations": [
+      "Does not directly modify binary document files, provides configuration and guidance only",
+      "Brand standards are based on example Acme Corporation guidelines and require customization for specific organizations",
+      "Cannot enforce brand compliance automatically, relies on user implementation of provided standards",
+      "Validation scripts detect pattern violations but may not catch all subtle brand guideline deviations"
+    ],
+    "use_cases": [
+      {
+        "title": "Corporate Report Branding",
+        "description": "Marketing teams can quickly apply consistent brand colors, fonts, and layouts to quarterly reports and presentations ensuring professional appearance and brand compliance across all external communications.",
+        "target_user": "Marketing professionals and content creators"
+      },
+      {
+        "title": "Brand Compliance Validation",
+        "description": "Brand managers can validate existing documents against corporate standards, identify violations like unapproved colors or incorrect logo usage, and receive specific correction recommendations with compliance scores.",
+        "target_user": "Brand managers and quality assurance teams"
+      },
+      {
+        "title": "Document Template Creation",
+        "description": "Designers can reference comprehensive brand guidelines to create new document templates for Excel spreadsheets, PowerPoint presentations, and PDF reports that automatically include proper headers, footers, color schemes, and typography.",
+        "target_user": "Graphic designers and template developers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Get Brand Color Palette",
+        "prompt": "What are the approved brand colors for our corporate documents? Include hex codes and usage guidelines.",
+        "scenario": "Starting a new document design and need to know which colors to use"
+      },
+      {
+        "title": "Validate Document Compliance",
+        "prompt": "Check this document content for brand guideline violations and provide a compliance score with specific corrections needed.",
+        "scenario": "Reviewing a draft document before final publication"
+      },
+      {
+        "title": "Generate Excel Formatting Config",
+        "prompt": "Create a brand compliant formatting configuration for an Excel quarterly report with proper headers, colors, and chart styles.",
+        "scenario": "Building a new financial report template"
+      },
+      {
+        "title": "Apply PowerPoint Brand Standards",
+        "prompt": "Generate a complete PowerPoint presentation configuration that follows our corporate brand guidelines including title slide, content slides, and data visualization standards.",
+        "scenario": "Creating a branded presentation template for sales team"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What color should I use for primary headers in our documents?",
+        "output": "Use Acme Blue (#0066CC, RGB: 0, 102, 204) for primary headers and call-to-action buttons. This is your main brand color that should be used consistently across all document types including PowerPoint slide titles, Excel header rows, and PDF section headings."
+      },
+      {
+        "input": "Validate this content for brand compliance: Welcome to acme corporation! We offer cheap solutions. Contact us using Comic Sans font.",
+        "output": [
+          "Brand Compliance Score: 40/100",
+          "Violations Found:",
+          "- Incorrect brand name capitalization: 'acme corporation' should be 'Acme Corporation'",
+          "- Prohibited word used: 'cheap' (use 'cost-effective' or 'value-driven' instead)",
+          "- Unapproved font: 'Comic Sans' (use 'Segoe UI' or approved alternatives)",
+          "Recommendations: Always capitalize brand name correctly, avoid prohibited terms that undermine brand positioning, and use only approved font families from the brand guidelines."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always reference the complete brand guidelines before creating new documents to ensure consistency with approved colors, fonts, and layouts from the start",
+      "Use the validation tools to check documents before final publication to catch brand violations early and maintain professional quality standards",
+      "Customize the example Acme Corporation guidelines with your own organization brand standards including specific color codes, fonts, tone keywords, and prohibited terms"
+    ],
+    "anti_patterns": [
+      "Do not modify brand color codes or create variations, always use exact hex values provided in guidelines to maintain visual consistency across all materials",
+      "Avoid mixing multiple font families in a single document, stick to the approved primary font and its weight variations for professional appearance",
+      "Never skip brand validation for internal documents assuming standards do not matter, consistent branding strengthens company identity in all communications"
+    ],
+    "faq": [
+      {
+        "question": "Can this skill automatically modify my existing PowerPoint and Excel files?",
+        "answer": "No, this skill provides brand guidelines, configuration objects, and validation tools but does not directly modify binary document files. You use the provided standards and configurations to apply formatting manually or integrate with document generation libraries."
+      },
+      {
+        "question": "How do I customize the brand guidelines for my own company?",
+        "answer": "Edit the color codes, font names, tone keywords, and prohibited words in the BrandGuidelines configuration. Replace Acme Corporation examples with your organization name, tagline, and specific brand standards. The Python classes and validation logic remain the same."
+      },
+      {
+        "question": "What types of documents are supported?",
+        "answer": "The skill provides formatting standards and configurations for Excel spreadsheets, PowerPoint presentations, and PDF documents. It includes specific guidelines for headers, footers, color schemes, typography, charts, tables, and layout requirements for each format."
+      },
+      {
+        "question": "How does the brand validation scoring work?",
+        "answer": "The validator scans content for violations like unapproved colors, incorrect fonts, prohibited words, and brand name errors. Each violation deducts 10 points and each warning deducts 3 points from a base score of 100. A score of 100 means full compliance with zero violations."
+      },
+      {
+        "question": "Can I use this for web design and digital products?",
+        "answer": "Yes, the color codes (hex and RGB), font specifications, and design principles apply to digital products. The guidelines include accessibility standards with contrast ratios and minimum font sizes suitable for web and app design beyond just documents."
+      },
+      {
+        "question": "Are there security concerns with this skill?",
+        "answer": "No, this skill contains only documentation and Python utility functions for formatting configurations and validation. It does not execute system commands, access networks, read files, or handle credentials. All code is safe for use in any environment."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "apply_brand.py",
+      "type": "file",
+      "path": "apply_brand.py",
+      "lines": 433
+    },
+    {
+      "name": "REFERENCE.md",
+      "type": "file",
+      "path": "REFERENCE.md",
+      "lines": 137
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 172
+    },
+    {
+      "name": "validate_brand.py",
+      "type": "file",
+      "path": "validate_brand.py",
+      "lines": 326
+    }
+  ]
+}

@@ -1,0 +1,503 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:22:11.179Z",
+    "slug": "dnyoussef-agentdb-performance-optimization",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/agentdb-optimization",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2f89515de3a1ad352edc725cbae887e184ac016917bc2757e670be7bf16d4200",
+    "tree_hash": "21dfcfc135cfc04751b7caef18041acdb5bcdda663d5760d7f1ef8241794e198"
+  },
+  "skill": {
+    "name": "agentdb-performance-optimization",
+    "description": "Optimize AgentDB performance with quantization (4-32x memory reduction), HNSW indexing (150x faster search), caching, and batch operations. Use when optimizing memory usage, improving search speed, or scaling to millions of vectors.",
+    "summary": "Optimize AgentDB performance with quantization (4-32x memory reduction), HNSW indexing (150x faster ...",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "performance",
+      "vector-database",
+      "optimization",
+      "agentdb",
+      "machine-learning"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 78 static findings are false positives. This skill is pure documentation containing only markdown with TypeScript code examples. The CRITICAL heuristic misidentified documentation patterns as malicious. HIGH findings misclassified 'quantization' (ML compression) as cryptographic algorithms. MEDIUM findings mistook markdown code fences for shell execution. No executable code, network operations, or credential access exists.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 502,
+            "line_end": 502
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 503,
+            "line_end": 503
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 169
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 252
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 252,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 264
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 264,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 286
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 286,
+            "line_end": 290
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 290,
+            "line_end": 298
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 298,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 317
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 328
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 328,
+            "line_end": 332
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 332,
+            "line_end": 342
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 342,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 363
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 363,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 376
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 376,
+            "line_end": 385
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 389
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 389,
+            "line_end": 397
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 397,
+            "line_end": 405
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 405,
+            "line_end": 411
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 411,
+            "line_end": 415
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 415,
+            "line_end": 421
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 421,
+            "line_end": 425
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 425,
+            "line_end": 431
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 431,
+            "line_end": 435
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 435,
+            "line_end": 442
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 442,
+            "line_end": 450
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 450,
+            "line_end": 456
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 456,
+            "line_end": 460
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 460,
+            "line_end": 470
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 470,
+            "line_end": 474
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 474,
+            "line_end": 480
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 688,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:22:11.179Z"
+  },
+  "content": {
+    "user_title": "Optimize AgentDB vector database performance",
+    "value_statement": "Vector databases consume massive memory and suffer slow searches at scale. This skill provides proven optimization techniques including quantization, HNSW indexing, and caching to achieve 150x-12,500x performance improvements while reducing memory usage by 4-32x.",
+    "seo_keywords": [
+      "AgentDB optimization",
+      "vector database performance",
+      "HNSW indexing",
+      "quantization",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "vector search optimization",
+      "memory reduction",
+      "batch operations"
+    ],
+    "actual_capabilities": [
+      "Apply quantization strategies (binary, scalar, product) for 4-32x memory reduction",
+      "Configure HNSW indexing for O(log n) search complexity and 150x faster queries",
+      "Implement in-memory LRU caching to achieve sub-millisecond pattern retrieval",
+      "Use batch operations for 500x faster bulk inserts (2ms vs 1s for 100 vectors)",
+      "Monitor performance metrics including cache hit rate and search latency",
+      "Scale from small (less than 10K) to massive (more than 1M) vector deployments"
+    ],
+    "limitations": [
+      "Requires AgentDB v1.0.7+ and Node.js 18+",
+      "Quantization may cause 2-7% accuracy loss depending on strategy chosen",
+      "HNSW parameters require tuning for optimal recall vs speed trade-offs",
+      "Benefits apply only to AgentDB; not compatible with other vector databases"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML Engineers",
+        "title": "Scale vector embeddings",
+        "description": "Deploy memory-efficient vector search for production ML applications with millions of embeddings"
+      },
+      {
+        "target_user": "AI Developers",
+        "title": "Accelerate agent memory",
+        "description": "Speed up reasoning bank queries for intelligent agents requiring fast context retrieval"
+      },
+      {
+        "target_user": "Data Engineers",
+        "title": "Optimize database resources",
+        "description": "Reduce infrastructure costs by applying quantization and indexing to large-scale vector stores"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic optimization setup",
+        "scenario": "Enable performance features",
+        "prompt": "Configure AgentDB with quantization, HNSW indexing, and caching for optimal performance. Show the configuration options and explain the trade-offs between memory usage and accuracy."
+      },
+      {
+        "title": "Memory optimization",
+        "scenario": "Reduce memory footprint",
+        "prompt": "What quantization strategy should I use to reduce memory usage by 32x for a large-scale deployment with 1M+ vectors? Show the configuration and expected accuracy impact."
+      },
+      {
+        "title": "Speed optimization",
+        "scenario": "Maximize search speed",
+        "prompt": "Configure AgentDB for maximum search speed with sub-100us queries. Include HNSW parameter tuning and cache configuration. What accuracy trade-offs should I expect?"
+      },
+      {
+        "title": "Scaling strategy",
+        "scenario": "Scale to millions",
+        "prompt": "Create an optimization recipe for scaling AgentDB from 10K to over 1M vectors. Include quantization type selection, HNSW parameters, and cache sizing for each scale tier."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Configure AgentDB with binary quantization and HNSW indexing for a large-scale deployment",
+        "output": [
+          "Binary Quantization: 32x memory reduction (3GB -> 96MB for 1M vectors)",
+          "HNSW Index: Hierarchical Navigable Small World with M=32 connections",
+          "Cache Size: 2000 patterns for frequent query acceleration",
+          "Expected Performance: less than 100us search latency, 10x faster queries",
+          "Trade-off: 2-5% accuracy loss acceptable for scale"
+        ]
+      },
+      {
+        "input": "How do I optimize for maximum accuracy instead of speed",
+        "output": [
+          "Disable quantization (set type to 'none') for full float32 precision",
+          "Increase HNSW M parameter to 32 for more graph connections",
+          "Set efSearch to 200 for higher recall during queries",
+          "Use 2000+ cache size for frequent pattern retention",
+          "Expected: less than 200us latency with 100% accuracy preserved"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with scalar quantization (4x reduction) for production unless memory is critical, as it preserves 98-99% accuracy",
+      "Monitor cache hit rate and aim for greater than 80% by adjusting cacheSize based on access patterns",
+      "Tune HNSW parameters progressively: start with defaults (M=16, efSearch=100) then adjust based on recall requirements"
+    ],
+    "anti_patterns": [
+      "Using no quantization on datasets over 100K vectors causes unnecessary memory pressure and slow searches",
+      "Setting efSearch too high (above 200) degrades performance without significant recall improvement for most use cases",
+      "Disabling HNSW indexing reverts to linear scan (O(n)) making large-scale queries impractical"
+    ],
+    "faq": [
+      {
+        "question": "Which quantization type should I choose?",
+        "answer": "Binary for maximum memory savings (32x) with 2-5% accuracy loss. Scalar for balanced 4x reduction with 98-99% accuracy. Product for high-dimensional vectors requiring 8-16x compression."
+      },
+      {
+        "question": "What is the minimum AgentDB version required?",
+        "answer": "AgentDB v1.0.7 or later is required. Run npx agentdb@latest --version to check your installed version."
+      },
+      {
+        "question": "How do I integrate this with Claude Code?",
+        "answer": "Import createAgentDBAdapter from agentic-flow/reasoningbank and configure with optimization parameters. The skill provides complete TypeScript examples for all configuration options."
+      },
+      {
+        "question": "Is my data safe with quantization?",
+        "answer": "Quantization preserves semantic similarity while reducing precision. Binary quantization uses 1 bit per dimension. Accuracy loss is typically 2-7% depending on data characteristics and use case."
+      },
+      {
+        "question": "Why is my search still slow after optimization?",
+        "answer": "Check cache hit rate with adapter.getStats(). Increase cacheSize if below 80%. Verify HNSW indexing is enabled. Ensure efSearch is not set too low for your recall requirements."
+      },
+      {
+        "question": "How does this compare to other vector databases?",
+        "answer": "AgentDB with optimizations achieves comparable or better performance than Pinecone, Weaviate, and Qdrant for single-node deployments. HNSW indexing provides logarithmic search complexity similar to industry standards."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 510
+    }
+  ]
+}

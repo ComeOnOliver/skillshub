@@ -1,0 +1,860 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:34:03.238Z",
+    "slug": "dicklesworthstone-csctf",
+    "source_url": "https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/tree/main/skills/csctf",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "10f57174e45cd0dc45c5e74f82c6076f5dac87240319b84bacf8e8d43e63b9a9",
+    "tree_hash": "dbea5b72ebe14ae2aea788b83f7ad9f689c788ccbdb1ced0fd96b0a57e8a4296"
+  },
+  "skill": {
+    "name": "csctf",
+    "description": "Chat Shared Conversation To File - Convert ChatGPT, Gemini, Grok, and Claude share links to clean Markdown + HTML transcripts. Preserves code fences with language detection, deterministic filenames, GitHub Pages publishing. Bun-native CLI.",
+    "summary": "Chat Shared Conversation To File - Convert ChatGPT, Gemini, Grok, and Claude share links to clean Ma...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "Dicklesworthstone",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "transcripts",
+      "markdown",
+      "export",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill describing a CLI tool for converting AI chat transcripts. All 155 static findings are false positives triggered by documentation examples showing shell commands, legitimate hardcoded URLs for the tool's own distribution, standard CLI installation patterns like pipe-to-shell, and documented browser automation for Claude.ai authentication. The skill contains no executable code and describes a legitimate productivity tool with documented security measures.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 102,
+            "line_end": 102
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 112,
+            "line_end": 112
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 117,
+            "line_end": 117
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 122,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 380,
+            "line_end": 380
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 117
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 153,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 168,
+            "line_end": 174
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 209,
+            "line_end": 213
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 227
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 234
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 234,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 261
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 261,
+            "line_end": 262
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 262,
+            "line_end": 267
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 267,
+            "line_end": 269
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 269
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 276,
+            "line_end": 278
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 278,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 283
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 283,
+            "line_end": 286
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 286,
+            "line_end": 288
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 288,
+            "line_end": 291
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 291,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 296
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 318
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 318,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 345
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 345,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 348
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 348,
+            "line_end": 348
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 348,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 364
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 364,
+            "line_end": 365
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 365,
+            "line_end": 365
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 365,
+            "line_end": 366
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 366,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 374
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 374,
+            "line_end": 378
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 378,
+            "line_end": 390
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 390,
+            "line_end": 394
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 394,
+            "line_end": 398
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 386,
+            "line_end": 386
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 389,
+            "line_end": 389
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 318,
+            "line_end": 318
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 365,
+            "line_end": 365
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 374,
+            "line_end": 374
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 318,
+            "line_end": 318
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 365,
+            "line_end": 365
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 374,
+            "line_end": 374
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 277,
+            "line_end": 277
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 604,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:34:03.238Z"
+  },
+  "content": {
+    "user_title": "Convert AI Chat Share Links to Markdown",
+    "value_statement": "Saving AI chat transcripts often breaks code blocks and creates messy filenames. This tool converts share links from ChatGPT, Gemini, Grok, and Claude into clean Markdown and HTML with preserved formatting and syntax highlighting.",
+    "seo_keywords": [
+      "Claude export",
+      "ChatGPT transcript",
+      "AI conversation save",
+      "Claude Code",
+      "markdown converter",
+      "code block preservation",
+      "share link export",
+      "Bun CLI",
+      "Grok export",
+      "Gemini transcript"
+    ],
+    "actual_capabilities": [
+      "Convert share links from ChatGPT, Gemini, Grok, and Claude to Markdown",
+      "Preserve code fences with language detection and syntax highlighting",
+      "Generate deterministic, collision-proof filenames from conversation titles",
+      "Create static HTML output with inline CSS and zero JavaScript",
+      "Publish exports directly to GitHub Pages with one command",
+      "Handle Claude.ai Cloudflare protection using your Chrome session"
+    ],
+    "limitations": [
+      "Requires public share links (Claude.ai uses your browser session)",
+      "Provider layouts may change over time affecting selectors",
+      "First run downloads Playwright Chromium (~200MB)",
+      "Markdown and HTML exports require share link to be accessible"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers",
+        "title": "Save Code-Rich Chats",
+        "description": "Archive conversations containing code examples with syntax highlighting preserved for future reference."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Build AI Conversation Dataset",
+        "description": "Collect and organize AI interactions for analysis, citation, or training data preparation."
+      },
+      {
+        "target_user": "Technical Writers",
+        "title": "Create Documentation from Chats",
+        "description": "Transform AI-generated content into clean, self-contained HTML documentation ready for hosting."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Conversion",
+        "scenario": "Convert a share link to Markdown",
+        "prompt": "Save this Claude conversation to Markdown: https://claude.ai/share/549c846d-f6c8-411c-9039-a9a14db376cf"
+      },
+      {
+        "title": "HTML Output Only",
+        "scenario": "Get styled HTML without Markdown",
+        "prompt": "Convert this ChatGPT link to HTML only: https://chatgpt.com/share/69343092-91ac-800b-996c-7552461b9b70"
+      },
+      {
+        "title": "Custom Output Path",
+        "scenario": "Save to specific location",
+        "prompt": "Save this Gemini conversation to /archive/gemini-tips.md: https://gemini.google.com/share/66d944b0e6b9"
+      },
+      {
+        "title": "Publish to Pages",
+        "scenario": "Export and publish to GitHub Pages",
+        "prompt": "Convert this Grok conversation and publish to GitHub Pages: https://grok.com/share/bGVnYWN5_d5329c61-f497-40b7-9472-c555fa71af9c"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Save this Claude conversation: https://claude.ai/share/549c846d-f6c8-411c-9039-a9a14db376cf",
+        "output": [
+          "✓ Conversation saved to: how_to_build_a_rest_api.md",
+          "✓ HTML version saved to: how_to_build_a_rest_api.html",
+          "✓ Code blocks preserved with syntax highlighting",
+          "✓ Ready for publishing with --publish-to-gh-pages"
+        ]
+      },
+      {
+        "input": "Convert this ChatGPT link to HTML: https://chatgpt.com/share/69343092-91ac-800b-996c-7552461b9b70",
+        "output": [
+          "✓ HTML saved to: python_sorting_algorithms.html",
+          "✓ Inline CSS styling with light/dark mode support",
+          "✓ Syntax highlighting via highlight.js",
+          "✓ Zero JavaScript for safe hosting"
+        ]
+      },
+      {
+        "input": "Save and publish to GitHub Pages: https://gemini.google.com/share/66d944b0e6b9",
+        "output": [
+          "✓ Files committed to: username/my_shared_conversations",
+          "✓ Published to: https://username.github.io/my_shared_conversations/csctf/",
+          "✓ manifest.json and index.html regenerated",
+          "✓ Ready to share your exported conversation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use public share links for ChatGPT, Gemini, and Grok for fastest results",
+      "Increase timeout with --timeout-ms for large or slow-loading conversations",
+      "Run --check-updates periodically to get the latest improvements",
+      "Verify GitHub CLI authentication with gh auth status before publishing"
+    ],
+    "anti_patterns": [
+      "Using private share links - they are not accessible without proper authentication",
+      "Ignoring selector changes - update the tool when providers change layouts",
+      "Publishing without --dry-run first - verify the output before pushing"
+    ],
+    "faq": [
+      {
+        "question": "Which AI platforms are supported?",
+        "answer": "ChatGPT, Gemini, Grok, and Claude share links are all supported. Each has optimized extraction logic."
+      },
+      {
+        "question": "Do I need a Claude.ai login for all platforms?",
+        "answer": "No. Only Claude.ai requires your Chrome session. ChatGPT, Gemini, and Grok use public share links."
+      },
+      {
+        "question": "What file formats does it produce?",
+        "answer": "Two files are created: Markdown (.md) with preserved code fences and static HTML (.html) with inline styling."
+      },
+      {
+        "question": "Is my data sent to external servers?",
+        "answer": "Only the share URL is fetched. GitHub publishing is opt-in and uses the official gh CLI for authentication."
+      },
+      {
+        "question": "What happens if code blocks are not detected?",
+        "answer": "The tool uses provider-specific selectors with fallback chains. Report issues if certain content is missed."
+      },
+      {
+        "question": "How is this different from copy-pasting?",
+        "answer": "Copy-paste often breaks code formatting and loses language hints. This tool preserves fences, syntax highlighting, and generates clean deterministic filenames."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 427
+    }
+  ]
+}

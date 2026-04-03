@@ -1,0 +1,272 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:10:33.541Z",
+    "slug": "k-dense-ai-exploratory-data-analysis",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/exploratory-data-analysis",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "958cddc7c6f76b7ee822769eef813b35bf97564d4c91697449c3b73d14dece19",
+    "tree_hash": "409fbbef3c29de8c857b4e42c931ec92a76d4318190714fc8883f8fa2459fd6a"
+  },
+  "skill": {
+    "name": "exploratory-data-analysis",
+    "description": "Perform comprehensive exploratory data analysis on scientific data files across 200+ file formats. This skill should be used when analyzing any scientific data file to understand its structure, content, quality, and characteristics. Automatically detects file type and generates detailed markdown reports with format-specific analysis, quality metrics, and downstream analysis recommendations. Covers chemistry, bioinformatics, microscopy, spectroscopy, proteomics, metabolomics, and general scientific data formats.",
+    "summary": "Perform comprehensive exploratory data analysis on scientific data files across 200+ file formats. T...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "data",
+    "tags": [
+      "scientific-data",
+      "file-analysis",
+      "bioinformatics",
+      "data-quality",
+      "research"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "After thorough evaluation of 1077 static findings, all are false positives. The scanner misinterpreted Markdown code formatting (backticks) as shell commands, bioinformatics format names (SAM) as Windows credentials, and documentation references to file format specifications as weak cryptography. The skill is a legitimate scientific data analysis tool that only reads data files and writes markdown reports. No network access, no command execution, and no sensitive data handling were found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/eda_analyzer.py",
+            "line_start": 508,
+            "line_end": 508
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 8669,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:10:33.541Z"
+  },
+  "content": {
+    "user_title": "Analyze Scientific Data Files Automatically",
+    "value_statement": "Scientific data files come in hundreds of formats. This skill automatically detects file type, extracts metadata, assesses data quality, and generates comprehensive markdown reports with format-specific analysis recommendations.",
+    "seo_keywords": [
+      "exploratory data analysis",
+      "scientific data files",
+      "bioinformatics analysis",
+      "Claude data analysis",
+      "scientific file formats",
+      "data quality assessment",
+      "Claude Code",
+      "genomics data",
+      "microscopy imaging",
+      "chemistry data"
+    ],
+    "actual_capabilities": [
+      "Automatically detects 200+ scientific file formats across 6 categories",
+      "Extracts format-specific metadata and structure information",
+      "Generates comprehensive markdown reports with statistics and quality metrics",
+      "Provides downstream analysis recommendations based on file type",
+      "Supports chemistry, bioinformatics, microscopy, spectroscopy, and general scientific formats",
+      "Creates analysis reports suitable for documentation and planning"
+    ],
+    "limitations": [
+      "Does not perform advanced statistical modeling or machine learning",
+      "Does not modify or transform the original data files",
+      "Requires specific Python libraries for certain file formats",
+      "Analyzes file structure but does not interpret biological or chemical meaning"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bioinformaticians",
+        "title": "Explore genomic sequencing data",
+        "description": "Analyze FASTQ, BAM, and VCF files to understand sequence quality, mapping rates, and variant distributions."
+      },
+      {
+        "target_user": "Chemists and materials scientists",
+        "title": "Examine molecular structure files",
+        "description": "Parse PDB, SDF, and CIF files to assess molecular structures, atomic coordinates, and bond information."
+      },
+      {
+        "target_user": "Microscopy and imaging researchers",
+        "title": "Inspect microscopy image metadata",
+        "description": "Extract dimensions, channels, timestamps, and spatial calibration from TIFF, ND2, and CZI imaging files."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic analysis",
+        "scenario": "Analyze a data file",
+        "prompt": "Analyze this scientific data file at path: <filepath>"
+      },
+      {
+        "title": "With report",
+        "scenario": "Generate markdown report",
+        "prompt": "Generate a comprehensive EDA report for this file and save it to <filepath>"
+      },
+      {
+        "title": "Quality focus",
+        "scenario": "Assess data quality",
+        "prompt": "Perform a data quality assessment on this file and identify any issues or anomalies."
+      },
+      {
+        "title": "Multi-file",
+        "scenario": "Compare multiple files",
+        "prompt": "Analyze these multiple related files and create a summary comparison report."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze data/sample.fastq",
+        "output": [
+          "File: sample.fastq (24.5 MB)",
+          "Format: FASTQ (sequence data with quality scores)",
+          "Sampled 10,000 reads: Mean length 150bp, Mean quality: 35.2",
+          "GC Content: 52.3%",
+          "Quality Assessment: High-quality data, suitable for downstream analysis",
+          "Recommendations: Proceed with alignment; no trimming required"
+        ]
+      },
+      {
+        "input": "Explore experiment_results.csv",
+        "output": [
+          "File: experiment_results.csv (1.2 MB)",
+          "Format: CSV (tabular data)",
+          "Dimensions: 5,000 rows x 12 columns",
+          "Missing Values: 2.3% in column 'temperature'",
+          "Statistics: Mean=45.2, Std=12.8, Range=[-5.2, 98.4]",
+          "Recommendations: Impute missing values; check for outliers in temperature column"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide the full file path when requesting analysis for precise detection",
+      "Specify output filename to generate a persistent markdown report",
+      "Check required Python libraries for specialized formats before analysis"
+    ],
+    "anti_patterns": [
+      "Do not ask the skill to modify or write back to source data files",
+      "Do not expect the skill to perform advanced statistical modeling",
+      "Do not assume the skill can interpret biological meaning from sequences"
+    ],
+    "faq": [
+      {
+        "question": "What file formats are supported?",
+        "answer": "200+ formats including FASTQ, BAM, VCF, PDB, CIF, TIFF, ND2, CSV, HDF5, and many more."
+      },
+      {
+        "question": "Does this modify my data files?",
+        "answer": "No, the skill only reads files and generates new markdown reports without altering original data."
+      },
+      {
+        "question": "What does the generated report include?",
+        "answer": "File metadata, format details, statistical summaries, quality metrics, and downstream analysis recommendations."
+      },
+      {
+        "question": "Can it analyze large files?",
+        "answer": "Yes, but very large files may be sampled for performance. The report notes when sampling is used."
+      },
+      {
+        "question": "What Python libraries are required?",
+        "answer": "Core libraries: pandas, numpy. Format-specific: Biopython for sequences, h5py for HDF5, Pillow for images."
+      },
+      {
+        "question": "Can it analyze multiple files together?",
+        "answer": "Each file is analyzed separately. You can request comparisons across related files in the same analysis request."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "report_template.md",
+          "type": "file",
+          "path": "assets/report_template.md",
+          "lines": 197
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "bioinformatics_genomics_formats.md",
+          "type": "file",
+          "path": "references/bioinformatics_genomics_formats.md",
+          "lines": 665
+        },
+        {
+          "name": "chemistry_molecular_formats.md",
+          "type": "file",
+          "path": "references/chemistry_molecular_formats.md",
+          "lines": 665
+        },
+        {
+          "name": "general_scientific_formats.md",
+          "type": "file",
+          "path": "references/general_scientific_formats.md",
+          "lines": 519
+        },
+        {
+          "name": "microscopy_imaging_formats.md",
+          "type": "file",
+          "path": "references/microscopy_imaging_formats.md",
+          "lines": 621
+        },
+        {
+          "name": "proteomics_metabolomics_formats.md",
+          "type": "file",
+          "path": "references/proteomics_metabolomics_formats.md",
+          "lines": 518
+        },
+        {
+          "name": "spectroscopy_analytical_formats.md",
+          "type": "file",
+          "path": "references/spectroscopy_analytical_formats.md",
+          "lines": 634
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "eda_analyzer.py",
+          "type": "file",
+          "path": "scripts/eda_analyzer.py",
+          "lines": 548
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 446
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:44:07.468Z",
+    "slug": "barnhardt-enterprises-inc-voice-system-expert",
+    "source_url": "https://github.com/Barnhardt-Enterprises-Inc/quetrex-plugin/tree/main/templates/skills/voice-system-expert",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "677bb2cefbfaaa6d4e19dfde1de7364e37c178276293aa10943d5a6902e1ccdc",
+    "tree_hash": "4b4a8d4e4d0f7f95628bd2e3c3a75a715e864d990d475b36c0eb27afa5da4bcc"
+  },
+  "skill": {
+    "name": "voice-system-expert",
+    "description": "Use when working with Quetrex's voice interface, OpenAI Realtime API, WebRTC, or echo cancellation. Knows Quetrex's specific voice architecture decisions and patterns. CRITICAL - prevents breaking working voice system.",
+    "summary": "Use when working with Quetrex's voice interface, OpenAI Realtime API, WebRTC, or echo cancellation. ...",
+    "icon": "🎙️",
+    "version": "1.0.0",
+    "author": "Barnhardt-Enterprises-Inc",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "voice",
+      "webrtc",
+      "audio",
+      "openai-realtime"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only architectural guidance for voice system implementation. No executable code, scripts, network calls, or filesystem access. All 50 static findings are false positives caused by markdown documentation being misidentified as security-sensitive patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 213
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 290
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 290,
+            "line_end": 291
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 291,
+            "line_end": 292
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 292,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 306
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 495,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:44:07.468Z"
+  },
+  "content": {
+    "user_title": "Implement Voice Systems with Browser AEC",
+    "value_statement": "Voice interface implementation requires careful architectural decisions to prevent audio feedback loops and ensure reliable echo cancellation. This skill provides expert guidance on proven voice architecture using OpenAI Realtime API and browser-based echo cancellation.",
+    "seo_keywords": [
+      "voice interface",
+      "WebRTC audio",
+      "OpenAI Realtime API",
+      "echo cancellation",
+      "browser AEC",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "audio pipeline",
+      "microphone streaming"
+    ],
+    "actual_capabilities": [
+      "Guide OpenAI Realtime API integration for voice interfaces",
+      "Implement browser-based echo cancellation using WebRTC",
+      "Avoid common anti-patterns that break voice systems",
+      "Configure audio constraints for optimal voice quality",
+      "Handle microphone permission errors gracefully",
+      "Maintain industry-standard voice architecture patterns"
+    ],
+    "limitations": [
+      "This skill provides guidance only, not executable code",
+      "Requires browser environment with WebRTC support",
+      "Does not include custom audio processing algorithms"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Developers",
+        "title": "Integrate Voice AI Features",
+        "description": "Add conversational voice capabilities to AI applications using OpenAI Realtime API and WebRTC audio streaming"
+      },
+      {
+        "target_user": "Frontend Engineers",
+        "title": "Build Audio Pipelines",
+        "description": "Create reliable audio capture and playback systems using browser echo cancellation and proper media constraints"
+      },
+      {
+        "target_user": "System Architects",
+        "title": "Design Voice Architecture",
+        "description": "Establish voice system patterns that prevent echo feedback and work across all major browsers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Voice Setup",
+        "scenario": "Getting started with voice interface",
+        "prompt": "How do I set up a basic voice interface using OpenAI Realtime API with browser echo cancellation?"
+      },
+      {
+        "title": "Audio Constraints",
+        "scenario": "Configuring microphone settings",
+        "prompt": "What audio constraints should I use for getUserMedia to enable proper echo cancellation?"
+      },
+      {
+        "title": "Fix Echo Issues",
+        "scenario": "Troubleshooting audio feedback",
+        "prompt": "My voice system has echo problems. How do I implement the correct browser AEC pattern?"
+      },
+      {
+        "title": "Architecture Review",
+        "scenario": "Validating voice implementation",
+        "prompt": "Review my voice system code and ensure it follows the always-on microphone + browser AEC pattern without common anti-patterns"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I prevent echo in my voice application?",
+        "output": [
+          "Use always-on microphone with browser echo cancellation enabled",
+          "Configure getUserMedia with echoCancellation: true, noiseSuppression: true, autoGainControl: true",
+          "Keep audio in browser pipeline using HTMLAudioElement for playback",
+          "Avoid toggling microphone track or routing audio outside browser",
+          "Trust browser AEC - it handles echo cancellation automatically"
+        ]
+      },
+      {
+        "input": "What is the correct architecture for a voice AI assistant?",
+        "output": [
+          "Follow the industry-standard pattern used by ChatGPT, Zoom, and Google Meet",
+          "Keep microphone enabled throughout the entire conversation",
+          "Route audio through browser WebRTC stack to OpenAI Realtime API",
+          "Play responses via HTMLAudioElement to maintain browser audio pipeline",
+          "Use server-side VAD for turn detection, not microphone toggling"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use browser echo cancellation with echoCancellation: true in getUserMedia constraints",
+      "Keep microphone enabled throughout the entire conversation - never toggle track state",
+      "Route all audio through browser pipeline using HTMLAudioElement to maintain AEC"
+    ],
+    "anti_patterns": [
+      "Toggling microphone track on and off during conversation breaks AEC",
+      "Routing audio outside browser via AudioWorklet bypass breaks echo cancellation",
+      "Implementing custom echo cancellation reinvents the wheel and causes issues"
+    ],
+    "faq": [
+      {
+        "question": "Which browsers support browser echo cancellation?",
+        "answer": "All major browsers support WebRTC echo cancellation including Chrome, Safari, Firefox, and Edge"
+      },
+      {
+        "question": "What is the maximum audio sample rate for voice?",
+        "answer": "Voice applications typically use 24000 Hz sample rate for optimal quality and performance"
+      },
+      {
+        "question": "How do I handle microphone permission errors?",
+        "answer": "Catch NotAllowedError for permission denials and NotFoundError when no microphone is available"
+      },
+      {
+        "question": "Does this skill store audio data?",
+        "answer": "No, this skill only provides guidance. Actual audio handling depends on your implementation"
+      },
+      {
+        "question": "Why is my voice system producing echo?",
+        "answer": "Echo usually occurs when audio leaves the browser pipeline or echoCancellation is disabled"
+      },
+      {
+        "question": "How is this different from other voice implementations?",
+        "answer": "This follows the industry-standard pattern used by ChatGPT, Zoom, and Google Meet with always-on mic"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 319
+    }
+  ]
+}

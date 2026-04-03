@@ -1,0 +1,417 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-03-06T08:49:25.142Z",
+    "slug": "am-will-llm-council",
+    "source_url": "https://github.com/am-will/codex-skills/tree/main/skills/llm-council/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "934d8909ec5a2280f9716a0fd4a01584169693e4c38bc36502a820afc418c505",
+    "tree_hash": "d1b856750d7601e64587bfc2eca362bc42abd5183f3ff2664db1a72e604955bf"
+  },
+  "skill": {
+    "name": "llm-council",
+    "description": "Orchestrate a configurable, multi-member CLI planning council (Codex, Claude Code, Gemini, OpenCode, or custom) to produce independent implementation plans, anonymize and randomize them, then judge and merge into one final plan. Use when you need a robust, bias-resistant planning workflow, structured JSON outputs, retries, and failure handling across multiple CLI agents.\n",
+    "summary": "Orchestrate a configurable, multi-member CLI planning council (Codex, Claude Code, Gemini, OpenCode,...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "am-will",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "multi-agent",
+      "planning",
+      "orchestration",
+      "codex",
+      "claude-code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Security audit completed. The skill orchestrates multiple AI CLI agents to create implementation plans. All detected patterns (external commands, filesystem, network) are intentional functionality for AI agent orchestration. The 'weak cryptographic algorithm' and 'path traversal' findings are false positives - the scanner misidentified JSON field names and hardcoded resource paths. No prompt injection or malicious behavior detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/llm_council.py",
+            "line_start": 294,
+            "line_end": 294
+          },
+          {
+            "file": "scripts/llm_council.py",
+            "line_start": 820,
+            "line_end": 820
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/llm_council.py",
+            "line_start": 1295,
+            "line_end": 1300
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "External Command Execution",
+        "description": "Skill spawns subprocess.Popen to run AI agent CLI tools (Codex, Claude, Gemini). This is intentional core functionality for multi-agent orchestration.",
+        "locations": [
+          {
+            "file": "scripts/llm_council.py",
+            "line_start": 294,
+            "line_end": 294
+          }
+        ],
+        "confidence": 0.95,
+        "confidence_reasoning": "Legitimate AI agent spawning - the skill's purpose is to orchestrate multiple CLI agents. No user input injection risk as commands are built from config."
+      },
+      {
+        "title": "Local UI Server Network Access",
+        "description": "Skill runs a local Flask server for visualization. Network access is local-only (127.0.0.1), not for external data exfiltration.",
+        "locations": [
+          {
+            "file": "scripts/ui_server.py",
+            "line_start": 50,
+            "line_end": 76
+          }
+        ],
+        "confidence": 0.9,
+        "confidence_reasoning": "Local-only server bound to 127.0.0.1 - no external network communication detected."
+      },
+      {
+        "title": "Config File Read/Write",
+        "description": "Skill reads agent config from user config directory and writes output plans to local filesystem. Required for skill functionality.",
+        "locations": [
+          {
+            "file": "scripts/llm_council.py",
+            "line_start": 69,
+            "line_end": 69
+          }
+        ],
+        "confidence": 0.92,
+        "confidence_reasoning": "Standard config file handling - reads from XDG_CONFIG_HOME, writes output to local runs directory."
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 22,
+    "total_lines": 4058,
+    "audit_model": "claude",
+    "audited_at": "2026-03-06T08:49:25.142Z"
+  },
+  "content": {
+    "user_title": "Orchestrate Multi-Agent Planning Council",
+    "value_statement": "Coordinate multiple AI agents (Codex, Claude Code, Gemini) to produce independent implementation plans, anonymize and merge them into a bias-resistant final plan.",
+    "seo_keywords": [
+      "multi-agent planning",
+      "Claude Code skill",
+      "Codex skill",
+      "AI orchestration",
+      "implementation planning",
+      "bias-resistant planning",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "agent council"
+    ],
+    "actual_capabilities": [
+      "Spawn and coordinate multiple CLI AI agents (Codex, Claude, Gemini, OpenCode)",
+      "Run planners in parallel and collect independent implementation plans",
+      "Anonymize and randomize plans to reduce bias before judging",
+      "Execute judge agent to evaluate and merge plans into final recommendation",
+      "Provide live UI dashboard for monitoring council progress",
+      "Handle failures with retries and timeout management"
+    ],
+    "limitations": [
+      "Requires configured AI CLI tools (Codex, Claude, or Gemini) to be installed",
+      "Plans are limited to text-based planning, cannot execute code directly",
+      "Depends on external API availability for cloud-based models",
+      "Session must remain open for up to 30 minutes during execution"
+    ],
+    "use_cases": [
+      {
+        "title": "Complex Project Planning",
+        "description": "Get unbiased implementation plans by having multiple AI perspectives evaluate your task, then merge the best ideas into one robust plan.",
+        "target_user": "Software developers working on complex features"
+      },
+      {
+        "title": "Architecture Decision Making",
+        "description": "Use multiple AI agents to propose different architectural approaches, then have a judge evaluate tradeoffs and recommend the best option.",
+        "target_user": "Technical leads and architects"
+      },
+      {
+        "title": "Code Review Planning",
+        "description": "Generate comprehensive change proposals that consider multiple angles before implementation, reducing oversight and blind spots.",
+        "target_user": "Engineering teams seeking thorough planning"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Planning Request",
+        "prompt": "Use the llm-council skill to create an implementation plan for: [describe your task]",
+        "scenario": "Quick start with default agent configuration"
+      },
+      {
+        "title": "Custom Agent Setup",
+        "prompt": "Run llm-council with these agents: Codex (planner), Claude (planner), Gemini (judge). Task: [describe]",
+        "scenario": "Specify custom agents for planning"
+      },
+      {
+        "title": "Multi-Model Comparison",
+        "prompt": "Configure 4 different planners (Codex, Claude Opus, Claude Sonnet, Gemini) to produce plans for [task], then have judge select and merge the best approach.",
+        "scenario": "Compare multiple AI model perspectives"
+      },
+      {
+        "title": "Deep Analysis Mode",
+        "prompt": "Run llm-council with high-timeout (600s), 3 retries, and include detailed risk analysis in the final merged plan for: [complex task]",
+        "scenario": "Thorough planning for critical features"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a user authentication system with OAuth2",
+        "output": [
+          "Council runs 3 planners (Codex, Claude, Gemini) in parallel",
+          "Each produces independent plan with phases, risks, testing strategy",
+          "Plans are anonymized and randomized before judging",
+          "Judge evaluates and produces final merged plan in final-plan.md"
+        ]
+      },
+      {
+        "input": "Build API rate limiting service",
+        "output": [
+          "Multiple AI perspectives suggest different approaches (token bucket, sliding window, fixed window)",
+          "Judge analyzes tradeoffs and recommends best solution",
+          "Final plan includes comparative analysis and selected approach rationale"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide detailed task descriptions during intake to improve plan quality",
+      "Configure at least 3 planners for meaningful comparison and diversity",
+      "Keep the session open until the 30-minute timer completes and final-plan.md is saved",
+      "Review anonymized judge output to understand plan tradeoffs before implementation"
+    ],
+    "anti_patterns": [
+      "Starting council without configuring AI agents (must run setup.sh first)",
+      "Providing vague task descriptions that lead to generic plans",
+      "Killing the session before final-plan.md is saved (loses the merged result)",
+      "Using only one planner defeats the purpose of multi-agent bias reduction"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools does this skill support?",
+        "answer": "It supports Codex CLI, Claude Code, Gemini CLI, OpenCode, and custom CLI tools. Run ./setup.sh to configure which agents to use."
+      },
+      {
+        "question": "How does the judge select the best plan?",
+        "answer": "The judge evaluates anonymized plans against a rubric covering completeness, feasibility, risks, and testing strategy. It then merges the best elements into a final recommendation."
+      },
+      {
+        "question": "Can I customize the planner agents?",
+        "answer": "Yes, you can specify any number of planners in the task spec JSON, along with model names, reasoning effort, and extra arguments."
+      },
+      {
+        "question": "What happens if a planner fails?",
+        "answer": "The skill retries failed planners up to 2 times. If all retries fail, it alerts you to fix the issue before continuing."
+      },
+      {
+        "question": "Where are the output files saved?",
+        "answer": "Plans are saved under ./llm-council/runs/<timestamp>/ including judge.md and final-plan.md for auditability."
+      },
+      {
+        "question": "Why must I keep the session open for 30 minutes?",
+        "answer": "The council needs time to run multiple AI agents in parallel, collect outputs, anonymize them, run the judge, and produce the final merged plan. Prematurely closing loses all progress."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "schemas",
+          "type": "dir",
+          "path": "references/schemas",
+          "children": [
+            {
+              "name": "council_plan.schema.json",
+              "type": "file",
+              "path": "references/schemas/council_plan.schema.json",
+              "lines": 71
+            },
+            {
+              "name": "final_plan.schema.json",
+              "type": "file",
+              "path": "references/schemas/final_plan.schema.json",
+              "lines": 100
+            },
+            {
+              "name": "judge_input.schema.json",
+              "type": "file",
+              "path": "references/schemas/judge_input.schema.json",
+              "lines": 46
+            },
+            {
+              "name": "judge_output.schema.json",
+              "type": "file",
+              "path": "references/schemas/judge_output.schema.json",
+              "lines": 107
+            },
+            {
+              "name": "task_spec.schema.json",
+              "type": "file",
+              "path": "references/schemas/task_spec.schema.json",
+              "lines": 78
+            }
+          ]
+        },
+        {
+          "name": "templates",
+          "type": "dir",
+          "path": "references/templates",
+          "children": [
+            {
+              "name": "judge.md",
+              "type": "file",
+              "path": "references/templates/judge.md",
+              "lines": 60
+            },
+            {
+              "name": "plan.md",
+              "type": "file",
+              "path": "references/templates/plan.md",
+              "lines": 39
+            }
+          ]
+        },
+        {
+          "name": "architecture.md",
+          "type": "file",
+          "path": "references/architecture.md",
+          "lines": 130
+        },
+        {
+          "name": "cli-notes.md",
+          "type": "file",
+          "path": "references/cli-notes.md",
+          "lines": 30
+        },
+        {
+          "name": "data-contracts.md",
+          "type": "file",
+          "path": "references/data-contracts.md",
+          "lines": 24
+        },
+        {
+          "name": "prompts.md",
+          "type": "file",
+          "path": "references/prompts.md",
+          "lines": 63
+        },
+        {
+          "name": "task-spec.example.json",
+          "type": "file",
+          "path": "references/task-spec.example.json",
+          "lines": 29
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "ui",
+          "type": "dir",
+          "path": "scripts/ui",
+          "children": [
+            {
+              "name": "app.js",
+              "type": "file",
+              "path": "scripts/ui/app.js",
+              "lines": 461
+            },
+            {
+              "name": "index.html",
+              "type": "file",
+              "path": "scripts/ui/index.html",
+              "lines": 495
+            },
+            {
+              "name": "styles.css",
+              "type": "file",
+              "path": "scripts/ui/styles.css",
+              "lines": 491
+            }
+          ]
+        },
+        {
+          "name": "llm_council.py",
+          "type": "file",
+          "path": "scripts/llm_council.py",
+          "lines": 1455
+        },
+        {
+          "name": "ui_server.py",
+          "type": "file",
+          "path": "scripts/ui_server.py",
+          "lines": 228
+        },
+        {
+          "name": "ui_state.py",
+          "type": "file",
+          "path": "scripts/ui_state.py",
+          "lines": 70
+        }
+      ]
+    },
+    {
+      "name": "setup.bat",
+      "type": "file",
+      "path": "setup.bat",
+      "lines": 3
+    },
+    {
+      "name": "setup.ps1",
+      "type": "file",
+      "path": "setup.ps1",
+      "lines": 3
+    },
+    {
+      "name": "setup.sh",
+      "type": "file",
+      "path": "setup.sh",
+      "lines": 6
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 69
+    }
+  ]
+}

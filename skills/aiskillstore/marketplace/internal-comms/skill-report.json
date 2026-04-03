@@ -1,0 +1,284 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:33:04.920Z",
+    "slug": "internal-comms",
+    "source_url": "https://github.com/anthropics/skills/tree/main/skills/internal-comms",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "official",
+    "content_hash": "6c5721a4357fd5a6aacef9cf1f8cc197425a0f0d5c9e341b3449448e6d307679",
+    "tree_hash": "70ac4b07e317289e17d465888b163d017179a0aec91000ed13ea4801ab34077c"
+  },
+  "skill": {
+    "name": "internal-comms",
+    "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+    "summary": "A set of resources to help me write all kinds of internal communications, using the formats that my ...",
+    "icon": "📢",
+    "version": "1.0.0",
+    "author": "anthropics",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "communication",
+    "tags": [
+      "internal-comms",
+      "newsletter",
+      "3p-updates",
+      "faq",
+      "status-updates"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Official Anthropic skill containing only markdown documentation files. No scripts, executables, network calls, or filesystem operations. Purely provides writing templates and guidelines for internal communications.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "LICENSE.txt",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "LICENSE.txt",
+            "line_start": 196,
+            "line_end": 196
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 437,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:33:04.920Z"
+  },
+  "content": {
+    "user_title": "Write Internal Company Communications",
+    "value_statement": "Creating consistent internal communications takes time and requires the right format for each situation. This skill provides templates and guidelines for writing 3P updates, company newsletters, FAQs, and other internal messages.",
+    "seo_keywords": [
+      "internal communications",
+      "3P updates",
+      "company newsletter",
+      "status report",
+      "team update",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "writing templates",
+      "FAQ responses"
+    ],
+    "actual_capabilities": [
+      "Write 3P (Progress, Plans, Problems) updates for teams and executives",
+      "Create company-wide newsletters with structured bullet points organized by category",
+      "Generate FAQ responses from common employee questions",
+      "Write general internal communications with proper audience and tone",
+      "Format updates with appropriate emojis and structured sections"
+    ],
+    "limitations": [
+      "Does not connect to external APIs to fetch data automatically",
+      "Requires user to provide team updates, metrics, and content",
+      "Output is plain text only, no native image or media generation",
+      "User must verify accuracy of all information before sending"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Team Leads",
+        "title": "Weekly Team Updates",
+        "description": "Summarize weekly progress, upcoming plans, and blockers for executive review."
+      },
+      {
+        "target_user": "Leadership",
+        "title": "Company Newsletters",
+        "description": "Create monthly company-wide newsletters highlighting announcements and milestones."
+      },
+      {
+        "target_user": "All Employees",
+        "title": "FAQ Summaries",
+        "description": "Compile and answer frequently asked questions across the organization."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Newsletter",
+        "scenario": "Monthly company update",
+        "prompt": "Write a company newsletter for December highlighting major announcements, progress on key priorities, and leadership updates."
+      },
+      {
+        "title": "3P Team Update",
+        "scenario": "Weekly progress report",
+        "prompt": "Write a 3P update for the engineering team covering this week's achievements, next week's priorities, and any blockers."
+      },
+      {
+        "title": "FAQ Compilation",
+        "scenario": "Common questions answered",
+        "prompt": "Create an FAQ document answering the top 5 questions employees have asked about our new remote work policy."
+      },
+      {
+        "title": "Comprehensive Summary",
+        "scenario": "Full communication package",
+        "prompt": "Write a comprehensive internal communication package including a 3P update for Q4, a FAQ section about the new benefits program, and a general announcement about the upcoming company event."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Write a 3P update for the marketing team",
+        "output": [
+          ":rocket: Marketing Team (Dec 23 - Dec 30)",
+          "Progress: Launched 3 new campaign assets, increased email open rates by 15%, completed brand guidelines update",
+          "Plans: Begin Q1 planning, finalize influencer partnerships, start social media calendar for product launch",
+          "Problems: Design resource constraints, waiting on legal review for partner contracts"
+        ]
+      },
+      {
+        "input": "Create a company newsletter for January",
+        "output": [
+          ":megaphone: Company Announcements",
+          "- We welcomed 15 new team members across engineering and sales",
+          "- Q1 company goals have been published in the leadership handbook",
+          "",
+          ":dart: Progress on Priorities",
+          "- Product: Released 3 new features to beta",
+          "- Sales: Closed 12 enterprise deals",
+          "- Engineering: Completed infrastructure migration",
+          "",
+          ":pillar: Leadership Updates",
+          "- CEO posted quarterly vision update",
+          "- New head of Product announced"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep updates concise with 1-3 sentences per section for 3P updates",
+      "Gather information from multiple sources like Slack, email, and documents before writing",
+      "Match the tone and format to your company's existing communication style"
+    ],
+    "anti_patterns": [
+      "Writing long paragraphs instead of bullet points in newsletters",
+      "Using the wrong format for the audience (e.g., detailed 3P for all-company announcements)",
+      "Including unverified information or speculation without clear disclaimers"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools work with this skill?",
+        "answer": "The skill works with Claude Code, Claude, and other Anthropic AI products. It provides templates that work across all platforms."
+      },
+      {
+        "question": "What formats are supported?",
+        "answer": "Supported formats include 3P updates, company newsletters, FAQ documents, status reports, incident reports, and general communications."
+      },
+      {
+        "question": "Does this skill access my company data?",
+        "answer": "The skill itself does not access data. It guides Claude to ask you for information or use available tools you have connected."
+      },
+      {
+        "question": "Can I customize the templates?",
+        "answer": "Yes. You can modify the example files in the examples directory to match your company's specific formatting preferences."
+      },
+      {
+        "question": "Is my data kept private?",
+        "answer": "Your data remains within your Claude session. Nothing is sent to external servers beyond normal AI processing."
+      },
+      {
+        "question": "How is this different from general writing skills?",
+        "answer": "This skill focuses specifically on internal business formats with strict structural guidelines for team and company communications."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "3p-updates.md",
+          "type": "file",
+          "path": "examples/3p-updates.md",
+          "lines": 47
+        },
+        {
+          "name": "company-newsletter.md",
+          "type": "file",
+          "path": "examples/company-newsletter.md",
+          "lines": 66
+        },
+        {
+          "name": "faq-answers.md",
+          "type": "file",
+          "path": "examples/faq-answers.md",
+          "lines": 30
+        },
+        {
+          "name": "general-comms.md",
+          "type": "file",
+          "path": "examples/general-comms.md",
+          "lines": 16
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 33
+    }
+  ]
+}

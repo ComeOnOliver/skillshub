@@ -1,0 +1,278 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:01:36.205Z",
+    "slug": "cygnusfear-systematic-debugging",
+    "source_url": "https://github.com/Cygnusfear/claude-stuff/tree/main/skills/systematic-debugging",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1a6bb97f9541f57f12c7edb48a9ca62288e84190fbf6713f405dc16e96786af9",
+    "tree_hash": "9459361800c6451c6302722b3129d6980e3995188a71d80d94a6ec03d96d6d8f"
+  },
+  "skill": {
+    "name": "systematic-debugging",
+    "description": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+    "summary": "Use when encountering any bug, test failure, or unexpected behavior, before proposing fixes",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "Cygnusfear",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "debugging",
+      "root-cause",
+      "testing",
+      "methodology"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate debugging methodology skill containing only documentation and code examples. All 138 static findings are FALSE POSITIVES. The flagged patterns are markdown documentation showing example debugging commands, shell variable expansion, environment checks, and standard filesystem operations - all used for legitimate debugging documentation purposes. No malicious code or intent present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "find-polluter.sh",
+            "line_start": 1,
+            "line_end": 64
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "condition-based-waiting-example.ts",
+            "line_start": 1,
+            "line_end": 159
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 12,
+    "total_lines": 1489,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:01:36.205Z"
+  },
+  "content": {
+    "user_title": "Apply systematic debugging for any bug",
+    "value_statement": "Random fixes waste time and create new bugs. This skill provides a four-phase methodology to find root cause before attempting any fix. It prevents symptom-level patching and ensures lasting solutions.",
+    "seo_keywords": [
+      "debugging methodology",
+      "root cause analysis",
+      "bug fixing",
+      "test failure debugging",
+      "systematic debugging",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "troubleshooting",
+      "investigation process"
+    ],
+    "actual_capabilities": [
+      "Four-phase debugging process: investigation, pattern analysis, hypothesis, implementation",
+      "Root cause tracing through multi-layer call stacks",
+      "Defense-in-depth validation at every data layer",
+      "Condition-based waiting to replace flaky timeouts",
+      "Anti-pattern recognition to stop symptom-level fixes",
+      "Pressure-resistant rules that prevent rationalization"
+    ],
+    "limitations": [
+      "Requires following the full process in order before proposing fixes",
+      "Does not provide platform-specific debugging commands",
+      "Does not include test framework setup or configuration",
+      "Assumes access to codebase and ability to read error messages"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Fix test failures properly",
+        "description": "Stop adding sleep statements. Trace why tests fail at the source for permanent fixes."
+      },
+      {
+        "target_user": "AI agents",
+        "title": "Avoid symptom-level patching",
+        "description": "Follow documented process instead of guessing fixes when encountering unexpected behavior."
+      },
+      {
+        "target_user": "Debugging teams",
+        "title": "Trace complex call stacks",
+        "description": "Find where invalid data originates in multi-component systems with proven tracing techniques."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic bug investigation",
+        "scenario": "Test is failing with unclear error",
+        "prompt": "Load skills/debugging/systematic-debugging and help me investigate this test failure. The test expects X but received Y."
+      },
+      {
+        "title": "Multi-layer system debugging",
+        "scenario": "Error deep in call stack",
+        "prompt": "Use the root cause tracing technique to trace this bug backward through the call chain. The error appears at line N."
+      },
+      {
+        "title": "Flaky test pattern",
+        "scenario": "Tests pass sometimes, fail sometimes",
+        "prompt": "Apply the condition-based waiting pattern to replace arbitrary timeouts in this test file."
+      },
+      {
+        "title": "Prevent symptom fixing",
+        "scenario": "Quick fix seems obvious",
+        "prompt": "Check my work against the systematic debugging process. Have I actually found the root cause?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Test fails with 'Expected status completed but received pending'",
+        "output": [
+          "Phase 1 - Root Cause: Trace when status gets set versus when we check it",
+          "Phase 2 - Pattern: Find working tests that verify status updates",
+          "Phase 3 - Hypothesis: Perhaps async operation not awaited before assertion",
+          "Phase 4 - Implementation: Add waitFor condition to detect actual state change"
+        ]
+      },
+      {
+        "input": "File created in wrong directory during tests",
+        "output": [
+          "Phase 1 - Root Cause: Use find-polluter.sh to identify which test creates the file",
+          "Phase 2 - Pattern: Compare with tests that run clean",
+          "Phase 3 - Hypothesis: Empty path variable resolves to cwd",
+          "Phase 4 - Implementation: Add validation layer that refuses operation outside tmpdir"
+        ]
+      },
+      {
+        "input": "Environment secrets not reaching build layer",
+        "output": [
+          "Phase 1 - Evidence: Log env vars at each layer (workflow, build, signing)",
+          "Phase 2 - Pattern: Find where propagation breaks down",
+          "Phase 3 - Hypothesis: Layer transition strips environment",
+          "Phase 4 - Implementation: Add defense-in-depth check at each layer boundary"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always complete Phase 1 (root cause) before proposing any fix, even under time pressure",
+      "Trace backward through the call chain to find where bad data originated, not where it manifests",
+      "Add validation at every layer data passes through to make bugs structurally impossible"
+    ],
+    "anti_patterns": [
+      "Adding sleep statements instead of waiting for actual conditions",
+      "Fixing where the error appears instead of tracing to the source",
+      "Proposing multiple fixes at once to 'get more coverage'"
+    ],
+    "faq": [
+      {
+        "question": "Can I skip to the fix if the issue seems obvious?",
+        "answer": "No. The skill mandates Phase 1 completion before any fix. Simple bugs have root causes too. Systematic is faster than thrashing."
+      },
+      {
+        "question": "What if I do not understand the codebase well enough to trace root cause?",
+        "answer": "Say 'I do not understand X' rather than guessing. Ask for help or research more. The skill explicitly values honesty over pretense."
+      },
+      {
+        "question": "How do I handle production emergencies with this skill?",
+        "answer": "The skill acknowledges pressure but requires investigation first. Quick fixes mask issues that recur. Systematic debugging handles emergencies faster than symptom whack-a-mole."
+      },
+      {
+        "question": "When should I use condition-based waiting?",
+        "answer": "Replace arbitrary sleep or timeout calls with polling for the actual condition. This eliminates flaky tests that pass on fast machines but fail in CI."
+      },
+      {
+        "question": "What if three fixes have already failed?",
+        "answer": "Stop and question the architecture. Three failed fixes often indicate a structural problem, not a symptom to patch. Discuss with your human partner."
+      },
+      {
+        "question": "How is this different from test-driven development?",
+        "answer": "TDD writes tests before code. This skill investigates bugs when they occur. Both require understanding root cause but serve different phases of development."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "condition-based-waiting-example.ts",
+      "type": "file",
+      "path": "condition-based-waiting-example.ts",
+      "lines": 159
+    },
+    {
+      "name": "condition-based-waiting.md",
+      "type": "file",
+      "path": "condition-based-waiting.md",
+      "lines": 116
+    },
+    {
+      "name": "CREATION-LOG.md",
+      "type": "file",
+      "path": "CREATION-LOG.md",
+      "lines": 120
+    },
+    {
+      "name": "defense-in-depth.md",
+      "type": "file",
+      "path": "defense-in-depth.md",
+      "lines": 123
+    },
+    {
+      "name": "find-polluter.sh",
+      "type": "file",
+      "path": "find-polluter.sh",
+      "lines": 64
+    },
+    {
+      "name": "root-cause-tracing.md",
+      "type": "file",
+      "path": "root-cause-tracing.md",
+      "lines": 170
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 297
+    },
+    {
+      "name": "test-academic.md",
+      "type": "file",
+      "path": "test-academic.md",
+      "lines": 15
+    },
+    {
+      "name": "test-pressure-1.md",
+      "type": "file",
+      "path": "test-pressure-1.md",
+      "lines": 59
+    },
+    {
+      "name": "test-pressure-2.md",
+      "type": "file",
+      "path": "test-pressure-2.md",
+      "lines": 69
+    },
+    {
+      "name": "test-pressure-3.md",
+      "type": "file",
+      "path": "test-pressure-3.md",
+      "lines": 70
+    }
+  ]
+}

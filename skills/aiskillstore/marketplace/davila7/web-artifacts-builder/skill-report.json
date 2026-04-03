@@ -1,0 +1,285 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:32:50.101Z",
+    "slug": "davila7-web-artifacts-builder",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/development/web-artifacts-builder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "81c5002c6643b0de7b8710b00e7a9038daa6fb9b68d59870ee6adb12da8d10f8",
+    "tree_hash": "93d07b3a99ea4f9bb364647d5524fa1cd57936bbb3039cfa327443440b5472df"
+  },
+  "skill": {
+    "name": "web-artifacts-builder",
+    "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+    "summary": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern fronten...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "development",
+    "tags": [
+      "react",
+      "frontend",
+      "tailwind",
+      "shadcn",
+      "ui"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate frontend development skill. All 56 static findings are FALSE POSITIVES. The 26 'weak cryptographic algorithm' detections are CSS hsl() color notation for theming. 'Shell command' and 'fs operations' detections are standard project initialization scripts. Network calls only reach npm registry for dependencies. No data exfiltration or malicious behavior detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/bundle-artifact.sh",
+            "line_start": 1,
+            "line_end": 54
+          },
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 1,
+            "line_end": 323
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/bundle-artifact.sh",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 36,
+            "line_end": 79
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 228,
+            "line_end": 250
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 7,
+            "line_end": 46
+          },
+          {
+            "file": "scripts/bundle-artifact.sh",
+            "line_start": 47,
+            "line_end": 47
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 913,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:32:50.101Z"
+  },
+  "content": {
+    "user_title": "Build Complex React Artifacts",
+    "value_statement": "Creating rich HTML artifacts for Claude conversations requires significant frontend expertise. This skill provides a complete React development environment with shadcn/ui components so you can build professional interactive artifacts quickly.",
+    "seo_keywords": [
+      "Claude artifact builder",
+      "React HTML artifacts",
+      "Claude Code skill",
+      "shadcn UI components",
+      "Tailwind CSS artifacts",
+      "interactive Claude artifacts",
+      "frontend development skill",
+      "React TypeScript Vite",
+      "Claude AI frontend",
+      "dynamic HTML artifacts"
+    ],
+    "actual_capabilities": [
+      "Initialize React plus TypeScript plus Vite projects with one command",
+      "Install and configure Tailwind CSS with shadcn/ui theming system",
+      "Bundle complete React applications into single self-contained HTML files",
+      "Access 40 plus pre-installed shadcn/ui components including dialogs, forms, and carousels"
+    ],
+    "limitations": [
+      "Does not include runtime testing or preview functionality",
+      "Requires Node.js 18 or higher to run scripts",
+      "Does not handle artifact deployment or hosting"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Build Interactive Dashboards",
+        "description": "Create complex React applications with charts, tables, and forms that render as shareable HTML artifacts in Claude conversations."
+      },
+      {
+        "target_user": "Product managers",
+        "title": "Prototype UI Mockups",
+        "description": "Quickly generate professional UI prototypes with accessible components to visualize concepts during conversations."
+      },
+      {
+        "target_user": "Content creators",
+        "title": "Design Visual Presentations",
+        "description": "Build rich visual presentations and interactive demos using modern component libraries without manual coding."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Artifact Setup",
+        "scenario": "Initialize a new project",
+        "prompt": "Use the web-artifacts-builder skill to initialize a new React project called my-project. Then create a simple landing page with a hero section, features grid, and footer using shadcn/ui components."
+      },
+      {
+        "title": "Data Dashboard",
+        "scenario": "Build a data visualization",
+        "prompt": "Use web-artifacts-builder to create a dashboard with cards, tables, and progress indicators. Include sample data and make it interactive with state management."
+      },
+      {
+        "title": "Form Application",
+        "scenario": "Create a complex form",
+        "prompt": "Build a multi-step form using web-artifacts-builder. Include validation, file upload, and a confirmation dialog. Use React Hook Form and Zod for validation."
+      },
+      {
+        "title": "Interactive Demo",
+        "scenario": "Create a feature showcase",
+        "prompt": "Create an interactive component showcase using web-artifacts-builder. Include tabs, accordions, dialogs, and hover cards to demonstrate different UI patterns."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an interactive pricing calculator artifact with React, including tier cards, a toggle for monthly/yearly billing, and a feature comparison table.",
+        "output": [
+          "Bundling React app to single HTML artifact...",
+          "Bundle complete",
+          "Output: bundle.html (2.1M)",
+          "",
+          "The pricing calculator is ready as a self-contained HTML artifact.",
+          "Three pricing tier cards with hover effects",
+          "Monthly/Yearly billing toggle with discount calculation",
+          "Feature comparison table with checkmarks",
+          "Responsive design using shadcn/ui components"
+        ]
+      },
+      {
+        "input": "Build a task management dashboard with columns, drag and drop cards, and progress tracking.",
+        "output": [
+          "Initializing React project with shadcn/ui components...",
+          "Project setup complete",
+          "Creating Kanban board with columns and cards...",
+          "Bundle complete: bundle.html",
+          "",
+          "Task management dashboard is ready.",
+          "Four project columns: Todo, In Progress, Review, Done",
+          "Drag and drop card functionality",
+          "Progress bar showing task completion",
+          "Dark mode support with shadcn/ui theme"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run the bundle script after making final changes to generate a clean artifact",
+      "Test your React app locally using pnpm dev before bundling",
+      "Keep the project folder for future edits and re-bundling"
+    ],
+    "anti_patterns": [
+      "Do not skip the initialization step when starting new artifacts",
+      "Do not modify the bundled HTML file directly - edit source and re-bundle",
+      "Do not ignore Node.js version requirements - minimum version is 18"
+    ],
+    "faq": [
+      {
+        "question": "What versions of Claude does this skill support?",
+        "answer": "This skill works with Claude and Claude Code. It generates standalone HTML artifacts compatible with Claudes artifact viewer."
+      },
+      {
+        "question": "How large can the bundled HTML file be?",
+        "answer": "Artifact size limits depend on Claudes platform. For optimal performance, keep bundles under 5MB by using only necessary components."
+      },
+      {
+        "question": "Can I use this with other component libraries?",
+        "answer": "Yes. The skill sets up a standard React plus Vite plus Tailwind environment. You can add any npm package compatible with this stack."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. All processing happens locally on your machine. The skill only downloads packages from the official npm registry."
+      },
+      {
+        "question": "Why is my artifact not rendering correctly?",
+        "answer": "Ensure you bundled after making changes. Check that index.html exists in the project root. The artifact must be a complete self-contained HTML file."
+      },
+      {
+        "question": "How is this different from simple HTML artifacts?",
+        "answer": "This skill enables complex React applications with state management, routing, and 40 plus pre-built components. Simple HTML artifacts cannot match this capability."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "bundle-artifact.sh",
+          "type": "file",
+          "path": "scripts/bundle-artifact.sh",
+          "lines": 54
+        },
+        {
+          "name": "init-artifact.sh",
+          "type": "file",
+          "path": "scripts/init-artifact.sh",
+          "lines": 323
+        },
+        {
+          "name": "shadcn-components.tar.gz",
+          "type": "file",
+          "path": "scripts/shadcn-components.tar.gz"
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 74
+    }
+  ]
+}

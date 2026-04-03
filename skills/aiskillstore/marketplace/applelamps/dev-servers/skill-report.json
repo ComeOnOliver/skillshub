@@ -1,0 +1,219 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:11:56.519Z",
+    "slug": "applelamps-dev-servers",
+    "source_url": "https://github.com/AppleLamps/web-term/tree/main/.claude/skills/dev-servers",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4533a69e687fb105ab94d58634e924e63bc36f3a370e13787c946b73a6268150",
+    "tree_hash": "3868548fcc2e21976242af6e97a30ed055efd9608d06d80bc94de8459bfced03"
+  },
+  "skill": {
+    "name": "dev-servers",
+    "description": "Start the backend (FastAPI/uvicorn) and frontend (Vite) development servers. Use when user mentions 'start dev', 'run servers', 'launch app', 'start the app', or needs to run the application locally.",
+    "summary": "Start local development servers for FastAPI backend and Vite frontend applications",
+    "icon": "🖥️",
+    "version": "1.0.0",
+    "author": "AppleLamps",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "development",
+      "servers",
+      "fastapi",
+      "vite",
+      "local-development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings evaluated as false positives. The skill is a legitimate developer utility for starting local development servers. The 'weak cryptographic algorithm' patterns are false matches on 'uvicorn' text. 'Backtick execution' patterns are markdown code formatting in documentation. Hardcoded URLs are standard localhost addresses. Environment variable access is for configuration validation with explicit guardrails against key exposure.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 12
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 20
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 486,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:11:56.519Z"
+  },
+  "content": {
+    "user_title": "Start Development Servers",
+    "value_statement": "Managing multiple development servers for a full-stack application can be error-prone and time-consuming. This skill simplifies launching FastAPI backend and Vite frontend development servers with proper dependency checking and port validation.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "development servers",
+      "FastAPI",
+      "Vite",
+      "local development",
+      "uvicorn",
+      "npm run dev",
+      "backend frontend"
+    ],
+    "actual_capabilities": [
+      "Start FastAPI backend server with uvicorn on port 8000",
+      "Start Vite frontend server on port 5173",
+      "Check for installed dependencies before starting servers",
+      "Verify environment configuration with OPENAI_API_KEY"
+    ],
+    "limitations": [
+      "Only supports FastAPI backend and Vite frontend stack",
+      "Does not support custom port configurations",
+      "Requires pre-existing backend and frontend directories",
+      "Cannot manage servers running in Docker containers"
+    ],
+    "use_cases": [
+      {
+        "title": "Full-stack Application Development",
+        "description": "Launch both backend and frontend servers simultaneously for full-stack development workflow",
+        "target_user": "Full-stack developers working on Python and JavaScript applications"
+      },
+      {
+        "title": "Local Development Environment",
+        "description": "Set up a complete local development environment with dependency verification",
+        "target_user": "New team members onboarding to a project"
+      },
+      {
+        "title": "Application Testing",
+        "description": "Quickly start development servers to test API changes and frontend updates",
+        "target_user": "QA engineers and developers running local tests"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Server Start",
+        "prompt": "Start the dev servers for my application",
+        "scenario": "Simple request to launch all development servers"
+      },
+      {
+        "title": "Run Locally",
+        "prompt": "Run the app locally",
+        "scenario": "Request to run the application in development mode"
+      },
+      {
+        "title": "Launch Backend and Frontend",
+        "prompt": "Launch backend and frontend",
+        "scenario": "Explicit request to start both server components"
+      },
+      {
+        "title": "Start Development Environment",
+        "prompt": "I need to start the development environment for my FastAPI and Vite project",
+        "scenario": "Detailed request with technology stack mentioned"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Start the dev servers",
+        "output": "I will start the development servers for your application.\n\nBackend (FastAPI/uvicorn): http://localhost:8000\nFrontend (Vite): http://localhost:5173\n\nBefore starting, I will check if dependencies are installed."
+      },
+      {
+        "input": "Run the app locally",
+        "output": "Setting up your local development environment.\n\n1. Checking backend dependencies (Python/venv)...\n2. Checking frontend dependencies (node_modules)...\n3. Starting uvicorn server on port 8000...\n4. Starting Vite dev server on port 5173..."
+      }
+    ],
+    "best_practices": [
+      "Run backend and frontend servers in separate terminals to avoid port conflicts",
+      "Ensure OPENAI_API_KEY is set in backend/.env before starting",
+      "Check that ports 8000 and 5173 are available before launching"
+    ],
+    "anti_patterns": [
+      "Running the skill without verifying dependencies are installed first",
+      "Starting servers without checking if ports are already in use",
+      "Exposing or logging API keys during server startup"
+    ],
+    "faq": [
+      {
+        "question": "What servers does this skill start?",
+        "answer": "The skill starts a FastAPI backend server using uvicorn on port 8000 and a Vite frontend server on port 5173."
+      },
+      {
+        "question": "Does this skill install dependencies?",
+        "answer": "The skill checks for existing dependencies but does not automatically install them. It will prompt for confirmation before installing."
+      },
+      {
+        "question": "Can I use custom ports?",
+        "answer": "This version does not support custom port configuration. The backend uses port 8000 and frontend uses port 5173."
+      },
+      {
+        "question": "What if ports are already in use?",
+        "answer": "The skill includes a guardrail to warn if ports 8000 or 5173 are already in use by another process."
+      },
+      {
+        "question": "Does this skill support Docker containers?",
+        "answer": "No, this skill is designed for local development servers running directly on the host machine, not containers."
+      },
+      {
+        "question": "What environment variables are required?",
+        "answer": "The skill checks for OPENAI_API_KEY in backend/.env. This is used for API configuration in the application."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 33
+    }
+  ]
+}

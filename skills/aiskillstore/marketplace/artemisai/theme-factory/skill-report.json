@@ -1,0 +1,259 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:18:17.977Z",
+    "slug": "artemisai-theme-factory",
+    "source_url": "https://github.com/ArtemisAI/code-execution-with-MCP/tree/main/skills/theme-factory",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "366ee55d92407128fd5f05871d9a6135bfe6fad2146ec2652edf99fc0b0d177b",
+    "tree_hash": "b21e76778eb99baf707555b8b9dae3e8cdcdc405c9fa32e73acf052423d04e02"
+  },
+  "skill": {
+    "name": "theme-factory",
+    "description": "Professional design toolkit with 10 curated color and font themes for styling presentations, documents, reports, and HTML artifacts with consistent visual identity.",
+    "summary": "Apply professional design themes to artifacts with curated color palettes and font pairings",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "ArtemisAI",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "design",
+    "tags": [
+      "design",
+      "themes",
+      "styling",
+      "presentations",
+      "color-palettes"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analyzer detected 91 potential issues that are all false positives. The backtick patterns are markdown inline code blocks for hex color codes. The cryptographic algorithm warnings are from standard Apache License text and hex color codes misinterpreted as hashes. This skill contains only markdown theme definitions with no executable code or security risks.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 1372,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:18:17.977Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Apply Professional Design Themes to Your Artifacts",
+    "value_statement": "Designing visually consistent artifacts is time consuming and requires design expertise. This skill provides 10 professionally curated themes with color palettes and font pairings that can be instantly applied to presentations, documents, and reports.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "design themes",
+      "color palette",
+      "presentation design",
+      "font pairing",
+      "visual styling",
+      "professional themes",
+      "artifact theming"
+    ],
+    "actual_capabilities": [
+      "Display visual showcase of 10 professionally designed themes with color palettes and fonts",
+      "Apply selected themes to presentations, documents, reports, and HTML artifacts",
+      "Generate custom themes on demand based on user requirements and preferences",
+      "Provide theme specifications including hex color codes and font pairings",
+      "Ensure consistent visual identity across all slides and pages in artifacts",
+      "Match themes to specific contexts such as healthcare, technology, or entertainment"
+    ],
+    "limitations": [
+      "Requires Claude Code or compatible AI tool to apply themes to artifacts",
+      "Theme application quality depends on the structure of the target artifact",
+      "Custom theme generation is based on general design principles, not brand guidelines",
+      "Font availability depends on the system or platform rendering the artifact"
+    ],
+    "use_cases": [
+      {
+        "title": "Business Presentation Styling",
+        "description": "Apply professional themes to quarterly business review slides or investor pitch decks for consistent corporate visual identity.",
+        "target_user": "Business professionals and executives"
+      },
+      {
+        "title": "Technical Documentation Design",
+        "description": "Style technical reports and documentation with clean, readable themes that enhance comprehension and professionalism.",
+        "target_user": "Software engineers and technical writers"
+      },
+      {
+        "title": "Marketing Material Creation",
+        "description": "Apply vibrant, industry-appropriate themes to marketing presentations and HTML landing pages for brand consistency.",
+        "target_user": "Marketing teams and content creators"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "View Available Themes",
+        "prompt": "Show me all available themes in the theme showcase",
+        "scenario": "User wants to browse the 10 pre-designed themes before selecting one"
+      },
+      {
+        "title": "Apply Specific Theme",
+        "prompt": "Apply the Ocean Depths theme to my presentation slides",
+        "scenario": "User has already chosen a theme and wants it applied to their artifact"
+      },
+      {
+        "title": "Get Theme Recommendations",
+        "prompt": "Which theme would work best for a healthcare technology presentation?",
+        "scenario": "User needs guidance selecting an appropriate theme for their industry or context"
+      },
+      {
+        "title": "Create Custom Theme",
+        "prompt": "Create a custom theme with warm earth tones and modern fonts suitable for a sustainability report",
+        "scenario": "User needs a custom theme that matches specific requirements not covered by preset themes"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me the theme showcase",
+        "output": "The theme showcase displays 10 professionally designed themes including Ocean Depths (maritime blue tones), Sunset Boulevard (warm sunset colors), Forest Canopy (earth tones), Modern Minimalist (grayscale), and six other distinct visual identities. Each theme shows its color palette and font selections."
+      },
+      {
+        "input": "Apply the Arctic Frost theme to my slides",
+        "output": "Applied the Arctic Frost theme with Ice Blue backgrounds, Steel Blue accents, Silver metallic elements, and Crisp White text. Headers use DejaVu Sans Bold and body text uses DejaVu Sans for a cool, professional winter-inspired design."
+      },
+      {
+        "input": "Create a custom theme for a financial services presentation",
+        "output": "Created Professional Finance theme with Navy Blue primary color, Gold accents for trust and value, Slate Gray for charts, and White backgrounds. Headers use Montserrat Bold and body text uses Open Sans for clarity and authority."
+      }
+    ],
+    "best_practices": [
+      "Review the theme showcase before selecting to see all options visually displayed together",
+      "Choose themes that match your industry context and audience expectations for maximum impact",
+      "Verify font availability on target platforms before finalizing theme selection for deliverables"
+    ],
+    "anti_patterns": [
+      "Applying multiple different themes to the same artifact creates visual inconsistency and confusion",
+      "Selecting themes based only on personal preference without considering audience or context",
+      "Modifying theme colors or fonts after application defeats the purpose of using curated design systems"
+    ],
+    "faq": [
+      {
+        "question": "How many themes are available in the collection?",
+        "answer": "There are 10 professionally curated preset themes, each with distinct color palettes and font pairings. You can also request custom themes generated on demand for specific requirements."
+      },
+      {
+        "question": "Can I customize the colors in an existing theme?",
+        "answer": "The preset themes are designed as cohesive systems for best results. For custom requirements, request a new custom theme rather than modifying existing ones to maintain design integrity."
+      },
+      {
+        "question": "What types of artifacts can these themes be applied to?",
+        "answer": "Themes work with presentations, documents, reports, HTML landing pages, and other text-based artifacts that support color and font styling."
+      },
+      {
+        "question": "Do I need design experience to use this skill?",
+        "answer": "No design experience is required. Each theme is professionally designed with complementary colors and fonts that work together automatically when applied."
+      },
+      {
+        "question": "Which theme is best for corporate presentations?",
+        "answer": "Ocean Depths, Modern Minimalist, and Tech Innovation work well for corporate contexts. Arctic Frost is excellent for healthcare and technology. Choose based on your industry and desired visual tone."
+      },
+      {
+        "question": "Can themes be applied to existing artifacts or only new ones?",
+        "answer": "Themes can be applied to both new and existing artifacts. The skill will update colors and fonts throughout the entire document while preserving content and structure."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "themes",
+      "type": "dir",
+      "path": "themes",
+      "children": [
+        {
+          "name": "arctic-frost.md",
+          "type": "file",
+          "path": "themes/arctic-frost.md",
+          "lines": 20
+        },
+        {
+          "name": "botanical-garden.md",
+          "type": "file",
+          "path": "themes/botanical-garden.md",
+          "lines": 20
+        },
+        {
+          "name": "desert-rose.md",
+          "type": "file",
+          "path": "themes/desert-rose.md",
+          "lines": 20
+        },
+        {
+          "name": "forest-canopy.md",
+          "type": "file",
+          "path": "themes/forest-canopy.md",
+          "lines": 20
+        },
+        {
+          "name": "golden-hour.md",
+          "type": "file",
+          "path": "themes/golden-hour.md",
+          "lines": 20
+        },
+        {
+          "name": "midnight-galaxy.md",
+          "type": "file",
+          "path": "themes/midnight-galaxy.md",
+          "lines": 20
+        },
+        {
+          "name": "modern-minimalist.md",
+          "type": "file",
+          "path": "themes/modern-minimalist.md",
+          "lines": 20
+        },
+        {
+          "name": "ocean-depths.md",
+          "type": "file",
+          "path": "themes/ocean-depths.md",
+          "lines": 20
+        },
+        {
+          "name": "sunset-boulevard.md",
+          "type": "file",
+          "path": "themes/sunset-boulevard.md",
+          "lines": 20
+        },
+        {
+          "name": "tech-innovation.md",
+          "type": "file",
+          "path": "themes/tech-innovation.md",
+          "lines": 20
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 60
+    },
+    {
+      "name": "theme-showcase.pdf",
+      "type": "file",
+      "path": "theme-showcase.pdf"
+    }
+  ]
+}

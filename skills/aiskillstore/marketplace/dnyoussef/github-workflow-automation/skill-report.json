@@ -1,0 +1,244 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:36:11.805Z",
+    "slug": "dnyoussef-github-workflow-automation",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/github-workflow-automation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7814a371b62670289e6864d4b7c11c4bb3dd4ed87b9329df7222f6b250b88652",
+    "tree_hash": "0efb51dfa1a39c6fe378bb203ab1ea52eb7845e43d40f0991af84fe59242047e"
+  },
+  "skill": {
+    "name": "github-workflow-automation",
+    "description": "Automate GitHub Actions workflows with AI-powered optimization, intelligent CI/CD pipelines, and comprehensive repository management for modern development teams.",
+    "summary": "AI-powered GitHub Actions automation with intelligent workflows and swarm coordination",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "github-actions",
+      "ci-cd",
+      "workflow-automation",
+      "Claude",
+      "Claude Code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides legitimate GitHub Actions workflow automation capabilities. Static analysis detected 192 potential issues, but comprehensive review confirms these are false positives. The external commands are expected for GitHub CLI and npm tooling. All network access is to official GitHub documentation. No malicious patterns or security vulnerabilities were identified.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 418,
+            "line_end": 427
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "External Command Execution in Workflow Templates",
+        "description": "The skill provides templates and examples that execute external commands via npx, gh CLI, and bash. This is the intended functionality for a GitHub Actions automation skill. All commands are documented examples for legitimate GitHub workflow operations including CI/CD, testing, and deployment automation.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 418,
+            "line_end": 427
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2933,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:36:11.805Z"
+  },
+  "content": {
+    "user_title": "Automate GitHub Workflows with AI Intelligence",
+    "value_statement": "Managing GitHub Actions workflows manually is time-consuming and error-prone. This skill provides AI-powered automation that optimizes CI/CD pipelines, coordinates multi-agent workflows, and streamlines repository management with intelligent recommendations.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "GitHub Actions",
+      "CI/CD automation",
+      "workflow optimization",
+      "GitHub CLI",
+      "DevOps automation",
+      "intelligent pipelines",
+      "repository management",
+      "continuous integration"
+    ],
+    "actual_capabilities": [
+      "Generate optimized GitHub Actions workflows based on codebase analysis and language detection",
+      "Coordinate multi-repository operations with AI swarm patterns for parallel execution",
+      "Analyze workflow performance and identify bottlenecks with actionable optimization suggestions",
+      "Automate pull request validation with multi-agent code review, testing, and security scanning",
+      "Create self-healing pipelines that detect and fix common workflow failures automatically",
+      "Implement progressive deployment strategies with intelligent risk assessment and rollback capabilities"
+    ],
+    "limitations": [
+      "Requires GitHub CLI installed and authenticated with appropriate repository permissions",
+      "Depends on Node.js v16 or higher and npm package manager for execution",
+      "External tools like ruv-swarm and claude-flow must be installed separately for advanced features",
+      "Cannot modify workflows in repositories where the user lacks write access or appropriate permissions"
+    ],
+    "use_cases": [
+      {
+        "title": "DevOps Engineer: Optimize CI/CD Pipeline Performance",
+        "description": "A DevOps engineer managing multiple microservices can use this skill to analyze existing GitHub Actions workflows, identify performance bottlenecks, and automatically generate optimized configurations with intelligent caching and parallelization strategies.",
+        "target_user": "DevOps engineers managing complex CI/CD infrastructure"
+      },
+      {
+        "title": "Development Team: Automate Code Review Workflows",
+        "description": "Development teams can implement automated pull request validation that spawns multiple specialized agents for linting, testing, security scanning, and documentation checks, providing comprehensive feedback before human review.",
+        "target_user": "Software development teams seeking to improve code quality"
+      },
+      {
+        "title": "Release Manager: Coordinate Multi-Repository Deployments",
+        "description": "Release managers coordinating updates across multiple repositories can use AI swarm coordination to synchronize version updates, create coordinated pull requests, and manage progressive deployment strategies with automated risk assessment.",
+        "target_user": "Release managers handling multi-repository coordination"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Generate Initial Workflow",
+        "prompt": "Analyze my repository and create an optimized GitHub Actions CI/CD workflow that detects the tech stack and sets up appropriate testing and deployment stages",
+        "scenario": "Setting up GitHub Actions for a new project"
+      },
+      {
+        "title": "Optimize Existing Pipeline",
+        "prompt": "Review the workflow at .github/workflows/ci.yml and suggest optimizations for parallelization, caching, and reducing execution time",
+        "scenario": "Improving slow or inefficient workflows"
+      },
+      {
+        "title": "Implement Automated PR Validation",
+        "prompt": "Create a pull request validation workflow that runs linting, tests, security scans, and generates a comprehensive review report for PR #123",
+        "scenario": "Adding automated quality checks to pull requests"
+      },
+      {
+        "title": "Coordinate Multi-Repo Release",
+        "prompt": "Synchronize version 2.0.0 release across repositories repo-a, repo-b, and repo-c, updating dependencies and creating coordinated pull requests",
+        "scenario": "Managing releases across multiple repositories"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate an optimized CI workflow for my Node.js project",
+        "output": [
+          "Generated workflow file: .github/workflows/ci.yml",
+          "Detected stack: Node.js 18, Jest testing, ESLint",
+          "Configured parallel execution for tests and linting",
+          "Added intelligent caching for node_modules and build artifacts",
+          "Estimated 40% reduction in workflow execution time"
+        ]
+      },
+      {
+        "input": "Analyze failures in workflow run 12345 and suggest fixes",
+        "output": [
+          "Failure analysis complete for run 12345",
+          "Root cause: Dependency version mismatch in test environment",
+          "Suggested fix: Lock dependency versions in package-lock.json",
+          "Additional recommendation: Add dependency caching to reduce installation time",
+          "Created draft PR with proposed fixes"
+        ]
+      },
+      {
+        "input": "Validate pull request 456 with comprehensive checks",
+        "output": [
+          "PR validation initiated for #456",
+          "Linting: Passed with 0 issues",
+          "Tests: 127/127 passed, coverage 94.2%",
+          "Security scan: No vulnerabilities detected",
+          "Documentation: Updated for 3 new functions",
+          "Overall status: Ready for human review"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use reusable workflows to avoid duplication and maintain consistency across multiple repositories and projects",
+      "Implement proper caching strategies for dependencies and build artifacts to significantly reduce workflow execution time and costs",
+      "Set appropriate timeouts at both job and step levels to prevent runaway workflows from consuming excessive resources"
+    ],
+    "anti_patterns": [
+      "Do not store sensitive credentials or API keys directly in workflow files; always use GitHub Secrets for secure configuration",
+      "Avoid running computationally intensive operations sequentially when they can be parallelized across multiple jobs or matrix strategies",
+      "Do not grant excessive permissions to workflows; follow the principle of least privilege by specifying only required permissions"
+    ],
+    "faq": [
+      {
+        "question": "What prerequisites are needed to use this skill?",
+        "answer": "You need GitHub CLI installed and authenticated, Git configured with user credentials, Node.js version 16 or higher, and write access to the target repository. Additional tools like ruv-swarm may be required for advanced swarm coordination features."
+      },
+      {
+        "question": "Can this skill work with private repositories?",
+        "answer": "Yes, the skill works with both public and private repositories. You must have appropriate access permissions and ensure your GitHub CLI is authenticated with the necessary scopes to read and write workflows."
+      },
+      {
+        "question": "How does the AI swarm coordination work?",
+        "answer": "The skill can spawn multiple specialized AI agents that work in parallel on different aspects of workflow management, such as code review, testing, security scanning, and optimization. Agents coordinate through hierarchical or mesh topologies to efficiently complete complex tasks."
+      },
+      {
+        "question": "Will this skill modify my existing workflows without approval?",
+        "answer": "No, the skill generates suggestions and creates draft configurations or pull requests for review. You maintain full control over which changes are applied to your workflows and when they are merged."
+      },
+      {
+        "question": "What programming languages and frameworks are supported?",
+        "answer": "The skill automatically detects programming languages and frameworks in your repository and generates appropriate workflow configurations. It supports all languages compatible with GitHub Actions, including JavaScript, TypeScript, Python, Go, Rust, Java, and more."
+      },
+      {
+        "question": "How can I optimize costs for GitHub Actions usage?",
+        "answer": "The skill analyzes workflow usage patterns and suggests cost optimizations such as intelligent caching, reducing redundant operations, using appropriate runner sizes, implementing early termination for failed checks, and recommending self-hosted runners for high-volume workflows."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1066
+    }
+  ]
+}

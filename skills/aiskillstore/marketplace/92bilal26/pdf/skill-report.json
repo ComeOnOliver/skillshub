@@ -1,0 +1,290 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:56:13.176Z",
+    "slug": "92bilal26-pdf",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/pdf",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f2eecd1fff4eaf3a77a318cedd8f4138723273b87c5f31a896acdbd751ba3db4",
+    "tree_hash": "33e5da262f599f46afd506d42e93ccbc3d00d1ba41d1a1e2ddd3590a4ccf0b3b"
+  },
+  "skill": {
+    "name": "pdf",
+    "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+    "summary": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/sp...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "92Bilal26",
+    "license": "Proprietary. LICENSE.txt has complete terms",
+    "category": "data",
+    "tags": [
+      "pdf",
+      "document-processing",
+      "extraction",
+      "forms"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate PDF processing toolkit using standard Python libraries. All 226 static findings are false positives triggered by documentation code examples. No network connectivity, no credential access, no code execution vulnerabilities. Scripts only read and write user-specified PDF files.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/extract_form_field_info.py",
+            "line_start": 140,
+            "line_end": 145
+          },
+          {
+            "file": "scripts/fill_fillable_fields.py",
+            "line_start": 13,
+            "line_end": 56
+          },
+          {
+            "file": "scripts/fill_pdf_form_with_annotations.py",
+            "line_start": 32,
+            "line_end": 94
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 2232,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:56:13.176Z"
+  },
+  "content": {
+    "user_title": "Process PDF documents",
+    "value_statement": "PDF documents are difficult to edit programmatically. This skill provides tools to extract text and tables, create new PDFs, merge and split documents, and fill out PDF forms automatically.",
+    "seo_keywords": [
+      "pdf processing",
+      "pdf manipulation",
+      "pdf extraction",
+      "pdf form filling",
+      "Claude pdf",
+      "Codex pdf",
+      "claude-code pdf",
+      "document conversion",
+      "merge pdf",
+      "split pdf"
+    ],
+    "actual_capabilities": [
+      "Extract text and tables from existing PDFs",
+      "Create new PDFs with text, tables, and formatting",
+      "Merge multiple PDFs into one document",
+      "Split PDFs into individual pages",
+      "Fill PDF forms programmatically",
+      "Convert PDFs to images and vice versa"
+    ],
+    "limitations": [
+      "Cannot edit scanned PDF content without OCR",
+      "Cannot remove password protection from encrypted PDFs",
+      "Limited support for complex form field types",
+      "Requires poppler-utils for some command-line operations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data analysts",
+        "title": "Extract table data",
+        "description": "Pull structured tables from PDF reports into CSV or Excel format for analysis."
+      },
+      {
+        "target_user": "Administrative workers",
+        "title": "Automate form filling",
+        "description": "Fill out PDF forms with consistent data like names and addresses automatically."
+      },
+      {
+        "target_user": "Office professionals",
+        "title": "Combine documents",
+        "description": "Merge separate PDF documents into a single file for easy distribution."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Extract text",
+        "scenario": "Get text from PDF",
+        "prompt": "Extract all text from the PDF file located at [path]. Show the total number of pages and provide a summary of the content."
+      },
+      {
+        "title": "Extract tables",
+        "scenario": "Pull table data from report",
+        "prompt": "Extract all tables from the PDF report at [path] and save them to an Excel file with each table on a separate sheet."
+      },
+      {
+        "title": "Merge PDFs",
+        "scenario": "Combine documents",
+        "prompt": "Merge these PDF files into a single document: [list of files]. Save the result as merged.pdf."
+      },
+      {
+        "title": "Fill PDF form",
+        "scenario": "Complete form fields",
+        "prompt": "Fill out the fillable PDF form at [input.pdf] with the values in field_values.json and save the result as [output.pdf]."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Extract text from invoice.pdf",
+        "output": [
+          "Invoice #12345 - 3 pages",
+          "",
+          "Page 1: Bill to: Acme Corp, Total: $1,250.00",
+          "Page 2: Line items (3 items)",
+          "Page 3: Payment terms and signature line"
+        ]
+      },
+      {
+        "input": "Merge quarterly reports into one document",
+        "output": [
+          "Successfully merged Q1.pdf, Q2.pdf, Q3.pdf, Q4.pdf",
+          "Output: quarterly_report_merged.pdf (52 pages)",
+          "Document contains all quarterly data in order"
+        ]
+      },
+      {
+        "input": "Fill form with applicant data",
+        "output": [
+          "Processed 15 form fields",
+          "All fields validated successfully",
+          "Output: application_filled.pdf",
+          "Ready for signing"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Verify input PDF is not password protected before processing",
+      "Use high DPI settings when converting PDFs to images for better quality",
+      "Validate form field values before attempting to fill PDF forms"
+    ],
+    "anti_patterns": [
+      "Do not assume all PDFs have extractable text (scanned documents require OCR)",
+      "Do not attempt to fill non-fillable PDF forms without using annotation methods",
+      "Do not process encrypted PDFs without the correct password"
+    ],
+    "faq": [
+      {
+        "question": "Can this skill extract text from scanned PDFs?",
+        "answer": "Scanned PDFs contain images, not text. Use OCR tools like pytesseract to convert scanned pages to text first."
+      },
+      {
+        "question": "What PDF form field types are supported?",
+        "answer": "Text fields, checkboxes, radio groups, and choice/dropdown fields are supported for fillable PDF forms."
+      },
+      {
+        "question": "Can I merge PDFs with different page sizes?",
+        "answer": "Yes, pypdf can merge PDFs regardless of page sizes. Content may need adjustment for consistent presentation."
+      },
+      {
+        "question": "Is my data safe when processing PDFs?",
+        "answer": "All processing is local. Files are read from and written to paths you specify. No data is sent to external servers."
+      },
+      {
+        "question": "Why is text extraction incomplete?",
+        "answer": "Some PDFs use non-standard encoding or images instead of text. Try alternative extraction methods or OCR for complex documents."
+      },
+      {
+        "question": "How does this compare to online PDF tools?",
+        "answer": "This skill offers programmatic control, batch processing, and privacy since files never leave your system unlike online services."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "check_bounding_boxes_test.py",
+          "type": "file",
+          "path": "scripts/check_bounding_boxes_test.py",
+          "lines": 227
+        },
+        {
+          "name": "check_bounding_boxes.py",
+          "type": "file",
+          "path": "scripts/check_bounding_boxes.py",
+          "lines": 71
+        },
+        {
+          "name": "check_fillable_fields.py",
+          "type": "file",
+          "path": "scripts/check_fillable_fields.py",
+          "lines": 13
+        },
+        {
+          "name": "convert_pdf_to_images.py",
+          "type": "file",
+          "path": "scripts/convert_pdf_to_images.py",
+          "lines": 36
+        },
+        {
+          "name": "create_validation_image.py",
+          "type": "file",
+          "path": "scripts/create_validation_image.py",
+          "lines": 42
+        },
+        {
+          "name": "extract_form_field_info.py",
+          "type": "file",
+          "path": "scripts/extract_form_field_info.py",
+          "lines": 153
+        },
+        {
+          "name": "fill_fillable_fields.py",
+          "type": "file",
+          "path": "scripts/fill_fillable_fields.py",
+          "lines": 115
+        },
+        {
+          "name": "fill_pdf_form_with_annotations.py",
+          "type": "file",
+          "path": "scripts/fill_pdf_form_with_annotations.py",
+          "lines": 108
+        }
+      ]
+    },
+    {
+      "name": "forms.md",
+      "type": "file",
+      "path": "forms.md",
+      "lines": 206
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 31
+    },
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 612
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 295
+    }
+  ]
+}

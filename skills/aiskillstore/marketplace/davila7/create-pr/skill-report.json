@@ -1,0 +1,365 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:10:40.845Z",
+    "slug": "davila7-create-pr",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/sentry/create-pr",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e270f8438c3d60b087b62c2c996f9fc493c2c43e84ffe44b39f35f315d3b17dc",
+    "tree_hash": "aa7ec1cc8063911df1023247dc87c527c8c4820831c093453781c9492a2db111"
+  },
+  "skill": {
+    "name": "create-pr",
+    "description": "Create pull requests following Sentry conventions. Use when opening PRs, writing PR descriptions, or preparing changes for review. Follows Sentry's code review guidelines.",
+    "summary": "Create pull requests following Sentry conventions. Use when opening PRs, writing PR descriptions, or...",
+    "icon": "🔀",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "github",
+      "pull-requests",
+      "code-review",
+      "git",
+      "workflow"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing markdown guidance for PR creation. No executable code, scripts, network operations, or file system modifications. All static findings are false positives from pattern detection that does not account for documentation files with command examples. The official skill-report.json confirms 'safe' status with zero risk factors.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 157
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 129,
+            "line_end": 129
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 73
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 336,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:10:40.845Z"
+  },
+  "content": {
+    "user_title": "Create pull requests following Sentry conventions",
+    "value_statement": "Developers need clear guidance for creating well-structured pull requests that follow team conventions. This skill provides step-by-step instructions for creating PRs with proper descriptions, title formatting, and reviewer assignment following Sentry engineering practices.",
+    "seo_keywords": [
+      "create pull request",
+      "Sentry PR conventions",
+      "GitHub pull request guide",
+      "PR description template",
+      "code review guidelines",
+      "git workflow",
+      "Claude Code",
+      "Claude",
+      "GitHub CLI",
+      "PR best practices"
+    ],
+    "actual_capabilities": [
+      "Analyzes branch state and git status before creating PRs",
+      "Writes structured PR descriptions with motivation and context",
+      "Formats PR titles using conventional commit syntax",
+      "Adds reviewers to pull requests via GitHub CLI",
+      "References issues using Fixes and Refs syntax",
+      "Verifies changes are committed and rebased before submission"
+    ],
+    "limitations": [
+      "Requires GitHub CLI (gh) to be installed and authenticated",
+      "Only provides guidance documentation, does not execute git commands",
+      "Follows Sentry-specific conventions which may differ from other organizations",
+      "Does not create actual PRs directly, only guides the process"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Create feature PRs",
+        "description": "Prepare and submit feature pull requests with proper title format, description, and context for reviewers."
+      },
+      {
+        "target_user": "Backend engineers",
+        "title": "Submit bug fix PRs",
+        "description": "Document bug fixes with clear problem statements, root causes, and resolution explanations."
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Review PR descriptions",
+        "description": "Ensure submitted PRs follow team conventions with complete information for effective code review."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create a new feature PR",
+        "scenario": "Preparing a feature pull request",
+        "prompt": "Help me create a pull request for my feature branch. Analyze the current git status and guide me through creating a PR with proper title format and description following Sentry conventions."
+      },
+      {
+        "title": "Document bug fix",
+        "scenario": "Submitting a bug fix for review",
+        "prompt": "I fixed a bug in the user API endpoint. Help me create a PR description that explains the problem, root cause, and solution clearly for reviewers."
+      },
+      {
+        "title": "Refactor with context",
+        "scenario": "Submitting refactoring changes",
+        "prompt": "I refactored some validation logic into a shared module. Help me write a PR description that explains the motivation and why this refactor is needed."
+      },
+      {
+        "title": "Add reviewers to PR",
+        "scenario": "Requesting code review",
+        "prompt": "I already created a PR but need to add reviewers. Help me use the GitHub CLI to add the appropriate team members for review."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create a PR for my feature that adds Slack thread replies for alert notifications",
+        "output": [
+          "✓ Analyzed current branch state and verified changes are committed",
+          "✓ Formatted PR title: feat(notifications): Add Slack thread replies for alert notifications",
+          "✓ Wrote description explaining the motivation (grouping related notifications, reducing channel noise)",
+          "✓ Included alternatives considered (editing original message vs threading)",
+          "✓ Added issue reference: Refs SENTRY-1234",
+          "✓ Created PR using: gh pr create --title \"feat(notifications): Add Slack thread replies for alert notifications\" --body \"...\""
+        ]
+      },
+      {
+        "input": "I fixed a null response bug in the user API endpoint. Help me document this properly.",
+        "output": [
+          "✓ Analyzed git status and identified the changes",
+          "✓ Formatted PR title: fix(api): Handle null response in user API endpoint",
+          "✓ Wrote description: The user endpoint could return null for soft-deleted accounts",
+          "✓ Added root cause: Dashboard crashes when accessing user properties",
+          "✓ Included resolution: Added null check and returns proper 404 response",
+          "✓ Added issue reference: Fixes SENTRY-5678"
+        ]
+      },
+      {
+        "input": "I refactored validation logic into a shared module. Help me write a clear PR description.",
+        "output": [
+          "✓ Analyzed the refactor scope across alerts, issues, and projects endpoints",
+          "✓ Formatted PR title: ref(core): Extract validation logic to shared module",
+          "✓ Wrote description: Moves duplicate validation code into shared validator class",
+          "✓ Clarified no behavior change - pure refactoring",
+          "✓ Explained motivation: Prepares for adding new validation rules in SENTRY-9999"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep PRs small and focused on a single feature or fix for faster reviews",
+      "Explain the why behind changes, not just the what - reviewers need to understand motivation",
+      "Request review early using draft PRs when you want feedback before completion"
+    ],
+    "anti_patterns": [
+      "Bundling unrelated changes into a single PR makes review difficult and increases risk",
+      "Including only diff summaries without context leaves reviewers guessing about motivation",
+      "Skipping issue references makes it harder to track the relationship between code and business value"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with GitLab or Bitbucket?",
+        "answer": "No, this skill is designed specifically for GitHub using the GitHub CLI (gh). Other platforms use different conventions and commands."
+      },
+      {
+        "question": "What if I do not have GitHub CLI installed?",
+        "answer": "You can still use the guidance manually. The descriptions and title formats apply regardless of how you create the PR."
+      },
+      {
+        "question": "Can I use this for private repositories?",
+        "answer": "Yes, the conventions apply to both public and private repositories. Ensure gh is authenticated for your private repo."
+      },
+      {
+        "question": "Is my code and commit data safe?",
+        "answer": "Yes, this is a read-only guidance skill. It only reads your git status locally to provide context-aware advice."
+      },
+      {
+        "question": "Why are Sentry conventions different from my team?",
+        "answer": "Sentry has specific engineering practices. You can adapt the title format and description structure to match your own team conventions."
+      },
+      {
+        "question": "How is this different from Claude Code built-in PR creation?",
+        "answer": "This skill provides Sentry-specific conventions and step-by-step guidance. The built-in commands may not follow these specific practices."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 158
+    }
+  ]
+}

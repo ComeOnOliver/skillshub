@@ -1,0 +1,362 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:36:37.401Z",
+    "slug": "brownfinesecurity-nmap",
+    "source_url": "https://github.com/BrownFineSecurity/iothackbot/tree/master/skills/nmap",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4cb93b9969fcafe8b956f8392c741f6727c67a6b0496934060033867ee0ccfef",
+    "tree_hash": "d5c0ce9a3dc965a1fbf8b55487608df0153a6368f3bddc70803312cb78498524"
+  },
+  "skill": {
+    "name": "nmap",
+    "description": "Professional network reconnaissance and port scanning using nmap. Supports various scan types (quick, full, UDP, stealth), service detection, vulnerability scanning, and NSE scripts. Use when you need to enumerate network services, detect versions, or perform network reconnaissance.",
+    "summary": "Professional network reconnaissance and port scanning using nmap. Supports various scan types (quick, full, UDP, stealth), service detection, vulnerability scanning, and NSE scripts.",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "BrownFineSecurity",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "network scanning",
+      "port enumeration",
+      "service detection",
+      "vulnerability scanning",
+      "reconnaissance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate network reconnaissance skill for authorized security testing. The static analyzer flagged network scanning patterns because this skill IS designed for port scanning. All nmap commands are legitimate tool usage with hardcoded templates, not command injection risks. The skill explicitly requires authorization and documents ethical usage guidelines. Risk is inherent to security reconnaissance tools but appropriate for the marketplace.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 208
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 273,
+            "line_end": 273
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 416,
+            "line_end": 416
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 460,
+            "line_end": 460
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 489,
+            "line_end": 490
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 502,
+            "line_end": 502
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 506,
+            "line_end": 506
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 524,
+            "line_end": 524
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 542,
+            "line_end": 542
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 545,
+            "line_end": 545
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 286,
+            "line_end": 286
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 291,
+            "line_end": 291
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 296
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 301,
+            "line_end": 301
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 497,
+            "line_end": 497
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 524,
+            "line_end": 524
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 526,
+            "line_end": 526
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 529,
+            "line_end": 529
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 532,
+            "line_end": 532
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 453,
+            "line_end": 464
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 3396,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:36:37.401Z"
+  },
+  "content": {
+    "user_title": "Perform network reconnaissance with nmap",
+    "value_statement": "Security professionals need to enumerate network services and identify vulnerabilities. This skill automates professional nmap port scanning with multiple scan types, service detection, and NSE scripts for comprehensive network reconnaissance.",
+    "seo_keywords": [
+      "nmap",
+      "network scanning",
+      "port scanner",
+      "service enumeration",
+      "vulnerability scanning",
+      "network reconnaissance",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "penetration testing"
+    ],
+    "actual_capabilities": [
+      "Execute fast port discovery scans with SYN stealth scanning",
+      "Perform service version detection with -sV flag",
+      "Run Nmap Scripting Engine (NSE) scripts for vulnerability detection",
+      "Scan UDP ports and perform OS fingerprinting",
+      "Parse and analyze nmap output files",
+      "Support multiple scan types including quick, full, stealth, and aggressive scans"
+    ],
+    "limitations": [
+      "Requires nmap to be installed on the system",
+      "Some scan types require root or sudo privileges",
+      "UDP scans are significantly slower than TCP scans",
+      "Cannot scan targets without network access"
+    ],
+    "use_cases": [
+      {
+        "title": "Authorized security assessment",
+        "description": "Perform comprehensive network reconnaissance during authorized penetration testing engagements. Use two-phase scanning strategy for efficient port discovery and service enumeration.",
+        "target_user": "Security professionals and penetration testers"
+      },
+      {
+        "title": "IoT device discovery",
+        "description": "Identify IoT devices and their exposed services. Run targeted scripts for RTSP, MQTT, UPnP, and ONVIF protocols commonly found in smart devices.",
+        "target_user": "Security researchers and IoT auditors"
+      },
+      {
+        "title": "Network inventory and auditing",
+        "description": "Map network infrastructure and document running services. Generate reports of open ports, service versions, and potential security issues.",
+        "target_user": "Network administrators and IT security auditors"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick port scan",
+        "prompt": "Run a quick nmap scan on [TARGET_IP] to discover open ports and services. Use service detection and save output to ./nmap-output directory.",
+        "scenario": "Initial reconnaissance on a single target"
+      },
+      {
+        "title": "Full network scan",
+        "prompt": "Perform a comprehensive nmap scan on network [NETWORK_CIDR] scanning all 65535 ports. Run service detection and vulnerability scripts on discovered services.",
+        "scenario": "Complete network assessment requiring full port coverage"
+      },
+      {
+        "title": "Stealth reconnaissance",
+        "prompt": "Run a stealth SYN scan on [TARGET] to avoid detection. Use slow timing template and save results for later analysis.",
+        "scenario": "Red team engagement requiring evasion techniques"
+      },
+      {
+        "title": "IoT device enumeration",
+        "prompt": "Scan [TARGET_IP] for IoT-specific services. Run scripts for RTSP, HTTP methods, and common IoT protocols. Focus on ports 80, 443, 554, 1883, and 8000.",
+        "scenario": "IoT security assessment"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Scan 192.168.1.100 with service detection",
+        "output": [
+          "Starting Nmap scan...",
+          "Phase 1: Fast SYN scan on all 65535 ports",
+          "Open ports found: 22, 80, 443, 554",
+          "Phase 2: Service detection on open ports",
+          "Results saved to: ./nmap-output/",
+          "  - nmap-portscan.nmap (port discovery)",
+          "  - nmap-services.nmap (service detection)",
+          "Key findings:",
+          "  - Port 22/tcp: OpenSSH 8.2 detected",
+          "  - Port 80/tcp: HTTP server detected",
+          "  - Port 554/tcp: RTSP service detected"
+        ]
+      },
+      {
+        "input": "Scan network range for IoT devices",
+        "output": [
+          "Scanning 192.168.1.0/24...",
+          "Found 3 devices with interesting services:",
+          "",
+          "192.168.1.50:",
+          "  - Port 80: HTTP (web interface)",
+          "  - Port 554: RTSP (video streaming)",
+          "  - Port 8000: HTTP alternate",
+          "",
+          "192.168.1.75:",
+          "  - Port 1883: MQTT broker",
+          "  - Port 8883: MQTT/TLS",
+          "",
+          "Full results available in ./nmap-output/nmap-portscan.gnmap"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always save nmap output using -oA flag to generate normal, XML, and grepable formats",
+      "Use the two-phase strategy: fast port discovery followed by targeted service detection",
+      "Verify you have explicit authorization before scanning any target"
+    ],
+    "anti_patterns": [
+      "Running scans without saving output or documenting results",
+      "Using aggressive timing on production systems without understanding impact",
+      "Scanning targets without verifying authorization scope"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill require nmap to be installed?",
+        "answer": "Yes, nmap must be installed on the system. The skill provides command templates but relies on the nmap binary being available."
+      },
+      {
+        "question": "Why does the skill use sudo for some scans?",
+        "answer": "Certain nmap features require root privileges: SYN stealth scans (-sS), UDP scans (-sU), OS detection (-O), and raw packet operations. The skill documents when sudo is required."
+      },
+      {
+        "question": "Can I scan any target with this skill?",
+        "answer": "You should only scan targets you have explicit authorization to test. Unauthorized scanning may be illegal and violates ethical guidelines."
+      },
+      {
+        "question": "How long do scans typically take?",
+        "answer": "Fast port discovery takes 1-3 minutes. Service detection on open ports adds 1-3 minutes. UDP scans are much slower and may take 10+ minutes for top 100 ports."
+      },
+      {
+        "question": "What output formats are generated?",
+        "answer": "Using -oA flag generates three formats: .nmap (human-readable), .xml (machine-readable), and .gnmap (grep-able) for parsing with scripts."
+      },
+      {
+        "question": "Can this skill detect vulnerabilities?",
+        "answer": "Yes, using --script vuln runs NSE vulnerability detection scripts. However, this is basic scanning; comprehensive vulnerability assessment requires dedicated tools."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 577
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:51:37.773Z",
+    "slug": "cygnusfear-blitz",
+    "source_url": "https://github.com/Cygnusfear/claude-stuff/tree/main/skills/blitz",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1c50f04defc218038d447dbfe4d7097334d08f74254395d96086a559113d6a59",
+    "tree_hash": "a1c1cdd78005e71748cfcf03bcdcea90dedc7c8a5c2fa3ce71a72d4701cc375d"
+  },
+  "skill": {
+    "name": "blitz",
+    "description": "Parallelizes multi-issue sprints using git worktrees and parallel Claude agents. Orchestrates the workflow from issue triage through agent delegation to sequential merge, ensuring 100% issue coverage before merging.",
+    "summary": "Parallel workflow orchestration for tackling multiple GitHub issues simultaneously with isolated git worktrees and independent Claude agents.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Cygnusfear",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "git",
+      "workflow",
+      "parallel-processing",
+      "github",
+      "code-review"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 126 static findings are false positives from markdown documentation. The backticks are code block syntax showing git and GitHub CLI examples, not executable code. C2 keywords refer to Claude agent orchestration terminology. No actual security risks detected.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 1867,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:51:37.773Z"
+  },
+  "content": {
+    "user_title": "Parallelize Multi-Issue Sprints with Git Worktrees",
+    "value_statement": "Managing multiple GitHub issues in parallel often leads to git conflicts and context switching overhead. Blitz automates parallel issue handling using isolated git worktrees and independent Claude agents, ensuring 100% coverage before merge.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "git worktrees",
+      "parallel development",
+      "GitHub issues",
+      "workflow automation",
+      "code review",
+      "pull requests",
+      "DevOps"
+    ],
+    "actual_capabilities": [
+      "Creates isolated git worktrees for parallel issue development",
+      "Delegates independent GitHub issues to separate Claude agents",
+      "Enforces 100% issue coverage verification before PR merge",
+      "Automates sequential squash-merge with rebase conflict resolution",
+      "Integrates with GitHub CLI for issue triage and PR management",
+      "Supports self-review workflow with quality gates"
+    ],
+    "limitations": [
+      "Requires git version 2.5 or higher with worktree support",
+      "Needs GitHub CLI authenticated and configured",
+      "Assumes issues are independent and can be worked in parallel",
+      "Agents cannot resume after API disconnection"
+    ],
+    "use_cases": [
+      {
+        "title": "Sprint Planning",
+        "description": "Tackle 5 independent bug fixes simultaneously using isolated worktrees, each with its own agent and PR, then merge sequentially to avoid conflicts.",
+        "target_user": "Development teams handling multiple backlog items"
+      },
+      {
+        "title": "Feature Branch Management",
+        "description": "Develop multiple feature branches in parallel with complete filesystem isolation, preventing node_modules and build artifact conflicts between agents.",
+        "target_user": "Solo developers managing complex multi-feature work"
+      },
+      {
+        "title": "Issue Triage Automation",
+        "description": "Use Delphi skill to audit open issues across multiple agents, automatically closing completed items and prioritizing actionable work for parallel execution.",
+        "target_user": "Project maintainers with large issue backlogs"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Parallel Sprint",
+        "prompt": "Use blitz to handle issues 12, 15, and 18 in parallel. Create worktrees, delegate to agents, and merge when all hit 10/10 reviews.",
+        "scenario": "You have 3 independent bug fixes ready to work on"
+      },
+      {
+        "title": "Triage and Execute",
+        "prompt": "Run blitz with Delphi triage on all open issues. Close completed ones, then parallelize the fixable issues with full coverage verification.",
+        "scenario": "Your backlog needs cleaning before starting parallel work"
+      },
+      {
+        "title": "Feature Development Sprint",
+        "prompt": "Blitz mode: Create worktrees for feat/auth, feat/api, and feat/ui. Each agent must achieve 100% coverage of their requirements before merge.",
+        "scenario": "Building multiple independent features simultaneously"
+      },
+      {
+        "title": "Advanced Conflict Resolution",
+        "prompt": "Execute blitz workflow for issues 5-9, with sequential rebase between merges. Monitor for conflicts and have agents resolve during rebase.",
+        "scenario": "Working on potentially overlapping changes that need careful merge ordering"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Use blitz to parallelize issues 23, 24, and 25",
+        "output": [
+          "Created worktrees: .worktrees/test-isolation, .worktrees/config-fix, .worktrees/api-update",
+          "Launched 3 agents with 4-step-program skill",
+          "Agent 1: PR #45 created, self-review score 10/10, 100% coverage verified",
+          "Agent 2: PR #46 created, score 8/10, resuming with feedback",
+          "Agent 3: PR #47 created, score 10/10, 100% coverage verified",
+          "Agent 2: Re-review complete, now 10/10",
+          "Sequential merge: PR #45 squash-merged, issue #23 auto-closed",
+          "Rebased PR #46 onto main, squash-merged, issue #24 auto-closed",
+          "Rebased PR #47 onto main, squash-merged, issue #25 auto-closed",
+          "Cleanup: All worktrees removed, branches deleted, main synced"
+        ]
+      },
+      {
+        "input": "Blitz with Delphi triage for all open issues",
+        "output": [
+          "Delphi audit: 3 oracles analyzing 12 open issues",
+          "Unanimous: Close #1, #4, #7 (already complete)",
+          "Majority: Fix #2, #5, #9 (actionable)",
+          "Divergent: #3 needs manual review",
+          "Closed issues 1, 4, 7 with comment",
+          "Created worktrees for issues 2, 5, 9",
+          "Parallel execution with 100% coverage requirement..."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always extract complete requirement lists from GitHub issues before delegating to agents to ensure 100% coverage verification",
+      "Use absolute paths in agent prompts to prevent directory confusion during worktree operations",
+      "Monitor background processes after workflow completion and clean up orphaned dev servers or watchers"
+    ],
+    "anti_patterns": [
+      "Do not manually delete worktree directories with rm. Always use git worktree remove to avoid stale references",
+      "Do not merge PRs before verifying 100% issue coverage and 10/10 review scores. Incomplete work creates technical debt",
+      "Do not skip the sequential rebase step between merges. Parallel merges lead to difficult conflict resolution"
+    ],
+    "faq": [
+      {
+        "question": "What happens if an agent disconnects during execution?",
+        "answer": "Claude agents cannot resume after API disconnection. Check the worktree state with git status, then spawn a fresh agent with context about what was already completed. The new agent picks up from the current state."
+      },
+      {
+        "question": "How does the 100% coverage gate work?",
+        "answer": "Before merging any PR, create a line-by-line table matching each requirement from the original GitHub issue to implementation evidence. Only PRs with all requirements marked as complete can proceed to merge."
+      },
+      {
+        "question": "Why sequential merge instead of parallel merge?",
+        "answer": "Sequential squash-merge with rebase between each PR catches integration issues early and keeps main history linear. Parallel merges create difficult conflict resolution scenarios."
+      },
+      {
+        "question": "Can I use blitz without the Delphi skill?",
+        "answer": "Yes. Delphi is optional and only needed for ambiguous issue triage decisions. For clear-cut issue lists, skip directly to Phase 2 worktree setup."
+      },
+      {
+        "question": "What git version is required?",
+        "answer": "Git 2.5 or higher with worktree support. Verify with git worktree list command."
+      },
+      {
+        "question": "Do the review scores appear in GitHub UI?",
+        "answer": "The gh api command posts reviews as PR comments, not formal GitHub reviews. They appear in the conversation but do not trigger branch protection rules."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "commands.md",
+          "type": "file",
+          "path": "references/commands.md",
+          "lines": 95
+        },
+        {
+          "name": "pitfalls.md",
+          "type": "file",
+          "path": "references/pitfalls.md",
+          "lines": 115
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 372
+    }
+  ]
+}

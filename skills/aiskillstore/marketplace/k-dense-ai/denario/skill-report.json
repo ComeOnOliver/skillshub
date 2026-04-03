@@ -1,0 +1,1552 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:45:18.316Z",
+    "slug": "k-dense-ai-denario",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/denario",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bd9e8e3b25e6634e6ac1a92b60f0bd473de7f9b34180ca03576a4ac0d150031b",
+    "tree_hash": "f938afdb03da361c45aaeed4b61743fa4cc4744d2d81d7afcf3be65739dae981"
+  },
+  "skill": {
+    "name": "denario",
+    "description": "Multiagent AI system for scientific research assistance that automates research workflows from data analysis to publication. This skill should be used when generating research ideas from datasets, developing research methodologies, executing computational experiments, performing literature searches, or generating publication-ready papers in LaTeX format. Supports end-to-end research pipelines with customizable agent orchestration.",
+    "summary": "Multiagent AI system for scientific research assistance that automates research workflows from data ...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "GPL-3.0 license",
+    "category": "research",
+    "tags": [
+      "research",
+      "scientific",
+      "multiagent",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 369 static findings are FALSE POSITIVES. The skill is documentation-only with bash command examples, API key configuration patterns, and file operations for research project management - all legitimate documented functionality for a scientific research automation tool.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/examples.md",
+            "line_start": 9,
+            "line_end": 16
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 16,
+            "line_end": 20
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 20,
+            "line_end": 39
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 39,
+            "line_end": 43
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 43,
+            "line_end": 75
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 75,
+            "line_end": 79
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 79,
+            "line_end": 92
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 92,
+            "line_end": 100
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 100,
+            "line_end": 105
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 105,
+            "line_end": 109
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 109,
+            "line_end": 137
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 137,
+            "line_end": 145
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 145,
+            "line_end": 163
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 163,
+            "line_end": 171
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 171,
+            "line_end": 192
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 192,
+            "line_end": 200
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 200,
+            "line_end": 279
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 279,
+            "line_end": 287
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 287,
+            "line_end": 307
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 307,
+            "line_end": 315
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 315,
+            "line_end": 341
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 341,
+            "line_end": 349
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 349,
+            "line_end": 378
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 378,
+            "line_end": 386
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 386,
+            "line_end": 426
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 426,
+            "line_end": 434
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 434,
+            "line_end": 441
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 441,
+            "line_end": 447
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 447,
+            "line_end": 459
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 459,
+            "line_end": 465
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 465,
+            "line_end": 478
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 478,
+            "line_end": 484
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 484,
+            "line_end": 494
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 16,
+            "line_end": 22
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 22,
+            "line_end": 28
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 28,
+            "line_end": 35
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 35,
+            "line_end": 41
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 41,
+            "line_end": 52
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 52,
+            "line_end": 58
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 58,
+            "line_end": 67
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 67,
+            "line_end": 69
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 69,
+            "line_end": 75
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 75,
+            "line_end": 78
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 78,
+            "line_end": 82
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 82,
+            "line_end": 84
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 84,
+            "line_end": 92
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 92,
+            "line_end": 94
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 94,
+            "line_end": 102
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 102,
+            "line_end": 107
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 107,
+            "line_end": 118
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 118,
+            "line_end": 125
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 125,
+            "line_end": 127
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 127,
+            "line_end": 130
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 130,
+            "line_end": 132
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 132,
+            "line_end": 145
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 145,
+            "line_end": 147
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 147,
+            "line_end": 154
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 154,
+            "line_end": 156
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 156,
+            "line_end": 159
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 159,
+            "line_end": 161
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 161,
+            "line_end": 165
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 165,
+            "line_end": 166
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 166,
+            "line_end": 168
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 168,
+            "line_end": 173
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 173,
+            "line_end": 175
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 175,
+            "line_end": 184
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 184,
+            "line_end": 186
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 186,
+            "line_end": 189
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 189,
+            "line_end": 191
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 191,
+            "line_end": 194
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 194,
+            "line_end": 196
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 196,
+            "line_end": 201
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 201,
+            "line_end": 203
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 203,
+            "line_end": 206
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 206,
+            "line_end": 208
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 208,
+            "line_end": 211
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 211,
+            "line_end": 213
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 126,
+            "line_end": 126
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 43,
+            "line_end": 45
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 45,
+            "line_end": 59
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 59,
+            "line_end": 61
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 61,
+            "line_end": 68
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 68,
+            "line_end": 71
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 71,
+            "line_end": 73
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 76
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 76,
+            "line_end": 78
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 78,
+            "line_end": 84
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 84,
+            "line_end": 86
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 86,
+            "line_end": 98
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 98,
+            "line_end": 102
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 102,
+            "line_end": 108
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 108,
+            "line_end": 114
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 114,
+            "line_end": 124
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 124,
+            "line_end": 135
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 135,
+            "line_end": 140
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 140,
+            "line_end": 143
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 143,
+            "line_end": 145
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 145,
+            "line_end": 148
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 148,
+            "line_end": 150
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 150,
+            "line_end": 153
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 153,
+            "line_end": 156
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 156,
+            "line_end": 159
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 159,
+            "line_end": 169
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 169,
+            "line_end": 172
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 172,
+            "line_end": 179
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 179,
+            "line_end": 185
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 185,
+            "line_end": 194
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 194,
+            "line_end": 225
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 225,
+            "line_end": 226
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 226,
+            "line_end": 231
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 231,
+            "line_end": 248
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 248,
+            "line_end": 249
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 249,
+            "line_end": 250
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 250,
+            "line_end": 253
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 253,
+            "line_end": 263
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 263,
+            "line_end": 264
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 264,
+            "line_end": 265
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 11,
+            "line_end": 15
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 15,
+            "line_end": 18
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 18,
+            "line_end": 26
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 26,
+            "line_end": 28
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 28,
+            "line_end": 31
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 31,
+            "line_end": 34
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 34,
+            "line_end": 41
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 41,
+            "line_end": 49
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 49,
+            "line_end": 51
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 51,
+            "line_end": 58
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 58,
+            "line_end": 62
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 62,
+            "line_end": 68
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 68,
+            "line_end": 70
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 70,
+            "line_end": 73
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 73,
+            "line_end": 76
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 76,
+            "line_end": 78
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 78,
+            "line_end": 86
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 86,
+            "line_end": 88
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 88,
+            "line_end": 99
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 99,
+            "line_end": 103
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 103,
+            "line_end": 109
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 109,
+            "line_end": 112
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 112,
+            "line_end": 115
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 115,
+            "line_end": 118
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 118,
+            "line_end": 129
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 129,
+            "line_end": 135
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 135,
+            "line_end": 137
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 137,
+            "line_end": 148
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 148,
+            "line_end": 151
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 151,
+            "line_end": 159
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 159,
+            "line_end": 162
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 162,
+            "line_end": 165
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 165,
+            "line_end": 168
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 168,
+            "line_end": 180
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 180,
+            "line_end": 188
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 188,
+            "line_end": 190
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 190,
+            "line_end": 193
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 193,
+            "line_end": 204
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 204,
+            "line_end": 209
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 209,
+            "line_end": 215
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 215,
+            "line_end": 217
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 217,
+            "line_end": 221
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 221,
+            "line_end": 229
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 229,
+            "line_end": 235
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 235,
+            "line_end": 243
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 243,
+            "line_end": 260
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 260,
+            "line_end": 266
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 266,
+            "line_end": 278
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 278,
+            "line_end": 284
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 284,
+            "line_end": 295
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 295,
+            "line_end": 301
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 301,
+            "line_end": 321
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 321,
+            "line_end": 327
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 327,
+            "line_end": 341
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 341,
+            "line_end": 378
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 378,
+            "line_end": 385
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 385,
+            "line_end": 388
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 388,
+            "line_end": 393
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 393,
+            "line_end": 396
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 396,
+            "line_end": 401
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 401,
+            "line_end": 403
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 403,
+            "line_end": 413
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 413,
+            "line_end": 426
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 426,
+            "line_end": 432
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 432,
+            "line_end": 436
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 436,
+            "line_end": 442
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 442,
+            "line_end": 458
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 458,
+            "line_end": 464
+          },
+          {
+            "file": "references/research_pipeline.md",
+            "line_start": 464,
+            "line_end": 469
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 136
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 136,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 168,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 203
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 209
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/examples.md",
+            "line_start": 467,
+            "line_end": 467
+          },
+          {
+            "file": "references/examples.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 73,
+            "line_end": 73
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/installation.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 69,
+            "line_end": 69
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 135,
+            "line_end": 135
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 135,
+            "line_end": 135
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 50,
+            "line_end": 50
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 137,
+            "line_end": 137
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 202,
+            "line_end": 202
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 174,
+            "line_end": 174
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 175,
+            "line_end": 175
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 104,
+            "line_end": 104
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 250,
+            "line_end": 250
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 104,
+            "line_end": 104
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 250,
+            "line_end": 250
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 70,
+            "line_end": 70
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 92,
+            "line_end": 92
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 121,
+            "line_end": 121
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 175,
+            "line_end": 175
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 253,
+            "line_end": 253
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 69,
+            "line_end": 69
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 77,
+            "line_end": 77
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 88,
+            "line_end": 88
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 120,
+            "line_end": 120
+          },
+          {
+            "file": "references/llm_configuration.md",
+            "line_start": 248,
+            "line_end": 248
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 3198,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:45:18.316Z"
+  },
+  "content": {
+    "user_title": "Automate scientific research workflows",
+    "value_statement": "Transform datasets into publication-ready research by automating hypothesis generation, methodology development, computational experiments, and LaTeX paper writing. Multiagent AI coordinates specialized agents for end-to-end research pipelines.",
+    "seo_keywords": [
+      "denario",
+      "scientific research automation",
+      "multiagent AI",
+      "research workflow",
+      "hypothesis generation",
+      "LaTeX paper generation",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "data analysis automation"
+    ],
+    "actual_capabilities": [
+      "Generate research hypotheses from dataset descriptions using AI agents",
+      "Develop structured research methodologies with statistical approaches",
+      "Execute computational experiments and generate visualizations",
+      "Produce publication-ready LaTeX papers formatted for academic journals",
+      "Orchestrate end-to-end research pipelines from data to publication",
+      "Integrate with common scientific libraries including pandas, sklearn, and scipy"
+    ],
+    "limitations": [
+      "Requires LLM API keys from supported providers (OpenAI, Google Vertex AI)",
+      "Python 3.12 or higher required; LaTeX needed for PDF paper generation",
+      "Quality of outputs depends on the detail provided in data descriptions",
+      "Internet connection required for LLM API calls during workflow execution"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Academic researchers",
+        "title": "Accelerate publication pipeline",
+        "description": "Automate the journey from raw dataset to formatted journal submission, reducing time spent on methodology design and paper writing."
+      },
+      {
+        "target_user": "Data scientists",
+        "title": "Structured exploration workflows",
+        "description": "Transform exploratory data analysis into reproducible research projects with generated hypotheses, methods, and documentation."
+      },
+      {
+        "target_user": "Graduate students",
+        "title": "Learn research best practices",
+        "description": "Follow AI-generated methodologies to understand structured approaches to computational research and scientific writing."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Climate analysis",
+        "scenario": "Analyze temperature data",
+        "prompt": "Analyze global temperature anomaly data from 1880-2023 using pandas, scipy, and matplotlib. Generate research questions about long-term warming trends, develop a methodology with linear regression, and create publication-ready paper."
+      },
+      {
+        "title": "Gene expression study",
+        "scenario": "Medical research workflow",
+        "prompt": "Process gene expression microarray data from 500 breast cancer patients with 20000 features. Generate hypotheses about treatment response predictors, create methodology with machine learning classification, and produce LaTeX paper."
+      },
+      {
+        "title": "Financial forecasting",
+        "scenario": "Time-series prediction",
+        "prompt": "Analyze monthly unemployment rates from 1950-2023 with GDP and inflation indicators. Generate SARIMAX forecasting methodology, execute analysis with confidence intervals, and write research paper."
+      },
+      {
+        "title": "Full research pipeline",
+        "scenario": "Complete automation",
+        "prompt": "Use denario to run complete research pipeline: set data description for my IoT sensor dataset, generate research idea for anomaly detection, develop methodology with sklearn, execute analysis, and generate APS-formatted LaTeX paper."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate research on climate data",
+        "output": [
+          "Research hypothesis: Quantify global warming acceleration using linear regression",
+          "Methodology: Time-series decomposition, trend analysis, statistical significance testing",
+          "Results: 0.18°C per decade warming trend, p < 0.001",
+          "Paper: Complete LaTeX document with figures and bibliography"
+        ]
+      },
+      {
+        "input": "Analyze customer churn dataset",
+        "output": [
+          "Research idea: Ensemble model combining XGBoost and Random Forest with SMOTE",
+          "Methodology: Train/test split, cross-validation, hyperparameter tuning, SHAP analysis",
+          "Results: 85% AUC-ROC, key churn factors identified",
+          "Paper: Journal-formatted manuscript with performance visualizations"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide detailed data descriptions including format, size, known challenges, and available tools for better AI-generated outputs",
+      "Review and refine generated ideas and methodologies before executing computationally expensive analysis stages",
+      "Use version control by committing after each pipeline stage to track research evolution and enable reproducibility"
+    ],
+    "anti_patterns": [
+      "Providing vague data descriptions leads to generic, unusable research ideas and methodologies",
+      "Skipping methodology review before execution may result in inappropriate statistical approaches for your data",
+      "Running full pipeline without intermediate validation wastes compute on flawed research directions"
+    ],
+    "faq": [
+      {
+        "question": "What LLM providers does denario support?",
+        "answer": "OpenAI GPT-4/3.5, Google Vertex AI Gemini/PaLM, and any provider compatible with AG2 or LangGraph frameworks."
+      },
+      {
+        "question": "Is LaTeX required to use this skill?",
+        "answer": "LaTeX is only needed for PDF paper generation. You can use the full workflow without it and get LaTeX source files."
+      },
+      {
+        "question": "Can I use my own research methodology?",
+        "answer": "Yes, use set_method() with your markdown methodology or file path to bypass automated generation."
+      },
+      {
+        "question": "What Python version is required?",
+        "answer": "Python 3.12 or higher is required for this skill to function properly."
+      },
+      {
+        "question": "Can I provide pre-computed results?",
+        "answer": "Yes, use set_results() to load existing analysis results and skip the computational execution stage."
+      },
+      {
+        "question": "What journals are supported for paper formatting?",
+        "answer": "American Physical Society (APS) format is included. Check documentation for additional journal formats."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "examples.md",
+          "type": "file",
+          "path": "references/examples.md",
+          "lines": 495
+        },
+        {
+          "name": "installation.md",
+          "type": "file",
+          "path": "references/installation.md",
+          "lines": 214
+        },
+        {
+          "name": "llm_configuration.md",
+          "type": "file",
+          "path": "references/llm_configuration.md",
+          "lines": 266
+        },
+        {
+          "name": "research_pipeline.md",
+          "type": "file",
+          "path": "references/research_pipeline.md",
+          "lines": 472
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 215
+    }
+  ]
+}

@@ -1,0 +1,318 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:02:24.634Z",
+    "slug": "wshobson-gitlab-ci-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/cicd-automation/skills/gitlab-ci-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c2edbe2f95b2c166fb468d120a2119f4b60fbdd8264293069ce66d9c52011f5c",
+    "tree_hash": "7d9fa40f9d577add092d28870898f495051b35eb0e17b726aa8afa69cd6d255e"
+  },
+  "skill": {
+    "name": "gitlab-ci-patterns",
+    "description": "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalable automation. Use when implementing GitLab CI/CD, optimizing pipeline performance, or setting up automated testing and deployment.",
+    "summary": "Build GitLab CI/CD pipelines with multi-stage workflows, caching, and distributed runners for scalab...",
+    "icon": "🦊",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "gitlab",
+      "ci-cd",
+      "pipelines",
+      "deployment",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only static GitLab CI YAML examples and DevOps guidance. No executable code, scripts, network calls, or file access behavior is present. All 32 static findings are false positives: hash values, YAML frontmatter, markdown code block delimiters, and placeholder URLs were misidentified as security risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 127
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 179
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 179,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 227
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 252
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 252,
+            "line_end": 269
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 271
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 448,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:02:24.634Z"
+  },
+  "content": {
+    "user_title": "Build GitLab CI pipeline patterns",
+    "value_statement": "Teams often struggle to design reliable GitLab CI workflows at scale. This skill provides proven pipeline patterns for builds, tests, deployments, caching, and security scanning.",
+    "seo_keywords": [
+      "GitLab CI",
+      "CI CD pipelines",
+      "pipeline patterns",
+      "DevOps automation",
+      "Kubernetes deploy",
+      "Terraform pipeline",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Provide a basic multi-stage pipeline with build, test, and deploy jobs",
+      "Show Docker build and push jobs with registry login steps",
+      "Provide multi-environment Kubernetes deployment templates using kubectl",
+      "Outline Terraform validate, plan, and apply pipeline stages",
+      "Include security scanning patterns with GitLab templates and Trivy",
+      "Show caching patterns and child pipeline generation examples"
+    ],
+    "limitations": [
+      "Does not execute or validate pipelines in a live GitLab project",
+      "Examples require project-specific variables and files to be configured",
+      "Does not provide secrets management beyond CI variable mentions",
+      "Runner setup and configuration details are not included"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps engineer",
+        "title": "Standardize CI templates",
+        "description": "Create consistent GitLab CI patterns for multiple repositories and teams."
+      },
+      {
+        "target_user": "Backend developer",
+        "title": "Add deployment stages",
+        "description": "Extend an existing pipeline with Kubernetes deployment jobs."
+      },
+      {
+        "target_user": "Platform lead",
+        "title": "Speed up pipelines",
+        "description": "Apply caching and artifact patterns to reduce build times."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Starter pipeline",
+        "scenario": "New repository needs CI basics",
+        "prompt": "Create a simple GitLab CI pipeline with build, test, and deploy stages for a Node.js service."
+      },
+      {
+        "title": "Docker build push",
+        "scenario": "Publish images to registry",
+        "prompt": "Provide a GitLab CI job to build and push Docker images on main and tags."
+      },
+      {
+        "title": "Terraform workflow",
+        "scenario": "Infrastructure as code pipeline",
+        "prompt": "Generate validate, plan, and apply stages for Terraform with manual apply."
+      },
+      {
+        "title": "Multi-env deploy",
+        "scenario": "Staging and production in Kubernetes",
+        "prompt": "Design staging and production deploy jobs using kubectl with a shared template."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show a GitLab CI pipeline for build, test, and deploy with caching",
+        "output": [
+          "Stages are build, test, and deploy in order",
+          "Build job uses node:20 and caches node_modules",
+          "Test job runs lint and tests with coverage reporting",
+          "Deploy job applies Kubernetes manifests and waits for rollout"
+        ]
+      },
+      {
+        "input": "How do I set up Docker builds in GitLab CI?",
+        "output": [
+          "Use docker:24 image with docker:24-dind service",
+          "Login to registry using CI_REGISTRY_USER and CI_REGISTRY_PASSWORD variables",
+          "Build and push images with tags for both SHA and latest",
+          "Trigger on main branch and tags only"
+        ]
+      },
+      {
+        "input": "Create a security scanning stage",
+        "output": [
+          "Include GitLab's built-in security scanning templates",
+          "Add Trivy vulnerability scanning for container images",
+          "Set exit-code 1 for HIGH and CRITICAL severity findings",
+          "Allow job to fail so scanning does not block merges"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use specific image tags for reproducible builds",
+      "Cache dependencies with stable keys to speed up jobs",
+      "Use manual approval gates for production deployments"
+    ],
+    "anti_patterns": [
+      "Using latest image tags in production pipelines",
+      "Skipping artifacts for build outputs needed downstream",
+      "Deploying to production without an approval gate"
+    ],
+    "faq": [
+      {
+        "question": "Which GitLab versions are supported?",
+        "answer": "Patterns target standard GitLab CI features and work on recent GitLab versions."
+      },
+      {
+        "question": "Are there limits on pipeline size?",
+        "answer": "Limits depend on your GitLab plan and runner capacity, not on this skill."
+      },
+      {
+        "question": "Can this integrate with existing runners?",
+        "answer": "Yes, examples assume standard GitLab runners and can be adapted to your setup."
+      },
+      {
+        "question": "Is any sensitive data collected?",
+        "answer": "No, content is static documentation without file, environment, or network access."
+      },
+      {
+        "question": "What if a job fails after using this?",
+        "answer": "Check runner logs, image availability, and variable configuration, then adjust."
+      },
+      {
+        "question": "How does this compare to GitHub Actions?",
+        "answer": "Focuses on GitLab CI syntax and features instead of GitHub Actions workflows."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 272
+    }
+  ]
+}

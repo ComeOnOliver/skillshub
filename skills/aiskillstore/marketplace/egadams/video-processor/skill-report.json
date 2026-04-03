@@ -1,0 +1,244 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:03:12.892Z",
+    "slug": "egadams-video-processor",
+    "source_url": "https://github.com/EGAdams/planner/tree/main/.claude/skills/video-processor",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "591d837b34d4e588951199e84cfeac679cc47119fb2aa6ec936001b87a73fd88",
+    "tree_hash": "ddfe95f323c2c815de814b0af14417e26b773639c4e03ac7829875b3137627a5"
+  },
+  "skill": {
+    "name": "video-processor",
+    "description": "Process video files with audio extraction, format conversion (mp4, webm), and Whisper transcription. Use when user mentions video conversion, audio extraction, transcription, mp4, webm, ffmpeg, or whisper transcription.",
+    "summary": "Process video files with audio extraction, format conversion (mp4, webm), and Whisper transcription....",
+    "icon": "🎥",
+    "version": "1.0.0",
+    "author": "EGAdams",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "video",
+      "audio",
+      "transcription",
+      "ffmpeg",
+      "whisper"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate video processing utility. All subprocess calls use list-based arguments (safe from injection). The static scanner flagged documentation syntax (backticks, pipes) and markdown tables as suspicious patterns. No actual crypto or C2 behavior exists. Input paths are validated via click.Path() and arguments are constrained by click.Choice() enums. Temporary files are properly cleaned up.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/video_processor.py",
+            "line_start": 37,
+            "line_end": 42
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/video_processor.py",
+            "line_start": 335,
+            "line_end": 336
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [
+      {
+        "title": "Subprocess execution for external tools",
+        "description": "The skill executes FFmpeg and Whisper via subprocess. While arguments are list-based and validated, external tool execution is inherently higher-risk.",
+        "locations": [
+          {
+            "file": "scripts/video_processor.py",
+            "line_start": 37,
+            "line_end": 42
+          }
+        ]
+      }
+    ],
+    "low_findings": [
+      {
+        "title": "Output path traversal potential",
+        "description": "Output file paths are accepted via click.Path() without explicit path traversal validation. User could theoretically specify paths outside intended directory.",
+        "locations": [
+          {
+            "file": "scripts/video_processor.py",
+            "line_start": 85,
+            "line_end": 85
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1028,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:03:12.892Z"
+  },
+  "content": {
+    "user_title": "Convert and transcribe videos with FFmpeg and Whisper",
+    "value_statement": "Process videos without manual command-line work. Extract audio, convert formats, and generate transcripts with simple commands. Perfect for content creators, educators, and developers.",
+    "seo_keywords": [
+      "video conversion",
+      "audio extraction",
+      "speech transcription",
+      "FFmpeg",
+      "OpenAI Whisper",
+      "MP4 WebM",
+      "Claude Code",
+      "video processing",
+      "automatic transcription",
+      "format converter"
+    ],
+    "actual_capabilities": [
+      "Extract audio from any video file to WAV, MP3, AAC, or FLAC",
+      "Convert videos to MP4 with customizable codecs and quality settings",
+      "Convert videos to WebM format optimized for web streaming",
+      "Transcribe audio/video using OpenAI Whisper with multiple model sizes",
+      "Generate subtitles in SRT, VTT, or JSON formats with timestamps"
+    ],
+    "limitations": [
+      "Requires FFmpeg and OpenAI Whisper pre-installed on system",
+      "No cloud processing - all operations run locally on your machine",
+      "Large video files may require significant processing time and resources"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Content creators",
+        "title": "Convert videos for web",
+        "description": "Convert camera footage to web formats and generate subtitles"
+      },
+      {
+        "target_user": "Educators",
+        "title": "Create lecture transcripts",
+        "description": "Extract audio from recordings and generate accurate transcripts"
+      },
+      {
+        "target_user": "Developers",
+        "title": "Process video assets",
+        "description": "Convert videos to standardized formats for apps"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick video conversion",
+        "scenario": "Convert any video to MP4",
+        "prompt": "Convert this video file to MP4 format: input_video.avi"
+      },
+      {
+        "title": "Extract and transcribe",
+        "scenario": "Get transcript from video",
+        "prompt": "Extract the audio from meeting_recording.mp4 and transcribe it"
+      },
+      {
+        "title": "Web-ready with subtitles",
+        "scenario": "Prepare video for website",
+        "prompt": "Convert presentation.mp4 to WebM and generate SRT subtitles"
+      },
+      {
+        "title": "High-quality transcription",
+        "scenario": "Accurate transcript in language",
+        "prompt": "Transcribe this Spanish interview using medium Whisper model: entrevista.mp4"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Convert lecture.mp4 to WebM and transcribe to SRT subtitles",
+        "output": [
+          "✓ Video converted successfully to lecture.webm",
+          "✓ Audio extracted to temporary file",
+          "✓ Transcription completed successfully!",
+          "Output: lecture.srt",
+          "File size: 45.2 KB"
+        ]
+      },
+      {
+        "input": "Extract audio from interview.mp4 in MP3 format",
+        "output": [
+          "✓ Audio extracted successfully to interview.mp3",
+          "File size: 12.5 MB"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the base Whisper model for quick drafts and small model for production quality",
+      "Extract audio first for long videos, then transcribe in segments for better performance",
+      "Convert to WebM with VP9 codec for best web compression and streaming quality"
+    ],
+    "anti_patterns": [
+      "Do not process extremely large files without considering system resources",
+      "Avoid using the large Whisper model unless maximum accuracy is essential",
+      "Do not store sensitive information in video transcripts without encryption"
+    ],
+    "faq": [
+      {
+        "question": "Which video formats are supported?",
+        "answer": "MP4, AVI, MOV, MKV, WebM, FLV, WMV for video input. Audio: WAV, MP3, AAC, FLAC, M4A, OGG."
+      },
+      {
+        "question": "Do I need to install anything?",
+        "answer": "Yes, install FFmpeg and OpenAI Whisper on your system before using this skill."
+      },
+      {
+        "question": "Can it handle long videos?",
+        "answer": "Yes, but consider extracting audio first for very long videos to avoid timeouts."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "All processing happens locally on your machine. No files are uploaded to external servers."
+      },
+      {
+        "question": "Why is transcription slow?",
+        "answer": "Larger Whisper models need more processing time and memory for better accuracy."
+      },
+      {
+        "question": "How accurate is transcription?",
+        "answer": "Accuracy depends on audio quality and model size. Use medium or large models for best results."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "video_processor.py",
+          "type": "file",
+          "path": "scripts/video_processor.py",
+          "lines": 433
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 262
+    }
+  ]
+}

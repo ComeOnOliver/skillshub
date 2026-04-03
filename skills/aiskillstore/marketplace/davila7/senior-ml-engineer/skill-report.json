@@ -1,0 +1,296 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:57:33.621Z",
+    "slug": "davila7-senior-ml-engineer",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/development/senior-ml-engineer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "05955e286d61b9d7729d3feb5e628661c72fd7e4b67f5e0a04d65878757eb2e0",
+    "tree_hash": "3acd8a4db2b2380da87834e0ce1b667fe085a853c58de8ee498b513e3b47eb4a"
+  },
+  "skill": {
+    "name": "senior-ml-engineer",
+    "description": "World-class ML engineering skill for productionizing ML models, MLOps, and building scalable ML systems. Expertise in PyTorch, TensorFlow, model deployment, feature stores, model monitoring, and ML infrastructure. Includes LLM integration, fine-tuning, RAG systems, and agentic AI. Use when deploying ML models, building ML platforms, implementing MLOps, or integrating LLMs into production systems.",
+    "summary": "World-class ML engineering skill for productionizing ML models, MLOps, and building scalable ML syst...",
+    "icon": "🤖",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "machine-learning",
+      "mlops",
+      "production",
+      "llm",
+      "deployment"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-heavy skill with placeholder Python scripts and reference guides. Static findings are false positives triggered by documentation text about security best practices and markdown code formatting. The scanner flagged documentation mentions of 'encryption', 'circuit breakers', and backtick formatting as security threats. Actual code contains no network calls, no external commands, no cryptographic implementations. The three Python scripts are skeleton templates using only standard libraries with placeholder implementations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/model_deployment_pipeline.py",
+            "line_start": 1,
+            "line_end": 101
+          },
+          {
+            "file": "scripts/rag_system_builder.py",
+            "line_start": 1,
+            "line_end": 101
+          },
+          {
+            "file": "scripts/ml_monitoring_suite.py",
+            "line_start": 1,
+            "line_end": 101
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/model_deployment_pipeline.py",
+            "line_start": 73,
+            "line_end": 74
+          },
+          {
+            "file": "scripts/rag_system_builder.py",
+            "line_start": 73,
+            "line_end": 74
+          },
+          {
+            "file": "scripts/ml_monitoring_suite.py",
+            "line_start": 73,
+            "line_end": 74
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 1041,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:57:33.621Z"
+  },
+  "content": {
+    "user_title": "Deploy production ML models with expert guidance",
+    "value_statement": "Building and deploying ML systems to production requires deep expertise in MLOps, model monitoring, and scalable infrastructure. This skill provides world-class guidance for productionizing ML models, implementing RAG systems, and integrating LLMs into production workflows.",
+    "seo_keywords": [
+      "claude ml engineer",
+      "machine learning production",
+      "mlops best practices",
+      "llm deployment",
+      "rag system",
+      "model monitoring",
+      "claude code skill",
+      "ml infrastructure",
+      "model serving",
+      "claude ai"
+    ],
+    "actual_capabilities": [
+      "Design and implement production ML pipelines with PyTorch and TensorFlow",
+      "Build MLOps infrastructure with model monitoring and drift detection",
+      "Create RAG systems using LangChain and LlamaIndex",
+      "Deploy models to Kubernetes with Docker containers",
+      "Integrate LLMs into production systems with DSPy",
+      "Implement feature stores and automated retraining workflows"
+    ],
+    "limitations": [
+      "Does not execute ML training or inference directly",
+      "Does not provision cloud resources or manage infrastructure",
+      "Does not access external APIs or third-party services",
+      "Provides guidance only, requires user to implement solutions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML Engineers",
+        "title": "Production ML Systems",
+        "description": "Design scalable ML pipelines with monitoring, feature stores, and automated retraining for production environments"
+      },
+      {
+        "target_user": "Data Scientists",
+        "title": "LLM Integration",
+        "description": "Build RAG systems and integrate language models into applications using industry-standard frameworks"
+      },
+      {
+        "target_user": "DevOps Teams",
+        "title": "ML Infrastructure",
+        "description": "Deploy models to Kubernetes with Docker, implement A/B testing, and set up observability"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Model Deployment",
+        "scenario": "Deploy ML model to production",
+        "prompt": "Help me design a deployment pipeline for my PyTorch model. Include containerization with Docker, Kubernetes deployment, model versioning, and monitoring setup."
+      },
+      {
+        "title": "RAG System",
+        "scenario": "Build document search",
+        "prompt": "Create a RAG system architecture for my document corpus. Use LangChain for orchestration, a vector database for embeddings, and implement retrieval optimization."
+      },
+      {
+        "title": "ML Monitoring",
+        "scenario": "Set up model observability",
+        "prompt": "Design a model monitoring system that tracks prediction drift, data drift, and model performance metrics. Include alerts and automated retraining triggers."
+      },
+      {
+        "title": "LLM Integration",
+        "scenario": "Production LLM app",
+        "prompt": "Help me integrate Claude or GPT models into my production application. Include prompt engineering, rate limiting, caching, and cost optimization strategies."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me design a model deployment pipeline for my image classification model",
+        "output": [
+          "## Model Deployment Architecture",
+          "- Container: Docker with PyTorch serving",
+          "- Infrastructure: Kubernetes with HPA autoscaling",
+          "- Monitoring: Prometheus metrics plus custom drift detection",
+          "- Strategy: Canary deployment with A/B testing"
+        ]
+      },
+      {
+        "input": "How do I set up a RAG system for my documentation",
+        "output": [
+          "## RAG System Components",
+          "- Document ingestion pipeline with chunking strategies",
+          "- Vector database (Pinecone, Weaviate, or pgvector)",
+          "- Embedding model selection and optimization",
+          "- Retrieval with hybrid search (dense plus sparse)",
+          "- Response synthesis with context compression"
+        ]
+      },
+      {
+        "input": "What monitoring do I need for my production ML model",
+        "output": [
+          "## Model Monitoring Framework",
+          "- Data drift detection (population stability index)",
+          "- Prediction drift monitoring (distribution shifts)",
+          "- Performance metrics (accuracy, latency, throughput)",
+          "- Feature store validation and consistency checks",
+          "- Alert configuration with PagerDuty or Slack integration"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always design for 10x scale from the start, not as an afterthought",
+      "Implement comprehensive monitoring before deployment, not after",
+      "Use feature stores to ensure consistency between training and inference",
+      "Automate retraining pipelines with clear rollback procedures"
+    ],
+    "anti_patterns": [
+      "Deploying models without automated testing and validation gates",
+      "Skipping data drift monitoring until performance degrades",
+      "Hardcoding model paths or configuration instead of using environment variables",
+      "Building monolithic serving infrastructure without horizontal scaling"
+    ],
+    "faq": [
+      {
+        "question": "Which ML frameworks are supported?",
+        "answer": "PyTorch, TensorFlow, Scikit-learn, and XGBoost are all supported for model development and deployment."
+      },
+      {
+        "question": "What cloud platforms work with this skill?",
+        "answer": "AWS, GCP, and Azure are all supported for deployment. The skill covers Kubernetes and Docker deployment patterns."
+      },
+      {
+        "question": "Does this skill train models?",
+        "answer": "No, this skill provides architectural guidance for training workflows but does not execute training code."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes, all processing happens locally. The skill only provides guidance and does not access or transmit data."
+      },
+      {
+        "question": "Can this skill deploy to Kubernetes?",
+        "answer": "Yes, the skill provides Kubernetes deployment patterns including HPA, service configuration, and rolling updates."
+      },
+      {
+        "question": "How does this compare to a data scientist skill?",
+        "answer": "This skill focuses on production systems while data scientist skills focus on experimentation and model development."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "llm_integration_guide.md",
+          "type": "file",
+          "path": "references/llm_integration_guide.md",
+          "lines": 81
+        },
+        {
+          "name": "mlops_production_patterns.md",
+          "type": "file",
+          "path": "references/mlops_production_patterns.md",
+          "lines": 81
+        },
+        {
+          "name": "rag_system_architecture.md",
+          "type": "file",
+          "path": "references/rag_system_architecture.md",
+          "lines": 81
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "ml_monitoring_suite.py",
+          "type": "file",
+          "path": "scripts/ml_monitoring_suite.py",
+          "lines": 101
+        },
+        {
+          "name": "model_deployment_pipeline.py",
+          "type": "file",
+          "path": "scripts/model_deployment_pipeline.py",
+          "lines": 101
+        },
+        {
+          "name": "rag_system_builder.py",
+          "type": "file",
+          "path": "scripts/rag_system_builder.py",
+          "lines": 101
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 227
+    }
+  ]
+}

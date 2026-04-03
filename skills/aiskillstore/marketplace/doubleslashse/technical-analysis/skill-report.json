@@ -1,0 +1,202 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T19:24:30.438Z",
+    "slug": "doubleslashse-technical-analysis",
+    "source_url": "https://github.com/DoubleslashSE/claude-workflows/tree/main/Plugins/business-analyst/skills/technical-analysis",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3c83400cdde3ad0627e88742ebfd7e291a369b2f0ac7d6259a07e8135e9fbc9b",
+    "tree_hash": "7ec457d9f8cb649e23e3388bc062ecb3c9404ab50179373677d3cad0491810d0"
+  },
+  "skill": {
+    "name": "technical-analysis",
+    "description": "Technical analysis capabilities for APIs, data models, integrations, and security requirements. Use when analyzing technical aspects of systems or documenting technical requirements.",
+    "summary": "Documentation and analysis templates for APIs, data models, integrations, and security requirements",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "DoubleslashSE",
+    "license": "MIT",
+    "tags": [
+      "api-documentation",
+      "data-modeling",
+      "integration-analysis",
+      "security-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill providing markdown templates for technical analysis. All static findings are false positives: placeholder patterns in templates and ASCII diagrams were misidentified as shell commands. No code execution, network access, or credential handling occurs.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1687,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T19:24:30.438Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Analyze APIs, Data Models, and System Integrations",
+    "value_statement": "Technical systems require thorough documentation to ensure reliability, security, and maintainability. This skill provides structured templates for analyzing and documenting APIs, data models, integrations, and security requirements with consistent formatting.",
+    "seo_keywords": [
+      "API documentation",
+      "technical analysis",
+      "data modeling",
+      "integration patterns",
+      "security requirements",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Analyzes REST, GraphQL, and message-based APIs with standardized documentation templates",
+      "Documents data models including entities, relationships, constraints, and indexes",
+      "Captures integration patterns with authentication, error handling, and SLA requirements",
+      "Evaluates security implementations including authentication, authorization, and data protection",
+      "Documents infrastructure components including compute, networking, and storage"
+    ],
+    "limitations": [
+      "Does not execute code or perform live testing against systems",
+      "Does not access external networks or APIs",
+      "Does not generate implementation code or configurations",
+      "Relies on existing code artifacts in the project for analysis"
+    ],
+    "use_cases": [
+      {
+        "title": "Document Legacy API Endpoints",
+        "description": "Generate comprehensive documentation for undocumented REST APIs by analyzing route definitions, controller classes, and existing code patterns.",
+        "target_user": "Backend developers and system integrators"
+      },
+      {
+        "title": "Create Data Model Reference Documentation",
+        "description": "Document database entities, their relationships, constraints, and indexes to serve as a reference for developers and data architects.",
+        "target_user": "Database architects and full-stack developers"
+      },
+      {
+        "title": "Analyze Third-Party Integration Security",
+        "description": "Document authentication methods, data flows, and security requirements for external system integrations to identify gaps.",
+        "target_user": "Security analysts and integration engineers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Analyze REST API Endpoints",
+        "prompt": "Analyze the REST API in this codebase. For each endpoint, document: HTTP method, path, purpose, authentication requirements, request parameters, response schemas, and error handling. Use the technical-analysis skill templates.",
+        "scenario": "Analyzing an undocumented REST API"
+      },
+      {
+        "title": "Document Database Schema",
+        "prompt": "Examine the database models and document entities with their attributes, data types, relationships, constraints, and indexes. Include business rules where applicable.",
+        "description": "Examine the database models and document entities with their attributes, data types, relationships, constraints, and indexes. Include business rules where applicable."
+      },
+      {
+        "title": "Map Integration Data Flows",
+        "prompt": "Trace data flows through external integrations. Document the source and destination systems, transformation logic, authentication methods, and error handling patterns.",
+        "scenario": "Mapping integration data flows"
+      },
+      {
+        "title": "Review Security Implementation",
+        "prompt": "Analyze the authentication and authorization implementation. Document the access control model, roles, permissions, data protection measures, and compliance requirements.",
+        "scenario": "Reviewing security implementation"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze the user management API endpoints",
+        "output": [
+          "### Endpoint: GET /api/users",
+          "**Purpose**: Retrieve paginated list of users",
+          "**Authentication**: Bearer token required",
+          "**Response**: { content: User[], total: number, page: number }",
+          "",
+          "### Endpoint: POST /api/users",
+          "**Purpose**: Create new user account",
+          "**Authentication**: Admin role required"
+        ]
+      },
+      {
+        "input": "Document the customer entity data model",
+        "output": [
+          "## Entity: Customer",
+          "",
+          "### Attributes",
+          "| Name | Type | Required | Description |",
+          "|------|------|----------|-------------|",
+          "| id | UUID | Yes | Primary key |",
+          "| email | string | Yes | Unique email address |",
+          "",
+          "### Relationships",
+          "| Related Entity | Type | Description |",
+          "|---------------|------|-------------|",
+          "| Order | 1:N | Customer has many orders |"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide complete endpoint documentation including all parameters, headers, and possible response codes",
+      "Include business rules and validation logic in entity documentation",
+      "Document authentication flows and data protection measures explicitly",
+      "List dependencies and SLA requirements for integrations"
+    ],
+    "anti_patterns": [
+      "Leaving placeholders without filling in actual values from the codebase",
+      "Documenting only happy paths without error scenarios",
+      "Skipping relationship mappings between entities",
+      "Omitting authentication and authorization details from integration documentation"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill use?",
+        "answer": "This skill uses Read, Grep, Glob, and LSP tools to analyze code and generate documentation from existing artifacts."
+      },
+      {
+        "question": "Does this skill make network calls?",
+        "answer": "No. This skill only analyzes local code artifacts and generates markdown documentation templates."
+      },
+      {
+        "question": "Can this skill analyze external APIs?",
+        "answer": "The skill can document API contracts from local code. To analyze external APIs, you must first import OpenAPI specs or similar artifacts locally."
+      },
+      {
+        "question": "What file types can this skill analyze?",
+        "answer": "Any code files the LSP and Grep tools can parse, including source code, configuration files, and database schema definitions."
+      },
+      {
+        "question": "Does this skill modify existing files?",
+        "answer": "No. This skill generates documentation content as output. It does not modify source code or existing documentation files."
+      },
+      {
+        "question": "Can I customize the documentation templates?",
+        "answer": "The templates provide a starting point. You can modify the generated documentation to match your organization's standards."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "integration-patterns.md",
+      "type": "file",
+      "path": "integration-patterns.md",
+      "lines": 384
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 392
+    }
+  ]
+}

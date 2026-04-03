@@ -1,0 +1,200 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:20:20.185Z",
+    "slug": "a-genno-uiux-ops",
+    "source_url": "https://github.com/A-Genno/Polaris/tree/master/documents/skills/uiux-ops",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "771a37a3fff9c50c9bc7e4d4d4ece5c2e703af0ae6dec301dcceeb53f5e2acca",
+    "tree_hash": "a4b0d5b9f4a04bcbe6482400e3d46876028aa1459f2440739466d1d9266587b4"
+  },
+  "skill": {
+    "name": "uiux-ops",
+    "description": "UI/UX 設計・改善を進めるための運用手順とチェックリストをまとめたスキル。",
+    "summary": "UI/UX 設計・改善を進めるための運用手順とチェックリストをまとめたスキル。",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "A-Genno",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "ui",
+      "ux",
+      "design",
+      "accessibility",
+      "user-experience"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 14 static findings evaluated as false positives. Scanner flagged legitimate JSON metadata fields (URLs, hashes, timestamps), markdown code formatting (backticks for file references), and typical text entropy patterns. This skill contains only documentation and operational guidelines for UI/UX design with no executable code, network calls, or external command execution.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 417,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:20:20.185Z"
+  },
+  "content": {
+    "user_title": "Improve UI/UX with design guidelines",
+    "value_statement": "UI/UX design projects often lack consistent standards and clear processes, leading to fragmented user experiences and accessibility gaps. This skill provides comprehensive operational procedures and checklists to streamline design workflows, ensure consistency, and maintain accessibility compliance across all projects.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "UI design",
+      "UX design",
+      "user experience",
+      "accessibility",
+      "WCAG",
+      "design system",
+      "responsive design"
+    ],
+    "actual_capabilities": [
+      "Provide UI/UX design principles and best practices",
+      "Create consistent design patterns and component guidelines",
+      "Check designs for WCAG accessibility compliance",
+      "Define design systems with color, typography, and spacing rules",
+      "Guide interaction design with feedback and error handling patterns",
+      "Maintain documentation for design decisions and specifications"
+    ],
+    "limitations": [
+      "Does not generate design assets or mockups",
+      "Does not conduct user research or usability testing",
+      "Does not replace professional designers for complex design decisions",
+      "Cannot validate color contrast programmatically"
+    ],
+    "use_cases": [
+      {
+        "title": "Establishing design standards for a new product",
+        "description": "A product manager needs to define consistent UI patterns and design principles before development begins. The skill provides guidelines for creating a design system with reusable components, color palettes, and typography rules.",
+        "target_user": "Product managers and design leads"
+      },
+      {
+        "title": "Auditing existing interfaces for accessibility",
+        "description": "A developer wants to ensure their application meets accessibility requirements. The skill provides WCAG-based checklists and guidelines to identify and fix accessibility issues in current interfaces.",
+        "target_user": "Frontend developers and QA engineers"
+      },
+      {
+        "title": "Improving user interaction patterns",
+        "description": "A designer wants to enhance user satisfaction by adding better feedback mechanisms and error handling. The skill provides interaction design principles for creating intuitive user experiences.",
+        "target_user": "UX designers and frontend developers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Getting started with design principles",
+        "prompt": "What are the core principles of user-centered design for web applications? Include guidance on consistency, accessibility, and responsive design.",
+        "scenario": "Learning fundamental UI/UX design concepts"
+      },
+      {
+        "title": "Creating a design system",
+        "prompt": "Help me create a design system for a SaaS application. Include guidance on component library structure, color palette definition, typography rules, and spacing conventions.",
+        "scenario": "Building a reusable design system"
+      },
+      {
+        "title": "Accessibility audit checklist",
+        "prompt": "Provide a comprehensive checklist for auditing web interfaces against WCAG 2.1 AA guidelines. Include specific items for color contrast, keyboard navigation, screen reader support, and focus management.",
+        "scenario": "Conducting accessibility reviews"
+      },
+      {
+        "title": "Interaction design patterns",
+        "prompt": "Explain best practices for handling user interactions including visual feedback for actions, error message design, loading state communication, and micro-interactions. Provide examples of each pattern.",
+        "scenario": "Improving user interaction design"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I design a form with good error handling?",
+        "output": [
+          "**Error Handling Best Practices:**",
+          "",
+          "1. **Real-time Validation**: Validate fields as users type, not just on submit.",
+          "",
+          "2. **Specific Error Messages**: State exactly what is wrong and how to fix it. Avoid generic messages like 'Invalid input'.",
+          "",
+          "3. **Visual Distinction**: Use color, icons, and positioning to clearly identify error fields.",
+          "",
+          "4. **Accessible Descriptions**: Link error messages to inputs using aria-describedby for screen readers.",
+          "",
+          "5. **Focus Management**: Move focus to the first error field when validation fails."
+        ]
+      },
+      {
+        "input": "What makes a good color palette for a design system?",
+        "output": [
+          "**Color Palette Structure:**",
+          "",
+          "1. **Primary Colors**: 2-3 main brand colors for primary actions and key UI elements.",
+          "",
+          "2. **Semantic Colors**: Success (green), warning (yellow), error (red), and info (blue) colors for system feedback.",
+          "",
+          "3. **Neutral Colors**: Grayscale palette for text, backgrounds, and borders with multiple shades.",
+          "",
+          "4. **Contrast Requirements**: Ensure 4.5:1 minimum contrast ratio for normal text and 3:1 for large text.",
+          "",
+          "5. **Documentation**: Document each color with hex values, RGB values, and usage guidelines."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Follow user-centered design principles by focusing on user goals and tasks first",
+      "Maintain consistency across all screens using a documented design system",
+      "Validate accessibility early and often using WCAG guidelines as a baseline"
+    ],
+    "anti_patterns": [
+      "Using different interaction patterns for similar actions across screens",
+      "Hiding important information behind hover states or accordions",
+      "Relying solely on color to convey information without additional cues"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill generate actual design files or code?",
+        "answer": "No. This skill provides guidelines, checklists, and best practices for UI/UX design. It does not generate design assets, mockups, or implementation code."
+      },
+      {
+        "question": "What accessibility standards does this skill cover?",
+        "answer": "The skill references WCAG 2.1 guidelines, focusing on perceivable, operable, understandable, and robust principles for web accessibility."
+      },
+      {
+        "question": "Can this skill help me create a complete design system?",
+        "answer": "Yes. The skill provides guidance on defining component libraries, color palettes, typography, spacing systems, and design tokens for building design systems."
+      },
+      {
+        "question": "Is this skill suitable for mobile app design?",
+        "answer": "Yes. The principles of user-centered design, consistency, and accessibility apply to mobile applications. The skill includes responsive design guidance that adapts to different screen sizes."
+      },
+      {
+        "question": "How does this skill handle error messages?",
+        "answer": "The skill provides guidelines for writing clear, actionable error messages that explain what went wrong and how to fix it, with accessibility considerations for screen readers."
+      },
+      {
+        "question": "Does this skill include information about user testing?",
+        "answer": "The skill focuses on design principles and operational guidelines. It does not cover user research methodologies or usability testing procedures."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 29
+    }
+  ]
+}

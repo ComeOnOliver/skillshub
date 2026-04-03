@@ -1,0 +1,253 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:48:00.593Z",
+    "slug": "awais68-env-config",
+    "source_url": "https://github.com/Awais68/hackathon-2-phase-ii-full-stack-web-app/tree/main/.claude/skills/env-config",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d576484b2a19d36eb611b77ee1221be265f509cc96137b5a21d0c73a9086dfca",
+    "tree_hash": "347cc7b24d12dfc4b0ccfc11bba45f908d4aa007e926a438ff826f5eea84c6a3"
+  },
+  "skill": {
+    "name": "env-config",
+    "description": "Use when setting up environment configuration, loading .env files, or managing application settings across environments.\nTriggers for: .env setup, loading environment variables, Pydantic BaseSettings, configuration validation, or secret management.\nNOT for: code-specific logic, feature flags, or runtime feature toggles.\n",
+    "summary": "Manage environment configuration, .env files, and secrets for Python/FastAPI projects using Pydantic BaseSettings.",
+    "icon": "🔧",
+    "version": "1.0.0",
+    "author": "Awais68",
+    "license": "MIT",
+    "tags": [
+      "environment",
+      "configuration",
+      "secrets",
+      "dotenv",
+      "pydantic"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "env_access",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static scanner flagged 128 patterns, but manual review confirms all are false positives. The skill is a legitimate environment configuration guide. Regex flags were misidentified as crypto algorithms. Shell commands are documented secret generation using openssl. Environment file access is the core purpose with explicit security warnings against committing secrets.",
+    "risk_factor_evidence": [
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 160
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 32
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Hardcoded example URLs",
+        "description": "Documentation contains hardcoded URLs (localhost, example.com) used for configuration examples. These are benign development examples, not external connections.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 148
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1643,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:48:00.593Z",
+    "risk_factors": [
+      "env_access",
+      "filesystem"
+    ]
+  },
+  "content": {
+    "user_title": "Configure Environment Variables",
+    "value_statement": "Managing application settings across environments is error-prone and insecure. This skill provides standardized patterns for loading .env files, validating configurations with Pydantic, and handling secrets safely with SecretStr.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "environment configuration",
+      "dotenv",
+      "environment variables",
+      "Pydantic settings",
+      "secrets management",
+      "multi-environment",
+      "configuration validation"
+    ],
+    "actual_capabilities": [
+      "Create Pydantic BaseSettings classes with environment variable binding",
+      "Load .env files using python-dotenv with encoding and validation",
+      "Handle sensitive values securely with SecretStr type",
+      "Validate required configuration at application startup",
+      "Support multi-environment configs (development, staging, production)"
+    ],
+    "limitations": [
+      "Does not handle secret injection from external secrets managers (AWS Secrets Manager, HashiCorp Vault)",
+      "Does not provide runtime configuration hot-reload functionality",
+      "Does not encrypt .env files or provide key management"
+    ],
+    "use_cases": [
+      {
+        "title": "New Python Project Setup",
+        "description": "Initialize secure environment configuration for a new FastAPI or Python project with proper secret handling and validation.",
+        "target_user": "Python developers starting new projects"
+      },
+      {
+        "title": "Multi-Environment Deployment",
+        "description": "Configure separate settings for development, staging, and production environments with environment-specific .env files.",
+        "target_user": "DevOps engineers and team leads"
+      },
+      {
+        "title": "Security Audit Preparation",
+        "description": "Review and fix configuration patterns to ensure secrets are not logged, committed to version control, or exposed in error messages.",
+        "target_user": "Security engineers and platform teams"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Configuration Setup",
+        "prompt": "Set up environment configuration using Pydantic BaseSettings for a FastAPI project. Include database URL, JWT settings, and Redis configuration. Use SecretStr for sensitive values and add Field validation for required settings.",
+        "scenario": "Creating a new settings.py file for a Python project"
+      },
+      {
+        "title": "Multi-Environment Support",
+        "prompt": "Add support for multiple environments (development, staging, production) to the settings class. Create a from_env class method that loads the appropriate .env file based on the environment parameter.",
+        "scenario": "Extending configuration for different deployment environments"
+      },
+      {
+        "title": "Secret Rotation Script",
+        "prompt": "Write a Python script to rotate a secret value in .env files. The script should take the environment file path, key name, and new value as arguments. Use regex to replace the existing value safely.",
+        "scenario": "Implementing secret rotation for credentials"
+      },
+      {
+        "title": "Startup Validation",
+        "prompt": "Create a startup validation function that checks all required environment variables are set before the application starts. The function should use Pydantic ValidationError to report missing or invalid settings.",
+        "scenario": "Adding configuration validation at application startup"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create settings for a FastAPI app with database and JWT configuration",
+        "output": [
+          "Created config/settings.py with Settings class using Pydantic BaseSettings",
+          "Database URL marked as required with Field validation",
+          "JWT secret uses SecretStr type for secure handling",
+          "Created .env.example template with all required variables",
+          "Added get_settings() function with lru_cache for efficient reuse"
+        ]
+      },
+      {
+        "input": "How do I handle production secrets securely?",
+        "output": [
+          "Use SecretStr type for all sensitive values (passwords, API keys, tokens)",
+          "Never print or log settings objects - they may contain secrets",
+          "Store production secrets in secrets manager, not .env files",
+          "Use environment variables in production, not .env files",
+          "Validate settings at startup to catch missing secrets early"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use SecretStr for passwords, API keys, and tokens - never plain strings",
+      "Validate required settings at application startup with Pydantic Field validation",
+      "Commit .env.example template but never commit actual .env files with secrets"
+    ],
+    "anti_patterns": [
+      "Never hardcode secrets in source code or commit them to version control",
+      "Avoid logging settings objects or environment variables in production",
+      "Do not use default or placeholder secrets in any environment"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between .env and .env.example?",
+        "answer": ".env contains actual secrets and is never committed. .env.example is a template with all required variable names but placeholder values, and it is committed to version control."
+      },
+      {
+        "question": "How should production secrets be managed?",
+        "answer": "Use platform-specific secrets management (AWS Secrets Manager, GCP Secret Manager, HashiCorp Vault, or Docker/K8s secrets). Pass secrets as environment variables in production."
+      },
+      {
+        "question": "What is SecretStr and why use it?",
+        "answer": "SecretStr is a Pydantic type that handles strings securely. It prevents accidental logging of sensitive values by masking them in representations and error messages."
+      },
+      {
+        "question": "How do I validate configuration at startup?",
+        "answer": "Use Pydantic Field with ellipsis (...) to mark required fields. Settings() will raise ValidationError if required fields are missing when the application starts."
+      },
+      {
+        "question": "Can I use this with frameworks other than FastAPI?",
+        "answer": "Yes. Pydantic BaseSettings works with any Python application. The patterns apply to Flask, Django, Django REST Framework, and standalone scripts."
+      },
+      {
+        "question": "How do I generate secure secrets?",
+        "answer": "Use openssl rand -hex 32 for hex-encoded secrets or openssl rand -base64 32 for base64-encoded secrets. Never use predictable or default values."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 62
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 368
+    }
+  ]
+}

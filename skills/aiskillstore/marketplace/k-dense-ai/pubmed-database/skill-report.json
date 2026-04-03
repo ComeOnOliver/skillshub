@@ -1,0 +1,250 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:46:50.146Z",
+    "slug": "k-dense-ai-pubmed-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pubmed-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "720c1c54639927bd5608e162ef9dd7c0d0f2c010a42b46d497f0556f49fc25f2",
+    "tree_hash": "b61f2f4fc0b84b8fc02c44ff5a32900811c0060a435c0eee42e54011737b9ea9"
+  },
+  "skill": {
+    "name": "pubmed-database",
+    "description": "Direct REST API access to PubMed. Advanced Boolean/MeSH queries, E-utilities API, batch processing, citation management. For Python workflows, prefer biopython (Bio.Entrez). Use this for direct HTTP/REST work or custom API implementations.",
+    "summary": "Direct REST API access to PubMed for biomedical literature searches",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Unknown",
+    "tags": [
+      "pubmed",
+      "biomedical",
+      "literature-search",
+      "research",
+      "nlp"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. This is a documentation-only skill providing reference materials for PubMed queries. The detected patterns (backticks, API key placeholders, URLs) are markdown documentation elements, not executable code. The skill contains no executable code, no network calls, and no credential access.",
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 5088,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:46:50.146Z",
+    "risk_factors": [
+      "network"
+    ],
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/api_reference.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 295,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 453,
+            "line_end": 453
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 454,
+            "line_end": 454
+          }
+        ]
+      }
+    ]
+  },
+  "content": {
+    "user_title": "Search PubMed biomedical literature",
+    "value_statement": "Researchers need efficient access to biomedical literature for systematic reviews and evidence-based research. This skill provides comprehensive documentation for PubMed queries including Boolean operators, MeSH terms, and E-utilities API access.",
+    "seo_keywords": [
+      "PubMed",
+      "biomedical literature search",
+      "MeSH terms",
+      "systematic review",
+      "NCBI E-utilities",
+      "clinical research",
+      "medical database",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Construct advanced Boolean search queries with field tags and operators",
+      "Use Medical Subject Headings (MeSH) for precise biomedical searching",
+      "Access PubMed programmatically via E-utilities REST API",
+      "Build systematic review search strategies using PICO framework",
+      "Find related articles and citation networks via ELink",
+      "Export search results in multiple formats for reference management"
+    ],
+    "limitations": [
+      "Provides documentation only; requires separate HTTP tool for API calls",
+      "No full-text access; citations and abstracts only",
+      "Rate limits apply (3 requests/second without API key)",
+      "Display limited to 10,000 results maximum"
+    ],
+    "use_cases": [
+      {
+        "title": "Systematic Literature Review",
+        "description": "Construct comprehensive search strategies using Boolean operators, MeSH terms, and filters to find all relevant studies for systematic reviews and meta-analyses.",
+        "target_user": "Researchers and graduate students"
+      },
+      {
+        "title": "Biomedical Research Queries",
+        "description": "Search for articles on specific diseases, treatments, or drug interactions using precise field tags and controlled vocabulary.",
+        "target_user": "Medical professionals and clinicians"
+      },
+      {
+        "title": "Programmatic Data Extraction",
+        "description": "Build automated workflows to search PubMed and extract article metadata using the E-utilities API for large-scale research projects.",
+        "target_user": "Data scientists and bioinformaticians"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Article Search",
+        "prompt": "Find recent articles on {topic} published in 2024. Use appropriate MeSH terms and field tags to limit results to English language research papers.",
+        "scenario": "Simple literature search with time and language constraints"
+      },
+      {
+        "title": "Clinical Trial Search",
+        "prompt": "Search for randomized controlled trials comparing {treatment_a} versus {treatment_b} for {condition} from 2020 to 2024. Include only free full-text articles.",
+        "scenario": "Finding clinical evidence with publication type and text availability filters"
+      },
+      {
+        "title": "Systematic Review Query",
+        "prompt": "Use the PICO framework to construct a comprehensive search strategy for {clinical_question}. Include all relevant synonyms and MeSH terms.",
+        "scenario": "Building systematic review search with population, intervention, comparison, outcome structure"
+      },
+      {
+        "title": "API-Based Batch Search",
+        "prompt": "Write a Python script using the E-utilities API to search for articles matching {criteria}, retrieve up to 500 PMIDs using the history server, and export results to a CSV file with PMID, title, and abstract.",
+        "scenario": "Programmatic PubMed access with batch processing and data export"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search for systematic reviews on machine learning in medical imaging published 2023-2024",
+        "output": [
+          "Query: (machine learning[mh] OR deep learning[tiab] OR artificial intelligence[tiab]) AND (medical imaging[mh] OR radiology[tiab] OR diagnostic imaging[tiab]) AND systematic review[pt] AND 2023:2024[dp]",
+          "Result: 247 articles found",
+          "Top matches include:",
+          "- Deep learning in radiology: a systematic review (PMID: 38012345)",
+          "- Machine learning for medical image analysis: systematic review (PMID: 37987654)"
+        ]
+      },
+      {
+        "input": "Find clinical trials on metformin for type 2 diabetes with cardiovascular outcomes",
+        "output": [
+          "Query: (metformin[nm] OR biguanides[mh]) AND diabetes mellitus, type 2[mh] AND cardiovascular diseases[mh] AND randomized controlled trial[pt] AND hasabstract[text]",
+          "Result: 89 articles found",
+          "Key studies:",
+          "- Metformin and cardiovascular outcomes in type 2 diabetes (PMID: 36543210)",
+          "- Long-term cardiovascular effects of metformin (PMID: 36123456)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with broad searches using MeSH terms, then narrow with field tags and filters for precision",
+      "Include synonyms and alternative terms to capture all relevant literature",
+      "Use the history server (usehistory=y) for large result sets exceeding 500 articles",
+      "Obtain an API key from NCBI for higher rate limits (10 requests/second vs 3)"
+    ],
+    "anti_patterns": [
+      "Using only free-text terms without MeSH terms misses indexed articles",
+      "Running many small API requests instead of batch operations wastes rate limits",
+      "Not caching results leads to redundant API calls and slower workflows",
+      "Ignoring automatic term mapping can produce unexpected search results"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between MeSH terms and text word searches?",
+        "answer": "MeSH terms search the controlled vocabulary index where all articles are manually tagged. Text word searches only match terms appearing in titles and abstracts. Combining both provides comprehensive coverage."
+      },
+      {
+        "question": "How do I get an API key for PubMed E-utilities?",
+        "answer": "Register for a free NCBI account at ncbi.nlm.nih.gov, then visit your account settings to generate an API key. Include it in requests with the api_key parameter for higher rate limits."
+      },
+      {
+        "question": "What are the PubMed rate limits?",
+        "answer": "Without an API key: 3 requests per second. With an API key: 10 requests per second. Always include a descriptive User-Agent header in your requests."
+      },
+      {
+        "question": "How do I handle large result sets with thousands of articles?",
+        "answer": "Use the history server: first call ESearch with usehistory=y to store results, then use the WebEnv and QueryKey parameters with ESummary or EFetch to retrieve data in batches of up to 500 records per request."
+      },
+      {
+        "question": "What export formats are available for PubMed results?",
+        "answer": "Common formats include MEDLINE (text), XML (structured data), RIS (reference managers), and NBIB (EndNote). Use the rettype and retmode parameters to specify your desired format."
+      },
+      {
+        "question": "How do I find articles that cite a specific paper?",
+        "answer": "Use the ELink utility with dbfrom=pubmed, db=pubmed, and cmd=cite. This returns PMIDs of articles that cite the input article. Note that citation data may not be complete for very recent publications."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 299
+        },
+        {
+          "name": "common_queries.md",
+          "type": "file",
+          "path": "references/common_queries.md",
+          "lines": 454
+        },
+        {
+          "name": "search_syntax.md",
+          "type": "file",
+          "path": "references/search_syntax.md",
+          "lines": 437
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 460
+    }
+  ]
+}

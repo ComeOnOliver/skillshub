@@ -1,0 +1,689 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:32:10.389Z",
+    "slug": "wshobson-javascript-testing-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/javascript-typescript/skills/javascript-testing-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0774fee8108518ed78b0ed6bc5c129ca7e4e2c25f45e79eacbfc89abb8cb8dae",
+    "tree_hash": "b58a501cb1a67c1e48bcf6c8b7dc3cafdc7d686459f2a227bb66669158a6d9d9"
+  },
+  "skill": {
+    "name": "javascript-testing-patterns",
+    "description": "Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, integration tests, and end-to-end testing with mocking, fixtures, and test-driven development. Use when writing JavaScript/TypeScript tests, setting up test infrastructure, or implementing TDD/BDD workflows.",
+    "summary": "Implement comprehensive testing strategies using Jest, Vitest, and Testing Library for unit tests, i...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "testing",
+      "javascript",
+      "typescript",
+      "tdd"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing testing pattern examples. The static analyzer flagged 153 patterns, but ALL are FALSE POSITIVEs: weak crypto alerts are triggered by test fixture strings (hashed_password), backtick alerts are TypeScript template literals, path traversal alerts are relative import paths in test code, and the critical heuristic is an invalid combination of benign testing patterns. The previous audit correctly classified this as SAFE.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 223,
+            "line_end": 223
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 520,
+            "line_end": 520
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 540,
+            "line_end": 540
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 555,
+            "line_end": 555
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 557,
+            "line_end": 557
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 568,
+            "line_end": 568
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 578,
+            "line_end": 578
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 590,
+            "line_end": 590
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 598,
+            "line_end": 598
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 605,
+            "line_end": 605
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 613,
+            "line_end": 613
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 622,
+            "line_end": 622
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 223,
+            "line_end": 223
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 285,
+            "line_end": 285
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 919,
+            "line_end": 919
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1022,
+            "line_end": 1022
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1023,
+            "line_end": 1023
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1024,
+            "line_end": 1024
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1025,
+            "line_end": 1025
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 315,
+            "line_end": 315
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 328,
+            "line_end": 328
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 331,
+            "line_end": 331
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 350
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 362
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 362,
+            "line_end": 435
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 435,
+            "line_end": 439
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 439,
+            "line_end": 442
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 442,
+            "line_end": 443
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 443,
+            "line_end": 451
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 451,
+            "line_end": 453
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 453,
+            "line_end": 483
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 483,
+            "line_end": 489
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 489,
+            "line_end": 579
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 579,
+            "line_end": 624
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 624,
+            "line_end": 631
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 631,
+            "line_end": 635
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 635,
+            "line_end": 657
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 665,
+            "line_end": 707
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 707,
+            "line_end": 713
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 713,
+            "line_end": 796
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 796,
+            "line_end": 800
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 800,
+            "line_end": 867
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 867,
+            "line_end": 871
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 871,
+            "line_end": 903
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 903,
+            "line_end": 907
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 907,
+            "line_end": 932
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 932,
+            "line_end": 936
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 936,
+            "line_end": 945
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 945,
+            "line_end": 969
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 969,
+            "line_end": 982
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 982,
+            "line_end": 986
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 986,
+            "line_end": 997
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 997,
+            "line_end": 1001
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1001,
+            "line_end": 1018
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 447,
+            "line_end": 447
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 460,
+            "line_end": 460
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 492,
+            "line_end": 492
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 492,
+            "line_end": 492
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 493,
+            "line_end": 493
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 493,
+            "line_end": 493
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 639,
+            "line_end": 639
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 639,
+            "line_end": 639
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 890,
+            "line_end": 890
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 316,
+            "line_end": 316
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 316,
+            "line_end": 316
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1204,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:32:10.388Z"
+  },
+  "content": {
+    "user_title": "Write JavaScript Tests with Jest and Vitest",
+    "value_statement": "Writing reliable tests for JavaScript and TypeScript applications is time-consuming and error-prone. This skill provides ready-to-use testing patterns for unit tests, integration tests, and component tests with mocking, fixtures, and TDD workflows.",
+    "seo_keywords": [
+      "javascript testing patterns",
+      "jest testing guide",
+      "vitest tutorial",
+      "unit testing javascript",
+      "integration testing typescript",
+      "react testing library",
+      "tdd javascript",
+      "claude code testing",
+      "mocking patterns javascript",
+      "test fixtures"
+    ],
+    "actual_capabilities": [
+      "Create unit tests for functions, classes, and async operations using Jest and Vitest",
+      "Implement integration tests for APIs and database operations",
+      "Mock external dependencies, modules, and API calls in tests",
+      "Write component tests for React applications using Testing Library",
+      "Set up test configuration with coverage thresholds and reporting",
+      "Apply test-driven development workflows and AAA pattern"
+    ],
+    "limitations": [
+      "Does not execute tests or run test frameworks directly",
+      "Does not modify project files or test configuration",
+      "Does not integrate with CI/CD pipelines",
+      "Does not generate test coverage reports"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Test React components",
+        "description": "Write component tests with React Testing Library to verify UI behavior and user interactions."
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "Test API endpoints",
+        "description": "Create integration tests for REST APIs with database fixtures and authentication flows."
+      },
+      {
+        "target_user": "Full-stack engineers",
+        "title": "Implement TDD workflow",
+        "description": "Follow test-driven development patterns to build reliable functions and services with high coverage."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic unit test",
+        "scenario": "Write a simple function test",
+        "prompt": "Write unit tests for this function that cover normal cases, edge cases, and error conditions."
+      },
+      {
+        "title": "Mock API calls",
+        "scenario": "Test async service",
+        "prompt": "Create tests for this service that mocks external API calls using vi.mock or jest.mock."
+      },
+      {
+        "title": "Component tests",
+        "scenario": "Test React component",
+        "prompt": "Write component tests using @testing-library/react that test user interactions and rendering."
+      },
+      {
+        "title": "Integration tests",
+        "scenario": "Test API endpoints",
+        "prompt": "Create integration tests for this REST API endpoint including authentication and database cleanup."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Write tests for a user service that creates, updates, and deletes users",
+        "output": [
+          "Created UserService with CRUD operations",
+          "Tested create() method - success case and duplicate user error",
+          "Tested update() method - success case and user not found error",
+          "Tested delete() method - successful deletion and non-existent user",
+          "Used beforeEach to reset service state between tests",
+          "Added comprehensive assertions for all edge cases"
+        ]
+      },
+      {
+        "input": "Create a test for an API service that fetches data from an external endpoint",
+        "output": [
+          "Set up ApiService with fetchUser and createUser methods",
+          "Mocked global.fetch with vi.fn() for isolated testing",
+          "Tested successful user fetch with mock response",
+          "Tested error handling for failed API calls",
+          "Verified correct HTTP methods and request bodies"
+        ]
+      },
+      {
+        "input": "Write a React component test for a form with user input and submission",
+        "output": [
+          "Rendered UserForm component with Testing Library",
+          "Tested input field rendering and state updates",
+          "Verified onSubmit callback fires with correct data",
+          "Used fireEvent to simulate user interactions",
+          "Added testid attributes for reliable element selection"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the AAA pattern: Arrange inputs, Act on the function, Assert expected outcomes",
+      "Mock external dependencies to keep tests fast and isolated from real services",
+      "Test behavior, not implementation details, to make tests resilient to refactoring"
+    ],
+    "anti_patterns": [
+      "Avoid testing implementation details that change frequently",
+      "Do not write tests that depend on execution order or shared state",
+      "Do not skip mocking slow external services in unit tests"
+    ],
+    "faq": [
+      {
+        "question": "Which testing framework should I use?",
+        "answer": "Vitest is recommended for Vite projects. Jest works well for all projects and has the largest ecosystem."
+      },
+      {
+        "question": "What coverage percentage should I target?",
+        "answer": "Aim for 80% or higher coverage for critical code. Focus on meaningful tests rather than just increasing numbers."
+      },
+      {
+        "question": "How do I test async code?",
+        "answer": "Use async/await with expect().resolves or expect().rejects. Clear mocks with vi.clearAllMocks() between tests."
+      },
+      {
+        "question": "Is my test data safe?",
+        "answer": "This skill only generates test code patterns. It does not access, store, or transmit any user data."
+      },
+      {
+        "question": "Why do my tests fail intermittently?",
+        "answer": "Check for shared state between tests. Use beforeEach for setup and ensure mocks are cleared. Avoid test order dependencies."
+      },
+      {
+        "question": "How is this different from Jest?",
+        "answer": "Vitest uses the same API as Jest but runs faster with Vite. Configuration is similar but uses Vite's configuration format."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1026
+    }
+  ]
+}

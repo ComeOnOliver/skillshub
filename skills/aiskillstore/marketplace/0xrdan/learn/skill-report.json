@@ -1,0 +1,338 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:57:22.218Z",
+    "slug": "0xrdan-learn",
+    "source_url": "https://github.com/0xrdan/claude-router/tree/main/.claude-plugin/skills/learn",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "188598f06ed1d3f45d52101a4729eafb4e12efa0543cf2629e4cdc38e17a745a",
+    "tree_hash": "885b85a97bef9aee48168fd36aa8069fff56e7308d00d20eb27f94948f852796"
+  },
+  "skill": {
+    "name": "learn",
+    "description": "Extract and persist insights from the current conversation to the knowledge base",
+    "summary": "Extract and persist insights from the current conversation to the knowledge base",
+    "icon": "📚",
+    "version": "1.0.0",
+    "author": "0xrdan",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "knowledge",
+      "insights",
+      "documentation",
+      "patterns",
+      "learning"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt-based documentation skill. Contains only SKILL.md with instructions to analyze conversations and write markdown files. No executable code, network requests, or command execution. All 35 static findings are false positives caused by scanner malfunctioning on markdown text and metadata. Original security audit correctly identified zero risk factors.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 123
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 308,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:57:22.218Z"
+  },
+  "content": {
+    "user_title": "Capture project insights automatically",
+    "value_statement": "Project insights are lost when sessions end. This skill extracts patterns, quirks, and decisions from conversations and persists them to a knowledge base that survives context compaction and new sessions.",
+    "seo_keywords": [
+      "Claude skill",
+      "knowledge base",
+      "project insights",
+      "persistent learning",
+      "Claude Code",
+      "patterns",
+      "quirks",
+      "decisions",
+      "documentation",
+      "AI learning"
+    ],
+    "actual_capabilities": [
+      "Extracts patterns from successful problem-solving approaches",
+      "Documents quirks and unexpected behaviors discovered in the codebase",
+      "Records architectural decisions with their rationale",
+      "Updates markdown files in knowledge/learnings/ directory",
+      "Maintains state.json with extraction metadata",
+      "Reports extracted insights in a formatted summary"
+    ],
+    "limitations": [
+      "Only extracts insights from the current conversation",
+      "Does not generate code or execute commands",
+      "Requires the knowledge/learnings/ directory to exist",
+      "Does not analyze code directly, only conversation context"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Development teams",
+        "title": "Build project memory",
+        "description": "Capture team decisions and patterns so future sessions understand project conventions automatically"
+      },
+      {
+        "target_user": "AI developers",
+        "title": "Train context-aware AI",
+        "description": "Help AI assistants understand project-specific quirks and avoid repeated mistakes"
+      },
+      {
+        "target_user": "Codebase maintainers",
+        "title": "Document institutional knowledge",
+        "description": "Preserve architectural rationale and design choices for onboarding and long-term maintenance"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Capture a pattern",
+        "scenario": "After successful debugging",
+        "prompt": "Use /learn to extract the pattern from our debugging approach and save it to patterns.md"
+      },
+      {
+        "title": "Document a quirk",
+        "scenario": "Discovering unexpected behavior",
+        "prompt": "Use /learn to document the auth token quirk we discovered in quirks.md"
+      },
+      {
+        "title": "Record a decision",
+        "scenario": "Making architectural choice",
+        "prompt": "Use /learn to record why we chose SQLite over PostgreSQL in decisions.md"
+      },
+      {
+        "title": "Full extraction",
+        "scenario": "End of work session",
+        "prompt": "Use /learn to extract all valuable insights from our conversation into the appropriate knowledge files"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Use /learn to extract insights from our debugging session",
+        "output": [
+          "Knowledge Extraction Complete",
+          "───────────────────────────────────────",
+          "Extracted:",
+          "  [Pattern] \"API rate limiting with exponential backoff\"",
+          "",
+          "Knowledge base now contains:",
+          "  - 5 patterns",
+          "  - 3 quirks",
+          "  - 7 decisions"
+        ]
+      },
+      {
+        "input": "Document the database migration quirk we found",
+        "output": [
+          "Quirk documented successfully:",
+          "───────────────────────────────────────",
+          "## Quirk: PostgreSQL migration requires CASCADE",
+          "- **Discovered:** 2026-01-15",
+          "- **Location:** db/migrate/*.sql",
+          "- **Behavior:** Dropping tables fails if foreign keys exist",
+          "- **Workaround:** Use DROP TABLE ... CASCADE",
+          "- **Confidence:** high"
+        ]
+      },
+      {
+        "input": "Record our decision about the authentication approach",
+        "output": [
+          "Decision recorded successfully:",
+          "───────────────────────────────────────",
+          "## Decision: JWT with RS256 for API authentication",
+          "- **Made:** 2026-01-14",
+          "- **Context:** Need stateless auth for microservices",
+          "- **Choice:** JWT tokens with RS256 signing",
+          "- **Rationale:** Better scalability than session-based auth",
+          "- **Confidence:** high"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Extract insights at natural stopping points during work sessions",
+      "Use high confidence for verified insights, medium for inferred patterns",
+      "Focus on project-specific knowledge, not generic programming concepts"
+    ],
+    "anti_patterns": [
+      "Extracting obvious or trivial information that adds no value",
+      "Recording insights without context or rationale",
+      "Skipping extraction because insights seem \"too small\" to document"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill support?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. It is designed for the Claude Router system."
+      },
+      {
+        "question": "How many insights can I extract?",
+        "answer": "There is no hard limit. The skill processes all extractable insights from the current conversation context."
+      },
+      {
+        "question": "Can I integrate this with other skills?",
+        "answer": "Yes. Use /learn-on for continuous extraction, then /learn to persist at session end."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. All data stays local in the knowledge/learnings/ directory. No data is sent externally."
+      },
+      {
+        "question": "Why are my insights not appearing?",
+        "answer": "Check that knowledge/learnings/ directory exists. Low confidence insights are not used for routing decisions."
+      },
+      {
+        "question": "How is this different from chat history?",
+        "answer": "Insights are structured, deduplicated, and survive context compaction. They persist across sessions permanently."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 127
+    }
+  ]
+}

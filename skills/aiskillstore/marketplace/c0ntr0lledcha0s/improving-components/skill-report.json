@@ -1,0 +1,181 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:56:32.245Z",
+    "slug": "c0ntr0lledcha0s-improving-components",
+    "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/tree/main/self-improvement/skills/improving-components",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b90ac98f69df9c565da545d7281c648dbbb1d5f0baeeb1f3e80e0238d95dde5a",
+    "tree_hash": "fe2de194c539b24d2dcd334a46dfbb505c21bcbd3371c580939489d40cdddec2"
+  },
+  "skill": {
+    "name": "improving-components",
+    "description": "Expert at automatically applying improvements to Claude Code components based on quality analysis. Enhances descriptions, optimizes tool permissions, strengthens security, and improves usability. Works in conjunction with analyzing-component-quality skill.",
+    "summary": "Systematically enhances Claude Code components by improving descriptions, optimizing permissions, and strengthening security based on quality analysis.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "C0ntr0lledCha0s",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "component-improvement",
+      "code-quality",
+      "security-optimization",
+      "documentation",
+      "best-practices"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 108 static findings are false positives. The weak cryptographic algorithm detections are triggered by markdown file extensions and YAML examples in documentation. Ruby backtick execution warnings are markdown code formatting in example snippets. The network reference is legitimate GitHub source metadata. This skill only uses Read and Edit tools for legitimate component improvement purposes. No actual security risks identified.",
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1563,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:56:32.245Z",
+    "risk_factors": [],
+    "risk_factor_evidence": []
+  },
+  "content": {
+    "user_title": "Enhance Claude Code Components with Quality Improvements",
+    "value_statement": "This skill systematically improves Claude Code components by enhancing descriptions, optimizing tool permissions, strengthening security, and improving usability. It transforms quality analysis results into concrete enhancements while preserving component functionality.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "component improvement",
+      "code quality",
+      "security optimization",
+      "tool permissions",
+      "documentation enhancement",
+      "best practices",
+      "usability improvement"
+    ],
+    "actual_capabilities": [
+      "Enhances component descriptions for clarity and specificity with auto-invoke triggers",
+      "Optimizes tool permissions by removing unnecessary access while maintaining functionality",
+      "Strengthens security through input validation requirements and minimal permission principles",
+      "Improves documentation structure with examples, capabilities lists, and usage guidelines",
+      "Applies systematic improvements based on quality analysis results with before/after validation",
+      "Preserves component functionality while upgrading to current best practices"
+    ],
+    "limitations": [
+      "Requires quality analysis results to guide improvements and cannot analyze components independently",
+      "Only uses Read and Edit tools and cannot execute scripts or perform complex transformations",
+      "Focuses on incremental improvements and does not redesign components from scratch",
+      "Cannot modify components that have syntax errors preventing file reading"
+    ],
+    "use_cases": [
+      {
+        "title": "Optimize Tool Permissions for Security",
+        "description": "Security engineers can use this skill to review and minimize tool permissions in components, removing unnecessary Bash, Write, or Edit access while maintaining required functionality.",
+        "target_user": "Security engineers"
+      },
+      {
+        "title": "Enhance Component Marketplace Readiness",
+        "description": "Component authors can prepare skills and agents for marketplace publication by improving descriptions, adding examples, and meeting quality standards systematically.",
+        "target_user": "Component developers"
+      },
+      {
+        "title": "Upgrade Legacy Components to Best Practices",
+        "description": "Development teams can modernize existing components by applying current documentation standards, security patterns, and usability improvements automatically.",
+        "target_user": "Development teams"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Component Enhancement",
+        "prompt": "Improve the description and documentation for my component",
+        "scenario": "User has a component with vague description and wants to enhance clarity"
+      },
+      {
+        "title": "Security Optimization",
+        "prompt": "Review and optimize tool permissions for my skill to minimize security risks",
+        "scenario": "User wants to reduce unnecessary permissions in a component"
+      },
+      {
+        "title": "Marketplace Preparation",
+        "prompt": "Prepare my component for marketplace publication by applying all recommended improvements",
+        "scenario": "User wants to meet quality standards before publishing a component"
+      },
+      {
+        "title": "Systematic Quality Upgrade",
+        "prompt": "Apply quality analysis recommendations to improve my component while preserving functionality",
+        "scenario": "User has quality analysis results and wants to apply improvements systematically"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Improve the description for my code-helper skill",
+        "output": "Enhanced description from 'Helps with code' to 'Expert at analyzing code quality using ESLint, Prettier, and static analysis tools. Auto-invokes when user finishes writing code or asks is this code good, check code quality, or review this code. Provides actionable improvement suggestions with severity levels.' Quality score improved from 3.2 to 4.6."
+      },
+      {
+        "input": "Optimize tool permissions for my research skill",
+        "output": "Removed unnecessary tools: Write, Edit (research does not modify files), Bash (command execution not needed), and Task (skills do not delegate to agents). Kept Read, Grep, Glob, WebSearch, and WebFetch for legitimate research capabilities. Security score improved by reducing attack surface."
+      },
+      {
+        "input": "Add auto-invoke triggers to my testing skill",
+        "output": "Added specific triggers: Auto-invokes when user asks test this code, write tests for X, add unit tests, or when user completes writing a new function without tests. Clarity score improved by making activation criteria explicit and unambiguous."
+      }
+    ],
+    "best_practices": [
+      "Always validate that improvements preserve component functionality before applying changes",
+      "Prioritize security improvements such as removing unnecessary Bash access or adding input validation requirements",
+      "Use quality analysis results to guide evidence-based improvements rather than making arbitrary changes"
+    ],
+    "anti_patterns": [
+      "Changing what a component does rather than improving how well it does it",
+      "Removing tool permissions without verifying they are truly unnecessary for functionality",
+      "Applying improvements without showing before and after comparison or quality score validation"
+    ],
+    "faq": [
+      {
+        "question": "Will this skill modify the behavior of my components?",
+        "answer": "No. This skill preserves component intent and functionality while only improving clarity, security, and usability. Changes focus on descriptions, permissions, and documentation."
+      },
+      {
+        "question": "How does this skill work with the analyzing-component-quality skill?",
+        "answer": "The analyzing skill evaluates components and identifies improvement opportunities. This improving skill takes those findings and applies concrete enhancements systematically."
+      },
+      {
+        "question": "Can this skill fix broken components with syntax errors?",
+        "answer": "No. This skill requires readable components to analyze and improve. Syntax errors must be fixed manually before applying systematic improvements."
+      },
+      {
+        "question": "What types of components can this skill improve?",
+        "answer": "This skill works with all Claude Code component types including agents, skills, commands, and hooks that use YAML frontmatter and markdown structure."
+      },
+      {
+        "question": "How do I verify that improvements actually increase quality?",
+        "answer": "The skill provides before and after quality scores and shows specific changes applied. You can re-run quality analysis to validate improvements objectively."
+      },
+      {
+        "question": "Does this skill require specific tools to be enabled?",
+        "answer": "Yes. This skill requires Read and Edit tools to analyze component files and apply improvements. No other tools are needed or used."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 520
+    }
+  ]
+}

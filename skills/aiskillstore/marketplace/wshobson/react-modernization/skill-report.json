@@ -1,0 +1,355 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:36:47.426Z",
+    "slug": "wshobson-react-modernization",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/framework-migration/skills/react-modernization",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1d592f97de1a3109fe5c53545c3466d015e72a8a7271db9c0761a3b095ffc9ca",
+    "tree_hash": "a6b5c9655d587dc5486ea3f8f5f8006b5d5e2f7e3d3125559e3cc3f19ff7c0c3"
+  },
+  "skill": {
+    "name": "react-modernization",
+    "description": "Upgrade React applications to latest versions, migrate from class components to hooks, and adopt concurrent features. Use when modernizing React codebases, migrating to React Hooks, or upgrading to latest React versions.",
+    "summary": "Upgrade React applications to latest versions, migrate from class components to hooks, and adopt con...",
+    "icon": "⚛️",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "react",
+      "migration",
+      "hooks",
+      "react-18",
+      "codemods"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "scripts",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only static documentation content with React modernization patterns. No executable scripts, network calls, file system access, or external command execution were detected. All 55 static findings are FALSE POSITIVES - the scanner misclassified documentation text and code examples as security threats.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 130
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 401
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 402,
+            "line_end": 402
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 262
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 262,
+            "line_end": 288
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 288,
+            "line_end": 291
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 291,
+            "line_end": 318
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 318,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 342
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 342,
+            "line_end": 345
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 345,
+            "line_end": 366
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 366,
+            "line_end": 371
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 371,
+            "line_end": 394
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 394,
+            "line_end": 397
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 397,
+            "line_end": 414
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 414,
+            "line_end": 418
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 418,
+            "line_end": 443
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 443,
+            "line_end": 447
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 447,
+            "line_end": 484
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 689,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:36:47.426Z"
+  },
+  "content": {
+    "user_title": "Upgrade React apps with modern patterns",
+    "value_statement": "Legacy React code slows upgrades and hides breaking changes. This skill provides clear steps to move to hooks and React 18 features.",
+    "seo_keywords": [
+      "React modernization",
+      "React 18 upgrade",
+      "class to hooks",
+      "React codemods",
+      "React concurrent features",
+      "React migration checklist",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Explain React 16 to 18 upgrade steps and breaking changes",
+      "Show class component to hooks conversions with examples",
+      "Map lifecycle methods to useEffect patterns",
+      "Describe React 18 root API, batching, transitions, and Suspense",
+      "Provide codemod commands and a custom codemod outline",
+      "Outline performance and TypeScript migration patterns"
+    ],
+    "limitations": [
+      "Does not run codemods or install packages",
+      "Does not access or modify repositories",
+      "Does not verify builds, tests, or runtime behavior",
+      "Requires project context for precise guidance"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend lead",
+        "title": "Plan a React 18 upgrade",
+        "description": "Build a phased upgrade plan with breaking changes and testing steps."
+      },
+      {
+        "target_user": "Maintenance engineer",
+        "title": "Convert class components",
+        "description": "Translate legacy classes to hooks with safe lifecycle mappings."
+      },
+      {
+        "target_user": "Consultant",
+        "title": "Create modernization guidance",
+        "description": "Deliver a modernization checklist with codemods and performance tips."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Upgrade path",
+        "scenario": "Beginner planning a React upgrade",
+        "prompt": "Outline a safe upgrade path from React 16 to React 18 with key breaking changes and testing steps."
+      },
+      {
+        "title": "Class to hooks",
+        "scenario": "Migrate a single class component",
+        "prompt": "Convert this class component with state and lifecycle methods to hooks and explain each change."
+      },
+      {
+        "title": "Concurrent features",
+        "scenario": "Adopt React 18 features",
+        "prompt": "Explain how to add transitions and automatic batching in React 18 with short examples."
+      },
+      {
+        "title": "Codemod plan",
+        "scenario": "Large codebase refactor",
+        "prompt": "List codemods to run for React modernization and the safest order to run them."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Give me a checklist to upgrade a React 17 app to React 18.",
+        "output": [
+          "Update react and react-dom to 18 and align type packages",
+          "Switch to createRoot and test in StrictMode",
+          "Validate batching behavior and fix side effects"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Upgrade incrementally and test after each step",
+      "Use codemods for repetitive changes",
+      "Validate behavior in StrictMode before release"
+    ],
+    "anti_patterns": [
+      "Upgrading all dependencies at once",
+      "Ignoring StrictMode warnings",
+      "Converting components without tests"
+    ],
+    "faq": [
+      {
+        "question": "Which React versions does it cover?",
+        "answer": "It covers upgrade guidance from React 16 through React 18."
+      },
+      {
+        "question": "What are the main limits?",
+        "answer": "It provides guidance only and does not run codemods, builds, or tests."
+      },
+      {
+        "question": "Can it integrate with my repo?",
+        "answer": "It can reference your context, but it cannot access or change files directly."
+      },
+      {
+        "question": "Does it read or send my data?",
+        "answer": "No. It is static guidance and does not access files, environment variables, or networks."
+      },
+      {
+        "question": "What if my upgrade has issues?",
+        "answer": "Follow the checklist, test in StrictMode, and address warnings step by step."
+      },
+      {
+        "question": "How is it different from a linter?",
+        "answer": "It explains upgrade strategy and patterns rather than enforcing rules in code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 514
+    }
+  ]
+}

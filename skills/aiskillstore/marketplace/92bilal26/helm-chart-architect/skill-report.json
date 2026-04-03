@@ -1,0 +1,315 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:37:27.786Z",
+    "slug": "92bilal26-helm-chart-architect",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/helm-chart-architect",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e714f114406dbb85b14ac4ff499264db59bab5c8e5d881cef28d8ea31f99a755",
+    "tree_hash": "f8d9e650a8d93d017a2f08da50b1f52c2300bbd08305f0998011479ca2d8134a"
+  },
+  "skill": {
+    "name": "helm-chart-architect",
+    "description": "Design production-grade Helm charts through architectural reasoning rather than pattern\nretrieval. Activate when designing new Helm charts for Kubernetes deployments, evaluating\nchart architecture, making decisions about component packaging, or reviewing charts for\nextensibility and maintainability. Guides decision-making about dependencies, lifecycle\nhooks, configuration surface, and multi-environment deployment through context-specific\nreasoning rather than generic best practices.\n",
+    "summary": "Design production-grade Helm charts through architectural reasoning rather than pattern\nretrieval. A...",
+    "icon": "⚓",
+    "version": "1.0.0",
+    "author": "92Bilal26",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "helm",
+      "kubernetes",
+      "infrastructure",
+      "architecture",
+      "devops"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation/markdown skill with no executable code. All 88 static findings are FALSE POSITIVES: backticks in markdown code blocks were misinterpreted as Ruby/shell execution, legitimate Helm repository URLs in examples were flagged as hardcoded URLs, and random strings in JSON content were misidentified as weak cryptographic algorithms. The skill provides only architectural guidance and contains no scripts, network calls, or filesystem operations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 225
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 213
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 213
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 228
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 228,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 248
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 248,
+            "line_end": 254
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 254,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 315
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 315,
+            "line_end": 317
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 325
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 325,
+            "line_end": 353
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 353,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 420
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 420,
+            "line_end": 432
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 615,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:37:27.786Z"
+  },
+  "content": {
+    "user_title": "Design Production-Grade Helm Charts",
+    "value_statement": "Teams often copy Helm chart examples without understanding their architecture. This skill guides you through systematic architectural analysis to create charts that match your specific constraints and operational requirements.",
+    "seo_keywords": [
+      "helm chart architect",
+      "kubernetes deployment",
+      "helm chart design",
+      "claude code skill",
+      "devops automation",
+      "container orchestration",
+      "helm architecture",
+      "kubernetes manifests",
+      "infrastructure as code",
+      "claude"
+    ],
+    "actual_capabilities": [
+      "Analyze project requirements to determine optimal chart architecture",
+      "Design component packaging strategy for monolithic vs multi-chart approaches",
+      "Plan lifecycle hooks for database migrations, health checks, and cleanup operations",
+      "Create values.yaml design that enables extensibility without requiring forks",
+      "Identify failure modes and add diagnostic capabilities to charts",
+      "Establish team boundaries and governance for chart ownership"
+    ],
+    "limitations": [
+      "Does not generate actual Helm chart templates or code files",
+      "Does not interact with Kubernetes clusters or Helm CLI",
+      "Does not validate existing charts or provide linting",
+      "Assumes basic familiarity with Helm concepts and Kubernetes resources"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Platform Engineers",
+        "title": "Design organizational Helm patterns",
+        "description": "Establish consistent Helm chart patterns that all teams can follow with clear extension points and ownership boundaries."
+      },
+      {
+        "target_user": "DevOps Architects",
+        "title": "Architect new deployment charts",
+        "description": "Analyze application requirements and design charts with proper lifecycle management, dependencies, and multi-environment support."
+      },
+      {
+        "target_user": "Site Reliability Engineers",
+        "title": "Review charts for production readiness",
+        "description": "Evaluate existing charts for operational gaps, failure modes, and operator experience issues before production deployment."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New Chart Design",
+        "scenario": "Starting a new Helm chart project",
+        "prompt": "Use the Helm Chart Architect skill to design architecture for a [application type] that requires [key requirements]. Consider [specific constraints like cluster size, team structure, external dependencies]."
+      },
+      {
+        "title": "Review Existing Chart",
+        "scenario": "Evaluating a chart for production",
+        "prompt": "Review this Helm chart design for operational gaps. What failure modes are missing? How can operators diagnose issues? What extension points should be added for common customization needs?"
+      },
+      {
+        "title": "Multi-Environment Strategy",
+        "scenario": "Planning environment-specific deployments",
+        "prompt": "Design a Helm chart strategy for dev, staging, and production environments. What should be configurable per environment? What should remain consistent? How should values files be organized?"
+      },
+      {
+        "title": "Dependency Management",
+        "scenario": "Managing chart dependencies",
+        "prompt": "Analyze the dependencies for this application. Which should be included as subcharts? Which should be external services? How should dependency conditions and tags be structured for flexibility?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Design a Helm chart for a Python FastAPI service with PostgreSQL and Redis that needs multi-GPU support for training workloads.",
+        "output": [
+          "Component Architecture: FastAPI container (critical) + PostgreSQL (critical path) + Redis (supporting)",
+          "Dependencies: PostgreSQL conditional (Bitnami subchart for dev, external RDS for prod), Redis optional",
+          "Lifecycle Hooks: Pre-install database schema migration, post-upgrade health validation hook",
+          "Values Design: Expose replicaCount, GPU count, training parameters; lock security context and image pull policy",
+          "Failure Modes: GPU scheduling failures, OOM kills during training, queue depth monitoring",
+          "Team Boundaries: Platform owns GPU scheduling templates, ML team owns training logic"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the 10 architectural questions to analyze requirements before writing any templates",
+      "Apply the 12 principles to guide decisions about dependencies, hooks, and extensibility",
+      "Design values.yaml as an API contract that operators can rely on without needing to fork the chart"
+    ],
+    "anti_patterns": [
+      "Copying templates without understanding their architectural assumptions",
+      "Hardcoding values that teams will need to change, forcing them to fork the chart",
+      "Adding hooks for everything instead of identifying what genuinely needs lifecycle management",
+      "Creating tight coupling between charts instead of using external ConfigMaps for cross-chart communication"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill generate actual Helm templates?",
+        "answer": "No. This skill provides architectural guidance and design decisions. You still write the actual templates using Helm templating syntax."
+      },
+      {
+        "question": "What Kubernetes versions are supported by principles?",
+        "answer": "The principles apply to any Kubernetes version. Use values.schema.json and kubeVersion in Chart.yaml to specify your supported version range."
+      },
+      {
+        "question": "Can this integrate with existing CI/CD pipelines?",
+        "answer": "Yes. The architectural output can inform your CI/CD pipeline design, including test hooks, OCI registry publishing, and version management."
+      },
+      {
+        "question": "Is my chart data safe when using this skill?",
+        "answer": "This is a prompt-based skill with no code execution. Your chart configurations remain local and are never transmitted externally."
+      },
+      {
+        "question": "Charts fail to deploy unexpectedly. Can this help?",
+        "answer": "Yes. The skill helps identify failure modes during design, including connection failures, resource issues, and schema problems that cause deployment failures."
+      },
+      {
+        "question": "How is this different from generic Helm templates?",
+        "answer": "Generic templates provide starting code. This skill guides architectural reasoning specific to your project constraints, team structure, and operational requirements."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 435
+    }
+  ]
+}

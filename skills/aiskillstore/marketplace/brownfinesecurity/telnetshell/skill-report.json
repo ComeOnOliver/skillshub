@@ -1,0 +1,261 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:15:36.196Z",
+    "slug": "brownfinesecurity-telnetshell",
+    "source_url": "https://github.com/BrownFineSecurity/iothackbot/tree/master/skills/telnetshell",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "344d2fb9421d274c0427ecd4e1f4e424d2ef115e76f08a8e7402eabf29db387e",
+    "tree_hash": "297883bbcde48978346766c7873c12418c6cd228dcea465b57f5f6261c4a6274"
+  },
+  "skill": {
+    "name": "telnetshell",
+    "description": "Use telnet to interact with IoT device shells for pentesting operations including device enumeration, vulnerability discovery, credential testing, and post-exploitation. Use when the user needs to interact with network-accessible shells, IoT devices, or telnet services.",
+    "summary": "Use telnet to interact with IoT device shells for pentesting operations including device enumeration...",
+    "icon": "🔒",
+    "version": "1.0.0",
+    "author": "BrownFineSecurity",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "iot",
+      "pentesting",
+      "telnet",
+      "security-testing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate IoT penetration testing tool. Static analysis flagged 530 findings as suspicious, but evaluation confirms all are FALSE POSITIVES. The tool explicitly identifies as a pentesting skill and includes authorization requirements. The flagged patterns (password file access, SSH key enumeration, sudoers file access) are standard security enumeration commands used in authorized penetration testing. Risk level is MEDIUM because powerful capabilities require proper user authorization.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "enum_security.txt",
+            "line_start": 32,
+            "line_end": 54
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "enum_network.txt",
+            "line_start": 5,
+            "line_end": 33
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "enum_files.txt",
+            "line_start": 1,
+            "line_end": 43
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 2284,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:15:36.196Z"
+  },
+  "content": {
+    "user_title": "Interact with IoT device shells via telnet",
+    "value_statement": "This skill enables secure telnet interaction with IoT device shells for penetration testing. It provides automated device enumeration, security assessment commands, and firmware extraction capabilities for authorized security testing.",
+    "seo_keywords": [
+      "iot penetration testing",
+      "telnet shell interaction",
+      "claude security testing",
+      "codex iot assessment",
+      "claude code telnet",
+      "device enumeration",
+      "embedded security",
+      "busybox pentesting"
+    ],
+    "actual_capabilities": [
+      "Execute commands on IoT devices via telnet connection",
+      "Run pre-built enumeration scripts for system, network, and security assessment",
+      "Automate device discovery and vulnerability identification",
+      "Extract firmware from embedded devices via telnet",
+      "Monitor telnet sessions in real-time with session logging",
+      "Support custom prompt detection for diverse IoT devices"
+    ],
+    "limitations": [
+      "Requires telnet access to target device (no authentication bypass)",
+      "Limited to devices with exposed telnet services",
+      "Cannot bypass device-specific authentication mechanisms",
+      "Does not exploit vulnerabilities - only aids authorized assessment"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security Researchers",
+        "title": "IoT Security Assessment",
+        "description": "Conduct authorized penetration tests on IoT devices with telnet access for vulnerability research."
+      },
+      {
+        "target_user": "Security Consultants",
+        "title": "Device Vulnerability Testing",
+        "description": "Assess IoT device security posture for clients using standardized enumeration techniques."
+      },
+      {
+        "target_user": "Network Administrators",
+        "title": "Internal Device Auditing",
+        "description": "Audit internally deployed IoT devices for security misconfigurations and weak credentials."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Connection",
+        "scenario": "Connect to IoT device",
+        "prompt": "Use telnetshell to connect to 192.168.1.100 on port 2222 and run uname -a to identify the device"
+      },
+      {
+        "title": "System Enumeration",
+        "scenario": "Gather device information",
+        "prompt": "Run the enum_system.txt script against the IoT device at 192.168.1.100 to collect system information"
+      },
+      {
+        "title": "Security Assessment",
+        "scenario": "Security testing",
+        "prompt": "Use telnetshell to run the security enumeration script on the device and check for SUID binaries and readable /etc/shadow"
+      },
+      {
+        "title": "Firmware Extraction",
+        "scenario": "Extract device firmware",
+        "prompt": "Use telnetshell to identify MTD partitions on the device and prepare firmware extraction commands"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run system enumeration on 192.168.1.100",
+        "output": [
+          "Device identified: Linux BusyBox 1.25.0 on armv5tel",
+          "Kernel version: 3.3.0 detected",
+          "CPU: ARMv5 processor found",
+          "Memory: 256MB RAM, 32MB flash storage",
+          "Network interfaces: eth0 with IP 192.168.1.100"
+        ]
+      },
+      {
+        "input": "Check for privilege escalation vectors",
+        "output": [
+          "SUID binaries found: /bin/busybox, /bin/ping, /bin/traceroute",
+          "No world-writable sensitive files detected",
+          "Shadow file is NOT readable (good security)",
+          "SSH service detected but not running on device"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always verify authorization before testing any device - only assess devices you own or have documented permission to test",
+      "Use the --logfile flag to enable session monitoring and maintain audit trails of all commands executed",
+      "Start with system enumeration before attempting privilege escalation - understand the device before deeper testing"
+    ],
+    "anti_patterns": [
+      "Never use this skill against targets without explicit authorization - unauthorized access is illegal",
+      "Avoid destructive commands that could brick devices - use read-only enumeration when possible",
+      "Do not rely on this tool for authentication bypass - it requires valid telnet access credentials"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill exploit vulnerabilities?",
+        "answer": "No. This skill provides telnet interaction and enumeration. Exploitation requires separate tools and techniques."
+      },
+      {
+        "question": "Can this bypass device authentication?",
+        "answer": "No. Valid credentials are required for telnet access. The tool helps test weak/default credentials only."
+      },
+      {
+        "question": "Is authorization required?",
+        "answer": "Yes. Always verify you have explicit permission. Unauthorized testing is illegal and unethical."
+      },
+      {
+        "question": "What devices are supported?",
+        "answer": "Any IoT device with exposed telnet service. Common targets include cameras, routers, and embedded systems."
+      },
+      {
+        "question": "How are sessions monitored?",
+        "answer": "Use --logfile to save all I/O. Watch sessions in real-time with tail -f in a separate terminal."
+      },
+      {
+        "question": "Can this extract firmware?",
+        "answer": "Yes. The skill identifies MTD partitions and helps extract firmware for offline analysis on supported devices."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "enum_files.txt",
+      "type": "file",
+      "path": "enum_files.txt",
+      "lines": 43
+    },
+    {
+      "name": "enum_network.txt",
+      "type": "file",
+      "path": "enum_network.txt",
+      "lines": 34
+    },
+    {
+      "name": "enum_security.txt",
+      "type": "file",
+      "path": "enum_security.txt",
+      "lines": 55
+    },
+    {
+      "name": "enum_system.txt",
+      "type": "file",
+      "path": "enum_system.txt",
+      "lines": 41
+    },
+    {
+      "name": "examples.md",
+      "type": "file",
+      "path": "examples.md",
+      "lines": 528
+    },
+    {
+      "name": "OBSERVING_SESSIONS.md",
+      "type": "file",
+      "path": "OBSERVING_SESSIONS.md",
+      "lines": 301
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 539
+    },
+    {
+      "name": "telnet_helper.py",
+      "type": "file",
+      "path": "telnet_helper.py",
+      "lines": 474
+    }
+  ]
+}

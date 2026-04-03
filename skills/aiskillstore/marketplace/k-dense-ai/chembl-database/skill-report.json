@@ -1,0 +1,1066 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:09:35.592Z",
+    "slug": "k-dense-ai-chembl-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/chembl-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2171fdbfa3e6509ee6ff446b7c7196c242ac9cccdf07a7bf68fd8f4e32321251",
+    "tree_hash": "da1a5c44a9853534f446b4d0151e8b0507323827661eca318374d9c4251529be"
+  },
+  "skill": {
+    "name": "chembl-database",
+    "description": "Query ChEMBL bioactive molecules and drug discovery data. Search compounds by structure/properties, retrieve bioactivity data (IC50, Ki), find inhibitors, perform SAR studies, for medicinal chemistry.",
+    "summary": "Query ChEMBL bioactive molecules and drug discovery data. Search compounds by structure/properties, ...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "cheminformatics",
+      "drug-discovery",
+      "bioinformatics",
+      "molecules",
+      "research"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 198 static findings are FALSE POSITIVES. The analyzer misidentified markdown code formatting (backticks) as shell command execution, SMILES chemical notation as shell operators, and documentation URLs as network endpoints. This is a legitimate scientific database integration skill containing only documentation for the ChEMBL Web Resource Client library. The Python example file contains only wrapper functions that call the official chembl_webresource_client library. No executable malicious code or dangerous functionality exists.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/api_reference.md",
+            "line_start": 16,
+            "line_end": 18
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 18,
+            "line_end": 45
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 45,
+            "line_end": 46
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 46,
+            "line_end": 47
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 47,
+            "line_end": 48
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 48,
+            "line_end": 49
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 49,
+            "line_end": 50
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 50,
+            "line_end": 51
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 51,
+            "line_end": 52
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 52,
+            "line_end": 53
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 53,
+            "line_end": 54
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 54,
+            "line_end": 55
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 55,
+            "line_end": 56
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 56,
+            "line_end": 57
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 57,
+            "line_end": 58
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 58,
+            "line_end": 59
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 59,
+            "line_end": 64
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 64,
+            "line_end": 66
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 66,
+            "line_end": 69
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 69,
+            "line_end": 71
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 71,
+            "line_end": 74
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 74,
+            "line_end": 79
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 79,
+            "line_end": 86
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 86,
+            "line_end": 90
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 90,
+            "line_end": 95
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 95,
+            "line_end": 98
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 98,
+            "line_end": 103
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 103,
+            "line_end": 105
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 105,
+            "line_end": 108
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 108,
+            "line_end": 110
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 110,
+            "line_end": 113
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 113,
+            "line_end": 119
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 119,
+            "line_end": 122
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 122,
+            "line_end": 124
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 124,
+            "line_end": 142
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 142,
+            "line_end": 156
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 156,
+            "line_end": 162
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 162,
+            "line_end": 163
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 163,
+            "line_end": 164
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 164,
+            "line_end": 165
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 165,
+            "line_end": 166
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 166,
+            "line_end": 167
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 167,
+            "line_end": 168
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 168,
+            "line_end": 169
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 169,
+            "line_end": 170
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 170,
+            "line_end": 171
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 171,
+            "line_end": 172
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 172,
+            "line_end": 173
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 173,
+            "line_end": 179
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 179,
+            "line_end": 180
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 180,
+            "line_end": 181
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 181,
+            "line_end": 182
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 182,
+            "line_end": 183
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 183,
+            "line_end": 184
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 184,
+            "line_end": 185
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 185,
+            "line_end": 191
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 191,
+            "line_end": 192
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 192,
+            "line_end": 193
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 193,
+            "line_end": 194
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 194,
+            "line_end": 195
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 195,
+            "line_end": 196
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 196,
+            "line_end": 201
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 201,
+            "line_end": 214
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 214,
+            "line_end": 217
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 217,
+            "line_end": 221
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 221,
+            "line_end": 224
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 224,
+            "line_end": 229
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 229,
+            "line_end": 235
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 235,
+            "line_end": 239
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 239,
+            "line_end": 245
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 245,
+            "line_end": 249
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 249,
+            "line_end": 258
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 169
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 185
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 185,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 187,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 197
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 197,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 228
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 228,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 271
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 271,
+            "line_end": 275
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 275,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 308
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 312
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 312,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 328
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 328,
+            "line_end": 329
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 329,
+            "line_end": 330
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 330,
+            "line_end": 331
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 331,
+            "line_end": 332
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 332,
+            "line_end": 333
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 333,
+            "line_end": 334
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 334,
+            "line_end": 335
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 335,
+            "line_end": 336
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 336,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 364
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 364,
+            "line_end": 365
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/api_reference.md",
+            "line_start": 269,
+            "line_end": 269
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 270,
+            "line_end": 270
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 271,
+            "line_end": 271
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 272,
+            "line_end": 272
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 382,
+            "line_end": 382
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 384,
+            "line_end": 384
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 385
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 386,
+            "line_end": 386
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 3084,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:09:35.592Z"
+  },
+  "content": {
+    "user_title": "Query ChEMBL bioactive molecules and drug discovery data",
+    "value_statement": "Access the ChEMBL database to search compounds by structure and properties. Retrieve bioactivity measurements, find inhibitors, and perform structure-activity relationship studies for drug discovery research.",
+    "seo_keywords": [
+      "ChEMBL database",
+      "drug discovery",
+      "bioactive molecules",
+      "molecular database",
+      "IC50 Ki EC50",
+      "cheminformatics",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "inhibitor search"
+    ],
+    "actual_capabilities": [
+      "Search molecules by name, SMILES structure, or physicochemical properties",
+      "Retrieve bioactivity data including IC50, Ki, EC50, and Kd values",
+      "Find similar compounds and perform substructure searches",
+      "Query drug information, mechanisms of action, and clinical indications",
+      "Identify bioactive compounds",
+      "kinase inhibitors and other",
+      "Export query results to pandas DataFrames for analysis"
+    ],
+    "limitations": [
+      "Rate limited by ChEMBL API fair usage policies",
+      "Cannot access local databases - only queries the ChEMBL web API",
+      "Data completeness depends on ChEMBL curation status"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Medicinal Chemists",
+        "title": "Find Inhibitors for Drug Targets",
+        "description": "Search for potent inhibitors of specific targets like EGFR or kinases by querying bioactivity measurements."
+      },
+      {
+        "target_user": "Pharmacologists",
+        "title": "Analyze Drug-Target Interactions",
+        "description": "Retrieve drug mechanisms, indications, and activity profiles to understand compound-target relationships."
+      },
+      {
+        "target_user": "Computational Chemists",
+        "title": "Structure-Activity Relationship Studies",
+        "description": "Find similar compounds and analyze molecular properties to identify structure-activity patterns."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Find Molecule by ID",
+        "scenario": "Look up a specific compound",
+        "prompt": "Get information about molecule CHEMBL25 (aspirin) from ChEMBL"
+      },
+      {
+        "title": "Search by Properties",
+        "scenario": "Filter compounds by drug-likeness",
+        "prompt": "Find all molecules with molecular weight under 500, LogP under 5, and at most 10 hydrogen bond acceptors"
+      },
+      {
+        "title": "Query Bioactivity",
+        "scenario": "Find potent compounds for a target",
+        "prompt": "Find all EGFR inhibitors with IC50 values below 100 nM"
+      },
+      {
+        "title": "Structure Search",
+        "scenario": "Find similar chemical structures",
+        "prompt": "Find compounds similar to aspirin (CC(=O)Oc1ccccc1C(=O)O) with 85 percent similarity"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Get information about aspirin from ChEMBL",
+        "output": [
+          "ChEMBL ID: CHEMBL25",
+          "Preferred Name: ASPIRIN",
+          "Molecular Weight: 180.16 g/mol",
+          "LogP: 1.19",
+          "Drug Type: Small molecule",
+          "First Approved: 1930"
+        ]
+      },
+      {
+        "input": "Find kinase inhibitors with IC50 below 100 nM",
+        "output": [
+          "Retrieved 247 kinase inhibitors with IC50 < 100 nM",
+          "Top hits include approved drugs like Imatinib, Gefitinib, and Erlotinib",
+          "Results sorted by potency (lowest IC50 first)"
+        ]
+      },
+      {
+        "input": "Find compounds similar to caffeine",
+        "output": [
+          "Found 156 compounds similar to caffeine (>80% similarity)",
+          "Most similar: Theobromine (96%), Theophylline (94%)",
+          "Includes natural xanthine derivatives and synthetic analogs"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use caching to respect rate limits when making repeated queries",
+      "Apply molecular weight and LogP filters early to reduce result sets",
+      "Always check the data_validity_comment field for potential issues"
+    ],
+    "anti_patterns": [
+      "Making rapid consecutive requests without respecting rate limits",
+      "Ignoring the pchembl_value normalization when comparing activities",
+      "Assuming all compounds in ChEMBL are experimentally verified"
+    ],
+    "faq": [
+      {
+        "question": "What is ChEMBL?",
+        "answer": "ChEMBL is a manually curated database of bioactive molecules maintained by EBI, containing over 2 million compounds."
+      },
+      {
+        "question": "Does this skill require API keys?",
+        "answer": "No, ChEMBL is a free public database. No authentication is required for basic queries."
+      },
+      {
+        "question": "What activity values are available?",
+        "answer": "ChEMBL provides IC50, Ki, Kd, EC50, and other bioactivity measurements with standardized units."
+      },
+      {
+        "question": "Can I search by chemical structure?",
+        "answer": "Yes, use SMILES strings for similarity searches and substructure matching."
+      },
+      {
+        "question": "How are results returned?",
+        "answer": "Results are lazy-evaluated iterators. Convert to list() to force execution."
+      },
+      {
+        "question": "What are good property filters for drug-likeness?",
+        "answer": "MW under 500, LogP under 5, HBA under 10, HBD under 5 follow Lipinski's rule of 5."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 273
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "example_queries.py",
+          "type": "file",
+          "path": "scripts/example_queries.py",
+          "lines": 279
+        }
+      ]
+    },
+    {
+      "name": "evaluation_output.json",
+      "type": "file",
+      "path": "evaluation_output.json",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 389
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:39:23.421Z",
+    "slug": "byronwilliamscpa-git",
+    "source_url": "https://github.com/ByronWilliamsCPA/fragrance-rater/tree/main/.claude/skills/git",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c784942ea536f0cee407f96f136d4dd73257ff1962dfa5448bc12bae8ed7f348",
+    "tree_hash": "0ae85cc90ccd01510b97ff94ffdf5ba802866f804a7ac9674557c1221e748bcd"
+  },
+  "skill": {
+    "name": "git",
+    "description": "Git workflow management including branch validation, commit conventions, PR preparation, and repository health checks.",
+    "summary": "Git workflow management including branch validation, commit conventions, PR preparation, and reposit...",
+    "icon": "🔀",
+    "version": "1.0.0",
+    "author": "ByronWilliamsCPA",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "git",
+      "workflow",
+      "commits",
+      "pull-requests",
+      "branching"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing markdown files. No executable code, no file system access, no network calls, and no external command execution. All static findings are false positives: hash values were misidentified as crypto algorithms, git branch names as C2 keywords, and documentation examples as command execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 52
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 252,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:39:23.421Z"
+  },
+  "content": {
+    "user_title": "Apply git workflows and conventions",
+    "value_statement": "This skill helps developers follow consistent git workflows with branch naming conventions, conventional commit messages, and pull request templates. It automates PR description generation and validates repository health.",
+    "seo_keywords": [
+      "git workflow",
+      "branch management",
+      "conventional commits",
+      "pull request",
+      "git branch",
+      "commit message",
+      "merge strategy",
+      "rebase",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Validate branch naming conventions with type prefixes",
+      "Prepare conventional commit messages",
+      "Generate pull request descriptions from templates",
+      "Check repository health and status",
+      "Apply semantic release branch prefixes",
+      "Enforce commit message format standards"
+    ],
+    "limitations": [
+      "Does not execute git commands directly",
+      "Requires manual git command execution by user",
+      "No merge conflict resolution",
+      "No remote repository management"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual developers",
+        "title": "Maintain clean commit history",
+        "description": "Follow conventional commit standards and keep branch names descriptive and consistent across personal projects"
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Enforce team git standards",
+        "description": "Create consistent branch and commit conventions across team members with automated validation"
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Streamline PR reviews",
+        "description": "Generate standardized pull request descriptions and checklists for better contribution management"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check current branch",
+        "scenario": "Verify branch name",
+        "prompt": "What is the current branch and does it follow the naming convention?"
+      },
+      {
+        "title": "Create feature branch",
+        "scenario": "Start new feature",
+        "prompt": "Create a feature branch for implementing user authentication following the branch naming convention"
+      },
+      {
+        "title": "Prepare commit",
+        "scenario": "Stage and commit changes",
+        "prompt": "Prepare a conventional commit message for adding user login functionality with a scope of auth"
+      },
+      {
+        "title": "Generate PR description",
+        "scenario": "Create pull request",
+        "prompt": "Generate a pull request description template for the new feature branch that includes summary and test plan"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate a pull request description for adding dark mode support",
+        "output": [
+          "## Summary",
+          "Added dark mode support with theme toggle in settings",
+          "",
+          "## Changes Made",
+          "- Implemented theme context provider",
+          "- Added dark mode CSS variables",
+          "- Created theme toggle component",
+          "",
+          "## Test Plan",
+          "- Verify theme toggles correctly",
+          "- Check all pages render in dark mode",
+          "- Test system preference detection"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always create feature branches from main or develop rather than committing directly",
+      "Use semantic branch prefixes like feat/, fix/, docs/ to indicate change type",
+      "Write conventional commit messages with type, scope, and description for changelog automation"
+    ],
+    "anti_patterns": [
+      "Committing directly to main or master branches",
+      "Using vague branch names like update or fix-stuff without descriptive slugs",
+      "Skipping PR descriptions and leaving checklist items incomplete"
+    ],
+    "faq": [
+      {
+        "question": "Which git platforms are supported?",
+        "answer": "Works with GitHub, GitLab, Bitbucket, and any Git-based repository hosting service."
+      },
+      {
+        "question": "What are the supported branch types?",
+        "answer": "Feat, fix, docs, refactor, perf, test, chore, and hotfix prefixes are supported."
+      },
+      {
+        "question": "How do I integrate with CI/CD?",
+        "answer": "The skill generates conventional commits that work with semantic-release and other automated versioning tools."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "This skill only provides guidance templates. It does not read, write, or modify any repository files directly."
+      },
+      {
+        "question": "Why is my branch rejected?",
+        "answer": "Branches must follow the type/descriptive-slug format with lowercase letters, numbers, and hyphens only."
+      },
+      {
+        "question": "How is this different from git CLI?",
+        "answer": "This skill provides intelligent guidance and templates. You still run git commands manually in your terminal."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 66
+    }
+  ]
+}

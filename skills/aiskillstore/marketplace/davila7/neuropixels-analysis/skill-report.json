@@ -1,0 +1,352 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:27:34.109Z",
+    "slug": "davila7-neuropixels-analysis",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/neuropixels-analysis",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "aa496e889cb3a20d7fe3a74b616c5cb3bd9234dd3c8f5f9c708aa6ea733a252f",
+    "tree_hash": "87cb62386f1590b6b5170fb5413ec5ceefe369040bfdd140c1f69c11ee6e9827"
+  },
+  "skill": {
+    "name": "neuropixels-analysis",
+    "description": "Neuropixels neural recording analysis. Load SpikeGLX/OpenEphys data, preprocess, motion correction, Kilosort4 spike sorting, quality metrics, Allen/IBL curation, AI-assisted visual analysis, for Neuropixels 1.0/2.0 extracellular electrophysiology. Use when working with neural recordings, spike sorting, extracellular electrophysiology, or when the user mentions Neuropixels, SpikeGLX, Open Ephys, Kilosort, quality metrics, or unit curation.",
+    "summary": "Neuropixels neural recording analysis. Load SpikeGLX/OpenEphys data, preprocess, motion correction, ...",
+    "icon": "🧠",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "neuropixels",
+      "electrophysiology",
+      "spike-sorting",
+      "neuroscience",
+      "data-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate scientific analysis toolkit for Neuropixels neural recordings. All 704 static findings are false positives: markdown backticks were misidentified as Ruby shell execution, neuroscience parameters like CAR (Common Average Reference) were misidentified as cryptographic algorithms, and scientific terms were flagged as C2 keywords. The code performs standard data processing on user-specified files with no exfiltration, credential theft, or persistence mechanisms.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/neuropixels_pipeline.py",
+            "line_start": 328,
+            "line_end": 343
+          },
+          {
+            "file": "scripts/compute_metrics.py",
+            "line_start": 98,
+            "line_end": 135
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 338,
+            "line_end": 344
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 20,
+    "total_lines": 5731,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:27:34.109Z"
+  },
+  "content": {
+    "user_title": "Analyze Neuropixels neural recordings",
+    "value_statement": "Analyzing Neuropixels recordings requires expertise with multiple tools and complex pipelines. This skill provides a complete workflow from raw data to curated units with preprocessing, spike sorting, quality metrics, and AI-assisted curation following best practices from SpikeInterface, Allen Institute, and IBL.",
+    "seo_keywords": [
+      "neuropixels analysis",
+      "claude code skill",
+      "spike sorting",
+      "kilosort4",
+      "electrophysiology",
+      "neuroscience",
+      "spikeinterface",
+      "neuropixels 2.0",
+      "cell sorting",
+      "neural data analysis"
+    ],
+    "actual_capabilities": [
+      "Load SpikeGLX, Open Ephys, and NWB format recordings",
+      "Apply preprocessing: filtering, phase shift, bad channel detection, common reference",
+      "Estimate and correct motion drift in recordings",
+      "Run Kilosort4, SpykingCircus2, Mountainsort5 spike sorting",
+      "Compute quality metrics: SNR, ISI violations, presence ratio, amplitude cutoff",
+      "Apply Allen Institute or IBL curation criteria to classify units"
+    ],
+    "limitations": [
+      "Requires external dependencies: spikeinterface, kilosort, and optional GPU for Kilosort4",
+      "Does not include pre-built binaries for spike sorters",
+      "AI-assisted curation requires separate API setup with Anthropic or OpenAI",
+      "Manual review in Phy may be needed for uncertain units"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Neuroscience researchers",
+        "title": "Process experimental recordings",
+        "description": "Analyze Neuropixels recordings from spike detection through curated single units with publication-ready metrics."
+      },
+      {
+        "target_user": "Neurophysiology labs",
+        "title": "Automate quality control",
+        "description": "Apply standardized Allen Institute or IBL criteria to classify units as good, MUA, or noise automatically."
+      },
+      {
+        "target_user": "Computational neuroscientists",
+        "title": "Export for Phy review",
+        "description": "Generate complete analysis outputs ready for manual curation in the Phy GUI for detailed review."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic recording analysis",
+        "scenario": "Load and analyze Neuropixels data",
+        "prompt": "Analyze my Neuropixels recording at /path/to/data using the neuropixels-analysis skill. Load the data, preprocess it, run Kilosort4 spike sorting, compute quality metrics, and apply Allen curation criteria."
+      },
+      {
+        "title": "Batch processing",
+        "scenario": "Process multiple recordings",
+        "prompt": "Process all recordings in /path/to/experiments/ using the neuropixels-analysis pipeline. Apply motion correction if needed, run spike sorting with kilosort4, and export quality metrics CSV files."
+      },
+      {
+        "title": "Quality assessment",
+        "scenario": "Evaluate sorted units",
+        "prompt": "Review the spike sorting results in /path/to/sorting/ using the neuropixels-analysis skill. Compute all quality metrics, identify units with SNR between 3-8 that need review, and apply IBL curation criteria."
+      },
+      {
+        "title": "Custom pipeline",
+        "scenario": "Customized analysis workflow",
+        "prompt": "Run a custom Neuropixels analysis with: 300-6000 Hz bandpass, phase shift correction, motion estimation with nonrigid_accurate preset, kilosort4 with nblocks=5, and strict curation criteria (SNR > 5, isi_violations < 0.01)."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze my Neuropixels recording at /data/experiment1/ using kilosort4 and export to Phy",
+        "output": [
+          "Recording: 384 channels, 1200.5s duration, 30000 Hz sampling rate",
+          "Preprocessing: bandpass 300-6000 Hz, phase shift, 3 bad channels removed, CMR applied",
+          "Motion: drift estimate 15.2 um, correction applied with nonrigid_accurate preset",
+          "Kilosort4: found 142 units, 452380 total spikes",
+          "Quality metrics: SNR median 8.2, ISI violations median 0.005, presence ratio median 0.94",
+          "Allen curation: 67 good units, 48 MUA, 27 noise",
+          "Exported to Phy: /output/phy_export/ ready for manual review"
+        ]
+      },
+      {
+        "input": "Run preprocessing on my Open Ephys recording with motion correction",
+        "output": [
+          "Recording: 385 channels, 600.0s duration, 30000 Hz sampling rate",
+          "Highpass filter: 400 Hz applied",
+          "Bad channel detection: 2 noisy channels identified and removed",
+          "Phase shift correction: not needed for Neuropixels 2.0",
+          "Common median reference: global reference applied",
+          "Motion estimation: 8.3 um drift detected, correction applied",
+          "Saved preprocessed recording to: /output/preprocessed/"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always visualize and estimate drift before deciding on motion correction",
+      "Save preprocessed recordings to avoid recomputing during iteration",
+      "Combine automated metrics with AI-assisted visual analysis for uncertain units",
+      "Use GPU for Kilosort4 (10-50x faster than CPU alternatives)"
+    ],
+    "anti_patterns": [
+      "Running spike sorting without first checking for drift or bad channels",
+      "Using default curation thresholds without reviewing your specific data",
+      "Trusting automated curation blindly for critical experiments",
+      "Skipping preprocessing when using Kilosort4 on raw Neuropixels data"
+    ],
+    "faq": [
+      {
+        "question": "What Neuropixels probes are supported?",
+        "answer": "Neuropixels 1.0 (960 electrodes, 384 channels), Neuropixels 2.0 single (1280 electrodes), and Neuropixels 2.0 4-shank (5120 electrodes)."
+      },
+      {
+        "question": "How long recordings can be processed?",
+        "answer": "Processing time depends on recording length and available GPU. SpikeInterface handles recordings of any length, but very long recordings may need segmentation."
+      },
+      {
+        "question": "How does this integrate with Phy?",
+        "answer": "The export_to_phy script generates complete Phy-compatible outputs with waveforms, templates, PC features, and amplitudes for manual curation."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "All processing runs locally on your machine. Data is read from and written to user-specified directories. No data is transmitted externally."
+      },
+      {
+        "question": "Why use this over manual analysis?",
+        "answer": "This skill provides standardized, reproducible workflows following best practices from SpikeInterface, Allen Institute, and IBL, with automated quality control."
+      },
+      {
+        "question": "How does it compare to other sorters?",
+        "answer": "Supports multiple sorters: Kilosort4 (GPU, recommended), SpykingCircus2 and Mountainsort5 (CPU). Choose based on your hardware and accuracy needs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "analysis_template.py",
+          "type": "file",
+          "path": "assets/analysis_template.py",
+          "lines": 272
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 416
+        },
+        {
+          "name": "plotting_guide.md",
+          "type": "file",
+          "path": "references/plotting_guide.md",
+          "lines": 455
+        },
+        {
+          "name": "standard_workflow.md",
+          "type": "file",
+          "path": "references/standard_workflow.md",
+          "lines": 386
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "compute_metrics.py",
+          "type": "file",
+          "path": "scripts/compute_metrics.py",
+          "lines": 179
+        },
+        {
+          "name": "explore_recording.py",
+          "type": "file",
+          "path": "scripts/explore_recording.py",
+          "lines": 169
+        },
+        {
+          "name": "export_to_phy.py",
+          "type": "file",
+          "path": "scripts/export_to_phy.py",
+          "lines": 80
+        },
+        {
+          "name": "neuropixels_pipeline.py",
+          "type": "file",
+          "path": "scripts/neuropixels_pipeline.py",
+          "lines": 433
+        },
+        {
+          "name": "preprocess_recording.py",
+          "type": "file",
+          "path": "scripts/preprocess_recording.py",
+          "lines": 123
+        },
+        {
+          "name": "run_sorting.py",
+          "type": "file",
+          "path": "scripts/run_sorting.py",
+          "lines": 99
+        }
+      ]
+    },
+    {
+      "name": "AI_CURATION.md",
+      "type": "file",
+      "path": "AI_CURATION.md",
+      "lines": 346
+    },
+    {
+      "name": "ANALYSIS.md",
+      "type": "file",
+      "path": "ANALYSIS.md",
+      "lines": 393
+    },
+    {
+      "name": "AUTOMATED_CURATION.md",
+      "type": "file",
+      "path": "AUTOMATED_CURATION.md",
+      "lines": 359
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 22
+    },
+    {
+      "name": "MOTION_CORRECTION.md",
+      "type": "file",
+      "path": "MOTION_CORRECTION.md",
+      "lines": 324
+    },
+    {
+      "name": "PREPROCESSING.md",
+      "type": "file",
+      "path": "PREPROCESSING.md",
+      "lines": 274
+    },
+    {
+      "name": "QUALITY_METRICS.md",
+      "type": "file",
+      "path": "QUALITY_METRICS.md",
+      "lines": 360
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 345
+    },
+    {
+      "name": "SPIKE_SORTING.md",
+      "type": "file",
+      "path": "SPIKE_SORTING.md",
+      "lines": 340
+    }
+  ]
+}

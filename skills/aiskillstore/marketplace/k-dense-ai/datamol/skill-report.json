@@ -1,0 +1,263 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:40:38.036Z",
+    "slug": "k-dense-ai-datamol",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/datamol",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "12c3a1d1e896d265edd0acce84ad7161b8d2d0ea76e9ef7c43cdd30db3d95b36",
+    "tree_hash": "83ef1efe1b33dc917936c6242b1f938232002a502e0481dada1d4764ec2b2889"
+  },
+  "skill": {
+    "name": "datamol",
+    "description": "Pythonic wrapper around RDKit with simplified interface and sensible defaults. Preferred for standard drug discovery including SMILES parsing, standardization, descriptors, fingerprints, clustering, 3D conformers, parallel processing. Returns native rdkit.Chem.Mol objects. For advanced control or custom parameters, use rdkit directly.",
+    "summary": "Pythonic wrapper around RDKit with simplified interface and sensible defaults. Preferred for standar...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Apache-2.0 license",
+    "category": "research",
+    "tags": [
+      "cheminformatics",
+      "molecular-analysis",
+      "drug-discovery",
+      "rdkit"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 593 static findings are false positives. This is a documentation-only skill containing markdown files with Python code examples. The analyzer misinterpreted markdown code formatting (backticks) as shell commands, chemistry terminology as cryptographic patterns, and RDKit method calls as system reconnaissance. No actual security vulnerabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 704
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/core_api.md",
+            "line_start": 1,
+            "line_end": 1
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3724,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:40:38.036Z"
+  },
+  "content": {
+    "user_title": "Analyze molecular structures with Datamol",
+    "value_statement": "Process chemical data efficiently with a Pythonic interface to RDKit. Datamol simplifies complex cheminformatics operations while maintaining full compatibility with the RDKit ecosystem.",
+    "seo_keywords": [
+      "datamol",
+      "cheminformatics",
+      "molecular analysis",
+      "RDKit",
+      "drug discovery",
+      "SMILES",
+      "Claude",
+      "Claude Code",
+      "Python chemistry",
+      "molecular descriptors"
+    ],
+    "actual_capabilities": [
+      "Convert between molecular formats (SMILES, InChI, SELFIES)",
+      "Compute molecular descriptors and fingerprints",
+      "Generate 3D conformers and analyze molecular properties",
+      "Cluster molecules by structural similarity",
+      "Extract scaffolds and perform fragment analysis",
+      "Visualize molecular structures with customizable rendering"
+    ],
+    "limitations": [
+      "Requires RDKit installation as dependency",
+      "Butina clustering limited to ~1000 molecules due to memory constraints",
+      "3D conformer generation can be computationally intensive for large datasets"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Medicinal chemists",
+        "title": "Analyze compound libraries",
+        "description": "Process and standardize molecular datasets, compute drug-likeness properties, and identify promising candidates."
+      },
+      {
+        "target_user": "Cheminformatics researchers",
+        "title": "Molecular similarity analysis",
+        "description": "Generate fingerprints, calculate similarity matrices, and cluster compounds for virtual screening campaigns."
+      },
+      {
+        "target_user": "Data scientists",
+        "title": "Feature engineering for ML",
+        "description": "Extract molecular descriptors and fingerprints as features for predictive modeling in drug discovery."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic molecule processing",
+        "scenario": "Convert SMILES to standardized molecules",
+        "prompt": "Use datamol to convert these SMILES strings to standardized molecules: CCO, c1ccccc1, CC(=O)O. Show the canonical SMILES for each."
+      },
+      {
+        "title": "Compute molecular properties",
+        "scenario": "Calculate drug-likeness descriptors",
+        "prompt": "Calculate molecular weight, logP, H-bond donors and acceptors for these molecules: aspirin (CC(=O)OC1=CC=CC=C1C(=O)O) and caffeine (CN1C=NC2=C1C(=O)N(C(=O)N2C)C)."
+      },
+      {
+        "title": "Cluster molecular datasets",
+        "scenario": "Group similar compounds",
+        "prompt": "Generate ECFP fingerprints for these molecules and cluster them: benzene, toluene, phenol, benzoic acid, aniline. Use Tanimoto similarity with 0.3 cutoff."
+      },
+      {
+        "title": "3D conformer analysis",
+        "scenario": "Generate and analyze conformers",
+        "prompt": "Generate 50 conformers for cyclohexane, cluster them by RMSD, and identify the most representative conformers. Calculate SASA for each."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Standardize these SMILES: OCCO, C(CO)O, ethanol",
+        "output": [
+          "OCCO → CCO (canonical SMILES for ethanol)",
+          "C(CO)O → CCO (same molecule, different representation)",
+          "ethanol → None (invalid SMILES, returns None)",
+          "All valid ethanol representations standardize to the same canonical form"
+        ]
+      },
+      {
+        "input": "Compute descriptors for caffeine",
+        "output": [
+          "Molecular weight: 194.19 g/mol",
+          "LogP: 0.61",
+          "H-bond donors: 0",
+          "H-bond acceptors: 6",
+          "TPSA: 58.44 Å²",
+          "Number of aromatic atoms: 5"
+        ]
+      },
+      {
+        "input": "Find similar molecules to aspirin",
+        "output": [
+          "Generated ECFP4 fingerprints for query and library",
+          "Calculated Tanimoto similarity matrix",
+          "Top 5 most similar molecules identified",
+          "Similarity scores range from 0.72 to 0.85",
+          "Visualized aligned structures with activity labels"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always standardize molecules from external sources before analysis",
+      "Use parallel processing (n_jobs=-1) for large datasets to improve performance",
+      "Check for None values after molecule parsing to handle invalid inputs gracefully"
+    ],
+    "anti_patterns": [
+      "Don't skip standardization when working with external molecular data",
+      "Avoid full Butina clustering for datasets larger than 1000 molecules",
+      "Don't use default fingerprints without considering your specific similarity needs"
+    ],
+    "faq": [
+      {
+        "question": "What is Datamol?",
+        "answer": "Datamol is a Python library that provides a simplified interface to RDKit for molecular cheminformatics operations."
+      },
+      {
+        "question": "Do I need to install RDKit separately?",
+        "answer": "Yes, Datamol is a wrapper around RDKit, so you need both installed: 'uv pip install datamol rdkit'."
+      },
+      {
+        "question": "Can Datamol handle large molecular datasets?",
+        "answer": "Yes, it supports parallel processing for most operations and can handle thousands of molecules efficiently."
+      },
+      {
+        "question": "What file formats does Datamol support?",
+        "answer": "SDF, SMILES, CSV, Excel, MOL, Mol2, PDB, and remote files via fsspec (S3, GCS, HTTP)."
+      },
+      {
+        "question": "How do I visualize molecules?",
+        "answer": "Use dm.viz.to_image() for basic visualization or dm.viz.conformers() for 3D conformer visualization."
+      },
+      {
+        "question": "Is Datamol suitable for machine learning?",
+        "answer": "Yes, it provides molecular descriptors and fingerprints that can be used as features for ML models."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "conformers_module.md",
+          "type": "file",
+          "path": "references/conformers_module.md",
+          "lines": 132
+        },
+        {
+          "name": "core_api.md",
+          "type": "file",
+          "path": "references/core_api.md",
+          "lines": 131
+        },
+        {
+          "name": "descriptors_viz.md",
+          "type": "file",
+          "path": "references/descriptors_viz.md",
+          "lines": 196
+        },
+        {
+          "name": "fragments_scaffolds.md",
+          "type": "file",
+          "path": "references/fragments_scaffolds.md",
+          "lines": 175
+        },
+        {
+          "name": "io_module.md",
+          "type": "file",
+          "path": "references/io_module.md",
+          "lines": 110
+        },
+        {
+          "name": "reactions_data.md",
+          "type": "file",
+          "path": "references/reactions_data.md",
+          "lines": 219
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 706
+    }
+  ]
+}

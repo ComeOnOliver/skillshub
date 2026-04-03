@@ -1,0 +1,645 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:38:36.983Z",
+    "slug": "dennisliuck-claude-opus-4-5-migration",
+    "source_url": "https://github.com/DennisLiuCk/claude-plugin-marketplace/tree/main/plugins/claude-opus-4-5-migration/skills/claude-opus-4-5-migration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7f633dd7682492039c1e4e476283838270f119f03d04dcb3c97f4d9afeacf69f",
+    "tree_hash": "6846402b346a3c78649fe28e4576f9bd4d20444670f4390f93646274863a100e"
+  },
+  "skill": {
+    "name": "claude-opus-4-5-migration",
+    "description": "將提示詞和程式碼從 Claude Sonnet 4.0、Sonnet 4.5 或 Opus 4.1 遷移至 Opus 4.5。當使用者想要更新其程式碼庫、提示詞或 API 呼叫以使用 Opus 4.5 時使用。處理模型字串更新和針對已知 Opus 4.5 行為差異的提示詞調整。不會遷移 Haiku 4.5。",
+    "summary": "將提示詞和程式碼從 Claude Sonnet 4.0、Sonnet 4.5 或 Opus 4.1 遷移至 Opus 4.5。當使用者想要更新其程式碼庫、提示詞或 API 呼叫以使用 Opus 4.5...",
+    "icon": "🔄",
+    "version": "1.0.0",
+    "author": "DennisLiuCk",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "model-migration",
+      "api-integration",
+      "claude-opus",
+      "configuration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only instructions and reference guides for AI model migration. Static findings are all false positives triggered by markdown code formatting (backticks) and model version strings. No executable code, network operations, or security risks detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/effort.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 31,
+            "line_end": 41
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 41,
+            "line_end": 45
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 45,
+            "line_end": 55
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 55,
+            "line_end": 59
+          },
+          {
+            "file": "references/effort.md",
+            "line_start": 59,
+            "line_end": 69
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 30,
+            "line_end": 44
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 44,
+            "line_end": 52
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 52,
+            "line_end": 64
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 64,
+            "line_end": 76
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 76,
+            "line_end": 86
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 86,
+            "line_end": 100
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 100,
+            "line_end": 100
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 100,
+            "line_end": 101
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 101,
+            "line_end": 101
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 101,
+            "line_end": 102
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 102,
+            "line_end": 102
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 102,
+            "line_end": 103
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "references/prompt-snippets.md",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 163
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 563,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:38:36.983Z"
+  },
+  "content": {
+    "user_title": "Migrate Claude code to Opus 4.5",
+    "value_statement": "Update your codebase from Claude Sonnet 4.0/4.5 or Opus 4.5 to Opus 4.5. This skill handles model string updates, beta header removal, and optional prompt adjustments for known behavioral differences.",
+    "seo_keywords": [
+      "Claude Opus 4.5 migration",
+      "Claude model upgrade",
+      "Claude API migration",
+      "Anthropic model strings",
+      "AWS Bedrock Claude",
+      "Google Vertex AI Claude",
+      "Claude Code migration",
+      "Claude Sonnet 4.5",
+      "Claude Opus 4.1"
+    ],
+    "actual_capabilities": [
+      "Search codebase for model strings and API calls across platforms",
+      "Update model strings to Opus 4.5 for Anthropic API, AWS Bedrock, Google Vertex AI, and Azure",
+      "Remove unsupported beta headers with explanatory comments",
+      "Add effort parameter configuration for optimal Opus 4.5 performance",
+      "Apply optional prompt adjustments for known behavioral differences",
+      "Provide detailed migration summary with all changes made"
+    ],
+    "limitations": [
+      "Does not migrate Haiku 4.5 models",
+      "Does not modify user code beyond model string updates",
+      "Applies prompt fixes only when user explicitly requests or reports issues",
+      "Requires manual verification of third-party API compatibility"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers",
+        "title": "API integration updates",
+        "description": "Update all model strings in application code when migrating to Opus 4.5"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Infrastructure configuration",
+        "description": "Migrate cloud deployment configs across AWS Bedrock, Vertex AI, or Azure"
+      },
+      {
+        "target_user": "AI engineers",
+        "title": "Prompt optimization",
+        "description": "Apply behavioral adjustments for Opus 4.5 differences when issues arise"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic migration",
+        "scenario": "Migrate codebase to Opus 4.5",
+        "prompt": "Use the claude-opus-4-5-migration skill to migrate my codebase from [claude-sonnet-4-20250514/claude-sonnet-4-5-20250929/claude-opus-4-1-20250422] to Opus 4.5."
+      },
+      {
+        "title": "Multi-platform migration",
+        "scenario": "Update configs for cloud platforms",
+        "prompt": "Migrate all model configurations in my project to Opus 4.5, including AWS Bedrock, Google Vertex AI, and Azure AI Foundry settings."
+      },
+      {
+        "title": "With effort parameter",
+        "scenario": "Enable high effort mode",
+        "prompt": "Migrate to Opus 4.5 and add the effort parameter set to high for optimal performance."
+      },
+      {
+        "title": "With prompt fixes",
+        "scenario": "Apply behavioral adjustments",
+        "prompt": "Migrate to Opus 4.5 and apply all relevant prompt adjustments for tool overtriggering and over-engineering prevention."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Migrate my project from Sonnet 4.5 to Opus 4.5",
+        "output": [
+          "Updated 12 model strings from claude-sonnet-4-5-20250929 to claude-opus-4-5-20251101",
+          "Removed 3 unsupported beta headers (context-1m-2025-08-07)",
+          "Added effort parameter configuration for all API calls",
+          "Migration summary saved to migration-notes.md",
+          "Tip: If you encounter issues with Opus 4.5, let me know and I can help adjust your prompts"
+        ]
+      },
+      {
+        "input": "Migrate our production code across all cloud platforms",
+        "output": [
+          "Scanned 45 files for model configurations",
+          "Updated Anthropic API (1P) calls: 23 occurrences",
+          "Updated AWS Bedrock configurations: 8 occurrences",
+          "Updated Google Vertex AI configs: 11 occurrences",
+          "Updated Azure AI Foundry configs: 3 occurrences",
+          "Beta header check complete: No unsupported headers found"
+        ]
+      },
+      {
+        "input": "After migration, tools are being triggered too frequently",
+        "output": [
+          "Applied tool overtriggering fixes to 5 system prompts",
+          "Replaced 12 aggressive language patterns with softer alternatives",
+          "Updated prompt sections with balanced tool usage guidelines",
+          "Changes documented in migration-prompt-adjustments.md",
+          "Note: Test with Opus 4.5 to verify improved behavior"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run migration on a feature branch and test thoroughly before merging",
+      "Apply prompt adjustments only after confirming specific issues in Opus 4.5 behavior",
+      "Review all changes and verify third-party service compatibility before deployment"
+    ],
+    "anti_patterns": [
+      "Migrating production code without testing in a staging environment",
+      "Applying all prompt fixes proactively without user-reported issues",
+      "Forgetting to update documentation after migration"
+    ],
+    "faq": [
+      {
+        "question": "Which Claude models can be migrated to Opus 4.5?",
+        "answer": "Supports Sonnet 4.0, Sonnet 4.5, and Opus 4.1. Does not migrate Haiku models."
+      },
+      {
+        "question": "What platforms are supported for migration?",
+        "answer": "Anthropic API (1P), AWS Bedrock, Google Vertex AI, and Azure AI Foundry."
+      },
+      {
+        "question": "What is the effort parameter?",
+        "answer": "Controls model token spending. High effort provides best performance for Opus 4.5."
+      },
+      {
+        "question": "Is my data safe during migration?",
+        "answer": "The skill only reads and modifies model string configurations. No data is sent externally."
+      },
+      {
+        "question": "Why keep default prompt adjustments?",
+        "answer": "Apply prompt fixes only when users report issues. Default Opus 4.5 behavior works well for most cases."
+      },
+      {
+        "question": "How is this different from other migration tools?",
+        "answer": "Provides platform-specific model strings, behavioral adjustments, and comprehensive documentation of all changes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "effort.md",
+          "type": "file",
+          "path": "references/effort.md",
+          "lines": 87
+        },
+        {
+          "name": "prompt-snippets.md",
+          "type": "file",
+          "path": "references/prompt-snippets.md",
+          "lines": 121
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 164
+    }
+  ]
+}

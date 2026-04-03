@@ -1,0 +1,401 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:47:15.121Z",
+    "slug": "barnhardt-enterprises-inc-git-workflow",
+    "source_url": "https://github.com/Barnhardt-Enterprises-Inc/quetrex-claude/tree/main/skills/git-workflow",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "352de525196911849286953dfce8e7a0cfa0faefd8ff2d90bb0dc81aa8d37e02",
+    "tree_hash": "6f27e4d8727cdbd0934c2d2c1e8f65456961dbb59bb530ec54630cc05ff56b2f"
+  },
+  "skill": {
+    "name": "git-workflow",
+    "description": "Git workflow with worktrees and conventional commits.",
+    "summary": "Git workflow with worktrees and conventional commits.",
+    "icon": "🔀",
+    "version": "1.0.0",
+    "author": "Barnhardt-Enterprises-Inc",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "git",
+      "version-control",
+      "workflow",
+      "commits",
+      "branches"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing best practices and guidelines. No executable code, scripts, network access, or filesystem operations are present. Only contains markdown documentation with git command examples. All 50 static findings are false positives - the scanner mistook documentation examples (branch names, commit formats, git commands in code blocks) for executable code. The original skill-report.json already performed human evaluation and correctly marked this as safe.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 125,
+            "line_end": 125
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 126,
+            "line_end": 126
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 127,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 95
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 10,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 139
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 326,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:47:15.121Z"
+  },
+  "content": {
+    "user_title": "Apply standardized Git workflow practices",
+    "value_statement": "Teams struggle with inconsistent branches and commits. This skill enforces naming conventions, worktree isolation, and conventional commits for clean history.",
+    "seo_keywords": [
+      "git workflow",
+      "conventional commits",
+      "git worktree",
+      "git branch naming",
+      "git aliases",
+      "GitHub CLI",
+      "Claude",
+      "claude-code",
+      "version control",
+      "code review"
+    ],
+    "actual_capabilities": [
+      "Create standardized branch names with issue prefixes",
+      "Write conventional commit messages with type and scope",
+      "Manage feature worktrees for isolated development",
+      "Clean up branches after merge",
+      "Apply rebasing and stashing workflows"
+    ],
+    "limitations": [
+      "Does not execute git commands automatically",
+      "Requires Git and GitHub CLI to be installed",
+      "Only provides guidance, not automation",
+      "Does not configure remote repository settings"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Development teams",
+        "title": "Enforce team standards",
+        "description": "Apply consistent branch naming and commit message formats across your development team."
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Maintain clean history",
+        "description": "Use conventional commits and linear history for readable project history."
+      },
+      {
+        "target_user": "Solo developers",
+        "title": "Isolate feature work",
+        "description": "Use git worktrees to work on multiple features without switching branches."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create feature branch",
+        "scenario": "Starting a new feature",
+        "prompt": "I need to start work on issue #42 for user authentication. Help me create a properly named branch using a git worktree."
+      },
+      {
+        "title": "Write commit message",
+        "scenario": "Committing code changes",
+        "prompt": "I just added a login form component. Write a conventional commit message for this change."
+      },
+      {
+        "title": "Prepare pull request",
+        "scenario": "Submitting changes for review",
+        "prompt": "My feature branch is ready. Help me push the changes and create a pull request that follows the conventional format."
+      },
+      {
+        "title": "Clean up merged branch",
+        "scenario": "Merged feature is complete",
+        "prompt": "My pull request was merged. What commands do I run to clean up the worktree and local branch?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create a branch for issue #42 adding user authentication",
+        "output": [
+          "Branch naming convention: feature/42-user-authentication",
+          "Commands to run:",
+          "gh issue create --title \"Add user authentication\" --body \"...\"",
+          "git worktree add ../worktrees/feature-42-auth -b feature/42-auth",
+          "cd ../worktrees/feature-42-auth"
+        ]
+      },
+      {
+        "input": "Write a commit message for adding a login form component",
+        "output": [
+          "Recommended format: feat(auth): add login form component",
+          "Type: feat for new feature",
+          "Scope: (auth) indicates authentication module",
+          "Description clearly describes the change"
+        ]
+      },
+      {
+        "input": "My feature branch is ready for review",
+        "output": [
+          "Push your branch: git push -u origin feature/42-auth",
+          "Create PR: gh pr create --title \"feat: add user authentication\" --body \"Closes #42\"",
+          "Your PR title follows conventional commit format",
+          "Body links to the issue being closed"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always create worktrees in a dedicated directory outside your main repo",
+      "Use conventional commits with type prefix for machine-readable history",
+      "Link issues to commits and PRs using issue numbers",
+      "Rebase onto main before submitting PRs to keep history linear"
+    ],
+    "anti_patterns": [
+      "Working directly on main branch instead of feature branches",
+      "Using generic commit messages like 'fixed bug' or 'updates'",
+      "Skipping branch cleanup after merge",
+      "Using force push to shared branches"
+    ],
+    "faq": [
+      {
+        "question": "What tools do I need installed?",
+        "answer": "Git must be installed. GitHub CLI (gh) is recommended for issue and PR creation commands."
+      },
+      {
+        "question": "Can I use this with GitLab or Bitbucket?",
+        "answer": "Yes. The git commands work with any Git host. Only gh commands are GitHub-specific."
+      },
+      {
+        "question": "Does this skill modify my git config?",
+        "answer": "No. This skill only provides guidance. You must manually run commands or configure aliases."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "Yes. This is a documentation-only skill that reads nothing and modifies nothing."
+      },
+      {
+        "question": "What if my team uses a different commit format?",
+        "answer": "Adapt the conventions to your team's standards. The skill provides a recommended starting point."
+      },
+      {
+        "question": "How is this different from git initialization tools?",
+        "answer": "This skill provides workflow guidance, not project setup. It helps maintain consistency during development."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 148
+    }
+  ]
+}

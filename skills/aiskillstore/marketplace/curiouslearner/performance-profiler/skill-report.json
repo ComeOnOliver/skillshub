@@ -1,0 +1,309 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:55:56.891Z",
+    "slug": "curiouslearner-performance-profiler",
+    "source_url": "https://github.com/CuriousLearner/devkit/tree/main/skills/performance-profiler",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b66a525d63a23aa722b90cf12f61777b7c92a4cd854dfff1e8832cd5811e0695",
+    "tree_hash": "8691e959c6a18df3a139ca418c45e2924504af87509a4a4a4b220388052d6c13"
+  },
+  "skill": {
+    "name": "performance-profiler",
+    "description": "Analyze code performance patterns and identify optimization opportunities.",
+    "summary": "Analyze code performance patterns and identify optimization opportunities.",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "CuriousLearner",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "performance",
+      "optimization",
+      "profiling",
+      "algorithms",
+      "code-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure prompt-based skill containing only markdown documentation with code examples. All flagged patterns are documentation snippets showing performance anti-patterns and fixes, not executable code. No actual security risks exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 153,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 174
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 178
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 185
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 185,
+            "line_end": 249
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 162
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 466,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:55:56.891Z"
+  },
+  "content": {
+    "user_title": "Analyze code performance and find optimization opportunities",
+    "value_statement": "Slow code wastes compute resources and frustrates users. This skill identifies inefficient algorithms, memory leaks, and N+1 queries, then provides specific fixes with expected performance gains.",
+    "seo_keywords": [
+      "performance optimization",
+      "code profiler",
+      "algorithm efficiency",
+      "memory leak detection",
+      "React performance",
+      "N+1 query",
+      "bundle size analysis",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Identify O(n²) algorithms and suggest O(n) alternatives",
+      "Detect memory leaks from uncleared event listeners",
+      "Find unnecessary React or Vue component re-renders",
+      "Locate N+1 database query patterns",
+      "Analyze bundle size and large dependency imports",
+      "Provide before and after code examples with expected improvements"
+    ],
+    "limitations": [
+      "Cannot execute code or measure actual runtime performance",
+      "Cannot access external profiling tools or browser DevTools",
+      "Analysis is based on code patterns, not production metrics",
+      "Cannot modify files or apply fixes automatically"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Fix slow React components",
+        "description": "Identify unnecessary re-renders and apply memoization strategies to improve React performance."
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "Optimize database queries",
+        "description": "Detect N+1 query problems and suggest eager loading or join strategies to reduce database calls."
+      },
+      {
+        "target_user": "Full-stack engineers",
+        "title": "Reduce JavaScript bundle size",
+        "description": "Find large dependencies like lodash or moment and suggest lighter alternatives or tree shaking."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic performance check",
+        "scenario": "Quick review of code performance",
+        "prompt": "Analyze this code for performance issues and suggest improvements."
+      },
+      {
+        "title": "Algorithm efficiency review",
+        "scenario": "Check for inefficient algorithms",
+        "prompt": "Review the algorithms in this code. Find any O(n²) or worse patterns and suggest O(n) alternatives."
+      },
+      {
+        "title": "React component optimization",
+        "scenario": "Fix slow React components",
+        "prompt": "Analyze this React component for unnecessary re-renders, missing memoization, and memory leaks."
+      },
+      {
+        "title": "Full performance report",
+        "scenario": "Comprehensive analysis needed",
+        "prompt": "Provide a complete performance analysis including algorithm efficiency, memory usage, bundle impact, and specific optimizations with code examples."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze this JavaScript search function for performance",
+        "output": [
+          "Found O(n²) complexity from nested loops",
+          "Current performance estimate: 850ms for 1000 items",
+          "Recommendation: Use Map for O(1) lookups",
+          "Expected improvement: 99% faster at ~8ms for 1000 items"
+        ]
+      },
+      {
+        "input": "Review this React component for re-render issues",
+        "output": [
+          "Component re-renders on every parent state change",
+          "Missing React.memo wrapper",
+          "Expensive calculation runs on each render",
+          "Recommendation: Add useMemo for expensiveCalculation, wrap with React.memo"
+        ]
+      },
+      {
+        "input": "Check my bundle for large dependencies",
+        "output": [
+          "lodash: 71KB gzipped - import only needed functions",
+          "moment: 68KB gzipped - replace with date-fns or day.js",
+          "Total potential savings: 120KB"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Profile code before optimizing to identify actual bottlenecks",
+      "Focus on high-impact areas first rather than micro-optimizations",
+      "Measure performance improvements after implementing changes"
+    ],
+    "anti_patterns": [
+      "Optimizing code without measuring actual performance impact",
+      "Importing entire libraries when only specific functions are needed",
+      "Ignoring memory leaks from uncleared event listeners or timers"
+    ],
+    "faq": [
+      {
+        "question": "Which programming languages does this skill support?",
+        "answer": "The skill works with JavaScript, Python, Java, Go, and most mainstream languages. Analysis focuses on universal performance patterns."
+      },
+      {
+        "question": "Can this skill measure actual runtime performance?",
+        "answer": "No. The skill analyzes code patterns conceptually. Use browser DevTools, clinic.js, or language-specific profilers for runtime measurements."
+      },
+      {
+        "question": "Does this skill integrate with build tools like webpack?",
+        "answer": "No. This is a prompt-based skill for AI assistants. It provides analysis recommendations but does not integrate with build systems."
+      },
+      {
+        "question": "Is my code data safe with this skill?",
+        "answer": "Yes. As a prompt-based skill, no code is stored externally. Analysis happens within your AI session context."
+      },
+      {
+        "question": "How is this different from Chrome DevTools or Lighthouse?",
+        "answer": "This skill analyzes source code patterns statically. DevTools and Lighthouse measure runtime performance. Use both for complete optimization."
+      },
+      {
+        "question": "What types of performance issues can this skill find?",
+        "answer": "Algorithm inefficiency, memory leaks, unnecessary re-renders, N+1 queries, large bundle dependencies, and blocking operations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 290
+    }
+  ]
+}

@@ -1,0 +1,175 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T19:36:54.071Z",
+    "slug": "wshobson-modern-javascript-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/javascript-typescript/skills/modern-javascript-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "835dcdbe603207909c521f5bb14e15a9ad13f3c63cb153ecc4a0240906fd7a24",
+    "tree_hash": "70d9f8ddfea3b0c8add3fd0e7e084c296fd03f2cdae5375f0688b8541d6e5e3b"
+  },
+  "skill": {
+    "name": "modern-javascript-patterns",
+    "description": "Master ES6+ features including async/await, destructuring, spread operators, arrow functions, promises, modules, iterators, generators, and functional programming patterns for writing clean, efficient JavaScript code. Use when refactoring legacy code, implementing modern patterns, or optimizing JavaScript applications.",
+    "summary": "Master ES6+ features including async/await, destructuring, spread operators, arrow functions, promises, modules, iterators, generators, and functional programming patterns for writing clean, efficient JavaScript code.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "tags": [
+      "javascript",
+      "es6",
+      "async-await",
+      "functional-programming"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation skill containing educational content about JavaScript ES6+ patterns. All static analysis findings are false positives. The 'weak cryptographic algorithm' flags are triggered by JavaScript template literals and class private field syntax (#). The 'shell backtick execution' flags are false positives from JavaScript template literals in code examples. The 'dynamic import()' detections are legitimate ES6 module examples being documented. No malicious code patterns exist.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1897,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T20:00:00.000Z"
+  },
+  "content": {
+    "user_title": "Apply Modern JavaScript Patterns",
+    "value_statement": "Legacy JavaScript codebases are difficult to maintain and optimize. This skill provides comprehensive guidance on ES6+ features including arrow functions, destructuring, async/await, promises, functional programming patterns, and modern class features to write clean, efficient, and maintainable JavaScript code.",
+    "seo_keywords": [
+      "JavaScript ES6",
+      "modern JavaScript patterns",
+      "async await tutorial",
+      "arrow functions JavaScript",
+      "destructuring JavaScript",
+      "functional programming JavaScript",
+      "JavaScript modules",
+      "JavaScript best practices",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Explains and demonstrates ES6+ features including arrow functions, destructuring, spread operators, and template literals",
+      "Provides guidance on async programming patterns using Promises and async/await with proper error handling",
+      "Teaches functional programming concepts including map, filter, reduce, higher-order functions, and function composition",
+      "Demonstrates modern class features including private fields, static methods, getters, setters, and inheritance",
+      "Shows ES6 module patterns including named exports, default exports, and dynamic imports",
+      "Covers iterators, generators, and async generators for controlled iteration and lazy evaluation"
+    ],
+    "limitations": [
+      "Does not execute or test user code - provides guidance and examples only",
+      "Does not include interactive coding exercises or challenges",
+      "Does not cover framework-specific patterns (React, Vue, Angular)",
+      "Does not provide project scaffolding or file generation capabilities"
+    ],
+    "use_cases": [
+      {
+        "title": "Refactor Legacy JavaScript Codebases",
+        "description": "Migrate callback-based code to Promises and async/await patterns. Replace traditional functions with arrow functions to fix 'this' binding issues. Apply destructuring and spread operators to simplify data manipulation.",
+        "target_user": "Backend and frontend developers modernizing existing JavaScript applications"
+      },
+      {
+        "title": "Learn Functional Programming in JavaScript",
+        "description": "Understand how to use map, filter, and reduce for data transformation. Learn to create pure functions that avoid side effects. Apply function composition and piping for readable data processing pipelines.",
+        "target_user": "Developers learning functional programming concepts in JavaScript"
+      },
+      {
+        "title": "Write Maintainable JavaScript Code",
+        "description": "Apply modern JavaScript patterns for cleaner, more expressive code. Use proper module organization and ES6 class features. Implement performance optimizations like debouncing, throttling, and lazy evaluation.",
+        "target_user": "Developers seeking to improve code quality and maintainability"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic ES6+ Question",
+        "prompt": "How do I use [feature] in modern JavaScript? Can you show me examples of [use case]?",
+        "scenario": "Learning a specific ES6 feature"
+      },
+      {
+        "title": "Refactoring Legacy Code",
+        "prompt": "I have this legacy JavaScript code: [code snippet]. How can I refactor it to use modern ES6+ patterns? What specific features should I apply?",
+        "scenario": "Converting callback-based or ES5 code to modern syntax"
+      },
+      {
+        "title": "Async Pattern Implementation",
+        "prompt": "I need to implement [specific async task]. Should I use Promises, async/await, or a combination? Show me the best practice pattern for [scenario] with proper error handling.",
+        "scenario": "Implementing asynchronous operations"
+      },
+      {
+        "title": "Functional Programming Challenge",
+        "prompt": "I have an array of objects: [data structure]. How can I use functional programming to [transform/group/filter/aggregate] this data? Show me step-by-step how to compose functions for this task.",
+        "scenario": "Applying functional programming patterns to data manipulation"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I destructure nested objects in JavaScript?",
+        "output": "Nested object destructuring allows you to extract values from deeply nested objects:\n\n```javascript\nconst user = {\n  id: 1,\n  name: 'Alice',\n  address: {\n    city: 'Boston',\n    country: 'USA'\n  }\n};\n\n// Nested destructuring\nconst { \n  name, \n  address: { city, country } \n} = user;\n\nconsole.log(city);  // 'Boston'\nconsole.log(country);  // 'USA'\n\n// With default values\nconst { \n  address: { \n    city = 'Unknown',\n    zipCode = '00000'\n  } = {} \n} = user;\n```"
+      },
+      {
+        "input": "What's the difference between Promise.all and Promise.allSettled?",
+        "output": "Promise.all fails fast - if any promise rejects, the entire operation fails. Promise.allSettled waits for all promises to settle regardless of outcome:\n\n```javascript\n// Promise.all - fails on first rejection\nconst users = await Promise.all([\n  fetchUser(1),\n  fetchUser(2)\n]);  // Throws if either fails\n\n// Promise.allSettled - waits for all\nconst results = await Promise.allSettled([\n  fetchUser(1),\n  fetchUser(2)\n]);\n\nresults.forEach(result => {\n  if (result.status === 'fulfilled') {\n    console.log('Success:', result.value);\n  } else {\n    console.log('Failed:', result.reason);\n  }\n});\n```"
+      }
+    ],
+    "best_practices": [
+      "Use const by default and only use let when reassignment is truly needed. This prevents accidental mutations and makes code intent clearer.",
+      "Prefer arrow functions for callbacks and methods that need lexical 'this' binding. Use traditional functions only when you need dynamic 'this'.",
+      "Apply destructuring and spread operators for cleaner data manipulation. Avoid direct property access and mutation when possible."
+    ],
+    "anti_patterns": [
+      "Avoid wrapping already async functions in new Promises. If a function already returns a Promise, use it directly with await.",
+      "Do not mutate input data in functions. Always return new objects or arrays using spread operators to maintain immutability.",
+      "Avoid callback pyramids and excessive Promise chaining. Use async/await for better readability and error handling."
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between arrow functions and traditional functions in JavaScript?",
+        "answer": "Arrow functions have lexical 'this' binding (inherit from surrounding scope) and cannot be used as constructors. Traditional functions have dynamic 'this' binding and can be called with 'new'. Use arrow functions for callbacks and methods where 'this' should not change."
+      },
+      {
+        "question": "When should I use async/await vs Promises directly?",
+        "answer": "Use async/await for most cases as it produces more readable code similar to synchronous code. Use Promises directly when composing multiple async operations with Promise.all, Promise.race, or Promise.allSettled."
+      },
+      {
+        "question": "How do I handle errors with async/await?",
+        "answer": "Wrap await calls in try/catch blocks. For multiple independent async operations, consider using Promise.allSettled to handle failures gracefully without stopping the entire operation."
+      },
+      {
+        "question": "What are the benefits of functional programming in JavaScript?",
+        "answer": "Functional programming makes code more predictable and easier to test. Pure functions always produce the same output for the same input and have no side effects. Array methods like map, filter, and reduce create chainable transformations that are readable and maintainable."
+      },
+      {
+        "question": "When should I use destructuring vs direct property access?",
+        "answer": "Use destructuring when extracting multiple properties from an object or array. It makes code cleaner and declares all variables at once. Use direct access for single property access in simple cases."
+      },
+      {
+        "question": "What are the performance implications of modern JavaScript features?",
+        "answer": "Modern JavaScript features are optimized by modern engines. Some patterns like spread operators on large arrays can create performance overhead. Use debouncing and throttling for event handlers. For intensive operations, consider generators for lazy evaluation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 912
+    }
+  ]
+}

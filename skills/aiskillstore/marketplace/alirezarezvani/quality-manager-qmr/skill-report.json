@@ -1,0 +1,261 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:34:34.617Z",
+    "slug": "alirezarezvani-quality-manager-qmr",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/ra-qm-team/quality-manager-qmr",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "fb265abe3949f71fbb62e31ee326f5205122a8e91a208b542a0ffbccd5230eae",
+    "tree_hash": "642c4497bb8c6165bb8660159d31199cbdaa84bbb41e896e5f93bd66f1d8da8e"
+  },
+  "skill": {
+    "name": "quality-manager-qmr",
+    "description": "Senior Quality Manager Responsible Person (QMR) for HealthTech and MedTech companies. Provides overall quality system responsibility, regulatory compliance oversight, management accountability, and strategic quality leadership. Use for quality system governance, regulatory compliance oversight, management responsibility, and quality strategic planning.",
+    "summary": "Senior Quality Manager Responsible Person (QMR) for HealthTech and MedTech companies. Provides overa...",
+    "icon": "🎯",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "quality-management",
+      "regulatory-compliance",
+      "iso-13485",
+      "healthtech",
+      "medtech"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing markdown files with quality management frameworks. No executable code, scripts, network operations, or cryptographic operations exist. All 63 static findings are false positives caused by the scanner misidentifying ASCII tree diagram characters as shell backticks, file format names as cryptographic patterns, and regulatory compliance text as security threats.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 193,
+            "line_end": 208
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 175
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 917,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:34:34.617Z"
+  },
+  "content": {
+    "user_title": "Lead Quality Management for HealthTech Organizations",
+    "value_statement": "HealthTech and MedTech companies face complex quality system requirements across multiple jurisdictions. This skill provides senior quality manager expertise for ISO 13485 compliance, regulatory oversight, and strategic quality leadership.",
+    "seo_keywords": [
+      "quality manager",
+      "ISO 13485",
+      "regulatory compliance",
+      "HealthTech",
+      "MedTech",
+      "quality management system",
+      "QMR",
+      "FDA compliance",
+      "MDR compliance",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Provides overall quality management system oversight and accountability",
+      "Guides regulatory compliance across EU MDR, FDA QSR, and ISO 13485 requirements",
+      "Leads management review processes with strategic quality planning",
+      "Develops quality KPIs and performance monitoring frameworks",
+      "Establishes quality culture and organizational quality leadership",
+      "Manages regulatory authority relationships and certification programs"
+    ],
+    "limitations": [
+      "Does not execute regulatory submissions or interact with authorities directly",
+      "Does not replace qualified legal or regulatory affairs professionals",
+      "Does not provide device-specific clinical or technical documentation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Quality Directors",
+        "title": "Strategic Quality Planning",
+        "description": "Develop quality strategies aligned with business objectives and regulatory requirements across multiple markets."
+      },
+      {
+        "target_user": "Regulatory Affairs Managers",
+        "title": "Compliance Oversight",
+        "description": "Monitor multi-jurisdictional compliance status and prepare for regulatory authority inspections and audits."
+      },
+      {
+        "target_user": "Quality Engineers",
+        "title": "QMS Implementation",
+        "description": "Establish quality management system governance, document controls, and continuous improvement processes."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "QMS Overview",
+        "scenario": "Start quality management engagement",
+        "prompt": "Provide an overview of QMR responsibilities for a medical device company seeking ISO 13485 certification."
+      },
+      {
+        "title": "Compliance Assessment",
+        "scenario": "Evaluate regulatory compliance gaps",
+        "prompt": "What are the key compliance requirements for FDA QSR 21 CFR 820 and EU MDR 2017/745 for a Class II medical device?"
+      },
+      {
+        "title": "Management Review",
+        "scenario": "Prepare management reporting",
+        "prompt": "Help me create a quarterly management review agenda covering quality system effectiveness, regulatory compliance, and quality culture."
+      },
+      {
+        "title": "Quality Strategy",
+        "scenario": "Develop strategic quality plan",
+        "prompt": "Develop a 3-year quality strategic plan for a growing MedTech company expanding from US to European markets."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What are the key elements of an effective CAPA management system under ISO 13485?",
+        "output": [
+          "Root cause analysis methodology (5-Why, fishbone diagram, FMEA)",
+          "Corrective action documentation with effectiveness verification",
+          "Trend analysis and metrics for nonconformity tracking",
+          "Linkage to document control and change management",
+          "Management review integration for systemic issue escalation"
+        ]
+      },
+      {
+        "input": "How should we prepare for an FDA inspection of our quality system?",
+        "output": [
+          "Pre-inspection readiness assessment covering all QSR subsystems",
+          "Documentation review and organization (DHR, DMR, DHF)",
+          "Interview preparation for key personnel roles",
+          "Common inspection findings and remediation strategies",
+          "Post-inspection response planning and CAPA development"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Integrate quality considerations into product development from concept through commercialization",
+      "Maintain proactive regulatory intelligence to anticipate compliance requirement changes",
+      "Establish clear quality metrics and review them regularly with senior leadership"
+    ],
+    "anti_patterns": [
+      "Waiting until audit findings to address systemic quality issues",
+      "Treating quality management as a documentation exercise rather than a cultural commitment",
+      "Neglecting to involve cross-functional teams in quality system governance"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between QMR and a Quality Assurance Manager?",
+        "answer": "QMR has organizational accountability for quality system effectiveness, while QA managers handle day-to-day quality operations."
+      },
+      {
+        "question": "How often should management reviews be conducted?",
+        "answer": "ISO 13485 requires documented management review at planned intervals. Quarterly reviews are industry standard."
+      },
+      {
+        "question": "What qualifications does a QMR need?",
+        "answer": "Regulatory requirements vary, but typically include quality system experience, regulatory knowledge, and organizational authority."
+      },
+      {
+        "question": "How do EU MDR and FDA QSR requirements differ?",
+        "answer": "EU MDR emphasizes clinical evaluation and post-market surveillance, while FDA QSR focuses on design controls and manufacturing."
+      },
+      {
+        "question": "Can this skill help with ISO 13485 certification preparation?",
+        "answer": "Yes, it provides guidance on certification requirements, audit preparation, and continuous improvement for maintaining certification."
+      },
+      {
+        "question": "What quality metrics should we track?",
+        "answer": "Key metrics include process effectiveness, customer satisfaction, audit findings, CAPA closure rates, and product quality indicators."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "example_asset.txt",
+          "type": "file",
+          "path": "assets/example_asset.txt",
+          "lines": 25
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 35
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "example.py",
+          "type": "file",
+          "path": "scripts/example.py",
+          "lines": 20
+        }
+      ]
+    },
+    {
+      "name": "evaluation.json",
+      "type": "file",
+      "path": "evaluation.json",
+      "lines": 311
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 210
+    }
+  ]
+}

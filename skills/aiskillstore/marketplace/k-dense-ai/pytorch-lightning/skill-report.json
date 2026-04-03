@@ -1,0 +1,320 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:19:32.581Z",
+    "slug": "k-dense-ai-pytorch-lightning",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pytorch-lightning",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b747b79c9fae4128443726b9c2a33838716eb9f7e2c4fdfe738ce04b2ad06e19",
+    "tree_hash": "848da3cedcd74269dfa2a92a5ea74d10940f78d58eddd98f34e71ae6ba51d29b"
+  },
+  "skill": {
+    "name": "pytorch-lightning",
+    "description": "Deep learning framework (PyTorch Lightning). Organize PyTorch code into LightningModules, configure Trainers for multi-GPU/TPU, implement data pipelines, callbacks, logging (W&B, TensorBoard), distributed training (DDP, FSDP, DeepSpeed), for scalable neural network training.",
+    "summary": "Deep learning framework (PyTorch Lightning). Organize PyTorch code into LightningModules, configure ...",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Apache-2.0 license",
+    "category": "research",
+    "tags": [
+      "deep-learning",
+      "pytorch",
+      "neural-networks",
+      "gpu-training",
+      "distributed"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "scripts",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 843 static findings are false positives. The 'Ruby/shell backtick execution' alerts are markdown code blocks, 'weak cryptographic algorithm' alerts flag normal text like 'DDP/FSDP', and 'eval()' refers to PyTorch's model.eval() method. This is legitimate deep learning documentation with no malicious code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 40
+          },
+          {
+            "file": "references/best_practices.md",
+            "line_start": 8,
+            "line_end": 25
+          },
+          {
+            "file": "references/logging.md",
+            "line_start": 14,
+            "line_end": 35
+          },
+          {
+            "file": "references/callbacks.md",
+            "line_start": 18,
+            "line_end": 50
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "references/lightning_module.md",
+            "line_start": 443,
+            "line_end": 447
+          },
+          {
+            "file": "scripts/quick_trainer_setup.py",
+            "line_start": 8,
+            "line_end": 10
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/logging.md",
+            "line_start": 80,
+            "line_end": 88
+          },
+          {
+            "file": "references/distributed_training.md",
+            "line_start": 437,
+            "line_end": 446
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 12,
+    "total_lines": 9738,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:19:32.581Z"
+  },
+  "content": {
+    "user_title": "Build neural networks with PyTorch Lightning",
+    "value_statement": "This skill helps you organize PyTorch code into reusable LightningModules. It provides templates and documentation for configuring multi-GPU training, implementing data pipelines, and setting up experiment tracking with popular tools like W&B and TensorBoard.",
+    "seo_keywords": [
+      "PyTorch Lightning",
+      "deep learning training",
+      "LightningModule",
+      "distributed training",
+      "multi-GPU training",
+      "TensorBoard logging",
+      "neural network",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Create LightningModules to organize model code into training, validation, and test steps",
+      "Configure Trainers for single-GPU, multi-GPU, and TPU training with automatic mixed precision",
+      "Build reusable data pipelines with LightningDataModules for data loading and preprocessing",
+      "Implement callbacks for checkpointing, early stopping, and learning rate monitoring",
+      "Set up distributed training across multiple GPUs using DDP, FSDP, or DeepSpeed strategies",
+      "Integrate experiment tracking with TensorBoard, W&B, MLflow, Neptune, or Comet loggers"
+    ],
+    "limitations": [
+      "Does not install PyTorch Lightning - users must install separately with pip install lightning",
+      "Does not execute training - provides templates and documentation only",
+      "Does not manage cloud resources or compute infrastructure",
+      "Does not include pre-trained models or datasets"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Machine learning researchers",
+        "title": "Organize research experiments",
+        "description": "Structure PyTorch code into reusable LightningModules for cleaner experimentation and faster iteration."
+      },
+      {
+        "target_user": "ML engineers",
+        "title": "Scale training to multiple GPUs",
+        "description": "Configure distributed training across clusters with DDP, FSDP, or DeepSpeed for large model training."
+      },
+      {
+        "target_user": "Data scientists",
+        "title": "Track experiments automatically",
+        "description": "Integrate with W&B, TensorBoard, or MLflow to log metrics, hyperparameters, and model checkpoints."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic model setup",
+        "scenario": "Create a simple image classifier",
+        "prompt": "Show me how to create a LightningModule for an image classifier with training_step, validation_step, and configure_optimizers methods."
+      },
+      {
+        "title": "Multi-GPU training",
+        "scenario": "Scale training to multiple GPUs",
+        "prompt": "How do I configure a Trainer for multi-GPU training using DDP strategy with 4 GPUs on a single node?"
+      },
+      {
+        "title": "Data pipeline",
+        "scenario": "Build a data loading pipeline",
+        "prompt": "Create a LightningDataModule for loading image data with custom transforms for training, validation, and test sets."
+      },
+      {
+        "title": "Experiment tracking",
+        "scenario": "Log metrics to W&B",
+        "prompt": "Set up Weights & Biases logging with WandbLogger in PyTorch Lightning to track training metrics and hyperparameters."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a simple CNN LightningModule for image classification",
+        "output": [
+          "A LightningModule class with __init__, training_step, validation_step, and configure_optimizers",
+          "Example CNN architecture using torch.nn layers",
+          "Training loop that returns loss and logs metrics with self.log()",
+          "Optimizer configuration with Adam and learning rate scheduler"
+        ]
+      },
+      {
+        "input": "Configure Trainer for GPU training with checkpointing",
+        "output": [
+          "Trainer configuration with accelerator='gpu', devices=2",
+          "ModelCheckpoint callback to save best model based on validation loss",
+          "EarlyStopping callback to halt training when metrics plateau",
+          "Progress bar and logger configuration"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use self.device instead of .cuda() for device-agnostic code that works on GPU and CPU",
+      "Call self.save_hyperparameters() in __init__() to save configuration for reproducibility",
+      "Use self.log() with sync_dist=True when logging metrics in distributed training"
+    ],
+    "anti_patterns": [
+      "Do not manually call loss.backward() or optimizer.step() - let the Trainer handle optimization",
+      "Avoid mixing research code (model architecture, loss computation) with engineering code (device management, checkpointing)",
+      "Do not use .cuda() directly - use self.to(device) or rely on Lightning automatic device placement"
+    ],
+    "faq": [
+      {
+        "question": "How do I install PyTorch Lightning?",
+        "answer": "Run pip install lightning. The skill provides templates and documentation after installation."
+      },
+      {
+        "question": "What is the difference between DDP, FSDP, and DeepSpeed?",
+        "answer": "DDP for models under 500M parameters. FSDP shards model across GPUs for larger models. DeepSpeed offers advanced features like CPU offloading."
+      },
+      {
+        "question": "How do I debug my model quickly?",
+        "answer": "Use Trainer(fast_dev_run=True) to run one batch through train, validation, and test loops for rapid debugging."
+      },
+      {
+        "question": "Can I use this skill for inference only?",
+        "answer": "Yes, use model.eval() mode and trainer.predict() method for inference on new data without training."
+      },
+      {
+        "question": "How do I resume training from a checkpoint?",
+        "answer": "Pass ckpt_path='path/to/checkpoint.ckpt' to trainer.fit(), trainer.validate(), or trainer.test() methods."
+      },
+      {
+        "question": "What loggers are supported?",
+        "answer": "TensorBoard (default), Weights & Biases, MLflow, Neptune, Comet, and CSVLogger for local files."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "best_practices.md",
+          "type": "file",
+          "path": "references/best_practices.md",
+          "lines": 725
+        },
+        {
+          "name": "callbacks.md",
+          "type": "file",
+          "path": "references/callbacks.md",
+          "lines": 565
+        },
+        {
+          "name": "data_module.md",
+          "type": "file",
+          "path": "references/data_module.md",
+          "lines": 566
+        },
+        {
+          "name": "distributed_training.md",
+          "type": "file",
+          "path": "references/distributed_training.md",
+          "lines": 644
+        },
+        {
+          "name": "lightning_module.md",
+          "type": "file",
+          "path": "references/lightning_module.md",
+          "lines": 488
+        },
+        {
+          "name": "logging.md",
+          "type": "file",
+          "path": "references/logging.md",
+          "lines": 655
+        },
+        {
+          "name": "trainer.md",
+          "type": "file",
+          "path": "references/trainer.md",
+          "lines": 642
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "quick_trainer_setup.py",
+          "type": "file",
+          "path": "scripts/quick_trainer_setup.py",
+          "lines": 455
+        },
+        {
+          "name": "template_datamodule.py",
+          "type": "file",
+          "path": "scripts/template_datamodule.py",
+          "lines": 329
+        },
+        {
+          "name": "template_lightning_module.py",
+          "type": "file",
+          "path": "scripts/template_lightning_module.py",
+          "lines": 220
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 174
+    }
+  ]
+}

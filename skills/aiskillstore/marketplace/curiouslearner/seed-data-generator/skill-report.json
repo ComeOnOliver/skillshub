@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:51:37.706Z",
+    "slug": "curiouslearner-seed-data-generator",
+    "source_url": "https://github.com/CuriousLearner/devkit/tree/main/skills/seed-data-generator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "162a2127783e84961cd6ecbf697f93ecaac7aa1876b8eb8d02e6446285e6ad67",
+    "tree_hash": "a1252d483a58486d43c011ce43321034b2a6e33c9c5ab8c921e7d6c1a0360222"
+  },
+  "skill": {
+    "name": "seed-data-generator",
+    "description": "Generate realistic test data for database development, testing, and demos using Faker libraries and ORM seeders.",
+    "summary": "Automate creation of realistic test data with proper relationships and constraints for any database system.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "CuriousLearner",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "database",
+      "testing",
+      "seed-data",
+      "faker",
+      "test-automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides educational documentation for generating test database seed data. All static findings are false positives from documentation examples. The skill contains no executable code, only markdown documentation showing SQL functions, JavaScript/TypeScript examples, and Python code snippets. No security risks identified.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1595,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:51:37.706Z"
+  },
+  "content": {
+    "user_title": "Generate Realistic Database Seed Data for Testing",
+    "value_statement": "Creating realistic test data for database development is time-consuming and error-prone. This skill helps you generate properly structured seed data with realistic relationships, constraints, and scenarios for any database system using Faker libraries and ORM tools.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "database seeding",
+      "test data generation",
+      "faker library",
+      "database testing",
+      "seed data",
+      "ORM seeders",
+      "realistic test data"
+    ],
+    "actual_capabilities": [
+      "Generate SQL INSERT statements with realistic data for any database schema",
+      "Create ORM-based seeders for Prisma, TypeORM, Sequelize, Django, and Rails",
+      "Build PostgreSQL functions for dynamic test data generation with proper constraints",
+      "Design multi-table seed data that maintains referential integrity and foreign key relationships",
+      "Produce realistic user personas and data scenarios for e-commerce and SaaS applications",
+      "Generate seed scripts with customizable data quantities and distribution patterns"
+    ],
+    "limitations": [
+      "Does not execute database migrations or schema changes automatically",
+      "Requires manual adaptation of examples to match your specific database schema",
+      "Cannot connect directly to databases or verify data integrity after seeding",
+      "Does not include database-specific optimization for very large datasets beyond 100k records"
+    ],
+    "use_cases": [
+      {
+        "title": "Backend Developer Testing",
+        "description": "A backend developer needs realistic test data for an e-commerce API with users, products, orders, and reviews to test application logic and database queries.",
+        "target_user": "Backend developers building and testing API endpoints"
+      },
+      {
+        "title": "Demo Environment Setup",
+        "description": "A product manager preparing a sales demo needs a populated database with realistic customer data, transaction history, and business metrics to showcase product features.",
+        "target_user": "Product managers and sales teams creating demonstration environments"
+      },
+      {
+        "title": "Database Schema Validation",
+        "description": "A database engineer wants to validate schema design and constraint enforcement by populating tables with diverse test cases including edge cases and boundary conditions.",
+        "target_user": "Database engineers and data architects validating schema designs"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Seed Data Generation",
+        "prompt": "@seed-data-generator Create seed data for a users table with 50 realistic users including usernames, emails, and timestamps",
+        "scenario": "Quick test data generation for a single table"
+      },
+      {
+        "title": "Multi-Table E-Commerce Seeding",
+        "prompt": "@seed-data-generator Generate a complete e-commerce seed dataset with 100 users, 200 products across 5 categories, and 500 orders with proper relationships",
+        "scenario": "Setting up a realistic test environment for an online store"
+      },
+      {
+        "title": "ORM-Based Prisma Seeder",
+        "prompt": "@seed-data-generator Create a Prisma seed script that generates 50 users, 100 blog posts, and 300 comments with realistic faker data and proper foreign key relationships",
+        "scenario": "Building a TypeScript seeder for a blog application"
+      },
+      {
+        "title": "Advanced SaaS Multi-Tenant Data",
+        "prompt": "@seed-data-generator Generate realistic multi-tenant SaaS data with organizations of varying sizes, user roles, projects, and activity logs distributed over the past 2 years",
+        "scenario": "Creating complex hierarchical test data for enterprise applications"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create seed data for a products table with 10 items",
+        "output": "SQL INSERT statement with 10 realistic products including names from Faker commerce library, descriptions, prices between $10-$2000, stock quantities, category IDs, and timestamps spread across the past year"
+      },
+      {
+        "input": "Generate a TypeORM seeder for users and orders",
+        "output": "Complete TypeScript seeder class implementing the Seeder interface, creating 50 users with faker-generated profiles, then 200 orders distributed among active users with realistic status distribution and total amounts"
+      },
+      {
+        "input": "Build a Django management command to seed an e-commerce database",
+        "output": "Python management command with argument parsing for configurable quantities, creating categories, users with realistic personas, products with stock levels, and orders with proper item relationships and calculated totals"
+      }
+    ],
+    "best_practices": [
+      "Always use faker.seed() with a fixed value to make data generation reproducible across different environments and test runs",
+      "Clear existing data with DELETE or TRUNCATE before seeding to prevent duplicate key errors and ensure clean test state",
+      "Seed tables in dependency order with parent records before child records to maintain referential integrity and avoid foreign key constraint violations"
+    ],
+    "anti_patterns": [
+      "Avoid seeding production databases with test data as this contaminates real customer information and violates data governance policies",
+      "Do not use identical passwords or predictable patterns for all test users as this fails to test authentication security properly",
+      "Never hardcode auto-increment IDs in seed data as this breaks when running seeds multiple times and causes constraint violations"
+    ],
+    "faq": [
+      {
+        "question": "Which faker library should I use for my project?",
+        "answer": "Use @faker-js/faker for JavaScript or TypeScript projects, Faker for Python or Ruby projects. All provide similar realistic data generation capabilities for names, emails, addresses, dates, and commerce data."
+      },
+      {
+        "question": "How do I maintain referential integrity when seeding related tables?",
+        "answer": "Always seed parent tables first and store their returned IDs, then use those IDs when creating child records. Use transactions to ensure all related data is created together or rolled back on failure."
+      },
+      {
+        "question": "Can I use this skill to seed a production database?",
+        "answer": "No, seed data should only be used in development, testing, and staging environments. Production databases should contain only real customer data and never be populated with generated test data."
+      },
+      {
+        "question": "How do I make seed data reproducible across team members?",
+        "answer": "Set a fixed random seed value using faker.seed(12345) at the start of your seed script. This ensures all team members generate identical test data when running the same seed script."
+      },
+      {
+        "question": "What is the best way to seed large datasets with millions of records?",
+        "answer": "Use batch insert methods like createMany in Prisma or bulk_create in Django instead of individual inserts. Wrap operations in transactions and consider using database-native functions for even better performance."
+      },
+      {
+        "question": "How do I create realistic relationships between users and orders?",
+        "answer": "Create user personas with different behavior patterns like frequent buyers or occasional shoppers, then generate orders matching those patterns. Use weighted random selection to create realistic distribution of order frequencies and values."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 913
+    }
+  ]
+}

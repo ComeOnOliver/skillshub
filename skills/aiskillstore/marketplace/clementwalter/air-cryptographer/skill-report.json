@@ -1,0 +1,380 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:06:52.885Z",
+    "slug": "clementwalter-air-cryptographer",
+    "source_url": "https://github.com/ClementWalter/rookie-marketplace/tree/main/air-cryptographer/skills/air-expertise",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a002be18d2c2bf51f1766aa500fdf1f97715c1918516e2e2cac9c572b9b87f45",
+    "tree_hash": "1765472b57d66591002df14c600973cf34229128797ba35db1ac874e4818bd2f"
+  },
+  "skill": {
+    "name": "air-cryptographer",
+    "description": "This skill should be used when the user asks about \"AIR\", \"algebraic intermediate representation\", \"ZK constraints\", \"trace design\", \"constraint soundness\", \"polynomial commitments\", \"FRI\", \"STARK\", \"lookup arguments\", \"permutation arguments\", \"memory consistency\", \"transition constraints\", \"boundary constraints\", \"vanishing polynomial\", \"quotient polynomial\", \"Fiat-Shamir\", or needs expert-level cryptographic review of constraint systems.",
+    "summary": "This skill should be used when the user asks about \"AIR\", \"algebraic intermediate representation\", \"...",
+    "icon": "🔐",
+    "version": "1.0.0",
+    "author": "ClementWalter",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "cryptography",
+      "zero-knowledge",
+      "zk-proofs",
+      "stark",
+      "constraint-systems"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only educational markdown content about AIR cryptography for ZK proof systems. Zero executable code, no file access, no network calls, no external commands. Static findings are false positives from mathematical notation and cryptographic terminology being misidentified as security risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 58,
+            "line_end": 58
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 90,
+            "line_end": 90
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 91,
+            "line_end": 91
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 104,
+            "line_end": 104
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 109,
+            "line_end": 109
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 114,
+            "line_end": 114
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 131,
+            "line_end": 131
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 136,
+            "line_end": 136
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 144,
+            "line_end": 144
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 146,
+            "line_end": 146
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 147,
+            "line_end": 147
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 152,
+            "line_end": 152
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 226,
+            "line_end": 226
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 227,
+            "line_end": 227
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 228,
+            "line_end": 228
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 229,
+            "line_end": 229
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 240,
+            "line_end": 240
+          },
+          {
+            "file": "references/review-checklist.md",
+            "line_start": 241,
+            "line_end": 241
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 266
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 802,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:06:52.885Z"
+  },
+  "content": {
+    "user_title": "Design and audit AIR constraint systems",
+    "value_statement": "Zero-knowledge proof systems require mathematically sound AIR constraints to guarantee computational integrity. This skill provides expert guidance on trace design, boundary constraints, permutation arguments, and security review methodologies for ZK protocols.",
+    "seo_keywords": [
+      "AIR cryptographer",
+      "algebraic intermediate representation",
+      "zero knowledge proof",
+      "STARK protocol",
+      "constraint system audit",
+      "trace design",
+      "polynomial commitment",
+      "FRI",
+      "Claude Code",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Design trace columns with proper source, derived, and auxiliary classifications",
+      "Define transition and boundary constraints with correct vanishing polynomials",
+      "Implement permutation and lookup arguments using grand products",
+      "Audit AIR soundness using systematic adversarial testing",
+      "Analyze degree accounting for composition polynomial correctness",
+      "Review Fiat-Shamir transcript binding and challenge separation"
+    ],
+    "limitations": [
+      "Does not generate constraint code or proof implementations",
+      "Does not execute or verify actual cryptographic implementations",
+      "Does not provide legal or regulatory compliance advice",
+      "Does not include performance benchmarking or optimization"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ZK Protocol Developers",
+        "title": "Design sound AIR constraints",
+        "description": "Build constraint systems with proper boundary conditions, transition rules, and global consistency arguments."
+      },
+      {
+        "target_user": "Security Auditors",
+        "title": "Audit ZK constraint systems",
+        "description": "Review AIR implementations for unconstrained columns, selector vulnerabilities, and soundness gaps."
+      },
+      {
+        "target_user": "Cryptography Engineers",
+        "title": "Apply advanced cryptographic arguments",
+        "description": "Implement permutation arguments, lookup tables, and memory consistency checks with correctness proofs."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic AIR Question",
+        "scenario": "Learning about AIR basics",
+        "prompt": "Explain the difference between source, derived, and auxiliary columns in AIR trace design."
+      },
+      {
+        "title": "Constraint Design",
+        "scenario": "Building transition constraints",
+        "prompt": "How do I write a transition constraint that ensures the program counter increments correctly only when not branching?"
+      },
+      {
+        "title": "Security Review",
+        "scenario": "Auditing an AIR implementation",
+        "prompt": "What are the key red flags to look for when auditing AIR selectors and booleanity constraints?"
+      },
+      {
+        "title": "Advanced Analysis",
+        "scenario": "Deep security assessment",
+        "prompt": "Walk me through the adversarial witness exercises: how would I test if all selectors equals zero creates a vulnerability?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I check if my AIR has unconstrained columns?",
+        "output": [
+          "Trace column inventory: List every column with its meaning, source type, and where it is constrained",
+          "Red flag: Columns that are only documented but never actually referenced in any constraint equation",
+          "Critical rule: Every column must appear in at least one constraint to prevent prover freedom",
+          "Check derived columns: Their derivation constraint must be complete, not gated by unconstrained selectors",
+          "Adversarial test: Attempt to construct a trace where one column varies freely while all constraints pass"
+        ]
+      },
+      {
+        "input": "What makes a good selector in AIR?",
+        "output": [
+          "Booleanity enforced: Each selector s satisfies s(s-1)=0 to guarantee binary values",
+          "Mutual exclusivity: Sum of selectors equals 1 ensures exactly one instruction type per row",
+          "No ghost mode: Every row has a defined selector, preventing vacuous constraint satisfaction",
+          "Proper gating: Selector constraints apply to same row set as the constraints they gate",
+          "Coverage verification: When using less than full exclusivity, prove at most one active or provide coverage proof"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with a one-page summary: claimed statement, trace length handling, public inputs placement, and prover freedom degrees",
+      "Enforce selector exclusivity using s(s-1)=0 for booleanity and sum(s_i)=1 for mutual exclusivity",
+      "Always bound challenges in the transcript before they are used, with separate challenges for different arguments"
+    ],
+    "anti_patterns": [
+      "Leaving selectors unconstrained allows vacuous constraints when all selectors are zero",
+      "Using the same Fiat-Shamir challenge for multiple arguments enables algebraic cancellation attacks",
+      "Defining final row without unique identification allows prover to dump inconsistencies"
+    ],
+    "faq": [
+      {
+        "question": "What AIR frameworks are supported?",
+        "answer": "This skill covers general AIR principles applicable to any ZK framework including Cairo, Stwo, Plonky3, and custom implementations."
+      },
+      {
+        "question": "What trace lengths are supported?",
+        "answer": "Fixed and variable length traces. Variable length requires explicit halt handling and trace length binding into the Fiat-Shamir transcript."
+      },
+      {
+        "question": "How does this integrate with existing ZK tools?",
+        "answer": "Provides architectural guidance compatible with constraint compilers, provers, and verifiers. Does not replace implementation code."
+      },
+      {
+        "question": "Is data stored or transmitted?",
+        "answer": "No. This is a knowledge-only skill with no file access, network calls, or data persistence capabilities."
+      },
+      {
+        "question": "Why is my AIR failing FRI?",
+        "answer": "Common causes: constraint polynomial does not vanish on domain, degree exceeds domain size, or missing boundary constraints on composition."
+      },
+      {
+        "question": "How does this compare to formal verification?",
+        "answer": "Provides security review methodology for human analysis. Complements but does not replace automated formal verification tools."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "review-checklist.md",
+          "type": "file",
+          "path": "references/review-checklist.md",
+          "lines": 345
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 267
+    }
+  ]
+}

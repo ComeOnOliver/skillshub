@@ -1,0 +1,274 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:23:22.708Z",
+    "slug": "davila7-scikit-learn",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/scikit-learn",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0602d2df283f9e6b7a7ef3c6f085732cd330fd91e548de9a278946e8fe126059",
+    "tree_hash": "1efc8a746472d202e38ab5a780f007544b89deb4bb7b74daac9a128c87ddf86a"
+  },
+  "skill": {
+    "name": "scikit-learn",
+    "description": "Machine learning in Python with scikit-learn. Use when working with supervised learning (classification, regression), unsupervised learning (clustering, dimensionality reduction), model evaluation, hyperparameter tuning, preprocessing, or building ML pipelines. Provides comprehensive reference documentation for algorithms, preprocessing techniques, pipelines, and best practices.",
+    "summary": "Machine learning in Python with scikit-learn. Use when working with supervised learning (classificat...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "machine-learning",
+      "python",
+      "data-science",
+      "classification",
+      "clustering"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 566 static findings are FALSE POSITIVES. The static analyzer misidentified markdown documentation syntax (backticks for code formatting) as shell commands, Python import examples as dynamic imports, and 'PC2' (Principal Component 2) as C2 command-and-control keywords. This is a pure documentation/reference skill containing legitimate scikit-learn ML examples with no network calls, credential access, or file exfiltration capabilities.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/classification_pipeline.py",
+            "line_start": 1,
+            "line_end": 258
+          },
+          {
+            "file": "scripts/clustering_analysis.py",
+            "line_start": 1,
+            "line_end": 387
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 500
+          },
+          {
+            "file": "references/model_evaluation.md",
+            "line_start": 11,
+            "line_end": 600
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 4543,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:23:22.707Z"
+  },
+  "content": {
+    "user_title": "Apply scikit-learn for ML models",
+    "value_statement": "Build machine learning models quickly with scikit-learn guidance. Covers classification, regression, clustering, preprocessing, pipelines, and model evaluation with ready-to-use examples.",
+    "seo_keywords": [
+      "scikit-learn",
+      "machine learning",
+      "Python ML",
+      "classification",
+      "clustering",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "data science",
+      "model training"
+    ],
+    "actual_capabilities": [
+      "Build classification and regression models with scikit-learn algorithms",
+      "Perform clustering analysis with K-Means, DBSCAN, and other algorithms",
+      "Create ML pipelines to prevent data leakage and streamline workflows",
+      "Preprocess data with scaling, encoding, and imputation techniques",
+      "Evaluate models using cross-validation, metrics, and hyperparameter tuning",
+      "Apply dimensionality reduction with PCA, t-SNE, and UMAP"
+    ],
+    "limitations": [
+      "Requires scikit-learn and dependencies to be installed separately",
+      "Does not provide deep learning or neural network frameworks",
+      "No auto-ML or model selection recommendations beyond guidance",
+      "Performance depends on user's data quality and preprocessing"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data scientists",
+        "title": "Build production ML pipelines",
+        "description": "Create end-to-end ML workflows with preprocessing, model training, evaluation, and hyperparameter tuning."
+      },
+      {
+        "target_user": "ML engineers",
+        "title": "Compare ML algorithms",
+        "description": "Evaluate different classifiers, regressors, and clustering methods using standardized metrics and cross-validation."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Apply unsupervised learning",
+        "description": "Discover patterns in data using clustering, dimensionality reduction, and outlier detection techniques."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick classification",
+        "scenario": "Build a classifier fast",
+        "prompt": "Build a classification model using scikit-learn. Use the breast cancer dataset. Train with train-test split, StandardScaler preprocessing, RandomForest classifier, and show classification report."
+      },
+      {
+        "title": "Clustering analysis",
+        "scenario": "Find data clusters",
+        "prompt": "Perform clustering analysis on the iris dataset using scikit-learn. Compare K-Means, DBSCAN, and AgglomerativeClustering. Use elbow method and silhouette score to find optimal clusters. Visualize results with PCA."
+      },
+      {
+        "title": "ML pipeline",
+        "scenario": "Create production pipeline",
+        "prompt": "Create a complete ML pipeline with ColumnTransformer for mixed numeric and categorical data. Include preprocessing (imputation, scaling, encoding), PCA for dimensionality reduction, and GradientBoosting classifier. Use GridSearchCV for hyperparameter tuning."
+      },
+      {
+        "title": "Model evaluation",
+        "scenario": "Evaluate model performance",
+        "prompt": "Evaluate a classification model using cross-validation. Show accuracy, precision, recall, F1-score, and ROC AUC. Create confusion matrix and learning curves. Compare with stratified k-fold for imbalanced classes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Build a classification model to predict customer churn",
+        "output": [
+          "Model: RandomForestClassifier with 100 estimators",
+          "Preprocessing: StandardScaler for numeric features, OneHotEncoder for categorical",
+          "Cross-validation accuracy: 94.2% (+/- 1.3%)",
+          "Top predictive features: contract_type, monthly_charges, tenure",
+          "Recommendations: Consider GradientBoosting for higher accuracy, collect more features about customer complaints"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use Pipelines to prevent data leakage in cross-validation",
+      "Scale features before training algorithms that require normalized inputs (SVM, KNN, Neural Networks)",
+      "Use stratified splitting for classification to preserve class distribution"
+    ],
+    "anti_patterns": [
+      "Fitting preprocessing on all data before splitting (causes data leakage)",
+      "Using accuracy alone for imbalanced classification problems",
+      "Not setting random_state for reproducibility in experiments"
+    ],
+    "faq": [
+      {
+        "question": "Which algorithm should I start with for classification?",
+        "answer": "Start with LogisticRegression as a fast baseline, then try RandomForest as a robust default."
+      },
+      {
+        "question": "Do I need to scale features for all algorithms?",
+        "answer": "No. Tree-based models do not require scaling. Scale for SVM, KNN, Neural Networks, PCA, and linear models."
+      },
+      {
+        "question": "How do I handle mixed numeric and categorical features?",
+        "answer": "Use ColumnTransformer to apply different preprocessing to different columns."
+      },
+      {
+        "question": "Is my data safe when using these scripts?",
+        "answer": "Yes. Scripts run locally using scikit-learn APIs. They only read data you provide and process in memory."
+      },
+      {
+        "question": "Why is my model not converging?",
+        "answer": "Increase max_iter parameter or scale your features. For linear models, try StandardScaler."
+      },
+      {
+        "question": "How does this compare to TensorFlow or PyTorch?",
+        "answer": "Scikit-learn excels at classical ML with structured data. Use TensorFlow or PyTorch for deep learning."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "model_evaluation.md",
+          "type": "file",
+          "path": "references/model_evaluation.md",
+          "lines": 593
+        },
+        {
+          "name": "pipelines_and_composition.md",
+          "type": "file",
+          "path": "references/pipelines_and_composition.md",
+          "lines": 613
+        },
+        {
+          "name": "preprocessing.md",
+          "type": "file",
+          "path": "references/preprocessing.md",
+          "lines": 607
+        },
+        {
+          "name": "quick_reference.md",
+          "type": "file",
+          "path": "references/quick_reference.md",
+          "lines": 434
+        },
+        {
+          "name": "supervised_learning.md",
+          "type": "file",
+          "path": "references/supervised_learning.md",
+          "lines": 379
+        },
+        {
+          "name": "unsupervised_learning.md",
+          "type": "file",
+          "path": "references/unsupervised_learning.md",
+          "lines": 506
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "classification_pipeline.py",
+          "type": "file",
+          "path": "scripts/classification_pipeline.py",
+          "lines": 258
+        },
+        {
+          "name": "clustering_analysis.py",
+          "type": "file",
+          "path": "scripts/clustering_analysis.py",
+          "lines": 387
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 516
+    }
+  ]
+}

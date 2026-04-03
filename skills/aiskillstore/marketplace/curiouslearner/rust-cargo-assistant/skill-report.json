@@ -1,0 +1,180 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:47:23.667Z",
+    "slug": "curiouslearner-rust-cargo-assistant",
+    "source_url": "https://github.com/CuriousLearner/devkit/tree/main/skills/rust-cargo-assistant",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5f1b277b78ff77645d35796ba1b4e384665cdeac9ad600866b9e265530b3e081",
+    "tree_hash": "23bc0631e94e042f99e28ae71a5f156e83fa8f1ab700317c3c7ff0871ab36caf"
+  },
+  "skill": {
+    "name": "rust-cargo-assistant",
+    "description": "Expert guidance for Cargo build system operations, dependency management, and Rust project configuration with comprehensive command reference and troubleshooting support.",
+    "summary": "Cargo build system and Rust project configuration assistant with dependency management expertise.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "CuriousLearner",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "rust",
+      "cargo",
+      "build-tool",
+      "dependency-management",
+      "Claude Code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and instructional content for Rust Cargo commands. All 123 static findings are false positives from markdown code examples showing standard cargo CLI usage. The skill provides guidance and reference material without executing any commands or accessing external resources.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2324,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:47:23.667Z"
+  },
+  "content": {
+    "user_title": "Master Cargo Build System and Rust Project Configuration",
+    "value_statement": "Managing Cargo projects requires understanding complex configuration patterns and dependency resolution. This skill delivers expert guidance for project initialization, dependency management, build optimization, and troubleshooting common Rust toolchain issues.",
+    "seo_keywords": [
+      "Rust",
+      "Cargo",
+      "crate management",
+      "build tool",
+      "dependency management",
+      "Rust project configuration",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "toml configuration"
+    ],
+    "actual_capabilities": [
+      "Provide comprehensive Cargo.toml configuration templates for packages, workspaces, and build profiles",
+      "Guide dependency version specification using semantic versioning with caret, tilde, and exact constraints",
+      "Explain feature flag configuration for conditional compilation and optional dependencies",
+      "Recommend build optimization settings including LTO, codegen-units, and profile inheritance",
+      "Diagnose dependency conflicts and version resolution issues using cargo tree analysis",
+      "Document cross-compilation setup for multiple target platforms and architectures"
+    ],
+    "limitations": [
+      "Provides documentation and guidance only without executing cargo commands",
+      "Cannot access or modify files on the local filesystem",
+      "Does not install Rust toolchains or manage system-level dependencies",
+      "Requires user to manually apply recommended configurations to their projects"
+    ],
+    "use_cases": [
+      {
+        "title": "Initialize Production-Ready Rust Projects",
+        "description": "Configure new Rust binary or library projects with comprehensive Cargo.toml settings including metadata, build profiles, feature flags, and proper dependency constraints for immediate development.",
+        "target_user": "Rust developers starting new projects"
+      },
+      {
+        "title": "Resolve Dependency Conflicts in Large Codebases",
+        "description": "Debug and fix version conflicts between transitive dependencies using cargo tree analysis, workspace dependency unification, and exact version pinning strategies to maintain compatibility.",
+        "target_user": "Engineering teams maintaining complex Rust applications"
+      },
+      {
+        "title": "Optimize Release Builds for Production Deployment",
+        "description": "Configure advanced release profiles with LTO, symbol stripping, codegen-units tuning, and size optimization flags to minimize binary size and maximize runtime performance for shipping applications.",
+        "target_user": "DevOps engineers deploying Rust applications to production"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Project Setup",
+        "prompt": "Show me how to initialize a new Rust library project with proper Cargo.toml configuration including metadata and basic dependencies.",
+        "scenario": "Beginner creating their first Rust library"
+      },
+      {
+        "title": "Add Runtime Dependencies",
+        "prompt": "Add tokio async runtime with full features and serde serialization with derive macros to my project. Include version constraints that allow compatible updates.",
+        "scenario": "Adding async and serialization capabilities to an application"
+      },
+      {
+        "title": "Optimize Release Builds",
+        "prompt": "Configure my Cargo.toml release profile for maximum optimization with LTO, reduced codegen-units, and symbol stripping to minimize binary size for production deployment.",
+        "scenario": "Preparing Rust application for production release"
+      },
+      {
+        "title": "Debug Dependency Conflicts",
+        "prompt": "My build fails with serde version conflicts between dependencies. Walk me through using cargo tree to identify the conflicting versions and show workspace dependency configuration to unify them.",
+        "scenario": "Advanced troubleshooting of transitive dependency issues in workspace"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me a complete Cargo.toml for a production web service",
+        "output": "The skill provides a comprehensive Cargo.toml template including package metadata with authors and license, runtime dependencies like tokio and axum with semantic versioning, optional features for Redis caching, dev dependencies for testing, and a release profile configured with LTO and optimized codegen-units for production deployment."
+      },
+      {
+        "input": "How do I resolve serde version conflicts in my workspace?",
+        "output": "The skill explains running cargo tree to identify conflicting serde versions across workspace members, then demonstrates creating a workspace.dependencies section in the root Cargo.toml to unify the serde version at 1.0 across all crates, and shows how member crates inherit this shared version using workspace = true syntax."
+      },
+      {
+        "input": "What build optimizations should I use for a small CLI binary?",
+        "output": "The skill recommends configuring the release profile with opt-level set to z for size optimization, enabling LTO for link-time optimization, setting codegen-units to 1 for better inlining, adding strip = true to remove debug symbols, and setting panic to abort to eliminate unwinding code, which together can reduce binary size by 50 percent or more."
+      }
+    ],
+    "best_practices": [
+      "Always commit Cargo.lock for binary applications but exclude it for library crates",
+      "Use semantic versioning with caret by default: version = 1.0 means compatible with 1.x releases",
+      "Enable LTO and reduce codegen-units for production release builds to maximize optimization"
+    ],
+    "anti_patterns": [
+      "Do not pin exact versions unless necessary, as this prevents security updates from transitive dependencies",
+      "Avoid committing Cargo.lock in library projects, as it prevents downstream users from using compatible versions",
+      "Do not use release mode for development builds, as it hides debug information and slows compilation"
+    ],
+    "faq": [
+      {
+        "question": "How do I update all dependencies to their latest compatible versions?",
+        "answer": "Run cargo update to update all dependencies within their semver constraints. For major version updates, manually edit Cargo.toml with the new version constraint."
+      },
+      {
+        "question": "What is the difference between cargo build and cargo check?",
+        "answer": "cargo check is faster because it only verifies code compiles without generating binaries. Use it during development. Use cargo build when you need the actual binary output."
+      },
+      {
+        "question": "How do I exclude files from being published to crates.io?",
+        "answer": "Add an exclude array in the package section of Cargo.toml listing patterns or paths to exclude. Common entries include tests, examples, and github directories."
+      },
+      {
+        "question": "Can I use git dependencies in my project?",
+        "answer": "Yes. Add dependencies from git repositories with branch, tag, or commit specifiers. Note that crates with git dependencies cannot be published to crates.io."
+      },
+      {
+        "question": "How do I configure a workspace for multiple crates?",
+        "answer": "Create a workspace Cargo.toml with a workspace section listing member paths using glob patterns. Each crate in the workspace has its own Cargo.toml in a subdirectory."
+      },
+      {
+        "question": "What is the best way to optimize binary size?",
+        "answer": "Use opt-level z or s in the release profile, enable lto = true, set codegen-units = 1, and add strip = true to remove debug symbols. Consider panic = abort to eliminate unwinding code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1028
+    }
+  ]
+}

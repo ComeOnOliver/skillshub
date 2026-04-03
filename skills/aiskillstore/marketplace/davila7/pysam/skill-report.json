@@ -1,0 +1,248 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T19:27:27.709Z",
+    "slug": "davila7-pysam",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/pysam",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3cc82d31438f4252acfb22d6dd334819ca2cefa6c580b800c506b2dd389d7039",
+    "tree_hash": "5a55b7ddb954b6fa7d029a9c0d743cf36cac8bfa3ac41069e785ce112ba0cfc3"
+  },
+  "skill": {
+    "name": "pysam",
+    "description": "Genomic file toolkit. Read/write SAM/BAM/CRAM alignments, VCF/BCF variants, FASTA/FASTQ sequences, extract regions, calculate coverage, for NGS data processing pipelines.",
+    "summary": "Python interface for genomic file formats. Read/write SAM/BAM/CRAM alignments, VCF/BCF variants, FASTA/FASTQ sequences.",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "tags": [
+      "genomics",
+      "bioinformatics",
+      "sequencing",
+      "NGS",
+      "variant-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The skill is a legitimate bioinformatics library for genomic data analysis. Patterns detected (SAM files, samtools commands, genome database URLs) relate to standard genomics file formats and tools, not security threats. The scanner confused SAM (Sequence Alignment/Map format) with Windows SAM database.",
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 5859,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T19:27:27.709Z",
+    "risk_factors": [
+      "filesystem",
+      "external_commands"
+    ],
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 29
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 42
+          }
+        ]
+      }
+    ]
+  },
+  "content": {
+    "user_title": "Process genomic sequencing data",
+    "value_statement": "Process next-generation sequencing data by reading and writing SAM/BAM/CRAM alignment files, VCF/BCF variant files, and FASTA/FASTQ sequences for bioinformatics analysis pipelines.",
+    "seo_keywords": [
+      "pysam",
+      "genomic sequencing",
+      "bioinformatics",
+      "SAM BAM CRAM",
+      "VCF variant files",
+      "NGS analysis",
+      "sequence alignment",
+      "variant calling",
+      "coverage analysis",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Read and write SAM/BAM/CRAM alignment files for sequencing data",
+      "Read and write VCF/BCF variant files for genetic variant analysis",
+      "Read FASTA/FASTQ sequences with quality score handling",
+      "Extract genomic regions and calculate coverage statistics",
+      "Execute samtools and bcftools commands through pysam interface",
+      "Perform pileup analysis for base-by-base coverage"
+    ],
+    "limitations": [
+      "Does not perform variant calling or variant effect prediction directly",
+      "Requires indexed files for random access to genomic regions",
+      "Coordinate system differences between Python (0-based) and samtools (1-based) require attention",
+      "Cannot modify quality scores after changing query sequences"
+    ],
+    "use_cases": [
+      {
+        "title": "Extract reads from genomic region",
+        "description": "Fetch and analyze sequencing reads overlapping a specific genomic region for variant validation or coverage analysis.",
+        "target_user": "Bioinformatics analyst working with NGS data"
+      },
+      {
+        "title": "Filter and subset variant files",
+        "description": "Load VCF files, apply quality and allele frequency filters, and export subset of variants for downstream analysis.",
+        "target_user": "Geneticist or researcher studying population variants"
+      },
+      {
+        "title": "Calculate coverage statistics",
+        "description": "Perform pileup analysis to calculate per-base coverage depth and identify low-coverage regions in sequencing data.",
+        "target_user": "Quality control specialist or sequencing core facility"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Read BAM file region",
+        "prompt": "Use pysam to open a BAM file and fetch all reads overlapping chromosome 1 from position 1000 to 2000. Print the read names and their starting positions.",
+        "scenario": "Basic BAM file reading"
+      },
+      {
+        "title": "Extract variant information",
+        "prompt": "Open a VCF file and iterate through all variants on chromosome 20. For each variant, print the position, reference allele, alternate alleles, and the genotype for sample NA12878.",
+        "scenario": "VCF variant analysis"
+      },
+      {
+        "title": "Calculate coverage depth",
+        "prompt": "Use pysam pileup to calculate the average coverage depth across chromosome 1 for a BAM file. Report any positions where coverage falls below 10x.",
+        "scenario": "Coverage analysis"
+      },
+      {
+        "title": "Integrate alignment and variant data",
+        "prompt": "Open both a BAM file and a VCF file. For each variant in the VCF, count the number of reads in the BAM that support the alternate allele (have the variant position within their alignment and match the alternate base).",
+        "scenario": "Advanced integrated analysis"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Open a BAM file and list the first 5 reads",
+        "output": [
+          "Read1: chr1:1005-1150 (length=146, MAPQ=60)",
+          "Read2: chr1:1102-1248 (length=147, MAPQ=60)",
+          "Read3: chr1:1250-1398 (length=149, MAPQ=60)",
+          "Read4: chr1:1350-1499 (length=150, MAPQ=60)",
+          "Read5: chr1:1450-1598 (length=149, MAPQ=60)"
+        ]
+      },
+      {
+        "input": "Count variants on chromosome 1",
+        "output": "Found 1254 variants on chromosome 1 in the VCF file."
+      },
+      {
+        "input": "Calculate average coverage for a region",
+        "output": "Average coverage for chr1:1000-5000: 42.3x across 4001 bases"
+      }
+    ],
+    "best_practices": [
+      "Always create index files (.bai for BAM, .fai for FASTA, .tbi for compressed VCF) for random access operations",
+      "Use context managers or explicitly close files to free system resources when processing large datasets",
+      "Use the pileup() method for column-wise analysis instead of repeated fetch() calls for better performance",
+      "Be aware of coordinate system differences between pysam (0-based) and samtools conventions (1-based)"
+    ],
+    "anti_patterns": [
+      "Using fetch() in a loop for column-wise analysis instead of pileup()",
+      "Forgetting to create index files before attempting random access to specific genomic regions",
+      "Not handling SamtoolsError exceptions when calling samtools or bcftools commands",
+      "Assuming VariantFile coordinates are the same format as AlignmentFile coordinates"
+    ],
+    "faq": [
+      {
+        "question": "What file formats does pysam support?",
+        "answer": "Pysam supports SAM (text), BAM (binary compressed), and CRAM (compressed) for alignment files. For variants, it supports VCF (text) and BCF (binary). For sequences, it supports FASTA and FASTQ formats."
+      },
+      {
+        "question": "Do I need to install samtools separately?",
+        "answer": "Pysam includes Python bindings to samtools and bcftools commands, but you need to have samtools installed on your system for the command-line functions to work."
+      },
+      {
+        "question": "How do I create index files?",
+        "answer": "Use pysam.index() for BAM files, pysam.faidx() for FASTA files, and pysam.tabix_index() for compressed VCF files. Index files enable random access to specific genomic regions."
+      },
+      {
+        "question": "What is the difference between fetch and pileup?",
+        "answer": "fetch() returns read objects overlapping a region. pileup() provides column-wise iteration where you can access all bases at each genomic position, which is more efficient for coverage analysis."
+      },
+      {
+        "question": "How do I filter reads by mapping quality?",
+        "answer": "When iterating with fetch() or pileup(), check the read's mapq attribute and skip reads below your threshold. For pileup, you can access reads through the read() method of each pileup column."
+      },
+      {
+        "question": "Can pysam handle multi-sample VCF files?",
+        "answer": "Yes, pysam can read VCF files with multiple samples. Access genotype information through the sample name in the VCF record's samples list or dictionary."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "alignment_files.md",
+          "type": "file",
+          "path": "references/alignment_files.md",
+          "lines": 281
+        },
+        {
+          "name": "common_workflows.md",
+          "type": "file",
+          "path": "references/common_workflows.md",
+          "lines": 521
+        },
+        {
+          "name": "sequence_files.md",
+          "type": "file",
+          "path": "references/sequence_files.md",
+          "lines": 408
+        },
+        {
+          "name": "variant_files.md",
+          "type": "file",
+          "path": "references/variant_files.md",
+          "lines": 366
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 260
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:20:56.181Z",
+    "slug": "5t111111-git-operation",
+    "source_url": "https://github.com/5t111111/tailwind-theme-figma-variables/tree/main/.github/skills/git-operation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a9fd35775a61d0dd42236f74c9e893c0277a02edd532c40c474d4422a27b8ff7",
+    "tree_hash": "3614499b34a402238316c6a95fe8dcf383ca2c86253ce3bc7f3da698f56f6bad"
+  },
+  "skill": {
+    "name": "git-operation",
+    "description": "Guide for basic Git operations",
+    "summary": "Guide for basic Git operations",
+    "icon": "git",
+    "version": "1.0.0",
+    "author": "5t111111",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "git",
+      "commit",
+      "version-control",
+      "development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown guidelines for Git commit messages. No executable code, scripts, network operations, or file system access are present. All 22 static findings are false positives from pattern matching on documentation text. The analyzer misinterpreted markdown code formatting (backticks), metadata fields, and documentation keywords as security threats.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 192,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:20:56.181Z"
+  },
+  "content": {
+    "user_title": "Create proper Git commit messages",
+    "value_statement": "Developers often write unclear or inconsistent commit messages. This skill provides clear guidelines for writing professional Git commit messages in English with proper formatting.",
+    "seo_keywords": [
+      "git",
+      "commit",
+      "version control",
+      "git commit",
+      "git commands",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Guide for writing Git commit messages in English",
+      "Best practices for commit message structure",
+      "Guidance on summarizing changes concisely",
+      "Tips for adding detailed explanations when needed"
+    ],
+    "limitations": [
+      "Only provides guidelines, does not execute Git commands",
+      "Does not integrate with Git hosting platforms",
+      "Does not provide commit history analysis"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual developers",
+        "title": "Improve commit quality",
+        "description": "Learn to write clear, professional commit messages for personal projects"
+      },
+      {
+        "target_user": "Team members",
+        "title": "Standardize team commits",
+        "description": "Ensure consistent commit message format across team contributions"
+      },
+      {
+        "target_user": "Open source contributors",
+        "title": "Follow project guidelines",
+        "description": "Create contribution-ready commits that meet open source project standards"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic commit",
+        "scenario": "Making a simple code change",
+        "prompt": "Help me create a proper commit message for this change: [describe your change]"
+      },
+      {
+        "title": "Complex feature",
+        "scenario": "Committing multiple file changes",
+        "prompt": "I made several changes: [list changes]. Help me write a comprehensive commit message with summary and details."
+      },
+      {
+        "title": "Bug fix",
+        "scenario": "Documenting a bug fix",
+        "prompt": "Help me write a commit message for fixing a bug where [describe bug and solution]."
+      },
+      {
+        "title": "Refactoring",
+        "scenario": "Documenting code improvements",
+        "prompt": "I refactored [describe what changed]. Create a commit message that explains the refactoring purpose and impact."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I fixed a memory leak in the user authentication module by moving the database connection closing logic to a finally block.",
+        "output": [
+          "Fix memory leak in user authentication module",
+          "- Moved database connection closing logic to finally block",
+          "- Ensures connections are properly closed even when exceptions occur"
+        ]
+      },
+      {
+        "input": "I updated the user interface to add a dark mode toggle in the settings page.",
+        "output": [
+          "Add dark mode toggle to settings page",
+          "- Created new toggle component in settings UI",
+          "- Persists user preference to local storage"
+        ]
+      },
+      {
+        "input": "I refactored the authentication controller to use dependency injection for better testability.",
+        "output": [
+          "Refactor authentication controller with dependency injection",
+          "- Extracted auth service interface",
+          "- Enabled mocking for unit tests",
+          "- Reduced coupling between components"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run formatting and tests before committing to ensure code quality",
+      "Keep the summary line under 72 characters for readability",
+      "Separate summary from body with a blank line"
+    ],
+    "anti_patterns": [
+      "Skipping tests before committing code changes",
+      "Using non-English commit messages in international projects",
+      "Writing vague messages like fixed stuff or updated code"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute Git commands?",
+        "answer": "No, this is a guidance-only skill that provides best practices for writing commit messages."
+      },
+      {
+        "question": "What is the recommended commit message length?",
+        "answer": "Keep the summary line under 72 characters. Detailed explanations can follow after a blank line."
+      },
+      {
+        "question": "Can I use this with GitHub or GitLab?",
+        "answer": "Yes, the commit message guidelines work with any Git hosting platform."
+      },
+      {
+        "question": "Is my commit data safe?",
+        "answer": "Yes, this skill only reads your input and provides text guidance. No data is stored or transmitted."
+      },
+      {
+        "question": "Why should I run tests before committing?",
+        "answer": "Running tests first ensures you do not commit broken code that could affect your team or users."
+      },
+      {
+        "question": "How is this different from commit message linters?",
+        "answer": "This skill provides educational guidance while linters enforce rules. Use both for best results."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 21
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:09:47.226Z",
+    "slug": "2389-research-terminal-title",
+    "source_url": "https://github.com/2389-research/claude-plugins/tree/main/terminal-title/skills",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1b420a82d1b62bf4605e7f16317457603a2f86bcadc55e4e7cc3acc61b0602bd",
+    "tree_hash": "7c63758a699619f4c4e66a24a59ad3a82afad26e88a96dc34f4f774d5a532f30"
+  },
+  "skill": {
+    "name": "terminal-title",
+    "description": "This skill should be used to update terminal window title with context. Triggers automatically at session start via hook. Also triggers on topic changes during conversation (debugging to docs, frontend to backend). Updates title with emoji + project + current topic.",
+    "summary": "This skill should be used to update terminal window title with context. Triggers automatically at se...",
+    "icon": "📟",
+    "version": "1.0.0",
+    "author": "2389-research",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "terminal",
+      "productivity",
+      "workflow",
+      "context",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate terminal productivity tool with no malicious intent. All static findings are false positives. The scripts use standard shell/PowerShell patterns to send ANSI escape sequences for setting terminal window titles. Input sanitization is properly implemented to prevent escape sequence injection attacks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 285
+          },
+          {
+            "file": "scripts/set_title.sh",
+            "line_start": 1,
+            "line_end": 42
+          },
+          {
+            "file": "scripts/set_title.ps1",
+            "line_start": 1,
+            "line_end": 51
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/set_title.sh",
+            "line_start": 35,
+            "line_end": 41
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 615,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:09:47.226Z"
+  },
+  "content": {
+    "user_title": "Set terminal title with context",
+    "value_statement": "Keep track of what you are working on across different projects and topics. The terminal title updates automatically when you switch between contexts. This helps you maintain focus and quickly identify your current work.",
+    "seo_keywords": [
+      "terminal title",
+      "context switching",
+      "productivity",
+      "Claude Code",
+      "terminal automation",
+      "project tracking",
+      "terminal workspace",
+      "claude",
+      "codex",
+      "claude code"
+    ],
+    "actual_capabilities": [
+      "Updates terminal window title with emoji, project name, and current topic",
+      "Reads emoji from TERMINAL_TITLE_EMOJI environment variable",
+      "Detects operating system and uses appropriate script (bash or PowerShell)",
+      "Sanitizes all inputs to prevent escape sequence injection",
+      "Triggers automatically via SessionStart hook on session start",
+      "Detects topic changes during conversation to update title"
+    ],
+    "limitations": [
+      "Requires permission configuration in ~/.claude/settings.json",
+      "Does not persist titles across terminal restarts",
+      "Cannot track multiple simultaneous topics in separate windows"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers working on multiple projects",
+        "title": "Multi-project development",
+        "description": "Quickly identify which project and task you are working on when switching between terminal windows or resuming work."
+      },
+      {
+        "target_user": "Context switchers",
+        "title": "Session topic tracking",
+        "description": "Maintain awareness of current topic during long sessions with frequent context changes between debugging and implementation."
+      },
+      {
+        "target_user": "Power users",
+        "title": "Terminal workflow optimization",
+        "description": "Use emoji-based visual cues to distinguish work categories (work vs personal projects) in your terminal title bar."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Session Start",
+        "scenario": "When Claude Code session starts",
+        "prompt": "Set the terminal title to show this is a new Claude Code session with topic 'Claude Code'."
+      },
+      {
+        "title": "Topic Change",
+        "scenario": "When conversation shifts to new topic",
+        "prompt": "The conversation has shifted to working on the database schema. Update the terminal title to reflect this new topic."
+      },
+      {
+        "title": "Project Switch",
+        "scenario": "When starting work on different project",
+        "prompt": "We are switching to the authentication service. Update the terminal title to show 'Authentication Service' as the project and 'Token Refresh' as the topic."
+      },
+      {
+        "title": "Explicit Title",
+        "scenario": "When user requests title update",
+        "prompt": "Set the terminal title to 'MyApp - Bug Fixes' to indicate the current work focus."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Set terminal title for this debugging session",
+        "output": [
+          "Terminal title updated to: 🎉 Debugging - Session Debug"
+        ]
+      },
+      {
+        "input": "We are now working on the API documentation",
+        "output": [
+          "Title changed to: 💼 API Documentation - Writing Docs"
+        ]
+      },
+      {
+        "input": "Start working on the frontend components",
+        "output": [
+          "Terminal title updated to: 💼 MyProject - Frontend Components"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Configure the required permission in ~/.claude/settings.json before use to avoid repeated prompts.",
+      "Set the TERMINAL_TITLE_EMOJI environment variable to customize emoji based on context (work vs personal).",
+      "Let Claude detect topic changes automatically rather than invoking manually on every switch."
+    ],
+    "anti_patterns": [
+      "Do not invoke on every user message; only invoke when topic materially changes.",
+      "Do not include sensitive information in the title as it may be visible in terminal window bars.",
+      "Do not use very long project or topic names that may truncate awkwardly in the terminal title bar."
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work on Windows?",
+        "answer": "Yes. The skill includes a PowerShell script for Windows and automatically detects your operating system."
+      },
+      {
+        "question": "What emoji appears in the title?",
+        "answer": "It reads from the TERMINAL_TITLE_EMOJI environment variable. Falls back to 🎉 if not set."
+      },
+      {
+        "question": "How do I configure permissions?",
+        "answer": "Add the bash or PowerShell permission to your ~/.claude/settings.json file as shown in SKILL.md."
+      },
+      {
+        "question": "When does the title update?",
+        "answer": "At session start via SessionStart hook and automatically when Claude detects a topic change."
+      },
+      {
+        "question": "Can I set a custom emoji?",
+        "answer": "Yes. Set the TERMINAL_TITLE_EMOJI environment variable to your preferred emoji before starting Claude Code."
+      },
+      {
+        "question": "Is this safe to use?",
+        "answer": "Yes. The skill sanitizes all inputs to prevent ANSI escape sequence injection attacks."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "set_title.ps1",
+          "type": "file",
+          "path": "scripts/set_title.ps1",
+          "lines": 51
+        },
+        {
+          "name": "set_title.sh",
+          "type": "file",
+          "path": "scripts/set_title.sh",
+          "lines": 42
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 285
+    }
+  ]
+}

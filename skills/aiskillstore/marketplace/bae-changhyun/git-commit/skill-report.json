@@ -1,0 +1,491 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:26:05.126Z",
+    "slug": "bae-changhyun-git-commit",
+    "source_url": "https://github.com/Bae-ChangHyun/cc-plugins-bch/tree/main/plugins/gitwf/skills/git-commit",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6c595ac1cac265569eb9aa2a49beb60ea2c060bb146cb6a1dc68f2ca01cd203a",
+    "tree_hash": "ad98adcdae83a55c1b77096260395928cd6b69ffd40e4a3a0b7ffe4986e271a0"
+  },
+  "skill": {
+    "name": "git-commit",
+    "description": "MUST use this skill when user asks to commit, create commit, save work, or mentions \"커밋\". This skill OVERRIDES default git commit behavior. Creates commits following Conventional Commits format with emoji + type/scope/subject (✨ feat, 🐛 fix, ♻️ refactor, etc).",
+    "summary": "MUST use this skill when user asks to commit, create commit, save work, or mentions \"커밋\". This skill...",
+    "icon": "📌",
+    "version": "1.0.0",
+    "author": "Bae-ChangHyun",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "git",
+      "commits",
+      "conventional-commits",
+      "version-control"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown guidance for git commit best practices. All 70 static findings are false positives - the scanner misinterpreted documentation examples as executable code. SKILL.md contains no shell execution, network calls, or file system operations beyond its own static content. The backticks and shell syntax are markdown code blocks showing examples, not actual commands being executed.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 153,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 197
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 197,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 228
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 228,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 249
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 249,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 208
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 228,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 249,
+            "line_end": 257
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 174
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 499,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:26:05.126Z"
+  },
+  "content": {
+    "user_title": "Create standardized git commits",
+    "value_statement": "Manual git commit creation lacks consistency and structure. This skill enforces Conventional Commits with emoji prefixes for clear, standardized commit messages that improve team collaboration and changelog generation.",
+    "seo_keywords": [
+      "git commit",
+      "conventional commits",
+      "claude code",
+      "commit message format",
+      "git workflow",
+      "commit conventions",
+      "emoji commits",
+      "claude",
+      "codex",
+      "version control"
+    ],
+    "actual_capabilities": [
+      "Creates Conventional Commits with emoji prefixes (feat, fix, refactor, etc)",
+      "Enforces feature-unit commits instead of file-by-file commits",
+      "Validates commit message format with character limits",
+      "Provides result-oriented commit messages in imperative mood",
+      "Supports multi-line commit messages with detailed explanations",
+      "Includes breaking changes syntax and review fix commits"
+    ],
+    "limitations": [
+      "Does not execute git commands automatically",
+      "Does not create or modify files in the repository",
+      "Does not integrate with git hosting platforms",
+      "Requires user to run git commit command manually"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual developers",
+        "title": "Maintain commit consistency",
+        "description": "Create standardized commits following industry best practices across personal projects"
+      },
+      {
+        "target_user": "Team developers",
+        "title": "Enforce team conventions",
+        "description": "Ensure all team members use the same commit message format for better code reviews"
+      },
+      {
+        "target_user": "Release managers",
+        "title": "Generate changelogs",
+        "description": "Create commits that automatically generate meaningful changelogs from git history"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic commit",
+        "scenario": "Save current work",
+        "prompt": "커밋해줘 (commit my current changes)"
+      },
+      {
+        "title": "Feature commit",
+        "scenario": "Add new feature",
+        "prompt": "새 기능을 추가했어, 커밋해줘 (commit new feature)"
+      },
+      {
+        "title": "Bug fix commit",
+        "scenario": "Fix a bug",
+        "prompt": "버그를 수정했어, 커밋해줘 (commit bug fix)"
+      },
+      {
+        "title": "Complex commit",
+        "scenario": "Multi-file changes",
+        "prompt": "여러 파일을 수정했는데, 한 번에 커밋해줘 (commit multiple related files)"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "사용자가 커밋을 요청하면 staged된 파일들을 확인하고 Conventional Commits 형식에 맞춰 커밋 메시지를 생성합니다",
+        "output": [
+          "Check staged files and project conventions",
+          "Analyze changes to determine type, scope, and subject",
+          "Create result-oriented commit message like: ✨ feat(auth): implement JWT-based login"
+        ]
+      },
+      {
+        "input": "버그를 수정했는데 커밋 메시지를 어떻게 작성해야 할지 모르겠어",
+        "output": [
+          "Identify the bug fix type and affected scope",
+          "Write in imperative mood: 🐛 fix(scope): resolve issue description",
+          "Include reference to issue number if available"
+        ]
+      },
+      {
+        "input": "여러 파일을 수정했는데 한 번에 커밋하고 싶어",
+        "output": [
+          "Review all staged files for related changes",
+          "Group by feature unit not by file",
+          "Create single commit: ✨ feat(search): implement keyword search with API endpoint"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always review staged changes before committing to ensure all related files are included",
+      "Write commit messages in imperative mood (add, not added or adding)",
+      "Group related changes into feature units rather than committing per file"
+    ],
+    "anti_patterns": [
+      "Creating commits that list development process instead of final results",
+      "Committing files individually when they belong to the same feature",
+      "Using vague commit subjects like \"update code\" or \"fix stuff\""
+    ],
+    "faq": [
+      {
+        "question": "Does this skill run git commit automatically?",
+        "answer": "No, this skill provides guidance and format rules. You run the git commit command yourself."
+      },
+      {
+        "question": "What is Conventional Commits format?",
+        "answer": "A structured format with emoji, type, scope, and subject that makes commits easier to understand."
+      },
+      {
+        "question": "Can I use this with any git hosting platform?",
+        "answer": "Yes, Conventional Commits works with GitHub, GitLab, Bitbucket, and any platform that reads git history."
+      },
+      {
+        "question": "Is my commit data sent anywhere?",
+        "answer": "No, this is a prompt-based skill. Commit data stays local and is only processed by git on your machine."
+      },
+      {
+        "question": "Why use emoji prefixes?",
+        "answer": "Emoji prefixes make commit history scannable. Team members can quickly identify the type of change."
+      },
+      {
+        "question": "How does this differ from other commit tools?",
+        "answer": "This skill enforces result-oriented messages and feature-unit commits rather than process-oriented commits."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 326
+    }
+  ]
+}

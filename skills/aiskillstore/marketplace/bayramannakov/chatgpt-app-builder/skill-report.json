@@ -1,0 +1,492 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:58:41.595Z",
+    "slug": "bayramannakov-chatgpt-app-builder",
+    "source_url": "https://github.com/BayramAnnakov/chatgpt-app-skill/tree/main/chatgpt-app-builder/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "452ae384d9814f3fb882c48a829bbe9752853588e1d1b5b41fec9fb019288c3e",
+    "tree_hash": "9ad664a3af58960b2bfcd052c9c4353a6f6066414157abf050c349a52c673f44"
+  },
+  "skill": {
+    "name": "chatgpt-app-builder",
+    "description": "Build ChatGPT Apps using the Apps SDK and MCP. Use when users want to:\n(1) Evaluate if their product should become a ChatGPT App\n(2) Design and implement MCP servers with widgets\n(3) Test apps locally and in ChatGPT\n(4) Prepare for App Store submission\nTriggers: \"ChatGPT app\", \"Apps SDK\", \"build for ChatGPT\",\n\"ChatGPT integration\", \"MCP server for ChatGPT\", \"submit to ChatGPT\"\n",
+    "summary": "Build ChatGPT Apps using the Apps SDK and MCP. Use when users want to:\n(1) Evaluate if their product...",
+    "icon": "🚀",
+    "version": "1.0.0",
+    "author": "BayramAnnakov",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "chatgpt",
+      "apps-sdk",
+      "mcp",
+      "openai",
+      "chatgpt-apps"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a legitimate documentation and template builder for ChatGPT Apps. The static analyzer flagged 1322 potential issues, but all findings are false positives or benign patterns. The code uses secure crypto (crypto.randomUUID), properly blocks SSRF targets (AWS metadata), and contains only standard development patterns (env vars, fetch calls) documented in reference markdown files.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "assets/server/src/index.ts",
+            "line_start": 72,
+            "line_end": 73
+          },
+          {
+            "file": "assets/server/src/widget/embed.ts",
+            "line_start": 25,
+            "line_end": 34
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "assets/server/src/index.ts",
+            "line_start": 51,
+            "line_end": 51
+          },
+          {
+            "file": "assets/server/src/lib/image-proxy.ts",
+            "line_start": 126,
+            "line_end": 126
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "assets/server/src/index.ts",
+            "line_start": 49,
+            "line_end": 51
+          },
+          {
+            "file": "assets/server/src/lib/api-client.ts",
+            "line_start": 53,
+            "line_end": 54
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 41,
+    "total_lines": 12112,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:58:41.595Z"
+  },
+  "content": {
+    "user_title": "Build ChatGPT Apps with Apps SDK",
+    "value_statement": "This skill guides developers through creating ChatGPT Apps from concept to App Store submission. It provides templates, implementation patterns, and testing workflows for Apps using the MCP protocol.",
+    "seo_keywords": [
+      "ChatGPT App Builder",
+      "Apps SDK",
+      "MCP server",
+      "ChatGPT integration",
+      "Claude Code",
+      "OpenAI Apps",
+      "ChatGPT plugin development",
+      "Claude",
+      "Codex",
+      "chatgpt-app-builder"
+    ],
+    "actual_capabilities": [
+      "Evaluates product fit for ChatGPT Apps using Know/Do/Show framework",
+      "Generates complete project templates with MCP server code",
+      "Creates React widget components with Apps SDK patterns",
+      "Implements authentication flows with OAuth integration"
+    ],
+    "limitations": [
+      "Does not execute code or deploy apps automatically",
+      "Requires users to configure their own API credentials",
+      "Does not provide hosting or infrastructure",
+      "Template code requires customization for production use"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Product Developers",
+        "title": "Build new ChatGPT Apps",
+        "description": "Create production-ready ChatGPT Apps with widgets and MCP servers for the App Store"
+      },
+      {
+        "target_user": "Integration Engineers",
+        "title": "Add MCP Integration",
+        "description": "Connect existing APIs to ChatGPT Apps using MCP protocol and OAuth authentication"
+      },
+      {
+        "target_user": "QA Engineers",
+        "title": "Test App Implementations",
+        "description": "Validate ChatGPT Apps locally using MCP Inspector and golden prompt testing"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create new ChatGPT App",
+        "scenario": "Starting a new project",
+        "prompt": "Create a new ChatGPT App called [AppName] that connects to [API] and displays [data type] with actions to [actions]"
+      },
+      {
+        "title": "Add OAuth Authentication",
+        "scenario": "Implementing user auth",
+        "prompt": "Add OAuth authentication to my ChatGPT App with [AuthProvider] for user-specific data access"
+      },
+      {
+        "title": "Build Widget UI",
+        "scenario": "Creating custom interface",
+        "prompt": "Create a widget that displays [content type] with filtering by [fields] and action buttons for [operations]"
+      },
+      {
+        "title": "Deploy to Production",
+        "scenario": "Preparing for submission",
+        "prompt": "Help me prepare my ChatGPT App for App Store submission with proper health endpoints, CORS, and security headers"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a ChatGPT App for my task management API",
+        "output": [
+          "Created app-spec.md with fit evaluation",
+          "Generated MCP server with task_get_tasks, task_create_item, task_complete_item tools",
+          "Created React widget with task list and action buttons",
+          "Added OAuth integration for user-specific task access",
+          "Configured ngrok tunnel for local testing"
+        ]
+      },
+      {
+        "input": "Test the app with golden prompts",
+        "output": [
+          "Direct prompts trigger correctly: 'Show my tasks', 'Create a task'",
+          "Indirect prompts work: 'What should I work on?'",
+          "Negative prompts do not trigger: 'Set an alarm'",
+          "Widget renders properly in ChatGPT",
+          "All tools return expected structured content"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Follow the Know/Do/Show framework to ensure your app provides unique value beyond text responses",
+      "Use one job per tool principle and annotate tools with readOnlyHint, destructiveHint, and openWorldHint",
+      "Implement rate limiting and SSRF protection for production deployments"
+    ],
+    "anti_patterns": [
+      "Do not use separate paths for GET and POST MCP endpoints",
+      "Avoid hardcoding credentials in source files",
+      "Do not skip validation of image URLs in image proxy"
+    ],
+    "faq": [
+      {
+        "question": "What is the Know/Do/Show framework?",
+        "answer": "A fit evaluation model where Know provides unique data, Do takes real actions, and Show displays rich UI beyond text."
+      },
+      {
+        "question": "Does this skill deploy my app?",
+        "answer": "No, this skill generates templates and guides. You deploy using your chosen hosting provider like Fly.io or Vercel."
+      },
+      {
+        "question": "What authentication does it support?",
+        "answer": "OAuth 2.0 with examples for Auth0, Stytch, and custom providers using the well-known endpoints pattern."
+      },
+      {
+        "question": "Can I test locally before deploying?",
+        "answer": "Yes, use ngrok to create an HTTPS tunnel and MCP Inspector for local testing before connecting to ChatGPT."
+      },
+      {
+        "question": "What UI patterns are supported?",
+        "answer": "List views, action buttons, loading states, dark mode, and responsive layouts using Apps SDK UI design tokens."
+      },
+      {
+        "question": "How do I submit to the App Store?",
+        "answer": "Complete the pre-submission checklist including organization verification, tool annotations, and test credentials documentation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "deploy",
+          "type": "dir",
+          "path": "assets/deploy",
+          "children": [
+            {
+              "name": "Dockerfile",
+              "type": "file",
+              "path": "assets/deploy/Dockerfile",
+              "lines": 46
+            },
+            {
+              "name": "fly.toml",
+              "type": "file",
+              "path": "assets/deploy/fly.toml",
+              "lines": 39
+            }
+          ]
+        },
+        {
+          "name": "server",
+          "type": "dir",
+          "path": "assets/server",
+          "children": [
+            {
+              "name": "scripts",
+              "type": "dir",
+              "path": "assets/server/scripts",
+              "children": [
+                {
+                  "name": "build-widget.ts",
+                  "type": "file",
+                  "path": "assets/server/scripts/build-widget.ts",
+                  "lines": 69
+                }
+              ]
+            },
+            {
+              "name": "src",
+              "type": "dir",
+              "path": "assets/server/src",
+              "children": [
+                {
+                  "name": "lib",
+                  "type": "dir",
+                  "path": "assets/server/src/lib"
+                },
+                {
+                  "name": "tools",
+                  "type": "dir",
+                  "path": "assets/server/src/tools"
+                },
+                {
+                  "name": "types",
+                  "type": "dir",
+                  "path": "assets/server/src/types"
+                },
+                {
+                  "name": "widget",
+                  "type": "dir",
+                  "path": "assets/server/src/widget"
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "assets/server/src/index.ts",
+                  "lines": 624
+                }
+              ]
+            },
+            {
+              "name": "tsconfig.json",
+              "type": "file",
+              "path": "assets/server/tsconfig.json",
+              "lines": 25
+            }
+          ]
+        },
+        {
+          "name": "tests",
+          "type": "dir",
+          "path": "assets/tests",
+          "children": [
+            {
+              "name": "golden-prompts.ts",
+              "type": "file",
+              "path": "assets/tests/golden-prompts.ts",
+              "lines": 226
+            },
+            {
+              "name": "tool-tests.ts",
+              "type": "file",
+              "path": "assets/tests/tool-tests.ts",
+              "lines": 253
+            }
+          ]
+        },
+        {
+          "name": "widget",
+          "type": "dir",
+          "path": "assets/widget",
+          "children": [
+            {
+              "name": "src",
+              "type": "dir",
+              "path": "assets/widget/src",
+              "children": [
+                {
+                  "name": "components",
+                  "type": "dir",
+                  "path": "assets/widget/src/components"
+                },
+                {
+                  "name": "hooks",
+                  "type": "dir",
+                  "path": "assets/widget/src/hooks"
+                },
+                {
+                  "name": "types",
+                  "type": "dir",
+                  "path": "assets/widget/src/types"
+                },
+                {
+                  "name": "App.tsx",
+                  "type": "file",
+                  "path": "assets/widget/src/App.tsx",
+                  "lines": 255
+                }
+              ]
+            },
+            {
+              "name": "styles",
+              "type": "dir",
+              "path": "assets/widget/styles",
+              "children": [
+                {
+                  "name": "widget.css",
+                  "type": "file",
+                  "path": "assets/widget/styles/widget.css",
+                  "lines": 289
+                }
+              ]
+            },
+            {
+              "name": "tsconfig.json",
+              "type": "file",
+              "path": "assets/widget/tsconfig.json",
+              "lines": 18
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "apps_sdk_ui_tokens.md",
+          "type": "file",
+          "path": "references/apps_sdk_ui_tokens.md",
+          "lines": 228
+        },
+        {
+          "name": "chatgpt_app_best_practices.md",
+          "type": "file",
+          "path": "references/chatgpt_app_best_practices.md",
+          "lines": 477
+        },
+        {
+          "name": "fit_evaluation.md",
+          "type": "file",
+          "path": "references/fit_evaluation.md",
+          "lines": 207
+        },
+        {
+          "name": "node_chatgpt_app.md",
+          "type": "file",
+          "path": "references/node_chatgpt_app.md",
+          "lines": 687
+        },
+        {
+          "name": "oauth_integration.md",
+          "type": "file",
+          "path": "references/oauth_integration.md",
+          "lines": 628
+        },
+        {
+          "name": "security_patterns.md",
+          "type": "file",
+          "path": "references/security_patterns.md",
+          "lines": 559
+        },
+        {
+          "name": "submission_requirements.md",
+          "type": "file",
+          "path": "references/submission_requirements.md",
+          "lines": 351
+        },
+        {
+          "name": "testing_patterns.md",
+          "type": "file",
+          "path": "references/testing_patterns.md",
+          "lines": 444
+        },
+        {
+          "name": "troubleshooting.md",
+          "type": "file",
+          "path": "references/troubleshooting.md",
+          "lines": 850
+        },
+        {
+          "name": "widget_css_template.md",
+          "type": "file",
+          "path": "references/widget_css_template.md",
+          "lines": 616
+        },
+        {
+          "name": "widget_development.md",
+          "type": "file",
+          "path": "references/widget_development.md",
+          "lines": 840
+        },
+        {
+          "name": "widget_loading_patterns.md",
+          "type": "file",
+          "path": "references/widget_loading_patterns.md",
+          "lines": 594
+        },
+        {
+          "name": "widget_ui_patterns.md",
+          "type": "file",
+          "path": "references/widget_ui_patterns.md",
+          "lines": 601
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "validate-app-spec.py",
+          "type": "file",
+          "path": "scripts/validate-app-spec.py",
+          "lines": 270
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 430
+    }
+  ]
+}

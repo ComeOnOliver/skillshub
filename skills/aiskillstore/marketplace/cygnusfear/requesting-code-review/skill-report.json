@@ -1,0 +1,298 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:49:04.369Z",
+    "slug": "cygnusfear-requesting-code-review",
+    "source_url": "https://github.com/Cygnusfear/claude-stuff/tree/main/skills/requesting-code-review",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "01b8bab34c33e16747d6aef97c8b0558a5c9bdd6f78162924a968b2f92c3d708",
+    "tree_hash": "a7546ad69b99a99e657477c1f7b38d032c9c1fc83440e38ea1bf442ae751d6ee"
+  },
+  "skill": {
+    "name": "requesting-code-review",
+    "description": "Use when completing tasks, implementing major features, or before merging to verify work meets requirements",
+    "summary": "Use when completing tasks, implementing major features, or before merging to verify work meets requi...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "Cygnusfear",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "code-review",
+      "quality-assurance",
+      "development-workflow",
+      "git",
+      "validation"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing markdown templates and guidelines for code review workflows. All static findings are false positives triggered by git SHA terminology and documentation examples of version control commands. No executable code, cryptographic implementations, or malicious patterns exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "code-reviewer.md",
+            "line_start": 25,
+            "line_end": 28
+          },
+          {
+            "file": "code-reviewer.md",
+            "line_start": 28,
+            "line_end": 112
+          },
+          {
+            "file": "code-reviewer.md",
+            "line_start": 112,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 75
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 451,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:49:04.369Z"
+  },
+  "content": {
+    "user_title": "Request Code Review Before Merging",
+    "value_statement": "Code reviews catch bugs before production. This skill provides structured review templates and workflows to validate every code change at key development stages.",
+    "seo_keywords": [
+      "code review",
+      "Claude Code",
+      "quality assurance",
+      "development workflow",
+      "git diff",
+      "code validation",
+      "automated review",
+      "best practices",
+      "production readiness",
+      "bug prevention"
+    ],
+    "actual_capabilities": [
+      "Provides structured code review templates with severity categorization",
+      "Includes comprehensive checklists for code quality and architecture review",
+      "Offers git diff integration for targeted change analysis",
+      "Delivers production readiness assessment with clear verdicts",
+      "Supports both mandatory and optional review scenarios"
+    ],
+    "limitations": [
+      "Requires manual git SHA collection for diff generation",
+      "Templates need customization for specific project requirements",
+      "No automated code execution - relies on human reviewer interpretation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Pre-merge code validation",
+        "description": "Review changes before merging to main branch to catch critical issues, security vulnerabilities, and architectural problems."
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Workflow standardization",
+        "description": "Establish consistent review processes across teams with structured templates and severity-based issue categorization."
+      },
+      {
+        "target_user": "Junior developers",
+        "title": "Learn code quality standards",
+        "description": "Use review templates to understand what makes code production-ready and learn best practices from structured feedback."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Feature Review",
+        "scenario": "After implementing a new feature",
+        "prompt": "I completed implementing user authentication. Review changes from commit abc123 to def456. Requirements were JWT-based auth with refresh tokens. Focus on security, error handling, and test coverage."
+      },
+      {
+        "title": "Bug Fix Validation",
+        "scenario": "After fixing a critical bug",
+        "prompt": "I fixed a race condition in payment processing. Review changes between commits 123abc and 456def. Bug caused duplicate charges under load. Verify fix handles edge cases."
+      },
+      {
+        "title": "Architecture Review",
+        "scenario": "After major refactoring",
+        "prompt": "I refactored the API into microservices. Review architectural changes from base abc123 to head def456. Check service boundaries, API contracts, and migration strategy."
+      },
+      {
+        "title": "Security Audit",
+        "scenario": "Before production deployment",
+        "prompt": "Deploying new authentication service. Review all changes since last release for security vulnerabilities, data exposure risks, and OWASP compliance. Focus on input validation and encryption."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review my recent changes to add rate limiting to the API",
+        "output": [
+          "Strengths: Clean middleware following SOLID principles, comprehensive test coverage, proper error responses with rate limit headers",
+          "Issues - Important: Missing Redis connection retry logic at rate-limiter.js:45-67, Fix: Implement circuit breaker pattern",
+          "Minor: Hardcoded rate limits at config.js:12-15, Fix: Use environment variables",
+          "Assessment: Ready to merge with fixes - core functionality sound but needs resilience improvements"
+        ]
+      },
+      {
+        "input": "Review my database schema migration changes",
+        "output": [
+          "Strengths: Clean schema with proper migrations, appropriate indexes, good use of transactions",
+          "Issues - Critical: Missing rollback script for migration, Fix: Add reversible migration",
+          "Important: No constraints on foreign keys, Fix: Add ON DELETE CASCADE",
+          "Assessment: Ready to merge with fixes - data integrity issues must be resolved"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always run code review after completing each task to catch issues before they compound",
+      "Include specific file paths and line numbers in all feedback for actionable improvements",
+      "Categorize issues by actual severity - reserve Critical for bugs that break functionality or create security risks"
+    ],
+    "anti_patterns": [
+      "Skipping reviews because changes seem simple - subtle bugs often hide in obvious code",
+      "Marking style preferences as Critical issues - focus on actual problems that affect functionality",
+      "Giving vague feedback without specific locations or clear remediation steps"
+    ],
+    "faq": [
+      {
+        "question": "When should I request a code review?",
+        "answer": "Request reviews after completing tasks, before merging to main, and when stuck. Mandatory for all task completions in subagent-driven development."
+      },
+      {
+        "question": "How do I get the git SHAs for the review?",
+        "answer": "Use git rev-parse HEAD~1 for base SHA and git rev-parse HEAD for head SHA, or reference specific commits by hash."
+      },
+      {
+        "question": "Can I skip reviews for small changes?",
+        "answer": "No. Even simple changes can introduce subtle bugs. The review process catches issues before they cascade."
+      },
+      {
+        "question": "What if the reviewer is wrong about an issue?",
+        "answer": "Push back with technical reasoning and evidence. Show code or tests that prove your implementation is correct."
+      },
+      {
+        "question": "How do I integrate this with my workflow?",
+        "answer": "Add review checkpoints after each task completion. Use templates to standardize reviews across your team."
+      },
+      {
+        "question": "What is the difference between Important and Critical?",
+        "answer": "Critical issues break functionality or create security risks. Important issues affect architecture or maintainability but do not break the code."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "code-reviewer.md",
+      "type": "file",
+      "path": "code-reviewer.md",
+      "lines": 147
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 106
+    }
+  ]
+}

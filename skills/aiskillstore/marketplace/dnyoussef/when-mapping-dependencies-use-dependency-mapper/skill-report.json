@@ -1,0 +1,288 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:11:08.022Z",
+    "slug": "dnyoussef-when-mapping-dependencies-use-dependency-mapper",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/dependencies/when-mapping-dependencies-use-dependency-mapper",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "afd2c692ab576db643835cf5e15fdfbe700ef39defb099a200db9dffce8e0282",
+    "tree_hash": "58af423b452433834510679a4f11e33267bffcea7f96e069a7089f90763007b6"
+  },
+  "skill": {
+    "name": "when-mapping-dependencies-use-dependency-mapper",
+    "description": "Comprehensive dependency mapping, analysis, and visualization tool for software projects",
+    "summary": "Comprehensive dependency mapping, analysis, and visualization tool for software projects",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Claude Code",
+    "license": "MIT",
+    "category": "analysis",
+    "tags": [
+      "dependencies",
+      "graph-analysis",
+      "security",
+      "visualization",
+      "mece"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analyzer flagged 261 patterns, but ALL major findings are FALSE_POSITIVES. The skill is a legitimate dependency analysis tool. External commands are coordination hooks for Claude-Flow. Network access queries vulnerability databases. Environment variables authenticate to security APIs. No malicious intent detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "subagent-dependency-mapper.md",
+            "line_start": 480,
+            "line_end": 490
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "subagent-dependency-mapper.md",
+            "line_start": 272,
+            "line_end": 280
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "slash-command-dep-map.sh",
+            "line_start": 125,
+            "line_end": 125
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "subagent-dependency-mapper.md",
+            "line_start": 274,
+            "line_end": 274
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "slash-command-dep-map.sh",
+            "line_start": 143,
+            "line_end": 145
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 2831,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:11:08.022Z"
+  },
+  "content": {
+    "user_title": "Map and analyze project dependencies",
+    "value_statement": "Software projects often have hidden dependency issues that cause security vulnerabilities, build problems, and maintenance headaches. Dependency Mapper extracts complete dependency trees, detects circular dependencies, identifies outdated packages, and scans for security vulnerabilities across multiple package managers.",
+    "seo_keywords": [
+      "dependency mapping",
+      "dependency analysis",
+      "vulnerability scanning",
+      "circular dependency detection",
+      "package manager analysis",
+      "npm audit",
+      "dependency visualization",
+      "Claude Code",
+      "Codex",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Extract complete dependency trees from package managers (npm, pip, cargo, maven, go)",
+      "Detect circular dependencies and duplicate packages in the dependency graph",
+      "Scan for security vulnerabilities using npm audit, Snyk, GitHub Advisories, and OSV",
+      "Generate interactive HTML and SVG dependency visualizations with D3.js",
+      "Check for outdated packages and suggest update priorities",
+      "Query multiple vulnerability databases in parallel for comprehensive security coverage"
+    ],
+    "limitations": [
+      "Requires lock files to be present for complete analysis (package-lock.json, yarn.lock, etc.)",
+      "Visualization for very large dependency trees may require limiting tree depth",
+      "Security scans require network access to vulnerability databases"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security engineers",
+        "title": "Pre-release security audits",
+        "description": "Run comprehensive vulnerability scans before deploying to production and generate security reports."
+      },
+      {
+        "target_user": "DevOps teams",
+        "title": "CI/CD pipeline integration",
+        "description": "Automate dependency analysis in build pipelines to catch vulnerabilities before merge."
+      },
+      {
+        "target_user": "Frontend developers",
+        "title": "Bundle optimization",
+        "description": "Identify duplicate dependencies and large packages that can be replaced with lighter alternatives."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic dependency scan",
+        "scenario": "Analyze a project",
+        "prompt": "Map all dependencies in my project and check for security vulnerabilities."
+      },
+      {
+        "title": "Security audit",
+        "scenario": "Find vulnerabilities",
+        "prompt": "Run a full security audit on my dependencies and list all high-severity vulnerabilities."
+      },
+      {
+        "title": "Visualize dependencies",
+        "scenario": "Create dependency graph",
+        "prompt": "Generate an interactive HTML visualization showing my dependency tree with vulnerable packages highlighted."
+      },
+      {
+        "title": "Circular dependency check",
+        "scenario": "Find circular deps",
+        "prompt": "Detect all circular dependencies in my project and show the paths."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Map dependencies in my project with security audit",
+        "output": [
+          "Total Dependencies: 847",
+          "Direct: 23, Dev: 15, Transitive: 809",
+          "Security: 2 High, 5 Medium, 12 Low vulnerabilities",
+          "Circular Dependencies: 0",
+          "Outdated Packages: 15 (3 major, 7 minor, 5 patch)",
+          "Recommendation: Update lodash to fix high-severity CVE"
+        ]
+      },
+      {
+        "input": "Generate HTML visualization",
+        "output": [
+          "Generated dependency-graph.html with D3.js visualization",
+          "Vulnerable packages highlighted in red",
+          "Outdated packages in yellow",
+          "Interactive search and zoom functionality"
+        ]
+      },
+      {
+        "input": "Check for circular dependencies",
+        "output": [
+          "No circular dependencies found",
+          "Max depth: 8 levels",
+          "Graph structure is clean"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run dependency mapping before major releases to catch security issues early",
+      "Integrate into CI/CD pipelines with automated failure on critical vulnerabilities",
+      "Use visualization to identify and resolve circular dependency issues"
+    ],
+    "anti_patterns": [
+      "Ignoring low-severity vulnerabilities that can accumulate over time",
+      "Using deep dependency trees without monitoring for circular dependencies",
+      "Skipping security scans to save time during fast-paced releases"
+    ],
+    "faq": [
+      {
+        "question": "What package managers are supported?",
+        "answer": "npm, yarn, pnpm, pip, poetry, cargo, maven, go modules, bundler, composer, and nuget."
+      },
+      {
+        "question": "How does security scanning work?",
+        "answer": "The tool queries npm audit, Snyk, GitHub Advisories, and OSV databases in parallel for comprehensive coverage."
+      },
+      {
+        "question": "Can I use this offline?",
+        "answer": "Basic dependency extraction works offline, but security scanning requires network access to vulnerability databases."
+      },
+      {
+        "question": "How is circular dependency detection performed?",
+        "answer": "Uses depth-first search algorithm to detect cycles in the dependency graph and reports paths."
+      },
+      {
+        "question": "What visualization formats are available?",
+        "answer": "Console text summary, JSON report, interactive HTML with D3.js, and static SVG diagrams."
+      },
+      {
+        "question": "How does caching work?",
+        "answer": "Results are cached for 1 hour using md5 hash of project path. Use --no-cache to skip cached results."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "mcp-dependency-mapper.json",
+      "type": "file",
+      "path": "mcp-dependency-mapper.json",
+      "lines": 363
+    },
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 163
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 503
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 292
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 250
+    },
+    {
+      "name": "slash-command-dep-map.sh",
+      "type": "file",
+      "path": "slash-command-dep-map.sh",
+      "lines": 404
+    },
+    {
+      "name": "subagent-dependency-mapper.md",
+      "type": "file",
+      "path": "subagent-dependency-mapper.md",
+      "lines": 647
+    }
+  ]
+}

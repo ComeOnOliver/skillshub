@@ -1,0 +1,315 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T10:11:01.067Z",
+    "slug": "wshobson-similarity-search-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/similarity-search-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4aeedf1943b5822bfa7aba054c27f029e7c5785420fdaa0181548ea2940123ea",
+    "tree_hash": "d86d42df5e1cc1f675cfffb1d1c1959e6d2e457d5b076d4bd6051e383cc281bf"
+  },
+  "skill": {
+    "name": "similarity-search-patterns",
+    "description": "Implement efficient similarity search with vector databases. Use when building semantic search, implementing nearest neighbor queries, or optimizing retrieval performance.",
+    "summary": "Implement efficient similarity search with vector databases. Use when building semantic search, impl...",
+    "icon": "🔎",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "vector-search",
+      "rag",
+      "retrieval",
+      "databases",
+      "performance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and code templates for implementing vector search. No executable code, file access, or network operations are performed by the skill itself. The static analyzer detected patterns in documentation examples and mathematical formulas that triggered false positive security alerts. All detected 'network', 'external_commands', and 'env_access' patterns are documentation artifacts, not actual malicious code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 377,
+            "line_end": 377
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 398,
+            "line_end": 398
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 442,
+            "line_end": 442
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 555,
+            "line_end": 555
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 556,
+            "line_end": 556
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 557,
+            "line_end": 557
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 558,
+            "line_end": 558
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 430
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 430,
+            "line_end": 434
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 434,
+            "line_end": 536
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 736,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T10:11:01.067Z"
+  },
+  "content": {
+    "user_title": "Implement similarity search patterns",
+    "value_statement": "Building fast semantic search is complex and error prone. This skill provides proven templates for common vector databases and hybrid retrieval methods.",
+    "seo_keywords": [
+      "similarity search",
+      "vector database",
+      "RAG retrieval",
+      "Pinecone",
+      "Qdrant",
+      "pgvector",
+      "Weaviate",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Provide Pinecone vector store template with upsert, search, and rerank methods",
+      "Provide Qdrant vector store template with filters and hybrid search support",
+      "Provide pgvector template with HNSW index and hybrid SQL queries",
+      "Provide Weaviate template with vector and hybrid search flows",
+      "Outline index types (Flat, HNSW, IVF+PQ) and distance metrics selection",
+      "Show hybrid search combining semantic and keyword search"
+    ],
+    "limitations": [
+      "Does not generate embeddings or choose embedding models",
+      "Does not deploy or configure external database services",
+      "Does not provide performance benchmarks for your specific data",
+      "Does not manage authentication or secret storage"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend engineer",
+        "title": "Add vector search API",
+        "description": "Stand up a vector search layer with Pinecone, Qdrant, pgvector, or Weaviate."
+      },
+      {
+        "target_user": "Data engineer",
+        "title": "Scale retrieval indexing",
+        "description": "Select index types and parameters for large scale similarity search workloads."
+      },
+      {
+        "target_user": "Product developer",
+        "title": "Improve RAG quality",
+        "description": "Implement hybrid search and reranking to improve relevance in retrieval augmented generation."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Choose index type",
+        "scenario": "Selecting index for dataset size",
+        "prompt": "Recommend an index type for 5 million vectors with latency under 100 ms and explain the tradeoffs."
+      },
+      {
+        "title": "Pinecone setup",
+        "scenario": "Create a Pinecone store",
+        "prompt": "Draft a Pinecone vector store class with upsert and search methods and explain needed parameters."
+      },
+      {
+        "title": "pgvector hybrid",
+        "scenario": "Blend vector and text search",
+        "prompt": "Show a pgvector hybrid search query combining vector similarity and full text search with weight control."
+      },
+      {
+        "title": "Rerank results",
+        "scenario": "Improve relevance after retrieval",
+        "prompt": "Add a reranking step using a cross encoder after vector search and explain the flow."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Explain how to implement hybrid search with Qdrant",
+        "output": [
+          "Use a dense vector query with optional filters for metadata.",
+          "Add sparse or keyword signals by managing payload fields.",
+          "Balance relevance by tuning limit and score threshold parameters.",
+          "Consider enabling quantization for memory efficiency at scale."
+        ]
+      },
+      {
+        "input": "What index type should I use for 10 million vectors?",
+        "output": [
+          "Consider HNSW for balanced speed and recall at this scale.",
+          "Configure ef_search between 100-500 based on latency requirements.",
+          "Monitor recall metrics to tune search parameters.",
+          "For very large datasets, evaluate IVF+PQ for memory efficiency."
+        ]
+      },
+      {
+        "input": "Show me a Pinecone reranking pattern",
+        "output": [
+          "Over-fetch initial results (50-100) using vector search.",
+          "Pass query and top results to cross-encoder for scoring.",
+          "Reorder final results by cross-encoder scores.",
+          "Limit final output to top_k based on relevance requirements."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Measure recall and latency before tuning index parameters",
+      "Use hybrid search for better relevance on ambiguous queries",
+      "Batch upserts to reduce API overhead and operational cost"
+    ],
+    "anti_patterns": [
+      "Skipping evaluation and relying only on default parameters",
+      "Over indexing small datasets where flat search is sufficient",
+      "Ignoring metadata filters that can reduce search space"
+    ],
+    "faq": [
+      {
+        "question": "Which platforms can use this skill?",
+        "answer": "It works with Claude, Codex, and Claude Code workflows that support reading the templates."
+      },
+      {
+        "question": "Are there limits on database size?",
+        "answer": "No limits are enforced here, but each vector database backend has its own scaling constraints."
+      },
+      {
+        "question": "Can I integrate with my existing API layer?",
+        "answer": "Yes, the templates are simple classes you can wrap with your API framework of choice."
+      },
+      {
+        "question": "Does this skill access my data?",
+        "answer": "No, it only provides patterns and templates, it does not read or transmit user data."
+      },
+      {
+        "question": "What if searches are slow?",
+        "answer": "Review your index type, tune search parameters like ef_search, and add filters to reduce candidate sets."
+      },
+      {
+        "question": "How does this compare to a full framework?",
+        "answer": "This provides focused guidance and templates, not a complete application framework."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 559
+    }
+  ]
+}

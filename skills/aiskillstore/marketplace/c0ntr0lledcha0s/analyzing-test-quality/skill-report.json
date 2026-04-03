@@ -1,0 +1,273 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:40:59.901Z",
+    "slug": "c0ntr0lledcha0s-analyzing-test-quality",
+    "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/tree/main/testing-expert/skills/analyzing-test-quality",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3a332fe2c163295ae0ba014575ddbe019279106a8d2ec6b650b1716d8f758ef6",
+    "tree_hash": "39cb833454a837647d56e3549dda9dc850fa4cebc45d9684764bd3e66f4d9422"
+  },
+  "skill": {
+    "name": "analyzing-test-quality",
+    "description": "Automatically activated when user asks about test quality, code coverage, test reliability, test maintainability, or wants to analyze their test suite. Provides framework-agnostic test quality analysis and improvement recommendations. Does NOT provide framework-specific patterns - use jest-testing or playwright-testing for those.",
+    "summary": "Automatically activated when user asks about test quality, code coverage, test reliability, test mai...",
+    "icon": "🧪",
+    "version": "1.1.0",
+    "author": "C0ntr0lledCha0s",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "testing",
+      "quality",
+      "coverage",
+      "test-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a prompt-based testing utility skill with an auxiliary bash script for metrics calculation. The script only reads files using standard Unix utilities (find, grep, wc) and outputs metrics to stdout. No network calls, no sensitive data access, no command injection risk. All static findings are false positives from documentation code examples and structural syntax being misinterpreted by the pattern matcher.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/calculate-metrics.sh",
+            "line_start": 1,
+            "line_end": 150
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/calculate-metrics.sh",
+            "line_start": 28,
+            "line_end": 46
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/calculate-metrics.sh",
+            "line_start": 28,
+            "line_end": 140
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1187,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:40:59.901Z"
+  },
+  "content": {
+    "user_title": "Analyze test quality and coverage metrics",
+    "value_statement": "Poor test quality leads to false confidence and hidden bugs. This skill provides automated analysis of test suites including coverage metrics, anti-pattern detection, and actionable improvement recommendations across any testing framework.",
+    "seo_keywords": [
+      "test quality analysis",
+      "code coverage metrics",
+      "test suite analysis",
+      "Claude Code testing skill",
+      "anti-pattern detection",
+      "mutation testing",
+      "flaky test detection",
+      "test maintainability",
+      "testing best practices",
+      "test reliability assessment"
+    ],
+    "actual_capabilities": [
+      "Calculates test metrics including test counts, ratios, and pattern usage",
+      "Detects common anti-patterns like test pollution, over-mocking, and flaky assertions",
+      "Analyzes code coverage across statements, branches, functions, and lines",
+      "Identifies flaky tests and reliability issues in test suites",
+      "Provides mutation testing guidance with Stryker configuration examples",
+      "Evaluates test pyramid balance and test organization quality"
+    ],
+    "limitations": [
+      "Does not provide framework-specific testing patterns (use jest-testing or playwright-testing skills)",
+      "Cannot execute tests or generate coverage reports directly",
+      "Does not fix tests - only provides recommendations and guidance",
+      "Cannot analyze non-JavaScript/TypeScript test files"
+    ],
+    "use_cases": [
+      {
+        "target_user": "QA Engineers",
+        "title": "Test suite health check",
+        "description": "Evaluate test quality metrics and identify improvement areas across your entire test suite"
+      },
+      {
+        "target_user": "Dev Leads",
+        "title": "Coverage gap analysis",
+        "description": "Identify untested code paths and prioritize which areas need additional test coverage"
+      },
+      {
+        "target_user": "Developers",
+        "title": "Anti-pattern identification",
+        "description": "Find and fix common testing mistakes like flaky tests, over-mocking, and assertion roulette"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick coverage check",
+        "scenario": "Get a quick overview of test coverage",
+        "prompt": "Analyze my test coverage and identify the main gaps in my test suite"
+      },
+      {
+        "title": "Reliability audit",
+        "scenario": "Find flaky tests",
+        "prompt": "Check my tests for flakiness issues, timing dependencies, and shared state problems"
+      },
+      {
+        "title": "Anti-pattern review",
+        "scenario": "Review test quality",
+        "prompt": "Review my test files and identify anti-patterns like over-mocking, assertion roulette, and mystery guests"
+      },
+      {
+        "title": "Full assessment",
+        "scenario": "Complete test analysis",
+        "prompt": "Run a full test quality assessment including metrics, coverage, anti-patterns, and provide a prioritized improvement roadmap"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze my test coverage and identify the main gaps",
+        "output": [
+          "Coverage: 72% statements, 65% branches (below 80% target)",
+          "Critical gaps found in error handling paths in auth.service.ts",
+          "Missing tests for boundary conditions in validation module",
+          "Recommend adding 12 test cases to reach 80% coverage",
+          "Anti-pattern detected: 3 tests use setTimeout without waitFor"
+        ]
+      },
+      {
+        "input": "Check my tests for flakiness issues",
+        "output": [
+          "Found 5 potential flaky tests using setTimeout without proper waits",
+          "3 tests share mutable state between test cases",
+          "2 tests have timing dependencies on external services",
+          "Suggestion: Replace setTimeout with waitFor or testing-library waits",
+          "Suggestion: Reset shared state in beforeEach hooks"
+        ]
+      },
+      {
+        "input": "Review my test files for anti-patterns",
+        "output": [
+          "Over-mocking detected: 8 files mock internal dependencies unnecessarily",
+          "Assertion roulette found: 4 tests have multiple unrelated assertions",
+          "Mystery guest pattern: 2 tests use global test data without setup",
+          "Recommendation: Mock only external services, keep internal logic real",
+          "Recommendation: Split tests to have one logical assertion per test"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use AAA (Arrange-Act-Assert) pattern for clear and maintainable test structure",
+      "Keep tests independent with proper setup and teardown for each test case",
+      "Test behavior, not implementation details to avoid brittle tests",
+      "Aim for meaningful coverage that validates actual functionality"
+    ],
+    "anti_patterns": [
+      "Multiple unrelated assertions in a single test (assertion roulette)",
+      "Hidden dependencies in tests without explicit setup (mystery guest pattern)",
+      "Over-mocking external dependencies which hides bugs and makes tests brittle",
+      "Using setTimeout instead of proper wait conditions for async tests"
+    ],
+    "faq": [
+      {
+        "question": "What frameworks does this skill support?",
+        "answer": "Framework-agnostic. Works with Jest, Vitest, Mocha, Playwright, and any testing framework using standard patterns."
+      },
+      {
+        "question": "Does it generate coverage reports?",
+        "answer": "No. It analyzes existing coverage data and provides recommendations. Run your framework's coverage command first."
+      },
+      {
+        "question": "How is this different from jest-testing?",
+        "answer": "jest-testing provides Jest-specific patterns. This skill analyzes test quality across any framework without framework details."
+      },
+      {
+        "question": "Is my test data safe?",
+        "answer": "Yes. The skill only reads files to analyze patterns. No data is sent anywhere or stored externally."
+      },
+      {
+        "question": "Can it fix the issues it finds?",
+        "answer": "No. It identifies problems and provides recommendations. You must implement the fixes yourself."
+      },
+      {
+        "question": "Does it work with other languages?",
+        "answer": "The bash script focuses on JS/TS files. The analysis principles apply broadly but implementation is language-specific."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "quality-report.template.md",
+          "type": "file",
+          "path": "assets/quality-report.template.md",
+          "lines": 200
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "quality-checklist.md",
+          "type": "file",
+          "path": "references/quality-checklist.md",
+          "lines": 171
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "calculate-metrics.sh",
+          "type": "file",
+          "path": "scripts/calculate-metrics.sh",
+          "lines": 150
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 418
+    }
+  ]
+}

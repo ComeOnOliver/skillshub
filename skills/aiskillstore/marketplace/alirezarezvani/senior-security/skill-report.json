@@ -1,0 +1,321 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:54:18.684Z",
+    "slug": "alirezarezvani-senior-security",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering-team/senior-security",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6111a935dfe2aa72acac2404a1180f0474eb1458fe294815dea52e807e0f2b37",
+    "tree_hash": "70f7906b42ebf21840df541c4ea10dc250661a1da858cd4c813fbf60cd0fe8e8"
+  },
+  "skill": {
+    "name": "senior-security",
+    "description": "Comprehensive security engineering skill for application security, penetration testing, security architecture, and compliance auditing. Includes security assessment tools, threat modeling, crypto implementation, and security automation. Use when designing security architecture, conducting penetration tests, implementing cryptography, or performing security audits.",
+    "summary": "Comprehensive security engineering skill for application security, penetration testing, security arc...",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "security",
+      "threat-modeling",
+      "penetration-testing",
+      "security-audit",
+      "cryptography"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "After manual evaluation, all 115 static findings are FALSE POSITIVES. The static scanner detected markdown code block syntax (```) as shell backticks, security terminology in educational documentation as exploits, and standard Python file I/O for report generation. The skill contains skeleton scripts and reference documentation for defensive security practices only. No malicious code, actual exploits, or harmful functionality exists.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 57
+          },
+          {
+            "file": "references/cryptography_implementation.md",
+            "line_start": 20,
+            "line_end": 25
+          },
+          {
+            "file": "references/penetration_testing_guide.md",
+            "line_start": 20,
+            "line_end": 25
+          },
+          {
+            "file": "references/security_architecture_patterns.md",
+            "line_start": 20,
+            "line_end": 25
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/security_auditor.py",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "scripts/threat_modeler.py",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "scripts/pentest_automator.py",
+            "line_start": 107,
+            "line_end": 107
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 2131,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:54:18.684Z"
+  },
+  "content": {
+    "user_title": "Senior Security Engineering Toolkit",
+    "value_statement": "This skill provides comprehensive security engineering capabilities for application security, threat modeling, and compliance auditing. It helps security professionals design secure architectures, implement proper cryptography, and automate security assessments across multiple technology stacks.",
+    "seo_keywords": [
+      "senior security",
+      "threat modeling",
+      "security audit",
+      "penetration testing",
+      "cryptography implementation",
+      "security architecture",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "application security"
+    ],
+    "actual_capabilities": [
+      "Create automated threat models with configurable templates and quality checks for software projects",
+      "Perform comprehensive security audits of codebases with deep analysis and recommendations",
+      "Design secure system architectures following industry best practices and compliance standards",
+      "Implement proper cryptographic solutions using AES-256, RSA, and secure key management",
+      "Apply security patterns for authentication, authorization, input validation, and audit logging",
+      "Generate security assessment reports with vulnerability findings and remediation guidance"
+    ],
+    "limitations": [
+      "Script templates require customization to implement specific security checks for your codebase",
+      "Automated tools cannot replace manual security reviews for complex vulnerability assessment",
+      "Penetration testing features require explicit authorization and proper legal scope",
+      "Cryptography implementation requires understanding of security principles and algorithm selection",
+      "Security audits depend on code quality and completeness of the target codebase"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security Engineers",
+        "title": "Application Security Assessment",
+        "description": "Conduct comprehensive security audits of web applications, APIs, and mobile apps to identify and remediate vulnerabilities."
+      },
+      {
+        "target_user": "DevSecOps Teams",
+        "title": "Threat Modeling for Projects",
+        "description": "Create automated threat models for new software projects by identifying assets, threats, and security controls."
+      },
+      {
+        "target_user": "Architects",
+        "title": "Secure Architecture Design",
+        "description": "Design secure system architectures following zero-trust principles, defense in depth, and least privilege patterns."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Security Audit",
+        "scenario": "Analyze codebase security",
+        "prompt": "Use the security auditor to analyze the codebase at [path]. Run the analysis and provide a detailed report of critical and high-severity security findings with remediation recommendations."
+      },
+      {
+        "title": "Create Threat Model",
+        "scenario": "Model security threats",
+        "prompt": "Create a threat model for [project name]. Identify assets, threat actors, attack vectors, and recommend appropriate security controls following STRIDE methodology."
+      },
+      {
+        "title": "Design Security Architecture",
+        "scenario": "Architect secure system",
+        "prompt": "Design a secure architecture for [system description] following the security architecture patterns reference. Include authentication, authorization, input validation, and audit logging."
+      },
+      {
+        "title": "Implement Cryptography",
+        "scenario": "Add encryption to data",
+        "prompt": "Implement secure encryption for [data type] using industry-standard algorithms. Use AES-256-GCM for symmetric encryption and RSA-2048 or higher for asymmetric encryption with proper key management."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze my React application for security vulnerabilities",
+        "output": [
+          "Security Audit Results:",
+          "- Critical: Potential XSS in user input rendering (Component.js:45)",
+          "- High: Missing authentication on API endpoints (routes.js:12)",
+          "- Medium: Insecure CORS configuration allowing all origins",
+          "Recommendations:",
+          "1. Sanitize all user inputs before rendering",
+          "2. Implement JWT-based authentication for API routes",
+          "3. Restrict CORS to specific allowed origins"
+        ]
+      },
+      {
+        "input": "Design authentication for my mobile banking app",
+        "output": [
+          "Authentication Architecture:",
+          "1. OAuth 2.0 with PKCE flow for mobile clients",
+          "2. JWT access tokens (15 min expiry) with refresh tokens (7 days)",
+          "3. Secure token storage using iOS Keychain and Android Keystore",
+          "4. Biometric authentication (Face ID, Touch ID) for app unlock",
+          "5. Certificate pinning for API communications"
+        ]
+      },
+      {
+        "input": "Create a threat model for my payment processing service",
+        "output": [
+          "Threat Model Summary:",
+          "Assets: Payment card data, customer PII, transaction records",
+          "Threat Actors: External attackers, malicious insiders",
+          "Attack Vectors: API injection, man-in-the-middle, credential theft",
+          "Security Controls: TLS 1.3, tokenization, MFA, SIEM logging"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Validate and sanitize all user inputs to prevent injection attacks like SQL injection and XSS",
+      "Use parameterized queries or ORM frameworks for all database operations",
+      "Store passwords using strong hashing algorithms like bcrypt or Argon2 with unique salts",
+      "Implement HTTPS/TLS for all network communications and use certificate pinning in mobile apps",
+      "Follow the principle of least privilege for user permissions and service account access"
+    ],
+    "anti_patterns": [
+      "Hardcoding credentials, API keys, or secrets directly in source code",
+      "Using weak or deprecated cryptographic algorithms like MD5, SHA1, or DES",
+      "Trusting user input without validation or sanitization",
+      "Implementing custom cryptography instead of using established libraries"
+    ],
+    "faq": [
+      {
+        "question": "How do I run a security audit on my codebase?",
+        "answer": "Run 'python scripts/security_auditor.py <target-path> --verbose' to analyze the target directory. The script performs analysis and generates a report with security findings."
+      },
+      {
+        "question": "What permissions are needed for penetration testing?",
+        "answer": "You must have explicit written authorization before conducting any penetration tests. Use this skill only on systems you own or have proper legal scope to test."
+      },
+      {
+        "question": "Which cryptographic algorithms should I use?",
+        "answer": "Use AES-256-GCM for symmetric encryption, RSA-2048 or higher for asymmetric encryption, SHA-256 for hashing, and bcrypt for password storage."
+      },
+      {
+        "question": "How do I create a threat model?",
+        "answer": "Run 'python scripts/threat_modeler.py <project-path>' to generate a threat model. The tool identifies assets, threats, and recommends security controls."
+      },
+      {
+        "question": "What programming languages are supported?",
+        "answer": "This skill supports TypeScript, JavaScript, Python, Go, Swift, and Kotlin. It covers frameworks like React, Node.js, Express, and databases like PostgreSQL."
+      },
+      {
+        "question": "How often should security audits be performed?",
+        "answer": "Run automated audits on every code commit or pull request. Conduct comprehensive manual audits quarterly and after major feature additions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "cryptography_implementation.md",
+          "type": "file",
+          "path": "references/cryptography_implementation.md",
+          "lines": 104
+        },
+        {
+          "name": "penetration_testing_guide.md",
+          "type": "file",
+          "path": "references/penetration_testing_guide.md",
+          "lines": 104
+        },
+        {
+          "name": "security_architecture_patterns.md",
+          "type": "file",
+          "path": "references/security_architecture_patterns.md",
+          "lines": 104
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "pentest_automator.py",
+          "type": "file",
+          "path": "scripts/pentest_automator.py",
+          "lines": 115
+        },
+        {
+          "name": "security_auditor.py",
+          "type": "file",
+          "path": "scripts/security_auditor.py",
+          "lines": 115
+        },
+        {
+          "name": "threat_modeler.py",
+          "type": "file",
+          "path": "scripts/threat_modeler.py",
+          "lines": 115
+        }
+      ]
+    },
+    {
+      "name": "evaluation_output.json",
+      "type": "file",
+      "path": "evaluation_output.json",
+      "lines": 487
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 210
+    }
+  ]
+}

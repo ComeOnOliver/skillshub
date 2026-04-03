@@ -1,0 +1,266 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:06:23.654Z",
+    "slug": "brand-guidelines",
+    "source_url": "https://github.com/anthropics/skills/tree/main/skills/brand-guidelines",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "official",
+    "content_hash": "0ef5365ce4ee2233acfb6c6fc0c3227a6944a44f8889400f5e1300611bcfb940",
+    "tree_hash": "b91c7788624b9db5211e93ed4a9626c095a93fd13c14656ac9643a36c6b5fac3"
+  },
+  "skill": {
+    "name": "brand-guidelines",
+    "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+    "summary": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit fr...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "anthropics",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "design",
+    "tags": [
+      "branding",
+      "style-guide",
+      "colors",
+      "typography",
+      "visual-design"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Official Anthropic skill containing only static documentation files (SKILL.md and LICENSE.txt). No executable code, scripts, network operations, or filesystem access beyond reading skill files. No security risks identified.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "LICENSE.txt",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "LICENSE.txt",
+            "line_start": 196,
+            "line_end": 196
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2277,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:06:23.653Z"
+  },
+  "content": {
+    "user_title": "Apply Anthropic brand styling",
+    "value_statement": "Your assets may not follow Anthropic brand standards. This skill provides official colors and typography guidance for consistent styling across all your materials.",
+    "seo_keywords": [
+      "Anthropic brand guidelines",
+      "brand colors",
+      "typography",
+      "visual identity",
+      "presentation styling",
+      "design system",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Lists official main and accent color hex values for consistent branding",
+      "Specifies Poppins font for headings with Arial fallback",
+      "Specifies Lora font for body text with Georgia fallback",
+      "Recommends smart color selection based on background contrast",
+      "Recommends accent color cycling for non-text shapes"
+    ],
+    "limitations": [
+      "Does not install fonts or check font availability",
+      "Does not generate layouts or new visual assets",
+      "Provides guidance only and does not apply changes automatically",
+      "Requires tools that support font and color edits"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Marketing designer",
+        "title": "Brand aligned slides",
+        "description": "Apply official colors and typography to presentation decks for consistent visuals."
+      },
+      {
+        "target_user": "Product manager",
+        "title": "Consistent documents",
+        "description": "Align briefs and proposals with Anthropic brand styling guidelines."
+      },
+      {
+        "target_user": "Developer advocate",
+        "title": "Polished demo assets",
+        "description": "Style demo materials to match Anthropic brand expectations."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick brand pass",
+        "scenario": "Beginner document styling",
+        "prompt": "Apply Anthropic brand colors and typography to this document. Use readable text colors and keep headings distinct."
+      },
+      {
+        "title": "Slide styling",
+        "scenario": "Deck with shapes and text",
+        "prompt": "Style this slide deck with Anthropic colors. Set Poppins for headings, Lora for body text, and rotate accent colors on shapes."
+      },
+      {
+        "title": "Brand alignment",
+        "scenario": "Existing asset audit",
+        "prompt": "Review current styling and align it with Anthropic brand guidelines. Update fonts and colors with proper fallbacks."
+      },
+      {
+        "title": "Advanced pass",
+        "scenario": "Complex multi-section asset",
+        "prompt": "Apply Anthropic brand styling to each section. Use main colors for backgrounds, accent colors for shapes, and ensure contrast for all text."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Apply Anthropic brand styling to my slide deck.",
+        "output": [
+          "Headings use Poppins with Arial fallback",
+          "Body text uses Lora with Georgia fallback",
+          "Primary text uses Dark and Light palette colors",
+          "Accent shapes cycle Orange, Blue, and Green",
+          "Backgrounds use Light and Light Gray tones"
+        ]
+      },
+      {
+        "input": "Make this document follow Anthropic brand guidelines.",
+        "output": [
+          "Update all headings to Poppins font",
+          "Set body text to Lora font",
+          "Apply Dark color for primary text on Light backgrounds",
+          "Use Light Gray for subtle section backgrounds",
+          "Add Orange, Blue, or Green accents to decorative shapes"
+        ]
+      },
+      {
+        "input": "Review my presentation and apply brand styling.",
+        "output": [
+          "Headings 24pt and larger use Poppins",
+          "Body text uses Lora with Georgia fallback",
+          "Text colors chosen based on background contrast",
+          "Accent colors applied to shapes in rotation",
+          "All colors match official Anthropic hex values"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Install Poppins and Lora fonts before applying styles",
+      "Maintain strong contrast between text and background",
+      "Use accent colors for shapes and highlights only"
+    ],
+    "anti_patterns": [
+      "Mixing non-brand fonts with the recommended typography",
+      "Using accent colors for long body text",
+      "Ignoring contrast rules for text and backgrounds"
+    ],
+    "faq": [
+      {
+        "question": "Is it compatible with Claude, Codex, and Claude Code?",
+        "answer": "Yes, the guidance works with Claude, Codex, and Claude Code workflows."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides colors and typography guidance only, not layout redesign."
+      },
+      {
+        "question": "Can it integrate with existing templates?",
+        "answer": "Yes, apply the guidance to your current templates and assets."
+      },
+      {
+        "question": "How is my data handled?",
+        "answer": "The content is static and does not transmit or store your data."
+      },
+      {
+        "question": "What should I do if fonts are missing?",
+        "answer": "Use the provided fallbacks: Arial for headings and Georgia for body."
+      },
+      {
+        "question": "How does it compare to general styling tools?",
+        "answer": "It targets Anthropic brand standards instead of generic themes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 74
+    }
+  ]
+}

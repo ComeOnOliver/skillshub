@@ -1,0 +1,406 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:25:29.233Z",
+    "slug": "ariegoldkin-brainstorming",
+    "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/tree/main/skills/brainstorming",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "72e6808dc08b44004ecf52e774b9a312cc323a039865574da2c84668879a70b5",
+    "tree_hash": "b2e5272abfc3ce662aabf56f829f4c24d03f00320b91976b5b644aa0c28a2bce"
+  },
+  "skill": {
+    "name": "brainstorming",
+    "description": "Use when creating or developing anything, before writing code or implementation plans - refines rough ideas into fully-formed designs through structured Socratic questioning, alternative exploration, and incremental validation",
+    "summary": "Use when creating or developing anything, before writing code or implementation plans - refines roug...",
+    "icon": "💡",
+    "version": "1.0.0",
+    "author": "ArieGoldkin",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "design",
+      "ideation",
+      "structured-thinking",
+      "requirements",
+      "architecture"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown templates and examples. No executable code, scripts, network operations, or file access capabilities. All 132 static findings are false positives triggered by documentation patterns - the scanner detected terminology in markdown files (e.g., 'md5', 'backticks', 'network', 'cookies') without any actual vulnerable code. The skill provides prompting guidance only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "assets/design-doc-template.md",
+            "line_start": 53,
+            "line_end": 57
+          },
+          {
+            "file": "assets/design-doc-template.md",
+            "line_start": 57,
+            "line_end": 81
+          },
+          {
+            "file": "assets/design-doc-template.md",
+            "line_start": 81,
+            "line_end": 87
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 14,
+            "line_end": 26
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 26,
+            "line_end": 33
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 33,
+            "line_end": 43
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 43,
+            "line_end": 63
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 63,
+            "line_end": 73
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 73,
+            "line_end": 90
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 90,
+            "line_end": 106
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 106,
+            "line_end": 115
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 115,
+            "line_end": 117
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 117,
+            "line_end": 128
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 128,
+            "line_end": 137
+          },
+          {
+            "file": "references/example-session-auth.md",
+            "line_start": 137,
+            "line_end": 153
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 19,
+            "line_end": 29
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 29,
+            "line_end": 49
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 49,
+            "line_end": 59
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 59,
+            "line_end": 78
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 78,
+            "line_end": 92
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 92,
+            "line_end": 101
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 101,
+            "line_end": 119
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 119,
+            "line_end": 128
+          },
+          {
+            "file": "references/example-session-dashboard.md",
+            "line_start": 128,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 156
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 1088,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:25:29.233Z"
+  },
+  "content": {
+    "user_title": "Refine ideas into designs through structured brainstorming",
+    "value_statement": "Ideas often start vague and incomplete. This skill guides you through a three-phase process to clarify requirements, explore alternatives, and validate designs incrementally before any code is written. Use this skill when creating or developing anything, before writing implementation plans.",
+    "seo_keywords": [
+      "brainstorming",
+      "design thinking",
+      "structured ideation",
+      "requirements gathering",
+      "architecture planning",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "system design",
+      "Socratic questioning"
+    ],
+    "actual_capabilities": [
+      "Guides three-phase brainstorming process (Understanding, Exploration, Design)",
+      "Uses structured questioning to clarify vague requirements",
+      "Presents architectural alternatives with explicit trade-offs",
+      "Validates design incrementally in 200-300 word sections",
+      "Provides templates for decision matrices and design documents"
+    ],
+    "limitations": [
+      "Does not write code or implementation plans",
+      "Does not access or modify project files",
+      "Does not execute commands or scripts",
+      "Requires user engagement for effective brainstorming"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Product managers",
+        "title": "Clarify product requirements",
+        "description": "Transform high-level feature ideas into clear, validated requirements before development begins"
+      },
+      {
+        "target_user": "Software architects",
+        "title": "Explore architectural approaches",
+        "description": "Evaluate technology choices with explicit trade-off analysis and decision documentation"
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Prevent costly rework",
+        "description": "Catch design gaps early by validating assumptions before implementation starts"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Initial idea",
+        "scenario": "Starting a new feature discussion",
+        "prompt": "I have an idea for [feature/product]. Help me explore and design it."
+      },
+      {
+        "title": "Architecture selection",
+        "scenario": "Choosing between approaches",
+        "prompt": "I need to build [system]. What are the best approaches and their trade-offs?"
+      },
+      {
+        "title": "Requirements clarification",
+        "scenario": "Vague or unclear requirements",
+        "prompt": "Help me understand what I actually need for [project]. Ask me questions to clarify."
+      },
+      {
+        "title": "Design validation",
+        "scenario": "Reviewing a proposed design",
+        "prompt": "Here is my initial design for [feature]. Validate it section by section and identify gaps."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I want to add user authentication to my web app",
+        "output": [
+          "Clarifying question about storage location (Session, Local, Cookies, Server-side)",
+          "Security level assessment (Basic, Enhanced, Maximum)",
+          "Success criteria definition (session duration, device support, logout behavior)",
+          "Architecture options with trade-offs (JWT, Session ID with Redis, JWT + Refresh Token)",
+          "Incremental design validation covering auth flow, session management, and security measures"
+        ]
+      },
+      {
+        "input": "Build me a real-time dashboard to track user activity",
+        "output": [
+          "Clarifying questions about metrics (Logins, API calls, errors, active users)",
+          "Scale requirements assessment (Low, Medium, High volume)",
+          "Architecture comparison (Database polling, Server-Sent Events, WebSockets)",
+          "Data flow architecture (Message queue, Aggregation worker, SSE endpoint)",
+          "Connection handling strategy (Auto-reconnect, exponential backoff, catch-up replay)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Announce skill usage at the start of brainstorming sessions",
+      "Ask one question at a time and wait for responses before proceeding",
+      "Always propose 2-3 approaches with explicit trade-off comparisons",
+      "Validate each design section before moving to the next"
+    ],
+    "anti_patterns": [
+      "Jumping to solutions before understanding the problem",
+      "Presenting only one approach without alternatives",
+      "Skipping incremental validation and presenting full designs at once",
+      "Forcing linear progression when new information requires revisiting earlier phases"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. It uses the AskUserQuestion tool for structured choices."
+      },
+      {
+        "question": "What types of projects benefit most?",
+        "answer": "Complex features, new systems, or any project where requirements are vague or multiple approaches could work."
+      },
+      {
+        "question": "How does this integrate with existing workflows?",
+        "answer": "Use this before writing code or implementation plans. Document results using the included templates."
+      },
+      {
+        "question": "Is any data stored or transmitted?",
+        "answer": "No. This is a prompt-based skill with no code execution, file access, or network operations."
+      },
+      {
+        "question": "What if requirements change mid-session?",
+        "answer": "The skill supports non-linear progression. Return to earlier phases to incorporate new constraints."
+      },
+      {
+        "question": "How is this different from general prompting?",
+        "answer": "It provides a structured three-phase framework with explicit tool usage guidelines and templates."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "decision-matrix-template.md",
+          "type": "file",
+          "path": "assets/decision-matrix-template.md",
+          "lines": 158
+        },
+        {
+          "name": "design-doc-template.md",
+          "type": "file",
+          "path": "assets/design-doc-template.md",
+          "lines": 174
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "example-session-auth.md",
+          "type": "file",
+          "path": "references/example-session-auth.md",
+          "lines": 182
+        },
+        {
+          "name": "example-session-dashboard.md",
+          "type": "file",
+          "path": "references/example-session-dashboard.md",
+          "lines": 204
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 157
+    }
+  ]
+}

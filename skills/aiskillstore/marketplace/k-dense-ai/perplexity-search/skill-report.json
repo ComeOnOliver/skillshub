@@ -1,0 +1,292 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:21:25.385Z",
+    "slug": "k-dense-ai-perplexity-search",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/perplexity-search",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d0e8ae04db175f400a604d752237b71d15eb83300396219c60e972b9d5a7ac44",
+    "tree_hash": "36d9cdc210e0a6b63278cec197ef8fc92c8ca2c2153c3e1cd616433a32a2f86a"
+  },
+  "skill": {
+    "name": "perplexity-search",
+    "description": "Perform AI-powered web searches with real-time information using Perplexity models via LiteLLM and OpenRouter. This skill should be used when conducting web searches for current information, finding recent scientific literature, getting grounded answers with source citations, or accessing information beyond the model knowledge cutoff. Provides access to multiple Perplexity models including Sonar Pro, Sonar Pro Search (advanced agentic search), and Sonar Reasoning Pro through a single OpenRouter API key.",
+    "summary": "Perform AI-powered web searches with real-time information using Perplexity models via LiteLLM and O...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "research",
+    "tags": [
+      "web-search",
+      "perplexity",
+      "ai-models",
+      "research",
+      "literature"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "env_access",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate web search API client. Static scanner flagged 362 patterns as potential issues, but ALL are false positives. The skill performs standard API client operations: reading user-provided API keys from environment variables, making HTTPS requests to OpenRouter API, and saving search results. The credential access + network pattern is expected and legitimate for any authenticated API client. No data exfiltration, no unauthorized access, no malicious behavior.",
+    "risk_factor_evidence": [
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/perplexity_search.py",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "scripts/setup_env.py",
+            "line_start": 72,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 47
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "scripts/perplexity_search.py",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "references/openrouter_setup.md",
+            "line_start": 21,
+            "line_end": 21
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/perplexity_search.py",
+            "line_start": 269,
+            "line_end": 269
+          },
+          {
+            "file": "scripts/setup_env.py",
+            "line_start": 44,
+            "line_end": 44
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 2437,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:21:25.385Z"
+  },
+  "content": {
+    "user_title": "Search the web with Perplexity AI",
+    "value_statement": "This skill enables AI-powered web searches to find current information, recent scientific research, and grounded answers with source citations. It provides access to multiple Perplexity models through a single OpenRouter API key.",
+    "seo_keywords": [
+      "Perplexity search",
+      "Claude web search",
+      "AI research tool",
+      "real-time information",
+      "scientific literature search",
+      "source citations",
+      "Perplexity models",
+      "OpenRouter API",
+      "Claude Code web search",
+      "Codex web search"
+    ],
+    "actual_capabilities": [
+      "Perform web searches using Perplexity AI models through OpenRouter",
+      "Access multiple models including Sonar Pro, Sonar Pro Search, and Sonar Reasoning Pro",
+      "Save search results to JSON files for further analysis",
+      "Get source citations for all search results"
+    ],
+    "limitations": [
+      "Requires a valid OpenRouter API key with sufficient credits",
+      "Searches are billed per token usage based on model selected",
+      "Does not execute code or perform computations directly"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Researchers",
+        "title": "Find recent publications",
+        "description": "Search for latest scientific papers and research findings beyond your knowledge cutoff"
+      },
+      {
+        "target_user": "Developers",
+        "title": "Get technical answers",
+        "description": "Find current technical documentation and solutions with verified source links"
+      },
+      {
+        "target_user": "Students",
+        "title": "Research current events",
+        "description": "Access up-to-date information on any topic with reliable source citations"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Search",
+        "scenario": "Find current information",
+        "prompt": "Search for the latest developments in {topic} from 2024"
+      },
+      {
+        "title": "Scientific Query",
+        "scenario": "Research academic papers",
+        "prompt": "Find recent peer-reviewed studies on {topic} published in {year}"
+      },
+      {
+        "title": "Comparative Analysis",
+        "scenario": "Compare technologies",
+        "prompt": "Compare {technology_1} versus {technology_2} including pros and cons"
+      },
+      {
+        "title": "Deep Research",
+        "scenario": "Comprehensive investigation",
+        "prompt": "Conduct a comprehensive analysis of {topic} including current state, recent advances, and future directions"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What are the latest developments in CRISPR gene editing?",
+        "output": [
+          "Latest CRISPR developments include prime editing advances, base editing improvements, and new clinical trial results",
+          "Key papers from 2024 show improved precision in gene correction",
+          "Source: Nature Biotechnology, Science, and clinicaltrials.gov"
+        ]
+      },
+      {
+        "input": "Compare mRNA vaccines versus viral vector vaccines",
+        "output": [
+          "mRNA vaccines offer faster development and flexibility against variants",
+          "Viral vector vaccines provide longer shelf life and established platform",
+          "Both show strong efficacy in clinical trials with different storage requirements",
+          "Sources: WHO, NEJM, and peer-reviewed clinical studies"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use specific search terms with time constraints for best results",
+      "Choose appropriate model based on query complexity",
+      "Monitor OpenRouter usage to manage costs effectively"
+    ],
+    "anti_patterns": [
+      "Do not use for simple calculations or logic problems",
+      "Do not commit API keys to version control",
+      "Do not exceed rate limits without proper delays between requests"
+    ],
+    "faq": [
+      {
+        "question": "Do I need a separate Perplexity account?",
+        "answer": "No. This skill uses OpenRouter to access Perplexity models with a single API key."
+      },
+      {
+        "question": "How much do searches cost?",
+        "answer": "Costs vary by model from $0.001 to $0.05 per query. Check OpenRouter for current pricing."
+      },
+      {
+        "question": "Which model should I choose?",
+        "answer": "Start with sonar-pro for most queries. Use sonar for simple facts and sonar-pro-search for complex analysis."
+      },
+      {
+        "question": "How do I get an API key?",
+        "answer": "Visit openrouter.ai/keys to create an account and generate an API key."
+      },
+      {
+        "question": "Can I save search results?",
+        "answer": "Yes. Use the --output flag to save results to a JSON file for later analysis."
+      },
+      {
+        "question": "Is this skill secure?",
+        "answer": "Yes. Your API key is stored locally in environment variables and never shared with third parties."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "model_comparison.md",
+          "type": "file",
+          "path": "references/model_comparison.md",
+          "lines": 387
+        },
+        {
+          "name": "openrouter_setup.md",
+          "type": "file",
+          "path": "references/openrouter_setup.md",
+          "lines": 455
+        },
+        {
+          "name": "search_strategies.md",
+          "type": "file",
+          "path": "references/search_strategies.md",
+          "lines": 259
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "perplexity_search.py",
+          "type": "file",
+          "path": "scripts/perplexity_search.py",
+          "lines": 278
+        },
+        {
+          "name": "setup_env.py",
+          "type": "file",
+          "path": "scripts/setup_env.py",
+          "lines": 172
+        }
+      ]
+    },
+    {
+      "name": "evaluation_result.json",
+      "type": "file",
+      "path": "evaluation_result.json",
+      "lines": 182
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 448
+    }
+  ]
+}

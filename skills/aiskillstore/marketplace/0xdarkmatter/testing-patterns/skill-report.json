@@ -1,0 +1,261 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:02:19.887Z",
+    "slug": "0xdarkmatter-testing-patterns",
+    "source_url": "https://github.com/0xDarkMatter/claude-mods/tree/main/skills/testing-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cd9f8b7b21e9b73db41b54de2653b14b12d25ac10d48791c716409dee79b3676",
+    "tree_hash": "76daf4d4b85e5c6c857a569256a7e2abf45e0727e7a3666c13229b7d0cc07be5"
+  },
+  "skill": {
+    "name": "testing-patterns",
+    "description": "Cross-language testing strategies and patterns. Triggers on: test pyramid, unit test, integration test, e2e test, TDD, BDD, test coverage, mocking strategy, test doubles, test isolation.",
+    "summary": "Cross-language testing strategies and patterns. Triggers on: test pyramid, unit test, integration te...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "0xDarkMatter",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "testing",
+      "tdd",
+      "quality",
+      "test-pyramid"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-focused skill providing testing pattern guidance. Static findings are false positives from markdown code examples. The scanner flagged backtick-delimited code blocks as shell execution, example DATABASE_URLs as credential access, and testing tool names like pytest/docker as reconnaissance. The single utility script (coverage-check.sh) is a benign pytest wrapper with no network access or credential handling.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/ci-testing.md",
+            "line_start": 1,
+            "line_end": 294
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/coverage-check.sh",
+            "line_start": 1,
+            "line_end": 39
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 1521,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:02:19.887Z"
+  },
+  "content": {
+    "user_title": "Apply Testing Patterns",
+    "value_statement": "Writing effective tests requires understanding the right patterns for each scenario. This skill provides universal testing strategies, from the test pyramid to TDD workflows, so you can build reliable test suites.",
+    "seo_keywords": [
+      "testing patterns",
+      "test pyramid",
+      "unit test",
+      "integration test",
+      "e2e test",
+      "TDD",
+      "BDD",
+      "test coverage",
+      "mocking",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Implement test pyramid with correct unit, integration, and E2E balance",
+      "Apply TDD red-green-refactor cycle for new features",
+      "Choose appropriate test doubles (stubs, mocks, spies, fakes)",
+      "Create test data using fixtures, factories, and builders",
+      "Configure CI testing pipelines with parallelization and caching",
+      "Analyze test quality and identify anti-patterns"
+    ],
+    "limitations": [
+      "Does not execute tests directly in the workspace",
+      "Framework-specific implementations are referenced, not provided",
+      "Does not generate complete test suites automatically",
+      "Coverage script requires pytest and coverage plugins"
+    ],
+    "use_cases": [
+      {
+        "target_user": "New developers",
+        "title": "Learn testing fundamentals",
+        "description": "Understand the test pyramid and how to structure tests for different scenarios"
+      },
+      {
+        "target_user": "QA engineers",
+        "title": "Design test strategies",
+        "description": "Create comprehensive test plans with proper isolation and mocking approaches"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Build CI testing pipelines",
+        "description": "Configure efficient testing pipelines with parallelization and coverage gates"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic unit test",
+        "scenario": "Write a unit test",
+        "prompt": "Help me write a unit test for [function name] including arrange-act-assert structure and proper mocking of dependencies."
+      },
+      {
+        "title": "Test pyramid",
+        "scenario": "Balance test types",
+        "prompt": "Design a test pyramid for my [feature name]. How many unit, integration, and E2E tests should I have?"
+      },
+      {
+        "title": "TDD workflow",
+        "scenario": "Practice TDD",
+        "prompt": "Guide me through TDD for [feature]. Start with a failing test, then minimal code, then refactor."
+      },
+      {
+        "title": "Advanced mocking",
+        "scenario": "Mock external services",
+        "prompt": "Help me set up mocking for [external API/database] in my tests. Include stubs for responses and mocks for verifying interactions."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me set up TDD for a shopping cart calculate_total function",
+        "output": [
+          "Step 1 - RED: Write failing test for empty cart (returns 0)",
+          "Step 2 - GREEN: Minimal code to pass the test",
+          "Step 3 - Refactor: Add item support with proper assertions",
+          "Next tests to add: single item, multiple items, discount handling"
+        ]
+      },
+      {
+        "input": "What mocking strategy should I use for testing database queries?",
+        "output": [
+          "Use stubs for predictable return values on repository methods",
+          "Use spies to verify query calls and count",
+          "Mock at the repository boundary, not inside the database layer",
+          "Consider fakes for complex query scenarios"
+        ]
+      },
+      {
+        "input": "How do I structure my test pyramid for a new API service?",
+        "output": [
+          "Unit tests (70%): Test each endpoint handler and business logic in isolation",
+          "Integration tests (20%): Test database queries and service interactions",
+          "E2E tests (10%): Test critical user flows end-to-end"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Write tests before production code using TDD for new features",
+      "Mock only at external boundaries (databases, APIs, file system)",
+      "Keep tests independent with no order dependencies"
+    ],
+    "anti_patterns": [
+      "Testing implementation details instead of public behavior",
+      "Mocking the code under test itself",
+      "Writing tests that mirror production code logic"
+    ],
+    "faq": [
+      {
+        "question": "Which testing frameworks work with these patterns?",
+        "answer": "Patterns are language-agnostic. Python (pytest), JavaScript (Jest), Java (JUnit), Go (testing) all apply."
+      },
+      {
+        "question": "What is the recommended coverage threshold?",
+        "answer": "Aim for 80% unit test coverage. Integration and E2E tests cover critical paths only."
+      },
+      {
+        "question": "How do I integrate with CI pipelines?",
+        "answer": "Run fast tests (lint, unit) first. Parallelize with matrix builds. Cache dependencies between runs."
+      },
+      {
+        "question": "Is my test data safe?",
+        "answer": "This skill only provides patterns. Test data handling depends on your test configuration and CI secrets management."
+      },
+      {
+        "question": "Why are my tests flaky?",
+        "answer": "Flaky tests often have external dependencies, timing issues, or shared state. Isolate and use deterministic data."
+      },
+      {
+        "question": "How is this different from test documentation?",
+        "answer": "These are actionable patterns you apply directly. The skill helps you choose and implement the right approach."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "ci-testing.md",
+          "type": "file",
+          "path": "references/ci-testing.md",
+          "lines": 294
+        },
+        {
+          "name": "mocking-strategies.md",
+          "type": "file",
+          "path": "references/mocking-strategies.md",
+          "lines": 240
+        },
+        {
+          "name": "tdd-workflow.md",
+          "type": "file",
+          "path": "references/tdd-workflow.md",
+          "lines": 215
+        },
+        {
+          "name": "test-data-patterns.md",
+          "type": "file",
+          "path": "references/test-data-patterns.md",
+          "lines": 333
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "coverage-check.sh",
+          "type": "file",
+          "path": "scripts/coverage-check.sh",
+          "lines": 39
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 161
+    }
+  ]
+}

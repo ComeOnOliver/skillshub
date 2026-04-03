@@ -1,0 +1,281 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:49:09.052Z",
+    "slug": "k-dense-ai-adaptyv",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/adaptyv",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9de29edf367e86a5bc2c49097e5f3c726ee982b1757e79df062f85432c6ed293",
+    "tree_hash": "18de97fad6da4cf088d2f09c7f3bb12af21fd77f6ddbf2745aa18bf1a4028d51"
+  },
+  "skill": {
+    "name": "adaptyv",
+    "description": "Cloud laboratory platform for automated protein testing and validation. Use when designing proteins and needing experimental validation including binding assays, expression testing, thermostability measurements, enzyme activity assays, or protein sequence optimization. Also use for submitting experiments via API, tracking experiment status, downloading results, optimizing protein sequences for better expression using computational tools (NetSolP, SoluProt, SolubleMPNN, ESM), or managing protein design workflows with wet-lab validation.",
+    "summary": "Cloud laboratory platform for automated protein testing and validation. Use when designing proteins ...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "protein-engineering",
+      "bioinformatics",
+      "cloud-laboratory",
+      "experimental-validation",
+      "scientific"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 304 static findings are FALSE POSITIVES. The skill is legitimate scientific software for protein research. Scanner patterns triggered on: FASTA format headers (protein sequences in markdown code blocks), API calls to official platform endpoints, environment variable usage for API keys (recommended practice), and scientific notation (e.g., binding affinity values like 1.2e-9). No malicious behavior confirmed.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 113
+          },
+          {
+            "file": "reference/api_reference.md",
+            "line_start": 1,
+            "line_end": 309
+          },
+          {
+            "file": "reference/examples.md",
+            "line_start": 1,
+            "line_end": 914
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 69
+          },
+          {
+            "file": "reference/examples.md",
+            "line_start": 79,
+            "line_end": 83
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 25
+          },
+          {
+            "file": "reference/examples.md",
+            "line_start": 13,
+            "line_end": 16
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 3608,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:49:09.052Z"
+  },
+  "content": {
+    "user_title": "Submit protein sequences for cloud lab validation",
+    "value_statement": "Protein design requires experimental validation. Adaptyv provides API access to a cloud laboratory for automated testing of binding affinity, expression levels, thermostability, and enzyme activity. Get experimental results in approximately 21 days.",
+    "seo_keywords": [
+      "adaptyv",
+      "protein testing",
+      "binding assay",
+      "protein validation",
+      "cloud laboratory",
+      "Claude",
+      "Codex",
+      "Clade Code",
+      "biotech automation",
+      "FASTA sequences"
+    ],
+    "actual_capabilities": [
+      "Submit protein sequences for binding, expression, thermostability, and enzyme activity assays",
+      "Track experiment status and receive webhook notifications upon completion",
+      "Download experimental results including KD, kon, koff, yield, and quality metrics",
+      "Integrate with computational tools like NetSolP, SolubleMPNN, and ESM for sequence optimization",
+      "Search target catalog and request custom antigens for binding experiments"
+    ],
+    "limitations": [
+      "Results typically take 21 days turnaround time from submission",
+      "API access requires registration and API key from adaptyvbio.com",
+      "Not all platform features are available via API during alpha/beta phase"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Protein engineers",
+        "title": "Antibody affinity testing",
+        "description": "Submit antibody variants to measure binding affinity against target antigens and identify high-affinity candidates."
+      },
+      {
+        "target_user": "Computational biologists",
+        "title": "Sequence optimization validation",
+        "description": "Use computational tools to design protein variants, then experimentally validate expression and stability predictions."
+      },
+      {
+        "target_user": "Enzyme engineers",
+        "title": "Catalytic activity screening",
+        "description": "Screen enzyme variants for improved turnover, substrate affinity, and inhibitor sensitivity."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Submit binding assay",
+        "scenario": "Test protein binding",
+        "prompt": "Submit my antibody sequences to Adaptyv for binding assays against human PD-L1. The sequences are in FASTA format and I want to measure KD values."
+      },
+      {
+        "title": "Check experiment status",
+        "scenario": "Monitor progress",
+        "prompt": "Check the status of experiment exp_abc123xyz and tell me the current stage and estimated completion date."
+      },
+      {
+        "title": "Download results",
+        "scenario": "Get experimental data",
+        "prompt": "Download the results from experiment exp_abc123xyz and parse the binding measurements into a table showing sequence, KD, kon, and koff values."
+      },
+      {
+        "title": "Run optimization pipeline",
+        "scenario": "Full workflow",
+        "prompt": "Optimize my protein sequences using NetSolP and SolubleMPNN, then submit the top 50 candidates to Adaptyv for expression testing with webhook notification."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Submit two antibody sequences for binding assays against PD-L1",
+        "output": [
+          "Experiment submitted successfully",
+          "Experiment ID: exp_new123xyz",
+          "Status: submitted",
+          "Estimated completion: 2025-02-07",
+          "Target: Human PD-L1"
+        ]
+      },
+      {
+        "input": "What is the status of my binding experiment?",
+        "output": [
+          "Experiment: exp_abc123xyz",
+          "Status: processing",
+          "Progress: 65%",
+          "Current stage: assay",
+          "Updated: 2025-01-25T14:30:00Z"
+        ]
+      },
+      {
+        "input": "Download and summarize the binding results",
+        "output": [
+          "Results downloaded: exp_abc123xyz_results.json",
+          "Sequences tested: 12",
+          "Top binder: variant_7 (KD: 0.8 nM)",
+          "Confidence: high (R-squared: 0.98)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Pre-screen sequences with computational tools (NetSolP, ESM) before experimental submission to reduce costs",
+      "Use webhooks instead of polling for experiment completion notifications",
+      "Include wild-type or reference sequences as controls in every batch submission"
+    ],
+    "anti_patterns": [
+      "Submitting sequences without validation - always run computational screening first",
+      "Polling for status instead of using webhooks - wastes API quota and adds delay",
+      "Ignoring FASTA format requirements - validate sequences locally before submission"
+    ],
+    "faq": [
+      {
+        "question": "How long does it take to get results?",
+        "answer": "Most experiments deliver results in approximately 21 days from submission."
+      },
+      {
+        "question": "How do I get API access?",
+        "answer": "Contact support@adaptyvbio.com to request access during the alpha/beta period."
+      },
+      {
+        "question": "What experiment types are supported?",
+        "answer": "Binding assays (BLI), expression testing, thermostability (DSF), and enzyme activity assays."
+      },
+      {
+        "question": "Can I test binding against custom targets?",
+        "answer": "Yes, use the POST /targets/request endpoint to request custom antigens not in the catalog."
+      },
+      {
+        "question": "How many sequences can I submit?",
+        "answer": "Up to 1000 experiments per day per organization with batch submissions recommended."
+      },
+      {
+        "question": "How are results delivered?",
+        "answer": "Results are available via API download with raw data URLs and quality metrics including confidence scores."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "reference",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "reference/api_reference.md",
+          "lines": 309
+        },
+        {
+          "name": "examples.md",
+          "type": "file",
+          "path": "reference/examples.md",
+          "lines": 914
+        },
+        {
+          "name": "experiments.md",
+          "type": "file",
+          "path": "reference/experiments.md",
+          "lines": 361
+        },
+        {
+          "name": "protein_optimization.md",
+          "type": "file",
+          "path": "reference/protein_optimization.md",
+          "lines": 638
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 114
+    }
+  ]
+}

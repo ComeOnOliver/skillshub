@@ -1,0 +1,221 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:45:00.941Z",
+    "slug": "asmayaseen-working-with-documents",
+    "source_url": "https://github.com/Asmayaseen/hackathon-2/tree/main/.claude/skills/working-with-documents",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bbf6f96db5fc63d3c51bdcddfd3cee825c7ea606b8ac7de2df936ed586ec150e",
+    "tree_hash": "0f2b4be62f41567b7a9e98e7f301080f79b8421389f74bb54794b63653a03407"
+  },
+  "skill": {
+    "name": "working-with-documents",
+    "description": "Creates and edits Office documents: Word (.docx), PDF, and PowerPoint (.pptx).\nUse when working with document creation, PDF manipulation, presentation generation,\ntracked changes, or converting between formats.\n",
+    "summary": "Creates and edits Office documents: Word (.docx), PDF, and PowerPoint (.pptx).\nUse when working with...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "Asmayaseen",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "office",
+      "word",
+      "pdf",
+      "powerpoint",
+      "document-conversion"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a documentation-only resource providing guidance on working with Office documents. The SKILL.md file contains instructional code examples that are not executed. The only executable script (verify.py) is a simple validator that reads the local SKILL.md file to check for required sections. All 64 static findings are false positives triggered by pattern matching on documentation content and metadata hashes.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/verify.py",
+            "line_start": 1,
+            "line_end": 39
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 509,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:45:00.941Z"
+  },
+  "content": {
+    "user_title": "Create and edit Word, PDF, and PowerPoint documents",
+    "value_statement": "Working with Office documents requires knowledge of multiple tools and formats. This skill provides comprehensive guidance for reading, creating, editing, and converting Word, PDF, and PowerPoint files.",
+    "seo_keywords": [
+      "Claude document creation",
+      "Word DOCX editing",
+      "PDF manipulation Python",
+      "PowerPoint PPTX generation",
+      "Office document conversion",
+      "Claude Code documents",
+      "Codex office files",
+      "pandoc document conversion",
+      "reportlab PDF",
+      "docx-js Word"
+    ],
+    "actual_capabilities": [
+      "Provides guidance for reading Word documents using pandoc and python-docx",
+      "Shows how to create new Word documents with the docx-js library",
+      "Explains text and table extraction from PDFs with pdfplumber",
+      "Demonstrates PDF creation using the reportlab library",
+      "Guides PowerPoint editing through OOXML unpacking and repacking",
+      "Covers format conversion between DOCX, PDF, PPTX, and Markdown"
+    ],
+    "limitations": [
+      "Provides guidance only and does not execute document operations directly",
+      "Requires external tools like pandoc and LibreOffice to be installed on your system",
+      "OCR capabilities require Tesseract installation for scanned document processing",
+      "Complex document layouts may require manual adjustments after conversion"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Technical writers",
+        "title": "Convert documentation formats",
+        "description": "Transform Word documents to Markdown for static site generators or to PDF for distribution."
+      },
+      {
+        "target_user": "Business analysts",
+        "title": "Extract data from PDF reports",
+        "description": "Pull text and tables from PDF financial reports for analysis using pdfplumber."
+      },
+      {
+        "target_user": "Software developers",
+        "title": "Generate reports programmatically",
+        "description": "Create Word documents, PDFs, or presentations from application data using Python libraries."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Extract PDF text",
+        "scenario": "Need to read content from a PDF file",
+        "prompt": "Show me how to extract all text from my PDF file using pdfplumber"
+      },
+      {
+        "title": "Create Word document",
+        "scenario": "Need to generate a DOCX file with formatting",
+        "prompt": "Help me create a Word document with a title, paragraphs, and bold text using docx-js"
+      },
+      {
+        "title": "Merge multiple PDFs",
+        "scenario": "Need to combine several PDF files into one",
+        "prompt": "Write Python code to merge these three PDF files into a single document using pypdf"
+      },
+      {
+        "title": "Edit PowerPoint presentation",
+        "scenario": "Need to modify slides in an existing PPTX",
+        "prompt": "Guide me through unpacking a PowerPoint file, editing slide content, and repacking it"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Extract text from my quarterly report PDF",
+        "output": [
+          "Opening the PDF with pdfplumber",
+          "Processing 24 pages of content",
+          "Extracted 3 tables from the financial section",
+          "Text saved to quarterly_report.txt"
+        ]
+      },
+      {
+        "input": "Create a Word document with my meeting notes",
+        "output": [
+          "Creating document structure with docx-js",
+          "Adding title: Team Meeting Notes",
+          "Adding 5 paragraphs with bullet points",
+          "Document saved as meeting_notes.docx"
+        ]
+      },
+      {
+        "input": "Convert my presentation to PDF",
+        "output": [
+          "Running LibreOffice in headless mode",
+          "Converting presentation.pptx to PDF format",
+          "Output saved as presentation.pdf",
+          "Conversion completed successfully"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use pandoc for format conversions to preserve document structure and styling",
+      "Install all system dependencies including LibreOffice and poppler-utils before starting",
+      "Validate OOXML documents after manual XML editing to ensure file integrity"
+    ],
+    "anti_patterns": [
+      "Editing OOXML files without validation can corrupt the document structure",
+      "Skipping system tool installation leads to incomplete functionality",
+      "Relying on OCR without verification may produce inaccurate text extraction"
+    ],
+    "faq": [
+      {
+        "question": "What document formats does this skill support?",
+        "answer": "DOCX (Word), PDF, and PPTX (PowerPoint) are fully supported with read, create, and edit guidance."
+      },
+      {
+        "question": "What software do I need to install?",
+        "answer": "Python libraries (pdfplumber, reportlab, pypdf) plus system tools (pandoc, LibreOffice, poppler-utils)."
+      },
+      {
+        "question": "Can this skill handle tracked changes in Word documents?",
+        "answer": "Yes, the skill explains how to view and edit tracked changes using OOXML manipulation techniques."
+      },
+      {
+        "question": "Is my document data sent anywhere?",
+        "answer": "No, this skill only provides guidance. All document processing happens locally on your machine."
+      },
+      {
+        "question": "How do I handle password-protected PDFs?",
+        "answer": "PDFs with passwords require decryption first. Use pypdf with the password parameter to unlock them."
+      },
+      {
+        "question": "Can I convert scanned documents to editable text?",
+        "answer": "Yes, use pytesseract for OCR. Convert PDF pages to images first, then run text recognition."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 39
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 271
+    }
+  ]
+}

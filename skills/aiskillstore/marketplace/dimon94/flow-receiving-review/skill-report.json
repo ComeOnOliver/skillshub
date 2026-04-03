@@ -1,0 +1,340 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:33:20.213Z",
+    "slug": "dimon94-flow-receiving-review",
+    "source_url": "https://github.com/Dimon94/cc-devflow/tree/main/.claude/skills/flow-receiving-review",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6160b2d008af44e39bc3f0405d0307eaee17d6cd9b702f9ce56abd1c2aa3059f",
+    "tree_hash": "eea913a5112991364c444a0aa214f2f75921cf24aa83b5f2bbc38c0e01892ff4"
+  },
+  "skill": {
+    "name": "flow-receiving-review",
+    "description": "Handle code review feedback with technical rigor. Don't blindly agree - verify before implementing.",
+    "summary": "Handle code review feedback with technical rigor. Don't blindly agree - verify before implementing.",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "Dimon94",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "code-review",
+      "process",
+      "workflow",
+      "quality"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt-based documentation skill with no executable code. The static findings are all false positives: metadata URL is source reference (not network call), backticks are markdown formatting (not shell execution), path references are markdown links (not traversal attacks), and workflow terms are skill names (not C2 commands). This is a low-risk instructional skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 149
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 10,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 111
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 111,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 117
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 143
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 330,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:33:20.213Z"
+  },
+  "content": {
+    "user_title": "Verify code review feedback before implementing",
+    "value_statement": "Code review feedback can be incorrect or misguided. This skill provides a systematic 3-step process to verify feedback, ask clarifying questions, and respond appropriately—ensuring technical rigor over blind compliance.",
+    "seo_keywords": [
+      "Claude Code",
+      "code review",
+      "feedback verification",
+      "code review process",
+      "technical rigor",
+      "software development",
+      "code quality",
+      "developer workflow",
+      "Codex",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Guide users through a 3-step process: Understand, Verify, Implement",
+      "Provide templates for agreeing, asking clarification, and respectfully disagreeing",
+      "Identify red flags that indicate blind compliance with incorrect feedback",
+      "Help users push back on feedback with technical reasoning and evidence",
+      "Cross-reference with flow-review command for comprehensive review workflow"
+    ],
+    "limitations": [
+      "Does not execute code or run tests automatically",
+      "Does not access codebase to verify feedback correctness",
+      "Does not communicate with external reviewers or platforms",
+      "Requires manual verification steps by the user"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Professional code review response",
+        "description": "Developers can use this skill to maintain technical standards when responding to review comments"
+      },
+      {
+        "target_user": "AI coding assistants",
+        "title": "Structured feedback handling",
+        "description": "AI agents can use this skill to process review feedback systematically before implementing changes"
+      },
+      {
+        "target_user": "Tech leads and reviewers",
+        "title": "Quality review guidelines",
+        "description": "Team leads can use this skill to ensure review feedback is technically sound before submission"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Agree with feedback",
+        "scenario": "Acknowledging a valid code review comment",
+        "prompt": "Good catch! You're right that [issue]. I've updated [file] to [fix]. Verified by running [test/command]."
+      },
+      {
+        "title": "Ask for clarification",
+        "scenario": "When review feedback is unclear",
+        "prompt": "I want to make sure I understand correctly. Are you suggesting [interpretation]? If so, I'm wondering about [concern]. Could you elaborate?"
+      },
+      {
+        "title": "Respectfully disagree",
+        "scenario": "When feedback appears incorrect",
+        "prompt": "I considered [suggestion], but I went with [current approach] because: 1. [Reason 1] 2. [Reason 2]. The trade-off is [X]. What do you think about [alternative]?"
+      },
+      {
+        "title": "Request evidence",
+        "scenario": "When unable to reproduce the issue",
+        "prompt": "I'm having trouble reproducing [issue]. Could you share: steps to reproduce, expected vs actual behavior, and environment details?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Reviewer commented that my function should use a for loop instead of map()",
+        "output": [
+          "Understand: Read the full comment - is this a style preference or a performance concern?",
+          "Verify: Does map() actually have issues here? Check if the suggested for loop improves anything.",
+          "Respond: If for loop is better, implement and thank them. If map() is correct, explain why with evidence."
+        ]
+      },
+      {
+        "input": "Reviewer says my naming convention is wrong but I followed the project style guide",
+        "output": [
+          "Understand: Check if this is about project standards or personal preference.",
+          "Verify: Cross-reference with CLAUDE.md and existing code patterns in the codebase.",
+          "Respond: Provide evidence from the style guide and ask the reviewer to clarify their concern."
+        ]
+      },
+      {
+        "input": "Reviewer suggested a simpler solution that might break error handling",
+        "output": [
+          "Understand: Identify what the simplification would change.",
+          "Verify: Test if the suggested approach handles all edge cases your current code does.",
+          "Respond: Explain the trade-offs and show test results that demonstrate the issue."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always verify feedback correctness before implementing - reviewers can make mistakes",
+      "Ask clarifying questions when feedback is unclear rather than guessing intent",
+      "Provide evidence and reasoning when pushing back on feedback"
+    ],
+    "anti_patterns": [
+      "Blindly implementing feedback you do not understand or agree with",
+      "Silently disagreeing without raising concerns constructively",
+      "Skipping verification steps because it seems faster to just make the change"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill integrate with other CC-DevFlow commands?",
+        "answer": "Yes, it integrates with /flow-review command and references spec-reviewer and code-quality-reviewer agents."
+      },
+      {
+        "question": "What platforms support this skill?",
+        "answer": "This skill supports Claude, Codex, and Claude Code. It works in any environment where these AI tools are available."
+      },
+      {
+        "question": "Can this skill run tests automatically?",
+        "answer": "No, this is a prompt-based skill. You must manually verify feedback and run tests yourself."
+      },
+      {
+        "question": "Is my review data stored or shared?",
+        "answer": "No, this skill is purely instructional. It does not store, transmit, or share any data."
+      },
+      {
+        "question": "How do I handle aggressive or dismissive reviewers?",
+        "answer": "Focus on technical facts. Use the response templates to maintain professionalism while standing your ground."
+      },
+      {
+        "question": "How is this different from flow-review skill?",
+        "answer": "flow-review handles giving feedback to others. flow-receiving-review handles receiving and responding to feedback."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 154
+    }
+  ]
+}

@@ -1,0 +1,277 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:57:22.373Z",
+    "slug": "alirezarezvani-senior-frontend",
+    "source_url": "https://github.com/alirezarezvani/claude-skills/tree/main/engineering-team/senior-frontend",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c1513701fa710a1e52574bf67a1878c25de818267b8fdaaddd3e313c447ef7b5",
+    "tree_hash": "b1a327f10e57d07c6a27b520b04754b4c5971ff5fbb426ac2881936ce6c0bcb9"
+  },
+  "skill": {
+    "name": "senior-frontend",
+    "description": "Comprehensive frontend development skill for building modern, performant web applications using ReactJS, NextJS, TypeScript, Tailwind CSS. Includes component scaffolding, performance optimization, bundle analysis, and UI best practices. Use when developing frontend features, optimizing performance, implementing UI/UX designs, managing state, or reviewing frontend code.",
+    "summary": "Comprehensive frontend development skill for building modern, performant web applications using Reac...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "alirezarezvani",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "frontend",
+      "react",
+      "nextjs",
+      "typescript",
+      "web-development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 137 static findings are false positives. The static analyzer misidentified markdown code fences as shell backtick execution, YAML frontmatter delimiters as cryptographic algorithms, and section headings as system reconnaissance. The three Python scripts are legitimate CLI utilities that perform standard file I/O for generating reports and documentation. No network access, no credential handling, no command injection vectors detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/bundle_analyzer.py",
+            "line_start": 1,
+            "line_end": 115
+          },
+          {
+            "file": "scripts/component_generator.py",
+            "line_start": 1,
+            "line_end": 115
+          },
+          {
+            "file": "scripts/frontend_scaffolder.py",
+            "line_start": 1,
+            "line_end": 115
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 2055,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:57:22.373Z"
+  },
+  "content": {
+    "user_title": "Build modern web apps with React and Next.js",
+    "value_statement": "Frontend development requires managing component architecture, performance optimization, and code organization at scale. This skill provides automated tooling and best practices for building production-ready React applications with TypeScript, Next.js, and Tailwind CSS.",
+    "seo_keywords": [
+      "Claude frontend development",
+      "Claude Code React skills",
+      "Next.js development tools",
+      "TypeScript component generator",
+      "React patterns",
+      "frontend bundle analyzer",
+      "Claude Code web development",
+      "frontend performance optimization",
+      "React scaffolding tool",
+      "Next.js best practices"
+    ],
+    "actual_capabilities": [
+      "Generate React and TypeScript components with proper structure, imports, and prop typing",
+      "Analyze frontend bundle size and identify optimization opportunities for code splitting",
+      "Scaffold new frontend projects with modern stack configuration including Next.js and Tailwind",
+      "Apply React patterns including hooks, compound components, and state management best practices",
+      "Optimize Next.js applications for performance, caching, and SEO improvements",
+      "Review frontend code for anti-patterns, accessibility issues, and code quality"
+    ],
+    "limitations": [
+      "Does not execute npm install or build commands directly on user systems",
+      "Does not access user environment variables or secrets",
+      "Does not modify production code without explicit user approval",
+      "Does not deploy applications to cloud platforms"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend Developers",
+        "title": "Scaffold React components",
+        "description": "Generate new React components with TypeScript, proper props, and styling following best practices"
+      },
+      {
+        "target_user": "Fullstack Engineers",
+        "title": "Optimize bundle size",
+        "description": "Analyze frontend bundles and identify large dependencies for tree-shaking optimization"
+      },
+      {
+        "target_user": "Technical Leads",
+        "title": "Enforce coding standards",
+        "description": "Generate consistent component patterns across team codebase with documentation"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create Component",
+        "scenario": "Generate a new React component",
+        "prompt": "Create a new React component called Button in TypeScript. Include proper TypeScript interfaces for props, handle loading and error states, and use Tailwind CSS for styling variants."
+      },
+      {
+        "title": "Analyze Bundle",
+        "scenario": "Review bundle size",
+        "prompt": "Analyze the bundle size of my Next.js application. Identify the largest dependencies and suggest optimizations for code splitting to reduce initial load time."
+      },
+      {
+        "title": "Setup Project",
+        "scenario": "Initialize new frontend project",
+        "prompt": "Set up a new Next.js project with TypeScript, Tailwind CSS, and proper folder structure following modern React patterns and best practices."
+      },
+      {
+        "title": "Refactor Code",
+        "scenario": "Improve existing code",
+        "prompt": "Review my React component and refactor it to use proper hooks, memoization, and separate business logic from presentation for better performance."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a Button component with variants",
+        "output": [
+          "Generates Button.tsx with TypeScript interfaces for props",
+          "Adds accessibility attributes (aria-label, disabled)",
+          "Uses Tailwind CSS classes for primary, secondary, danger variants",
+          "Includes loading and error state handling",
+          "Exports component with proper name"
+        ]
+      },
+      {
+        "input": "Analyze my Next.js app bundle",
+        "output": [
+          "Reports bundle size by chunk with visual breakdown",
+          "Identifies large dependencies (lodash, moment, styled-components)",
+          "Suggests dynamic imports for heavy components",
+          "Recommends code splitting strategies",
+          "Provides estimated savings for each optimization"
+        ]
+      },
+      {
+        "input": "Set up a new project",
+        "output": [
+          "Creates Next.js + TypeScript + Tailwind project structure",
+          "Generates components folder with atomic organization",
+          "Adds ESLint and Prettier configuration",
+          "Sets up Jest and React Testing Library",
+          "Creates sample components demonstrating patterns"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use TypeScript interfaces for all component props to ensure type safety across the application",
+      "Separate business logic from presentation using custom hooks for reusable state management",
+      "Optimize bundle size by lazy loading routes and using dynamic imports for heavy components"
+    ],
+    "anti_patterns": [
+      "Avoid prop drilling through multiple component layers; use context or state management instead",
+      "Do not put all state in useState; prefer useReducer for complex state logic",
+      "Avoid inline function definitions in JSX render to prevent unnecessary re-renders"
+    ],
+    "faq": [
+      {
+        "question": "What React versions are supported?",
+        "answer": "Supports React 18 and newer with hooks-based patterns. Works with Next.js 13+ App Router and Pages Router."
+      },
+      {
+        "question": "Does this skill modify my code?",
+        "answer": "It generates new files and suggests improvements. All code modifications require explicit user approval before execution."
+      },
+      {
+        "question": "Can I customize component templates?",
+        "answer": "Yes, templates are configurable through script options. Custom templates can be added to the references directory."
+      },
+      {
+        "question": "What styling approaches are supported?",
+        "answer": "Tailwind CSS is primary. Can generate CSS Modules, styled-components, or plain CSS on request."
+      },
+      {
+        "question": "Does this work with React Native?",
+        "answer": "Core React patterns apply. Use the component generator with React Native project structure for mobile development."
+      },
+      {
+        "question": "How does bundle analysis work?",
+        "answer": "Scans build output to report chunk sizes, identifies large dependencies, and suggests tree-shaking and code splitting strategies."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "frontend_best_practices.md",
+          "type": "file",
+          "path": "references/frontend_best_practices.md",
+          "lines": 104
+        },
+        {
+          "name": "nextjs_optimization_guide.md",
+          "type": "file",
+          "path": "references/nextjs_optimization_guide.md",
+          "lines": 104
+        },
+        {
+          "name": "react_patterns.md",
+          "type": "file",
+          "path": "references/react_patterns.md",
+          "lines": 104
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "bundle_analyzer.py",
+          "type": "file",
+          "path": "scripts/bundle_analyzer.py",
+          "lines": 115
+        },
+        {
+          "name": "component_generator.py",
+          "type": "file",
+          "path": "scripts/component_generator.py",
+          "lines": 115
+        },
+        {
+          "name": "frontend_scaffolder.py",
+          "type": "file",
+          "path": "scripts/frontend_scaffolder.py",
+          "lines": 115
+        }
+      ]
+    },
+    {
+      "name": "marketplace_content.json",
+      "type": "file",
+      "path": "marketplace_content.json",
+      "lines": 426
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 210
+    }
+  ]
+}

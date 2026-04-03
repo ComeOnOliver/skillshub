@@ -1,0 +1,443 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:00:20.877Z",
+    "slug": "89jobrien-ai-code-cleanup",
+    "source_url": "https://github.com/89jobrien/steve/tree/main/steve/skills/ai-code-cleanup",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e858ba49d70fbbc951cedecafba9e99b361e911cfa1928306b46f95fd696089e",
+    "tree_hash": "05131b9ab8d6a13494c9411155d0350acc3a043a96139f515c6899ed9f044297"
+  },
+  "skill": {
+    "name": "ai-code-cleanup",
+    "description": "Remove AI-generated code slop from branches. Use after AI-assisted coding sessions to clean up defensive bloat, unnecessary comments, type casts, and style inconsistencies. Focuses on identifying and removing AI artifacts that degrade code quality.",
+    "summary": "Remove AI-generated code slop from branches. Use after AI-assisted coding sessions to clean up defen...",
+    "icon": "broom",
+    "version": "1.0.1",
+    "author": "Joseph OBrien",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "code cleanup",
+      "refactoring",
+      "code quality",
+      "ai artifacts"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill with no executable code. SKILL.md and refactoring-plan.template.md are markdown documentation files. The static analyzer misidentified template syntax (e.g., {{VARIABLE}}) as security patterns. Shell command examples in documentation (git diff) are illustrative only. No scripts, network calls, file system operations, environment access, or external commands exist in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/refactoring-plan.template.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "references/refactoring-plan.template.md",
+            "line_start": 48,
+            "line_end": 50
+          },
+          {
+            "file": "references/refactoring-plan.template.md",
+            "line_start": 50,
+            "line_end": 69
+          },
+          {
+            "file": "references/refactoring-plan.template.md",
+            "line_start": 69,
+            "line_end": 71
+          },
+          {
+            "file": "references/refactoring-plan.template.md",
+            "line_start": 71,
+            "line_end": 75
+          },
+          {
+            "file": "references/refactoring-plan.template.md",
+            "line_start": 75,
+            "line_end": 77
+          },
+          {
+            "file": "references/refactoring-plan.template.md",
+            "line_start": 77,
+            "line_end": 136
+          },
+          {
+            "file": "references/refactoring-plan.template.md",
+            "line_start": 136,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 193
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 193,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 236
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 236,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 276,
+            "line_end": 280
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 167
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 213,
+            "line_end": 213
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 219
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 677,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:00:20.876Z"
+  },
+  "content": {
+    "user_title": "Clean AI-generated code artifacts",
+    "value_statement": "AI-assisted coding often introduces defensive bloat, unnecessary comments, and style inconsistencies. This skill identifies and removes these artifacts to produce cleaner, more maintainable code while preserving functionality.",
+    "seo_keywords": [
+      "AI code cleanup",
+      "Claude code refactoring",
+      "remove AI artifacts",
+      "code cleanup skill",
+      "codex cleanup",
+      "claude-code quality",
+      "AI code bloat",
+      "code refactoring",
+      "code quality improvement",
+      "AI-generated code"
+    ],
+    "actual_capabilities": [
+      "Identifies AI-generated artifacts in code",
+      "Removes unnecessary defensive code patterns",
+      "Cleans up redundant and obvious comments",
+      "Fixes unnecessary type casts and workarounds",
+      "Standardizes code style inconsistencies",
+      "Validates code changes preserve functionality"
+    ],
+    "limitations": [
+      "Does not execute code or run tests automatically",
+      "Requires user to review and apply suggested changes",
+      "Cannot fix logic errors or architectural issues",
+      "Relies on existing project style conventions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers using AI coding assistants",
+        "title": "Post-AI coding cleanup",
+        "description": "Clean up code after AI-assisted sessions before commits or code reviews"
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Review preparation",
+        "description": "Standardize code style and remove bloat before reviewing pull requests"
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Quality gate enforcement",
+        "description": "Maintain consistent code quality standards across AI-assisted contributions"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Clean full branch",
+        "scenario": "Remove AI slop from entire branch",
+        "prompt": "Remove AI slop from this branch. Identify and remove defensive bloat, unnecessary comments, type casts, and style inconsistencies that do not affect functionality."
+      },
+      {
+        "title": "Target specific files",
+        "scenario": "Clean up selected source files",
+        "prompt": "Remove unnecessary comments and defensive code from src/. Focus on AI-generated artifacts while preserving all error handling and functionality."
+      },
+      {
+        "title": "Prepare for review",
+        "scenario": "Clean pull request code",
+        "prompt": "Clean up the code in this pull request. Remove AI artifacts, standardize style to match the codebase, and eliminate defensive bloat while maintaining behavior."
+      },
+      {
+        "title": "Quality assessment",
+        "scenario": "Analyze code for cleanup needs",
+        "prompt": "Analyze this code for AI-generated artifacts. List all unnecessary comments, defensive patterns, type workarounds, and style inconsistencies that should be removed."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Remove AI slop from this branch",
+        "output": [
+          "Identified 12 unnecessary comments explaining obvious code",
+          "Removed 5 redundant try/catch blocks on validated inputs",
+          "Fixed 3 unnecessary type casts to 'any'",
+          "Standardized naming to match project conventions",
+          "Code reduced by 47 lines while preserving all functionality"
+        ]
+      },
+      {
+        "input": "Remove defensive bloat from src/api/users.js",
+        "output": [
+          "Removed 3 unnecessary try/catch blocks",
+          "Eliminated 8 redundant null checks on validated inputs",
+          "Simplified error handling to match codebase patterns",
+          "Reduced code from 15 lines to 3 lines"
+        ]
+      },
+      {
+        "input": "Clean up the code in this pull request",
+        "output": [
+          "Found 20 AI-generated comments to remove",
+          "Identified 7 type workarounds",
+          "Standardized import order",
+          "Ensured all error handling is preserved"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Review all suggested changes before applying to verify functionality is preserved",
+      "Run existing tests after cleanup to confirm no regressions",
+      "Make incremental changes and validate each step when cleaning large files"
+    ],
+    "anti_patterns": [
+      "Removing legitimate error handling along with defensive bloat",
+      "Applying cleanup without understanding the original code context",
+      "Expecting the skill to fix logic errors or architectural problems"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools is this skill compatible with?",
+        "answer": "Works with Claude, Codex, and Claude Code for any AI-assisted coding workflow."
+      },
+      {
+        "question": "What patterns does this skill identify?",
+        "answer": "It detects unnecessary comments, defensive bloat, type workarounds, style inconsistencies, and AI tells."
+      },
+      {
+        "question": "How does this integrate with my workflow?",
+        "answer": "Use after AI coding sessions. The skill analyzes code and suggests edits you apply manually."
+      },
+      {
+        "question": "Is my code data safe?",
+        "answer": "Yes. This is a documentation-only skill. No code is transmitted externally or stored anywhere."
+      },
+      {
+        "question": "Why is code quality worse after AI coding?",
+        "answer": "AI tends toward defensive patterns and verbose explanations. This skill removes that over-engineering."
+      },
+      {
+        "question": "How is this different from a linter?",
+        "answer": "Linters enforce rules. This skill identifies AI-specific patterns that degrade readability and maintainability."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "refactoring-plan.template.md",
+          "type": "file",
+          "path": "references/refactoring-plan.template.md",
+          "lines": 173
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 315
+    }
+  ]
+}

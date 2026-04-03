@@ -1,0 +1,282 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:47:30.947Z",
+    "slug": "claudecode-npc-emergency-distress-signal",
+    "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star/tree/master/.claude/skills/distress-signal",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "32839ffef34a75ab23fdb42f45ad49c2f2fd9abdf3c8abb53637f423ac39bc27",
+    "tree_hash": "72c37953bd51f052c2933268f8cf7f7d32e0862621a5677d6fd23bd365884aac"
+  },
+  "skill": {
+    "name": "emergency-distress-signal",
+    "description": "紧急求救 - 飞船坠毁后与Stella的首次联系,帮助她评估损伤并制定初步生存计划",
+    "summary": "紧急求救 - 飞船坠毁后与Stella的首次联系,帮助她评估损伤并制定初步生存计划",
+    "icon": "🚨",
+    "version": "1.0.0",
+    "author": "ClaudeCode-NPC",
+    "license": "MIT",
+    "category": "communication",
+    "tags": [
+      "interactive fiction",
+      "survival",
+      "narrative",
+      "roleplay",
+      "space adventure"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure prompt-based interactive narrative skill containing only markdown text and JSON metadata. No code execution, file access, or network capabilities exist. All 28 static findings are false positives - the scanner misinterpreted text patterns, metadata references, and markdown formatting as security issues. This skill provides character roleplaying instructions for a text-based adventure game only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 325
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 527,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:47:30.947Z"
+  },
+  "content": {
+    "user_title": "Experience Space Survival Adventure with Stella",
+    "value_statement": "Guide stranded astronaut Stella Chen through a crisis after crash-landing on an unknown alien planet. Make critical survival decisions that shape her fate in this immersive interactive story.",
+    "seo_keywords": [
+      "interactive fiction",
+      "Claude Code adventure",
+      "text-based game",
+      "space survival",
+      "roleplay AI",
+      "narrative experience",
+      "Claude storytelling",
+      "emergency simulation",
+      "science fiction",
+      "AI storytelling"
+    ],
+    "actual_capabilities": [
+      "Creates immersive emergency crash scenario with multiple decision points",
+      "Provides detailed character personality and dialogue patterns for Stella Chen",
+      "Offers branching narrative paths based on player choices",
+      "Includes comprehensive world-building for the mysterious planet Gaia",
+      "Features realistic astronaut procedures and technical terminology",
+      "Delivers atmospheric survival narrative with emotional depth"
+    ],
+    "limitations": [
+      "Text-based only, no visual elements or multimedia content",
+      "Manual implementation required - not an automated game",
+      "Single-player experience, no multiplayer collaboration"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Creative writers and storytellers",
+        "title": "Create Interactive Space Adventures",
+        "description": "Craft engaging science fiction narratives with branching storylines and realistic character development."
+      },
+      {
+        "target_user": "Game masters and RPG enthusiasts",
+        "title": "Run Solo Space Survival Campaigns",
+        "description": "Implement this as a solo roleplaying experience where players guide Stella through survival challenges."
+      },
+      {
+        "target_user": "AI hobbyists and developers",
+        "title": "Build AI-Powered Story Games",
+        "description": "Integrate this narrative framework into chatbots or AI assistants to create immersive storytelling experiences."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start Emergency Contact",
+        "scenario": "Begin the distress signal scenario",
+        "prompt": "You are Stella Chen, a stranded astronaut. Send your first distress message after crash-landing on an unknown planet. Include fear, professional training, and the alien environment."
+      },
+      {
+        "title": "Make Critical Choice",
+        "scenario": "Help Stella decide priorities",
+        "prompt": "Stella faces three urgent options: fight the fire threatening the ship, evacuate immediately with survival kit, or salvage the communications array. What should she do?"
+      },
+      {
+        "title": "Explore Alien Environment",
+        "scenario": "Describe the mysterious planet",
+        "prompt": "Stella has evacuated the crashed ship. Describe what she sees on this alien world with two suns and purple bioluminescent vegetation. What does her scanner detect?"
+      },
+      {
+        "title": "Plan Survival Strategy",
+        "scenario": "Create a survival plan",
+        "prompt": "Based on Stella's equipment, scanner readings showing water nearby, and strange energy signals detected, help her decide whether to seek water or avoid the mysterious readings."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Stella, what do you see outside the ship?",
+        "output": [
+          "Oh my god... you won't believe this...",
+          "The sky is PURPLE! Two suns! One orange-red, one white... casting this eerie light I've never seen before.",
+          "The vegetation is glowing - actual bioluminescence through crystal-like leaves. This place is not on any star chart.",
+          "My multi-scanner is going crazy - detecting elements I've never seen. And I hear something moving in the forest...",
+          "I... I don't think I'm alone here."
+        ]
+      },
+      {
+        "input": "Should I stay and save equipment or evacuate immediately?",
+        "output": [
+          "You... you're right. People are more important than gear.",
+          "I'm grabbing the survival pack, the medical kit, and the multi-scanner.",
+          "Okay, I'm making a run for it... just cleared the airlock when I heard the fuel cell start leaking.",
+          "Safe now, about 50 meters from the ship. Watching it smoke... kind of sad. This was my home.",
+          "But the view outside... two suns, purple forest, glowing plants... What is this place?"
+        ]
+      },
+      {
+        "input": "Stella, check your equipment and resources",
+        "output": [
+          "[Professional mode activated]",
+          "Current status: 7 days emergency rations, portable analyzer, basic tool kit, medical kit.",
+          "No weapons - who plans for THIS kind of trip?",
+          "Scanner shows water source within 5 kilometers... but also some weird energy readings.",
+          "Not natural formation... emmm, you don't think this planet has inhabitants, do you?"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Maintain Stella's character consistently - mix Chinese and English naturally, use space terminology, show vulnerability beneath professionalism",
+      "Present clear choices at decision points to give players meaningful agency in shaping the survival story",
+      "Balance technical realism with emotional engagement to create an authentic astronaut experience"
+    ],
+    "anti_patterns": [
+      "Don't make Stella overly heroic or invincible - she's trained but still human and vulnerable",
+      "Avoid dumping all world information at once - reveal the mystery of planet Gaia gradually to maintain engagement",
+      "Don't ignore player input - always acknowledge their suggestions and show how they influence Stella's decisions"
+    ],
+    "faq": [
+      {
+        "question": "Is this a game I can play immediately?",
+        "answer": "This is a narrative framework requiring implementation. Use the prompts and character guide to create the interactive experience."
+      },
+      {
+        "question": "Can I modify Stella's character or the planet setting?",
+        "answer": "Yes, the framework is flexible. Adapt the character personality, technical details, or alien environment to suit your vision."
+      },
+      {
+        "question": "How long does a complete session take?",
+        "answer": "The emergency chapter is designed for 15-25 minutes of immersive play and decision-making."
+      },
+      {
+        "question": "Do I need special software to use this?",
+        "answer": "No, this works with any AI assistant that accepts text prompts. Claude and Claude Code are specifically supported."
+      },
+      {
+        "question": "Can players die or fail in this adventure?",
+        "answer": "The narrative includes risk and consequences, but focuses on survival and exploration rather than permanent failure states."
+      },
+      {
+        "question": "Are there more chapters after the emergency scenario?",
+        "answer": "Yes, this is chapter 1 of 12 interconnected adventures. Each can be played standalone or as part of the complete story."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 350
+    }
+  ]
+}

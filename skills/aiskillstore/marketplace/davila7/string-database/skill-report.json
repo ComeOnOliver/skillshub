@@ -1,0 +1,239 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:54:15.621Z",
+    "slug": "davila7-string-database",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/string-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d87b3542ef26d0b08dfd01978b7059b978ff2e140851a6dba86ae1aea9ab4bad",
+    "tree_hash": "c2158c117008a98606c677b6d0343bb2b9f1f1109c4719410eab063a40a383c5"
+  },
+  "skill": {
+    "name": "string-database",
+    "description": "Query STRING API for protein-protein interactions (59M proteins, 20B interactions). Network analysis, GO/KEGG enrichment, interaction discovery, 5000+ species, for systems biology.",
+    "summary": "Query STRING API for protein-protein interactions (59M proteins, 20B interactions). Network analysis...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "CC-BY-4.0",
+    "category": "data",
+    "tags": [
+      "bioinformatics",
+      "proteomics",
+      "systems-biology",
+      "api-integration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. External command detections are markdown code fences, network access is to legitimate STRING database API, filesystem operations save visualization images, and heuristic alerts are standard API client patterns. No malicious intent detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/string_api.py",
+            "line_start": 14,
+            "line_end": 17
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/string_api.py",
+            "line_start": 148,
+            "line_end": 149
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 1630,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:54:15.621Z"
+  },
+  "content": {
+    "user_title": "Query STRING protein interaction database",
+    "value_statement": "Access protein-protein interaction networks from STRING database covering 59M proteins and 20B interactions. Perform functional enrichment analysis, discover interaction partners, and generate network visualizations for systems biology research.",
+    "seo_keywords": [
+      "STRING database",
+      "protein-protein interactions",
+      "functional enrichment",
+      "network analysis",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "systems biology",
+      "GO terms",
+      "KEGG pathways"
+    ],
+    "actual_capabilities": [
+      "Query protein-protein interaction networks from 5000+ species",
+      "Perform GO and KEGG functional enrichment analysis",
+      "Generate network visualization images",
+      "Identify interaction partners and hub proteins",
+      "Map gene names to STRING identifiers",
+      "Test network connectivity significance"
+    ],
+    "limitations": [
+      "Requires network access to string-db.org API",
+      "Limited to publicly available STRING database data",
+      "Rate limits apply for frequent API calls",
+      "Visualization returns image data for saving"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bioinformatics researchers",
+        "title": "Protein interaction analysis",
+        "description": "Analyze protein networks for gene lists from proteomics or RNA-seq experiments"
+      },
+      {
+        "target_user": "Systems biologists",
+        "title": "Pathway enrichment",
+        "description": "Identify enriched GO terms and KEGG pathways in protein sets"
+      },
+      {
+        "target_user": "Molecular biologists",
+        "title": "Interaction partner discovery",
+        "description": "Find and visualize proteins interacting with a protein of interest"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic network query",
+        "scenario": "Get protein interactions",
+        "prompt": "Use string-database to get the interaction network for TP53 and MDM2 at high confidence (score 700)"
+      },
+      {
+        "title": "Functional enrichment",
+        "scenario": "Enrich protein list",
+        "prompt": "Perform GO and KEGG enrichment analysis on these proteins: TP53, BRCA1, ATM, CHEK2, MDM2"
+      },
+      {
+        "title": "Network visualization",
+        "scenario": "Generate figure",
+        "prompt": "Create a confidence-colored network image for these cancer genes and save as png"
+      },
+      {
+        "title": "PPI enrichment",
+        "scenario": "Test connectivity",
+        "prompt": "Check if these proteins form a significantly connected module: BRCA1, BRCA2, PALB2, RAD51, ATM"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Get interaction partners for TP53",
+        "output": [
+          "Top TP53 interactors: MDM2 (score 999), MDM4 (score 995), ATM (score 957)",
+          "MDM2 is the strongest interactor with experimental evidence"
+        ]
+      },
+      {
+        "input": "Enrich BRCA1 gene list",
+        "output": [
+          "DNA repair (GO:0006281) FDR: 1.2e-15",
+          "Cell cycle (GO:0007049) FDR: 3.4e-12",
+          "Homologous recombination (GO:0000724) FDR: 8.9e-10"
+        ]
+      },
+      {
+        "input": "Create network image",
+        "output": [
+          "Generated network image showing TP53, ATM, CHEK2, BRCA1 connections",
+          "Edges colored by evidence type, thickness by confidence score"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Map gene names to STRING IDs first for faster queries",
+      "Use confidence score threshold appropriate for your analysis goals",
+      "Wait 1 second between API calls to respect rate limits"
+    ],
+    "anti_patterns": [
+      "Do not use low confidence thresholds for publication figures",
+      "Do not omit species parameter for large protein lists",
+      "Do not skip error checking when parsing API responses"
+    ],
+    "faq": [
+      {
+        "question": "What confidence score should I use?",
+        "answer": "Use 400 for exploratory analysis, 700 for high-confidence interactions for publications."
+      },
+      {
+        "question": "Which species are supported?",
+        "answer": "Over 5000 species including human (9606), mouse (10090), yeast (4932), and E. coli."
+      },
+      {
+        "question": "How many proteins can I query?",
+        "answer": "The API handles lists efficiently, but for thousands of proteins use the web interface."
+      },
+      {
+        "question": "What output formats are available?",
+        "answer": "TSV, JSON, XML, PSI-MI for data; PNG and SVG for network images."
+      },
+      {
+        "question": "Is an API key required?",
+        "answer": "No key needed for basic queries. Registration required for bulk analysis features."
+      },
+      {
+        "question": "How to cite STRING in publications?",
+        "answer": "Cite the latest Szklarczyk et al. publication from string-db.org/about"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "string_reference.md",
+          "type": "file",
+          "path": "references/string_reference.md",
+          "lines": 456
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "string_api.py",
+          "type": "file",
+          "path": "scripts/string_api.py",
+          "lines": 370
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 529
+    }
+  ]
+}

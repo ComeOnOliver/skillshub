@@ -1,0 +1,274 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:15:33.215Z",
+    "slug": "chandlerhardy-chronicle-session-documenter",
+    "source_url": "https://github.com/ChandlerHardy/chronicle/tree/main/chronicle-skills/chronicle-session-documenter",
+    "source_ref": "main",
+    "model": "codex",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1032460faaffed6239d98c2b69020d6a21c7733cb4764028c9948871048a2f2c",
+    "tree_hash": "0985be6ab0f7c2f3d5bcd7a69a1d34f6c34f8fa2b80ef576321d8cb05054fe27"
+  },
+  "skill": {
+    "name": "chronicle-session-documenter",
+    "description": "Document AI-assisted development sessions to an Obsidian vault using Chronicle data. Works with MCP for structured data or CLI commands for portability. Creates structured notes with metadata, summaries, and wikilinks.",
+    "summary": "Create structured Obsidian notes from Chronicle session data.",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "ChandlerHardy",
+    "license": "MIT",
+    "tags": [
+      "obsidian",
+      "chronicle",
+      "session-logs",
+      "knowledge-base",
+      "developer-docs"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ],
+    "category": "documentation"
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static findings point to documentation examples and metadata, not executable code. The skill documents sessions and writes local notes, which is expected for its purpose. No evidence of malicious intent or data exfiltration was found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 216
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 227
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Command-line execution examples",
+        "description": "The documentation shows Chronicle CLI commands for users to run manually. No dynamic input or automation is present, so command injection risk is not demonstrated.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 216
+          }
+        ]
+      },
+      {
+        "title": "Local vault file writes",
+        "description": "The skill writes Markdown notes to an Obsidian vault path. This is expected behavior but implies local filesystem access.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 227
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1074,
+    "audit_model": "codex",
+    "audited_at": "2026-01-21T16:15:33.215Z",
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "content": {
+    "user_title": "Document AI development sessions in Obsidian",
+    "value_statement": "Teams often lose context after AI-assisted work sessions. This skill creates structured Obsidian notes from Chronicle sessions so decisions and changes are easy to find.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Obsidian session notes",
+      "Chronicle integration",
+      "AI development log",
+      "session documentation",
+      "developer knowledge base",
+      "MCP workflows",
+      "engineering journal"
+    ],
+    "actual_capabilities": [
+      "Retrieve Chronicle session summaries through MCP when available",
+      "Parse Chronicle CLI output to capture summary, files, and metadata",
+      "Create Markdown notes with frontmatter in an Obsidian vault",
+      "Link sessions, repositories, and commits using wikilinks",
+      "Document multiple sessions in a batch workflow"
+    ],
+    "limitations": [
+      "Requires Chronicle to be installed and accessible to the user",
+      "Recent sessions may not have summaries until background processing completes",
+      "CLI parsing can miss fields if the output format changes",
+      "Only writes new notes or overwrites with user confirmation"
+    ],
+    "use_cases": [
+      {
+        "title": "End of day session wrap up",
+        "description": "Generate an Obsidian note that captures today's AI-assisted work, decisions, and files changed.",
+        "target_user": "Individual developers tracking daily progress"
+      },
+      {
+        "title": "Sprint retrospective archive",
+        "description": "Document multiple sessions from a sprint to build a searchable history of implementation choices.",
+        "target_user": "Team leads and engineering managers"
+      },
+      {
+        "title": "Architecture knowledge capture",
+        "description": "Create linked notes across related sessions to explain system changes and technical rationale.",
+        "target_user": "Staff engineers and architects"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Document the latest session",
+        "prompt": "Document my most recent Chronicle session to my Obsidian vault with summary, accomplishments, decisions, and files changed.",
+        "scenario": "Beginner user documenting the latest session"
+      },
+      {
+        "title": "Document a specific session ID",
+        "prompt": "Use Chronicle to document session 42 in my Obsidian vault and include all available metadata and links.",
+        "scenario": "User needs a past session captured by ID"
+      },
+      {
+        "title": "Batch document a time range",
+        "prompt": "Find all sessions from the last 7 days and document each one. Skip sessions without summaries.",
+        "scenario": "User catching up on multiple sessions"
+      },
+      {
+        "title": "Topic search and document",
+        "prompt": "Search Chronicle for sessions about authentication and document each match with wikilinks and tags.",
+        "scenario": "Advanced user building topic-based notes"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Document session 42 to my Obsidian vault",
+        "output": [
+          "Created Chronicle/Sessions/Session-42.md in your vault.",
+          "Summary and metadata are included with links to related sessions and files.",
+          "Let me know if you want to append or update the note."
+        ]
+      },
+      {
+        "input": "Document all sessions from last week",
+        "output": [
+          "Found 5 sessions from the last 7 days.",
+          "Documented each session with summaries, decisions, and file lists.",
+          "Skipped 1 session that is still processing a summary."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run documentation immediately after a session to capture accurate context",
+      "Use consistent tags for tool names and topics to improve search",
+      "Confirm vault paths and note locations before overwriting"
+    ],
+    "anti_patterns": [
+      "Documenting sessions without verifying the summary is complete",
+      "Overwriting existing notes without reviewing manual edits",
+      "Skipping links to related sessions and repositories"
+    ],
+    "faq": [
+      {
+        "question": "What does this skill create?",
+        "answer": "It creates structured Markdown notes in your Obsidian vault with session metadata, summaries, and links."
+      },
+      {
+        "question": "Do I need MCP to use it?",
+        "answer": "No. MCP is faster and structured, but the skill can also use Chronicle CLI output."
+      },
+      {
+        "question": "Why is a session summary missing?",
+        "answer": "Chronicle generates summaries in the background. Wait a few minutes and try again."
+      },
+      {
+        "question": "Where are notes saved?",
+        "answer": "Notes are saved under Chronicle/Sessions in your Obsidian vault unless you change the path."
+      },
+      {
+        "question": "Can it update an existing note?",
+        "answer": "It can overwrite or append only after you confirm, to avoid losing manual edits."
+      },
+      {
+        "question": "Does it upload data anywhere?",
+        "answer": "No evidence shows network upload. The workflow writes notes to your local vault."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 303
+    }
+  ]
+}

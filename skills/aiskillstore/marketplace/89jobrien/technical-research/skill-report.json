@@ -1,0 +1,250 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:12:05.440Z",
+    "slug": "89jobrien-technical-research",
+    "source_url": "https://github.com/89jobrien/steve/tree/main/steve/skills/technical-research",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "89a4e8eb9e6e9f726977fac78169d560c11730dc86e75624293252964870386a",
+    "tree_hash": "281acaca7d132aaa14df9f2808fd789fd8195da9f55646d3f3785d4581bb6081"
+  },
+  "skill": {
+    "name": "technical-research",
+    "description": "Technical spike and research investigation specialist. Use when exploring options for a technical decision, conducting timeboxed investigations, or evaluating technology choices.",
+    "summary": "Technical spike and research investigation specialist. Use when exploring options for a technical de...",
+    "icon": "🔬",
+    "version": "1.0.1",
+    "author": "Joseph OBrien",
+    "license": "UNLICENSED",
+    "category": "research",
+    "tags": [
+      "technical-spike",
+      "technology-evaluation",
+      "proof-of-concept",
+      "architecture",
+      "investigation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. This skill contains only markdown documentation templates with placeholder syntax ({{VARIABLE}}). The scanner misidentified template placeholders like {{CODE_SAMPLE}} as shell backticks, and words like 'description' as crypto/C2 keywords. No executable code, network access, or dangerous capabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/technical-spike.template.md",
+            "line_start": 64,
+            "line_end": 66
+          },
+          {
+            "file": "references/technical-spike.template.md",
+            "line_start": 66,
+            "line_end": 93
+          },
+          {
+            "file": "references/technical-spike.template.md",
+            "line_start": 93,
+            "line_end": 95
+          },
+          {
+            "file": "references/technical-spike.template.md",
+            "line_start": 95,
+            "line_end": 194
+          },
+          {
+            "file": "references/technical-spike.template.md",
+            "line_start": 194,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 467,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:12:05.440Z"
+  },
+  "content": {
+    "user_title": "Conduct Structured Technical Spikes and Research",
+    "value_statement": "Technical decisions made without proper investigation lead to costly rework and technical debt. This skill provides structured templates for timeboxed spikes with clear comparison matrices and recommendations.",
+    "seo_keywords": [
+      "technical spike",
+      "technology evaluation",
+      "proof of concept",
+      "technical research",
+      "architecture decision",
+      "feasibility study",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "decision framework"
+    ],
+    "actual_capabilities": [
+      "Structures timeboxed technical investigations with clear objectives and success criteria",
+      "Creates comparison matrices for evaluating multiple technical options",
+      "Documents proof of concept implementations with pros and cons",
+      "Identifies risks, dependencies, and mitigation strategies",
+      "Provides phased implementation roadmaps with effort estimates",
+      "Tracks open questions and unanswered items systematically"
+    ],
+    "limitations": [
+      "Does not execute code or run automated tests",
+      "Does not fetch external documentation or APIs",
+      "Does not perform actual performance benchmarking",
+      "Requires manual effort to implement suggested POC code"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Architects",
+        "title": "Evaluate Architecture Patterns",
+        "description": "Compare microservices, event-driven, and monolith approaches with structured POC code samples and weighted criteria matrices."
+      },
+      {
+        "target_user": "Engineering Managers",
+        "title": "Assess Technology Feasibility",
+        "description": "Determine viability of new frameworks or tools within defined time and resource constraints before committing."
+      },
+      {
+        "target_user": "Senior Developers",
+        "title": "Investigate Implementation Options",
+        "description": "Explore solutions for complex features with documented trade-offs, risks, and clear justified recommendations."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Evaluate New Framework",
+        "scenario": "Assessing a framework for adoption",
+        "prompt": "Use Technical Research skill to evaluate [FRAMEWORK] for [USE_CASE]. Timebox: 4 hours. Answer: 1) Learning curve? 2) Performance impact? 3) Maintenance burden?"
+      },
+      {
+        "title": "Architecture Decision",
+        "scenario": "Choosing between approaches",
+        "prompt": "Conduct technical spike on [TOPIC]. Explore 3 options with POC code. Use criteria: performance, maintainability, team familiarity. Provide recommendation."
+      },
+      {
+        "title": "Library Comparison",
+        "scenario": "Selecting the best library",
+        "prompt": "Compare [LIBRARY_A] vs [LIBRARY_B] for [USE_CASE]. Create comparison matrix with: community support, documentation, bundle size, performance."
+      },
+      {
+        "title": "Feasibility Study",
+        "scenario": "Determining if approach is viable",
+        "prompt": "Investigate feasibility of [FEATURE]. Constraints: [CONSTRAINTS]. Document risks, dependencies, and provide implementation path if viable."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Evaluate Next.js vs Remix for our e-commerce platform with SSR requirement",
+        "output": [
+          "Objective: Determine best React meta-framework for e-commerce SSR",
+          "Three options explored with POC code for product listing page",
+          "Comparison matrix scoring: Next.js 42, Remix 38, SolidStart 28",
+          "Recommendation: Next.js for better ecosystem and team familiarity",
+          "Risks: App router learning curve, mitigation via incremental adoption"
+        ]
+      },
+      {
+        "input": "Spike on caching strategy for high-traffic API",
+        "output": [
+          "Options: Redis cluster, CDN edge caching, application-level cache",
+          "POC code demonstrating each approach with benchmark setup",
+          "Weighted matrix on latency, cost, complexity, and scalability",
+          "Recommendation: Redis cluster with CDN for static assets",
+          "Implementation phases: 1) Redis setup 2) Cache invalidation 3) CDN layer"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Define clear success criteria and questions before starting investigation",
+      "Stay within timebox and document what was not explored",
+      "Create runnable POC code rather than theoretical analysis only"
+    ],
+    "anti_patterns": [
+      "Starting spike without clear objectives or measurable criteria",
+      "Exploring only one option instead of comparing alternatives",
+      "Skipping risk assessment and implementation path sections"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. The structured templates guide any LLM through technical investigations."
+      },
+      {
+        "question": "How long should a technical spike take?",
+        "answer": "Most spikes should be 2-8 hours. Longer investigations should be split into multiple focused spikes."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This is a prompt-only skill with no code execution or network access. Your data stays in your conversation."
+      },
+      {
+        "question": "Can I adapt this for non-technical research?",
+        "answer": "Yes. The comparison matrix and structured approach work for any decision requiring multiple options analysis."
+      },
+      {
+        "question": "What if my spike exceeds the timebox?",
+        "answer": "Document findings so far, list unanswered questions, and recommend a follow-up spike. Partial results are valuable."
+      },
+      {
+        "question": "Do I need to write all the POC code myself?",
+        "answer": "The AI can generate POC code samples. You may need to test and refine them in your actual environment."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "technical-spike.template.md",
+          "type": "file",
+          "path": "references/technical-spike.template.md",
+          "lines": 218
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 56
+    }
+  ]
+}

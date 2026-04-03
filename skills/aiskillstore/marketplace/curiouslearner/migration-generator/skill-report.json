@@ -1,0 +1,187 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:43:43.364Z",
+    "slug": "curiouslearner-migration-generator",
+    "source_url": "https://github.com/CuriousLearner/devkit/tree/main/skills/migration-generator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "972deeec46bea74478059b5bed1a631e4e399fd5ffbf8bb7e779791fbf191baf",
+    "tree_hash": "43e04823baab7d7406d8ebdd4793afd54537a0130bbae4eadef970ad643186fb"
+  },
+  "skill": {
+    "name": "migration-generator",
+    "description": "Create database migrations from model changes, schema diffs, and migration best practices.",
+    "summary": "Generate safe, reversible database migrations for PostgreSQL, MySQL, SQLite and popular ORMs",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "CuriousLearner",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "database",
+      "migrations",
+      "schema",
+      "sql",
+      "orm"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides educational documentation and templates for database migrations. All 112 static findings are false positives from analyzing documentation examples as executable code. The skill contains no actual network calls, command execution, or cryptographic operations - only markdown examples showing migration syntax for various frameworks. No security concerns identified.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 2078,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:43:43.364Z"
+  },
+  "content": {
+    "user_title": "Generate Safe Database Migrations for Any Framework",
+    "value_statement": "Writing database migrations manually is error-prone and can cause data loss or downtime in production. This skill generates safe, reversible migrations with best practices for PostgreSQL, MySQL, SQLite, and popular ORMs like Prisma, TypeORM, Alembic, and Django.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "database migrations",
+      "schema changes",
+      "SQL migrations",
+      "ORM migrations",
+      "Prisma",
+      "TypeORM",
+      "Alembic",
+      "Django migrations"
+    ],
+    "actual_capabilities": [
+      "Generate forward and backward migrations for schema changes including tables, columns, indexes, and foreign keys",
+      "Create data migrations for backfilling values, transforming data, and handling complex schema transformations",
+      "Produce ORM-specific migrations for Prisma, TypeORM, Sequelize, Alembic, Django, and Rails Active Record",
+      "Generate zero-downtime migration strategies for production environments with phased rollout steps",
+      "Detect schema differences and recommend migration approach based on database type and framework",
+      "Include safety checks, validation steps, and rollback procedures in generated migrations"
+    ],
+    "limitations": [
+      "Does not execute migrations automatically - generates migration code that you must review and run manually",
+      "Cannot detect all potential data loss scenarios - you must review migrations for your specific data",
+      "Requires you to specify the target database type and ORM framework for accurate syntax",
+      "Does not perform database backups - you must backup your data before running migrations"
+    ],
+    "use_cases": [
+      {
+        "title": "Backend Developer Adding New Features",
+        "description": "Generate migrations when adding new tables or columns to support feature development. The skill creates both up and down migrations with proper indexes and constraints.",
+        "target_user": "Backend developers building new application features"
+      },
+      {
+        "title": "DevOps Engineer Planning Schema Changes",
+        "description": "Create zero-downtime migration strategies for production databases. The skill breaks complex changes into safe phases that avoid locking tables or causing outages.",
+        "target_user": "DevOps and database administrators managing production systems"
+      },
+      {
+        "title": "Team Lead Reviewing Migration Safety",
+        "description": "Use migration best practices and safety checklists to validate team migrations before production deployment. The skill provides templates for data transformations and rollback procedures.",
+        "target_user": "Technical leads and architects ensuring database reliability"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Add Column to Existing Table",
+        "prompt": "Generate a migration to add an email_verified boolean column to the users table with default value false",
+        "scenario": "Adding a simple column with a default value to an existing table"
+      },
+      {
+        "title": "Create Table with Foreign Keys",
+        "prompt": "Create a migration for an orders table with user_id foreign key, total_amount decimal field, and status enum with indexes for TypeORM",
+        "scenario": "Building a new table with relationships and constraints"
+      },
+      {
+        "title": "Data Migration with Transformation",
+        "prompt": "Generate a migration to split the full_name column into first_name and last_name columns, preserving existing data in Alembic",
+        "scenario": "Transforming data structure while preserving existing information"
+      },
+      {
+        "title": "Zero-Downtime Schema Change",
+        "prompt": "Create a zero-downtime migration strategy to rename the email column to email_address in the users table for PostgreSQL production database",
+        "scenario": "Modifying schema in production without causing downtime"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate a Prisma migration to add a UserProfile model with one-to-one relationship to User",
+        "output": "Generated Prisma schema additions with UserProfile model including bio and avatar_url fields, one-to-one relation configuration, and the corresponding SQL migration file with CREATE TABLE statement, unique constraint, and foreign key with CASCADE delete."
+      },
+      {
+        "input": "Create a data migration in Django to backfill a new role column with default value member",
+        "output": "Created Django migration with four phases: add nullable column, update existing rows with default value, set NOT NULL constraint, and add check constraint limiting values to admin, member, or guest."
+      },
+      {
+        "input": "Generate zero-downtime migration to add NOT NULL column to large users table",
+        "output": "Generated three-phase migration strategy: add column as nullable, deploy application code to populate field for new records, backfill existing records in batches, then add NOT NULL constraint in final migration."
+      }
+    ],
+    "best_practices": [
+      "Always test migrations on staging environment before production and ensure down migrations work correctly",
+      "Keep migrations small and focused on one logical change to make debugging easier and rollbacks safer",
+      "For production systems, use zero-downtime strategies by adding columns as nullable first, backfilling data, then applying constraints"
+    ],
+    "anti_patterns": [
+      "Never modify committed migrations that have already run in production - create a new migration to fix issues instead",
+      "Avoid running large data migrations without batching - process records in chunks to prevent table locks and timeouts",
+      "Do not skip creating indexes on foreign key columns as this causes severe performance degradation on joins"
+    ],
+    "faq": [
+      {
+        "question": "Can this skill automatically run migrations on my database?",
+        "answer": "No, this skill generates migration code that you must review and execute manually using your framework's migration tools. This ensures you verify the changes before applying them to your database."
+      },
+      {
+        "question": "Which database systems and ORMs are supported?",
+        "answer": "The skill supports PostgreSQL, MySQL, and SQLite for raw SQL migrations. For ORMs, it supports Prisma, TypeORM, Sequelize, Knex.js, Alembic, Django, Rails Active Record, golang-migrate, and Laravel migrations."
+      },
+      {
+        "question": "How do I handle migrations that might cause data loss?",
+        "answer": "The skill generates warnings for potentially destructive operations and includes validation steps in migrations. You should always backup your database before running migrations and test on staging first."
+      },
+      {
+        "question": "What are zero-downtime migrations and when should I use them?",
+        "answer": "Zero-downtime migrations break schema changes into phases that avoid locking tables. Use them in production when you cannot afford application downtime, such as when adding NOT NULL columns or renaming fields."
+      },
+      {
+        "question": "Can the skill detect schema changes automatically?",
+        "answer": "The skill can guide you through comparing schemas and identifying differences, but automatic detection depends on your ORM framework. Tools like Prisma and TypeORM have built-in schema diffing that the skill can help you use."
+      },
+      {
+        "question": "How do I rollback a migration if something goes wrong?",
+        "answer": "All generated migrations include down/rollback procedures. Use your framework's rollback command such as alembic downgrade, prisma migrate rollback, or typeorm migration revert to reverse the changes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "output.json",
+      "type": "file",
+      "path": "output.json",
+      "lines": 147
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 890
+    }
+  ]
+}

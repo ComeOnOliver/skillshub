@@ -1,0 +1,406 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:55:09.999Z",
+    "slug": "dataknifeai-vm-template-creation",
+    "source_url": "https://github.com/DataKnifeAI/proxmox-ve-mcp/tree/main/.github/skills/vm-template-creation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c027a415395b2bca7a096a23c060b996b2fa85fab7f12cf9544ca36ef452b962",
+    "tree_hash": "2ccde4a5265887b90ce57bb117574f98a2685ff4aa39cf91b7ad8acf67550085"
+  },
+  "skill": {
+    "name": "vm-template-creation",
+    "description": "Create, configure, and manage VM templates in Proxmox. Build reusable VM images for rapid deployment of standardized environments, including Kubernetes clusters and managed applications.",
+    "summary": "Create, configure, and manage VM templates in Proxmox. Build reusable VM images for rapid deployment...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DataKnifeAI",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "proxmox",
+      "vm-templates",
+      "virtualization",
+      "infrastructure",
+      "kubernetes"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and metadata files. No executable code, scripts, network calls, or file system operations are present. The static scanner flagged generic patterns (e.g., 'main' git branch, 'curl' package names, 'clone' function names) as false positives. All files are safe markdown documentation describing Proxmox VM template workflows.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 203
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 223
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 223,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 313
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 685,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:55:09.999Z"
+  },
+  "content": {
+    "user_title": "Create Proxmox VM templates for rapid deployment",
+    "value_statement": "Building VM templates manually takes significant time and leads to inconsistent configurations. This skill provides step-by-step guidance for creating reusable Proxmox VM templates, enabling standardized infrastructure deployment in minutes instead of hours.",
+    "seo_keywords": [
+      "Proxmox VM template creation",
+      "Claude VM template skill",
+      "Claude Code Proxmox automation",
+      "Codex virtualization templates",
+      "VM image management",
+      "Cloud-Init template setup",
+      "Kubernetes cluster deployment",
+      "Infrastructure as Code templates",
+      "Proxmox template cloning",
+      "VM standardization skill"
+    ],
+    "actual_capabilities": [
+      "Create VM templates from cloud images or custom configurations",
+      "Convert configured VMs into reusable templates",
+      "Clone templates to deploy multiple standardized VMs",
+      "Manage template configurations and updates",
+      "Configure Cloud-Init settings for automated provisioning",
+      "Build specialized templates for Kubernetes and applications"
+    ],
+    "limitations": [
+      "Templates cannot be booted directly (must be cloned first)",
+      "Large templates require more time to clone across the cluster",
+      "Network configuration occurs post-clone via Cloud-Init",
+      "Disk image import requires manual Proxmox CLI steps"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Standardize Kubernetes Infrastructure",
+        "description": "Build RKE2-ready Ubuntu templates for consistent Kubernetes cluster deployment across development and production environments."
+      },
+      {
+        "target_user": "System Administrators",
+        "title": "Rapid VM Provisioning",
+        "description": "Create application-specific templates to deploy identical servers in minutes for web, database, and CI/CD workloads."
+      },
+      {
+        "target_user": "Infrastructure Teams",
+        "title": "Maintain IaC Consistency",
+        "description": "Develop versioned templates with documented configurations to ensure infrastructure consistency across the organization."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Template Creation",
+        "scenario": "Create a simple Ubuntu template",
+        "prompt": "Create a template VM named ubuntu-22.04-template on node pve2 with 2 CPU cores, 4GB memory, and 50GB disk for Cloud-Init deployment."
+      },
+      {
+        "title": "Mark VM as Template",
+        "scenario": "Convert VM to reusable template",
+        "prompt": "Mark VM 100 on pve2 as a template so it can be cloned for deployments."
+      },
+      {
+        "title": "Kubernetes Cluster Setup",
+        "scenario": "Deploy multi-node cluster from template",
+        "prompt": "Clone ubuntu-rke2-template (VM 100) three times to create control plane nodes named rancher-1, rancher-2, and rancher-3 with full clone mode."
+      },
+      {
+        "title": "Template Update Workflow",
+        "scenario": "Update existing template with new configuration",
+        "prompt": "Clone template VM 100 to VM 900 as a test instance, then guide me through updating it with Docker support and security patches before creating a new versioned template."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a template VM for Ubuntu 22.04 with RKE2 Kubernetes support",
+        "output": [
+          "Step 1: Create base VM with cloud image",
+          "- VM ID: 100 (ubuntu-rke2-template)",
+          "- Memory: 4096 MB, Cores: 4",
+          "- Disk: 100GB on local-lvm",
+          "- Network: virtio bridge to vmbr0",
+          "- Boot from: jammy-server-cloudimg-amd64.iso",
+          "",
+          "Step 2: After boot, configure:",
+          "- Set hostname via Cloud-Init",
+          "- Install RKE2 dependencies (curl, wget)",
+          "- Apply security hardening",
+          "- Configure SSH keys for access",
+          "",
+          "Step 3: Mark as template",
+          "update_vm_config(node_name='pve2', vmid=100, config={'template': 1})",
+          "",
+          "Step 4: Deploy cluster nodes",
+          "clone_vm(pve2, 100, 101, 'control-plane-1', full=true)",
+          "clone_vm(pve2, 100, 102, 'control-plane-2', full=true)",
+          "clone_vm(pve2, 100, 103, 'control-plane-3', full=true)"
+        ]
+      },
+      {
+        "input": "Mark VM 100 as a template",
+        "output": [
+          "To convert VM 100 to a template:",
+          "",
+          "Use update_vm_config with template=1:",
+          "update_vm_config(node_name='pve2', vmid=100, config={'template': 1})",
+          "",
+          "Important notes:",
+          "- Templates cannot be started directly",
+          "- Templates can only be cloned, not modified",
+          "- Original VM becomes immutable once marked as template",
+          "- Ensure all configuration is complete before marking as template"
+        ]
+      },
+      {
+        "input": "Clone template for three-node web cluster",
+        "output": [
+          "Cloning ubuntu-web-template (VM 100) to create 3 web servers:",
+          "",
+          "Clone 1: web-01 (VM 201)",
+          "clone_vm(node_name='pve1', source_vmid=100, new_vmid=201, new_name='web-01', full=true)",
+          "",
+          "Clone 2: web-02 (VM 202)",
+          "clone_vm(node_name='pve1', source_vmid=100, new_vmid=202, new_name='web-02', full=true)",
+          "",
+          "Clone 3: web-03 (VM 203)",
+          "clone_vm(node_name='pve1', source_vmid=100, new_vmid=203, new_name='web-03', full=true)",
+          "",
+          "After cloning, configure each VM with unique IP via Cloud-Init"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use Cloud-Init for network and hostname configuration to keep templates minimal and portable",
+      "Apply security hardening and patches before marking a VM as a template",
+      "Document template versions, contents, and creation dates for audit and reproducibility"
+    ],
+    "anti_patterns": [
+      "Booting templates directly instead of cloning them first",
+      "Leaving sensitive data or credentials on VMs before converting to templates",
+      "Using thick provisioning for templates when thin provisioning provides better storage efficiency"
+    ],
+    "faq": [
+      {
+        "question": "What Proxmox versions are supported?",
+        "answer": "This skill works with Proxmox VE 7.x and 8.x. MCP tools require API access to your Proxmox node."
+      },
+      {
+        "question": "How many VMs can I clone from a template?",
+        "answer": "There is no limit on clone count. Each clone is an independent VM with its own resources."
+      },
+      {
+        "question": "Can I integrate this with Terraform?",
+        "answer": "Yes. Use MCP tools interactively for template preparation, then Terraform for production-scale cloning."
+      },
+      {
+        "question": "Is my data safe when creating templates?",
+        "answer": "This skill only generates configuration guidance. Actual VM operations are performed by Proxmox MCP tools on your infrastructure."
+      },
+      {
+        "question": "Why do my cloned VMs have the same IP address?",
+        "answer": "Templates store initial network config. Use Cloud-Init with DHCP or unique static IPs per clone for proper networking."
+      },
+      {
+        "question": "How is this different from Terraform Proxmox provider?",
+        "answer": "Terraform manages infrastructure state at scale. This skill provides interactive guidance for template design and testing."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "output.json",
+      "type": "file",
+      "path": "output.json",
+      "lines": 159
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 335
+    }
+  ]
+}

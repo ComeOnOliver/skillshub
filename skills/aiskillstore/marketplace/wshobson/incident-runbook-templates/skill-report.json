@@ -1,0 +1,513 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:28:47.276Z",
+    "slug": "wshobson-incident-runbook-templates",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/incident-response/skills/incident-runbook-templates",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "dcc104e65af65a5c1595c905cd1e488f73bd085ece741fea69b815078c624c14",
+    "tree_hash": "1c50857eab302e3ff35c23864db8f5780f3ced36e0f4ee5e1ef9ca1800b17c4b"
+  },
+  "skill": {
+    "name": "incident-runbook-templates",
+    "description": "Create structured incident response runbooks with step-by-step procedures, escalation paths, and recovery actions. Use when building runbooks, responding to incidents, or establishing incident response procedures.",
+    "summary": "Create structured incident response runbooks with step-by-step procedures, escalation paths, and rec...",
+    "icon": "🚨",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "incident-response",
+      "runbooks",
+      "sre",
+      "oncall",
+      "devops"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only static markdown templates. No executable code, no file system access, no network calls. All 70 static findings are false positives: markdown code blocks were misidentified as Ruby/shell backticks, example URLs were flagged as hardcoded network addresses, and SQL/YAML content was misidentified as weak cryptographic algorithms. The skill generates text templates only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 67,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 203
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 228
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 228,
+            "line_end": 242
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 260
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 260,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 276,
+            "line_end": 279
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 279,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 298
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 298,
+            "line_end": 304
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 304,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 306
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 306,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 328
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 328,
+            "line_end": 331
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 331,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 360
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 360,
+            "line_end": 361
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 67,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 208
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 381,
+            "line_end": 381
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 382,
+            "line_end": 382
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 198
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 142
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 589,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:28:47.276Z"
+  },
+  "content": {
+    "user_title": "Build incident runbooks quickly",
+    "value_statement": "Teams struggle to document consistent incident response steps during pressure. This skill delivers structured runbook templates with triage, mitigation, and communication sections.",
+    "seo_keywords": [
+      "incident runbook templates",
+      "incident response",
+      "SRE runbook",
+      "on call playbook",
+      "Kubernetes outage",
+      "database incident",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Provide a structured incident runbook outline with required sections",
+      "Define incident severity levels with impact and response time guidance",
+      "Offer a service outage runbook with triage and mitigation steps",
+      "Offer a database incident runbook with SQL checks and actions",
+      "Provide escalation matrix and communication template examples"
+    ],
+    "limitations": [
+      "Does not execute commands or verify results",
+      "Assumes Kubernetes and PostgreSQL in examples",
+      "Requires customization for your services and contacts",
+      "Does not provide monitoring or alerting setup"
+    ],
+    "use_cases": [
+      {
+        "target_user": "On call engineer",
+        "title": "Handle a live outage",
+        "description": "Follow structured triage and mitigation steps while keeping stakeholders informed."
+      },
+      {
+        "target_user": "SRE lead",
+        "title": "Standardize runbooks",
+        "description": "Create consistent runbook structure and severity levels across teams."
+      },
+      {
+        "target_user": "New team member",
+        "title": "Learn incident flow",
+        "description": "Study templates to understand escalation paths and recovery procedures."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Runbook outline",
+        "scenario": "Create a basic template",
+        "prompt": "Create a concise incident runbook outline for a SaaS API service with detection, triage, mitigation, verification, and communication sections."
+      },
+      {
+        "title": "Service outage guide",
+        "scenario": "Draft outage procedures",
+        "prompt": "Draft a service outage runbook for a payments API. Include triage steps, rollback actions, and escalation contacts."
+      },
+      {
+        "title": "Database incident guide",
+        "scenario": "Cover database failures",
+        "prompt": "Create a database incident runbook for PostgreSQL with connection exhaustion, replication lag, and disk space issues."
+      },
+      {
+        "title": "Advanced playbook",
+        "scenario": "Add tailored metrics",
+        "prompt": "Extend a runbook with specific alerts, dashboards, and verification metrics for a microservice on Kubernetes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a service outage runbook for our billing service",
+        "output": [
+          "Overview and impact checklist for the billing service",
+          "Triage steps with health checks and rollback options",
+          "Mitigation paths for downtime, latency, and partial failures",
+          "Escalation matrix and communication templates for updates"
+        ]
+      },
+      {
+        "input": "Draft a database incident runbook for PostgreSQL",
+        "output": [
+          "Quick reference table with common PostgreSQL diagnostic queries",
+          "Connection pool exhaustion procedures with SQL termination commands",
+          "Replication lag checks and failover decision tree",
+          "Disk space emergency procedures with table size queries"
+        ]
+      },
+      {
+        "input": "Create escalation matrix for a SEV1 incident",
+        "output": [
+          "15-minute escalation to engineering manager if unresolved",
+          "Security team notification if data breach suspected",
+          "Finance and legal escalation for financial impact over 10k",
+          "Support lead coordination for customer communication"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Customize commands, dashboards, and contacts before use",
+      "Order steps by urgency and verify each action",
+      "Review and update templates after incidents"
+    ],
+    "anti_patterns": [
+      "Leaving placeholders without owners or contacts",
+      "Including steps that require undocumented tribal knowledge",
+      "Skipping verification and rollback guidance"
+    ],
+    "faq": [
+      {
+        "question": "Is it compatible with Claude, Codex, and Claude Code?",
+        "answer": "Yes. The content is plain text templates that work in Claude, Codex, and Claude Code."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides guidance only and does not execute commands or monitor systems."
+      },
+      {
+        "question": "Can I integrate it with our incident tools?",
+        "answer": "Yes. Replace placeholders with your PagerDuty, Slack, and dashboard links."
+      },
+      {
+        "question": "Does it access or store sensitive data?",
+        "answer": "No. It is static content and does not read files or send data."
+      },
+      {
+        "question": "What if the steps do not match our stack?",
+        "answer": "Edit the commands and sections to match your services and tooling."
+      },
+      {
+        "question": "How does this compare to incident platforms?",
+        "answer": "It offers templates only, while platforms add automation and live coordination."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 384
+    }
+  ]
+}

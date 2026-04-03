@@ -1,0 +1,315 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:14:13.869Z",
+    "slug": "consiliency-schema-alignment",
+    "source_url": "https://github.com/Consiliency/treesitter-chunker/tree/main/.ai-dev-kit/skills/schema-alignment",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c4532a4a3c8701f41eef224b35acb19c28803cf4459da619bacdca7802dde76a",
+    "tree_hash": "0199194ccc47c0fa9dd6f777ef0d7c6f1d0dd56e7bdd8fb63bf355ca841c6a82"
+  },
+  "skill": {
+    "name": "schema-alignment",
+    "description": "Detect and report drift between database schema and code data models. Works with SQLAlchemy, Django ORM, Prisma, TypeORM, and other ORMs. Generic across any project.",
+    "summary": "Detect and report drift between database schema and code data models across multiple ORM frameworks.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Consiliency",
+    "license": "MIT",
+    "tags": [
+      "database",
+      "schema",
+      "orm",
+      "migration",
+      "code-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static scanner detected patterns in documentation files that appear to be code examples and references rather than executable malicious code. All flagged locations are in markdown documentation (cookbook/*.md, reference/*.md, SKILL.md) describing ORM patterns and schema alignment techniques. The skill is a legitimate development tool for database schema analysis.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 68
+          },
+          {
+            "file": "cookbook/alembic-migration.md",
+            "line_start": 7,
+            "line_end": 16
+          },
+          {
+            "file": "cookbook/sqlalchemy-detection.md",
+            "line_start": 9,
+            "line_end": 19
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 68
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [
+      {
+        "title": "Documentation contains code examples with shell patterns",
+        "description": "Markdown documentation files contain code examples that reference shell commands and external tools. These are documentation content, not executable code, and represent legitimate examples for schema detection workflows.",
+        "locations": [
+          {
+            "file": "cookbook/alembic-migration.md",
+            "line_start": 1,
+            "line_end": 263
+          },
+          {
+            "file": "cookbook/sqlalchemy-detection.md",
+            "line_start": 1,
+            "line_end": 140
+          },
+          {
+            "file": "reference/orm-patterns.md",
+            "line_start": 1,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 316
+          }
+        ]
+      }
+    ],
+    "low_findings": [
+      {
+        "title": "Documentation references to cryptographic algorithms",
+        "description": "Documentation mentions hash algorithms (md5, sha1) in the context of explaining ORM column types and schema patterns. These are informational references, not actual cryptographic usage.",
+        "locations": [
+          {
+            "file": "cookbook/prisma-detection.md",
+            "line_start": 1,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 325
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 4758,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:14:13.870Z"
+  },
+  "content": {
+    "user_title": "Align database schemas with code models",
+    "value_statement": "Database schemas often drift from code definitions bugs and deployment causing failures. This skill detects misalignment between database schemas and ORM models across SQLAlchemy, Django, Prisma, and TypeORM frameworks.",
+    "seo_keywords": [
+      "schema alignment",
+      "database schema",
+      "ORM detection",
+      "schema drift",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "database migration",
+      "code analysis",
+      "schema validation"
+    ],
+    "actual_capabilities": [
+      "Detect schema drift between database and ORM models",
+      "Support multiple ORM frameworks (SQLAlchemy, Django, Prisma, TypeORM)",
+      "Generate detailed reports of schema mismatches",
+      "Provide actionable fix recommendations for schema alignment"
+    ],
+    "limitations": [
+      "Requires access to both database schema and source code files",
+      "May not detect runtime-only schema changes",
+      "Framework support depends on pattern coverage for each ORM"
+    ],
+    "use_cases": [
+      {
+        "title": "Pre-deployment schema validation",
+        "description": "Validate that database schema matches application models before deploying changes to prevent runtime errors.",
+        "target_user": "DevOps engineers and backend developers"
+      },
+      {
+        "title": "Legacy database investigation",
+        "description": "Analyze existing databases to understand current schema and compare against application models for refactoring projects.",
+        "target_user": "System architects and maintenance developers"
+      },
+      {
+        "title": "Multi-framework migration audit",
+        "description": "Audit schema consistency across different ORM implementations during framework migration projects.",
+        "target_user": "Technical leads and migration consultants"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic schema check",
+        "prompt": "Check if my database schema is aligned with my ORM models. The database is [DATABASE_URL] and the code is in [PROJECT_PATH].",
+        "scenario": "Quick validation of schema alignment"
+      },
+      {
+        "title": "Framework-specific audit",
+        "prompt": "Run a [ORM_NAME] schema alignment check on my project at [PATH]. Report any drift between the database and models.",
+        "scenario": "Targeted ORM framework validation"
+      },
+      {
+        "title": "Migration preparation",
+        "prompt": "Analyze the current schema and ORM models to identify all mismatches that need to be addressed before deployment.",
+        "scenario": "Pre-migration validation"
+      },
+      {
+        "title": "Comprehensive audit",
+        "prompt": "Perform a full schema alignment audit across all ORM patterns in the codebase at [PATH]. Include detailed findings and recommended fixes for each discrepancy found.",
+        "scenario": "Complete project analysis with remediation steps"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Check SQLAlchemy schema alignment for my project at ./app",
+        "output": [
+          "Schema Alignment Report",
+          "======================",
+          "",
+          "Found 3 schema drift issues:",
+          "",
+          "1. Table 'users' - Column 'email'",
+          "   - Database: VARCHAR(255) NOT NULL",
+          "   - Model: String(254) nullable=True",
+          "   - Fix: Update model to match database constraints",
+          "",
+          "2. Table 'orders' - Column 'created_at'",
+          "   - Database: TIMESTAMP",
+          "   - Model: DateTime",
+          "   - Note: Types are equivalent, no action needed"
+        ]
+      },
+      {
+        "input": "Detect schema drift in Prisma project",
+        "output": [
+          "Prisma Schema Analysis",
+          "-----------------------",
+          "Checking User model against database...",
+          "",
+          "Missing columns in database:",
+          "  - last_login: DateTime (defined in schema.prisma)",
+          "",
+          "Extra columns in database (not in model):",
+          "  - legacy_flags: JSON (deprecated, consider removing)",
+          "",
+          "Summary: 1 issue requires migration"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run schema alignment checks before every deployment to catch drift early",
+      "Include schema alignment validation in CI/CD pipelines",
+      "Document any intentional schema-model deviations"
+    ],
+    "anti_patterns": [
+      "Running alignment checks only after production incidents",
+      "Ignoring minor schema drift assuming it will not cause issues",
+      "Making schema changes without updating corresponding models"
+    ],
+    "faq": [
+      {
+        "question": "Which ORM frameworks are supported?",
+        "answer": "The skill supports SQLAlchemy, Django ORM, Prisma, and TypeORM. Additional frameworks can be added through pattern extensions."
+      },
+      {
+        "question": "Does this tool modify my database or code?",
+        "answer": "No, this skill only performs read-only analysis and generates reports. It does not make any changes to your database or code files."
+      },
+      {
+        "question": "How does it access my database schema?",
+        "answer": "The skill can connect to your database using standard connection methods to inspect the current schema structure."
+      },
+      {
+        "question": "Can it detect partial matches or similar columns?",
+        "answer": "Yes, the skill includes fuzzy matching for column names and can suggest potential matches with confidence scores."
+      },
+      {
+        "question": "What output formats are supported?",
+        "answer": "Reports are generated in human-readable text format. Structured output can be requested for integration with other tools."
+      },
+      {
+        "question": "How often should I run schema alignment checks?",
+        "answer": "Run checks before deployments, after database migrations, and periodically for long-running projects to catch drift from manual database changes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "cookbook",
+      "type": "dir",
+      "path": "cookbook",
+      "children": [
+        {
+          "name": "alembic-migration.md",
+          "type": "file",
+          "path": "cookbook/alembic-migration.md",
+          "lines": 263
+        },
+        {
+          "name": "prisma-detection.md",
+          "type": "file",
+          "path": "cookbook/prisma-detection.md",
+          "lines": 186
+        },
+        {
+          "name": "sqlalchemy-detection.md",
+          "type": "file",
+          "path": "cookbook/sqlalchemy-detection.md",
+          "lines": 140
+        }
+      ]
+    },
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "reference",
+      "children": [
+        {
+          "name": "orm-patterns.md",
+          "type": "file",
+          "path": "reference/orm-patterns.md",
+          "lines": 247
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 325
+    }
+  ]
+}

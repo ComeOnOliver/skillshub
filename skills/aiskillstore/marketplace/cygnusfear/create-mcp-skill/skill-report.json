@@ -1,0 +1,634 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:21:54.837Z",
+    "slug": "cygnusfear-create-mcp-skill",
+    "source_url": "https://github.com/Cygnusfear/claude-stuff/tree/main/skills/create-mcp-skill",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "15bddcc5c667b640eb7d7e9e7e63efc406172c9da8c8bd1c5ca40e80a1e3015a",
+    "tree_hash": "fd279411cce1a734bb4646d8f47f2064ea9ff7ad99842d47666250b591d8db04"
+  },
+  "skill": {
+    "name": "create-mcp-skill",
+    "description": "Create a new skill that uses an MCP server, following best practices from the MCP CLI guide. Use when user wants to create a skill for a new MCP server or integrate MCP functionality into a skill.",
+    "summary": "Create a new skill that uses an MCP server, following best practices from the MCP CLI guide. Use whe...",
+    "icon": "🛠️",
+    "version": "1.0.0",
+    "author": "Cygnusfear",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "MCP",
+      "skill-creation",
+      "best-practices",
+      "performance",
+      "templates"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guidance for creating MCP server skills. No executable code, no network calls, no file access beyond documentation templates. The static analyzer produced false positives by misinterpreting documentation examples showing bash command syntax as executable malicious code. All flagged patterns are legitimate documentation examples teaching proper MCP CLI usage.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 322,
+            "line_end": 322
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 323
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 223
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 223,
+            "line_end": 227
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 227,
+            "line_end": 241
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 241,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 261
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 261,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 269
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 273
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 273,
+            "line_end": 277
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 277,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 284
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 284,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 292
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 292,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 297
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 297,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 330
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 330,
+            "line_end": 332
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 332,
+            "line_end": 337
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 337,
+            "line_end": 338
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 338,
+            "line_end": 341
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 321,
+            "line_end": 321
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 258,
+            "line_end": 258
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 266,
+            "line_end": 266
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 283,
+            "line_end": 283
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 298,
+            "line_end": 298
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 525,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:21:54.837Z"
+  },
+  "content": {
+    "user_title": "Create MCP-based skills",
+    "value_statement": "Creating MCP server skills from scratch takes significant research and experimentation. This skill provides a proven template, discovery workflow, and performance best practices so you can build optimized skills in minutes instead of hours.",
+    "seo_keywords": [
+      "MCP skill creation",
+      "Model Context Protocol",
+      "Claude skills",
+      "MCP server integration",
+      "skill templates",
+      "MCP CLI",
+      "Claude Code",
+      "automated skill generation",
+      "MCP tools discovery",
+      "performance patterns"
+    ],
+    "actual_capabilities": [
+      "Create skill directory structure following MCP conventions",
+      "Discover available tools from any MCP server using CLI",
+      "Generate SKILL.md documentation from templates",
+      "Apply optimized command patterns for fast execution",
+      "Test MCP tools interactively before documentation",
+      "Follow best practices checklist for production skills"
+    ],
+    "limitations": [
+      "Requires MCP CLI to be installed separately",
+      "Does not install or configure target MCP servers",
+      "Cannot execute MCP commands without server availability",
+      "Skill creation workflow is for documentation only"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Skill Developers",
+        "title": "Build new MCP skills",
+        "description": "Create properly structured MCP server skills with templates, tool discovery, and performance patterns."
+      },
+      {
+        "target_user": "Integration Engineers",
+        "title": "Document MCP servers",
+        "description": "Generate comprehensive documentation for existing MCP servers with tested command examples."
+      },
+      {
+        "target_user": "AI Tool Builders",
+        "title": "Standardize skill format",
+        "description": "Apply consistent best practices and performance optimizations across multiple skill projects."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New MCP Skill",
+        "scenario": "Create a skill for an MCP server",
+        "prompt": "Use the create-mcp-skill skill to create a new skill for the filesystem MCP server at path ~/projects."
+      },
+      {
+        "title": "Document Tools",
+        "scenario": "Discover tools from MCP server",
+        "prompt": "Help me discover all tools available from a filesystem MCP server and create documentation for the key tools."
+      },
+      {
+        "title": "Optimize Pattern",
+        "scenario": "Apply performance best practices",
+        "prompt": "Review my current MCP skill and apply the performance best practices from the MCP CLI guide."
+      },
+      {
+        "title": "Generate Template",
+        "scenario": "Create skill from CLI",
+        "prompt": "Generate a basic skill structure for a new MCP server using the template generator workflow."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an MCP skill for the filesystem server that can read and write files.",
+        "output": [
+          "Created skill directory: skills/filesystem/",
+          "SKILL.md created with:",
+          "  - Setup instructions for @modelcontextprotocol/server-filesystem",
+          "  - Quick Start section with optimized commands",
+          "  - Tool discovery patterns using mcp tools",
+          "  - Template for read_file and write_file commands",
+          "  - Performance checklist applied"
+        ]
+      },
+      {
+        "input": "Help me discover what tools the chrome-devtools MCP server provides.",
+        "output": [
+          "Running MCP tools discovery:",
+          "  - navigate_page: Navigate to URL (required: url)",
+          "  - screenshot: Take screenshot of page (optional: fullPage)",
+          "  - click_element: Click element at selector (required: selector)",
+          "  - evaluate_javascript: Run JavaScript (required: script)",
+          "Documenting top 5 tools for skill..."
+        ]
+      },
+      {
+        "input": "Apply best practices to my existing MCP skill.",
+        "output": [
+          "Reviewing skill structure:",
+          "  - Added Quick Start section with optimized pattern",
+          "  - Fixed parameter format (removed arguments wrapper)",
+          "  - Added cleanup commands with pkill pattern",
+          "  - Included timeout wrapper on all commands",
+          "  - Added reference to MCP CLI guide"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the optimized pattern: cleanup; sleep; echo commands | timeout shell for all MCP interactions.",
+      "Include process cleanup with pkill -9 -f pattern before each command to prevent hanging.",
+      "Document all parameters with required vs optional distinction in the Key Tools section.",
+      "Test each tool interactively before writing documentation to catch edge cases."
+    ],
+    "anti_patterns": [
+      "Avoid wrapping parameters in {\"arguments\":{}} - pass parameters directly.",
+      "Do not skip the timeout wrapper - always use timeout 30 for shell commands.",
+      "Avoid individual mcp call commands when shell mode can execute multiple commands in one call.",
+      "Do not skip cleanup steps - orphaned processes cause subsequent failures."
+    ],
+    "faq": [
+      {
+        "question": "What tools do I need installed before using this skill?",
+        "answer": "You need the MCP CLI installed via brew or go install plus your target MCP server available."
+      },
+      {
+        "question": "Can this skill install MCP servers for me?",
+        "answer": "No. This skill generates documentation and templates. You must install the target MCP server separately."
+      },
+      {
+        "question": "What MCP servers are supported?",
+        "answer": "Any MCP server that follows the Model Context Protocol specification. Common examples include filesystem, GitHub, and database servers."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This is a documentation skill that only generates markdown files. No data is sent to external services."
+      },
+      {
+        "question": "Why do commands use pkill and timeout?",
+        "answer": "These prevent hanging processes and stuck sessions. MCP servers can hold resources; cleanup ensures reliable repeated execution."
+      },
+      {
+        "question": "How is this different from the MCP CLI guide?",
+        "answer": "The CLI guide is a reference manual. This skill provides a step-by-step workflow and templates for creating complete skills."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 343
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:46:09.797Z",
+    "slug": "cloudai-x-designing-architecture",
+    "source_url": "https://github.com/CloudAI-X/claude-workflow/tree/main/skills/designing-architecture",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "073d79f3fdfffe8d34e190bf4d764ded1e272590de3c9713f746b4a718015d73",
+    "tree_hash": "d1f21247e472cdcc04b47b7e5e5e0c64b6ed86085f20715d9717fe58ccefcf59"
+  },
+  "skill": {
+    "name": "designing-architecture",
+    "description": "Designs software architecture and selects appropriate patterns for projects. Use when designing systems, choosing architecture patterns, structuring projects, making technical decisions, or when asked about microservices, monoliths, or architectural approaches.",
+    "summary": "Designs software architecture and selects appropriate patterns for projects. Use when designing syst...",
+    "icon": "🏗️",
+    "version": "1.0.0",
+    "author": "CloudAI-X",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "architecture",
+      "software-design",
+      "patterns",
+      "microservices",
+      "system-design"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure markdown documentation skill containing only architectural guidance. The SKILL.md file contains ASCII diagrams using backticks, tables, checklists, and templates for architecture decisions. No executable code, no network operations, no filesystem access beyond reading its own files. All 52 static findings are false positives: backticks are markdown code block delimiters, not shell execution; 'cryptographic algorithm' flags triggered by architecture terminology misidentification; URL is standard metadata.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 166
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 166,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 205
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 395,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:46:09.797Z"
+  },
+  "content": {
+    "user_title": "Design software architecture patterns",
+    "value_statement": "Choosing the right architecture pattern is critical for project success but requires evaluating many factors. This skill provides a systematic framework for selecting architecture patterns based on project size, team capabilities, and business requirements.",
+    "seo_keywords": [
+      "software architecture",
+      "clean architecture",
+      "microservices",
+      "monolith",
+      "hexagonal architecture",
+      "CQRS",
+      "event-driven",
+      "Claude Code",
+      "Codex",
+      "system design"
+    ],
+    "actual_capabilities": [
+      "Recommends architecture patterns based on project size and team experience",
+      "Provides visual diagrams for Layered, Clean, Hexagonal, Event-Driven, and CQRS patterns",
+      "Offers directory structure templates for feature-based and layer-based organizations",
+      "Includes a trade-off analysis template for documenting architectural decisions",
+      "Presents a validation checklist to verify architecture selections"
+    ],
+    "limitations": [
+      "Does not generate code implementations for selected architectures",
+      "Does not provide technology-specific recommendations",
+      "Does not estimate project timelines or resource requirements",
+      "Does not integrate with CI/CD pipelines or deployment systems"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Architects",
+        "title": "Evaluate pattern trade-offs",
+        "description": "Compare architecture patterns using the trade-off analysis template to document decisions"
+      },
+      {
+        "target_user": "Tech Leads",
+        "title": "Structure new projects",
+        "description": "Select appropriate directory structures based on project size and feature organization"
+      },
+      {
+        "target_user": "Development Teams",
+        "title": "Validate architectural choices",
+        "description": "Use validation checklists to ensure architecture matches team capabilities"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick pattern selection",
+        "scenario": "Choosing architecture for a new project",
+        "prompt": "What architecture pattern should I use for a [size] project with [team_size] developers working on [project_type]?"
+      },
+      {
+        "title": "Compare approaches",
+        "scenario": "Evaluating monolith vs microservices",
+        "prompt": "Compare monolith and microservices architecture for a [scale] application. Consider team size of [n] and requirements for [requirements]."
+      },
+      {
+        "title": "Create directory structure",
+        "scenario": "Setting up project organization",
+        "prompt": "Design a feature-based directory structure for a [tech_stack] application with [n] main features including users, orders, and payments."
+      },
+      {
+        "title": "Document architecture decision",
+        "scenario": "Recording technical decisions",
+        "prompt": "Help me document the decision to use [pattern] over [alternative] for a [project_description]. Include trade-offs for complexity, scalability, and team familiarity."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What architecture should I use for a small e-commerce app with 2 developers?",
+        "output": [
+          "Recommended Pattern: Layered Architecture (MVC)",
+          "",
+          "Why: Simple CRUD app, small team, quick prototypes",
+          "",
+          "Directory Structure:",
+          "├── controllers/    ← API endpoints",
+          "├── services/       ← Business logic",
+          "├── models/         ← Data entities",
+          "├── repositories/   ← Database access",
+          "└── utils/          ← Helpers",
+          "",
+          "Validation:",
+          "- [x] Matches small project size",
+          "- [x] Aligns with small team skills",
+          "- [x] Supports current requirements"
+        ]
+      },
+      {
+        "input": "Help me choose between Clean Architecture and Hexagonal Architecture for a long-term enterprise project",
+        "output": [
+          "Both patterns are suitable for complex, long-lived projects with testability requirements.",
+          "",
+          "Clean Architecture:",
+          "- Separates concerns into concentric circles",
+          "- Framework independent",
+          "- Testable without external dependencies",
+          "",
+          "Hexagonal Architecture:",
+          "- Ports and adapters model",
+          "- Easy to swap external dependencies",
+          "- Multiple entry points supported",
+          "",
+          "Recommendation: Choose Clean Architecture if your domain logic is complex. Choose Hexagonal if you need to support multiple external integrations."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with the simplest architecture that meets current requirements and evolve as complexity grows",
+      "Match architecture complexity to team experience and skills to ensure maintainability",
+      "Document architectural decisions including trade-offs and rationale for future reference"
+    ],
+    "anti_patterns": [
+      "Over-engineering early by choosing microservices when a monolith would suffice",
+      "Ignoring team capabilities when selecting architecture patterns",
+      "Failing to validate architecture selections against project requirements"
+    ],
+    "faq": [
+      {
+        "question": "Which tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code for architectural guidance."
+      },
+      {
+        "question": "What project sizes are covered?",
+        "answer": "Small (<10K LOC) uses MVC, medium (10K-100K) uses Clean Architecture, large (>100K) uses Modular Monolith or Microservices."
+      },
+      {
+        "question": "Can this skill integrate with existing projects?",
+        "answer": "This is a guidance-only skill. It provides patterns and templates but does not modify project files."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill contains no executable code. It only provides architectural guidance through prompts."
+      },
+      {
+        "question": "Why was my architecture recommendation rejected?",
+        "answer": "Validation checks may fail if the pattern does not match project size, team skills, or scalability requirements."
+      },
+      {
+        "question": "How does this compare to hiring an architect?",
+        "answer": "This skill provides structured guidance but cannot replace domain expertise or complex stakeholder negotiations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 208
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:50:17.297Z",
+    "slug": "dimon94-constitution-guardian",
+    "source_url": "https://github.com/Dimon94/cc-devflow/tree/main/.claude/skills/constitution-guardian",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c582553e515762782398af137b742d8983026463252fb3f41ffdf70993a7a1db",
+    "tree_hash": "e2646ca1428583fb0f56c78adf7d37df0f0bdd4199703f04ce9201cacd86d84f"
+  },
+  "skill": {
+    "name": "constitution-guardian",
+    "description": "Real-time Constitution compliance checker for devflow documents. Blocks partial implementations and hardcoded secrets during file editing.",
+    "summary": "Enforces CC-DevFlow Constitution compliance by detecting violations in real-time during document editing.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Dimon94",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "compliance",
+      "validation",
+      "documentation",
+      "security",
+      "guardrail"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a safe documentation validation guardrail. All 73 static findings are false positives: regex patterns, API key examples, and code snippets are documentation of prohibited patterns (what NOT to do), not executable code. The skill performs pattern matching on markdown documents without executing commands or making network requests.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1101,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:50:17.297Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Enforce Constitution Compliance in DevFlow Documents",
+    "value_statement": "Prevent non-compliant content from being saved to project documentation. This guardrail enforces CC-DevFlow Constitution rules by detecting partial implementations and hardcoded secrets in real-time during file editing.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "documentation validation",
+      "compliance checker",
+      "guardrail",
+      "security patterns",
+      "devflow",
+      "constitution enforcement",
+      "real-time validation"
+    ],
+    "actual_capabilities": [
+      "Detects TODO and FIXME placeholders that indicate partial implementations in documentation",
+      "Identifies hardcoded secrets in code examples within markdown files",
+      "Blocks file saves when constitutional violations are detected",
+      "Reports precise line numbers for each violation found",
+      "Supports skip conditions for legacy documents and special cases",
+      "Validates compliance with Articles I.1 and III.1 of CC-DevFlow Constitution"
+    ],
+    "limitations": [
+      "Only validates two constitutional articles in real-time, not all ten articles",
+      "Focuses on devflow documentation files, not general source code validation",
+      "Pattern-based detection may produce false positives on legitimate content",
+      "Requires PreToolUse hook integration to function as a guardrail"
+    ],
+    "use_cases": [
+      {
+        "title": "Development Team Lead",
+        "description": "Enforce quality standards across project documentation by preventing team members from saving incomplete specifications or design documents with TODO placeholders.",
+        "target_user": "Development Team Lead"
+      },
+      {
+        "title": "Security Engineer",
+        "description": "Prevent accidental exposure of credentials by blocking documentation that contains hardcoded API keys, passwords, or tokens in code examples.",
+        "target_user": "Security Engineer"
+      },
+      {
+        "title": "Documentation Manager",
+        "description": "Maintain documentation quality by ensuring all technical design documents meet constitutional standards before they are committed to version control.",
+        "target_user": "Documentation Manager"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check Document Compliance",
+        "prompt": "Review this PRD.md file for constitutional violations before I save it.",
+        "scenario": "Basic validation of a single requirements document"
+      },
+      {
+        "title": "Understand Blocking Reason",
+        "prompt": "The constitution guardian blocked my save. Can you explain what violations were detected and how to fix them?",
+        "scenario": "Troubleshooting validation failures and getting remediation guidance"
+      },
+      {
+        "title": "Configure Skip Conditions",
+        "prompt": "I need to bypass the constitution guardian for a legacy migration document. What are my options?",
+        "scenario": "Setting up exceptions for special case documents"
+      },
+      {
+        "title": "Validate Multiple Documents",
+        "prompt": "Run constitution compliance checks on all EPIC.md files in the devflow/requirements directory and report any violations.",
+        "scenario": "Batch validation across multiple documentation files"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Attempting to save PRD.md with TODO placeholder on line 42",
+        "output": "Blocked - Constitution Violation Detected: Line 42 contains TODO placeholder violating Article I.1 No Partial Implementation. Complete all TODOs before saving or add @constitution-verified comment to skip."
+      },
+      {
+        "input": "Saving TECH_DESIGN.md with hardcoded API key in configuration example",
+        "output": "Blocked - Constitution Violation Detected: Line 58 contains hardcoded API key violating Article III.1 No Hardcoded Secrets. Move secrets to environment variables or use secret management service."
+      },
+      {
+        "input": "Editing compliant documentation file without violations",
+        "output": "Constitution validation passed. File saved successfully."
+      }
+    ],
+    "best_practices": [
+      "Add the @constitution-verified comment only to legacy documents that have undergone manual compliance review",
+      "Use SKIP_CONSTITUTION_CHECK environment variable sparingly and only for temporary bulk operations",
+      "Review the blocking message line numbers to quickly locate and fix violations"
+    ],
+    "anti_patterns": [
+      "Permanently disabling the guardrail globally instead of fixing constitutional violations",
+      "Adding skip markers to new documents to bypass validation requirements",
+      "Ignoring blocked saves without understanding the underlying constitutional principle being violated"
+    ],
+    "faq": [
+      {
+        "question": "What is the CC-DevFlow Constitution?",
+        "answer": "The CC-DevFlow Constitution is a set of 10 articles defining quality, security, and process standards for development workflows. This guardrail enforces Articles I.1 and III.1 in real-time during document editing."
+      },
+      {
+        "question": "Why does this only check Articles I.1 and III.1?",
+        "answer": "This guardrail focuses on the most critical real-time violations during editing. Full validation of all 10 constitutional articles is performed by validate-constitution.sh script at phase completion gates."
+      },
+      {
+        "question": "How do I fix a TODO placeholder violation?",
+        "answer": "Complete the implementation described in the TODO comment and remove the placeholder, or revise the document to exclude the incomplete feature entirely. Partial implementations are not allowed under Article I.1."
+      },
+      {
+        "question": "Can I use example API keys in documentation?",
+        "answer": "Yes, but use obviously fake placeholders like YOUR_API_KEY_HERE or sk-PLACEHOLDER instead of realistic-looking keys. The guardrail detects patterns that look like real credentials."
+      },
+      {
+        "question": "What files does this guardrail monitor?",
+        "answer": "The guardrail monitors devflow documentation files including PRD.md, EPIC.md, TASKS.md, TECH_DESIGN.md, contract YAML files, and data model documents in the devflow/requirements directory."
+      },
+      {
+        "question": "How does session skip work?",
+        "answer": "When sessionSkillUsed is true in skill-rules.json, the guardrail only triggers once per Claude session. After the first warning, subsequent edits are allowed so you can work on fixing violations without repeated blocks."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 307
+    }
+  ]
+}

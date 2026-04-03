@@ -1,0 +1,221 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:03:50.023Z",
+    "slug": "dyai2025-template-skill",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/template-skill",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8ddbe2b8a92333a00fdd5929764e485e6d0f6de28ddaeb0d16c242325cf6947c",
+    "tree_hash": "5fd5cc4f401c6d3c2862925de04daa7ced05f17941af8f8c922ff4c0e1f6d982"
+  },
+  "skill": {
+    "name": "template-skill",
+    "description": "Replace with description of the skill and when Claude should use it.",
+    "summary": "Replace with description of the skill and when Claude should use it.",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "template",
+      "boilerplate",
+      "starter",
+      "skeleton",
+      "development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 27 static findings are FALSE POSITIVES. This skill contains only documentation and metadata files (skill-report.json, SKILL.md) with no executable code. The static scanner misidentified common English words and metadata fields as security threats. The skill-report.json security_audit section explicitly confirms 'safe' status with no findings.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 187,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:03:50.023Z"
+  },
+  "content": {
+    "user_title": "Create skills from standardized template",
+    "value_statement": "This template provides the foundation for building new Claude skills. It includes the required structure and documentation format so developers can focus on implementing functionality rather than configuring boilerplate.",
+    "seo_keywords": [
+      "Claude skill template",
+      "Claude Code skill",
+      "AI skill development",
+      "Claude Codex template",
+      "skill boilerplate",
+      "Claude plugin template",
+      "skill creation guide",
+      "Claude automation template",
+      "AI assistant template",
+      "Claude skill structure"
+    ],
+    "actual_capabilities": [
+      "Provides standardized SKILL.md format with YAML frontmatter",
+      "Defines skill metadata including name, description, and category",
+      "Includes tags for skill marketplace discoverability",
+      "Documents supported AI tools (Claude, Codex, Claude Code)",
+      "Establishes version and license information",
+      "Sets up best practices for skill documentation"
+    ],
+    "limitations": [
+      "This is a template only - no functional code included",
+      "Requires complete replacement of placeholder content",
+      "No predefined functionality or integrations",
+      "Users must add all implementation logic themselves"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Skill Developers",
+        "title": "Start new skill projects",
+        "description": "Use as starting point for building new Claude skills with proper structure from day one."
+      },
+      {
+        "target_user": "Learning Developers",
+        "title": "Learn skill anatomy",
+        "description": "Study the template format to understand how skills are structured and documented."
+      },
+      {
+        "target_user": "Team Contributors",
+        "title": "Maintain skill consistency",
+        "description": "Ensure all team skills follow the same format for easier maintenance and review."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create new skill",
+        "scenario": "Starting a new skill project",
+        "prompt": "Use the template-skill to create a new skill for [describe your skill purpose]. Include appropriate category, tags, and description."
+      },
+      {
+        "title": "Clone skill structure",
+        "scenario": "Duplicating an existing skill",
+        "prompt": "Clone the template-skill structure for a new skill called [skill name] with description [description]."
+      },
+      {
+        "title": "Add skill documentation",
+        "scenario": "Documenting skill capabilities",
+        "prompt": "Update the SKILL.md file to add proper documentation for my skill including capabilities, limitations, and use cases."
+      },
+      {
+        "title": "Configure skill metadata",
+        "scenario": "Setting skill properties",
+        "prompt": "Configure the metadata for my skill: set version to [number], license to [license], and add tags [tag1, tag2, tag3]."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a new skill using template-skill for tracking code commits",
+        "output": [
+          "Created new skill structure from template",
+          "Configured name: commit-tracker",
+          "Set description: Track and manage git commits with Claude",
+          "Added category: productivity",
+          "Tags: git, commits, version-control, tracking"
+        ]
+      },
+      {
+        "input": "I need a template for a weather查询 skill",
+        "output": [
+          "Created skill structure from template",
+          "Set name: weather-query",
+          "Category: data",
+          "Tags: weather, api, forecast, location"
+        ]
+      },
+      {
+        "input": "Help me set up a documentation helper skill",
+        "output": [
+          "Initialized skill template",
+          "Name: doc-helper",
+          "License: MIT",
+          "Version: 1.0.0",
+          "Category: documentation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Replace all placeholder content with specific skill details before publishing",
+      "Choose the most relevant category for your skill's primary function",
+      "Add 3-5 specific tags that describe your skill's function and use case for optimal discoverability"
+    ],
+    "anti_patterns": [
+      "Publishing without replacing the placeholder description",
+      "Leaving the template name instead of a descriptive skill name",
+      "Skipping the supported_tools configuration"
+    ],
+    "faq": [
+      {
+        "question": "What tools support this template?",
+        "answer": "The template works with Claude, Codex, and Claude Code. All three platforms recognize the SKILL.md format."
+      },
+      {
+        "question": "Can I modify the template structure?",
+        "answer": "Yes, the template is a starting point. Adapt the structure to fit your skill's specific requirements."
+      },
+      {
+        "question": "Is this skill functional?",
+        "answer": "No, this is a template only. It provides documentation and structure but no executable functionality."
+      },
+      {
+        "question": "How do I publish a skill?",
+        "answer": "Fill in all placeholder fields, test your implementation, then submit through the skill marketplace submission process."
+      },
+      {
+        "question": "What license should I use?",
+        "answer": "Choose an appropriate open source license. MIT, Apache 2.0, and CC0 are common choices for skill templates."
+      },
+      {
+        "question": "How many tags should I add?",
+        "answer": "Add 3-5 specific tags that describe your skill's function and use case for optimal discoverability."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 7
+    }
+  ]
+}

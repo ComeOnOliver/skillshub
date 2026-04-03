@@ -1,0 +1,656 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:45:22.414Z",
+    "slug": "canvas-design",
+    "source_url": "https://github.com/anthropics/skills/tree/main/skills/canvas-design",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "official",
+    "content_hash": "a1f288079624402f30682753c1d43920b6664785698d21d3e7aa197450a6448b",
+    "tree_hash": "5b4de244404a0adee74bfb814c28f88f2ec7cc354fc7a90e59c5f6eea1b30532"
+  },
+  "skill": {
+    "name": "canvas-design",
+    "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+    "summary": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this ...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "anthropics",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "design",
+    "tags": [
+      "canvas",
+      "poster",
+      "typography",
+      "visual-art",
+      "philosophy"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Official instruction-only skill with bundled open-source fonts. Outputs standard design files. No executable code or dangerous patterns. Network risk is theoretical since all fonts are pre-bundled.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 116
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 110
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 31,
+    "total_lines": 3488,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:45:22.414Z"
+  },
+  "content": {
+    "user_title": "Create museum grade canvas art",
+    "value_statement": "You need original visual art that communicates through form and space. This skill builds a visual philosophy and outputs polished PNG or PDF artwork.",
+    "seo_keywords": [
+      "canvas design",
+      "visual philosophy",
+      "poster art",
+      "PNG poster",
+      "PDF artwork",
+      "typography design",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "AI design skill"
+    ],
+    "actual_capabilities": [
+      "Create a named visual philosophy in 4 to 6 paragraphs in a markdown file",
+      "Deduce a subtle conceptual reference from the user prompt",
+      "Produce a single page PNG or PDF canvas artwork",
+      "Use fonts from the local canvas-fonts directory",
+      "Create additional pages on request in one PDF or multiple PNGs"
+    ],
+    "limitations": [
+      "Outputs only .md, .png, or .pdf files",
+      "Does not copy specific artists or existing works",
+      "Focuses on static design, not animation or interactivity",
+      "Needs a clear theme to guide the subtle reference"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Marketing designer",
+        "title": "Launch poster concept",
+        "description": "Create a campaign poster with minimal text and a cohesive visual mood."
+      },
+      {
+        "target_user": "Editorial art director",
+        "title": "Magazine cover study",
+        "description": "Generate a cover concept driven by composition, color, and spatial hierarchy."
+      },
+      {
+        "target_user": "Independent artist",
+        "title": "Gallery print",
+        "description": "Produce a refined art print with a subtle conceptual reference."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple poster",
+        "scenario": "Beginner single page poster",
+        "prompt": "Create a visual philosophy and a PNG poster about calm winter streets with minimal text and a restrained palette."
+      },
+      {
+        "title": "Event identity",
+        "scenario": "Intermediate request with tone",
+        "prompt": "Design a visual philosophy and a PDF artwork for a contemporary dance festival with sparse text and strong spatial rhythm."
+      },
+      {
+        "title": "Concept study",
+        "scenario": "Advanced conceptual reference",
+        "prompt": "Create a philosophy and PNG artwork that subtly references orbital mechanics through form, color, and composition with minimal labels."
+      },
+      {
+        "title": "Series booklet",
+        "scenario": "Expert multi page series",
+        "prompt": "Create a philosophy and a 3 page PDF series about coastal geology, each page distinct but related, with minimal text."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a visual philosophy and PNG artwork about urban silence.",
+        "output": [
+          "Philosophy named and described in five concise paragraphs",
+          "Artwork uses large negative space with precise geometry",
+          "Sparse labels set in two contrasting fonts",
+          "Muted palette with one controlled accent color",
+          "Composition refined for crisp margins and spacing"
+        ]
+      },
+      {
+        "input": "Design a philosophy and PDF for a jazz album cover about improvisation.",
+        "output": [
+          "Philosophy focused on rhythm and spontaneous flow",
+          "Abstract shapes suggesting musical movement",
+          "Typography placed as visual counterpoint",
+          "High contrast palette evoking stage lighting",
+          "Multi-page layout with consistent mood"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide a short theme and a preferred output format",
+      "Ask for minimal text and a focused color palette",
+      "Request a refinement pass for alignment and spacing"
+    ],
+    "anti_patterns": [
+      "Requesting copies of known artists or posters",
+      "Asking for dense paragraphs of text inside the artwork",
+      "Expecting interactive or animated outputs"
+    ],
+    "faq": [
+      {
+        "question": "What platforms are supported?",
+        "answer": "It works with Claude, Codex, and Claude Code workflows that can create files."
+      },
+      {
+        "question": "What are the output limits?",
+        "answer": "It defaults to one page and only produces .md, .png, or .pdf files."
+      },
+      {
+        "question": "Can I integrate outputs into my workflow?",
+        "answer": "Yes. Request PNG or PDF outputs and import them into your design pipeline."
+      },
+      {
+        "question": "Is my data stored or shared?",
+        "answer": "This skill only follows your prompt and does not include data storage features."
+      },
+      {
+        "question": "What if the output looks rough?",
+        "answer": "Ask for a refinement pass focused on alignment, spacing, and typography."
+      },
+      {
+        "question": "How is this different from a template tool?",
+        "answer": "It creates an original philosophy and composition instead of filling a fixed template."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "canvas-fonts",
+      "type": "dir",
+      "path": "canvas-fonts",
+      "children": [
+        {
+          "name": "ArsenalSC-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/ArsenalSC-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "ArsenalSC-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/ArsenalSC-Regular.ttf"
+        },
+        {
+          "name": "BigShoulders-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/BigShoulders-Bold.ttf"
+        },
+        {
+          "name": "BigShoulders-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/BigShoulders-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "BigShoulders-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/BigShoulders-Regular.ttf"
+        },
+        {
+          "name": "Boldonse-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/Boldonse-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "Boldonse-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Boldonse-Regular.ttf"
+        },
+        {
+          "name": "BricolageGrotesque-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/BricolageGrotesque-Bold.ttf"
+        },
+        {
+          "name": "BricolageGrotesque-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/BricolageGrotesque-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "BricolageGrotesque-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/BricolageGrotesque-Regular.ttf"
+        },
+        {
+          "name": "CrimsonPro-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/CrimsonPro-Bold.ttf"
+        },
+        {
+          "name": "CrimsonPro-Italic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/CrimsonPro-Italic.ttf"
+        },
+        {
+          "name": "CrimsonPro-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/CrimsonPro-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "CrimsonPro-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/CrimsonPro-Regular.ttf"
+        },
+        {
+          "name": "DMMono-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/DMMono-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "DMMono-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/DMMono-Regular.ttf"
+        },
+        {
+          "name": "EricaOne-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/EricaOne-OFL.txt",
+          "lines": 95
+        },
+        {
+          "name": "EricaOne-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/EricaOne-Regular.ttf"
+        },
+        {
+          "name": "GeistMono-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/GeistMono-Bold.ttf"
+        },
+        {
+          "name": "GeistMono-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/GeistMono-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "GeistMono-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/GeistMono-Regular.ttf"
+        },
+        {
+          "name": "Gloock-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/Gloock-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "Gloock-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Gloock-Regular.ttf"
+        },
+        {
+          "name": "IBMPlexMono-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/IBMPlexMono-Bold.ttf"
+        },
+        {
+          "name": "IBMPlexMono-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/IBMPlexMono-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "IBMPlexMono-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/IBMPlexMono-Regular.ttf"
+        },
+        {
+          "name": "IBMPlexSerif-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/IBMPlexSerif-Bold.ttf"
+        },
+        {
+          "name": "IBMPlexSerif-BoldItalic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/IBMPlexSerif-BoldItalic.ttf"
+        },
+        {
+          "name": "IBMPlexSerif-Italic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/IBMPlexSerif-Italic.ttf"
+        },
+        {
+          "name": "IBMPlexSerif-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/IBMPlexSerif-Regular.ttf"
+        },
+        {
+          "name": "InstrumentSans-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/InstrumentSans-Bold.ttf"
+        },
+        {
+          "name": "InstrumentSans-BoldItalic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/InstrumentSans-BoldItalic.ttf"
+        },
+        {
+          "name": "InstrumentSans-Italic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/InstrumentSans-Italic.ttf"
+        },
+        {
+          "name": "InstrumentSans-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/InstrumentSans-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "InstrumentSans-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/InstrumentSans-Regular.ttf"
+        },
+        {
+          "name": "InstrumentSerif-Italic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/InstrumentSerif-Italic.ttf"
+        },
+        {
+          "name": "InstrumentSerif-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/InstrumentSerif-Regular.ttf"
+        },
+        {
+          "name": "Italiana-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/Italiana-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "Italiana-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Italiana-Regular.ttf"
+        },
+        {
+          "name": "JetBrainsMono-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/JetBrainsMono-Bold.ttf"
+        },
+        {
+          "name": "JetBrainsMono-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/JetBrainsMono-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "JetBrainsMono-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/JetBrainsMono-Regular.ttf"
+        },
+        {
+          "name": "Jura-Light.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Jura-Light.ttf"
+        },
+        {
+          "name": "Jura-Medium.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Jura-Medium.ttf"
+        },
+        {
+          "name": "Jura-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/Jura-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "LibreBaskerville-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/LibreBaskerville-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "LibreBaskerville-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/LibreBaskerville-Regular.ttf"
+        },
+        {
+          "name": "Lora-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Lora-Bold.ttf"
+        },
+        {
+          "name": "Lora-BoldItalic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Lora-BoldItalic.ttf"
+        },
+        {
+          "name": "Lora-Italic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Lora-Italic.ttf"
+        },
+        {
+          "name": "Lora-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/Lora-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "Lora-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Lora-Regular.ttf"
+        },
+        {
+          "name": "NationalPark-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/NationalPark-Bold.ttf"
+        },
+        {
+          "name": "NationalPark-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/NationalPark-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "NationalPark-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/NationalPark-Regular.ttf"
+        },
+        {
+          "name": "NothingYouCouldDo-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/NothingYouCouldDo-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "NothingYouCouldDo-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/NothingYouCouldDo-Regular.ttf"
+        },
+        {
+          "name": "Outfit-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Outfit-Bold.ttf"
+        },
+        {
+          "name": "Outfit-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/Outfit-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "Outfit-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Outfit-Regular.ttf"
+        },
+        {
+          "name": "PixelifySans-Medium.ttf",
+          "type": "file",
+          "path": "canvas-fonts/PixelifySans-Medium.ttf"
+        },
+        {
+          "name": "PixelifySans-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/PixelifySans-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "PoiretOne-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/PoiretOne-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "PoiretOne-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/PoiretOne-Regular.ttf"
+        },
+        {
+          "name": "RedHatMono-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/RedHatMono-Bold.ttf"
+        },
+        {
+          "name": "RedHatMono-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/RedHatMono-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "RedHatMono-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/RedHatMono-Regular.ttf"
+        },
+        {
+          "name": "Silkscreen-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/Silkscreen-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "Silkscreen-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Silkscreen-Regular.ttf"
+        },
+        {
+          "name": "SmoochSans-Medium.ttf",
+          "type": "file",
+          "path": "canvas-fonts/SmoochSans-Medium.ttf"
+        },
+        {
+          "name": "SmoochSans-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/SmoochSans-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "Tektur-Medium.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Tektur-Medium.ttf"
+        },
+        {
+          "name": "Tektur-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/Tektur-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "Tektur-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/Tektur-Regular.ttf"
+        },
+        {
+          "name": "WorkSans-Bold.ttf",
+          "type": "file",
+          "path": "canvas-fonts/WorkSans-Bold.ttf"
+        },
+        {
+          "name": "WorkSans-BoldItalic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/WorkSans-BoldItalic.ttf"
+        },
+        {
+          "name": "WorkSans-Italic.ttf",
+          "type": "file",
+          "path": "canvas-fonts/WorkSans-Italic.ttf"
+        },
+        {
+          "name": "WorkSans-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/WorkSans-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "WorkSans-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/WorkSans-Regular.ttf"
+        },
+        {
+          "name": "YoungSerif-OFL.txt",
+          "type": "file",
+          "path": "canvas-fonts/YoungSerif-OFL.txt",
+          "lines": 94
+        },
+        {
+          "name": "YoungSerif-Regular.ttf",
+          "type": "file",
+          "path": "canvas-fonts/YoungSerif-Regular.ttf"
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 130
+    }
+  ]
+}

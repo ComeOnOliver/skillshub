@@ -1,0 +1,263 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:48:07.237Z",
+    "slug": "wshobson-workflow-orchestration-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/backend-development/skills/workflow-orchestration-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "aea097b1f5accd480bf56e16ee4a173c70264b5189b2308effa02f58c95f2436",
+    "tree_hash": "11e697854ea556399b7ee742232da8aaa8066c3a15eb4e54bb4c2c0efea56d51"
+  },
+  "skill": {
+    "name": "workflow-orchestration-patterns",
+    "description": "Design durable workflows with Temporal for distributed systems. Covers workflow vs activity separation, saga patterns, state management, and determinism constraints. Use when building long-running processes, distributed transactions, or microservice orchestration.",
+    "summary": "Design durable workflows with Temporal for distributed systems. Covers workflow vs activity separati...",
+    "icon": "🧭",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "temporal",
+      "workflows",
+      "orchestration",
+      "saga",
+      "resilience"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guidance about Temporal workflow patterns. No executable code, scripts, or network activity. All 43 static findings are false positives triggered by documentation metadata and code block syntax - specifically git hash identifiers flagged as weak crypto, markdown backticks flagged as shell execution, and normal error classification flagged as reconnaissance.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 169
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 174
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 175,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 248
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 248,
+            "line_end": 248
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 462,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:48:07.237Z"
+  },
+  "content": {
+    "user_title": "Design durable Temporal workflows",
+    "value_statement": "Distributed transactions fail without clear orchestration. This skill provides Temporal patterns for deterministic workflows, retries, and compensation actions.",
+    "seo_keywords": [
+      "Temporal workflows",
+      "workflow orchestration",
+      "saga pattern",
+      "distributed transactions",
+      "microservice coordination",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "deterministic workflows",
+      "workflow patterns"
+    ],
+    "actual_capabilities": [
+      "Explain workflow versus activity separation and when to use each",
+      "Outline saga compensation steps with correct ordering for rollback",
+      "Describe entity workflow patterns using signals and queryable state",
+      "Define fan-out and fan-in for parallel task execution",
+      "Summarize retry policies, heartbeats, and idempotency requirements"
+    ],
+    "limitations": [
+      "Provides no executable code or SDK-specific implementation examples",
+      "Does not cover non-Temporal orchestration engines",
+      "Excludes real-time streaming or batch pipeline design"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend engineer",
+        "title": "Design payment orchestration",
+        "description": "Plan a multi-step payment workflow with compensations, retries, and idempotent activities."
+      },
+      {
+        "target_user": "Platform architect",
+        "title": "Model long-lived entities",
+        "description": "Choose entity workflows for accounts or carts with signals and queryable state."
+      },
+      {
+        "target_user": "SRE lead",
+        "title": "Harden failure recovery",
+        "description": "Define retry limits, backoff, and heartbeat policies for critical activities."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Workflow or activity",
+        "scenario": "New to Temporal design choices",
+        "prompt": "Classify each step of my order process as workflow or activity and explain why."
+      },
+      {
+        "title": "Saga checklist",
+        "scenario": "Distributed transaction planning",
+        "prompt": "Draft a saga plan for reserve inventory, charge payment, and ship order with compensations and idempotency rules."
+      },
+      {
+        "title": "Parallel scaling",
+        "scenario": "Large fan-out workload",
+        "prompt": "Propose a fan-out and fan-in design for 500,000 tasks using child workflows and bounded workflow size."
+      },
+      {
+        "title": "Versioning strategy",
+        "scenario": "Change running workflows",
+        "prompt": "Recommend a versioning approach for a long-running workflow update with backward compatibility constraints."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Outline a Temporal saga for booking travel with rollback steps.",
+        "output": [
+          "Register compensations before each step",
+          "Reserve flight, compensate by canceling reservation",
+          "Book hotel, compensate by canceling booking",
+          "Charge payment, compensate by refunding payment",
+          "On failure, run compensations in reverse order (LIFO)"
+        ]
+      },
+      {
+        "input": "When should I use a child workflow versus parallel activities?",
+        "output": [
+          "Use child workflows for complex, reusable process segments",
+          "Use parallel activities for simple independent tasks",
+          "Child workflows have their own execution history and timeouts",
+          "Activities share parent workflow history and run faster"
+        ]
+      },
+      {
+        "input": "How do I handle long-running activities that might stall?",
+        "output": [
+          "Implement heartbeat within activity to report progress",
+          "Set heartbeat timeout to detect stalled work",
+          "Use heartbeat details to enable progress-based retry",
+          "Break long tasks into smaller idempotent steps"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep workflows deterministic and move all I/O to activities",
+      "Make activities idempotent, short-lived, and always configure timeouts",
+      "Use child workflows to scale large parallel workloads"
+    ],
+    "anti_patterns": [
+      "Calling external APIs directly from workflows",
+      "Using system time or random functions in workflows",
+      "Skipping compensation registration before executing a step"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with all Temporal SDKs?",
+        "answer": "Yes, the patterns are SDK agnostic and focus on architecture and design principles."
+      },
+      {
+        "question": "What are the main limits covered?",
+        "answer": "It addresses determinism, payload size, retry behavior, and long-running execution constraints."
+      },
+      {
+        "question": "How do I integrate this with existing services?",
+        "answer": "Use activities for external calls and keep workflows focused on orchestration and decision logic."
+      },
+      {
+        "question": "Does it access or store my data?",
+        "answer": "No, this is documentation only and includes no code or data handling capabilities."
+      },
+      {
+        "question": "What if my workflow fails repeatedly?",
+        "answer": "Use retry policies with limits, classify non-retryable errors, and add compensations for partial failures."
+      },
+      {
+        "question": "How does it compare to Airflow or Kafka?",
+        "answer": "It targets long-running orchestration and distributed transactions, not batch pipelines or real-time streams."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 287
+    }
+  ]
+}

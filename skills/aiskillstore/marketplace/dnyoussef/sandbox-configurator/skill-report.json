@@ -1,0 +1,362 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:58:33.963Z",
+    "slug": "dnyoussef-sandbox-configurator",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/sandbox-configurator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ed932248c0b6d42738d77c10e1062e17794e4d2516f308eb74d62bf7ee5cf19a",
+    "tree_hash": "0e138e90194d72f52520cdc0d8f825c6f1c96974a5bb39e045803c8a8fc2c448"
+  },
+  "skill": {
+    "name": "sandbox-configurator",
+    "description": "Configure Claude Code sandbox security with file system and network isolation boundaries",
+    "summary": "Configure Claude Code sandbox security with file system and network isolation boundaries",
+    "icon": "🔒",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "security",
+      "sandbox",
+      "configuration",
+      "network-isolation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing configuration templates and security guidance. No executable code, file access, network calls, or command execution. All 43 static findings are false positives from the scanner misinterpreting markdown code formatting, documentation examples, and security guidance as malicious patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 105,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 149
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 153,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 178
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 183
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 493,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:58:33.963Z"
+  },
+  "content": {
+    "user_title": "Configure sandbox security boundaries",
+    "value_statement": "Claude Code sandbox configuration is complex and security trade-offs are unclear. This skill provides a specialist agent that analyzes your development needs and generates appropriate sandbox configurations with four security levels from maximum isolation to development mode.",
+    "seo_keywords": [
+      "sandbox security",
+      "Claude Code configuration",
+      "network isolation",
+      "file system security",
+      "sandbox-configurator",
+      "Claude Code sandbox",
+      "developer security",
+      "container isolation",
+      "Claude Code security",
+      "sandbox configuration"
+    ],
+    "actual_capabilities": [
+      "Analyze security requirements and recommend appropriate sandbox level",
+      "Generate JSON configuration for file access, network, and command restrictions",
+      "Define trusted domains for package registries and internal services",
+      "Configure Docker integration and local development server access",
+      "Document security trade-offs for each configuration choice",
+      "Validate configuration against development workflow requirements"
+    ],
+    "limitations": [
+      "Only configures Claude Code sandbox settings, does not modify system files",
+      "Requires manual application of generated settings to .claude/settings.local.json",
+      "Does not verify or enforce compliance with organizational security policies",
+      "Cannot detect or prevent runtime security violations by other code"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Enterprise developers",
+        "title": "Enterprise security compliance",
+        "description": "Configure strict sandbox settings for regulated environments with internal registries and minimal permissions"
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Public repo safety",
+        "description": "Apply maximum security level when contributing to public repositories to prevent prompt injection attacks"
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Development workflow balance",
+        "description": "Enable Docker and local servers while maintaining controlled network access for development"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick security setup",
+        "scenario": "Basic sandbox configuration",
+        "prompt": "Set up sandbox with balanced security for full-stack development that needs Docker and local dev servers"
+      },
+      {
+        "title": "Enterprise config",
+        "scenario": "Corporate environment requirements",
+        "prompt": "Configure sandbox for enterprise with internal registries at *.company.com and registry.company.internal, enable Docker and Git, allow local binding, add NPM_TOKEN and COMPANY_API_KEY environment variables"
+      },
+      {
+        "title": "Security audit",
+        "scenario": "Reviewing current configuration",
+        "prompt": "Review my current sandbox configuration and recommend improvements for secure open source contribution"
+      },
+      {
+        "title": "Development mode",
+        "scenario": "Trusted environment setup",
+        "prompt": "Set up development mode sandbox with auto-allow bash, full Docker integration, and local binding enabled"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Configure sandbox with balanced security for full-stack development",
+        "output": [
+          "Security Level: Balanced Security (Level 2)",
+          "Sandbox: Enabled with auto-allow for trusted operations",
+          "Network: Custom domains enabled for npm and GitHub registries",
+          "Local Binding: Allowed for development servers",
+          "Excluded Commands: git, docker (Unix sockets enabled)",
+          "Trusted Domains: *.npmjs.org, registry.npmjs.org, *.github.com, api.github.com"
+        ]
+      },
+      {
+        "input": "Set up maximum security for public repository contribution",
+        "output": [
+          "Security Level: Maximum Security (Level 1)",
+          "Sandbox: Enabled with regular permissions",
+          "Network: Trusted registries only (npm, GitHub)",
+          "Local Binding: Blocked (prevents npm run dev)",
+          "Excluded Commands: Minimal",
+          "Trusted Domains: *.npmjs.org, registry.npmjs.org, *.github.com"
+        ]
+      },
+      {
+        "input": "Configure development mode with full Docker access",
+        "output": [
+          "Security Level: Development Mode (Level 3)",
+          "Sandbox: Enabled with auto-allow bash and auto-accept edits",
+          "Network: Full local binding enabled",
+          "Docker Integration: Full access via Unix sockets",
+          "Git Operations: Excluded from sandbox restrictions",
+          "Recommendation: Use only in fully trusted environments"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with maximum security and only add permissions when specifically required by your workflow",
+      "Keep trusted domain lists minimal and avoid adding unnecessary external services",
+      "Document the security trade-offs when configuring exceptions for development needs"
+    ],
+    "anti_patterns": [
+      "Using no sandbox mode for routine development tasks",
+      "Adding broad wildcard domains like * to trusted domains without verification",
+      "Leaving sensitive values like API keys in environment variables without reviewing access"
+    ],
+    "faq": [
+      {
+        "question": "Which security level should I choose?",
+        "answer": "Start with Maximum Security for public projects. Use Balanced Security for routine development. Development Mode only for fully trusted environments with controlled code."
+      },
+      {
+        "question": "What domains should I add to trusted domains?",
+        "answer": "Only add domains you explicitly need such as npm registries, GitHub, or internal documentation servers. Avoid adding domains you do not recognize or use rarely."
+      },
+      {
+        "question": "Can I use environment variables safely?",
+        "answer": "Yes but never store secrets like API keys or tokens directly. Use placeholder values and set actual secrets through your CI system or shell environment."
+      },
+      {
+        "question": "What happens if I disable the sandbox?",
+        "answer": "Disabling sandbox removes all isolation boundaries. Claude Code gains direct system access which increases risk of prompt injection attacks executing harmful commands."
+      },
+      {
+        "question": "How do I verify Git and Docker work with my config?",
+        "answer": "The skill provides validation test commands. Run git status to test Git operations and docker ps to test Docker access. Add them to excludedCommands if blocked."
+      },
+      {
+        "question": "What is the difference between Level 1 and Level 2?",
+        "answer": "Level 1 blocks local binding and has minimal exclusions. Level 2 allows local binding for dev servers, adds custom network domains, and enables Docker via Unix sockets."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "sandbox-configurator-process.dot",
+      "type": "file",
+      "path": "sandbox-configurator-process.dot",
+      "lines": 127
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 185
+    }
+  ]
+}

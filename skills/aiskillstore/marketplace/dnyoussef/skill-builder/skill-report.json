@@ -1,0 +1,228 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:45:39.189Z",
+    "slug": "dnyoussef-skill-builder",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/skill-builder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "58bfa1913aad7b9a1da55dd19ef54d697038bd0a43f0e577891a1f1f00780c3b",
+    "tree_hash": "1e39c32e42d3e92853c7895b9be363f9a27a8d2bec511bc84b4a3512d73b4c20"
+  },
+  "skill": {
+    "name": "skill-builder",
+    "description": "Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generate skill templates, or understand the Claude Skills specification.",
+    "summary": "Create production-ready Claude Code Skills with proper YAML frontmatter, progressive disclosure architecture, and complete file/folder structure.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "tags": [
+      "skill-development",
+      "claude-code",
+      "template-generator",
+      "workflow-automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Evaluated 244 static findings. All flagged patterns are false positives: C2 keywords (invalid line numbers), weak crypto (YAML text misidentified), external commands (legitimate bash docs), hardcoded URLs (documentation links), and filesystem access (standard skill paths). This is a legitimate skill-building tool with no malicious code. Safe to publish.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 174
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 431
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 3292,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T19:00:00.000Z"
+  },
+  "content": {
+    "user_title": "Build Claude Code Skills",
+    "value_statement": "Creating Claude Code Skills manually is error-prone and time-consuming. This skill generates production-ready skill templates with proper YAML frontmatter, progressive disclosure structure, and complete directory organization so you can focus on functionality.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "skill builder",
+      "Claude skill development",
+      "AI agent skills",
+      "skill template",
+      "YAML frontmatter",
+      "progressive disclosure"
+    ],
+    "actual_capabilities": [
+      "Creates Claude Code Skills with proper YAML frontmatter format",
+      "Generates complete directory structure including scripts, resources, and docs folders",
+      "Implements progressive disclosure architecture with 4-level content structure",
+      "Provides validated skill templates for basic, intermediate, and advanced skills",
+      "Documents skill locations and version control best practices"
+    ],
+    "limitations": [
+      "Does not execute code or install skills automatically",
+      "Does not validate existing skills in the marketplace",
+      "Does not provide skill testing or deployment automation",
+      "Does not generate skill icon graphics or branding assets"
+    ],
+    "use_cases": [
+      {
+        "title": "Create Your First Claude Skill",
+        "description": "Generate a minimal skill with YAML frontmatter and basic structure for personal productivity tools or custom workflows.",
+        "target_user": "New Claude Code users learning to build skills"
+      },
+      {
+        "title": "Build Team-Shared Skills",
+        "description": "Create advanced skills with scripts, resources, and documentation for version-controlled team workflows.",
+        "target_user": "Development teams standardizing workflows"
+      },
+      {
+        "title": "Learn Skill Architecture",
+        "description": "Understand Claude Skills specification with comprehensive templates and examples from real skills.",
+        "target_user": "Developers exploring skill development patterns"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Skill Creation",
+        "prompt": "Use the skill-builder skill to create a new skill called \"[skill-name]\" with this description: \"[description of what the skill does and when to use it]\"",
+        "scenario": "When you need to create a simple skill quickly"
+      },
+      {
+        "title": "Full-Featured Skill",
+        "prompt": "Build an advanced skill with scripts directory, resources folder, and comprehensive documentation. Include setup.sh, validate.sh scripts and templates in resources/templates/",
+        "scenario": "When building complex skills with supporting files"
+      },
+      {
+        "title": "Team Project Skill",
+        "prompt": "Create a project-level skill in .claude/skills/ directory with team documentation, configuration examples, and troubleshooting guide.",
+        "scenario": "When creating skills for specific project contexts"
+      },
+      {
+        "title": "Skill Template Customization",
+        "prompt": "Show me how to modify the progressive disclosure structure for a skill that needs detailed API reference documentation but minimal quick start.",
+        "scenario": "When customizing template structure for specific needs"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a skill for generating API documentation",
+        "output": [
+          "Created skill directory: ~/.claude/skills/api-doc-generator/",
+          "Generated SKILL.md with YAML frontmatter",
+          "Created directory structure with scripts/, resources/, docs/",
+          "Added template files and examples"
+        ]
+      },
+      {
+        "input": "Build a skill for React component generation",
+        "output": [
+          "Skill structure created: .claude/skills/react-component-generator/",
+          "Included scripts/generate.sh",
+          "Added resources/templates/component.tsx.template",
+          "Created docs/ADVANCED.md with configuration options"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Include both what the skill does AND when to use it in the description field for autonomous matching",
+      "Keep the core SKILL.md file lean (2-5KB) and move detailed content to separate files",
+      "Use the 4-level progressive disclosure structure to scale skills without context overhead",
+      "Place skills directly in ~/.claude/skills/ or .claude/skills/ without nested subdirectories"
+    ],
+    "anti_patterns": [
+      "Adding extra fields like version or author to YAML frontmatter (they are ignored by Claude)",
+      "Creating deeply nested subdirectories instead of flat skill structure",
+      "Burying trigger conditions in the middle of the description instead of front-loading them",
+      "Including all documentation inline instead of referencing separate files"
+    ],
+    "faq": [
+      {
+        "question": "Where should I place my skill files?",
+        "answer": "Personal skills go in ~/.claude/skills/[skill-name]/ (available across all projects). Project skills go in .claude/skills/[skill-name]/ in your project root (version controlled)."
+      },
+      {
+        "question": "What fields are required in YAML frontmatter?",
+        "answer": "Only name (max 64 chars) and description (max 1024 chars). The description must include what the skill does and when to use it."
+      },
+      {
+        "question": "What is progressive disclosure?",
+        "answer": "A 3-level architecture: Level 1 loads always (name + description), Level 2 loads when skill triggers, Level 3+ loads on demand. This lets Claude scale to 100+ skills with minimal context."
+      },
+      {
+        "question": "Can I include executable scripts?",
+        "answer": "Yes. Place scripts in a scripts/ directory within your skill. Reference them from SKILL.md using markdown code blocks with shell commands."
+      },
+      {
+        "question": "How big should my SKILL.md be?",
+        "answer": "Keep the main file between 2-5KB. Move extensive documentation, API references, and examples to separate files in docs/ or resources/ and reference them from SKILL.md."
+      },
+      {
+        "question": "What directory structure is supported?",
+        "answer": "Claude Code requires skills directly under ~/.claude/skills/ or .claude/skills/ without nested subdirectories. Use flat structure with optional scripts/, resources/, and docs/ subdirectories."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 911
+    }
+  ]
+}

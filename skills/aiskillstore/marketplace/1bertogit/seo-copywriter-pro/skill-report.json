@@ -1,0 +1,287 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:59:04.060Z",
+    "slug": "1bertogit-seo-copywriter-pro",
+    "source_url": "https://github.com/1bertogit/modern-face-definitive/tree/main/.claude/skills/seo-copywriter-pro",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7e6769c76094891c5a7a9d3c8294a67c303e4635dc83f0a87c553e0442cf39b6",
+    "tree_hash": "984e68cb7e98538211ec90e72c65914a72bd97c68e3778a891f0428f7a02f032"
+  },
+  "skill": {
+    "name": "seo-copywriter-pro",
+    "description": "Agente especializado em criação massiva de conteúdo SEO seguindo a metodologia James/Diesel Dudes. Use para criar 50+ páginas otimizadas rapidamente, gerar artigos em batch, traduzir para múltiplos idiomas, e rankear no Google em 30 dias. Ideal para sites de serviços locais, profissionais liberais, médicos, advogados, e qualquer negócio que precise dominar SEO local. Triggers: criar páginas SEO, gerar conteúdo em massa, rankear no Google, SEO local, criar artigos batch.\n",
+    "summary": "Agente especializado em criação massiva de conteúdo SEO seguindo a metodologia James/Diesel Dudes. U...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "1bertogit",
+    "license": "MIT",
+    "category": "writing",
+    "tags": [
+      "seo",
+      "content",
+      "copywriting",
+      "marketing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 379 static findings are FALSE POSITIVES. MD5 hashing is used for legitimate duplicate content detection, markdown code blocks are incorrectly flagged as shell execution, keyword research tables are misidentified as system reconnaissance, and API key handling is standard configuration for PageSpeed integration. This is a legitimate SEO copywriting skill with no security risks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/pele-seo-auditor.py",
+            "line_start": 1,
+            "line_end": 1308
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/pele-seo-auditor.py",
+            "line_start": 801,
+            "line_end": 875
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/generate-batch.py",
+            "line_start": 149,
+            "line_end": 154
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 4632,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:59:04.060Z"
+  },
+  "content": {
+    "user_title": "Generate SEO-optimized content at scale",
+    "value_statement": "Create 50+ SEO-optimized pages quickly for local businesses, medical practices, and service providers. This agent follows proven SEO methodologies to help rank in Google within 30 days.",
+    "seo_keywords": [
+      "seo copywriting",
+      "seo content",
+      "keyword research",
+      "meta tags",
+      "schema markup",
+      "claude seo",
+      "claude code seo",
+      "codex seo",
+      "local seo",
+      "content optimization"
+    ],
+    "actual_capabilities": [
+      "Generate 50+ SEO-optimized pages using proven methodology",
+      "Create keyword research tables by intent category (emergency, service, problem, location, authority)",
+      "Build complete page templates with meta tags, H1 structure, and internal linking",
+      "Validate pages against SEO checklist (title length, description, content length, FAQ, schema)"
+    ],
+    "limitations": [
+      "Requires user input for business-specific content and copy",
+      "Does not perform live keyword volume analysis",
+      "Does not automatically submit pages to search engines",
+      "Does not generate images or visual content"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Local business owners",
+        "title": "Local service pages",
+        "description": "Generate location-specific service pages for multi-location businesses"
+      },
+      {
+        "target_user": "Medical professionals",
+        "title": "Procedure content",
+        "description": "Create detailed procedure pages for medical and cosmetic services"
+      },
+      {
+        "target_user": "Content agencies",
+        "title": "Bulk article generation",
+        "description": "Produce large volumes of SEO blog content efficiently"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic service page",
+        "scenario": "Create a single service page",
+        "prompt": "Create an SEO page for /servicos/[service-name]/ with keyword [main keyword], targeting [audience]. Include H1, meta description under 160 chars, FAQ section with 5 questions, and MedicalProcedure schema."
+      },
+      {
+        "title": "Location pages",
+        "scenario": "Generate multiple location pages",
+        "prompt": "Generate location pages for [city-1], [city-2], [city-3] for [service name]. Use the batch generator template with brand [brand name], service [service], and CTAs for /contato/"
+      },
+      {
+        "title": "Blog articles",
+        "scenario": "Create long-form blog content",
+        "prompt": "Create a 2000+ word blog article about [topic] with keyword [primary keyword]. Include H2s for [secondary keywords], internal links to /servicos/, and FAQ schema."
+      },
+      {
+        "title": "Full site audit",
+        "scenario": "Validate existing SEO pages",
+        "prompt": "Run the Pele SEO auditor on ./src/app directory. Generate an HTML report with all issues, duplicate content detection, and orphan page analysis."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a service page for endomidface procedure targeting plastic surgeons",
+        "output": [
+          "Title: Endomidface por Visão Direta | Dr. Robério Brandão - Técnica minimamente invasiva",
+          "H1: Endomidface por Visão Direta: O Guia Completo",
+          "FAQ Section: 7 questions about procedure, recovery, risks",
+          "Schema: MedicalProcedure with @id /tecnicas/endomidface/"
+        ]
+      },
+      {
+        "input": "Generate location pages for plastic surgery in São Paulo, Rio de Janeiro, Belo Horizonte",
+        "output": [
+          "3 location pages with unique content per city",
+          "Each page includes: area-specific intro, services list, CTA for consultation",
+          "Internal linking structure connecting all location pages"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use high-intent keywords where users are ready to take action",
+      "Create unique content per location instead of copying templates",
+      "Include 5-7 FAQ questions per page with schema markup",
+      "Maintain consistent internal linking across all pages"
+    ],
+    "anti_patterns": [
+      "Do not duplicate content across multiple pages without canonical tags",
+      "Do not use thin content under 1500 words for service pages",
+      "Do not forget alt text on images or canonical URLs",
+      "Do not skip hreflang tags for multilingual content"
+    ],
+    "faq": [
+      {
+        "question": "How many pages can this skill generate?",
+        "answer": "The batch generator can create unlimited pages from a JSON configuration file."
+      },
+      {
+        "question": "Does it create content automatically?",
+        "answer": "It generates page structure and templates. You provide the specific copy and business details."
+      },
+      {
+        "question": "What SEO elements are included?",
+        "answer": "Title, meta description, H1-H2 structure, internal links, FAQ schema, and canonical URLs."
+      },
+      {
+        "question": "Can I validate existing pages?",
+        "answer": "Yes, use pele-seo-auditor.py to validate pages against SEO checklist and generate reports."
+      },
+      {
+        "question": "Does it support multiple languages?",
+        "answer": "Yes, templates support PT-BR, EN, and ES with hreflang configuration."
+      },
+      {
+        "question": "What frameworks does it support?",
+        "answer": "Primary support for Astro 5.x with React, also works with generic HTML/JSX projects."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "copy-bank.md",
+          "type": "file",
+          "path": "references/copy-bank.md",
+          "lines": 171
+        },
+        {
+          "name": "keywords.md",
+          "type": "file",
+          "path": "references/keywords.md",
+          "lines": 143
+        },
+        {
+          "name": "page-templates.md",
+          "type": "file",
+          "path": "references/page-templates.md",
+          "lines": 665
+        },
+        {
+          "name": "schema-examples.md",
+          "type": "file",
+          "path": "references/schema-examples.md",
+          "lines": 323
+        },
+        {
+          "name": "stack-astro.md",
+          "type": "file",
+          "path": "references/stack-astro.md",
+          "lines": 796
+        },
+        {
+          "name": "tone-guide.md",
+          "type": "file",
+          "path": "references/tone-guide.md",
+          "lines": 169
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "generate-batch.py",
+          "type": "file",
+          "path": "scripts/generate-batch.py",
+          "lines": 245
+        },
+        {
+          "name": "pele-seo-auditor.py",
+          "type": "file",
+          "path": "scripts/pele-seo-auditor.py",
+          "lines": 1308
+        },
+        {
+          "name": "validate-seo.py",
+          "type": "file",
+          "path": "scripts/validate-seo.py",
+          "lines": 250
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 243
+    }
+  ]
+}

@@ -3,9 +3,12 @@ import { createDb } from "./client.js";
 import { users, repos, skills } from "./schema.js";
 import { eq, and } from "drizzle-orm";
 import { readFileSync, readdirSync, existsSync } from "fs";
-import { join } from "path";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 import matter from "gray-matter";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 const SKILLS_DIR = join(__dirname, "../../../skills");
 
 async function main() {
@@ -18,7 +21,9 @@ async function main() {
   let imported = 0;
   let skipped = 0;
 
-  const owners = readdirSync(SKILLS_DIR);
+  const owners = readdirSync(SKILLS_DIR).filter(f => {
+    try { return readdirSync(join(SKILLS_DIR, f)).length >= 0; } catch { return false; }
+  });
   for (const owner of owners) {
     const ownerDir = join(SKILLS_DIR, owner);
     const repoNames = readdirSync(ownerDir).filter(f => {
@@ -47,6 +52,7 @@ async function main() {
         .limit(1);
       if (!repo) {
         [repo] = await db.insert(repos).values({
+          name: `${owner}/${repoName}`,
           githubOwner: owner,
           githubRepoName: repoName,
           githubUrl: `https://github.com/${owner}/${repoName}`,

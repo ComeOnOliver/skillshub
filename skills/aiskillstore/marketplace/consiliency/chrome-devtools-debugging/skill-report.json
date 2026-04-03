@@ -1,0 +1,284 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:57:26.047Z",
+    "slug": "consiliency-chrome-devtools-debugging",
+    "source_url": "https://github.com/Consiliency/treesitter-chunker/tree/main/.ai-dev-kit/skills/chrome-devtools-debugging",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "af7f4e8dfead427399f589ad6e5077d84fee27ed849928bf4b2c3cd2bc4716ca",
+    "tree_hash": "9fc3a937e0febc7f779835f82cb4f001677e619d4a9cce916eac9138a65a7302"
+  },
+  "skill": {
+    "name": "chrome-devtools-debugging",
+    "description": "Debug and analyze web applications using Chrome DevTools MCP. Use for console log inspection, network request monitoring, performance analysis, and debugging authenticated sessions. For basic browser automation (screenshots, form filling), use browser-discovery skill instead.",
+    "summary": "Debug and analyze web applications using Chrome DevTools MCP. Use for console log inspection, network request monitoring, performance analysis, and debugging authenticated sessions.",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "Consiliency",
+    "license": "MIT",
+    "tags": [
+      "debugging",
+      "chrome-devtools",
+      "web-development",
+      "browser",
+      "mcp"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate Chrome DevTools debugging skill. All static findings are false positives. The 'external_commands' detections are markdown code fences in documentation, not actual shell execution. 'Browser storage access' references are legitimate DevTools debugging operations for inspecting localStorage/sessionStorage during authenticated session debugging. 'Weak cryptographic algorithm' flags are triggered by security-related documentation content, not actual crypto implementation. No malicious code patterns found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "cookbook/console-debugging.md",
+            "line_start": 9,
+            "line_end": 17
+          },
+          {
+            "file": "cookbook/network-debugging.md",
+            "line_start": 9,
+            "line_end": 18
+          },
+          {
+            "file": "reference.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 42
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "reference.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "reference.md",
+            "line_start": 110,
+            "line_end": 114
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 42
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 3301,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:57:26.047Z"
+  },
+  "content": {
+    "user_title": "Debug Web Apps with Chrome DevTools",
+    "value_statement": "Web application debugging requires inspecting console errors, network requests, and authenticated sessions. This skill provides structured access to Chrome DevTools MCP for automated debugging workflows, performance analysis, and JavaScript execution in browser context.",
+    "seo_keywords": [
+      "Chrome DevTools",
+      "web debugging",
+      "console inspection",
+      "network analysis",
+      "browser debugging",
+      "MCP",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "performance tracing"
+    ],
+    "actual_capabilities": [
+      "Inspect console errors, warnings, and log messages from Chrome DevTools Protocol",
+      "Monitor and analyze network requests including XHR, fetch, headers, and response bodies",
+      "Execute JavaScript code directly in browser context via evaluate_script",
+      "Debug authenticated sessions by inspecting localStorage and sessionStorage",
+      "Record and analyze performance traces with AI-powered insights",
+      "Navigate pages, list tabs, and wait for page elements to load"
+    ],
+    "limitations": [
+      "Requires Chrome browser running with remote debugging enabled on port 9222",
+      "Cannot take screenshots or perform basic browser automation (use browser-discovery skill instead)",
+      "Cannot modify browser settings or install extensions",
+      "Depends on chrome-devtools-mcp server being installed and accessible"
+    ],
+    "use_cases": [
+      {
+        "title": "Debug JavaScript errors in production",
+        "description": "Quickly identify and diagnose console errors in deployed web applications without manual browser inspection. Connect to a running Chrome instance and retrieve all error messages with stack traces.",
+        "target_user": "Frontend developers troubleshooting production issues"
+      },
+      {
+        "title": "Analyze API request failures",
+        "description": "Correlate console errors with failed network requests to identify API issues. Get full request and response details including headers, status codes, and response bodies.",
+        "target_user": "Backend developers debugging API integrations"
+      },
+      {
+        "title": "Debug authenticated user sessions",
+        "description": "Connect to an existing Chrome browser with a logged-in user and inspect authentication state. Examine localStorage for tokens and sessionStorage for session data.",
+        "target_user": "Full-stack developers investigating auth issues"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Get all console errors",
+        "prompt": "Show me all console errors from the Chrome DevTools session. List each error with its message and timestamp if available.",
+        "scenario": "Initial error inspection when debugging a web application"
+      },
+      {
+        "title": "Find failed API requests",
+        "prompt": "Show me all failed network requests (4xx or 5xx status codes) from the browser. Include the request URL, status code, and response body for each.",
+        "scenario": "Debugging API integration issues"
+      },
+      {
+        "title": "Check authenticated session state",
+        "prompt": "Inspect the authenticated session. Get all items from localStorage and sessionStorage, and list any authentication tokens or user data found.",
+        "scenario": "Debugging login or session-related issues"
+      },
+      {
+        "title": "Performance analysis",
+        "prompt": "Start a performance trace, reload the page, and stop the trace. Then get the AI-powered insights about performance bottlenecks.",
+        "scenario": "Identifying performance issues in web applications"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Get all console errors",
+        "output": [
+          "=== Console Errors ===",
+          "1. TypeError: Cannot read property 'data' of undefined",
+          "   URL: https://app.example.com/dashboard",
+          "   Timestamp: 2024-01-15T10:23:45.123Z",
+          "",
+          "2. Failed to load resource: net::ERR_FAILED",
+          "   URL: https://api.example.com/v1/users",
+          "   Status: 401 Unauthorized"
+        ]
+      },
+      {
+        "input": "Check authenticated session state",
+        "output": [
+          "=== localStorage ===",
+          "auth_token: \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\"",
+          "user_id: \"12345\"",
+          "sessionExpiry: \"2024-01-15T12:00:00Z\"",
+          "",
+          "=== sessionStorage ===",
+          "csrf_token: \"abc123xyz\""
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start Chrome with remote debugging before connecting: google-chrome --remote-debugging-port=9222",
+      "Set the CHROME_DEVTOOLS_URL environment variable to point to your Chrome instance",
+      "Use pagination (page_size, page_idx) when working with large numbers of console messages or network requests",
+      "Combine console and network tools to correlate errors with failed API calls"
+    ],
+    "anti_patterns": [
+      "Using this skill for screenshots or form filling (use browser-discovery skill instead)",
+      "Trying to connect before starting Chrome with --remote-debugging-port=9222",
+      "Calling tools without waiting for page load to complete",
+      "Assuming the skill can debug non-Chrome browsers"
+    ],
+    "faq": [
+      {
+        "question": "How do I start Chrome for debugging?",
+        "answer": "Start Chrome with remote debugging enabled: google-chrome --remote-debugging-port=9222 on Linux, or /Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --remote-debugging-port=9222 on macOS."
+      },
+      {
+        "question": "What is the difference between this and browser-discovery?",
+        "answer": "This skill focuses on debugging and analysis (console inspection, network monitoring, performance tracing). browser-discovery is for basic browser automation like screenshots, form filling, and navigation."
+      },
+      {
+        "question": "Can I debug an incognito window?",
+        "answer": "Yes, but you need to start Chrome with --remote-debugging-port=9222 using your normal profile or specify --user-data-dir for a specific profile."
+      },
+      {
+        "question": "How do I inspect localStorage data?",
+        "answer": "Use the debug.evaluate_script tool with the expression JSON.stringify(localStorage) to retrieve all localStorage items as a JSON string."
+      },
+      {
+        "question": "Can this skill modify page content?",
+        "answer": "The evaluate_script function can execute JavaScript that modifies the page, but it is primarily designed for reading data and debugging purposes."
+      },
+      {
+        "question": "Does this work with other browsers?",
+        "answer": "No, this skill specifically uses Chrome DevTools Protocol. Other browsers like Firefox or Safari have different debugging protocols."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "cookbook",
+      "type": "dir",
+      "path": "cookbook",
+      "children": [
+        {
+          "name": "console-debugging.md",
+          "type": "file",
+          "path": "cookbook/console-debugging.md",
+          "lines": 213
+        },
+        {
+          "name": "network-debugging.md",
+          "type": "file",
+          "path": "cookbook/network-debugging.md",
+          "lines": 276
+        }
+      ]
+    },
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 363
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 181
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:30:59.622Z",
+    "slug": "23blocks-os-ai-maestro-documentation-search",
+    "source_url": "https://github.com/23blocks-OS/ai-maestro/tree/main/skills/docs-search",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "31133f0226bbd2c8c574577098e5a6801d678f9cfc50b0a97cdb9e83a016ea25",
+    "tree_hash": "27360f323a2c19f4fff38d386ea3d48d6ab96bcea5e129e55b567c370365a04b"
+  },
+  "skill": {
+    "name": "ai-maestro-documentation-search",
+    "description": "PROACTIVELY search auto-generated documentation when receiving ANY user instruction. Search for function signatures, API documentation, class definitions, and code comments BEFORE implementing anything. Your codebase documentation is valuable - use it first.",
+    "summary": "PROACTIVELY search auto-generated documentation when receiving ANY user instruction. Search for func...",
+    "icon": "📚",
+    "version": "1.0.0",
+    "author": "23blocks-OS",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "documentation",
+      "search",
+      "ai-maestro",
+      "code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a prompt-based documentation skill containing only SKILL.md. No executable code, no filesystem access beyond its own directory, no external network calls. The skill provides documentation search behavior instructions to agents. All 74 static findings are FALSE POSITIVEs: shell examples in documentation are not executable code, 'hash' and 'tree' strings are not crypto algorithms, and the localhost URL is legitimate API documentation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": []
+      },
+      {
+        "factor": "network",
+        "evidence": []
+      },
+      {
+        "factor": "filesystem",
+        "evidence": []
+      },
+      {
+        "factor": "env_access",
+        "evidence": []
+      },
+      {
+        "factor": "external_commands",
+        "evidence": []
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 396,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:30:59.622Z"
+  },
+  "content": {
+    "user_title": "Search documentation proactively",
+    "value_statement": "Developers often miss existing implementations or use incorrect function signatures when working with unfamiliar code. This skill enforces proactive documentation search before any implementation, reducing errors and ensuring code consistency with established patterns.",
+    "seo_keywords": [
+      "Claude Code",
+      "documentation search",
+      "code documentation",
+      "API docs",
+      "function signatures",
+      "developer productivity",
+      "code consistency",
+      "AI coding assistant",
+      "Claude",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Search documentation using semantic queries",
+      "Find docs by type (function, class, module, interface)",
+      "Get full documents with all sections",
+      "Index documentation from any project",
+      "List all indexed documents and statistics"
+    ],
+    "limitations": [
+      "Requires docs-index.sh scripts to be installed",
+      "Requires AI Maestro to be running locally",
+      "Only searches previously indexed documentation",
+      "Depends on existing code documentation (JSDoc, docstrings)"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers working on large codebases",
+        "title": "Prevent signature mismatches",
+        "description": "Search function signatures before calling unfamiliar APIs to avoid runtime errors and type mismatches."
+      },
+      {
+        "target_user": "AI assistants",
+        "title": "Enforce documentation-first workflow",
+        "description": "Automatically search docs for any user instruction before implementing code, following established patterns."
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Verify existing patterns",
+        "description": "Check documentation for established patterns before suggesting new implementations to maintain consistency."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Search for function",
+        "scenario": "Finding function documentation",
+        "prompt": "Search documentation for [FunctionName] to understand its parameters and return type."
+      },
+      {
+        "title": "Search by keyword",
+        "scenario": "Finding exact matches",
+        "prompt": "Search documentation using keyword mode for [term] to find exact matches."
+      },
+      {
+        "title": "Find by type",
+        "scenario": "Listing all classes or functions",
+        "prompt": "Find all [class|function|module] documentation to understand the codebase structure."
+      },
+      {
+        "title": "Search for concepts",
+        "scenario": "Finding related documentation",
+        "prompt": "Search documentation semantically for [authentication|validation|error-handling] to find related patterns."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search documentation for user authentication",
+        "output": [
+          "Found 3 relevant documents:",
+          "• authenticateUser() - Function to validate user credentials",
+          "• AuthController - Class handling all auth endpoints",
+          "• JWT tokens - Guide for token-based authentication",
+          "",
+          "Key patterns: Password hashing with bcrypt, JWT expiration at 24h"
+        ]
+      },
+      {
+        "input": "How do I implement a new API endpoint?",
+        "output": [
+          "Searching docs for API patterns...",
+          "Found 2 relevant class documents:",
+          "• BaseController - Parent class with before_action and response helpers",
+          "• ApiResponse - Wrapper class for consistent JSON responses",
+          "",
+          "Key patterns: Use ApiResponse.format() for all responses, inherit from BaseController"
+        ]
+      },
+      {
+        "input": "Find database connection patterns",
+        "output": [
+          "Found 4 documentation matches:",
+          "• Database - Connection manager class with pooling config",
+          "• QueryBuilder - Fluent interface for building queries",
+          "• migrations - Guide for creating new migrations",
+          "• connection-pooling - Configuration guide",
+          "",
+          "Important: Always use transactions for multi-statement operations"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always search documentation before implementing new code features",
+      "Use semantic search for finding conceptually related documentation",
+      "Combine keyword and semantic searches for comprehensive results"
+    ],
+    "anti_patterns": [
+      "Skipping doc search because the task seems simple",
+      "Assuming function signatures without checking documentation",
+      "Implementing features without checking for existing patterns"
+    ],
+    "faq": [
+      {
+        "question": "Can this search documentation across multiple repositories?",
+        "answer": "Each repository needs its documentation indexed separately using docs-index.sh. Indexes are stored per agent."
+      },
+      {
+        "question": "Does documentation update in real time?",
+        "answer": "No. You must run docs-index.sh after code changes to update the search index with new documentation."
+      },
+      {
+        "question": "What programming languages are supported?",
+        "answer": "Any language with documentation comments (JSDoc, docstrings, RDoc, TypeScript interfaces) can be indexed."
+      },
+      {
+        "question": "Is my code or documentation sent to external servers?",
+        "answer": "No. All documentation stays local. The skill only queries the local AI Maestro instance on localhost."
+      },
+      {
+        "question": "What if no documentation is found?",
+        "answer": "Inform the user that no docs were found, then proceed with code analysis but note that documentation may need to be added."
+      },
+      {
+        "question": "How is this different from code search tools?",
+        "answer": "This searches documentation, not code. It finds conceptual descriptions, usage examples, and API contracts."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 223
+    }
+  ]
+}

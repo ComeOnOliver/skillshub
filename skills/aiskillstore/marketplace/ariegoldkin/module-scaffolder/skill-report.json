@@ -1,0 +1,384 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:47:50.245Z",
+    "slug": "ariegoldkin-module-scaffolder",
+    "source_url": "https://github.com/ArieGoldkin/devPrepAi/tree/main/.claude/skills/module-scaffolder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0958ee9b8b4ded63fdce6e6eb1e073b97613523d2420b9ad00b8cdec1b5180dc",
+    "tree_hash": "ec1021958ccb7fd32291318313e35524774850eb33c399506c4b02c92254c36a"
+  },
+  "skill": {
+    "name": "module-scaffolder",
+    "description": "Scaffolds new feature modules in DevPrep AI following the 6-folder architecture with proper TypeScript interfaces, path aliases, and quality standards. Use when creating new domains like 'analytics', 'notifications', or any new feature module.",
+    "summary": "Scaffolds new feature modules in DevPrep AI following the 6-folder architecture with proper TypeScri...",
+    "icon": "🏗️",
+    "version": "1.0.0",
+    "author": "ArieGoldkin",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "typescript",
+      "scaffolding",
+      "code-generation",
+      "architecture"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 418 static findings are false positives. The skill is a legitimate module scaffolding tool using bash scripts and template substitution. The static analyzer misidentified documentation examples, relative imports, and template placeholders as security issues.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/create-module.sh",
+            "line_start": 15,
+            "line_end": 20
+          },
+          {
+            "file": "scripts/add-component.sh",
+            "line_start": 15,
+            "line_end": 18
+          },
+          {
+            "file": "scripts/validate-module.sh",
+            "line_start": 15,
+            "line_end": 16
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 22,
+    "total_lines": 2423,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:47:50.245Z"
+  },
+  "content": {
+    "user_title": "Create feature modules with standardized structure",
+    "value_statement": "Manually creating feature modules requires following complex architecture patterns and naming conventions. This skill automates module creation with proper TypeScript interfaces, barrel exports, and quality standards enforced through validation.",
+    "seo_keywords": [
+      "module scaffolder",
+      "typescript scaffolding",
+      "feature module generator",
+      "code architecture tool",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "claude-code",
+      "component generator",
+      "module structure"
+    ],
+    "actual_capabilities": [
+      "Scaffolds new feature modules following 6-folder architecture",
+      "Generates TypeScript components with proper I-prefixed interfaces",
+      "Creates barrel exports (index.ts) for clean imports",
+      "Validates module structure against quality standards",
+      "Supports adding components to existing modules"
+    ],
+    "limitations": [
+      "Designed for DevPrep AI project structure specifically",
+      "Module names must use lowercase-with-hyphens format",
+      "Component names must use PascalCase",
+      "Does not modify existing files beyond barrel exports"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Add new feature module",
+        "description": "Quickly scaffold a complete feature module with components, hooks, and types following project conventions."
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Enforce architecture standards",
+        "description": "Ensure all new modules follow the same structure with consistent naming and quality checks."
+      },
+      {
+        "target_user": "New team members",
+        "title": "Learn project patterns",
+        "description": "Reference the generated module structure and examples to understand project conventions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic module creation",
+        "scenario": "Create a new feature module",
+        "prompt": "Create a new module called analytics with the module-scaffolder skill"
+      },
+      {
+        "title": "Module with components",
+        "scenario": "Add components to a module",
+        "prompt": "Add a component called AnalyticsDashboard to the analytics module"
+      },
+      {
+        "title": "Validate structure",
+        "scenario": "Check module compliance",
+        "prompt": "Validate that the user-profile module follows all quality standards"
+      },
+      {
+        "title": "Generate reference module",
+        "scenario": "Create example for documentation",
+        "prompt": "Create a complete-module as a reference example for the team"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a new notifications module",
+        "output": [
+          "Module 'notifications' created at frontend/src/modules/notifications",
+          "Structure: components/, hooks/, utils/ directories",
+          "Generated: INotificationData interface, NotificationsCard component",
+          "Barrel exports configured in components/index.ts",
+          "Run validation: scripts/validate-module.sh notifications"
+        ]
+      },
+      {
+        "input": "Add a NotificationSettings component to the notifications module",
+        "output": [
+          "Component 'NotificationSettings.tsx' created",
+          "Props interface: INotificationSettingsProps",
+          "Added to components/index.ts barrel export",
+          "Next: Edit component to implement settings UI"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Plan module scope before scaffolding using the brainstorming skill",
+      "Use descriptive module names that reflect business domain",
+      "Run validation after scaffolding to ensure quality compliance"
+    ],
+    "anti_patterns": [
+      "Scaffolding modules with non-standard names breaks validation",
+      "Skipping validation leads to inconsistent architecture",
+      "Modifying generated templates without understanding impact"
+    ],
+    "faq": [
+      {
+        "question": "What naming formats are required?",
+        "answer": "Module names use lowercase-with-hyphens. Component names use PascalCase. Interfaces use I prefix."
+      },
+      {
+        "question": "Where are modules created?",
+        "answer": "Modules are created at frontend/src/modules/<module-name> following the 6-folder architecture."
+      },
+      {
+        "question": "Can I customize the templates?",
+        "answer": "Yes, edit templates in templates/ directory to change generated code patterns."
+      },
+      {
+        "question": "What validation checks are performed?",
+        "answer": "Validation checks directory structure, file size limits, I-prefix interfaces, no 'any' types, and import patterns."
+      },
+      {
+        "question": "How do I delete a module?",
+        "answer": "This skill creates modules only. To remove, delete the module directory manually and update imports."
+      },
+      {
+        "question": "What tools does this skill use?",
+        "answer": "Uses Read, Write, Bash, and Glob tools for file operations and script execution."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "complete-module",
+          "type": "dir",
+          "path": "examples/complete-module",
+          "children": [
+            {
+              "name": "components",
+              "type": "dir",
+              "path": "examples/complete-module/components",
+              "children": [
+                {
+                  "name": "ExampleCard.tsx",
+                  "type": "file",
+                  "path": "examples/complete-module/components/ExampleCard.tsx",
+                  "lines": 58
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "examples/complete-module/components/index.ts",
+                  "lines": 3
+                }
+              ]
+            },
+            {
+              "name": "hooks",
+              "type": "dir",
+              "path": "examples/complete-module/hooks",
+              "children": [
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "examples/complete-module/hooks/index.ts",
+                  "lines": 3
+                },
+                {
+                  "name": "useExample.ts",
+                  "type": "file",
+                  "path": "examples/complete-module/hooks/useExample.ts",
+                  "lines": 69
+                }
+              ]
+            },
+            {
+              "name": "utils",
+              "type": "dir",
+              "path": "examples/complete-module/utils",
+              "children": [
+                {
+                  "name": "helpers.ts",
+                  "type": "file",
+                  "path": "examples/complete-module/utils/helpers.ts",
+                  "lines": 40
+                },
+                {
+                  "name": "index.ts",
+                  "type": "file",
+                  "path": "examples/complete-module/utils/index.ts",
+                  "lines": 3
+                }
+              ]
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "examples/complete-module/README.md",
+              "lines": 58
+            },
+            {
+              "name": "types.ts",
+              "type": "file",
+              "path": "examples/complete-module/types.ts",
+              "lines": 25
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "6-folder-architecture.md",
+          "type": "file",
+          "path": "references/6-folder-architecture.md",
+          "lines": 211
+        },
+        {
+          "name": "naming-conventions.md",
+          "type": "file",
+          "path": "references/naming-conventions.md",
+          "lines": 351
+        },
+        {
+          "name": "path-aliases.md",
+          "type": "file",
+          "path": "references/path-aliases.md",
+          "lines": 272
+        },
+        {
+          "name": "quality-checklist.md",
+          "type": "file",
+          "path": "references/quality-checklist.md",
+          "lines": 431
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "add-component.sh",
+          "type": "file",
+          "path": "scripts/add-component.sh",
+          "lines": 88
+        },
+        {
+          "name": "create-module.sh",
+          "type": "file",
+          "path": "scripts/create-module.sh",
+          "lines": 108
+        },
+        {
+          "name": "validate-module.sh",
+          "type": "file",
+          "path": "scripts/validate-module.sh",
+          "lines": 139
+        }
+      ]
+    },
+    {
+      "name": "templates",
+      "type": "dir",
+      "path": "templates",
+      "children": [
+        {
+          "name": "component.tsx.template",
+          "type": "file",
+          "path": "templates/component.tsx.template",
+          "lines": 29
+        },
+        {
+          "name": "hook.ts.template",
+          "type": "file",
+          "path": "templates/hook.ts.template",
+          "lines": 23
+        },
+        {
+          "name": "index.ts.template",
+          "type": "file",
+          "path": "templates/index.ts.template",
+          "lines": 5
+        },
+        {
+          "name": "types.ts.template",
+          "type": "file",
+          "path": "templates/types.ts.template",
+          "lines": 16
+        },
+        {
+          "name": "util.ts.template",
+          "type": "file",
+          "path": "templates/util.ts.template",
+          "lines": 13
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 142
+    }
+  ]
+}

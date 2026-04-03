@@ -1,0 +1,262 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T10:04:21.060Z",
+    "slug": "wshobson-security-requirement-extraction",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/security-scanning/skills/security-requirement-extraction",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "223b4d5c250609def80398bceda4f4f55043704d7a16c15efcbcb00905a42c61",
+    "tree_hash": "7803ae42cd7e6c2434f15b85e9c1c195a02c95109960d6cf4deb05f3b1555c06"
+  },
+  "skill": {
+    "name": "security-requirement-extraction",
+    "description": "Derive security requirements from threat models and business context. Use when translating threats into actionable requirements, creating security user stories, or building security test cases.",
+    "summary": "Derive security requirements from threat models and business context. Use when translating threats i...",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "threat-modeling",
+      "requirements",
+      "compliance",
+      "security-stories",
+      "test-cases"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing templates and guidance for security requirement extraction. Python code examples in SKILL.md are documentation templates only, not executable code. All 47 static findings are false positives: URLs are documentation links, backticks are markdown code blocks, and security terminology (C2, crypto, reconnaissance, SAM) appears in legitimate compliance and threat modeling context. No actual code execution, network calls, or credential access occurs.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 675,
+            "line_end": 675
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 676,
+            "line_end": 676
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 677,
+            "line_end": 677
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 429
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 429,
+            "line_end": 433
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 433,
+            "line_end": 543
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 543,
+            "line_end": 547
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 547,
+            "line_end": 655
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 853,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T10:04:21.060Z"
+  },
+  "content": {
+    "user_title": "Generate security requirements from threats",
+    "value_statement": "Security threats are hard to turn into clear requirements. This skill converts threats into testable requirements, user stories, and compliance mappings. Use it when translating threat models into actionable security controls.",
+    "seo_keywords": [
+      "security requirements",
+      "threat modeling",
+      "STRIDE",
+      "acceptance criteria",
+      "security user stories",
+      "compliance mapping",
+      "security test cases",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Extracts requirements from STRIDE threat inputs",
+      "Formats requirements as user stories with acceptance criteria",
+      "Generates test specifications from requirements",
+      "Builds threat to requirement traceability matrices",
+      "Maps requirements to compliance controls"
+    ],
+    "limitations": [
+      "Requires clear threat inputs and categories",
+      "Provides templates, not runnable tools or automation",
+      "Does not perform threat modeling itself",
+      "Compliance mapping is limited to included frameworks"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security analyst",
+        "title": "Threat to requirement mapping",
+        "description": "Convert STRIDE threat lists into prioritized security requirements with rationale."
+      },
+      {
+        "target_user": "Product manager",
+        "title": "Security user stories",
+        "description": "Produce user stories and acceptance criteria for security backlog planning."
+      },
+      {
+        "target_user": "Compliance lead",
+        "title": "Control traceability",
+        "description": "Map requirements to PCI DSS, HIPAA, GDPR, and OWASP controls."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic extraction",
+        "scenario": "Single threat input",
+        "prompt": "Convert this threat into security requirements with acceptance criteria and test cases: [threat details]."
+      },
+      {
+        "title": "STRIDE batch",
+        "scenario": "Multiple threats list",
+        "prompt": "Extract security requirements for these STRIDE threats and group by domain: [list of threats]."
+      },
+      {
+        "title": "User story focus",
+        "scenario": "Backlog creation",
+        "prompt": "Generate security user stories with priority and acceptance criteria for these threats: [threats]."
+      },
+      {
+        "title": "Compliance mapping",
+        "scenario": "Framework coverage",
+        "prompt": "Map these requirements to PCI DSS and OWASP controls, and note gaps: [requirements]."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create requirements from a spoofing threat targeting login",
+        "output": [
+          "SR-001: Authenticate users before access to login",
+          "Acceptance criteria: MFA for sensitive operations, authentication failures logged",
+          "Test cases: Unauthenticated access denied, invalid credentials rejected, tokens cannot be forged"
+        ]
+      },
+      {
+        "input": "Generate requirements for data tampering threats",
+        "output": [
+          "SR-005: Validate all input to data store",
+          "Acceptance criteria: Data integrity verified, modification attempts trigger alerts",
+          "Test cases: Invalid input rejected, tampered data detected and rejected"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide clear threat descriptions with impact and likelihood ratings",
+      "Trace each requirement to a specific threat identifier",
+      "Include measurable acceptance criteria and testable conditions"
+    ],
+    "anti_patterns": [
+      "Using generic requirements without testability",
+      "Omitting rationale or priority for requirements",
+      "Mapping to compliance without threat traceability"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Claude, Codex, and Claude Code?",
+        "answer": "Yes. It provides text templates and guidance usable in these platforms."
+      },
+      {
+        "question": "What are the limits of the generated requirements?",
+        "answer": "They depend on the quality of the input threats and categories provided."
+      },
+      {
+        "question": "Can I integrate this with my tooling?",
+        "answer": "Yes. Export the outputs into your backlog or test management system."
+      },
+      {
+        "question": "Does this skill access or store sensitive data?",
+        "answer": "No. It is static guidance with no code execution or data access."
+      },
+      {
+        "question": "What if outputs seem too generic?",
+        "answer": "Add more context such as assets, actors, and business impact details."
+      },
+      {
+        "question": "How does this compare to a threat modeling tool?",
+        "answer": "It translates threats into requirements but does not create the threat model itself."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 678
+    }
+  ]
+}

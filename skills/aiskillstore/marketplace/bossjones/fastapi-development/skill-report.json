@@ -1,0 +1,371 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:48:31.438Z",
+    "slug": "bossjones-fastapi-development",
+    "source_url": "https://github.com/bossjones/logging-lab/tree/main/.claude/skills/fastapi",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "eabc2024edbfed54a18160603aa4a7f978459cc32049cba1319a2a80d1cc900c",
+    "tree_hash": "8bca1c1c5f0f929d6f3dcd032caf4a48ff166865c5b3861eafada36be4b66487"
+  },
+  "skill": {
+    "name": "fastapi-development",
+    "description": "Build async APIs with FastAPI, including endpoints, dependency injection, validation, and testing. Use when creating REST APIs, web backends, or microservices.",
+    "summary": "Build async APIs with FastAPI, including endpoints, dependency injection, validation, and testing. U...",
+    "icon": "🚀",
+    "version": "1.0.0",
+    "author": "bossjones",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "fastapi",
+      "python",
+      "api",
+      "async"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 56 static findings are false positives. The analyzer misidentified markdown code fences (```) as Ruby backtick execution, Python syntax as cryptographic algorithms, and input validation logic as system reconnaissance. This skill contains only legitimate FastAPI documentation and code examples.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "evaluation.json",
+            "line_start": 18,
+            "line_end": 24
+          },
+          {
+            "file": "evaluation.json",
+            "line_start": 24,
+            "line_end": 42
+          },
+          {
+            "file": "evaluation.json",
+            "line_start": 42,
+            "line_end": 144
+          },
+          {
+            "file": "evaluation.json",
+            "line_start": 144,
+            "line_end": 150
+          },
+          {
+            "file": "evaluation.json",
+            "line_start": 150,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 159
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 762,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:48:31.437Z"
+  },
+  "content": {
+    "user_title": "Build async APIs with FastAPI",
+    "value_statement": "FastAPI is a modern Python web framework for building APIs with automatic validation and documentation. This skill provides ready-to-use code patterns for endpoints, dependency injection, and testing so you can create production-ready APIs faster.",
+    "seo_keywords": [
+      "fastapi",
+      "python api",
+      "claude code",
+      "fastapi development",
+      "async python",
+      "rest api",
+      "python web framework",
+      "fastapi tutorial",
+      "pydantic validation",
+      "claude"
+    ],
+    "actual_capabilities": [
+      "Create FastAPI endpoints with path, query, and body parameters",
+      "Implement dependency injection for database connections and shared logic",
+      "Define Pydantic models for automatic request and response validation",
+      "Handle errors with HTTPException and custom status codes",
+      "Write tests using FastAPI TestClient for endpoint verification",
+      "Generate OpenAPI documentation automatically at /docs endpoint"
+    ],
+    "limitations": [
+      "Does not cover database integration with SQLAlchemy or async ORM setup",
+      "Does not include authentication or authorization patterns",
+      "Does not address deployment to production servers or containers"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developers",
+        "title": "REST API development",
+        "description": "Build CRUD APIs with automatic validation, documentation, and async support for high-concurrency applications."
+      },
+      {
+        "target_user": "Data engineers",
+        "title": "Data service endpoints",
+        "description": "Create fast data access endpoints that return validated JSON responses from database queries."
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Microservices architecture",
+        "description": "Build lightweight, independent services that communicate via REST with clear contracts and documentation."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic endpoint",
+        "scenario": "Create a simple API endpoint",
+        "prompt": "Create a FastAPI endpoint at /hello that returns a JSON message with a name query parameter"
+      },
+      {
+        "title": "CRUD operations",
+        "scenario": "Build a resource API",
+        "prompt": "Create a FastAPI API for managing items with Create, Read, Update, and Delete endpoints using Pydantic models"
+      },
+      {
+        "title": "Database integration",
+        "scenario": "Add database dependency",
+        "prompt": "Add a database dependency to my FastAPI app using async context manager for connection cleanup"
+      },
+      {
+        "title": "Advanced validation",
+        "scenario": "Implement complex validation",
+        "prompt": "Create a FastAPI endpoint with path validation using Path(gt=0), query validation using Query(max_length=50), and response models"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a FastAPI endpoint for user registration with email and password fields",
+        "output": [
+          "Created UserCreate Pydantic model with email validation and password min_length",
+          "Added POST /users/register endpoint with automatic validation",
+          "Returns 201 status code on success with created user data",
+          "Added error handling for duplicate emails with HTTPException 400"
+        ]
+      },
+      {
+        "input": "Create a FastAPI app that returns product data from a database",
+        "output": [
+          "Set up async database dependency with connection cleanup",
+          "Created GET /products endpoint to list all products",
+          "Implemented GET /products/{id} with path validation",
+          "Added Pydantic response models for product data",
+          "Included TestClient tests for all endpoints"
+        ]
+      },
+      {
+        "input": "Build a FastAPI endpoint that validates query parameters",
+        "prompt": "Create a search endpoint with q parameter limited to 100 characters and skip/limit pagination",
+        "output": [
+          "Created GET /search endpoint with Query parameter validation",
+          "Added max_length=50 for q parameter",
+          "Implemented skip=0 and limit=100 default pagination",
+          "Returns validated and typed response data"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use async def for I/O-bound operations to handle concurrent requests efficiently",
+      "Define Pydantic models for all request and response data to enable automatic validation",
+      "Use response_model parameter to control exactly what data is returned to clients"
+    ],
+    "anti_patterns": [
+      "Do not use sync blocking calls in async endpoints without moving them to background tasks",
+      "Do not return sensitive fields like passwords in response models without explicit opt-out",
+      "Do not skip input validation by not defining Pydantic models for complex request bodies"
+    ],
+    "faq": [
+      {
+        "question": "How do I run my FastAPI application in development?",
+        "answer": "Use uvicorn with --reload flag: uvicorn main:app --reload. This auto-restarts on code changes."
+      },
+      {
+        "question": "What is the difference between Path and Query parameters?",
+        "answer": "Path parameters are part of the URL route like /items/{item_id}. Query parameters come after ? like ?skip=0."
+      },
+      {
+        "question": "How does FastAPI handle validation errors?",
+        "answer": "FastAPI automatically returns 422 Unprocessable Entity with error details when request data fails validation."
+      },
+      {
+        "question": "Can I use FastAPI without async?",
+        "answer": "Yes, define endpoints with regular def functions. Use async def for I/O operations like database queries."
+      },
+      {
+        "question": "How do I add custom exception handling?",
+        "answer": "Create exception handlers with @app.exception_handler(ExceptionType) decorator and register custom response logic."
+      },
+      {
+        "question": "Where is the automatic API documentation?",
+        "answer": "Access Swagger UI at /docs or ReDoc at /redoc when your FastAPI application is running."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "evaluation.json",
+      "type": "file",
+      "path": "evaluation.json",
+      "lines": 297
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 160
+    }
+  ]
+}

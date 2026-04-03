@@ -1,0 +1,300 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:02:33.540Z",
+    "slug": "wshobson-langchain-architecture",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/langchain-architecture",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "722d19eab2e2ccc25e099e25bacdbe51f22a617a2d9bee0d49dce4e9a051d5ce",
+    "tree_hash": "0848117791c3195b98f912869a27510c7d2a74f714eb20f43134bd9000180dbe"
+  },
+  "skill": {
+    "name": "langchain-architecture",
+    "description": "Design LLM applications using the LangChain framework with agents, memory, and tool integration patterns. Use when building LangChain applications, implementing AI agents, or creating complex LLM workflows.",
+    "summary": "Design LLM applications using the LangChain framework with agents, memory, and tool integration patt...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "langchain",
+      "agents",
+      "architecture",
+      "llm",
+      "ai"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing educational content about LangChain architecture patterns. All 44 static findings are false positives: SHA-256 hashes flagged as C2, LangChain class names flagged as weak crypto, and markdown code blocks flagged as shell execution. No executable code, network calls, file system access, or security risks present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 225
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 246
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 246,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 273
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 273,
+            "line_end": 278
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 278,
+            "line_end": 283
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 283,
+            "line_end": 286
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 286,
+            "line_end": 299
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 299,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 306
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 518,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:02:33.540Z"
+  },
+  "content": {
+    "user_title": "Master LangChain Architecture for AI Applications",
+    "value_statement": "Build sophisticated AI agents and workflows with LangChain. Learn to implement memory, tools, and chains for production-ready LLM applications that integrate with any data source.",
+    "seo_keywords": [
+      "langchain",
+      "ai agents",
+      "llm architecture",
+      "claude",
+      "codex",
+      "claude code",
+      "langchain tutorial",
+      "ai workflow",
+      "llm patterns",
+      "agent framework"
+    ],
+    "actual_capabilities": [
+      "Provides comprehensive LangChain architecture guidance",
+      "Explains agent types: ReAct, OpenAI Functions, Structured Chat",
+      "Details memory systems: Buffer, Summary, Window, Entity, VectorStore",
+      "Documents chain patterns: Sequential, Router, Transform, MapReduce",
+      "Includes production code examples and best practices"
+    ],
+    "limitations": [
+      "Documentation-only skill with no interactive features",
+      "Requires separate LangChain installation in your environment",
+      "Code examples need adaptation to your specific use case",
+      "Does not include real-time debugging or testing capabilities"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI developers",
+        "title": "Build AI Agents with Tool Integration",
+        "description": "Create autonomous agents that search databases, send emails, and perform complex tasks using LangChain's agent framework."
+      },
+      {
+        "target_user": "Software architects",
+        "title": "Design Production LLM Workflows",
+        "description": "Architect scalable LLM applications with proper memory management, error handling, and performance optimization."
+      },
+      {
+        "target_user": "Data engineers",
+        "title": "Implement RAG Document Processing",
+        "description": "Build retrieval-augmented generation systems for intelligent document search and question-answering."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Agent Setup",
+        "scenario": "Creating your first LangChain agent",
+        "prompt": "Help me create a simple LangChain agent with web search and calculator tools using OpenAI GPT-4. Include memory and verbose output."
+      },
+      {
+        "title": "RAG Implementation",
+        "scenario": "Building a document Q&A system",
+        "prompt": "Show me how to build a RAG system that loads PDF documents, creates embeddings, and answers questions using semantic search with Chroma vector store."
+      },
+      {
+        "title": "Multi-Step Chain",
+        "scenario": "Creating complex processing workflows",
+        "prompt": "Design a SequentialChain that extracts entities from text, analyzes sentiment, and generates a comprehensive report with the findings."
+      },
+      {
+        "title": "Production Agent",
+        "scenario": "Enterprise-ready implementation",
+        "prompt": "Create a production-grade LangChain agent with custom tools, proper error handling, callbacks for monitoring, and fallback strategies."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I create a LangChain agent that can search the web and do calculations?",
+        "output": [
+          "Set up OpenAI LLM with temperature=0 for consistent results",
+          "Load tools: serpapi for web search, llm-math for calculations",
+          "Initialize agent with CONVERSATIONAL_REACT_DESCRIPTION type",
+          "Add ConversationBufferMemory for chat history",
+          "Use verbose=True to see agent's reasoning process"
+        ]
+      },
+      {
+        "input": "What memory types should I use for long conversations?",
+        "output": [
+          "Use ConversationSummaryMemory to summarize older messages and save tokens",
+          "Consider ConversationBufferWindowMemory to keep only the last N messages",
+          "Try VectorStoreMemory for semantic retrieval of relevant history",
+          "EntityMemory helps track information about specific entities across the conversation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always implement proper error handling and timeout limits for agent execution",
+      "Monitor token usage with callbacks to control costs in production",
+      "Choose appropriate memory type based on conversation length and context needs"
+    ],
+    "anti_patterns": [
+      "Avoid using ConversationBufferMemory for long conversations without truncation",
+      "Don't create tools with vague descriptions that confuse agent selection",
+      "Never exceed context window limits without proper chunking strategies"
+    ],
+    "faq": [
+      {
+        "question": "Which LangChain version does this skill support?",
+        "answer": "The skill covers LangChain concepts applicable to both v0.1 and v0.2, with examples using the stable API patterns."
+      },
+      {
+        "question": "Can I use this with other LLMs besides OpenAI?",
+        "answer": "Yes, LangChain supports multiple LLM providers including Anthropic, Google, and open-source models via the same interface."
+      },
+      {
+        "question": "How do I handle memory overflow in long conversations?",
+        "answer": "Use ConversationSummaryMemory or ConversationBufferWindowMemory to manage history length and prevent context overflow."
+      },
+      {
+        "question": "Is this skill compatible with Claude Code?",
+        "answer": "Yes, the skill works with Claude Code and can help you implement LangChain patterns in your projects."
+      },
+      {
+        "question": "What is the difference between ReAct and OpenAI Functions agents?",
+        "answer": "ReAct uses text-based reasoning while OpenAI Functions leverages native function calling for more reliable tool selection."
+      },
+      {
+        "question": "How do I debug agent tool selection issues?",
+        "answer": "Enable verbose mode and use custom callbacks to log agent decisions, then improve tool descriptions based on failures."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 339
+    }
+  ]
+}

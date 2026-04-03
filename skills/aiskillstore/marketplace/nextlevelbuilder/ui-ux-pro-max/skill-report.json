@@ -1,0 +1,328 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:05:24.588Z",
+    "slug": "nextlevelbuilder-ui-ux-pro-max",
+    "source_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/tree/main/.claude/skills/ui-ux-pro-max/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e5f8cd42abeb15f2df0926cbd96555c726628e1028e89bb9456d71987e74dbdf",
+    "tree_hash": "9a4a2a2dabcaac769ef74b280b658ec750232100378560d2d6d6afa7a781db08"
+  },
+  "skill": {
+    "name": "ui-ux-pro-max",
+    "description": "UI/UX design intelligence. 50 styles, 21 palettes, 50 font pairings, 20 charts, 8 stacks (React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, Tailwind). Actions: plan, build, create, design, implement, review, fix, improve, optimize, enhance, refactor, check UI/UX code. Projects: website, landing page, dashboard, admin panel, e-commerce, SaaS, portfolio, blog, mobile app, .html, .tsx, .vue, .svelte. Elements: button, modal, navbar, sidebar, card, table, form, chart. Styles: glassmorphism, claymorphism, minimalism, brutalism, neumorphism, bento grid, dark mode, responsive, skeuomorphism, flat design. Topics: color palette, accessibility, animation, layout, typography, font pairing, spacing, hover, shadow, gradient.",
+    "summary": "UI/UX design intelligence with 50 styles, color palettes, font pairings, and framework-specific guidelines.",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "nextlevelbuilder",
+    "license": "MIT",
+    "tags": [
+      "ui-design",
+      "ux-design",
+      "frontend",
+      "design-systems",
+      "component-library"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 910 static findings are false positives. The scanner incorrectly flagged hexadecimal color codes (#2563EB) as weak cryptographic algorithms, documentation URLs as hardcoded URLs, and legitimate UI/UX terms like 'debounce' as keylogger keywords. The skill contains only design data (styles, palettes, typography, frameworks) and has no network calls, file system access, or credential handling.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 22,
+    "total_lines": 9051,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:05:24.588Z"
+  },
+  "content": {
+    "user_title": "Create professional UI/UX designs",
+    "value_statement": "Building user interfaces requires finding the right style, colors, and layout patterns. This skill provides a comprehensive database of 50 design styles, 21 color palettes, 50 font pairings, and framework-specific guidelines to create professional interfaces.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "UI design",
+      "UX design",
+      "design system",
+      "color palette",
+      "font pairing",
+      "component library",
+      "frontend design"
+    ],
+    "actual_capabilities": [
+      "Generate UI designs with 50+ design styles including glassmorphism, brutalism, neumorphism, and bento grids",
+      "Create color palettes with hex codes for primary, secondary, CTA, background, text, and border colors",
+      "Provide font pairings from Google Fonts with heading and body font combinations",
+      "Deliver framework-specific guidelines for React, Next.js, Vue, Svelte, SwiftUI, React Native, Flutter, and Tailwind CSS"
+    ],
+    "limitations": [
+      "Does not generate complete application code or implementation files",
+      "Does not create custom graphics, icons, or image assets",
+      "Does not perform accessibility audits on existing code",
+      "Does not integrate with design tools like Figma or Sketch"
+    ],
+    "use_cases": [
+      {
+        "title": "Frontend Development Design Guidelines",
+        "audience": "Frontend Developers",
+        "description": "Get design recommendations and framework-specific guidelines when building user interfaces for web or mobile applications"
+      },
+      {
+        "title": "Design Inspiration for Product Interfaces",
+        "audience": "Product Designers",
+        "description": "Explore design styles, color palettes, and typography pairings to find inspiration for new product interfaces"
+      },
+      {
+        "title": "Design System Documentation",
+        "audience": "Technical Writers",
+        "description": "Find appropriate UI patterns and component structures when documenting design systems and component libraries"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Landing Page Design",
+        "prompt": "Create a [style] style landing page for a [product_type] using [framework]",
+        "complexity": "beginner",
+        "description": "Simple request for a landing page with specific style and framework"
+      },
+      {
+        "title": "Dashboard Design with Specifications",
+        "prompt": "Design a [product_type] dashboard with [color_scheme] colors, [font_pairing] fonts, and [chart_type] charts using [framework]",
+        "complexity": "intermediate",
+        "description": "Detailed dashboard request with color palette, typography, and chart specifications"
+      },
+      {
+        "title": "Comprehensive Hybrid Design",
+        "prompt": "Create a [product_type] with [style1] and [style2] hybrid styling, including color palette with [primary_color] as primary, [secondary_color] as secondary, typography pairing [heading_font] and [body_font], accessibility-compliant [component] components, and framework guidelines for [framework]",
+        "complexity": "advanced",
+        "description": "Comprehensive design request with multiple style blending and detailed specifications"
+      },
+      {
+        "title": "Full Application Interface Design",
+        "prompt": "Build a complete [product_type] application interface including: 1) Landing page with [style1] style and brand colors, 2) Dashboard with [chart_type] visualizations and [color_scheme] theme, 3) Mobile-responsive [component] components using [framework] best practices, 4) Typography system with [font_pairing], 5) Accessibility features following WCAG guidelines. Include framework-specific code patterns, component hierarchy, and state management approach.",
+        "complexity": "expert",
+        "description": "Full application interface design with multiple views, components, and implementation guidance"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a glassmorphism style landing page for a SaaS product using React and Tailwind CSS",
+        "output": "Landing page structure with hero section, features, and CTA using Tailwind CSS with glassmorphism style",
+        "description": "Landing page structure with hero section, features, and CTA using Tailwind CSS with glassmorphism style",
+        "format": "Text description"
+      },
+      {
+        "input": "Generate a color palette for a SaaS application with professional tones",
+        "output": "Color palette with primary blue (#2563EB), secondary teal (#14B8A6), coral CTA (#F97316), and neutral grays for a SaaS application",
+        "description": "Color palette with primary blue, secondary teal, coral CTA, and neutral grays for a SaaS application",
+        "format": "Color codes"
+      },
+      {
+        "input": "Recommend font pairing for a modern web application",
+        "output": "Font pairing using Inter for headings (700 weight) and Open Sans for body text (400 weight) with 16px base size",
+        "description": "Font pairing using Inter for headings and Open Sans for body text with 16px base size",
+        "format": "Font specifications"
+      }
+    ],
+    "best_practices": [
+      "Start by identifying the product type and industry to narrow down appropriate design styles from the database",
+      "Use the framework-specific guidelines to ensure code patterns match your chosen technology stack",
+      "Consider accessibility requirements by selecting color combinations that meet WCAG contrast ratios"
+    ],
+    "anti_patterns": [
+      "Avoid mixing more than two conflicting design styles without a clear visual hierarchy",
+      "Do not use decorative fonts for body text as they reduce readability",
+      "Avoid ignoring framework-specific conventions as they help maintain code consistency"
+    ],
+    "faq": [
+      {
+        "question": "How do I choose the right design style for my project?",
+        "answer": "Start by identifying your product type, target audience, and industry. Each design style in the database includes recommendations for appropriate use cases and examples of products that use that style."
+      },
+      {
+        "question": "Can I use this skill for mobile app design?",
+        "answer": "Yes, the skill includes guidelines for React Native, Flutter, and SwiftUI frameworks with mobile-specific component recommendations and responsive design patterns."
+      },
+      {
+        "question": "How does this skill help with accessibility?",
+        "answer": "Design styles include accessibility ratings and color palettes provide contrast ratio information. Framework guidelines include ARIA attribute recommendations and semantic HTML patterns."
+      },
+      {
+        "question": "What output formats does this skill provide?",
+        "answer": "The skill provides design specifications including color codes, font names, CSS patterns, and framework-specific code examples. It does not generate complete files or project structures."
+      },
+      {
+        "question": "How are the design styles categorized?",
+        "answer": "Styles are categorized by era, complexity, and primary use case including general styles, landing page styles, and BI/analytics dashboard styles."
+      },
+      {
+        "question": "Does this skill work with design systems?",
+        "answer": "Yes, the skill provides component guidelines, typography systems, color tokens, and framework-specific patterns that align with design system architecture."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "data",
+      "type": "dir",
+      "path": "data",
+      "children": [
+        {
+          "name": "stacks",
+          "type": "dir",
+          "path": "data/stacks",
+          "children": [
+            {
+              "name": "flutter.csv",
+              "type": "file",
+              "path": "data/stacks/flutter.csv",
+              "lines": 54
+            },
+            {
+              "name": "html-tailwind.csv",
+              "type": "file",
+              "path": "data/stacks/html-tailwind.csv",
+              "lines": 57
+            },
+            {
+              "name": "nextjs.csv",
+              "type": "file",
+              "path": "data/stacks/nextjs.csv",
+              "lines": 54
+            },
+            {
+              "name": "nuxt-ui.csv",
+              "type": "file",
+              "path": "data/stacks/nuxt-ui.csv",
+              "lines": 52
+            },
+            {
+              "name": "nuxtjs.csv",
+              "type": "file",
+              "path": "data/stacks/nuxtjs.csv",
+              "lines": 60
+            },
+            {
+              "name": "react-native.csv",
+              "type": "file",
+              "path": "data/stacks/react-native.csv",
+              "lines": 53
+            },
+            {
+              "name": "react.csv",
+              "type": "file",
+              "path": "data/stacks/react.csv",
+              "lines": 55
+            },
+            {
+              "name": "svelte.csv",
+              "type": "file",
+              "path": "data/stacks/svelte.csv",
+              "lines": 55
+            },
+            {
+              "name": "swiftui.csv",
+              "type": "file",
+              "path": "data/stacks/swiftui.csv",
+              "lines": 52
+            },
+            {
+              "name": "vue.csv",
+              "type": "file",
+              "path": "data/stacks/vue.csv",
+              "lines": 51
+            }
+          ]
+        },
+        {
+          "name": "charts.csv",
+          "type": "file",
+          "path": "data/charts.csv",
+          "lines": 26
+        },
+        {
+          "name": "colors.csv",
+          "type": "file",
+          "path": "data/colors.csv",
+          "lines": 97
+        },
+        {
+          "name": "landing.csv",
+          "type": "file",
+          "path": "data/landing.csv",
+          "lines": 31
+        },
+        {
+          "name": "products.csv",
+          "type": "file",
+          "path": "data/products.csv",
+          "lines": 97
+        },
+        {
+          "name": "prompts.csv",
+          "type": "file",
+          "path": "data/prompts.csv",
+          "lines": 25
+        },
+        {
+          "name": "styles.csv",
+          "type": "file",
+          "path": "data/styles.csv",
+          "lines": 59
+        },
+        {
+          "name": "typography.csv",
+          "type": "file",
+          "path": "data/typography.csv",
+          "lines": 58
+        },
+        {
+          "name": "ux-guidelines.csv",
+          "type": "file",
+          "path": "data/ux-guidelines.csv",
+          "lines": 100
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "core.py",
+          "type": "file",
+          "path": "scripts/core.py",
+          "lines": 239
+        },
+        {
+          "name": "search.py",
+          "type": "file",
+          "path": "scripts/search.py",
+          "lines": 62
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 229
+    }
+  ]
+}

@@ -1,0 +1,351 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:22:35.223Z",
+    "slug": "cam10001110101-pdf",
+    "source_url": "https://github.com/Cam10001110101/claude-skills-base/tree/main/mnt/skills/public/pdf",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f69ec4912f832a97b7fe939686702babb45e73f02befd7e02bf369a0c31d8692",
+    "tree_hash": "8b0540b2f36530eef1f46844fcf9280f9cc998ecf7f62690870f22c39b509f76"
+  },
+  "skill": {
+    "name": "pdf",
+    "description": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/splitting documents, and handling forms. When Claude needs to fill in a PDF form or programmatically process, generate, or analyze PDF documents at scale.",
+    "summary": "Comprehensive PDF manipulation toolkit for extracting text and tables, creating new PDFs, merging/sp...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "Cam10001110101",
+    "license": "Proprietary. LICENSE.txt has complete terms",
+    "category": "data",
+    "tags": [
+      "pdf",
+      "document-processing",
+      "text-extraction",
+      "forms",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate PDF processing toolkit with standard Python libraries. All static findings are false positives. External command detections are documentation examples, not executed code. Weak crypto flags are from documentation examples about PDF password features, not actual crypto usage. Scripts perform documented PDF operations safely.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/check_bounding_boxes.py",
+            "line_start": 1,
+            "line_end": 71
+          },
+          {
+            "file": "scripts/fill_fillable_fields.py",
+            "line_start": 1,
+            "line_end": 115
+          },
+          {
+            "file": "scripts/fill_pdf_form_with_annotations.py",
+            "line_start": 1,
+            "line_end": 107
+          },
+          {
+            "file": "scripts/convert_pdf_to_images.py",
+            "line_start": 1,
+            "line_end": 36
+          },
+          {
+            "file": "scripts/extract_form_field_info.py",
+            "line_start": 1,
+            "line_end": 153
+          },
+          {
+            "file": "scripts/check_fillable_fields.py",
+            "line_start": 1,
+            "line_end": 13
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/fill_fillable_fields.py",
+            "line_start": 12,
+            "line_end": 14
+          },
+          {
+            "file": "scripts/fill_pdf_form_with_annotations.py",
+            "line_start": 32,
+            "line_end": 33
+          },
+          {
+            "file": "scripts/convert_pdf_to_images.py",
+            "line_start": 22,
+            "line_end": 24
+          },
+          {
+            "file": "scripts/extract_form_field_info.py",
+            "line_start": 141,
+            "line_end": 144
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 209
+          },
+          {
+            "file": "REFERENCE.md",
+            "line_start": 265,
+            "line_end": 341
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 2226,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:22:35.223Z"
+  },
+  "content": {
+    "user_title": "Extract text and tables from PDFs",
+    "value_statement": "Processing PDF documents manually takes too much time. This toolkit provides comprehensive PDF operations including text extraction, table detection, form filling, and document creation using Python and command-line tools.",
+    "seo_keywords": [
+      "PDF processing",
+      "Claude PDF",
+      "extract text from PDF",
+      "PDF form filling",
+      "merge PDF files",
+      "table extraction",
+      "pdfplumber",
+      "pypdf",
+      "document automation",
+      "claude-code"
+    ],
+    "actual_capabilities": [
+      "Extract text and tables from PDF documents using pdfplumber",
+      "Merge multiple PDFs or split documents into individual pages",
+      "Fill PDF forms programmatically with fillable fields or annotations",
+      "Convert PDF pages to images for visual analysis",
+      "Create new PDFs with text, tables, and styling using reportlab",
+      "Extract metadata, rotate pages, add watermarks, and password-protect documents"
+    ],
+    "limitations": [
+      "Scanned PDFs require OCR tools like pytesseract for text extraction",
+      "Complex forms without fillable fields require visual bounding box analysis",
+      "Some PDF viewers may not display annotations consistently",
+      "Large PDFs may require chunked processing for memory efficiency"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data analysts",
+        "title": "Extract table data",
+        "description": "Pull structured tables from reports and financial documents into spreadsheets or databases"
+      },
+      {
+        "target_user": "Administrative staff",
+        "title": "Automate form filling",
+        "description": "Fill out standardized PDF forms with consistent data across many documents"
+      },
+      {
+        "target_user": "Developers",
+        "title": "Build PDF workflows",
+        "description": "Create document processing pipelines that merge, split, and transform PDFs programmatically"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic text extraction",
+        "scenario": "Get text from a PDF file",
+        "prompt": "Extract all text from example.pdf and save it to example.txt"
+      },
+      {
+        "title": "Table extraction",
+        "scenario": "Pull tables into spreadsheet",
+        "prompt": "Extract all tables from report.pdf and save them to an Excel file with one sheet per table"
+      },
+      {
+        "title": "Merge documents",
+        "scenario": "Combine multiple PDFs",
+        "prompt": "Merge chapter1.pdf, chapter2.pdf, and chapter3.pdf into a single document called book.pdf"
+      },
+      {
+        "title": "Fill PDF forms",
+        "scenario": "Complete form fields",
+        "prompt": "Fill the fields in application.pdf using the data from form_values.json and save the result as completed.pdf"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Extract all text from quarterly_report.pdf",
+        "output": [
+          "Successfully extracted text from quarterly_report.pdf",
+          "Document has 24 pages",
+          "Output saved to quarterly_report.txt"
+        ]
+      },
+      {
+        "input": "Extract tables from financial_report.pdf to Excel",
+        "output": [
+          "Found 5 tables in the document",
+          "Table 1: Revenue by Region",
+          "Table 2: Quarterly Expenses",
+          "Exported to financial_report_tables.xlsx with 5 sheets"
+        ]
+      },
+      {
+        "input": "Merge all chapter PDFs into one book",
+        "output": [
+          "Successfully merged 12 PDF files",
+          "Output: book.pdf (156 pages)",
+          "All chapters in correct order"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use pdfplumber for text with coordinates when you need to preserve layout information",
+      "Validate form field coordinates using the bounding box checker before filling",
+      "Process large PDFs in chunks to manage memory usage effectively"
+    ],
+    "anti_patterns": [
+      "Do not use OCR for digitally-created PDFs when text extraction is available",
+      "Do not skip validation of bounding boxes when filling non-fillable forms",
+      "Do not attempt to fill encrypted PDFs without the correct password"
+    ],
+    "faq": [
+      {
+        "question": "Which library should I use for text extraction?",
+        "answer": "Use pdfplumber for text with layout preservation and table extraction. Use pypdf for basic operations like merging and splitting."
+      },
+      {
+        "question": "How do I handle scanned PDFs without text?",
+        "answer": "Convert the PDF to images using pdf2image, then use pytesseract for OCR-based text extraction."
+      },
+      {
+        "question": "Can I use this with JavaScript or Node.js?",
+        "answer": "Yes, use pdf-lib for browser and Node.js environments. See REFERENCE.md for examples."
+      },
+      {
+        "question": "Is my data safe when processing PDFs?",
+        "answer": "All processing happens locally. No data is sent to external servers. PDFs are only read from and written to paths you specify."
+      },
+      {
+        "question": "Why are my form annotations not visible?",
+        "answer": "Some PDF viewers do not display FreeText annotations consistently. Try opening the output in a different viewer like Adobe Acrobat."
+      },
+      {
+        "question": "How is this different from pdf-lib?",
+        "answer": "This toolkit focuses on Python-based processing with pypdf and pdfplumber. pdf-lib is a JavaScript library for browser and Node.js use."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "check_bounding_boxes_test.py",
+          "type": "file",
+          "path": "scripts/check_bounding_boxes_test.py",
+          "lines": 227
+        },
+        {
+          "name": "check_bounding_boxes.py",
+          "type": "file",
+          "path": "scripts/check_bounding_boxes.py",
+          "lines": 71
+        },
+        {
+          "name": "check_fillable_fields.py",
+          "type": "file",
+          "path": "scripts/check_fillable_fields.py",
+          "lines": 13
+        },
+        {
+          "name": "convert_pdf_to_images.py",
+          "type": "file",
+          "path": "scripts/convert_pdf_to_images.py",
+          "lines": 36
+        },
+        {
+          "name": "create_validation_image.py",
+          "type": "file",
+          "path": "scripts/create_validation_image.py",
+          "lines": 42
+        },
+        {
+          "name": "extract_form_field_info.py",
+          "type": "file",
+          "path": "scripts/extract_form_field_info.py",
+          "lines": 153
+        },
+        {
+          "name": "fill_fillable_fields.py",
+          "type": "file",
+          "path": "scripts/fill_fillable_fields.py",
+          "lines": 115
+        },
+        {
+          "name": "fill_pdf_form_with_annotations.py",
+          "type": "file",
+          "path": "scripts/fill_pdf_form_with_annotations.py",
+          "lines": 108
+        }
+      ]
+    },
+    {
+      "name": "FORMS.md",
+      "type": "file",
+      "path": "FORMS.md",
+      "lines": 206
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 31
+    },
+    {
+      "name": "REFERENCE.md",
+      "type": "file",
+      "path": "REFERENCE.md",
+      "lines": 612
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 295
+    }
+  ]
+}

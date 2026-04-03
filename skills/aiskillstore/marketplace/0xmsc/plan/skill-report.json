@@ -1,0 +1,282 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:37:35.534Z",
+    "slug": "0xmsc-plan",
+    "source_url": "https://github.com/0xmsc/coding_assistant/tree/master/src/coding_assistant/skills/plan",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1916911764943fb3eea72dd3d688659754a40f5bd27915e492ad1263b6ec567c",
+    "tree_hash": "e2f9dde09dccbc35ec0ec6dcae120a491bc62acecc1d3f80037b73a2e23739cf"
+  },
+  "skill": {
+    "name": "plan",
+    "description": "Guidelines for iteratively planning tasks and changes before implementation. Use this when the user requests a non-trivial task or when you need to align on a complex implementation strategy.",
+    "summary": "Guidelines for iteratively planning tasks and changes before implementation. Use this when the user ...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "0xmsc",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "planning",
+      "workflow",
+      "task-management",
+      "best-practices"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure markdown documentation skill containing only behavioral guidelines. No executable code, network calls, filesystem access, or external command execution. The static scanner flagged false positives: backtick references were markdown tool names, 'DES' was 'Design Up Front', and metadata URLs were configuration. All 21 findings are FALSE_POSITIVEs.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/principles.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "references/principles.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "references/principles.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "references/principles.md",
+            "line_start": 26,
+            "line_end": 26
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 243,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:37:35.534Z"
+  },
+  "content": {
+    "user_title": "Plan complex tasks before implementation",
+    "value_statement": "Complex AI tasks often fail due to unclear scope or missing requirements. This skill provides a structured workflow for gathering requirements, drafting implementation plans, and getting user approval before writing any code.",
+    "seo_keywords": [
+      "Claude planning",
+      "task breakdown",
+      "implementation strategy",
+      "AI coding workflow",
+      "software planning",
+      "code planning",
+      "project planning",
+      "task management",
+      "Claude Code",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Guide AI to explore codebase before planning",
+      "Structure plans with objective, approach, steps, and verification",
+      "Generate clarifying questions with proposed answers",
+      "Wait for user approval before implementation",
+      "Track progress using TODO lists",
+      "Apply iterative planning principles"
+    ],
+    "limitations": [
+      "Does not execute planning steps automatically",
+      "Does not integrate with project management tools",
+      "Does not generate code or modify files",
+      "Relies on user to provide approval"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Feature Implementation Planning",
+        "description": "Plan new features with clear scope, dependencies, and verification steps before coding begins."
+      },
+      {
+        "target_user": "AI Engineers",
+        "title": "Complex Task Decomposition",
+        "description": "Break down large AI tasks into manageable milestones with iterative feedback loops."
+      },
+      {
+        "target_user": "Technical Leads",
+        "title": "Architecture Review Workflow",
+        "description": "Establish consistent planning process for team code changes and architectural decisions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Planning Request",
+        "scenario": "Start planning a coding task",
+        "prompt": "Plan the implementation of [describe your task]. Follow the planning workflow: gather information, draft a plan with objective, approach, steps, and verification, then ask clarifying questions."
+      },
+      {
+        "title": "Refine Existing Plan",
+        "scenario": "Iterate on a previous plan",
+        "prompt": "Refine the previous plan based on this feedback: [describe changes]. Update the plan and wait for my approval before proceeding."
+      },
+      {
+        "title": "Risk-Aware Planning",
+        "scenario": "Plan high-risk changes",
+        "prompt": "Plan a [describe dangerous operation like bulk refactoring or database migration]. Identify the most risky parts and propose safe verification steps for each."
+      },
+      {
+        "title": "Exploration-First Planning",
+        "scenario": "Understand codebase first",
+        "prompt": "Explore the codebase to understand [specific area]. List dependencies and existing patterns, then draft a plan that aligns with the codebase conventions."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Plan a user authentication system for our React app",
+        "output": [
+          "## Plan: User Authentication System",
+          "",
+          "**Objective**: Add secure login/logout with JWT tokens",
+          "",
+          "**Approach**: Implement auth with protected routes",
+          "",
+          "**Steps**: 1) Install dependencies 2) Create auth context 3) Build login form 4) Add API endpoints 5) Implement protected routes",
+          "",
+          "**Verification**: Test login flow, verify protected routes work, confirm token refresh",
+          "",
+          "**Clarifying Questions**:",
+          "1. Which auth provider? [Proposed: Auth0]",
+          "2. Session duration? [Proposed: 24 hours]",
+          "3. Need social login? [Proposed: Google only]",
+          "",
+          "Awaiting your approval to proceed..."
+        ]
+      },
+      {
+        "input": "Plan database migration from PostgreSQL 14 to 16",
+        "output": [
+          "## Plan: PostgreSQL 14 to 16 Migration",
+          "",
+          "**Objective**: Upgrade database version with zero downtime",
+          "",
+          "**Approach**: Use replication for controlled switchover",
+          "",
+          "**Steps**: 1) Backup all databases 2) Set up replica with PostgreSQL 16 3) Sync data 4) Test reads on replica 5) Switchover during maintenance window",
+          "",
+          "**Verification**: Run pg_upgrade --check, verify all extensions compatible, test application on new version",
+          "",
+          "**Clarifying Questions**:",
+          "1. Downtime window available? [Proposed: 2 hours]",
+          "2. Extensions in use? [Proposed: pg_trgm, uuid-ossp]",
+          "3. Rollback plan if issues? [Proposed: Point-in-time recovery from pre-migration backup]",
+          "",
+          "Awaiting your approval to proceed..."
+        ]
+      },
+      {
+        "input": "Plan refactoring our API error handling",
+        "output": [
+          "## Plan: API Error Handling Refactor",
+          "",
+          "**Objective**: Centralize error handling with consistent format and logging",
+          "",
+          "**Approach**: Create middleware for centralized error processing",
+          "",
+          "**Steps**: 1) Audit existing error patterns 2) Design unified error response format 3) Create error classes 4) Implement middleware 5) Update all endpoints",
+          "",
+          "**Verification**: Run full test suite, verify error responses match spec, check logs for proper error context",
+          "",
+          "**Clarifying Questions**:",
+          "1. Error response format? [Proposed: {code, message, details, timestamp}]",
+          "2. Include stack traces? [Proposed: Only in development]",
+          "3. Existing patterns to preserve? [Proposed: HTTP status codes, current error messages]",
+          "",
+          "Awaiting your approval to proceed..."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always explore the codebase before planning to understand existing patterns",
+      "Include at least three clarifying questions with proposed answers",
+      "Wait for explicit user approval before starting implementation"
+    ],
+    "anti_patterns": [
+      "Starting implementation without user approval or clarification",
+      "Creating overly detailed plans for massive tasks",
+      "Skipping risk identification for dangerous operations"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. It provides planning guidelines for any LLM coding assistant."
+      },
+      {
+        "question": "How detailed should the plan be?",
+        "answer": "Keep plans concise and actionable. Focus on the immediate milestone rather than planning every detail upfront."
+      },
+      {
+        "question": "Can I integrate with Jira or other tools?",
+        "answer": "This skill does not integrate with external tools. It provides verbal planning workflow between you and the AI."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "This skill only contains documentation guidelines. It does not access files, network, or send data anywhere."
+      },
+      {
+        "question": "What if the plan needs changes during implementation?",
+        "answer": "Stop implementation, explain the deviation, and ask for approval on the updated plan before continuing."
+      },
+      {
+        "question": "How is this different from other planning approaches?",
+        "answer": "This skill enforces an iterative approach with explicit approval checkpoints rather than upfront comprehensive planning."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "principles.md",
+          "type": "file",
+          "path": "references/principles.md",
+          "lines": 30
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 26
+    }
+  ]
+}

@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:50:30.755Z",
+    "slug": "claudecode-npc-finding-shelter",
+    "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star/tree/master/.claude/skills/shelter-finding",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f431a80039e30cb1ac91199c7a9966c19b6ba24d332213088dba2c59fa6bf7fa",
+    "tree_hash": "643b7597dfce9ea216d13056d299cbd7a1bb2971d4ba80eea3b2e13fc1217c43"
+  },
+  "skill": {
+    "name": "finding-shelter",
+    "description": "寻找庇护所 - 帮助Stella在盖亚星球度过第一个夜晚,寻找或建造安全的临时住所",
+    "summary": "寻找庇护所 - 帮助Stella在盖亚星球度过第一个夜晚,寻找或建造安全的临时住所",
+    "icon": "🏕️",
+    "version": "1.0.0",
+    "author": "ClaudeCode-NPC",
+    "license": "MIT",
+    "category": "communication",
+    "tags": [
+      "storytelling",
+      "interactive-fiction",
+      "roleplay",
+      "adventure",
+      "survival"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure narrative/storytelling skill containing only markdown documentation for interactive fiction. No executable code exists. The static analyzer misinterpreted narrative elements as security concerns: the content hash is standard metadata, backticks represent fictional device displays in the story, and technical terminology is roleplay flavor text. No network, filesystem, or cryptographic operations are present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 301
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 301,
+            "line_end": 308
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 424
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 436
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 436,
+            "line_end": 439
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 439,
+            "line_end": 448
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 448,
+            "line_end": 451
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 451,
+            "line_end": 462
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 643,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:50:30.755Z"
+  },
+  "content": {
+    "user_title": "Guide astronaut through first night survival",
+    "value_statement": "Help Stella find safe shelter on an alien planet before nightfall. Experience emotional storytelling while making critical survival decisions together. Navigate three unique shelter options and build a meaningful connection through shared challenges.",
+    "seo_keywords": [
+      "interactive fiction",
+      "Claude storytelling",
+      "text adventure",
+      "roleplay game",
+      "survival game",
+      "AI companion",
+      "Claude Code skills",
+      "narrative experience",
+      "space adventure",
+      "character roleplay"
+    ],
+    "actual_capabilities": [
+      "Interactive narrative with branching story paths based on shelter choices",
+      "Character development through dialogue decisions and emotional support",
+      "Survival scenario decision-making with three unique outcomes",
+      "Atmospheric storytelling describing alien planet environments",
+      "Multi-stage story progression from exploration to emotional bonding",
+      "Roleplay as Stella making survival choices on an alien world"
+    ],
+    "limitations": [
+      "Text-based interaction only with no visual elements",
+      "Single chapter experience lasting approximately 20-30 minutes",
+      "No persistent state between separate conversation sessions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Story game enthusiasts",
+        "title": "Experience immersive space survival",
+        "description": "Play through a gripping survival scenario as the only human contact for a stranded astronaut on an alien world."
+      },
+      {
+        "target_user": "Roleplay fans",
+        "title": "Build emotional connection with AI character",
+        "description": "Develop a meaningful relationship with Stella through life-or-death decisions and intimate late-night conversations."
+      },
+      {
+        "target_user": "Casual gamers seeking narrative",
+        "title": "Enjoy quick interactive fiction",
+        "description": "Experience a complete story chapter in 20-30 minutes with meaningful choices that affect the narrative outcome."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Choose shelter location",
+        "scenario": "Stella found three shelter options",
+        "prompt": "Stella discovered a cave with life signs, a giant living tree, and materials to build her own shelter. Which option should she choose and why?"
+      },
+      {
+        "title": "Provide emotional support",
+        "scenario": "Stella feels vulnerable at night",
+        "prompt": "Stella is having trouble sleeping and opens up about her fears. How should I respond to comfort her?"
+      },
+      {
+        "title": "Make survival decisions",
+        "scenario": "Unexpected danger approaches",
+        "prompt": "A large creature is approaching Stella's shelter at night. Should she hide, stay still, or try to scare it away?"
+      },
+      {
+        "title": "Explore scientific mysteries",
+        "scenario": "Discover alien phenomena",
+        "prompt": "Stella found glowing crystals and breathing trees. What scientific explanations might exist for these phenomena?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Which shelter should Stella choose - the cave, the tree, or build her own?",
+        "output": [
+          "Cave option reveals glowing crystals and friendly alien creatures inside",
+          "Tree shelter shows a massive breathing organism with natural moss bedding",
+          "Self-built shelter demonstrates survival skills with thermal blankets and tarp"
+        ]
+      },
+      {
+        "input": "Stella is scared and cannot sleep. What do you say?",
+        "output": [
+          "She shares childhood memories of watching stars with her father",
+          "She talks about her journey from Tsinghua to MIT to becoming an astronaut",
+          "She expresses gratitude for your presence during this difficult time"
+        ]
+      },
+      {
+        "input": "Something large is approaching Stella's shelter at night. What should she do?",
+        "output": [
+          "A three-meter tall creature with four legs sniffs around the shelter",
+          "Stella must decide whether to hide, stay still, or make noise",
+          "The creature passes by without interest, teaching her about local fauna"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Take time to explore all shelter options before deciding - each offers unique story content",
+      "Engage with Stella's emotional moments to build deeper connection and unlock more story",
+      "Consider both practical survival needs and potential discoveries when making choices"
+    ],
+    "anti_patterns": [
+      "Rushing through decisions without exploring consequences reduces story quality",
+      "Ignoring Stella's emotional needs misses character development opportunities",
+      "Treating this as game mechanics rather than roleplay diminishes narrative depth"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Claude Code?",
+        "answer": "Yes, this skill works with Claude Code and standard Claude chat interfaces."
+      },
+      {
+        "question": "How long does one chapter take?",
+        "answer": "Each chapter lasts 20-30 minutes depending on conversation pace and exploration depth."
+      },
+      {
+        "question": "Can I save progress between chapters?",
+        "answer": "Progress is maintained within the conversation. Start new chapters from the main skill menu."
+      },
+      {
+        "question": "Is my conversation data safe?",
+        "answer": "This is a text-only storytelling skill with no external connections or data storage."
+      },
+      {
+        "question": "What if Stella dies in the story?",
+        "answer": "This introductory chapter ensures survival regardless of choices. Future chapters may have higher stakes."
+      },
+      {
+        "question": "How does this compare to other AI roleplay?",
+        "answer": "This offers structured narrative with character development and survival themes rather than open-ended chat."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 470
+    }
+  ]
+}

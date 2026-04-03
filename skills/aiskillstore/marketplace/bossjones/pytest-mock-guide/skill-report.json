@@ -1,0 +1,216 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:57:04.092Z",
+    "slug": "bossjones-pytest-mock-guide",
+    "source_url": "https://github.com/bossjones/logging-lab/tree/main/.claude/skills/pytest-mock",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7a0041390cef65dc1ba81186a9358f2c2dce0b07b74dac68be7b660c2b6fbf89",
+    "tree_hash": "9e423ee1db8004084ac66ed7853395106801f524aa9df83d062b1e5f46bb10fe"
+  },
+  "skill": {
+    "name": "pytest-mock-guide",
+    "description": "Guide for using pytest-mock plugin to write tests with mocking. Use when writing pytest tests that need mocking, patching, spying, or stubbing. Covers mocker fixture usage, patch methods, spy/stub patterns, and assertion helpers.",
+    "summary": "Guide for using pytest-mock plugin to write tests with mocking. Use when writing pytest tests that n...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "bossjones",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "pytest",
+      "testing",
+      "python",
+      "mocking",
+      "tdd"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 152 static findings are FALSE POSITIVES. The skill contains only documentation for pytest-mock testing library with Python code examples. Pattern detections are triggered by: (1) Markdown backtick formatting being misidentified as Ruby shell execution, (2) Documentation examples of mocking OS functions like os.listdir for testing, and (3) Common method names like attach_mock being misidentified as C2 keywords. No executable code, network requests, or malicious patterns exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 42
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 88
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1530,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:57:04.092Z"
+  },
+  "content": {
+    "user_title": "Use pytest-mock for Testing",
+    "value_statement": "Writing unit tests requires isolating code from dependencies. This skill provides patterns for mocking, patching, spying, and stubbing in pytest using the pytest-mock plugin and unittest.mock API.",
+    "seo_keywords": [
+      "pytest-mock",
+      "pytest mocking",
+      "python unit testing",
+      "mocker fixture",
+      "test isolation",
+      "mock patching",
+      "claude code testing",
+      "codex python tests",
+      "claude python mocking"
+    ],
+    "actual_capabilities": [
+      "Apply the mocker fixture for per-test, class, module, package, and session-scoped mocking",
+      "Patch module functions, object methods, dictionaries, and context managers",
+      "Spy on real functions to track calls while preserving original behavior",
+      "Create stubs for callbacks and async functions with proper assertion methods",
+      "Use autospec to generate mocks matching function signatures automatically",
+      "Verify mock calls with enhanced assertion methods including pytest introspection"
+    ],
+    "limitations": [
+      "Does not provide actual test execution - guides on using pytest-mock syntax patterns",
+      "Does not install pytest-mock plugin - assumes pytest and pytest-mock are installed",
+      "Does not cover other mocking libraries like unittest.mock directly or mockito-python"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Python developers",
+        "title": "Test Isolation",
+        "description": "Replace database calls, API clients, and file operations with mocks to make tests fast and reliable."
+      },
+      {
+        "target_user": "QA engineers",
+        "title": "Exception Testing",
+        "description": "Simulate errors and edge cases by configuring side effects on mocked functions without triggering real failures."
+      },
+      {
+        "target_user": "TDD practitioners",
+        "title": "Behavior Verification",
+        "description": "Spy on functions to verify correct interaction patterns between components during test execution."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Mock Setup",
+        "scenario": "Replace a function with a mock",
+        "prompt": "Show me how to use mocker.patch to replace module.function with a mock that returns a specific value."
+      },
+      {
+        "title": "Spy on Methods",
+        "scenario": "Track real function calls",
+        "prompt": "How do I use mocker.spy to wrap a real method while tracking all the arguments passed to it?"
+      },
+      {
+        "title": "Async Mocking",
+        "scenario": "Mock async functions and methods",
+        "prompt": "What patterns does pytest-mock provide for mocking async functions and verifying await calls?"
+      },
+      {
+        "title": "Scoped Fixtures",
+        "scenario": "Share mocks across tests",
+        "prompt": "How do I use class_mocker, module_mocker, package_mocker, and session_mocker to share mock state?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I mock os.listdir to return a specific directory listing?",
+        "output": [
+          "Use mocker.patch with the full dotted path to os.listdir:",
+          "mock_listdir = mocker.patch('os.listdir')",
+          "mock_listdir.return_value = ['file1.txt', 'file2.txt']",
+          "Then os.listdir() returns ['file1.txt', 'file2.txt'] when called in your test.",
+          "To verify calls: mock_listdir.assert_called_once_with('/some/path')"
+        ]
+      },
+      {
+        "input": "How do I test that my function raises an error for bad input?",
+        "output": [
+          "Configure side_effect on your mock to raise exceptions:",
+          "mock_func = mocker.patch('module.process')",
+          "mock_func.side_effect = ValueError('invalid input')",
+          "with pytest.raises(ValueError):",
+          "    module.process('bad data')",
+          "The mock will raise ValueError when called, testing your error handling."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Patch where the function is used, not where it is defined, to match how other code imports it",
+      "Use autospec=True or create_autospec to catch signature mismatches early in your tests",
+      "Reset call history with resetall() between test assertions when you need to verify specific call patterns"
+    ],
+    "anti_patterns": [
+      "Avoid mocking everything - focus on external dependencies, not your own well-designed code",
+      "Do not forget that patching builtins requires patching 'builtins.open' in the module that uses it",
+      "Avoid using assert_called() without arguments after multiple calls - it only verifies the last call"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between patch and spy?",
+        "answer": "patch replaces a function entirely with a mock. spy keeps the real function but tracks all calls and return values for verification."
+      },
+      {
+        "question": "How does pytest-mock differ from unittest.mock?",
+        "answer": "pytest-mock provides the mocker fixture that automatically cleans up mocks after each test and integrates with pytest fixtures."
+      },
+      {
+        "question": "Can I mock async functions with pytest-mock?",
+        "answer": "Yes, use AsyncMock for async functions or mocker.async_stub for async stubs. AsyncMock supports all assert_await methods."
+      },
+      {
+        "question": "How do I verify a mock was never called?",
+        "answer": "Use mock.assert_not_called() to verify the mock has not been invoked at any point in the test."
+      },
+      {
+        "question": "What is autospec and when should I use it?",
+        "answer": "autospec creates a mock that matches the signature of the target function, catching errors when tests call mocks with wrong arguments."
+      },
+      {
+        "question": "How do I mock properties or class methods?",
+        "answer": "Use mocker.patch.object for instance methods, PropertyMock for properties, and patch.object on the class for class methods."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "ADVANCED.md",
+      "type": "file",
+      "path": "ADVANCED.md",
+      "lines": 298
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 392
+    }
+  ]
+}

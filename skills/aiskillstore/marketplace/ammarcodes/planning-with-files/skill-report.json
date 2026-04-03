@@ -1,0 +1,483 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:39:21.923Z",
+    "slug": "ammarcodes-planning-with-files",
+    "source_url": "https://github.com/AmmarCodes/dotfiles/tree/master/opencode/skill/planning-with-files",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9e4202b533743066a4585d19fd69436a0eea674805a3e3325e10520960ed42f6",
+    "tree_hash": "6cb6a664b19f61e121fb1609583d6968eb5622cc84e3e6fc70a6bc6b90b38746"
+  },
+  "skill": {
+    "name": "planning-with-files",
+    "description": "Transforms workflow to use Manus-style persistent markdown files for planning, progress tracking, and knowledge storage. Use when starting complex tasks, multi-step projects, research tasks, or when the user mentions planning, organizing work, tracking progress, or wants structured output.",
+    "summary": "Transforms workflow to use Manus-style persistent markdown files for planning, progress tracking, an...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "AmmarCodes",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "planning",
+      "workflow",
+      "organization",
+      "task-management",
+      "productivity"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown files with workflow guidance. No executable code, scripts, network calls, or file system operations. The static analyzer misinterpreted markdown inline code formatting (backticks) as shell command execution patterns. All 68 findings are false positives.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "examples.md",
+            "line_start": 9,
+            "line_end": 11
+          },
+          {
+            "file": "examples.md",
+            "line_start": 11,
+            "line_end": 13
+          },
+          {
+            "file": "examples.md",
+            "line_start": 13,
+            "line_end": 36
+          },
+          {
+            "file": "examples.md",
+            "line_start": 36,
+            "line_end": 40
+          },
+          {
+            "file": "examples.md",
+            "line_start": 40,
+            "line_end": 45
+          },
+          {
+            "file": "examples.md",
+            "line_start": 45,
+            "line_end": 49
+          },
+          {
+            "file": "examples.md",
+            "line_start": 49,
+            "line_end": 54
+          },
+          {
+            "file": "examples.md",
+            "line_start": 54,
+            "line_end": 58
+          },
+          {
+            "file": "examples.md",
+            "line_start": 58,
+            "line_end": 61
+          },
+          {
+            "file": "examples.md",
+            "line_start": 61,
+            "line_end": 71
+          },
+          {
+            "file": "examples.md",
+            "line_start": 71,
+            "line_end": 105
+          },
+          {
+            "file": "examples.md",
+            "line_start": 105,
+            "line_end": 117
+          },
+          {
+            "file": "examples.md",
+            "line_start": 117,
+            "line_end": 141
+          },
+          {
+            "file": "examples.md",
+            "line_start": 141,
+            "line_end": 145
+          },
+          {
+            "file": "examples.md",
+            "line_start": 145,
+            "line_end": 166
+          },
+          {
+            "file": "examples.md",
+            "line_start": 166,
+            "line_end": 170
+          },
+          {
+            "file": "examples.md",
+            "line_start": 170,
+            "line_end": 184
+          },
+          {
+            "file": "examples.md",
+            "line_start": 184,
+            "line_end": 194
+          },
+          {
+            "file": "examples.md",
+            "line_start": 194,
+            "line_end": 199
+          },
+          {
+            "file": "examples.md",
+            "line_start": 199,
+            "line_end": 203
+          },
+          {
+            "file": "examples.md",
+            "line_start": 203,
+            "line_end": 214
+          },
+          {
+            "file": "examples.md",
+            "line_start": 214,
+            "line_end": 222
+          },
+          {
+            "file": "examples.md",
+            "line_start": 222,
+            "line_end": 229
+          },
+          {
+            "file": "reference.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "reference.md",
+            "line_start": 26,
+            "line_end": 30
+          },
+          {
+            "file": "reference.md",
+            "line_start": 30,
+            "line_end": 42
+          },
+          {
+            "file": "reference.md",
+            "line_start": 42,
+            "line_end": 47
+          },
+          {
+            "file": "reference.md",
+            "line_start": 47,
+            "line_end": 83
+          },
+          {
+            "file": "reference.md",
+            "line_start": 83,
+            "line_end": 85
+          },
+          {
+            "file": "reference.md",
+            "line_start": 85,
+            "line_end": 91
+          },
+          {
+            "file": "reference.md",
+            "line_start": 91,
+            "line_end": 92
+          },
+          {
+            "file": "reference.md",
+            "line_start": 92,
+            "line_end": 93
+          },
+          {
+            "file": "reference.md",
+            "line_start": 93,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 164
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "reference.md",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 718,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:39:21.923Z"
+  },
+  "content": {
+    "user_title": "Plan complex tasks with persistent markdown files",
+    "value_statement": "AI assistants often lose track of goals during long tasks with many steps. This skill teaches a proven pattern using markdown files as external memory. Create task plans, track progress with checkboxes, and store research notes in files. The assistant stays organized and never loses sight of the original goal.",
+    "seo_keywords": [
+      "planning skill",
+      "Claude Code",
+      "task management",
+      "workflow organization",
+      "Manus methodology",
+      "markdown planning",
+      "progress tracking",
+      "AI productivity",
+      "complex task management",
+      "context engineering"
+    ],
+    "actual_capabilities": [
+      "Create task_plan.md files with phases and checkboxes for tracking progress",
+      "Maintain notes.md files for storing research findings and intermediate work",
+      "Generate deliverable markdown files for final outputs",
+      "Apply read-before-decide pattern to keep goals in attention window",
+      "Log errors and decisions to build knowledge for future tasks"
+    ],
+    "limitations": [
+      "Requires the user to work in a persistent filesystem context",
+      "Best suited for multi-step tasks spanning several tool calls",
+      "Does not execute code or access external APIs directly",
+      "Requires manual file creation and updates by the AI"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Track bug fixes",
+        "description": "Break down complex debugging into phases. Track root cause analysis, decisions made, and errors encountered."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Organize research projects",
+        "description": "Store sources, synthesized findings, and key questions in structured markdown files. Build knowledge as you go."
+      },
+      {
+        "target_user": "Project managers",
+        "title": "Manage feature development",
+        "description": "Plan multi-phase features with clear deliverables. Track decisions and maintain context across long coding sessions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start a complex task",
+        "scenario": "Beginning a multi-step project",
+        "prompt": "Use the Planning with Files skill. Create a task_plan.md file with phases, goal, key questions, decisions made, and errors encountered sections. Then create a notes.md file for intermediate findings."
+      },
+      {
+        "title": "Track progress",
+        "scenario": "After completing a phase",
+        "prompt": "Using Planning with Files, update task_plan.md by marking the current phase as complete with [x], adding any errors encountered, and updating the status section. Then read both files before continuing."
+      },
+      {
+        "title": "Store research findings",
+        "scenario": "Gathering information",
+        "prompt": "Apply Planning with Files methodology. Write new findings to notes.md with sources and synthesized insights. Update task_plan.md to reflect research progress."
+      },
+      {
+        "title": "Recover from errors",
+        "scenario": "Something failed during work",
+        "prompt": "Using Planning with Files, document the error in task_plan.md's Errors Encountered section with the resolution. Then continue from the updated plan."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Research machine learning frameworks and recommend the best one for our project",
+        "output": [
+          "Created task_plan.md with 4 phases",
+          "Created notes.md for research findings",
+          "Currently in Phase 2: Searching and gathering sources",
+          "Key questions: performance needs, team expertise, integration requirements",
+          "Will update plan after each information gathering session"
+        ]
+      },
+      {
+        "input": "Fix the login bug in the authentication module",
+        "output": [
+          "Created task_plan.md with 5 phases",
+          "Tracked root cause analysis in decisions section",
+          "Logged TypeError in Errors Encountered",
+          "Identified fix in validateToken function",
+          "Marked phases complete as work progresses"
+        ]
+      },
+      {
+        "input": "Add a dark mode toggle to the settings page",
+        "output": [
+          "Created task_plan.md with 5 phases",
+          "Stored design decisions in notes.md",
+          "Tracked files to modify: theme.ts, SettingsPage.tsx, useTheme.ts, App.tsx",
+          "Using CSS custom properties for theming",
+          "Storing preference in localStorage"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always create the task_plan.md file before starting any complex task with 3 or more steps",
+      "Read task_plan.md before making any major decision to refresh goals in your attention window",
+      "Log every error and decision to the plan file instead of hiding failures or losing context"
+    ],
+    "anti_patterns": [
+      "Using TodoWrite for persistence instead of creating markdown plan files",
+      "Starting execution immediately without first creating a structured plan",
+      "Stuffing all information in context instead of storing large content in files"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. Any AI assistant that can read and write files can use this pattern."
+      },
+      {
+        "question": "How many tool calls can this handle?",
+        "answer": "The Manus methodology supports approximately 50 tool calls without losing track of original goals through plan file re-reading."
+      },
+      {
+        "question": "Does this integrate with version control?",
+        "answer": "Yes. The markdown files can be committed to git alongside code, creating a searchable record of decisions and research."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. This skill only creates and manages local markdown files in your working directory. No data is sent anywhere."
+      },
+      {
+        "question": "Why not use TodoWrite instead?",
+        "answer": "TodoWrite is ephemeral and not visible in the attention window. Plan files persist and can be re-read to keep goals front and center."
+      },
+      {
+        "question": "How is this different from regular note-taking?",
+        "answer": "The key difference is structure: phases with checkboxes, explicit error logging, and the read-before-decide pattern for attention management."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples.md",
+      "type": "file",
+      "path": "examples.md",
+      "lines": 232
+    },
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 117
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 182
+    }
+  ]
+}

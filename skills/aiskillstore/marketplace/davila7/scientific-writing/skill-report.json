@@ -1,0 +1,275 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T19:28:41.594Z",
+    "slug": "davila7-scientific-writing",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/scientific-writing",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3af85003db2e677c92d84214910cdc5d2f93ed37df1565d81472109f32da9bab",
+    "tree_hash": "e9841193cb4db4143e6d3eaec7488ed5f2d319f761a07c98cdce654e19073de1"
+  },
+  "skill": {
+    "name": "scientific-writing",
+    "description": "Core skill for the deep research and writing tool. Write scientific manuscripts in full paragraphs (never bullet points). Use two-stage process: (1) create section outlines with key points using research-lookup, (2) convert to flowing prose. IMRAD structure, citations (APA/AMA/Vancouver), figures/tables, reporting guidelines (CONSORT/STROBE/PRISMA), for research papers and journal submissions.",
+    "summary": "Write publication-ready scientific manuscripts with proper IMRAD structure, citation formatting, and adherence to reporting guidelines.",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "tags": [
+      "scientific-writing",
+      "academic-manuscripts",
+      "citation-formatting",
+      "imrad-structure",
+      "research-papers"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing markdown reference files for scientific writing. Static analyzer flagged markdown code formatting (backticks) as shell commands and documentation URLs as network access - all false positives. No executable code present. Safe for publication.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 47
+          },
+          {
+            "file": "references/citation_styles.md",
+            "line_start": 34,
+            "line_end": 270
+          },
+          {
+            "file": "references/figures_tables.md",
+            "line_start": 67,
+            "line_end": 575
+          },
+          {
+            "file": "references/imrad_structure.md",
+            "line_start": 88,
+            "line_end": 450
+          },
+          {
+            "file": "references/reporting_guidelines.md",
+            "line_start": 431,
+            "line_end": 715
+          },
+          {
+            "file": "references/writing_principles.md",
+            "line_start": 18,
+            "line_end": 630
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/citation_styles.md",
+            "line_start": 204,
+            "line_end": 720
+          },
+          {
+            "file": "references/reporting_guidelines.md",
+            "line_start": 86,
+            "line_end": 637
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 8206,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T19:28:41.594Z",
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "content": {
+    "user_title": "Write Publication-Ready Scientific Manuscripts",
+    "value_statement": "Researchers struggle to format scientific papers according to journal requirements and academic conventions. This skill provides structured guidance for writing manuscripts using IMRAD format, proper citation styles, and compliance with reporting guidelines for successful journal submissions.",
+    "seo_keywords": [
+      "scientific writing",
+      "academic manuscript",
+      "IMRAD structure",
+      "citation styles",
+      "APA format",
+      "research paper",
+      "journal submission",
+      "scientific writing guidelines",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Structure scientific manuscripts using IMRAD format (Introduction, Methods, Results, Discussion)",
+      "Format citations and references in APA, AMA, Vancouver, Chicago, and IEEE styles",
+      "Create and format figures and tables following scientific publication standards",
+      "Apply reporting guidelines (CONSORT, STROBE, PRISMA) for study-specific manuscript sections",
+      "Draft abstracts and cover letters for journal submissions",
+      "Ensure manuscripts follow academic writing conventions and journal-specific requirements"
+    ],
+    "limitations": [
+      "Does not perform actual research or access external databases for literature review",
+      "Does not verify citation accuracy or retrieve reference details from databases",
+      "Does not format mathematical equations or complex chemical nomenclature",
+      "Cannot guarantee manuscript acceptance by specific journals"
+    ],
+    "use_cases": [
+      {
+        "title": "Graduate Student Writing Thesis Chapters",
+        "description": "Graduate students use this skill to structure thesis chapters and journal manuscripts according to academic conventions, ensuring proper citation formatting and adherence to field-specific reporting standards.",
+        "target_user": "Graduate students and PhD candidates"
+      },
+      {
+        "title": "Research Team Preparing Journal Submission",
+        "description": "Research teams apply this skill when preparing manuscripts for journal submission, following CONSORT, STROBE, or PRISMA guidelines as required by target journals and peer reviewers.",
+        "target_user": "Academic researchers and principal investigators"
+      },
+      {
+        "title": "Scientific Writer Creating Multiple Manuscripts",
+        "description": "Professional scientific writers use this skill to maintain consistency across multiple manuscripts, applying standardized citation styles and structure while adapting to different journal requirements.",
+        "target_user": "Medical writers and science communicators"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Manuscript Section",
+        "prompt": "Write the Introduction section for a research paper about [TOPIC]. Follow IMRAD structure and establish the research context by covering background, relevant literature, knowledge gaps, and research objectives. Write in flowing prose with no bullet points.",
+        "scenario": "Creating a research paper introduction"
+      },
+      {
+        "title": "Methods Section with Reporting Guidelines",
+        "prompt": "Write the Methods section for a [STUDY TYPE] study following [GUIDELINE] reporting standards. Include participant recruitment, study procedures, data collection methods, and statistical analysis approaches. Ensure reproducibility through detailed documentation.",
+        "scenario": "Documenting methodology with reporting guidelines"
+      },
+      {
+        "title": "Citation-Integrated Results",
+        "prompt": "Write the Results section presenting findings from [DESCRIPTION OF DATA/FINDINGS]. Integrate relevant citations in [STYLE] format where appropriate. Present data objectively without interpretation. Include suggestions for [NUMBER] supporting figures or tables.",
+        "scenario": "Presenting findings with proper citations"
+      },
+      {
+        "title": "Discussion with Limitations",
+        "prompt": "Write the Discussion section interpreting results from [PREVIOUSLY ESTABLISHED FINDINGS]. Address study limitations, compare with existing literature, discuss implications, and propose future research directions. Write in formal academic tone.",
+        "scenario": "Interpreting findings and discussing implications"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Write the Introduction section for a machine learning study comparing algorithm performance for early detection of diabetic retinopathy. The study involved 500 patients across 3 clinical sites.",
+        "output": "Diabetic retinopathy remains a leading cause of vision loss worldwide, affecting an estimated 100 million individuals globally (Yau et al., 2012). Early detection through screening programs has been shown to significantly reduce the risk of severe vision impairment (Looker et al., 2013). However, access to expert ophthalmologists for screening remains limited in many regions, particularly in low-resource settings (Bourne et al., 2013). Recent advances in deep learning have shown promise for automated diabetic retinopathy detection, with several studies reporting performance comparable to human experts (Ting et al., 2017). Despite these advances, challenges remain in deploying robust models across diverse clinical settings with varying image quality and patient populations. The present study aimed to develop and validate a machine learning algorithm for early detection of diabetic retinopathy using a multi-site cohort of 500 patients, addressing the need for scalable screening solutions in diverse clinical environments."
+      },
+      {
+        "input": "Format these citations in Vancouver style: 2 studies by Smith et al (2020 and 2022), Jones (2019), and a range of studies from 2015-2018",
+        "output": "Multiple studies have demonstrated the efficacy of this approach [1-4]. Smith et al [1, 2] conducted foundational work in this area, while Jones [3] provided critical validation in independent cohorts. Recent systematic reviews [4] have consolidated these findings across multiple settings."
+      },
+      {
+        "input": "What are the key elements to include in the CONSORT checklist for a randomized controlled trial?",
+        "output": "The CONSORT 2010 checklist includes essential reporting items: trial design description, eligibility criteria for participants and centers, precise intervention details, outcomes definition, sample size determination, randomization sequence generation, allocation concealment mechanism, and implementation details. The flow diagram must show participant numbers at each stage: enrollment, allocation, follow-up, and analysis. Statistical methods should address changes to protocol, deviations from intended interventions, and methods for handling missing data."
+      }
+    ],
+    "best_practices": [
+      "Always write in complete paragraphs with flowing prose rather than bullet points, as scientific manuscripts require formal academic structure.",
+      "Apply the two-stage process: first create section outlines with key points, then expand each outline into full paragraphs with citations.",
+      "Consult the appropriate reporting guideline (CONSORT, STROBE, PRISMA) before drafting to ensure all required elements are included."
+    ],
+    "anti_patterns": [
+      "Using bullet points in final manuscript output instead of flowing prose paragraphs, which violates scientific writing conventions.",
+      "Submitting manuscripts without verifying citation formatting against the target journal's style guide.",
+      "Skipping the Methods section details needed for reproducibility, which reviewers commonly request."
+    ],
+    "faq": [
+      {
+        "question": "What citation styles does this skill support?",
+        "answer": "This skill supports APA, AMA, Vancouver, Chicago, and IEEE citation styles. Each style includes in-text citation formatting and complete reference list examples for journals, books, book chapters, and online resources."
+      },
+      {
+        "question": "How do I structure a systematic review manuscript?",
+        "answer": "Follow PRISMA 2020 guidelines. Include a flow diagram showing study selection, methods for database searches, eligibility criteria, data extraction process, and risk of bias assessment. The Results section should present study characteristics, risk of bias findings, and synthesis results."
+      },
+      {
+        "question": "Can this skill help with journal-specific formatting?",
+        "answer": "This skill provides general scientific writing conventions. For journal-specific formatting, check the target journal's author guidelines for page limits, reference style variants, figure requirements, and section structure preferences."
+      },
+      {
+        "question": "What is the IMRAD structure and when should I use it?",
+        "answer": "IMRAD stands for Introduction, Methods, Results, and Discussion. It is the standard structure for most scientific manuscripts. Use it for original research articles, most clinical studies, and experimental research papers in biomedical and natural sciences."
+      },
+      {
+        "question": "How do I write a strong Methods section?",
+        "answer": "A strong Methods section enables reproducibility. Include study design, setting and dates, participant eligibility criteria, intervention details, outcome measures, statistical methods, and ethical approvals. Be specific enough that another researcher could replicate your study."
+      },
+      {
+        "question": "What reporting guidelines should I use for different study types?",
+        "answer": "Use CONSORT for randomized controlled trials, STROBE for observational studies, PRISMA for systematic reviews and meta-analyses, CARE for case reports, and STARD for diagnostic accuracy studies. Many journals require adherence to these guidelines."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "citation_styles.md",
+          "type": "file",
+          "path": "references/citation_styles.md",
+          "lines": 721
+        },
+        {
+          "name": "figures_tables.md",
+          "type": "file",
+          "path": "references/figures_tables.md",
+          "lines": 807
+        },
+        {
+          "name": "imrad_structure.md",
+          "type": "file",
+          "path": "references/imrad_structure.md",
+          "lines": 659
+        },
+        {
+          "name": "reporting_guidelines.md",
+          "type": "file",
+          "path": "references/reporting_guidelines.md",
+          "lines": 749
+        },
+        {
+          "name": "writing_principles.md",
+          "type": "file",
+          "path": "references/writing_principles.md",
+          "lines": 825
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 484
+    }
+  ]
+}

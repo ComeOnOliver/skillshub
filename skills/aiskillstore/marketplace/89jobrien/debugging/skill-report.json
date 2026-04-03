@@ -1,0 +1,250 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:19:49.444Z",
+    "slug": "89jobrien-debugging",
+    "source_url": "https://github.com/89jobrien/steve/tree/main/steve/skills/debugging",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9033181c78632c9aa97c55d5cc823a158a0cab4315de94551af7435c4c6cb453",
+    "tree_hash": "eaa9092ae63fc2dce27bf2c6437c0a3754753dec10c3204897bc7391a9c67d50"
+  },
+  "skill": {
+    "name": "debugging",
+    "description": "Comprehensive debugging specialist for errors, test failures, log analysis, and system problems. Use when encountering issues, analyzing error logs, investigating system anomalies, debugging production issues, analyzing stack traces, or identifying root causes. Combines general debugging workflows with error pattern detection and log analysis.",
+    "summary": "Comprehensive debugging specialist for errors, test failures, log analysis, and system problems. Use...",
+    "icon": "🔧",
+    "version": "1.0.1",
+    "author": "Joseph OBrien",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "debugging",
+      "error-analysis",
+      "log-analysis",
+      "troubleshooting",
+      "root-cause"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-focused debugging skill. The static analyzer flagged 134 findings, but 100% are false positives. All flagged patterns are examples in markdown documentation showing common debugging commands and anti-patterns, not actual executable code. The only executable component is a 125-line Python log parser script that safely reads user-specified files and outputs JSON analysis. No network access, no credential handling, no arbitrary code execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/parse-logs.py",
+            "line_start": 1,
+            "line_end": 125
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/parse-logs.py",
+            "line_start": 102,
+            "line_end": 107
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1746,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:19:49.443Z"
+  },
+  "content": {
+    "user_title": "Debug code errors and analyze logs",
+    "value_statement": "Debugging complex errors and analyzing logs takes significant time and expertise. This skill provides structured workflows for error analysis, log parsing, stack trace investigation, and root cause identification across multiple languages and platforms.",
+    "seo_keywords": [
+      "debugging",
+      "error analysis",
+      "log parsing",
+      "stack trace",
+      "troubleshooting",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "root cause",
+      "bug fixing"
+    ],
+    "actual_capabilities": [
+      "Analyzes error messages and stack traces across multiple programming languages",
+      "Parses log files to extract errors, exceptions, and patterns",
+      "Identifies root causes through systematic investigation workflows",
+      "Detects common error patterns including memory leaks, race conditions, and timeouts",
+      "Provides guidance for reproducing and fixing bugs",
+      "Creates incident postmortem documentation"
+    ],
+    "limitations": [
+      "Cannot access external systems or databases directly",
+      "Cannot execute code or run tests on user systems",
+      "Cannot modify production systems or deploy fixes",
+      "Analysis is based on provided error information and log content"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Fix production bugs",
+        "description": "Analyze error logs and stack traces to identify root causes and implement fixes"
+      },
+      {
+        "target_user": "QA Engineers",
+        "title": "Debug test failures",
+        "description": "Investigate why tests are failing and identify the underlying code issues"
+      },
+      {
+        "target_user": "SRE Engineers",
+        "title": "Investigate incidents",
+        "description": "Correlate errors across services and conduct postmortem analysis"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Analyze error message",
+        "scenario": "Debug a specific error",
+        "prompt": "Debug this error: [paste error message and stack trace]"
+      },
+      {
+        "title": "Parse log file",
+        "scenario": "Extract errors from logs",
+        "prompt": "Analyze the error logs in [file path] and identify the root cause"
+      },
+      {
+        "title": "Detect patterns",
+        "scenario": "Find recurring issues",
+        "prompt": "Find patterns in these error logs from the past 24 hours"
+      },
+      {
+        "title": "Fix code issue",
+        "scenario": "Implement solution",
+        "prompt": "Fix the null reference error at [file:line] with minimal changes"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Debug this error: TypeError: Cannot read property 'name' of undefined",
+        "output": [
+          "Error Type: TypeError",
+          "Location: src/services/user.js:45",
+          "Root Cause: getUser() returns undefined when user not found",
+          "Fix: Add null check before accessing user.name"
+        ]
+      },
+      {
+        "input": "Analyze the error logs in /var/log/app.log",
+        "output": [
+          "Total Errors: 47",
+          "Most Common: Connection timeout (23 occurrences)",
+          "Pattern: Errors spike during peak hours (14:00-16:00)",
+          "Recommendation: Increase connection pool size"
+        ]
+      },
+      {
+        "input": "Why are users seeing intermittent 500 errors",
+        "output": [
+          "Likely Cause: Race condition in request handler",
+          "Evidence: Errors correlate with concurrent API calls",
+          "Fix: Add request queuing or use locks for shared resource access"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with symptoms before proposing solutions",
+      "Test hypotheses systematically rather than guessing",
+      "Implement minimal fixes that address root causes"
+    ],
+    "anti_patterns": [
+      "Applying fixes without understanding root causes",
+      "Ignoring error patterns across multiple incidents",
+      "Making large changes when a small fix suffices"
+    ],
+    "faq": [
+      {
+        "question": "Which programming languages are supported?",
+        "answer": "JavaScript, Node.js, Python, Java, and other languages with standard stack trace formats."
+      },
+      {
+        "question": "What log formats can be parsed?",
+        "answer": "Plain text logs, JSON logs, and common log formats with timestamps and error levels."
+      },
+      {
+        "question": "How does this integrate with my IDE?",
+        "answer": "The skill works with any text-based error information. Copy-paste errors from your terminal or IDE."
+      },
+      {
+        "question": "Is my log data processed externally?",
+        "answer": "No. All analysis happens locally. The Python script reads files and outputs JSON locally."
+      },
+      {
+        "question": "Why is my debugging not finding the issue?",
+        "answer": "Ensure you provide the full error message, stack trace, and relevant log context. Some issues require additional logging."
+      },
+      {
+        "question": "How is this different from standard error messages?",
+        "answer": "This skill provides structured analysis workflows, pattern detection, and systematic root cause identification."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "debugging-workflows.md",
+          "type": "file",
+          "path": "references/debugging-workflows.md",
+          "lines": 618
+        },
+        {
+          "name": "incident-postmortem.template.md",
+          "type": "file",
+          "path": "references/incident-postmortem.template.md",
+          "lines": 207
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "parse-logs.py",
+          "type": "file",
+          "path": "scripts/parse-logs.py",
+          "lines": 125
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 564
+    }
+  ]
+}

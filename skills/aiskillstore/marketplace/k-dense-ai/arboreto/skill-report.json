@@ -1,0 +1,257 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:53:13.898Z",
+    "slug": "k-dense-ai-arboreto",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/arboreto",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f75c2119a6d3a528537615521a053f512422520b638605c66486c0d26c94334b",
+    "tree_hash": "4343b2082f5c02e64b2159936ec5751da4bfc41682523c71ec1e0194b5b3d6c8"
+  },
+  "skill": {
+    "name": "arboreto",
+    "description": "Infer gene regulatory networks (GRNs) from gene expression data using scalable algorithms (GRNBoost2, GENIE3). Use when analyzing transcriptomics data (bulk RNA-seq, single-cell RNA-seq) to identify transcription factor-target gene relationships and regulatory interactions. Supports distributed computation for large-scale datasets.",
+    "summary": "Infer gene regulatory networks (GRNs) from gene expression data using scalable algorithms (GRNBoost2...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "BSD-3-Clause license",
+    "category": "data",
+    "tags": [
+      "bioinformatics",
+      "gene-regulation",
+      "transcriptomics",
+      "machine-learning",
+      "distributed-computing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 118 static findings are FALSE POSITIVES. The analyzer misidentified markdown Python code blocks (using triple backticks) as shell command execution, genetic algorithm names (GENIE3, GRNBoost2) as weak cryptographic algorithms, and Dask cluster configuration examples as C2/network reconnaissance. Arboreto is a legitimate open-source bioinformatics library for gene regulatory network inference from transcriptomics data. The only Python script (scripts/basic_grn_inference.py:1-97) is benign code that imports standard libraries and performs standard bioinformatics computations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/algorithms.md",
+            "line_start": 29,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 22
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/distributed_computing.md",
+            "line_start": 109,
+            "line_end": 109
+          },
+          {
+            "file": "references/distributed_computing.md",
+            "line_start": 124,
+            "line_end": 124
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 1589,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:53:13.898Z"
+  },
+  "content": {
+    "user_title": "Infer Gene Regulatory Networks from Expression Data",
+    "value_statement": "Gene regulatory network inference identifies transcription factor-target gene relationships from transcriptomics data. Arboreto provides scalable implementations of GRNBoost2 and GENIE3 algorithms that process both bulk and single-cell RNA-seq data on local machines or distributed clusters.",
+    "seo_keywords": [
+      "arboreto",
+      "gene regulatory network",
+      "GRN inference",
+      "GRNBoost2",
+      "GENIE3",
+      "transcriptomics",
+      "single-cell RNA-seq",
+      "transcription factors",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Infer gene regulatory networks from gene expression matrices using GRNBoost2 or GENIE3 algorithms",
+      "Filter analysis by transcription factor lists to focus on known regulators",
+      "Scale computation from single multi-core machines to distributed Dask clusters",
+      "Export regulatory networks as TF-target-importance triplets for downstream analysis",
+      "Set random seeds for reproducible network inference results"
+    ],
+    "limitations": [
+      "Requires gene expression data with genes as columns and observations as rows",
+      "Does not perform downstream regulon analysis (use pySCENIC for that step)",
+      "Memory requirements scale with number of target genes in dataset",
+      "Output is probabilistic regulatory relationships, not validated biological interactions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Computational Biologists",
+        "title": "Single-Cell GRN Analysis",
+        "description": "Infer cell-type-specific regulatory networks from scRNA-seq data to understand cellular heterogeneity."
+      },
+      {
+        "target_user": "Genomics Researchers",
+        "title": "Bulk RNA-seq Network Inference",
+        "description": "Identify transcription factor targets in bulk expression datasets with TF filtering for focused analysis."
+      },
+      {
+        "target_user": "Bioinformatics Teams",
+        "title": "Distributed Large-Scale GRN",
+        "description": "Process datasets with thousands of samples using Dask clusters for high-performance computing environments."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic GRN Inference",
+        "scenario": "Load expression data and infer network",
+        "prompt": "Use arboreto to infer a gene regulatory network from my expression matrix in expression_data.tsv. Save results to network.tsv."
+      },
+      {
+        "title": "With TF Filtering",
+        "scenario": "Restrict to known transcription factors",
+        "prompt": "Run grnboost2 on expression_data.tsv using only the transcription factors listed in tfs.txt. Set seed to 42 for reproducibility."
+      },
+      {
+        "title": "Cluster Computing",
+        "scenario": "Use distributed computing",
+        "prompt": "Connect to my Dask cluster at tcp://scheduler:8786 and run grnboost2 on my large dataset with verbose output enabled."
+      },
+      {
+        "title": "Multiple Conditions",
+        "scenario": "Compare networks across conditions",
+        "prompt": "Infer separate GRN networks for control, treatment_24h, and treatment_48h expression datasets using grnboost2. Save each with the corresponding condition name."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Infer a gene regulatory network from expression_data.tsv using arboreto",
+        "output": [
+          "Network contains 1500 regulatory links",
+          "Top regulators: TF1 (45 targets), TF2 (38 targets), TF3 (32 targets)",
+          "Highest importance: TF1 -> gene5 (0.92 importance score)"
+        ]
+      },
+      {
+        "input": "Run GRNBoost2 with TF filtering on my single-cell data",
+        "output": [
+          "Processed 8000 cells x 20000 genes",
+          "Filtered to 250 known transcription factors",
+          "Inferred network in 4.2 minutes on local cluster",
+          "Top cell-type regulator: MYC (87 targets, avg importance 0.78)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use 'if __name__ == __main__:' guard in scripts since Dask spawns new processes",
+      "Set a random seed for reproducible results when comparing networks",
+      "Filter TF list to known transcription factors to reduce computation time"
+    ],
+    "anti_patterns": [
+      "Running arboreto without TF filtering on large datasets causes excessive computation time",
+      "Forgetting the 'if __name__ == __main__:' guard causes Dask process spawn errors",
+      "Using GENIE3 on datasets with thousands of observations is slow; prefer GRNBoost2 for large data"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between GRNBoost2 and GENIE3?",
+        "answer": "GRNBoost2 uses gradient boosting and is faster for large datasets. GENIE3 uses Random Forest and is better for small datasets or validation."
+      },
+      {
+        "question": "What input format does arboreto expect?",
+        "answer": "Gene expression matrix with genes as columns and observations as rows. Use Pandas DataFrame or NumPy array with gene names."
+      },
+      {
+        "question": "How does distributed computing work?",
+        "answer": "Arboreto uses Dask to parallelize gene-wise regression. Connect to a LocalCluster or remote scheduler for multi-node computation."
+      },
+      {
+        "question": "What does the output mean?",
+        "answer": "Output is TF-target-importance triplets where higher importance scores indicate stronger predicted regulatory relationships."
+      },
+      {
+        "question": "How do I filter results?",
+        "answer": "Filter by importance threshold (e.g., > 0.5) or select top N links per target gene. Use pandas DataFrame operations."
+      },
+      {
+        "question": "Can I use this with pySCENIC?",
+        "answer": "Yes, arboreto provides GRN inference as the first step of the SCENIC pipeline for single-cell regulatory network analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "algorithms.md",
+          "type": "file",
+          "path": "references/algorithms.md",
+          "lines": 139
+        },
+        {
+          "name": "basic_inference.md",
+          "type": "file",
+          "path": "references/basic_inference.md",
+          "lines": 152
+        },
+        {
+          "name": "distributed_computing.md",
+          "type": "file",
+          "path": "references/distributed_computing.md",
+          "lines": 243
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "basic_grn_inference.py",
+          "type": "file",
+          "path": "scripts/basic_grn_inference.py",
+          "lines": 98
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 243
+    }
+  ]
+}

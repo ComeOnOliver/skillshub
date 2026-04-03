@@ -1,0 +1,280 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:58:25.173Z",
+    "slug": "k-dense-ai-scikit-survival",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scikit-survival",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8740633939e4bb6b2ee827bcea50377405de7df1d1cbb6afb836d2f274cfeb84",
+    "tree_hash": "ab2a733dba55a7e40a6fe563d733c28d8319e89983a2f4a64680ae4b905f82b2"
+  },
+  "skill": {
+    "name": "scikit-survival",
+    "description": "Comprehensive toolkit for survival analysis and time-to-event modeling in Python using scikit-survival. Use this skill when working with censored survival data, performing time-to-event analysis, fitting Cox models, Random Survival Forests, Gradient Boosting models, or Survival SVMs, evaluating survival predictions with concordance index or Brier score, handling competing risks, or implementing any survival analysis workflow with the scikit-survival library.",
+    "summary": "Comprehensive toolkit for survival analysis and time-to-event modeling in Python using scikit-surviv...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "GPL-3.0 license",
+    "category": "data",
+    "tags": [
+      "survival-analysis",
+      "time-to-event",
+      "machine-learning",
+      "python",
+      "medical-research"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 277 static findings are FALSE POSITIVES. This skill contains only markdown documentation for the legitimate scikit-survival Python library. The 'Ruby/shell backtick execution' detections are markdown code fences (```python) for Python syntax highlighting. No executable code, scripts, or malicious patterns exist. The 'C2 keywords' and 'weak cryptographic algorithm' detections are false positives caused by statistical/medical terminology being misidentified by the pattern scanner.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 380
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 387
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 40
+          },
+          {
+            "file": "references/competing-risks.md",
+            "line_start": 46,
+            "line_end": 70
+          },
+          {
+            "file": "references/data-handling.md",
+            "line_start": 11,
+            "line_end": 20
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 357,
+            "line_end": 360
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3958,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:58:25.173Z"
+  },
+  "content": {
+    "user_title": "Analyze survival data with scikit-survival",
+    "value_statement": "Survival analysis handles data where events may not have occurred for all subjects. This skill provides Python tools for time-to-event modeling with censored data using Cox models, Random Survival Forests, SVMs, and specialized evaluation metrics like concordance index.",
+    "seo_keywords": [
+      "scikit-survival",
+      "survival analysis",
+      "time-to-event modeling",
+      "Cox proportional hazards",
+      "Random Survival Forest",
+      "concordance index",
+      "censored data analysis",
+      "Claude Code",
+      "Claude",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Fit Cox Proportional Hazards models with standard or penalized regression",
+      "Build Random Survival Forests and Gradient Boosting survival models",
+      "Train Survival Support Vector Machines with linear and kernel methods",
+      "Evaluate models using concordance index, time-dependent AUC, and Brier score",
+      "Handle competing risks with cumulative incidence functions",
+      "Estimate Kaplan-Meier and Nelson-Aalen survival curves"
+    ],
+    "limitations": [
+      "Does not provide Fine-Gray sub-distribution models (requires external packages)",
+      "Limited to right-censored data (left/interval censoring needs special handling)",
+      "Gray's test for competing risks not directly available"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Clinical researchers",
+        "title": "Patient survival prediction",
+        "description": "Analyze clinical trial data to predict patient survival probabilities and identify risk factors for adverse outcomes."
+      },
+      {
+        "target_user": "Data scientists",
+        "title": "Time-to-event machine learning",
+        "description": "Build and compare multiple survival models including Cox, Random Survival Forest, and SVM for predictive maintenance or customer churn."
+      },
+      {
+        "target_user": "Epidemiologists",
+        "title": "Disease progression modeling",
+        "description": "Study time-to-event data with competing risks such as death from different causes in disease progression studies."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic survival analysis",
+        "scenario": "Load data and fit a Cox model",
+        "prompt": "Use scikit-survival to load the breast cancer dataset, split it into train and test sets, fit a Cox Proportional Hazards model, and evaluate using Uno's concordance index."
+      },
+      {
+        "title": "Model comparison",
+        "scenario": "Compare multiple survival models",
+        "prompt": "Compare CoxPHSurvivalAnalysis, RandomSurvivalForest, GradientBoostingSurvivalAnalysis, and FastSurvivalSVM on the GBSG2 dataset using cross-validation with concordance index scoring."
+      },
+      {
+        "title": "Feature selection",
+        "scenario": "High-dimensional survival data",
+        "prompt": "Use CoxnetSurvivalAnalysis with elastic net regularization to perform feature selection on high-dimensional survival data, then identify which features were selected."
+      },
+      {
+        "title": "Competing risks",
+        "scenario": "Multiple event types",
+        "prompt": "Demonstrate competing risks analysis using cumulative_incidence_competing_risks. Show how to estimate cumulative incidence for different event types and compare between treatment groups."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Build a survival model for the veterans lung cancer dataset and evaluate performance",
+        "output": [
+          "Loaded veterans_lung_cancer dataset with 137 patients",
+          "Censoring rate: 8.0% (11 events, 126 censored)",
+          "Fitted CoxPHSurvivalAnalysis with concordance_index_ipcw = 0.73",
+          "Top risk factors: Karnofsky score (HR=0.96), age (HR=1.02)",
+          "Time-dependent AUC at 180 days: 0.81"
+        ]
+      },
+      {
+        "input": "Compare Random Survival Forest and Cox model on GBSG2 breast cancer data",
+        "output": [
+          "Loaded GBSG2 dataset with 2238 patients, 1548 events",
+          "RandomSurvivalForest C-index: 0.68 (5-fold CV)",
+          "CoxPHSurvivalAnalysis C-index: 0.66 (5-fold CV)",
+          "RSF selected 12/7 features via permutation importance",
+          "Recommendation: RSF provides slightly better ranking ability"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always standardize features for SVMs and regularized Cox models before fitting",
+      "Use Uno's C-index (concordance_index_ipcw) instead of Harrell's when censoring exceeds 40%",
+      "Report multiple evaluation metrics including C-index, integrated Brier score, and time-dependent AUC"
+    ],
+    "anti_patterns": [
+      "Using Kaplan-Meier estimator when competing risks are present (use cumulative incidence instead)",
+      "Using built-in feature importance for Random Survival Forests (use permutation importance)",
+      "Not checking proportional hazards assumption for Cox models before interpretation"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between Harrell's and Uno's C-index?",
+        "answer": "Harrell's C-index works well with low censoring (<40%). Uno's uses IPCW weighting and remains unbiased with high censoring."
+      },
+      {
+        "question": "How do I handle competing risks?",
+        "answer": "Use cumulative_incidence_competing_risks for estimation or fit separate cause-specific Cox models for each event type."
+      },
+      {
+        "question": "Which model should I choose for high-dimensional data?",
+        "answer": "Use CoxnetSurvivalAnalysis with elastic net regularization for feature selection in high-dimensional settings."
+      },
+      {
+        "question": "How do I evaluate model calibration?",
+        "answer": "Use integrated_brier_score to assess both discrimination and calibration. Lower scores indicate better-calibrated predictions."
+      },
+      {
+        "question": "Can I use scikit-survival with scikit-learn pipelines?",
+        "answer": "Yes, scikit-survival models are compatible with sklearn Pipeline, GridSearchCV, and cross_val_score."
+      },
+      {
+        "question": "What preprocessing is required for survival data?",
+        "answer": "Convert data to Surv object, handle missing values, encode categoricals, and standardize features for SVMs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "competing-risks.md",
+          "type": "file",
+          "path": "references/competing-risks.md",
+          "lines": 398
+        },
+        {
+          "name": "cox-models.md",
+          "type": "file",
+          "path": "references/cox-models.md",
+          "lines": 183
+        },
+        {
+          "name": "data-handling.md",
+          "type": "file",
+          "path": "references/data-handling.md",
+          "lines": 495
+        },
+        {
+          "name": "ensemble-models.md",
+          "type": "file",
+          "path": "references/ensemble-models.md",
+          "lines": 328
+        },
+        {
+          "name": "evaluation-metrics.md",
+          "type": "file",
+          "path": "references/evaluation-metrics.md",
+          "lines": 379
+        },
+        {
+          "name": "svm-models.md",
+          "type": "file",
+          "path": "references/svm-models.md",
+          "lines": 412
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 399
+    }
+  ]
+}

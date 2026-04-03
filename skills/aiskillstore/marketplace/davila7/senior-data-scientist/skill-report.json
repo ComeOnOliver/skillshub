@@ -1,0 +1,290 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:46:20.470Z",
+    "slug": "davila7-senior-data-scientist",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/development/senior-data-scientist",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a2ad70e3e730d5915a27472f0413f524ac96e4cf7fd1474a39e14a178c87170d",
+    "tree_hash": "7e97de6c9680580e0bff1d0df515ccbfb4deab3d9e6093caa1294aa0fcf171ea"
+  },
+  "skill": {
+    "name": "senior-data-scientist",
+    "description": "World-class data science skill for statistical modeling, experimentation, causal inference, and advanced analytics. Expertise in Python (NumPy, Pandas, Scikit-learn), R, SQL, statistical methods, A/B testing, time series, and business intelligence. Includes experiment design, feature engineering, model evaluation, and stakeholder communication. Use when designing experiments, building predictive models, performing causal analysis, or driving data-driven decisions.",
+    "summary": "World-class data science skill for statistical modeling, experimentation, causal inference, and adva...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "machine-learning",
+      "statistics",
+      "data-analysis",
+      "experimentation",
+      "python"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 75 static findings are FALSE POSITIVES. The scanner misidentified Python logging format strings (containing '%') as 'weak cryptographic algorithms', bash documentation backticks as 'command execution risks', and hash values as 'C2 keywords'. This is a legitimate data science skill containing skeleton CLI templates with no network calls, credential access, or malicious patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/experiment_designer.py",
+            "line_start": 1,
+            "line_end": 101
+          },
+          {
+            "file": "scripts/feature_engineering_pipeline.py",
+            "line_start": 1,
+            "line_end": 101
+          },
+          {
+            "file": "scripts/model_evaluation_suite.py",
+            "line_start": 1,
+            "line_end": 101
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/experiment_designer.py",
+            "line_start": 73,
+            "line_end": 74
+          },
+          {
+            "file": "scripts/feature_engineering_pipeline.py",
+            "line_start": 73,
+            "line_end": 74
+          },
+          {
+            "file": "scripts/model_evaluation_suite.py",
+            "line_start": 73,
+            "line_end": 74
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 1038,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:46:20.470Z"
+  },
+  "content": {
+    "user_title": "Build statistical models and experiments",
+    "value_statement": "Design experiments, build predictive models, and drive data-driven decisions with expert-level data science techniques. This skill provides production-grade frameworks for statistical analysis, feature engineering, and model evaluation.",
+    "seo_keywords": [
+      "Claude data scientist skill",
+      "statistical modeling AI",
+      "machine learning Claude Code",
+      "A/B testing framework",
+      "Python data science",
+      "feature engineering pipeline",
+      "model evaluation suite",
+      "causal inference",
+      "experiment design",
+      "Codex data analysis"
+    ],
+    "actual_capabilities": [
+      "Design and analyze A/B tests with statistical rigor",
+      "Build feature engineering pipelines for ML models",
+      "Evaluate models with production-grade metrics",
+      "Perform causal inference and statistical analysis",
+      "Create experiment frameworks for business decisions",
+      "Communicate findings to stakeholders"
+    ],
+    "limitations": [
+      "Requires user-provided data and computational resources",
+      "Does not execute code without explicit user prompts",
+      "Cannot access external APIs or data sources directly",
+      "Does not provide pre-trained models"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data Scientists",
+        "title": "Build ML pipelines",
+        "description": "Design feature engineering workflows and evaluate models with production best practices"
+      },
+      {
+        "target_user": "Product Managers",
+        "title": "Run A/B experiments",
+        "description": "Design statistically valid experiments and interpret results for product decisions"
+      },
+      {
+        "target_user": "Research Analysts",
+        "title": "Analyze datasets",
+        "description": "Perform causal analysis and statistical modeling on research data"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Analyze A/B test",
+        "scenario": "Evaluate experiment results",
+        "prompt": "Analyze these A/B test results. Calculate statistical significance, confidence intervals, and provide recommendations. Use senior data scientist expertise."
+      },
+      {
+        "title": "Design features",
+        "scenario": "Prepare ML features",
+        "prompt": "Design a feature engineering pipeline for this dataset. Suggest transformations, encoding strategies, and feature selection methods."
+      },
+      {
+        "title": "Evaluate model",
+        "scenario": "Assess model performance",
+        "prompt": "Evaluate this model using production-grade metrics. Include accuracy, precision, recall, F1, ROC-AUC, and provide improvement suggestions."
+      },
+      {
+        "title": "Causal analysis",
+        "scenario": "Discover relationships",
+        "prompt": "Perform causal inference analysis on this observational dataset. Identify potential confounders and suggest appropriate statistical methods."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze our A/B test results. We tested a new checkout flow with 10,000 users. Control conversion: 3.2%, Treatment conversion: 3.8%.",
+        "output": [
+          "Statistical significance: p-value = 0.012 (significant at 95% confidence)",
+          "Lift: 18.75% relative improvement",
+          "95% CI for difference: (0.0012, 0.0112)",
+          "Recommendation: Deploy new checkout flow",
+          "Follow-up: Monitor for novelty effects in weeks 2-4"
+        ]
+      },
+      {
+        "input": "Design feature engineering for customer churn prediction with these features: age, contract type, usage patterns, support calls, payment history.",
+        "output": [
+          "Recommended transformations: log-transform usage patterns, one-hot encode contract type",
+          "Feature selection: use correlation analysis to remove redundant features",
+          "Consider derived features: customer tenure, average support calls per month",
+          "Handle missing values: impute support calls with median, flag missing as separate feature"
+        ]
+      },
+      {
+        "input": "Evaluate our classification model. We have 1000 test samples. Confusion matrix: TP=420, TN=380, FP=100, FN=100.",
+        "output": [
+          "Accuracy: 80%, Precision: 80.8%, Recall: 80.8%, F1: 80.8%",
+          "Class imbalance detected: review business impact of false negatives",
+          "Consider threshold tuning if recall for positive class needs improvement",
+          "Next steps: Examine misclassified samples for patterns"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate statistical assumptions before choosing analysis methods",
+      "Document experiment design and decision criteria before running tests",
+      "Use cross-validation and holdout sets when evaluating models"
+    ],
+    "anti_patterns": [
+      "Running experiments without pre-registered hypotheses",
+      "Ignoring multiple comparison corrections in A/B testing",
+      "Evaluating models only on accuracy without checking for bias"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "Works with Claude, Claude Code, and Codex. Use with any LLM that supports tool calling."
+      },
+      {
+        "question": "What data formats are supported?",
+        "answer": "Accepts CSV, JSON, Parquet, and SQL query results. Provide data or specify format in prompts."
+      },
+      {
+        "question": "Can this run Python code?",
+        "answer": "The skill provides guidance and templates. Actual code execution depends on your environment setup."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "All processing happens locally. The skill does not send data to external services or store information."
+      },
+      {
+        "question": "How long should experiments run?",
+        "answer": "Sample size calculators help determine duration. Generally 1-2 weeks for web experiments with daily traffic."
+      },
+      {
+        "question": "How does this compare to hiring a data scientist?",
+        "answer": "Provides expert-level guidance and frameworks. Complex implementations may require human data scientists."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "experiment_design_frameworks.md",
+          "type": "file",
+          "path": "references/experiment_design_frameworks.md",
+          "lines": 81
+        },
+        {
+          "name": "feature_engineering_patterns.md",
+          "type": "file",
+          "path": "references/feature_engineering_patterns.md",
+          "lines": 81
+        },
+        {
+          "name": "statistical_methods_advanced.md",
+          "type": "file",
+          "path": "references/statistical_methods_advanced.md",
+          "lines": 81
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "experiment_designer.py",
+          "type": "file",
+          "path": "scripts/experiment_designer.py",
+          "lines": 101
+        },
+        {
+          "name": "feature_engineering_pipeline.py",
+          "type": "file",
+          "path": "scripts/feature_engineering_pipeline.py",
+          "lines": 101
+        },
+        {
+          "name": "model_evaluation_suite.py",
+          "type": "file",
+          "path": "scripts/model_evaluation_suite.py",
+          "lines": 101
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 227
+    }
+  ]
+}

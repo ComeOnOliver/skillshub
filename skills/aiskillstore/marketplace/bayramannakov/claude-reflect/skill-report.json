@@ -1,0 +1,456 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:00:18.373Z",
+    "slug": "bayramannakov-claude-reflect",
+    "source_url": "https://github.com/BayramAnnakov/claude-reflect/tree/main/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5ddc4aa3f9c8973645b90fd3a8a976600de64ea523b53da4e51fa69188fca38e",
+    "tree_hash": "437f878176be14066db5a71ee1e1b52092fe02bfd61d7aa55ff740f252586a5e"
+  },
+  "skill": {
+    "name": "claude-reflect",
+    "description": "Self-learning system that captures corrections during sessions and reminds users to run /reflect to update CLAUDE.md. Use when discussing learnings, corrections, or when the user mentions remembering something for future sessions.",
+    "summary": "Self-learning system that captures corrections during sessions and reminds users to run /reflect to ...",
+    "icon": "brain",
+    "version": "2.1.1",
+    "author": "BayramAnnakov",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "memory",
+      "learning",
+      "corrections",
+      "CLAUDE.md",
+      "self-improvement"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate self-learning system with no malicious intent. All static findings are false positives: shell commands are documentation examples, hidden file access targets the standard ~/.claude/ directory for Claude configuration, and credential references are guidance documentation, not actual access. The critical heuristic alert incorrectly flagged local file operations as dangerous.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/lib/reflect_utils.py",
+            "line_start": 1,
+            "line_end": 52
+          },
+          {
+            "file": "scripts/lib/semantic_detector.py",
+            "line_start": 1,
+            "line_end": 38
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "commands/reflect.md",
+            "line_start": 1,
+            "line_end": 1013
+          },
+          {
+            "file": "scripts/lib/reflect_utils.py",
+            "line_start": 17,
+            "line_end": 29
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "commands/reflect.md",
+            "line_start": 109,
+            "line_end": 246
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 30,
+    "total_lines": 6268,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:00:18.373Z"
+  },
+  "content": {
+    "user_title": "Capture corrections to remember in CLAUDE.md",
+    "value_statement": "Users often correct Claude Code during sessions but lose those learnings between sessions. This skill automatically detects corrections, queues them, and helps you apply them to CLAUDE.md so Claude remembers your preferences in future sessions.",
+    "seo_keywords": [
+      "claude-reflect",
+      "CLAUDE.md",
+      "claude code",
+      "self-learning",
+      "memory",
+      "corrections",
+      "preferences",
+      "persistent learning",
+      "claude",
+      "codex"
+    ],
+    "actual_capabilities": [
+      "Detects correction patterns during sessions using regex and semantic analysis",
+      "Queues learnings to ~/.claude/learnings-queue.json for later review",
+      "Scans past sessions with --scan-history to find missed corrections",
+      "Applies approved learnings to CLAUDE.md and AGENTS.md with human review",
+      "Supports global (all projects) and project-specific learning scopes"
+    ],
+    "limitations": [
+      "Requires human review - learnings are never auto-applied without approval",
+      "Cannot capture non-verbal corrections or contextual feedback",
+      "First-time use requires --scan-history to discover past session learnings"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual developers",
+        "title": "Remember model preferences",
+        "description": "Capture corrections like 'use gpt-5.1 not gpt-5' so Claude remembers your model preferences across sessions."
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Build project conventions",
+        "description": "Store project-specific coding standards and tool preferences that apply to everyone using the shared CLAUDE.md."
+      },
+      {
+        "target_user": "Power users",
+        "title": "Create persistent memory",
+        "description": "Build a comprehensive memory of your workflow preferences that persists between Claude Code sessions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Process queued learnings",
+        "scenario": "Review captured corrections",
+        "prompt": "Run /reflect to process my queued learnings from this session."
+      },
+      {
+        "title": "Find past corrections",
+        "scenario": "First-time setup or cold start",
+        "prompt": "Run /reflect --scan-history to find corrections I made in past sessions."
+      },
+      {
+        "title": "Review before applying",
+        "scenario": "Check confidence scores",
+        "prompt": "Run /reflect --review to see my queued learnings with confidence scores before processing."
+      },
+      {
+        "title": "Consolidate duplicates",
+        "description": "Clean up similar entries",
+        "prompt": "Run /reflect --dedupe to find and consolidate similar entries in my CLAUDE.md files."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "User says: no, use gpt-5.1 not gpt-5 for reasoning",
+        "output": [
+          "Hook queues learning: Use gpt-5.1 for reasoning tasks",
+          "/reflect shows: 1 learning queued - scope: global",
+          "User approves: Added to ~/.claude/CLAUDE.md"
+        ]
+      },
+      {
+        "input": "User runs: /reflect --scan-history",
+        "output": [
+          "Scans all past session files for corrections",
+          "Finds 5 learnings missed by real-time hooks",
+          "User reviews and applies 3 to CLAUDE.md"
+        ]
+      },
+      {
+        "input": "User runs: /reflect --review",
+        "output": [
+          "Shows queue with confidence scores (0.60-0.95)",
+          "Displays decay status (stale items flagged)",
+          "User can skip low-confidence entries before applying"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use 'remember:' prefix for important corrections to ensure high-confidence capture",
+      "Run /reflect after git commits to capture work-related learnings",
+      "Review and edit learnings before applying to ensure clarity and accuracy"
+    ],
+    "anti_patterns": [
+      "Skipping /reflect regularly causes corrections to be lost between sessions",
+      "Applying learnings without review allows low-confidence noise into CLAUDE.md",
+      "Forgetting --scan-history on new machines loses learnings from past sessions"
+    ],
+    "faq": [
+      {
+        "question": "Does this send my data externally?",
+        "answer": "No. All processing happens locally on your machine using your Claude configuration files only."
+      },
+      {
+        "question": "Can I remove a learning after applying it?",
+        "answer": "Yes. Edit ~/.claude/CLAUDE.md or project CLAUDE.md directly to remove or modify entries."
+      },
+      {
+        "question": "Does it work with other AI tools?",
+        "answer": "Yes. It syncs to AGENTS.md which works with Codex, Cursor, Aider, Jules, Zed, and Factory."
+      },
+      {
+        "question": "What happens to my queue if I don't run /reflect?",
+        "answer": "Learnings stay queued until you run /reflect. They are flagged as stale after 90 days of decay."
+      },
+      {
+        "question": "Can I use this without internet?",
+        "answer": "Yes. The skill uses local file operations and optional Claude CLI for semantic analysis."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "Yes. The skill only reads your Claude session files and writes to your CLAUDE.md files."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "reflect-demo.jpg",
+          "type": "file",
+          "path": "assets/reflect-demo.jpg"
+        }
+      ]
+    },
+    {
+      "name": "commands",
+      "type": "dir",
+      "path": "commands",
+      "children": [
+        {
+          "name": "reflect.md",
+          "type": "file",
+          "path": "commands/reflect.md",
+          "lines": 1013
+        },
+        {
+          "name": "skip-reflect.md",
+          "type": "file",
+          "path": "commands/skip-reflect.md",
+          "lines": 33
+        },
+        {
+          "name": "view-queue.md",
+          "type": "file",
+          "path": "commands/view-queue.md",
+          "lines": 56
+        }
+      ]
+    },
+    {
+      "name": "hooks",
+      "type": "dir",
+      "path": "hooks",
+      "children": [
+        {
+          "name": "hooks.json",
+          "type": "file",
+          "path": "hooks/hooks.json",
+          "lines": 38
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "legacy",
+          "type": "dir",
+          "path": "scripts/legacy",
+          "children": [
+            {
+              "name": "capture-learning.sh",
+              "type": "file",
+              "path": "scripts/legacy/capture-learning.sh",
+              "lines": 164
+            },
+            {
+              "name": "check-learnings.sh",
+              "type": "file",
+              "path": "scripts/legacy/check-learnings.sh",
+              "lines": 27
+            },
+            {
+              "name": "extract-session-learnings.sh",
+              "type": "file",
+              "path": "scripts/legacy/extract-session-learnings.sh",
+              "lines": 47
+            },
+            {
+              "name": "extract-tool-rejections.sh",
+              "type": "file",
+              "path": "scripts/legacy/extract-tool-rejections.sh",
+              "lines": 35
+            },
+            {
+              "name": "post-commit-reminder.sh",
+              "type": "file",
+              "path": "scripts/legacy/post-commit-reminder.sh",
+              "lines": 44
+            }
+          ]
+        },
+        {
+          "name": "lib",
+          "type": "dir",
+          "path": "scripts/lib",
+          "children": [
+            {
+              "name": "__init__.py",
+              "type": "file",
+              "path": "scripts/lib/__init__.py",
+              "lines": 2
+            },
+            {
+              "name": "reflect_utils.py",
+              "type": "file",
+              "path": "scripts/lib/reflect_utils.py",
+              "lines": 572
+            },
+            {
+              "name": "semantic_detector.py",
+              "type": "file",
+              "path": "scripts/lib/semantic_detector.py",
+              "lines": 434
+            }
+          ]
+        },
+        {
+          "name": "capture_learning.py",
+          "type": "file",
+          "path": "scripts/capture_learning.py",
+          "lines": 75
+        },
+        {
+          "name": "check_learnings.py",
+          "type": "file",
+          "path": "scripts/check_learnings.py",
+          "lines": 52
+        },
+        {
+          "name": "compare_detection.py",
+          "type": "file",
+          "path": "scripts/compare_detection.py",
+          "lines": 367
+        },
+        {
+          "name": "extract_session_learnings.py",
+          "type": "file",
+          "path": "scripts/extract_session_learnings.py",
+          "lines": 44
+        },
+        {
+          "name": "extract_tool_errors.py",
+          "type": "file",
+          "path": "scripts/extract_tool_errors.py",
+          "lines": 177
+        },
+        {
+          "name": "extract_tool_rejections.py",
+          "type": "file",
+          "path": "scripts/extract_tool_rejections.py",
+          "lines": 43
+        },
+        {
+          "name": "post_commit_reminder.py",
+          "type": "file",
+          "path": "scripts/post_commit_reminder.py",
+          "lines": 66
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "dir",
+      "path": "tests",
+      "children": [
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "tests/__init__.py",
+          "lines": 2
+        },
+        {
+          "name": "test_integration.py",
+          "type": "file",
+          "path": "tests/test_integration.py",
+          "lines": 487
+        },
+        {
+          "name": "test_reflect_utils.py",
+          "type": "file",
+          "path": "tests/test_reflect_utils.py",
+          "lines": 438
+        },
+        {
+          "name": "test_semantic_detector.py",
+          "type": "file",
+          "path": "tests/test_semantic_detector.py",
+          "lines": 584
+        },
+        {
+          "name": "test_tool_errors.py",
+          "type": "file",
+          "path": "tests/test_tool_errors.py",
+          "lines": 327
+        }
+      ]
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "lines": 75
+    },
+    {
+      "name": "DISTRIBUTION.md",
+      "type": "file",
+      "path": "DISTRIBUTION.md",
+      "lines": 315
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "lines": 22
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 225
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 63
+    }
+  ]
+}

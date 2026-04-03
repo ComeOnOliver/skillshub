@@ -1,0 +1,234 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:00:42.888Z",
+    "slug": "k-dense-ai-zinc-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/zinc-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7720f5b636ee77e93355dadfaaa084ef4f729a0a45c2608bafbc4cfdca5f5552",
+    "tree_hash": "4ef5bfa56133937db68fa40c30497148627e59f15db4f49a61065556cbee6617"
+  },
+  "skill": {
+    "name": "zinc-database",
+    "description": "Access ZINC (230M+ purchasable compounds). Search by ZINC ID/SMILES, similarity searches, 3D-ready structures for docking, analog discovery, for virtual screening and drug discovery.",
+    "summary": "Access ZINC (230M+ purchasable compounds). Search by ZINC ID/SMILES, similarity searches, 3D-ready s...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "drug-discovery",
+      "cheminformatics",
+      "molecular-docking",
+      "virtual-screening",
+      "research"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 389 static findings are false positives. The skill is legitimate scientific documentation for accessing the public ZINC database maintained by UCSF. subprocess.run calls use array syntax with hardcoded ZINC API endpoints. C2 keyword flags are common programming terms (command, control, execute) used in legitimate documentation context. The scanner misinterpreted cheminformatics terminology (MD5/SHA checksums) and DOCK database format files (.db2) as security concerns. No malicious behavior patterns detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 389
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 280,
+            "line_end": 294
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 2804,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:00:42.888Z"
+  },
+  "content": {
+    "user_title": "Search ZINC database for compounds",
+    "value_statement": "The ZINC database contains 230M+ purchasable chemical compounds for drug discovery research. This skill provides programmatic access to search by ZINC ID, SMILES, or supplier code, retrieve 3D structures, and perform similarity searches for virtual screening and molecular docking studies.",
+    "seo_keywords": [
+      "ZINC database",
+      "drug discovery",
+      "molecular docking",
+      "virtual screening",
+      "compound search",
+      "SMILES search",
+      "cheminformatics",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Search compounds by ZINC ID or SMILES structure",
+      "Perform similarity searches with Tanimoto distance thresholds",
+      "Retrieve random compound sets by drug-like properties",
+      "Download 3D molecular structures for docking",
+      "Query compounds by supplier catalog codes",
+      "Parse tranche data for property-based filtering"
+    ],
+    "limitations": [
+      "No direct 3D structure download capability - only provides API and file repository URLs",
+      "No molecular docking simulation - only compound retrieval",
+      "Requires external tools like curl, wget, or RDKit for full workflow"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Computational chemists",
+        "title": "Build docking libraries",
+        "description": "Query ZINC to obtain drug-like compounds, download 3D structures, and prepare libraries for DOCK6 or AutoDock Vina screening."
+      },
+      {
+        "target_user": "Medicinal chemists",
+        "title": "Find analog compounds",
+        "description": "Search by SMILES similarity to discover purchasable analogs of known active compounds for structure-activity relationship studies."
+      },
+      {
+        "target_user": "Drug discovery researchers",
+        "title": "Virtual screening setup",
+        "description": "Generate random compound sets filtered by molecular weight, LogP, or H-bond donors for initial virtual screening campaigns."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Simple compound search",
+        "scenario": "Find a specific compound",
+        "prompt": "Search the ZINC database for compound ZINC000000000001 and show its SMILES, supplier codes, and catalogs."
+      },
+      {
+        "title": "SMILES similarity",
+        "scenario": "Find similar compounds",
+        "prompt": "Find compounds similar to Ibuprofen (CC(C)Cc1ccc(cc1)C(C)C(=O)O) using a Tanimoto distance of 3. Return ZINC IDs, SMILES, and available catalogs."
+      },
+      {
+        "title": "Docking library prep",
+        "scenario": "Prepare screening library",
+        "prompt": "Generate a list of 1000 random drug-like compounds from ZINC22 with MW 350-500. Show ZINC IDs, SMILES, and tranche codes."
+      },
+      {
+        "title": "Analog discovery",
+        "scenario": "Structure-based search",
+        "prompt": "Find 50 lead-like analogs (MW 250-350) of a hit compound with SMILES CCCc1ccc(cc1)C(C)N. Return purchasable options with supplier codes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search for ZINC000000000001 and find similar compounds with distance 3",
+        "output": [
+          "ZINC ID: ZINC000000000001",
+          "SMILES: [displayed structure]",
+          "Available from: [catalogs]",
+          "Similar compounds found: 142",
+          "Top matches: ZINC000000000002, ZINC000000000003, ..."
+        ]
+      },
+      {
+        "input": "Get 100 random lead-like compounds with MW 250-350",
+        "output": [
+          "Retrieved 100 compounds from ZINC22",
+          "Property range: MW 250-350, lead-like subset",
+          "Tranche codes: H##P###M### format",
+          "Each entry includes ZINC ID, SMILES, and supplier information"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use exact SMILES matches first, then expand to similarity searches with distance parameters",
+      "Limit output fields to only needed data to reduce response size and improve performance",
+      "Cache frequently accessed compound data locally to reduce repeated API calls"
+    ],
+    "anti_patterns": [
+      "Making rapid consecutive requests without delays - respect server rate limits",
+      "Requesting all output fields when only a few are needed",
+      "Skipping tranche property parsing - these encode MW, LogP, and H-bond donor counts useful for filtering"
+    ],
+    "faq": [
+      {
+        "question": "What is ZINC database?",
+        "answer": "ZINC is a free public database of 230M+ purchasable chemical compounds maintained by UCSF for drug discovery research."
+      },
+      {
+        "question": "Do I need an API key?",
+        "answer": "No, the ZINC API is free and requires no authentication. Simply use the documented endpoints at cartblanche22.docking.org."
+      },
+      {
+        "question": "What file formats are available?",
+        "answer": "ZINC provides MOL2, SDF, and DOCK DB2 formats for 3D structures. Choose based on your docking software requirements."
+      },
+      {
+        "question": "How do I download 3D structures?",
+        "answer": "Use the file repository at files.docking.org/zinc22/ with tranche codes, or request structures via API for smaller batches."
+      },
+      {
+        "question": "What is a tranche?",
+        "answer": "Tranches encode molecular properties: H## (H-bond donors), P### (LogP x10), M### (MW), and phase (reactivity). Example: H05P035M400-0."
+      },
+      {
+        "question": "Can I use this for commercial research?",
+        "answer": "Check supplier licensing terms. ZINC aggregates compounds from many vendors - verify intellectual property status before commercial use."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 693
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 193
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 404
+    }
+  ]
+}

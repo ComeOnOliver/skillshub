@@ -1,0 +1,278 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:30:27.422Z",
+    "slug": "davila7-gtars",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/gtars",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "070c8730b23cbe8fee8a39e7057dc9409fd5e5c68c9325136ba998484f8fd1de",
+    "tree_hash": "71f473752b7b97204ce686f7840649580bc2ccf722f730ae5c765578c141fc51"
+  },
+  "skill": {
+    "name": "gtars",
+    "description": "High-performance toolkit for genomic interval analysis in Rust with Python bindings. Use when working with genomic regions, BED files, coverage tracks, overlap detection, tokenization for ML models, or fragment analysis in computational genomics and machine learning applications.",
+    "summary": "High-performance toolkit for genomic interval analysis in Rust with Python bindings. Use when workin...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "genomics",
+      "bioinformatics",
+      "rust",
+      "machine-learning",
+      "data-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate genomic interval analysis toolkit. All 187 static findings are false positives: bash command examples in documentation (misidentified as shell execution), standard cryptographic digests for the GA4GH refget protocol in bioinformatics, memory-mapped file access for efficient large file handling, and system info commands during installation. No malicious code patterns, network exfiltration, credential access, or obfuscation detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 40
+          },
+          {
+            "file": "references/cli.md",
+            "line_start": 7,
+            "line_end": 13
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 254
+          },
+          {
+            "file": "references/python-api.md",
+            "line_start": 150,
+            "line_end": 160
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/cli.md",
+            "line_start": 35,
+            "line_end": 47
+          },
+          {
+            "file": "references/cli.md",
+            "line_start": 65,
+            "line_end": 89
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 1560,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:30:27.421Z"
+  },
+  "content": {
+    "user_title": "Analyze genomic intervals and coverage tracks",
+    "value_statement": "Genomic interval analysis requires specialized tools for processing BED files, detecting overlaps, and generating coverage tracks. Gtars provides high-performance Rust implementations with Python bindings for computational genomics and machine learning workflows.",
+    "seo_keywords": [
+      "gtars genomic toolkit",
+      "genomic interval analysis",
+      "BED file processing",
+      "coverage track generation",
+      "genomic overlap detection",
+      "Rust bioinformatics",
+      "genomic ML tokenization",
+      "single-cell genomics",
+      "ATAC-seq analysis",
+      "Claude Code genomics"
+    ],
+    "actual_capabilities": [
+      "Detect overlaps between genomic intervals using IGD indexing",
+      "Generate coverage tracks from sequencing data (WIG, BigWig formats)",
+      "Tokenize genomic regions for machine learning applications",
+      "Manage reference genome sequences with GA4GH refget protocol",
+      "Split and analyze single-cell fragment files by barcodes",
+      "Score fragment overlaps against reference datasets"
+    ],
+    "limitations": [
+      "Requires Rust/Cargo for CLI installation, Python bindings for library use",
+      "Does not perform sequence alignment or variant calling",
+      "Limited to standard genomic formats (BED, WIG, BigWig, FASTA)",
+      "Does not include visualization or plotting capabilities"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Computational Biologists",
+        "title": "Peak Overlap Analysis",
+        "description": "Identify overlapping regulatory elements between ChIP-seq peaks and gene annotations."
+      },
+      {
+        "target_user": "ML Engineers",
+        "title": "Genomic ML Preprocessing",
+        "description": "Convert genomic coordinates to discrete tokens for transformer models and deep learning."
+      },
+      {
+        "target_user": "Single-Cell Researchers",
+        "title": "Fragment Processing",
+        "description": "Split ATAC-seq fragments by cell barcodes and perform cluster-based analysis."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Overlap Query",
+        "scenario": "Find overlapping regions",
+        "prompt": "Use gtars to find overlaps between two BED files: chip_peaks.bed and promoters.bed. Show regions that overlap."
+      },
+      {
+        "title": "Coverage Generation",
+        "scenario": "Generate coverage track",
+        "prompt": "Generate a BigWig coverage track from atac_fragments.bed using gtars uniwig with 10bp resolution."
+      },
+      {
+        "title": "ML Tokenization",
+        "scenario": "Prepare data for ML",
+        "prompt": "Create a TreeTokenizer from training_regions.bed and tokenize these genomic coordinates for a genomic transformer model."
+      },
+      {
+        "title": "Fragment Analysis",
+        "scenario": "Process single-cell data",
+        "prompt": "Split fragments.tsv by clusters.txt and generate coverage tracks for each cluster using gtars."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find overlaps between chip_peaks.bed and promoters.bed using gtars",
+        "output": [
+          "Found 245 peaks overlapping with promoter regions",
+          "Overlapping peaks written to peaks_in_promoters.bed",
+          "Average overlap length: 432bp",
+          "Top overlapping chromosomes: chr1 (89), chr2 (52), chr3 (38)"
+        ]
+      },
+      {
+        "input": "Generate BigWig coverage track from ATAC-seq fragments",
+        "output": [
+          "Processed 1.2M fragments in 4.2 seconds",
+          "Coverage track saved to atac_coverage.bw",
+          "Peak accessibility at chr1:780000-790000 (12.3x enrichment)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Build IGD indexes once and reuse for repeated queries to improve performance",
+      "Use BigWig format instead of WIG for large datasets to reduce file size and enable efficient random access",
+      "Enable parallel processing for files with more than 100,000 regions"
+    ],
+    "anti_patterns": [
+      "Processing unvalidated BED files without checking chromosome names match your reference",
+      "Running coverage analysis at single-base resolution on whole-genome data without memory considerations",
+      "Using tokenizers without understanding the resolution parameter impact on downstream ML models"
+    ],
+    "faq": [
+      {
+        "question": "What Python version is required?",
+        "answer": "Gtars requires Python 3.8 or later. Python 3.10+ recommended for best performance."
+      },
+      {
+        "question": "Can this run on Windows?",
+        "answer": "Python bindings work on Windows via pip. CLI tools require Rust compilation which is supported on Windows through WSL."
+      },
+      {
+        "question": "How much memory is needed?",
+        "answer": "Memory usage depends on dataset size. For 1M regions, plan for 2-4GB RAM. Use streaming for larger files."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Gtars processes data locally. No data is sent to external servers. All file I/O is user-controlled."
+      },
+      {
+        "question": "Why is my query slow?",
+        "answer": "Build an IGD index before querying. Enable parallel processing with --threads flag. Use memory-mapped mode for large files."
+      },
+      {
+        "question": "How does this compare to BEDTools?",
+        "answer": "Gtars offers Rust-based performance with Python bindings. Similar overlap detection but adds tokenization for ML and BigWig support."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "cli.md",
+          "type": "file",
+          "path": "references/cli.md",
+          "lines": 223
+        },
+        {
+          "name": "coverage.md",
+          "type": "file",
+          "path": "references/coverage.md",
+          "lines": 173
+        },
+        {
+          "name": "overlap.md",
+          "type": "file",
+          "path": "references/overlap.md",
+          "lines": 157
+        },
+        {
+          "name": "python-api.md",
+          "type": "file",
+          "path": "references/python-api.md",
+          "lines": 212
+        },
+        {
+          "name": "refget.md",
+          "type": "file",
+          "path": "references/refget.md",
+          "lines": 148
+        },
+        {
+          "name": "tokenizers.md",
+          "type": "file",
+          "path": "references/tokenizers.md",
+          "lines": 104
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 280
+    }
+  ]
+}

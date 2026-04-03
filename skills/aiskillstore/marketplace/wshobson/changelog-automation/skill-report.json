@@ -1,0 +1,188 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:55:23.245Z",
+    "slug": "wshobson-changelog-automation",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/documentation-generation/skills/changelog-automation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "be4e1be8935dce2eadc785d1154f581033597be755c02e6a6f32d441fff1277f",
+    "tree_hash": "ddf5265c0fa414f3b94244f0b4a7339760d14e5f626674d5a78dce24cad26920"
+  },
+  "skill": {
+    "name": "changelog-automation",
+    "description": "Automate changelog generation from commits, PRs, and releases following Keep a Changelog format. Use when setting up release workflows, generating release notes, or standardizing commit conventions.",
+    "summary": "Automate changelog generation and release workflows using industry standards",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "changelog",
+      "release-automation",
+      "semantic-versioning",
+      "conventional-commits",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains documentation and configuration templates for changelog automation tools. All static findings are false positives: network URLs are documentation references to keepachangelog.com and semver.org, backtick patterns are code examples in markdown format, and env_access references are configuration samples for GitHub Actions workflows. No executable code or security risks detected.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1378,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:55:23.245Z"
+  },
+  "content": {
+    "user_title": "Automate Changelog Generation and Release Workflows",
+    "value_statement": "Managing changelogs manually is error-prone and time-consuming. This skill provides patterns and tools for automating changelog generation, release notes, and version management following industry standards like Keep a Changelog and Conventional Commits.",
+    "seo_keywords": [
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "changelog automation",
+      "release notes",
+      "semantic versioning",
+      "conventional commits",
+      "keep a changelog",
+      "git automation",
+      "release workflow"
+    ],
+    "actual_capabilities": [
+      "Generate changelog templates following Keep a Changelog format",
+      "Configure Conventional Commits validation with commitlint",
+      "Set up automated release workflows using standard-version or semantic-release",
+      "Create GitHub Actions workflows for automated versioning and releases",
+      "Configure git-cliff for fast Rust-based changelog generation",
+      "Implement Python commitizen for interactive commit creation"
+    ],
+    "limitations": [
+      "Provides configuration templates only, requires installation of actual tools",
+      "Does not execute commands or modify repositories directly",
+      "Configuration examples may need customization for specific project needs",
+      "GitHub Actions examples require appropriate repository permissions"
+    ],
+    "use_cases": [
+      {
+        "title": "New Project Release Setup",
+        "description": "Set up automated changelog generation for a new Node.js project using standard-version, commitlint, and GitHub Actions for consistent release workflows.",
+        "target_user": "DevOps engineers starting new projects"
+      },
+      {
+        "title": "Migrating to Conventional Commits",
+        "description": "Migrate an existing project to Conventional Commits standard with validation, automated versioning, and changelog generation to improve release consistency.",
+        "target_user": "Development teams standardizing workflows"
+      },
+      {
+        "title": "Multi-Language Release Automation",
+        "description": "Configure changelog automation for projects in different languages using appropriate tools like semantic-release for Node.js or commitizen for Python.",
+        "target_user": "Technical leads managing polyglot repositories"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Changelog Setup",
+        "prompt": "Help me set up a CHANGELOG.md file following Keep a Changelog format for my project",
+        "scenario": "Starting changelog documentation"
+      },
+      {
+        "title": "Configure Conventional Commits",
+        "prompt": "Configure commitlint and husky to enforce Conventional Commits in my Node.js project",
+        "scenario": "Implementing commit message validation"
+      },
+      {
+        "title": "Automate Release Workflow",
+        "prompt": "Create a GitHub Actions workflow that automatically generates changelogs and creates releases using semantic-release",
+        "scenario": "Setting up CI/CD for releases"
+      },
+      {
+        "title": "Custom Release Configuration",
+        "prompt": "Configure standard-version with custom commit types and changelog sections specific to my project structure",
+        "scenario": "Advanced customization for team needs"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me a basic Keep a Changelog template",
+        "output": "A markdown template with sections for Unreleased, Added, Changed, Deprecated, Removed, Fixed, and Security, following the keepachangelog.com specification with proper semantic versioning links."
+      },
+      {
+        "input": "What are the Conventional Commit types I should use?",
+        "output": [
+          "feat: New features (triggers MINOR version bump)",
+          "fix: Bug fixes (triggers PATCH version bump)",
+          "docs: Documentation changes (no version bump)",
+          "refactor: Code restructuring (maps to Changed section)",
+          "perf: Performance improvements (maps to Changed section)",
+          "test: Test additions (no version bump)",
+          "chore: Maintenance tasks (no version bump)"
+        ]
+      },
+      {
+        "input": "Configure git-cliff for my Rust project",
+        "output": "A complete cliff.toml configuration file with conventional commits parsing, GitHub integration, and templated changelog sections formatted according to Keep a Changelog standards."
+      }
+    ],
+    "best_practices": [
+      "Use commitlint with husky to validate commit messages before they are created, preventing invalid commits from entering the repository",
+      "Configure separate workflows for manual and automatic releases to support both scheduled releases and emergency hotfixes",
+      "Define clear commit type conventions in team documentation and configure parsers to match your specific workflow needs"
+    ],
+    "anti_patterns": [
+      "Do not manually edit generated CHANGELOG.md files as changes will be overwritten on next automated release",
+      "Avoid mixing multiple unrelated changes in a single commit, which makes automated categorization inaccurate",
+      "Do not skip commitlint validation during development as it leads to inconsistent changelogs and broken automation"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between standard-version and semantic-release?",
+        "answer": "standard-version requires manual triggering and gives you control over when releases happen, while semantic-release fully automates releases based on commit messages in CI/CD. Use standard-version for manual release approval, semantic-release for complete automation."
+      },
+      {
+        "question": "How do I handle breaking changes in my commits?",
+        "answer": "Add an exclamation mark after the type (feat!) or include BREAKING CHANGE: in the commit footer. This triggers a MAJOR version bump and highlights the change prominently in the changelog."
+      },
+      {
+        "question": "Can I customize which commit types appear in the changelog?",
+        "answer": "Yes, all tools support customization. In standard-version use .versionrc.js, in semantic-release use commit-analyzer options, and in git-cliff use commit_parsers in cliff.toml. Set hidden: true or skip: true to exclude types."
+      },
+      {
+        "question": "Which tool should I use for a Python project?",
+        "answer": "Use commitizen for Python projects. It integrates with pyproject.toml, supports interactive commits, and can update version files in Python packages automatically."
+      },
+      {
+        "question": "How do I migrate an existing project to Conventional Commits?",
+        "answer": "Start by adding commitlint configuration and husky hooks, then use changelog_start_rev to begin tracking from a specific version. Previous commits can remain in old format while new commits follow the convention."
+      },
+      {
+        "question": "What permissions do GitHub Actions need for automated releases?",
+        "answer": "The workflow needs contents: write permission to create releases and commits, and may need pull-requests: write for release PRs. Use GITHUB_TOKEN for basic operations and NPM_TOKEN only if publishing to npm registry."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 553
+    }
+  ]
+}

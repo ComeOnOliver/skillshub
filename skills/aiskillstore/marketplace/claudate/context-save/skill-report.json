@@ -1,0 +1,280 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:31:11.110Z",
+    "slug": "claudate-context-save",
+    "source_url": "https://github.com/Claudate/claude-code-context-sync/tree/main/skills/context-save",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "83f9071d78b212e83b497d77620fc8f5538e9d273db872d692d58513b5b49214",
+    "tree_hash": "0a47aeeb211ab59f2b305232e7bf5f319259b3251c1ab63e67221d873b37e6dc"
+  },
+  "skill": {
+    "name": "context-save",
+    "description": "当用户发送\"换窗口处理-\"时调用。总结当前窗口的上下文信息、已完成任务、未完成任务，保存到 docs/context-sessions/ 目录，便于新窗口恢复。",
+    "summary": "当用户发送\"换窗口处理-\"时调用。总结当前窗口的上下文信息、已完成任务、未完成任务，保存到 docs/context-sessions/ 目录，便于新窗口恢复。",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "Claudate",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "context",
+      "sessions",
+      "continuity",
+      "productivity",
+      "workflow"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a prompt-based skill with no executable code. SKILL.md contains only natural language instructions for generating markdown session summaries. No file system access, network calls, or command execution capabilities exist in the skill itself. The static analyzer produced false positives by misinterpreting Chinese text and markdown formatting as security vulnerabilities. All findings are dismissed as false positives.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 117
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 130
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 319,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:31:11.110Z"
+  },
+  "content": {
+    "user_title": "Save session context for new windows",
+    "value_statement": "Context switching between AI sessions causes lost progress and repeated work. This skill automatically generates structured markdown summaries that capture tasks, files, and next steps so new AI windows can resume work instantly.",
+    "seo_keywords": [
+      "context save",
+      "session continuity",
+      "Claude Code",
+      "AI workflow",
+      "task tracking",
+      "context switch",
+      "session resume",
+      "work progress",
+      "productivity",
+      "multitasking"
+    ],
+    "actual_capabilities": [
+      "Summarize current session context including tasks and progress",
+      "Generate structured markdown files in docs/context-sessions/",
+      "Track completed and pending tasks with priority levels",
+      "Document key files and technical decisions",
+      "Provide actionable next steps for resuming work"
+    ],
+    "limitations": [
+      "Requires the context-resume skill to restore sessions",
+      "Only creates files in the docs/context-sessions/ directory",
+      "Does not handle binary files or media content",
+      "Requires user to trigger with the specific phrase"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Multi-project developers",
+        "title": "Switch between projects",
+        "description": "Save progress on one project and resume exactly where you left off when returning"
+      },
+      {
+        "target_user": "Long-running task handlers",
+        "title": "Preserve complex workflows",
+        "description": "Document ongoing work so context is never lost during extended development sessions"
+      },
+      {
+        "target_user": "Team collaborators",
+        "title": "Hand off work seamlessly",
+        "description": "Create session summaries that help others quickly understand current project state"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic session save",
+        "scenario": "Save current work context",
+        "prompt": "换窗口处理-"
+      },
+      {
+        "title": "Before break",
+        "scenario": "Save before taking a break",
+        "prompt": "我需要休息一下，换窗口处理-"
+      },
+      {
+        "title": "Milestone reached",
+        "scenario": "Save after completing a milestone",
+        "prompt": "完成了主要功能，换窗口处理-"
+      },
+      {
+        "title": "EOD summary",
+        "scenario": "End of day wrap-up",
+        "prompt": "今天工作结束了，换窗口处理-"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "换窗口处理-",
+        "output": [
+          "上下文已保存到: docs/context-sessions/20251128-1430-实现用户登录功能.md",
+          "新窗口恢复方法: 1) 调用 skill: context-resume 2) 选择对应的 session 文件",
+          "未完成任务数: 4"
+        ]
+      },
+      {
+        "input": "我需要休息一下，换窗口处理-",
+        "output": [
+          "上下文已保存到: docs/context-sessions/20251128-1800-午休前保存.md",
+          "新窗口恢复方法: 使用 context-resume skill 加载此会话",
+          "高优先级任务: 2 项待处理"
+        ]
+      },
+      {
+        "input": "完成了主要功能，换窗口处理-",
+        "output": [
+          "上下文已保存到: docs/context-sessions/20251128-1600-用户认证模块完成.md",
+          "新窗口恢复方法: 先查看 session 文件了解当前进度",
+          "下一步: 开始实现权限管理功能"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Trigger context-save before switching tasks or taking breaks",
+      "Keep task descriptions specific and actionable",
+      "Review the generated markdown for accuracy before resuming"
+    ],
+    "anti_patterns": [
+      "Calling context-save without meaningful progress to document",
+      "Leaving vague or outdated task descriptions in summaries",
+      "Skipping the context-resume step when starting a new window"
+    ],
+    "faq": [
+      {
+        "question": "Which AI platforms support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. No additional configuration required."
+      },
+      {
+        "question": "How many sessions can I save?",
+        "answer": "Unlimited sessions can be saved. Each creates a separate markdown file in docs/context-sessions/."
+      },
+      {
+        "question": "How do I resume a saved session?",
+        "answer": "Use the context-resume skill to load a session file and restore all context information."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. All data stays local. Files are saved in your project directory without any external network calls."
+      },
+      {
+        "question": "Why is my saved file not showing up?",
+        "answer": "Check that docs/context-sessions/ directory exists. Verify the filename format matches YYYYMMDD-HHMM-description.md"
+      },
+      {
+        "question": "How does this compare to Claudes memory feature?",
+        "answer": "This skill creates persistent, project-specific files you can version control and share with team members."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 140
+    }
+  ]
+}

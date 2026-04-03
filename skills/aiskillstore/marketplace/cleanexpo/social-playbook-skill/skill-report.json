@@ -1,0 +1,257 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:29:38.640Z",
+    "slug": "cleanexpo-social-playbook-skill",
+    "source_url": "https://github.com/CleanExpo/Unite-Hub/tree/main/.claude/skills/social-playbook",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2475c7c07ff885778620548ded6f88e73391b45d3dcdc705381f3dc6930419a8",
+    "tree_hash": "3fe4cda088075775854667596fb31328e8151c14200d598d5781f72548f3ba6c"
+  },
+  "skill": {
+    "name": "social-playbook-skill",
+    "description": "Design and generate complete social media playbooks (scripts, visuals, captions, hooks, thumbnails, transitions) for Synthex clients across YouTube, TikTok, Instagram, Facebook, LinkedIn, and Shorts/Reels. Use when planning multi-platform campaigns or content systems.",
+    "summary": "Design and generate complete social media playbooks (scripts, visuals, captions, hooks, thumbnails, ...",
+    "icon": "📱",
+    "version": "1.0.0",
+    "author": "CleanExpo",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "social-media",
+      "marketing",
+      "content-creation",
+      "campaigns",
+      "playbooks"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 27 static findings are FALSE POSITIVES. The skill contains only documentation files (skill-report.json, SKILL.md) with no executable code. The static analyzer incorrectly flagged pattern matches in metadata fields and documentation text. No network calls, file system threats, or code execution capabilities exist in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 120,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:29:38.640Z"
+  },
+  "content": {
+    "user_title": "Generate Social Media Playbooks for Multi-Platform Campaigns",
+    "value_statement": "Stop struggling with social media content planning. This skill creates complete playbooks with scripts, visuals, and posting schedules for YouTube, TikTok, Instagram, LinkedIn, and Facebook in minutes. Transform one content idea into optimized posts across every major platform automatically.",
+    "seo_keywords": [
+      "social media playbook",
+      "content creation",
+      "YouTube scripts",
+      "TikTok marketing",
+      "Instagram reels",
+      "LinkedIn posts",
+      "Claude Code",
+      "marketing automation",
+      "multi-platform campaigns",
+      "social media automation"
+    ],
+    "actual_capabilities": [
+      "Generates 10-30 video and post concepts per playbook",
+      "Creates platform-specific content variations for YouTube, TikTok, Instagram, LinkedIn, and Facebook",
+      "Designs thumbnail concepts with text overlays and visual styles",
+      "Plans weekly posting schedules with optimal time windows",
+      "Structures content for database storage and automation integration"
+    ],
+    "limitations": [
+      "Requires existing marketing documentation for context and brand guidelines",
+      "Does not create actual video files or graphics - generates concepts only",
+      "Content must align with practical, no-hype brand tone"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Marketing agency owner",
+        "title": "Onboard new clients quickly",
+        "description": "Generate complete 30-day social media strategies for new clients across all major platforms in under 10 minutes."
+      },
+      {
+        "target_user": "Small business owner",
+        "title": "Launch products effectively",
+        "description": "Create platform-specific content that maximizes reach for product launches without expensive agencies."
+      },
+      {
+        "target_user": "Content creator",
+        "title": "Scale content across platforms",
+        "description": "Turn one video idea into optimized content for YouTube, TikTok, Instagram, and LinkedIn automatically."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New Client Playbook",
+        "scenario": "Agency onboarding a client",
+        "prompt": "Create a social media playbook for a [industry] company targeting [audience]. Focus on [key services]. Include 20 video ideas with hooks, scripts, and thumbnail concepts."
+      },
+      {
+        "title": "Product Launch Campaign",
+        "scenario": "Launching a new feature",
+        "prompt": "Design a 6-week social media campaign for launching [product]. Create content for LinkedIn thought leadership, YouTube tutorials, and TikTok behind-the-scenes."
+      },
+      {
+        "title": "Educational Series",
+        "scenario": "Building authority",
+        "prompt": "Develop a 30-day educational content series for a [profession] teaching [topic]. Include platform-specific variations for each post."
+      },
+      {
+        "title": "Seasonal Promotion",
+        "scenario": "Holiday campaign",
+        "prompt": "Create a comprehensive social media playbook for [business] [season] campaign. Include countdown content, product showcases, and deals across all platforms."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a social media playbook for a digital marketing agency targeting e-commerce brands",
+        "output": [
+          "Campaign Overview: Authority-building campaign for e-commerce brands",
+          "Primary Persona: E-commerce store owners ($100k-$1M revenue)",
+          "Platform Strategy: YouTube (long-form), LinkedIn (thought leadership), TikTok (quick tips)",
+          "Video Concepts: 15 ideas including common mistakes and growth strategies",
+          "Posting Schedule: 5 videos per week at optimal time windows per platform",
+          "Thumbnail Style: Bright colors, large text overlays, before/after comparisons"
+        ]
+      },
+      {
+        "input": "Create a 30-day playbook for a local plumbing company",
+        "output": [
+          "Campaign Goal: Lead generation for emergency services",
+          "Target Audience: Homeowners aged 30-55",
+          "Content Mix: 60% educational, 30% testimonial, 10% promotional",
+          "Video Ideas: How-to guides, common problem solutions, team introductions",
+          "Platform Focus: Facebook community posts, YouTube tutorials, TikTok quick fixes",
+          "Call-to-Action Strategy: Emergency service phone number integration"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always specify your target audience and industry for more relevant content ideas",
+      "Include your unique value proposition to differentiate from competitors",
+      "Review and customize the generated hooks to match your authentic voice"
+    ],
+    "anti_patterns": [
+      "Don't use generic prompts like make me viral content - be specific about your goals",
+      "Avoid copying competitor content exactly - use ideas as inspiration only",
+      "Don't schedule all content at once - leave room for trending topics and news"
+    ],
+    "faq": [
+      {
+        "question": "Which platforms does this skill support?",
+        "answer": "YouTube, TikTok, Instagram (Reels and carousels), LinkedIn, and Facebook. Each platform gets optimized content variations."
+      },
+      {
+        "question": "How many content ideas will I get?",
+        "answer": "Each playbook generates 10-30 video and post concepts with platform-specific variations, hooks, scripts, and thumbnails."
+      },
+      {
+        "question": "Can I integrate this with my existing tools?",
+        "answer": "Yes, content is structured for database storage and can connect to scheduling tools like Buffer, Hootsuite, or custom APIs."
+      },
+      {
+        "question": "Is my client data safe?",
+        "answer": "The skill only uses information you provide and does not store or transmit data externally. All processing happens locally."
+      },
+      {
+        "question": "What if the content does not match my brand?",
+        "answer": "Each playbook includes brand tone guidelines and can be customized. Review and adjust hooks to match your voice."
+      },
+      {
+        "question": "How does this compare to hiring an agency?",
+        "answer": "Get agency-quality strategy in minutes instead of weeks, at a fraction of the cost, with unlimited revisions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 60
+    }
+  ]
+}

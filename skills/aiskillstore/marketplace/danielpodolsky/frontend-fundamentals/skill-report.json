@@ -1,0 +1,269 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:20:02.940Z",
+    "slug": "danielpodolsky-frontend-fundamentals",
+    "source_url": "https://github.com/DanielPodolsky/mentor-spec/tree/main/.claude/skills/fundamentals/frontend",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "087938b2a55714f4e33062a74fcc3298051996faf30e9b1d494d11b0d0349927",
+    "tree_hash": "593e48e8441160c2ff4026530bf9901fc310025ac708cabf15b27477bb70f3cc"
+  },
+  "skill": {
+    "name": "frontend-fundamentals",
+    "description": "Auto-invoke when reviewing React, Vue, or frontend component code. Enforces component architecture, state management patterns, and UI best practices.",
+    "summary": "Auto-invoke when reviewing React, Vue, or frontend component code. Enforces component architecture, ...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "DanielPodolsky",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "frontend",
+      "react",
+      "vue",
+      "code-review",
+      "components"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation/metadata skill with no executable code. All 23 static findings are FALSE POSITIVES caused by the static analyzer misinterpreting markdown syntax, file paths, and documentation content as security threats. The files contain only frontend code review guidelines, metadata JSON, and example code snippets - no actual network calls, command execution, or cryptographic operations exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 155,
+            "line_end": 155
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 108
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 296,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:20:02.940Z"
+  },
+  "content": {
+    "user_title": "Review Frontend Code Automatically",
+    "value_statement": "Frontend code reviews often miss architectural issues and anti-patterns. This skill automatically applies proven frontend standards to catch component design flaws, state management mistakes, and performance issues before they reach production.",
+    "seo_keywords": [
+      "frontend review",
+      "React components",
+      "Vue components",
+      "code quality",
+      "component architecture",
+      "state management",
+      "Claude Code",
+      "AI code review",
+      "frontend best practices",
+      "code review automation"
+    ],
+    "actual_capabilities": [
+      "Automatically reviews React, Vue, and Svelte components",
+      "Checks component size and prop count limits",
+      "Identifies state management anti-patterns",
+      "Provides accessibility compliance checks",
+      "Suggests performance optimizations"
+    ],
+    "limitations": [
+      "Only works with frontend component code",
+      "Cannot execute or test the actual code",
+      "Limited to architectural patterns, not business logic"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Senior developers mentoring juniors",
+        "title": "Mentor Junior Developers",
+        "description": "Automatically catch architectural mistakes in junior developers' code and provide educational feedback with specific examples."
+      },
+      {
+        "target_user": "Code review teams",
+        "title": "Standardize Code Reviews",
+        "description": "Ensure consistent code review standards across your team with automated checks for component architecture best practices."
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Review Community Contributions",
+        "description": "Quickly assess pull requests for frontend architectural issues and provide actionable feedback to contributors."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Review Component",
+        "scenario": "Analyzing a new React component",
+        "prompt": "Please review this React component for architectural issues, performance problems, and accessibility concerns. Focus on component size, prop count, state management, and whether it follows single responsibility principle."
+      },
+      {
+        "title": "Check State Management",
+        "scenario": "Reviewing state management patterns",
+        "prompt": "Analyze this code for state management anti-patterns. Check if state is properly colocated, if prop drilling exists, and whether server state is handled correctly."
+      },
+      {
+        "title": "Performance Audit",
+        "scenario": "Identifying performance issues",
+        "prompt": "Review this frontend code for performance bottlenecks. Look for unnecessary re-renders, missing memoization, and opportunities for code splitting."
+      },
+      {
+        "title": "Accessibility Review",
+        "scenario": "Ensuring accessibility compliance",
+        "prompt": "Check this component for accessibility issues. Verify semantic HTML usage, ARIA attributes, and keyboard navigation support."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review this React component for architectural issues",
+        "output": [
+          "Component exceeds 200 lines - consider splitting into smaller components",
+          "Found 8 props - try to reduce to under 7 for better maintainability",
+          "State management looks good - properly colocated with useState",
+          "Performance: Add useMemo for the filtered users calculation",
+          "Accessibility: Button needs aria-label for screen readers"
+        ]
+      },
+      {
+        "input": "Check this Vue component for performance problems",
+        "output": [
+          "Computed property is recalculating on every render - use memoization",
+          "v-for without key could cause unnecessary re-renders",
+          "Good use of compositional API for logic separation",
+          "Consider lazy loading this component with defineAsyncComponent"
+        ]
+      },
+      {
+        "input": "Analyze this component for accessibility compliance",
+        "output": [
+          "Missing alt text on all images - add descriptive alternatives",
+          "Form inputs need associated labels for screen readers",
+          "Color contrast ratio is insufficient - darken the text color",
+          "Interactive elements missing keyboard focus styles"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Apply the single responsibility principle - each component should do one thing well",
+      "Keep components under 200 lines and props under 7 for maintainability",
+      "Colocate state as close as possible to where it's actually used"
+    ],
+    "anti_patterns": [
+      "Creating god components that handle data fetching, state, and UI rendering",
+      "Prop drilling through more than 3 levels of components",
+      "Putting expensive calculations directly in render without memoization"
+    ],
+    "faq": [
+      {
+        "question": "Which frontend frameworks does this support?",
+        "answer": "Works with React, Vue, Svelte, and other component-based frameworks. Focuses on universal patterns applicable to all."
+      },
+      {
+        "question": "What are the size limits for components?",
+        "answer": "Recommends keeping components under 200 lines and using fewer than 7 props for optimal maintainability."
+      },
+      {
+        "question": "How does this integrate with my development workflow?",
+        "answer": "Automatically activates when reviewing frontend code in Claude Code, providing instant feedback during code reviews."
+      },
+      {
+        "question": "Is my code data safe during review?",
+        "answer": "Yes, this is a documentation-only skill that does not execute code or make network requests. Your code stays local."
+      },
+      {
+        "question": "What if the skill flags something that is actually correct?",
+        "answer": "These are guidelines, not rules. Use your judgment - the skill helps identify potential issues for your consideration."
+      },
+      {
+        "question": "How does this compare to linters like ESLint?",
+        "answer": "This focuses on architectural patterns and design principles, while linters catch syntax and style issues. They complement each other."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 121
+    }
+  ]
+}

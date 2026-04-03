@@ -1,0 +1,352 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:21:32.188Z",
+    "slug": "dyai2025-condition-based-waiting",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/condition-based-waiting",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "11037d1d2d42f0c09b907b7e03097708d13eac0f4719b4c1c03e10dcc0e7b72a",
+    "tree_hash": "8c59160c146356f5ba60997778cf1a5fac09ef6343dc12fec871f7c779da28a0"
+  },
+  "skill": {
+    "name": "condition-based-waiting",
+    "description": "Use when tests have race conditions, timing dependencies, or inconsistent pass/fail behavior - replaces arbitrary timeouts with condition polling to wait for actual state changes, eliminating flaky tests from timing guesses",
+    "summary": "Use when tests have race conditions, timing dependencies, or inconsistent pass/fail behavior - repla...",
+    "icon": "⏱️",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "testing",
+      "flaky-tests",
+      "async",
+      "quality-assurance",
+      "race-conditions"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure testing utility skill containing only TypeScript polling functions and documentation. All 43 static findings are false positives: JavaScript template literals were misidentified as Ruby shell execution, timing functions were misidentified as weak cryptography, and documentation comments were misidentified as system reconnaissance. No actual risk factors present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "example.ts",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "example.ts",
+            "line_start": 79,
+            "line_end": 79
+          },
+          {
+            "file": "example.ts",
+            "line_start": 128,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 107
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 60
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 465,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:21:32.188Z"
+  },
+  "content": {
+    "user_title": "Eliminate flaky tests with condition polling",
+    "value_statement": "Flaky tests waste time and reduce confidence in your codebase. Condition-based waiting replaces arbitrary timeouts with actual state checks, ensuring tests pass reliably across all environments including CI.",
+    "seo_keywords": [
+      "condition based waiting",
+      "flaky tests",
+      "test reliability",
+      "async testing",
+      "race conditions",
+      "waitFor polling",
+      "automated testing",
+      "CI CD testing",
+      "Claude",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Replace arbitrary setTimeout and sleep calls with condition polling",
+      "Wait for specific event types to appear in thread managers",
+      "Wait for a specific count of events to accumulate",
+      "Match events using custom predicate functions",
+      "Set configurable timeouts with descriptive error messages",
+      "Implement efficient 10ms polling intervals for CPU efficiency"
+    ],
+    "limitations": [
+      "Does not work for testing actual timing behavior like debounce or throttle",
+      "Requires the condition to be checkable via function (not timing-dependent)",
+      "Only available for TypeScript and JavaScript testing environments"
+    ],
+    "use_cases": [
+      {
+        "target_user": "QA Engineers",
+        "title": "Fix CI test failures",
+        "description": "Eliminate intermittent test failures that pass locally but fail in continuous integration environments"
+      },
+      {
+        "target_user": "Frontend Developers",
+        "title": "Reliable async component tests",
+        "description": "Write stable tests for React components with async state changes without brittle sleep calls"
+      },
+      {
+        "target_user": "Backend Engineers",
+        "title": "Integration test stability",
+        "description": "Ensure database and API integration tests pass consistently without race condition failures"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic condition check",
+        "scenario": "Replace a simple setTimeout",
+        "prompt": "Replace this arbitrary timeout with condition-based waiting: await new Promise(r => setTimeout(r, 100)); expect(element).toBeVisible();"
+      },
+      {
+        "title": "Wait for event",
+        "scenario": "Testing async events",
+        "prompt": "Use waitForEvent to wait for a TOOL_RESULT event before asserting on the response data."
+      },
+      {
+        "title": "Count events",
+        "scenario": "Multiple async responses",
+        "prompt": "Wait for 3 AGENT_MESSAGE events to accumulate using waitForEventCount before validating the conversation flow."
+      },
+      {
+        "title": "Custom predicate",
+        "scenario": "Complex matching criteria",
+        "prompt": "Create a waitForEventMatch call to wait for an event matching (e) => e.type === 'DATA_READY' && e.payload.id === 'item_123'."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me fix this flaky test that randomly fails in CI: await sleep(300); expect(results.length).toBe(5);",
+        "output": [
+          "Replace the arbitrary 300ms sleep with condition polling:",
+          "await waitFor(() => results.length === 5, '5 results to be available');",
+          "This eliminates timing dependency and ensures the test waits for actual state."
+        ]
+      },
+      {
+        "input": "My test passes locally but fails in CI when the server is slow",
+        "output": [
+          "Instead of guessing a timeout value, poll for the condition you actually need:",
+          "await waitFor(() => server.isReady(), 'server to be ready', 10000);",
+          "This adapts to actual server speed rather than failing on slow runs."
+        ]
+      },
+      {
+        "input": "I need to wait for 3 API calls to complete before checking the results",
+        "output": [
+          "Use waitForEventCount to accumulate multiple events:",
+          "await waitForEventCount(threadManager, threadId, 'API_RESPONSE', 3);",
+          "Then assert on all accumulated results at once."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always set reasonable timeout limits (5000ms default) with descriptive error messages",
+      "Poll every 10ms for efficiency—1ms wastes CPU, 100ms makes tests slow",
+      "Call state getters inside the polling loop, never cache values before it"
+    ],
+    "anti_patterns": [
+      "Polling too fast (every 1ms) which wastes CPU cycles without benefit",
+      "Omitting timeout protection which causes infinite loops if condition never met",
+      "Reading state outside the polling loop which captures stale values"
+    ],
+    "faq": [
+      {
+        "question": "Which testing frameworks work with this skill?",
+        "answer": "Any JavaScript or TypeScript testing framework including Jest, Vitest, Mocha, and Playwright."
+      },
+      {
+        "question": "What timeout values work best?",
+        "answer": "Default 5000ms works for most cases. Increase for slow CI environments or complex async operations."
+      },
+      {
+        "question": "Can this handle cross-tab synchronization?",
+        "answer": "Yes, poll a shared state variable that both tabs can read and update."
+      },
+      {
+        "question": "Does this modify my test runner?",
+        "answer": "No, it provides pure utility functions you call from your existing test code."
+      },
+      {
+        "question": "What is the initial polling delay?",
+        "answer": "First check runs immediately, then every 10ms thereafter."
+      },
+      {
+        "question": "How is this different from @testing-library waitFor?",
+        "answer": "This provides a lower-level primitive you can adapt to any condition, not just DOM queries."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "example.ts",
+      "type": "file",
+      "path": "example.ts",
+      "lines": 159
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 121
+    },
+    {
+      "name": "SKILL.zip",
+      "type": "file",
+      "path": "SKILL.zip"
+    }
+  ]
+}

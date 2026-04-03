@@ -1,0 +1,349 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:44:37.921Z",
+    "slug": "cjharmath-py-observability",
+    "source_url": "https://github.com/CJHarmath/claude-agents-skills/tree/main/skills/py-observability",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b3195154cfe6c3b8fa0ca20db1d25337d766de86a8decb82421a500e5664eace",
+    "tree_hash": "6649b730cf7540fbe6fe85d4ba924afbdc99c0f926ef02e6b435bf178fbb0c86"
+  },
+  "skill": {
+    "name": "py-observability",
+    "description": "Observability patterns for Python backends. Use when adding logging, metrics, tracing, or debugging production issues.",
+    "summary": "Observability patterns for Python backends. Use when adding logging, metrics, tracing, or debugging ...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "CJHarmath",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "observability",
+      "logging",
+      "metrics",
+      "python",
+      "debugging"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 45 static findings are false positives. This is a pure documentation skill containing only code examples for observability patterns. No executable code, network calls, filesystem access, or command execution exists. The scanner detected markdown formatting syntax and metadata hashes as security issues.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 267
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 267,
+            "line_end": 271
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 271,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 316
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 316,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 367
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 367,
+            "line_end": 414
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 414,
+            "line_end": 420
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 420,
+            "line_end": 457
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 457,
+            "line_end": 463
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 463,
+            "line_end": 483
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 464,
+            "line_end": 464
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 686,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:44:37.921Z"
+  },
+  "content": {
+    "user_title": "Add observability to Python backends",
+    "value_statement": "Production issues are impossible to debug without observability. Silent failures and missing context in errors make incidents last longer. This skill provides patterns for logging, metrics, tracing, and error tracking for Python backends.",
+    "seo_keywords": [
+      "observability",
+      "python",
+      "logging",
+      "metrics",
+      "tracing",
+      "prometheus",
+      "sentry",
+      "structlog",
+      "claude",
+      "claude code"
+    ],
+    "actual_capabilities": [
+      "Implement structured logging with context and request IDs",
+      "Set up Prometheus metrics with counters, histograms, and gauges",
+      "Configure Sentry error tracking with sensitive data redaction",
+      "Create flow tracing for multi-step operations",
+      "Build health check endpoints for dependency verification",
+      "Add proper error logging with full context and exception details"
+    ],
+    "limitations": [
+      "Does not install or configure dependencies",
+      "Does not modify existing code files",
+      "Does not access production systems or metrics",
+      "Does not provide hosting or infrastructure"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developers",
+        "title": "Add logging to API endpoints",
+        "description": "Implement structured logging with request context for FastAPI or Flask backends."
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Set up monitoring dashboards",
+        "description": "Configure Prometheus metrics and Sentry error tracking for production services."
+      },
+      {
+        "target_user": "Site reliability engineers",
+        "title": "Debug production incidents",
+        "description": "Trace multi-step operations and correlate logs by request ID for faster debugging."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic logging setup",
+        "scenario": "Add logging to a Python service",
+        "prompt": "Help me set up structured logging using structlog for a Python FastAPI service. Include request ID correlation and proper log levels."
+      },
+      {
+        "title": "Add Prometheus metrics",
+        "scenario": "Monitor API performance",
+        "prompt": "Show me how to add Prometheus metrics to a Python web application. Include HTTP request counters and latency histograms."
+      },
+      {
+        "title": "Configure error tracking",
+        "scenario": "Set up Sentry for errors",
+        "prompt": "Configure Sentry error tracking for a Python backend. Include sensitive data redaction and custom context for better debugging."
+      },
+      {
+        "title": "Trace multi-step flows",
+        "scenario": "Debug complex operations",
+        "prompt": "Implement flow tracing for a multi-step business process in Python. Include step-by-step logging and error handling with context."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me set up structured logging for my FastAPI application",
+        "output": [
+          "Configure structlog with JSON output for production and console renderer for development",
+          "Add request ID correlation using contextvars middleware",
+          "Set up proper log levels: DEBUG for diagnostics, INFO for business events, WARNING for edge cases, ERROR for failures",
+          "Bind request context (path, method, request_id) to all logs in a request",
+          "Redact sensitive fields like passwords and tokens before logging"
+        ]
+      },
+      {
+        "input": "How do I add metrics to track API performance",
+        "output": [
+          "Create a Counter for total HTTP requests by method, path, and status code",
+          "Create a Histogram for request duration with buckets (0.01, 0.05, 0.1, 0.5, 1.0, 5.0)",
+          "Add middleware to observe request duration and increment counters",
+          "Expose a /metrics endpoint for Prometheus scraping",
+          "Track business metrics like submissions by skill area and status"
+        ]
+      },
+      {
+        "input": "My production service is failing, how do I debug",
+        "output": [
+          "Generate a unique flow_id at the start of multi-step operations",
+          "Log each step with the flow_id to trace execution path",
+          "Include full context (user_id, assessment_id, error details) in error logs",
+          "Use Sentry with push_scope to add custom context before capturing exceptions",
+          "Correlate logs by request_id to see all logs from the same request"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always include request_id and user_id in logs for correlation",
+      "Use structured key-value pairs instead of string interpolation in logs",
+      "Log with full context when errors occur including error type and message",
+      "Redact sensitive data before logging request bodies or user information"
+    ],
+    "anti_patterns": [
+      "Silent early returns without logging why the function returned early",
+      "Logging errors without context (just the error message, no user or request info)",
+      "Using unstructured string formatting instead of structured key-value logging"
+    ],
+    "faq": [
+      {
+        "question": "Which Python frameworks are supported?",
+        "answer": "Patterns work with FastAPI, Flask, and any Python async or sync framework. Libraries used are framework-agnostic."
+      },
+      {
+        "question": "What logging libraries does this skill use?",
+        "answer": "Primary library is structlog for structured logging. Can also use standard logging module with custom formatters."
+      },
+      {
+        "question": "Can I use this with Docker or Kubernetes?",
+        "answer": "Yes. Structured JSON logs work well with container orchestration. Prometheus metrics scrape endpoints easily."
+      },
+      {
+        "question": "Is sensitive data safe in logs?",
+        "answer": "Skill includes patterns to redact passwords, tokens, and API keys before logging. Always review log output."
+      },
+      {
+        "question": "Why are my logs not appearing?",
+        "answer": "Check log level configuration, ensure logger is properly initialized, and verify structured log output format matches your log collector."
+      },
+      {
+        "question": "How is this different from other logging skills?",
+        "answer": "Focuses on production observability with metrics and tracing, not just log formatting. Includes Prometheus and Sentry integration."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 507
+    }
+  ]
+}

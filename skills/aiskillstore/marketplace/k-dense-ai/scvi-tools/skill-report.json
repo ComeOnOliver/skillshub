@@ -1,0 +1,256 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:54:50.272Z",
+    "slug": "k-dense-ai-scvi-tools",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scvi-tools",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "324b65aa833d076efa71dc48ee044d4006648944112e4c374a95d47eb8be31a5",
+    "tree_hash": "b30c5f3d393083e8d42cec5269d4bdeafc85cc973573e26621d4b734a32a84ab"
+  },
+  "skill": {
+    "name": "scvi-tools",
+    "description": "Deep generative models for single-cell omics. Use when you need probabilistic batch correction (scVI), transfer learning, differential expression with uncertainty, or multi-modal integration (TOTALVI, MultiVI). Best for advanced modeling, batch effects, multimodal data. For standard analysis pipelines use scanpy.",
+    "summary": "Deep generative models for single-cell omics. Use when you need probabilistic batch correction (scVI), transfer learning, differential expression with uncertainty, or multi-modal integration (TOTALVI, MultiVI). Best for advanced modeling, batch effects, multimodal data. For standard analysis pipelines use scanpy.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "BSD-3-Clause license",
+    "tags": [
+      "single-cell",
+      "genomics",
+      "machine-learning",
+      "bioinformatics",
+      "deep-learning"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing markdown reference files for scvi-tools, a legitimate Python library for single-cell genomics analysis. All 399 static findings are false positives caused by incorrect pattern matching: Python code examples in documentation were flagged as shell commands, bioinformatics statistical terms were misidentified as cryptographic algorithms, and documentation URLs were flagged as hardcoded URLs. No executable code or malicious patterns exist. Safe for publication.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 169
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 7698,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:54:50.272Z",
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "content": {
+    "user_title": "Analyze single-cell genomics data",
+    "value_statement": "Single-cell genomics analysis requires probabilistic models to handle technical noise and batch effects. scvi-tools provides deep generative models using variational inference for dimensionality reduction, batch correction, differential expression, and multi-modal integration of single-cell data.",
+    "seo_keywords": [
+      "single-cell RNA-seq analysis",
+      "scVI",
+      "scvi-tools",
+      "batch correction",
+      "single-cell genomics",
+      "variational autoencoder",
+      "Cellular analysis",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Train deep generative models (scVI, scANVI, totalVI) for single-cell data analysis",
+      "Perform probabilistic batch correction using neural network-based integration",
+      "Conduct differential expression analysis with uncertainty quantification",
+      "Integrate multimodal single-cell data (RNA, protein, chromatin) with MultiVI",
+      "Generate low-dimensional latent representations for downstream analysis",
+      "Analyze spatial transcriptomics data with deconvolution and mapping methods"
+    ],
+    "limitations": [
+      "Requires raw count data (not log-normalized) for optimal model performance",
+      "Needs GPU resources for training on large datasets (>100,000 cells)",
+      "Models require expertise to interpret and validate results properly",
+      "Limited to AnnData-compatible data formats from the scanpy ecosystem"
+    ],
+    "use_cases": [
+      {
+        "title": "Batch correction for integrated single-cell analysis",
+        "description": "Remove technical batch effects from single-cell RNA-seq datasets across multiple donors, protocols, or sequencing runs using scVI to create unified, integrated cell atlases.",
+        "target_user": "Computational biologists building cell atlases"
+      },
+      {
+        "title": "Differential expression with uncertainty",
+        "description": "Identify differentially expressed genes between cell types or conditions with probabilistic uncertainty estimates, providing more reliable statistical conclusions for downstream validation.",
+        "target_user": "Genomics researchers studying gene expression changes"
+      },
+      {
+        "title": "Multi-modal data integration",
+        "description": "Jointly analyze paired RNA and protein measurements (CITE-seq) or chromatin accessibility data to discover cell populations with enhanced biological resolution.",
+        "target_user": "Multi-omics researchers studying cell identity"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic scVI model setup",
+        "prompt": "Help me set up scvi-tools to analyze my single-cell RNA-seq data. I have an AnnData object with raw count data and want to perform batch correction. Show me how to register the data, train the model, and extract latent representations.",
+        "scenario": "User wants to start using scvi-tools for the first time"
+      },
+      {
+        "title": "Differential expression analysis",
+        "prompt": "I trained an scVI model on my single-cell dataset with cell type annotations. Help me identify differentially expressed genes between two cell types (e.g., cluster A vs cluster B) using the differential_expression method. Include how to interpret the results and set effect size thresholds.",
+        "scenario": "User wants to perform differential expression between cell populations"
+      },
+      {
+        "title": "Multi-modal integration with totalVI",
+        "prompt": "I have paired CITE-seq data with RNA counts and protein antibody-derived counts. Help me set up totalVI to jointly model both modalities, train the model, and extract joint latent representations that capture both RNA and protein variation.",
+        "scenario": "User wants to integrate protein and RNA measurements"
+      },
+      {
+        "title": "Spatial transcriptomics deconvolution",
+        "prompt": "I have a single-cell reference dataset with cell type annotations and a spatial transcriptomics dataset with spot-level counts. Help me use DestVI or Stereoscope to deconvolve cell types in the spatial data and create cell type proportion maps.",
+        "scenario": "User wants to map cell types to spatial locations"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me set up scVI for batch correction on my single-cell dataset with two batches.",
+        "output": "```python\nimport scvi\nimport scanpy as sc\n\n# Preprocess data\nadata = sc.read_h5ad(\"my_single_cell_data.h5ad\")\nsc.pp.filter_genes(adata, min_counts=3)\n\n# Register data with batch information\nscvi.model.SCVI.setup_anndata(\n    adata,\n    layer=\"counts\",\n    batch_key=\"batch\"\n)\n\n# Train model\nmodel = scvi.model.SCVI(adata)\nmodel.train()\n\n# Get batch-corrected latent representation\nlatent = model.get_latent_representation()\nadata.obsm[\"X_scVI\"] = latent\n\n# Downstream analysis\nsc.pp.neighbors(adata, use_rep=\"X_scVI\")\nsc.tl.umap(adata)\nsc.tl.leiden(adata)\n```"
+      },
+      {
+        "input": "How do I identify marker genes between two cell types in my scVI model?",
+        "output": "```python\n# Differential expression between two groups\nde_results = model.differential_expression(\n    groupby=\"leiden\",\n    group1=\"0\",  # Cluster 0\n    group2=\"1\",  # Cluster 1\n    mode=\"change\",\n    delta=0.25  # Minimum effect size\n)\n\n# View top differentially expressed genes\nprint(de_results.head(20))\n\n# Filter for significant genes\nsignificant_genes = de_results[\n    (de_results['is_de_fdr_0.05']) & \n    (de_results['bayes_factor'] > 1)\n]\nprint(f\"Found {len(significant_genes)} differentially expressed genes\")\n```"
+      }
+    ],
+    "best_practices": [
+      "Always provide raw, unnormalized count data to scvi-tools models for accurate probabilistic modeling",
+      "Register all known technical covariates (batch, donor, protocol) during setup to improve batch correction",
+      "Save trained models regularly using model.save() to avoid retraining on large datasets",
+      "Use GPU acceleration (accelerator=\"gpu\") when training on datasets with more than 50,000 cells"
+    ],
+    "anti_patterns": [
+      "Do not use log-normalized data as input - scvi-tools models expect raw count data",
+      "Do not skip data filtering (low-count genes/cells) before training as it affects model quality",
+      "Do not interpret latent representations without validation against known biological markers",
+      "Do not use scvi-tools for bulk RNA-seq analysis - it is designed specifically for single-cell data"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between scVI and scanpy for single-cell analysis?",
+        "answer": "scvi-tools uses deep generative models with variational inference to learn probabilistic representations of single-cell data, providing uncertainty quantification and superior batch correction. scanpy provides traditional dimensionality reduction (PCA, UMAP) and clustering methods. Use scvi-tools for advanced modeling and batch correction, scanpy for standard pipelines and downstream analysis."
+      },
+      {
+        "question": "Do I need a GPU to use scvi-tools?",
+        "answer": "A GPU is recommended but not required. For datasets with fewer than 50,000 cells, CPU training is feasible. For larger datasets or frequent analysis, GPU acceleration significantly reduces training time. Install with GPU support using: pip install scvi-tools[cuda]"
+      },
+      {
+        "question": "What data formats does scvi-tools support?",
+        "answer": "scvi-tools works with AnnData objects from the scanpy ecosystem. Data should be stored in the .X matrix as raw counts. Cell-level covariates (batch, donor) and gene-level information are registered using model.setup_anndata(). Support for Seurat objects is available through conversion."
+      },
+      {
+        "question": "How do I choose between scVI, scANVI, and totalVI?",
+        "answer": "Use scVI for unsupervised analysis without cell type labels. Use scANVI when you have some cell type annotations and want semi-supervised integration. Use totalVI for paired RNA and protein (CITE-seq) data to jointly model both modalities."
+      },
+      {
+        "question": "What does the differential_expression method return?",
+        "answer": "It returns a DataFrame with gene-level statistics including: bayes_factor (evidence for differential expression), is_de_fdr_0.05 (FDR-corrected significance), mean (average expression per group), and effect size estimates. Higher bayes_factor indicates stronger evidence for differential expression."
+      },
+      {
+        "question": "How do I save and load trained scvi-tools models?",
+        "answer": "Use model.save(\"path/to/model\", overwrite=True) to save and model = scvi.model.SCVI.load(\"path/to/model\", adata=new_adata) to load. The saved model includes model weights, training history, and configuration. This allows sharing models and avoiding retraining."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "differential-expression.md",
+          "type": "file",
+          "path": "references/differential-expression.md",
+          "lines": 582
+        },
+        {
+          "name": "models-atac-seq.md",
+          "type": "file",
+          "path": "references/models-atac-seq.md",
+          "lines": 322
+        },
+        {
+          "name": "models-multimodal.md",
+          "type": "file",
+          "path": "references/models-multimodal.md",
+          "lines": 368
+        },
+        {
+          "name": "models-scrna-seq.md",
+          "type": "file",
+          "path": "references/models-scrna-seq.md",
+          "lines": 331
+        },
+        {
+          "name": "models-spatial.md",
+          "type": "file",
+          "path": "references/models-spatial.md",
+          "lines": 439
+        },
+        {
+          "name": "models-specialized.md",
+          "type": "file",
+          "path": "references/models-specialized.md",
+          "lines": 409
+        },
+        {
+          "name": "theoretical-foundations.md",
+          "type": "file",
+          "path": "references/theoretical-foundations.md",
+          "lines": 439
+        },
+        {
+          "name": "workflows.md",
+          "type": "file",
+          "path": "references/workflows.md",
+          "lines": 547
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 192
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 190
+    }
+  ]
+}

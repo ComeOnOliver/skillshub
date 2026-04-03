@@ -1,0 +1,317 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:50:06.254Z",
+    "slug": "k-dense-ai-vaex",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/vaex",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "57b6f481ef1bb1a50972dc08f282438b617b3703c517b94e56146c88dab90ffb",
+    "tree_hash": "efaf025a91139da1a2159f8e7d1615d0ba1a7efcb16b5a3a7ee20454de8f619e"
+  },
+  "skill": {
+    "name": "vaex",
+    "description": "Use this skill for processing and analyzing large tabular datasets (billions of rows) that exceed available RAM. Vaex excels at out-of-core DataFrame operations, lazy evaluation, fast aggregations, efficient visualization of big data, and machine learning on large datasets. Apply when users need to work with large CSV/HDF5/Arrow/Parquet files, perform fast statistics on massive datasets, create visualizations of big data, or build ML pipelines that do not fit in memory.",
+    "summary": "Use this skill for processing and analyzing large tabular datasets (billions of rows) that exceed av...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "data",
+    "tags": [
+      "data-science",
+      "big-data",
+      "dataframes",
+      "python",
+      "performance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill for the Vaex Python library. All 498 static findings are false positives caused by markdown code block formatting. The scanner misinterpreted backticks in code examples as Ruby/shell commands, flagged memory-mapping as filesystem access, and misidentified DataFrame inspection methods as reconnaissance. No executable code, credential handling, or malicious patterns exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 178
+          },
+          {
+            "file": "references/core_dataframes.md",
+            "line_start": 15,
+            "line_end": 156
+          },
+          {
+            "file": "references/data_processing.md",
+            "line_start": 11,
+            "line_end": 554
+          },
+          {
+            "file": "references/io_operations.md",
+            "line_start": 19,
+            "line_end": 702
+          },
+          {
+            "file": "references/machine_learning.md",
+            "line_start": 7,
+            "line_end": 727
+          },
+          {
+            "file": "references/performance.md",
+            "line_start": 11,
+            "line_end": 570
+          },
+          {
+            "file": "references/visualization.md",
+            "line_start": 20,
+            "line_end": 612
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/io_operations.md",
+            "line_start": 10,
+            "line_end": 13
+          },
+          {
+            "file": "references/io_operations.md",
+            "line_start": 22,
+            "line_end": 48
+          },
+          {
+            "file": "references/performance.md",
+            "line_start": 259,
+            "line_end": 262
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/io_operations.md",
+            "line_start": 474,
+            "line_end": 474
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 6268,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:50:06.254Z"
+  },
+  "content": {
+    "user_title": "Analyze massive datasets with Vaex",
+    "value_statement": "Processing large tabular datasets that exceed RAM requires specialized tools. Vaex enables out-of-core DataFrame operations, lazy evaluation, and billion-row-per-second processing on datasets too big for memory. Perfect for astronomical data, financial time series, and large-scale scientific analysis.",
+    "seo_keywords": [
+      "vaex",
+      "big data",
+      "dataframes",
+      "python",
+      "claude",
+      "codex",
+      "claude-code",
+      "out-of-core",
+      "hdf5",
+      "parquet"
+    ],
+    "actual_capabilities": [
+      "Load and process datasets with billions of rows using memory-mapped HDF5/Arrow/Parquet formats",
+      "Perform lazy evaluation and virtual columns to minimize memory overhead",
+      "Execute fast statistical aggregations and groupby operations on massive datasets",
+      "Create visualizations and heatmaps of large data without loading everything into RAM",
+      "Build ML pipelines with transformers, encoders, and integration with scikit-learn and XGBoost",
+      "Convert between data formats and work with cloud storage (S3, GCS) seamlessly"
+    ],
+    "limitations": [
+      "Cannot process non-tabular data types like images, text documents, or graph structures",
+      "Limited to single-machine processing - does not support distributed clusters",
+      "Requires data to be in supported formats (HDF5, Arrow, Parquet, CSV) for optimal performance"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data scientists",
+        "title": "Explore billion-row datasets",
+        "description": "Analyze massive CSV/HDF5 datasets interactively without memory constraints or preprocessing."
+      },
+      {
+        "target_user": "Scientific researchers",
+        "title": "Process astronomical data",
+        "description": "Work with terabyte-scale scientific datasets using out-of-core computation and lazy evaluation."
+      },
+      {
+        "target_user": "ML engineers",
+        "title": "Build scalable pipelines",
+        "description": "Create feature engineering and ML workflows that handle datasets exceeding available RAM."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Load large dataset",
+        "scenario": "Open and explore big data",
+        "prompt": "Use Vaex to open my HDF5 file at data/large_dataset.hdf5 and show its structure, column types, and row count."
+      },
+      {
+        "title": "Filter and aggregate",
+        "scenario": "Compute statistics on big data",
+        "prompt": "Filter the dataset for records where age > 25 and calculate the mean and standard deviation of income grouped by category."
+      },
+      {
+        "title": "Create visualization",
+        "scenario": "Visualize large data",
+        "prompt": "Create a heatmap showing the relationship between x and y coordinates with 100 bins on each axis."
+      },
+      {
+        "title": "Build ML pipeline",
+        "scenario": "Train model on big data",
+        "prompt": "Use Vaex ML to create a StandardScaler for features age and income, then apply PCA for dimensionality reduction."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Load my parquet file and show statistics",
+        "output": [
+          "DataFrame shape: (10,000,000, 15) rows x columns",
+          "Column types: int64 (5), float64 (7), string (3)",
+          "Memory usage: 0.5 GB (virtual columns)",
+          "Mean age: 34.2 | Std income: 45200.5"
+        ]
+      },
+      {
+        "input": "Filter and group data",
+        "output": [
+          "Filtered to 2.3 million rows (age > 25)",
+          "Group by category results:",
+          "- Electronics: 450K rows, mean $52,000",
+          "- Clothing: 890K rows, mean $31,000",
+          "- Home: 960K rows, mean $42,000"
+        ]
+      },
+      {
+        "input": "Convert CSV to HDF5 for performance",
+        "output": [
+          "Original CSV: 15 GB, 45 minutes to load",
+          "Converted HDF5: 8 GB, instant loading",
+          "Memory-mapped access - zero RAM for exploration"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use HDF5 or Apache Arrow formats for instant memory-mapped loading instead of CSV",
+      "Leverage virtual columns and expressions for computations without materializing data",
+      "Batch operations with delay=True when performing multiple aggregations for efficiency"
+    ],
+    "anti_patterns": [
+      "Avoid loading entire datasets into RAM - use vaex.open() for memory-mapped access",
+      "Do not convert large datasets to pandas - use Vaex operations throughout the pipeline",
+      "Avoid multiple small exports - batch writes and use efficient formats like HDF5"
+    ],
+    "faq": [
+      {
+        "question": "What makes Vaex different from pandas?",
+        "answer": "Vaex uses lazy evaluation and memory-mapping to process datasets larger than RAM without loading everything into memory."
+      },
+      {
+        "question": "What file formats does Vaex support?",
+        "answer": "Vaex supports HDF5, Apache Arrow, Parquet, CSV, and FITS formats with memory-mapped loading for efficient access."
+      },
+      {
+        "question": "Can Vaex handle billion-row datasets?",
+        "answer": "Yes, Vaex can process over a billion rows per second using optimized C++ operations and out-of-core computation."
+      },
+      {
+        "question": "Does Vaex support machine learning?",
+        "answer": "Vaex ML provides transformers, encoders, PCA, K-means, and integration with scikit-learn, XGBoost, and LightGBM."
+      },
+      {
+        "question": "How does lazy evaluation work?",
+        "answer": "Operations are not executed until results are needed, enabling efficient batching and minimal memory usage."
+      },
+      {
+        "question": "Can Vaex access cloud storage?",
+        "answer": "Vaex can read from S3, GCS, and other cloud storage using protocols like s3:// and gs:// prefixes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "core_dataframes.md",
+          "type": "file",
+          "path": "references/core_dataframes.md",
+          "lines": 368
+        },
+        {
+          "name": "data_processing.md",
+          "type": "file",
+          "path": "references/data_processing.md",
+          "lines": 556
+        },
+        {
+          "name": "io_operations.md",
+          "type": "file",
+          "path": "references/io_operations.md",
+          "lines": 704
+        },
+        {
+          "name": "machine_learning.md",
+          "type": "file",
+          "path": "references/machine_learning.md",
+          "lines": 729
+        },
+        {
+          "name": "performance.md",
+          "type": "file",
+          "path": "references/performance.md",
+          "lines": 572
+        },
+        {
+          "name": "visualization.md",
+          "type": "file",
+          "path": "references/visualization.md",
+          "lines": 614
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 182
+    }
+  ]
+}

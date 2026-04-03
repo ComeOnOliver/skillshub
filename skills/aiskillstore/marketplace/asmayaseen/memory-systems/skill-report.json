@@ -1,0 +1,240 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:46:29.530Z",
+    "slug": "asmayaseen-memory-systems",
+    "source_url": "https://github.com/Asmayaseen/hackathon-2/tree/main/.claude/skills/memory-systems",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ab7a15d309d5007e0a68a9836e52f39aa1fcc3b2a797eeabfbc0e6e6282fcb4c",
+    "tree_hash": "9cdb0b81b20b514df9a37d28604c79208e76becd3b10293333330d835f270327"
+  },
+  "skill": {
+    "name": "memory-systems",
+    "description": "Design and implement memory architectures for agent systems. Use when building agents that need to persist state across sessions, maintain entity consistency, or reason over structured knowledge.",
+    "summary": "Design and implement memory architectures for agent systems. Use when building agents that need to p...",
+    "icon": "🧠",
+    "version": "1.0.0",
+    "author": "Asmayaseen",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "memory",
+      "knowledge-graphs",
+      "vector-stores",
+      "agent-systems",
+      "persistence"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only documentation and Python library code for memory system implementation. All static findings are false positives: backticks flagged as 'shell execution' are Python string formatting characters; MD5 use is for ID generation, not cryptography; system utility functions (uuid, time, datetime) are legitimate data structure operations. No network calls, external commands, or sensitive file access in production code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/verify.py",
+            "line_start": 7,
+            "line_end": 14
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1327,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:46:29.530Z"
+  },
+  "content": {
+    "user_title": "Design persistent memory architectures for AI agents",
+    "value_statement": "Agents lose all state when sessions end without persistent memory. This skill provides architectural patterns for layered memory systems that enable cross-session learning, entity tracking, and temporal knowledge graphs for time-aware reasoning.",
+    "seo_keywords": [
+      "Claude memory architecture",
+      "agent persistent memory",
+      "knowledge graphs for AI",
+      "vector stores vs knowledge graphs",
+      "temporal knowledge graphs",
+      "entity tracking for agents",
+      "context engineering",
+      "memory consolidation patterns",
+      "Claude Code memory systems",
+      "AI agent memory design"
+    ],
+    "actual_capabilities": [
+      "Design layered memory architectures from working memory to permanent storage",
+      "Implement vector stores with metadata filtering for semantic retrieval",
+      "Build property graphs for entity and relationship tracking",
+      "Create temporal knowledge graphs with validity periods for time-aware queries",
+      "Integrate memory systems with context loading for just-in-time retrieval",
+      "Apply memory consolidation patterns to prevent unbounded growth"
+    ],
+    "limitations": [
+      "Does not provide hosted memory storage services",
+      "Does not include embedding model integration",
+      "Does not implement authentication or access control for memory data"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Application Developers",
+        "title": "Build persistent agent memory",
+        "description": "Implement cross-session memory so agents remember user preferences and conversation context across interactions."
+      },
+      {
+        "target_user": "Enterprise AI Engineers",
+        "title": "Create structured knowledge bases",
+        "description": "Design knowledge graphs that capture entity relationships for reasoning over accumulated domain knowledge."
+      },
+      {
+        "target_user": "Research Engineers",
+        "title": "Enable temporal reasoning",
+        "description": "Track fact validity over time with temporal knowledge graphs to answer historical queries and prevent conflicts."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic memory design",
+        "scenario": "Getting started with agent memory",
+        "prompt": "Design a memory architecture for an agent that needs to remember user preferences across sessions. Include at least three memory layers and explain how each balances latency, capacity, and persistence."
+      },
+      {
+        "title": "Vector vs graph",
+        "scenario": "Choosing memory architecture",
+        "prompt": "Compare vector stores and knowledge graphs for agent memory. When would you use each? Provide concrete examples where graph memory outperforms vector retrieval."
+      },
+      {
+        "title": "Temporal queries",
+        "scenario": "Implementing time-aware memory",
+        "prompt": "Design a temporal knowledge graph schema for tracking user address changes over time. Show how to query: What was the user's address on January 15, 2024?"
+      },
+      {
+        "title": "Memory consolidation",
+        "scenario": "Preventing memory bloat",
+        "prompt": "Design a memory consolidation strategy for an agent that accumulates thousands of memories per week. Include triggers, deduplication logic, and archive policies."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Design a memory architecture for a customer support agent that needs to remember customer history and preferences across sessions.",
+        "output": [
+          "Layer 1 - Working Memory: Active conversation context in the context window",
+          "Layer 2 - Short-Term Memory: Session-scoped storage for current customer interaction history",
+          "Layer 3 - Long-Term Memory: Customer profile graph with entities (Customer, Product, Ticket) and relationships (PURCHASED, OPENED_TICKET, HAS_PREFERENCE)",
+          "Layer 4 - Temporal Knowledge: Track preference validity periods so outdated preferences do not apply",
+          "Integration: Just-in-time retrieval of customer context before each response based on detected entities"
+        ]
+      },
+      {
+        "input": "When should I use a knowledge graph instead of a vector store for agent memory?",
+        "output": [
+          "Use knowledge graphs when you need relationship traversal (e.g., find all products bought by customers who also bought X)",
+          "Use vector stores when you only need semantic similarity (e.g., find documents similar to query)",
+          "Knowledge graphs preserve structure that vector stores flatten into embeddings",
+          "Temporal knowledge graphs add validity periods for time-travel queries"
+        ]
+      },
+      {
+        "input": "How do I prevent memory from growing unboundedly over time?",
+        "output": [
+          "Implement consolidation triggers: after memory threshold, periodic schedule, or explicit request",
+          "Deduplication: merge duplicate facts about same entities",
+          "Archive outdated facts with validity periods that have passed",
+          "Rebuild indexes after consolidation to maintain performance"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Match memory architecture complexity to actual query requirements - simple persistence may not need graph databases",
+      "Implement progressive disclosure where memories are retrieved only when relevant rather than loaded all at once",
+      "Design for memory retrieval failures with graceful degradation rather than complete system failure"
+    ],
+    "anti_patterns": [
+      "Storing everything in context without persistent memory, losing all state when sessions end",
+      "Using simple vector stores for use cases requiring relationship traversal or temporal reasoning",
+      "Neglecting memory consolidation, allowing unbounded growth of redundant and outdated memories"
+    ],
+    "faq": [
+      {
+        "question": "Which memory architecture should I start with?",
+        "answer": "Start with file-system memory for simple persistence needs. Upgrade to vector stores with metadata for semantic search. Add knowledge graphs only when you need relationship traversal."
+      },
+      {
+        "question": "What are the performance implications of different memory layers?",
+        "answer": "Working memory has zero latency but is volatile. Vector stores offer fast semantic search with moderate persistence. Knowledge graphs enable complex queries but require traversal time."
+      },
+      {
+        "question": "How do I integrate memory with context systems?",
+        "answer": "Use just-in-time retrieval to fetch relevant memories when needed, then inject them in attention-favored positions in the context window."
+      },
+      {
+        "question": "Is my memory data secure?",
+        "answer": "This skill provides implementation patterns only. Security depends on your storage infrastructure. Implement encryption at rest and access controls for production systems."
+      },
+      {
+        "question": "Why are my retrieval results getting worse over time?",
+        "answer": "Without consolidation, outdated memories compete with current ones. Implement periodic consolidation to merge duplicates, update validity periods, and archive obsolete facts."
+      },
+      {
+        "question": "How does this compare to existing memory services like Zep or MemGPT?",
+        "answer": "Services like Zep provide managed temporal knowledge graphs with 94.8% DMR accuracy. This skill helps you design compatible architectures whether you build or buy."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "implementation.md",
+          "type": "file",
+          "path": "references/implementation.md",
+          "lines": 458
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "memory_store.py",
+          "type": "file",
+          "path": "scripts/memory_store.py",
+          "lines": 396
+        },
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 32
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 221
+    }
+  ]
+}

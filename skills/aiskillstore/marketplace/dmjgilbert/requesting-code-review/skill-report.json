@@ -1,0 +1,261 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T03:53:08.731Z",
+    "slug": "dmjgilbert-requesting-code-review",
+    "source_url": "https://github.com/DMJGilbert/.config/tree/main/users/darren/config/claude/skills/requesting-code-review",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4eee11cba7f837f57ef2b494358f29d3857161cef5d3d20bbcb5c5a00a374cd0",
+    "tree_hash": "6315c99216fb2f8f4c67e6c3dd6f4218f6bd28623e0e6448cec70f813275c6eb"
+  },
+  "skill": {
+    "name": "requesting-code-review",
+    "description": "Request and process code reviews with proper context. Use after completing significant implementation work.",
+    "summary": "Request and process code reviews with proper context. Use after completing significant implementatio...",
+    "icon": "👀",
+    "version": "1.0.0",
+    "author": "DMJGilbert",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "code-review",
+      "quality-assurance",
+      "workflow",
+      "best-practices",
+      "collaboration"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only Markdown templates and guidelines for code review workflows. No executable code, no file system access, no network calls, and no external command execution capabilities. All 30 static findings are false positives caused by documentation pattern detection.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 138
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 351,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T03:53:08.730Z"
+  },
+  "content": {
+    "user_title": "Request high-quality code reviews",
+    "value_statement": "Developers often struggle with when and how to request effective code reviews. This skill provides templates, workflows, and guidance for requesting and processing code reviews that catch issues before they compound.",
+    "seo_keywords": [
+      "code review skill",
+      "code review template",
+      "code review guide",
+      "code review process",
+      "AI code review",
+      "Claude Code skill",
+      "code quality",
+      "software review",
+      "pull request review",
+      "code review best practices"
+    ],
+    "actual_capabilities": [
+      "Provides templates for requesting code reviews with commit ranges and file summaries",
+      "Guides when to request reviews based on development phase",
+      "Defines severity levels for review feedback (Critical, High, Medium, Low)",
+      "Shows how to process and respond to review feedback appropriately",
+      "Includes guidance for handling disagreements with reviewers",
+      "Lists integration points with other workflow skills"
+    ],
+    "limitations": [
+      "Does not perform actual code review (requires separate code-reviewer agent)",
+      "Does not integrate with Git hosting platforms directly",
+      "Does not automate pull request creation or management",
+      "Does not execute git commands or access repository state"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual Developers",
+        "title": "Improve code quality",
+        "description": "Get guidance on when and how to request reviews for your code changes"
+      },
+      {
+        "target_user": "Team Leads",
+        "title": "Standardize review process",
+        "description": "Establish consistent review workflows across team members"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Pre-merge quality gates",
+        "description": "Ensure code meets quality standards before merging to main branches"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Review Request",
+        "scenario": "After completing a task",
+        "prompt": "Use the requesting-code-review skill to help me request a code review for my recent changes on branch [branch-name]. I have completed [brief description of work]."
+      },
+      {
+        "title": "Major Feature Review",
+        "scenario": "Before feature integration",
+        "prompt": "Help me create a code review request for a major feature. The changes include [list of key files] and implement [feature description]."
+      },
+      {
+        "title": "Bug Fix Review",
+        "scenario": "After fixing a complex bug",
+        "prompt": "I just fixed a complex bug. Help me request a focused review that covers the fix in [file] at lines [line numbers]. Root cause was [brief explanation]."
+      },
+      {
+        "title": "Pre-merge Quality Gate",
+        "scenario": "Before merging to main",
+        "prompt": "I am ready to merge my branch [name] to main. Use requesting-code-review to help me prepare a comprehensive review request covering all [N] commits."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me request a code review for my authentication feature",
+        "output": [
+          "Code Review Request with commit range and branch info",
+          "Summary of changes (OAuth2 login with session management)",
+          "Changes by file with change type and description",
+          "Requirements reference and testing checklist",
+          "Specific areas needing attention like security review"
+        ]
+      },
+      {
+        "input": "I just fixed a complex bug in the payment processing code",
+        "output": [
+          "Focused review request with file and line numbers",
+          "Root cause explanation included",
+          "Severity categorization of the fix",
+          "Questions for the reviewer about the approach"
+        ]
+      },
+      {
+        "input": "I am ready to merge my feature branch to main",
+        "output": [
+          "Comprehensive pre-merge review request",
+          "All commits listed with descriptions",
+          "Quality checklist status",
+          "Integration points with other workflow skills"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Review early and often. Request reviews after each task rather than waiting for large batches.",
+      "Provide clear context including requirements reference and specific areas of concern.",
+      "Categorize review feedback by severity (Critical, High, Medium, Low) and respond appropriately."
+    ],
+    "anti_patterns": [
+      "Requesting reviews without providing context, file lists, or requirements reference",
+      "Dismissing review feedback without technical justification or explanation",
+      "Waiting until just before merge to request the first review"
+    ],
+    "faq": [
+      {
+        "question": "What tools is this compatible with?",
+        "answer": "Works with Claude, Codex, and Claude Code. Requires the code-reviewer agent to perform actual reviews."
+      },
+      {
+        "question": "What are the limits on review requests?",
+        "answer": "No technical limits. For large features, break into multiple review requests focused on specific areas."
+      },
+      {
+        "question": "How does this integrate with other skills?",
+        "answer": "Use after executing-plans or systematic-debugging. Before finishing-branches for pre-merge quality checks."
+      },
+      {
+        "question": "Is my code data safe?",
+        "answer": "This skill only provides templates and guidance. No code is sent anywhere or stored externally."
+      },
+      {
+        "question": "What if I disagree with feedback?",
+        "answer": "Provide technical justification with evidence from codebase. Explain trade-offs considered. Stay open to discussion."
+      },
+      {
+        "question": "How is this different from a code-reviewer?",
+        "answer": "This skill provides workflows and templates for requesting reviews. The code-reviewer agent actually performs the review."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 145
+    }
+  ]
+}

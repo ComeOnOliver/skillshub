@@ -1,0 +1,306 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:26:59.882Z",
+    "slug": "dyai2025-writing-plans",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/writing-plans",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c5cbb69cfffcf41757ab6e5c4517abcc42e83e4481424fd2eae7fb70feb45e8b",
+    "tree_hash": "ef6cc284664a10fb4155aed4572c22a5cdfc8819dd5557eb05c13bf07cb4d0c7"
+  },
+  "skill": {
+    "name": "writing-plans",
+    "description": "Use when design is complete and you need detailed implementation tasks for engineers with zero codebase context - creates comprehensive implementation plans with exact file paths, complete code examples, and verification steps assuming engineer has minimal domain knowledge",
+    "summary": "Use when design is complete and you need detailed implementation tasks for engineers with zero codeb...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "planning",
+      "implementation",
+      "documentation",
+      "task-breakdown",
+      "tdd"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure prompt/documentation skill containing only markdown templates for creating implementation plans. All static findings are false positives: 'weak cryptographic algorithm' alerts are misidentified JSON metadata fields, 'shell backtick execution' alerts are markdown code examples documenting plan structure, and 'hardcoded URL' is a source repository reference field. No executable code, network calls, or filesystem operations exist in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 101
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 300,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:26:59.882Z"
+  },
+  "content": {
+    "user_title": "Create detailed implementation plans",
+    "value_statement": "Implementation plans are often incomplete or assume too much context. This skill generates comprehensive, bite-sized tasks with exact file paths, code examples, and verification steps. Engineers can start coding immediately without guessing.",
+    "seo_keywords": [
+      "Claude Code implementation plan",
+      "codex planning tool",
+      "developer task breakdown",
+      "software implementation guide",
+      "feature specification plan",
+      "engineering task planning",
+      "execution roadmap",
+      "TDD implementation guide",
+      "subagent planning",
+      "code documentation generator"
+    ],
+    "actual_capabilities": [
+      "Generates comprehensive implementation plans from design documents",
+      "Creates bite-sized tasks with 2-5 minute completion estimates",
+      "Provides exact file paths and code examples for each step",
+      "Includes verification commands with expected outputs",
+      "Documents test cases with minimal passing implementations",
+      "Saves plans to docs/plans/ directory"
+    ],
+    "limitations": [
+      "Requires existing design or feature specification to work from",
+      "Does not execute code or run tests directly",
+      "Does not modify the codebase itself",
+      "Assumes engineer will follow the plan manually or via executing-plans skill"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software architects",
+        "title": "Hand off designs to developers",
+        "description": "Transform high-level architecture into actionable task lists that junior developers can execute without asking clarifying questions."
+      },
+      {
+        "target_user": "Tech leads",
+        "title": "Break down complex features",
+        "description": "Divide large features into TDD-friendly tasks with test-first approach and commit-ready code snippets."
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Document contribution guides",
+        "description": "Create contributor-friendly implementation plans that work across different skill levels and knowledge domains."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New feature plan",
+        "scenario": "Starting a new feature",
+        "prompt": "Use writing-plans skill to create an implementation plan for adding user authentication with OAuth2 support."
+      },
+      {
+        "title": "Bug fix plan",
+        "scenario": "Fixing a reported bug",
+        "prompt": "Use writing-plans skill to create an implementation plan for fixing the memory leak in the data processing module."
+      },
+      {
+        "title": "Refactor plan",
+        "scenario": "Refactoring legacy code",
+        "prompt": "Use writing-plans skill to create an implementation plan for refactoring the legacy payment processing code to use the new event system."
+      },
+      {
+        "title": "Integration plan",
+        "scenario": "Adding third-party integration",
+        "prompt": "Use writing-plans skill to create an implementation plan for integrating the Stripe payment API across all checkout flows."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Use writing-plans to create a plan for adding email notifications",
+        "output": [
+          "• Task 1: Create email service interface with send() method",
+          "• Task 2: Write failing test for email validation logic",
+          "• Task 3: Implement email template rendering",
+          "• Task 4: Add notification queue with retry mechanism",
+          "• Task 5: Integrate with user signup flow",
+          "• Each task includes: file paths, code examples, test commands, commit messages"
+        ]
+      },
+      {
+        "input": "Use writing-plans to create a plan for adding user authentication with OAuth2",
+        "output": [
+          "• Task 1: Create OAuth2 configuration schema and environment variables",
+          "• Task 2: Write failing test for OAuth2 redirect URL validation",
+          "• Task 3: Implement OAuth2 client initialization",
+          "• Task 4: Add authorization code exchange flow",
+          "• Task 5: Create user session management",
+          "• Task 6: Add logout and token revocation",
+          "• All tasks include: exact file paths, code snippets, pytest commands, expected outputs"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Pair with subagent-driven-development skill for hands-free execution in the current session",
+      "Save plans to a dedicated worktree created by the brainstorming skill",
+      "Include verification commands with expected outputs to catch regressions early"
+    ],
+    "anti_patterns": [
+      "Using writing-plans without first clarifying the feature scope and requirements",
+      "Skipping the plan and jumping directly into coding complex features",
+      "Treating the plan as final rather than a living document to update as work progresses"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. Optimized for Claude Code's subagent workflow."
+      },
+      {
+        "question": "How detailed are the tasks?",
+        "answer": "Each task is 2-5 minutes of work with exact code snippets, file paths, and test commands."
+      },
+      {
+        "question": "Can I execute the plan automatically?",
+        "answer": "Yes. Use the executing-plans skill or subagent-driven-development skill for automated execution."
+      },
+      {
+        "question": "Does this modify my codebase?",
+        "answer": "No. The skill only creates markdown documentation. Execution skills handle actual code changes."
+      },
+      {
+        "question": "Where are plans saved?",
+        "answer": "Plans save to docs/plans/YYYY-MM-DD-feature-name.md in your repository."
+      },
+      {
+        "question": "How is this different from brainstorming?",
+        "answer": "Brainstorming explores ideas and designs. Writing-plans converts completed designs into actionable implementation steps."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 117
+    },
+    {
+      "name": "SKILL.zip",
+      "type": "file",
+      "path": "SKILL.zip"
+    }
+  ]
+}

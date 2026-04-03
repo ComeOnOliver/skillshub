@@ -1,0 +1,320 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:10:58.347Z",
+    "slug": "k-dense-ai-latchbio-integration",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/latchbio-integration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4190ca35d13a4efd781ea376cdbeea22930af3055e5cd61073fec95d1050d7f9",
+    "tree_hash": "6a603122a4ac92002800da97b8cc9a55f33d94a401af2f127b80837923444b63"
+  },
+  "skill": {
+    "name": "latchbio-integration",
+    "description": "Latch platform for bioinformatics workflows. Build pipelines with Latch SDK, @workflow/@task decorators, deploy serverless workflows, LatchFile/LatchDir, Nextflow/Snakemake integration.",
+    "summary": "Latch platform for bioinformatics workflows. Build pipelines with Latch SDK, @workflow/@task decorat...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "bioinformatics",
+      "workflows",
+      "pipelines",
+      "data-science"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "scripts",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing only markdown files (.md) and JSON metadata. No executable source code present. All 285 static findings are false positives caused by the scanner misinterpreting markdown code block syntax and documentation examples as executable code. The 'backtick execution' findings are markdown code delimiters, 'weak cryptographic algorithm' findings are misinterpreted Python decorators, and 'credential access' findings demonstrate legitimate Latch SDK APIs. This is standard bioinformatics documentation teaching users how to use a cloud-based workflow platform.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 319
+          },
+          {
+            "file": "references/data-management.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "references/workflow-creation.md",
+            "line_start": 9,
+            "line_end": 11
+          },
+          {
+            "file": "references/verified-workflows.md",
+            "line_start": 8,
+            "line_end": 8
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "evaluation_output.json",
+            "line_start": 45,
+            "line_end": 48
+          },
+          {
+            "file": "references/verified-workflows.md",
+            "line_start": 13,
+            "line_end": 13
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 338,
+            "line_end": 342
+          },
+          {
+            "file": "references/workflow-creation.md",
+            "line_start": 252,
+            "line_end": 254
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "evaluation_output.json",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "references/data-management.md",
+            "line_start": 380,
+            "line_end": 380
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 3456,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:10:58.347Z"
+  },
+  "content": {
+    "user_title": "Build bioinformatics pipelines with Latch SDK",
+    "value_statement": "Deploy production-ready bioinformatics workflows without managing infrastructure. Create serverless pipelines using Python decorators with automatic containerization, GPU support, and integrated cloud storage.",
+    "seo_keywords": [
+      "Latch bioinformatics workflows",
+      "Claude scientific skills",
+      "Codex data pipelines",
+      "workflow automation",
+      "bioinformatics platform",
+      "Snakemake Nextflow integration",
+      "AlphaFold ColabFold",
+      "RNA-seq pipeline",
+      "serverless workflows",
+      "GPU-accelerated analysis"
+    ],
+    "actual_capabilities": [
+      "Create serverless bioinformatics workflows using @workflow and @task decorators",
+      "Deploy Python, Nextflow, or Snakemake pipelines with automatic Docker containerization",
+      "Configure compute resources including CPU, memory, and GPU (K80, V100, A100)",
+      "Integrate pre-built verified workflows for RNA-seq, AlphaFold, DESeq2, and single-cell analysis",
+      "Manage cloud data with LatchFile and LatchDir abstractions",
+      "Organize experimental data using the Registry system with Projects, Tables, and Records"
+    ],
+    "limitations": [
+      "Requires Latch account and Docker installation for workflow registration",
+      "Verified workflows are platform-specific and may require additional configuration",
+      "Task resource decorators must be statically defined at registration time"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bioinformatics researchers",
+        "title": "Deploy RNA-seq analysis pipelines",
+        "description": "Build complete transcriptomics workflows from quality control through differential expression analysis."
+      },
+      {
+        "target_user": "Computational biologists",
+        "title": "Run protein structure prediction",
+        "description": "Execute AlphaFold or ColabFold jobs with automatic GPU resource allocation and cloud storage."
+      },
+      {
+        "target_user": "Data scientists",
+        "title": "Integrate verified bioinformatics tools",
+        "description": "Combine pre-built workflows with custom steps for specialized analysis pipelines."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create basic workflow",
+        "scenario": "Build your first Latch workflow",
+        "prompt": "Create a Latch workflow that processes files using the @small_task decorator and returns a LatchFile result."
+      },
+      {
+        "title": "Configure GPU resources",
+        "scenario": "Set up GPU-accelerated tasks",
+        "prompt": "Configure a Latch task to use an A100 GPU for deep learning model execution with custom resource specifications."
+      },
+      {
+        "title": "Import existing pipeline",
+        "scenario": "Convert Nextflow/Snakemake pipelines",
+        "prompt": "Show how to register an existing Nextflow or Snakemake pipeline to the Latch platform."
+      },
+      {
+        "title": "Build multi-step pipeline",
+        "scenario": "Create complex analysis workflows",
+        "prompt": "Create a complete RNA-seq pipeline with quality control, alignment, and quantification tasks using Latch decorators."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a Latch workflow for protein structure prediction",
+        "output": [
+          "Use @large_gpu_task decorator with nvidia-tesla-v100 GPU",
+          "Import alphafold from latch.verified module",
+          "Configure input via LatchFile for FASTA sequence",
+          "Set output directory with LatchDir for PDB results",
+          "Platform automatically handles Docker containerization",
+          "Monitor execution via Latch dashboard"
+        ]
+      },
+      {
+        "input": "How do I set up a DESeq2 differential expression analysis?",
+        "output": [
+          "Import deseq2 from latch.verified module",
+          "Define input parameters for count matrix and sample metadata",
+          "Configure output directory for results and plots",
+          "Platform provisions appropriate compute resources",
+          "Access results through registered output paths"
+        ]
+      },
+      {
+        "input": "Configure GPU resources for AlphaFold on Latch",
+        "output": [
+          "Use @large_gpu_task decorator for GPU workloads",
+          "Set gpu_type to nvidia-tesla-v100 or nvidia-tesla-a100",
+          "Configure memory requirements based on protein size",
+          "Platform handles GPU scheduling automatically",
+          "Monitor GPU utilization during execution"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with standard task decorators (@small_task, @large_task) and scale resources only when profiling shows need",
+      "Use type annotations and docstrings for all parameters to auto-generate workflow interfaces",
+      "Test workflows locally with Docker before registering to the platform"
+    ],
+    "anti_patterns": [
+      "Avoid over-provisioning resources - GPU tasks cost significantly more than CPU tasks",
+      "Do not use dynamic resource configuration at runtime - decorators must be static",
+      "Avoid mixing multiple workflow frameworks in a single pipeline without clear separation"
+    ],
+    "faq": [
+      {
+        "question": "What bioinformatics tools are available as verified workflows?",
+        "answer": "Latch provides verified workflows for bulk RNA-seq, DESeq2, AlphaFold, ColabFold, MAFFT, Trim Galore, ArchR, scVelo, CRISPResso2, and phylogenetics."
+      },
+      {
+        "question": "How do I configure GPU resources for my workflow?",
+        "answer": "Use @small_gpu_task or @large_gpu_task decorators, or specify gpu and gpu_type parameters in @custom_task for precise control."
+      },
+      {
+        "question": "Can I import existing Nextflow or Snakemake pipelines?",
+        "answer": "Yes, use latch register --nextflow or latch register --snakemake commands to import existing pipelines with automatic containerization."
+      },
+      {
+        "question": "How does LatchFile differ from local file paths?",
+        "answer": "LatchFile is a cloud storage reference. The SDK automatically downloads files to local paths during execution and uploads results back to cloud storage."
+      },
+      {
+        "question": "What compute resources are available?",
+        "answer": "CPU up to 96 cores, memory up to 768 GB, GPU options include K80, V100, and A100, with configurable ephemeral storage."
+      },
+      {
+        "question": "How do I organize experimental data in the Registry?",
+        "answer": "Create Projects containing Tables with Records. Use column types like string, number, file, link, and enum to structure your data model."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "data-management.md",
+          "type": "file",
+          "path": "references/data-management.md",
+          "lines": 428
+        },
+        {
+          "name": "resource-configuration.md",
+          "type": "file",
+          "path": "references/resource-configuration.md",
+          "lines": 430
+        },
+        {
+          "name": "verified-workflows.md",
+          "type": "file",
+          "path": "references/verified-workflows.md",
+          "lines": 488
+        },
+        {
+          "name": "workflow-creation.md",
+          "type": "file",
+          "path": "references/workflow-creation.md",
+          "lines": 255
+        }
+      ]
+    },
+    {
+      "name": "evaluation_output.json",
+      "type": "file",
+      "path": "evaluation_output.json",
+      "lines": 196
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 353
+    }
+  ]
+}

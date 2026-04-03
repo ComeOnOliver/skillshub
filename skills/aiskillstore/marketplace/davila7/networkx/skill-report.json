@@ -1,0 +1,280 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:44:54.745Z",
+    "slug": "davila7-networkx",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/networkx",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e6d1a712657b49121c40af6077a95e29fbc9f9ea8f419ceba18b1a0f90fc5168",
+    "tree_hash": "b4592e02fdc82fd0afd1b779c4a9d30419048ae8586ed8ea3de97133a89c4f15"
+  },
+  "skill": {
+    "name": "networkx",
+    "description": "Comprehensive toolkit for creating, analyzing, and visualizing complex networks and graphs in Python. Use when working with network/graph data structures, analyzing relationships between entities, computing graph algorithms (shortest paths, centrality, clustering), detecting communities, generating synthetic networks, or visualizing network topologies. Applicable to social networks, biological networks, transportation systems, citation networks, and any domain involving pairwise relationships.",
+    "summary": "Create, analyze, and visualize complex networks and graphs using Python's NetworkX library.",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "tags": [
+      "graphs",
+      "networks",
+      "data-analysis",
+      "visualization",
+      "algorithms"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The skill is a documentation/reference guide for NetworkX (Python graph library). Static scanner flagged markdown code formatting backticks as 'shell execution' and documentation about file I/O operations as 'filesystem access'. No malicious code, credential access, or command injection exists. The skill provides safe Python graph processing guidance.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/io.md",
+            "line_start": 210,
+            "line_end": 210
+          },
+          {
+            "file": "references/io.md",
+            "line_start": 223,
+            "line_end": 223
+          },
+          {
+            "file": "references/io.md",
+            "line_start": 236,
+            "line_end": 236
+          },
+          {
+            "file": "references/io.md",
+            "line_start": 252,
+            "line_end": 252
+          },
+          {
+            "file": "references/io.md",
+            "line_start": 278,
+            "line_end": 278
+          },
+          {
+            "file": "references/io.md",
+            "line_start": 327,
+            "line_end": 327
+          },
+          {
+            "file": "references/io.md",
+            "line_start": 396,
+            "line_end": 396
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 428,
+            "line_end": 428
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 429,
+            "line_end": 429
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 430,
+            "line_end": 430
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 431,
+            "line_end": 431
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 6916,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:44:54.745Z"
+  },
+  "content": {
+    "user_title": "Create and analyze complex networks",
+    "value_statement": "Working with network and graph data requires understanding graph algorithms, visualization techniques, and data formats. This skill provides comprehensive guidance on using NetworkX for creating, analyzing, and visualizing complex networks in Python.",
+    "seo_keywords": [
+      "NetworkX",
+      "graph algorithms",
+      "network analysis",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Python graphs",
+      "data visualization",
+      "complex networks",
+      "social network analysis"
+    ],
+    "actual_capabilities": [
+      "Create and manipulate graph data structures including directed, undirected, and multi-graph variants",
+      "Compute graph algorithms such as shortest paths, centrality measures, and community detection",
+      "Generate synthetic networks using classic, random, and scale-free graph models",
+      "Read and write graphs in multiple formats including GraphML, GML, edge lists, and JSON",
+      "Visualize networks with customizable layouts, node colors, edge weights, and publication-quality outputs"
+    ],
+    "limitations": [
+      "Does not execute code - provides documentation and guidance only",
+      "Cannot process very large graphs that exceed available memory",
+      "Floating-point computations have inherent precision limitations",
+      "Does not include interactive web-based visualization capabilities"
+    ],
+    "use_cases": [
+      {
+        "title": "Analyze social network relationships",
+        "description": "Build and analyze social network graphs to identify influential users, detect communities, and find connection patterns.",
+        "target_user": "Data analysts and social scientists studying relationship dynamics"
+      },
+      {
+        "title": "Model biological networks",
+        "description": "Create protein interaction networks, gene regulatory networks, or neural connectivity maps for biological research.",
+        "target_user": "Bioinformatics researchers and computational biologists"
+      },
+      {
+        "title": "Optimize infrastructure routes",
+        "description": "Find shortest paths, design efficient transportation networks, and analyze connectivity in infrastructure systems.",
+        "target_user": "Transportation engineers and logistics planners"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Getting Started",
+        "prompt": "How do I create a basic graph using NetworkX and add nodes and edges with attributes?"
+      },
+      {
+        "title": "Finding Paths",
+        "prompt": "Find the shortest path between two nodes in my graph and calculate the total distance considering edge weights."
+      },
+      {
+        "title": "Analyzing Influence",
+        "prompt": "Compute centrality measures (betweenness, degree, PageRank) to identify the most influential nodes in my network."
+      },
+      {
+        "title": "Community Detection",
+        "prompt": "Detect communities in my graph using modularity-based methods and visualize the results with different colors for each community."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a graph with 5 nodes connected in a cycle and compute the shortest path from node 1 to node 5",
+        "output": "Path found: [1, 2, 3, 4, 5] with length 4"
+      },
+      {
+        "input": "Find the node with highest betweenness centrality in a social network",
+        "output": "User 'alice' has the highest betweenness centrality (0.45), indicating significant influence in connecting different groups"
+      },
+      {
+        "input": "Generate a scale-free network with 100 nodes",
+        "output": "Generated Barabasi-Albert graph with 100 nodes and 297 edges using preferential attachment"
+      }
+    ],
+    "best_practices": [
+      "Set random seeds (seed=42) when generating random graphs or layouts for reproducibility",
+      "Use appropriate graph types (Graph, DiGraph, MultiGraph) based on whether edges are directed and if multiple edges exist",
+      "Choose efficient file formats like GraphML for preserving attributes or pickle for large Python objects"
+    ],
+    "anti_patterns": [
+      "Avoid using floating-point numbers as node identifiers due to precision comparison issues",
+      "Do not attempt to draw very large graphs (>1000 nodes) without filtering or clustering first",
+      "Avoid modifying a graph while iterating over its nodes or edges without creating a copy first"
+    ],
+    "faq": [
+      {
+        "question": "What graph types does NetworkX support?",
+        "answer": "NetworkX supports Graph (undirected), DiGraph (directed), MultiGraph (undirected with multiple edges), and MultiDiGraph (directed with multiple edges)."
+      },
+      {
+        "question": "How do I read a graph from a file?",
+        "answer": "Use functions like nx.read_edgelist() for simple edge lists, nx.read_graphml() for GraphML format, or nx.read_gml() for GML format."
+      },
+      {
+        "question": "What algorithms are available for finding important nodes?",
+        "answer": "Common centrality measures include degree_centrality, betweenness_centrality, closeness_centrality, and PageRank for directed graphs."
+      },
+      {
+        "question": "How do I detect communities in a network?",
+        "answer": "Use community.greedy_modularity_communities() or community.louvain_communities() to detect groups of densely connected nodes."
+      },
+      {
+        "question": "Can I visualize graphs with custom colors and sizes?",
+        "answer": "Yes, use node_color for colors (based on attributes or degrees), node_size for sizing, and width for edge thickness in nx.draw()."
+      },
+      {
+        "question": "What file formats are supported for graph I/O?",
+        "answer": "Supported formats include edge lists, GraphML, GML, JSON, CSV, adjacency matrices, Pandas DataFrames, and SQLite databases."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "algorithms.md",
+          "type": "file",
+          "path": "references/algorithms.md",
+          "lines": 384
+        },
+        {
+          "name": "generators.md",
+          "type": "file",
+          "path": "references/generators.md",
+          "lines": 379
+        },
+        {
+          "name": "graph-basics.md",
+          "type": "file",
+          "path": "references/graph-basics.md",
+          "lines": 284
+        },
+        {
+          "name": "io.md",
+          "type": "file",
+          "path": "references/io.md",
+          "lines": 442
+        },
+        {
+          "name": "visualization.md",
+          "type": "file",
+          "path": "references/visualization.md",
+          "lines": 530
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 432
+    }
+  ]
+}

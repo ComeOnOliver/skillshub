@@ -1,0 +1,343 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:40:58.883Z",
+    "slug": "artemisai-mcp-builder",
+    "source_url": "https://github.com/ArtemisAI/code-execution-with-MCP/tree/main/skills/mcp-builder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cc36ccd15ba6c19c02fabfcc485493b26c142976ccb99c49f90cb488208d1bfc",
+    "tree_hash": "8e0ab9295d3e427819f687a41a91e50880d084854d4499af095ea05f24689efb"
+  },
+  "skill": {
+    "name": "mcp-builder",
+    "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+    "summary": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact wi...",
+    "icon": "🛠️",
+    "version": "1.0.0",
+    "author": "ArtemisAI",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "coding",
+    "tags": [
+      "mcp",
+      "api-integration",
+      "python",
+      "typescript",
+      "tool-development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation guidance skill for building MCP servers. The static analyzer flagged 599 potential issues, but ALL findings are FALSE POSITIVES. The 'weak cryptographic algorithm' detections in documentation files are pattern matches on words like 'md5' appearing in text/code examples. The 'external command' findings are documentation examples showing how to run MCP servers for testing (e.g., 'python server.py'). Environment variable access is standard practice for API authentication configuration. The critical heuristic about 'Code execution + Network + Credential access' is a false positive - this is legitimate documentation that naturally involves all three patterns for building and testing MCP servers. No malicious intent, data exfiltration, or harmful patterns detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/connections.py",
+            "line_start": 1,
+            "line_end": 152
+          },
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 1,
+            "line_end": 374
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 76
+          },
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 21,
+            "line_end": 53
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 56,
+            "line_end": 77
+          },
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 305,
+            "line_end": 335
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/connections.py",
+            "line_start": 76,
+            "line_end": 85
+          },
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 228,
+            "line_end": 228
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 223,
+            "line_end": 232
+          },
+          {
+            "file": "reference/evaluation.md",
+            "line_start": 19,
+            "line_end": 26
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 4591,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:40:58.883Z"
+  },
+  "content": {
+    "user_title": "Build MCP servers for LLM tool integrations",
+    "value_statement": "Creating MCP servers from scratch requires understanding protocol specs, SDK patterns, and evaluation methods. This skill provides a structured four-phase workflow for building production-ready MCP servers with proper tool design, input validation, and comprehensive testing. It includes reference implementations for Python and TypeScript, evaluation frameworks, and security best practices.",
+    "seo_keywords": [
+      "MCP server development",
+      "Model Context Protocol",
+      "Claude MCP integration",
+      "FastMCP Python",
+      "MCP TypeScript SDK",
+      "API tool creation",
+      "LLM tool building",
+      "MCP server evaluation",
+      "external API integration",
+      "MCP server best practices"
+    ],
+    "actual_capabilities": [
+      "Guides MCP server creation through four phases: research, implementation, review, and evaluation",
+      "Provides Python FastMCP and TypeScript SDK implementation patterns with complete examples",
+      "Includes evaluation harness for testing MCP server effectiveness with QA pairs",
+      "Documents security best practices including OAuth, input validation, and data protection",
+      "Covers transport options (stdio, HTTP, SSE) and connection management patterns"
+    ],
+    "limitations": [
+      "Does not generate complete MCP server code automatically - provides patterns and guidance",
+      "Requires users to have API documentation for the service they want to integrate",
+      "Evaluation harness requires an Anthropic API key and valid evaluation XML files"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Platform developers",
+        "title": "Integrate external services",
+        "description": "Build MCP servers that expose external APIs as tools for LLMs, following best practices for naming, validation, and error handling."
+      },
+      {
+        "target_user": "AI engineers",
+        "title": "Test MCP server quality",
+        "description": "Create and run evaluation suites that test whether LLMs can effectively use your MCP server tools to complete real-world tasks."
+      },
+      {
+        "target_user": "Tool builders",
+        "title": "Design agent-friendly tools",
+        "description": "Design tools that optimize for limited context windows, provide actionable errors, and enable complete workflows rather than just API calls."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create MCP server",
+        "scenario": "Start new MCP server",
+        "prompt": "Help me create an MCP server to integrate with the GitHub API. I want to build tools for listing repositories and creating issues. Follow the four-phase workflow in the mcp-builder skill."
+      },
+      {
+        "title": "Add new tool",
+        "scenario": "Extend existing server",
+        "prompt": "Add a new tool called github_search_issues to my existing MCP server. It should search for issues by keyword and status. Use the patterns from the Python implementation guide."
+      },
+      {
+        "title": "Run evaluations",
+        "scenario": "Test server quality",
+        "prompt": "Create an evaluation file for my MCP server and run it using the evaluation harness. The evaluation should test read-only operations that require multiple tool calls."
+      },
+      {
+        "title": "Review implementation",
+        "scenario": "Check code quality",
+        "prompt": "Review my MCP server implementation against the quality checklist. Check that tools follow naming conventions and have proper input validation with Pydantic."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create an MCP server for the GitHub API with tools for listing repositories and creating issues.",
+        "output": [
+          "## Phase 1: Research and Planning",
+          "First, I need to gather information about the GitHub API and MCP protocol:",
+          "1. Fetch the MCP protocol documentation from modelcontextprotocol.io",
+          "2. Load the Python SDK README from the modelcontextprotocol/python-sdk repository",
+          "3. Study the GitHub REST API documentation for endpoints needed",
+          "",
+          "Based on the mcp-builder skill guidance, I'll design tools that:",
+          "- Consolidate related operations into workflow-focused tools",
+          "- Use human-readable identifiers over opaque IDs",
+          "- Provide concise and detailed response format options"
+        ]
+      },
+      {
+        "input": "Add a search_issues tool to my existing GitHub MCP server",
+        "output": [
+          "## Adding the search_issues tool",
+          "",
+          "Using the Python FastMCP pattern, I'll create a tool with:",
+          "- Pydantic input model with validation constraints",
+          "- Annotations for readOnlyHint and idempotentHint",
+          "- Proper error handling with actionable messages",
+          "- Pagination support for large result sets"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Design tools for complete workflows, not just individual API endpoints. Consolidate related operations to reduce tool calls.",
+      "Use input validation (Pydantic for Python, Zod for TypeScript) with clear constraints and descriptive error messages.",
+      "Create evaluations with realistic, read-only questions that require multiple tool calls and verify answers through string comparison."
+    ],
+    "anti_patterns": [
+      "Don't simply wrap every API endpoint as a separate tool. This creates tool sprawl and forces LLMs to make many calls.",
+      "Avoid returning exhaustive data dumps. Implement character limits and truncation with guidance on filtering results.",
+      "Do not skip evaluation. Without testing how LLMs actually use your tools, you cannot measure or improve quality."
+    ],
+    "faq": [
+      {
+        "question": "Which programming language should I use?",
+        "answer": "Python with FastMCP is recommended for beginners. TypeScript with MCP SDK offers more control for complex projects."
+      },
+      {
+        "question": "What are the character limits for responses?",
+        "answer": "The recommended limit is 25,000 characters. Implement truncation with guidance on how to filter or paginate."
+      },
+      {
+        "question": "How do I connect MCP servers to Claude?",
+        "answer": "Use stdio for local servers, or HTTP/SSE for remote servers. Configure transport settings in your Claude client."
+      },
+      {
+        "question": "Is my data safe when using MCP servers?",
+        "answer": "MCP servers only access data you explicitly configure. Follow security best practices for authentication."
+      },
+      {
+        "question": "Why are my evaluations failing?",
+        "answer": "Check tool descriptions are clear and comprehensive. Verify input parameters are well-documented with examples."
+      },
+      {
+        "question": "What transport options are supported?",
+        "answer": "MCP supports stdio (local), HTTP, and Server-Sent Events (SSE) for connecting servers to clients."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "reference",
+      "children": [
+        {
+          "name": "evaluation.md",
+          "type": "file",
+          "path": "reference/evaluation.md",
+          "lines": 602
+        },
+        {
+          "name": "mcp_best_practices.md",
+          "type": "file",
+          "path": "reference/mcp_best_practices.md",
+          "lines": 916
+        },
+        {
+          "name": "node_mcp_server.md",
+          "type": "file",
+          "path": "reference/node_mcp_server.md",
+          "lines": 916
+        },
+        {
+          "name": "python_mcp_server.md",
+          "type": "file",
+          "path": "reference/python_mcp_server.md",
+          "lines": 752
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "connections.py",
+          "type": "file",
+          "path": "scripts/connections.py",
+          "lines": 152
+        },
+        {
+          "name": "evaluation.py",
+          "type": "file",
+          "path": "scripts/evaluation.py",
+          "lines": 374
+        },
+        {
+          "name": "example_evaluation.xml",
+          "type": "file",
+          "path": "scripts/example_evaluation.xml",
+          "lines": 23
+        },
+        {
+          "name": "requirements.txt",
+          "type": "file",
+          "path": "scripts/requirements.txt",
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 329
+    }
+  ]
+}

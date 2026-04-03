@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:09:05.354Z",
+    "slug": "chakshugautam-context-optimization",
+    "source_url": "https://github.com/ChakshuGautam/games/tree/main/.claude/skills/context-optimization",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6a7a947d2c1fe30118ecd69d0e98ea21cce0933ba77429b53c186f892b9f089c",
+    "tree_hash": "949011171631cbf4f223c294f133bc3cf781a585f2a45cb0c4740eb1304c7807"
+  },
+  "skill": {
+    "name": "context-optimization",
+    "description": "This skill should be used when the user asks to \"optimize context\", \"reduce token costs\", \"improve context efficiency\", \"implement KV-cache optimization\", \"partition context\", or mentions context limits, observation masking, context budgeting, or extending effective context capacity.",
+    "summary": "This skill should be used when the user asks to \"optimize context\", \"reduce token costs\", \"improve c...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "ChakshuGautam",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "context-engineering",
+      "token-optimization",
+      "llm-efficiency",
+      "performance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 55 static findings evaluated as false positives. The static scanner misidentified Python f-string syntax as shell backticks, metadata URLs as network calls, and MD5 content hashing for reference IDs as weak cryptography. This is a pure utility library containing only in-memory data processing for context optimization. No network access, no filesystem operations beyond file path metadata, no external commands, and no code execution vulnerabilities.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 43,
+            "line_end": 70
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 70,
+            "line_end": 89
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 89,
+            "line_end": 101
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 101,
+            "line_end": 111
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 111,
+            "line_end": 134
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 134,
+            "line_end": 204
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 204,
+            "line_end": 222
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 222,
+            "line_end": 228
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 228,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 136
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 76,
+            "line_end": 76
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 1032,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:09:05.354Z"
+  },
+  "content": {
+    "user_title": "Optimize LLM Context Efficiency",
+    "value_statement": "LLM context windows limit task complexity and increase costs as conversations grow. This skill provides techniques to extend effective capacity through strategic compression, observation masking, KV-cache optimization, and context partitioning.",
+    "seo_keywords": [
+      "context optimization",
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "token optimization",
+      "context window",
+      "KV-cache",
+      "LLM efficiency",
+      "context compression",
+      "context partitioning"
+    ],
+    "actual_capabilities": [
+      "Implement context compaction by summarizing conversation history and tool outputs when approaching limits",
+      "Apply observation masking to replace verbose tool outputs with compact references",
+      "Design KV-cache friendly prompts that maximize cache hit rates for repeated requests",
+      "Partition work across isolated sub-agent contexts to prevent context bloat",
+      "Monitor context utilization and trigger optimization when limits approach"
+    ],
+    "limitations": [
+      "Does not modify actual model context limits or API implementations",
+      "Requires integration with existing agent or application framework",
+      "Effectiveness depends on model behavior and task characteristics"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Engineers",
+        "title": "Build Cost-Efficient Agents",
+        "description": "Design production agent systems that handle longer conversations with lower token costs"
+      },
+      {
+        "target_user": "ML Researchers",
+        "title": "Extend Context Capacity",
+        "description": "Maximize effective context for research tasks without requiring larger models"
+      },
+      {
+        "target_user": "Application Developers",
+        "title": "Optimize LLM Applications",
+        "description": "Reduce latency and costs for production LLM-powered applications"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check Context Usage",
+        "scenario": "When approaching context limits",
+        "prompt": "My conversation is getting long. Check my current context utilization and compact it if above 80%."
+      },
+      {
+        "title": "Mask Verbose Outputs",
+        "scenario": "When tool outputs dominate context",
+        "prompt": "Tool outputs are consuming too many tokens. Apply observation masking to observations older than 3 turns."
+      },
+      {
+        "title": "Design Cache-Friendly Prompts",
+        "scenario": "When optimizing for repeated requests",
+        "prompt": "Design a system prompt template that maximizes KV-cache hit rates by avoiding dynamic content."
+      },
+      {
+        "title": "Partition Complex Tasks",
+        "scenario": "When single context is insufficient",
+        "prompt": "Partition this complex task across sub-agents with isolated contexts, then aggregate results."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "My conversation has 45,000 tokens and my limit is 50,000. Optimize it.",
+        "output": [
+          "Current utilization: 90%",
+          "Compacting 12 tool outputs into summaries (68% reduction)",
+          "Masking 8 old observations from turns 5-12",
+          "New context size: 28,000 tokens (44% reduction)",
+          "Key information preserved: 3 decisions, 2 user preferences, current task state"
+        ]
+      },
+      {
+        "input": "Tool outputs are dominating my context window. Help me reduce them.",
+        "output": [
+          "Analyzing tool output patterns in context",
+          "Identifying 15 verbose outputs from turns 2-8",
+          "Generating compact references for each output",
+          "Applying selective masking based on task relevance",
+          "Context reduced by 62% while preserving key findings and metrics"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Measure context utilization before applying optimizations to avoid premature optimization",
+      "Preserve critical information like task goals, user preferences, and recent context when compacting",
+      "Design prompts with stable prefixes to maximize KV-cache hit rates across requests"
+    ],
+    "anti_patterns": [
+      "Compacting system prompts or critical task information",
+      "Masking observations that are still needed for active reasoning",
+      "Ignoring attention distribution when placing important information in context"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "This skill works with Claude, Claude Code, and Codex. Integration requires framework support for context manipulation."
+      },
+      {
+        "question": "What token reduction can I expect?",
+        "answer": "Compaction typically achieves 50-70% reduction with less than 5% quality degradation. Observation masking achieves 60-80% for masked content."
+      },
+      {
+        "question": "How does this integrate with my existing agent?",
+        "answer": "Call the utility functions between model calls to compact context. The skill provides Python utilities for integration."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. All processing is local and in-memory. No data is sent to external services or written to disk."
+      },
+      {
+        "question": "Why is quality degrading as my conversation extends?",
+        "answer": "This is the lost-in-middle phenomenon. Apply compaction and position critical information at attention-favored positions."
+      },
+      {
+        "question": "How is this different from longer context models?",
+        "answer": "This skill optimizes existing context without API costs. Longer contexts still have higher per-request costs and attention limitations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "optimization_techniques.md",
+          "type": "file",
+          "path": "references/optimization_techniques.md",
+          "lines": 273
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "compaction.py",
+          "type": "file",
+          "path": "scripts/compaction.py",
+          "lines": 380
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 180
+    }
+  ]
+}

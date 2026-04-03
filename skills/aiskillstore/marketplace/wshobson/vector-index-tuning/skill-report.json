@@ -1,0 +1,205 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:42:33.092Z",
+    "slug": "wshobson-vector-index-tuning",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/llm-application-dev/skills/vector-index-tuning",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "170990cb969ba2ff2e846e2edf46f7aa3f553be6385466e9a05f660bd341f668",
+    "tree_hash": "0b3c0e72fcdfc23ed7d3094cadc0516c753f5141e7ab20fee4857e3a155a3e00"
+  },
+  "skill": {
+    "name": "vector-index-tuning",
+    "description": "Optimize vector index performance for latency, recall, and memory. Use when tuning HNSW parameters, selecting quantization strategies, or scaling vector search infrastructure.",
+    "summary": "Optimize vector index performance for latency, recall, and memory. Use when tuning HNSW parameters, ...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "vector-search",
+      "hnsw",
+      "quantization",
+      "performance",
+      "indexing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill with instructional Python templates for vector index tuning. All static findings are false positives: hardcoded URLs are documentation references, weak crypto patterns matched legitimate quantization terminology, backticks are markdown formatting, and memory-mapped references are Qdrant config parameters.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 519,
+            "line_end": 521
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 723,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:42:33.092Z"
+  },
+  "content": {
+    "user_title": "Optimize vector index tuning for speed and recall",
+    "value_statement": "Vector search feels slow or costly when indexes are misconfigured. This skill provides tuning templates and heuristics to improve latency, recall, and memory use for HNSW and quantization strategies.",
+    "seo_keywords": [
+      "vector index tuning",
+      "HNSW parameters",
+      "quantization strategies",
+      "Qdrant optimization",
+      "vector search performance",
+      "ANN benchmarks",
+      "vector database tuning",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Benchmark HNSW parameter grids and compute recall metrics",
+      "Recommend HNSW settings based on scale and recall targets",
+      "Apply scalar, product, and binary quantization strategies",
+      "Estimate memory usage for index and vector storage",
+      "Configure Qdrant collections and search parameters",
+      "Monitor search latency percentiles and recall over time"
+    ],
+    "limitations": [
+      "Requires representative queries and ground truth for accurate recall measurement",
+      "Templates assume Python and libraries like hnswlib, sklearn, and qdrant-client",
+      "Does not automate deployment or manage index lifecycle operations",
+      "Heuristics may need adjustment for specific datasets and use cases"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML engineer",
+        "title": "Tune ANN for recall",
+        "description": "Find HNSW settings that meet recall targets without exceeding latency budgets."
+      },
+      {
+        "target_user": "Search platform lead",
+        "title": "Reduce memory footprint",
+        "description": "Evaluate quantization options and estimate storage tradeoffs at scale."
+      },
+      {
+        "target_user": "Data engineer",
+        "title": "Plan index scaling",
+        "description": "Select index types and configurations for millions to billions of vectors."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick HNSW sweep",
+        "scenario": "Small dataset baseline",
+        "prompt": "Benchmark HNSW M and efSearch for 200k vectors targeting 0.95 recall. Suggest the best balanced configuration."
+      },
+      {
+        "title": "Quantization choice",
+        "scenario": "Memory reduction plan",
+        "prompt": "Compare fp16, int8, and product quantization for 10M vectors of 768 dims. Summarize memory and recall impacts."
+      },
+      {
+        "title": "Qdrant config",
+        "scenario": "Balanced production setup",
+        "prompt": "Create Qdrant collection settings for balanced recall and speed with 5M vectors. Include HNSW and quantization configs."
+      },
+      {
+        "title": "Monitoring plan",
+        "scenario": "Performance regression guard",
+        "prompt": "Define metrics and a testing loop to track latency percentiles and recall drift for weekly index updates."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Suggest HNSW parameters for 1M vectors with 0.95 recall and under 10 ms latency.",
+        "output": [
+          "Recommended M: 32 and efConstruction: 200 for build quality",
+          "Set efSearch to 128 to target 0.95 recall",
+          "Estimate memory overhead with M at 32 and validate with a small benchmark"
+        ]
+      },
+      {
+        "input": "What memory savings can I get by switching from FP32 to INT8 quantization?",
+        "output": [
+          "FP32 uses 4 bytes per dimension, INT8 uses 1 byte",
+          "For 768-dim vectors: FP32 = 3KB, INT8 = 768 bytes per vector",
+          "Approximately 75% memory reduction with minor recall impact"
+        ]
+      },
+      {
+        "input": "How do I choose between IVF and HNSW for 50M vectors?",
+        "output": [
+          "HNSW: better recall at cost of memory and build time",
+          "IVF: lower memory, faster build, slightly lower recall",
+          "Consider hybrid: IVF-PQ for 50M+ vectors when memory constrained"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Benchmark with real queries and a ground truth set for accurate recall measurement",
+      "Start with default parameters, then tune one variable at a time systematically",
+      "Track latency percentiles and recall after each configuration change"
+    ],
+    "anti_patterns": [
+      "Tuning without measuring recall against a known ground truth set",
+      "Changing multiple parameters simultaneously without controlled experiments",
+      "Ignoring memory overhead when increasing M or efSearch values"
+    ],
+    "faq": [
+      {
+        "question": "What platforms does this skill support?",
+        "answer": "Works with Claude, Codex, and Claude Code. Provides general guidance with Qdrant-specific examples."
+      },
+      {
+        "question": "What are the main limits of the templates?",
+        "answer": "Templates are Python examples requiring libraries like hnswlib and sklearn to run. Users must provide their own data and queries."
+      },
+      {
+        "question": "Can I integrate this into my pipeline?",
+        "answer": "Yes. Use templates as building blocks in benchmarking scripts, CI jobs, or performance testing workflows."
+      },
+      {
+        "question": "Does it access or send my data?",
+        "answer": "No. The skill content is static documentation. No data collection or network calls occur from the skill itself."
+      },
+      {
+        "question": "What if benchmark results are noisy?",
+        "answer": "Increase query sample size, fix random seeds, and separate index build timing from search timing measurements."
+      },
+      {
+        "question": "How does this compare to generic tuning guides?",
+        "answer": "Provides concrete Python templates, parameter ranges, memory estimation formulas, and Qdrant-specific configurations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 522
+    }
+  ]
+}

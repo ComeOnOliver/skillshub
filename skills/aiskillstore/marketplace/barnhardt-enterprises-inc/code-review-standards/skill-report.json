@@ -1,0 +1,213 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T14:54:28.705Z",
+    "slug": "barnhardt-enterprises-inc-code-review-standards",
+    "source_url": "https://github.com/Barnhardt-Enterprises-Inc/quetrex-plugin/tree/main/templates/skills/code-review-standards",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1ae08780c38871089271b638567f02dd1efd7ae1e851f624508b5cd14e53e121",
+    "tree_hash": "2fe2c112b013757035d2636c36c3334ad4fb2b941479146939284e5769442395"
+  },
+  "skill": {
+    "name": "code-review-standards",
+    "description": "Code review framework and criteria. References security-sentinel for security checks. Use when performing code reviews or defining review standards.",
+    "summary": "Code review framework and criteria. References security-sentinel for security checks. Use when perfo...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Barnhardt-Enterprises-Inc",
+    "license": "MIT",
+    "tags": [
+      "code-review",
+      "software-quality",
+      "development-standards",
+      "best-practices"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 177 static findings are false positives. The skill consists of markdown documentation files containing code examples for educational purposes. The flagged patterns (external_commands, network, filesystem, scripts, env_access) appear only in documentation examples demonstrating what to look for during code reviews, not as executable code. This is a documentation skill with no security risks.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 2835,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T14:54:28.705Z"
+  },
+  "content": {
+    "user_title": "Apply Code Review Standards",
+    "value_statement": "Teams struggle with inconsistent code reviews and missed issues. This skill provides comprehensive criteria for maintainability, performance, and security reviews, ensuring consistent quality standards across all code contributions.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "code review",
+      "code review standards",
+      "software quality",
+      "code review checklist",
+      "development standards",
+      "code review criteria",
+      "software engineering"
+    ],
+    "actual_capabilities": [
+      "Apply maintainability rules to assess code clarity and organization",
+      "Evaluate code against performance criteria and optimization guidelines",
+      "Conduct security-focused reviews using established checklist items",
+      "Provide consistent review standards across team code contributions"
+    ],
+    "limitations": [
+      "Does not execute or test code - only provides review criteria",
+      "Does not integrate with version control systems automatically",
+      "Does not enforce rules or block commits directly",
+      "Requires human judgment for final review decisions"
+    ],
+    "use_cases": [
+      {
+        "title": "New Team Member Onboarding",
+        "description": "New developers use the skill to learn team code standards before submitting their first pull requests, reducing review cycles and improving code quality from day one.",
+        "target_user": "New developers joining a team"
+      },
+      {
+        "title": "Pull Request Review Process",
+        "description": "Team leads apply the skill during code reviews to ensure all maintainability, performance, and security criteria are checked systematically.",
+        "target_user": "Code reviewers and team leads"
+      },
+      {
+        "title": "Establishing Team Standards",
+        "description": "Engineering managers use the skill to define or update team code review standards, creating documented criteria for consistent code quality.",
+        "target_user": "Engineering managers and architects"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Code Review",
+        "prompt": "Review the following code for maintainability, performance, and security issues using the code-review-standards skill. List any problems you find.",
+        "scenario": "Quick code review request"
+      },
+      {
+        "title": "Detailed Security Review",
+        "prompt": "Perform a security-focused code review on the following code. Check for common vulnerabilities and security anti-patterns. Report your findings.",
+        "scenario": "Security-specific code review"
+      },
+      {
+        "title": "Performance Optimization Review",
+        "prompt": "Review the following code for performance issues. Identify any inefficient algorithms, unnecessary operations, or resource management problems.",
+        "scenario": "Performance optimization review"
+      },
+      {
+        "title": "Comprehensive Code Audit",
+        "prompt": "Conduct a full code review using all criteria from code-review-standards. Evaluate maintainability, performance, and security. Provide a summary report with prioritized findings.",
+        "scenario": "Complete code audit"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Review this function for code review standards:\n\n```python\ndef get_user_data(user_id):\n    conn = sqlite3.connect('users.db')\n    cursor = conn.cursor()\n    cursor.execute(f\"SELECT * FROM users WHERE id = {user_id}\")\n    return cursor.fetchone()\n```",
+        "output": [
+          "**Maintainability Issues:**",
+          "- Function name does not follow snake_case convention (should be get_user_data)",
+          "- No docstring explaining parameters or return value",
+          "- Hardcoded database path reduces portability",
+          "",
+          "**Security Issues:**",
+          "- SQL injection vulnerability: user_id directly interpolated into query",
+          "- Consider using parameterized queries instead",
+          "- Database connection not closed after use (resource leak)",
+          "",
+          "**Performance Issues:**",
+          "- SELECT * returns all columns when only specific ones may be needed",
+          "- No error handling for database exceptions"
+        ]
+      },
+      {
+        "input": "Check this code for security vulnerabilities:\n\n```javascript\nconst crypto = require('crypto');\nconst hash = crypto.createHash('md5').update(password).digest('hex');\n```",
+        "output": [
+          "**Security Finding:**",
+          "- MD5 is a weak cryptographic algorithm vulnerable to collision attacks",
+          "- MD5 is considered cryptographically broken for security purposes",
+          "- Use SHA-256 or stronger algorithms instead",
+          "",
+          "**Recommendation:**",
+          "- Replace with: crypto.createHash('sha256')",
+          "- For password hashing, use bcrypt or Argon2 with salt"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the complete review checklist from all three criteria files (maintainability, performance, security) for comprehensive reviews",
+      "Provide specific, actionable feedback with code examples when suggesting improvements",
+      "Document exceptions and trade-offs when deviating from standards is necessary"
+    ],
+    "anti_patterns": [
+      "Skipping security checks in favor of speed - security issues are harder to fix later",
+      "Reviewing only for style preferences without checking actual code quality and correctness",
+      "Not documenting the reasoning behind review decisions and feedback"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute the code being reviewed?",
+        "answer": "No. This skill provides criteria and guidelines for reviewing code. It does not run or test the code itself. It is designed to be used as a reference framework during manual or automated code reviews."
+      },
+      {
+        "question": "Can I use this skill with other Claude skills?",
+        "answer": "Yes. The skill description references security-sentinel for additional security checks. You can combine it with other skills for comprehensive code analysis and review workflows."
+      },
+      {
+        "question": "How do I customize the standards for my team?",
+        "answer": "The skill provides baseline criteria. You can modify the markdown files to add, remove, or adjust criteria to match your team's specific requirements and coding conventions."
+      },
+      {
+        "question": "What file formats can this skill review?",
+        "answer": "This skill provides criteria applicable to any programming language. The examples in the documentation cover multiple languages. You can apply the principles to review code in any format."
+      },
+      {
+        "question": "Does this skill integrate with CI/CD pipelines?",
+        "answer": "This skill is designed for human-assisted code reviews. For automated checks in CI/CD, you would need to use complementary tools that enforce similar standards programmatically."
+      },
+      {
+        "question": "How detailed are the review criteria?",
+        "answer": "The skill includes comprehensive criteria across maintainability, performance, and security domains. Each category contains specific rules, examples, and guidance for thorough code evaluation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "maintainability-rules.md",
+      "type": "file",
+      "path": "maintainability-rules.md",
+      "lines": 334
+    },
+    {
+      "name": "performance-criteria.md",
+      "type": "file",
+      "path": "performance-criteria.md",
+      "lines": 257
+    },
+    {
+      "name": "security-checklist.md",
+      "type": "file",
+      "path": "security-checklist.md",
+      "lines": 122
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 428
+    }
+  ]
+}

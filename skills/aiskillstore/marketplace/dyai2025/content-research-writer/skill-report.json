@@ -1,0 +1,408 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:26:10.082Z",
+    "slug": "dyai2025-content-research-writer",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/content-research-writer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "24265ffa8b7803f2a2f8b778b8fa1ceb18c8308eda68b3fc97825d899dc73113",
+    "tree_hash": "34934d5b8d02aca74bae6e9359cf75fc3bd7f036ff20d29cb0ac2efd165eea71"
+  },
+  "skill": {
+    "name": "content-research-writer",
+    "description": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, iterating on outlines, and providing real-time feedback on each section. Transforms your writing process from solo effort to collaborative partnership.",
+    "summary": "Assists in writing high-quality content by conducting research, adding citations, improving hooks, i...",
+    "icon": "✍️",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "writing",
+    "tags": [
+      "writing",
+      "research",
+      "content creation",
+      "editing",
+      "citations"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a prompt-based writing assistance skill containing only markdown documentation. Static findings are false positives: shell command examples are user setup instructions, source URL is metadata, and content research references are legitimate use cases, not system reconnaissance. No executable code, scripts, network operations, or file system access beyond standard AI capabilities.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 269
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 271
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 271,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 278
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 278,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 285
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 285,
+            "line_end": 288
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 288,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 348
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 348,
+            "line_end": 374
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 374,
+            "line_end": 396
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 396,
+            "line_end": 419
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 419,
+            "line_end": 447
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 447,
+            "line_end": 496
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 496,
+            "line_end": 507
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 718,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:26:10.082Z"
+  },
+  "content": {
+    "user_title": "Research and Write Quality Content",
+    "value_statement": "Writing quality content takes significant effort. This skill transforms solo writing into a collaborative partnership by providing research assistance, structured outlines, real-time section feedback, and proper citation management.",
+    "seo_keywords": [
+      "Claude writing assistant",
+      "content research tool",
+      "article outline generator",
+      "citation manager",
+      "writing feedback",
+      "content creation",
+      "blog writing",
+      "technical documentation",
+      "Claude Code writing skill",
+      "content research writer"
+    ],
+    "actual_capabilities": [
+      "Creates structured outlines with research placeholders and logical flow",
+      "Conducts research on topics and adds proper citations",
+      "Improves article hooks and introductions for better engagement",
+      "Provides section-by-section feedback on clarity, flow, and evidence",
+      "Preserves writer's voice and style across revisions",
+      "Manages citations and references in multiple formats"
+    ],
+    "limitations": [
+      "Does not write full articles from scratch without user input",
+      "Does not access paid databases or subscription-only sources",
+      "Does not verify facts beyond web search capabilities",
+      "Cannot publish or upload content to external platforms"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bloggers and content marketers",
+        "title": "Write blog posts faster",
+        "description": "Create outlines, research key points, and get section-by-section feedback to publish quality articles efficiently."
+      },
+      {
+        "target_user": "Technical writers",
+        "title": "Document with citations",
+        "description": "Write technical documentation with proper research, citations, and clear explanations for complex topics."
+      },
+      {
+        "target_user": "Thought leaders",
+        "title": "Develop compelling narratives",
+        "description": "Craft opinion pieces and thought leadership content with strong hooks, evidence, and distinctive voice."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create outline",
+        "scenario": "Start a new article",
+        "prompt": "Help me create an outline for an article about [topic]. Ask me about my target audience, length, and writing goals first."
+      },
+      {
+        "title": "Research topic",
+        "scenario": "Find sources and data",
+        "prompt": "Research [specific topic] and add citations to my outline. Find recent data and credible sources I can reference."
+      },
+      {
+        "title": "Improve hook",
+        "scenario": "Strengthen introduction",
+        "prompt": "Here's my introduction: [paste text]. Analyze it and provide 3 alternative hooks with explanations of why each works."
+      },
+      {
+        "title": "Get feedback",
+        "scenario": "Review written section",
+        "prompt": "Review this section I just wrote: [paste section]. Give me specific feedback on clarity, flow, and suggestions for improvement."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create an outline for an article about remote work productivity.",
+        "output": [
+          "Before I create your outline, I have a few questions:",
+          "• What is your main argument or thesis about remote work productivity?",
+          "• Who is your target audience? (managers, individual contributors, founders)",
+          "• What is your target length? (short blog post, long-form article, guide)",
+          "• What is your preferred writing style? (formal, conversational, data-driven)",
+          "• Do you have existing research or personal experience to include?"
+        ]
+      },
+      {
+        "input": "Research how AI affects product management and add citations.",
+        "output": [
+          "Key findings gathered:",
+          "• 80% of product managers will use AI tools by 2025 (Gartner)",
+          "• 45% of teams report faster feature shipping with AI assistance",
+          "• Expert insight: 'AI amplifies PM judgment, not replaces it' - Marty Cagan",
+          "• Case study: Airbnb's AI-assisted prioritization methodology",
+          "All sources added to your outline with proper citations."
+        ]
+      },
+      {
+        "input": "Review this introduction and suggest better hooks.",
+        "output": [
+          "Analysis of your current hook:",
+          "• Strength: Clear topic introduction",
+          "• Opportunity: More specific, creates curiosity",
+          "",
+          "3 Alternative Hooks:",
+          "1. Data-driven: 'AI analyzed 500 customer interviews in 30 minutes instead of 3 weeks. Product management will never be the same.'",
+          "2. Question: 'What if you could read every customer review before your morning coffee?'",
+          "3. Story: 'Sarah spent two weeks building the wrong feature because she could not spot the pattern fast enough.'"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Work on one section at a time and get feedback before moving on to maintain momentum.",
+      "Save research separately in a research.md file to keep your draft focused and clean.",
+      "Specify your voice and style preferences early so the skill can match your tone throughout."
+    ],
+    "anti_patterns": [
+      "Do not expect the skill to write your entire article without your input on each section.",
+      "Avoid skipping the outlining phase, as it saves time and improves structure later.",
+      "Do not ignore feedback on citations, as unverifiable claims weaken your credibility."
+    ],
+    "faq": [
+      {
+        "question": "What AI tools work with this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code for writing assistance."
+      },
+      {
+        "question": "Can it access paid research databases?",
+        "answer": "No. The skill searches publicly available web sources. For subscription-only research, provide your own sources."
+      },
+      {
+        "question": "How does it handle citations?",
+        "answer": "It supports inline citations, numbered references, and footnotes. It maintains a running reference list for your article."
+      },
+      {
+        "question": "Is my writing data safe?",
+        "answer": "This is a prompt-based skill with no data storage. Your content stays within your Claude session."
+      },
+      {
+        "question": "Why is my outline not being generated?",
+        "answer": "The skill asks clarifying questions first. Answer them to get a tailored outline for your specific needs."
+      },
+      {
+        "question": "How is this different from a basic writing assistant?",
+        "answer": "This skill provides structured workflows, research integration, section-by-section iterative feedback, and voice preservation across revisions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 539
+    }
+  ]
+}

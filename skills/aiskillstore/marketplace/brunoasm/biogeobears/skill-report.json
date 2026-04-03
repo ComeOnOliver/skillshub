@@ -1,0 +1,309 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:19:49.021Z",
+    "slug": "brunoasm-biogeobears",
+    "source_url": "https://github.com/brunoasm/my_claude_skills/tree/main/biogeobears",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6a872dc71353f89651825f0bcdd14d9e226103345d08380c9d6b4ba7de2df10a",
+    "tree_hash": "05bbd85fc03fb789a8e5d5a01745cc59e706cccacf39bceca52cad294761d007"
+  },
+  "skill": {
+    "name": "biogeobears",
+    "description": "Set up and execute phylogenetic biogeographic analyses using BioGeoBEARS in R. Use when users request biogeographic reconstruction, ancestral range estimation, or want to analyze species distributions on phylogenies. Handles input file validation, data reformatting, RMarkdown workflow generation, and result visualization.",
+    "summary": "Set up and execute phylogenetic biogeographic analyses using BioGeoBEARS in R. Use when users reques...",
+    "icon": "🐻",
+    "version": "1.0.0",
+    "author": "brunoasm",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "biogeography",
+      "phylogenetics",
+      "R",
+      "bioinformatics",
+      "evolution"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate bioinformatics skill for phylogenetic biogeographic analysis. All 174 static findings are FALSE POSITIVES caused by the scanner misinterpreting documentation examples (R code showing package installation), scientific notation (d,e,j biogeographic parameters as 'weak crypto'), and relative file paths in examples as path traversal. No malicious intent detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 259
+          },
+          {
+            "file": "README.md",
+            "line_start": 43,
+            "line_end": 156
+          },
+          {
+            "file": "references/biogeobears_details.md",
+            "line_start": 9,
+            "line_end": 239
+          },
+          {
+            "file": "scripts/biogeobears_analysis_template.Rmd",
+            "line_start": 4,
+            "line_end": 402
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 204
+          },
+          {
+            "file": "README.md",
+            "line_start": 222,
+            "line_end": 222
+          },
+          {
+            "file": "scripts/validate_geography_file.py",
+            "line_start": 180,
+            "line_end": 180
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 557,
+            "line_end": 557
+          },
+          {
+            "file": "README.md",
+            "line_start": 209,
+            "line_end": 209
+          },
+          {
+            "file": "references/biogeobears_details.md",
+            "line_start": 355,
+            "line_end": 356
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 2141,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:19:49.021Z"
+  },
+  "content": {
+    "user_title": "Run BioGeoBEARS biogeographic analyses",
+    "value_statement": "Phylogenetic biogeographic analysis helps researchers understand how species geographic ranges evolved over time. This skill automates the complete BioGeoBEARS workflow from input validation to publication-ready ancestral range visualizations.",
+    "seo_keywords": [
+      "biogeography",
+      "phylogenetic analysis",
+      "BioGeoBEARS",
+      "ancestral range estimation",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "R statistical analysis",
+      "evolutionary biology",
+      "phylogenetics"
+    ],
+    "actual_capabilities": [
+      "Validates phylogenetic tree and geography input files for format compliance",
+      "Reformats CSV/TSV distribution data to BioGeoBEARS PHYLIP format",
+      "Generates parameterized RMarkdown analysis scripts for six biogeographic models",
+      "Compares DEC, DIVALIKE, BAYAREALIKE models with/without founder-event (+J) parameter",
+      "Creates publication-ready ancestral range visualizations on phylogenies",
+      "Produces HTML reports with statistical results and model comparison tables"
+    ],
+    "limitations": [
+      "Requires BioGeoBEARS R package and dependencies (ape, rmarkdown, knitr)",
+      "Analysis runtime scales exponentially with number of geographic areas",
+      "Generates analysis scripts but cannot execute the actual R analysis itself"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Evolutionary biologists",
+        "title": "Ancestral range reconstruction",
+        "description": "Reconstruct where ancestors of species lived on their phylogenetic tree using DEC, DIVALIKE, and BAYAREALIKE models."
+      },
+      {
+        "target_user": "Ecology researchers",
+        "title": "Dispersal and extinction analysis",
+        "description": "Estimate rates of geographic range expansion, contraction, and founder-event speciation across a clade."
+      },
+      {
+        "target_user": "Conservation scientists",
+        "title": "Historical biogeography",
+        "description": "Understand historical biogeographic patterns to inform conservation prioritization and predict responses to climate change."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic analysis request",
+        "scenario": "User has tree and distribution data",
+        "prompt": "I have a Newick phylogeny of [NUMBER] species and their geographic distributions across [NUMBER] areas. Run a BioGeoBEARS analysis to reconstruct ancestral ranges."
+      },
+      {
+        "title": "Model comparison",
+        "scenario": "User wants to compare specific models",
+        "prompt": "Compare DEC, DEC+J, DIVALIKE, and DIVALIKE+J models on my phylogeny. Which model has the best AIC weight? Explain the biological meaning of the parameters."
+      },
+      {
+        "title": "Data reformatting",
+        "scenario": "User has CSV distribution data",
+        "prompt": "Convert my species distribution CSV file to BioGeoBEARS format and validate it against my phylogenetic tree file."
+      },
+      {
+        "title": "Visualization focus",
+        "scenario": "User wants publication figures",
+        "prompt": "Generate an RMarkdown script that produces pie chart visualizations of ancestral ranges on my phylogeny for all six BioGeoBEARS models."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run BioGeoBEARS analysis on my 30-species bird phylogeny with their island distributions",
+        "output": [
+          "Analysis setup complete at: biogeobears_analysis/",
+          "Validated 30 species across 5 islands (A, B, C, D, E)",
+          "Generated RMarkdown script with 6 model comparison",
+          "Max range size: 4 areas (conservative)",
+          "Models: DEC, DEC+J, DIVALIKE, DIVALIKE+J, BAYAREALIKE, BAYAREALIKE+J",
+          "To run: cd biogeobears_analysis && bash run_analysis.sh",
+          "Expected runtime: 30-60 minutes for full model comparison"
+        ]
+      },
+      {
+        "input": "Convert my species distribution CSV to BioGeoBEARS format",
+        "output": [
+          "Detected 45 species across 6 geographic areas",
+          "Converted presence/absence data to PHYLIP format",
+          "Validated species names match tree tip labels",
+          "Output written to: geography.data",
+          "File is valid for BioGeoBEARS analysis"
+        ]
+      },
+      {
+        "input": "Which BioGeoBEARS model is best for my island dataset?",
+        "output": [
+          "Model comparison results (AIC weights):",
+          "  DEC+J: 0.52 (best supported)",
+          "  DIVALIKE+J: 0.31",
+          "  DEC: 0.09",
+          "  BAYAREALIKE+J: 0.05",
+          "The +J parameter significantly improves fit (LRT p < 0.001)",
+          "Suggesting founder-event speciation is important for island biogeography"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate input files before running full analysis to catch species name mismatches early",
+      "Use all six models for comprehensive model comparison rather than testing only one",
+      "Set max_range_size conservatively (number of areas minus one) to avoid computational explosion"
+    ],
+    "anti_patterns": [
+      "Running analysis without validating that species names match between tree and geography files",
+      "Using very high max_range_size values (greater than 5) without understanding computational implications",
+      "Reporting results from only one model without AIC-based model comparison"
+    ],
+    "faq": [
+      {
+        "question": "What does the +J parameter mean?",
+        "answer": "The +J adds founder-event speciation, allowing new species to disperse to distant areas during speciation events."
+      },
+      {
+        "question": "How many geographic areas can I include?",
+        "answer": "More than 5-6 areas dramatically increases computation time. Consider combining adjacent areas if possible."
+      },
+      {
+        "question": "Which model should I use?",
+        "answer": "Run all six models and compare using AIC weights. The best-supported model indicates which processes best explain your data."
+      },
+      {
+        "question": "What if species names do not match?",
+        "answer": "Use the validate_geography_file.py script to identify mismatches, then edit either the tree or geography file to align names."
+      },
+      {
+        "question": "Can I use an unrooted tree?",
+        "answer": "BioGeoBEARS requires rooted trees. Root your tree using an outgroup species and provide the rooted version."
+      },
+      {
+        "question": "How long will the analysis take?",
+        "answer": "Small datasets (less than 50 species, 5 or fewer areas): 10-30 minutes. Large datasets (more than 100 species): 1-6 hours."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "biogeobears_details.md",
+          "type": "file",
+          "path": "references/biogeobears_details.md",
+          "lines": 359
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "biogeobears_analysis_template.Rmd",
+          "type": "file",
+          "path": "scripts/biogeobears_analysis_template.Rmd",
+          "lines": 405
+        },
+        {
+          "name": "validate_geography_file.py",
+          "type": "file",
+          "path": "scripts/validate_geography_file.py",
+          "lines": 300
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 223
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 581
+    }
+  ]
+}

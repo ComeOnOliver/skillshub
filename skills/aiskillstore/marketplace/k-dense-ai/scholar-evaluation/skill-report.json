@@ -1,0 +1,574 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:29:12.730Z",
+    "slug": "k-dense-ai-scholar-evaluation",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scholar-evaluation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "84f46c9092b5b791caa76bb607797003eda5e52cd8b109b9089566034fe518dc",
+    "tree_hash": "2f0ceb575b52d0b0310da1d78a16abb87d6446caa79674e0cbb58a31ba1fca0f"
+  },
+  "skill": {
+    "name": "scholar-evaluation",
+    "description": "Systematically evaluate scholarly work using the ScholarEval framework, providing structured assessment across research quality dimensions including problem formulation, methodology, analysis, and writing with quantitative scoring and actionable feedback.",
+    "summary": "Systematically evaluate scholarly work using the ScholarEval framework, providing structured assessm...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "tags": [
+      "scholar-evaluation",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": false,
+    "summary": "AI analysis failed after multiple attempts - MANUAL REVIEW REQUIRED before publishing. This skill cannot be auto-published until reviewed by a human.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 291,
+            "line_end": 291
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 236,
+            "line_end": 236
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 295
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 270
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [
+      {
+        "title": "Weak cryptographic algorithm",
+        "description": "Weak cryptographic algorithm detected in code",
+        "locations": [
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 5,
+            "line_end": 5
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 82,
+            "line_end": 82
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 90,
+            "line_end": 90
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 117,
+            "line_end": 117
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 125,
+            "line_end": 125
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 130,
+            "line_end": 130
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 139,
+            "line_end": 139
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 148,
+            "line_end": 148
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 157,
+            "line_end": 157
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 176,
+            "line_end": 176
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 177,
+            "line_end": 177
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 185,
+            "line_end": 185
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 254,
+            "line_end": 254
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 257,
+            "line_end": 257
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 320,
+            "line_end": 320
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 117,
+            "line_end": 117
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 119,
+            "line_end": 119
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 151,
+            "line_end": 151
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 307,
+            "line_end": 307
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 308,
+            "line_end": 308
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 134,
+            "line_end": 134
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 164,
+            "line_end": 164
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 169,
+            "line_end": 169
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 174,
+            "line_end": 174
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 191,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 104
+          }
+        ]
+      },
+      {
+        "title": "System reconnaissance",
+        "description": "System reconnaissance detected in code",
+        "locations": [
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 663,
+            "line_end": 663
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 63,
+            "line_end": 63
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 89,
+            "line_end": 89
+          },
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 280,
+            "line_end": 280
+          }
+        ]
+      },
+      {
+        "title": "Network reconnaissance",
+        "description": "Network reconnaissance detected in code",
+        "locations": [
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 215,
+            "line_end": 216
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 432,
+            "line_end": 433
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 438,
+            "line_end": 439
+          },
+          {
+            "file": "references/evaluation_framework.md",
+            "line_start": 488,
+            "line_end": 489
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 141
+          }
+        ]
+      },
+      {
+        "title": "Path traversal sequence",
+        "description": "Path traversal sequence detected in code",
+        "locations": [
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 291,
+            "line_end": 291
+          }
+        ]
+      },
+      {
+        "title": "Python file write/append",
+        "description": "Python file write/append detected in code",
+        "locations": [
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 236,
+            "line_end": 236
+          }
+        ]
+      },
+      {
+        "title": "Certificate/key files",
+        "description": "Certificate/key files detected in code",
+        "locations": [
+          {
+            "file": "scripts/calculate_scores.py",
+            "line_start": 126,
+            "line_end": 126
+          }
+        ]
+      },
+      {
+        "title": "Hardcoded URL",
+        "description": "Hardcoded URL detected in code",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 295
+          }
+        ]
+      },
+      {
+        "title": "Ruby/shell backtick execution",
+        "description": "Ruby/shell backtick execution detected in code",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 270
+          }
+        ]
+      },
+      {
+        "title": "[HEURISTIC] DANGEROUS COMBINATION: Code execution + Network + Credential access",
+        "description": "[HEURISTIC] DANGEROUS COMBINATION: Code execution + Network + Credential access detected in code",
+        "locations": [
+          {
+            "file": "multiple",
+            "line_start": 1,
+            "line_end": 1
+          }
+        ]
+      },
+      {
+        "title": "[HEURISTIC] SUSPICIOUS COMBINATION: Filesystem + Credentials + Network",
+        "description": "[HEURISTIC] SUSPICIOUS COMBINATION: Filesystem + Credentials + Network detected in code",
+        "locations": [
+          {
+            "file": "multiple",
+            "line_start": 1,
+            "line_end": 1
+          }
+        ]
+      }
+    ],
+    "files_scanned": 4,
+    "total_lines": 1624,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:29:12.730Z"
+  },
+  "content": {
+    "user_title": "Scholar Evaluation",
+    "value_statement": "An AI skill for Claude, Codex, and Claude Code",
+    "seo_keywords": [
+      "scholar-evaluation",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "actual_capabilities": [],
+    "limitations": [],
+    "use_cases": [],
+    "prompt_templates": [],
+    "output_examples": [],
+    "best_practices": [],
+    "anti_patterns": [],
+    "faq": []
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "evaluation_framework.md",
+          "type": "file",
+          "path": "references/evaluation_framework.md",
+          "lines": 664
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "calculate_scores.py",
+          "type": "file",
+          "path": "scripts/calculate_scores.py",
+          "lines": 379
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 300
+    }
+  ]
+}

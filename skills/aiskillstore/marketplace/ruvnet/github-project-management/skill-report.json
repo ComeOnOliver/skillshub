@@ -1,0 +1,212 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:29:43.038Z",
+    "slug": "ruvnet-github-project-management",
+    "source_url": "https://github.com/ruvnet/claude-flow/tree/main/.claude/skills/github-project-management",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6e2317acdb78b8b9c8e1af0f36e2de4e4784ee7b25f2b69510fbb8c3b4ee4c5f",
+    "tree_hash": "fd9660971581c1499d81280a5c25c81acc272b100d9be012365f9ed6ccf56b3c"
+  },
+  "skill": {
+    "name": "github-project-management",
+    "description": "Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning",
+    "summary": "Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automat...",
+    "icon": "🎯",
+    "version": "2.0.0",
+    "author": "Claude Code",
+    "license": "MIT",
+    "category": "github",
+    "tags": [
+      "github",
+      "project-management",
+      "issue-tracking",
+      "project-boards",
+      "sprint-planning",
+      "agile",
+      "swarm-coordination"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing example bash scripts for GitHub CLI operations. The static analyzer flagged 185 potential issues, but 99% are false positives. The 'shell backtick execution' findings are actually POSIX shell command substitution ($()) used in legitimate gh CLI examples. The 'weak cryptographic algorithm' findings are misidentified base64 strings in URLs/metadata. The 'system reconnaissance' findings are standard GitHub CLI commands (gh issue list, gh project list) for project management. All detected patterns are standard documentation for a legitimate GitHub project management tool.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 67
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1268,
+            "line_end": 1271
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1515,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:29:43.038Z"
+  },
+  "content": {
+    "user_title": "Automate GitHub project management with AI swarm coordination",
+    "value_statement": "Managing GitHub projects manually is time-consuming and error-prone. This skill automates issue tracking, project board synchronization, and sprint planning using AI swarm coordination for efficient project delivery.",
+    "seo_keywords": [
+      "github project management",
+      "github issues automation",
+      "project board sync",
+      "claude code github",
+      "ai swarm coordination",
+      "sprint planning automation",
+      "github cli automation",
+      "agile project management"
+    ],
+    "actual_capabilities": [
+      "Create and manage GitHub issues with automated swarm coordination",
+      "Synchronize project boards with real-time status updates",
+      "Automate sprint planning and milestone tracking",
+      "Convert issues into coordinated swarm tasks",
+      "Generate progress reports and analytics",
+      "Handle cross-repository issue dependencies"
+    ],
+    "limitations": [
+      "Requires GitHub CLI authentication and repository permissions",
+      "Depends on external MCP servers (ruv-swarm or claude-flow)",
+      "Limited to GitHub-hosted repositories",
+      "May have rate limiting for large-scale operations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Development team leads",
+        "title": "Automated sprint management",
+        "description": "Coordinate sprints with AI agents that automatically assign tasks, track progress, and update project boards based on issue status."
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Issue triage automation",
+        "description": "Automatically label, prioritize, and assign issues to appropriate team members using AI analysis of issue content."
+      },
+      {
+        "target_user": "Project managers",
+        "title": "Cross-team coordination",
+        "description": "Manage issues across multiple repositories and teams with synchronized project boards and automated progress tracking."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create sprint issues",
+        "scenario": "Planning a new development sprint",
+        "prompt": "Create GitHub issues for sprint planning with labels, assignees, and swarm coordination for a 2-week sprint focused on API development"
+      },
+      {
+        "title": "Automate issue triage",
+        "scenario": "Managing incoming bug reports",
+        "prompt": "Analyze and triage unlabeled GitHub issues, add appropriate labels based on content, and assign to relevant team members"
+      },
+      {
+        "title": "Sync project boards",
+        "scenario": "Keeping multiple boards updated",
+        "prompt": "Synchronize issue status across development, QA, and release project boards with real-time updates"
+      },
+      {
+        "title": "Generate progress reports",
+        "scenario": "Weekly team updates",
+        "prompt": "Generate comprehensive progress reports including burndown charts, velocity metrics, and blocker analysis for the current sprint"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a coordinated issue for implementing user authentication",
+        "output": [
+          "Issue #123 created: Feature: Implement OAuth2 Authentication",
+          "Added labels: enhancement, authentication, high-priority",
+          "Assigned to: @developer-team",
+          "Swarm initialized with 3 agents: architect, coder, tester",
+          "Added to project board: Development Sprint 15",
+          "Automated progress tracking enabled"
+        ]
+      },
+      {
+        "input": "Find and triage unlabeled issues",
+        "output": [
+          "Analyzed 15 unlabeled issues",
+          "Labeled 8 bugs with bug,swarm-debugger",
+          "Labeled 5 features with enhancement,swarm-feature",
+          "Labeled 2 performance items with performance,swarm-optimizer",
+          "Prioritized issues based on keywords and complexity"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always initialize swarm coordination for complex issues to enable parallel development and automated tracking",
+      "Use consistent labeling strategy across all issues to improve automation accuracy and team communication",
+      "Configure bidirectional sync between issues and project boards to maintain real-time status updates"
+    ],
+    "anti_patterns": [
+      "Avoid creating issues without swarm coordination for complex tasks - this misses automation benefits",
+      "Do not manually update project board cards when automated sync is available - this creates inconsistencies",
+      "Never skip proper GitHub CLI authentication setup - this causes permission errors during operations"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with GitHub Enterprise?",
+        "answer": "Yes, the skill works with GitHub Enterprise Cloud and Server editions using the same GitHub CLI commands."
+      },
+      {
+        "question": "What are the rate limits for large projects?",
+        "answer": "GitHub API has rate limits of 5000 requests per hour for authenticated users. The skill includes batching to minimize API calls."
+      },
+      {
+        "question": "Can I integrate this with Slack or Teams?",
+        "answer": "Yes, the skill can send notifications to Slack, Teams, and other platforms using webhook integrations configured in the workflow."
+      },
+      {
+        "question": "How secure is the data handling?",
+        "answer": "All operations use official GitHub CLI and APIs with OAuth tokens. No data is stored externally - everything stays in your GitHub repository."
+      },
+      {
+        "question": "What if the swarm agents conflict?",
+        "answer": "The skill uses conflict resolution strategies and maintains audit trails. You can always manually override automated decisions."
+      },
+      {
+        "question": "How does this compare to GitHub Projects automation?",
+        "answer": "This skill extends GitHub Projects with AI coordination, cross-repository sync, and intelligent task assignment not available in native automation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1278
+    }
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:51:04.264Z",
+    "slug": "k-dense-ai-pyhealth",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pyhealth",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "181fb093103397a8a96c3d9c36a7f3e8eb188d41c4a8085df4d3ef4cb547728c",
+    "tree_hash": "5d5a58a6ca6d4e7dafc681e5eccf54ab0ede67ec103735affdc803193aff2e5e"
+  },
+  "skill": {
+    "name": "pyhealth",
+    "description": "Comprehensive healthcare AI toolkit for developing, testing, and deploying machine learning models with clinical data. This skill should be used when working with electronic health records (EHR), clinical prediction tasks (mortality, readmission, drug recommendation), medical coding systems (ICD, NDC, ATC), physiological signals (EEG, ECG), healthcare datasets (MIMIC-III/IV, eICU, OMOP), or implementing deep learning models for healthcare applications (RETAIN, SafeDrug, Transformer, GNN).",
+    "summary": "Healthcare AI toolkit for clinical machine learning and medical data processing",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "data",
+    "tags": [
+      "healthcare",
+      "medical-ai",
+      "clinical-data",
+      "machine-learning",
+      "ehr"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analysis detected 511 pattern matches across 8 documentation files. All findings are false positives from markdown formatting. The backtick patterns flagged as shell commands are code examples in documentation. Text patterns flagged as cryptographic weaknesses are medical terminology (MD5 medication codes, ICD codes). No actual security risks identified. This is a documentation-only skill with reference materials for the PyHealth healthcare AI library.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 8087,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:51:04.264Z"
+  },
+  "content": {
+    "user_title": "Build Healthcare AI Models with Clinical Data",
+    "value_statement": "Healthcare researchers and data scientists struggle with complex clinical data formats and coding systems. PyHealth provides a unified toolkit for loading medical datasets, processing EHR data, training predictive models, and working with standard medical codes.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "healthcare AI",
+      "clinical machine learning",
+      "EHR processing",
+      "medical coding",
+      "MIMIC dataset",
+      "patient prediction",
+      "medical data science"
+    ],
+    "actual_capabilities": [
+      "Load and process 10+ healthcare datasets including MIMIC-III, MIMIC-IV, eICU, OMOP, and physiological signal data",
+      "Apply 20+ predefined clinical prediction tasks such as mortality, readmission, length of stay, and drug recommendation",
+      "Implement 33+ machine learning models including RETAIN, SafeDrug, Transformer, and GNN architectures for healthcare",
+      "Translate between medical coding systems including ICD-9, ICD-10, NDC, RxNorm, and ATC codes",
+      "Process sequential clinical events, physiological signals, medical images, and clinical text data",
+      "Train models with automatic checkpointing, monitoring, and evaluation using healthcare-specific metrics"
+    ],
+    "limitations": [
+      "Requires access to licensed healthcare datasets like MIMIC which need credentialed approval",
+      "Does not provide the actual PyHealth library installation or execution, only documentation guidance",
+      "Medical coding translations depend on available ontology mappings and may not cover all edge cases",
+      "Performance optimization guidance is general and may need tuning for specific clinical use cases"
+    ],
+    "use_cases": [
+      {
+        "title": "Hospital Readmission Prediction",
+        "description": "Build a model to predict 30-day hospital readmission risk using patient visit history, diagnoses, medications, and procedures from MIMIC-IV data.",
+        "target_user": "Healthcare data scientists and clinical researchers"
+      },
+      {
+        "title": "Medical Code Translation Pipeline",
+        "description": "Convert legacy ICD-9 diagnosis codes to current ICD-10 standards and map medication NDC codes to ATC therapeutic classes for data standardization.",
+        "target_user": "Health informatics teams and EHR data engineers"
+      },
+      {
+        "title": "Multi-Modal Clinical Prediction",
+        "description": "Develop mortality prediction models combining structured EHR events, physiological time series signals, and clinical notes using Transformer architectures.",
+        "target_user": "Academic researchers and AI healthcare startups"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Load MIMIC Dataset",
+        "prompt": "Show me how to load the MIMIC-IV dataset and set up a mortality prediction task",
+        "scenario": "Starting a new clinical prediction project"
+      },
+      {
+        "title": "Convert Medical Codes",
+        "prompt": "How do I translate ICD-9 diagnosis codes to ICD-10 and map NDC medication codes to ATC classes?",
+        "scenario": "Standardizing legacy healthcare data"
+      },
+      {
+        "title": "Train Readmission Model",
+        "prompt": "Help me build a 30-day readmission prediction model using patient visit sequences with the RETAIN architecture",
+        "scenario": "Implementing a specific healthcare prediction task"
+      },
+      {
+        "title": "Custom Clinical Task",
+        "prompt": "I need to create a custom prediction task for ICU length of stay using diagnoses, lab values, and vital signs as features",
+        "scenario": "Advanced workflow with custom requirements"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me how to load MIMIC-IV and set up mortality prediction",
+        "output": "The skill provides code examples showing: 1) Loading MIMIC4Dataset with the root directory path, 2) Applying the mortality_prediction_mimic4_fn task function, 3) Splitting data by patient into train/val/test sets, 4) Creating data loaders with specified batch sizes, and 5) Initializing a Transformer model with feature keys for diagnoses and medications."
+      },
+      {
+        "input": "How do I translate between ICD-9 and ICD-10 codes?",
+        "output": "The skill explains using CrossMap.load to create a mapping object between ICD9CM and ICD10CM systems, then calling the map method with specific codes. It notes that mappings can be one-to-many and provides guidance on handling multiple matches with hierarchical level specifications."
+      },
+      {
+        "input": "What models are available for drug recommendation tasks?",
+        "output": "The skill lists specialized models including SafeDrug for safe medication recommendation with drug-drug interaction constraints, GAMENet for personalized drug combinations, and MICRON for medication prediction with memory networks. Each model description includes the architectural approach and specific healthcare use case."
+      }
+    ],
+    "best_practices": [
+      "Always split healthcare data by patient ID rather than by individual visits to prevent data leakage between train and test sets",
+      "Use healthcare-specific evaluation metrics like PR-AUC for imbalanced clinical datasets rather than standard accuracy",
+      "Validate medical code translations manually for critical applications as automated mappings may have edge cases"
+    ],
+    "anti_patterns": [
+      "Avoid splitting data randomly by samples as this can leak patient information across train and test sets",
+      "Do not use raw ICD or medication codes without understanding their hierarchical structure and clinical meaning",
+      "Avoid training models on small patient cohorts without considering statistical power and generalization risks"
+    ],
+    "faq": [
+      {
+        "question": "How do I get access to MIMIC datasets?",
+        "answer": "MIMIC datasets require completing CITI training and requesting access through PhysioNet. The skill provides documentation on using the datasets after you obtain credentials and download the data files."
+      },
+      {
+        "question": "Can PyHealth handle real-time clinical predictions?",
+        "answer": "PyHealth is designed for model development and research. For production deployment, you would train models using PyHealth then export them for real-time inference systems."
+      },
+      {
+        "question": "What is the difference between InnerMap and CrossMap?",
+        "answer": "InnerMap handles lookups within a single coding system like navigating ICD-10 hierarchies. CrossMap translates between different systems like converting ICD codes to clinical categories."
+      },
+      {
+        "question": "How does PyHealth handle missing clinical data?",
+        "answer": "The skill documents various preprocessing strategies including forward fill for time series, mean imputation for lab values, and special missing value tokens for deep learning models."
+      },
+      {
+        "question": "Which model should I use for mortality prediction?",
+        "answer": "The skill recommends starting with Transformer or RETAIN models for sequential EHR data. Transformer handles multi-modal features well while RETAIN provides interpretability through attention weights."
+      },
+      {
+        "question": "Can I use PyHealth with OMOP Common Data Model?",
+        "answer": "Yes, PyHealth includes an OMOPDataset loader that works with databases following the OMOP CDM schema. The skill provides guidance on connecting to OMOP databases and extracting patient cohorts."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "datasets.md",
+          "type": "file",
+          "path": "references/datasets.md",
+          "lines": 179
+        },
+        {
+          "name": "medical_coding.md",
+          "type": "file",
+          "path": "references/medical_coding.md",
+          "lines": 285
+        },
+        {
+          "name": "models.md",
+          "type": "file",
+          "path": "references/models.md",
+          "lines": 595
+        },
+        {
+          "name": "preprocessing.md",
+          "type": "file",
+          "path": "references/preprocessing.md",
+          "lines": 639
+        },
+        {
+          "name": "tasks.md",
+          "type": "file",
+          "path": "references/tasks.md",
+          "lines": 380
+        },
+        {
+          "name": "training_evaluation.md",
+          "type": "file",
+          "path": "references/training_evaluation.md",
+          "lines": 649
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 491
+    }
+  ]
+}

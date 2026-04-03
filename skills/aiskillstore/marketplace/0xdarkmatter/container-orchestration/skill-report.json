@@ -1,0 +1,260 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:29:17.580Z",
+    "slug": "0xdarkmatter-container-orchestration",
+    "source_url": "https://github.com/0xDarkMatter/claude-mods/tree/main/skills/container-orchestration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "20191932119945cb1e8c612e1079ac3c2075a98892545f07ae10d90dfd2df919",
+    "tree_hash": "e7528806f3e088079215ffaa149bd5639cd0d1f647fecb2419af1b67605ebbd9"
+  },
+  "skill": {
+    "name": "container-orchestration",
+    "description": "Docker and Kubernetes patterns. Triggers on: Dockerfile, docker-compose, kubernetes, k8s, helm, pod, deployment, service, ingress, container, image.",
+    "summary": "Docker and Kubernetes patterns. Triggers on: Dockerfile, docker-compose, kubernetes, k8s, helm, pod,...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "0xDarkMatter",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "docker",
+      "kubernetes",
+      "containers",
+      "helm",
+      "devops"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides documentation and templates for container orchestration. Static findings are predominantly false positives: the 'rm -rf' flags target standard apt cache cleanup paths (/var/lib/apt/lists/*), not root directories. Template placeholders use standard ${VAR:-default} syntax without actual credential exposure. Documentation patterns and script commands are controlled and appropriate for a DevOps skill. No malicious intent, data exfiltration, or unauthorized access patterns confirmed.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/build-push.sh",
+            "line_start": 1,
+            "line_end": 86
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 1857,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:29:17.580Z"
+  },
+  "content": {
+    "user_title": "Build production container deployments",
+    "value_statement": "Creating container deployments requires understanding Docker best practices, Kubernetes manifests, and Helm charts. This skill provides production-ready patterns and templates for containerized applications.",
+    "seo_keywords": [
+      "Docker",
+      "Kubernetes",
+      "container orchestration",
+      "Helm",
+      "Dockerfile",
+      "docker-compose",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "devops"
+    ],
+    "actual_capabilities": [
+      "Generate secure Dockerfile templates with multi-stage builds",
+      "Create production-ready Docker Compose configurations",
+      "Write Kubernetes Deployment, Service, and Ingress manifests",
+      "Build Helm chart structures with values files",
+      "Apply container security best practices",
+      "Configure health checks and resource limits"
+    ],
+    "limitations": [
+      "Does not execute container commands directly",
+      "Does not connect to Kubernetes clusters",
+      "Does not manage container registries",
+      "Requires Docker and Kubernetes CLI tools for actual deployments"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Developers",
+        "title": "Containerize applications",
+        "description": "Generate Dockerfiles and compose files for web applications with security best practices"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Deploy to Kubernetes",
+        "description": "Create production Kubernetes manifests with RBAC, network policies, and autoscaling"
+      },
+      {
+        "target_user": "Platform Teams",
+        "title": "Standardize Helm charts",
+        "description": "Build reusable Helm chart templates with environment-specific configurations"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create Dockerfile",
+        "scenario": "Python API container",
+        "prompt": "Create a secure Dockerfile for a Python FastAPI application with multi-stage builds, non-root user, and health checks"
+      },
+      {
+        "title": "Docker Compose",
+        "scenario": "Full stack stack",
+        "prompt": "Generate a docker-compose.yml with app, postgres, redis, health checks, and proper networking"
+      },
+      {
+        "title": "K8s Deployment",
+        "scenario": "Production deployment",
+        "prompt": "Create a Kubernetes Deployment with secrets from ConfigMap, resource limits, liveness and readiness probes"
+      },
+      {
+        "title": "Helm Chart",
+        "scenario": "Environment configs",
+        "prompt": "Build a Helm chart structure with values-staging.yaml and values-production.yaml for different environments"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a secure Dockerfile for a Python web application",
+        "output": [
+          "Multi-stage build pattern (builder stage + production stage)",
+          "Non-root user (appuser with UID 1000)",
+          "Specific base image version (python:3.11-slim)",
+          "Health check configured (HTTP /health endpoint)",
+          "Environment variables (PYTHONUNBUFFERED, PORT)",
+          "Build cache optimization (dependencies before source code)"
+        ]
+      },
+      {
+        "input": "Generate a Kubernetes Deployment for production",
+        "output": [
+          "Deployment with 3 replicas and rolling update strategy",
+          "Resource limits (512Mi memory, 500m CPU)",
+          "Secrets from Kubernetes Secrets (not hardcoded)",
+          "Liveness and readiness probes configured",
+          "Pod anti-affinity for high availability",
+          "Non-root user with read-only root filesystem"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use specific image versions instead of :latest tags for reproducibility",
+      "Run containers as non-root users to limit privilege escalation risks",
+      "Add health checks to enable proper container orchestration and restart policies"
+    ],
+    "anti_patterns": [
+      "Storing secrets in Docker images or environment variables committed to version control",
+      "Installing development dependencies in production containers",
+      "Using overly permissive base images without minimal attack surface"
+    ],
+    "faq": [
+      {
+        "question": "Which Kubernetes versions are supported?",
+        "answer": "Compatible with Kubernetes 1.25 and later versions with current API versions"
+      },
+      {
+        "question": "What are the resource limits for containers?",
+        "answer": "Recommended starting point: 128Mi memory and 100m CPU, adjust based on application needs"
+      },
+      {
+        "question": "How do I integrate with existing Kubernetes clusters?",
+        "answer": "The skill generates manifests. Apply them using kubectl apply or integrate with GitOps workflows"
+      },
+      {
+        "question": "Is my data safe when using these templates?",
+        "answer": "Templates do not access external systems. Secrets are referenced from Kubernetes Secrets, not hardcoded"
+      },
+      {
+        "question": "Why is my container failing health checks?",
+        "answer": "Ensure the health check endpoint returns HTTP 200. Check that the port matches your application configuration"
+      },
+      {
+        "question": "How is this different from plain Docker commands?",
+        "answer": "This skill provides orchestration patterns for production deployments including scaling, service discovery, and rolling updates"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "docker-compose.template.yml",
+          "type": "file",
+          "path": "assets/docker-compose.template.yml",
+          "lines": 141
+        },
+        {
+          "name": "Dockerfile.template",
+          "type": "file",
+          "path": "assets/Dockerfile.template",
+          "lines": 69
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "dockerfile-patterns.md",
+          "type": "file",
+          "path": "references/dockerfile-patterns.md",
+          "lines": 341
+        },
+        {
+          "name": "helm-patterns.md",
+          "type": "file",
+          "path": "references/helm-patterns.md",
+          "lines": 377
+        },
+        {
+          "name": "k8s-manifests.md",
+          "type": "file",
+          "path": "references/k8s-manifests.md",
+          "lines": 382
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "build-push.sh",
+          "type": "file",
+          "path": "scripts/build-push.sh",
+          "lines": 86
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 231
+    }
+  ]
+}

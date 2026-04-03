@@ -1,0 +1,555 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:51:10.825Z",
+    "slug": "brownfinesecurity-apktool",
+    "source_url": "https://github.com/BrownFineSecurity/iothackbot/tree/master/skills/apktool",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "fbef0c946f57efdc2223268dd91dfa40ff02c6bdde92d378bb8f92487e5a7720",
+    "tree_hash": "6f3b98a0ddc6cb9d4da5324de547872d6aec8a4888601958f0ca32d51f7ddabb"
+  },
+  "skill": {
+    "name": "apktool",
+    "description": "Android APK unpacking and resource extraction tool for reverse engineering. Use when you need to decode APK files, extract resources, examine AndroidManifest.xml, analyze smali code, or repackage modified APKs.",
+    "summary": "Android APK unpacking and resource extraction tool for reverse engineering. Use when you need to dec...",
+    "icon": "📱",
+    "version": "1.0.0",
+    "author": "BrownFineSecurity",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "android",
+      "reverse-engineering",
+      "apk",
+      "security-analysis",
+      "mobile"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing instructional content for using apktool, a legitimate Android reverse engineering tool. All 97 static findings are false positives caused by markdown code examples showing bash commands for security analysis. The skill contains no executable code, only educational guidance for authorized security testing.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 169
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 187,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 225
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 249
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 249,
+            "line_end": 266
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 266,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 286
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 286,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 316
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 316,
+            "line_end": 341
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 341,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 351
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 351,
+            "line_end": 356
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 356,
+            "line_end": 370
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 370,
+            "line_end": 392
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 392,
+            "line_end": 394
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 394,
+            "line_end": 398
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 398,
+            "line_end": 399
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 399,
+            "line_end": 401
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 406
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 406,
+            "line_end": 409
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 409,
+            "line_end": 414
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 414,
+            "line_end": 417
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 417,
+            "line_end": 422
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 422,
+            "line_end": 425
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 425,
+            "line_end": 430
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 430,
+            "line_end": 432
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 432,
+            "line_end": 456
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 456,
+            "line_end": 491
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 491,
+            "line_end": 507
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 507,
+            "line_end": 528
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 316
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 359
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 242
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 233
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 709,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:51:10.825Z"
+  },
+  "content": {
+    "user_title": "Unpack and Analyze Android APK Files",
+    "value_statement": "Analyzing Android apps for security issues requires extracting and examining their internal structure. This skill guides you through APK unpacking, manifest analysis, and secret discovery using apktool.",
+    "seo_keywords": [
+      "apktool",
+      "android apk analysis",
+      "reverse engineering android",
+      "apk decompile",
+      "smali code",
+      "android security testing",
+      "manifest analysis",
+      "claude",
+      "claude code",
+      "codex"
+    ],
+    "actual_capabilities": [
+      "Unpack APK files to extract readable resources and smali code",
+      "Analyze AndroidManifest.xml for permissions and security issues",
+      "Search for hardcoded credentials and API keys in app resources",
+      "Examine exported components that may be security vulnerabilities",
+      "Repackage modified APKs with proper signing procedures",
+      "Analyze native libraries and their supported architectures"
+    ],
+    "limitations": [
+      "Requires apktool and Java Runtime Environment installed locally",
+      "Produces smali code, not Java source code (use jadx for Java)",
+      "Cannot automatically bypass all obfuscation or packing protections",
+      "Some framework-dependent apps require additional framework files"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security Researchers",
+        "title": "Android App Security Assessment",
+        "description": "Analyze Android applications for security misconfigurations, exported components, debuggable flags, and hardcoded secrets."
+      },
+      {
+        "target_user": "IoT Security Analysts",
+        "title": "IoT Companion App Analysis",
+        "description": "Extract API endpoints, credentials, and communication protocols from IoT device companion applications."
+      },
+      {
+        "target_user": "Penetration Testers",
+        "title": "Authorized Mobile App Testing",
+        "description": "Support authorized penetration testing engagements by unpacking and documenting Android application internals."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic APK Unpack",
+        "scenario": "Quick extraction of APK contents",
+        "prompt": "Unpack the APK file at [PATH] using apktool and show me the directory structure of the output."
+      },
+      {
+        "title": "Security Manifest Check",
+        "scenario": "Analyze app permissions and exports",
+        "prompt": "Analyze the AndroidManifest.xml from [APK]. List all permissions, exported components, and check for debuggable or allowBackup flags."
+      },
+      {
+        "title": "Credential Discovery",
+        "scenario": "Find hardcoded secrets",
+        "prompt": "Search the unpacked APK directory for hardcoded API keys, passwords, tokens, and URLs. Show file paths and context for each finding."
+      },
+      {
+        "title": "Complete Security Analysis",
+        "scenario": "Full app security assessment",
+        "prompt": "Perform a complete security analysis of [APK]: unpack it, examine the manifest for security issues, search for hardcoded credentials, and summarize all findings."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Unpack target.apk and check for security issues",
+        "output": [
+          "APK unpacked successfully to target-unpacked directory",
+          "Package: com.example.targetapp version 2.1.0",
+          "Dangerous permissions found: INTERNET, ACCESS_FINE_LOCATION, READ_CONTACTS",
+          "Security issue: 3 activities have exported=true without permission requirements",
+          "Security issue: android:allowBackup=true enables data extraction",
+          "Found 2 hardcoded URLs in res/values/strings.xml"
+        ]
+      },
+      {
+        "input": "Search for API keys in the unpacked IoT app",
+        "output": [
+          "Searching res/values/strings.xml for API-related strings",
+          "Found: api_key = 'sk_live_xxxx' at line 45",
+          "Found: device_endpoint = 'https://api.iotdevice.com/v2' at line 67",
+          "Searching smali code for hardcoded credentials",
+          "Found potential auth token in smali/com/iot/AuthManager.smali"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always work on copies of APK files to preserve original evidence",
+      "Examine AndroidManifest.xml first to understand app structure before code analysis",
+      "Document all findings with file paths and line numbers for reproducibility"
+    ],
+    "anti_patterns": [
+      "Analyzing APKs without explicit authorization violates ethical guidelines",
+      "Skipping manifest analysis misses critical security information",
+      "Running apktool without output directory creates disorganized file structure"
+    ],
+    "faq": [
+      {
+        "question": "What are the prerequisites for using apktool?",
+        "answer": "You need apktool installed on your system plus Java Runtime Environment. Ensure you have sufficient disk space as unpacked APKs are 2-5x larger."
+      },
+      {
+        "question": "Can apktool produce Java source code?",
+        "answer": "No, apktool produces smali bytecode. For readable Java source code, use jadx which decompiles DEX to Java."
+      },
+      {
+        "question": "How do I repackage a modified APK?",
+        "answer": "Use 'apktool b' to rebuild, then sign with jarsigner using a keystore. The APK must be signed before it can be installed."
+      },
+      {
+        "question": "What should I look for in AndroidManifest.xml?",
+        "answer": "Check permissions, exported components, debuggable flag, allowBackup setting, min/target SDK versions, and network security config."
+      },
+      {
+        "question": "Why does apktool fail with framework errors?",
+        "answer": "Some apps depend on device manufacturer frameworks. Install the required framework using 'apktool if framework-res.apk' before decoding."
+      },
+      {
+        "question": "Is it legal to unpack APK files?",
+        "answer": "Only analyze APKs you own or have explicit authorization to test. Respect intellectual property, terms of service, and applicable laws."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 529
+    }
+  ]
+}

@@ -1,0 +1,535 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:20:44.054Z",
+    "slug": "ariegoldkin-architecture-decision-record",
+    "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/tree/main/skills/architecture-decision-record",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "66f4a00dd040bc9d3b79e32a611b65bc896291b41f66e1d82d480960aae14ba6",
+    "tree_hash": "d0e83c5408ddafafbaa75bc0c5498fc55616dbebd628897ddfc72d624e7a9e24"
+  },
+  "skill": {
+    "name": "architecture-decision-record",
+    "description": "Use this skill when documenting significant architectural decisions. Provides ADR templates following the Nygard format with sections for context, decision, consequences, and alternatives. Helps teams maintain architectural memory and rationale for backend systems, API designs, database choices, and infrastructure decisions.",
+    "summary": "Use this skill when documenting significant architectural decisions. Provides ADR templates followin...",
+    "icon": "📋",
+    "version": "1.0.0",
+    "author": "AI Agent Hub",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "architecture",
+      "documentation",
+      "decision-making",
+      "backend"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown templates and guidance. No executable code, scripts, network operations, or file system access. All static scanner findings are false positives caused by the scanner misinterpreting markdown syntax and documentation text as code/security issues. Prior audit correctly identified this as safe with zero risk factors.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "checklists/adr-review-checklist.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "checklists/adr-review-checklist.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "checklists/adr-review-checklist.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "examples/adr-0002-choose-postgresql.md",
+            "line_start": 59,
+            "line_end": 59
+          },
+          {
+            "file": "examples/adr-0002-choose-postgresql.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "examples/adr-0002-choose-postgresql.md",
+            "line_start": 61,
+            "line_end": 61
+          },
+          {
+            "file": "examples/adr-0002-choose-postgresql.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "examples/adr-0002-choose-postgresql.md",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 51,
+            "line_end": 55
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 55,
+            "line_end": 82
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 82,
+            "line_end": 94
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 94,
+            "line_end": 98
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 98,
+            "line_end": 100
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 100,
+            "line_end": 107
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 107,
+            "line_end": 108
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 108,
+            "line_end": 108
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 108,
+            "line_end": 194
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 194,
+            "line_end": 195
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 195,
+            "line_end": 216
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 216,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 255,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 255,
+            "line_end": 261
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 261,
+            "line_end": 293
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 293,
+            "line_end": 294
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 294,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 296
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "examples/adr-0001-adopt-microservices.md",
+            "line_start": 286,
+            "line_end": 286
+          },
+          {
+            "file": "examples/adr-0001-adopt-microservices.md",
+            "line_start": 288,
+            "line_end": 288
+          },
+          {
+            "file": "examples/adr-0001-adopt-microservices.md",
+            "line_start": 291,
+            "line_end": 291
+          },
+          {
+            "file": "examples/adr-0001-adopt-microservices.md",
+            "line_start": 296,
+            "line_end": 296
+          },
+          {
+            "file": "examples/adr-0001-adopt-microservices.md",
+            "line_start": 307,
+            "line_end": 307
+          },
+          {
+            "file": "examples/adr-0001-adopt-microservices.md",
+            "line_start": 308,
+            "line_end": 308
+          },
+          {
+            "file": "examples/adr-0002-choose-postgresql.md",
+            "line_start": 231,
+            "line_end": 231
+          },
+          {
+            "file": "examples/adr-0002-choose-postgresql.md",
+            "line_start": 232,
+            "line_end": 232
+          },
+          {
+            "file": "examples/adr-0002-choose-postgresql.md",
+            "line_start": 233,
+            "line_end": 233
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 281,
+            "line_end": 281
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 282,
+            "line_end": 282
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 283,
+            "line_end": 283
+          },
+          {
+            "file": "examples/adr-0003-api-versioning-strategy.md",
+            "line_start": 284,
+            "line_end": 284
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "templates/adr-frontmatter.yaml",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "templates/adr-frontmatter.yaml",
+            "line_start": 70,
+            "line_end": 70
+          },
+          {
+            "file": "templates/adr-frontmatter.yaml",
+            "line_start": 72,
+            "line_end": 72
+          },
+          {
+            "file": "templates/adr-frontmatter.yaml",
+            "line_start": 76,
+            "line_end": 76
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 2022,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:20:44.054Z"
+  },
+  "content": {
+    "user_title": "Document architectural decisions with ADRs",
+    "value_statement": "Teams struggle to remember why architectural decisions were made, leading to repeated debates and rework. This skill provides templates and examples for creating Architecture Decision Records that capture context, alternatives, and trade-offs so teams maintain architectural memory for future reference.",
+    "seo_keywords": [
+      "architecture decision record",
+      "ADR template",
+      "architectural documentation",
+      "Nygard format",
+      "decision log",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "technical decisions",
+      "architecture review"
+    ],
+    "actual_capabilities": [
+      "Generate ADR documents using Nygard format templates",
+      "Document decision context, alternatives, and trade-offs",
+      "Create YAML frontmatter for ADR metadata management",
+      "Follow review checklists for ADR quality assurance",
+      "Model real-world examples of ADRs for common scenarios",
+      "Track ADR status lifecycle from proposed to deprecated"
+    ],
+    "limitations": [
+      "Does not execute code or modify files automatically",
+      "Does not integrate with version control systems",
+      "Does not generate diagrams or visual artifacts",
+      "Does not enforce ADR compliance in workflows"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Architects",
+        "title": "Document system architecture",
+        "description": "Record major architectural choices with full context for team reference and stakeholder alignment"
+      },
+      {
+        "target_user": "Engineering Leads",
+        "title": "Establish technical standards",
+        "description": "Create records of technology selection decisions including database, framework, and infrastructure choices"
+      },
+      {
+        "target_user": "Development Teams",
+        "title": "Capture decision rationale",
+        "description": "Document why certain approaches were chosen so future team members understand the reasoning"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Database Selection",
+        "scenario": "Choosing a database technology",
+        "prompt": "Create an ADR to document our database selection decision between PostgreSQL, MongoDB, and DynamoDB. Include the context of our microservices architecture, requirements for ACID compliance, and comparison of trade-offs."
+      },
+      {
+        "title": "API Versioning",
+        "scenario": "Choosing an API versioning strategy",
+        "prompt": "Document our API versioning strategy decision. Compare URL path versioning versus header-based versioning versus query parameter versioning. Explain why we chose URL path versioning."
+      },
+      {
+        "title": "Architecture Migration",
+        "scenario": "Planning a migration approach",
+        "prompt": "Create an ADR for migrating from a monolith to microservices. Include the strangler fig pattern approach, phase-by-phase implementation plan, and honest assessment of consequences."
+      },
+      {
+        "title": "Technology Stack",
+        "scenario": "Selecting a technology stack",
+        "prompt": "Document our technology stack selection for a new backend service. Cover programming language, framework, database, and deployment infrastructure choices with clear rationale for each decision."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an ADR for choosing PostgreSQL as our primary database",
+        "output": [
+          "ADR will include: Status (Accepted), Context with requirements and constraints, Decision section with specific technology choices, Consequences (positive, negative, neutral), Alternatives considered (MySQL, MongoDB, DynamoDB) with pros/cons and rejection rationale, References to documentation"
+        ]
+      },
+      {
+        "input": "Document our microservices migration decision",
+        "output": [
+          "ADR will cover: Problem context (scalability issues, deployment bottlenecks), Decision to adopt microservices with specific technology stack, Consequences with honest trade-offs, Alternatives evaluated (optimize monolith, serverless) with reasons for rejection"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Write ADRs in present tense as historical records that capture decisions at the moment they were made",
+      "Document at least two alternatives with honest pros and cons to demonstrate thorough evaluation",
+      "Keep ADRs immutable after acceptance - create new ADRs to supersede rather than editing existing ones"
+    ],
+    "anti_patterns": [
+      "Using vague language like \"we might consider using\" instead of clear decisions like \"we will adopt\"",
+      "Only listing positive consequences without acknowledging costs, risks, and trade-offs honestly",
+      "Skipping alternatives or presenting only obviously inferior options as strawmen"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between this and a design document?",
+        "answer": "ADRs focus specifically on the why behind decisions, not implementation details. They capture trade-offs and alternatives considered."
+      },
+      {
+        "question": "How many ADRs should a project have?",
+        "answer": "Only create ADRs for significant decisions that affect multiple components, require team alignment, or involve trade-offs."
+      },
+      {
+        "question": "Can ADRs be integrated with my codebase?",
+        "answer": "Store ADRs in /docs/adr/ or /architecture/decisions/ alongside code. Use the YAML frontmatter for tooling integration."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill only generates documentation templates. No data is sent anywhere or stored externally."
+      },
+      {
+        "question": "Why should I document alternatives I rejected?",
+        "answer": "Documenting alternatives prevents repeated debates. Future team members can understand why certain approaches were considered and rejected."
+      },
+      {
+        "question": "How does this compare to ADRs in other tools?",
+        "answer": "This skill provides the Nygard format templates and examples. Integration with specific tools depends on your workflow."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "checklists",
+      "type": "dir",
+      "path": "checklists",
+      "children": [
+        {
+          "name": "adr-review-checklist.md",
+          "type": "file",
+          "path": "checklists/adr-review-checklist.md",
+          "lines": 291
+        }
+      ]
+    },
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "adr-0001-adopt-microservices.md",
+          "type": "file",
+          "path": "examples/adr-0001-adopt-microservices.md",
+          "lines": 347
+        },
+        {
+          "name": "adr-0002-choose-postgresql.md",
+          "type": "file",
+          "path": "examples/adr-0002-choose-postgresql.md",
+          "lines": 265
+        },
+        {
+          "name": "adr-0003-api-versioning-strategy.md",
+          "type": "file",
+          "path": "examples/adr-0003-api-versioning-strategy.md",
+          "lines": 338
+        }
+      ]
+    },
+    {
+      "name": "templates",
+      "type": "dir",
+      "path": "templates",
+      "children": [
+        {
+          "name": "adr-frontmatter.yaml",
+          "type": "file",
+          "path": "templates/adr-frontmatter.yaml",
+          "lines": 81
+        },
+        {
+          "name": "adr-template.md",
+          "type": "file",
+          "path": "templates/adr-template.md",
+          "lines": 150
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 326
+    }
+  ]
+}

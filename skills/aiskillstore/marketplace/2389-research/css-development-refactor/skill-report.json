@@ -1,0 +1,181 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:47:28.708Z",
+    "slug": "2389-research-css-development-refactor",
+    "source_url": "https://github.com/2389-research/claude-plugins/tree/main/css-development/skills/refactor",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "912a62348eb7bd10a1681f15f1e11ed3589b4acd0f540845bce05f6ac14ba6d8",
+    "tree_hash": "3fd5c8ef65d643784be6ed9c14d8f54d7cecb029b6add9064f4edcf3a424a5a4"
+  },
+  "skill": {
+    "name": "css-development-refactor",
+    "description": "This skill should be used when refactoring existing CSS from inline styles or utility classes to semantic patterns. Triggers on \"refactor CSS\", \"extract styles\", \"consolidate CSS\", \"convert inline\", \"clean up styles\", \"migrate to semantic\". Transforms to semantic classes with dark mode and tests.",
+    "summary": "Refactor CSS from inline styles and utility classes to semantic component patterns with dark mode support",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "2389-research",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "css",
+      "refactoring",
+      "tailwind",
+      "dark-mode",
+      "semantic-css"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation resource for CSS refactoring workflows. All 71 static findings are false positives from markdown syntax being misinterpreted as executable code. The skill contains no actual scripts, network calls, or file operations, only examples in documentation blocks.",
+    "risk_factors": [],
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1192,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:47:28.708Z"
+  },
+  "content": {
+    "user_title": "Refactor CSS to Semantic Component Patterns",
+    "value_statement": "This skill transforms messy CSS from inline styles and repeated utility classes into organized semantic components. It extracts patterns, adds dark mode support, creates tests, and ensures maintainable styling with Tailwind composition.",
+    "seo_keywords": [
+      "CSS refactoring",
+      "semantic CSS",
+      "Tailwind CSS",
+      "dark mode",
+      "CSS components",
+      "Claude Code",
+      "CSS best practices",
+      "utility classes",
+      "code cleanup",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Extract inline styles to semantic CSS classes with automatic naming conventions",
+      "Consolidate repeated utility class combinations into reusable components using Tailwind @apply",
+      "Add dark mode variants to all refactored CSS classes automatically",
+      "Generate test coverage for CSS components including static CSS tests and rendering tests",
+      "Update markup across multiple files to use new semantic class names",
+      "Create documentation comments for each extracted CSS component with usage examples"
+    ],
+    "limitations": [
+      "Requires existing CSS to refactor and cannot create designs from scratch",
+      "Works best with Tailwind CSS projects and may need adaptation for other frameworks",
+      "Cannot automatically test visual appearance and requires manual verification of styling",
+      "Does not handle complex CSS animations or transitions beyond basic hover states"
+    ],
+    "use_cases": [
+      {
+        "title": "Clean Up Utility Class Sprawl",
+        "description": "Convert repeated utility class combinations in markup into semantic component classes to reduce code duplication and improve maintainability.",
+        "target_user": "Frontend developers maintaining large component libraries"
+      },
+      {
+        "title": "Add Dark Mode to Existing CSS",
+        "description": "Refactor existing CSS components to include dark mode variants without breaking current functionality or requiring major rewrites.",
+        "target_user": "Product teams adding dark mode support to existing applications"
+      },
+      {
+        "title": "Migrate from Inline Styles to CSS Classes",
+        "description": "Transform inline style attributes in React or HTML components into organized semantic CSS classes with proper naming and structure.",
+        "target_user": "Teams modernizing legacy codebases or improving code quality"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic CSS Refactoring",
+        "prompt": "Refactor the button styles in this component to use semantic CSS classes",
+        "scenario": "When you have a component with repeated utility classes or inline styles that need organization"
+      },
+      {
+        "title": "Extract Repeated Patterns",
+        "prompt": "Find all repeated utility class combinations across these files and extract them to semantic components",
+        "scenario": "When you need to identify and consolidate duplicated styling patterns across multiple files"
+      },
+      {
+        "title": "Add Dark Mode Support",
+        "prompt": "Refactor these CSS classes to include dark mode variants following our design system",
+        "scenario": "When adding dark mode support to existing components without breaking current functionality"
+      },
+      {
+        "title": "Complete Refactoring with Tests",
+        "prompt": "Refactor all card components to semantic CSS, add dark mode support, create tests, and verify behavior is unchanged",
+        "scenario": "When you need a comprehensive refactoring with full testing and verification workflow"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Refactor this button with repeated utilities: <button class=\"bg-indigo-500 hover:bg-indigo-700 px-6 py-3 rounded-lg text-white\">",
+        "output": "Created semantic class .button-primary in styles/components.css with dark mode variants, updated 8 button instances across 5 files, added 3 test cases, reduced markup by 180 characters per button"
+      },
+      {
+        "input": "Extract the card styling pattern that appears in Dashboard, Profile, and Settings pages",
+        "output": "Created .card component class with 12 properties including shadows, borders, padding, and dark mode variants. Updated 15 card instances across 7 files. Added static CSS tests and component rendering tests."
+      },
+      {
+        "input": "Add dark mode to all existing button classes",
+        "output": "Added dark: variants to button-primary, button-secondary, and button-danger classes. Updated 23 components. Created before/after comparison tests. All tests passing with behavior unchanged."
+      }
+    ],
+    "best_practices": [
+      "Always analyze existing components before creating new classes to avoid duplication and ensure consistency with established patterns",
+      "Include dark mode variants for all refactored classes to maintain feature parity and prepare for theme switching",
+      "Verify behavior is unchanged after refactoring by running tests and visually inspecting components in both light and dark modes"
+    ],
+    "anti_patterns": [
+      "Creating new semantic classes without checking if similar patterns already exist in the codebase, leading to duplicate components",
+      "Refactoring CSS without adding test coverage, making it difficult to verify behavior is preserved and catch regressions",
+      "Skipping dark mode variants during refactoring and planning to add them later, creating technical debt and inconsistent theming"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with CSS frameworks other than Tailwind?",
+        "answer": "The skill is optimized for Tailwind CSS and uses Tailwind @apply directives. It can adapt to other frameworks but may require manual adjustments to the refactoring workflow and syntax."
+      },
+      {
+        "question": "Will refactoring change how my components look?",
+        "answer": "No. The skill performs behavior-neutral refactoring, meaning visual output should match exactly. It includes verification steps to ensure styling is preserved during the transformation."
+      },
+      {
+        "question": "How does the skill decide which patterns to extract?",
+        "answer": "It identifies repeated utility class combinations appearing 2 or more times, checks if similar semantic classes already exist, and prioritizes high-frequency patterns for extraction to maximize code reduction."
+      },
+      {
+        "question": "Can I use this skill on individual components or does it require full project access?",
+        "answer": "You can use it on individual components or specific files. The skill will analyze only the provided scope and suggest extractions based on patterns found within that scope."
+      },
+      {
+        "question": "What testing does the skill add after refactoring?",
+        "answer": "It adds static CSS tests to verify classes exist and contain expected properties, plus component rendering tests to ensure classes are applied correctly. You should still manually verify visual appearance."
+      },
+      {
+        "question": "How does dark mode support work if my project does not have dark mode yet?",
+        "answer": "The skill adds dark: variants following Tailwind conventions, preparing components for dark mode even if not currently enabled. These variants remain dormant until dark mode is activated in your project."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 416
+    }
+  ]
+}

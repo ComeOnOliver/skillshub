@@ -1,0 +1,265 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:55:23.724Z",
+    "slug": "wshobson-cqrs-implementation",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/backend-development/skills/cqrs-implementation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7867a8fc60c7002b8e485ae288f0d300d7f01da96c48ec6a9acc12775b925df1",
+    "tree_hash": "269b04478291698c1034b9fe05b10cfec0f57b11ef09a0c7a8cac62a45b928b5"
+  },
+  "skill": {
+    "name": "cqrs-implementation",
+    "description": "Implement Command Query Responsibility Segregation for scalable architectures. Use when separating read and write models, optimizing query performance, or building event-sourced systems.",
+    "summary": "Implement Command Query Responsibility Segregation for scalable architectures. Use when separating r...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "cqrs",
+      "event-sourcing",
+      "architecture",
+      "backend",
+      "patterns"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing Python code examples for CQRS architecture patterns. All 38 static findings are false positives: cryptographic flags triggered by words like 'segregation' and 'separation'; system reconnaissance flags from architectural terms like 'Command' and 'Query'; external_commands flags from markdown backticks; and network flags from legitimate documentation URLs. The skill-report.json already contains a previous audit rating this 'safe'.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 283,
+            "line_end": 283
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 551,
+            "line_end": 551
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 552,
+            "line_end": 552
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 301
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 301,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 419
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 419,
+            "line_end": 423
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 423,
+            "line_end": 484
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 484,
+            "line_end": 488
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 488,
+            "line_end": 532
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 729,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:55:23.724Z"
+  },
+  "content": {
+    "user_title": "Implement CQRS Architecture Patterns",
+    "value_statement": "Build scalable applications with Command Query Responsibility Segregation. Separate read and write operations for optimal performance and maintainability.",
+    "seo_keywords": [
+      "CQRS implementation",
+      "event sourcing",
+      "Python CQRS",
+      "Claude Code",
+      "command query separation",
+      "scalable architecture",
+      "backend patterns",
+      "read write models",
+      "event driven architecture"
+    ],
+    "actual_capabilities": [
+      "Generates CQRS command and query handler templates",
+      "Provides FastAPI integration examples for CQRS endpoints",
+      "Creates event sourcing patterns with read model synchronization",
+      "Implements eventual consistency handling strategies"
+    ],
+    "limitations": [
+      "Requires Python programming knowledge",
+      "Assumes basic understanding of architectural patterns",
+      "Examples use async/await patterns",
+      "Database-specific code may need adaptation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developers",
+        "title": "Build scalable order management",
+        "description": "Implement CQRS to handle high-volume order processing with separate read/write models for inventory and reporting."
+      },
+      {
+        "target_user": "Software architects",
+        "title": "Design event-sourced microservices",
+        "description": "Create event-driven architectures with proper command/query separation and eventual consistency."
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Optimize database query performance",
+        "description": "Separate read and write databases to scale queries independently and optimize for specific use cases."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic CQRS Setup",
+        "scenario": "Create command and query handlers",
+        "prompt": "Generate a CQRS implementation for a user registration system with CreateUserCommand and GetUserQuery handlers"
+      },
+      {
+        "title": "Event Sourcing Integration",
+        "scenario": "Add event sourcing to CQRS",
+        "prompt": "Show me how to implement event sourcing with CQRS for an e-commerce order system using Python"
+      },
+      {
+        "title": "FastAPI CQRS Endpoints",
+        "scenario": "Build REST API with CQRS",
+        "prompt": "Create FastAPI endpoints that use CQRS pattern for a blog post system with separate read/write operations"
+      },
+      {
+        "title": "Read Model Synchronization",
+        "scenario": "Handle eventual consistency",
+        "prompt": "Implement a read model synchronizer that updates query models from events with proper error handling"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate a CQRS implementation for inventory management",
+        "output": [
+          "Command handlers for stock adjustments, receipts, and transfers",
+          "Query handlers for inventory levels, locations, and history",
+          "Event sourcing for audit trail and stock movement tracking",
+          "FastAPI endpoints with proper HTTP method mapping",
+          "Read model optimization for real-time inventory queries",
+          "Eventual consistency handling for multi-warehouse scenarios"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Separate command and query models completely to avoid mixing read/write logic",
+      "Use eventual consistency with defined SLAs for read model updates",
+      "Version events properly to handle schema evolution over time"
+    ],
+    "anti_patterns": [
+      "Querying within command handlers breaks separation of concerns",
+      "Sharing databases between read and write models creates coupling",
+      "Ignoring consistency requirements leads to stale data issues"
+    ],
+    "faq": [
+      {
+        "question": "Which frameworks work with these CQRS examples?",
+        "answer": "Examples use Python with FastAPI, but patterns apply to any language or framework like Node.js, C#, or Java."
+      },
+      {
+        "question": "When should I avoid using CQRS?",
+        "answer": "Avoid CQRS for simple CRUD applications where read/write models are identical and performance is not critical."
+      },
+      {
+        "question": "How do I integrate with existing databases?",
+        "answer": "Use the read model synchronizer pattern to build query-optimized views from your existing write database."
+      },
+      {
+        "question": "Is event sourcing required for CQRS?",
+        "answer": "No, CQRS works without event sourcing, but combining them provides better audit trails and temporal queries."
+      },
+      {
+        "question": "How do I handle read-your-writes consistency?",
+        "answer": "Use the consistent query handler pattern with version checking to ensure users see their updates immediately."
+      },
+      {
+        "question": "What is the performance impact of CQRS?",
+        "answer": "Initial complexity adds overhead, but enables independent scaling of reads and writes for better performance at scale."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 553
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:12:09.506Z",
+    "slug": "wshobson-threat-mitigation-mapping",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/security-scanning/skills/threat-mitigation-mapping",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "412e329bcb8b7b9cc1f8b311e9a63779daacf65bde66a281e77582cafb1e25f4",
+    "tree_hash": "b9d9afddc0ce8540c442fcdbc5450f51e3996d9ca5dc5e764bbbaa6883677f7e"
+  },
+  "skill": {
+    "name": "threat-mitigation-mapping",
+    "description": "Map identified threats to appropriate security controls and mitigations. Use when prioritizing security investments, creating remediation plans, or validating control effectiveness.",
+    "summary": "Map threats to security controls for defense-in-depth planning and risk reduction analysis",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "threat-modeling",
+      "security-controls",
+      "risk-mitigation",
+      "defense-in-depth",
+      "compliance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill provides educational templates and frameworks for threat mitigation mapping. All static findings are false positives. The 62 detected patterns include references to security terms in documentation (AES, TLS, STRIDE categories) and external reference URLs to NIST, CIS, and MITRE resources. No actual network calls, command execution, or malicious code present.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1250,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:12:09.506Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Map Threats to Security Controls",
+    "value_statement": "Security teams struggle to connect identified threats with appropriate mitigations and validate control coverage. This skill provides frameworks for mapping threats to controls, analyzing defense-in-depth, and generating remediation roadmaps.",
+    "seo_keywords": [
+      "threat mitigation",
+      "security controls",
+      "Claude Code",
+      "defense in depth",
+      "risk reduction",
+      "STRIDE",
+      "control mapping",
+      "Claude",
+      "security framework",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Generate threat-to-control mapping models with coverage scoring",
+      "Create standard control libraries with effectiveness ratings",
+      "Analyze mitigation gaps and recommend additional controls",
+      "Calculate defense-in-depth coverage across security layers",
+      "Generate implementation roadmaps prioritized by risk",
+      "Test control effectiveness and generate verification reports"
+    ],
+    "limitations": [
+      "Provides templates and frameworks only, not pre-built threat databases",
+      "Does not perform automated vulnerability scanning or penetration testing",
+      "Requires manual threat identification from other modeling activities",
+      "Control effectiveness ratings are examples and need customization"
+    ],
+    "use_cases": [
+      {
+        "title": "Security Architecture Review",
+        "description": "Map existing threats from STRIDE analysis to current and planned security controls. Identify gaps in defense-in-depth coverage and generate a prioritized remediation roadmap.",
+        "target_user": "Security Architect"
+      },
+      {
+        "title": "Compliance Control Mapping",
+        "description": "Connect organizational threats to security controls that satisfy compliance requirements like PCI-DSS, SOC2, or GDPR. Generate evidence of control coverage for auditors.",
+        "target_user": "Compliance Officer"
+      },
+      {
+        "title": "Risk Treatment Planning",
+        "description": "Evaluate multiple mitigation options for identified risks. Calculate coverage scores and optimize control selection within budget constraints to maximize risk reduction.",
+        "target_user": "Risk Manager"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create Basic Threat-Control Mapping",
+        "prompt": "Create a mitigation mapping for a spoofing threat targeting user authentication. Include preventive and detective controls with effectiveness ratings.",
+        "scenario": "Starting point for users new to control mapping"
+      },
+      {
+        "title": "Analyze Defense-in-Depth Coverage",
+        "prompt": "Analyze my current mitigation plan for threats T-001 through T-005. Show which security layers have controls and identify any single-layer dependencies.",
+        "scenario": "Validating that controls span multiple layers"
+      },
+      {
+        "title": "Generate Gap Analysis Report",
+        "prompt": "Generate a gap analysis for my threat mitigation plan. Identify threats with less than 50% coverage and recommend additional controls from the standard library.",
+        "scenario": "Finding weaknesses in current security posture"
+      },
+      {
+        "title": "Optimize Control Selection",
+        "prompt": "I have a $50K security budget. Recommend controls that maximize risk reduction for my critical and high-impact threats. Consider implementation and maintenance costs.",
+        "scenario": "Budget-constrained security planning"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Map the threat of SQL injection to appropriate controls",
+        "output": "Mitigation Mapping for SQL Injection:\n\nPreventive Controls:\n- VAL-001: Input Validation Framework (High effectiveness)\n  Layer: Application\n  Technologies: Parameterized queries, ORM frameworks\n  Status: Should implement\n\n- VAL-002: Web Application Firewall (Medium effectiveness)\n  Layer: Network\n  Technologies: AWS WAF, ModSecurity\n  Status: Additional layer\n\nDetective Controls:\n- LOG-001: Security Event Logging (Medium effectiveness)\n  Layer: Application\n  Technologies: Log failed validation attempts\n\nCoverage Analysis: 85% with defense-in-depth (Application + Network layers)"
+      },
+      {
+        "input": "Analyze gaps in my authentication threat mitigations",
+        "output": "Gap Analysis - Authentication Threats:\n\nThreat: T-AUTH-001 (Credential Stuffing)\nCurrent Coverage: 40%\nIssue: Insufficient control coverage\nMissing Controls:\n- AUTH-001: Multi-Factor Authentication (not implemented)\n- LOG-001: Failed login monitoring (not implemented)\nRecommendation: Add MFA as primary preventive control\n\nThreat: T-AUTH-002 (Session Hijacking)\nCurrent Coverage: 60%\nIssue: No defense in depth (only application layer)\nRecommendation: Add network-layer controls like TLS enforcement"
+      },
+      {
+        "input": "Generate implementation roadmap for critical threats",
+        "output": "Security Control Implementation Roadmap:\n\nPhase 1 (Weeks 1-4) - Critical Threats:\n- [Critical] Multi-Factor Authentication for T-AUTH-001\n- [Critical] Data Encryption at Rest for T-DATA-003\n- [Critical] Input Validation Framework for T-INJECT-001\n\nPhase 2 (Weeks 5-8) - High Impact:\n- [High] Web Application Firewall for T-INJECT-002\n- [High] DDoS Protection for T-DOS-001\n\nEstimated Risk Reduction: 68% after Phase 1, 82% after Phase 2"
+      }
+    ],
+    "best_practices": [
+      "Map all identified threats to at least two controls from different layers to achieve defense-in-depth",
+      "Mix preventive, detective, and corrective control types to ensure comprehensive coverage throughout the attack lifecycle",
+      "Prioritize control implementation by threat risk score and validate effectiveness through testing before marking as implemented"
+    ],
+    "anti_patterns": [
+      "Mapping threats to single controls creates single points of failure that can be bypassed",
+      "Implementing controls without testing effectiveness may provide false sense of security",
+      "Copying control libraries without customizing effectiveness ratings for your environment leads to inaccurate risk calculations"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between control types in the framework?",
+        "answer": "Preventive controls stop attacks before they occur, detective controls identify attacks in progress or after the fact, and corrective controls help respond and recover from successful attacks. Effective mitigation requires all three types."
+      },
+      {
+        "question": "How do I calculate the coverage score for a threat?",
+        "answer": "Coverage score combines control effectiveness ratings with implementation status. A fully implemented high-effectiveness control contributes more than a partially implemented medium-effectiveness control. The framework calculates this automatically."
+      },
+      {
+        "question": "Can I use this skill without completing STRIDE threat modeling first?",
+        "answer": "Yes, but you need some list of threats to map. You can use threats from vulnerability scans, penetration tests, or industry frameworks like OWASP Top 10 instead of STRIDE output."
+      },
+      {
+        "question": "How often should I update my mitigation mappings?",
+        "answer": "Review mappings quarterly or when significant changes occur such as new threats identified, controls implemented, or architecture changes. Controls degrade over time and need continuous validation."
+      },
+      {
+        "question": "What does defense-in-depth mean in this context?",
+        "answer": "Defense-in-depth means having controls at multiple security layers. If an attacker bypasses your network firewall, application-layer input validation and data-layer encryption still protect you."
+      },
+      {
+        "question": "How do I customize the control library for my organization?",
+        "answer": "Copy the template and modify control IDs, effectiveness ratings, costs, and technologies to match your environment. Add organization-specific controls and remove ones that do not apply to your systems."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 746
+    }
+  ]
+}

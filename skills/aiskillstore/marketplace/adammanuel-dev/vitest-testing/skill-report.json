@@ -1,0 +1,398 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:36:05.257Z",
+    "slug": "adammanuel-dev-vitest-testing",
+    "source_url": "https://github.com/AdamManuel-dev/claude-code-ext/tree/main/skills/vitest-testing",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "478ecd0398964d0d24125da1b81c1e6f6281e8273c4888c3a85701b5c5831111",
+    "tree_hash": "9451705cd8513adf90a71ebcae6474a44b40f278858289f512f42265732f0a0c"
+  },
+  "skill": {
+    "name": "vitest-testing",
+    "description": "**AI-friendly comprehensive testing guidance for Vitest with practical patterns and behavior-driven development.**",
+    "summary": "**AI-friendly comprehensive testing guidance for Vitest with practical patterns and behavior-driven ...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "AdamManuel-dev",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "testing",
+      "vitest",
+      "typescript",
+      "tdd",
+      "jest"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing markdown guidance and example TypeScript test code. All static findings are false positives: backtick patterns are markdown code block syntax, 'weak crypto' references are mock code with comments recommending bcrypt, and system reconnaissance patterns are Vitest test function names (describe, it, expect). No actual code execution, network access, or file system operations beyond reading own files.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "index.md",
+            "line_start": 24,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 156
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 354,
+            "line_end": 357
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 28,
+    "total_lines": 14629,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:36:05.257Z"
+  },
+  "content": {
+    "user_title": "Write Expert Vitest Tests",
+    "value_statement": "Writing reliable unit tests is challenging without clear patterns. This skill provides AI-optimized Vitest guidance with F.I.R.S.T principles, AAA pattern structure, black box testing strategy, and comprehensive examples for mocks, async code, and error scenarios.",
+    "seo_keywords": [
+      "vitest",
+      "testing",
+      "unit testing",
+      "jest migration",
+      "typescript testing",
+      "test patterns",
+      "mocking",
+      "claude code",
+      "claude",
+      "codex"
+    ],
+    "actual_capabilities": [
+      "Apply F.I.R.S.T principles for quality tests (Fast, Isolated, Repeatable, Self-Checking, Timely)",
+      "Structure tests using AAA pattern (Arrange-Act-Assert)",
+      "Implement black box testing through public APIs",
+      "Create mocks, stubs, spies, and fakes with Vitest",
+      "Test async code with promises, async/await, and fake timers",
+      "Handle error scenarios and edge cases in tests"
+    ],
+    "limitations": [
+      "Does not execute tests or modify project files",
+      "Does not provide test coverage analysis",
+      "Does not integrate with CI/CD pipelines"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Agents",
+        "title": "Generate Tests",
+        "description": "AI agents use this skill to write consistent, high-quality Vitest tests following established patterns"
+      },
+      {
+        "target_user": "TypeScript Developers",
+        "title": "Learn Testing Patterns",
+        "description": "Developers learn Vitest best practices including mocking strategies and error testing approaches"
+      },
+      {
+        "target_user": "Teams Migrating from Jest",
+        "title": "Migrate Test Suites",
+        "description": "Teams transitioning from Jest find quick reference guides for syntax differences and migration"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Test",
+        "scenario": "Write a unit test",
+        "prompt": "Write a Vitest unit test for [function/component name] following F.I.R.S.T principles and AAA pattern. Include happy path and error cases."
+      },
+      {
+        "title": "Async Testing",
+        "scenario": "Test async functions",
+        "prompt": "Write tests for async function [name] that handles promises and potential errors. Use appropriate async testing patterns."
+      },
+      {
+        "title": "Mocking",
+        "scenario": "Create test doubles",
+        "prompt": "Create comprehensive mocks for [dependency] in Vitest. Include stubbed return values and verification of interactions."
+      },
+      {
+        "title": "Error Cases",
+        "scenario": "Test error handling",
+        "prompt": "Write error handling tests for [function] covering validation errors, edge cases, and failure scenarios using Vitest matchers."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Write a Vitest test for a UserService.register function",
+        "output": [
+          "Test creates user with valid data",
+          "Test rejects invalid email format",
+          "Test rejects duplicate emails",
+          "Test verifies password hashing occurred",
+          "Test confirms welcome email sent",
+          "Test handles database and email failures"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use mocks for all external dependencies to keep tests fast and isolated",
+      "Test only through public APIs (black box approach) to make tests refactoring-resistant",
+      "Structure every test with clear Arrange-Act-Assert sections and descriptive names"
+    ],
+    "anti_patterns": [
+      "Testing private methods directly breaks encapsulation and makes tests fragile",
+      "Making real database or network calls in tests creates slow, flaky, order-dependent tests",
+      "Skipping error scenario testing leaves critical failure modes uncovered"
+    ],
+    "faq": [
+      {
+        "question": "How does this skill differ from official Vitest documentation?",
+        "answer": "This skill provides AI-optimized decision trees, patterns, and examples focused on test quality principles rather than API reference."
+      },
+      {
+        "question": "Can I use this skill for Jest projects?",
+        "answer": "Most patterns apply to Jest. See the quick-reference/jest-to-vitest.md for syntax differences and migration guidance."
+      },
+      {
+        "question": "Does this skill generate executable test files?",
+        "answer": "No, the skill provides guidance and examples. Users must implement tests in their own projects."
+      },
+      {
+        "question": "What test coverage should I aim for?",
+        "answer": "Focus on behavior coverage through public APIs. Aim for meaningful coverage of business logic, not arbitrary percentage targets."
+      },
+      {
+        "question": "How do I test React components?",
+        "answer": "See patterns/component-testing.md for React Testing Library integration patterns with Vitest."
+      },
+      {
+        "question": "Can this skill help with integration tests?",
+        "answer": "Yes, see patterns/integration-testing.md for testing database connections, external APIs, and service interactions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "patterns",
+      "type": "dir",
+      "path": "patterns",
+      "children": [
+        {
+          "name": "api-testing.md",
+          "type": "file",
+          "path": "patterns/api-testing.md",
+          "lines": 418
+        },
+        {
+          "name": "async-testing.md",
+          "type": "file",
+          "path": "patterns/async-testing.md",
+          "lines": 513
+        },
+        {
+          "name": "component-testing.md",
+          "type": "file",
+          "path": "patterns/component-testing.md",
+          "lines": 886
+        },
+        {
+          "name": "e2e-testing.md",
+          "type": "file",
+          "path": "patterns/e2e-testing.md",
+          "lines": 756
+        },
+        {
+          "name": "error-testing.md",
+          "type": "file",
+          "path": "patterns/error-testing.md",
+          "lines": 439
+        },
+        {
+          "name": "integration-testing.md",
+          "type": "file",
+          "path": "patterns/integration-testing.md",
+          "lines": 435
+        },
+        {
+          "name": "performance-testing.md",
+          "type": "file",
+          "path": "patterns/performance-testing.md",
+          "lines": 723
+        },
+        {
+          "name": "test-data.md",
+          "type": "file",
+          "path": "patterns/test-data.md",
+          "lines": 777
+        },
+        {
+          "name": "test-doubles.md",
+          "type": "file",
+          "path": "patterns/test-doubles.md",
+          "lines": 689
+        }
+      ]
+    },
+    {
+      "name": "principles",
+      "type": "dir",
+      "path": "principles",
+      "children": [
+        {
+          "name": "aaa-pattern.md",
+          "type": "file",
+          "path": "principles/aaa-pattern.md",
+          "lines": 627
+        },
+        {
+          "name": "bdd-integration.md",
+          "type": "file",
+          "path": "principles/bdd-integration.md",
+          "lines": 501
+        },
+        {
+          "name": "first-principles.md",
+          "type": "file",
+          "path": "principles/first-principles.md",
+          "lines": 678
+        },
+        {
+          "name": "testing-pyramid.md",
+          "type": "file",
+          "path": "principles/testing-pyramid.md",
+          "lines": 688
+        }
+      ]
+    },
+    {
+      "name": "quick-reference",
+      "type": "dir",
+      "path": "quick-reference",
+      "children": [
+        {
+          "name": "cheatsheet.md",
+          "type": "file",
+          "path": "quick-reference/cheatsheet.md",
+          "lines": 437
+        },
+        {
+          "name": "decision-tree.md",
+          "type": "file",
+          "path": "quick-reference/decision-tree.md",
+          "lines": 616
+        },
+        {
+          "name": "jest-to-vitest.md",
+          "type": "file",
+          "path": "quick-reference/jest-to-vitest.md",
+          "lines": 615
+        }
+      ]
+    },
+    {
+      "name": "refactoring",
+      "type": "dir",
+      "path": "refactoring",
+      "children": [
+        {
+          "name": "testability-patterns.md",
+          "type": "file",
+          "path": "refactoring/testability-patterns.md",
+          "lines": 648
+        }
+      ]
+    },
+    {
+      "name": "strategies",
+      "type": "dir",
+      "path": "strategies",
+      "children": [
+        {
+          "name": "black-box-testing.md",
+          "type": "file",
+          "path": "strategies/black-box-testing.md",
+          "lines": 475
+        },
+        {
+          "name": "implementation-details.md",
+          "type": "file",
+          "path": "strategies/implementation-details.md",
+          "lines": 364
+        }
+      ]
+    },
+    {
+      "name": "index.md",
+      "type": "file",
+      "path": "index.md",
+      "lines": 440
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 157
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 463
+    },
+    {
+      "name": "STATUS.md",
+      "type": "file",
+      "path": "STATUS.md",
+      "lines": 298
+    },
+    {
+      "name": "SUMMARY.md",
+      "type": "file",
+      "path": "SUMMARY.md",
+      "lines": 215
+    },
+    {
+      "name": "TEST-SUITE-EXPLANATION.md",
+      "type": "file",
+      "path": "TEST-SUITE-EXPLANATION.md",
+      "lines": 671
+    },
+    {
+      "name": "user-service.test.ts",
+      "type": "file",
+      "path": "user-service.test.ts",
+      "lines": 710
+    },
+    {
+      "name": "user-service.ts",
+      "type": "file",
+      "path": "user-service.ts",
+      "lines": 46
+    }
+  ]
+}

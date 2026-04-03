@@ -1,0 +1,245 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:47:54.495Z",
+    "slug": "dcjanus-exa-cli",
+    "source_url": "https://github.com/DCjanus/prompts/tree/master/skills/exa-cli",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "62b07c6ffbde5be966332edcfee1ca6457908583d52528caaff70ef875021436",
+    "tree_hash": "16332bea2922b158d994ba3e3e9daf675ccc225ba9c50cfce15ecd3834196e11"
+  },
+  "skill": {
+    "name": "exa-cli",
+    "description": "使用 Exa 搜索与代码上下文命令行进行信息检索与编程资料检索。适用于需要从实时网页获取资料、定位权威来源、或查询具体代码示例/库用法的任务（如技术调研、API 使用方式确认、示例代码查找）。",
+    "summary": "使用 Exa 搜索与代码上下文命令行进行信息检索与编程资料检索。适用于需要从实时网页获取资料、定位权威来源、或查询具体代码示例/库用法的任务（如技术调研、API 使用方式确认、示例代码查找）。",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "DCjanus",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "search",
+      "web",
+      "coding",
+      "research"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate CLI tool that connects to Exa's documented MCP API for web search and code context retrieval. All static findings are false positives: network calls target documented API endpoint, environment variable access retrieves API keys for authentication, no cryptographic operations or external command execution present. The combination of network access and credential retrieval is standard for authenticated API clients.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/exa-cli.py",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "scripts/exa-cli.py",
+            "line_start": 106,
+            "line_end": 106
+          },
+          {
+            "file": "scripts/exa-cli.py",
+            "line_start": 250,
+            "line_end": 250
+          },
+          {
+            "file": "scripts/exa-cli.py",
+            "line_start": 263,
+            "line_end": 263
+          },
+          {
+            "file": "scripts/exa-cli.py",
+            "line_start": 295,
+            "line_end": 295
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/exa-cli.py",
+            "line_start": 115,
+            "line_end": 115
+          },
+          {
+            "file": "scripts/exa-cli.py",
+            "line_start": 199,
+            "line_end": 199
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 617,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:47:54.495Z"
+  },
+  "content": {
+    "user_title": "Search web and code with Exa",
+    "value_statement": "Need to find real-time information or code examples for your coding tasks. This skill connects to Exa's search API to retrieve web content and programming context directly from your CLI.",
+    "seo_keywords": [
+      "exa search",
+      "web search cli",
+      "code context search",
+      "programmer search tool",
+      "Claude Code search",
+      "technical research",
+      "API documentation search",
+      "code examples finder",
+      "real-time web search",
+      "programming resource lookup"
+    ],
+    "actual_capabilities": [
+      "Search the web for real-time information and content",
+      "Retrieve code context and programming examples",
+      "Filter searches by type (auto, fast, deep)",
+      "Control result count and context length",
+      "Cache results locally for faster repeated queries",
+      "Output results as plain text or JSON"
+    ],
+    "limitations": [
+      "Requires an Exa API key (EXA_API_KEY or EXA_MCP_TOKEN environment variable)",
+      "Searches are limited to Exa's indexed content and web crawl data",
+      "Live web crawling requires specific API access and may have rate limits"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Find code examples",
+        "description": "Look up how to use specific libraries or APIs with real-world code examples"
+      },
+      {
+        "target_user": "Technical Researchers",
+        "title": "Web research",
+        "description": "Search for real-time information on technologies and tools"
+      },
+      {
+        "target_user": "Documentation Writers",
+        "title": "API reference lookup",
+        "description": "Find authoritative documentation and usage patterns"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Web Search",
+        "scenario": "Search for general information",
+        "prompt": "Search the web for information about [TOPIC] using exa-cli web-search-exa"
+      },
+      {
+        "title": "Code Pattern Search",
+        "scenario": "Find programming examples",
+        "prompt": "Find code examples for [PATTERN] using exa-cli get-code-context-exa with 500 tokens"
+      },
+      {
+        "title": "API Documentation Search",
+        "scenario": "Research API usage",
+        "prompt": "Search for [API_NAME] documentation and usage examples using exa-cli"
+      },
+      {
+        "title": "Deep Technical Research",
+        "scenario": "In-depth technical queries",
+        "prompt": "Conduct deep research on [TECHNOLOGY] focusing on best practices and common patterns using exa-cli with type=deep"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search for how to use Python async await patterns",
+        "output": [
+          "Found relevant results from Exa search",
+          "Title: Python async/await Tutorial",
+          "URL: https://realpython.com/async-python/",
+          "Snippet: Async/await syntax allows you to write concurrent code..."
+        ]
+      },
+      {
+        "input": "Find React useEffect examples",
+        "output": [
+          "Found code context for React useEffect",
+          "Documentation: https://react.dev/reference/react/useEffect",
+          "Example: useEffect(() => { console.log('mounted'); }, [])"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Set the EXA_API_KEY environment variable before running searches",
+      "Use JSON output (--json) for programmatic processing of results",
+      "Enable caching (default) to reduce API calls for repeated queries"
+    ],
+    "anti_patterns": [
+      "Sharing your API key in public repositories or chat messages",
+      "Running searches without checking result relevance first",
+      "Ignoring rate limits or terms of service for Exa API"
+    ],
+    "faq": [
+      {
+        "question": "What platforms support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code CLI tools."
+      },
+      {
+        "question": "How many search results can I get?",
+        "answer": "Default is automatic. You can set --num-results to control the count."
+      },
+      {
+        "question": "How do I integrate with other tools?",
+        "answer": "Use --json flag to get machine-readable output for scripting."
+      },
+      {
+        "question": "Is my search data stored?",
+        "answer": "Results are cached locally for 1 hour. Configure with --cache-ttl or disable with --no-cache."
+      },
+      {
+        "question": "Why are my searches failing?",
+        "answer": "Check that EXA_API_KEY is set. Verify network connectivity to https://mcp.exa.ai/mcp."
+      },
+      {
+        "question": "How is this different from regular search?",
+        "answer": "Exa provides AI-enhanced search with code-specific context and content extraction beyond simple links."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "exa-cli.py",
+          "type": "file",
+          "path": "scripts/exa-cli.py",
+          "lines": 388
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 48
+    }
+  ]
+}

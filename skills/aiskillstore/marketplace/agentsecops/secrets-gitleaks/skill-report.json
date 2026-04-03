@@ -1,0 +1,329 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:18:59.443Z",
+    "slug": "agentsecops-secrets-gitleaks",
+    "source_url": "https://github.com/AgentSecOps/SecOpsAgentKit/tree/main/skills/devsecops/secrets-gitleaks",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "be2136657bae58526d7a93eaaba982cfd4e5c65e065b086c0312b5b6446c3d5e",
+    "tree_hash": "52ec67c8e180ab461cfb648cf045fb121152ff572cda98dd2afce07a9589fa66"
+  },
+  "skill": {
+    "name": "secrets-gitleaks",
+    "description": "Hardcoded secret detection and prevention in git repositories and codebases using Gitleaks. Identifies passwords, API keys, tokens, and credentials through regex-based pattern matching and entropy analysis. Use when: (1) Scanning repositories for exposed secrets and credentials, (2) Implementing pre-commit hooks to prevent secret leakage, (3) Integrating secret detection into CI/CD pipelines, (4) Auditing codebases for compliance violations (PCI-DSS, SOC2, GDPR), (5) Establishing baseline secret detection and tracking new exposures, (6) Remediating historical secret exposures in git history.\n",
+    "summary": "Hardcoded secret detection and prevention in git repositories and codebases using Gitleaks. Identifi...",
+    "icon": "🔐",
+    "version": "0.1.0",
+    "author": "AgentSecOps",
+    "license": "MIT",
+    "category": "devsecops",
+    "tags": [
+      "secrets",
+      "gitleaks",
+      "secret-scanning",
+      "devsecops",
+      "ci-cd",
+      "credentials",
+      "api-keys",
+      "compliance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate defensive security tool for detecting hardcoded secrets. All 572 static findings are FALSE POSITIVES triggered by documentation examples, configuration placeholders, and CI/CD templates. No malicious patterns exist. The skill provides guidance for integrating Gitleaks, an established open-source secret scanning tool.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 48
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "assets/github-action.yml",
+            "line_start": 56,
+            "line_end": 61
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "assets/github-action.yml",
+            "line_start": 97,
+            "line_end": 99
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "assets/github-action.yml",
+            "line_start": 47,
+            "line_end": 48
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 3610,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:18:59.443Z"
+  },
+  "content": {
+    "user_title": "Detect hardcoded secrets with Gitleaks",
+    "value_statement": "Hardcoded secrets in code lead to data breaches and unauthorized access. This skill integrates Gitleaks for automated secret detection in repositories, CI/CD pipelines, and pre-commit hooks.",
+    "seo_keywords": [
+      "gitleaks",
+      "secret detection",
+      "hardcoded secrets",
+      "credential scanning",
+      "CI/CD security",
+      "pre-commit hooks",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "DevSecOps"
+    ],
+    "actual_capabilities": [
+      "Scan repositories for passwords, API keys, tokens, and credentials",
+      "Generate JSON, SARIF, and human-readable scan reports",
+      "Configure pre-commit hooks to prevent secret commits",
+      "Integrate secret scanning into GitHub Actions and GitLab CI",
+      "Create baselines for incremental secret detection",
+      "Map findings to compliance frameworks (PCI-DSS, SOC2, GDPR)"
+    ],
+    "limitations": [
+      "Cannot remediate secrets already pushed to public repositories",
+      "May require tuning to reduce false positives in test code",
+      "Requires Gitleaks binary to be installed or available via Docker",
+      "Cannot detect encrypted or dynamically generated secrets"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security Engineers",
+        "title": "Automated Secret Scanning",
+        "description": "Set up continuous secret scanning in CI/CD pipelines with automated reporting"
+      },
+      {
+        "target_user": "DevOps Teams",
+        "title": "Pre-commit Protection",
+        "description": "Install pre-commit hooks to prevent developers from accidentally committing secrets"
+      },
+      {
+        "target_user": "Compliance Teams",
+        "title": "Audit Trail Generation",
+        "description": "Generate compliance reports mapping findings to PCI-DSS, SOC2, and GDPR requirements"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick Scan",
+        "scenario": "Run a simple repository scan",
+        "prompt": "Scan this repository for hardcoded secrets using Gitleaks and report all findings with file locations and rule types."
+      },
+      {
+        "title": "CI/CD Integration",
+        "scenario": "Set up GitHub Actions workflow",
+        "prompt": "Create a GitHub Actions workflow file that runs Gitleaks secret scanning on every push and pull request, with SARIF output for the Security tab."
+      },
+      {
+        "title": "False Positive Tuning",
+        "scenario": "Reduce false positives",
+        "prompt": "Help me configure Gitleaks allowlists to reduce false positives from test fixtures and documentation examples."
+      },
+      {
+        "title": "Compliance Report",
+        "scenario": "Generate audit documentation",
+        "prompt": "Generate a compliance report from Gitleaks findings showing how detected secrets map to PCI-DSS and SOC2 controls."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Scan this repository for hardcoded secrets",
+        "output": [
+          "Found 3 potential secrets:",
+          "  - File: config/database.py:42 - Hardcoded database password (HIGH)",
+          "  - File: src/api/client.go:15 - AWS Access Key ID (CRITICAL)",
+          "  - File: tests/fixtures/auth.json:8 - Stripe test key (MEDIUM)",
+          "",
+          "Recommendation: Rotate exposed credentials immediately and migrate to environment variables."
+        ]
+      },
+      {
+        "input": "Set up pre-commit hooks for secret detection",
+        "output": [
+          "Pre-commit hook configuration created:",
+          "  - Hook installed at .git/hooks/pre-commit",
+          "  - Gitleaks protect mode enabled with --redact flag",
+          "  - Staged changes will be scanned before commit",
+          "  - Invalid commits will be blocked with error details"
+        ]
+      },
+      {
+        "input": "Create GitHub Actions workflow for secret scanning",
+        "output": [
+          "GitHub Actions workflow configured:",
+          "  - Triggers on push to main/develop/release branches",
+          "  - Triggers on pull requests to main/develop",
+          "  - Runs gitleaks-action@v2 with GITHUB_TOKEN",
+          "  - Generates JSON and SARIF reports",
+          "  - Uploads findings to GitHub Security tab"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use the --redact flag when sharing scan outputs to prevent accidental secret exposure",
+      "Install pre-commit hooks on developer workstations before any code is committed",
+      "Create a baseline file for legacy repositories to focus on new secret exposure only"
+    ],
+    "anti_patterns": [
+      "Skipping secret scanning in CI/CD to avoid blocking builds",
+      "Allowlisting entire directories without reviewing individual false positives",
+      "Sharing unredacted Gitleaks reports in public channels or tickets"
+    ],
+    "faq": [
+      {
+        "question": "Does Gitleaks work with private repositories?",
+        "answer": "Yes, Gitleaks scans local git history and works with private repositories when run locally or in CI/CD with repository access."
+      },
+      {
+        "question": "How do I reduce false positives from test code?",
+        "answer": "Add test directories to the allowlist in your .gitleaks.toml configuration, or use stopwords for placeholder patterns."
+      },
+      {
+        "question": "Can I integrate Gitleaks with Jenkins?",
+        "answer": "Yes, run Gitleaks via Docker or install the binary in your Jenkins pipeline stages using the standard sh step."
+      },
+      {
+        "question": "Are scan reports safe to share?",
+        "answer": "Only share reports with --redact flag enabled. Unredacted reports contain actual secret values and should be treated as confidential."
+      },
+      {
+        "question": "What is the difference between detect and protect commands?",
+        "answer": "gitleaks detect scans repository history, while gitleaks protect checks staged changes before commit."
+      },
+      {
+        "question": "How does Gitleaks compare to other secret scanners?",
+        "answer": "Gitleaks provides regex patterns, entropy analysis, and git history scanning. It is open source with active maintenance and broad CI/CD integration."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "config-balanced.toml",
+          "type": "file",
+          "path": "assets/config-balanced.toml",
+          "lines": 82
+        },
+        {
+          "name": "config-custom.toml",
+          "type": "file",
+          "path": "assets/config-custom.toml",
+          "lines": 179
+        },
+        {
+          "name": "config-strict.toml",
+          "type": "file",
+          "path": "assets/config-strict.toml",
+          "lines": 49
+        },
+        {
+          "name": "github-action.yml",
+          "type": "file",
+          "path": "assets/github-action.yml",
+          "lines": 182
+        },
+        {
+          "name": "gitlab-ci.yml",
+          "type": "file",
+          "path": "assets/gitlab-ci.yml",
+          "lines": 258
+        },
+        {
+          "name": "precommit-config.yaml",
+          "type": "file",
+          "path": "assets/precommit-config.yaml",
+          "lines": 71
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "compliance_mapping.md",
+          "type": "file",
+          "path": "references/compliance_mapping.md",
+          "lines": 539
+        },
+        {
+          "name": "detection_rules.md",
+          "type": "file",
+          "path": "references/detection_rules.md",
+          "lines": 277
+        },
+        {
+          "name": "EXAMPLE.md",
+          "type": "file",
+          "path": "references/EXAMPLE.md",
+          "lines": 41
+        },
+        {
+          "name": "false_positives.md",
+          "type": "file",
+          "path": "references/false_positives.md",
+          "lines": 599
+        },
+        {
+          "name": "remediation_guide.md",
+          "type": "file",
+          "path": "references/remediation_guide.md",
+          "lines": 531
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 503
+    }
+  ]
+}

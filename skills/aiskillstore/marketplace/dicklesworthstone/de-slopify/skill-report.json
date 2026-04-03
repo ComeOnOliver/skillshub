@@ -1,0 +1,394 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:37:01.562Z",
+    "slug": "dicklesworthstone-de-slopify",
+    "source_url": "https://github.com/Dicklesworthstone/agent_flywheel_clawdbot_skills_and_integrations/tree/main/skills/de-slopify",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5285985e90a2b8b2e6d5bc337ae9e0601525e35869e76a9592cd2e28a692cd25",
+    "tree_hash": "4f88dfd27ca0e3f7737faced74dff71d58c9962201ff0554cebef75730599a2a"
+  },
+  "skill": {
+    "name": "de-slopify",
+    "description": "Remove telltale signs of AI-generated 'slop' writing from README files and documentation. Make your docs sound authentically human.",
+    "summary": "Remove telltale signs of AI-generated 'slop' writing from README files and documentation. Make your ...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "Dicklesworthstone",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "writing",
+      "documentation",
+      "content-quality",
+      "readme",
+      "editing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown prompts and writing guidelines. No executable code, no file system access, no network calls, no environment access. All static findings are false positives caused by pattern matching without semantic understanding of documentation content.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 136
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 136,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 159,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 187,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 193
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 193,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 217
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 217,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 222
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 400,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:37:01.562Z"
+  },
+  "content": {
+    "user_title": "Remove AI Writing Artifacts from Docs",
+    "value_statement": "Documentation generated by AI often contains telltale patterns like excessive emdashes, formulaic phrases, and forced enthusiasm. This skill provides systematic prompts and guidelines to identify and remove these artifacts so your documentation sounds authentically human.",
+    "seo_keywords": [
+      "de-slopify",
+      "AI writing detection",
+      "documentation improvement",
+      "remove AI artifacts",
+      "Claude writing",
+      "Codex documentation",
+      "Claude Code assistant",
+      "readme editing",
+      "technical writing",
+      "content authenticity"
+    ],
+    "actual_capabilities": [
+      "Identify excessive emdash usage and suggest alternatives",
+      "Detect formulaic phrases like 'It's not X, it's Y' and 'Here's why'",
+      "Flag forced enthusiasm patterns like 'Let's dive in'",
+      "Provide manual line-by-line review prompts",
+      "Offer concrete before and after transformation examples",
+      "Suggest recasting sentences to sound naturally human"
+    ],
+    "limitations": [
+      "Does not automatically edit files; requires user to apply changes",
+      "Not an automated tool; relies on AI assistant following prompts",
+      "Does not check grammar, spelling, or technical accuracy",
+      "Does not preserve original versions; user must backup if needed"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Open source maintainers",
+        "title": "Polish project README files",
+        "description": "Remove AI writing tells from project documentation to make your open source project feel more authentic and professional."
+      },
+      {
+        "target_user": "Technical writers",
+        "title": "Refine documentation drafts",
+        "description": "Review API documentation and guides to eliminate formulaic patterns and achieve a natural human voice."
+      },
+      {
+        "target_user": "Content creators",
+        "title": "Humanize AI-assisted writing",
+        "description": "Transform AI-generated blog posts and articles into content that sounds genuinely written by a person."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Full De-Slopify Review",
+        "scenario": "Complete documentation review",
+        "prompt": "Read through this text carefully and look for any telltale signs of AI slop style writing. Replace excessive emdashes with semicolons, commas, or recast sentences. Avoid 'It's not X, it's Y', 'Here's why', and similar formulaic patterns. Manually read each line and revise systematically. Use ultrathink."
+      },
+      {
+        "title": "Quick Touch-Up",
+        "scenario": "Minor pattern removal",
+        "prompt": "Review this text and remove AI slop patterns: excessive emdashes, 'Here's why' constructions, 'It's not X, it's Y' formulas, and other LLM writing tells. Recast sentences to sound more naturally human. Use ultrathink."
+      },
+      {
+        "title": "Emdash Focus",
+        "scenario": "Fixing punctuation issues",
+        "prompt": "Focus on emdash usage in this text. For each emdash, decide whether to replace with semicolon, comma, or recast the sentence entirely. Sometimes splitting into two sentences works best. Keep the meaning intact while improving flow."
+      },
+      {
+        "title": "Phrase Elimination",
+        "scenario": "Removing formulaic phrases",
+        "prompt": "Find and rewrite these AI tells: 'Here's why', 'Let's dive in', 'In this guide we'll', 'It's worth noting that', 'At its core'. Replace with direct, natural phrasing. Delete unnecessary hedges and pseudo-profound openers."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "We built this amazing tool—and it works great. Here's why it matters: performance is key. It's not just a linter, it's a complete system. Let's dive in!",
+        "output": [
+          "Found 3 emdashes: replaced with commas and restructured",
+          "Removed 'Here's why it matters': explained importance directly",
+          "Rewrote 'It's not just a linter' to 'This complete system goes beyond basic linting'",
+          "Removed 'Let's dive in': replaced with direct transition"
+        ]
+      },
+      {
+        "input": "At its core, this project is about efficiency. It's worth noting that security matters too. Let's get started with the exciting features!",
+        "output": [
+          "Removed pseudo-profound 'At its core' opener",
+          "Eliminated hedge 'It's worth noting that'",
+          "Changed forced enthusiasm 'Let's get started' to direct introduction",
+          "Maintained technical accuracy throughout"
+        ]
+      },
+      {
+        "input": "In this guide, we'll explore how to configure the settings. Here's why this matters: proper setup prevents errors. It's not just documentation, it's a complete solution.",
+        "output": [
+          "Removed setup formula 'In this guide, we'll'",
+          "Replaced 'Here's why this matters' with inline explanation",
+          "Recast 'It's not just X, it's Y' to 'This documentation provides a complete solution'",
+          "Preserved all technical instructions"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Apply prompts before final publication, not during initial drafting",
+      "Review each change manually to ensure meaning is preserved",
+      "Focus on prose and natural flow; leave code examples untouched"
+    ],
+    "anti_patterns": [
+      "Using automated scripts or regex to remove patterns without understanding context",
+      "Removing all LLM-style patterns without considering if they add value",
+      "Over-editing to the point of losing technical accuracy or clarity"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools work with this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. The prompts are designed for any capable AI assistant."
+      },
+      {
+        "question": "Does this skill edit files automatically?",
+        "answer": "No. This skill provides prompts for AI assistants to follow. You must apply the suggested changes yourself."
+      },
+      {
+        "question": "What writing patterns does it detect?",
+        "answer": "It identifies emdash overuse, formulaic contrasts, clickbait-style leads, forced enthusiasm, and unnecessary hedges."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. The skill only contains prompts. Your data is processed by your chosen AI assistant following those prompts."
+      },
+      {
+        "question": "How is this different from grammar checkers?",
+        "answer": "Grammar checkers fix mechanical errors. This skill addresses style authenticity, patterns that make writing sound artificially generated."
+      },
+      {
+        "question": "Can I use this for non-English text?",
+        "answer": "The prompts are in English and target English writing patterns. Results may vary for other languages."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 223
+    }
+  ]
+}

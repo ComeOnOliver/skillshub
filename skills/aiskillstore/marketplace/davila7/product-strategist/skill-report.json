@@ -1,0 +1,217 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:21:31.282Z",
+    "slug": "davila7-product-strategist",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/business-marketing/product-strategist",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9707bacb752c4355e219c5349b2757fe5663765567cb39c3ac1eaaa68fa81db9",
+    "tree_hash": "2610aca62196dc2c50ad6a1ebb10be3f967c283c1b378980f24eff144cfe6813"
+  },
+  "skill": {
+    "name": "product-strategist",
+    "description": "Strategic product leadership toolkit for Head of Product including OKR cascade generation, market analysis, vision setting, and team scaling. Use for strategic planning, goal alignment, competitive analysis, and organizational design.",
+    "summary": "Strategic product leadership toolkit for Head of Product including OKR cascade generation, market an...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "business-marketing",
+    "tags": [
+      "strategy",
+      "okr",
+      "planning",
+      "product-management",
+      "alignment"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 15 static findings are false positives. The skill is a pure Python script that generates OKR templates in-memory with no network calls, no external command execution, no file I/O beyond stdout, and no cryptographic operations. Pattern-matching flagged string.replace() as crypto and markdown backticks as shell execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/okr_cascade_generator.py",
+            "line_start": 1,
+            "line_end": 479
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 692,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:21:31.282Z"
+  },
+  "content": {
+    "user_title": "Generate OKR Cascades and Strategic Alignment",
+    "value_statement": "Product leaders struggle to align company objectives across teams. This tool automatically cascades strategic OKRs from company level to product and team levels with alignment scoring.",
+    "seo_keywords": [
+      "product strategy",
+      "OKR cascade",
+      "strategic planning",
+      "goal alignment",
+      "objective and key results",
+      "team alignment",
+      "product leadership",
+      "Claude Code",
+      "business strategy",
+      "product management"
+    ],
+    "actual_capabilities": [
+      "Generate company-level OKRs from 5 strategic themes including growth, retention, revenue, innovation, and operational",
+      "Cascade objectives to product and team levels with parent-child tracking and contribution percentages",
+      "Calculate vertical and horizontal alignment scores across the organization",
+      "Export OKR hierarchy in readable dashboard format or JSON for integration",
+      "Translate company objectives to product and team-specific contexts automatically"
+    ],
+    "limitations": [
+      "Uses predefined templates and cannot replace strategic thinking",
+      "No integration with project management tools or external databases",
+      "Team structure is hardcoded to 4 teams and requires customization for other structures"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Head of Product",
+        "title": "Quarterly Planning",
+        "description": "Generate aligned OKRs for quarterly planning cycles across company, product, and team levels"
+      },
+      {
+        "target_user": "Strategy Team",
+        "title": "Goal Alignment Audit",
+        "description": "Validate that team objectives properly support company-level strategic initiatives"
+      },
+      {
+        "target_user": "Product Managers",
+        "title": "Team OKR Drafts",
+        "description": "Quickly create draft OKRs that connect to broader organizational goals"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic OKR Generation",
+        "scenario": "Generate quarterly OKRs",
+        "prompt": "Use the product-strategist skill to generate company OKRs for Q1 using the growth strategy with current MAU of 100000 and target of 150000"
+      },
+      {
+        "title": "Multi-Level Cascade",
+        "scenario": "Full organizational alignment",
+        "prompt": "Run the okr_cascade_generator.py script with the retention strategy and export the complete cascade in JSON format"
+      },
+      {
+        "title": "Alignment Analysis",
+        "scenario": "Score organizational alignment",
+        "prompt": "Generate OKRs using the innovation strategy and show me the alignment score dashboard"
+      },
+      {
+        "title": "Strategy Comparison",
+        "scenario": "Compare different strategies",
+        "prompt": "Generate OKR cascades for both revenue and operational strategies side by side to compare how they translate to team-level objectives"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate OKRs using the growth strategy",
+        "output": [
+          "Company OKRs: 3 objectives with key results for MAU growth, market expansion, and CAC reduction",
+          "Product OKRs: Translated objectives focused on product-led growth loops and feature adoption",
+          "Team OKRs: Distributed across Growth, Platform, Mobile, and Data teams",
+          "Alignment Score: Vertical 100%, Horizontal 75%, Overall 85%"
+        ]
+      },
+      {
+        "input": "Create OKRs for retention strategy",
+        "output": [
+          "Objective: Create lasting customer value and loyalty with key results for retention, NPS, and churn",
+          "Product-level translation focuses on product retention and sticky user experiences",
+          "Team distribution shows how each team contributes to customer success metrics"
+        ]
+      },
+      {
+        "input": "Show alignment scores for innovation strategy",
+        "output": [
+          "Vertical Alignment: 100% - all team objectives connect to product objectives",
+          "Horizontal Alignment: 50% - shared objectives across Growth and Data teams",
+          "Coverage: 100% - all company key results covered at product level"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Customize sample metrics with actual baseline data before using the output for planning",
+      "Review translated objectives to ensure they make sense for your specific organization structure",
+      "Use alignment scores to identify gaps where team objectives do not connect to company goals"
+    ],
+    "anti_patterns": [
+      "Using generated OKRs verbatim without adapting them to your specific context",
+      "Ignoring the alignment matrix when teams have disconnected objectives",
+      "Relying solely on templates without strategic analysis of market conditions"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Compatible with Claude, Codex, and Claude Code. Works as both a prompt-based skill and a script runner."
+      },
+      {
+        "question": "How many objectives does it generate?",
+        "answer": "Generates 3 company objectives with 3 key results each, cascading to product and team levels."
+      },
+      {
+        "question": "Can I export data to other tools?",
+        "answer": "Yes, use the json flag to export structured OKR data for import into project management tools."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes, the script runs locally with no network calls. All data stays on your machine during processing."
+      },
+      {
+        "question": "Why is my alignment score low?",
+        "answer": "Low scores indicate objectives lack parent-child connections. Check that team objectives reference product objectives."
+      },
+      {
+        "question": "How does this differ from Asana or Jira?",
+        "answer": "This generates strategic objectives and calculates alignment. It does not track progress or integrate with work management systems."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "okr_cascade_generator.py",
+          "type": "file",
+          "path": "scripts/okr_cascade_generator.py",
+          "lines": 479
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 27
+    }
+  ]
+}

@@ -1,0 +1,226 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:59:40.694Z",
+    "slug": "k-dense-ai-zarr-python",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/zarr-python",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9a229bc1f116955c267d0d8dea11c8d4c84ef3bafe61bedbea4643df25fce6e7",
+    "tree_hash": "075d72921aca75d1c296b1ecdf180c90a3d5d09dc95470cfae9385fa02933f5a"
+  },
+  "skill": {
+    "name": "zarr-python",
+    "description": "Chunked N-D arrays for cloud storage. Compressed arrays, parallel I/O, S3/GCS integration, NumPy/Dask/Xarray compatible, for large-scale scientific computing pipelines.",
+    "summary": "Chunked N-D arrays for cloud storage. Compressed arrays, parallel I/O, S3/GCS integration, NumPy/Das...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "data",
+    "tags": [
+      "scientific-computing",
+      "cloud-storage",
+      "data-arrays",
+      "compression"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 227 static findings are FALSE POSITIVES. The analyzer misidentified markdown documentation content as security vulnerabilities. Backticks in markdown are code formatting, not shell execution. Compression codec names (zstd, gzip, lz4) were flagged as cryptographic algorithms but are data compression. URLs are legitimate documentation links. No executable code, shell commands, or cryptographic operations exist in these documentation files.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/api_reference.md",
+            "line_start": 7,
+            "line_end": 515
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 762
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 768,
+            "line_end": 776
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 2641,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:59:40.694Z"
+  },
+  "content": {
+    "user_title": "Store large N-dimensional arrays efficiently",
+    "value_statement": "Working with large datasets that exceed memory limits. Zarr-python enables chunked array storage with compression for efficient cloud-native scientific computing workflows.",
+    "seo_keywords": [
+      "zarr",
+      "zarr-python",
+      "chunked arrays",
+      "scientific computing",
+      "cloud storage",
+      "NumPy",
+      "Dask",
+      "Xarray",
+      "compression",
+      "Claude Code",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Create and manage chunked N-dimensional arrays with configurable compression",
+      "Store arrays locally, in-memory, or in cloud storage (S3, GCS)",
+      "Integrate with NumPy, Dask, and Xarray for seamless scientific workflows",
+      "Enable parallel I/O operations for large-scale data processing",
+      "Organize arrays hierarchically with groups for complex data structures",
+      "Consolidate metadata for faster cloud storage access"
+    ],
+    "limitations": [
+      "Python 3.11+ required (does not support older Python versions)",
+      "Does not include data analysis or computation algorithms",
+      "No built-in visualization or plotting capabilities",
+      "Requires separate installation of cloud storage drivers (s3fs, gcsfs)"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Climate Scientists",
+        "title": "Store climate model data",
+        "description": "Store terabyte-scale climate data with time dimensions. Enable efficient appending of new timesteps."
+      },
+      {
+        "target_user": "Machine Learning Engineers",
+        "title": "Manage model checkpoints",
+        "description": "Store large embedding matrices and model weights. Integrate with Dask for distributed training."
+      },
+      {
+        "target_user": "Bioinformatics Researchers",
+        "title": "Process genomic datasets",
+        "description": "Handle multi-terabyte genomic arrays. Use cloud storage for collaboration."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Array Setup",
+        "scenario": "Create a simple Zarr array",
+        "prompt": "Create a Zarr array with shape (10000, 10000), chunks of (1000, 1000), and float32 dtype. Store it at data/my_array.zarr."
+      },
+      {
+        "title": "Cloud Storage",
+        "scenario": "Configure S3 storage",
+        "prompt": "Set up a Zarr array stored in S3 with s3fs. Use bucket my-bucket and path data/arrays.zarr."
+      },
+      {
+        "title": "Dask Integration",
+        "scenario": "Parallel computation",
+        "prompt": "Load a Zarr array as a Dask array and compute the mean along axis 0 in parallel."
+      },
+      {
+        "title": "Performance Tuning",
+        "scenario": "Optimize for cloud access",
+        "prompt": "Create a Zarr array optimized for cloud storage: 10MB chunks, consolidated metadata, and sharding enabled."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a Zarr array for storing temperature data with 365 time steps, 720 latitudes, and 1440 longitudes.",
+        "output": [
+          "Created Zarr array at 'temperature.zarr'",
+          "Shape: (365, 720, 1440) | Chunks: (1, 720, 1440) | Dtype: float32",
+          "Compression: Blosc (zstd, level 5) with shuffle filter",
+          "Each chunk contains one complete daily snapshot (~4MB)",
+          "Use z.append() to add new time steps efficiently"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Choose chunk sizes of 1-10 MB for optimal I/O performance",
+      "Align chunk shape with your data access pattern (e.g., time-first for time series)",
+      "Consolidate metadata when using cloud storage to reduce latency"
+    ],
+    "anti_patterns": [
+      "Avoid loading entire large arrays into memory - process in chunks",
+      "Do not use small chunks (<1MB) as they create excessive metadata overhead",
+      "Avoid frequent writes to the same cloud storage location without synchronization"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between Zarr v2 and v3 formats?",
+        "answer": "V3 supports sharding and has improved metadata. V2 is widely compatible with older tools. Zarr auto-detects format."
+      },
+      {
+        "question": "How do I choose the right chunk size?",
+        "answer": "Target 1-10 MB per chunk. For float32 data, 512x512 elements equals approximately 1 MB."
+      },
+      {
+        "question": "Can Zarr handle arrays larger than available memory?",
+        "answer": "Yes. Zarr only loads chunks needed for current operations. Use Dask for parallel out-of-core processing."
+      },
+      {
+        "question": "What compression should I use?",
+        "answer": "Use Blosc with lz4 for speed, zstd for balanced compression, or gzip for maximum compression ratio."
+      },
+      {
+        "question": "How does Zarr compare to HDF5?",
+        "answer": "Zarr offers simpler cloud integration, better metadata handling, and native support for parallel access patterns."
+      },
+      {
+        "question": "Can I use Zarr with existing HDF5 files?",
+        "answer": "Yes. Use h5py to read HDF5 files and zarr.array() to convert them to Zarr format."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 516
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 173
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 779
+    }
+  ]
+}

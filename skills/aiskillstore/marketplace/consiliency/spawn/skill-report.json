@@ -1,0 +1,387 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:21:31.782Z",
+    "slug": "consiliency-spawn",
+    "source_url": "https://github.com/Consiliency/treesitter-chunker/tree/main/.ai-dev-kit/skills/spawn",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "77960f2f907c89cc679842012e9c985e9b90410d1ccf49a6fb57b8a9bce46ebd",
+    "tree_hash": "1940a7457f90ac657c3a4adcb67fcb87d175ac3e6e31832529f4ca1d9e839447"
+  },
+  "skill": {
+    "name": "spawn",
+    "description": "Skills for spawning external processes - AI coding agents and generic CLI commands in new terminal windows. Parent skill category for agent and terminal spawning.",
+    "summary": "Launch AI coding agents and CLI commands in new terminal windows across macOS, Windows, and Linux",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Consiliency",
+    "license": "MIT",
+    "tags": [
+      "terminal",
+      "process-spawning",
+      "ai-agents",
+      "cli",
+      "cross-platform"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analyzer flagged command execution patterns, but these are expected for a terminal spawning skill. The skill's core purpose is to launch external processes in new terminal windows. Commands are properly quoted, arguments passed as lists, and all execution is user-initiated with visible output. No malicious intent or data exfiltration found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 58,
+            "line_end": 61
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 93,
+            "line_end": 93
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 196,
+            "line_end": 196
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 216,
+            "line_end": 216
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 222,
+            "line_end": 222
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 107,
+            "line_end": 108
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 41,
+            "line_end": 43
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 134,
+            "line_end": 136
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 157,
+            "line_end": 158
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Shell command execution patterns detected",
+        "description": "The skill spawns external terminal processes using subprocess. This is the intended functionality for a terminal spawning skill. Commands are properly quoted and arguments are passed as lists where possible.",
+        "locations": [
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 58,
+            "line_end": 61
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 93,
+            "line_end": 93
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 161,
+            "line_end": 161
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 196,
+            "line_end": 196
+          }
+        ]
+      },
+      {
+        "title": "Temporary file handling for output capture",
+        "description": "The skill writes terminal output to temporary files for capture. Files use UUID-based names in system temp directories and are cleaned up after use.",
+        "locations": [
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 40,
+            "line_end": 43
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 134,
+            "line_end": 136
+          },
+          {
+            "file": "agent/fork_terminal.py",
+            "line_start": 157,
+            "line_end": 159
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 6481,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:21:31.782Z"
+  },
+  "content": {
+    "user_title": "Spawn External Processes in Terminals",
+    "value_statement": "Launch AI coding agents and CLI commands in new terminal windows with cross-platform support for macOS, Windows, and WSL.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "terminal spawner",
+      "process launcher",
+      "CLI agent",
+      "cross-platform terminal",
+      "AI agent orchestration"
+    ],
+    "actual_capabilities": [
+      "Launch AI coding agents (Claude, Codex, Gemini, Cursor, OpenCode, Copilot) in new terminal windows",
+      "Execute generic CLI commands (ffmpeg, curl, python, npm) in interactive terminals",
+      "Cross-platform support: macOS Terminal.app, Windows Terminal (wt.exe), WSL, and tmux",
+      "Capture and return terminal output via temporary JSON or text files",
+      "Spawn terminals for user authentication flows with AI providers"
+    ],
+    "limitations": [
+      "Output capture requires logging to be enabled (blocks until command completes)",
+      "Windows output capture has limited support compared to macOS and Linux",
+      "Does not support parallel execution within a single terminal session",
+      "User interaction must occur in the spawned terminal window itself"
+    ],
+    "use_cases": [
+      {
+        "title": "Launch External AI Coding Agents",
+        "description": "Spawn a new terminal window running an external AI coding agent like Claude, Codex, or Gemini. Useful for multi-provider orchestration and when browser-based authentication is required.",
+        "target_user": "Developers using multiple AI coding providers"
+      },
+      {
+        "title": "Run Interactive CLI Commands",
+        "description": "Execute long-running or interactive CLI commands (ffmpeg transcoding, npm builds, python scripts) in a separate terminal that does not block Claude Code.",
+        "target_user": "Developers needing non-blocking CLI execution"
+      },
+      {
+        "title": "Provider Authentication Flows",
+        "description": "Spawn terminals for AI provider authentication when native Task agents encounter auth failures. The user authenticates in the spawned terminal and the skill detects completion.",
+        "target_user": "Users setting up AI provider credentials"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Agent Spawn",
+        "prompt": "Spawn Claude Code in a new terminal and ask it to: ${user_task}",
+        "scenario": "Delegating a task to Claude Code in an interactive session"
+      },
+      {
+        "title": "Multi-Provider Task",
+        "prompt": "Launch Gemini CLI in a new terminal window and have it: ${user_instruction}",
+        "scenario": "Using Gemini for a specific coding task"
+      },
+      {
+        "title": "Long-Running Process",
+        "prompt": "Run 'ffmpeg -i input.mp4 output.avi' in a new terminal window so it does not block Claude Code.",
+        "scenario": "Running a long video transcoding command"
+      },
+      {
+        "title": "Provider Authentication",
+        "prompt": "Help me authenticate with Codex. Open a terminal for the login flow.",
+        "scenario": "Setting up API credentials for an AI provider"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Spawn Claude Code in a new terminal and ask it to write a hello world Python script.",
+        "output": "A new Terminal window opens with Claude Code running. You see: 'Hello! I will create a hello world Python script for you.' The script is saved to the working directory."
+      },
+      {
+        "input": "Run 'npm install' in a new terminal window.",
+        "output": "A new terminal window opens showing npm installing dependencies. The installation runs independently without blocking Claude Code. Progress is logged to /tmp/fork-debug-xxx.txt."
+      }
+    ],
+    "best_practices": [
+      "Use spawn:agent for AI coding tasks that require interactive sessions or browser authentication",
+      "Use spawn:terminal for long-running CLI commands that should not block Claude Code",
+      "Enable output logging when you need to capture results from spawned commands",
+      "Check for authentication failures using detect_auth_failure() before manual auth flows"
+    ],
+    "anti_patterns": [
+      "Using spawn for automated multi-provider orchestration - prefer orchestration:native-invoke instead",
+      "Expecting real-time streaming output without proper logging configuration",
+      "Spawning commands that require user input without opening an interactive terminal",
+      "Running destructive commands without confirming the terminal window opened successfully"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between spawn and orchestration:native-invoke?",
+        "answer": "spawn opens a new visible terminal window for interactive use. orchestration:native-invoke runs commands in the background without a visible terminal. Use spawn for interactive AI sessions or when TTY access is required."
+      },
+      {
+        "question": "Which platforms are supported?",
+        "answer": "macOS (Terminal.app), Windows (Windows Terminal or cmd.exe), WSL (wt.exe or cmd.exe fallback), and Linux (tmux or fallback to background process)."
+      },
+      {
+        "question": "How do I capture output from spawned commands?",
+        "answer": "Set capture=True to block and return output, or log_to_file=True to write to a debug file. The skill returns the path to the output file for programmatic access."
+      },
+      {
+        "question": "Can I run multiple commands in one spawned terminal?",
+        "answer": "Yes. Combine commands with && or ; in the command string, or use a shell wrapper script. The skill runs the full command string in the new terminal."
+      },
+      {
+        "question": "How does the authentication flow work?",
+        "answer": "When an AI provider reports an auth failure, fork_for_auth() spawns a terminal with the login command. It polls for a completion signal and returns True when the terminal closes."
+      },
+      {
+        "question": "What happens if the terminal fails to open?",
+        "answer": "The skill uses fallback mechanisms (e.g., cmd.exe fallback for WSL). If all spawning methods fail, it returns an empty string and the command may not run."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "agent",
+      "type": "dir",
+      "path": "agent",
+      "children": [
+        {
+          "name": "cookbook",
+          "type": "dir",
+          "path": "agent/cookbook",
+          "children": [
+            {
+              "name": "claude-code.md",
+              "type": "file",
+              "path": "agent/cookbook/claude-code.md",
+              "lines": 89
+            },
+            {
+              "name": "codex-cli.md",
+              "type": "file",
+              "path": "agent/cookbook/codex-cli.md",
+              "lines": 135
+            },
+            {
+              "name": "copilot-cli.md",
+              "type": "file",
+              "path": "agent/cookbook/copilot-cli.md",
+              "lines": 151
+            },
+            {
+              "name": "cursor-cli.md",
+              "type": "file",
+              "path": "agent/cookbook/cursor-cli.md",
+              "lines": 179
+            },
+            {
+              "name": "gemini-cli.md",
+              "type": "file",
+              "path": "agent/cookbook/gemini-cli.md",
+              "lines": 149
+            },
+            {
+              "name": "opencode-cli.md",
+              "type": "file",
+              "path": "agent/cookbook/opencode-cli.md",
+              "lines": 146
+            }
+          ]
+        },
+        {
+          "name": "prompts",
+          "type": "dir",
+          "path": "agent/prompts",
+          "children": [
+            {
+              "name": "fork-summary-user-prompt.md",
+              "type": "file",
+              "path": "agent/prompts/fork-summary-user-prompt.md",
+              "lines": 19
+            }
+          ]
+        },
+        {
+          "name": "fork_terminal.py",
+          "type": "file",
+          "path": "agent/fork_terminal.py",
+          "lines": 340
+        },
+        {
+          "name": "SKILL.md",
+          "type": "file",
+          "path": "agent/SKILL.md",
+          "lines": 173
+        }
+      ]
+    },
+    {
+      "name": "terminal",
+      "type": "dir",
+      "path": "terminal",
+      "children": [
+        {
+          "name": "cookbook",
+          "type": "dir",
+          "path": "terminal/cookbook",
+          "children": [
+            {
+              "name": "cli-command.md",
+              "type": "file",
+              "path": "terminal/cookbook/cli-command.md",
+              "lines": 31
+            }
+          ]
+        },
+        {
+          "name": "SKILL.md",
+          "type": "file",
+          "path": "terminal/SKILL.md",
+          "lines": 84
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 91
+    }
+  ]
+}

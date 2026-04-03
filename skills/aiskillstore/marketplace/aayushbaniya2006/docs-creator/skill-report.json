@@ -1,0 +1,181 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:24:36.651Z",
+    "slug": "aayushbaniya2006-docs-creator",
+    "source_url": "https://github.com/AayushBaniya2006/blinkfund/tree/main/.claude/skills/docs-creator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4a2ff3cd2da4ab97239249e73a4a10faae7fa0a37c38fc53d80d86ff5beae419",
+    "tree_hash": "3f44741fe18a351232d7ae45a972b2a8de47660f7a1cbdca0deafbcf0121e33f"
+  },
+  "skill": {
+    "name": "docs-creator",
+    "description": "Create and organize public documentation pages using Fumadocs. Use when building new documentation pages or organizing existing ones.",
+    "summary": "Build structured documentation with Fumadocs MDX pages, automatic routing, and icon support",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "AayushBaniya2006",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "documentation",
+      "fumadocs",
+      "mdx",
+      "content-management",
+      "technical-writing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is safe for publication. All 47 static findings are false positives from the analyzer misinterpreting Markdown syntax as code. The skill contains only documentation and reference materials with no executable code, network requests, or file system operations.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 712,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:24:36.651Z"
+  },
+  "content": {
+    "user_title": "Create Fumadocs Documentation Pages",
+    "value_statement": "Building technical documentation requires consistent structure and routing. This skill helps you create well-organized MDX documentation pages with Fumadocs, handling frontmatter, navigation metadata, and icon integration automatically.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "documentation generator",
+      "Fumadocs",
+      "MDX pages",
+      "technical writing",
+      "API documentation",
+      "content structure",
+      "Lucide icons"
+    ],
+    "actual_capabilities": [
+      "Create MDX documentation pages with proper frontmatter structure",
+      "Generate meta.json files for controlling sidebar navigation and folder organization",
+      "Configure page metadata including titles, descriptions, and Lucide icons",
+      "Organize nested documentation hierarchies with automatic URL routing",
+      "Reference Fumadocs UI components like Callout, Tabs, and Steps in MDX content"
+    ],
+    "limitations": [
+      "Requires Fumadocs to be already installed and configured in the project",
+      "Only works with the specific file structure pattern in src/content/docs/",
+      "Cannot modify Fumadocs configuration or customize rendering behavior",
+      "Does not validate that referenced Lucide icon names exist"
+    ],
+    "use_cases": [
+      {
+        "title": "API Documentation Structure",
+        "description": "Create a complete API reference section with endpoint documentation, authentication guides, and code examples organized in a logical hierarchy.",
+        "target_user": "Backend developers documenting REST APIs"
+      },
+      {
+        "title": "Product Documentation",
+        "description": "Build user-facing help documentation with getting started guides, feature walkthroughs, and troubleshooting sections with proper navigation.",
+        "target_user": "Product managers and technical writers"
+      },
+      {
+        "title": "Internal Knowledge Base",
+        "description": "Organize team documentation including onboarding guides, architecture decisions, and development workflows in a searchable structure.",
+        "target_user": "Engineering teams building internal docs"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create Basic Documentation Page",
+        "prompt": "Create a getting started page at src/content/docs/getting-started.mdx with title Getting Started and description Quick start guide for new users",
+        "scenario": "Starting a new documentation section with a simple introductory page"
+      },
+      {
+        "title": "Build API Reference Section",
+        "prompt": "Create an API folder in docs with a meta.json that organizes pages for authentication, endpoints, and webhooks with the Webhook icon",
+        "scenario": "Structuring comprehensive API documentation with multiple related pages"
+      },
+      {
+        "title": "Add Nested Documentation",
+        "prompt": "Create a guides/advanced folder with meta.json and add pages for caching, performance, and security with appropriate icons",
+        "scenario": "Building a multi-level documentation hierarchy for complex topics"
+      },
+      {
+        "title": "Organize Existing Pages",
+        "prompt": "Update the meta.json in src/content/docs to reorder pages putting introduction first, then installation, configuration, and add a separator before advanced topics",
+        "scenario": "Reorganizing documentation navigation after adding multiple pages"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a troubleshooting page with the AlertCircle icon",
+        "output": "I created src/content/docs/troubleshooting.mdx with frontmatter containing title: Troubleshooting, description: Common issues and solutions, and icon: AlertCircle. The page is now accessible at /docs/troubleshooting."
+      },
+      {
+        "input": "Set up a components section with meta.json organizing button, form, and modal pages",
+        "output": "I created src/content/docs/components/meta.json with title: UI Components, icon: Package, and pages array containing button, form, and modal. The section will appear in the sidebar with proper ordering."
+      }
+    ],
+    "best_practices": [
+      "Always include title and description in MDX frontmatter for SEO and search functionality",
+      "Use descriptive Lucide icon names that match the content topic to improve visual navigation",
+      "Organize related pages into folders with meta.json to maintain clear documentation hierarchy"
+    ],
+    "anti_patterns": [
+      "Creating pages without frontmatter will result in missing metadata and poor search indexing",
+      "Using non-existent Lucide icon names will cause rendering errors in the sidebar",
+      "Placing pages outside src/content/docs/ will break the Fumadocs routing system"
+    ],
+    "faq": [
+      {
+        "question": "What file format should documentation pages use?",
+        "answer": "Use MDX format with .mdx extension. MDX allows you to combine Markdown with React components from Fumadocs UI."
+      },
+      {
+        "question": "How do I control the order of pages in the sidebar?",
+        "answer": "Create a meta.json file in the folder and list page filenames in the desired order in the pages array."
+      },
+      {
+        "question": "Can I use custom icons for documentation sections?",
+        "answer": "You can use any Lucide icon name. Reference the Lucide icon library at lucide.dev to find available icon names."
+      },
+      {
+        "question": "Where should I place documentation images and assets?",
+        "answer": "The skill focuses on page structure and metadata. Asset placement depends on your Fumadocs configuration, typically in a public or static folder."
+      },
+      {
+        "question": "How do nested folders affect the URL structure?",
+        "answer": "Folders create URL segments automatically. For example, api/auth.mdx becomes /docs/api/auth in the browser."
+      },
+      {
+        "question": "Does this skill modify existing Fumadocs configuration?",
+        "answer": "No, this skill only creates content pages and navigation metadata. It assumes Fumadocs is already installed and configured in your project."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 55
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 83
+    }
+  ]
+}

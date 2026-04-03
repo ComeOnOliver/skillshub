@@ -1,0 +1,283 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:27:09.529Z",
+    "slug": "cam10001110101-skill-creator",
+    "source_url": "https://github.com/Cam10001110101/claude-skills-base/tree/main/mnt/skills/examples/skill-creator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d49d1a8c2cef9841614d3d64aff53265f05caa8438ccb32464b0b1a1fbf71bc5",
+    "tree_hash": "328e673e673f81c839440578be693122680fb0c949be673b4b5fb33ddf9f4d03"
+  },
+  "skill": {
+    "name": "skill-creator",
+    "description": "Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.",
+    "summary": "Guide for creating effective skills. This skill should be used when users want to create a new skill...",
+    "icon": "🛠️",
+    "version": "1.0.0",
+    "author": "Cam10001110101",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "productivity",
+    "tags": [
+      "skill-development",
+      "ai-tools",
+      "productivity",
+      "claude-skills",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "The skill-creator is a legitimate development utility that creates skill templates, validates YAML frontmatter, and packages skills into zip files. All operations are local file system operations. The 106 static findings are false positives caused by the analyzer misinterpreting: (1) Apache License URLs as network indicators, (2) markdown backtick formatting as shell command execution, (3) SHA256 hashes and content hash identifiers as weak cryptographic algorithms, and (4) standard documentation patterns as C2 indicators. No malicious intent or dangerous patterns exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 1,
+            "line_end": 111
+          },
+          {
+            "file": "scripts/quick_validate.py",
+            "line_start": 1,
+            "line_end": 65
+          },
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 1,
+            "line_end": 304
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/package_skill.py",
+            "line_start": 30,
+            "line_end": 82
+          },
+          {
+            "file": "scripts/quick_validate.py",
+            "line_start": 11,
+            "line_end": 56
+          },
+          {
+            "file": "scripts/init_skill.py",
+            "line_start": 194,
+            "line_end": 270
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "LICENSE.txt",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "LICENSE.txt",
+            "line_start": 196,
+            "line_end": 196
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 1139,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:27:09.529Z"
+  },
+  "content": {
+    "user_title": "Create Custom AI Skills with Templates",
+    "value_statement": "Building AI skills from scratch requires understanding Claude's skill architecture, YAML frontmatter, and proper file organization. This tool provides templates, validation, and packaging to create professional skills quickly.",
+    "seo_keywords": [
+      "claude skills",
+      "ai skill creation",
+      "claude code skills",
+      "custom ai tools",
+      "skill templates",
+      "claude marketplace",
+      "ai automation",
+      "skill development",
+      "codex skills",
+      "claude skill builder"
+    ],
+    "actual_capabilities": [
+      "Generates skill templates with proper YAML frontmatter structure",
+      "Validates skill structure and required metadata fields",
+      "Packages skills into distributable zip files",
+      "Creates example scripts, references, and assets directories",
+      "Provides step-by-step skill creation guidance"
+    ],
+    "limitations": [
+      "Only creates skill scaffolding - content must be added manually",
+      "Validation checks structure but not content quality or usefulness",
+      "No built-in testing framework for skill functionality",
+      "Requires understanding of skill architecture before use"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI developers",
+        "title": "Build Custom Skills",
+        "description": "Create specialized skills for specific domains like finance, healthcare, or engineering with proper structure."
+      },
+      {
+        "target_user": "Enterprise teams",
+        "title": "Standardize AI Tools",
+        "description": "Develop consistent skill templates for your organization with company-specific workflows."
+      },
+      {
+        "target_user": "Marketplace contributors",
+        "title": "Package Skills for Distribution",
+        "description": "Prepare skills for sharing on AI marketplaces with proper validation and packaging."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create a Finance Skill",
+        "scenario": "Building skills for financial analysis",
+        "prompt": "Help me create a skill for analyzing quarterly earnings reports. It should extract key metrics and generate executive summaries."
+      },
+      {
+        "title": "Build a Healthcare Tool",
+        "scenario": "Medical data processing skill",
+        "prompt": "Create a skill that processes patient data exports and creates compliance reports with HIPAA validation."
+      },
+      {
+        "title": "Design a Code Review Skill",
+        "scenario": "Automated code quality checks",
+        "prompt": "Build a skill that analyzes Python code for security vulnerabilities and suggests improvements based on best practices."
+      },
+      {
+        "title": "Develop Multi-Step Workflow",
+        "scenario": "Complex business process automation",
+        "prompt": "Create a skill that orchestrates a 5-step approval workflow with email notifications and document generation."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a skill for analyzing customer feedback surveys",
+        "output": [
+          "Generated skill template at: feedback-analyzer/",
+          "Created SKILL.md with YAML frontmatter validation",
+          "Added example scripts directory with placeholder script",
+          "Created references directory with API documentation template",
+          "Packaged skill as: feedback-analyzer.zip"
+        ]
+      },
+      {
+        "input": "Help me build a skill for generating API documentation",
+        "output": [
+          "Initialized skill: api-docs-generator",
+          "Created three-tier structure: scripts/, references/, assets/",
+          "Added example Python script for doc generation",
+          "Included reference template for endpoint documentation",
+          "Skill validated and ready for packaging"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with concrete examples of how the skill will be used before writing content",
+      "Follow the progressive disclosure principle - keep SKILL.md concise and detailed docs in references/",
+      "Test skills with real tasks before packaging for distribution"
+    ],
+    "anti_patterns": [
+      "Don't include sensitive credentials or API keys in skill files",
+      "Avoid duplicating content between SKILL.md and reference documents",
+      "Don't create overly broad skills - focus on specific, well-defined tasks"
+    ],
+    "faq": [
+      {
+        "question": "What file formats are supported for skills?",
+        "answer": "Skills use YAML frontmatter in SKILL.md files. Scripts can be Python, Bash, or any executable format."
+      },
+      {
+        "question": "Is there a size limit for skill content?",
+        "answer": "SKILL.md should stay under 5,000 words. Reference files can be larger and are loaded on-demand."
+      },
+      {
+        "question": "Can skills include external dependencies?",
+        "answer": "Yes, scripts can import standard libraries. For external packages, include installation instructions."
+      },
+      {
+        "question": "How do I validate my skill before packaging?",
+        "answer": "Run the quick_validate.py script to check YAML frontmatter and required fields before packaging."
+      },
+      {
+        "question": "What naming conventions should I follow?",
+        "answer": "Use hyphen-case (lowercase with hyphens). Names must match the directory name exactly."
+      },
+      {
+        "question": "Can I update an existing skill?",
+        "answer": "Yes, edit the SKILL.md file and resource directories, then re-package using the packaging script."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "init_skill.py",
+          "type": "file",
+          "path": "scripts/init_skill.py",
+          "lines": 304
+        },
+        {
+          "name": "package_skill.py",
+          "type": "file",
+          "path": "scripts/package_skill.py",
+          "lines": 111
+        },
+        {
+          "name": "quick_validate.py",
+          "type": "file",
+          "path": "scripts/quick_validate.py",
+          "lines": 65
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 210
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:54:49.656Z",
+    "slug": "consiliency-spawn-agent",
+    "source_url": "https://github.com/Consiliency/treesitter-chunker/tree/main/.ai-dev-kit/skills/spawn/agent",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "de8bd822efd2fedcd10fb2b13952f047a9116dac1b7c729aeef224f4e4d55db6",
+    "tree_hash": "b42c1f863a6acb4106531a128dc29d68c722d99467e803183967515a60d0f86a"
+  },
+  "skill": {
+    "name": "spawn-agent",
+    "description": "Spawn an AI coding agent in a new terminal (Claude, Codex, Gemini, Cursor, OpenCode, Copilot). Defaults to Claude Code if unspecified.",
+    "summary": "Spawn an AI coding agent in a new terminal (Claude, Codex, Gemini, Cursor, OpenCode, Copilot). Defau...",
+    "icon": "🚀",
+    "version": "1.0.0",
+    "author": "Consiliency",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "terminal",
+      "ai-agents",
+      "claude",
+      "productivity"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static scanner flagged 447 patterns, all evaluated as false positives. The skill is a legitimate developer tool that spawns AI coding agents in terminal windows. All subprocess calls use hardcoded command strings (not user input), temp file paths are controlled and predictable, and there is no credential exfiltration or malicious behavior. The scanner misinterpreted markdown documentation examples as code execution and flagged normal terminal operations as suspicious patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "cookbook/claude-code.md",
+            "line_start": 16,
+            "line_end": 80
+          },
+          {
+            "file": "cookbook/codex-cli.md",
+            "line_start": 21,
+            "line_end": 130
+          },
+          {
+            "file": "cookbook/copilot-cli.md",
+            "line_start": 16,
+            "line_end": 148
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "fork_terminal.py",
+            "line_start": 41,
+            "line_end": 43
+          },
+          {
+            "file": "fork_terminal.py",
+            "line_start": 107,
+            "line_end": 108
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 1745,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:54:49.656Z"
+  },
+  "content": {
+    "user_title": "Spawn AI coding agents in new terminals",
+    "value_statement": "Managing multiple AI coding agents requires switching between different CLI tools. This skill launches Claude Code, Codex, Gemini, Cursor, OpenCode, or Copilot in a fresh terminal window. Developers can offload complex coding tasks to specialized agents while continuing their main workflow.",
+    "seo_keywords": [
+      "spawn agent",
+      "claude code terminal",
+      "ai coding agent",
+      "terminal automation",
+      "claude code",
+      "openai codex",
+      "gemini cli",
+      "cursor agent",
+      "developer productivity",
+      "multi-agent workflow"
+    ],
+    "actual_capabilities": [
+      "Launch Claude Code, Codex, Gemini, Cursor, OpenCode, or Copilot in new terminals",
+      "Capture and retrieve agent output for later review",
+      "Configure model selection, permission modes, and interactive settings per agent",
+      "Handle authentication flows for CLI tools that require login"
+    ],
+    "limitations": [
+      "Requires CLI tools to be installed and configured on the system",
+      "Output capture requires understanding each agent's JSON output flags",
+      "Interactive mode behavior varies between different AI CLI tools"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Senior developers",
+        "title": "Offload complex refactoring",
+        "description": "Spawn a heavy Opus-model agent in a new terminal to handle large-scale code refactoring while you continue code review."
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Parallel backend and frontend work",
+        "description": "Run Gemini CLI for backend API work in one terminal while using Claude Code for frontend debugging in another."
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Infrastructure automation",
+        "description": "Launch Cursor agent with workspace permissions to automate Terraform configurations and deployment scripts."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic agent spawn",
+        "scenario": "Launch default Claude Code agent",
+        "prompt": "Spawn an agent to analyze the codebase structure and identify the main components."
+      },
+      {
+        "title": "Specific model request",
+        "scenario": "Request heavy model for complex task",
+        "prompt": "Spawn agent use claude opus to review all authentication code paths and identify security issues."
+      },
+      {
+        "title": "Context transfer",
+        "scenario": "Include conversation summary",
+        "prompt": "Spawn agent use claude code to continue the work we discussed. Summarize work so far: implemented user auth module, need to add password reset flow."
+      },
+      {
+        "title": "Multi-agent coordination",
+        "scenario": "Use different providers for parallel work",
+        "prompt": "Spawn two agents in parallel: one using codex to write unit tests, another using gemini to generate API documentation."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Spawn agent use claude code to create a REST API endpoint for user registration",
+        "output": [
+          "Terminal opened with Claude Code agent",
+          "Agent output will be logged to /tmp/fork-agent-*.json",
+          "Agent will create the endpoint following your project patterns"
+        ]
+      },
+      {
+        "input": "Spawn agent use gemini to summarize this codebase architecture",
+        "output": [
+          "New terminal launched with Gemini CLI",
+          "Agent analyzes project structure and dependencies",
+          "Output captured for your review"
+        ]
+      },
+      {
+        "input": "Create a new agent with cursor to fix all linting errors",
+        "output": [
+          "Cursor agent terminal spawned",
+          "Runs with --force flag for automated fixing",
+          "Returns summary of fixes applied"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run the CLI --help command first to verify available options before spawning agents",
+      "Use model selection flags to match task complexity (fast models for simple tasks, heavy models for complex analysis)",
+      "Enable LOG_AGENT_OUTPUT to capture clean JSON responses for later processing"
+    ],
+    "anti_patterns": [
+      "Spawning agents without reading the cookbook for that specific CLI tool",
+      "Skipping the --help verification step assuming syntax is correct",
+      "Using interactive mode flags incorrectly which causes agents to exit immediately after task completion"
+    ],
+    "faq": [
+      {
+        "question": "Which AI agents are supported?",
+        "answer": "Claude Code, OpenAI Codex, Google Gemini, Cursor, OpenCode, and GitHub Copilot CLI tools are supported."
+      },
+      {
+        "question": "How does agent selection work?",
+        "answer": "Explicit requests use the specified agent. Without specification, DEFAULT_AGENT (claude-code) is used. Check ENABLED flags for availability."
+      },
+      {
+        "question": "Can I capture agent output?",
+        "answer": "Yes, set LOG_AGENT_OUTPUT true (default) to write clean JSON to temp files. Use read_fork_output() to retrieve results."
+      },
+      {
+        "question": "Do I need to install CLI tools?",
+        "answer": "Yes, each agent CLI must be installed and authenticated on your system before this skill can spawn them."
+      },
+      {
+        "question": "What terminal environments work?",
+        "answer": "Supports macOS Terminal.app, Windows Terminal, WSL, tmux, and fallback background processes on Linux."
+      },
+      {
+        "question": "How do I handle authentication?",
+        "answer": "Use fork_for_auth(provider) to spawn login terminals. Authenticate in the spawned terminal, then close it to continue."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "cookbook",
+      "type": "dir",
+      "path": "cookbook",
+      "children": [
+        {
+          "name": "claude-code.md",
+          "type": "file",
+          "path": "cookbook/claude-code.md",
+          "lines": 89
+        },
+        {
+          "name": "codex-cli.md",
+          "type": "file",
+          "path": "cookbook/codex-cli.md",
+          "lines": 135
+        },
+        {
+          "name": "copilot-cli.md",
+          "type": "file",
+          "path": "cookbook/copilot-cli.md",
+          "lines": 151
+        },
+        {
+          "name": "cursor-cli.md",
+          "type": "file",
+          "path": "cookbook/cursor-cli.md",
+          "lines": 179
+        },
+        {
+          "name": "gemini-cli.md",
+          "type": "file",
+          "path": "cookbook/gemini-cli.md",
+          "lines": 149
+        },
+        {
+          "name": "opencode-cli.md",
+          "type": "file",
+          "path": "cookbook/opencode-cli.md",
+          "lines": 146
+        }
+      ]
+    },
+    {
+      "name": "prompts",
+      "type": "dir",
+      "path": "prompts",
+      "children": [
+        {
+          "name": "fork-summary-user-prompt.md",
+          "type": "file",
+          "path": "prompts/fork-summary-user-prompt.md",
+          "lines": 19
+        }
+      ]
+    },
+    {
+      "name": "fork_terminal.py",
+      "type": "file",
+      "path": "fork_terminal.py",
+      "lines": 340
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 173
+    }
+  ]
+}

@@ -1,0 +1,385 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:53:16.474Z",
+    "slug": "apra-labs-bitbucket-devops",
+    "source_url": "https://github.com/Apra-Labs/claude-bitbucket-devops-skill/tree/main/",
+    "source_ref": "main",
+    "model": "codex",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "fe70dcf352fa181a6590c94bcc329c9b79268a4ae52a66790e76f9ca8765bf85",
+    "tree_hash": "477081d8480e37c61aaf6c18f7c0fd497f5c8bb6e8d8239090380d074033326d"
+  },
+  "skill": {
+    "name": "bitbucket-devops",
+    "description": "Comprehensive Bitbucket pipeline automation using direct Node.js API calls. Monitor pipeline status, analyze failures, download logs, and trigger builds. Use this skill when the user asks to check pipeline status, find failing pipelines, download logs, trigger builds, or debug pipeline failures. No MCP approval prompts required - uses Bash tool with node commands.",
+    "summary": "Comprehensive Bitbucket pipeline automation using direct Node.js API calls. Monitor pipeline status,...",
+    "icon": "🔄",
+    "version": "1.2.1",
+    "author": "Apra-Labs",
+    "license": "CC-BY-4.0",
+    "category": "devops",
+    "tags": [
+      "bitbucket",
+      "pipelines",
+      "ci-cd",
+      "devops",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Most static detections are in documentation, changelogs, or API specs and are not executable. Core code executes CLI commands and reads credentials for Bitbucket operations. There is potential command injection risk if untrusted inputs are passed into shell commands.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "lib/helpers.js",
+            "line_start": 19,
+            "line_end": 40
+          },
+          {
+            "file": "lib/helpers.js",
+            "line_start": 326,
+            "line_end": 363
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "lib/helpers.js",
+            "line_start": 19,
+            "line_end": 40
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "lib/helpers.js",
+            "line_start": 128,
+            "line_end": 145
+          },
+          {
+            "file": "lib/helpers.js",
+            "line_start": 274,
+            "line_end": 286
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "smoke-test.sh",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [
+      {
+        "title": "Potential command injection via execSync",
+        "description": "Potential command injection if user-provided inputs contain shell metacharacters in execSync commands.",
+        "locations": [
+          {
+            "file": "lib/helpers.js",
+            "line_start": 19,
+            "line_end": 40
+          },
+          {
+            "file": "lib/helpers.js",
+            "line_start": 326,
+            "line_end": 363
+          }
+        ]
+      }
+    ],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 20,
+    "total_lines": 27209,
+    "audit_model": "codex",
+    "audited_at": "2026-01-16T15:53:16.474Z"
+  },
+  "content": {
+    "user_title": "Automate Bitbucket pipelines with Claude",
+    "value_statement": "Pipeline failures waste time and break focus. This skill monitors builds, pulls logs, and triggers reruns with clear CLI workflows.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Bitbucket pipelines",
+      "CI/CD automation",
+      "pipeline debugging",
+      "DevOps assistant",
+      "build monitoring",
+      "Bitbucket API",
+      "log analysis"
+    ],
+    "actual_capabilities": [
+      "Fetch latest pipeline status and failed builds",
+      "List pipeline steps and identify failed steps",
+      "Download failed step logs to local files",
+      "Trigger and stop pipeline runs",
+      "Test Bitbucket git authentication and clone repositories"
+    ],
+    "limitations": [
+      "Cannot download pipeline artifacts due to Bitbucket API limits",
+      "Requires credentials file setup before use",
+      "Needs Node.js v18+ and Git installed",
+      "Log files are stored locally and need manual cleanup"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps engineers",
+        "title": "Resolve failed builds",
+        "description": "Locate the latest failed pipeline, download logs, and summarize the failing step quickly."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Monitor CI status",
+        "description": "Check recent pipelines for a repository and track progress without leaving the editor."
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Manage pipeline runs",
+        "description": "Trigger new builds or stop stuck pipelines with clear command outputs."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check latest build",
+        "scenario": "Quick status check",
+        "prompt": "Get the latest pipeline for workspace X and repo Y, and summarize status and branch."
+      },
+      {
+        "title": "Find a failed run",
+        "scenario": "Failure triage",
+        "prompt": "Find the most recent failed pipeline for workspace X repo Y and list failed steps."
+      },
+      {
+        "title": "Download failure logs",
+        "scenario": "Deep debugging",
+        "prompt": "Download logs for failed steps in pipeline UUID Z for workspace X repo Y and summarize key errors."
+      },
+      {
+        "title": "Trigger a pipeline",
+        "scenario": "Advanced control",
+        "prompt": "Run the pipeline for branch main in workspace X repo Y and then show the new pipeline status."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show the latest failed pipeline and the failed steps.",
+        "output": [
+          "Latest failed pipeline: #128 on main",
+          "Failed steps: Test, Deploy",
+          "Next step: download logs for these steps"
+        ]
+      },
+      {
+        "input": "Download failed logs for pipeline 123 and summarize errors.",
+        "output": [
+          "Downloaded 2 log files to .pipeline-logs",
+          "Primary error: missing environment variable",
+          "Suggested fix: add SECRET_KEY to pipeline variables"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Confirm workspace and repo before running commands",
+      "Start with helper commands for common workflows",
+      "Review log size before pasting full output"
+    ],
+    "anti_patterns": [
+      "Passing untrusted input directly into shell commands",
+      "Storing credentials in source control",
+      "Requesting artifact downloads via API"
+    ],
+    "faq": [
+      {
+        "question": "Do I need to install an MCP server?",
+        "answer": "No. The skill runs Node CLI commands directly."
+      },
+      {
+        "question": "Where do I put my credentials?",
+        "answer": "Create a credentials.json file using the provided template."
+      },
+      {
+        "question": "Can it download pipeline artifacts?",
+        "answer": "No. Bitbucket Cloud does not provide an artifact download API."
+      },
+      {
+        "question": "Where are logs saved?",
+        "answer": "Logs are saved under .pipeline-logs in your current project."
+      },
+      {
+        "question": "What permissions are required?",
+        "answer": "App password needs repository read and pipeline read or write."
+      },
+      {
+        "question": "Does it support git operations?",
+        "answer": "Yes. It can test auth and clone repositories using HTTPS."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "docs",
+      "type": "dir",
+      "path": "docs",
+      "children": [
+        {
+          "name": "bitbucket-api",
+          "type": "dir",
+          "path": "docs/bitbucket-api",
+          "children": [
+            {
+              "name": "bitbucket-cloud-api-openapi3.yml",
+              "type": "file",
+              "path": "docs/bitbucket-api/bitbucket-cloud-api-openapi3.yml",
+              "lines": 21838
+            },
+            {
+              "name": "bitbucket-cloud-api-v2.0-swagger.json",
+              "type": "file",
+              "path": "docs/bitbucket-api/bitbucket-cloud-api-v2.0-swagger.json",
+              "lines": 1
+            }
+          ]
+        },
+        {
+          "name": "ARTIFACTS_RESEARCH.md",
+          "type": "file",
+          "path": "docs/ARTIFACTS_RESEARCH.md",
+          "lines": 175
+        },
+        {
+          "name": "GIT_OPERATIONS.md",
+          "type": "file",
+          "path": "docs/GIT_OPERATIONS.md",
+          "lines": 201
+        },
+        {
+          "name": "PATTERNS.md",
+          "type": "file",
+          "path": "docs/PATTERNS.md",
+          "lines": 596
+        },
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "docs/README.md",
+          "lines": 142
+        },
+        {
+          "name": "REFERENCE.md",
+          "type": "file",
+          "path": "docs/REFERENCE.md",
+          "lines": 432
+        },
+        {
+          "name": "TROUBLESHOOTING.md",
+          "type": "file",
+          "path": "docs/TROUBLESHOOTING.md",
+          "lines": 445
+        }
+      ]
+    },
+    {
+      "name": "lib",
+      "type": "dir",
+      "path": "lib",
+      "children": [
+        {
+          "name": "helpers.js",
+          "type": "file",
+          "path": "lib/helpers.js",
+          "lines": 468
+        }
+      ]
+    },
+    {
+      "name": "CHANGELOG.md",
+      "type": "file",
+      "path": "CHANGELOG.md",
+      "lines": 226
+    },
+    {
+      "name": "CONTRIBUTING.md",
+      "type": "file",
+      "path": "CONTRIBUTING.md",
+      "lines": 268
+    },
+    {
+      "name": "credentials.json.template",
+      "type": "file",
+      "path": "credentials.json.template",
+      "lines": 14
+    },
+    {
+      "name": "install.ps1",
+      "type": "file",
+      "path": "install.ps1",
+      "lines": 46
+    },
+    {
+      "name": "install.sh",
+      "type": "file",
+      "path": "install.sh",
+      "lines": 307
+    },
+    {
+      "name": "LICENSE",
+      "type": "file",
+      "path": "LICENSE",
+      "lines": 54
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 599
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 412
+    },
+    {
+      "name": "smoke-test.sh",
+      "type": "file",
+      "path": "smoke-test.sh",
+      "lines": 226
+    },
+    {
+      "name": "TESTING.md",
+      "type": "file",
+      "path": "TESTING.md",
+      "lines": 364
+    }
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:42:05.482Z",
+    "slug": "davila7-gdpr-dsgvo-expert",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/enterprise-communication/gdpr-dsgvo-expert",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "25f92129305110590b05d2a1a6d9f679b71e5ca7a96997c4decfa2667aca2373",
+    "tree_hash": "09b39de90a8f545c66d28a429eae048b35c19695a4aa6eaa31aeae402ab33d00"
+  },
+  "skill": {
+    "name": "gdpr-dsgvo-expert",
+    "description": "Senior GDPR/DSGVO expert and internal/external auditor for data protection compliance. Provides EU GDPR and German DSGVO expertise, privacy impact assessments, data protection auditing, and compliance verification. Use for GDPR compliance assessments, privacy audits, data protection planning, and regulatory compliance verification.",
+    "summary": "Senior GDPR/DSGVO expert and internal/external auditor for data protection compliance. Provides EU G...",
+    "icon": "⚖️",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "legal",
+    "tags": [
+      "gdpr",
+      "data-protection",
+      "privacy-compliance",
+      "dsgvo",
+      "audit"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation-based skill providing GDPR/DSGVO compliance expertise. Contains only text-based guidance with no executable code, network operations, or file system access. All 43 static findings are false positives caused by the scanner misidentifying GDPR legal terminology as cryptographic terms and ASCII tree diagrams as shell commands.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 252
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 252,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 254
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 254,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 258
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 258,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 260
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 260,
+            "line_end": 261
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 261,
+            "line_end": 264
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 264,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 266
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 266,
+            "line_end": 267
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 576,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:42:05.482Z"
+  },
+  "content": {
+    "user_title": "Analyze GDPR compliance and data protection",
+    "value_statement": "Organizations face complex EU GDPR and German DSGVO requirements that require specialized expertise. This skill provides expert guidance on compliance frameworks, privacy impact assessments, data subject rights management, and regulatory verification.",
+    "seo_keywords": [
+      "GDPR compliance",
+      "DSGVO expert",
+      "data protection",
+      "privacy impact assessment",
+      "GDPR audit",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "data subject rights",
+      "privacy compliance"
+    ],
+    "actual_capabilities": [
+      "Design and implement GDPR/DSGVO compliance frameworks including legal basis and individual rights",
+      "Conduct Data Protection Impact Assessments (DPIA) with risk identification and mitigation",
+      "Manage data subject rights requests including access, erasure, and portability",
+      "Address German DSGVO specific requirements including BDSG integration and supervisory authority coordination",
+      "Prepare for external audits and supervisory authority investigations",
+      "Provide guidance on international data transfers under GDPR Chapter V"
+    ],
+    "limitations": [
+      "Provides guidance and recommendations only, does not replace legal counsel",
+      "Cannot access external regulatory databases or real-time legal updates",
+      "Does not file official documents with regulatory authorities",
+      "Cannot execute compliance checks on external systems"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data Protection Officers",
+        "title": "DPO Compliance Support",
+        "description": "Guidance on implementing data protection policies, DPO function support, and governance structure establishment."
+      },
+      {
+        "target_user": "Legal Teams",
+        "title": "Regulatory Compliance Analysis",
+        "description": "GDPR article-by-article compliance verification and regulatory reporting assistance."
+      },
+      {
+        "target_user": "IT Security Teams",
+        "title": "Privacy Technical Implementation",
+        "description": "Technical measures review for data protection by design and default implementation."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic GDPR Assessment",
+        "scenario": "Start compliance analysis",
+        "prompt": "Conduct a GDPR compliance assessment for our organization. We process customer data for [business purpose]. What are the key GDPR requirements we need to address?"
+      },
+      {
+        "title": "DPIA Framework",
+        "scenario": "Conduct privacy impact assessment",
+        "prompt": "Help us conduct a Data Protection Impact Assessment for [processing activity]. What factors determine if a DPIA is required and what should it include?"
+      },
+      {
+        "title": "Data Subject Rights",
+        "scenario": "Handle rights requests",
+        "prompt": "Our organization received a data subject access request. Walk us through the proper process for verification, fulfillment, and documentation under GDPR Article 15."
+      },
+      {
+        "title": "International Transfers",
+        "scenario": "Assess cross-border data flows",
+        "prompt": "We need to transfer personal data to [country]. Evaluate the GDPR Chapter V compliance requirements including adequacy decisions, SCCs, and supplementary measures."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help us understand our GDPR compliance obligations for our customer newsletter",
+        "output": [
+          "**GDPR Compliance Requirements for Newsletter**",
+          "• Legal Basis: Consent (Art. 6) or Legitimate Interest (must document balancing test)",
+          "• Data Collected: Email, name (minimize to necessity)",
+          "• Rights: Easy unsubscribe, 30-day erasure request handling",
+          "• Documentation: Maintain consent records with timestamp and version",
+          "• Privacy Notice: Update to include marketing communication details"
+        ]
+      },
+      {
+        "input": "What should our privacy notice include for our mobile app?",
+        "output": [
+          "**Mobile App Privacy Notice Requirements**",
+          "• Identity of data controller and DPO contact",
+          "• Categories of personal data collected (location, device ID, usage)",
+          "• Purposes of processing and legal basis for each",
+          "• Recipients or categories of recipients",
+          "• International transfer details and safeguards",
+          "• Retention periods for each data category",
+          "• User rights including complaint to supervisory authority"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Maintain comprehensive records of processing activities (Article 30) for all personal data processing",
+      "Conduct DPIAs before any high-risk processing activities involving large-scale data or special categories",
+      "Establish clear procedures for data subject rights requests with defined timelines and verification steps"
+    ],
+    "anti_patterns": [
+      "Processing personal data without documenting the legal basis for each processing activity",
+      "Collecting more data than necessary and failing to implement data minimization principles",
+      "Ignoring international data transfer requirements when using cloud services outside the EU"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill replace legal advice for GDPR compliance?",
+        "answer": "No. This skill provides guidance and recommendations but does not constitute legal advice. Consult qualified legal counsel."
+      },
+      {
+        "question": "What GDPR articles does this skill cover?",
+        "answer": "It covers key articles including lawful basis (6), individual rights (13-22), accountability (24-25), DPIA (35), and transfers (45-49)."
+      },
+      {
+        "question": "Can this skill integrate with our existing compliance tools?",
+        "answer": "The skill provides expertise guidance. Integration requires your team to apply recommendations to your specific tools and systems."
+      },
+      {
+        "question": "Is our data safe when using this skill?",
+        "answer": "Yes. This is a prompt-based skill with no network access, file system access, or external data transmission capabilities."
+      },
+      {
+        "question": "Why is our DPIA result showing high risk?",
+        "answer": "High-risk results indicate processing that requires additional safeguards or supervisory authority consultation under Article 35."
+      },
+      {
+        "question": "How does German DSGVO differ from EU GDPR?",
+        "answer": "German DSGVO includes national derogations and BDSG integration. This skill addresses both frameworks and their interaction."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "example_asset.txt",
+          "type": "file",
+          "path": "assets/example_asset.txt",
+          "lines": 25
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 35
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "example.py",
+          "type": "file",
+          "path": "scripts/example.py",
+          "lines": 20
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 268
+    }
+  ]
+}

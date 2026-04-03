@@ -1,0 +1,916 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:52:53.727Z",
+    "slug": "asmayaseen-multi-agent-patterns",
+    "source_url": "https://github.com/Asmayaseen/hackathon-2/tree/main/.claude/skills/multi-agent-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bc52376a02ec3ca4721a46aa25cb5ad92e1bb66bea5a41f6380c95dd456dc8fd",
+    "tree_hash": "58d317b10cf6203c538d726754b00256692c2dc98710b9f46b81237df07bd5e1"
+  },
+  "skill": {
+    "name": "multi-agent-patterns",
+    "description": "Design multi-agent architectures for complex tasks. Use when single-agent context limits are exceeded, when tasks decompose naturally into subtasks, or when specializing agents improves quality.",
+    "summary": "Design multi-agent architectures for complex tasks. Use when single-agent context limits are exceede...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Asmayaseen",
+    "license": "MIT",
+    "tags": [
+      "multi-agent-patterns",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": false,
+    "summary": "AI analysis failed after multiple attempts - MANUAL REVIEW REQUIRED before publishing. This skill cannot be auto-published until reviewed by a human.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/frameworks.md",
+            "line_start": 11,
+            "line_end": 89
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 89,
+            "line_end": 95
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 95,
+            "line_end": 143
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 143,
+            "line_end": 151
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 151,
+            "line_end": 192
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 192,
+            "line_end": 198
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 198,
+            "line_end": 249
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 249,
+            "line_end": 255
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 255,
+            "line_end": 267
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 267,
+            "line_end": 271
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 271,
+            "line_end": 288
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 288,
+            "line_end": 292
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 292,
+            "line_end": 318
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 318,
+            "line_end": 324
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 324,
+            "line_end": 338
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 338,
+            "line_end": 342
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 342,
+            "line_end": 378
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 378,
+            "line_end": 384
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 384,
+            "line_end": 405
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 405,
+            "line_end": 409
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 409,
+            "line_end": 432
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 211
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/frameworks.md",
+            "line_start": 300,
+            "line_end": 300
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 315,
+            "line_end": 315
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 424,
+            "line_end": 424
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 413,
+            "line_end": 413
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 244,
+            "line_end": 244
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 246,
+            "line_end": 246
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [
+      {
+        "title": "Ruby/shell backtick execution",
+        "description": "Ruby/shell backtick execution detected in code",
+        "locations": [
+          {
+            "file": "references/frameworks.md",
+            "line_start": 11,
+            "line_end": 89
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 89,
+            "line_end": 95
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 95,
+            "line_end": 143
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 143,
+            "line_end": 151
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 151,
+            "line_end": 192
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 192,
+            "line_end": 198
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 198,
+            "line_end": 249
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 249,
+            "line_end": 255
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 255,
+            "line_end": 267
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 267,
+            "line_end": 271
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 271,
+            "line_end": 288
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 288,
+            "line_end": 292
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 292,
+            "line_end": 318
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 318,
+            "line_end": 324
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 324,
+            "line_end": 338
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 338,
+            "line_end": 342
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 342,
+            "line_end": 378
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 378,
+            "line_end": 384
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 384,
+            "line_end": 405
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 405,
+            "line_end": 409
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 409,
+            "line_end": 432
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 76
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 76,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 211
+          }
+        ]
+      },
+      {
+        "title": "Python file write/append",
+        "description": "Python file write/append detected in code",
+        "locations": [
+          {
+            "file": "references/frameworks.md",
+            "line_start": 300,
+            "line_end": 300
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 315,
+            "line_end": 315
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 424,
+            "line_end": 424
+          }
+        ]
+      },
+      {
+        "title": "Python os file operations",
+        "description": "Python os file operations detected in code",
+        "locations": [
+          {
+            "file": "references/frameworks.md",
+            "line_start": 413,
+            "line_end": 413
+          }
+        ]
+      },
+      {
+        "title": "Weak cryptographic algorithm",
+        "description": "Weak cryptographic algorithm detected in code",
+        "locations": [
+          {
+            "file": "references/frameworks.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "references/frameworks.md",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 106,
+            "line_end": 106
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 107,
+            "line_end": 107
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 108,
+            "line_end": 108
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 112,
+            "line_end": 112
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 113,
+            "line_end": 113
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 114,
+            "line_end": 114
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 118,
+            "line_end": 118
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 118,
+            "line_end": 118
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 54,
+            "line_end": 54
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 55,
+            "line_end": 55
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 70,
+            "line_end": 70
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 86,
+            "line_end": 86
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 86,
+            "line_end": 86
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 91,
+            "line_end": 91
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 96,
+            "line_end": 96
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 113,
+            "line_end": 113
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 123,
+            "line_end": 123
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 135,
+            "line_end": 135
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 159,
+            "line_end": 159
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 229
+          }
+        ]
+      },
+      {
+        "title": "Certificate/key files",
+        "description": "Certificate/key files detected in code",
+        "locations": [
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 368,
+            "line_end": 368
+          }
+        ]
+      },
+      {
+        "title": "System reconnaissance",
+        "description": "System reconnaissance detected in code",
+        "locations": [
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 11,
+            "line_end": 14
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 130,
+            "line_end": 130
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 154,
+            "line_end": 154
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 162,
+            "line_end": 162
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 317,
+            "line_end": 317
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 340,
+            "line_end": 340
+          },
+          {
+            "file": "scripts/coordination.py",
+            "line_start": 429,
+            "line_end": 429
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 110
+          }
+        ]
+      },
+      {
+        "title": "Hardcoded URL",
+        "description": "Hardcoded URL detected in code",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 244,
+            "line_end": 244
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 246,
+            "line_end": 246
+          }
+        ]
+      },
+      {
+        "title": "Hidden file access",
+        "description": "Hidden file access detected in code",
+        "locations": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "title": "HTTP client library",
+        "description": "HTTP client library detected in code",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 202
+          }
+        ]
+      },
+      {
+        "title": "[HEURISTIC] DANGEROUS COMBINATION: Code execution + Network + Credential access",
+        "description": "[HEURISTIC] DANGEROUS COMBINATION: Code execution + Network + Credential access detected in code",
+        "locations": [
+          {
+            "file": "multiple",
+            "line_start": 1,
+            "line_end": 1
+          }
+        ]
+      },
+      {
+        "title": "[HEURISTIC] SUSPICIOUS COMBINATION: Filesystem + Credentials + Network",
+        "description": "[HEURISTIC] SUSPICIOUS COMBINATION: Filesystem + Credentials + Network detected in code",
+        "locations": [
+          {
+            "file": "multiple",
+            "line_start": 1,
+            "line_end": 1
+          }
+        ]
+      }
+    ],
+    "files_scanned": 5,
+    "total_lines": 1367,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:52:53.727Z"
+  },
+  "content": {
+    "user_title": "Multi Agent Patterns",
+    "value_statement": "An AI skill for Claude, Codex, and Claude Code",
+    "seo_keywords": [
+      "multi-agent-patterns",
+      "ai",
+      "skill",
+      "claude"
+    ],
+    "actual_capabilities": [],
+    "limitations": [],
+    "use_cases": [],
+    "prompt_templates": [],
+    "output_examples": [],
+    "best_practices": [],
+    "anti_patterns": [],
+    "faq": []
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "frameworks.md",
+          "type": "file",
+          "path": "references/frameworks.md",
+          "lines": 433
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "coordination.py",
+          "type": "file",
+          "path": "scripts/coordination.py",
+          "lines": 439
+        },
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 32
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 255
+    }
+  ]
+}

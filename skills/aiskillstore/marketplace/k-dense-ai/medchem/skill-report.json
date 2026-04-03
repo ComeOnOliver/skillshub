@@ -1,0 +1,260 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:30:13.559Z",
+    "slug": "k-dense-ai-medchem",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/medchem",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e9bcf6e574d720e9f1915e63887b3e6e17b8cfeb0753ba1446703089f4406966",
+    "tree_hash": "ab2681eff4689b5ca4b79fa1dd11a948f84f8ce8c43bc9ab55fdcc00923aed40"
+  },
+  "skill": {
+    "name": "medchem",
+    "description": "Medicinal chemistry filters. Apply drug-likeness rules (Lipinski, Veber), PAINS filters, structural alerts, complexity metrics, for compound prioritization and library filtering.",
+    "summary": "Medicinal chemistry filters. Apply drug-likeness rules (Lipinski, Veber), PAINS filters, structural ...",
+    "icon": "⚗️",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Apache-2.0 license",
+    "category": "data",
+    "tags": [
+      "drug-discovery",
+      "chemistry",
+      "molecular-filtering",
+      "rdkit"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 288 static findings are false positives. The static analyzer misidentified markdown code fences (backticks) as shell execution, Python file operations as Node.js fs, medicinal chemistry terminology (MD5, DES) as cryptographic weaknesses, and molecule validation as reconnaissance. This is a legitimate drug discovery library with no malicious code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 396
+          },
+          {
+            "file": "references/api_guide.md",
+            "line_start": 12,
+            "line_end": 581
+          },
+          {
+            "file": "references/rules_catalog.md",
+            "line_start": 31,
+            "line_end": 577
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/filter_molecules.py",
+            "line_start": 209,
+            "line_end": 392
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 402,
+            "line_end": 403
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 3480,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:30:13.559Z"
+  },
+  "content": {
+    "user_title": "Filter molecules by drug-likeness rules",
+    "value_statement": "Drug discovery requires filtering large compound libraries for drug-like properties. This skill applies established medicinal chemistry rules including Rule of Five, Veber, and PAINS filters to prioritize compounds and identify structural alerts efficiently.",
+    "seo_keywords": [
+      "medchem",
+      "drug discovery",
+      "molecular filtering",
+      "Lipinski rule",
+      "medicinal chemistry",
+      "RDKit",
+      "compound library",
+      "Claude Code",
+      "Claude",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Apply drug-likeness rules including Rule of Five, Veber, and CNS criteria",
+      "Detect structural alerts and PAINS patterns in molecules",
+      "Calculate molecular complexity metrics for synthetic accessibility",
+      "Filter compound libraries by physicochemical properties",
+      "Identify specific chemical groups like hinge binders and Michael acceptors"
+    ],
+    "limitations": [
+      "Does not perform molecular docking or binding affinity prediction",
+      "Does not generate or modify molecular structures",
+      "Does not access external databases or APIs",
+      "Results should be combined with domain expertise for final decisions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Computational chemists",
+        "title": "Prioritize lead compounds",
+        "description": "Filter virtual screening hits to identify drug-like candidates for synthesis."
+      },
+      {
+        "target_user": "Medicinal chemists",
+        "title": "Assess compound quality",
+        "description": "Evaluate synthesized compounds against established medicinal chemistry rules."
+      },
+      {
+        "target_user": "Drug discovery teams",
+        "title": "Library design",
+        "description": "Design focused compound libraries with optimal physicochemical properties."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic filtering",
+        "scenario": "Apply drug-likeness rules",
+        "prompt": "Filter this list of SMILES using the Rule of Five and identify compounds that pass."
+      },
+      {
+        "title": "Structural alerts",
+        "scenario": "Detect problematic molecules",
+        "prompt": "Check these molecules for PAINS patterns and common structural alerts. Report any alerts found."
+      },
+      {
+        "title": "Lead optimization",
+        "scenario": "Apply strict criteria",
+        "prompt": "Apply lead-like criteria and Lilly demerits filter to prioritize compounds for optimization."
+      },
+      {
+        "title": "Comprehensive analysis",
+        "scenario": "Multi-filter workflow",
+        "prompt": "Apply multiple filters including Rule of Five, NIBR filters, and complexity metrics to my compound library."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Filter this SMILES list for drug-likeness: CC(=O)OC1=CC=CC=C1C(=O)O, c1ccccc1, CCN",
+        "output": [
+          "Aspirin: Passes Rule of Five",
+          "Benzene: Passes Ro5 but fails H-bond donor/acceptor requirements",
+          "Ethylamine: Passes Rule of Five",
+          "Summary: 2 of 3 molecules pass drug-likeness criteria"
+        ]
+      },
+      {
+        "input": "Check for PAINS patterns in these molecules",
+        "output": [
+          "No PAINS patterns detected in the first molecule",
+          "Second molecule contains rhodanine substructure (PAINS alert)",
+          "Third molecule flagged for catechol pattern"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Combine multiple filter types for comprehensive assessment",
+      "Use parallel processing for large compound libraries",
+      "Document filtering decisions for reproducibility"
+    ],
+    "anti_patterns": [
+      "Blindly accepting or rejecting compounds based solely on rule pass/fail",
+      "Ignoring structural alerts in favor of property-based rules alone",
+      "Applying strict filters too early in the discovery pipeline"
+    ],
+    "faq": [
+      {
+        "question": "What is the Rule of Five?",
+        "answer": "Lipinski's Rule of Five predicts oral bioavailability based on MW ≤ 500, LogP ≤ 5, HBD ≤ 5, HBA ≤ 10."
+      },
+      {
+        "question": "What are PAINS filters?",
+        "answer": "Pan Assay Interference compounds are molecules that show activity through non-specific mechanisms."
+      },
+      {
+        "question": "Can I use this for covalent inhibitor design?",
+        "answer": "Yes, the skill can identify Michael acceptors and other reactive groups useful for covalent inhibitors."
+      },
+      {
+        "question": "What file formats are supported?",
+        "answer": "Input formats include CSV, TSV, SDF, and plain text files with SMILES."
+      },
+      {
+        "question": "Does this require RDKit?",
+        "answer": "Yes, medchem depends on RDKit for molecular operations. Install via pip install medchem."
+      },
+      {
+        "question": "How are results structured?",
+        "answer": "Results include pass/fail status for each rule, detailed violation information, and demerit scores."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_guide.md",
+          "type": "file",
+          "path": "references/api_guide.md",
+          "lines": 601
+        },
+        {
+          "name": "rules_catalog.md",
+          "type": "file",
+          "path": "references/rules_catalog.md",
+          "lines": 605
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "filter_molecules.py",
+          "type": "file",
+          "path": "scripts/filter_molecules.py",
+          "lines": 419
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 406
+    }
+  ]
+}

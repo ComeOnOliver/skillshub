@@ -1,0 +1,275 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:44:50.895Z",
+    "slug": "wshobson-risk-metrics-calculation",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/quantitative-trading/skills/risk-metrics-calculation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1f5fb5c6ba77b2dbce65550f28f1d22aefc6ecf65b30cfbb23de98202defb3b4",
+    "tree_hash": "762e2d54de88661e1a9071f27c6c56406d717981808c9a96db482b302574f77a"
+  },
+  "skill": {
+    "name": "risk-metrics-calculation",
+    "description": "Calculate portfolio risk metrics including VaR, CVaR, Sharpe, Sortino, and drawdown analysis. Use when measuring portfolio risk, implementing risk limits, or building risk monitoring systems.",
+    "summary": "Calculate portfolio risk metrics including VaR, CVaR, Sharpe, Sortino, and drawdown analysis. Use wh...",
+    "icon": "📉",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "NOASSERTION",
+    "category": "data",
+    "tags": [
+      "risk",
+      "portfolio",
+      "metrics",
+      "trading",
+      "analytics"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing Python code examples for financial risk metrics. No executable code, file access, or network calls. Pure educational content matching stated purpose. Pre-computed static findings (100/100 risk) are false positives from scanner misidentifying Python f-strings as shell commands and financial abbreviations as cryptographic algorithms.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 553,
+            "line_end": 553
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 554,
+            "line_end": 554
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 555,
+            "line_end": 555
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 336
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 336,
+            "line_end": 340
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 340,
+            "line_end": 414
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 414,
+            "line_end": 418
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 418,
+            "line_end": 518
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 518,
+            "line_end": 522
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 522,
+            "line_end": 533
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 732,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:44:50.895Z"
+  },
+  "content": {
+    "user_title": "Calculate portfolio risk metrics",
+    "value_statement": "You need accurate risk measurements for portfolio management. This skill provides formulas and examples for VaR, Sharpe ratio, drawdowns, and other key metrics.",
+    "seo_keywords": [
+      "portfolio risk metrics",
+      "VaR calculation",
+      "Sharpe ratio",
+      "drawdown analysis",
+      "risk management",
+      "quantitative trading",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Compute volatility, beta, and downside deviation for return series",
+      "Calculate historical and parametric Value at Risk (VaR)",
+      "Generate drawdown analysis with maximum drawdown statistics",
+      "Calculate Sharpe, Sortino, Calmar, and Omega risk-adjusted ratios",
+      "Perform portfolio risk decomposition and stress testing"
+    ],
+    "limitations": [
+      "Documentation only - no executable code provided",
+      "Requires user to implement with their own data",
+      "Assumes 252 trading days per year for annualization",
+      "No real-time data integration or live monitoring"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Quantitative analyst",
+        "title": "Risk model implementation",
+        "description": "Reference implementation for VaR, CVaR, and drawdown calculations in Python."
+      },
+      {
+        "target_user": "Portfolio manager",
+        "title": "Risk reporting templates",
+        "description": "Standardized formulas for weekly risk reports and limit monitoring."
+      },
+      {
+        "target_user": "Financial developer",
+        "title": "Risk calculation library",
+        "description": "Code snippets for building risk management systems and dashboards."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic risk metrics",
+        "scenario": "Single asset analysis",
+        "prompt": "Calculate volatility, Sharpe ratio, and max drawdown for this return series using the formulas provided."
+      },
+      {
+        "title": "VaR calculation",
+        "scenario": "Tail risk measurement",
+        "prompt": "Compute 95% historical VaR and CVaR for these daily returns and explain what the numbers mean."
+      },
+      {
+        "title": "Portfolio risk",
+        "scenario": "Multi-asset portfolio",
+        "prompt": "Using the portfolio risk class, calculate total portfolio volatility and component risk contributions."
+      },
+      {
+        "title": "Rolling risk analysis",
+        "scenario": "Time-varying risk",
+        "prompt": "Implement 63-day rolling volatility and Sharpe ratio for monitoring risk changes over time."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Calculate risk metrics for my strategy returns",
+        "output": [
+          "Annual volatility: 15.2%",
+          "Sharpe ratio: 0.85",
+          "Max drawdown: -12.4%",
+          "95% VaR: -2.1% daily",
+          "Current drawdown: -3.8%"
+        ]
+      },
+      {
+        "input": "Show portfolio risk decomposition",
+        "output": [
+          "Total portfolio volatility: 12.3%",
+          "Asset A contribution: 4.2%",
+          "Asset B contribution: 5.1%",
+          "Asset C contribution: 3.0%",
+          "Diversification ratio: 1.32"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use multiple risk metrics for comprehensive analysis",
+      "Consider tail risk with both VaR and CVaR",
+      "Apply appropriate time horizons for your strategy"
+    ],
+    "anti_patterns": [
+      "Relying solely on volatility as risk measure",
+      "Ignoring drawdown periods in analysis",
+      "Using inappropriate confidence levels"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Claude and Claude Code?",
+        "answer": "Yes, the documentation works across all platforms."
+      },
+      {
+        "question": "What data do I need to provide?",
+        "answer": "You need return series data; no market data fetching is included."
+      },
+      {
+        "question": "Can I use this for real-time risk monitoring?",
+        "answer": "Yes, implement the rolling metrics for continuous monitoring."
+      },
+      {
+        "question": "Does it handle different time frequencies?",
+        "answer": "Examples use daily data but formulas work for any frequency."
+      },
+      {
+        "question": "What if my returns are not normally distributed?",
+        "answer": "Use historical VaR or Cornish-Fisher adjustment for skewed data."
+      },
+      {
+        "question": "How does this compare to commercial risk systems?",
+        "answer": "This provides core calculations; enterprise systems offer more features."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 556
+    }
+  ]
+}

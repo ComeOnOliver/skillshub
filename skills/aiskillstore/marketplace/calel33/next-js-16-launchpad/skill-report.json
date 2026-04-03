@@ -1,0 +1,339 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:44:56.019Z",
+    "slug": "calel33-next-js-16-launchpad",
+    "source_url": "https://github.com/Calel33/my-flash-ui-app--1-/tree/main/skills/nextjs16-core",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "dce9eba4d69e23a99cdfdc2d90d8681c697334c45a7a23f799f6825368bd505c",
+    "tree_hash": "5eea26d00a99bbda84288d35f462e838b23b9ac294d388a91281d5ef3a705570"
+  },
+  "skill": {
+    "name": "next-js-16-launchpad",
+    "description": "Next.js 16 with Turbopack, Cache Components, and proxy.ts. Use for bootstrapping, migrating, and building with App Router and React 19.",
+    "summary": "Next.js 16 with Turbopack, Cache Components, and proxy.ts. Use for bootstrapping, migrating, and bui...",
+    "icon": "⚡",
+    "version": "1.1.0",
+    "author": "Calel33",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "nextjs",
+      "react",
+      "turbopack",
+      "app-router",
+      "web-dev"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 849 static findings are false positives. The skill is a legitimate Next.js 16 documentation resource. External commands, network calls, and crypto references are all from markdown documentation showing code examples, not actual executable code with security implications.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 40
+          },
+          {
+            "file": "references/NEXTJS_16_COMPLETE_GUIDE.md",
+            "line_start": 54,
+            "line_end": 63
+          },
+          {
+            "file": "references/core-workflows.md",
+            "line_start": 10,
+            "line_end": 13
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 96
+          },
+          {
+            "file": "assets/app-router-starter/app/dashboard/page.tsx",
+            "line_start": 6,
+            "line_end": 9
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 16,
+    "total_lines": 3648,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:44:56.019Z"
+  },
+  "content": {
+    "user_title": "Bootstrap Next.js 16 projects with Turbopack",
+    "value_statement": "Get started with Next.js 16 features including Turbopack, Cache Components, and proxy.ts. This reference includes migration guides, production patterns, and ready-to-use code examples for building modern React applications.",
+    "seo_keywords": [
+      "Next.js 16",
+      "Turbopack",
+      "Cache Components",
+      "React 19",
+      "App Router",
+      "proxy.ts",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Next.js migration"
+    ],
+    "actual_capabilities": [
+      "Create new Next.js 16 projects with Turbopack enabled by default",
+      "Migrate existing Next.js projects to version 16 with codemods",
+      "Implement Cache Components with use cache directive and cacheLife",
+      "Set up proxy.ts for authentication and request handling",
+      "Build Server Components and Client Components patterns",
+      "Configure streaming with Suspense for better UX"
+    ],
+    "limitations": [
+      "Does not execute code or modify files directly",
+      "Does not include runtime dependencies or npm packages",
+      "Does not provide deployment infrastructure or CI/CD pipelines",
+      "Focused on App Router patterns, not Pages Router"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Quick start Next.js 16",
+        "description": "Set up a new Next.js 16 project with recommended defaults and Turbopack enabled."
+      },
+      {
+        "target_user": "Backend engineers",
+        "title": "Migrate to proxy.ts",
+        "description": "Move from middleware.ts to proxy.ts for Node.js runtime request handling."
+      },
+      {
+        "target_user": "Full-stack teams",
+        "title": "Production patterns",
+        "description": "Apply caching strategies, streaming, and server actions in production applications."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New project setup",
+        "scenario": "Starting Next.js 16 app",
+        "prompt": "Show me how to create a new Next.js 16 project with Turbopack and TypeScript using the recommended defaults."
+      },
+      {
+        "title": "Cache implementation",
+        "scenario": "Adding caching to components",
+        "prompt": "How do I use Cache Components with use cache and cacheLife in Next.js 16? Show me a complete example."
+      },
+      {
+        "title": "Migration guide",
+        "scenario": "Upgrading from Next.js 15",
+        "prompt": "What are the key changes when migrating from Next.js 15 to 16? Include async params, proxy.ts migration, and config updates."
+      },
+      {
+        "title": "Production patterns",
+        "scenario": "Building for production",
+        "prompt": "Show me production patterns for Next.js 16 including streaming with Suspense, cache tags, and authenticated proxy boundaries."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I create a new Next.js 16 project?",
+        "output": [
+          "Run: npx create-next-app@latest my-app",
+          "Recommended defaults: TypeScript, ESLint, Tailwind CSS, App Router, Turbopack",
+          "For existing projects: npx @next/codemod@canary upgrade latest"
+        ]
+      },
+      {
+        "input": "What is use cache in Next.js 16?",
+        "output": [
+          "Cache Components use explicit caching with 'use cache' directive",
+          "Use cacheLife('hours') to set duration",
+          "Cannot mix with cookies() or headers() - extract before caching",
+          "Combine with cacheTag for invalidation"
+        ]
+      },
+      {
+        "input": "How do I replace middleware.ts with proxy.ts?",
+        "output": [
+          "Rename middleware.ts to proxy.ts",
+          "Export proxy function instead of middleware object",
+          "Use Node.js runtime (not Edge)",
+          "Handle auth, redirects, and rewrites in the proxy function"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep Turbopack enabled for 2-5x faster builds and faster development cycles",
+      "Extract cookies and headers before caching to avoid dynamic data in cached components",
+      "Use Suspense boundaries with Cache Components for progressive streaming"
+    ],
+    "anti_patterns": [
+      "Mixing 'use cache' with cookies(), headers(), or other runtime APIs",
+      "Running proxy.ts on Edge runtime instead of Node.js",
+      "Missing Suspense boundaries when Cache Components are enabled"
+    ],
+    "faq": [
+      {
+        "question": "Is Turbopack production ready?",
+        "answer": "Yes, Turbopack is stable and default in Next.js 16 with 2-5x faster builds."
+      },
+      {
+        "question": "How does use cache differ from PPR?",
+        "answer": "Cache Components replace experimental PPR with explicit opt-in caching via 'use cache'."
+      },
+      {
+        "question": "Can I use middleware.ts in Next.js 16?",
+        "answer": "No, middleware.ts is replaced by proxy.ts for Node.js runtime request handling."
+      },
+      {
+        "question": "Do I need to update async params?",
+        "answer": "Yes, params is now async in Next.js 16. Use await params in all page components."
+      },
+      {
+        "question": "What is the minimum Node.js version?",
+        "answer": "Next.js 16 requires Node.js 20.9.0 or higher (LTS versions only)."
+      },
+      {
+        "question": "How do I cache data with specific durations?",
+        "answer": "Use 'use cache' with cacheLife('seconds', 'minutes', 'hours', 'days') for fine-grained control."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "app-router-starter",
+          "type": "dir",
+          "path": "assets/app-router-starter",
+          "children": [
+            {
+              "name": "app",
+              "type": "dir",
+              "path": "assets/app-router-starter/app",
+              "children": [
+                {
+                  "name": "dashboard",
+                  "type": "dir",
+                  "path": "assets/app-router-starter/app/dashboard"
+                },
+                {
+                  "name": "layout.tsx",
+                  "type": "file",
+                  "path": "assets/app-router-starter/app/layout.tsx",
+                  "lines": 30
+                },
+                {
+                  "name": "page.tsx",
+                  "type": "file",
+                  "path": "assets/app-router-starter/app/page.tsx",
+                  "lines": 50
+                },
+                {
+                  "name": "proxy.ts",
+                  "type": "file",
+                  "path": "assets/app-router-starter/app/proxy.ts",
+                  "lines": 19
+                }
+              ]
+            },
+            {
+              "name": "next.config.ts",
+              "type": "file",
+              "path": "assets/app-router-starter/next.config.ts",
+              "lines": 17
+            },
+            {
+              "name": "README.md",
+              "type": "file",
+              "path": "assets/app-router-starter/README.md",
+              "lines": 11
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "core-workflows.md",
+          "type": "file",
+          "path": "references/core-workflows.md",
+          "lines": 591
+        },
+        {
+          "name": "NEXTJS_16_COMPLETE_GUIDE.md",
+          "type": "file",
+          "path": "references/NEXTJS_16_COMPLETE_GUIDE.md",
+          "lines": 1614
+        },
+        {
+          "name": "nextjs16-advanced-patterns.md",
+          "type": "file",
+          "path": "references/nextjs16-advanced-patterns.md",
+          "lines": 191
+        },
+        {
+          "name": "nextjs16-migration-playbook.md",
+          "type": "file",
+          "path": "references/nextjs16-migration-playbook.md",
+          "lines": 89
+        },
+        {
+          "name": "nextjs16-reference.md",
+          "type": "file",
+          "path": "references/nextjs16-reference.md",
+          "lines": 291
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "bootstrap-nextjs16.ps1",
+          "type": "file",
+          "path": "scripts/bootstrap-nextjs16.ps1",
+          "lines": 62
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 319
+    }
+  ]
+}

@@ -1,0 +1,586 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:21:44.165Z",
+    "slug": "0xdarkmatter-sqlite-ops",
+    "source_url": "https://github.com/0xDarkMatter/claude-mods/tree/main/skills/sqlite-ops",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0b5851f14a0c887fed0df4bdb76fa74b8a12c0cda433d1bd553c23976b132202",
+    "tree_hash": "6d40fbbb1f0c13a8a92db467436cac8c4efdbb11eaae2883be404cb327cce9ac"
+  },
+  "skill": {
+    "name": "sqlite-ops",
+    "description": "Patterns for SQLite databases in Python projects - state management, caching, and async operations. Triggers on: sqlite, sqlite3, aiosqlite, local database, database schema, migration, wal mode.",
+    "summary": "Patterns for SQLite databases in Python projects - state management, caching, and async operations. ...",
+    "icon": "🗄️",
+    "version": "1.0.0",
+    "author": "0xDarkMatter",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "sqlite",
+      "database",
+      "python",
+      "persistence",
+      "state-management"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing SQLite patterns for Python. All content is markdown reference material with code examples for user implementation. No executable code, network calls, or file system access operations exist in the skill. The static scanner misidentified code fence delimiters and documentation references as security findings. All 137 findings are false positives.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 7,
+            "line_end": 17
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 17,
+            "line_end": 21
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 21,
+            "line_end": 31
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 31,
+            "line_end": 37
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 37,
+            "line_end": 47
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 47,
+            "line_end": 51
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 51,
+            "line_end": 61
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 61,
+            "line_end": 65
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 65,
+            "line_end": 81
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 81,
+            "line_end": 85
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 85,
+            "line_end": 94
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 94,
+            "line_end": 100
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 100,
+            "line_end": 110
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 110,
+            "line_end": 114
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 114,
+            "line_end": 124
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 124,
+            "line_end": 128
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 128,
+            "line_end": 146
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 146,
+            "line_end": 150
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 150,
+            "line_end": 206
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 206,
+            "line_end": 210
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 210,
+            "line_end": 222
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 222,
+            "line_end": 226
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 226,
+            "line_end": 253
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 253,
+            "line_end": 257
+          },
+          {
+            "file": "references/async-patterns.md",
+            "line_start": 257,
+            "line_end": 288
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 7,
+            "line_end": 59
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 59,
+            "line_end": 63
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 63,
+            "line_end": 153
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 153,
+            "line_end": 157
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 157,
+            "line_end": 180
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 180,
+            "line_end": 188
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 188,
+            "line_end": 194
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 194,
+            "line_end": 198
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 198,
+            "line_end": 201
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 201,
+            "line_end": 207
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 207,
+            "line_end": 236
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 236,
+            "line_end": 242
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 242,
+            "line_end": 259
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 259,
+            "line_end": 263
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 263,
+            "line_end": 287
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 287,
+            "line_end": 291
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 291,
+            "line_end": 308
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 308,
+            "line_end": 312
+          },
+          {
+            "file": "references/migration-patterns.md",
+            "line_start": 312,
+            "line_end": 330
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 9,
+            "line_end": 25
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 25,
+            "line_end": 31
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 31,
+            "line_end": 55
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 55,
+            "line_end": 61
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 61,
+            "line_end": 86
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 86,
+            "line_end": 92
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 92,
+            "line_end": 110
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 110,
+            "line_end": 116
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 116,
+            "line_end": 153
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 153,
+            "line_end": 159
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 159,
+            "line_end": 189
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 189,
+            "line_end": 195
+          },
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 195,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 85
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/schema-patterns.md",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1138,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:21:44.165Z"
+  },
+  "content": {
+    "user_title": "Use SQLite databases in Python",
+    "value_statement": "Learn patterns for SQLite databases in Python projects. Includes connection management, async operations, migrations, and common schema designs for state, cache, and event logging.",
+    "seo_keywords": [
+      "sqlite python",
+      "sqlite3 patterns",
+      "aiosqlite async",
+      "database migrations",
+      "sqlite schema design",
+      "claude sqlite",
+      "codex database",
+      "claude-code python",
+      "wal mode sqlite",
+      "sqlite connection pool"
+    ],
+    "actual_capabilities": [
+      "Connection patterns with WAL mode and thread safety",
+      "Context manager transactions with rollback handling",
+      "Async CRUD operations using aiosqlite library",
+      "Database migration patterns with version tracking",
+      "Schema designs for state, cache, events, and queues",
+      "Batch operations and connection pooling patterns"
+    ],
+    "limitations": [
+      "Contains documentation only, not a library",
+      "Requires Python 3.8+ with sqlite3 or aiosqlite",
+      "Users must copy and adapt patterns manually",
+      "SQLite has limited ALTER TABLE support"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Python developers",
+        "title": "Build local data storage",
+        "description": "Implement local SQLite databases for state management and caching in Python applications."
+      },
+      {
+        "target_user": "MCP server builders",
+        "title": "Add persistence to servers",
+        "description": "Use SQLite patterns to persist data in Model Context Protocol servers."
+      },
+      {
+        "target_user": "Backend engineers",
+        "title": "Handle async database ops",
+        "description": "Apply async patterns for concurrent database operations in web services."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic connection",
+        "scenario": "Set up SQLite connection",
+        "prompt": "Show me how to connect to an SQLite database in Python with WAL mode and foreign keys enabled."
+      },
+      {
+        "title": "Async queries",
+        "scenario": "Run async database operations",
+        "prompt": "Write async CRUD functions using aiosqlite for a Python project."
+      },
+      {
+        "title": "Schema migration",
+        "scenario": "Manage database schema changes",
+        "prompt": "How do I create a migration system for SQLite that tracks version numbers?"
+      },
+      {
+        "title": "Performance tuning",
+        "scenario": "Optimize database performance",
+        "prompt": "What patterns improve SQLite performance for concurrent reads and writes in production?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me how to use SQLite for caching in Python.",
+        "output": [
+          "Create a cache table with TTL:",
+          "- Key column as PRIMARY KEY for fast lookups",
+          "- Expires_at column with datetime values",
+          "- Index on expires_at for cleanup queries",
+          "Use INSERT with ON CONFLICT to upsert cached values",
+          "Set TTL using datetime('now', '+1 hour') syntax",
+          "Cleanup expired entries with: DELETE FROM cache WHERE expires_at < datetime('now')"
+        ]
+      },
+      {
+        "input": "How do I implement a job queue with SQLite?",
+        "output": [
+          "Create queue table with status column:",
+          "- pending, processing, completed, failed states",
+          "- Priority column for ordering",
+          "- Timestamps for tracking",
+          "Claim jobs atomically using UPDATE with subquery",
+          "Mark jobs complete or failed with status updates",
+          "Use indexes on status and priority for fast polling"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use parameterized queries with ? placeholders to prevent SQL injection attacks.",
+      "Enable WAL mode with PRAGMA journal_mode=WAL for better concurrent read/write performance.",
+      "Use context managers or try/finally blocks to ensure connections are properly closed."
+    ],
+    "anti_patterns": [
+      "Do not concatenate user input directly into SQL strings - always use parameterized queries.",
+      "Do not use DELETE journal mode for web applications with concurrent access.",
+      "Do not skip error handling for database operations like locking and constraint violations."
+    ],
+    "faq": [
+      {
+        "question": "What Python versions support sqlite3?",
+        "answer": "Python 3.8+ includes sqlite3 in standard library. Use aiosqlite for async support on Python 3.8+."
+      },
+      {
+        "question": "What is the maximum database size?",
+        "answer": "SQLite supports databases up to 281 TB. Practical limits depend on filesystem and available disk space."
+      },
+      {
+        "question": "Can I use this with FastAPI or Flask?",
+        "answer": "Yes. Use WAL mode for concurrency, connection pooling for high traffic, and context managers for request-scoped connections."
+      },
+      {
+        "question": "Is data safe during power loss?",
+        "answer": "WAL mode with proper checkpoints protects data. Consider periodic VACUUM to maintain performance and integrity."
+      },
+      {
+        "question": "Why do I get 'database is locked'?",
+        "answer": "Default DELETE mode blocks reads during writes. Enable WAL mode for concurrent access. Keep transactions short."
+      },
+      {
+        "question": "How does this compare to PostgreSQL or MySQL?",
+        "answer": "SQLite is serverless, zero-configuration, and ideal for local storage. PostgreSQL and MySQL handle higher concurrency and replication."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "async-patterns.md",
+          "type": "file",
+          "path": "references/async-patterns.md",
+          "lines": 289
+        },
+        {
+          "name": "migration-patterns.md",
+          "type": "file",
+          "path": "references/migration-patterns.md",
+          "lines": 331
+        },
+        {
+          "name": "schema-patterns.md",
+          "type": "file",
+          "path": "references/schema-patterns.md",
+          "lines": 230
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 86
+    }
+  ]
+}

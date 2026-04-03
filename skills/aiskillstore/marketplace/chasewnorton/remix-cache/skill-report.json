@@ -1,0 +1,271 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:25:17.612Z",
+    "slug": "chasewnorton-remix-cache",
+    "source_url": "https://github.com/ChaseWNorton/remix-cache/tree/main/remix-cache-skill/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "40b8127089430e2a4bc81005e460f410f4573382444313fb6a0ebea98a42c931",
+    "tree_hash": "4f5ad270052a165cc693c9c46cfe2e38d5a4a9e4b9e432331346c06d73350092"
+  },
+  "skill": {
+    "name": "remix-cache",
+    "description": "A type-safe, Redis-backed caching library for Remix applications with SSE-based real-time invalidation, stale-while-revalidate, pattern matching, and automatic React revalidation. Use when working with Remix caching, Redis, cache invalidation, implementing caching strategies, or real-time data synchronization in Remix apps.",
+    "summary": "A type-safe, Redis-backed caching library for Remix applications with SSE-based real-time invalidati...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "ChaseWNorton",
+    "license": "MIT",
+    "tags": [
+      "remix",
+      "redis",
+      "caching",
+      "performance",
+      "server-side"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing markdown files with code examples. All 946 static findings are false positives from documentation code blocks. No executable code or malicious patterns present. Safe for marketplace publication.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 15025,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:25:17.612Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Implement Redis Caching in Remix",
+    "value_statement": "Remix applications often suffer from repeated database queries that slow down response times. This skill provides expert guidance on implementing type-safe Redis caching with real-time invalidation, stale-while-revalidate patterns, and automatic React revalidation.",
+    "seo_keywords": [
+      "remix-cache",
+      "redis caching remix",
+      "claude code skill",
+      "claude",
+      "codex",
+      "claude code",
+      "remix caching",
+      "server-side caching",
+      "react revalidation",
+      "cache invalidation"
+    ],
+    "actual_capabilities": [
+      "Create type-safe cache definitions with perfect TypeScript inference",
+      "Implement stale-while-revalidate and sliding window TTL strategies",
+      "Set up tag-based and pattern-based cache invalidation",
+      "Configure SSE-based real-time cache invalidation for React components",
+      "Implement circuit breaker patterns for resilient cache operations",
+      "Optimize for both server and serverless deployment modes"
+    ],
+    "limitations": [
+      "This is a documentation skill that provides guidance; it does not execute code",
+      "Requires existing remix-cache library installation to implement solutions",
+      "Does not provision Redis infrastructure or manage Redis servers",
+      "Cannot debug issues in user code without access to their project"
+    ],
+    "use_cases": [
+      {
+        "title": "Add Caching to Remix Loaders",
+        "description": "Reduce database load and improve response times by caching loader results with configurable TTL and automatic invalidation.",
+        "target_user": "Remix application developers building data-heavy routes"
+      },
+      {
+        "title": "Real-Time Dashboard Updates",
+        "description": "Implement live data updates using SSE-based cache invalidation so dashboards always show fresh data without manual refresh.",
+        "target_user": "Full-stack developers building real-time admin panels"
+      },
+      {
+        "title": "API Response Optimization",
+        "description": "Cache expensive API responses with stale-while-revalidate patterns to maintain fast response times even during data refreshes.",
+        "target_user": "Backend engineers optimizing high-traffic API endpoints"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Cache Setup",
+        "prompt": "How do I set up redis caching in my Remix application using remix-cache? Show me the basic configuration and how to create a cache for my user data loader.",
+        "scenario": "Setting up caching for the first time"
+      },
+      {
+        "title": "Cache Invalidation",
+        "prompt": "I need to invalidate my cache when user profiles are updated. Show me how to use tag-based and pattern-based invalidation with remix-cache.",
+        "scenario": "Implementing cache invalidation strategies"
+      },
+      {
+        "title": "Real-Time Revalidation",
+        "prompt": "How do I set up SSE-based real-time cache invalidation so my React components automatically update when cached data changes?",
+        "scenario": "Adding live updates to cached data"
+      },
+      {
+        "title": "Advanced TTL Strategies",
+        "prompt": "Explain the difference between stale-while-revalidate, sliding window, and conditional TTL strategies. When should I use each one?",
+        "scenario": "Choosing the right caching strategy"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I set up caching for my product listings?",
+        "output": [
+          "Here is a complete setup for caching product listings:",
+          "",
+          "1. First, create a cache definition:",
+          "```typescript",
+          "// app/cache.server.ts",
+          "import { createCache } from \"remix-cache/server\"",
+          "",
+          "export const cache = createCache({",
+          "  redis: { host: process.env.REDIS_HOST, port: 6379 },",
+          "  prefix: \"myapp\",",
+          "})",
+          "",
+          "export const productCache = cache.define({",
+          "  name: \"products\",",
+          "  key: (category: string) => category,",
+          "  fetch: async (category: string) => {",
+          "    return db.product.findMany({ where: { category } })",
+          "  },",
+          "  ttl: 300, // 5 minutes",
+          "})",
+          "```",
+          "",
+          "2. Use in your loader:",
+          "```typescript",
+          "export async function loader({ params }: LoaderFunctionArgs) {",
+          "  const products = await productCache.get(params.category)",
+          "  return json({ products })",
+          "}",
+          "```"
+        ]
+      },
+      {
+        "input": "How do I invalidate cache when products are updated?",
+        "output": [
+          "Here are three ways to invalidate your product cache:",
+          "",
+          "**By Tag:**",
+          "```typescript",
+          "await cache.invalidateByTag(\"products\")",
+          "```",
+          "",
+          "**By Pattern:**",
+          "```typescript",
+          "await cache.invalidateByPattern(\"products:*\")",
+          "```",
+          "",
+          "**By Key:**",
+          "```typescript",
+          "await cache.invalidate({ key: \"myapp:products:electronics\" })",
+          "```"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use tag-based invalidation for related data changes (e.g., invalidate \"products\" tag when any product is updated)",
+      "Implement stale-while-revalidate for high-traffic APIs to ensure zero latency during cache refreshes",
+      "Configure circuit breakers to prevent cascade failures when Redis becomes unavailable"
+    ],
+    "anti_patterns": [
+      "Avoid using very long TTLs without proper invalidation - stale data frustrates users",
+      "Do not cache user-specific sensitive data without proper access controls",
+      "Avoid caching entire page responses when individual component caching would be more effective"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill execute code in my project?",
+        "answer": "No. This is a documentation skill that provides expert guidance on using the remix-cache library. It does not modify or execute any code in your project."
+      },
+      {
+        "question": "What Redis providers work with remix-cache?",
+        "answer": " remix-cache works with any Redis server compatible with the Redis protocol, including Redis Cloud, AWS ElastiCache, Upstash, and self-hosted Redis."
+      },
+      {
+        "question": "How does stale-while-revalidate work?",
+        "answer": "When cached data expires, remix-cache returns the stale data immediately while fetching fresh data in the background. Users see fast responses even during cache refreshes."
+      },
+      {
+        "question": "Can I use this in serverless environments?",
+        "answer": "Yes. Enable serverless mode in the cache config to use versioned Redis keys and disable local caching, which works well with AWS Lambda and similar platforms."
+      },
+      {
+        "question": "How do I test cache implementations?",
+        "answer": "Use the mock cache adapter for unit tests. For integration tests, use a test Redis instance. The skill documentation includes testing patterns and strategies."
+      },
+      {
+        "question": "What happens when Redis is unavailable?",
+        "answer": "By default, remix-cache fails open and executes the fetch function directly. You can configure circuit breakers to handle repeated failures gracefully."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "API_REFERENCE.md",
+      "type": "file",
+      "path": "API_REFERENCE.md",
+      "lines": 952
+    },
+    {
+      "name": "EXAMPLES.md",
+      "type": "file",
+      "path": "EXAMPLES.md",
+      "lines": 893
+    },
+    {
+      "name": "GETTING_STARTED.md",
+      "type": "file",
+      "path": "GETTING_STARTED.md",
+      "lines": 466
+    },
+    {
+      "name": "PATTERNS.md",
+      "type": "file",
+      "path": "PATTERNS.md",
+      "lines": 912
+    },
+    {
+      "name": "REACT_INTEGRATION.md",
+      "type": "file",
+      "path": "REACT_INTEGRATION.md",
+      "lines": 790
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 88
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 235
+    },
+    {
+      "name": "TESTING.md",
+      "type": "file",
+      "path": "TESTING.md",
+      "lines": 931
+    },
+    {
+      "name": "TROUBLESHOOTING.md",
+      "type": "file",
+      "path": "TROUBLESHOOTING.md",
+      "lines": 776
+    }
+  ]
+}

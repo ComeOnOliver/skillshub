@@ -1,0 +1,228 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:53:54.750Z",
+    "slug": "k-dense-ai-opentargets-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/opentargets-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a307922ca59ff8d2f43fc7e4cba8908de244dd34dea6adc029dcfdf5b0901843",
+    "tree_hash": "7f0da770abaee84cb8ccc9eb4caa9e53da348a1c7978648b80da366a9af7f5b2"
+  },
+  "skill": {
+    "name": "opentargets-database",
+    "description": "Query Open Targets Platform for target-disease associations, drug target discovery, tractability/safety data, genetics/omics evidence, known drugs, for therapeutic target identification.",
+    "summary": "Query Open Targets Platform for target-disease associations, drug target discovery, tractability/saf...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "bioinformatics",
+      "drug-discovery",
+      "genomics",
+      "therapeutic-targets"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 150 static findings are false positives. The skill is a legitimate bioinformatics library with no shell commands, no cryptographic operations, and no malicious network behavior. Backticks flagged in markdown are code formatting delimiters, not Ruby/shell execution. Network requests target only the public Open Targets GraphQL API for therapeutic target research.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/query_opentargets.py",
+            "line_start": 40,
+            "line_end": 40
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 2456,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:53:54.750Z"
+  },
+  "content": {
+    "user_title": "Query Open Targets for therapeutic targets",
+    "value_statement": "Find therapeutic targets and drug candidates using Open Targets Platform data. Access genetic evidence, tractability assessments, safety data, and known drugs for target-disease associations.",
+    "seo_keywords": [
+      "Open Targets Platform",
+      "therapeutic target discovery",
+      "drug target database",
+      "genetics omics evidence",
+      "tractability assessment",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "bioinformatics",
+      "target-disease associations"
+    ],
+    "actual_capabilities": [
+      "Search targets, diseases, and drugs by name or identifier",
+      "Retrieve target annotations including tractability and safety data",
+      "Get disease information with associated targets and drugs",
+      "Fetch evidence supporting target-disease associations",
+      "Query known drugs for diseases with clinical trial phases",
+      "Access drug mechanisms of action and indications"
+    ],
+    "limitations": [
+      "API is designed for exploratory queries, not bulk data retrieval",
+      "Association scores rank relative evidence, not predict clinical success",
+      "Under-studied diseases may have lower scores despite valid evidence",
+      "No authentication required but proper citation is required for data use"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Drug discovery researchers",
+        "title": "Identify novel targets",
+        "description": "Find potential therapeutic targets for a disease by querying genetic evidence and tractability data."
+      },
+      {
+        "target_user": "Bioinformaticians",
+        "title": "Cross-reference evidence",
+        "description": "Gather supporting evidence for target-disease links from multiple data sources and evidence types."
+      },
+      {
+        "target_user": "Pharmacologists",
+        "title": "Find drug repurposing",
+        "description": "Identify existing drugs for a disease that could be repurposed based on target mechanisms."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Find gene targets",
+        "scenario": "Search for disease targets",
+        "prompt": "Find genes associated with [DISEASE] that have good genetic evidence and tractability data."
+      },
+      {
+        "title": "Get evidence details",
+        "scenario": "Get supporting evidence",
+        "prompt": "What evidence supports the association between [GENE] and [DISEASE]?"
+      },
+      {
+        "title": "Check drug options",
+        "scenario": "Find known drugs",
+        "prompt": "List known drugs for [DISEASE] and their clinical trial phases."
+      },
+      {
+        "title": "Compare targets",
+        "scenario": "Prioritize targets",
+        "prompt": "Compare tractability, safety, and genetic constraint for [GENE1] and [GENE2]."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find targets for Alzheimer's disease with genetic evidence",
+        "output": [
+          "BRCA1 - associated with score 0.85, evidence from GWAS and genetic association",
+          "PICALM - tractability: predicted druggable, safety: no liabilities reported",
+          "CLU - known drugs: none in clinical trials, expression data available"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with genetic evidence as the strongest indicator of disease relevance",
+      "Consider multiple evidence types for confidence in target selection",
+      "Check tractability assessments before prioritizing targets",
+      "Review safety liabilities for potential toxicity concerns"
+    ],
+    "anti_patterns": [
+      "Using association scores as absolute confidence measures",
+      "Relying on single evidence source for critical decisions",
+      "Ignoring under-studied diseases that may score lower",
+      "Missing proper citation of Open Targets Platform in publications"
+    ],
+    "faq": [
+      {
+        "question": "What is Open Targets Platform?",
+        "answer": "A public database integrating genetics, omics, and literature data for therapeutic target identification."
+      },
+      {
+        "question": "Do I need API access?",
+        "answer": "No authentication required. The GraphQL API is freely accessible for research and commercial use."
+      },
+      {
+        "question": "What entities can I query?",
+        "answer": "Targets (genes), diseases (EFO IDs), and drugs (ChEMBL IDs) with comprehensive annotations."
+      },
+      {
+        "question": "How to filter by evidence type?",
+        "answer": "Use the data_types parameter in get_target_disease_evidence to filter evidence categories."
+      },
+      {
+        "question": "What are association scores?",
+        "answer": "Relative rankings of evidence strength from 0-1, not absolute confidence measures."
+      },
+      {
+        "question": "How often is data updated?",
+        "answer": "Open Targets Platform is updated quarterly with new data releases."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 250
+        },
+        {
+          "name": "evidence_types.md",
+          "type": "file",
+          "path": "references/evidence_types.md",
+          "lines": 307
+        },
+        {
+          "name": "target_annotations.md",
+          "type": "file",
+          "path": "references/target_annotations.md",
+          "lines": 402
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "query_opentargets.py",
+          "type": "file",
+          "path": "scripts/query_opentargets.py",
+          "lines": 404
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 373
+    }
+  ]
+}

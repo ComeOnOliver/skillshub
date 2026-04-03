@@ -1,0 +1,209 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:06:10.473Z",
+    "slug": "composiohq-skill-share",
+    "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/skill-share",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "fb620db74f76d4c467f60d8666db363945999f5a7c15f29996245a15b59df39e",
+    "tree_hash": "d57f79cbdef513ec1c6d9b2325ba01c7244da8ec545dc7c83f894eb3d569d570"
+  },
+  "skill": {
+    "name": "skill-share",
+    "description": "A skill that creates new Claude skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery.",
+    "summary": "A skill that creates new Claude skills and automatically shares them on Slack using Rube for seamles...",
+    "icon": "🚀",
+    "version": "1.0.0",
+    "author": "ComposioHQ",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "productivity",
+    "tags": [
+      "skill-creation",
+      "slack",
+      "collaboration",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing no executable code. All 17 static findings are false positives: the scanner misidentified markdown code fences as shell commands, flagged common words like 'share' and 'slack' as cryptographic terms, and misinterpreted repository metadata as network security issues. The skill describes a workflow for creating and sharing Claude skills via Slack integration.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 66
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 253,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:06:10.473Z"
+  },
+  "content": {
+    "user_title": "Create and Share Claude Skills with Your Team",
+    "value_statement": "Teams struggle to share and discover Claude skills across members. This skill automates skill creation and notifies your team via Slack when new skills are ready. It ensures consistent structure and enables seamless collaboration on custom AI capabilities.",
+    "seo_keywords": [
+      "Claude skills",
+      "skill creation",
+      "Slack integration",
+      "team collaboration",
+      "Claude Code",
+      "AI automation",
+      "skill sharing",
+      "team productivity",
+      "skill distribution",
+      "Rube"
+    ],
+    "actual_capabilities": [
+      "Creates properly structured skill directories with SKILL.md templates",
+      "Generates scripts/, references/, and assets/ directories automatically",
+      "Validates skill format, naming conventions, and metadata completeness",
+      "Packages skills into distributable zip files for sharing",
+      "Posts skill announcements to Slack channels via Rube integration"
+    ],
+    "limitations": [
+      "Requires Slack workspace connection through Rube",
+      "Only creates skill structure, not functional code",
+      "Needs write access to the skill creation directory"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Development teams",
+        "title": "Standardize skill creation",
+        "description": "Ensure all team-created skills follow consistent structure and metadata standards for easier maintenance"
+      },
+      {
+        "target_user": "AI tool administrators",
+        "title": "Manage skill distribution",
+        "description": "Automate skill packaging and team notifications for better skill discovery across your organization"
+      },
+      {
+        "target_user": "Collaborative workspaces",
+        "title": "Share custom skills",
+        "description": "Build specialized Claude skills and share them with immediate visibility through team Slack channels"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create new skill",
+        "scenario": "Starting skill development",
+        "prompt": "Create a new Claude skill called 'data-analyzer' for processing CSV files and generating reports"
+      },
+      {
+        "title": "Package existing skill",
+        "scenario": "Preparing for distribution",
+        "prompt": "Package the pdf-extractor skill I created and share it with the #ai-tools channel"
+      },
+      {
+        "title": "Bulk skill creation",
+        "scenario": "Multiple skill workflow",
+        "prompt": "Create skills for text-summarizer, image-resizer, and code-formatter then notify the team"
+      },
+      {
+        "title": "Validate skill structure",
+        "scenario": "Quality assurance",
+        "prompt": "Validate the structure and metadata of my custom-skill directory before packaging"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a skill called email-classifier for sorting support tickets",
+        "output": [
+          "Created directory: /skill-email-classifier",
+          "Generated SKILL.md with proper metadata",
+          "Created scripts/, references/, and assets/ folders",
+          "Validated skill structure",
+          "Packaged skill as email-classifier.zip",
+          "Posted to Slack: 'New Skill Available: email-classifier - Automatically categorize support emails by urgency and department'"
+        ]
+      },
+      {
+        "input": "Create a documentation helper skill and share it",
+        "output": [
+          "Created skill documentation-helper",
+          "Generated all required skill directories",
+          "Validated YAML frontmatter and required fields",
+          "Packaged for distribution",
+          "Notified #documentation-team about the new skill"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use descriptive skill names that clearly indicate the primary function",
+      "Include comprehensive descriptions in SKILL.md for better team understanding",
+      "Choose appropriate Slack channels for skill announcements based on team structure"
+    ],
+    "anti_patterns": [
+      "Creating overly broad skills that try to do too many things at once",
+      "Sharing skills without proper documentation or usage examples",
+      "Ignoring naming conventions which breaks consistency across the skill library"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with all Claude versions?",
+        "answer": "Yes, it creates standard skill structures compatible with Claude and Claude Code platforms"
+      },
+      {
+        "question": "What are the limits on skill creation?",
+        "answer": "No hard limits exist, but follow naming conventions and keep descriptions concise and clear"
+      },
+      {
+        "question": "Can I integrate with platforms besides Slack?",
+        "answer": "Currently only supports Slack via Rube, but the skill structure is platform-agnostic"
+      },
+      {
+        "question": "Is my data safe when sharing skills?",
+        "answer": "Yes, only skill metadata is shared to Slack, not your actual data or usage information"
+      },
+      {
+        "question": "Skills are not posting to Slack, what should I check?",
+        "answer": "Verify your Rube connection is active and the target Slack channel exists and is accessible"
+      },
+      {
+        "question": "How does this compare to manual skill creation?",
+        "answer": "It enforces consistency, validates structure automatically, and removes manual team notification steps"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 81
+    }
+  ]
+}

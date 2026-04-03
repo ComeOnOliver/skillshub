@@ -1,0 +1,211 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:35:28.637Z",
+    "slug": "obra-subagent-driven-development",
+    "source_url": "https://github.com/obra/superpowers/tree/main/skills/subagent-driven-development",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "55e7a813c7858a87c2605a392d99d6e30364c8094ef2c0a06e36ec2d9906d816",
+    "tree_hash": "5de97a669e5d472353af60cf33e18c03d8ea8fef353e876b8f645c17f761d056"
+  },
+  "skill": {
+    "name": "subagent-driven-development",
+    "description": "Execute implementation plans by dispatching subagents with two-stage review: spec compliance first, then code quality. Fresh subagent per task ensures clean context and high quality.",
+    "summary": "Subagent-driven implementation with spec and quality review gates",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "obra",
+    "license": "MIT",
+    "tags": [
+      "workflow",
+      "subagent",
+      "code-review",
+      "implementation",
+      "tdd"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The skill contains only prompt templates and workflow documentation. References to SHA hashes are git commit identifiers, not cryptographic code. System commands in prompts are example Task tool definitions, not actual shell execution. No malicious patterns confirmed.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 888,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:35:28.637Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Execute Plans with Subagent Review",
+    "value_statement": "Complex implementation plans are hard to execute reliably. This skill dispatches fresh subagents per task with automatic spec compliance and code quality reviews, ensuring nothing is missed and quality stays high.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "subagent",
+      "workflow automation",
+      "implementation plan",
+      "code review",
+      "spec compliance",
+      "software development",
+      "task management"
+    ],
+    "actual_capabilities": [
+      "Dispatch fresh subagents per implementation task to avoid context pollution",
+      "Two-stage review after each task: spec compliance first, then code quality",
+      "Review loops ensure issues are fixed before moving on",
+      "Controller provides full task context upfront so subagents never read plan files",
+      "Self-review checkpoints catch issues before handoff"
+    ],
+    "limitations": [
+      "Requires a pre-written implementation plan with discrete, independent tasks",
+      "Not suitable for tightly coupled tasks that must run sequentially",
+      "Controller must prepare all task context before dispatching subagents",
+      "Cannot be used for parallel session execution (use executing-plans skill instead)"
+    ],
+    "use_cases": [
+      {
+        "title": "Feature Development",
+        "description": "Execute a multi-task feature plan where each task can be implemented independently. Subagents implement, then pass spec and quality review before the task is marked complete.",
+        "target_user": "Software developers building features from implementation plans"
+      },
+      {
+        "title": "Refactoring Projects",
+        "description": "Break a large refactor into independent tasks. Each subagent handles one refactoring with automatic quality gates ensuring no regressions.",
+        "target_user": "Engineers modernizing legacy codebases"
+      },
+      {
+        "title": "Bug Fix Sprints",
+        "description": "Process a list of bugs where fixes are independent. Subagents fix bugs and pass through spec and quality review to ensure fixes are correct.",
+        "target_user": "Debug teams handling multiple issues"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Task Dispatch",
+        "prompt": "I have an implementation plan with independent tasks. Use subagent-driven-development to execute Task 1: [task description]",
+        "scenario": "Starting execution of the first task in a plan"
+      },
+      {
+        "title": "Sequential Task Processing",
+        "prompt": "Task 1 is complete. Now execute Task 2 using subagent-driven-development: [task description]",
+        "scenario": "Processing the next task after the previous one passed review"
+      },
+      {
+        "title": "Review Loop Request",
+        "prompt": "The spec reviewer found issues. Use subagent-driven-development to dispatch the implementer to fix them, then re-run both reviews.",
+        "scenario": "Addressing review feedback that requires rework"
+      },
+      {
+        "title": "Full Plan Execution",
+        "prompt": "Execute the entire implementation plan at docs/plans/feature-plan.md using subagent-driven-development. Extract all tasks and process them with two-stage review.",
+        "scenario": "Running a complete plan from start to finish"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Execute Task 1 using subagent-driven-development: Implement user authentication",
+        "output": [
+          "Dispatched implementer subagent for user authentication",
+          "Implementer asked clarifying questions about JWT vs session-based auth",
+          "Answered questions, subagent proceeded",
+          "Implementer completed: JWT authentication with refresh tokens",
+          "Spec reviewer verified: All requirements met, nothing extra",
+          "Code quality reviewer approved: Clean implementation, good test coverage",
+          "Task 1 marked complete in TodoWrite"
+        ]
+      },
+      {
+        "input": "Process Task 2 with subagent-driven-development: Add password reset flow",
+        "output": [
+          "Dispatched implementer subagent for password reset",
+          "No questions, proceeded directly",
+          "Implementer completed implementation",
+          "Spec reviewer found gap: Missing email rate limiting",
+          "Implementer fixed: Added rate limiting per email",
+          "Code quality reviewer approved with one minor suggestion",
+          "Task 2 marked complete"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide full task context upfront so subagents never need to read the plan file",
+      "Always let subagents ask questions before starting work - answer thoroughly",
+      "Never skip the two-stage review order (spec compliance before code quality)",
+      "Run review loops until approval - don't skip re-review after fixes"
+    ],
+    "anti_patterns": [
+      "Letting subagents read the plan file themselves (causes context pollution)",
+      "Starting code quality review before spec compliance passes",
+      "Skipping review loops and moving to the next task with open issues",
+      "Accepting partial compliance from the spec reviewer"
+    ],
+    "faq": [
+      {
+        "question": "When should I use subagent-driven-development vs executing-plans?",
+        "answer": "Use subagent-driven-development when you want to stay in the same session with fresh subagents per task. Use executing-plans when you need parallel sessions for maximum parallelism."
+      },
+      {
+        "question": "Can I skip the spec compliance review?",
+        "answer": "No. The spec compliance review catches missing requirements and extra features. Skipping it risks building the wrong thing regardless of code quality."
+      },
+      {
+        "question": "What if a subagent asks questions during work?",
+        "answer": "Answer them thoroughly. The skill expects questions and supports pausing for clarification. Better to get clarity upfront than fix mistakes later."
+      },
+      {
+        "question": "How do I handle a failing subagent?",
+        "answer": "Dispatch a new fix subagent with specific instructions. Don't try to fix manually - that causes context pollution from the failed attempt."
+      },
+      {
+        "question": "What makes tasks suitable for this skill?",
+        "answer": "Tasks should be independent and mostly self-contained. Tightly coupled tasks that depend on each other should be combined into a single task."
+      },
+      {
+        "question": "How many review iterations should I expect?",
+        "answer": "One to three iterations is normal. The review loop catches issues early when they're cheapest to fix. Don't skip re-review just because it adds iterations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "code-quality-reviewer-prompt.md",
+      "type": "file",
+      "path": "code-quality-reviewer-prompt.md",
+      "lines": 21
+    },
+    {
+      "name": "implementer-prompt.md",
+      "type": "file",
+      "path": "implementer-prompt.md",
+      "lines": 79
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 241
+    },
+    {
+      "name": "spec-reviewer-prompt.md",
+      "type": "file",
+      "path": "spec-reviewer-prompt.md",
+      "lines": 62
+    }
+  ]
+}

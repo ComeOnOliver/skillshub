@@ -1,0 +1,335 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:11:27.375Z",
+    "slug": "davila7-git-commit-helper",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/development/git-commit-helper",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "978a4a46d0923428e9f34f487254cf5140f7dfdc876878e9aa22c94c9281c3db",
+    "tree_hash": "2ca6d7a3e93f9d1f080b06fb0da684200d9dfd6613feab143a6efb0f124a6a01"
+  },
+  "skill": {
+    "name": "git-commit-helper",
+    "description": "Generate descriptive commit messages by analyzing git diffs. Use when the user asks for help writing commit messages or reviewing staged changes.",
+    "summary": "Generate descriptive commit messages by analyzing git diffs. Use when the user asks for help writing...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "git",
+      "commits",
+      "version-control",
+      "conventional-commits",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing only guidance for writing git commit messages. The static scanner produced false positives: it misidentified English words like 'analyze' and 'conventional' as cryptographic terms, misidentified a content verification hash as C2 malware indicators, and flagged git command examples as external command execution. No executable code, network operations, or malicious patterns exist. The skill is purely informational.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 136
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 136,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 178
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 185
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 384,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:11:27.375Z"
+  },
+  "content": {
+    "user_title": "Generate descriptive git commit messages",
+    "value_statement": "Writing clear commit messages is difficult. This skill analyzes git diffs and generates well-structured commit messages following conventional commits format, making your commit history readable and maintainable.",
+    "seo_keywords": [
+      "git commit helper",
+      "conventional commits",
+      "commit message generator",
+      "git commit messages",
+      "Claude Code skill",
+      "version control best practices",
+      "git workflow",
+      "commit message format",
+      "code review",
+      "git history"
+    ],
+    "actual_capabilities": [
+      "Analyzes git diffs to understand code changes",
+      "Generates conventional commits format messages",
+      "Suggests appropriate commit types (feat, fix, docs, refactor, test, chore)",
+      "Identifies scopes for frontend, backend, and infrastructure changes",
+      "Detects and documents breaking changes",
+      "Reviews staged changes before committing"
+    ],
+    "limitations": [
+      "Does not execute git commands directly - provides guidance for users",
+      "Does not amend or push commits automatically",
+      "Does not integrate with external git hosting services",
+      "Requires user to run git commands and provide diff output"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developer",
+        "title": "Quick commit messages",
+        "description": "Generate clear, consistent commit messages for daily development work without memorizing conventions."
+      },
+      {
+        "target_user": "Team lead",
+        "title": "Enforce commit standards",
+        "description": "Help team members write standardized commit messages that work well with automated changelog tools."
+      },
+      {
+        "target_user": "Open source maintainer",
+        "title": "Maintain clean history",
+        "description": "Create meaningful commit histories that make it easier to understand project evolution and write release notes."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic commit",
+        "scenario": "Generate a simple commit message",
+        "prompt": "Help me write a commit message for these staged changes:\n\ngit diff --staged output here\n\nUse conventional commits format with appropriate type and scope."
+      },
+      {
+        "title": "Feature commit",
+        "scenario": "Document a new feature",
+        "prompt": "I am adding a new feature. Analyze my staged changes and create a conventional commit message:\n\n[git diff --staged output]\n\nInclude the type, scope, and a clear description in the summary line."
+      },
+      {
+        "title": "Breaking change",
+        "scenario": "Document breaking changes",
+        "prompt": "My changes include breaking changes. Generate a conventional commit message that clearly indicates this:\n\n[git diff --staged output]\n\nUse the ! notation and explain the breaking change in the footer."
+      },
+      {
+        "title": "Complex refactor",
+        "scenario": "Document multi-file refactoring",
+        "prompt": "I have refactored multiple files. Analyze all the staged changes and create a single commit message that captures the overall refactoring purpose:\n\n[git diff --staged output]\n\nInclude a summary and body that explains the refactoring rationale."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate a commit message for these staged changes that add user authentication with JWT tokens",
+        "output": [
+          "feat(auth): add JWT authentication system",
+          "",
+          "Implement user login with JWT-based authentication:",
+          "- Add login endpoint with token generation",
+          "- Create token validation middleware",
+          "- Add refresh token support for session management",
+          "",
+          "BREAKING CHANGE: Auth service now requires config object with secret key"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use imperative mood in summary line (add, fix, refactor not added, fixed, refactored)",
+      "Keep summary under 50 characters and explain changes in body when needed",
+      "Reference issue numbers and clearly mark breaking changes with BREAKING CHANGE footer"
+    ],
+    "anti_patterns": [
+      "Using vague messages like 'update', 'fix stuff', or 'misc changes'",
+      "Including technical implementation details in the summary line",
+      "Mixing unrelated changes into a single commit (non-atomic commits)"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "This skill works with Claude Code and Claude. It provides guidance for generating commit messages through natural conversation."
+      },
+      {
+        "question": "What is the character limit for commit summaries?",
+        "answer": "Keep commit summaries under 50 characters. This is a soft convention to ensure readability in git log and GitHub interfaces."
+      },
+      {
+        "question": "Does this integrate with git hosting platforms?",
+        "answer": "No, this skill provides guidance and message suggestions. Users must run git commands and commit changes themselves."
+      },
+      {
+        "question": "Is my code or repository data sent anywhere?",
+        "answer": "No. This is a local guidance skill. Git diff output is analyzed locally within your conversation without being sent to external services."
+      },
+      {
+        "question": "Why are my generated messages rejected by my team?",
+        "answer": "Check that you are using the correct type (feat/fix/docs/style/refactor/test/chore), appropriate scope, and following your team's commit message conventions."
+      },
+      {
+        "question": "How is this different from git commit templates?",
+        "answer": "Git commit templates set a starting point for messages. This skill actively analyzes your actual code changes and generates specific, contextual commit messages."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 204
+    }
+  ]
+}

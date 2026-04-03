@@ -1,0 +1,309 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:19:14.801Z",
+    "slug": "cam10001110101-mcp-server",
+    "source_url": "https://github.com/Cam10001110101/claude-skills-base/tree/main/mnt/skills/examples/mcp-server",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1f76e1c7509c1d7cc6e55f5e577eef0eb9a3ba28676f836051297c1b9a9edaf0",
+    "tree_hash": "8517008ff711807a968266ba05552f1e09ddece177be3d2c24a285b8af31b21e"
+  },
+  "skill": {
+    "name": "mcp-server",
+    "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+    "summary": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact wi...",
+    "icon": "🔧",
+    "version": "1.0.0",
+    "author": "Cam10001110101",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "coding",
+    "tags": [
+      "mcp",
+      "api-integration",
+      "server-development",
+      "tools",
+      "sdk"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation skill for MCP server development. All 593 static findings are FALSE POSITIVEs: markdown code blocks triggered 'backtick execution' alerts; official MCP documentation URLs triggered 'hardcoded URL' alerts; UUIDs and version strings in docs triggered 'weak cryptographic algorithm' alerts. The Python scripts (connections.py, evaluation.py) use official MCP libraries for legitimate stdio transport configuration. No malicious behavior confirmed after manual review. Previous audit also rated this as 'safe'.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/connections.py",
+            "line_start": 1,
+            "line_end": 152
+          },
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 1,
+            "line_end": 374
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 76
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/connections.py",
+            "line_start": 76,
+            "line_end": 85
+          },
+          {
+            "file": "scripts/evaluation.py",
+            "line_start": 290,
+            "line_end": 302
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 4507,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:19:14.801Z"
+  },
+  "content": {
+    "user_title": "Build MCP Servers with Best Practices",
+    "value_statement": "Create secure, efficient MCP servers that enable AI agents to interact with external APIs and services. Follow proven patterns for tool design, error handling, and evaluation.",
+    "seo_keywords": [
+      "MCP server",
+      "Model Context Protocol",
+      "Claude tools",
+      "AI integration",
+      "API server",
+      "Claude Code",
+      "FastMCP",
+      "TypeScript SDK",
+      "Python MCP",
+      "tool development"
+    ],
+    "actual_capabilities": [
+      "Guides building MCP servers in Python (FastMCP) and TypeScript (MCP SDK)",
+      "Provides complete implementation examples with code patterns",
+      "Includes evaluation framework for testing MCP server effectiveness",
+      "Offers security and authentication best practices",
+      "Supports multiple transport types: stdio, HTTP, SSE"
+    ],
+    "limitations": [
+      "Requires programming knowledge to implement servers",
+      "External API integration needs proper authentication setup",
+      "Server deployment requires infrastructure configuration"
+    ],
+    "use_cases": [
+      {
+        "target_user": "API developers",
+        "title": "Integrate External Services",
+        "description": "Build MCP servers to connect Claude with your APIs, databases, or third-party services."
+      },
+      {
+        "target_user": "AI tool builders",
+        "title": "Create Custom AI Tools",
+        "description": "Develop specialized tools that enable AI agents to perform complex workflows and access real-time data."
+      },
+      {
+        "target_user": "Enterprise teams",
+        "title": "Secure AI Integration",
+        "description": "Implement enterprise-grade MCP servers with proper authentication, error handling, and monitoring."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Server",
+        "scenario": "Create a simple MCP server",
+        "prompt": "Help me create a basic MCP server in Python that can search for users. Include proper tool naming, Pydantic validation, and error handling."
+      },
+      {
+        "title": "API Integration",
+        "scenario": "Connect to external API",
+        "prompt": "Build an MCP server for GitHub API integration. Show tools for searching repos, creating issues, and managing PRs with rate limiting."
+      },
+      {
+        "title": "Evaluation Testing",
+        "scenario": "Test MCP server quality",
+        "prompt": "Create an evaluation test suite with 10 realistic test cases to verify Claude can use my MCP server tools effectively."
+      },
+      {
+        "title": "Production Setup",
+        "scenario": "Deploy MCP server securely",
+        "prompt": "Guide me through deploying an MCP server in production with OAuth authentication, input validation, and monitoring."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an MCP server for Slack integration",
+        "output": [
+          "Complete Python implementation with FastMCP",
+          "Tools for sending messages, listing channels, searching users",
+          "Proper error handling and rate limiting",
+          "Evaluation test suite with 10 test cases",
+          "Deployment instructions with security checklist"
+        ]
+      },
+      {
+        "input": "How do I name my MCP tools?",
+        "output": [
+          "Use service-specific prefixes: github_create_issue not create_issue",
+          "Follow verb_noun pattern for actions: search_users, get_file",
+          "Keep names lowercase with underscores for readability",
+          "Be descriptive about what the tool returns"
+        ]
+      },
+      {
+        "input": "What transport types does MCP support?",
+        "output": [
+          "stdio: Local process communication via standard input/output",
+          "HTTP: Web-based server with REST-like interface",
+          "SSE: Server-Sent Events for real-time streaming",
+          "Choose based on your deployment scenario"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use service-specific prefixes in tool names to avoid conflicts",
+      "Implement both JSON and Markdown response formats for flexibility",
+      "Add proper annotations (readOnlyHint, destructiveHint, idempotentHint) to all tools",
+      "Follow the evaluation-driven development approach for continuous improvement"
+    ],
+    "anti_patterns": [
+      "Don't create tools that simply wrap single API endpoints without workflow consideration",
+      "Avoid returning excessive data that overwhelms the context window",
+      "Never skip input validation or error handling",
+      "Don't ignore the CHARACTER_LIMIT when returning large datasets"
+    ],
+    "faq": [
+      {
+        "question": "What programming languages are supported?",
+        "answer": "The guide covers Python (FastMCP) and Node/TypeScript (MCP SDK) implementations."
+      },
+      {
+        "question": "How do I test my MCP server?",
+        "answer": "Use the included evaluation framework with XML test cases to verify tool effectiveness."
+      },
+      {
+        "question": "What transport types are available?",
+        "answer": "MCP supports stdio, HTTP, and SSE transports for different deployment scenarios."
+      },
+      {
+        "question": "How do I handle authentication?",
+        "answer": "The guide covers OAuth, API keys, and secure credential management for service integration."
+      },
+      {
+        "question": "What is the difference between tools and resources?",
+        "answer": "Tools perform actions and operations while resources provide static data access via URI templates."
+      },
+      {
+        "question": "How do I prevent tool name conflicts?",
+        "answer": "Always use service-specific prefixes like github_create_issue instead of generic names."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "reference",
+      "type": "dir",
+      "path": "reference",
+      "children": [
+        {
+          "name": "evaluation.md",
+          "type": "file",
+          "path": "reference/evaluation.md",
+          "lines": 602
+        },
+        {
+          "name": "mcp_best_practices.md",
+          "type": "file",
+          "path": "reference/mcp_best_practices.md",
+          "lines": 916
+        },
+        {
+          "name": "node_mcp_server.md",
+          "type": "file",
+          "path": "reference/node_mcp_server.md",
+          "lines": 916
+        },
+        {
+          "name": "python_mcp_server.md",
+          "type": "file",
+          "path": "reference/python_mcp_server.md",
+          "lines": 752
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "connections.py",
+          "type": "file",
+          "path": "scripts/connections.py",
+          "lines": 152
+        },
+        {
+          "name": "evaluation.py",
+          "type": "file",
+          "path": "scripts/evaluation.py",
+          "lines": 374
+        },
+        {
+          "name": "example_evaluation.xml",
+          "type": "file",
+          "path": "scripts/example_evaluation.xml",
+          "lines": 23
+        },
+        {
+          "name": "requirements.txt",
+          "type": "file",
+          "path": "scripts/requirements.txt",
+          "lines": 3
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 329
+    }
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:56:16.087Z",
+    "slug": "wshobson-data-quality-frameworks",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/data-engineering/skills/data-quality-frameworks",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8a8a62e8e0f581ebee33922bbf7665f24c22e74555fd4a36d99697d00c3e67d4",
+    "tree_hash": "e0223bca2be830ce619674d02f47ef8f56241b95887c97dc39f5a832cfd74666"
+  },
+  "skill": {
+    "name": "data-quality-frameworks",
+    "description": "Implement data quality validation with Great Expectations, dbt tests, and data contracts. Use when building data quality pipelines, implementing validation rules, or establishing data contracts.",
+    "summary": "Implement data quality validation with Great Expectations, dbt tests, and data contracts. Use when b...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "data-quality",
+      "great-expectations",
+      "dbt",
+      "data-contracts",
+      "validation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is pure documentation containing educational examples for data quality frameworks. All 69 static findings are FALSE POSITIVES. The scanner incorrectly flagged Great Expectations library method names (e.g., 'expect_column_values_to_not_be_null') as shell backtick execution and weak cryptographic algorithms. The content has no executable code, network calls, file access, or sensitive operations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 584,
+            "line_end": 584
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 585,
+            "line_end": 585
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 586,
+            "line_end": 586
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 587,
+            "line_end": 587
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 234
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 234,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 301
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 301,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 324
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 326
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 326,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 345
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 345,
+            "line_end": 366
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 366,
+            "line_end": 370
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 370,
+            "line_end": 448
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 448,
+            "line_end": 452
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 452,
+            "line_end": 564
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 762,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:56:16.087Z"
+  },
+  "content": {
+    "user_title": "Implement data quality frameworks fast",
+    "value_statement": "Data quality issues cause failed analytics and broken pipelines. This skill provides proven Great Expectations, dbt tests, and data contract patterns to prevent them.",
+    "seo_keywords": [
+      "data quality frameworks",
+      "Great Expectations",
+      "dbt tests",
+      "data contracts",
+      "data validation",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "data pipeline checks",
+      "data quality metrics"
+    ],
+    "actual_capabilities": [
+      "Provide Great Expectations suite examples with common expectations",
+      "Show checkpoint configuration and failure handling patterns",
+      "Define dbt schema tests and custom test templates",
+      "Outline data contract structure with quality checks",
+      "Sketch an automated quality pipeline with reporting"
+    ],
+    "limitations": [
+      "Examples are templates and require adaptation to your data sources",
+      "No packaged code or install scripts are included",
+      "Does not provide runtime monitoring or alerting integrations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data engineer",
+        "title": "Build validation suites",
+        "description": "Create Great Expectations suites and checkpoints for warehouse tables."
+      },
+      {
+        "target_user": "Analytics engineer",
+        "title": "Expand dbt testing",
+        "description": "Add schema, column, and custom dbt tests for marts."
+      },
+      {
+        "target_user": "Data platform lead",
+        "title": "Define data contracts",
+        "description": "Specify contracts with schema, quality checks, and SLAs."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Starter checks",
+        "scenario": "New table validation",
+        "prompt": "Create a basic Great Expectations suite for an orders table with primary key, status, amount, and created_at checks."
+      },
+      {
+        "title": "dbt test plan",
+        "scenario": "Marts testing",
+        "prompt": "Draft dbt tests for fct_orders and dim_customers including recency, relationships, and accepted values."
+      },
+      {
+        "title": "Contract spec",
+        "scenario": "Team data contract",
+        "prompt": "Write a data contract outline for an orders dataset with schema, quality checks, and SLAs."
+      },
+      {
+        "title": "Pipeline pattern",
+        "scenario": "Automated validation",
+        "prompt": "Describe an automated data quality pipeline that runs suites for multiple tables and generates a report."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Give me a minimal Great Expectations suite for orders data.",
+        "output": [
+          "Defines required columns and primary key checks",
+          "Validates status values and amount range",
+          "Adds freshness and row count checks"
+        ]
+      },
+      {
+        "input": "How do I test relationships between tables in dbt?",
+        "output": [
+          "Uses relationships test for foreign key validation",
+          "Checks referential integrity across models",
+          "Validates customer_id maps to dim_customers"
+        ]
+      },
+      {
+        "input": "Create a data contract for customer data.",
+        "output": [
+          "Specifies schema with required and optional fields",
+          "Defines PII classification for sensitive columns",
+          "Sets freshness SLA and quality check thresholds"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with critical columns and expand tests over time",
+      "Document expectations and ownership for each dataset",
+      "Alert on failures and review trends regularly"
+    ],
+    "anti_patterns": [
+      "Testing every column without prioritization",
+      "Hardcoding thresholds without a rationale",
+      "Skipping freshness checks for event data"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Claude and Codex?",
+        "answer": "Yes, the content is plain text examples and works with Claude, Codex, and Claude Code."
+      },
+      {
+        "question": "Are there limits on dataset size?",
+        "answer": "The templates do not impose limits, but performance depends on your warehouse and test design."
+      },
+      {
+        "question": "Can it integrate with CI or orchestration tools?",
+        "answer": "It provides patterns that you can adapt for CI pipelines or schedulers."
+      },
+      {
+        "question": "Does it access or store sensitive data?",
+        "answer": "No, it only provides documentation and example code snippets."
+      },
+      {
+        "question": "What if a check fails unexpectedly?",
+        "answer": "Review recent data changes, adjust thresholds, and confirm source freshness."
+      },
+      {
+        "question": "How does this compare to a full framework setup?",
+        "answer": "It is guidance and templates, not a prebuilt framework or package."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 588
+    }
+  ]
+}

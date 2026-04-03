@@ -1,0 +1,632 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:00:08.937Z",
+    "slug": "automattic-wp-playground",
+    "source_url": "https://github.com/Automattic/agent-skills/tree/trunk/skills/wp-playground",
+    "source_ref": "trunk",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ba9204a8cfa4844a1889ce5e390f6636f419b00054061718e7c00b817f4e7b69",
+    "tree_hash": "f58864312dbe706c076001e832086d61e8bbf1f50bc79de4b53a0f65aab77ff1"
+  },
+  "skill": {
+    "name": "wp-playground",
+    "description": "Use for WordPress Playground workflows: fast disposable WP instances in the browser or locally via @wp-playground/cli (server, run-blueprint, build-snapshot), auto-mounting plugins/themes, switching WP/PHP versions, blueprints, and debugging (Xdebug).",
+    "summary": "Use for WordPress Playground workflows: fast disposable WP instances in the browser or locally via @...",
+    "icon": "🅿️",
+    "version": "1.0.0",
+    "author": "Automattic",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "wordpress",
+      "testing",
+      "debugging",
+      "blueprints",
+      "xdebug"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing no executable code. All static findings are FALSE POSITIVES: markdown code blocks are misidentified as 'Ruby/shell backtick execution', hardcoded URLs are documentation references, and 'weak cryptographic algorithm' detections have no basis in the actual content. This skill is pure documentation guidance for the legitimate @wp-playground/cli package.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/blueprints.md",
+            "line_start": 7,
+            "line_end": 15
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 15,
+            "line_end": 19
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 19,
+            "line_end": 20
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 20,
+            "line_end": 21
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 21,
+            "line_end": 22
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 22,
+            "line_end": 23
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 23,
+            "line_end": 24
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 24,
+            "line_end": 25
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 25,
+            "line_end": 26
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 26,
+            "line_end": 27
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 27,
+            "line_end": 28
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 28,
+            "line_end": 32
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 32,
+            "line_end": 35
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 35,
+            "line_end": 36
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "references/cli-commands.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "references/debugging.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "references/debugging.md",
+            "line_start": 3,
+            "line_end": 3
+          },
+          {
+            "file": "references/debugging.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "references/debugging.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/debugging.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "references/debugging.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 96
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/blueprints.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "references/blueprints.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 125,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 101
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 396,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:00:08.937Z"
+  },
+  "content": {
+    "user_title": "Test WordPress with Disposable Playgrounds",
+    "value_statement": "Setting up WordPress locally for testing is time consuming. This skill provides instant disposable WordPress instances in your browser or via CLI. Test plugins, themes, and debug with Xdebug in isolated environments without full stack setup.",
+    "seo_keywords": [
+      "WordPress Playground",
+      "WordPress testing",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "WordPress debugging",
+      "Xdebug",
+      "Blueprints",
+      "WordPress development",
+      "plugin testing"
+    ],
+    "actual_capabilities": [
+      "Spin up disposable WordPress instances in browser or locally",
+      "Auto-mount and test plugins and themes",
+      "Run Blueprint JSON files for scripted setup",
+      "Switch between WordPress and PHP versions",
+      "Debug with Xdebug in isolated Playground",
+      "Build site snapshots for sharing"
+    ],
+    "limitations": [
+      "Requires Node.js 20.18+ for CLI usage",
+      "Uses SQLite, not suitable for production databases",
+      "Cannot run native PHP extensions",
+      "Not a replacement for full WordPress stack when native modules needed"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Plugin Developers",
+        "title": "Test Plugins Safely",
+        "description": "Test your plugin across multiple WordPress and PHP versions without polluting your local environment."
+      },
+      {
+        "target_user": "Theme Designers",
+        "title": "Preview Theme Changes",
+        "description": "Preview theme changes instantly in a clean WordPress environment before deploying."
+      },
+      {
+        "target_user": "QA Engineers",
+        "title": "Reproduce Bug Reports",
+        "description": "Create reproducible WordPress environments to investigate bug reports from users."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick WP Test",
+        "scenario": "Start a test WordPress instance",
+        "prompt": "Start a WordPress Playground instance to test a plugin. I am working in /path/to/my-plugin. Use the latest WordPress and PHP 8.3."
+      },
+      {
+        "title": "Version Compatibility",
+        "scenario": "Test across WP versions",
+        "prompt": "Test my plugin for compatibility with WordPress 6.8, 6.7, and 6.6. Use PHP 8.2. Check if the plugin activates without errors on each version."
+      },
+      {
+        "title": "Blueprint Workflow",
+        "scenario": "Run a custom Blueprint",
+        "prompt": "Run a Blueprint to set up WordPress with my custom plugin and theme. The blueprint is at /path/to/blueprint.json. Enable Xdebug for debugging."
+      },
+      {
+        "title": "Debug Session",
+        "scenario": "Debug plugin with Xdebug",
+        "prompt": "Start a WordPress Playground debugging session with Xdebug enabled. My plugin code is at /path/to/plugin. I want to step through the activation code."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Start a WordPress Playground to test my plugin at /projects/my-plugin with PHP 8.2",
+        "output": [
+          "Created disposable WordPress instance at http://localhost:9400",
+          "Auto-detected and mounted plugin from /projects/my-plugin",
+          "WordPress 6.9.0 with PHP 8.2 is running",
+          "Plugin activated successfully",
+          "Xdebug is available on port 9003"
+        ]
+      },
+      {
+        "input": "Run a blueprint to set up WordPress with WooCommerce",
+        "output": [
+          "Downloading WordPress 6.9.0",
+          "Installing WooCommerce from ZIP",
+          "Running database setup steps",
+          "Site ready at http://localhost:9400",
+          "Snapshot saved to site.zip"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always verify mounted code is active by checking plugin list or theme appearance",
+      "Use Blueprints for reproducible test environments and CI validation",
+      "Never point Playground at production data since it uses ephemeral in-memory storage"
+    ],
+    "anti_patterns": [
+      "Do not use Playground for production database migrations",
+      "Avoid testing with real user data in disposable instances",
+      "Do not skip version compatibility testing when targeting multiple WP releases"
+    ],
+    "faq": [
+      {
+        "question": "What versions of WordPress and PHP are supported?",
+        "answer": "WordPress 6.9+ and PHP 7.2.24+ are supported. PHP 8.3 is the default since July 2025."
+      },
+      {
+        "question": "Can I test native PHP extensions?",
+        "answer": "No. Playground runs PHP in WebAssembly and cannot load native PHP extensions. Use Docker or full stack for that."
+      },
+      {
+        "question": "How do I integrate with my CI pipeline?",
+        "answer": "Use run-blueprint command with CI-friendly outputs. Blueprints can validate plugins activate without errors."
+      },
+      {
+        "question": "Is my data safe in Playground instances?",
+        "answer": "Playground uses ephemeral in-memory SQLite. Data is lost when the instance stops. Never use with production data."
+      },
+      {
+        "question": "Why are my breakpoints not hitting in Xdebug?",
+        "answer": "Check IDE path mappings include the VFS path used by Playground. Confirm IDE listens on the port shown by CLI."
+      },
+      {
+        "question": "How is this different from wp-env or Docker?",
+        "answer": "Playground runs entirely in browser or via lightweight CLI without Docker. It is faster to start but has limitations on native extensions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "blueprints.md",
+          "type": "file",
+          "path": "references/blueprints.md",
+          "lines": 37
+        },
+        {
+          "name": "cli-commands.md",
+          "type": "file",
+          "path": "references/cli-commands.md",
+          "lines": 40
+        },
+        {
+          "name": "debugging.md",
+          "type": "file",
+          "path": "references/debugging.md",
+          "lines": 17
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 102
+    }
+  ]
+}

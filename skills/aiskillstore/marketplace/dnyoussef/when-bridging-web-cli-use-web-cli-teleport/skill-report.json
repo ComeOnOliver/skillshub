@@ -1,0 +1,263 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T03:15:29.316Z",
+    "slug": "dnyoussef-when-bridging-web-cli-use-web-cli-teleport",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/workflow/when-bridging-web-cli-use-web-cli-teleport",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "35bc4c8fa3ff3973dac4bcccccc372073ee49ddc1519915629f50cc846e8344f",
+    "tree_hash": "bd924342711ecde2ffb7269331b9d2bdf3ed1deda4443d106d9dc8c8a8784040"
+  },
+  "skill": {
+    "name": "when-bridging-web-cli-use-web-cli-teleport",
+    "description": "Bridge web interfaces with CLI workflows for seamless bidirectional integration",
+    "summary": "Bridge web interfaces with CLI workflows for seamless bidirectional integration",
+    "icon": "🌐",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "workflow",
+    "tags": [
+      "web",
+      "cli",
+      "integration",
+      "bridge",
+      "teleport"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "medium",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is documentation/guidance skill containing no malicious code. It provides example patterns for web-CLI integration with explicit security warnings. The static analyzer flagged example code patterns (exec, child_process) that are documented educational examples with acknowledged security considerations. The skill itself documents these risks and provides security best practices.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 255
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 167
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [
+      {
+        "title": "Command Injection Risk in Example Code",
+        "description": "The bridge server example at SKILL.md:251-255 uses exec() with unsanitized user input. While documented as an anti-pattern with explicit warnings, implementers must add proper input validation and command whitelisting.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 255
+          }
+        ]
+      }
+    ],
+    "medium_findings": [
+      {
+        "title": "No Authentication in Example Server",
+        "description": "The example bridge server lacks authentication. Anyone with network access can execute CLI commands. The skill documents this as a best practice to implement (line 470).",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 296
+          }
+        ]
+      },
+      {
+        "title": "Unrestricted CORS Configuration",
+        "description": "CORS origin is set to '*' which allows cross-origin requests from any domain. Documented as a security consideration.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 247
+          }
+        ]
+      }
+    ],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 834,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T03:15:29.316Z"
+  },
+  "content": {
+    "user_title": "Bridge web interfaces with CLI workflows",
+    "value_statement": "Users need a way to integrate web applications with command-line tools for real-time communication. This skill provides step-by-step guidance for building bidirectional web-CLI bridges using REST APIs and WebSockets.",
+    "seo_keywords": [
+      "web-cli bridge",
+      "cli integration",
+      "rest api",
+      "websocket",
+      "claude code",
+      "claude",
+      "codex",
+      "command execution",
+      "bidirectional communication",
+      "teleport"
+    ],
+    "actual_capabilities": [
+      "Design bidirectional web-CLI bridge architecture",
+      "Build REST API endpoints for CLI command execution",
+      "Implement WebSocket for real-time communication",
+      "Create web interface components to trigger CLI commands",
+      "Deploy bridge server with Express and Socket.io"
+    ],
+    "limitations": [
+      "Skill provides guidance only, not executable code",
+      "Requires manual implementation of security measures",
+      "No built-in authentication or command whitelisting"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps engineers",
+        "title": "Remote CLI Control",
+        "description": "Control CLI tools from a web dashboard for easier DevOps management and monitoring"
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Build System Integration",
+        "description": "Trigger builds and deployments from web interfaces with real-time output streaming"
+      },
+      {
+        "target_user": "System administrators",
+        "title": "Admin Dashboard",
+        "description": "Create web-based admin panels for server management and command execution"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Bridge Setup",
+        "scenario": "Creating a simple web-CLI connection",
+        "prompt": "Create a web-CLI bridge that allows a React web interface to execute simple CLI commands and display output via WebSocket"
+      },
+      {
+        "title": "API Design",
+        "scenario": "Designing bridge endpoints",
+        "prompt": "Design REST API specification for a web-CLI bridge with endpoints for command execution and real-time output streaming"
+      },
+      {
+        "title": "Security Hardening",
+        "scenario": "Adding authentication",
+        "prompt": "Add authentication, command whitelisting, and input validation to the web-CLI bridge to prevent unauthorized command execution"
+      },
+      {
+        "title": "Production Deployment",
+        "scenario": "Deploying to production",
+        "prompt": "Create Docker deployment configuration and monitoring setup for a production web-CLI bridge server"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Build a web interface that can execute CLI commands",
+        "output": [
+          "Bridge server running on port 3001",
+          "WebSocket connection established",
+          "Command executed: echo hello",
+          "Output: hello",
+          "API response time: 45ms"
+        ]
+      },
+      {
+        "input": "Design API for bidirectional web-CLI communication",
+        "output": [
+          "POST /api/cli/execute - Execute CLI command from web",
+          "POST /api/web/render - Render web UI from CLI",
+          "WebSocket events: cli-output, render-component",
+          "Authentication middleware ready",
+          "Rate limiting configured at 100 req/min"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Implement authentication and command whitelisting before deployment",
+      "Validate and sanitize all user inputs to prevent command injection",
+      "Use rate limiting and CORS restrictions to protect API endpoints"
+    ],
+    "anti_patterns": [
+      "Using exec() with unsanitized user input directly",
+      "Leaving CORS open to all origins in production",
+      "Deploying without authentication or authorization"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "This skill works with Claude, Claude Code, and Codex for generating bridge components and server implementations."
+      },
+      {
+        "question": "What are the performance targets?",
+        "answer": "API response under 200ms, WebSocket latency under 50ms, command execution under 5 seconds, uptime above 99.9%."
+      },
+      {
+        "question": "Can I use this with existing CLI tools?",
+        "answer": "Yes, the bridge can wrap any CLI tool by sending commands through the REST API or WebSocket connection."
+      },
+      {
+        "question": "How do I secure the bridge server?",
+        "answer": "Implement authentication, validate all inputs, whitelist allowed commands, restrict CORS origins, and add rate limiting."
+      },
+      {
+        "question": "What if commands hang or timeout?",
+        "answer": "Implement timeout mechanisms for long-running commands and use async execution with proper error handling."
+      },
+      {
+        "question": "How is this different from SSH?",
+        "answer": "This provides web-based access without SSH infrastructure. It is designed for controlled, API-driven command execution with a graphical interface."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 24
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 35
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 33
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 505
+    }
+  ]
+}

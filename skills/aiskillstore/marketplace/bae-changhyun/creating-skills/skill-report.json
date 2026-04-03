@@ -1,0 +1,514 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:21:55.358Z",
+    "slug": "bae-changhyun-creating-skills",
+    "source_url": "https://github.com/Bae-ChangHyun/cc-plugins-bch/tree/main/plugins/utils/skills/creating-skills",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cd466718eb11162f1bf856938847c895114843d737c5602e855f7cd5e7a592ef",
+    "tree_hash": "83b56ec40fb98f5cddb75972e5dbc47a9f5eeda99b19475840441d87791bce63"
+  },
+  "skill": {
+    "name": "creating-skills",
+    "description": "Guide for creating Claude Code skills following Anthropic's official best practices. Use when user wants to create a new skill, build a skill, write SKILL.md, or needs skill creation guidelines. Provides structure, naming conventions, description writing, and quality checklist.",
+    "summary": "Guide for creating Claude Code skills following Anthropic's official best practices. Use when user w...",
+    "icon": "🛠️",
+    "version": "1.0.0",
+    "author": "Bae-ChangHyun",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "skill-development",
+      "claude-code",
+      "best-practices",
+      "documentation"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guidance for creating Claude Code skills. No executable code, no network calls, no file system access, and no command execution capabilities. Contains only best practices documentation and example code blocks. All 98 static findings are false positives triggered by documentation examples.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 104,
+            "line_end": 104
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 154,
+            "line_end": 154
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 109,
+            "line_end": 109
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 121,
+            "line_end": 121
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 109,
+            "line_end": 109
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 121,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 165
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 102
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 188
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 188,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 251
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 251,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 258
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 258,
+            "line_end": 258
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 258,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 270
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 455,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:21:55.357Z"
+  },
+  "content": {
+    "user_title": "Create Claude Code Skills",
+    "value_statement": "Creating Claude Code skills requires understanding structure, naming conventions, and quality standards. This skill provides Anthropic's official best practices to help you build effective, discoverable skills following established patterns.",
+    "seo_keywords": [
+      "claude code skills",
+      "skill creation",
+      "SKILL.md",
+      "claude skills",
+      "anthropic best practices",
+      "claude-code",
+      "mcp skills",
+      "skill development",
+      "skill guidelines",
+      "skill structure"
+    ],
+    "actual_capabilities": [
+      "Provide step-by-step workflow for creating new skills",
+      "Define required and optional frontmatter for SKILL.md",
+      "Guide proper naming conventions and description formulas",
+      "Share quality checklist for validating skill implementation",
+      "Explain token budget and file organization principles"
+    ],
+    "limitations": [
+      "Does not execute code or create files automatically",
+      "Does not validate or test existing skills",
+      "Requires manual implementation of recommended patterns"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Skill developers new to Claude Code",
+        "title": "First Skill Creation",
+        "description": "Learn proper structure and conventions for your first Claude Code skill."
+      },
+      {
+        "target_user": "Experienced developers",
+        "title": "Skill Optimization",
+        "description": "Refactor existing skills to follow latest best practices and wildcard permissions."
+      },
+      {
+        "target_user": "AI engineers",
+        "title": "Team Standards",
+        "description": "Establish consistent skill patterns across your organization's development team."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create Basic Skill",
+        "scenario": "Starting a new skill project",
+        "prompt": "Help me create a new Claude Code skill called pdf-processor for extracting text from PDF documents."
+      },
+      {
+        "title": "Write SKILL.md",
+        "scenario": "Documenting a skill",
+        "prompt": "Write the frontmatter and description for a skill that manages GitHub pull requests."
+      },
+      {
+        "title": "Review Existing Skill",
+        "scenario": "Auditing a skill",
+        "prompt": "Review my existing skill at ~/.claude/skills/my-skill/SKILL.md and suggest improvements based on best practices."
+      },
+      {
+        "title": "Scale Large Skill",
+        "scenario": "Splitting complex skills",
+        "prompt": "My SKILL.md is over 400 lines. Help me split it into SKILL.md, references/examples.md, and references/troubleshooting.md."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Help me create a new skill called json-formatter that formats JSON files.",
+        "output": [
+          "Created skill directory: ~/.claude/skills/json-formatter/",
+          "Created SKILL.md with proper frontmatter",
+          "Added references/ directory for examples",
+          "Used lowercase-hyphen naming convention",
+          "Included trigger phrases in description"
+        ]
+      },
+      {
+        "input": "What should I include in my skill description?",
+        "output": [
+          "Use the formula: what it does + when to use it + key capabilities",
+          "Include action verbs like create, handle, manage, process",
+          "Add trigger phrases users would say naturally",
+          "Keep description under 1024 characters",
+          "Frontmatter name must use lowercase-hyphens"
+        ]
+      },
+      {
+        "input": "How do I organize a large skill?",
+        "output": [
+          "Keep SKILL.md under 500 lines total",
+          "Move detailed examples to references/examples.md",
+          "Move troubleshooting to references/troubleshooting.md",
+          "Use progressive disclosure principles",
+          "Only add context Claude does not already have"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep SKILL.md under 500 lines by moving examples to references/",
+      "Include trigger phrases in description for better skill discovery",
+      "Use Bash(git *) wildcard patterns instead of verbose permission lists"
+    ],
+    "anti_patterns": [
+      "Avoid wrapper scripts that just call external commands",
+      "Do not over-explain concepts Claude already knows",
+      "Never include multiple competing workflows in one skill"
+    ],
+    "faq": [
+      {
+        "question": "What tools support Claude Code skills?",
+        "answer": "Claude Code skills work in Claude and Claude Code. They may also work in Codex depending on integration."
+      },
+      {
+        "question": "What is the maximum size for a SKILL.md file?",
+        "answer": "Keep SKILL.md under 500 lines. Move detailed content to references/ folder for larger documentation."
+      },
+      {
+        "question": "Can I create helper scripts for my skill?",
+        "answer": "Yes, but only for complex logic or multi-step processing. Avoid simple wrapper scripts."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "This is a read-only documentation skill. It does not access files, execute code, or send network requests."
+      },
+      {
+        "question": "Why does my skill not trigger?",
+        "answer": "Check that frontmatter includes trigger phrases in description. Use action verbs like create, handle, process."
+      },
+      {
+        "question": "How is this different from MCP servers?",
+        "answer": "Skills are prompt-based guides for Claude behavior. MCP servers provide external tool integrations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 281
+    }
+  ]
+}

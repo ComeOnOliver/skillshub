@@ -1,0 +1,262 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:49:47.447Z",
+    "slug": "k-dense-ai-openalex-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/openalex-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2e727022570ddf8c9b30fdf6bebf6b23e8aba9cd52d0176edaa92ca94532fdd8",
+    "tree_hash": "a91d6fe838382c07c7fbb908fdaaaaef1e08431134cd67d28f1985bdbcc1d3a7"
+  },
+  "skill": {
+    "name": "openalex-database",
+    "description": "Query and analyze scholarly literature using the OpenAlex database. This skill should be used when searching for academic papers, analyzing research trends, finding works by authors or institutions, tracking citations, discovering open access publications, or conducting bibliometric analysis across 240M+ scholarly works. Use for literature searches, research output analysis, citation analysis, and academic database queries.",
+    "summary": "Query and analyze scholarly literature using the OpenAlex database. This skill should be used when s...",
+    "icon": "📚",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "academic",
+      "research",
+      "bibliometrics",
+      "literature",
+      "open-access"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 337 static findings are false positives. The 'external_commands' detections are markdown code block delimiters (```) in documentation, not shell backticks. 'Weak cryptographic algorithm' flags are triggered by substring matches in URL parameters like 'sample=' and 'seed=' - no crypto code exists. 'System reconnaissance' flags are database sampling parameters. No actual security vulnerabilities present. This is a legitimate scholarly API client accessing public OpenAlex database.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/openalex_client.py",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "scripts/openalex_client.py",
+            "line_start": 44,
+            "line_end": 73
+          },
+          {
+            "file": "scripts/query_helpers.py",
+            "line_start": 29,
+            "line_end": 29
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 2126,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:49:47.447Z"
+  },
+  "content": {
+    "user_title": "Search Academic Literature with OpenAlex Database",
+    "value_statement": "Researchers spend hours searching through academic databases to find relevant papers and analyze research trends. This skill provides direct access to OpenAlex 240M+ scholarly works with powerful filtering, citation analysis, and bibliometric capabilities for efficient literature discovery.",
+    "seo_keywords": [
+      "OpenAlex",
+      "academic search",
+      "research database",
+      "bibliometric analysis",
+      "literature review",
+      "citation analysis",
+      "Claude Code",
+      "scholarly works",
+      "academic database",
+      "research tools"
+    ],
+    "actual_capabilities": [
+      "Search 240M+ scholarly works with advanced filters",
+      "Find papers by author, institution, or topic",
+      "Analyze citation patterns and research trends",
+      "Export data for bibliometric analysis",
+      "Batch lookup multiple DOIs efficiently"
+    ],
+    "limitations": [
+      "Rate limited to 10 requests per second with email",
+      "No full-text access, only metadata available",
+      "Requires internet connection for API calls",
+      "Maximum 200 results per API request page"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Graduate Students",
+        "title": "Literature Review Research",
+        "description": "Find relevant papers, track citations, and identify key authors in your research field for comprehensive literature reviews."
+      },
+      {
+        "target_user": "Research Analysts",
+        "title": "Institution Research Output",
+        "description": "Analyze publication trends, collaboration networks, and research impact for universities and research organizations."
+      },
+      {
+        "target_user": "Librarians",
+        "title": "Open Access Discovery",
+        "description": "Identify open access versions of papers and help researchers find freely available scholarly literature."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Paper Search",
+        "scenario": "Find recent papers on a topic",
+        "prompt": "Search OpenAlex for papers about 'machine learning in healthcare' published after 2022, limit to 50 results, sorted by citations"
+      },
+      {
+        "title": "Author Publication List",
+        "scenario": "Get all works by a researcher",
+        "prompt": "Find all publications by 'Geoffrey Hinton' in OpenAlex, include papers from 2020-2024 with citation counts"
+      },
+      {
+        "title": "Institution Analysis",
+        "scenario": "Analyze university research output",
+        "prompt": "Analyze MIT research output in artificial intelligence for 2023, show top topics and open access percentage"
+      },
+      {
+        "title": "Citation Network",
+        "scenario": "Find highly cited papers",
+        "prompt": "Find the top 100 most cited papers on 'quantum computing' published after 2020 using OpenAlex"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find recent papers about CRISPR gene editing published in 2023",
+        "output": [
+          "Found 2,847 papers about CRISPR gene editing from 2023",
+          "• CRISPR-Cas systems for programmable RNA targeting - 156 citations",
+          "• Prime editing in human cells and embryos - 142 citations",
+          "• CRISPR tools for targeted genome editing - 98 citations",
+          "Open access papers: 78% (2,218 available freely)",
+          "Top journals: Nature, Science, Cell"
+        ]
+      },
+      {
+        "input": "Show me publication trends for AI research at Stanford",
+        "output": [
+          "Stanford University: 12,847 AI-related publications since 2020",
+          "2020: 2,134 papers",
+          "2021: 2,456 papers",
+          "2022: 2,987 papers",
+          "2023: 3,127 papers",
+          "2024: 2,143 papers (partial)",
+          "Open access rate: 67%",
+          "Top topics: Machine Learning, Neural Networks, Natural Language Processing"
+        ]
+      },
+      {
+        "input": "Find highly cited open access papers on climate change",
+        "output": [
+          "Found 892 highly cited OA papers on climate change",
+          "• The physical science behind climate change - 4,230 citations",
+          "• Climate change impacts on biodiversity - 2,891 citations",
+          "• Carbon emissions and global warming - 2,456 citations",
+          "All papers freely available through open access repositories"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always provide your email for 10x rate limit boost from 1 to 10 requests per second",
+      "Use the two-step pattern: first find entity ID, then filter works by that ID",
+      "Set per-page=200 for maximum efficiency when extracting large datasets"
+    ],
+    "anti_patterns": [
+      "Do not filter by entity names directly - always use OpenAlex IDs instead",
+      "Avoid making sequential API calls when batch operations with pipe operator are available",
+      "Do not use random page numbers for sampling - use the sample parameter with seed instead"
+    ],
+    "faq": [
+      {
+        "question": "Do I need an API key for OpenAlex?",
+        "answer": "No, OpenAlex is completely free and open. No registration or API key required for access."
+      },
+      {
+        "question": "What is the rate limit?",
+        "answer": "Default is 1 request per second. Provide your email to get 10 requests per second polite pool access."
+      },
+      {
+        "question": "Can I search by author name directly?",
+        "answer": "Use the two-step pattern: search for author to get ID, then filter works by that author ID."
+      },
+      {
+        "question": "How do I find open access papers?",
+        "answer": "Use filter parameter is_oa:true or the get_open_access_papers helper function for OA-only results."
+      },
+      {
+        "question": "Can I export data for analysis?",
+        "answer": "Yes, use the paginate_all method to extract large datasets and export to CSV or JSON formats."
+      },
+      {
+        "question": "What is the difference between search and filter?",
+        "answer": "Search performs full-text matching across fields. Filter uses exact field matching with operators like greater than, less than, pipe for OR, and exclamation for NOT."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_guide.md",
+          "type": "file",
+          "path": "references/api_guide.md",
+          "lines": 372
+        },
+        {
+          "name": "common_queries.md",
+          "type": "file",
+          "path": "references/common_queries.md",
+          "lines": 382
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "openalex_client.py",
+          "type": "file",
+          "path": "scripts/openalex_client.py",
+          "lines": 338
+        },
+        {
+          "name": "query_helpers.py",
+          "type": "file",
+          "path": "scripts/query_helpers.py",
+          "lines": 307
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 494
+    }
+  ]
+}

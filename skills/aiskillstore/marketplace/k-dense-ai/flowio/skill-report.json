@@ -1,0 +1,242 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:15:34.713Z",
+    "slug": "k-dense-ai-flowio",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/flowio",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "01b18fdb9b6bf3dd38afb0f1368a8d2bb0251427120a794fdde6239de6c86eca",
+    "tree_hash": "9260f9fb65e88bc595ac1ec847b178433db91287a6cb078ee49dfcc5b73942c0"
+  },
+  "skill": {
+    "name": "flowio",
+    "description": "Parse FCS (Flow Cytometry Standard) files v2.0-3.1. Extract events as NumPy arrays, read metadata/channels, convert to CSV/DataFrame, for flow cytometry data preprocessing.",
+    "summary": "Parse FCS (Flow Cytometry Standard) files v2.0-3.1. Extract events as NumPy arrays, read metadata/ch...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "BSD-3-Clause license",
+    "category": "data",
+    "tags": [
+      "flow-cytometry",
+      "fcs-files",
+      "scientific-data",
+      "bioinformatics"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 177 static findings are false positives. The scanner misidentified markdown documentation artifacts and legitimate scientific terminology as security issues. Shell command patterns are installation instructions in code blocks. 'Weak cryptographic algorithm' detections refer to 'PnE' (Parameter n Exponential), a legitimate flow cytometry data format term for amplification exponents. No actual executable code or malicious patterns exist in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/api_reference.md",
+            "line_start": 9,
+            "line_end": 11
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 33
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 355
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 1962,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:15:34.713Z"
+  },
+  "content": {
+    "user_title": "Read and write FCS flow cytometry files",
+    "value_statement": "Flow cytometry data requires specialized file handling. FlowIO parses FCS files, extracts event data as NumPy arrays, and enables conversion to CSV formats for downstream analysis pipelines.",
+    "seo_keywords": [
+      "flow cytometry",
+      "FCS files",
+      "FlowIO",
+      "scientific data parsing",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "bioinformatics",
+      "cell analysis",
+      " NumPy arrays"
+    ],
+    "actual_capabilities": [
+      "Read FCS files v2.0-3.1 and extract event data as NumPy arrays",
+      "Access metadata including channel names, acquisition dates, and instrument info",
+      "Create new FCS files from NumPy arrays with custom channel names",
+      "Convert flow cytometry data to CSV or Pandas DataFrame formats",
+      "Handle multi-dataset FCS files and problematic files with offset issues"
+    ],
+    "limitations": [
+      "Does not perform flow cytometry analysis (compensation, gating)",
+      "Does not support FlowJo or GatingML file formats",
+      "Limited to single-precision float export (FCS 3.1)",
+      "No direct event data modification - extract, modify, recreate required"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bioinformatics researchers",
+        "title": "Preprocess cytometry data",
+        "description": "Extract events from FCS files and prepare data for analysis pipelines with compensation and gating tools."
+      },
+      {
+        "target_user": "Laboratory scientists",
+        "title": "Inspect experiment files",
+        "description": "Quickly view channel counts, event counts, and metadata from flow cytometry experiments without specialized software."
+      },
+      {
+        "target_user": "Data engineers",
+        "title": "Batch convert to CSV",
+        "description": "Process directories of FCS files and export to CSV format for machine learning workflows."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic file reading",
+        "scenario": "Read an FCS file",
+        "prompt": "Use FlowIO to read experiment.fcs and show the version, event count, and channel names."
+      },
+      {
+        "title": "Extract event data",
+        "scenario": "Get NumPy array data",
+        "prompt": "Load sample.fcs using FlowIO and extract the event data as a NumPy array with preprocessing applied."
+      },
+      {
+        "title": "Create FCS file",
+        "scenario": "Generate synthetic data",
+        "prompt": "Create a new FCS file named output.fcs from a NumPy array with 1000 events and 5 channels named FSC-A, SSC-A, FL1-A, FL2-A, Time."
+      },
+      {
+        "title": "Batch conversion",
+        "scenario": "Convert multiple files",
+        "prompt": "Find all .fcs files in data/ directory, read each one, and export the event data to CSV files with the same basename."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Read my flow cytometry file and show the channel information",
+        "output": [
+          "File: sample.fcs (245 KB)",
+          "FCS Version: 3.1",
+          "Events: 10,234",
+          "Channels: 8",
+          "Channel [0] FSC-A | Forward Scatter | scatter",
+          "Channel [1] SSC-A | Side Scatter | scatter",
+          "Channel [2] FL1-A | FITC | fluoro",
+          "Channel [3] FL2-A | PE | fluoro",
+          "Time channel: Index 7"
+        ]
+      },
+      {
+        "input": "Convert this FCS file to CSV format",
+        "output": [
+          "Loaded sample.fcs with 15,000 events and 12 channels",
+          "Converted event data to Pandas DataFrame",
+          "Exported to sample.csv (2.3 MB)",
+          "Columns: FSC-A, SSC-A, FL1-A, FL2-A, FL3-A, FL4-A, FL5-A, Time"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use only_text=True parameter when only metadata is needed to save memory",
+      "Wrap file operations in try-except blocks to handle parsing errors gracefully",
+      "Use ignore_offset_discrepancy=True for files with offset inconsistencies"
+    ],
+    "anti_patterns": [
+      "Do not attempt direct modification of event data in FlowData objects",
+      "Do not use FlowData constructor for multi-dataset files - use read_multiple_data_sets()",
+      "Do not assume preprocessing is always desired - set preprocess parameter explicitly"
+    ],
+    "faq": [
+      {
+        "question": "What FCS versions are supported?",
+        "answer": "FlowIO supports FCS versions 2.0, 3.0, and 3.1 for both reading and writing."
+      },
+      {
+        "question": "How to extract only metadata?",
+        "answer": "Pass only_text=True to FlowData constructor to skip DATA segment parsing and save memory."
+      },
+      {
+        "question": "Can I modify event data?",
+        "answer": "FlowIO does not support direct modification. Extract data with as_array(), modify it, then use create_fcs() to save."
+      },
+      {
+        "question": "How to handle multi-dataset files?",
+        "answer": "Use read_multiple_data_sets() function instead of FlowData constructor to get all datasets as a list."
+      },
+      {
+        "question": "What preprocessing is applied?",
+        "answer": "By default, FlowIO applies gain scaling, logarithmic transformation using PnE values, and time scaling."
+      },
+      {
+        "question": "Can this integrate with other tools?",
+        "answer": "Yes, combine with FlowKit for compensation/gating or export to Pandas DataFrames for analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 373
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 608
+    }
+  ]
+}

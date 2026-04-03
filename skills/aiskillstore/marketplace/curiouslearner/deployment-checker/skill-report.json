@@ -1,0 +1,406 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:30:56.197Z",
+    "slug": "curiouslearner-deployment-checker",
+    "source_url": "https://github.com/CuriousLearner/devkit/tree/main/skills/deployment-checker",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "dc1676f2f358516122d46e3e8d5ee4b0cd69a4d36c02397dba4b546c050d0139",
+    "tree_hash": "31bb9404cfc39a274e597e4761758ba86966c895c37906e32dcacf74d69ed9ce"
+  },
+  "skill": {
+    "name": "deployment-checker",
+    "description": "Pre-deployment validation checklist and automated readiness assessment.",
+    "summary": "Pre-deployment validation checklist and automated readiness assessment.",
+    "icon": "🚀",
+    "version": "1.0.0",
+    "author": "CuriousLearner",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "deployment",
+      "devops",
+      "checklist",
+      "validation",
+      "production"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "scripts",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill providing deployment checklists and guidance. The static scanner incorrectly flagged example code patterns as executable threats, including Python exec() in a JavaScript file and Ruby backticks in documentation. The skill contains no actual executable code, no network connections, and no malicious intent. All 51 findings are false positives from pattern matching without semantic context.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 255,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 307
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 308,
+            "line_end": 308
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 255,
+            "line_end": 255
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 296
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 296,
+            "line_end": 297
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 297,
+            "line_end": 316
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 316,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 457
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 457,
+            "line_end": 458
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 458,
+            "line_end": 565
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 242
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 262,
+            "line_end": 262
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 242
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 262,
+            "line_end": 262
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 237
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 785,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:30:56.197Z"
+  },
+  "content": {
+    "user_title": "Validate deployment readiness with checklists",
+    "value_statement": "Ensure production deployments are safe and ready with systematic validation. Get comprehensive checklists covering code quality, security, performance, and infrastructure readiness.",
+    "seo_keywords": [
+      "deployment checklist",
+      "production deployment",
+      "devops validation",
+      "pre-deployment checks",
+      "Claude deployment",
+      "deployment automation",
+      "release management",
+      "infrastructure validation",
+      "security checklist",
+      "performance testing"
+    ],
+    "actual_capabilities": [
+      "Generate comprehensive deployment checklists for pre/post deployment",
+      "Create automated deployment validation scripts",
+      "Assess deployment readiness across code quality, security, and infrastructure",
+      "Provide deployment report templates with scoring",
+      "Recommend deployment strategies (blue-green, canary, rolling)"
+    ],
+    "limitations": [
+      "Requires manual implementation of automated checks",
+      "Does not execute actual deployment commands",
+      "Checklist items need customization per project",
+      "No real-time monitoring during deployment"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Pre-deployment validation",
+        "description": "Run comprehensive checks before production deployments to ensure all critical requirements are met"
+      },
+      {
+        "target_user": "Release Managers",
+        "title": "Deployment readiness reports",
+        "description": "Generate detailed readiness reports with scoring for stakeholder approval and go/no-go decisions"
+      },
+      {
+        "target_user": "Development Teams",
+        "title": "Automated deployment scripts",
+        "description": "Implement automated deployment validation scripts that integrate with CI/CD pipelines"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic deployment check",
+        "scenario": "Quick readiness assessment",
+        "prompt": "Check if my Node.js application is ready for deployment. Focus on tests, build, security, and environment variables."
+      },
+      {
+        "title": "Production deployment report",
+        "scenario": "Comprehensive readiness report",
+        "prompt": "Generate a deployment readiness report for my production release. Include checklist validation, risk assessment, and rollback plan."
+      },
+      {
+        "title": "Docker deployment validation",
+        "scenario": "Container deployment check",
+        "prompt": "Validate my Docker-based application deployment. Check container security, image size, health checks, and orchestration readiness."
+      },
+      {
+        "title": "Database migration safety",
+        "scenario": "Migration risk assessment",
+        "prompt": "Assess the safety of my database migration deployment. Check migration scripts, rollback procedures, and data backup strategies."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Check if my application is ready for deployment",
+        "output": [
+          "Code Quality: All tests passing (234 tests), linting clean, 87% coverage",
+          "Security: No vulnerabilities found, HTTPS configured, auth tested",
+          "Performance: Load test passed, response time <200ms, caching enabled",
+          "Infrastructure: Health checks need configuration",
+          "Database: Migration rollback script missing",
+          "Recommendation: Fix infrastructure health checks and create migration rollback before deploying"
+        ]
+      },
+      {
+        "input": "Generate a deployment report for my production release",
+        "output": [
+          "Deployment Readiness Score: 92/100",
+          "Critical Checks: All 10 passed",
+          "High Priority: 18/20 passed (2 warnings)",
+          "Medium Priority: 28/30 passed (2 warnings)",
+          "Risk Level: Low",
+          "Recommendation: Approved for deployment with minor fixes documented"
+        ]
+      },
+      {
+        "input": "Validate my Docker container deployment",
+        "output": [
+          "Container Security: Image scan passed, no critical vulnerabilities",
+          "Image Size: 245MB (within limits)",
+          "Health Checks: Endpoint configured and responding",
+          "Orchestration: Kubernetes readiness probe configured",
+          "Rollback: Rollback strategy documented",
+          "Status: Ready for container deployment"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always test deployment scripts in staging environment first",
+      "Document all environment variables and configuration requirements",
+      "Implement health checks and monitoring before deployment"
+    ],
+    "anti_patterns": [
+      "Deploying without testing rollback procedures",
+      "Skipping security scans for faster deployment",
+      "Deploying during high-traffic periods without proper planning"
+    ],
+    "faq": [
+      {
+        "question": "Is this skill compatible with all deployment platforms?",
+        "answer": "Yes, the checklists are platform-agnostic and work with AWS, Azure, GCP, Kubernetes, Docker, and traditional servers."
+      },
+      {
+        "question": "What are the limitations of automated checks?",
+        "answer": "Automated checks validate technical requirements but cannot assess business logic, user experience, or market readiness."
+      },
+      {
+        "question": "How do I integrate this with my CI/CD pipeline?",
+        "answer": "Use the Node.js example script as a template. Customize checks for your stack and run it as a pipeline stage."
+      },
+      {
+        "question": "Is my deployment data safe when using this skill?",
+        "answer": "Yes, this is a documentation-only skill. It does not access your code or deployment environments."
+      },
+      {
+        "question": "What should I do if checks fail?",
+        "answer": "Address critical failures before deployment. For warnings, assess risk and document mitigation strategies."
+      },
+      {
+        "question": "How does this compare to deployment tools like Terraform?",
+        "answer": "This skill provides validation checklists, while tools like Terraform manage infrastructure. Use both for comprehensive deployment management."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 606
+    }
+  ]
+}

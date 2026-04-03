@@ -1,0 +1,268 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T02:04:46.300Z",
+    "slug": "davila7-gget",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/gget",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8a8119e3e19e81b88ed2b6c8a9ad01ffdc8d5566c3afd8e11912f695c98079c8",
+    "tree_hash": "16894adf71f33460ed03515021890cde07ec02b8108a9baf153b12702d8ca2bc"
+  },
+  "skill": {
+    "name": "gget",
+    "description": "CLI/Python toolkit for rapid bioinformatics queries. Preferred for quick BLAST searches. Access to 20+ databases: gene info (Ensembl/UniProt), AlphaFold, ARCHS4, Enrichr, OpenTargets, COSMIC, genome downloads. For advanced BLAST/batch processing, use biopython. For multi-database integration, use bioservices.",
+    "summary": "CLI/Python toolkit for rapid bioinformatics queries. Preferred for quick BLAST searches. Access to 2...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "bioinformatics",
+      "genomics",
+      "sequence-analysis",
+      "protein-structure",
+      "data-retrieval"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation wrapper for established open-source bioinformatics library. All patterns flagged are legitimate tool functionality: CLI command examples in docs, URLs to public genomic databases, and optional OpenAI API integration. No malicious behavior detected. gget is an academic tool from UC Berkeley's Pachter lab.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 1,
+            "line_end": 866
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 863,
+            "line_end": 865
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/gene_analysis.py",
+            "line_start": 55,
+            "line_end": 61
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3267,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T02:04:46.300Z"
+  },
+  "content": {
+    "user_title": "Query genomic databases and analyze sequences",
+    "value_statement": "Need quick access to gene information, protein structures, or expression data? This skill provides unified access to 20+ bioinformatics databases through a single interface. Search genes, retrieve sequences, predict structures, and analyze disease associations without switching tools.",
+    "seo_keywords": [
+      "gget",
+      "bioinformatics",
+      "genomics",
+      "gene search",
+      "protein structure",
+      "AlphaFold",
+      "sequence analysis",
+      "Ensembl",
+      "UniProt",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Search genes by name or description across 20+ genomic databases",
+      "Retrieve nucleotide and protein sequences from Ensembl and UniProt",
+      "Query tissue expression and gene correlation data from ARCHS4",
+      "Perform enrichment analysis using Enrichr and KEGG pathways",
+      "Get disease and drug associations from OpenTargets",
+      "Predict protein structures with AlphaFold2"
+    ],
+    "limitations": [
+      "Requires Python installation and gget package (pip install gget)",
+      "Some modules require additional setup (AlphaFold, ELM, cellxgene)",
+      "Network connectivity required for database queries",
+      "Rate limits apply to API-based databases"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Molecular biologists",
+        "title": "Gene information lookup",
+        "description": "Quickly find gene details, sequences, and functional annotations from unified searches"
+      },
+      {
+        "target_user": "Computational researchers",
+        "title": "Pathway enrichment analysis",
+        "description": "Perform functional enrichment on gene lists using multiple ontology databases"
+      },
+      {
+        "target_user": "Drug discovery scientists",
+        "title": "Target prioritization",
+        "description": "Identify disease-associated genes and existing drugs targeting them"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Find a gene",
+        "scenario": "Search for gene information",
+        "prompt": "Find information about the [GENE_NAME] gene in human including its sequence, function, and disease associations"
+      },
+      {
+        "title": "Compare sequences",
+        "scenario": "Align and compare sequences",
+        "prompt": "Compare the protein sequences of [GENE_A] and [GENE_B] using MUSCLE alignment and identify conserved regions"
+      },
+      {
+        "title": "Expression analysis",
+        "scenario": "Get expression data",
+        "prompt": "Get tissue expression data for [GENE_NAME] and find genes with similar expression patterns"
+      },
+      {
+        "title": "Drug target research",
+        "scenario": "Find drug associations",
+        "prompt": "Identify drugs associated with [GENE_NAME] and its disease associations from OpenTargets"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find information about TP53 including its sequence, protein structure, and disease associations",
+        "output": [
+          "• Gene: TP53 (ENSG00000141510)",
+          "• Description: Tumor protein p53 - a tumor suppressor protein",
+          "• UniProt ID: P04637",
+          "• Tissue expression: Highest in testis, esophagus, and tongue",
+          "• Top disease associations: Malignant neoplasm of colon, Lung adenocarcinoma (scores > 0.9)",
+          "• Associated drugs: Doxorubicin, Cisplatin, Nutlin-3 (various trial phases)",
+          "• PDB structures: 1TUP, 1TSR, 2ACO (and 12 more)",
+          "• Nucleotide sequence: 1179 bp coding sequence available"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Specify species (homo_sapiens, mus_musculus) for accurate gene matching",
+      "Use Ensembl IDs for precise queries when gene symbols are ambiguous",
+      "Save results with output flags for reproducibility in workflows",
+      "Update gget regularly to match changing database structures"
+    ],
+    "anti_patterns": [
+      "Using gene symbols without species specification when symbols may overlap",
+      "Querying more than 1000 Ensembl IDs at once (may cause server errors)",
+      "Skipping error handling in automated analysis pipelines",
+      "Ignoring database version specifications for reproducibility"
+    ],
+    "faq": [
+      {
+        "question": "What databases does gget access?",
+        "answer": "gget queries 20+ databases including Ensembl, UniProt, NCBI, PDB, ARCHS4, Enrichr, OpenTargets, cBioPortal, COSMIC, and AlphaFold"
+      },
+      {
+        "question": "Does gget work with Claude Code?",
+        "answer": "Yes, gget works as a Python library in Claude Code. Install with pip and import gget in your analysis scripts"
+      },
+      {
+        "question": "What programming languages are supported?",
+        "answer": "gget provides both command-line interface and Python API. The Python API returns pandas DataFrames for easy data manipulation"
+      },
+      {
+        "question": "Is my data sent to external servers?",
+        "answer": "Yes, gget queries public genomic databases over HTTPS. No user data is stored. Sequence queries are sent to NCBI BLAST and other APIs"
+      },
+      {
+        "question": "How do I handle rate limits?",
+        "answer": "Implement delays between queries (1-2 seconds), use local databases (DIAMOND, COSMIC) for large-scale work, and cache results"
+      },
+      {
+        "question": "How does gget compare to Biopython?",
+        "answer": "gget provides unified access to 20+ databases through simple commands, while Biopython offers more sequence manipulation tools. Use both together for comprehensive analysis"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "database_info.md",
+          "type": "file",
+          "path": "references/database_info.md",
+          "lines": 301
+        },
+        {
+          "name": "module_reference.md",
+          "type": "file",
+          "path": "references/module_reference.md",
+          "lines": 468
+        },
+        {
+          "name": "workflows.md",
+          "type": "file",
+          "path": "references/workflows.md",
+          "lines": 815
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "batch_sequence_analysis.py",
+          "type": "file",
+          "path": "scripts/batch_sequence_analysis.py",
+          "lines": 192
+        },
+        {
+          "name": "enrichment_pipeline.py",
+          "type": "file",
+          "path": "scripts/enrichment_pipeline.py",
+          "lines": 236
+        },
+        {
+          "name": "gene_analysis.py",
+          "type": "file",
+          "path": "scripts/gene_analysis.py",
+          "lines": 162
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 866
+    }
+  ]
+}

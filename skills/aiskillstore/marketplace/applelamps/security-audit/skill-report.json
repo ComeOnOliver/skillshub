@@ -1,0 +1,202 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:35:00.449Z",
+    "slug": "applelamps-security-audit",
+    "source_url": "https://github.com/AppleLamps/web-term/tree/main/.claude/skills/security-audit",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e3cc164fd0ab840563fc2b749467e246d5d4afeef6d7f18915078581fbd4496d",
+    "tree_hash": "8eb80e560eb5bf073e47ccee7dad1b53930875b8526269989cdcbfc91b16b38f"
+  },
+  "skill": {
+    "name": "security-audit",
+    "description": "Review security of command execution, tool permissions, and API key handling. Use when user mentions \"security review\", \"audit\", \"check security\", \"vulnerabilities\", or before deploying to production.",
+    "summary": "Review security of command execution, tool permissions, and API key handling. Use when user mentions...",
+    "icon": "🔒",
+    "version": "1.0.0",
+    "author": "AppleLamps",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "security",
+      "audit",
+      "vulnerability",
+      "code-review",
+      "best-practices"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a prompt-based skill with read-only tools (Read, Grep, Glob). All static findings are false positives triggered by instructional content describing what security issues to look for. No executable code exists. The skill explicitly declares read-only operation and includes guardrails against exploiting vulnerabilities.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 4,
+            "line_end": 4
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 243,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:35:00.449Z"
+  },
+  "content": {
+    "user_title": "Audit code for security vulnerabilities and risks",
+    "value_statement": "Manual security reviews are time-consuming and may miss common vulnerabilities. This skill systematically checks code for command injection, permission issues, and exposed secrets using read-only analysis.",
+    "seo_keywords": [
+      "security audit",
+      "vulnerability scanner",
+      "code security review",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "command injection detection",
+      "API key security",
+      "secret detection",
+      "pre-deployment security"
+    ],
+    "actual_capabilities": [
+      "Review command execution code for shell injection vulnerabilities",
+      "Check tool permission configurations for bypass risks",
+      "Audit secrets management for hardcoded API keys",
+      "Analyze WebSocket endpoints for authentication gaps",
+      "Review frontend code for XSS vulnerabilities",
+      "Generate structured security reports with severity levels"
+    ],
+    "limitations": [
+      "Read-only analysis only. Cannot modify or fix code automatically.",
+      "Requires user approval before implementing any fixes",
+      "Limited to static code analysis of the current codebase",
+      "Cannot detect runtime vulnerabilities or dynamic issues"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps engineers",
+        "title": "Pre-deployment security check",
+        "description": "Run a comprehensive security audit before deploying code to production environments to catch critical issues early"
+      },
+      {
+        "target_user": "Security reviewers",
+        "title": "Third-party code assessment",
+        "description": "Identify command injection risks, permission issues, and exposed secrets in external or vendor code"
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Code review security checkpoint",
+        "description": "Add automated security checks to your code review workflow before merging pull requests"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick security scan",
+        "scenario": "Fast check for critical issues",
+        "prompt": "Run a security audit on this codebase and report any critical vulnerabilities"
+      },
+      {
+        "title": "Command injection review",
+        "scenario": "Check shell execution patterns",
+        "prompt": "Review all command execution patterns in the backend code and check for shell injection vulnerabilities"
+      },
+      {
+        "title": "Secrets audit",
+        "scenario": "Find exposed credentials",
+        "prompt": "Audit this project for hardcoded API keys, passwords, or secrets that should not be committed to version control"
+      },
+      {
+        "title": "Full security report",
+        "scenario": "Comprehensive pre-deploy review",
+        "prompt": "Perform a complete security audit including command execution, tool permissions, secrets management, WebSocket security, and frontend vulnerabilities. Generate a detailed report with severity levels."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run a security audit on this codebase",
+        "output": [
+          "Critical: Shell injection risk found. User input concatenated into system call.",
+          "Critical: WebSocket endpoint lacks authentication middleware.",
+          "Warning: Environment file not listed in gitignore.",
+          "Warning: Secrets loaded without using dotenv library.",
+          "Recommendation: Use parameterized commands instead of string concatenation.",
+          "Recommendation: Add authentication to all WebSocket endpoints."
+        ]
+      },
+      {
+        "input": "Check for hardcoded secrets",
+        "output": [
+          "Found 2 potential hardcoded secrets:",
+          "- config.py line 15: API_KEY variable contains literal string value",
+          "- settings.json line 8: Contains database password in plaintext",
+          "Recommendation: Move these values to environment variables.",
+          "Recommendation: Add these files to gitignore if they contain secrets."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run security audits before merging code involving command execution or secrets",
+      "Address critical findings immediately and warnings before production deployment",
+      "Use this skill as part of your regular code review workflow"
+    ],
+    "anti_patterns": [
+      "Ignoring audit warnings for internal or trusted code",
+      "Running audits only before major releases instead of continuously",
+      "Implementing fixes without understanding the underlying vulnerability"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools work with this skill?",
+        "answer": "This skill works with Claude Code, Claude, and Codex. It requires Read, Grep, and Glob tool capabilities."
+      },
+      {
+        "question": "What security issues can this skill detect?",
+        "answer": "It checks for shell injection, hardcoded secrets, missing authentication, permission misconfigurations, and XSS vulnerabilities."
+      },
+      {
+        "question": "Does this skill modify my code?",
+        "answer": "No. This is a read-only analysis tool. It recommends fixes but will not make changes without your explicit approval."
+      },
+      {
+        "question": "Is my code safe during the audit?",
+        "answer": "Yes. The skill only uses read-only tools and never logs, stores, or transmits discovered secrets or sensitive data."
+      },
+      {
+        "question": "What should I do with the audit findings?",
+        "answer": "Fix critical issues before deployment. Address warnings when possible. Implement recommendations as ongoing security practice."
+      },
+      {
+        "question": "How is this different from automated scanners?",
+        "answer": "This skill provides context-aware analysis using AI reasoning with specific remediation guidance tailored to your codebase."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 50
+    }
+  ]
+}

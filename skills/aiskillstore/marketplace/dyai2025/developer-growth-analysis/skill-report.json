@@ -1,0 +1,318 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:34:43.588Z",
+    "slug": "dyai2025-developer-growth-analysis",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/developer-growth-analysis",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cbf6f200d45d07ae970e2409d0227f7ece0854b24985de871f1a9f46f053c636",
+    "tree_hash": "c54d142d4c2505aa93e7c898d4976cda82d85f1d4ed36139e29eac7750762943"
+  },
+  "skill": {
+    "name": "developer-growth-analysis",
+    "description": "Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a personalized growth report to your Slack DMs.",
+    "summary": "Analyzes your recent Claude Code chat history to identify coding patterns, development gaps, and are...",
+    "icon": "📈",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "developer-growth",
+      "analytics",
+      "learning",
+      "career-development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 46 static findings are false positives. The skill is a prompt-based documentation file containing only instructions for analyzing chat history, curating learning resources, and sending reports via MCP tools. No executable code, scripts, or direct network/filesystem operations exist in the skill itself. All operations are mediated through Claude Code's built-in tools and Rube MCP integrations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 76,
+            "line_end": 76
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 146,
+            "line_end": 146
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 76,
+            "line_end": 76
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 146,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 304
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 501,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:34:43.588Z"
+  },
+  "content": {
+    "user_title": "Analyze Your Developer Growth",
+    "value_statement": "You want to improve as a developer but do not know where to focus. This skill analyzes your Claude Code chat history to identify patterns, skill gaps, and improvement areas, then curates HackerNews learning resources and delivers everything to your Slack.",
+    "seo_keywords": [
+      "developer growth analysis",
+      "Claude Code",
+      "codex",
+      "claude-code",
+      "programming skill improvement",
+      "learning resources",
+      "developer productivity",
+      "HackerNews",
+      "Slack integration",
+      "career development"
+    ],
+    "actual_capabilities": [
+      "Reads and analyzes Claude Code chat history from the past 24-48 hours",
+      "Identifies development patterns including technologies, problem types, and challenges",
+      "Detects specific skill gaps with evidence-based recommendations",
+      "Curates HackerNews articles tailored to each improvement area",
+      "Generates comprehensive growth reports with action items",
+      "Sends personalized reports directly to your Slack DMs"
+    ],
+    "limitations": [
+      "Requires access to local chat history file (~/.claude/history.jsonl)",
+      "Depends on Rube MCP for HackerNews search and Slack integration",
+      "Analysis is limited to conversations within Claude Code interface",
+      "Cannot access work done outside of Claude Code sessions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Weekly Growth Review",
+        "description": "Get a weekly summary of your development work, identify skill gaps, and receive curated learning resources."
+      },
+      {
+        "target_user": "Tech Leads",
+        "title": "Team Pattern Analysis",
+        "description": "Understand common challenges across your team by analyzing individual developer chat patterns."
+      },
+      {
+        "target_user": "Career Changers",
+        "title": "Skill Gap Identification",
+        "description": "Discover specific areas to focus on when transitioning to a new technology or domain."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Analysis",
+        "scenario": "Get growth insights",
+        "prompt": "Analyze my developer growth from my recent chats"
+      },
+      {
+        "title": "Today's Focus",
+        "scenario": "Review today's work",
+        "prompt": "Analyze my work from today and suggest areas for improvement"
+      },
+      {
+        "title": "Custom Period",
+        "scenario": "Review specific timeframe",
+        "prompt": "Analyze my coding patterns from the past week and identify my top 3 improvement areas"
+      },
+      {
+        "title": "Full Report",
+        "scenario": "Comprehensive analysis",
+        "prompt": "Give me a complete developer growth report including work summary, strengths, weaknesses, and learning resources from HackerNews"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze my developer growth from my recent chats",
+        "output": [
+          "Your Developer Growth Report",
+          "Work Summary: Over the past 24 hours, you focused on backend development...",
+          "Improvement Areas: 1. Advanced TypeScript Patterns, 2. Secure Data Handling...",
+          "Strengths: Security awareness, iterative refinement, full-stack capability",
+          "Action Items: 1. Study TypeScript utility types, 2. Document security patterns...",
+          "Learning Resources: Curated HackerNews articles for each improvement area"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run analysis weekly to track improvement trajectory over time",
+      "Focus on one improvement area before moving to the next",
+      "Apply learning resources to actual work projects for maximum retention"
+    ],
+    "anti_patterns": [
+      "Running analysis too frequently reduces actionable insights",
+      "Ignoring identified patterns and not acting on recommendations",
+      "Skipping the curated resources and relying only on generic tutorials"
+    ],
+    "faq": [
+      {
+        "question": "What data does this skill access?",
+        "answer": "The skill reads your local Claude Code chat history file which contains your messages, projects, and timestamps."
+      },
+      {
+        "question": "How far back does the analysis go?",
+        "answer": "By default, the skill analyzes chat history from the past 24-48 hours based on the current timestamp."
+      },
+      {
+        "question": "Does this integrate with other tools?",
+        "answer": "Yes, it uses Rube MCP for HackerNews searches and Slack message delivery. Both require separate authentication."
+      },
+      {
+        "question": "Is my chat data stored or shared?",
+        "answer": "Chat data is analyzed locally and only shared with you via Slack DM. No data is stored by the skill itself."
+      },
+      {
+        "question": "Why is my report not showing?",
+        "answer": "Ensure Slack is connected via Rube MCP and you have recent Claude Code chat history. The skill requires both MCP tools to function."
+      },
+      {
+        "question": "How is this different from code review?",
+        "answer": "This skill analyzes your development patterns and habits across sessions, focusing on skill gaps and learning, while code review focuses on specific code quality."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 323
+    }
+  ]
+}

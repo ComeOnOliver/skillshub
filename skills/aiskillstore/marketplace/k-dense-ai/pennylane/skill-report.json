@@ -1,0 +1,227 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:41:08.407Z",
+    "slug": "k-dense-ai-pennylane",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pennylane",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "77a393bb6a2bc2c8db101a4f85747186812a50969c55065fe265df781c74c701",
+    "tree_hash": "de71b34601e38d0b376bd428ab35d736fdc99317e3b0fc6ac4b3c04f5d9e3151"
+  },
+  "skill": {
+    "name": "pennylane",
+    "description": "Hardware-agnostic quantum ML framework with automatic differentiation. Use when training quantum circuits via gradients, building hybrid quantum-classical models, or needing device portability across IBM/Google/Rigetti/IonQ. Best for variational algorithms (VQE, QAOA), quantum neural networks, and integration with PyTorch/JAX/TensorFlow. For hardware-specific optimizations use qiskit (IBM) or cirq (Google); for open quantum systems use qutip.",
+    "summary": "Hardware-agnostic quantum ML framework with automatic differentiation for training quantum circuits with gradients.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Apache-2.0 license",
+    "tags": [
+      "quantum-computing",
+      "quantum-machine-learning",
+      "quantum-circuits",
+      "machine-learning",
+      "pennylane"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation/reference skill for the PennyLane quantum computing library. All static findings are false positives triggered by: (1) Python code blocks in markdown being flagged as shell execution patterns, (2) quantum computing terminology like 'control', 'command', 'execute' being misidentified as C2 keywords, (3) legitimate environment variable documentation for quantum hardware API credentials, and (4) documentation URLs. The skill contains no executable code, no network connections, and no file system operations. Safe for publication.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 8142,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:41:08.407Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Create quantum circuits and train them like neural networks",
+    "value_statement": "Building quantum machine learning models requires understanding quantum circuits, gradient computation, and hybrid classical-quantum workflows. This skill provides comprehensive documentation for PennyLane, enabling developers to train quantum circuits with automatic differentiation across simulators and real quantum hardware.",
+    "seo_keywords": [
+      "PennyLane",
+      "quantum computing",
+      "quantum machine learning",
+      "quantum circuits",
+      "VQE",
+      "QAOA",
+      "quantum neural networks",
+      "variational algorithms",
+      "quantum gradient",
+      "parameter-shift"
+    ],
+    "actual_capabilities": [
+      "Build quantum circuits with single and multi-qubit gates, measurements, and mid-circuit operations",
+      "Train quantum circuits using automatic differentiation with parameter-shift and backpropagation rules",
+      "Create hybrid quantum-classical models integrating with PyTorch, JAX, and TensorFlow",
+      "Execute quantum circuits on simulators (default.qubit, lightning.qubit) or cloud hardware (IBM, Amazon Braket, Google Cirq, Rigetti, IonQ)",
+      "Implement variational algorithms like VQE for molecular ground states and QAOA for optimization problems",
+      "Optimize quantum circuits using built-in optimizers (Adam, GradientDescent, Momentum, RMSProp)"
+    ],
+    "limitations": [
+      "This is a documentation skill providing reference information only - it does not execute quantum code",
+      "Requires the PennyLane library to be installed for actual quantum computations",
+      "Does not provide access to quantum hardware - users must configure their own hardware credentials",
+      "Cannot run quantum circuits directly - users must apply the documented patterns in their own code"
+    ],
+    "use_cases": [
+      {
+        "title": "Building quantum classifiers",
+        "description": "Create hybrid quantum-classical models for classification tasks using variational circuits and data encoding strategies.",
+        "target_user": "ML practitioners exploring quantum advantage for machine learning tasks"
+      },
+      {
+        "title": "Simulating molecular systems",
+        "description": "Compute ground state energies of molecules using the Variational Quantum Eigensolver (VQE) and UCCSD ansatz.",
+        "target_user": "Computational chemists and quantum researchers studying molecular properties"
+      },
+      {
+        "title": "Optimizing quantum workflows",
+        "description": "Select appropriate quantum devices, optimizers, and gradient methods for different computational constraints.",
+        "target_user": "Quantum computing developers building production quantum applications"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic quantum circuit setup",
+        "prompt": "How do I create a simple quantum circuit in PennyLane that measures the expectation value of PauliZ on qubit 0?",
+        "scenario": "Getting started with quantum circuit basics"
+      },
+      {
+        "title": "Training a variational circuit",
+        "prompt": "Show me how to train a parameterized quantum circuit using the GradientDescentOptimizer in PennyLane to minimize a cost function.",
+        "scenario": "Learning to optimize quantum circuit parameters"
+      },
+      {
+        "title": "Running on quantum hardware",
+        "prompt": "How do I configure PennyLane to run my circuit on IBM Quantum hardware using my API credentials?",
+        "scenario": "Connecting to cloud quantum computers"
+      },
+      {
+        "title": "Hybrid QML integration",
+        "prompt": "How do I integrate PennyLane with PyTorch to create a hybrid quantum-classical neural network for classification?",
+        "scenario": "Building quantum-classical ML models"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I create a quantum circuit that applies RX and RY gates and measures the result?",
+        "output": "Here's a simple PennyLane circuit:\n\n```python\nimport pennylane as qml\nfrom pennylane import numpy as np\n\n# Create a simulator device\ndev = qml.device('default.qubit', wires=2)\n\n# Define the circuit\n@qml.qnode(dev)\ndef circuit(params):\n    qml.RX(params[0], wires=0)  # Rotate qubit 0\n    qml.RY(params[1], wires=1)  # Rotate qubit 1\n    qml.CNOT(wires=[0, 1])      # Entangle qubits\n    return qml.expval(qml.PauliZ(0))\n\n# Run the circuit\nparams = np.array([0.5, 0.3])\nresult = circuit(params)\n```"
+      },
+      {
+        "input": "What are the main data encoding strategies in PennyLane?",
+        "output": "PennyLane supports several encoding strategies:\n\n1. **Angle Encoding** - Encode N features into N qubits using rotation angles\n2. **Amplitude Encoding** - Encode 2^N features into N qubits using state amplitudes (efficient for N<~10)\n3. **Basis State Encoding** - Encode binary features as computational basis states\n4. **IQP Encoding** - Embed features in an IQP circuit for kernel-based approaches\n\nEach encoding has tradeoffs between qubit efficiency and expressibility."
+      }
+    ],
+    "best_practices": [
+      "Start developing on simulators (default.qubit) before deploying to expensive cloud quantum hardware",
+      "Use parameter-shift rule for gradient computation on hardware, as backpropagation requires simulator devices",
+      "Reuse device objects to avoid the overhead of repeated device initialization",
+      "Use qml.specs() to analyze circuit complexity before running on hardware with limited shot budgets"
+    ],
+    "anti_patterns": [
+      "Running large circuits directly on quantum hardware without first validating on simulators",
+      "Using backpropagation for gradient computation when targeting real quantum devices (use parameter-shift instead)",
+      "Creating new device objects inside loops instead of reusing them",
+      "Ignoring barren plateaus in deep circuits by starting with large parameter values"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between default.qubit and lightning.qubit?",
+        "answer": "default.qubit is a pure Python simulator ideal for learning and prototyping. lightning.qubit uses the C++ lightning backend for significantly faster simulation of larger circuits. For production workloads, lightning.qubit is recommended."
+      },
+      {
+        "question": "How do I get gradients of quantum circuits in PennyLane?",
+        "answer": "PennyLane supports multiple methods: backpropagation (simulator-only, fastest), parameter-shift rule (works on all devices, most common for hardware), and adjoint differentiation. Use parameter-shift for real hardware."
+      },
+      {
+        "question": "Can I run PennyLane on actual quantum computers?",
+        "answer": "Yes. Install device plugins like pennylane-qiskit (IBM), pennylane-cirq (Google), or amazon-braket-pennylane (AWS). Configure your API credentials, then select the hardware device in your code."
+      },
+      {
+        "question": "What is a variational quantum circuit?",
+        "answer": "A variational circuit is a parameterized quantum circuit where gates have tunable angles. By varying parameters and minimizing a cost function, these circuits can solve optimization problems or classify data - similar to how neural networks work."
+      },
+      {
+        "question": "How many qubits do I need for my application?",
+        "answer": "This depends on your problem. Simple proof-of-concept circuits may use 2-4 qubits. Molecular simulation scales with molecular size (10+ qubits for small molecules). Start small, profile with qml.specs(), and scale as needed."
+      },
+      {
+        "question": "What is the difference between VQE and QAOA?",
+        "answer": "VQE (Variational Quantum Eigensolver) finds ground state energies of molecules/Hamiltonians. QAOA (Quantum Approximate Optimization Algorithm) solves combinatorial optimization problems. Both use variational circuits but optimize different cost functions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "advanced_features.md",
+          "type": "file",
+          "path": "references/advanced_features.md",
+          "lines": 668
+        },
+        {
+          "name": "devices_backends.md",
+          "type": "file",
+          "path": "references/devices_backends.md",
+          "lines": 597
+        },
+        {
+          "name": "getting_started.md",
+          "type": "file",
+          "path": "references/getting_started.md",
+          "lines": 228
+        },
+        {
+          "name": "optimization.md",
+          "type": "file",
+          "path": "references/optimization.md",
+          "lines": 672
+        },
+        {
+          "name": "quantum_chemistry.md",
+          "type": "file",
+          "path": "references/quantum_chemistry.md",
+          "lines": 568
+        },
+        {
+          "name": "quantum_circuits.md",
+          "type": "file",
+          "path": "references/quantum_circuits.md",
+          "lines": 438
+        },
+        {
+          "name": "quantum_ml.md",
+          "type": "file",
+          "path": "references/quantum_ml.md",
+          "lines": 572
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 226
+    }
+  ]
+}

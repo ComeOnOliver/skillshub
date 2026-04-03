@@ -1,0 +1,359 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:03:47.722Z",
+    "slug": "davidopdebeeck-commit",
+    "source_url": "https://github.com/DavidOpDeBeeck/guessimate/tree/master/.claude/skills/commit",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "19baf64dc558c3ca43f0b51028871174da3d49cda67f14ed7176f59a2c292eb4",
+    "tree_hash": "e428f673b0c9c12bf231d23093913662b8e2eb1cfb7826d911cd73489c9609ab"
+  },
+  "skill": {
+    "name": "commit",
+    "description": "Generate commit messages following project conventions for staged changes. Use when the user asks to commit changes or run /commit.",
+    "summary": "Generate commit messages following project conventions for staged changes. Use when the user asks to...",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "DavidOpDeBeeck",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "git",
+      "commit",
+      "version-control",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 38 static findings are FALSE POSITIVES. The static scanner incorrectly flagged standard git commit message prefixes (feat, fix, refactor, chore, style, test) as 'weak cryptographic algorithms', and legitimate git commands (git diff --staged, git status, git log) as 'shell backtick execution'. This is a prompt-based skill that generates conventional commit messages using hardcoded git commands for read operations and commits. No malicious behavior detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 91
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 282,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:03:47.722Z"
+  },
+  "content": {
+    "user_title": "Generate commit messages for staged changes",
+    "value_statement": "Writing clear commit messages takes time and consistency varies between developers. This skill analyzes your staged changes and generates conventional commit messages following your project conventions. It reviews git data, suggests a message, and commits after your approval.",
+    "seo_keywords": [
+      "git commit generator",
+      "commit message automation",
+      "conventional commits",
+      "git workflow tool",
+      "Claude Code git",
+      "codex commit helper",
+      "version control",
+      "git staging",
+      "commit message format",
+      "claude code"
+    ],
+    "actual_capabilities": [
+      "Review staged changes using git diff --staged",
+      "Check git status and recent commit history",
+      "Generate conventional commit messages (feat, fix, refactor, etc.)",
+      "Present message for user approval before committing"
+    ],
+    "limitations": [
+      "Requires git repository with staged changes",
+      "Does not stage files automatically - changes must be staged first",
+      "Message quality depends on change complexity and commit history context",
+      "Does not handle merge conflicts or complex git operations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Individual developers",
+        "title": "Quick commit messages",
+        "description": "Generate conventional commit messages instantly without memorizing formats."
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Enforce commit standards",
+        "description": "Ensure all team commits follow consistent conventions with automated message generation."
+      },
+      {
+        "target_user": "CI/CD pipelines",
+        "title": "Automated versioning",
+        "description": "Use in scripts to generate standardized commits for automated dependency updates."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic commit",
+        "scenario": "Quick commit with staged changes",
+        "prompt": "Run /commit to create a commit message for my staged changes."
+      },
+      {
+        "title": "Feature commit",
+        "scenario": "Committing a new feature",
+        "prompt": "Use /commit to generate a commit message for this feature implementation."
+      },
+      {
+        "title": "Bug fix commit",
+        "scenario": "Fixing a bug",
+        "prompt": "Run /commit to create a fix commit message for my staged bug fix."
+      },
+      {
+        "title": "Complex commit",
+        "scenario": "Multiple related changes",
+        "prompt": "Use /commit to generate an appropriate commit message for these changes. Review all staged files first."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run /commit to create a commit message for my staged changes",
+        "output": [
+          "feat: add auto-reveal toggle for estimation rounds",
+          "",
+          "Implement user-configurable auto-reveal that shows estimates",
+          "automatically after all users have voted",
+          "",
+          "Proceed with this commit message?"
+        ]
+      },
+      {
+        "input": "Use /commit to generate a commit message for this bug fix",
+        "output": [
+          "fix: prevent duplicate user connections to lobby",
+          "",
+          "Add validation to check existing connections before",
+          "establishing new WebSocket connections",
+          "",
+          "Proceed with this commit message?"
+        ]
+      },
+      {
+        "input": "Use /commit for my refactoring changes",
+        "output": [
+          "refactor: extract insight resolution logic to separate resolvers",
+          "",
+          "Move insight resolution from main service to dedicated",
+          "resolver classes for better separation of concerns",
+          "",
+          "Proceed with this commit message?"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Stage specific files before running commit to keep messages focused",
+      "Review the generated message before approving",
+      "Provide context in commit body when changes are complex"
+    ],
+    "anti_patterns": [
+      "Running commit on unstaged changes",
+      "Skipping message review approval",
+      "Using for merge commits or complex git operations",
+      "Expecting AI to understand unreviewed code context"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill stage files automatically?",
+        "answer": "No. You must stage files manually before running the commit skill. It only reviews already staged changes."
+      },
+      {
+        "question": "Can I customize the commit message format?",
+        "answer": "The skill follows conventional commit types (feat, fix, refactor, test, docs, style, chore). Message structure is fixed."
+      },
+      {
+        "question": "What if I want to edit the generated message?",
+        "answer": "The skill presents the message for your approval. You can request modifications before accepting."
+      },
+      {
+        "question": "Does this skill access my git credentials?",
+        "answer": "No. It only reads git data (diff, status, log) and executes commit commands through standard git interfaces."
+      },
+      {
+        "question": "Can I use this in non-git version control systems?",
+        "answer": "No. This skill is specifically designed for git and requires a git repository with staged changes."
+      },
+      {
+        "question": "How is this different from other commit message tools?",
+        "answer": "This skill uses AI to understand your specific changes and generates context-aware messages following project conventions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 93
+    }
+  ]
+}

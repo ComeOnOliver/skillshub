@@ -1,0 +1,281 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:23:28.117Z",
+    "slug": "k-dense-ai-clinicaltrials-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/clinicaltrials-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4ec0470f79e205653bc7ba4c55079a72798aef3f84b978733f7ccd0cd11e887b",
+    "tree_hash": "3518666da5ef10803695bf72d43cf2e04f8a0c9f1d366414dee3b47810e234b0"
+  },
+  "skill": {
+    "name": "clinicaltrials-database",
+    "description": "Query ClinicalTrials.gov via API v2. Search trials by condition, drug, location, status, or phase. Retrieve trial details by NCT ID, export data, for clinical research and patient matching.",
+    "summary": "Query ClinicalTrials.gov via API v2. Search trials by condition, drug, location, status, or phase. R...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "healthcare",
+      "clinical-research",
+      "api",
+      "medical-data",
+      "database"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 249 static findings are FALSE POSITIVES. The scanner misinterpreted markdown documentation syntax as executable code with security implications. The actual skill code (scripts/query_clinicaltrials.py) makes only legitimate HTTP GET requests to the ClinicalTrials.gov public API. No command execution, file operations, cryptographic operations, or suspicious network activity exists in the executable code. The skill is a simple data lookup tool for clinical research.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 387,
+            "line_end": 404
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 28,
+            "line_end": 42
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/query_clinicaltrials.py",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "scripts/query_clinicaltrials.py",
+            "line_start": 86,
+            "line_end": 87
+          },
+          {
+            "file": "scripts/query_clinicaltrials.py",
+            "line_start": 108,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 331,
+            "line_end": 331
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 266,
+            "line_end": 266
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 2233,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:23:28.117Z"
+  },
+  "content": {
+    "user_title": "Search ClinicalTrials.gov for Medical Research",
+    "value_statement": "Finding relevant clinical trials requires searching a large registry database. This skill provides a Python interface to query ClinicalTrials.gov API v2 to search trials by condition, drug, location, or sponsor and retrieve detailed study information.",
+    "seo_keywords": [
+      "clinical trials",
+      "ClinicalTrials.gov",
+      "medical research",
+      "patient matching",
+      "drug development",
+      "healthcare API",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "clinical research"
+    ],
+    "actual_capabilities": [
+      "Search clinical trials by condition, disease, or diagnosis",
+      "Find trials testing specific drugs or interventions",
+      "Filter trials by location, status, phase, or sponsor",
+      "Retrieve detailed trial information including eligibility criteria",
+      "Export trial data to CSV format for analysis",
+      "Automatically paginate through large result sets"
+    ],
+    "limitations": [
+      "No authentication - public API only with rate limit of 50 requests per minute",
+      "Cannot modify or submit clinical trial data",
+      "No access to private or unpublished trial information",
+      "Real-time data depends on ClinicalTrials.gov update schedules"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Medical researchers",
+        "title": "Analyze trial landscapes",
+        "description": "Search for trials by condition to understand research trends, funding sources, and study designs."
+      },
+      {
+        "target_user": "Healthcare providers",
+        "title": "Find patient options",
+        "description": "Locate recruiting trials for patients based on diagnosis, location, and eligibility requirements."
+      },
+      {
+        "target_user": "Pharmaceutical analysts",
+        "title": "Track drug development",
+        "description": "Monitor trials for specific drugs or interventions across phases and sponsors."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic search",
+        "scenario": "Find recruiting trials",
+        "prompt": "Find clinical trials for [condition] that are currently recruiting participants."
+      },
+      {
+        "title": "Filtered search",
+        "scenario": "Location and status filter",
+        "prompt": "Search for [intervention] trials in [location] that are in Phase 2 or Phase 3."
+      },
+      {
+        "title": "Detailed lookup",
+        "scenario": "Get trial details",
+        "prompt": "Get detailed information about trial NCT[ID] including eligibility criteria and contact information."
+      },
+      {
+        "title": "Bulk export",
+        "scenario": "Export data for analysis",
+        "prompt": "Find all [condition] trials sponsored by [organization] and export the results to CSV."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find breast cancer trials recruiting in California",
+        "output": [
+          "Found 47 recruiting breast cancer trials in California",
+          "NCT04852770: Phase 3 Study of Pembrolizumab - Los Angeles, CA",
+          "NCT05123482: Phase 2 Immunotherapy Trial - San Francisco, CA",
+          "NCT04911071: Targeted Therapy Study - San Diego, CA"
+        ]
+      },
+      {
+        "input": "Show me Phase 3 immunotherapy trials for lung cancer",
+        "output": [
+          "Found 23 Phase 3 immunotherapy trials for lung cancer",
+          "Key sponsors: National Cancer Institute, Pfizer, Bristol-Myers Squibb",
+          "Locations: 15 trials in US, 8 international"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Respect the API rate limit of 50 requests per minute by using max page size (1000) for bulk queries.",
+      "Always check for missing data using .get() methods since not all trials have complete information.",
+      "Implement retry logic with exponential backoff to handle rate limit (429) errors gracefully."
+    ],
+    "anti_patterns": [
+      "Making sequential single requests instead of using pagination with maximum page size.",
+      "Assuming all trials have results - check the 'hasResults' field before accessing results sections.",
+      "Ignoring the study status when searching - filter for RECRUITING to find actively enrolling trials."
+    ],
+    "faq": [
+      {
+        "question": "Do I need an API key to use this skill?",
+        "answer": "No. ClinicalTrials.gov provides free public access to their API without authentication."
+      },
+      {
+        "question": "How many requests can I make per minute?",
+        "answer": "The API allows approximately 50 requests per minute per IP address. Use pagination to minimize requests."
+      },
+      {
+        "question": "Can I search for trials by NCT ID?",
+        "answer": "Yes. Use get_study_details with the NCT ID (e.g., NCT04852770) to retrieve full trial information."
+      },
+      {
+        "question": "What trial statuses can I filter by?",
+        "answer": "Valid statuses include RECRUITING, NOT_YET_RECRUITING, ACTIVE_NOT_RECRUITING, COMPLETED, TERMINATED, SUSPENDED, and WITHDRAWN."
+      },
+      {
+        "question": "Can I export data to CSV format?",
+        "answer": "Yes. Set format='csv' in search_studies to receive CSV output which can be saved to a file."
+      },
+      {
+        "question": "What information is included in trial details?",
+        "answer": "Full details include identification, status, sponsor, description, conditions, design, interventions, outcomes, eligibility, and contacts."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 359
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "query_clinicaltrials.py",
+          "type": "file",
+          "path": "scripts/query_clinicaltrials.py",
+          "lines": 216
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 507
+    }
+  ]
+}

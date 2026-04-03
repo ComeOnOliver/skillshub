@@ -1,0 +1,319 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:01:04.348Z",
+    "slug": "92bilal26-prompt-template-designer",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/prompt-template-designer",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0562898f948e953cd2de4d83ea01ac32b48eba536baca462a2b3c0e5a02bc422",
+    "tree_hash": "203d09bba1172ee2287fef3779fa0a3b1f023c2773b8f59da9a8c9b32f497690"
+  },
+  "skill": {
+    "name": "prompt-template-designer",
+    "description": "Design reusable prompt templates that encode domain-specific patterns for recurring AI tasks.\nUse when you've executed similar prompts 2+ times and need to capture the pattern as reusable\nintelligence. NOT for one-off prompts or generic \"ask AI a question\" patterns.\n",
+    "summary": "Design reusable prompt templates that encode domain-specific patterns for recurring AI tasks.\nUse wh...",
+    "icon": "📋",
+    "version": "2.0.0",
+    "author": "92Bilal26",
+    "license": "MIT",
+    "category": "intelligence-design",
+    "tags": [
+      "prompt-engineering",
+      "template-design",
+      "automation",
+      "patterns",
+      "workflow"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing methodology for designing prompt templates. No executable code, file access, network calls, or external commands. All 56 static findings are false positives triggered by hash strings in metadata and example code blocks in documentation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 94
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 94,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 168
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 168,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 210
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 429,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:01:04.347Z"
+  },
+  "content": {
+    "user_title": "Design Reusable AI Prompt Templates",
+    "value_statement": "Repeated AI interactions waste time and produce inconsistent results. This skill teaches you to extract patterns from successful prompts and encode them as reusable templates that save time, reduce errors, and capture domain expertise.",
+    "seo_keywords": [
+      "Claude prompt templates",
+      "AI prompt design",
+      "prompt template designer",
+      "Claude Code templates",
+      "reusable prompts",
+      "prompt automation",
+      "prompt patterns",
+      "AI workflow templates",
+      "prompt engineering best practices"
+    ],
+    "actual_capabilities": [
+      "Identify recurring prompt patterns from your AI interactions",
+      "Distinguish between variants (parameters) and invariants (constants)",
+      "Design template parameters with proper typing and constraints",
+      "Structure prompts using Intent → Constraints → Success Criteria format",
+      "Version and evolve templates based on feedback and metrics"
+    ],
+    "limitations": [
+      "Does not execute code or modify files automatically",
+      "Does not integrate with external APIs or services",
+      "Does not store or manage templates in a database"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Create Code Review Templates",
+        "description": "Build parameterized code review prompts that capture team standards, language preferences, and severity levels."
+      },
+      {
+        "target_user": "Technical Writers",
+        "title": "Standardize Documentation Prompts",
+        "description": "Design templates for API docs, README generation, and code comments that enforce consistent formatting."
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Build Incident Response Templates",
+        "description": "Create parameterized templates for debugging scripts, log analysis, and deployment post-mortems."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Pattern Detection",
+        "scenario": "Identify if a prompt is template-worthy",
+        "prompt": "Have I used a similar prompt 2+ times? Does this prompt have 5+ decision points? What stays constant and what changes between uses?"
+      },
+      {
+        "title": "Parameter Extraction",
+        "scenario": "Convert recurring prompt to template",
+        "prompt": "For my prompt about [TASK_TYPE], identify: (1) What varies between instances, (2) What constraints stay the same, (3) Parameters with 3-7 options max."
+      },
+      {
+        "title": "Template Structure",
+        "scenario": "Create formal template structure",
+        "prompt": "Create a prompt template using this structure: INTENT: [action verb + description], CONSTRAINTS: [list of invariants], SUCCESS CRITERIA: [measurable outcomes]. Include example filled template."
+      },
+      {
+        "title": "Template Evaluation",
+        "scenario": "Assess template effectiveness",
+        "prompt": "Evaluate my template: What is the success rate target? Time saved? Iterations needed? Team adoption rate? Identify anti-patterns like over-parameterization or premature templating."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I keep asking Claude to generate Git commit messages for my team. What should I do?",
+        "output": [
+          "Use the prompt 2+ times to confirm the pattern works",
+          "Identify what stays constant: commit format, conventional rules",
+          "Identify what changes: ticket number, scope, changes made",
+          "Create a template with 3-7 parameters",
+          "Track success rate over 10 uses"
+        ]
+      },
+      {
+        "input": "Our team needs consistent code reviews but everyone does them differently.",
+        "output": [
+          "Extract the common review criteria your team agrees on",
+          "Create parameters for language, focus areas, and severity",
+          "Define invariants: must-pass checks, style requirements",
+          "Include concrete examples showing filled templates",
+          "Measure adoption and success rate over time"
+        ]
+      },
+      {
+        "input": "How do I know if a prompt should become a template?",
+        "output": [
+          "Ask: Have I used this pattern 2+ times successfully?",
+          "Check: Does it have 5+ decision points?",
+          "Verify: Does it encode domain knowledge?",
+          "If yes to all, extract the pattern into a template"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Wait for second use before templating to avoid premature abstraction",
+      "Limit parameters to 3-7 per template to maintain usability",
+      "Include concrete filled examples and common mistakes for each template"
+    ],
+    "anti_patterns": [
+      "Template before pattern emerges (premature templating adds maintenance burden)",
+      "Over-parameterization with 15+ parameters (split into focused templates instead)",
+      "Under-parameterization where template only works for one specific scenario"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools work with this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. The methodology applies to any AI assistant that accepts text prompts."
+      },
+      {
+        "question": "How many parameters should a template have?",
+        "answer": "Aim for 3-7 parameters. More indicates the template is too complex and should be split into focused templates."
+      },
+      {
+        "question": "When should I create a template?",
+        "answer": "Wait until you have used a similar prompt 2+ times with success. Premature templating adds unnecessary maintenance burden."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill only provides methodology guidance. It does not access, store, or transmit any data externally."
+      },
+      {
+        "question": "What if my template is not working well?",
+        "answer": "Track metrics like success rate and time saved. If template adds more cognitive load than it saves, discontinue use and refine parameters."
+      },
+      {
+        "question": "How is this different from simple prompt libraries?",
+        "answer": "This skill teaches the skill of extracting patterns and designing templates, not just collecting prompts. Focuses on the why behind each template element."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 253
+    }
+  ]
+}

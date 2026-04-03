@@ -1,0 +1,385 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:03:57.801Z",
+    "slug": "anthropics-stripe-best-practices",
+    "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/stripe/skills/stripe-best-practices",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1a5b300345a58d087f481d0ecea5e062fceb74829142fb98e2cd79acc22c43c7",
+    "tree_hash": "834697c94231a5e73d1b9a3bc87a7bf7a88694fbaf1f4e7fc272d50a002b55c3"
+  },
+  "skill": {
+    "name": "stripe-best-practices",
+    "description": "Best practices for building Stripe integrations. Use when implementing payment processing, checkout flows, subscriptions, webhooks, Connect platforms, or any Stripe API integration.",
+    "summary": "Best practices for building Stripe integrations. Use when implementing payment processing, checkout ...",
+    "icon": "💳",
+    "version": "1.0.0",
+    "author": "anthropics",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "stripe",
+      "payments",
+      "integration",
+      "api"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill with no executable code. All 97 static findings are false positives: 36 'Hardcoded URL' detections are legitimate Stripe documentation links embedded in guidance text, 61 'Weak cryptographic algorithm' detections are scanner misidentifications of payment terminology (CheckoutSessions, PaymentIntents, API) as crypto code, and 'System reconnaissance' detections incorrectly interpret API guidance as system scanning. The SKILL.md file contains only documentation references with no network calls, file operations, or cryptographic implementations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "evaluation.json",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "evaluation.json",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "evaluation.json",
+            "line_start": 168,
+            "line_end": 168
+          },
+          {
+            "file": "security_evaluation.json",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "security_evaluation.json",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "security_evaluation.json",
+            "line_start": 246,
+            "line_end": 246
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 419,
+            "line_end": 419
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 426,
+            "line_end": 426
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 427,
+            "line_end": 427
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 439,
+            "line_end": 439
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 478,
+            "line_end": 478
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 482,
+            "line_end": 482
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 987,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:03:57.801Z"
+  },
+  "content": {
+    "user_title": "Follow Stripe best practices for payments",
+    "value_statement": "This skill provides expert guidance on implementing secure and modern Stripe integrations. It covers checkout flows, subscriptions, webhooks, and Connect platforms to help you avoid deprecated APIs and follow Stripe's recommended patterns.",
+    "seo_keywords": [
+      "stripe integration",
+      "stripe payments",
+      "stripe checkout",
+      "stripe subscriptions",
+      "stripe webhooks",
+      "stripe connect",
+      "payment processing",
+      "claude code",
+      "claude",
+      "codex"
+    ],
+    "actual_capabilities": [
+      "Guide developers to use CheckoutSessions over legacy Charges API",
+      "Recommend PaymentIntents for off-session payments and custom checkout flows",
+      "Advise on Subscriptions and Billing APIs for recurring revenue models",
+      "Provide Connect platform integration guidance with direct and destination charges",
+      "Direct users to Stripe's official documentation for specific implementation details"
+    ],
+    "limitations": [
+      "Does not provide code implementations or code snippets",
+      "Does not execute or test Stripe integrations",
+      "Does not handle PCI compliance or security audits",
+      "Does not provide debugging assistance for failed payments"
+    ],
+    "use_cases": [
+      {
+        "target_user": "E-commerce developers",
+        "title": "Build payment checkout",
+        "description": "Guide on implementing Stripe Checkout, Payment Element, and avoiding deprecated payment methods."
+      },
+      {
+        "target_user": "SaaS developers",
+        "title": "Create subscription billing",
+        "description": "Help designing subscription integrations with Billing APIs and recurring payment flows."
+      },
+      {
+        "target_user": "Platform builders",
+        "title": "Build marketplace with Connect",
+        "description": "Guidance on Connect integration types, charge flows, and managing connected accounts."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic checkout setup",
+        "scenario": "Implementing payment checkout",
+        "prompt": "Help me set up Stripe Checkout for my e-commerce site. What APIs should I use?"
+      },
+      {
+        "title": "Subscription integration",
+        "scenario": "Building recurring billing",
+        "prompt": "I need to implement subscription billing for my SaaS application. Guide me on the right Stripe APIs."
+      },
+      {
+        "title": "Webhook handling",
+        "scenario": "Processing payment events",
+        "prompt": "What are the best practices for handling Stripe webhooks in my application?"
+      },
+      {
+        "title": "Platform Connect",
+        "scenario": "Building marketplace",
+        "prompt": "I'm building a marketplace platform. What Connect integration pattern should I use for multi-party payments?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I implement one-time payments with Stripe?",
+        "output": [
+          "Use CheckoutSessions API for on-session payments with tax and discount support",
+          "Prefer Stripe-hosted checkout page for security and PCI compliance",
+          "For off-session payments, use PaymentIntents API with saved payment methods",
+          "Avoid the legacy Charges API - migrate to PaymentIntents if currently using it",
+          "Reference: https://docs.stripe.com/payments/payment-methods/integration-options.md"
+        ]
+      },
+      {
+        "input": "What Connect pattern should I use for my platform?",
+        "output": [
+          "Use direct charges when Stripe should take the risk of disputes and refunds",
+          "Use destination charges when your platform accepts liability for negative balances",
+          "Use the on_behalf_of parameter to control the merchant of record",
+          "Never mix charge types within the same integration"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use CheckoutSessions or PaymentIntents instead of the deprecated Charges API",
+      "Prefer Stripe-hosted checkout or embedded Payment Element over custom form integrations",
+      "Enable dynamic payment methods in dashboard settings rather than hardcoding payment_method_types"
+    ],
+    "anti_patterns": [
+      "Using the Charges API for new integrations - it is deprecated and should not be recommended",
+      "Recommending the Card Element or custom card forms when Payment Element is available",
+      "Mixing Connect charge types (direct and destination) within the same integration"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between CheckoutSessions and PaymentIntents?",
+        "answer": "CheckoutSessions handles the full checkout flow including taxes and discounts. PaymentIntents provides more control for off-session payments or custom state management."
+      },
+      {
+        "question": "Should I use Stripe-hosted or embedded checkout?",
+        "answer": "Prefer Stripe-hosted checkout for simplicity and PCI compliance. Use embedded checkout when you need advanced customization within your page."
+      },
+      {
+        "question": "When should I use Payment Element over Checkout?",
+        "answer": "Use Payment Element when you need advanced customization of the payment form, especially before creating a PaymentIntent for use cases like surcharging."
+      },
+      {
+        "question": "What is the right Connect integration type for my platform?",
+        "answer": "Use direct charges when Stripe takes the risk. Use destination charges when your platform accepts liability for negative balances."
+      },
+      {
+        "question": "How do I handle deprecated Stripe APIs?",
+        "answer": "Avoid Sources API, Tokens API, and Charges API. Migrate to CheckoutSessions, PaymentIntents, or SetupIntents based on your use case."
+      },
+      {
+        "question": "Should I hardcode payment method types?",
+        "answer": "No. Enable dynamic payment methods in your Stripe dashboard. Stripe automatically shows appropriate payment methods based on user location and preferences."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "evaluation.json",
+      "type": "file",
+      "path": "evaluation.json",
+      "lines": 192
+    },
+    {
+      "name": "security_evaluation.json",
+      "type": "file",
+      "path": "security_evaluation.json",
+      "lines": 270
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 31
+    }
+  ]
+}

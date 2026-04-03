@@ -1,0 +1,248 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T18:38:15.275Z",
+    "slug": "dnyoussef-hooks-automation",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/hooks-automation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8fa1b50b47d76a2b304ba437a3b2828d8fbc1b55891e9a41343d994a8420d775",
+    "tree_hash": "7b19750ddbf026132a70a942f3bd687e35685c8798409e529ece9b07ce3a23ce"
+  },
+  "skill": {
+    "name": "hooks-automation",
+    "description": "Automated coordination, formatting, and learning from Claude Code operations using intelligent hooks with MCP integration. Includes pre/post task hooks, session management, Git integration, memory coordination, and neural pattern training for enhanced development workflows.",
+    "summary": "Automate Claude Code operations with intelligent hooks for coordination and learning",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "automation",
+      "hooks",
+      "workflow",
+      "mcp-integration",
+      "development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a legitimate development automation tool for Claude Code hooks. The static analyzer detected 189 potential issues, but investigation reveals these are primarily false positives. The backtick executions are documentation examples showing CLI usage patterns, not executable code. The skill provides workflow automation through shell command hooks that users configure. Minor risk from external command execution is acceptable given the intended use case.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 150
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 106
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Documentation Contains Shell Command Examples",
+        "description": "The skill documentation extensively demonstrates CLI usage with backtick code examples. These are legitimate documentation patterns showing users how to invoke the claude-flow hook commands. Not executable code, but documentation examples that static analysis flagged.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 150
+          }
+        ]
+      },
+      {
+        "title": "Filesystem Operations in Hook Commands",
+        "description": "The skill enables hooks that perform filesystem operations like file validation, backup creation, and temp file cleanup. These are legitimate operations for development workflow automation tools. Users configure and control these operations through their .claude/settings.json configuration.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 108
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2887,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T18:38:15.275Z"
+  },
+  "content": {
+    "user_title": "Automate Development Workflows with Intelligent Hooks",
+    "value_statement": "Managing Claude Code operations manually is time-consuming and error-prone. This skill provides intelligent hooks that automatically coordinate agents, format code, validate syntax, and learn from patterns to streamline your development workflow.",
+    "seo_keywords": [
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "automation hooks",
+      "development workflow",
+      "code formatting",
+      "MCP integration",
+      "agent coordination",
+      "session management",
+      "continuous learning"
+    ],
+    "actual_capabilities": [
+      "Execute pre-operation hooks before file edits, bash commands, and tasks to validate and prepare",
+      "Run post-operation hooks after operations to auto-format code, store decisions in memory, and train patterns",
+      "Manage session lifecycle with automatic state persistence, context restoration, and metrics export",
+      "Coordinate memory across swarm agents using standardized three-phase protocol",
+      "Integrate with Git operations through pre-commit, post-commit, and pre-push hooks",
+      "Automatically spawn and assign agents based on task complexity and file types"
+    ],
+    "limitations": [
+      "Requires Claude Flow CLI installation and proper configuration in .claude/settings.json",
+      "Hook execution adds latency to operations (target under 100ms per hook)",
+      "MCP server integration requires separate setup for full coordination features",
+      "Custom hook development requires JavaScript knowledge and understanding of hook lifecycle"
+    ],
+    "use_cases": [
+      {
+        "title": "Automatic Code Quality Enforcement",
+        "description": "Configure post-edit hooks to automatically format code, run linters, and validate syntax after every file modification, ensuring consistent code quality across your entire project.",
+        "target_user": "Development teams wanting automated quality gates"
+      },
+      {
+        "title": "Multi-Agent Workflow Coordination",
+        "description": "Use pre-task and post-task hooks to automatically spawn appropriate agents, share context through memory coordination, and track progress across complex multi-agent development sessions.",
+        "target_user": "Teams using swarm architecture patterns"
+      },
+      {
+        "title": "Session State Management",
+        "description": "Enable session-start and session-end hooks to automatically save progress, export metrics, generate summaries, and restore context when resuming work on complex features or debugging sessions.",
+        "target_user": "Developers working on long-running projects"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Initialize Basic Hooks",
+        "prompt": "Set up hooks automation for my project with auto-formatting after edits and syntax validation before edits",
+        "scenario": "First-time setup for code quality automation"
+      },
+      {
+        "title": "Configure Session Management",
+        "prompt": "Configure session hooks to save my progress and metrics when I end a Claude Code session and restore context when I start again",
+        "scenario": "Enable cross-session continuity"
+      },
+      {
+        "title": "Add Git Integration Hooks",
+        "prompt": "Set up Git pre-commit hooks that validate syntax and format code before allowing commits, and post-commit hooks that track metrics",
+        "scenario": "Integrate automation with version control"
+      },
+      {
+        "title": "Create Custom Quality Hook",
+        "prompt": "Create a custom pre-edit hook that checks code complexity and security issues, blocking edits if complexity exceeds 15 or security issues are found",
+        "scenario": "Advanced custom validation logic"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Configure post-edit hook with auto-formatting for JavaScript files",
+        "output": "Hook configured successfully. When you edit JavaScript files, the post-edit hook will automatically format using Prettier, store edit context in memory under key 'edits/[filepath]', and train patterns for continuous improvement. Edit .claude/settings.json to see the configuration."
+      },
+      {
+        "input": "Set up session-end hook to export metrics and generate summary",
+        "output": "Session-end hook configured. When your Claude Code session ends, it will automatically save session state, export metrics (duration, commands executed, files modified, token usage), generate a summary with decisions and next steps, and clean up temporary files."
+      }
+    ],
+    "best_practices": [
+      "Configure hooks during project initialization and test them with debug mode enabled before production use",
+      "Use memory keys with clear namespaces like swarm/agent-type/context-name for organized coordination",
+      "Set appropriate timeouts for hooks (target under 100ms, use async for heavy operations) to avoid blocking workflows"
+    ],
+    "anti_patterns": [
+      "Avoid creating synchronous hooks that perform slow operations like network requests or full test suite runs",
+      "Do not skip hook validation and testing before enabling in production environments",
+      "Never hardcode sensitive credentials or API keys in hook command configurations"
+    ],
+    "faq": [
+      {
+        "question": "Do I need MCP servers to use this skill?",
+        "answer": "MCP servers are optional. Basic hooks work without MCP. For advanced features like agent coordination, memory sync, and neural training, you need claude-flow MCP server installed."
+      },
+      {
+        "question": "How do hooks affect Claude Code performance?",
+        "answer": "Each hook adds execution time to operations. Target under 100ms per hook. Use async mode for heavy operations. Monitor with debug mode and optimize hooks that exceed timeout thresholds."
+      },
+      {
+        "question": "Can I disable specific hooks temporarily?",
+        "answer": "Yes. Edit .claude/settings.json and remove or comment out specific hook configurations. You can also set continueOnError to true to allow operations even if hooks fail."
+      },
+      {
+        "question": "How do I debug hooks that are not working?",
+        "answer": "Enable debug mode with export CLAUDE_FLOW_DEBUG=true, check .claude-flow/logs for execution logs, validate configuration with npx claude-flow hook validate-config, and test hooks individually with the --debug flag."
+      },
+      {
+        "question": "Can hooks access environment variables?",
+        "answer": "Yes. Hook commands run in your shell environment and can access environment variables. Be careful not to expose sensitive credentials in hook configurations or logs."
+      },
+      {
+        "question": "How do multiple agents coordinate through hooks?",
+        "answer": "Hooks use a three-phase memory protocol (status, progress, complete) to store state in MCP memory. Agents read and write to shared memory namespaces like swarm/agent-type/context to coordinate work and share decisions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1202
+    }
+  ]
+}

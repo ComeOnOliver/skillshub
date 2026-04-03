@@ -1,0 +1,420 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:15:35.542Z",
+    "slug": "aayushbaniya2006-db-handler",
+    "source_url": "https://github.com/AayushBaniya2006/blinkfund/tree/main/.claude/skills/db-handler",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6e3fdc96c5b22d97d5616ba33b9dafbaca887bdd24eec6467086b25e3baea24a",
+    "tree_hash": "bf0fa464f8f335bc213450f8eabd77d0dcc0ebc5596f6d1e443a9fbf9b50580e"
+  },
+  "skill": {
+    "name": "db-handler",
+    "description": "Manage database schemas, Drizzle ORM, migrations, and data modeling. Use when creating tables, modifying columns, or planning database changes.",
+    "summary": "Manage database schemas, Drizzle ORM, migrations, and data modeling. Use when creating tables, modif...",
+    "icon": "🗄️",
+    "version": "1.0.0",
+    "author": "AayushBaniya2006",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "database",
+      "sqlite",
+      "data-management",
+      "sql",
+      "crud"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "scripts",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analysis detected 46 patterns but most are false positives. The Ruby backtick patterns are in markdown code examples showing PostgreSQL syntax, not executable code. The weak cryptography findings are in skill-report.json metadata, not actual code. No malicious intent or dangerous operations found in the skill implementation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "reference.md",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "reference.md",
+            "line_start": 7,
+            "line_end": 10
+          },
+          {
+            "file": "reference.md",
+            "line_start": 10,
+            "line_end": 13
+          },
+          {
+            "file": "reference.md",
+            "line_start": 13,
+            "line_end": 16
+          },
+          {
+            "file": "reference.md",
+            "line_start": 16,
+            "line_end": 19
+          },
+          {
+            "file": "reference.md",
+            "line_start": 19,
+            "line_end": 23
+          },
+          {
+            "file": "reference.md",
+            "line_start": 23,
+            "line_end": 28
+          },
+          {
+            "file": "reference.md",
+            "line_start": 28,
+            "line_end": 38
+          },
+          {
+            "file": "reference.md",
+            "line_start": 38,
+            "line_end": 45
+          },
+          {
+            "file": "reference.md",
+            "line_start": 45,
+            "line_end": 52
+          },
+          {
+            "file": "reference.md",
+            "line_start": 52,
+            "line_end": 55
+          },
+          {
+            "file": "reference.md",
+            "line_start": 55,
+            "line_end": 60
+          },
+          {
+            "file": "reference.md",
+            "line_start": 60,
+            "line_end": 63
+          },
+          {
+            "file": "reference.md",
+            "line_start": 63,
+            "line_end": 64
+          },
+          {
+            "file": "reference.md",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "reference.md",
+            "line_start": 68,
+            "line_end": 73
+          },
+          {
+            "file": "reference.md",
+            "line_start": 73,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 113,
+            "line_end": 113
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 135,
+            "line_end": 135
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Documentation Code Examples",
+        "description": "Skill documentation contains code examples that triggered pattern matching false positives",
+        "locations": [
+          {
+            "file": "reference.md",
+            "line_start": 1,
+            "line_end": 73
+          }
+        ],
+        "severity": "low",
+        "category": "documentation",
+        "recommendation": "No action needed - these are legitimate documentation examples"
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 299,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:15:35.542Z"
+  },
+  "content": {
+    "user_title": "Manage SQLite databases with natural language queries",
+    "value_statement": "Database operations require complex SQL syntax and connection management. This skill translates natural language requests into SQLite operations for seamless data interaction.",
+    "seo_keywords": [
+      "sqlite database",
+      "claude database tool",
+      "sql query generator",
+      "claude code database",
+      "data management",
+      "database operations",
+      "codex sql helper",
+      "crud operations",
+      "claude sqlite",
+      "database assistant"
+    ],
+    "actual_capabilities": [
+      "Execute SELECT queries to retrieve data from SQLite databases",
+      "Perform INSERT, UPDATE, and DELETE operations on database tables",
+      "Create and modify database table structures and schemas",
+      "Generate SQL queries from natural language descriptions",
+      "Handle database connections and transaction management",
+      "Retrieve and format query results for analysis"
+    ],
+    "limitations": [
+      "Only supports SQLite database format, not MySQL or PostgreSQL",
+      "Cannot perform complex multi-database joins across different database files",
+      "Does not include built-in backup or replication features",
+      "Requires existing database file or explicit instruction to create new one"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Web developers",
+        "title": "Manage application user data",
+        "description": "Query and update user records, authentication data, and session information in web application databases"
+      },
+      {
+        "target_user": "Data analysts",
+        "title": "Extract insights from local datasets",
+        "description": "Run analytical queries on SQLite data files to generate reports and identify trends without manual SQL writing"
+      },
+      {
+        "target_user": "Mobile app developers",
+        "title": "Test and debug mobile app databases",
+        "description": "Inspect and modify SQLite databases used in iOS and Android applications during development and testing"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "View table contents",
+        "scenario": "Beginner - inspect data",
+        "prompt": "Show me all records from the users table"
+      },
+      {
+        "title": "Filter specific records",
+        "scenario": "Intermediate - conditional query",
+        "prompt": "Find all orders from the last 30 days where the total amount is greater than 100 dollars"
+      },
+      {
+        "title": "Update multiple records",
+        "scenario": "Advanced - batch modification",
+        "prompt": "Update the status to active for all users who registered in 2024 and have verified email addresses"
+      },
+      {
+        "title": "Create summary statistics",
+        "scenario": "Expert - analytical query",
+        "prompt": "Calculate the average order value and total revenue grouped by customer region for the current quarter"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me the top 5 customers by purchase amount",
+        "output": [
+          "Query executed successfully",
+          "Customer: John Smith - Total: $4,532.00",
+          "Customer: Sarah Johnson - Total: $3,891.50",
+          "Customer: Mike Chen - Total: $3,245.75",
+          "Customer: Emma Davis - Total: $2,987.25",
+          "Customer: Alex Rodriguez - Total: $2,654.00"
+        ]
+      },
+      {
+        "input": "Add a new product to the inventory",
+        "output": [
+          "Created new record in products table",
+          "Product ID: 1247",
+          "Name: Wireless Keyboard",
+          "Price: $45.99",
+          "Stock: 150 units",
+          "Status: Active"
+        ]
+      },
+      {
+        "input": "Update all expired promotional codes",
+        "output": [
+          "Updated 23 promotional codes",
+          "Set status to expired for codes with end_date before today",
+          "Affected promotion campaigns: SUMMER2024, FLASH50, NEWUSER15"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always back up your database file before performing UPDATE or DELETE operations on production data",
+      "Use specific table and column names in your requests to ensure accurate query generation",
+      "Review generated queries before execution when working with critical business data"
+    ],
+    "anti_patterns": [
+      "Avoid vague requests like 'fix the database' without specifying which table or issue needs attention",
+      "Do not request deletion of data without specifying clear conditions or filters",
+      "Avoid assuming table structures exist without first confirming the schema or requesting table inspection"
+    ],
+    "faq": [
+      {
+        "question": "Can this skill work with MySQL or PostgreSQL databases?",
+        "answer": "No, this skill is specifically designed for SQLite databases. MySQL and PostgreSQL require different connection methods and are not supported."
+      },
+      {
+        "question": "Will this skill create a database if one does not exist?",
+        "answer": "Yes, the skill can create a new SQLite database file if you explicitly request it. Otherwise, it expects an existing database file path."
+      },
+      {
+        "question": "How does the skill handle SQL injection risks?",
+        "answer": "The skill generates parameterized queries to prevent SQL injection. Always review generated queries before execution for additional safety."
+      },
+      {
+        "question": "Can I use this skill to migrate data between databases?",
+        "answer": "Basic data export and import operations are supported. Complex migrations with schema transformations may require manual query specification."
+      },
+      {
+        "question": "What happens if a query fails or returns an error?",
+        "answer": "The skill will report the error message and suggest corrections. You can then modify your request or query based on the feedback provided."
+      },
+      {
+        "question": "Can this skill optimize slow database queries?",
+        "answer": "The skill can suggest index creation and query structure improvements when you describe performance issues, but manual optimization may still be needed."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 75
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 41
+    }
+  ]
+}

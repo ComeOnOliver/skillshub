@@ -1,0 +1,289 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:24:03.910Z",
+    "slug": "ck991357-python-sandbox",
+    "source_url": "https://github.com/CK991357/gemini-chat/tree/main/src/skills/python_sandbox",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a3cadac243b051738090319c82a2313762fdba787696c285c1770c9012dc8dcc",
+    "tree_hash": "65616686a3f58b544b26c47c4e580d430196bc1c7dc28f731a077a70c1439d37"
+  },
+  "skill": {
+    "name": "python-sandbox",
+    "description": "在沙盒环境中执行Python代码，用于数据分析、可视化和生成Excel、Word、PDF等文件。支持数据清洗、统计分析、机器学习、图表生成、文档自动化等复杂工作流。",
+    "summary": "在沙盒环境中执行Python代码，用于数据分析、可视化和生成Excel、Word、PDF等文件。支持数据清洗、统计分析、机器学习、图表生成、文档自动化等复杂工作流。",
+    "icon": "🐍",
+    "version": "2.5",
+    "author": "CK991357",
+    "license": "MIT",
+    "category": "code",
+    "tags": [
+      "python",
+      "code",
+      "visualization",
+      "data-analysis",
+      "chart",
+      "document",
+      "automation",
+      "machine-learning",
+      "reporting",
+      "excel",
+      "word",
+      "pdf",
+      "ppt"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate Python code execution sandbox skill. Network is disabled, filesystem access is restricted to /data directory, and code runs in an isolated Docker container with 6GB memory limits and 90-second timeout. All 444 static findings are false positives triggered by documentation patterns (markdown code blocks, base64 encoding examples, and prohibited operation warnings). No malicious behavior detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 218
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 117
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 6671,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:24:03.910Z"
+  },
+  "content": {
+    "user_title": "Execute Python for data analysis and visualization",
+    "value_statement": "Need to analyze data, create charts, or generate reports? This sandbox lets AI assistants run Python code securely with full library support for Pandas, Matplotlib, scikit-learn, and document generation tools.",
+    "seo_keywords": [
+      "python sandbox",
+      "code interpreter",
+      "data analysis",
+      "machine learning",
+      "data visualization",
+      "chart generation",
+      "document automation",
+      "pandas",
+      "matplotlib",
+      "claude code",
+      "ai coding"
+    ],
+    "actual_capabilities": [
+      "Execute Python code in a secure, isolated Docker container",
+      "Data analysis with Pandas, NumPy, DuckDB for SQL-like queries",
+      "Create charts and visualizations with Matplotlib, Seaborn, Graphviz",
+      "Generate Excel, Word, PDF, and PowerPoint documents",
+      "Build machine learning models with scikit-learn and LightGBM",
+      "Scientific computing with SciPy and symbolic math with SymPy"
+    ],
+    "limitations": [
+      "90-second execution timeout per code block",
+      "6GB maximum memory allocation with swap disabled",
+      "Filesystem access restricted to /data directory only",
+      "Network access is completely disabled for security"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data Analysts",
+        "title": "Data Analysis",
+        "description": "Clean datasets, perform statistical analysis, and create visualizations for business insights."
+      },
+      {
+        "target_user": "Machine Learning Engineers",
+        "title": "ML Model Building",
+        "description": "Train classification, regression, and time series models with scikit-learn and LightGBM."
+      },
+      {
+        "target_user": "Business Professionals",
+        "title": "Report Generation",
+        "description": "Generate automated Excel reports, Word documents, and PDF presentations from data."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick Chart",
+        "scenario": "Create a bar chart",
+        "prompt": "Read data.csv from /data and create a bar chart showing sales by category using Matplotlib. Save the chart and display it."
+      },
+      {
+        "title": "Data Summary",
+        "scenario": "Analyze dataset",
+        "prompt": "Load the Excel file from /data, show basic statistics, and create a summary report with key metrics."
+      },
+      {
+        "title": "ML Pipeline",
+        "scenario": "Train prediction model",
+        "prompt": "Build a classification model using the uploaded dataset. Split into train/test, evaluate accuracy, and show feature importance."
+      },
+      {
+        "title": "Document Report",
+        "scenario": "Generate PDF report",
+        "prompt": "Create a professional PDF report with analysis results, include charts from the data analysis, and output as downloadable file."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze the sales data and create a chart",
+        "output": [
+          "Data loaded successfully: 1,250 rows x 8 columns",
+          "Key metrics: Total sales 2.3M, Average 1,840",
+          "Top category: Electronics (35% of sales)",
+          "Chart generated showing monthly sales trend"
+        ]
+      },
+      {
+        "input": "Build a classification model",
+        "output": [
+          "Dataset loaded: 500 samples, 20 features",
+          "Training accuracy: 94.2%, Test accuracy: 91.8%",
+          "Feature importance: top 3 features identified",
+          "Model saved to /data/model.joblib"
+        ]
+      },
+      {
+        "input": "Generate a Word report",
+        "output": [
+          "Report created with 5 sections",
+          "Summary statistics table included",
+          "3 charts embedded from analysis",
+          "File saved: /data/sales_report.docx"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use DuckDB for large datasets to avoid loading entire file into memory",
+      "Save intermediate results to /data for multi-step workflows",
+      "Always call plt.show() to trigger chart capture and display",
+      "Break complex analyses into multiple sequential code blocks"
+    ],
+    "anti_patterns": [
+      "Loading entire 100MB+ CSV into Pandas without chunking",
+      "Missing plt.show() call after creating charts",
+      "Generating multiple output files in a single code execution",
+      "Using class definitions which are not supported in sandbox environment"
+    ],
+    "faq": [
+      {
+        "question": "What Python libraries are available?",
+        "answer": "Pandas, NumPy, SciPy, Matplotlib, scikit-learn, LightGBM, SymPy, and many more for data science tasks."
+      },
+      {
+        "question": "How large files can I process?",
+        "answer": "Files up to 50MB work directly. For larger files, use chunked reading or DuckDB for memory-efficient SQL queries."
+      },
+      {
+        "question": "Can this access my local files?",
+        "answer": "No. The sandbox only accesses files uploaded to the /data directory. System files are read-only and network is disabled."
+      },
+      {
+        "question": "Is my data secure?",
+        "answer": "Yes. The sandbox runs in an isolated Docker container, network is disabled, and sessions are cleared after 24 hours of inactivity."
+      },
+      {
+        "question": "Why is my code timing out?",
+        "answer": "Code execution has a 90-second limit. Optimize by using efficient libraries like DuckDB, processing in chunks, or splitting into steps."
+      },
+      {
+        "question": "How is this different from local Python?",
+        "answer": "This sandbox provides consistent, reproducible environments with pre-installed libraries and automatic chart capture for AI assistant workflows."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "matplotlib_cookbook.md",
+          "type": "file",
+          "path": "references/matplotlib_cookbook.md",
+          "lines": 544
+        },
+        {
+          "name": "ml_workflow.md",
+          "type": "file",
+          "path": "references/ml_workflow.md",
+          "lines": 1581
+        },
+        {
+          "name": "pandas_cheatsheet.md",
+          "type": "file",
+          "path": "references/pandas_cheatsheet.md",
+          "lines": 387
+        },
+        {
+          "name": "report_generator_workflow.md",
+          "type": "file",
+          "path": "references/report_generator_workflow.md",
+          "lines": 683
+        },
+        {
+          "name": "scipy_cookbook.md",
+          "type": "file",
+          "path": "references/scipy_cookbook.md",
+          "lines": 818
+        },
+        {
+          "name": "sympy_cookbook.md",
+          "type": "file",
+          "path": "references/sympy_cookbook.md",
+          "lines": 529
+        },
+        {
+          "name": "text_analysis_cookbook.md",
+          "type": "file",
+          "path": "references/text_analysis_cookbook.md",
+          "lines": 1173
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 692
+    }
+  ]
+}

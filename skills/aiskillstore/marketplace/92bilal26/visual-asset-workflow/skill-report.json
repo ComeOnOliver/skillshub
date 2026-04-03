@@ -1,0 +1,269 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:18:39.843Z",
+    "slug": "92bilal26-visual-asset-workflow",
+    "source_url": "https://github.com/92Bilal26/TaskPilotAI/tree/main/.claude/skills/visual-asset-workflow",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "82023a4e77aae736a42dec07ad5c26e81b85de1265e18afe4b29c98708425aee",
+    "tree_hash": "9f1b6e078864637af8a19b077847ef3f579d1a25504e35bcb017ad03af110d0c"
+  },
+  "skill": {
+    "name": "visual-asset-workflow",
+    "description": "Generate distinctive educational visuals using creative brief methodology. Use when creating chapter illustrations, diagrams, or teaching visuals with Gemini.",
+    "summary": "Generate distinctive educational visuals using creative brief methodology. Use when creating chapter...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "92Bilal26",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "visual-generation",
+      "education",
+      "prompt-engineering",
+      "pedagogy",
+      "creative-briefs"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure markdown documentation skill containing zero executable code. All 38 static findings are false positives caused by pattern matching on benign educational text content. The skill provides methodology for writing creative briefs - no file access, network calls, or command execution exists.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 101
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 101,
+            "line_end": 214
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 289
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 489,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:18:39.843Z"
+  },
+  "content": {
+    "user_title": "Generate Professional Educational Visuals with Creative Briefs",
+    "value_statement": "Generic AI visuals often produce bland, PowerPoint-default aesthetics. This skill provides professional creative brief methodology that activates AI reasoning for distinctive, pedagogically effective educational visuals.",
+    "seo_keywords": [
+      "visual asset generation",
+      "educational visuals",
+      "creative briefs",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "prompt engineering",
+      "Gemini visuals",
+      "instructional design",
+      "pedagogical design"
+    ],
+    "actual_capabilities": [
+      "Creates strategic visual plans before generation",
+      "Writes narrative-driven creative briefs instead of technical specifications",
+      "Aligns visual complexity with student proficiency levels (A2, B1, C2)",
+      "Validates prerequisites to prevent teaching concept violations",
+      "Applies token conservation strategies for batch visual generation",
+      "Prevents duplicate visual patterns across chapter content"
+    ],
+    "limitations": [
+      "Does not generate images directly. Requires separate image generation tool",
+      "Cannot read or access files. Provides methodology only",
+      "Assumes user has access to chapter documentation for context",
+      "Optimized for Gemini but works with any text-based AI model"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Instructional Designers",
+        "title": "Create Teaching Visuals",
+        "description": "Generate pedagogically aligned visuals for educational content with proper complexity gates based on student proficiency levels."
+      },
+      {
+        "target_user": "Course Content Creators",
+        "title": "Visual Story Planning",
+        "description": "Plan distinctive visual narratives using creative briefs that activate AI reasoning instead of generic outputs."
+      },
+      {
+        "target_user": "Educators and Teachers",
+        "title": "Proficiency-Aligned Graphics",
+        "description": "Create visuals matched to student skill levels from beginner to advanced with appropriate complexity limits."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Strategic Visual Planning",
+        "scenario": "Before creating any visuals",
+        "prompt": "Review the chapter documentation. Identify proficiency level and prerequisites. Create a strategic plan for visual assets. Wait for approval before proceeding."
+      },
+      {
+        "title": "Creative Brief Writing",
+        "scenario": "When writing visual prompts",
+        "prompt": "Create a creative brief with: The Story, Emotional Intent, Visual Metaphor, Key Insight, Color Semantics with hex codes, and Pedagogical Reasoning."
+      },
+      {
+        "title": "Proficiency Validation",
+        "scenario": "Checking visual complexity",
+        "prompt": "Review proposed visual complexity against proficiency level. For A2 beginners: max 5-7 elements and under 5 second grasp time. Flag any violations."
+      },
+      {
+        "title": "Duplicate Prevention Check",
+        "scenario": "Avoiding redundant visuals",
+        "prompt": "Check existing visual patterns in the chapter. List all image files and corresponding prompts. Ensure new visual uses distinct type and metaphor from existing ones."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a visual explaining compound interest growth for intermediate students",
+        "output": [
+          "Story: A single seed multiplying into a vast orchard over time",
+          "Emotional Intent: Surprising magnitude of small choices compounded",
+          "Visual Metaphor: Multiplication cascade like compound interest",
+          "Key Insight: Small starting amounts grow dramatically over time",
+          "Color Semantics: Green for growth, blue for stability",
+          "Proficiency Gate: B1 allows 7-10 elements with simple interaction"
+        ]
+      },
+      {
+        "input": "Plan visual assets for a beginner chapter on AI fundamentals",
+        "output": [
+          "Strategic Plan: 4 visuals total for this A2 chapter",
+          "Complexity Limits: Max 5 elements per visual, static only",
+          "Prerequisite Check: No programming concepts, basic terminology only",
+          "Visual Types: 1 timeline, 1 comparison diagram, 2 concept illustrations",
+          "Distinctiveness: Each uses different visual metaphor and structure"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always read chapter documentation before creating visuals to understand context and prerequisites",
+      "Use narrative intent and metaphors instead of pixel specifications to activate AI reasoning",
+      "Validate proficiency-complexity alignment early to prevent wasted work on inappropriate visuals"
+    ],
+    "anti_patterns": [
+      "Using pixel specifications like coordinates and font sizes instead of creative briefs",
+      "Skipping the strategic planning phase and jumping directly into visual generation",
+      "Assuming knowledge that students do not have based on course prerequisites"
+    ],
+    "faq": [
+      {
+        "question": "Which AI models work with this skill?",
+        "answer": "Works with Gemini, Claude, Claude Code, Codex, and any model that responds to text prompts for image generation."
+      },
+      {
+        "question": "What are the proficiency levels?",
+        "answer": "Three levels: A2 beginner (max 7 elements), B1 intermediate (max 10 elements), C2 professional (no limits)."
+      },
+      {
+        "question": "Does this skill generate images directly?",
+        "answer": "No. This skill creates creative briefs and plans. Use with an image generator skill for actual image creation."
+      },
+      {
+        "question": "Is any data stored or transmitted?",
+        "answer": "No. This is a pure methodology skill with no file access, network calls, or data storage."
+      },
+      {
+        "question": "Why use creative briefs instead of technical specs?",
+        "answer": "Technical specs activate prediction mode for generic output. Creative briefs activate reasoning for distinctive visuals."
+      },
+      {
+        "question": "Can I use this with other visual generation skills?",
+        "answer": "Yes. Use this skill for planning and prompt design, then pass the creative briefs to image generator skills."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 310
+    }
+  ]
+}

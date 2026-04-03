@@ -1,0 +1,391 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:00:22.546Z",
+    "slug": "dasblueyeddevil-gemini-research-subagent",
+    "source_url": "https://github.com/DasBluEyedDevil/Multi-Agent-Workflow/tree/main/.claude/skills/gemini-research",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "dedb6aa5474ea833b3d48f7ecc2d34ce4a2888ee1812e4fc303d9432f4470d09",
+    "tree_hash": "be4f929f7ffcdc9d1019efbea5683c0506103c0c346046e679beb561054f4528"
+  },
+  "skill": {
+    "name": "gemini-research-subagent",
+    "description": "Delegates large-context code analysis to Gemini CLI. Use when analyzing codebases, tracing bugs across files, reviewing architecture, or performing security audits. Gemini reads, Claude implements.",
+    "summary": "Delegates large-context code analysis to Gemini CLI. Use when analyzing codebases, tracing bugs acro...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "DasBluEyedDevil",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "code analysis",
+      "research assistant",
+      "architecture review",
+      "debugging",
+      "security audit"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation/markdown file with no executable code. It provides instructions for delegating large-context analysis to Gemini CLI via wrapper script. All 51 static findings are FALSE POSITIVES: URLs are legitimate documentation links, backticks are markdown code block delimiters, and the reported 'cryptographic algorithms' and 'system reconnaissance' are misidentified metadata fields and text patterns. The skill poses no security risk.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 145,
+            "line_end": 145
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 28,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 101
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 279,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:00:22.546Z"
+  },
+  "content": {
+    "user_title": "Delegate Code Research to Gemini",
+    "value_statement": "Complex codebases are difficult to analyze without full context. This skill delegates large-scale code analysis to Gemini CLI while Claude handles implementation, following a proven research-then-implement workflow.",
+    "seo_keywords": [
+      "Gemini CLI",
+      "Claude Code",
+      "code analysis",
+      "codebase research",
+      "bug tracing",
+      "architecture review",
+      "security audit",
+      "code review",
+      "AI pair programming",
+      "software development"
+    ],
+    "actual_capabilities": [
+      "Delegates large-context analysis to Gemini CLI",
+      "Provides 10 pre-defined research roles (reviewer, debugger, planner, security, auditor, explainer, migrator, documenter, dependency-mapper, onboarder)",
+      "Supports custom role definitions in .gemini/roles/",
+      "Offers multiple output templates (implement-ready, fix-ready, verify)",
+      "Returns structured output with summary, file references, analysis, and recommendations",
+      "Enforces research-first workflow (Gemini researches, Claude implements)"
+    ],
+    "limitations": [
+      "Requires gemini-cli to be installed and configured separately",
+      "The wrapper script must be available at ./skills/gemini.agent.wrapper.sh",
+      "Does not perform code execution or file modifications directly",
+      "Does not work offline (requires Gemini API access)"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Analyze unfamiliar codebases",
+        "description": "Understand large codebases quickly by delegating research to Gemini before implementing changes"
+      },
+      {
+        "target_user": "Security Engineers",
+        "title": "Perform security audits",
+        "description": "Use the security role to identify vulnerabilities across multiple files with full context awareness"
+      },
+      {
+        "target_user": "Technical Leads",
+        "title": "Plan architecture changes",
+        "description": "Get architectural recommendations before implementation to avoid costly refactoring later"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Research",
+        "scenario": "Initial codebase exploration",
+        "prompt": "Analyze the @src/ directory and summarize the main components, their relationships, and key architectural patterns."
+      },
+      {
+        "title": "Code Review",
+        "scenario": "Bug or quality issues",
+        "prompt": "Review the authentication module at @src/auth/ for bugs, security issues, and code quality concerns."
+      },
+      {
+        "title": "Bug Tracing",
+        "scenario": "Debugging complex issues",
+        "prompt": "Trace the root cause of the login failure. Check auth.ts, user.service.ts, and token.handler.ts for issues."
+      },
+      {
+        "title": "Pre-implementation Planning",
+        "scenario": "Feature design",
+        "prompt": "Plan how to add caching to the data layer. Consider existing patterns, dependencies, and performance impact."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze @src/ for security vulnerabilities in the authentication flow",
+        "output": [
+          "Summary: Authentication flow has 3 medium-risk issues",
+          "Files: auth.ts:45, token.ts:12, middleware.ts:78",
+          "Analysis: Token expiration not enforced, SQL injection possible in user lookup, missing rate limiting",
+          "Recommendations: Add token expiry check, use parameterized queries, implement rate limiting middleware"
+        ]
+      },
+      {
+        "input": "How should I add caching to the data layer?",
+        "output": [
+          "Summary: Implement cache-aside pattern with Redis backend",
+          "Files: data/service.ts:12, cache/manager.ts:45, config/cache.json:8",
+          "Analysis: Existing code uses in-memory cache, no persistence, thread-safety concerns",
+          "Recommendations: Add Redis integration, implement cache invalidation, use thread-safe cache manager"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use Gemini for research before making multi-file changes",
+      "Use the appropriate role for your task (reviewer for bugs, security for vulnerabilities, planner for features)",
+      "Verify implementations with Gemini after completing changes using the verify template"
+    ],
+    "anti_patterns": [
+      "Using Gemini for simple single-file edits you can handle yourself",
+      "Skipping research and directly asking Claude to implement without context",
+      "Writing complex multi-part prompts that exceed token limits"
+    ],
+    "faq": [
+      {
+        "question": "How do I install the gemini-cli dependency?",
+        "answer": "Visit https://ai.google.dev/gemini-api/docs/cli for installation instructions for your platform."
+      },
+      {
+        "question": "What happens if gemini-cli is not installed?",
+        "answer": "The wrapper script will fail. Install gemini-cli and configure your API key before using this skill."
+      },
+      {
+        "question": "Can I use this with Claude Code desktop app?",
+        "answer": "Yes, if Claude Code is configured to load skills from your .claude/skills/ directory."
+      },
+      {
+        "question": "Is my code sent to external servers?",
+        "answer": "Yes, code context is sent to Googles Gemini API when using gemini-cli. Review their privacy policy."
+      },
+      {
+        "question": "Why not just use Gemini directly?",
+        "answer": "This skill provides a structured workflow with roles, templates, and integration with Claude Code for implementation."
+      },
+      {
+        "question": "How is this different from regular Gemini prompting?",
+        "answer": "It provides a collaborative workflow: Gemini researches with full context, Claude implements, Gemini verifies."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 102
+    }
+  ]
+}

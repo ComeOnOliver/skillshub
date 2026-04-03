@@ -1,0 +1,347 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:12:47.744Z",
+    "slug": "smallnest-crawl4ai",
+    "source_url": "https://github.com/smallnest/crawl4ai-skill/tree/master/",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e932d043202cdef88ff04d7cabf4dfbbc3944549a1bb62b8784d9c55ccbe6722",
+    "tree_hash": "ee4b9f54d4f8a1552135ac8f1e85434daa89b91daeed746b345aeae1adb27700"
+  },
+  "skill": {
+    "name": "crawl4ai",
+    "description": "This skill should be used when users need to scrape websites, extract structured data, handle JavaScript-heavy pages, crawl multiple URLs, or build automated web data pipelines. Includes optimized extraction patterns with schema generation for efficient, LLM-free extraction.",
+    "summary": "This skill should be used when users need to scrape websites, extract structured data, handle JavaSc...",
+    "icon": "🕷️",
+    "version": "0.7.4",
+    "author": "smallnest",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "web-scraping",
+      "crawler",
+      "data-extraction",
+      "async"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analysis flagged 2290 issues but 99% are false positives from markdown documentation. Actual Python code shows legitimate web crawler functionality with user-controlled URLs, explicit credential configuration, and standard file output operations. No hidden data exfiltration or malicious patterns found.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/basic_crawler.py",
+            "line_start": 54,
+            "line_end": 67
+          },
+          {
+            "file": "scripts/extraction_pipeline.py",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "scripts/google_search.py",
+            "line_start": 300,
+            "line_end": 300
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/google_search.py",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "scripts/basic_crawler.py",
+            "line_start": 41,
+            "line_end": 44
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "tests/run_all_tests.py",
+            "line_start": 15,
+            "line_end": 18
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 16,
+    "total_lines": 9145,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:12:47.744Z"
+  },
+  "content": {
+    "user_title": "Scrape websites and extract structured data",
+    "value_statement": "Crawl4AI enables efficient web scraping with JavaScript support, schema-based extraction, and flexible output formats. Users can extract data without LLM calls for cost-effective automation or use LLM-powered extraction for complex content.",
+    "seo_keywords": [
+      "crawl4ai",
+      "web scraping",
+      "web crawler",
+      "data extraction",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "async crawler",
+      "markdown generation",
+      "structured data"
+    ],
+    "actual_capabilities": [
+      "Crawl single or multiple URLs with JavaScript support",
+      "Extract structured data using CSS selectors or LLM",
+      "Generate clean markdown output from web pages",
+      "Handle authenticated sessions and proxy configurations",
+      "Process dynamic content with configurable wait conditions"
+    ],
+    "limitations": [
+      "Requires external crawl4ai package installation",
+      "LLM extraction requires API keys and costs money",
+      "Rate limits and bot detection may affect some sites"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Data engineers",
+        "title": "Build data pipelines",
+        "description": "Extract structured data from websites for analytics and reporting workflows."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Document websites",
+        "description": "Convert documentation sites to markdown for offline reading or migration."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Aggregate web content",
+        "description": "Collect and filter content from multiple sources for research analysis."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic crawl",
+        "scenario": "Get page content",
+        "prompt": "Crawl this URL and return the main content as markdown: https://example.com"
+      },
+      {
+        "title": "Extract data",
+        "scenario": "Structured extraction",
+        "prompt": "Extract product names, prices, and links from this e-commerce page using CSS selectors."
+      },
+      {
+        "title": "Handle JavaScript",
+        "scenario": "Dynamic content",
+        "prompt": "Crawl this JavaScript-heavy page and wait for the dynamic content to load before extracting."
+      },
+      {
+        "title": "Batch processing",
+        "scenario": "Multiple URLs",
+        "prompt": "Crawl these three URLs in parallel and extract the main headlines from each: https://news1.com, https://news2.com, https://news3.com"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Crawl https://docs.python.org/3/ and extract the installation instructions",
+        "output": [
+          "## Installation Instructions",
+          "- Download Python from python.org",
+          "- Run the installer",
+          "- Add Python to PATH",
+          "Source: https://docs.python.org/3/"
+        ]
+      },
+      {
+        "input": "Extract all article titles and links from a blog listing page",
+        "output": [
+          "Extracted 15 articles:",
+          "- 'Getting Started with Python' → https://blog.example.com/python-start",
+          "- 'Advanced Patterns' → https://blog.example.com/advanced",
+          "- 'Best Practices' → https://blog.example.com/best-practices"
+        ]
+      },
+      {
+        "input": "Crawl a dynamic page with infinite scroll",
+        "output": [
+          "Waited 3 seconds for content to load",
+          "Found 50 product cards",
+          "Extracted names, prices, and images for all products"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use schema-based CSS extraction for repetitive sites to avoid LLM costs",
+      "Set appropriate timeouts and wait conditions for JavaScript-heavy pages",
+      "Respect rate limits and use caching during development to reduce load"
+    ],
+    "anti_patterns": [
+      "Using LLM extraction when CSS selectors would work (higher cost)",
+      "Crawling without proper timeout settings (may hang indefinitely)",
+      "Ignoring rate limits on target sites (may get blocked)"
+    ],
+    "faq": [
+      {
+        "question": "What is crawl4ai?",
+        "answer": "A web crawling and data extraction library with CLI and Python SDK support."
+      },
+      {
+        "question": "Do I need to install anything?",
+        "answer": "Yes, run: pip install crawl4ai and crawl4ai-setup"
+      },
+      {
+        "question": "Can I extract data without LLM?",
+        "answer": "Yes, use CSS selector-based extraction which is faster and free."
+      },
+      {
+        "question": "Does it handle JavaScript pages?",
+        "answer": "Yes, it uses a browser and can wait for dynamic content."
+      },
+      {
+        "question": "What output formats supported?",
+        "answer": "Markdown, JSON, HTML, and extracted structured data."
+      },
+      {
+        "question": "How to handle authentication?",
+        "answer": "Configure session_id and provide credentials in browser config."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "cli-guide.md",
+          "type": "file",
+          "path": "references/cli-guide.md",
+          "lines": 359
+        },
+        {
+          "name": "complete-sdk-reference.md",
+          "type": "file",
+          "path": "references/complete-sdk-reference.md",
+          "lines": 5927
+        },
+        {
+          "name": "sdk-guide.md",
+          "type": "file",
+          "path": "references/sdk-guide.md",
+          "lines": 391
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "basic_crawler.py",
+          "type": "file",
+          "path": "scripts/basic_crawler.py",
+          "lines": 81
+        },
+        {
+          "name": "batch_crawler.py",
+          "type": "file",
+          "path": "scripts/batch_crawler.py",
+          "lines": 237
+        },
+        {
+          "name": "extraction_pipeline.py",
+          "type": "file",
+          "path": "scripts/extraction_pipeline.py",
+          "lines": 363
+        },
+        {
+          "name": "google_search.py",
+          "type": "file",
+          "path": "scripts/google_search.py",
+          "lines": 321
+        }
+      ]
+    },
+    {
+      "name": "tests",
+      "type": "dir",
+      "path": "tests",
+      "children": [
+        {
+          "name": "README.md",
+          "type": "file",
+          "path": "tests/README.md",
+          "lines": 49
+        },
+        {
+          "name": "run_all_tests.py",
+          "type": "file",
+          "path": "tests/run_all_tests.py",
+          "lines": 63
+        },
+        {
+          "name": "test_advanced_patterns.py",
+          "type": "file",
+          "path": "tests/test_advanced_patterns.py",
+          "lines": 73
+        },
+        {
+          "name": "test_basic_crawling.py",
+          "type": "file",
+          "path": "tests/test_basic_crawling.py",
+          "lines": 50
+        },
+        {
+          "name": "test_data_extraction.py",
+          "type": "file",
+          "path": "tests/test_data_extraction.py",
+          "lines": 63
+        },
+        {
+          "name": "test_markdown_generation.py",
+          "type": "file",
+          "path": "tests/test_markdown_generation.py",
+          "lines": 88
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 298
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 404
+    }
+  ]
+}

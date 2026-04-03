@@ -1,0 +1,354 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:42:03.824Z",
+    "slug": "cjharmath-py-fastapi-patterns",
+    "source_url": "https://github.com/CJHarmath/claude-agents-skills/tree/main/skills/py-fastapi-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "01641d4cda431f560cb7a1799a5fe563e710db727368fd98ce3dfd854a1590c4",
+    "tree_hash": "3e9ab32d9cbdde8cda3c8668e2793d1fcef2750fc9b1da08363c24b20f63047b"
+  },
+  "skill": {
+    "name": "py-fastapi-patterns",
+    "description": "FastAPI patterns for API design. Use when creating endpoints, handling dependencies, error handling, or working with OpenAPI schemas.",
+    "summary": "FastAPI patterns for API design. Use when creating endpoints, handling dependencies, error handling,...",
+    "icon": "🐍",
+    "version": "1.0.0",
+    "author": "CJHarmath",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "python",
+      "fastapi",
+      "api-design",
+      "backend",
+      "openapi"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown explanations and Python code examples. No executable scripts, network calls, file system access, or environment variable access. Static findings are false positives triggered by documentation keywords and markdown syntax.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 267,
+            "line_end": 267
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 359,
+            "line_end": 359
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 385
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 172
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 172,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 198
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 198,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 228
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 228,
+            "line_end": 249
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 249,
+            "line_end": 257
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 257,
+            "line_end": 283
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 283,
+            "line_end": 291
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 291,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 329
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 329,
+            "line_end": 352
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 352,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 368
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 368,
+            "line_end": 377
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 377,
+            "line_end": 386
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 564,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:42:03.824Z"
+  },
+  "content": {
+    "user_title": "Apply FastAPI Best Practices",
+    "value_statement": "Building APIs with FastAPI requires understanding dependency injection, response models, and OpenAPI schema design. This skill provides battle-tested patterns that prevent common bugs and improve developer experience for frontend teams.",
+    "seo_keywords": [
+      "FastAPI patterns",
+      "Python API development",
+      "FastAPI dependency injection",
+      "OpenAPI schema",
+      "API design best practices",
+      "FastAPI error handling",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "Pydantic models"
+    ],
+    "actual_capabilities": [
+      "Implement dependency injection with FastAPI Depends",
+      "Create proper response models to filter sensitive data",
+      "Handle errors with HTTPException and custom handlers",
+      "Design clean OpenAPI schemas with descriptions",
+      "Organize routes with APIRouter prefixes and tags",
+      "Validate request bodies with Pydantic Field validators"
+    ],
+    "limitations": [
+      "Does not generate complete API projects or boilerplate",
+      "Does not integrate with specific databases or ORMs",
+      "Does not provide runtime execution or testing capabilities",
+      "Focuses on patterns rather than complete implementation examples"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Python Developers",
+        "title": "Build Maintainable APIs",
+        "description": "Apply dependency chains and response models to create APIs that are easy to maintain and evolve over time."
+      },
+      {
+        "target_user": "Full-Stack Developers",
+        "title": "Improve Frontend Integration",
+        "description": "Design OpenAPI schemas that generate accurate TypeScript types for frontend code generation tools."
+      },
+      {
+        "target_user": "API Architects",
+        "title": "Standardize Team Patterns",
+        "description": "Establish consistent error handling and route organization across multiple API services."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Dependency Injection",
+        "scenario": "Setting up authentication dependencies",
+        "prompt": "Show me how to create a dependency chain in FastAPI for authentication. Include get_session, get_current_user, and get_current_active_user dependencies that can be used in endpoints."
+      },
+      {
+        "title": "Response Models",
+        "scenario": "Protecting sensitive data",
+        "prompt": "Explain how to use response_model in FastAPI to prevent exposing internal fields like hashed_password. Show a User model with read and create variants."
+      },
+      {
+        "title": "Error Handling",
+        "scenario": "Creating consistent error responses",
+        "prompt": "How do I create custom exception handlers in FastAPI that return consistent error responses with error codes? Include both the exception class and the handler."
+      },
+      {
+        "title": "Route Ordering",
+        "scenario": "Avoiding route conflicts",
+        "prompt": "Explain why route ordering matters in FastAPI. Show an example of how putting /users/me before /users/{user_id} prevents matching issues."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a paginated response model for listing assessments",
+        "output": [
+          "Define a generic PaginatedResponse class with items, total, page, and size fields",
+          "Use response_model=PaginatedResponse[AssessmentRead] on the list endpoint",
+          "FastAPI automatically filters the response to only include AssessmentRead fields",
+          "The OpenAPI schema will correctly document the nested structure"
+        ]
+      },
+      {
+        "input": "Add CORS middleware to my FastAPI app",
+        "output": [
+          "Import CORSMiddleware from fastapi.middleware.cors",
+          "Add middleware with allow_origins, allow_credentials, allow_methods, and allow_headers",
+          "Add CORS middleware early in the middleware stack for proper ordering",
+          "Use specific origins instead of wildcard (*) in production"
+        ]
+      },
+      {
+        "input": "Create validation for an input field",
+        "output": [
+          "Use Pydantic Field with min_length, max_length, and description parameters",
+          "Add a field_validator method to validate against allowed values",
+          "Raise ValueError with a clear message for invalid inputs",
+          "FastAPI automatically returns 422 status on validation failure"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always define specific routes before generic parameterized routes to prevent incorrect matching",
+      "Use response_model on every endpoint to control output and generate accurate OpenAPI schemas",
+      "Chain dependencies from most generic (session) to most specific (current_user) for reusability"
+    ],
+    "anti_patterns": [
+      "Omitting response_model exposes internal fields like hashed_password in API responses",
+      "Placing generic routes before specific routes causes /users/me to be captured as a user_id parameter",
+      "Using bare except clauses or generic HTTPException without status codes creates inconsistent error responses"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with FastAPI async endpoints?",
+        "answer": "Yes. All patterns support both sync and async endpoint definitions. Dependencies can be async functions using await."
+      },
+      {
+        "question": "What Python versions are supported?",
+        "answer": "FastAPI requires Python 3.8 or later. Most patterns work with Python 3.9+ features like the | type union operator."
+      },
+      {
+        "question": "Can I use these patterns with other frameworks?",
+        "answer": "The dependency injection concept applies to other frameworks. Response models and OpenAPI patterns are FastAPI-specific."
+      },
+      {
+        "question": "Is my data safe when using these patterns?",
+        "answer": "Yes. This skill contains only documentation patterns. No data leaves your environment when applying these practices."
+      },
+      {
+        "question": "Why am I getting 422 validation errors?",
+        "answer": "Pydantic v2 is strict by default. Check that your request body matches all Field validators including min_length and max_length constraints."
+      },
+      {
+        "question": "How does this compare to Django REST Framework?",
+        "answer": "FastAPI provides automatic OpenAPI generation and native async support. DRF has more built-in viewsets but requires more configuration for API docs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 387
+    }
+  ]
+}

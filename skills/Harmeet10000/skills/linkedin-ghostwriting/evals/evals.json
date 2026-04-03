@@ -1,0 +1,131 @@
+{
+  "skill_name": "linkedin-ghostwriting",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Write a LinkedIn post about how I grew my newsletter from 0 to 50,000 subscribers in 18 months.",
+      "expected_output": "Should NOT write the post. Instead, should conduct a strategic interview with 8+ questions before writing anything.",
+      "files": [],
+      "assertions": [
+        { "id": "1.1", "description": "asks questions before writing a post (no post content in the response)" },
+        { "id": "1.2", "description": "asks 8 or more distinct questions" },
+        { "id": "1.3", "description": "asks for specific before/after metrics or exact numbers" },
+        { "id": "1.4", "description": "asks about the mechanism/process (how it was achieved)" },
+        { "id": "1.5", "description": "asks about the target audience" },
+        { "id": "1.6", "description": "asks about the CTA or business goal of the post" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Here's my context for a LinkedIn post:\n- I'm a SaaS founder\n- Reduced customer churn from 8% to 2% monthly in 6 months\n- Did it by implementing weekly 1:1 calls with top 20% of customers\n- Counter-intuitive: more human touch beats automation for retention\n- CTA: DM me if you want the exact call script\n\nNow generate hooks for my post.",
+      "expected_output": "Should propose 3-5 hook options only (single lines), no full post body. No rhetorical questions. Hooks should use specific numbers.",
+      "files": [],
+      "assertions": [
+        { "id": "2.1", "description": "proposes 3 or more hook options" },
+        { "id": "2.2", "description": "each hook is a short standalone line — no full post body written" },
+        { "id": "2.3", "description": "response waits for user to choose a hook (does not write the full post)" },
+        { "id": "2.4", "description": "no rhetorical questions in any of the hooks (no '?' at end of hook lines)" },
+        { "id": "2.5", "description": "at least one hook includes specific numbers from the context (8%, 2%, 6 months)" }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I'll use hook #2: 'I cut churn from 8% to 2% in 6 months without a single new automation.'\n\nNow write the full post body.",
+      "expected_output": "Full post body starting with the hook. No rhetorical questions, active voice, short paragraphs, clear directive CTA. No empty phrases.",
+      "files": [],
+      "assertions": [
+        { "id": "3.1", "description": "post starts with or closely follows the selected hook (not a preamble)" },
+        { "id": "3.2", "description": "no rhetorical questions in the post body" },
+        { "id": "3.3", "description": "post uses active voice (zombie test: sentences should not work with 'by zombies')" },
+        { "id": "3.4", "description": "has a clear, directive CTA (not an open-ended question)" },
+        { "id": "3.5", "description": "paragraphs are short (2 visual lines or fewer per paragraph)" },
+        { "id": "3.6", "description": "does not contain 'very', 'really', or 'incredibly'" }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I want to write a LinkedIn post about my leadership journey but I don't have any specific numbers to share.",
+      "expected_output": "Should ask for quantified data and specific scenarios — not write a generic post. Should push back on lack of metrics.",
+      "files": [],
+      "assertions": [
+        { "id": "4.1", "description": "does not write a generic post without metrics" },
+        { "id": "4.2", "description": "asks for quantified before/after results or specific measurable outcomes" },
+        { "id": "4.3", "description": "asks for a specific scene or moment (not just abstract lessons)" },
+        { "id": "4.4", "description": "asks for a counter-intuitive insight that the post could be built around" }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Write a LinkedIn post about the importance of remote work culture in 2024.",
+      "expected_output": "Should not write a generic thought-leadership post. Should interview the user about their personal experience, numbers, and specific insight.",
+      "files": [],
+      "assertions": [
+        { "id": "5.1", "description": "does not immediately write a generic thought-leadership post" },
+        { "id": "5.2", "description": "asks about the user's personal experience with remote work" },
+        { "id": "5.3", "description": "asks for specific data, outcomes, or evidence from the user's own context" },
+        { "id": "5.4", "description": "asks what specific insight or belief the user wants to contradict or challenge" }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Here's all my context:\n- B2B SaaS founder, 8 years experience\n- Launched an AI feature that nobody used for 3 months\n- Discovered the problem: wrong messaging, not wrong product\n- Fixed by rewriting 3 lines on the pricing page\n- Revenue from that feature went from $0 to $45k MRR in 60 days\n- CTA: commenting 'PRICING' gets my free messaging framework\n\nWrite the full post.",
+      "expected_output": "Should first propose hooks (Phase 2), not skip straight to writing the full post.",
+      "files": [],
+      "assertions": [
+        { "id": "6.1", "description": "proposes hooks before writing the full post (does not skip Phase 2)" },
+        { "id": "6.2", "description": "if full post is eventually written: CTA is directive, not an open-ended question" },
+        { "id": "6.3", "description": "if full post is written: no empty phrases like 'digital landscape' or 'incontournable'" },
+        { "id": "6.4", "description": "if full post is written: no ternary structures (not 'X, Y, and Z' as a list of three equal items in the hook)" }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Write a hook for my LinkedIn post about cold email. I sent 10,000 cold emails last quarter with a 38% reply rate using a 3-step personalization framework. My audience is B2B sales reps.",
+      "expected_output": "Proposes 3-5 hooks. No rhetorical questions. Hooks reference specific numbers. Hooks reveal result without revealing full method.",
+      "files": [],
+      "assertions": [
+        { "id": "7.1", "description": "proposes 3 or more hook options" },
+        { "id": "7.2", "description": "no rhetorical questions in any hooks" },
+        { "id": "7.3", "description": "hooks include specific numbers (10,000, 38%)" },
+        { "id": "7.4", "description": "hooks reveal the result (38% reply rate) but not the full method — maintaining tension" }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Here's my post:\n'Remote work is really changing the digital landscape of modern business. It's very important to have good culture. Teams that adapt will thrive. Teams that don't adapt will struggle. Companies need to think carefully about this very complex topic.'\n\nPlease improve this post.",
+      "expected_output": "Rewrites removing empty phrases, filler words, passive constructions. Should suggest interview for concrete data. Result should be tighter with specific claims.",
+      "files": [],
+      "assertions": [
+        { "id": "8.1", "description": "removes 'very', 'really', or similar filler adverbs" },
+        { "id": "8.2", "description": "removes empty phrases like 'digital landscape'" },
+        { "id": "8.3", "description": "uses active voice throughout" },
+        { "id": "8.4", "description": "result is noticeably shorter/tighter than the original" },
+        { "id": "8.5", "description": "suggests the user needs specific numbers/data to make the post credible" }
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "My final CTA should be: 'What do you think about this approach? Let me know in the comments!'",
+      "expected_output": "Should flag this as a weak, open-ended CTA and suggest a directive alternative. Open-ended questions reduce action.",
+      "files": [],
+      "assertions": [
+        { "id": "9.1", "description": "identifies the open-ended question as a weak CTA" },
+        { "id": "9.2", "description": "suggests a directive alternative (e.g., 'Comment X', 'DM me', 'Save this post')" },
+        { "id": "9.3", "description": "explains why directive CTAs outperform open-ended questions" }
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Write a LinkedIn post body for this hook: 'I closed $2M in B2B deals last year using one question I never skip.'\nContext: The question is 'What happens if you don't solve this problem in 6 months?' It creates urgency without pressure. 47 deals closed, average deal size $42k. CTA: Comment 'QUESTION' to get the script.",
+      "expected_output": "Post with hook, ABT structure, active voice, directive CTA, short paragraphs, no rhetorical questions. Costumer signal included.",
+      "files": [],
+      "assertions": [
+        { "id": "10.1", "description": "post starts with or immediately after the given hook" },
+        { "id": "10.2", "description": "no rhetorical questions in the post body" },
+        { "id": "10.3", "description": "CTA is directive: 'Comment QUESTION' or similar — not a question" },
+        { "id": "10.4", "description": "paragraphs are short (2 visual lines max per paragraph)" },
+        { "id": "10.5", "description": "active voice throughout (no 'was closed by', 'are being used by')" }
+      ]
+    }
+  ]
+}

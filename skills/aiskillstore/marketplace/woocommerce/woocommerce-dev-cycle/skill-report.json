@@ -1,0 +1,1095 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:59:02.216Z",
+    "slug": "woocommerce-woocommerce-dev-cycle",
+    "source_url": "https://github.com/woocommerce/woocommerce/tree/trunk/.ai/skills/woocommerce-dev-cycle",
+    "source_ref": "trunk",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9e132d8534284ed9a521b3d72b0a404cb57c1139dcca1a62c45be314b659d3f1",
+    "tree_hash": "4eea80fba443c6a9ae5ef62fff164ad9b814f8a5cbff1eeacd2c0589d7477aad"
+  },
+  "skill": {
+    "name": "woocommerce-dev-cycle",
+    "description": "Run tests, linting, and quality checks for WooCommerce development. Use when running tests, fixing code style, or following the development workflow.",
+    "summary": "Run tests, linting, and quality checks for WooCommerce development. Use when running tests, fixing c...",
+    "icon": "🔄",
+    "version": "1.0.0",
+    "author": "woocommerce",
+    "license": "GPL-3.0-or-later",
+    "category": "documentation",
+    "tags": [
+      "woocommerce",
+      "testing",
+      "linting",
+      "php",
+      "quality"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only markdown documentation files. All 197 static findings are FALSE POSITIVES - the analyzer detected bash command examples in code blocks and markdownlint rule codes, but there is no executable code, scripts, network calls, or external command execution. The skill is purely informational guidance for WooCommerce development workflows.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "code-quality.md",
+            "line_start": 30,
+            "line_end": 32
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 32,
+            "line_end": 38
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 38,
+            "line_end": 41
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 41,
+            "line_end": 54
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 54,
+            "line_end": 66
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 66,
+            "line_end": 72
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 72,
+            "line_end": 75
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 75,
+            "line_end": 83
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 83,
+            "line_end": 91
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 91,
+            "line_end": 97
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 97,
+            "line_end": 116
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 116,
+            "line_end": 139
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 139,
+            "line_end": 145
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 145,
+            "line_end": 155
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 155,
+            "line_end": 159
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 159,
+            "line_end": 160
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 160,
+            "line_end": 166
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 166,
+            "line_end": 172
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 172,
+            "line_end": 176
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 176,
+            "line_end": 182
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 182,
+            "line_end": 186
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 186,
+            "line_end": 192
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 192,
+            "line_end": 198
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 198,
+            "line_end": 199
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 199,
+            "line_end": 200
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 200,
+            "line_end": 201
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 201,
+            "line_end": 221
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 221,
+            "line_end": 230
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 230,
+            "line_end": 240
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 240,
+            "line_end": 242
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 242,
+            "line_end": 250
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 250,
+            "line_end": 256
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 256,
+            "line_end": 264
+          },
+          {
+            "file": "code-quality.md",
+            "line_start": 264,
+            "line_end": 265
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 23,
+            "line_end": 25
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 25,
+            "line_end": 29
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 29,
+            "line_end": 42
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 42,
+            "line_end": 46
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 46,
+            "line_end": 50
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 50,
+            "line_end": 57
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 57,
+            "line_end": 62
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 62,
+            "line_end": 63
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 63,
+            "line_end": 75
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 75,
+            "line_end": 76
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 76,
+            "line_end": 76
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 76,
+            "line_end": 76
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 76,
+            "line_end": 89
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 89,
+            "line_end": 103
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 103,
+            "line_end": 107
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 107,
+            "line_end": 111
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 111,
+            "line_end": 115
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 115,
+            "line_end": 121
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 121,
+            "line_end": 127
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 127,
+            "line_end": 135
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 135,
+            "line_end": 136
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 136,
+            "line_end": 138
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 138,
+            "line_end": 139
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 139,
+            "line_end": 143
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 143,
+            "line_end": 144
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 144,
+            "line_end": 146
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 146,
+            "line_end": 147
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 147,
+            "line_end": 151
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 151,
+            "line_end": 152
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 152,
+            "line_end": 153
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 153,
+            "line_end": 153
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 153,
+            "line_end": 154
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 154,
+            "line_end": 154
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 154,
+            "line_end": 155
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 155,
+            "line_end": 156
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 156,
+            "line_end": 156
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 156,
+            "line_end": 162
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 162,
+            "line_end": 164
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 164,
+            "line_end": 168
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 168,
+            "line_end": 171
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 171,
+            "line_end": 177
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 177,
+            "line_end": 179
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 179,
+            "line_end": 181
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 181,
+            "line_end": 183
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 183,
+            "line_end": 187
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 187,
+            "line_end": 190
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 190,
+            "line_end": 192
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 192,
+            "line_end": 195
+          },
+          {
+            "file": "markdown-linting.md",
+            "line_start": 195,
+            "line_end": 199
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 21,
+            "line_end": 35
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 35,
+            "line_end": 44
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 44,
+            "line_end": 46
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 46,
+            "line_end": 55
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 55,
+            "line_end": 61
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 61,
+            "line_end": 65
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 65,
+            "line_end": 71
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 71,
+            "line_end": 75
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 75,
+            "line_end": 82
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 82,
+            "line_end": 86
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 86,
+            "line_end": 90
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 90,
+            "line_end": 99
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 99,
+            "line_end": 103
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 103,
+            "line_end": 112
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 112,
+            "line_end": 118
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 118,
+            "line_end": 136
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 136,
+            "line_end": 142
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 142,
+            "line_end": 154
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 154,
+            "line_end": 158
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 158,
+            "line_end": 162
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 162,
+            "line_end": 167
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 167,
+            "line_end": 171
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 171,
+            "line_end": 177
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 177,
+            "line_end": 181
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 181,
+            "line_end": 186
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 186,
+            "line_end": 194
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 194,
+            "line_end": 200
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 200,
+            "line_end": 202
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 202,
+            "line_end": 215
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 215,
+            "line_end": 221
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 221,
+            "line_end": 231
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 231,
+            "line_end": 237
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 237,
+            "line_end": 259
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 259,
+            "line_end": 265
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 265,
+            "line_end": 267
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 267,
+            "line_end": 271
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 271,
+            "line_end": 273
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 273,
+            "line_end": 278
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 278,
+            "line_end": 284
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 284,
+            "line_end": 286
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 286,
+            "line_end": 292
+          },
+          {
+            "file": "php-linting-patterns.md",
+            "line_start": 292,
+            "line_end": 304
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 23,
+            "line_end": 35
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 35,
+            "line_end": 39
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 39,
+            "line_end": 45
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 45,
+            "line_end": 51
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 51,
+            "line_end": 54
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 54,
+            "line_end": 58
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 58,
+            "line_end": 64
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 68,
+            "line_end": 71
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 71,
+            "line_end": 75
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 75,
+            "line_end": 78
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 78,
+            "line_end": 84
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 84,
+            "line_end": 90
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 90,
+            "line_end": 103
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 103,
+            "line_end": 109
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 109,
+            "line_end": 110
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 110,
+            "line_end": 110
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 110,
+            "line_end": 118
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 118,
+            "line_end": 127
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 127,
+            "line_end": 131
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 131,
+            "line_end": 149
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 149,
+            "line_end": 166
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 166,
+            "line_end": 168
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 168,
+            "line_end": 172
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 172,
+            "line_end": 174
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 174,
+            "line_end": 178
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 178,
+            "line_end": 180
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 180,
+            "line_end": 186
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 186,
+            "line_end": 188
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 188,
+            "line_end": 196
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 196,
+            "line_end": 209
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 209,
+            "line_end": 211
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 211,
+            "line_end": 226
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 226,
+            "line_end": 230
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 230,
+            "line_end": 230
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 230,
+            "line_end": 231
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 231,
+            "line_end": 235
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 235,
+            "line_end": 239
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 239,
+            "line_end": 240
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 240,
+            "line_end": 240
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 240,
+            "line_end": 241
+          },
+          {
+            "file": "running-tests.md",
+            "line_start": 241,
+            "line_end": 249
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 1267,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:59:02.216Z"
+  },
+  "content": {
+    "user_title": "Run WooCommerce tests and linting",
+    "value_statement": "WooCommerce developers need to run tests and linting to ensure code quality. This skill provides the exact commands and workflows for PHP unit tests, JavaScript tests, and code style checks in the WooCommerce monorepo.",
+    "seo_keywords": [
+      "woocommerce development",
+      "woocommerce testing",
+      "woocommerce linting",
+      "php unit tests",
+      "claude code",
+      "claude",
+      "codex",
+      "wordpress plugin",
+      "e-commerce development",
+      "code quality"
+    ],
+    "actual_capabilities": [
+      "Run PHP unit tests with PHPUnit via Docker environment",
+      "Run JavaScript and Jest tests for the admin client",
+      "Check and fix PHP code style with WordPress Coding Standards",
+      "Lint JavaScript and TypeScript files for code quality",
+      "Fix markdown files with markdownlint for documentation",
+      "Troubleshoot common test and linting failures"
+    ],
+    "limitations": [
+      "Does not execute tests or linting automatically",
+      "Requires Docker and wp-env for PHP test environment",
+      "Commands are for the WooCommerce monorepo only",
+      "Does not configure or install dependencies"
+    ],
+    "use_cases": [
+      {
+        "target_user": "WooCommerce plugin developers",
+        "title": "Run test suite",
+        "description": "Run PHP and JavaScript tests to verify code changes before committing"
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Check code quality",
+        "description": "Run linting commands to verify code follows WordPress coding standards"
+      },
+      {
+        "target_user": "Documentation writers",
+        "title": "Lint documentation",
+        "description": "Check markdown files pass markdownlint validation before creating PRs"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Run PHP tests",
+        "scenario": "Run a specific test class",
+        "prompt": "Run the PHP tests for the PaymentsExtensionSuggestionsTest class using the WooCommerce dev cycle skill"
+      },
+      {
+        "title": "Fix linting issues",
+        "scenario": "Fix PHP code style",
+        "prompt": "Help me fix PHP linting issues in my changed files using the WooCommerce dev cycle skill"
+      },
+      {
+        "title": "Check JS linting",
+        "scenario": "Run JavaScript linting",
+        "prompt": "Run JavaScript linting on the files I changed in my current branch"
+      },
+      {
+        "title": "Full workflow",
+        "scenario": "Complete development cycle",
+        "prompt": "Guide me through the full WooCommerce development cycle: run tests, check linting, and fix any issues"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run PHP unit tests for the SettingsPaymentsTest class",
+        "output": [
+          "1. Run test: pnpm run test:php:env -- --filter SettingsPaymentsTest",
+          "2. For verbose output: add --verbose flag",
+          "3. To stop on first failure: add --stop-on-failure flag",
+          "4. Test environment handles WordPress and WooCommerce setup automatically"
+        ]
+      },
+      {
+        "input": "Fix PHP code style in my branch",
+        "output": [
+          "1. Check changes: pnpm run lint:changes:branch:php",
+          "2. Auto-fix issues: pnpm run lint:php:fix",
+          "3. Review changes with git diff",
+          "4. Commit only after tests pass"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run specific tests for changed code during development to save time",
+      "Always run linting before committing to catch style issues early",
+      "Review automatic fixes with git diff before committing"
+    ],
+    "anti_patterns": [
+      "Running linting on the entire codebase instead of only changed files",
+      "Skipping linting checks before committing code changes",
+      "Ignoring test failures without investigating the root cause"
+    ],
+    "faq": [
+      {
+        "question": "What PHP version is used for tests?",
+        "answer": "Tests run in Docker with PHP 8.1 and PHPUnit 9.6.24 via wp-env."
+      },
+      {
+        "question": "How do I run tests for a single method?",
+        "answer": "Use the filter syntax: pnpm run test:php:env -- --filter ClassName::methodName"
+      },
+      {
+        "question": "Can I integrate this with CI pipelines?",
+        "answer": "Commands work in CI. Use full test runs without --filter for CI environments."
+      },
+      {
+        "question": "Is my data safe when running these commands?",
+        "answer": "Commands run locally in Docker. No data is sent to external servers."
+      },
+      {
+        "question": "Why do I get class not found errors?",
+        "answer": "Run pnpm install to install dependencies. Restart wp-env if issues persist."
+      },
+      {
+        "question": "How is this different from other PHP linting skills?",
+        "answer": "This skill is specific to WooCommerce monorepo with WordPress coding standards configured."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "code-quality.md",
+      "type": "file",
+      "path": "code-quality.md",
+      "lines": 274
+    },
+    {
+      "name": "markdown-linting.md",
+      "type": "file",
+      "path": "markdown-linting.md",
+      "lines": 203
+    },
+    {
+      "name": "php-linting-patterns.md",
+      "type": "file",
+      "path": "php-linting-patterns.md",
+      "lines": 305
+    },
+    {
+      "name": "running-tests.md",
+      "type": "file",
+      "path": "running-tests.md",
+      "lines": 250
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 36
+    }
+  ]
+}

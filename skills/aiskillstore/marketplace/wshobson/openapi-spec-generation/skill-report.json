@@ -1,0 +1,321 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:59:29.195Z",
+    "slug": "wshobson-openapi-spec-generation",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/documentation-generation/skills/openapi-spec-generation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "31404f61db66981be195264cdf03791f8b53cd9b0b8c8b31c68d4a2c32ad4247",
+    "tree_hash": "1965e02cab68fbee350a6b78913a12822258ae8cf819d01c455695120f707fe6"
+  },
+  "skill": {
+    "name": "openapi-spec-generation",
+    "description": "Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, and validation patterns. Use when creating API documentation, generating SDKs, or ensuring API contract compliance.",
+    "summary": "Generate and maintain OpenAPI 3.1 specifications from code, design-first specs, and validation patte...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "openapi",
+      "api-docs",
+      "sdk",
+      "validation",
+      "specification"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing YAML OpenAPI templates, code examples (Python FastAPI, TypeScript tsoa), and validation patterns. No executable code, no file system access, no network calls. All 126 static findings are false positives: detected cryptographic keywords are data format specifiers in YAML schemas, backticks are markdown formatting in documentation code blocks, URLs are example domains and documentation references, and system keywords are standard OpenAPI syntax.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 533,
+            "line_end": 533
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 534,
+            "line_end": 534
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1025,
+            "line_end": 1025
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1026,
+            "line_end": 1026
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1027,
+            "line_end": 1027
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 1028,
+            "line_end": 1028
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 511
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 511,
+            "line_end": 515
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 515,
+            "line_end": 701
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 701,
+            "line_end": 705
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 705,
+            "line_end": 893
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 893,
+            "line_end": 897
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 897,
+            "line_end": 978
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 978,
+            "line_end": 982
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 982,
+            "line_end": 1005
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1207,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:59:29.195Z"
+  },
+  "content": {
+    "user_title": "Generate OpenAPI 3.1 Specifications",
+    "value_statement": "Creating and maintaining API documentation is time-consuming and error-prone. This skill provides comprehensive templates, code examples, and validation patterns for OpenAPI 3.1 specifications to streamline API documentation workflows.",
+    "seo_keywords": [
+      "openapi",
+      "openapi-spec-generation",
+      "api-documentation",
+      "claude",
+      "codex",
+      "claude-code",
+      "swagger",
+      "rest-api",
+      "sdk-generation",
+      "api-contract"
+    ],
+    "actual_capabilities": [
+      "Generate complete OpenAPI 3.1 specification templates with paths, schemas, and components",
+      "Create API specifications from Python FastAPI code using automatic OpenAPI generation",
+      "Generate OpenAPI specs from TypeScript Express code using tsoa decorators",
+      "Validate specifications using Spectral and Redocly linting tools",
+      "Generate client SDKs in multiple languages from OpenAPI specs"
+    ],
+    "limitations": [
+      "Does not execute or validate specifications automatically",
+      "Does not connect to external APIs or documentation services",
+      "Does not modify existing project files",
+      "Requires manual integration of provided templates into your codebase"
+    ],
+    "use_cases": [
+      {
+        "target_user": "API Developers",
+        "title": "Create API Specifications",
+        "description": "Design and document REST APIs with complete OpenAPI 3.1 templates including schemas, examples, and security schemes."
+      },
+      {
+        "target_user": "Backend Engineers",
+        "title": "Code-First Documentation",
+        "description": "Generate OpenAPI specs from existing FastAPI or Express/tsoa codebases for automatic SDK generation."
+      },
+      {
+        "target_user": "DevOps Teams",
+        "title": "Validate API Contracts",
+        "description": "Set up linting rules and validation pipelines to ensure API specifications meet quality and compliance standards."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Spec",
+        "scenario": "Create OpenAPI specification",
+        "prompt": "Generate an OpenAPI 3.1 specification template for a [RESOURCE] API with CRUD endpoints, authentication, and error responses."
+      },
+      {
+        "title": "Code-First",
+        "scenario": "Generate from Python code",
+        "prompt": "Create a Python FastAPI code example that generates an OpenAPI specification for user management with pagination and filtering."
+      },
+      {
+        "title": "Validation",
+        "scenario": "Set up linting rules",
+        "prompt": "Write Spectral validation rules for OpenAPI specs that enforce operation IDs, descriptions, and security definitions."
+      },
+      {
+        "title": "SDK Generation",
+        "scenario": "Generate client SDK",
+        "prompt": "Generate an OpenAPI Generator command to create a TypeScript client from an OpenAPI specification file."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an OpenAPI specification for a product catalog API",
+        "output": [
+          "openapi: 3.1.0 with info section containing title, description, version",
+          "GET/POST/PUT/DELETE endpoints for products resource",
+          "Product schema with id, name, price, description, category properties",
+          "Pagination and filtering query parameters",
+          "Error responses for 400, 401, 404, 429 status codes",
+          "Bearer token authentication configuration in security schemes"
+        ]
+      },
+      {
+        "input": "Write Spectral validation rules for operation IDs",
+        "output": [
+          "Rule checks for presence of operationId in each operation",
+          "Severity level set to error for missing operationId",
+          "Validates operationId follows naming convention pattern",
+          "Reports violations with field path and descriptive message"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use $ref for reusable schemas, parameters, and responses to maintain consistency across specifications",
+      "Include real-world examples in request and response schemas to help API consumers understand usage",
+      "Define all possible error responses including validation errors, authentication failures, and rate limiting"
+    ],
+    "anti_patterns": [
+      "Avoid generic or missing descriptions on operations, parameters, and schema properties",
+      "Do not skip defining security schemes even for internal APIs",
+      "Avoid hardcoding server URLs in paths; use server variables for different environments"
+    ],
+    "faq": [
+      {
+        "question": "What programming languages does this skill support?",
+        "answer": "Templates cover Python FastAPI, TypeScript with tsoa, and plain YAML for any language. SDK generation supports 50+ languages."
+      },
+      {
+        "question": "What are the size limits for OpenAPI specifications?",
+        "answer": "OpenAPI specs have no hard size limit but tools may have practical limits. Large specs should be split using $ref for maintainability."
+      },
+      {
+        "question": "How do I integrate with CI/CD pipelines?",
+        "answer": "Use Spectral CLI or Redocly in CI to validate specs. Add pre-commit hooks to ensure specifications pass linting before deployment."
+      },
+      {
+        "question": "Is my API specification data kept private?",
+        "answer": "This skill runs locally with no network access. Your specifications remain on your machine and are never transmitted externally."
+      },
+      {
+        "question": "Why is my specification not generating expected endpoints?",
+        "answer": "Check that paths follow OpenAPI format with HTTP methods nested under path items. Verify schemas are correctly referenced with $ref."
+      },
+      {
+        "question": "How does this compare to Swagger Editor?",
+        "answer": "Swagger Editor provides interactive editing. This skill provides templates and patterns you can copy into any editor or CI pipeline."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 1029
+    }
+  ]
+}

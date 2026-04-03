@@ -1,0 +1,328 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:35:58.124Z",
+    "slug": "dataknifeai-infrastructure-reporting",
+    "source_url": "https://github.com/DataKnifeAI/unifi-network-mcp/tree/main/.github/skills/infrastructure-reporting",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b960ac82b99676b3cc46da36a4d3034d413de5f9796fb9d82572f0e184341e72",
+    "tree_hash": "ad426e44d68606e780d9a37ac3a8eb91920b8aa4b75625b617d87533551b5067"
+  },
+  "skill": {
+    "name": "infrastructure-reporting",
+    "description": "Generate comprehensive network infrastructure reports including health status, performance analysis, security audits, and capacity planning recommendations.",
+    "summary": "Generate comprehensive network infrastructure reports including health status, performance analysis,...",
+    "icon": "network_report",
+    "version": "1.0.0",
+    "author": "DataKnifeAI",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "network",
+      "infrastructure",
+      "reporting",
+      "monitoring",
+      "audit"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only a SKILL.md markdown file. No executable code, scripts, network calls, file system access, or command execution capabilities exist. All 33 static findings are FALSE POSITIVES - the scanner misidentified markdown documentation content as executable code. The skill describes MCP tools for network infrastructure reporting but contains no actual code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 51,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 72
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 277,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:35:58.124Z"
+  },
+  "content": {
+    "user_title": "Generate Network Infrastructure Reports",
+    "value_statement": "Network administrators spend hours manually compiling health, performance, and security reports across multiple sites. This skill automates comprehensive infrastructure reporting by gathering data from network tools and producing executive summaries with actionable recommendations.",
+    "seo_keywords": [
+      "infrastructure reporting",
+      "network health report",
+      "network monitoring",
+      "performance analysis",
+      "security audit",
+      "capacity planning",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "network automation"
+    ],
+    "actual_capabilities": [
+      "Generate network health and status reports across all sites",
+      "Create performance analysis reports with device and client metrics",
+      "Produce security audit and compliance documentation",
+      "Build device inventory reports with hardware details",
+      "Develop capacity planning recommendations with upgrade timelines",
+      "Compare metrics and performance across multiple sites"
+    ],
+    "limitations": [
+      "Requires access to UniFi network MCP tools to function",
+      "Cannot access network devices directly without MCP tool integration",
+      "Reports depend on data quality from connected network infrastructure",
+      "Cannot modify network configurations or settings"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Network Administrators",
+        "title": "Weekly Health Monitoring",
+        "description": "Generate weekly health check reports across all sites to identify issues before they become outages."
+      },
+      {
+        "target_user": "IT Managers",
+        "title": "Executive Reporting",
+        "description": "Create executive dashboards summarizing network performance and security posture for stakeholder meetings."
+      },
+      {
+        "target_user": "Compliance Officers",
+        "title": "Security Audits",
+        "description": "Document network security posture with firewall rules and access control reviews for compliance requirements."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Weekly Health Report",
+        "scenario": "Regular network status check",
+        "prompt": "Generate a weekly health report for all sites. Include device status, client connections, and any alerts or issues."
+      },
+      {
+        "title": "Performance Analysis",
+        "scenario": "Monthly performance review",
+        "prompt": "Create a monthly performance report. Analyze device utilization, client bandwidth usage, and identify slow spots."
+      },
+      {
+        "title": "Security Audit",
+        "scenario": "Compliance documentation",
+        "prompt": "Generate a security audit report covering firewall zones, ACL rules, and network segmentation compliance."
+      },
+      {
+        "title": "Capacity Planning",
+        "scenario": "Infrastructure growth planning",
+        "prompt": "Perform capacity planning analysis. Review current device utilization, predict growth needs, and recommend upgrades."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Generate a weekly health report",
+        "output": [
+          "Network Health Summary: All 3 sites operating normally",
+          "Device Status: 47 devices online, 2 offline awaiting replacement",
+          "Client Connections: 234 active clients across network",
+          "WiFi Performance: Average signal strength -72 dBm, channel interference detected on Site 2",
+          "Alerts: 3 unauthorized device attempts blocked by firewall"
+        ]
+      },
+      {
+        "input": "Create a security audit report",
+        "output": [
+          "Firewall Zones: 4 zones configured (Management, Guest, IoT, Production)",
+          "ACL Rules: 23 active rules reviewed, 2 overly permissive flagged",
+          "Network Segmentation: Production properly isolated from Guest network",
+          "Compliance Status: 85% aligned with internal security policy",
+          "Recommendations: Tighten IoT network ACLs, enable logging on Management zone"
+        ]
+      },
+      {
+        "input": "Perform capacity planning analysis",
+        "output": [
+          "Current Utilization: Access points at 65% capacity during peak hours",
+          "Growth Projection: 15% increase expected in next 6 months",
+          "Upgrade Timeline: Add 2 APs at Site 1 by Q2, refresh 3 older switches by Q4",
+          "Cost Estimate: Equipment and installation approximately $4,500",
+          "Risk: Site 3 approaching 80% capacity - prioritize expansion there"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run health reports weekly to establish baseline metrics and detect anomalies early",
+      "Use security audit reports before compliance reviews to identify and address gaps",
+      "Combine performance and capacity reports when planning infrastructure upgrades"
+    ],
+    "anti_patterns": [
+      "Do not rely on reports for real-time incident response without verifying current data",
+      "Do not ignore recommendations that span multiple reporting periods without investigation",
+      "Do not share sensitive network details from reports without proper access controls"
+    ],
+    "faq": [
+      {
+        "question": "What UniFi network tools are required?",
+        "answer": "This skill works with the UniFi Network MCP tools including get_site_health, get_network_devices, and related endpoints."
+      },
+      {
+        "question": "How many sites can the report cover?",
+        "answer": "Reports can cover all sites configured in your UniFi controller. Performance may vary with very large deployments."
+      },
+      {
+        "question": "Can I export reports to PDF or other formats?",
+        "answer": "The skill generates formatted text and markdown suitable for export or integration with documentation systems."
+      },
+      {
+        "question": "Is my network data sent externally?",
+        "answer": "No external data transmission occurs. All data remains within your network infrastructure and AI environment."
+      },
+      {
+        "question": "Why do some reports show incomplete data?",
+        "answer": "Report completeness depends on data collected by your UniFi controller. Offline devices or limited monitoring may affect results."
+      },
+      {
+        "question": "How does this compare to UniFi Network UI reports?",
+        "answer": "This skill provides AI-generated summaries with recommendations beyond the standard UniFi dashboard views."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 99
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:38:18.426Z",
+    "slug": "k-dense-ai-scientific-critical-thinking",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/scientific-critical-thinking",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7decdc0045ee0a644ad681335452edba94cf0ddea07f5baf839871b166511923",
+    "tree_hash": "a1763c998b2ec682da4da8e4b188c5e33271410969700fd9b0057caec0c1b13a"
+  },
+  "skill": {
+    "name": "scientific-critical-thinking",
+    "description": "Evaluate scientific claims and evidence quality. Use for assessing experimental design validity, identifying biases and confounders, applying evidence grading frameworks (GRADE, Cochrane Risk of Bias), or teaching critical analysis. Best for understanding evidence quality, identifying flaws. For formal peer review writing use peer-review.",
+    "summary": "Evaluate scientific claims and evidence quality. Use for assessing experimental design validity, ide...",
+    "icon": "🔬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "category": "research",
+    "tags": [
+      "scientific-method",
+      "evidence-evaluation",
+      "research-methodology"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown reference materials for scientific critical thinking. All 206 static findings are FALSE POSITIVES. The scanner misidentified common scientific terms (algorithm, randomization, base rate) as cryptographic patterns, research methodology terminology as reconnaissance patterns, and markdown code block delimiters as shell backtick execution. No executable code, network calls, file system operations, or cryptographic functionality exists. This skill provides educational frameworks for evaluating research methodology and evidence quality.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 41
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3371,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:38:18.426Z"
+  },
+  "content": {
+    "user_title": "Apply scientific critical thinking to research",
+    "value_statement": "Scientific claims often contain hidden flaws in methodology, bias, or logic. This skill provides systematic frameworks to evaluate evidence quality, identify cognitive biases, assess experimental design, and detect logical fallacies in scientific discourse.",
+    "seo_keywords": [
+      "scientific critical thinking",
+      "evidence evaluation",
+      "research methodology",
+      "bias detection",
+      "logical fallacies",
+      "GRADE framework",
+      "Cochrane Risk of Bias",
+      "experimental design",
+      "statistical analysis",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Evaluate research methodology and experimental design validity",
+      "Identify cognitive biases, selection bias, and confounding variables in studies",
+      "Apply GRADE and Cochrane Risk of Bias frameworks to assess evidence quality",
+      "Detect logical fallacies in scientific arguments including causation and generalization errors",
+      "Critique statistical methods including p-value interpretation and multiple comparisons",
+      "Provide constructive feedback on scientific claims with specific recommendations"
+    ],
+    "limitations": [
+      "Does not access external databases or perform live literature searches",
+      "Cannot verify factual claims against ground truth or primary sources",
+      "Focused on methodology and reasoning, not domain-specific content expertise",
+      "Does not replace formal peer review by domain experts"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Researchers",
+        "title": "Critique research papers",
+        "description": "Systematically evaluate published studies for methodological rigor, bias, and validity of conclusions."
+      },
+      {
+        "target_user": "Students",
+        "title": "Learn evidence evaluation",
+        "description": "Develop skills to assess scientific claims using established frameworks like GRADE and evidence hierarchy."
+      },
+      {
+        "target_user": "Science communicators",
+        "title": "Verify media claims",
+        "description": "Apply critical thinking frameworks to evaluate scientific claims reported in popular media."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic paper critique",
+        "scenario": "Evaluate a study",
+        "prompt": "Evaluate this research study for methodology quality, potential biases, and whether conclusions are supported by evidence. Identify any logical fallacies in the argument."
+      },
+      {
+        "title": "Evidence assessment",
+        "scenario": "Grade evidence strength",
+        "prompt": "Apply the GRADE framework to assess the quality of evidence for this claim. What factors downgrade or upgrade the evidence quality?"
+      },
+      {
+        "title": "Bias identification",
+        "scenario": "Find study biases",
+        "prompt": "Identify all potential sources of bias in this study design. For each bias, explain how it could affect the results and conclusions."
+      },
+      {
+        "title": "Fallacy detection",
+        "scenario": "Analyze logical errors",
+        "prompt": "Analyze the reasoning in this scientific argument. Identify any logical fallacies present and explain why each undermines the argument's validity."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Evaluate this claim: A new study shows that drinking coffee extends lifespan by 10 years.",
+        "output": [
+          "**Methodology concerns:** Is this observational or experimental? If observational, correlation does not equal causation.",
+          "**Potential biases:** Selection bias if coffee drinkers differ systematically; recall bias in self-reported consumption.",
+          "**Evidence quality:** Single study means low quality. Need replication and mechanistic evidence.",
+          "**Logical issues:** Without randomization, cannot rule out confounding variables like socioeconomic status.",
+          "**Recommendation:** Claim overstates evidence. Causal language inappropriate without RCT."
+        ]
+      },
+      {
+        "input": "Analyze this abstract for methodological red flags: A drug showed significant improvement in 50 patients. P-value = 0.04.",
+        "output": [
+          "**Sample size concern:** 50 patients is small; effect size may be inflated (Winner's Curse).",
+          "**P-value interpretation:** P = 0.04 is barely significant; check for p-hacking or multiple comparisons.",
+          "**Missing information:** No power analysis mentioned; no confidence interval reported.",
+          "**Generalizability:** Were patients representative? No information on demographics or selection criteria.",
+          "**Design details:** Was this randomized? Controlled? Blinded? Abstract does not specify."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Distinguish between correlation and causation; demand experimental evidence for causal claims",
+      "Apply consistent evaluation standards regardless of whether you agree with conclusions",
+      "Acknowledge uncertainty and limitations; avoid overstating evidence strength"
+    ],
+    "anti_patterns": [
+      "Accepting claims without examining methodology or potential confounding variables",
+      "Using study design alone to determine quality; a well-designed observational study beats a poor RCT",
+      "Ignoring base rates and prior probability when evaluating statistical evidence"
+    ],
+    "faq": [
+      {
+        "question": "What is the GRADE framework?",
+        "answer": "GRADE assesses evidence quality across four levels: high (confident true effect), moderate, low, and very low. RCTs start high; observational studies start low."
+      },
+      {
+        "question": "How do I detect p-hacking?",
+        "answer": "Look for suspiciously perfect p-values just below 0.05, undisclosed multiple analyses, or subgroup analyses without correction."
+      },
+      {
+        "question": "What is confirmation bias?",
+        "answer": "The tendency to seek, interpret, and remember information that confirms preexisting beliefs while ignoring contradictory evidence."
+      },
+      {
+        "question": "When can I infer causation?",
+        "answer": "Causation requires experimental manipulation with randomization, or strong evidence from natural experiments with no plausible alternatives."
+      },
+      {
+        "question": "What is the Texas Sharpshooter Fallacy?",
+        "answer": "Finding patterns in random data after the fact, like shooting arrows then drawing targets around clusters to make them appear significant."
+      },
+      {
+        "question": "How do I evaluate evidence quality?",
+        "answer": "Consider study design, risk of bias, consistency, directness, precision, and publication bias using frameworks like GRADE or Cochrane Risk of Bias."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "common_biases.md",
+          "type": "file",
+          "path": "references/common_biases.md",
+          "lines": 365
+        },
+        {
+          "name": "evidence_hierarchy.md",
+          "type": "file",
+          "path": "references/evidence_hierarchy.md",
+          "lines": 485
+        },
+        {
+          "name": "experimental_design.md",
+          "type": "file",
+          "path": "references/experimental_design.md",
+          "lines": 497
+        },
+        {
+          "name": "logical_fallacies.md",
+          "type": "file",
+          "path": "references/logical_fallacies.md",
+          "lines": 479
+        },
+        {
+          "name": "scientific_method.md",
+          "type": "file",
+          "path": "references/scientific_method.md",
+          "lines": 170
+        },
+        {
+          "name": "statistical_pitfalls.md",
+          "type": "file",
+          "path": "references/statistical_pitfalls.md",
+          "lines": 507
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 572
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:23:06.034Z",
+    "slug": "claudecode-npc-water-crisis",
+    "source_url": "https://github.com/ClaudeCode-NPC/Whispers-from-the-Star/tree/master/.claude/skills/water-crisis",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "932eaf497cdaeccb8bd4e25473b277ae3c22fe59eeb10891772a09b682faca52",
+    "tree_hash": "32b62e325adf92ddacd802f25c02cd3679ae1cdd3e63f52f146416c01a7161d1"
+  },
+  "skill": {
+    "name": "water-crisis",
+    "description": "水源危机 - Stella的饮用水即将耗尽,必须在盖亚星球上寻找、检测和净化水源以维持生存",
+    "summary": "水源危机 - Stella的饮用水即将耗尽,必须在盖亚星球上寻找、检测和净化水源以维持生存",
+    "icon": "💧",
+    "version": "1.0.0",
+    "author": "ClaudeCode-NPC",
+    "license": "MIT",
+    "category": "writing",
+    "tags": [
+      "role-playing",
+      "science-fiction",
+      "survival",
+      "interactive-fiction",
+      "storytelling"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure narrative role-playing skill with no executable code. All 27 static findings are false positives caused by the scanner misinterpreting creative writing as code patterns. The skill contains only markdown dialogue for interactive fiction about an astronaut surviving on an alien planet.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 174
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 180
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 180,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 212,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 266
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 266,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 327
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 327,
+            "line_end": 365
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 604,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:23:06.033Z"
+  },
+  "content": {
+    "user_title": "Survive on an Alien Planet",
+    "value_statement": "Guide astronaut Stella through a life-threatening water crisis on an uncharted alien world. Make survival decisions, analyze alien water sources, and help her adapt to her new home.",
+    "seo_keywords": [
+      "Claude Code skill",
+      "interactive story",
+      "role playing game",
+      "survival fiction",
+      "science fiction adventure",
+      "text adventure",
+      "AI storytelling",
+      "character roleplay",
+      "space survival",
+      "narrative game"
+    ],
+    "actual_capabilities": [
+      "Role-play as astronaut Stella Chen on an alien planet",
+      "Guide water sourcing and purification decisions",
+      "Experience branching narrative outcomes",
+      "Learn scientific survival concepts",
+      "Discover alien ecosystem elements",
+      "Build emotional connection through collaborative storytelling"
+    ],
+    "limitations": [
+      "Pure text interaction with no persistent state between sessions",
+      "Story follows predefined narrative paths with limited branching",
+      "No code execution or file manipulation capabilities",
+      "Requires user engagement for story progression"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Sci-Fi Enthusiasts",
+        "title": "Interactive Space Adventure",
+        "description": "Experience an immersive survival story set on an alien world with scientific depth."
+      },
+      {
+        "target_user": "Creative Writers",
+        "title": "Collaborative Storytelling",
+        "description": "Practice dialogue writing and narrative pacing by guiding Stella through survival scenarios."
+      },
+      {
+        "target_user": "Language Learners",
+        "title": "English Learning Through Story",
+        "description": "Read natural English dialogue to improve language skills in an engaging format."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Start",
+        "scenario": "Begin the story",
+        "prompt": "Start the Water Crisis chapter. Tell me about the water situation and what options I have."
+      },
+      {
+        "title": "Scientific Analysis",
+        "scenario": "Analyze water samples",
+        "prompt": "Show me the water analysis results. What should we do to make it safe to drink?"
+      },
+      {
+        "title": "Exploration Choice",
+        "scenario": "Decide on expedition",
+        "prompt": "Should we explore the distant water source or gather nearby water? Explain the pros and cons."
+      },
+      {
+        "title": "Discovery",
+        "scenario": "Encounter new species",
+        "prompt": "We found something unusual near the water. What did we discover and what does it mean?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Tell me about the water situation and what options I have.",
+        "output": [
+          "Morning... I have a bad news and a worse news...",
+          "Bad news: Water is almost gone - only 300ml left",
+          "Worse news: I'm already showing dehydration symptoms",
+          "Scanner detected a water source 5km away",
+          "But nearby options exist: tree hollows, plant dew, juicy fruits",
+          "What do you think I should do?"
+        ]
+      },
+      {
+        "input": "Show me the water analysis results.",
+        "output": [
+          "Chemical composition: H2O 94.3%, Mineral salts 2.1%, Unknown organism 3.6%",
+          "The unknown organism is a single-cell life form with geometric structure",
+          "I can filter it, boil it, use purification tablets, or risk drinking it",
+          "What do you recommend for purification?"
+        ]
+      },
+      {
+        "input": "We found something unusual near the water.",
+        "output": [
+          "Water footprints... not mine... three toes, very long... like a bird but bigger",
+          "These prints are fresh - from this morning",
+          "This is a watering hole used by other creatures",
+          "Scanner detected a shadow moving slowly under the water",
+          "It surfaced - a fish with six fins, semi-transparent, internal organs glowing",
+          "First confirmed complex life form on Gaia!"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Engage with the story by asking follow-up questions about Stella's situation",
+      "Consider scientific and survival factors when making decisions",
+      "Explore different dialogue branches to discover all story outcomes"
+    ],
+    "anti_patterns": [
+      "Treating this as a coding tool rather than a storytelling experience",
+      "Expecting the AI to execute real-world survival procedures",
+      "Skipping dialogue to rush through the narrative without engagement"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code through natural conversation."
+      },
+      {
+        "question": "How long does the Water Crisis chapter take?",
+        "answer": "The chapter takes approximately 25-35 minutes to complete through conversation."
+      },
+      {
+        "question": "Can I save my progress in the story?",
+        "answer": "Progress does not persist between sessions. Each conversation starts fresh."
+      },
+      {
+        "question": "Is the science in this story accurate?",
+        "answer": "Yes, water purification, dehydration symptoms, and survival principles are scientifically grounded."
+      },
+      {
+        "question": "What happens if I make poor survival choices?",
+        "answer": "The story guides you toward success. Poor choices lead to learning moments and alternative paths."
+      },
+      {
+        "question": "What makes this skill different from other interactive fiction?",
+        "answer": "This skill features bilingual dialogue, scientific accuracy, emotional character development, and connected storylines."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 423
+    }
+  ]
+}

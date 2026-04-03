@@ -1,0 +1,197 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:27:13.184Z",
+    "slug": "frontend-design",
+    "source_url": "https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design/skills/frontend-design",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "official",
+    "content_hash": "d39adf3a983de7dafc75991590d54f091755f7e4163d5a5ed085ecd719157184",
+    "tree_hash": "06175f0bd7ff1a58be3813d5c5e75265bc24bb5882f3b6811a9f9de5260d0664"
+  },
+  "skill": {
+    "name": "frontend-design",
+    "description": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill when the user asks to build web components, pages, or applications. Generates creative, polished code that avoids generic AI aesthetics.",
+    "summary": "Create distinctive, production-grade frontend interfaces with high design quality. Use this skill wh...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "anthropics",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "design",
+    "tags": [
+      "frontend",
+      "ui-design",
+      "web-development"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing markdown guidance for frontend design. No executable code, scripts, network calls, filesystem operations, or external command invocations are present. The SKILL.md file contains only design instructions and best practices.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 1,
+    "total_lines": 42,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:27:13.184Z"
+  },
+  "content": {
+    "user_title": "Design Production-Grade Frontend Interfaces",
+    "value_statement": "This skill creates distinctive, production-ready frontend interfaces that stand out from generic AI-generated designs. It delivers polished web components with bold aesthetics and meticulous attention to detail.",
+    "seo_keywords": [
+      "frontend design",
+      "web interface design",
+      "UI component development",
+      "creative web design",
+      "React components",
+      "Vue.js",
+      "CSS styling",
+      "Claude",
+      "Claude Code",
+      "Codex"
+    ],
+    "actual_capabilities": [
+      "Creates production-grade web components, pages, and applications",
+      "Generates distinctive designs that avoid generic AI aesthetics",
+      "Implements CSS animations and micro-interactions",
+      "Selects unique typography and cohesive color schemes",
+      "Builds spatial compositions with unexpected layouts"
+    ],
+    "limitations": [
+      "Does not execute code or run in browser environments",
+      "Does not create design files in Figma, Sketch, or similar tools",
+      "Does not perform accessibility audits or automated testing"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend Developers",
+        "title": "Build Polished Components",
+        "description": "Create distinctive React, Vue, or vanilla JS components with creative aesthetics."
+      },
+      {
+        "target_user": "Product Designers",
+        "title": "Rapid Interface Prototyping",
+        "description": "Translate design concepts into working frontend code with bold visual direction."
+      },
+      {
+        "target_user": "Full-Stack Engineers",
+        "title": "Complete Page Implementations",
+        "description": "Develop full web pages with cohesive design systems and engaging visual effects."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Component",
+        "scenario": "Create a simple UI element",
+        "prompt": "Create a [component name] with [functional description]. Use a [specific aesthetic direction] style."
+      },
+      {
+        "title": "Animated Element",
+        "scenario": "Add motion to an interface",
+        "prompt": "Build an animated [element type] featuring [specific animation effects]. Choose a [mood/theme] aesthetic."
+      },
+      {
+        "title": "Themed Section",
+        "scenario": "Design a complete page section",
+        "prompt": "Design a [section name] section with [brand/tone] aesthetics. Include [key elements] and [animation effects]."
+      },
+      {
+        "title": "Full Page",
+        "scenario": "Create a complete landing page",
+        "prompt": "Create a complete [page type] page with [specific theme] design. Implement all sections with consistent aesthetics."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a navigation bar with a brutalist design aesthetic",
+        "output": [
+          "Bold uppercase typography with heavy letter spacing",
+          "Sharp black and white color scheme with accent borders",
+          "Hover states with inverted colors and scale effects",
+          "CSS-only hamburger menu with smooth reveal animation",
+          "Sticky positioning with blur backdrop effect"
+        ]
+      },
+      {
+        "input": "Design a pricing section with an organic, nature-inspired theme",
+        "output": [
+          "Soft earth-tone color palette with moss green and terracotta accents",
+          "Flowing curved borders and irregular border-radius values",
+          "Subtle floating particle animations in background",
+          "Card hover states with gentle lift and shadow bloom",
+          "Typography pairing: rounded display font with clean sans-serif body"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Commit to a bold aesthetic direction before coding and execute it consistently",
+      "Use CSS variables for consistent theming and easy customization across the design",
+      "Prioritize CSS-only animations for performance, then enhance with JavaScript libraries"
+    ],
+    "anti_patterns": [
+      "Using generic fonts like Arial, Inter, or Roboto without intentional styling",
+      "Applying purple gradients on white backgrounds as default styling",
+      "Building predictable layouts without spatial interest or visual surprise"
+    ],
+    "faq": [
+      {
+        "question": "Which frameworks does this skill support?",
+        "answer": "The skill works with HTML/CSS/JS, React, Vue, and other modern frontend frameworks as requested."
+      },
+      {
+        "question": "Can I use this skill with any Claude product?",
+        "answer": "Yes, this skill is compatible with Claude, Codex, and Claude Code for frontend design tasks."
+      },
+      {
+        "question": "Does this skill create animation effects?",
+        "answer": "Yes, the skill implements CSS animations, micro-interactions, and can use animation libraries like Motion for React."
+      },
+      {
+        "question": "How do I get unique designs each time?",
+        "answer": "Provide specific aesthetic directions. The skill intentionally avoids common choices to generate distinctive designs."
+      },
+      {
+        "question": "Is the generated code production-ready?",
+        "answer": "Yes, the skill produces functional, production-grade code that follows best practices and modern standards."
+      },
+      {
+        "question": "Can I request dark themes or specific color palettes?",
+        "answer": "Yes, specify your theme preferences. The skill supports light, dark, and custom themed designs with CSS variables."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 42
+    }
+  ]
+}

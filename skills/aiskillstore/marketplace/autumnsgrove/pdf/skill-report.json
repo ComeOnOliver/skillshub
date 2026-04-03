@@ -1,0 +1,365 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:39:31.740Z",
+    "slug": "autumnsgrove-pdf",
+    "source_url": "https://github.com/AutumnsGrove/ClaudeSkills/tree/master/pdf",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ae281e1f2f987a5c4e86a85a10340376cfe4e98b99490d1f61a6d1b9bfabf303",
+    "tree_hash": "b48100daae2f12e829d02bfebe99caf44b3c368d705c67219725d7bbac227148"
+  },
+  "skill": {
+    "name": "pdf",
+    "description": "Comprehensive PDF manipulation, extraction, and generation with support for text extraction, form filling, merging, splitting, annotations, and creation. Use when working with .pdf files for: (1) Extracting text and tables, (2) Filling PDF forms, (3) Merging/splitting PDFs, (4) Creating PDFs programmatically, (5) Adding watermarks/annotations, (6) PDF metadata management",
+    "summary": "Comprehensive PDF manipulation, extraction, and generation with support for text extraction, form fi...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "AutumnsGrove",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "PDF",
+      "Python",
+      "document processing",
+      "text extraction",
+      "OCR"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "scripts",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "The static analyzer flagged 377 potential issues across 13 files. After evaluation, the majority are false positives: markdown documentation formatting (backticks in code blocks), legitimate cryptographic implementations (AES-256), and common PDF processing operations. One documented concern exists in example code using eval() for CSV parsing, with an explicit warning comment. The skill contains standard PDF manipulation capabilities with no confirmed malicious intent.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/pdf_helper.py",
+            "line_start": 743,
+            "line_end": 743
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 177
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "examples/invoice-generator.md",
+            "line_start": 273,
+            "line_end": 273
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "README.md",
+            "line_start": 13,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 34
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [
+      {
+        "title": "eval() usage in example CSV parsing code",
+        "description": "eval() used in example code for CSV parsing",
+        "file": "examples/invoice-generator.md",
+        "line": 273,
+        "mitigation": "Documented with warning comment, example only",
+        "locations": [
+          {
+            "file": "examples/invoice-generator.md",
+            "line_start": 273,
+            "line_end": 273
+          }
+        ]
+      }
+    ],
+    "low_findings": [
+      {
+        "title": "Dynamic import for optional dependency checking",
+        "description": "Dynamic __import__ for dependency checking",
+        "file": "references/best-practices.md",
+        "line": 380,
+        "locations": [
+          {
+            "file": "references/best-practices.md",
+            "line_start": 380,
+            "line_end": 380
+          }
+        ]
+      },
+      {
+        "title": "File I/O operations for PDF processing",
+        "description": "File I/O operations for PDF processing",
+        "file": "scripts/pdf_helper.py",
+        "line": 743,
+        "locations": [
+          {
+            "file": "scripts/pdf_helper.py",
+            "line_start": 743,
+            "line_end": 743
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 5124,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:39:31.740Z"
+  },
+  "content": {
+    "user_title": "Work with PDF files in Python",
+    "value_statement": "PDF files require complex tools for extraction and manipulation. This skill provides comprehensive code examples using popular Python libraries for all PDF operations.",
+    "seo_keywords": [
+      "PDF manipulation",
+      "Python PDF",
+      "text extraction",
+      "PDF forms",
+      "OCR",
+      "document processing",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Extract text from PDFs with layout preservation",
+      "Extract tables and structured data from documents",
+      "Create PDFs programmatically with text, images, and tables",
+      "Fill and modify PDF forms automatically",
+      "Merge multiple PDFs or split documents by pages",
+      "Add watermarks, annotations, and page numbers"
+    ],
+    "limitations": [
+      "Requires Python environment with library installations",
+      "System dependencies needed for OCR (tesseract, poppler)",
+      "Cannot edit scanned PDFs without OCR processing",
+      "Password-protected PDFs require correct password"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers",
+        "title": "Process PDF documents",
+        "description": "Extract data and automate document workflows in Python applications"
+      },
+      {
+        "target_user": "Accountants",
+        "title": "Extract invoice data",
+        "description": "Pull tables and figures from financial documents for analysis"
+      },
+      {
+        "target_user": "Office workers",
+        "title": "Automate document tasks",
+        "description": "Generate reports, fill forms, and organize document collections"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Extract text",
+        "scenario": "Get text from PDF",
+        "prompt": "Extract all text from a PDF file using pypdf or pdfplumber"
+      },
+      {
+        "title": "Fill forms",
+        "scenario": "Populate PDF forms",
+        "prompt": "Fill PDF form fields programmatically with given data values"
+      },
+      {
+        "title": "Create PDF",
+        "scenario": "Generate new document",
+        "prompt": "Create a professional PDF report with tables, images, and formatted text"
+      },
+      {
+        "title": "OCR scan",
+        "scenario": "Process scanned document",
+        "prompt": "Perform OCR on a scanned PDF to extract searchable text"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Extract text from my document.pdf",
+        "output": [
+          "Successfully extracted 15 pages from document.pdf",
+          "Total characters: 45,230 | Total words: 7,842",
+          "Extracted from page 1-3: Introduction and overview sections"
+        ]
+      },
+      {
+        "input": "Fill this invoice template with customer data",
+        "output": [
+          "Created 50 filled invoices from template",
+          "Data sourced from customers.csv",
+          "Output saved to /invoices/ directory"
+        ]
+      },
+      {
+        "input": "Merge these quarterly reports into one document",
+        "output": [
+          "Merged 4 PDF files into quarterly_report.pdf",
+          "Added page numbers to all pages",
+          "Applied consistent headers throughout"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Validate PDF files before processing and handle encryption errors",
+      "Use the right library for each task (pdfplumber for tables, reportlab for creation)",
+      "Process large PDFs in chunks with garbage collection to manage memory"
+    ],
+    "anti_patterns": [
+      "Attempting to process encrypted PDFs without checking for passwords",
+      "Using basic text extraction on scanned documents without OCR",
+      "Skipping error handling when processing multiple PDF files"
+    ],
+    "faq": [
+      {
+        "question": "Which Python library should I use for basic PDF operations?",
+        "answer": "Use pypdf for simple tasks like merge, split, rotate. Use pdfplumber for text and table extraction."
+      },
+      {
+        "question": "How do I extract tables from scanned PDFs?",
+        "answer": "First perform OCR using pytesseract, then use pdfplumber to extract table structure from the OCR output."
+      },
+      {
+        "question": "Can I create PDFs from scratch?",
+        "answer": "Yes, use reportlab library to programmatically create PDFs with text, images, tables, and formatted content."
+      },
+      {
+        "question": "How do I handle password-protected PDFs?",
+        "answer": "Use pypdf PdfReader with user_password parameter. Check if encryption exists before processing."
+      },
+      {
+        "question": "What formats can I convert PDFs to?",
+        "answer": "Use pdf2image to convert PDF pages to images (PNG, JPEG). Extract text to plain text or structured formats."
+      },
+      {
+        "question": "How do I extract metadata from PDFs?",
+        "answer": "Use pypdf PdfReader to access document metadata including author, title, creation date, and custom keywords."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "invoice-generator.md",
+          "type": "file",
+          "path": "examples/invoice-generator.md",
+          "lines": 284
+        },
+        {
+          "name": "report-automation.md",
+          "type": "file",
+          "path": "examples/report-automation.md",
+          "lines": 380
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "best-practices.md",
+          "type": "file",
+          "path": "references/best-practices.md",
+          "lines": 506
+        },
+        {
+          "name": "library-installation.md",
+          "type": "file",
+          "path": "references/library-installation.md",
+          "lines": 155
+        },
+        {
+          "name": "metadata-security-ocr.md",
+          "type": "file",
+          "path": "references/metadata-security-ocr.md",
+          "lines": 536
+        },
+        {
+          "name": "pdf-creation.md",
+          "type": "file",
+          "path": "references/pdf-creation.md",
+          "lines": 317
+        },
+        {
+          "name": "pdf-operations.md",
+          "type": "file",
+          "path": "references/pdf-operations.md",
+          "lines": 409
+        },
+        {
+          "name": "table-extraction.md",
+          "type": "file",
+          "path": "references/table-extraction.md",
+          "lines": 226
+        },
+        {
+          "name": "text-extraction.md",
+          "type": "file",
+          "path": "references/text-extraction.md",
+          "lines": 269
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "pdf_helper.py",
+          "type": "file",
+          "path": "scripts/pdf_helper.py",
+          "lines": 1062
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 169
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 543
+    }
+  ]
+}

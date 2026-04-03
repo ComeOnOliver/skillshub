@@ -1,0 +1,334 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:06:23.561Z",
+    "slug": "anthropics-command-development",
+    "source_url": "https://github.com/anthropics/claude-plugins-official/tree/main/plugins/plugin-dev/skills/command-development",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c03ba97fbe52eb65098b9fe3a89857d012e9f160106112d32e2165eb70230a26",
+    "tree_hash": "1ee29d34aa468d741739560fffc0cb581d0662bfa50726f2c7f871033cb02c93"
+  },
+  "skill": {
+    "name": "command-development",
+    "description": "This skill should be used when the user asks to \"create a slash command\", \"add a command\", \"write a custom command\", \"define command arguments\", \"use command frontmatter\", \"organize commands\", \"create command with file references\", \"interactive command\", \"use AskUserQuestion in command\", or needs guidance on slash command structure, YAML frontmatter fields, dynamic arguments, bash execution in commands, user interaction patterns, or command development best practices for Claude Code.",
+    "summary": "This skill should be used when the user asks to \"create a slash command\", \"add a command\", \"write a ...",
+    "icon": "⚡",
+    "version": "0.2.0",
+    "author": "anthropics",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "slash-commands",
+      "claude-code",
+      "plugin-development",
+      "automation",
+      "workflow"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Official Anthropic documentation skill for Claude Code slash command development. All 1,317 static findings are false positives triggered by documentation examples demonstrating legitimate Claude Code features like bash execution, file references, and argument passing. Pure markdown content with no executable code, network access, or credential handling.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 444,
+            "line_end": 444
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 464,
+            "line_end": 464
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 496,
+            "line_end": 496
+          },
+          {
+            "file": "examples/simple-commands.md",
+            "line_start": 100,
+            "line_end": 100
+          },
+          {
+            "file": "examples/plugin-commands.md",
+            "line_start": 24,
+            "line_end": 24
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 277,
+            "line_end": 277
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 295
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 12,
+    "total_lines": 12429,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:06:23.561Z"
+  },
+  "content": {
+    "user_title": "Create Claude Code slash commands",
+    "value_statement": "Build reusable slash commands for Claude Code. Learn command structure, YAML frontmatter options, dynamic arguments, file references, and bash execution to automate common workflows.",
+    "seo_keywords": [
+      "claude code slash commands",
+      "claude command development",
+      "claude plugin commands",
+      "claude code automation",
+      "claude code workflow",
+      "claude code documentation",
+      "claude code plugin",
+      "claude automation",
+      "claude code commands",
+      "claude developer tools"
+    ],
+    "actual_capabilities": [
+      "Create slash commands with YAML frontmatter configuration",
+      "Define dynamic arguments using $1, $2, $ARGUMENTS syntax",
+      "Include file contents with @file references",
+      "Execute bash commands using !`command` syntax",
+      "Organize commands with namespacing and subdirectories",
+      "Integrate commands with plugin agents and skills"
+    ],
+    "limitations": [
+      "Commands are text prompts, not executable scripts",
+      "Bash execution requires allowed-tools configuration",
+      "Commands run within Claude Code tool permissions",
+      "File references are read-only, not write operations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developer",
+        "title": "Automate code review",
+        "description": "Create /review command that runs git diff and analyzes changed files for quality issues."
+      },
+      {
+        "target_user": "DevOps Engineer",
+        "title": "Standardize deployments",
+        "description": "Build /deploy command with environment validation and npm script execution."
+      },
+      {
+        "target_user": "Plugin Developer",
+        "title": "Package commands",
+        "description": "Bundle reusable commands with plugins using ${CLAUDE_PLUGIN_ROOT} for portable scripts."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Command",
+        "scenario": "Create simple command",
+        "prompt": "Create a slash command called /test that runs npm test for the current file. Include proper frontmatter with allowed-tools."
+      },
+      {
+        "title": "With Arguments",
+        "scenario": "Add dynamic arguments",
+        "prompt": "Create a /deploy command that accepts environment and version as arguments. Validate environment is staging or production."
+      },
+      {
+        "title": "With File Reference",
+        "scenario": "Include file contents",
+        "prompt": "Create a /document command that generates documentation for a file specified as argument. Use the @ syntax to include the file."
+      },
+      {
+        "title": "Multi-Script Workflow",
+        "scenario": "Execute multiple bash commands",
+        "prompt": "Create a /build-test command that runs a build script, then runs tests, and reports results. Use the ${CLAUDE_PLUGIN_ROOT} variable."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a slash command called /git-pr that shows the current pull request status",
+        "output": [
+          "Creates .claude/commands/git-pr.md with frontmatter",
+          "Uses gh pr view command for GitHub CLI",
+          "Shows PR number, title, author, and status",
+          "Includes allowed-tools: Bash(gh:*) for security"
+        ]
+      },
+      {
+        "input": "Build a /lint command that runs eslint on staged files",
+        "output": [
+          "Uses git diff --name-only to get changed files",
+          "Pipes to xargs eslint for linting",
+          "Configures allowed-tools: Bash(git:*), Bash(xargs:*)",
+          "Reports all linting errors with file and line numbers"
+        ]
+      },
+      {
+        "input": "Make a documentation command that auto-generates API docs",
+        "output": [
+          "Reads source file with @ syntax",
+          "Extracts functions, classes, and parameters",
+          "Generates Markdown documentation",
+          "Writes output to docs/api/ directory"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use allowed-tools to restrict command permissions to minimum required",
+      "Add argument-hint to document expected arguments for user autocomplete",
+      "Test commands with different argument combinations before deployment"
+    ],
+    "anti_patterns": [
+      "Using Bash(*) instead of specific tool restrictions like Bash(git:*)",
+      "Writing commands as messages to users instead of instructions to Claude",
+      "Skipping error handling for missing arguments or file references"
+    ],
+    "faq": [
+      {
+        "question": "Where do I store slash commands?",
+        "answer": "Project commands go in .claude/commands/, personal commands in ~/.claude/commands/, and plugin commands in plugin-name/commands/."
+      },
+      {
+        "question": "How do I restrict what tools a command can use?",
+        "answer": "Use the allowed-tools field in frontmatter. For example: allowed-tools: Read, Bash(git:*)."
+      },
+      {
+        "question": "Can I pass arguments to slash commands?",
+        "answer": "Yes. Use $1, $2 for positional arguments or $ARGUMENTS for all arguments as a single string."
+      },
+      {
+        "question": "How do I include file contents in a command?",
+        "answer": "Use @file-path syntax. For example: Review @$1 to include the file specified as argument $1."
+      },
+      {
+        "question": "What is the !`command` syntax for?",
+        "answer": "It executes bash commands and includes their output in the command context. Useful for git status, npm scripts, and more."
+      },
+      {
+        "question": "How do I organize many commands?",
+        "answer": "Use subdirectories for namespacing. For example: .claude/commands/git/commit.md becomes /commit (project:git)."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "plugin-commands.md",
+          "type": "file",
+          "path": "examples/plugin-commands.md",
+          "lines": 558
+        },
+        {
+          "name": "simple-commands.md",
+          "type": "file",
+          "path": "examples/simple-commands.md",
+          "lines": 505
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "advanced-workflows.md",
+          "type": "file",
+          "path": "references/advanced-workflows.md",
+          "lines": 723
+        },
+        {
+          "name": "documentation-patterns.md",
+          "type": "file",
+          "path": "references/documentation-patterns.md",
+          "lines": 740
+        },
+        {
+          "name": "frontmatter-reference.md",
+          "type": "file",
+          "path": "references/frontmatter-reference.md",
+          "lines": 464
+        },
+        {
+          "name": "interactive-commands.md",
+          "type": "file",
+          "path": "references/interactive-commands.md",
+          "lines": 921
+        },
+        {
+          "name": "marketplace-considerations.md",
+          "type": "file",
+          "path": "references/marketplace-considerations.md",
+          "lines": 905
+        },
+        {
+          "name": "plugin-features-reference.md",
+          "type": "file",
+          "path": "references/plugin-features-reference.md",
+          "lines": 610
+        },
+        {
+          "name": "testing-strategies.md",
+          "type": "file",
+          "path": "references/testing-strategies.md",
+          "lines": 703
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 273
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 835
+    }
+  ]
+}

@@ -1,0 +1,297 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:45:44.561Z",
+    "slug": "k-dense-ai-uniprot-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/uniprot-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4992d5c2dd3a415443be12c345e7e4ce4ac24058d87a2663dadbaf581c8d7220",
+    "tree_hash": "edf6da737641d9fb5537718022d459d6c6d451d8ed27270e943a28d0ef8c1944"
+  },
+  "skill": {
+    "name": "uniprot-database",
+    "description": "Direct REST API access to UniProt. Protein searches, FASTA retrieval, ID mapping, Swiss-Prot/TrEMBL. For Python workflows with multiple databases, prefer bioservices (unified interface to 40+ services). Use this for direct HTTP/REST work or UniProt-specific control.",
+    "summary": "Direct REST API access to UniProt. Protein searches, FASTA retrieval, ID mapping, Swiss-Prot/TrEMBL....",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "proteins",
+      "bioinformatics",
+      "database",
+      "api",
+      "sequences"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate bioinformatics skill providing access to UniProt, the trusted public protein database. All 616 static findings are false positives. The scanner misinterpreted markdown code block delimiters as shell commands and flagged standard HTTP requests to rest.uniprot.org as network activity. No malicious patterns, data exfiltration, or security threats exist in the codebase.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/uniprot_client.py",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "scripts/uniprot_client.py",
+            "line_start": 61,
+            "line_end": 61
+          },
+          {
+            "file": "scripts/uniprot_client.py",
+            "line_start": 83,
+            "line_end": 83
+          },
+          {
+            "file": "references/api_examples.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "references/api_examples.md",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 54
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/api_examples.md",
+            "line_start": 105,
+            "line_end": 105
+          },
+          {
+            "file": "references/api_examples.md",
+            "line_start": 395,
+            "line_end": 395
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 7974,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:45:44.561Z"
+  },
+  "content": {
+    "user_title": "Query UniProt protein database via REST API",
+    "value_statement": "Search protein databases, retrieve sequences, and map identifiers across biological databases. This skill provides direct access to UniProt, the comprehensive protein sequence and functional information resource.",
+    "seo_keywords": [
+      "UniProt",
+      "protein database",
+      "protein search",
+      "FASTA retrieval",
+      "ID mapping",
+      "bioinformatics",
+      "sequence database",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Search proteins by name, gene, accession, or organism using UniProt query syntax",
+      "Retrieve protein sequences in FASTA, JSON, TSV, XML, or other formats",
+      "Map protein identifiers between UniProt and external databases like PDB, RefSeq, Ensembl",
+      "Access Swiss-Prot reviewed entries and TrEMBL unreviewed entries separately",
+      "Stream large result sets for batch protein downloads",
+      "Build complex queries with field-specific search syntax and boolean operators"
+    ],
+    "limitations": [
+      "Does not provide graphical interface; operates through API calls only",
+      "Rate limits apply to large batch operations; proper delays required",
+      "Results from ID mapping jobs are stored for 7 days maximum"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bioinformatics researchers",
+        "title": "Retrieve protein sequences",
+        "description": "Look up protein sequences by gene name or accession number for downstream analysis"
+      },
+      {
+        "target_user": "Computational biologists",
+        "title": "Map database identifiers",
+        "description": "Convert protein identifiers between UniProt, PDB, RefSeq, and Ensembl formats"
+      },
+      {
+        "target_user": "Life science educators",
+        "title": "Explore protein annotations",
+        "description": "Access GO terms, functional descriptions, and domain information for teaching"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic protein search",
+        "scenario": "Search for human insulin",
+        "prompt": "Find human insulin proteins in UniProt and return their accessions and sequences in FASTA format"
+      },
+      {
+        "title": "Gene-specific query",
+        "scenario": "Find BRCA1 proteins",
+        "prompt": "Search for reviewed human BRCA1 proteins and show gene names, organism, and length"
+      },
+      {
+        "title": "ID mapping",
+        "scenario": "Convert UniProt to PDB",
+        "prompt": "Map these UniProt accessions P01308 and P04637 to their corresponding PDB entries"
+      },
+      {
+        "title": "Complex query",
+        "scenario": "Filter by properties",
+        "prompt": "Find all reviewed human membrane proteins with kinase activity that have PDB structures"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search for human hemoglobin proteins",
+        "output": [
+          "Found 3 reviewed human hemoglobin entries:",
+          "- P69905 - Hemoglobin subunit alpha (HBA1) - 142 aa",
+          "- P68871 - Hemoglobin subunit beta (HBB) - 147 aa",
+          "- P02100 - Hemoglobin subunit epsilon (HBE1) - 147 aa"
+        ]
+      },
+      {
+        "input": "Get BRCA1 protein sequence",
+        "output": [
+          "P38398 - Breast cancer type 1 susceptibility protein (BRCA1)",
+          "Organism: Homo sapiens (Human)",
+          "Length: 1863 amino acids",
+          "Retrieved in FASTA format for downstream analysis"
+        ]
+      },
+      {
+        "input": "Map UniProt to RefSeq",
+        "output": [
+          "Mapped 2 UniProt accessions to RefSeq protein IDs:",
+          "P01308 -> NP_000198.1",
+          "P04637 -> NP_000537.3"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use reviewed:true filter for Swiss-Prot entries to ensure data quality",
+      "Request only needed fields to reduce bandwidth and processing time",
+      "Implement delays between batch requests to respect API rate limits"
+    ],
+    "anti_patterns": [
+      "Avoid requesting all fields for large queries; specify needed fields only",
+      "Do not ignore rate limits; implement proper delays for batch operations",
+      "Avoid mixing Swiss-Prot and TrEMBL without understanding curation differences"
+    ],
+    "faq": [
+      {
+        "question": "What is UniProt?",
+        "answer": "UniProt is the leading comprehensive protein sequence and functional information database maintained by the European Bioinformatics Institute."
+      },
+      {
+        "question": "What formats are supported?",
+        "answer": "FASTA, JSON, TSV, XML, Excel, RDF, TXT, and GFF formats are available for different use cases."
+      },
+      {
+        "question": "What is the difference between Swiss-Prot and TrEMBL?",
+        "answer": "Swiss-Prot entries are manually curated and reviewed; TrEMBL entries are computationally predicted annotations."
+      },
+      {
+        "question": "How many proteins can I retrieve at once?",
+        "answer": "Search queries return up to 500 results per request; use streaming for larger datasets or pagination."
+      },
+      {
+        "question": "How long are ID mapping results available?",
+        "answer": "ID mapping job results are stored for 7 days before being automatically deleted."
+      },
+      {
+        "question": "Is an API key required?",
+        "answer": "No API key is required for basic UniProt API usage; the service is free for academic and commercial use."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_examples.md",
+          "type": "file",
+          "path": "references/api_examples.md",
+          "lines": 414
+        },
+        {
+          "name": "api_fields.md",
+          "type": "file",
+          "path": "references/api_fields.md",
+          "lines": 276
+        },
+        {
+          "name": "id_mapping_databases.md",
+          "type": "file",
+          "path": "references/id_mapping_databases.md",
+          "lines": 286
+        },
+        {
+          "name": "query_syntax.md",
+          "type": "file",
+          "path": "references/query_syntax.md",
+          "lines": 257
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "uniprot_client.py",
+          "type": "file",
+          "path": "scripts/uniprot_client.py",
+          "lines": 342
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 192
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 195
+    }
+  ]
+}

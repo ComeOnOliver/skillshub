@@ -1,0 +1,384 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T10:36:21.829Z",
+    "slug": "wshobson-stripe-integration",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/payment-processing/skills/stripe-integration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "53ae88ae8c773131f3617a060f17283223acb68a59b0c5e0b310374d27ca9474",
+    "tree_hash": "ed9125284812c85b4fadf6703554b08b468a8a66c75b43e5db82143c8e2259d6"
+  },
+  "skill": {
+    "name": "stripe-integration",
+    "description": "Implement Stripe payment processing for robust, PCI-compliant payment flows including checkout, subscriptions, and webhooks. Use when integrating Stripe payments, building subscription systems, or implementing secure checkout flows.",
+    "summary": "Implement Stripe payment processing for robust, PCI-compliant payment flows including checkout, subs...",
+    "icon": "💳",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "stripe",
+      "payments",
+      "subscriptions",
+      "webhooks",
+      "checkout"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation file (SKILL.md, 443 lines) providing Stripe integration patterns and code examples. All 56 static findings are false positives triggered by documentation patterns: SHA-256/HMAC for webhook verification are secure algorithms, test API key placeholders (sk_test_...) are not real secrets, markdown backticks and Python f-strings are not shell execution, and placeholder URLs are documentation examples. No executable malicious code exists. The skill does not execute network calls, access credentials, or perform system operations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 115,
+            "line_end": 115
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 201
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 171
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 171,
+            "line_end": 174
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 193
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 193,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 204
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 204,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 209,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 273
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 273,
+            "line_end": 301
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 301,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 343
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 343,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 374
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 374,
+            "line_end": 378
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 378,
+            "line_end": 412
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 380,
+            "line_end": 380
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 632,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T10:36:21.828Z"
+  },
+  "content": {
+    "user_title": "Implement Stripe payments with clear patterns",
+    "value_statement": "Setting up Stripe payment flows can be confusing and error prone. This skill provides ready patterns for checkout, subscriptions, and secure webhooks for PCI compliant implementations.",
+    "seo_keywords": [
+      "Stripe integration",
+      "Stripe checkout",
+      "Stripe subscriptions",
+      "Stripe webhooks",
+      "payment intents",
+      "PCI compliance",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Provide checkout session setup pattern with hosted payment page",
+      "Provide payment intent flow with client secret handling for custom UI",
+      "Provide subscription creation flow with invoice expansion",
+      "Provide webhook verification and event handling with idempotent processing",
+      "Provide customer and payment method management patterns",
+      "Provide refund and dispute handling guidance"
+    ],
+    "limitations": [
+      "Does not execute Stripe API calls",
+      "Does not configure deployment or hosting",
+      "Does not create database schemas or migrations",
+      "Does not manage secrets storage for you"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Startup engineer",
+        "title": "Launch paid plan",
+        "description": "Set up subscription checkout and webhook confirmation for a new SaaS plan."
+      },
+      {
+        "target_user": "Mobile developer",
+        "title": "Add one time purchase",
+        "description": "Implement a hosted checkout flow for single purchases in a mobile app."
+      },
+      {
+        "target_user": "Ops engineer",
+        "title": "Harden webhook security",
+        "description": "Add signature verification and idempotent handling for Stripe webhooks."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic checkout",
+        "scenario": "New app needs hosted checkout",
+        "prompt": "Show a minimal Stripe Checkout Session flow with success and cancel URLs and explain server and client steps."
+      },
+      {
+        "title": "Payment intent UI",
+        "scenario": "Custom card form required",
+        "prompt": "Provide a payment intent backend example and the matching Stripe.js confirmCardPayment flow."
+      },
+      {
+        "title": "Subscription setup",
+        "scenario": "Monthly plan with trials",
+        "prompt": "Outline subscription creation using a Price ID and return the client secret for the first invoice."
+      },
+      {
+        "title": "Webhook hardening",
+        "scenario": "Secure webhook processing",
+        "prompt": "Give webhook verification and idempotent processing guidance with key events to handle."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Explain a Stripe subscription flow and required webhooks.",
+        "output": [
+          "Create customer and subscription using a Price ID",
+          "Return client secret for the first invoice payment",
+          "Verify webhook signatures for payment and cancellation events",
+          "Update access only after webhook confirmation"
+        ]
+      },
+      {
+        "input": "How do I set up a one-time payment checkout?",
+        "output": [
+          "Create checkout Session with payment_method_types and line_items",
+          "Set mode to payment for one-time charges",
+          "Provide success and cancel URLs with session_id placeholders",
+          "Redirect user to session.url for payment"
+        ]
+      },
+      {
+        "input": "What webhook events should I handle?",
+        "output": [
+          "payment_intent.succeeded for successful payments",
+          "payment_intent.payment_failed for failed attempts",
+          "customer.subscription.deleted for cancellations",
+          "charge.refunded for processed refunds"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Verify webhook signatures and use idempotency keys to prevent duplicate processing",
+      "Use test mode keys and Stripe test cards before moving to production",
+      "Store Stripe object IDs in your database to link payments to customer records"
+    ],
+    "anti_patterns": [
+      "Trusting client side payment status alone without webhook confirmation",
+      "Handling raw card data on your server instead of using Stripe hosted pages",
+      "Skipping webhook events for subscription updates and relying on client callbacks"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with all Stripe SDKs?",
+        "answer": "Examples are Python and JavaScript, but concepts apply to other Stripe SDKs."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides guidance and patterns, not running code or infrastructure setup."
+      },
+      {
+        "question": "How do I integrate with my backend?",
+        "answer": "Map the patterns to your server framework and add your data persistence logic."
+      },
+      {
+        "question": "Does it access or store my secrets?",
+        "answer": "No. It only provides guidance and does not handle secrets or API keys."
+      },
+      {
+        "question": "What if webhook verification fails?",
+        "answer": "Check the endpoint secret, raw body handling, and the Stripe-Signature header."
+      },
+      {
+        "question": "How does it compare to Stripe docs?",
+        "answer": "It condenses common flows into ready patterns and highlights key pitfalls."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 443
+    }
+  ]
+}

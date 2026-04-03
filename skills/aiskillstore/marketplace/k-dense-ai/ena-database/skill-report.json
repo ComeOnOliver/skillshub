@@ -1,0 +1,226 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:23:17.579Z",
+    "slug": "k-dense-ai-ena-database",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/ena-database",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "38c30e0ec5b656ca1c797b34f3bdae36050cae8a469e475ba5af921b77381243",
+    "tree_hash": "a7de2ae326d0ebcbeabb98f6cec7f4633cc8b1020d16e3ac3fbb88d57fea06c2"
+  },
+  "skill": {
+    "name": "ena-database",
+    "description": "Access European Nucleotide Archive via API/FTP. Retrieve DNA/RNA sequences, raw reads (FASTQ), genome assemblies by accession, for genomics and bioinformatics pipelines. Supports multiple formats.",
+    "summary": "Access genomic data from the European Nucleotide Archive via REST APIs and FTP for bioinformatics research.",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Unknown",
+    "tags": [
+      "genomics",
+      "bioinformatics",
+      "nucleotide-sequences",
+      "data-access",
+      "research"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate bioinformatics data access skill for querying the European Nucleotide Archive. All static findings are false positives. The 'external_commands' detections are backtick characters in documentation examples, not shell execution. 'Network' findings are HTTP requests to public ENA APIs (www.ebi.ac.uk). Critical/high severity flags (SAM database, C2 keywords, weak crypto) match generic terms in documentation (sample=sam, MD5/SHA1 for checksums). No actual security risks present.",
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 3646,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:23:17.579Z",
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ],
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 72
+          },
+          {
+            "file": "references/api_reference.md",
+            "line_start": 7,
+            "line_end": 9
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 124
+          }
+        ]
+      }
+    ]
+  },
+  "content": {
+    "user_title": "Query European Nucleotide Archive",
+    "value_statement": "Researchers need efficient access to genomic data for analysis. This skill provides programmatic access to ENA through REST APIs and FTP for retrieving DNA/RNA sequences, FASTQ files, and genome assemblies by accession number.",
+    "seo_keywords": [
+      "ENA",
+      "European Nucleotide Archive",
+      "genomic data access",
+      "DNA sequences",
+      "RNA sequences",
+      "FASTQ download",
+      "genome assemblies",
+      "bioinformatics",
+      "Clade",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Search and retrieve nucleotide sequences by accession number",
+      "Query sample, study, and assembly records via ENA Portal API",
+      "Download raw sequencing reads in FASTQ format",
+      "Access genome assemblies and annotations",
+      "Retrieve taxonomic information for organisms",
+      "Download bulk data via FTP or Aspera protocols"
+    ],
+    "limitations": [
+      "Requires network connectivity to ENA APIs (www.ebi.ac.uk)",
+      "Rate limited to 50 requests per second",
+      "Large file downloads require FTP or Aspera tools",
+      "Does not provide local data storage or caching"
+    ],
+    "use_cases": [
+      {
+        "title": "Retrieve sequencing data for analysis",
+        "description": "Download raw FASTQ files and genome assemblies by accession number for downstream bioinformatics analysis pipelines.",
+        "target_user": "Bioinformatics researchers"
+      },
+      {
+        "title": "Search datasets by study or organism",
+        "description": "Query the ENA Portal API to find all samples, runs, or assemblies associated with a specific study or taxonomic classification.",
+        "target_user": "Data curators"
+      },
+      {
+        "title": "Build reproducible research workflows",
+        "description": "Integrate ENA data retrieval into automated pipelines that fetch and cite specific accessions for reproducible genomics research.",
+        "target_user": "Computational biologists"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Find samples in a study",
+        "prompt": "Use the ENA Portal API to search for all samples in study PRJNA[STUDY_ID]. Return the accession numbers and sample titles.",
+        "scenario": "Retrieving sample metadata for a specific research project"
+      },
+      {
+        "title": "Download sequence by accession",
+        "prompt": "Retrieve the nucleotide sequence for accession [ACCESSION] in FASTA format using the ENA Browser API.",
+        "scenario": "Fetching a specific sequence record"
+      },
+      {
+        "title": "Find assemblies for organism",
+        "prompt": "Find all assemblies for [ORGANISM] with contig N50 >= [N50_VALUE] using the ENA Portal API.",
+        "scenario": "Filtering assemblies by taxonomy and quality metrics"
+      },
+      {
+        "title": "Bulk download workflow",
+        "prompt": "Search for all read runs in study [STUDY_ID], extract the FTP URLs, and generate a script to download all files via FTP.",
+        "scenario": "Creating a bulk download script for large datasets"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find assemblies for SARS-CoV-2 with assembly level chromosome",
+        "output": "Found 5 assemblies matching criteria:\n- ERR1234567: Complete Genome (MN908947.3)\n- ERR2345678: Complete Genome (MW123456.1)\n- ERR3456789: Assembly Level: chromosome\n\nAccess the sequences at: https://www.ebi.ac.uk/ena/browser/api/xml/[ACCESSION]"
+      },
+      {
+        "input": "Get taxonomy for Escherichia coli",
+        "output": "Taxonomy ID: 562\nScientific Name: Escherichia coli\nLineage: Bacteria; Proteobacteria; Gammaproteobacteria; Enterobacterales; Enterobacteriaceae; Escherichia\nRank: Species"
+      },
+      {
+        "input": "Search for RNA-seq experiments in study PRJEB12345",
+        "output": "Found 12 RNA-seq experiments:\n- ERX123456: Paired-end, ILLUMINA\n- ERX123457: Single-end, ILLUMINA\n- ERX123458: Paired-end, BGI\n\nRun accessions available for FASTQ download."
+      }
+    ],
+    "best_practices": [
+      "Implement rate limiting with exponential backoff to stay within 50 requests per second",
+      "Use FTP or Aspera for downloading files larger than 100MB",
+      "Cite study and sample accessions when publishing results derived from ENA data"
+    ],
+    "anti_patterns": [
+      "Making individual API calls for thousands of records instead of batching",
+      "Downloading large files via HTTP when FTP/Aspera is available",
+      "Failing to handle XML parsing errors from ENA Browser API responses"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between the ENA Portal API and Browser API?",
+        "answer": "The Portal API is for advanced searching and filtering across all data types. The Browser API is for direct retrieval of specific records by accession in XML format."
+      },
+      {
+        "question": "How do I download large FASTQ files?",
+        "answer": "For files over 100MB, use FTP or Aspera protocols instead of HTTP. The ENA Portal API returns FTP URLs in search results."
+      },
+      {
+        "question": "What formats can I retrieve sequences in?",
+        "answer": "Sequences are available in FASTA (assembled sequences), FASTQ (raw reads), XML (native format), and TSV/JSON for metadata."
+      },
+      {
+        "question": "How do I find all data from a specific study?",
+        "answer": "Use the Portal API with query parameter study_accession=[STUDY_ID] and result type sample, read_run, or assembly as needed."
+      },
+      {
+        "question": "What are the rate limits for ENA APIs?",
+        "answer": "All ENA APIs are limited to 50 requests per second. Exceeding this returns HTTP 429 and requires implementing backoff."
+      },
+      {
+        "question": "How do I cite ENA data in my publication?",
+        "answer": "Include the Study/Project accession as the primary citation. Also list specific sample, run, or assembly accessions used in your analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 491
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 204
+    }
+  ]
+}

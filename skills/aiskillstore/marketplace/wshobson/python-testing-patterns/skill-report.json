@@ -1,0 +1,597 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:29:16.037Z",
+    "slug": "wshobson-python-testing-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/python-development/skills/python-testing-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "dc473f2ccc2998bd05cbbf62bf790574025c503c49a7779dcf06e52abdb2a664",
+    "tree_hash": "4f9f0749d32ded222bcdea04d124bdabbeae1e00fab38e32537d0ad4b531da46"
+  },
+  "skill": {
+    "name": "python-testing-patterns",
+    "description": "Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven development. Use when writing Python tests, setting up test suites, or implementing testing best practices.",
+    "summary": "Implement comprehensive testing strategies with pytest, fixtures, mocking, and test-driven developme...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "python",
+      "testing",
+      "pytest",
+      "tdd",
+      "mocking"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only instructional examples for Python testing patterns. No executable code, scripts, or network operations in the skill logic itself. Static findings are false positives from example code blocks in documentation.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 113,
+            "line_end": 113
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 274
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 302,
+            "line_end": 302
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 303,
+            "line_end": 303
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 281,
+            "line_end": 281
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 292,
+            "line_end": 292
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 297,
+            "line_end": 297
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 310,
+            "line_end": 310
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 384,
+            "line_end": 384
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 889,
+            "line_end": 889
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 890,
+            "line_end": 890
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 254
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 254,
+            "line_end": 322
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 322,
+            "line_end": 326
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 326,
+            "line_end": 363
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 363,
+            "line_end": 369
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 369,
+            "line_end": 411
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 411,
+            "line_end": 415
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 415,
+            "line_end": 459
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 459,
+            "line_end": 463
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 463,
+            "line_end": 513
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 513,
+            "line_end": 517
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 517,
+            "line_end": 569
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 569,
+            "line_end": 573
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 573,
+            "line_end": 615
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 615,
+            "line_end": 621
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 621,
+            "line_end": 633
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 633,
+            "line_end": 637
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 637,
+            "line_end": 665
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 665,
+            "line_end": 669
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 669,
+            "line_end": 708
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 708,
+            "line_end": 712
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 712,
+            "line_end": 727
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 727,
+            "line_end": 731
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 731,
+            "line_end": 800
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 800,
+            "line_end": 804
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 804,
+            "line_end": 839
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 839,
+            "line_end": 843
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 843,
+            "line_end": 861
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 861,
+            "line_end": 863
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 863,
+            "line_end": 885
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 422,
+            "line_end": 422
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 434,
+            "line_end": 434
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 458,
+            "line_end": 458
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 420,
+            "line_end": 420
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 422,
+            "line_end": 422
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 425,
+            "line_end": 425
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 428,
+            "line_end": 428
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 432,
+            "line_end": 432
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 434,
+            "line_end": 434
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 435,
+            "line_end": 435
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 438,
+            "line_end": 438
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 440,
+            "line_end": 440
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 441,
+            "line_end": 441
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 523,
+            "line_end": 523
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 529,
+            "line_end": 529
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 532,
+            "line_end": 532
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 448,
+            "line_end": 448
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 450,
+            "line_end": 450
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 451,
+            "line_end": 451
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 457,
+            "line_end": 457
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 458,
+            "line_end": 458
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1084,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:29:16.037Z"
+  },
+  "content": {
+    "user_title": "Build reliable Python tests fast",
+    "value_statement": "Writing Python tests can be slow and inconsistent across teams. This skill provides clear pytest patterns and examples to speed test design and improve coverage.",
+    "seo_keywords": [
+      "python testing patterns",
+      "pytest fixtures",
+      "mocking pytest",
+      "TDD Python",
+      "async pytest",
+      "property based testing",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "pytest best practices"
+    ],
+    "actual_capabilities": [
+      "Provide pytest unit test examples using the Arrange Act Assert pattern",
+      "Show fixture setup, teardown, and scope patterns",
+      "Demonstrate parameterized tests with pytest.mark.parametrize",
+      "Explain mocking with unittest.mock and patch",
+      "Cover async testing with pytest.mark.asyncio",
+      "Introduce property based testing with Hypothesis"
+    ],
+    "limitations": [
+      "Does not run tests or verify outcomes",
+      "Does not inspect your codebase without provided snippets",
+      "Does not generate full project scaffolding",
+      "Does not install dependencies or configure CI automatically"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend developer",
+        "title": "Harden unit tests",
+        "description": "Apply pytest patterns to cover core business logic with clear, maintainable tests."
+      },
+      {
+        "target_user": "QA engineer",
+        "title": "Standardize test suites",
+        "description": "Use fixtures, markers, and parametrization to build consistent test infrastructure."
+      },
+      {
+        "target_user": "Data scientist",
+        "title": "Validate data utilities",
+        "description": "Add unit tests and property based checks for data processing functions."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic unit test",
+        "scenario": "Beginner needs a first pytest test",
+        "prompt": "Write a simple pytest test for a function that adds two numbers using the Arrange Act Assert pattern."
+      },
+      {
+        "title": "Fixture setup",
+        "scenario": "Intermediate setup and teardown",
+        "prompt": "Create a pytest fixture for a database client and show one test that uses it with proper teardown."
+      },
+      {
+        "title": "Mock HTTP call",
+        "scenario": "Mocking external requests",
+        "prompt": "Provide a pytest example that mocks requests.get and asserts the URL and parameters."
+      },
+      {
+        "title": "Async and property tests",
+        "scenario": "Advanced coverage strategy",
+        "prompt": "Show how to test an async function and add one Hypothesis property test for a string utility."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I need tests for a service that calls an API and caches results",
+        "output": [
+          "Create a fixture for the service with a temporary cache",
+          "Mock the HTTP client and assert it is called once",
+          "Add a second call test to confirm cached behavior"
+        ]
+      },
+      {
+        "input": "Write a test for a division function that handles zero",
+        "output": [
+          "Use pytest.raises to check ZeroDivisionError is raised",
+          "Add a test case for normal division",
+          "Assert the error message matches expected text"
+        ]
+      },
+      {
+        "input": "How do I test email validation with many inputs",
+        "output": [
+          "Use @pytest.mark.parametrize with test email cases",
+          "Include valid and invalid examples",
+          "Run all cases with single test function"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Keep tests isolated and clean up shared state",
+      "Use fixtures for reusable setup and teardown",
+      "Parametrize tests to cover edge cases with minimal duplication"
+    ],
+    "anti_patterns": [
+      "Sharing mutable global state across tests",
+      "Hitting live external services in unit tests",
+      "Asserting many behaviors in one test"
+    ],
+    "faq": [
+      {
+        "question": "Which Python versions are supported",
+        "answer": "Examples target modern Python and pytest, typically 3.9 or newer."
+      },
+      {
+        "question": "What test types are covered",
+        "answer": "Focuses on unit, integration, async, and property based patterns."
+      },
+      {
+        "question": "Can it integrate with CI pipelines",
+        "answer": "It gives pytest and coverage commands you can adapt for CI."
+      },
+      {
+        "question": "Does it access my data or files",
+        "answer": "No. It only provides guidance and example code."
+      },
+      {
+        "question": "How do I get help with failing tests",
+        "answer": "Share the failing output and a minimal code snippet for targeted advice."
+      },
+      {
+        "question": "How does it compare to generic advice",
+        "answer": "It provides concrete pytest patterns, fixtures, and mocking examples."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 908
+    }
+  ]
+}

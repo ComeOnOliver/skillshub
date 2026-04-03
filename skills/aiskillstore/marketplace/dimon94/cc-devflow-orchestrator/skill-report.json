@@ -1,0 +1,440 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:20:53.161Z",
+    "slug": "dimon94-cc-devflow-orchestrator",
+    "source_url": "https://github.com/Dimon94/cc-devflow/tree/main/.claude/skills/cc-devflow-orchestrator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "55e1c6d6ada00b7786d5f0938262e9f3cb3889201f27b9141ba785f674097575",
+    "tree_hash": "59c2202b863a36877412c208186709e7126dee6218630f47527c3989496c121d"
+  },
+  "skill": {
+    "name": "cc-devflow-orchestrator",
+    "description": "CC-DevFlow workflow router and agent recommender. Use when starting requirements, running flow commands, or asking about devflow processes.",
+    "summary": "CC-DevFlow workflow router and agent recommender. Use when starting requirements, running flow comma...",
+    "icon": "🔀",
+    "version": "1.0.0",
+    "author": "Dimon94",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "workflow",
+      "orchestration",
+      "development",
+      "routing",
+      "agents"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only workflow routing guidelines. No executable code, no file system access, no network calls, no command execution. All 80 static findings are false positives triggered by pattern detection on documentation text, not actual security issues.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 61,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 70
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 70,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 127
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 127,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 197
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 197,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 203
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 203,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 220
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 220,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 226
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 226,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 233
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 236
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 236,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 241
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 241,
+            "line_end": 242
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 246
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 454,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:20:53.161Z"
+  },
+  "content": {
+    "user_title": "Navigate CC-DevFlow workflows with smart routing",
+    "value_statement": "CC-DevFlow provides structured development workflows but users often struggle to know which command to use next. This orchestrator skill routes users to the correct workflow command and specialized agent based on their current project phase and task type.",
+    "seo_keywords": [
+      "Claude Code workflow",
+      "development orchestration",
+      "AI agent routing",
+      "software development process",
+      "requirement management",
+      "TDD workflow",
+      "code review automation",
+      "CI/CD pipeline",
+      "devflow",
+      "workflow automation"
+    ],
+    "actual_capabilities": [
+      "Routes users to correct /flow-* commands based on project phase",
+      "Recommends specialized agents for each task type including PRD writer, tech architect, and QA tester",
+      "Provides workflow state machine and progress tracking via orchestration_status.json",
+      "Links to detailed documentation for each workflow stage including phase gates and entry requirements",
+      "Supports requirement, project-level, and bug fix workflows with systematic debugging"
+    ],
+    "limitations": [
+      "Only works within CC-DevFlow projects with required directory structure",
+      "Does not execute commands itself - only routes users with recommendations",
+      "Cannot modify project files or run tests independently",
+      "Requires companion command and agent files to function properly"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers starting new requirements",
+        "title": "Start a new requirement",
+        "description": "New developer unsure which workflow command to run first for implementing a feature request."
+      },
+      {
+        "target_user": "Team leads managing project phases",
+        "title": "Navigate workflow stages",
+        "description": "Team lead needs to understand current project phase and recommended next steps in the development process."
+      },
+      {
+        "target_user": "AI assistants automating devflow",
+        "title": "Automate task delegation",
+        "description": "AI agent needs to determine which specialized agent to invoke for requirement clarification or technical design."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Start new requirement",
+        "scenario": "User wants to begin implementing a new feature",
+        "prompt": "I want to implement a new feature. What workflow command should I use and what are the steps?"
+      },
+      {
+        "title": "Check current progress",
+        "scenario": "User wants to understand where they are in the development process",
+        "prompt": "I'm working on REQ-123. What stage am I in and what should I do next?"
+      },
+      {
+        "title": "Navigate to bug fix",
+        "scenario": "User encounters a bug and needs systematic debugging",
+        "prompt": "I found a bug in the login flow. How do I use the systematic debugging workflow?"
+      },
+      {
+        "title": "Delegate to agent",
+        "scenario": "User needs to generate technical design documentation",
+        "prompt": "I need technical design documentation. Which agent should I invoke and what command do I use?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I'm working on REQ-123 and my PRD is complete. What should I do next?",
+        "output": [
+          "Your status shows: prd_complete",
+          "Recommended next step: /flow-tech (generate technical design)",
+          "Alternative: /flow-ui (generate UI prototype, optional)",
+          "Entry requirements: PRD.md must be complete (satisfied)",
+          "When ready: Run /flow-tech to invoke the tech-architect agent"
+        ]
+      },
+      {
+        "input": "I want to fix bug BUG-456 with the payment failure issue",
+        "output": [
+          "Use /flow-fix command for systematic bug debugging",
+          "4-phase process: Root Cause → Pattern → Hypothesis → TDD Fix",
+          "Run: /flow-fix \"BUG-456|payment failure\"",
+          "This invokes the flow-debugging skill for systematic investigation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use this skill at the start of any development session to confirm your current phase",
+      "Follow the state machine recommendations to avoid skipping critical workflow steps",
+      "Combine with specialized agent skills for detailed execution of each workflow stage"
+    ],
+    "anti_patterns": [
+      "Skipping workflow stages and jumping directly to coding without proper documentation",
+      "Using the wrong agent for a task - always route through this orchestrator first",
+      "Ignoring phase gates - the workflow enforces quality checkpoints for a reason"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with any Claude project?",
+        "answer": "No. This skill requires a CC-DevFlow project structure with devflow directory, .claude/commands/, and .claude/agents/ folders."
+      },
+      {
+        "question": "Can I skip workflow stages?",
+        "answer": "Some stages are optional like /flow-clarify and /flow-checklist. Core stages like PRD, tech design, and epic planning are required for quality."
+      },
+      {
+        "question": "Does this integrate with version control?",
+        "answer": "The workflows reference git status for entry gates but do not directly execute git commands. Users run git commands manually."
+      },
+      {
+        "question": "Is my project data safe with this skill?",
+        "answer": "This skill only reads its own documentation file. It does not access, modify, or transmit any project data."
+      },
+      {
+        "question": "Why am I seeing a phase gate blocked error?",
+        "answer": "Phase gates ensure prerequisites are met. Check orchestration_status.json to understand which requirement document is missing."
+      },
+      {
+        "question": "How is this different from other workflow tools?",
+        "answer": "This is a routing layer, not an executor. It tells you which command to run. Tools like GitHub Actions or Jenkins are executors."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 280
+    }
+  ]
+}

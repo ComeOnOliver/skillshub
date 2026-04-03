@@ -1,0 +1,221 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:38:03.930Z",
+    "slug": "barissozen-code-consistency-validator",
+    "source_url": "https://github.com/BarisSozen/claude/tree/main/.claude/skills/code-consistency-validator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "be72d2b3b293306d29f1b6032c425fb7e50facf80d28f5b7e2fee20f475aeb14",
+    "tree_hash": "3e262b44240596d897b42ea0d17a8bdb62c174e1fed2bc7f5985999f5039d8b8"
+  },
+  "skill": {
+    "name": "code-consistency-validator",
+    "description": "Validates type consistency across Rust, TypeScript, PostgreSQL boundaries. Use when reviewing code, debugging type mismatches, or validating API contracts. Triggers on: check consistency, validate types, find mismatches, cross-language.",
+    "summary": "Validates type consistency across Rust, TypeScript, PostgreSQL boundaries. Use when reviewing code, ...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "BarisSozen",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "type safety",
+      "cross-language",
+      "validation",
+      "code review"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 12 static findings are FALSE_POSITIVES. This is a prompt-only documentation skill containing only markdown guidance and example grep commands. No executable code, network calls, filesystem access, environment variable reads, or external command execution exists. Static scanner flagged JSON metadata fields, documentation text, and markdown code examples as security patterns out of context.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 53
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 237,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:38:03.930Z"
+  },
+  "content": {
+    "user_title": "Validate Type Consistency Across Languages",
+    "value_statement": "Cross-language type mismatches cause bugs and financial loss. This skill validates type consistency across Rust, TypeScript, and PostgreSQL boundaries using pattern detection and grep commands.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "type validation",
+      "TypeScript",
+      "Rust",
+      "PostgreSQL",
+      "type safety",
+      "cross-language",
+      "API contracts"
+    ],
+    "actual_capabilities": [
+      "Validate type mappings between Rust, TypeScript, and PostgreSQL",
+      "Detect precision loss patterns with Number() on large values",
+      "Find parseInt calls missing radix parameters",
+      "Check BigInt serialization issues",
+      "Audit cross-language data flow for type mismatches",
+      "Generate validation reports with severity levels"
+    ],
+    "limitations": [
+      "Pattern-based detection only, may miss complex issues",
+      "Cannot automatically fix detected problems",
+      "No runtime type checking or compile-time verification",
+      "Requires manual review of reported findings"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Developers",
+        "title": "API Contract Validation",
+        "description": "Validate that backend services return correct types to frontend clients"
+      },
+      {
+        "target_user": "Code Reviewers",
+        "title": "Cross-Language Audits",
+        "description": "Review code for type mismatches across Rust, TypeScript, and database boundaries"
+      },
+      {
+        "target_user": "DeFi Engineers",
+        "title": "Precision Loss Detection",
+        "description": "Find BigInt/Number conversion bugs that cause financial loss in DeFi applications"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick Type Check",
+        "scenario": "Check a specific file",
+        "prompt": "Use the code-consistency-validator skill to check my API response handler for type mismatches. Focus on Number() conversions on balance values."
+      },
+      {
+        "title": "Pattern Scan",
+        "scenario": "Scan codebase",
+        "prompt": "Run the quick grep commands from code-consistency-validator to find all parseInt calls without radix in my TypeScript files."
+      },
+      {
+        "title": "Full Audit",
+        "scenario": "Complete review",
+        "prompt": "Perform a complete cross-language type audit using code-consistency-validator. Check Rust to TypeScript boundaries and identify all precision loss patterns."
+      },
+      {
+        "title": "Report Generation",
+        "scenario": "Document findings",
+        "prompt": "Generate a type consistency report using CRITICAL, WARNING, and INFO severity levels for all findings. Prioritize issues affecting financial calculations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Check my Web3 handler for type issues",
+        "output": [
+          "🔴 CRITICAL: Number(response.profit_wei) - Precision loss on large wei values. Use BigInt() instead.",
+          "🔴 CRITICAL: parseInt(hexBalance) - Missing radix parameter. Add , 16 for hex values.",
+          "🟠 WARNING: JSON.stringify({ amount: BigInt(x) }) - BigInt cannot be serialized. Convert to string first.",
+          "✅ VALIDATED: u64 to bigint mappings are correct in index.ts"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use BigInt for values that may exceed Number.MAX_SAFE_INTEGER",
+      "Specify radix in parseInt calls for hexadecimal or binary data",
+      "Validate type mappings at API boundaries before deployment"
+    ],
+    "anti_patterns": [
+      "Using Number() on wei, balance, or other large integer values",
+      "Calling parseInt without a second radix argument",
+      "Passing BigInt values directly to JSON.stringify"
+    ],
+    "faq": [
+      {
+        "question": "Which languages does this skill support?",
+        "answer": "Rust, TypeScript, and PostgreSQL type boundary validation."
+      },
+      {
+        "question": "What are the detection limits?",
+        "answer": "Pattern-based detection only. Complex type inference issues require manual review."
+      },
+      {
+        "question": "Can it integrate with my CI/CD pipeline?",
+        "answer": "Use the grep commands in your pipeline to find issues before merge."
+      },
+      {
+        "question": "Is my code sent anywhere?",
+        "answer": "No. This is a prompt-only skill. Code is processed locally by your AI."
+      },
+      {
+        "question": "Why are some findings marked CRITICAL?",
+        "answer": "CRITICAL indicates potential funds at risk, such as precision loss in financial calculations."
+      },
+      {
+        "question": "How does this compare to TypeScript strict mode?",
+        "answer": "This skill catches cross-language type mismatches that TypeScript cannot detect across service boundaries."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 61
+    }
+  ]
+}

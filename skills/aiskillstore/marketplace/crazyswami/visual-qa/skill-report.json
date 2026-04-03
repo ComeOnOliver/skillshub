@@ -1,0 +1,269 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T16:29:30.655Z",
+    "slug": "crazyswami-visual-qa",
+    "source_url": "https://github.com/CrazySwami/wordpress-dev-skills/tree/main/skills/visual-qa",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "63873b9f5848011df60fa45591ef16dbe89f27e34a1533b216f905525a7bb874",
+    "tree_hash": "e72ad551cdde70c61b08c6a3ba209f96eb3514654b5db48a2b3759a35f33e377"
+  },
+  "skill": {
+    "name": "visual-qa",
+    "description": "Complete visual QA - screenshots with full-page scroll to trigger animations, then analyze with Claude. Run after CSS/template changes.",
+    "summary": "Automated visual QA with full-page scroll for GSAP animations, multi-device screenshots, and Claude-powered analysis",
+    "icon": "📸",
+    "version": "1.0.0",
+    "author": "CrazySwami",
+    "license": "MIT",
+    "tags": [
+      "visual-testing",
+      "screenshots",
+      "automation",
+      "playwright",
+      "qa"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static scanner flagged 43 potential issues, but all are false positives. The skill uses Playwright for legitimate visual QA automation. Hardcoded URLs are documentation examples, file operations are standard screenshot output handling, and there is no cryptographic code or dangerous operations.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "screenshot.py",
+            "line_start": 148,
+            "line_end": 148
+          },
+          {
+            "file": "screenshot.py",
+            "line_start": 185,
+            "line_end": 185
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "screenshot.py",
+            "line_start": 11,
+            "line_end": 11
+          },
+          {
+            "file": "screenshot.py",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "screenshot.py",
+            "line_start": 250,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 42
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 906,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T16:29:30.655Z"
+  },
+  "content": {
+    "user_title": "Run automated visual QA testing",
+    "value_statement": "Manual visual testing is time-consuming and error-prone. This skill automates full-page screenshots with proper animation handling across multiple devices, then enables Claude to analyze the results for visual regressions.",
+    "seo_keywords": [
+      "visual QA",
+      "screenshot automation",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Playwright",
+      "visual regression testing",
+      "GSAP animation testing",
+      "multi-device testing",
+      "automated screenshots"
+    ],
+    "actual_capabilities": [
+      "Scrolls through entire page in increments to trigger all GSAP and ScrollTrigger animations before capturing screenshots",
+      "Captures screenshots at 10 different viewport sizes including desktop, tablet, and mobile devices",
+      "Takes full-page screenshots that include content below the fold",
+      "Launches parallel Haiku sub-agents to analyze multiple pages simultaneously",
+      "Stores screenshots in configurable output directories for review"
+    ],
+    "limitations": [
+      "Requires Playwright and Chromium browser to be installed on the system",
+      "Cannot test authenticated pages or pages requiring login credentials",
+      "Does not perform visual regression comparison against baseline images automatically",
+      "Animation timing is fixed and may need adjustment for pages with very slow animations"
+    ],
+    "use_cases": [
+      {
+        "title": "Web Developer Checking Visual Changes",
+        "description": "After making CSS or template changes, run visual QA to capture all pages across devices and verify nothing is broken before deploying.",
+        "target_user": "Web developers and frontend engineers"
+      },
+      {
+        "title": "QA Engineer Performing Visual Regression Testing",
+        "description": "Capture screenshots of a website at multiple breakpoints and use Claude to review them for layout issues, missing images, or animation problems.",
+        "target_user": "QA engineers and quality assurance specialists"
+      },
+      {
+        "title": "Designer Reviewing Responsive Designs",
+        "description": "Quickly generate screenshots across all device sizes to verify that responsive designs work correctly without manually testing each viewport.",
+        "target_user": "UI/UX designers and design QA teams"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Visual QA",
+        "prompt": "Run visual QA on [URL] and analyze the screenshots for any visual issues.",
+        "scenario": "Quick visual check of a single page"
+      },
+      {
+        "title": "Full Site Visual Audit",
+        "prompt": "Run visual QA on all pages of [website]. Take screenshots at all breakpoints and review each one for visual issues like broken images, layout problems, or animation failures.",
+        "scenario": "Complete visual audit of an entire website"
+      },
+      {
+        "title": "Mobile-First Testing",
+        "prompt": "Take mobile screenshots of [URL] and check for touch target sizes, text readability, and layout issues on small screens.",
+        "scenario": "Mobile-specific visual testing"
+      },
+      {
+        "title": "Animation Verification",
+        "prompt": "Run visual QA on [URL] and specifically check that all GSAP ScrollTrigger animations completed properly. Look for elements that should be animated but appear in their initial state.",
+        "scenario": "Animation and scroll-trigger verification"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Run visual QA on the home page",
+        "output": [
+          "Taking screenshots of: https://csrdevelopment.com/",
+          "Output directory: /root/screenshots",
+          "✓ desktop-1920: 20260121_143022_home_desktop-1920.png",
+          "✓ desktop-1440: 20260121_143022_home_desktop-1440.png",
+          "✓ tablet-portrait: 20260121_143022_home_tablet-portrait.png",
+          "✓ mobile-iphone14: 20260121_143022_home_mobile-iphone14.png",
+          "Complete! 10 screenshots saved to /root/screenshots"
+        ]
+      },
+      {
+        "input": "Check the about page for animation issues",
+        "output": [
+          "Screenshot analysis for https://csrdevelopment.com/about/:",
+          "- Hero section: Hero text visible at final opacity, loaded correctly",
+          "- Team photos: All team member photos loaded, grayscale filter applied",
+          "- Scroll animations: All scroll-card elements triggered properly",
+          "- No horizontal scroll detected",
+          "- All links and buttons styled correctly"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run visual QA after any CSS, JavaScript, or template changes before deploying",
+      "Use the checklist in SKILL.md to systematically review each page for common issues",
+      "Run parallel analysis with multiple Haiku agents when testing many pages to save time"
+    ],
+    "anti_patterns": [
+      "Running visual QA without first checking that the development server is accessible",
+      "Not waiting for animations to complete before taking screenshots",
+      "Skipping the mobile viewport sizes when testing responsive designs"
+    ],
+    "faq": [
+      {
+        "question": "What browsers does this skill support?",
+        "answer": "The skill uses Chromium via Playwright. This provides consistent screenshot rendering across runs."
+      },
+      {
+        "question": "Can I test pages behind authentication?",
+        "answer": "The current version does not support authenticated pages. The skill is designed for publicly accessible pages."
+      },
+      {
+        "question": "How long does visual QA take?",
+        "answer": "Time varies by page count and animation complexity. A typical 6-page site with 10 viewports takes 2-5 minutes."
+      },
+      {
+        "question": "Where are screenshots saved?",
+        "answer": "By default, screenshots are saved to /root/screenshots. You can specify a custom output directory with the --output flag."
+      },
+      {
+        "question": "What animation types are handled?",
+        "answer": "The skill specifically handles GSAP and ScrollTrigger animations by scrolling through the entire page in increments."
+      },
+      {
+        "question": "Can I test a single viewport size?",
+        "answer": "The script captures all viewport sizes. You can filter the results after screenshots are taken or modify the script for specific testing needs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "screenshot.py",
+      "type": "file",
+      "path": "screenshot.py",
+      "lines": 256
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 97
+    }
+  ]
+}

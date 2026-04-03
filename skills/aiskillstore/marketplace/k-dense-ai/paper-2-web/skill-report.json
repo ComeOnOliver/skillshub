@@ -1,0 +1,309 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:35:01.171Z",
+    "slug": "k-dense-ai-paper-2-web",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/paper-2-web",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "5fa8f4845dd58f3ec51e0fafe11a8d5db00d6343a966d272aa0d1130f9e01695",
+    "tree_hash": "02b01092e3c3e3302e232151ca57aa9b9b4043258c33475b49270129d73bae5d"
+  },
+  "skill": {
+    "name": "paper-2-web",
+    "description": "This skill should be used when converting academic papers into promotional and presentation formats including interactive websites (Paper2Web), presentation videos (Paper2Video), and conference posters (Paper2Poster). Use this skill for tasks involving paper dissemination, conference preparation, creating explorable academic homepages, generating video abstracts, or producing print-ready posters from LaTeX or PDF sources.",
+    "summary": "Transform academic papers into websites, videos, and posters for conferences and promotion.",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Unknown",
+    "tags": [
+      "academic",
+      "research",
+      "conversion",
+      "presentation",
+      "latex"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill providing reference guides for the Paper2All academic paper transformation pipeline. Static findings are false positives triggered by documentation patterns (shell command examples, URL references, and API key placeholders). No executable code or malicious patterns present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 160,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 251
+          },
+          {
+            "file": "references/installation.md",
+            "line_start": 19,
+            "line_end": 22
+          },
+          {
+            "file": "references/usage_examples.md",
+            "line_start": 13,
+            "line_end": 38
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 135,
+            "line_end": 135
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 468,
+            "line_end": 468
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 144
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 7,
+    "total_lines": 4352,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:35:01.171Z",
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "env_access"
+    ]
+  },
+  "content": {
+    "user_title": "Create Academic Websites Videos and Posters",
+    "value_statement": "Researchers need to promote their work across multiple formats for conferences, journals, and online visibility. This skill provides documentation for Paper2All, an autonomous pipeline that transforms LaTeX or PDF papers into interactive websites, presentation videos, and print-ready conference posters.",
+    "seo_keywords": [
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "academic paper conversion",
+      "research paper website",
+      "conference poster generator",
+      "video abstract maker",
+      "paper2web",
+      "paper2video",
+      "paper2poster",
+      "latex to html",
+      "academic promotion"
+    ],
+    "actual_capabilities": [
+      "Generate interactive academic homepages from LaTeX or PDF papers (Paper2Web)",
+      "Create presentation videos with slides, narration, and optional talking-head avatars (Paper2Video)",
+      "Produce print-ready conference posters with professional layouts (Paper2Poster)",
+      "Extract and restructure paper content using LLM-powered processing",
+      "Apply layout-aware design for each output format",
+      "Support batch processing for multiple papers simultaneously"
+    ],
+    "limitations": [
+      "Requires external Paper2All installation and API keys (OpenAI, optional Google)",
+      "Talking-head video generation requires NVIDIA GPU with 48GB memory",
+      "Video generation is slow (20-120 minutes per paper depending on options)",
+      "Input papers must be LaTeX source or high-quality PDF with selectable text"
+    ],
+    "use_cases": [
+      {
+        "title": "Conference Presentation Preparation",
+        "description": "Generate a professional poster and video abstract for an upcoming academic conference. The skill helps transform paper content into visual formats optimized for poster sessions and video submissions.",
+        "target_user": "Academic researchers preparing for conferences"
+      },
+      {
+        "title": "Research Promotion and Dissemination",
+        "description": "Create an interactive academic homepage to accompany a preprint on arXiv or bioRxiv. The website provides a permanent, shareable showcase for research findings.",
+        "target_user": "Researchers promoting published or preprint papers"
+      },
+      {
+        "title": "Multi-Format Publication Package",
+        "description": "Generate a complete promotional package including website, poster, and video from a single LaTeX paper. Streamlines the process of creating materials for different venues and platforms.",
+        "target_user": "Lab managers and research teams needing consistent materials"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Paper Transformation",
+        "prompt": "Convert my paper at [path/to/paper] into a website, poster, and video presentation. Use GPT-4 for best quality. Generate all three components.",
+        "scenario": "Starting a complete paper transformation workflow"
+      },
+      {
+        "title": "Website-Only Generation",
+        "prompt": "Create an interactive academic homepage for my LaTeX paper at [path/to/paper]. Include responsive layout, navigation, and interactive figures. Save to [output/path].",
+        "scenario": "When only a website is needed"
+      },
+      {
+        "title": "Conference Poster with Custom Size",
+        "prompt": "Generate a conference poster from my paper at [path/to/paper]. Make it 48 inches wide by 36 inches tall. Include institution branding from [logo/path] and a QR code linking to the paper.",
+        "scenario": "Preparing for a specific conference with size requirements"
+      },
+      {
+        "title": "Video Abstract with Talking-Head",
+        "prompt": "Create a video abstract (3-5 minutes) from my research paper. Include the talking-head avatar option. Target audience is academic peers. Generate slides with key findings.",
+        "scenario": "Creating a video abstract for journal submission"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Convert my LaTeX paper into a complete promotional package including website, poster, and video.",
+        "output": [
+          "Generated output structure:",
+          "output/paper_name/",
+          "├── website/index.html (responsive academic homepage)",
+          "├── poster/poster_final.pdf (print-ready at 300 DPI)",
+          "└── video/final_video.mp4 (presentation with narration)"
+        ]
+      },
+      {
+        "input": "Create a conference poster from my paper about machine learning optimization.",
+        "output": [
+          "Poster configuration:",
+          "- Size: 48in x 36in (standard landscape)",
+          "- Layout: 4-column academic format",
+          "- Sections: Introduction, Methods, Results, Conclusion",
+          "- QR Code: Links to arXiv preprint",
+          "- Output: poster_final.pdf (ready for printing)"
+        ]
+      },
+      {
+        "input": "Generate a website for my paper on climate modeling.",
+        "output": [
+          "Website features:",
+          "- Interactive navigation with anchor links",
+          "- Responsive design (mobile-friendly)",
+          "- Auto-extracted figures and tables",
+          "- Citation links to references",
+          "- Institution logo discovery via Google Search API"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use LaTeX source files instead of PDF for best content extraction quality and structure preservation",
+      "Organize all paper assets (figures, tables, bibliography) in the input directory before processing",
+      "Generate the website first (fastest), then poster, then video to meet deadline priorities",
+      "Test generated outputs on target devices and verify print quality before conference deadlines"
+    ],
+    "anti_patterns": [
+      "Do not use low-resolution raster figures (below 300 DPI) as they degrade output quality",
+      "Do not skip the quality verification step before finalizing conference materials",
+      "Do not attempt video generation without sufficient disk space (5GB+ recommended per video)"
+    ],
+    "faq": [
+      {
+        "question": "What input formats are supported?",
+        "answer": "The skill supports LaTeX source files (recommended) and high-quality PDF with selectable text. Scanned images or OCR PDFs are not supported for accurate content extraction."
+      },
+      {
+        "question": "What are the computational requirements?",
+        "answer": "Website and poster generation require standard CPU and 16GB RAM. Video generation without talking-head requires moderate resources. Talking-head videos require an NVIDIA GPU with 48GB memory."
+      },
+      {
+        "question": "How long does processing take?",
+        "answer": "Website generation takes 15-30 minutes, poster generation 10-20 minutes, and video generation 20-120 minutes depending on options. Complete packages take 45-170 minutes per paper."
+      },
+      {
+        "question": "Do I need to install external tools?",
+        "answer": "Yes. The Paper2All pipeline requires Python 3.11, LibreOffice for document conversion, and Poppler utilities for PDF processing. See the installation documentation for complete setup."
+      },
+      {
+        "question": "What API keys are required?",
+        "answer": "An OpenAI API key is required for LLM-powered content extraction and generation. A Google API key is optional and only needed for automatic institution logo discovery."
+      },
+      {
+        "question": "Can I process multiple papers at once?",
+        "answer": "Yes. The skill supports batch processing by organizing multiple papers in the input directory. Each paper is processed independently with its own output folder."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "installation.md",
+          "type": "file",
+          "path": "references/installation.md",
+          "lines": 142
+        },
+        {
+          "name": "paper2poster.md",
+          "type": "file",
+          "path": "references/paper2poster.md",
+          "lines": 347
+        },
+        {
+          "name": "paper2video.md",
+          "type": "file",
+          "path": "references/paper2video.md",
+          "lines": 306
+        },
+        {
+          "name": "paper2web.md",
+          "type": "file",
+          "path": "references/paper2web.md",
+          "lines": 188
+        },
+        {
+          "name": "usage_examples.md",
+          "type": "file",
+          "path": "references/usage_examples.md",
+          "lines": 437
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 497
+    }
+  ]
+}

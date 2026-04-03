@@ -1,0 +1,308 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:09:57.200Z",
+    "slug": "clementwalter-email-assistant",
+    "source_url": "https://github.com/ClementWalter/rookie-marketplace/tree/main/gmail-mcp/skills/email-assistant",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3bf6b677f124e92dd44dd6d2a20a6cf8d8e190c34118477c15601f5be4e9130f",
+    "tree_hash": "873d8a5f883b90cf72c07f6f965db8da8e1ca5913be944c45b91abe53434627e"
+  },
+  "skill": {
+    "name": "email-assistant",
+    "description": "User asks to read, check, or manage emails - User asks to reply to or send an email - User asks to draft an email response",
+    "summary": "User asks to read, check, or manage emails - User asks to reply to or send an email - User asks to d...",
+    "icon": "✉️",
+    "version": "1.0.0",
+    "author": "ClementWalter",
+    "license": "MIT",
+    "category": "communication",
+    "tags": [
+      "gmail",
+      "email",
+      "productivity",
+      "mcp"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown guidelines for AI behavior. No executable code, file system access, or network operations. The static findings are false positives triggered by documentation strings (metadata URLs, placeholder examples, and FAQ text) that the scanner misinterpreted as security patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 73
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 73,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 88
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 88,
+            "line_end": 100
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 100,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 117
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 117,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 138
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 141
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 141,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 148
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 325,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:09:57.200Z"
+  },
+  "content": {
+    "user_title": "Manage Gmail with AI assistance",
+    "value_statement": "Users spend too much time managing email workflows manually. This skill provides structured guidelines for reading, drafting, and sending emails through Gmail MCP tools with proper validation and language matching.",
+    "seo_keywords": [
+      "email assistant",
+      "gmail mcp",
+      "claude email",
+      "claude-code gmail",
+      "email automation",
+      "email draft",
+      "gmail tools",
+      "codex email",
+      "email management",
+      "ai email"
+    ],
+    "actual_capabilities": [
+      "List and browse recent emails in inbox",
+      "Read full email content with attachments",
+      "Search for specific emails by criteria",
+      "Draft email replies in matching language",
+      "Draft new emails with attachments",
+      "Validate drafts before sending"
+    ],
+    "limitations": [
+      "Cannot send emails without explicit user approval",
+      "Limited to Gmail MCP tool capabilities",
+      "Cannot access non-Gmail email accounts"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Busy professionals",
+        "title": "Quick email triage",
+        "description": "Browse inbox and read important emails efficiently"
+      },
+      {
+        "target_user": "Multilingual users",
+        "title": "Language-matched responses",
+        "description": "Draft replies in the same language as received emails"
+      },
+      {
+        "target_user": "Teams with shared accounts",
+        "title": "Draft review workflow",
+        "description": "Create email drafts for team review before sending"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "List recent emails",
+        "scenario": "Check inbox",
+        "prompt": "Show me my recent emails"
+      },
+      {
+        "title": "Read specific email",
+        "scenario": "Read selected message",
+        "prompt": "Read the third email from today"
+      },
+      {
+        "title": "Draft reply",
+        "scenario": "Respond to message",
+        "prompt": "Draft a reply to this email"
+      },
+      {
+        "title": "Send new email",
+        "scenario": "Compose message",
+        "prompt": "Send an email to team@example.com about the project update"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me my recent emails",
+        "output": [
+          "From: john@example.com - Project Update - Today",
+          "From: sarah@company.org - Meeting Request - Yesterday",
+          "From: support@service.net - Your Ticket #12345 - 2 days ago"
+        ]
+      },
+      {
+        "input": "Draft a reply to this email",
+        "output": [
+          "To: sender@example.com",
+          "Subject: RE: Your email subject",
+          "",
+          "Thank you for your message. I will review and get back to you shortly.",
+          "",
+          "Ready to send?"
+        ]
+      },
+      {
+        "input": "Search for emails about the project",
+        "output": [
+          "Found 3 emails:",
+          "- Project Timeline Update - From: manager@company.com - Yesterday",
+          "- Project Budget Approval - From: finance@company.com - Last week",
+          "- Project Kickoff Notes - From: lead@company.com - 2 weeks ago"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always ask for user confirmation before sending any email",
+      "Match the language of incoming emails for replies",
+      "Keep email drafts concise and focused on key points"
+    ],
+    "anti_patterns": [
+      "Sending emails without explicit user approval",
+      "Ignoring the original email language when drafting replies",
+      "Creating overly verbose email drafts with unnecessary pleasantries"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "This skill works with Claude, Codex, and Claude Code. It requires Gmail MCP tools to be configured."
+      },
+      {
+        "question": "What are the email sending limits?",
+        "answer": "Limits depend on your Gmail account type and MCP tool configuration. Standard Gmail limits apply."
+      },
+      {
+        "question": "Can I use this with multiple Gmail accounts?",
+        "answer": "Yes. Specify the account using 1Password item names like Gmail Zama Claude or Gmail Personal Claude."
+      },
+      {
+        "question": "Is my email data stored anywhere?",
+        "answer": "No. The skill only reads email content through MCP tools. Data remains in your Gmail account."
+      },
+      {
+        "question": "Why was my draft rejected?",
+        "answer": "Drafts require explicit confirmation. Review the draft and reply with yes or send it to proceed."
+      },
+      {
+        "question": "How is this different from email filters?",
+        "answer": "This skill provides AI-assisted reading and drafting. Email filters automate sorting. They work together."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 151
+    }
+  ]
+}

@@ -1,0 +1,336 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T14:49:39.532Z",
+    "slug": "ck991357-crawl4ai",
+    "source_url": "https://github.com/CK991357/gemini-chat/tree/main/src/skills/crawl4ai",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f288c8973f410a72bec601f4fd83dc2570d3550c8286f4d6e5687764ad2982cf",
+    "tree_hash": "b486b9c81213dd632bc3a8e84c48576d3f7f2cae9d0bbf26e5f7e6c486267cd4"
+  },
+  "skill": {
+    "name": "crawl4ai",
+    "description": "A powerful open-source web scraping and data processing tool that supports 6 working modes including screenshot capture, PDF export, and intelligent crawling.",
+    "summary": "Web scraping tool with 6 modes for crawling, screenshots, PDF export, and structured data extraction.",
+    "icon": "📦",
+    "version": "1.2",
+    "author": "CK991357",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "web-scraping",
+      "screenshot",
+      "pdf-export",
+      "structured-data-extraction",
+      "deep-crawling",
+      "batch-processing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All static findings are false positives. The scanner misinterpreted markdown documentation patterns (code fences, example URLs) as security issues. This is a legitimate web scraping tool with no malicious code or intent.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 102,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 237,
+            "line_end": 237
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 274,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 313,
+            "line_end": 313
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 404,
+            "line_end": 404
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 423,
+            "line_end": 423
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 516,
+            "line_end": 516
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 528,
+            "line_end": 528
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 535,
+            "line_end": 535
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 554,
+            "line_end": 554
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 565,
+            "line_end": 565
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 573,
+            "line_end": 573
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 584,
+            "line_end": 584
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 595,
+            "line_end": 595
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 618,
+            "line_end": 618
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 635,
+            "line_end": 635
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 650,
+            "line_end": 653
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 665,
+            "line_end": 665
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 733
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 2919,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T14:49:39.532Z"
+  },
+  "content": {
+    "user_title": "Crawl Web Pages with Screenshots and PDF Export",
+    "value_statement": "Web scraping is difficult and time-consuming. Crawl4AI provides 6 intelligent modes for extracting content, screenshots, and PDFs from any website with anti-detection features.",
+    "seo_keywords": [
+      "web scraping",
+      "crawl4ai",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "screenshot capture",
+      "PDF export",
+      "structured data extraction",
+      "batch crawling",
+      "deep crawling"
+    ],
+    "actual_capabilities": [
+      "Scrape individual web pages with markdown, HTML, or text output",
+      "Capture full-page screenshots and export pages as PDF documents",
+      "Deep crawl entire websites with keyword filtering and URL patterns",
+      "Batch process multiple URLs simultaneously with concurrency control",
+      "Extract structured data using CSS selectors into JSON format",
+      "Auto-adapt to different website types with intelligent anti-detection"
+    ],
+    "limitations": [
+      "Cannot extract data without providing CSS selectors (LLM extraction mode not deployed)",
+      "Crawl4AI respects website robots.txt and rate limits",
+      "Maximum 20 pages per batch, 300 seconds timeout per operation",
+      "Requires explicit URL with http or https protocol"
+    ],
+    "use_cases": [
+      {
+        "title": "Research and Data Collection",
+        "description": "Automatically crawl documentation sites, blogs, and news articles to build research datasets. Use keyword filtering to focus on relevant content.",
+        "target_user": "Data researchers and analysts"
+      },
+      {
+        "title": "Content Archiving and Evidence Collection",
+        "description": "Capture screenshots and PDFs of web pages for legal, compliance, or archival purposes. Generate visual records of changing web content.",
+        "target_user": "Legal and compliance professionals"
+      },
+      {
+        "title": "Competitive Intelligence Gathering",
+        "description": "Systematically extract product information, pricing, and specifications from competitor websites. Build structured databases of market intelligence.",
+        "target_user": "Business analysts and product managers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Page Scraping",
+        "prompt": "Use crawl4ai to scrape the following URL and return the content in markdown format: {url}",
+        "scenario": "Quick content extraction from a single page"
+      },
+      {
+        "title": "Capture Visual Evidence",
+        "prompt": "Use crawl4ai to scrape {url} and include both a full-page screenshot and PDF export in your response.",
+        "scenario": "When you need visual documentation of a web page"
+      },
+      {
+        "title": "Batch Research Collection",
+        "prompt": "Use crawl4ai batch_crawl mode to process these URLs: {urls}. Set concurrent_limit to 4 and return all content in markdown format.",
+        "scenario": "Gathering information from multiple pages simultaneously"
+      },
+      {
+        "title": "Structured Data Extraction",
+        "prompt": "Use crawl4ai extract mode to pull structured data from {url}. Use this schema: {schema_definition}. Extract using CSS selectors.",
+        "scenario": "Extracting specific data points like products, articles, or listings"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Scrape https://example.com/article and return the main content",
+        "output": "The page was successfully scraped. Here is the content:\n\n# Article Title\n\nThis is the main content of the article...\n\nSource: https://example.com/article\nWords: 1250"
+      },
+      {
+        "input": "Take a screenshot of https://example.com and save it as PDF",
+        "output": "The page screenshot and PDF have been generated. The screenshot shows the full homepage layout with navigation, hero section, and footer content. The PDF document is 5 pages."
+      }
+    ],
+    "best_practices": [
+      "Start with simple scrape mode before attempting complex deep crawls",
+      "Test extraction schemas on a single page before batch processing",
+      "Respect website terms of service and implement appropriate delays between requests"
+    ],
+    "anti_patterns": [
+      "Do not omit the parameters wrapper when calling crawl4ai",
+      "Do not pass URLs as strings instead of arrays for batch operations",
+      "Do not attempt LLM-based extraction without a deployed LLM instance"
+    ],
+    "faq": [
+      {
+        "question": "What modes does crawl4ai support?",
+        "answer": "Crawl4ai supports 6 modes: scrape (single page), deep_crawl (entire site), batch_crawl (multiple URLs), extract (structured data), pdf_export, and screenshot."
+      },
+      {
+        "question": "How does the intelligent grading system work?",
+        "answer": "Version 1.2 automatically detects website type and applies optimal settings: standard for static sites, enhanced for JavaScript sites, and fallback for complex sites."
+      },
+      {
+        "question": "Can I crawl password-protected pages?",
+        "answer": "No, crawl4ai does not support authentication. Only publicly accessible web pages can be crawled."
+      },
+      {
+        "question": "What is the maximum crawl depth?",
+        "answer": "Deep crawl supports configurable max_depth (default 3) and max_pages (default 80). Batch crawl limits to 20 pages total."
+      },
+      {
+        "question": "How are screenshots and PDFs returned?",
+        "answer": "Binary outputs are base64 encoded in the JSON response for easy handling by AI models without file system access."
+      },
+      {
+        "question": "Does crawl4ai bypass paywalls or access controls?",
+        "answer": "No, crawl4ai respects robots.txt, rate limits, and standard access controls. Anti-detection features prevent automated detection only."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 734
+    }
+  ]
+}

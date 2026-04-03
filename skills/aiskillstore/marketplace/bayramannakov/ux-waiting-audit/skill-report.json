@@ -1,0 +1,613 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:01:28.736Z",
+    "slug": "bayramannakov-ux-waiting-audit",
+    "source_url": "https://github.com/BayramAnnakov/ux-waiting-audit/tree/main/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bd872a5597d170a2ceced9a6e32c5c684b7243efefcf88a64cbb3748fd7e6cb1",
+    "tree_hash": "fbdd3adb0338aa0691b5bc76099e31ba0502ab669a9082cfa85467e7d63e8ec2"
+  },
+  "skill": {
+    "name": "ux-waiting-audit",
+    "description": "Audit UX waiting states for web applications with long-running operations (30+ seconds). Use when asked to evaluate, audit, or analyze a product's loading states, wait times, progress indicators, or user experience during slow operations. Requires browser automation (Chrome MCP tools). Generates comprehensive reports with screenshots, checklist evaluation, and prioritized recommendations.",
+    "summary": "Audit UX waiting states for web applications with long-running operations (30+ seconds). Use when as...",
+    "icon": "⏱️",
+    "version": "1.0.0",
+    "author": "BayramAnnakov",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "UX audit",
+      "user experience",
+      "waiting states",
+      "progress indicators",
+      "browser automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation and template skill containing JavaScript snippets for browser-based UX evaluation via Chrome MCP tools. All static findings are false positives: JavaScript template literals in docs were misidentified as Ruby shell backticks, documentation URLs flagged as hardcoded URLs, and template placeholders misclassified as cryptographic algorithms. No network calls, filesystem access, or external command execution in any executable code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "README.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "README.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "README.md",
+            "line_start": 51,
+            "line_end": 51
+          },
+          {
+            "file": "README.md",
+            "line_start": 57,
+            "line_end": 57
+          },
+          {
+            "file": "README.md",
+            "line_start": 58,
+            "line_end": 58
+          },
+          {
+            "file": "README.md",
+            "line_start": 59,
+            "line_end": 59
+          },
+          {
+            "file": "README.md",
+            "line_start": 60,
+            "line_end": 60
+          },
+          {
+            "file": "README.md",
+            "line_start": 64,
+            "line_end": 71
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 18,
+            "line_end": 21
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 21,
+            "line_end": 38
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 38,
+            "line_end": 44
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 44,
+            "line_end": 61
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 61,
+            "line_end": 67
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 67,
+            "line_end": 84
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 84,
+            "line_end": 90
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 90,
+            "line_end": 107
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 107,
+            "line_end": 112
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 112,
+            "line_end": 130
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 130,
+            "line_end": 136
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 136,
+            "line_end": 153
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 153,
+            "line_end": 159
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 159,
+            "line_end": 196
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 196,
+            "line_end": 202
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 202,
+            "line_end": 219
+          },
+          {
+            "file": "references/checklist.md",
+            "line_start": 219,
+            "line_end": 225
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 132,
+            "line_end": 135
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 135,
+            "line_end": 137
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 137,
+            "line_end": 140
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 140,
+            "line_end": 144
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 144,
+            "line_end": 147
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 147,
+            "line_end": 151
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 151,
+            "line_end": 160
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 160,
+            "line_end": 167
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 167,
+            "line_end": 170
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 170,
+            "line_end": 177
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 177,
+            "line_end": 180
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 180,
+            "line_end": 187
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 187,
+            "line_end": 190
+          },
+          {
+            "file": "references/report-template.md",
+            "line_start": 190,
+            "line_end": 197
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 98
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 118
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 126
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 126,
+            "line_end": 133
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 133,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 158
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 181
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 181,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 207
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 207,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 230
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 230,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 241
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 241,
+            "line_end": 246
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 246,
+            "line_end": 252
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 252,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 308
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "README.md",
+            "line_start": 5,
+            "line_end": 5
+          },
+          {
+            "file": "README.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "README.md",
+            "line_start": 94,
+            "line_end": 94
+          },
+          {
+            "file": "README.md",
+            "line_start": 95,
+            "line_end": 95
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "README.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "README.md",
+            "line_start": 44,
+            "line_end": 44
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 6,
+    "total_lines": 1168,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:01:28.736Z"
+  },
+  "content": {
+    "user_title": "Audit web app waiting states for UX improvements",
+    "value_statement": "AI agent products often have long wait times that cause user anxiety and abandonment. This skill audits how applications handle long-running operations using browser automation and generates comprehensive reports with prioritized recommendations.",
+    "seo_keywords": [
+      "UX waiting states",
+      "UX audit",
+      "waiting UX",
+      "progress indicators",
+      "loading states",
+      "user experience",
+      "AI agent UX",
+      "Claude Code",
+      "browser automation",
+      "UX evaluation"
+    ],
+    "actual_capabilities": [
+      "Navigate to target URLs and trigger long-running operations",
+      "Capture screenshots at timed intervals during wait states",
+      "Execute DOM queries to detect loading indicators and progress elements",
+      "Evaluate against 10-point UX waiting checklist",
+      "Generate markdown reports with annotated screenshots",
+      "Provide prioritized recommendations for UX improvements"
+    ],
+    "limitations": [
+      "Requires Chrome MCP or similar browser automation tool",
+      "Cannot audit native mobile applications",
+      "Cannot test operations requiring complex authentication flows without user guidance",
+      "Cannot simulate network failures or test graceful degradation automatically"
+    ],
+    "use_cases": [
+      {
+        "target_user": "UX designers",
+        "title": "Evaluate competitor UX",
+        "description": "Audit how competitor products handle long-running AI operations and identify best practices."
+      },
+      {
+        "target_user": "Product managers",
+        "title": "Assess own product",
+        "description": "Evaluate your application waiting UX and get prioritized improvement recommendations."
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Before launch review",
+        "description": "Audit new features with long operations before release to catch UX gaps early."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic audit request",
+        "scenario": "Simple audit of a URL",
+        "prompt": "Run a UX waiting audit on [URL]. The operation I want you to test is [describe operation] which takes about [X] seconds."
+      },
+      {
+        "title": "Detailed audit with context",
+        "scenario": "Full audit with guidance",
+        "prompt": "Audit the waiting UX at [URL]. I want you to test [specific operation]. Click the [button name] button to start. Expected duration is [X] seconds. Capture screenshots at T+0, T+10, T+30 and completion."
+      },
+      {
+        "title": "Comparative audit",
+        "scenario": "Compare two products",
+        "prompt": "Compare waiting UX between [URL1] and [URL2]. Test the [specific operation] on both. Which one handles the wait better and why? Use the 10-point checklist criteria."
+      },
+      {
+        "title": "Before and after review",
+        "scenario": "Evaluate improvements",
+        "prompt": "Audit the waiting UX at [URL] for the [feature name] operation. Generate a detailed report with screenshots. I will make improvements and then run another audit to compare results."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Audit the waiting UX on our AI research tool when generating a report. The operation takes 45-60 seconds. Click the 'Generate Report' button.",
+        "output": [
+          "Summary Score: 4/10 categories addressed",
+          "Strengths: Shows partial results streaming in, has cancel button",
+          "Critical gaps: No time estimation, no progress percentage, spinner only",
+          "Quick wins: Add '~50 seconds remaining' text, add progress bar with percentage",
+          "P1 Priority: Add time estimation to reduce user anxiety",
+          "P2 Priority: Replace spinner with progress bar for visibility",
+          "P3 Priority: Add completion celebration animation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always screenshot first before attempting any interaction - visual inspection reveals UI state that DOM queries cannot",
+      "Ask users to manually trigger operations when possible to avoid complex navigation and authentication flows",
+      "Use the 10-point checklist systematically and provide specific evidence for each scoring decision"
+    ],
+    "anti_patterns": [
+      "Trying multiple selectors when DOM queries fail instead of taking a screenshot to understand the actual UI state",
+      "Assuming a spinner alone provides good UX - users need progress indicators, time estimates, and partial results",
+      "Auditing without user guidance when complex authentication or specific navigation steps are required"
+    ],
+    "faq": [
+      {
+        "question": "Which browsers are supported?",
+        "answer": "Chrome MCP is recommended. The skill works with any browser automation tool that provides screenshot, navigate, and execute_javascript capabilities."
+      },
+      {
+        "question": "How long should the tested operation be?",
+        "answer": "The skill is designed for operations lasting 30+ seconds. For faster operations, adjust screenshot intervals to T+0, T+50%, and completion."
+      },
+      {
+        "question": "Can I use this without browser automation?",
+        "answer": "Partial use is possible. You can use the checklist and report templates manually, but screenshots and DOM state capture require browser automation tools."
+      },
+      {
+        "question": "Is my data safe during the audit?",
+        "answer": "Yes. The skill runs entirely in your browser environment through automation tools. No data is sent to external servers by the skill itself."
+      },
+      {
+        "question": "The audit got stuck finding an element. What do I do?",
+        "answer": "Stop trying selectors. Take a screenshot immediately and analyze visually. Ask the user for guidance on button location or trigger the operation manually."
+      },
+      {
+        "question": "How is this different from Lighthouse or other auditing tools?",
+        "answer": "This skill focuses specifically on waiting UX during long operations. Lighthouse audits performance but not UX patterns like progress indicators, time estimates, or anxiety reduction."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "checklist.md",
+          "type": "file",
+          "path": "references/checklist.md",
+          "lines": 247
+        },
+        {
+          "name": "report-template.md",
+          "type": "file",
+          "path": "references/report-template.md",
+          "lines": 198
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "capture_state.js",
+          "type": "file",
+          "path": "scripts/capture_state.js",
+          "lines": 89
+        }
+      ]
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 100
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 321
+    }
+  ]
+}

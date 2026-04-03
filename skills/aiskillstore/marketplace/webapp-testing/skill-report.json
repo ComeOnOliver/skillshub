@@ -1,0 +1,282 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:48:46.327Z",
+    "slug": "webapp-testing",
+    "source_url": "https://github.com/anthropics/skills/tree/main/skills/webapp-testing",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "official",
+    "content_hash": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+    "tree_hash": "42a193c2682ef3a90b882f902438f4d05ea6741ac59d8d9469d0677000e9877c"
+  },
+  "skill": {
+    "name": "webapp-testing",
+    "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+    "summary": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "anthropics",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "coding",
+    "tags": [
+      "playwright",
+      "web-testing",
+      "automation",
+      "frontend"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Official Anthropic skill with minimal attack surface. Uses subprocess and socket APIs only for local server management. All file operations restricted to /tmp and /mnt/user-data/outputs. No external network calls.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/with_server.py",
+            "line_start": 17,
+            "line_end": 20
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/with_server.py",
+            "line_start": 23,
+            "line_end": 32
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "examples/console_logging.py",
+            "line_start": 31,
+            "line_end": 32
+          },
+          {
+            "file": "examples/static_html_automation.py",
+            "line_start": 16,
+            "line_end": 17
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/with_server.py",
+            "line_start": 68,
+            "line_end": 74
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 355,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:48:46.327Z"
+  },
+  "content": {
+    "user_title": "Test local web applications with Playwright",
+    "value_statement": "Testing local web applications requires browser automation, screenshot capture, and UI verification. This toolkit provides Playwright scripts for frontend testing, DOM inspection, and console logging.",
+    "seo_keywords": [
+      "Playwright",
+      "web testing",
+      "browser automation",
+      "frontend testing",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "DOM inspection",
+      "console logging"
+    ],
+    "actual_capabilities": [
+      "Automate browser interactions with Playwright for local web apps",
+      "Discover and inspect page elements including buttons, links, and inputs",
+      "Capture screenshots of rendered pages for visual verification",
+      "Capture and analyze browser console logs during automation",
+      "Manage multiple local servers with automatic lifecycle control",
+      "Test static HTML files using file:// URLs"
+    ],
+    "limitations": [
+      "Only supports Chromium browser for headless automation",
+      "Designed for local development servers, not production URLs",
+      "Does not include performance benchmarking or load testing features"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Verify UI functionality",
+        "description": "Test that buttons, forms, and navigation work correctly in your local development environment."
+      },
+      {
+        "target_user": "QA engineers",
+        "title": "Automated UI regression",
+        "description": "Create repeatable Playwright scripts to verify frontend behavior across code changes."
+      },
+      {
+        "target_user": "Debugging teams",
+        "title": "Capture console errors",
+        "description": "Run browser automation to capture console logs and identify JavaScript errors in local apps."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Take a screenshot",
+        "scenario": "Capture current page state",
+        "prompt": "Take a screenshot of the running app at localhost:5173 and save it to /tmp/inspect.png."
+      },
+      {
+        "title": "Find page elements",
+        "scenario": "Discover interactive elements",
+        "prompt": "Find all buttons, links, and input fields on the page at localhost:3000 and list them with their text or labels."
+      },
+      {
+        "title": "Capture console logs",
+        "scenario": "Debug JavaScript errors",
+        "prompt": "Navigate to the app, capture all console messages, and save them to a log file for debugging."
+      },
+      {
+        "title": "Run multi-server test",
+        "scenario": "Test full-stack apps",
+        "prompt": "Start the backend server on port 3000 and frontend on port 5173, then run element_discovery.py to verify the full stack is working."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Take a screenshot of the app and list all buttons",
+        "output": [
+          "Screenshot saved to /tmp/inspect.png",
+          "Found 5 buttons:",
+          "  [0] Submit",
+          "  [1] Cancel",
+          "  [2] Settings",
+          "  [3] Help",
+          "  [4] [hidden]"
+        ]
+      },
+      {
+        "input": "Debug why form submission is not working",
+        "output": [
+          "Console logs captured:",
+          "  [error] Cannot read property 'submit' of undefined",
+          "  [error] Form validation failed: email required",
+          "  [warning] Deprecation: Use .closest() instead of .parents()",
+          "Screenshot saved: /mnt/user-data/outputs/form_debug.png"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the bundled with_server.py script to manage server lifecycle automatically",
+      "Always wait for networkidle state before inspecting dynamic web applications",
+      "Close browser instances properly after automation completes"
+    ],
+    "anti_patterns": [
+      "Do not inspect DOM before waiting for networkidle on dynamic applications",
+      "Do not leave browser processes running after script completion",
+      "Do not skip using sync_playwright for simple automation tasks"
+    ],
+    "faq": [
+      {
+        "question": "Which browsers are supported?",
+        "answer": "This toolkit uses Chromium in headless mode for all automation tasks."
+      },
+      {
+        "question": "What is the maximum test duration?",
+        "answer": "Server timeout defaults to 30 seconds. Configure with --timeout flag for longer startup times."
+      },
+      {
+        "question": "Can I test remote production URLs?",
+        "answer": "Designed for local development servers. Production URL testing requires additional configuration."
+      },
+      {
+        "question": "Is my test data stored securely?",
+        "answer": "All outputs save to /tmp or /mnt/user-data/outputs with automatic cleanup recommendations."
+      },
+      {
+        "question": "Why is my DOM inspection failing?",
+        "answer": "Wait for networkidle state before inspection. Dynamic apps may render content after initial page load."
+      },
+      {
+        "question": "How does this compare to Selenium?",
+        "answer": "Playwright offers faster execution, better async support, and more reliable waiting mechanisms for modern web apps."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "console_logging.py",
+          "type": "file",
+          "path": "examples/console_logging.py",
+          "lines": 35
+        },
+        {
+          "name": "element_discovery.py",
+          "type": "file",
+          "path": "examples/element_discovery.py",
+          "lines": 40
+        },
+        {
+          "name": "static_html_automation.py",
+          "type": "file",
+          "path": "examples/static_html_automation.py",
+          "lines": 33
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "with_server.py",
+          "type": "file",
+          "path": "scripts/with_server.py",
+          "lines": 106
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 96
+    }
+  ]
+}

@@ -1,0 +1,286 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T00:27:30.104Z",
+    "slug": "cygnusfear-writing-skills",
+    "source_url": "https://github.com/Cygnusfear/claude-stuff/tree/main/skills/writing-skills",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8d0b984df9e43873b32effc60fe6b8309e90b3e30a7ad9919036a2076ddf616a",
+    "tree_hash": "5f1abf6895ce826a8b8f2c906006a98670bdb9a4474f481a09ae7cb37360cfab"
+  },
+  "skill": {
+    "name": "writing-skills",
+    "description": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+    "summary": "Use when creating new skills, editing existing skills, or verifying skills work before deployment",
+    "icon": "📝",
+    "version": "1.0.0",
+    "author": "Cygnusfear",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "skill-authoring",
+      "documentation",
+      "tdd",
+      "best-practices"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 522 static findings are FALSE POSITIVES. This is legitimate documentation about skill authoring. The flagged patterns (backtick execution, crypto references, C2 keywords) are all within markdown documentation examples, not executable code. The render-graphs.js utility uses standard Node.js file operations for diagram rendering. No malicious intent or security vulnerabilities present.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "anthropic-best-practices.md",
+            "line_start": 32,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 12,
+            "line_end": 12
+          },
+          {
+            "file": "persuasion-principles.md",
+            "line_start": 25,
+            "line_end": 28
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "render-graphs.js",
+            "line_start": 96,
+            "line_end": 97
+          },
+          {
+            "file": "render-graphs.js",
+            "line_start": 120,
+            "line_end": 120
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 8,
+    "total_lines": 3156,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T00:27:30.104Z"
+  },
+  "content": {
+    "user_title": "Create Effective Skills for Claude",
+    "value_statement": "Writing skills helps you build reusable, tested documentation that Claude can discover and apply. This skill adapts test-driven development to process documentation, ensuring your skills actually work when agents need them.",
+    "seo_keywords": [
+      "skill authoring",
+      "Claude Code",
+      "skill documentation",
+      "TDD for documentation",
+      "skill writing",
+      "Claude skills",
+      "agent skills",
+      "documentation patterns"
+    ],
+    "actual_capabilities": [
+      "Create skills following test-driven development methodology",
+      "Write skills that resist rationalization under pressure",
+      "Structure documentation for optimal Claude discovery",
+      "Test skills with subagents before deployment",
+      "Apply persuasion principles for effective skill design",
+      "Organize skill files and cross-references properly"
+    ],
+    "limitations": [
+      "Does not execute code or modify files directly",
+      "Requires understanding of test-driven development fundamentals",
+      "Does not generate skills automatically - guides the writing process"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Skill Authors",
+        "title": "Build Production Skills",
+        "description": "Create skills that are tested, documented, and ready for deployment with real usage scenarios."
+      },
+      {
+        "target_user": "Documentation Writers",
+        "title": "Structure Reference Docs",
+        "description": "Write reference documentation that Claude can discover and apply effectively at the right moments."
+      },
+      {
+        "target_user": "Process Engineers",
+        "title": "Enforce Team Practices",
+        "description": "Create discipline-enforcing skills that ensure processes are followed even under time pressure."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New Skill Setup",
+        "scenario": "Creating a skill from scratch",
+        "prompt": "Help me create a new skill for [purpose]. Walk me through the TDD cycle - first show me how to write a failing baseline test, then help me write the skill documentation."
+      },
+      {
+        "title": "Skill Testing",
+        "scenario": "Testing an existing skill",
+        "prompt": "I want to test my [skill-name] skill. Show me how to create pressure scenarios that expose rationalizations, then help me close the loopholes."
+      },
+      {
+        "title": "Documentation Optimization",
+        "scenario": "Improving skill discovery",
+        "prompt": "My skill [skill-name] is not being discovered by Claude. Review my SKILL.md and suggest improvements to the description, keywords, and structure for better CSO."
+      },
+      {
+        "title": "Cross-Referencing",
+        "scenario": "Linking related skills",
+        "prompt": "Help me create cross-references between my [skill-a] and [skill-b] skills. Show me the proper format for referencing required sub-skills."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I test if my new skill actually works?",
+        "output": [
+          "Run the TDD cycle: First test WITHOUT the skill to capture baseline behavior",
+          "Create 3+ combined pressure scenarios (time pressure, sunk cost, exhaustion)",
+          "Document exact rationalizations the agent uses when skipping the skill",
+          "Write the skill addressing those specific failures",
+          "Re-test WITH the skill - agent should now comply"
+        ]
+      },
+      {
+        "input": "What makes a good skill description?",
+        "output": [
+          "Start with 'Use when...' - describe triggering conditions, not workflow",
+          "Include specific symptoms and situations that signal the skill applies",
+          "Write in third person for system prompt injection",
+          "Keep triggers technology-agnostic unless the skill is technology-specific",
+          "NEVER summarize the skill's process or workflow"
+        ]
+      },
+      {
+        "input": "How do I stop agents from rationalizing around my discipline-enforcing skill?",
+        "output": [
+          "Close every loophole explicitly - forbid specific workarounds",
+          "Add 'No exceptions' statements with concrete examples",
+          "Address spirit vs letter arguments with foundational principles",
+          "Build a rationalization table from actual test failures",
+          "Create a red flags list for self-checking"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always test skills with subagents before deployment - never skip the baseline failure phase",
+      "Write descriptions that describe WHEN to use, not WHAT the skill does",
+      "Use concrete examples from real scenarios, not generic templates"
+    ],
+    "anti_patterns": [
+      "Writing skills without testing - untested skills have undetected gaps",
+      "Summarizing workflow in descriptions - Claude may follow description instead of reading the full skill",
+      "Including multiple language examples - one excellent example is better than mediocre examples in 5 languages"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between a technique, pattern, and reference skill?",
+        "answer": "Techniques are concrete step-by-step methods. Patterns are mental models for thinking about problems. References are API docs or tool documentation."
+      },
+      {
+        "question": "How long should my SKILL.md be?",
+        "answer": "Getting-started workflows under 150 words. Frequently-loaded skills under 200 words. Other skills under 500 words. Be concise."
+      },
+      {
+        "question": "When should I create a separate supporting file?",
+        "answer": "Only when reference material exceeds 100 lines or when you have reusable code tools. Keep everything else inline."
+      },
+      {
+        "question": "How do I name my skill?",
+        "answer": "Use active voice with verb-first format: creating-skills not skill-creation. Use hyphens, not underscores or spaces."
+      },
+      {
+        "question": "What makes a good code example in a skill?",
+        "answer": "One excellent example from a real scenario that is complete, runnable, and shows the pattern clearly. Ready to adapt."
+      },
+      {
+        "question": "How do I cross-reference other skills properly?",
+        "answer": "Use skill name only with explicit markers: REQUIRED SUB-SKILL or REQUIRED BACKGROUND. Avoid @ syntax that force-loads files."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "examples",
+      "type": "dir",
+      "path": "examples",
+      "children": [
+        {
+          "name": "CLAUDE_MD_TESTING.md",
+          "type": "file",
+          "path": "examples/CLAUDE_MD_TESTING.md",
+          "lines": 190
+        }
+      ]
+    },
+    {
+      "name": "anthropic-best-practices.md",
+      "type": "file",
+      "path": "anthropic-best-practices.md",
+      "lines": 1151
+    },
+    {
+      "name": "graphviz-conventions.dot",
+      "type": "file",
+      "path": "graphviz-conventions.dot",
+      "lines": 172
+    },
+    {
+      "name": "persuasion-principles.md",
+      "type": "file",
+      "path": "persuasion-principles.md",
+      "lines": 188
+    },
+    {
+      "name": "render-graphs.js",
+      "type": "file",
+      "path": "render-graphs.js",
+      "lines": 169
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 655
+    },
+    {
+      "name": "testing-skills-with-subagents.md",
+      "type": "file",
+      "path": "testing-skills-with-subagents.md",
+      "lines": 385
+    }
+  ]
+}

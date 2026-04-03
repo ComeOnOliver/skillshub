@@ -1,0 +1,279 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:37:38.439Z",
+    "slug": "cleanexpo-testing-patterns",
+    "source_url": "https://github.com/CleanExpo/Unite-Hub/tree/main/.claude/skills/testing-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cf8f343eb4e8745304df694cbe2cf713be0b5f11c56fbd9e713772f36ca5b362",
+    "tree_hash": "ee7c7cfb5bfd6bfe0195e676369fe2765d917ab4fe5200b8c69f48ef694e0ed9"
+  },
+  "skill": {
+    "name": "testing-patterns",
+    "description": "Vitest testing patterns and strategies for unit tests, agent tests, and API tests with Supabase mocking",
+    "summary": "Vitest testing patterns and strategies for unit tests, agent tests, and API tests with Supabase mock...",
+    "icon": "🧪",
+    "version": "1.0.0",
+    "author": "CleanExpo",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "testing",
+      "vitest",
+      "typescript",
+      "unit-tests",
+      "patterns"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown documentation with TypeScript test examples. No executable code, scripts, network calls, or filesystem access beyond reading the file. All 31 static findings are false positives caused by the scanner misinterpreting markdown code block syntax (backticks) and JSON metadata fields as security-sensitive patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 98,
+            "line_end": 98
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 17,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 47
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 85
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 85,
+            "line_end": 91
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 91,
+            "line_end": 107
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 107,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 131
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 325,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:37:38.439Z"
+  },
+  "content": {
+    "user_title": "Apply testing patterns with Vitest",
+    "value_statement": "Writing tests for new features, agents, and API routes requires consistent patterns. This skill provides ready-to-use Vitest patterns for unit tests, agent tests, and API tests with Supabase mocking.",
+    "seo_keywords": [
+      "vitest testing patterns",
+      "typescript unit tests",
+      "claude code testing",
+      "api route testing",
+      "supabase mocking",
+      "testing best practices",
+      "claude testing",
+      "codex testing",
+      "agent testing patterns"
+    ],
+    "actual_capabilities": [
+      "Write unit tests for services and utilities using Vitest",
+      "Test AI agents with mocked Supabase clients",
+      "Test API routes including authentication and validation",
+      "Mock Supabase database interactions",
+      "Apply coverage requirements for unit, integration, and E2E tests",
+      "Structure tests with beforeEach and mock cleanup"
+    ],
+    "limitations": [
+      "Does not execute tests or generate test files automatically",
+      "Does not configure Vitest or test environment",
+      "Does not provide Playwright E2E test patterns",
+      "Does not integrate with CI/CD pipelines"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Unit test services",
+        "description": "Create unit tests for new services and utilities using the standard describe-it-expect pattern."
+      },
+      {
+        "target_user": "AI agent developers",
+        "title": "Test agent logic",
+        "description": "Write tests for AI agent processTask methods with mocked Supabase client."
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "Validate API routes",
+        "description": "Test API endpoints including authentication, validation, and response handling."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create unit test",
+        "scenario": "Writing a unit test for a new service",
+        "prompt": "Write a Vitest unit test for MyService that tests data processing and error handling. Use beforeEach for setup and vi.clearAllMocks."
+      },
+      {
+        "title": "Test agent",
+        "scenario": "Testing an AI agent",
+        "prompt": "Write a Vitest test for MyAgent.processTask with mocked Supabase. Include test task with workspace_id, task_type, and payload."
+      },
+      {
+        "title": "API test",
+        "scenario": "Testing an API route",
+        "prompt": "Write a Vitest test for GET /api/my-endpoint that verifies workspace_id authentication is required. Expect 400 status on missing parameter."
+      },
+      {
+        "title": "Mock Supabase",
+        "scenario": "Creating database mocks",
+        "prompt": "Show me how to mock Supabase client in Vitest with mockFrom, mockSelect, mockEq functions that return test data."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Write a Vitest test for UserService that tests user creation and validates input.",
+        "output": [
+          "Create describe block for UserService",
+          "Set up beforeEach with vi.clearAllMocks()",
+          "Test user creation with valid input",
+          "Test error handling for invalid input",
+          "Mock Supabase from() and insert() methods"
+        ]
+      },
+      {
+        "input": "Create a test for an AI agent that processes tasks with a mocked database.",
+        "output": [
+          "Mock Supabase client with vi.mock",
+          "Define test task with required fields",
+          "Call agent.processTask(task)",
+          "Assert result is defined and valid",
+          "Verify mock was called correctly"
+        ]
+      },
+      {
+        "input": "Test an API endpoint that requires authentication.",
+        "output": [
+          "Create NextRequest without workspace_id",
+          "Call GET handler",
+          "Expect 400 status code",
+          "Verify error message in response",
+          "Test with valid credentials for success case"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use vi.clearAllMocks() in beforeEach to reset mock state between tests",
+      "Mock Supabase at the module level with vi.mock before describe blocks",
+      "Test authentication and validation first for API routes",
+      "Maintain 100% pass rate for all test suites"
+    ],
+    "anti_patterns": [
+      "Skipping test cleanup with beforeEach causing test pollution",
+      "Not mocking external dependencies like Supabase",
+      "Writing tests without assertions for error cases",
+      "Mixing integration and unit test patterns inappropriately"
+    ],
+    "faq": [
+      {
+        "question": "What test framework does this skill use?",
+        "answer": "Vitest. Run tests with npm run test in the tests/ directory."
+      },
+      {
+        "question": "What coverage targets are required?",
+        "answer": "100% pass rate required for all tests. Coverage includes unit, integration, and E2E tests."
+      },
+      {
+        "question": "How do I mock Supabase in tests?",
+        "answer": "Use vi.mock('@supabase/supabase-js') with createClient returning mocked from() with select/eq/insert."
+      },
+      {
+        "question": "Is my data safe when running tests?",
+        "answer": "Yes. Tests use mocked dependencies and never connect to real databases or external services."
+      },
+      {
+        "question": "Why are my tests failing with timeout errors?",
+        "answer": "Ensure async tests return promises. Check mock implementations use mockResolvedValue for async methods."
+      },
+      {
+        "question": "How does this compare to Jest?",
+        "answer": "Vitest shares Jest API but is faster and integrates with Vite. Syntax and patterns are nearly identical."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 146
+    }
+  ]
+}

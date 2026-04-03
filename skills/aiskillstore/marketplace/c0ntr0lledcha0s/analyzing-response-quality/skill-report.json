@@ -1,0 +1,439 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T19:39:53.551Z",
+    "slug": "c0ntr0lledcha0s-analyzing-response-quality",
+    "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/tree/main/self-improvement/skills/analyzing-response-quality",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ca250444bcfe26454c896ff97aec9734257039b327260a524651459fa753b077",
+    "tree_hash": "6c00a33d7b02ec4c0ea2a8d3880b508ab02d9d50403003b91f81abd780e7d761"
+  },
+  "skill": {
+    "name": "analyzing-response-quality",
+    "description": "Expert at analyzing the quality of Claude's responses and outputs. Use when evaluating response completeness, accuracy, clarity, or effectiveness. Auto-invokes during self-reflection or when quality assessment is needed.",
+    "summary": "Expert at analyzing the quality of Claude's responses and outputs. Use when evaluating response comp...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "C0ntr0lledCha0s",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "quality",
+      "analysis",
+      "self-improvement",
+      "code-review",
+      "validation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "scripts",
+      "env_access",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a quality analysis tool with security scanning capabilities. All static findings are FALSE POSITIVES. The scripts contain regex patterns to DETECT security vulnerabilities in other code - they do not execute dangerous operations. The skill only requires Read, Grep, and Glob permissions.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/check-code-quality.py",
+            "line_start": 163,
+            "line_end": 163
+          },
+          {
+            "file": "scripts/check-completeness.py",
+            "line_start": 33,
+            "line_end": 37
+          },
+          {
+            "file": "scripts/check-completeness.py",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "scripts/check-completeness.py",
+            "line_start": 37,
+            "line_end": 190
+          },
+          {
+            "file": "scripts/check-completeness.py",
+            "line_start": 190,
+            "line_end": 190
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 91,
+            "line_end": 91
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 93,
+            "line_end": 93
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 32,
+            "line_end": 32
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 186,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 120
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 120,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 146
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 146,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 167
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 167,
+            "line_end": 179
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 179,
+            "line_end": 258
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 258,
+            "line_end": 309
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 309,
+            "line_end": 320
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 320,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 331
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 331,
+            "line_end": 334
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 334,
+            "line_end": 341
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 341,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 360
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 360,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 390
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 390,
+            "line_end": 415
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 82,
+            "line_end": 82
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 28,
+            "line_end": 28
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 91,
+            "line_end": 91
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 93,
+            "line_end": 93
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 118,
+            "line_end": 118
+          },
+          {
+            "file": "scripts/check-security.py",
+            "line_start": 110,
+            "line_end": 110
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1383,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T19:39:53.551Z"
+  },
+  "content": {
+    "user_title": "Analyze and improve Claude response quality",
+    "value_statement": "Sometimes Claude's responses miss requirements, lack error handling, or have security issues. This skill provides systematic quality evaluation with scoring, gap analysis, and improvement recommendations.",
+    "seo_keywords": [
+      "Claude response quality",
+      "code quality analysis",
+      "Claude Code",
+      "response evaluation",
+      "quality metrics",
+      "code review",
+      "completeness check",
+      "security analysis",
+      "self-improvement",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Evaluates responses across six quality dimensions: correctness, completeness, clarity, efficiency, security, and usability",
+      "Scores code quality using AST analysis for Python and pattern analysis for JavaScript",
+      "Detects missing error handling, input validation, and edge case coverage",
+      "Identifies security vulnerabilities including SQL injection, XSS, and hardcoded secrets",
+      "Generates structured quality reports with prioritized recommendations",
+      "Compares response coverage against original requirements"
+    ],
+    "limitations": [
+      "Validation scripts are planned but not yet fully implemented - provides manual guidelines",
+      "Limited to Read, Grep, and Glob tools - cannot execute code to verify functionality",
+      "Python AST analysis more thorough than JavaScript pattern-based checks",
+      "Requires manual judgment for complex architectural or design quality issues"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers using Claude for coding",
+        "title": "Review code implementations",
+        "description": "After Claude generates code, invoke this skill to check for security issues, missing error handling, and best practice violations."
+      },
+      {
+        "target_user": "Technical leads",
+        "title": "Validate response completeness",
+        "description": "Verify that Claude's responses address all stated requirements before accepting the output for production use."
+      },
+      {
+        "target_user": "Security-conscious teams",
+        "title": "Security audit AI-generated code",
+        "description": "Scan Claude's code output for OWASP vulnerabilities, hardcoded credentials, and insecure patterns before deployment."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick quality check",
+        "scenario": "Fast review of recent response",
+        "prompt": "Analyze the quality of my last response. Score it on correctness, completeness, and clarity."
+      },
+      {
+        "title": "Code security review",
+        "scenario": "Security-focused code analysis",
+        "prompt": "Review this code for security vulnerabilities. Check for injection risks, hardcoded secrets, and insecure functions."
+      },
+      {
+        "title": "Completeness analysis",
+        "scenario": "Verify all requirements met",
+        "prompt": "Compare my response against the original requirements. List any missing functionality, unhandled edge cases, or gaps in documentation."
+      },
+      {
+        "title": "Full quality report",
+        "scenario": "Comprehensive quality audit",
+        "prompt": "Generate a complete quality analysis report. Score all six dimensions, identify critical and important issues, and provide prioritized recommendations."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze the quality of my authentication code",
+        "output": [
+          "Quality Score: 68 out of 100",
+          "Critical: SQL injection vulnerability found on line 45 - use parameterized queries",
+          "Critical: Passwords stored with MD5 - upgrade to bcrypt",
+          "Important: No rate limiting on login attempts",
+          "Missing: Password reset functionality not implemented"
+        ]
+      },
+      {
+        "input": "Check if my response addressed all requirements",
+        "output": [
+          "Requirements Coverage: 75 percent",
+          "Addressed: User authentication, session management, logout",
+          "Missing: Password reset flow, remember-me functionality",
+          "Gap: Error handling not present for database failures",
+          "Suggestion: Add input validation for email format"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run quality analysis after completing complex multi-step tasks to catch omissions before finalizing",
+      "Use the security checker on all code that handles user input, authentication, or sensitive data",
+      "Review the quality scores and address critical issues before moving to important ones"
+    ],
+    "anti_patterns": [
+      "Skipping quality analysis on small code changes - even minor changes can introduce security issues",
+      "Ignoring completeness checks when under time pressure - missing requirements cause rework",
+      "Running only code quality checks without security analysis - functionality and security are both essential"
+    ],
+    "faq": [
+      {
+        "question": "When should I use this skill?",
+        "answer": "Use after completing complex tasks, large code implementations, or when uncertain about response quality. It auto-invokes during self-reflection."
+      },
+      {
+        "question": "What quality dimensions does it evaluate?",
+        "answer": "Correctness, completeness, clarity, efficiency, security, and usability. Each is scored 1-5 with specific criteria."
+      },
+      {
+        "question": "Can it automatically fix issues it finds?",
+        "answer": "No, it identifies and prioritizes issues with recommendations. You must implement the fixes manually based on the analysis."
+      },
+      {
+        "question": "Does the security checker catch all vulnerabilities?",
+        "answer": "It catches common OWASP patterns like injection, XSS, and hardcoded secrets. Complex logic vulnerabilities require manual review."
+      },
+      {
+        "question": "What languages does the code quality checker support?",
+        "answer": "Python with full AST analysis and JavaScript with pattern-based checks. Other languages get basic metrics only."
+      },
+      {
+        "question": "Are the validation scripts ready to use?",
+        "answer": "The scripts exist but are marked as planned features. Currently, the skill provides manual guidelines and checklists for quality analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "check-code-quality.py",
+          "type": "file",
+          "path": "scripts/check-code-quality.py",
+          "lines": 231
+        },
+        {
+          "name": "check-completeness.py",
+          "type": "file",
+          "path": "scripts/check-completeness.py",
+          "lines": 237
+        },
+        {
+          "name": "check-security.py",
+          "type": "file",
+          "path": "scripts/check-security.py",
+          "lines": 278
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 440
+    }
+  ]
+}

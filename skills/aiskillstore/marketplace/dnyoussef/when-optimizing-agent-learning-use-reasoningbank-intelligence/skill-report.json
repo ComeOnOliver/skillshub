@@ -1,0 +1,229 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:12:18.386Z",
+    "slug": "dnyoussef-when-optimizing-agent-learning-use-reasoningbank-intelligence",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/utilities/when-optimizing-agent-learning-use-reasoningbank-intelligence",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "057d542af5b9747dc4ecd3f0df0056db3404fa9e6c1f99af996b39e0e9d3c7ca",
+    "tree_hash": "4e3e19c91e780d1f23dd9e25822a425b5224c287e862bdd61492e9867eaf7fbc"
+  },
+  "skill": {
+    "name": "when-optimizing-agent-learning-use-reasoningbank-intelligence",
+    "description": "Implement adaptive learning with ReasoningBank for pattern recognition, strategy optimization, and continuous improvement",
+    "summary": "Implement adaptive learning with ReasoningBank for pattern recognition, strategy optimization, and c...",
+    "icon": "🧠",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "utilities",
+    "tags": [
+      "machine-learning",
+      "adaptive-learning",
+      "pattern-recognition",
+      "optimization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing markdown files only (SKILL.md, PROCESS.md, README.md). No executable code files exist (.js, .py files). All 88 static findings are false positives caused by the analyzer incorrectly flagging markdown code examples as actual command execution. The skill is instructional content for ML libraries with no network calls, no credential handling, and no file system operations beyond documentation examples.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": []
+      },
+      {
+        "factor": "network",
+        "evidence": []
+      },
+      {
+        "factor": "filesystem",
+        "evidence": []
+      },
+      {
+        "factor": "external_commands",
+        "evidence": []
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1076,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:12:18.386Z"
+  },
+  "content": {
+    "user_title": "Implement adaptive agent learning with ReasoningBank",
+    "value_statement": "Agent performance plateaus without learning from experience. ReasoningBank captures decision trajectories, extracts patterns, and trains models to continuously improve agent strategies over time.",
+    "seo_keywords": [
+      "Claude Code adaptive learning",
+      "agent pattern recognition",
+      "self-improving AI agents",
+      "reasoningbank intelligence",
+      "meta-cognitive systems",
+      "decision transformer training",
+      "AI agent optimization",
+      "reinforcement learning patterns",
+      "Claude Codex performance",
+      "agent strategy optimization"
+    ],
+    "actual_capabilities": [
+      "Initialize ReasoningBank with trajectory tracking schema and verdict criteria",
+      "Capture agent decision trajectories with thought-action-observation sequences",
+      "Extract patterns using vector similarity clustering with cosine similarity",
+      "Train decision models using 9 reinforcement learning algorithms",
+      "Generate and apply strategy recommendations based on validated patterns",
+      "Benchmark performance and validate improvements exceeding 15 percent"
+    ],
+    "limitations": [
+      "Requires external dependencies: reasoningbank, agentdb, claude-flow packages",
+      "Pattern extraction requires sufficient trajectory data with minimum 10 to 20 samples",
+      "Performance gains depend on trajectory quality and diversity",
+      "AgentDB integration is optional but recommended for 150x faster operations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML Engineers",
+        "title": "Build self-improving agents",
+        "description": "Create agents that learn from experience and optimize their decision-making over time"
+      },
+      {
+        "target_user": "AI Researchers",
+        "title": "Experiment with RL algorithms",
+        "description": "Test and compare 9 reinforcement learning algorithms for agent strategy optimization"
+      },
+      {
+        "target_user": "Development Teams",
+        "title": "Optimize repetitive workflows",
+        "description": "Automatically identify and apply patterns from successful task executions"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Initialize System",
+        "scenario": "Set up learning system",
+        "prompt": "Initialize ReasoningBank with trajectory tracking, register schema, and configure verdict criteria for my agent"
+      },
+      {
+        "title": "Capture Patterns",
+        "scenario": "Track and analyze trajectories",
+        "prompt": "Capture agent decision trajectories and extract patterns using vector similarity with 0.85 threshold"
+      },
+      {
+        "title": "Train Model",
+        "scenario": "Optimize decision strategies",
+        "prompt": "Train a Decision Transformer model on extracted patterns and generate top 5 strategy recommendations"
+      },
+      {
+        "title": "Validate and Deploy",
+        "scenario": "Benchmark and deploy",
+        "prompt": "Benchmark baseline versus optimized agent performance and export the trained model for production deployment"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Initialize ReasoningBank and capture 20 agent trajectories",
+        "output": [
+          "Learning system initialized with 20 trajectories captured",
+          "Pattern extraction: 5 clusters identified with 85 percent similarity threshold",
+          "Top pattern: error recovery sequence with 92 percent success rate",
+          "Decision model trained: 100 epochs, 32 batch size",
+          "Performance improvement: 23 percent faster task completion",
+          "Integration guide generated and model exported"
+        ]
+      },
+      {
+        "input": "Train decision model on patterns and benchmark results",
+        "output": [
+          "Decision Transformer model created with 256 hidden size",
+          "Training completed with 0.002 loss after 100 epochs",
+          "Baseline agent average score: 72 percent",
+          "Optimized agent average score: 89 percent",
+          "Performance improvement: 23.6 percent",
+          "Model exported to /tmp/reasoningbank-export.json"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Collect diverse trajectories including both successful and failed attempts for balanced learning",
+      "Validate patterns with at least 80 percent success rate before applying optimizations",
+      "Monitor production performance after deployment and retrain models regularly"
+    ],
+    "anti_patterns": [
+      "Applying optimizations without validating pattern success rates first",
+      "Training on insufficient trajectory data with fewer than 10 samples",
+      "Skipping the benchmark comparison between baseline and optimized agents"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools support this skill?",
+        "answer": "Claude, Claude Code, and Codex with claude-flow integration for task orchestration"
+      },
+      {
+        "question": "How many trajectories do I need?",
+        "answer": "Minimum 10 to 20 diverse trajectories recommended for reliable pattern extraction"
+      },
+      {
+        "question": "Can I use this without AgentDB?",
+        "answer": "Yes, but operations will be slower. AgentDB provides 150x faster vector search"
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Trajectories stay local and are only used for model training within your environment"
+      },
+      {
+        "question": "Why is improvement less than 15 percent?",
+        "answer": "Insufficient trajectory diversity or low-quality data. Collect more varied examples and validate patterns"
+      },
+      {
+        "question": "How does this differ from prompt engineering?",
+        "answer": "This optimizes agent behavior at the model level through experience, not just prompt tuning"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 52
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 137
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 50
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 644
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:58:31.436Z",
+    "slug": "asmayaseen-context-fundamentals",
+    "source_url": "https://github.com/Asmayaseen/hackathon-2/tree/main/.claude/skills/context-fundamentals",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "56a5018ab3a72b637fe3ebf9089f73b9742c1fc22be0d13cf341a2b1fa2ba34f",
+    "tree_hash": "c27a34457337a3ee55c6189b501ca323cae99dbf359b96b5679a1c49eb338fa4"
+  },
+  "skill": {
+    "name": "context-fundamentals",
+    "description": "Understand the components, mechanics, and constraints of context in agent systems. Use when designing agent architectures, debugging context-related failures, or optimizing context usage.",
+    "summary": "Understand the components, mechanics, and constraints of context in agent systems. Use when designin...",
+    "icon": "🧠",
+    "version": "1.0.0",
+    "author": "Asmayaseen",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "context-engineering",
+      "agent-architecture",
+      "prompt-engineering",
+      "token-optimization"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation and educational skill focused on context engineering. All 108 static findings are FALSE_POSITIVES: code fence markers (```) were misidentified as shell backticks; MD5 usage is for content deduplication (non-crypto); cryptographic mentions are general concepts in documentation; and all other findings are scanner artifacts. No network calls, no credential access, no external command execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/context_manager.py",
+            "line_start": 295,
+            "line_end": 313
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1088,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:58:31.436Z"
+  },
+  "content": {
+    "user_title": "Master Context Engineering for AI Agents",
+    "value_statement": "Context limits cause unexpected AI behavior and high costs. This skill teaches you to design, budget, and optimize context in agent systems using proven patterns like progressive disclosure and attention-aware placement.",
+    "seo_keywords": [
+      "context engineering",
+      "Claude context",
+      "prompt engineering",
+      "token optimization",
+      "agent architecture",
+      "context windows",
+      "attention mechanisms",
+      "progressive disclosure",
+      "AI development",
+      "context management"
+    ],
+    "actual_capabilities": [
+      "Design effective system prompts with clear section boundaries and optimal altitude",
+      "Calculate and manage token budgets across all context components",
+      "Implement progressive disclosure to load information only when needed",
+      "Structure tool definitions for maximum agent comprehension",
+      "Validate context structure and identify efficiency issues",
+      "Optimize attention distribution using position-aware content placement"
+    ],
+    "limitations": [
+      "Does not provide real-time token counting for specific models",
+      "Does not execute or modify your existing agent systems",
+      "Does not integrate with specific LLM provider APIs directly",
+      "Does not persist context state between sessions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Engineers",
+        "title": "Design Agent Architectures",
+        "description": "Build context strategies for new agent systems using budget management and progressive disclosure patterns."
+      },
+      {
+        "target_user": "Developer Productivity Teams",
+        "title": "Optimize Token Usage",
+        "description": "Reduce token costs and improve model performance by optimizing context composition and placement."
+      },
+      {
+        "target_user": "ML Engineers",
+        "title": "Debug Context Failures",
+        "description": "Diagnose and fix unexpected agent behavior related to context limits, attention patterns, or information loss."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "System Prompt Design",
+        "scenario": "Creating agent instructions",
+        "prompt": "Help me design a system prompt for a [TYPE] agent. Include sections for background, instructions, tool guidance, and output format."
+      },
+      {
+        "title": "Context Budget",
+        "scenario": "Estimating token usage",
+        "prompt": "I have a context limit of [N] tokens. How should I allocate this budget across system prompt, tools, documents, and message history?"
+      },
+      {
+        "title": "Progressive Loading",
+        "scenario": "Managing large documents",
+        "prompt": "Show me how to implement progressive disclosure for loading large documentation sets efficiently into agent context."
+      },
+      {
+        "title": "Attention Placement",
+        "scenario": "Optimizing information position",
+        "prompt": "How should I position critical information in a long context window to maximize model attention?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How should I structure a system prompt for a code review agent?",
+        "output": [
+          "Organize into distinct sections: BACKGROUND_INFORMATION, INSTRUCTIONS, TOOL_GUIDANCE, OUTPUT_DESCRIPTION",
+          "Use clear XML tags or markdown headers for section boundaries",
+          "Calibrate altitude: provide clear heuristics, not brittle step-by-step or overly vague guidance",
+          "Place most critical instructions in the first 20% of context where attention is highest"
+        ]
+      },
+      {
+        "input": "My agent ignores important instructions in long conversations",
+        "output": [
+          "Check attention decay: critical instructions in middle of long contexts receive less model attention",
+          "Use summary injection at regular intervals to preserve key context",
+          "Consider compaction triggers at 70-80% utilization to prevent information loss",
+          "Reiterate important constraints periodically rather than assuming one-time instruction suffices"
+        ]
+      },
+      {
+        "input": "How do I decide what to include in context versus external references?",
+        "output": [
+          "Apply informativity over exhaustiveness: include what matters for the decision at hand",
+          "Store detailed reference materials externally and load on demand with progressive disclosure",
+          "Use lightweight identifiers for dynamic content that changes frequently",
+          "Pre-load stable information like project rules and tool definitions"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Treat context as a finite budget with diminishing returns, not an unlimited resource",
+      "Place critical information at attention-favored positions (beginning and end of context)",
+      "Load information progressively using lazy loading patterns to stay within token limits"
+    ],
+    "anti_patterns": [
+      "Stuffing all available information into context without curation or prioritization",
+      "Ignoring attention decay and placing key instructions in the middle of long contexts",
+      "Assuming longer context always improves performance regardless of information quality"
+    ],
+    "faq": [
+      {
+        "question": "Which AI platforms support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. Context patterns apply universally across most LLM providers."
+      },
+      {
+        "question": "What is the typical context window size?",
+        "answer": "Varies by model from 4K to 200K+ tokens. Design systems to adapt to different limits rather than assuming a fixed size."
+      },
+      {
+        "question": "How do I integrate these patterns?",
+        "answer": "Apply during system design phase. Start with context budgeting, implement progressive loading for documents, validate structure before sending to model."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "This skill is read-only documentation and utilities. No data is sent anywhere or persisted. All processing happens in your existing context flow."
+      },
+      {
+        "question": "Why does my agent ignore instructions?",
+        "answer": "Common causes: instructions buried in long context, competing directives, or altitude mismatch. Check attention positions and clarify priority."
+      },
+      {
+        "question": "How is this different from prompt engineering?",
+        "answer": "Context engineering operates at the system level, optimizing the entire context composition, not just the prompt text. It addresses constraints and mechanics beyond wording."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "context-components.md",
+          "type": "file",
+          "path": "references/context-components.md",
+          "lines": 283
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "context_manager.py",
+          "type": "file",
+          "path": "scripts/context_manager.py",
+          "lines": 370
+        },
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 32
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 185
+    }
+  ]
+}

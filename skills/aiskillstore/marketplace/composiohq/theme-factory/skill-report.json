@@ -1,0 +1,512 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:16:12.753Z",
+    "slug": "composiohq-theme-factory",
+    "source_url": "https://github.com/ComposioHQ/awesome-claude-skills/tree/master/theme-factory",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "366ee55d92407128fd5f05871d9a6135bfe6fad2146ec2652edf99fc0b0d177b",
+    "tree_hash": "8bd413f7aaddf5863c22b97ab39cad49cfe398a0498eafec3b8051a1d94ed3ec"
+  },
+  "skill": {
+    "name": "theme-factory",
+    "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+    "summary": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML la...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "ComposioHQ",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "design",
+    "tags": [
+      "themes",
+      "design",
+      "presentations",
+      "styling",
+      "colors"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 91 static findings are FALSE POSITIVES. The skill contains only static markdown files with color palette definitions and font specifications. No executable code, network calls, or file system operations exist. Pattern matching errors incorrectly flagged hex color codes as cryptographic hashes and markdown backticks as shell execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "LICENSE.txt",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "LICENSE.txt",
+            "line_start": 196,
+            "line_end": 196
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 53
+          },
+          {
+            "file": "themes/arctic-frost.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/arctic-frost.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/arctic-frost.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/arctic-frost.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/botanical-garden.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/botanical-garden.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/botanical-garden.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/botanical-garden.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/desert-rose.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/desert-rose.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/desert-rose.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/desert-rose.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/forest-canopy.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/forest-canopy.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/forest-canopy.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/forest-canopy.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/golden-hour.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/golden-hour.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/golden-hour.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/golden-hour.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/midnight-galaxy.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/midnight-galaxy.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/midnight-galaxy.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/midnight-galaxy.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/modern-minimalist.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/modern-minimalist.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/modern-minimalist.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/modern-minimalist.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/ocean-depths.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/ocean-depths.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/ocean-depths.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/ocean-depths.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/sunset-boulevard.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/sunset-boulevard.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/sunset-boulevard.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/sunset-boulevard.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/tech-innovation.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/tech-innovation.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/tech-innovation.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/tech-innovation.md",
+            "line_start": 10,
+            "line_end": 10
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 705,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:16:12.753Z"
+  },
+  "content": {
+    "user_title": "Apply Professional Themes to Presentations",
+    "value_statement": "Create visually consistent presentations with professionally curated color palettes and font pairings. Save time by applying ready-made themes instead of designing from scratch.",
+    "seo_keywords": [
+      "presentation themes",
+      "color palettes",
+      "font pairings",
+      "slide design",
+      "Claude themes",
+      "Codex styling",
+      "Claude Code design",
+      "professional presentations",
+      "theme toolkit",
+      "design templates"
+    ],
+    "actual_capabilities": [
+      "Apply 10 pre-designed professional themes to presentations",
+      "Customize colors with hex codes for consistent branding",
+      "Pair complementary fonts for headers and body text",
+      "Generate custom themes based on user preferences",
+      "Display theme showcase for visual selection"
+    ],
+    "limitations": [
+      "Requires manual application of theme specifications",
+      "No automatic theme detection from existing content",
+      "Limited to provided font families",
+      "Themes must be applied per artifact basis"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Business professionals",
+        "title": "Corporate presentation styling",
+        "description": "Apply professional Ocean Depths theme to quarterly reports and client presentations for consistent branding"
+      },
+      {
+        "target_user": "Marketing teams",
+        "title": "Brand-aligned pitch decks",
+        "description": "Use Sunset Boulevard theme for creative pitches and marketing presentations to maintain visual impact"
+      },
+      {
+        "target_user": "Startup founders",
+        "title": "Tech innovation showcases",
+        "description": "Apply Tech Innovation theme to product demos and investor pitches for modern, bold aesthetics"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic theme application",
+        "scenario": "Apply existing theme to presentation",
+        "prompt": "Show me the theme showcase PDF and help me apply the Ocean Depths theme to my presentation about quarterly sales"
+      },
+      {
+        "title": "Custom theme creation",
+        "scenario": "Create new theme for specific brand",
+        "prompt": "Create a custom theme for my eco-friendly cleaning product company using green and earth tones"
+      },
+      {
+        "title": "Multi-theme comparison",
+        "scenario": "Compare themes for best fit",
+        "prompt": "Show me themes suitable for a healthcare technology presentation and explain which would work best"
+      },
+      {
+        "title": "Theme consistency check",
+        "scenario": "Ensure theme consistency across slides",
+        "prompt": "Apply the Arctic Frost theme to my 20-slide deck and verify all colors and fonts are consistent throughout"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Apply the Forest Canopy theme to my sustainability report presentation",
+        "output": [
+          "Applied Forest Canopy theme with Forest Green (#2d4a2b) headers",
+          "Set body text to FreeSans with Sage (#7d8471) accents",
+          "Updated all slides with Olive (#a4ac86) highlights",
+          "Applied Ivory (#faf9f6) backgrounds for optimal readability"
+        ]
+      },
+      {
+        "input": "Create a custom theme for a wedding planning business",
+        "output": [
+          "Generated Elegant Wedding theme with Blush Pink (#d4a5a5) primary color",
+          "Paired headers with Playfair Display font for sophistication",
+          "Set Champagne (#e8d5c4) backgrounds for warmth",
+          "Added Deep Burgundy (#5d2e46) for contrast in headings"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Preview theme showcase before selection to ensure visual alignment with content",
+      "Consider audience and context when choosing between warm or cool color palettes",
+      "Verify color contrast ratios meet accessibility standards for presentations"
+    ],
+    "anti_patterns": [
+      "Mixing themes within the same presentation or document",
+      "Using themes with insufficient contrast for accessibility",
+      "Applying themes without considering brand guidelines or existing materials"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this theme factory skill?",
+        "answer": "Compatible with Claude, Codex, and Claude Code. Works with any AI assistant that can read markdown files and apply styling instructions"
+      },
+      {
+        "question": "Can I modify the existing themes or add my brand colors?",
+        "answer": "Yes, you can request custom themes with specific colors. The skill can generate new themes based on your brand guidelines"
+      },
+      {
+        "question": "How do I apply themes to my existing presentations?",
+        "answer": "Share your presentation content and specify the desired theme. The skill will provide color hex codes and font specifications to apply manually"
+      },
+      {
+        "question": "Are the themes accessible for color-blind users?",
+        "answer": "Most themes include high contrast options. The skill considers accessibility when suggesting themes for your content"
+      },
+      {
+        "question": "What if none of the 10 themes fit my needs?",
+        "answer": "Request a custom theme generation. Describe your requirements and the skill will create a new theme with appropriate colors and fonts"
+      },
+      {
+        "question": "Can I use these themes for web design or only presentations?",
+        "answer": "Themes work for any digital artifact including websites, reports, documents, and presentations. The color palettes and fonts are universally applicable"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "themes",
+      "type": "dir",
+      "path": "themes",
+      "children": [
+        {
+          "name": "arctic-frost.md",
+          "type": "file",
+          "path": "themes/arctic-frost.md",
+          "lines": 20
+        },
+        {
+          "name": "botanical-garden.md",
+          "type": "file",
+          "path": "themes/botanical-garden.md",
+          "lines": 20
+        },
+        {
+          "name": "desert-rose.md",
+          "type": "file",
+          "path": "themes/desert-rose.md",
+          "lines": 20
+        },
+        {
+          "name": "forest-canopy.md",
+          "type": "file",
+          "path": "themes/forest-canopy.md",
+          "lines": 20
+        },
+        {
+          "name": "golden-hour.md",
+          "type": "file",
+          "path": "themes/golden-hour.md",
+          "lines": 20
+        },
+        {
+          "name": "midnight-galaxy.md",
+          "type": "file",
+          "path": "themes/midnight-galaxy.md",
+          "lines": 20
+        },
+        {
+          "name": "modern-minimalist.md",
+          "type": "file",
+          "path": "themes/modern-minimalist.md",
+          "lines": 20
+        },
+        {
+          "name": "ocean-depths.md",
+          "type": "file",
+          "path": "themes/ocean-depths.md",
+          "lines": 20
+        },
+        {
+          "name": "sunset-boulevard.md",
+          "type": "file",
+          "path": "themes/sunset-boulevard.md",
+          "lines": 20
+        },
+        {
+          "name": "tech-innovation.md",
+          "type": "file",
+          "path": "themes/tech-innovation.md",
+          "lines": 20
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 60
+    },
+    {
+      "name": "theme-showcase.pdf",
+      "type": "file",
+      "path": "theme-showcase.pdf"
+    }
+  ]
+}

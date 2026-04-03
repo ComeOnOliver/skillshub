@@ -1,0 +1,357 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:11:10.434Z",
+    "slug": "abdulsamad94-backend-fastapi",
+    "source_url": "https://github.com/AbdulSamad94/Hackhaton-SpecsKitPlus/tree/master/.claude/skills/backend",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b6c6a4fa6ebfc3680d015060d3a6783e9f7a0a9a3f51e52b969dc47ac8bf5a70",
+    "tree_hash": "f160f116d588af344bff6e73526264d1b9662204ff12f86bcc9813c1b7e0463c"
+  },
+  "skill": {
+    "name": "backend-fastapi",
+    "description": "Documentation for the FastAPI backend, endpoints, and dependency injection.",
+    "summary": "Documentation for the FastAPI backend, endpoints, and dependency injection.",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "AbdulSamad94",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "fastapi",
+      "backend",
+      "api",
+      "documentation",
+      "rag"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "env_access",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing no executable code. The SKILL.md file describes FastAPI backend architecture without any scripts, network calls, or file system access capabilities. All 40 static findings are false positives caused by the scanner misinterpreting documentation text as code patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 71,
+            "line_end": 71
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 127,
+            "line_end": 127
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 127,
+            "line_end": 127
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 134,
+            "line_end": 134
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 156,
+            "line_end": 156
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 160,
+            "line_end": 160
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 160,
+            "line_end": 160
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 14,
+            "line_end": 14
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 29,
+            "line_end": 29
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 49,
+            "line_end": 49
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 226,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:11:10.434Z"
+  },
+  "content": {
+    "user_title": "Explore FastAPI Backend Architecture",
+    "value_statement": "This skill provides documentation about the FastAPI backend powering the chatbot and RAG features. It covers endpoint specifications, environment configuration, and dependency injection patterns for developers building or maintaining backend services.",
+    "seo_keywords": [
+      "FastAPI",
+      "backend",
+      "API endpoints",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "RAG chatbot",
+      "dependency injection",
+      "Qdrant",
+      "Python backend"
+    ],
+    "actual_capabilities": [
+      "Explains the POST /api/chat endpoint for RAG conversations",
+      "Documents the POST /api/ask-selection endpoint for targeted Q&A",
+      "Describes environment variables (GEMINI_API_KEY, QDRANT_URL)",
+      "Details backend entry point and startup commands",
+      "Covers utils and helper modules for embeddings and prompts"
+    ],
+    "limitations": [
+      "Does not generate or modify backend code",
+      "Does not execute or test API endpoints",
+      "Cannot debug or troubleshoot backend issues",
+      "Does not manage database or vector store connections"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend Developers",
+        "title": "Understand Endpoint Flow",
+        "description": "Learn how chat requests flow through embeddings, vector search, and LLM generation"
+      },
+      {
+        "target_user": "AI Developers",
+        "title": "Integrate with RAG Pipeline",
+        "description": "Connect AI assistants to the backend for retrieval-augmented generation capabilities"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Configure Backend Services",
+        "description": "Set up environment variables and understand service dependencies for deployment"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Endpoint Overview",
+        "scenario": "Getting started with the backend",
+        "prompt": "What endpoints does the FastAPI backend expose and what do they do?"
+      },
+      {
+        "title": "Chat Endpoint",
+        "scenario": "Understanding RAG chat flow",
+        "prompt": "Explain the POST /api/chat endpoint and its processing steps"
+      },
+      {
+        "title": "Environment Setup",
+        "scenario": "Configuring backend services",
+        "prompt": "What environment variables are required to run the FastAPI backend?"
+      },
+      {
+        "title": "Architecture Deep Dive",
+        "scenario": "Understanding backend structure",
+        "prompt": "Describe the backend architecture including models, utils, and main entry point"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What endpoints does the FastAPI backend expose?",
+        "output": [
+          "• POST /api/chat - Main RAG chat endpoint that embeds queries, searches Qdrant, builds prompts, and generates responses",
+          "• POST /api/ask-selection - Targeted Q&A endpoint for questions about selected text",
+          "• Entry point: backend/main.py (uvicorn on port 8000)",
+          "• Environment: GEMINI_API_KEY, QDRANT_URL, QDRANT_API_KEY"
+        ]
+      },
+      {
+        "input": "How does the RAG chat endpoint work?",
+        "output": [
+          "The /api/chat endpoint follows a 4-step process:",
+          "1. Embed the user query using the configured embedding model",
+          "2. Search the Qdrant vector database for similar documents",
+          "3. Build a RAG prompt with retrieved context",
+          "4. Generate a response using the LLM (Gemini)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use the /api/chat endpoint for general conversation with RAG context",
+      "Use /api/ask-selection when users select specific text for targeted questions",
+      "Ensure QDRANT_URL and QDRANT_API_KEY are configured before starting the backend"
+    ],
+    "anti_patterns": [
+      "Calling backend endpoints without proper authentication tokens",
+      "Skipping vector store configuration when deploying to production",
+      "Using the wrong API key type for embedding versus generation"
+    ],
+    "faq": [
+      {
+        "question": "What tools is this skill compatible with?",
+        "answer": "This skill works with Claude, Codex, and Claude Code for exploring backend documentation."
+      },
+      {
+        "question": "What are the rate limits for the API endpoints?",
+        "answer": "Rate limits are not defined in the documentation. Check the actual backend implementation for limits."
+      },
+      {
+        "question": "Can this skill integrate with other Python frameworks?",
+        "answer": "The documentation is specific to FastAPI. Other frameworks require separate documentation."
+      },
+      {
+        "question": "Is my chat data stored or sent to external services?",
+        "answer": "The backend uses GEMINI_API_KEY for LLM calls and Qdrant for vector storage. Data handling depends on your configuration."
+      },
+      {
+        "question": "Why is my backend not starting?",
+        "answer": "Verify GEMINI_API_KEY, QDRANT_URL, and QDRANT_API_KEY are set. Check that port 8000 is available."
+      },
+      {
+        "question": "How does this compare to other backend frameworks?",
+        "answer": "This FastAPI backend is optimized for RAG workloads with vector search. It differs from Flask/Django in async support."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 50
+    }
+  ]
+}

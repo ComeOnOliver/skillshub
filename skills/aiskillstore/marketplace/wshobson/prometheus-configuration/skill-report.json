@@ -1,0 +1,425 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:20:23.894Z",
+    "slug": "wshobson-prometheus-configuration",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/observability-monitoring/skills/prometheus-configuration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2583786cae34d46db3f273f2fa5c93ca68826fa8d06181c5a7d23bd64ccd314d",
+    "tree_hash": "0992126c77c0d74d4c01e48945d823f75c40c137a79cf1be5c72efbed840bea8"
+  },
+  "skill": {
+    "name": "prometheus-configuration",
+    "description": "Set up Prometheus for comprehensive metric collection, storage, and monitoring of infrastructure and applications. Use when implementing metrics collection, setting up monitoring infrastructure, or configuring alerting systems.",
+    "summary": "Set up Prometheus for comprehensive metric collection, storage, and monitoring of infrastructure and...",
+    "icon": "📈",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "prometheus",
+      "monitoring",
+      "metrics",
+      "alerting",
+      "observability"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing YAML configuration examples for Prometheus. No executable code, scripts, or malicious network behavior is present. Static findings are false positives caused by pattern-matching on documentation text rather than actual code analysis.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 368,
+            "line_end": 368
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 378,
+            "line_end": 378
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 57
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 57,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 79
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 79,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 170
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 170,
+            "line_end": 174
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 174,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 185
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 185,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 224
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 224,
+            "line_end": 266
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 266,
+            "line_end": 268
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 268,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 334
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 334,
+            "line_end": 338
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 338,
+            "line_end": 347
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 347,
+            "line_end": 349
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 349,
+            "line_end": 367
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 367,
+            "line_end": 369
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 369,
+            "line_end": 372
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 372,
+            "line_end": 374
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 374,
+            "line_end": 377
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 377,
+            "line_end": 379
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 379,
+            "line_end": 383
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 383,
+            "line_end": 384
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 384,
+            "line_end": 385
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 385,
+            "line_end": 386
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 386,
+            "line_end": 390
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 390,
+            "line_end": 391
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 391,
+            "line_end": 392
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 568,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:20:23.894Z"
+  },
+  "content": {
+    "user_title": "Configure Prometheus monitoring",
+    "value_statement": "Prometheus setup is complex and easy to misconfigure. This skill provides clear examples for scraping, rules, and validation to help you implement robust monitoring.",
+    "seo_keywords": [
+      "Prometheus configuration",
+      "metrics monitoring",
+      "alert rules",
+      "recording rules",
+      "Kubernetes monitoring",
+      "Helm Prometheus",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Provide Helm installation steps for Kubernetes deployments",
+      "Provide Docker Compose setup for Prometheus",
+      "Show a full prometheus.yml example with scrape configs",
+      "Provide recording rule examples for common service metrics",
+      "Provide alert rule examples with labels and annotations",
+      "List promtool validation commands for configs and rules"
+    ],
+    "limitations": [
+      "Does not execute commands or validate configurations",
+      "Does not include the referenced template or script files",
+      "Does not connect to Prometheus or read live metrics",
+      "Does not generate Grafana dashboards or SLOs"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Platform engineer",
+        "title": "Bootstrap monitoring stack",
+        "description": "Deploy Prometheus with Helm and apply a baseline configuration for a new cluster."
+      },
+      {
+        "target_user": "SRE",
+        "title": "Define alert coverage",
+        "description": "Draft alert rules for availability, latency, and resource usage with clear labels."
+      },
+      {
+        "target_user": "Developer",
+        "title": "Expose application metrics",
+        "description": "Add a scrape job for application endpoints with TLS settings and labels."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic config",
+        "scenario": "Beginner needs a starter setup",
+        "prompt": "Provide a simple prometheus.yml with one scrape job for my app and explain the key fields."
+      },
+      {
+        "title": "Recording rules",
+        "scenario": "Intermediate user wants fast queries",
+        "prompt": "Create recording rules for request rate, error rate, and p95 latency with clear metric names."
+      },
+      {
+        "title": "Alert rules",
+        "scenario": "Team needs production alerts",
+        "prompt": "Draft alert rules for service down, high error rate, and high latency with labels and annotations."
+      },
+      {
+        "title": "Kubernetes scrape",
+        "scenario": "Advanced user using annotations",
+        "prompt": "Show a scrape_config for Kubernetes pods using prometheus.io annotations and relabeling."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create alert rules for high CPU and low disk space.",
+        "output": [
+          "High CPU alert fires after 5 minutes above 80 percent usage.",
+          "Low disk alert fires after 5 minutes above 90 percent usage.",
+          "Each alert includes severity labels and a short summary."
+        ]
+      },
+      {
+        "input": "Show me how to configure Prometheus with Docker Compose.",
+        "output": [
+          "Docker Compose file mounts prometheus.yml config file.",
+          "Data persists in named volume for storage retention.",
+          "Prometheus runs on port 9090 with 30 day retention."
+        ]
+      },
+      {
+        "input": "How do I set up recording rules for HTTP metrics?",
+        "output": [
+          "Request rate rule sums rate of http_requests_total over 5 minutes.",
+          "Error rate rule filters 5xx status codes.",
+          "P95 latency uses histogram_quantile for percentile calculation."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Validate configs and rules with promtool before deployment",
+      "Set scrape intervals that match system load and retention needs",
+      "Use recording rules for expensive PromQL queries to improve performance"
+    ],
+    "anti_patterns": [
+      "Scraping too frequently without proper storage planning",
+      "Using alerts without clear labels and annotations",
+      "Skipping recording rules for complex dashboard queries"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with Kubernetes and Docker?",
+        "answer": "Yes. It includes Helm and Docker Compose examples for Prometheus deployment."
+      },
+      {
+        "question": "What limits should I expect?",
+        "answer": "It provides examples only and does not run commands or validate files."
+      },
+      {
+        "question": "Can it integrate with Grafana or Alertmanager?",
+        "answer": "It shows Alertmanager targets and assumes Grafana for visualization."
+      },
+      {
+        "question": "Does it access my data or credentials?",
+        "answer": "No. It is documentation only and does not access files or networks."
+      },
+      {
+        "question": "What if promtool reports errors?",
+        "answer": "Check YAML syntax, file paths, and rule expressions for typos."
+      },
+      {
+        "question": "How does this compare to generic guides?",
+        "answer": "It focuses on actionable configuration patterns and ready-to-use examples."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 393
+    }
+  ]
+}

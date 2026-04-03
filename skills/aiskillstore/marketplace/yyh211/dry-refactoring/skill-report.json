@@ -1,0 +1,530 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T09:05:18.025Z",
+    "slug": "yyh211-dry-refactoring",
+    "source_url": "https://github.com/YYH211/Claude-meta-skill/tree/main/dry-refactoring",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "a460a2eab31eb1b8601b284509e9ccf1e4260ebe72e37acd8be4abfe182534c7",
+    "tree_hash": "138830e5507881e62478c9a98e87665781fd8ca2561b799ca021ba2701fd0bca"
+  },
+  "skill": {
+    "name": "dry-refactoring",
+    "description": "Guides systematic code refactoring following the DRY (Don't Repeat Yourself) principle. Use when user asks to eliminate code duplication, refactor repetitive code, apply DRY principle, or mentions code smells like copy-paste, magic numbers, or repeated logic. Implements a 4-step workflow from identifying repetition to verified refactoring.",
+    "summary": "Guides systematic code refactoring following the DRY (Don't Repeat Yourself) principle. Use when use...",
+    "icon": "♻️",
+    "version": "1.0.0",
+    "author": "YYH211",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "refactoring",
+      "code-quality",
+      "dry-principle",
+      "clean-code"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only guidance and code examples for DRY refactoring. No executable code, no network calls, no file access, and no system commands. All 92 static findings are false positives caused by the analyzer misinterpreting markdown documentation patterns as security issues.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 72
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 72
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 75
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 75,
+            "line_end": 86
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 86,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 130
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 130,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 240
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 240,
+            "line_end": 242
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 242,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 305
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 305,
+            "line_end": 321
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 321,
+            "line_end": 324
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 324,
+            "line_end": 346
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 353
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 353,
+            "line_end": 368
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 368,
+            "line_end": 371
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 371,
+            "line_end": 390
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 390,
+            "line_end": 393
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 393,
+            "line_end": 402
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 402,
+            "line_end": 433
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 433,
+            "line_end": 456
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 456,
+            "line_end": 462
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 462,
+            "line_end": 470
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 470,
+            "line_end": 493
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 493,
+            "line_end": 510
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 510,
+            "line_end": 533
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 533,
+            "line_end": 567
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 567,
+            "line_end": 574
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 574,
+            "line_end": 574
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 574,
+            "line_end": 578
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 578,
+            "line_end": 616
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 616,
+            "line_end": 620
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 620,
+            "line_end": 638
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 638,
+            "line_end": 642
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 642,
+            "line_end": 684
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 684,
+            "line_end": 691
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 691,
+            "line_end": 702
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 702,
+            "line_end": 712
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 712,
+            "line_end": 738
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 738,
+            "line_end": 748
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 748,
+            "line_end": 760
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 760,
+            "line_end": 782
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 782,
+            "line_end": 804
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 804,
+            "line_end": 827
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 827,
+            "line_end": 833
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 833,
+            "line_end": 848
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 848,
+            "line_end": 852
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 852,
+            "line_end": 858
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 858,
+            "line_end": 882
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 882,
+            "line_end": 888
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 888,
+            "line_end": 904
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1141,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T09:05:18.025Z"
+  },
+  "content": {
+    "user_title": "Eliminate Code Duplication with DRY Refactoring",
+    "value_statement": "Code duplication leads to maintenance nightmares and inconsistent behavior. This skill guides you through a systematic 4-step process to identify, abstract, replace, and verify refactoring changes that eliminate repetition and improve code quality.",
+    "seo_keywords": [
+      "DRY refactoring",
+      "code duplication elimination",
+      "code refactoring guide",
+      "Don't Repeat Yourself principle",
+      "clean code patterns",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "magic numbers refactoring",
+      "code smell detection"
+    ],
+    "actual_capabilities": [
+      "Identifies code duplication through pattern recognition",
+      "Guides extraction of repeated logic into reusable functions and classes",
+      "Provides systematic 4-step refactoring workflow",
+      "Covers magic numbers, structural duplication, and logical repetition",
+      "Includes verification strategies with unit and integration tests"
+    ],
+    "limitations": [
+      "Does not execute refactoring automatically",
+      "Does not modify files in your codebase",
+      "Does not provide IDE integration or tooling",
+      "Requires user to manually apply the guidance"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Developers",
+        "title": "Clean Up Copy-Paste Code",
+        "description": "Identify and eliminate duplicate code blocks scattered across your codebase using the systematic 4-step workflow."
+      },
+      {
+        "target_user": "Code Reviewers",
+        "title": "Standardize Refactoring Reviews",
+        "description": "Apply consistent criteria when reviewing refactoring changes for adherence to DRY principles."
+      },
+      {
+        "target_user": "Technical Leads",
+        "title": "Establish Team Refactoring Standards",
+        "description": "Define clear guidelines for your team to systematically address code duplication in legacy systems."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick DRY Check",
+        "scenario": "Finding obvious duplication",
+        "prompt": "Help me identify duplicate code in my function that calculates prices. Here is my code: [paste code]"
+      },
+      {
+        "title": "Extract Function",
+        "scenario": "Creating reusable abstraction",
+        "prompt": "I have three similar validation functions. Help me extract the common logic into a single reusable function following the DRY workflow."
+      },
+      {
+        "title": "Magic Number Cleanup",
+        "scenario": "Eliminating hardcoded values",
+        "prompt": "My codebase has magic numbers like 0.08 for tax rates appearing in many places. Guide me through replacing them with named constants."
+      },
+      {
+        "title": "Full Refactoring",
+        "scenario": "Complete DRY transformation",
+        "prompt": "Guide me through a complete DRY refactoring of my order calculation module. I want to identify all duplication, abstract it properly, and verify the changes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "I have these two functions that look almost identical. Help me refactor them.",
+        "output": [
+          "I can see the duplication between these functions. Let me apply the DRY workflow:",
+          "Step 1 - Identify: Both functions share the same structure for calculating discounts above a threshold. The only difference is the variable names.",
+          "Step 2 - Abstract: Create a single function that takes the amount and threshold as parameters.",
+          "Step 3 - Replace: Update both call sites to use the new abstraction.",
+          "Step 4 - Verify: Let me help you write tests to confirm the behavior remains identical."
+        ]
+      },
+      {
+        "input": "My code has the same magic number 0.08 repeated in multiple places for tax calculations.",
+        "output": [
+          "I can help you eliminate these magic numbers. Here is the approach:",
+          "Step 1 - Identify: The value 0.08 appears in calculate_tax_1, calculate_tax_2, and calculate_total.",
+          "Step 2 - Abstract: Create a constant TAX_RATE = 0.08 in a central location.",
+          "Step 3 - Replace: Replace all occurrences with TAX_RATE.",
+          "Step 4 - Verify: Run tests to confirm tax calculations remain correct."
+        ]
+      },
+      {
+        "input": "Help me refactor my validation logic that is repeated across three different service files.",
+        "output": [
+          "I see you have similar validation patterns across services. Let me guide you through DRY refactoring:",
+          "Step 1 - Identify: All three services perform email validation, password validation, and role checks.",
+          "Step 2 - Abstract: Create a validation utility module with reusable functions.",
+          "Step 3 - Replace: Import and use the utility functions in each service.",
+          "Step 4 - Verify: Ensure all validation behavior is preserved and add comprehensive tests."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Apply the Rule of Two: Refactor when you write similar code for the second time.",
+      "Use progressive refactoring: Make small, testable changes rather than large rewrites.",
+      "Always write or update tests before refactoring to ensure behavior is preserved."
+    ],
+    "anti_patterns": [
+      "Over-abstracting: Creating generic solutions before understanding the true pattern.",
+      "Partial replacement: Leaving some duplicate code while cleaning others.",
+      "Ignoring performance: Introducing unnecessary function call overhead through abstraction."
+    ],
+    "faq": [
+      {
+        "question": "What programming languages does this skill support?",
+        "answer": "The skill is language-agnostic. Examples use JavaScript, Python, and TypeScript, but the principles apply to any programming language."
+      },
+      {
+        "question": "How much code duplication justifies refactoring?",
+        "answer": "Use the Rule of Two: when you write similar code the second time, consider extracting it. Small duplications add up over time."
+      },
+      {
+        "question": "Can I use this skill with my existing refactoring tools?",
+        "answer": "Yes. This skill provides guidance that works with any IDE or refactoring tool. Apply the principles while using your preferred tools."
+      },
+      {
+        "question": "Does this skill modify my files?",
+        "answer": "No. This skill provides guidance and examples. You apply the changes manually in your editor or IDE."
+      },
+      {
+        "question": "What if my duplicated code has slight variations?",
+        "answer": "The skill covers edge cases. Use optional parameters, callback functions, or keep variations separate if they have fundamentally different logic."
+      },
+      {
+        "question": "How is this different from automated refactoring tools?",
+        "answer": "Automated tools refactor mechanically. This skill helps you think systematically about when, what, and how to abstract for maximum maintainability."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 965
+    }
+  ]
+}

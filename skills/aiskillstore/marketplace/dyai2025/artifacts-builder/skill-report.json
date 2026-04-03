@@ -1,0 +1,309 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:00:30.971Z",
+    "slug": "dyai2025-artifacts-builder",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/artifacts-builder",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "8455a64e627d203fd7b43df64c83d8870cb98907aae21edce4ec8eeef651d850",
+    "tree_hash": "4d7f8bf04814636529961ce3ff524d9453e2a1de0614955e79257fe8b18cd7db"
+  },
+  "skill": {
+    "name": "artifacts-builder",
+    "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+    "summary": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern fronten...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "coding",
+    "tags": [
+      "react",
+      "frontend",
+      "tailwind",
+      "artifact",
+      "ui-components"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts",
+      "filesystem",
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill consists of two shell scripts that initialize React+Vite projects and bundle them into single HTML files. The behavior exactly matches its stated purpose as a development tool for Claude artifacts. No credential theft, data exfiltration, or persistence mechanisms detected. All static findings are false positives: the 'weak cryptographic algorithm' warnings trigger on CSS color definitions (hsl() syntax) and license text; 'external_command' warnings are legitimate build tooling (pnpm, npm, tar) with hardcoded arguments and controlled paths.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 1,
+            "line_end": 323
+          },
+          {
+            "file": "scripts/bundle-artifact.sh",
+            "line_start": 1,
+            "line_end": 54
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 228,
+            "line_end": 250
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 34,
+            "line_end": 37
+          },
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 59,
+            "line_end": 59
+          },
+          {
+            "file": "scripts/bundle-artifact.sh",
+            "line_start": 21,
+            "line_end": 21
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 283,
+            "line_end": 283
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "External package installation",
+        "description": "Scripts install npm packages from registry. Users should review package.json before running.",
+        "locations": [
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 69,
+            "line_end": 79
+          }
+        ]
+      },
+      {
+        "title": "Tarball extraction",
+        "description": "Script extracts shadcn-components.tar.gz locally. Content is from trusted skill directory.",
+        "locations": [
+          {
+            "file": "scripts/init-artifact.sh",
+            "line_start": 277,
+            "line_end": 277
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1006,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:00:30.971Z"
+  },
+  "content": {
+    "user_title": "Build React artifacts with shadcn/ui",
+    "value_statement": "Building complex artifacts with raw HTML is slow and limited. This skill provides a complete development environment with React, Tailwind CSS, and 40+ pre-built shadcn/ui components. Initialize a project, develop with modern tools, and bundle everything into a single portable HTML file.",
+    "seo_keywords": [
+      "claude artifacts",
+      "react artifacts",
+      "shadcn ui",
+      "tailwind css",
+      "frontend development",
+      "claude code",
+      "claude",
+      "codex",
+      "interactive ui",
+      "component library"
+    ],
+    "actual_capabilities": [
+      "Initialize React + Vite project with Tailwind CSS and shadcn/ui theming",
+      "Install 40+ pre-built shadcn/ui components including dialogs, forms, and cards",
+      "Configure path aliases and build tooling automatically",
+      "Bundle complete React application into single portable HTML file",
+      "Support Node.js 18+ with appropriate Vite version pinning"
+    ],
+    "limitations": [
+      "Requires pnpm package manager to be installed",
+      "Not suitable for simple single-file HTML artifacts",
+      "Bundle size may be large for complex applications",
+      "Does not include server-side rendering or backend integration"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend developers",
+        "title": "Build interactive dashboards",
+        "description": "Create complex data visualizations and dashboards with React components for Claude conversations"
+      },
+      {
+        "target_user": "AI engineers",
+        "title": "Prototype UI demos",
+        "description": "Rapidly prototype and share interactive UI demos as artifacts in AI conversations"
+      },
+      {
+        "target_user": "Content creators",
+        "title": "Design rich presentations",
+        "description": "Build beautiful presentations and interactive content using modern component libraries"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Initialize project",
+        "scenario": "Start a new artifact project",
+        "prompt": "Use the Artifacts Builder skill to create a new project called [project-name] for building an interactive [type-of-application] with React, Tailwind, and shadcn/ui components"
+      },
+      {
+        "title": "Add components",
+        "scenario": "Extend existing project",
+        "prompt": "Use Artifacts Builder to add [specific component] to my current project. The component should [describe functionality]."
+      },
+      {
+        "title": "Bundle artifact",
+        "scenario": "Prepare for sharing",
+        "prompt": "Bundle my current React project into a single HTML file using Artifacts Builder so I can share it as a Claude artifact."
+      },
+      {
+        "title": "Full workflow",
+        "scenario": "Complete artifact development",
+        "prompt": "Use Artifacts Builder to: 1) create a new project named [name], 2) develop a [description] with [specific components], 3) bundle into HTML for sharing as artifact"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a dashboard artifact with cards, buttons, and a dialog component",
+        "output": [
+          "✓ Project initialized: dashboard-artifact",
+          "✓ Dependencies installed",
+          "✓ Components available: button, card, dialog",
+          "✓ Ready to develop at dashboard-artifact/",
+          "Run 'pnpm dev' to start development server"
+        ]
+      },
+      {
+        "input": "Build an interactive form with validation",
+        "output": [
+          "✓ New project form-artifact created",
+          "✓ React Hook Form and Zod installed",
+          "✓ Form components ready: input, select, checkbox",
+          "✓ Run 'pnpm dev' to preview"
+        ]
+      },
+      {
+        "input": "Create a data visualization panel",
+        "output": [
+          "✓ Project initialized: analytics-panel",
+          "✓ Chart components and data libraries installed",
+          "✓ Available: tables, cards, progress bars",
+          "✓ Bundle ready for Claude artifact sharing"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Test your artifact locally using 'pnpm dev' before bundling",
+      "Review bundle size - complex artifacts may load slowly",
+      "Use the shadcn/ui components consistently for cohesive design"
+    ],
+    "anti_patterns": [
+      "Do not use for simple static HTML - prefer inline code instead",
+      "Do not skip testing before bundling - preview catches errors",
+      "Do not include unnecessary dependencies - increases bundle size"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between this and inline HTML artifacts?",
+        "answer": "This skill supports complex state management, routing, and 40+ UI components. Simple artifacts use inline HTML directly."
+      },
+      {
+        "question": "What are the system requirements?",
+        "answer": "Node.js 18 or higher and pnpm package manager are required. The skill supports macOS, Linux, and WSL."
+      },
+      {
+        "question": "Can I add more shadcn components later?",
+        "answer": "Yes, you can add components manually or extend the setup script. The components are standard shadcn/ui patterns."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. The skill only creates files in your project directory and installs npm packages. No data leaves your machine."
+      },
+      {
+        "question": "Why is my bundle file so large?",
+        "answer": "React and all dependencies are inlined. Large bundles are normal. Consider removing unused components to reduce size."
+      },
+      {
+        "question": "How does this compare to other artifact tools?",
+        "answer": "This skill provides a full development environment with type safety, hot reload, and the complete shadcn/ui component library."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "bundle-artifact.sh",
+          "type": "file",
+          "path": "scripts/bundle-artifact.sh",
+          "lines": 54
+        },
+        {
+          "name": "init-artifact.sh",
+          "type": "file",
+          "path": "scripts/init-artifact.sh",
+          "lines": 323
+        },
+        {
+          "name": "shadcn-components.tar.gz",
+          "type": "file",
+          "path": "scripts/shadcn-components.tar.gz"
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 74
+    }
+  ]
+}

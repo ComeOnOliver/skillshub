@@ -1,0 +1,302 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T16:52:00.632Z",
+    "slug": "abdulsamad94-plot-consistency-checker",
+    "source_url": "https://github.com/AbdulSamad94/30-Day-AIDD-Challenge-Task-1/tree/master/Task_09/.claude/skills/plot-consistency-checker",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "f5263648f5593046d4dfcb77b53914040e1fda62de910402f9db4fe309603e06",
+    "tree_hash": "81a3a590228abeebb6d2fbbcfbcc4bba81ebce0a6631e6cbdc3d3a796d0a8827"
+  },
+  "skill": {
+    "name": "plot-consistency-checker",
+    "description": "Analyzes narrative plot points, timelines, and story events to identify inconsistencies, plot holes, continuity errors, and pacing issues. Use when the user needs help ensuring their story remains logically consistent and well-paced.",
+    "summary": "Analyzes narrative plot points, timelines, and story events to identify inconsistencies, plot holes,...",
+    "icon": "📖",
+    "version": "1.0.0",
+    "author": "AbdulSamad94",
+    "license": "MIT",
+    "category": "writing",
+    "tags": [
+      "plot-analysis",
+      "story-editing",
+      "consistency",
+      "narrative",
+      "fiction-writing"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure prompt-based skill with no executable code. The SKILL.md file contains only instructional text for AI behavior. All 47 static findings are false positives: markdown code block markers were misidentified as Ruby/shell execution, markdown table syntax was flagged as cryptographic code, and story chapter references were interpreted as system reconnaissance. No file access, network calls, command execution, or external dependencies exist. Zero actual security risk.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 64,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 176
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 176,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 187,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 373
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 373,
+            "line_end": 395
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 395,
+            "line_end": 424
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 432
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 432,
+            "line_end": 560
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 777,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T16:52:00.632Z"
+  },
+  "content": {
+    "user_title": "Check Your Story for Plot Holes",
+    "value_statement": "Writers often miss plot holes and timeline errors in their own work. This skill systematically tracks plot points, character actions, and world rules to identify inconsistencies before readers notice them.",
+    "seo_keywords": [
+      "plot consistency checker",
+      "plot hole detector",
+      "story continuity checker",
+      "timeline analysis",
+      "narrative consistency",
+      "fiction editing",
+      "Claude Code",
+      "Claude AI",
+      "writing assistant",
+      "story validation"
+    ],
+    "actual_capabilities": [
+      "Tracks plot threads from introduction to resolution",
+      "Detects timeline and chronological errors",
+      "Identifies character motivation and description inconsistencies",
+      "Checks world-building rules for contradictions",
+      "Analyzes point-of-view violations in narration",
+      "Evaluates pacing and time allocation across chapters"
+    ],
+    "limitations": [
+      "Cannot access or read local files directly",
+      "Analyzes only text provided in conversation",
+      "Does not replace professional manuscript editing",
+      "Cannot verify historical or scientific accuracy of facts"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Fiction authors",
+        "title": "Manuscript revision",
+        "description": "Authors submit chapters for comprehensive review before querying agents or self-publishing."
+      },
+      {
+        "target_user": "Screenwriters",
+        "title": "Episode arc alignment",
+        "description": "TV writers check character actions and timelines remain consistent across episodes."
+      },
+      {
+        "target_user": "Self-publishing writers",
+        "title": "Series continuity",
+        "description": "Writers ensure each new book aligns with established rules and events in their series."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic check",
+        "scenario": "Quick plot review",
+        "prompt": "Check my story for plot inconsistencies. I have 5 chapters about a protagonist traveling to a magical city. Help me find any timeline errors, character contradictions, or plot holes."
+      },
+      {
+        "title": "Character focus",
+        "scenario": "Character arc review",
+        "prompt": "Review my manuscript focusing on character consistency. Main character Sarah starts shy but becomes confident. Check if her actions and dialogue align with this development across all chapters."
+      },
+      {
+        "title": "World-building",
+        "scenario": "Magic system review",
+        "prompt": "Analyze my fantasy novel for world-building consistency. My magic system has clear rules established in chapter 2. Flag any scenes where characters use magic in ways that violate those rules."
+      },
+      {
+        "title": "Full manuscript",
+        "scenario": "Complete analysis",
+        "prompt": "Perform a complete plot consistency analysis on my entire novel. Create trackers for timeline, characters, plot threads, and world rules. Provide a detailed report with specific chapter references and suggested fixes."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Check my first 3 chapters for consistency. My protagonist Kael has blue eyes and travels from Riverhold to the Capital.",
+        "output": [
+          "Timeline Issue Found: Travel time inconsistency. Chapter 1 establishes the Capital is 5 days away, but Chapter 3 has Kael arriving the next morning.",
+          "Character Consistency: Kael's eye color is consistently described as blue across all three chapters.",
+          "POV Check: No violations detected in third-person limited narration.",
+          "World Rules: No magic system established yet, so no violations possible.",
+          "Recommendation: Add a time skip or explain rapid travel method in Chapter 2."
+        ]
+      },
+      {
+        "input": "My fantasy novel has a magic system where mages can only cast fire spells once per day. Check chapters 5-10 for violations.",
+        "output": [
+          "Magic Violation Found: Chapter 7, page 42. Character Lyssa casts two fire spells within the same scene.",
+          "Magic Violation Found: Chapter 9, paragraph 15. Fire magic used during the night scene without established exception.",
+          "Consistent: Chapter 5 correctly establishes the once-per-day rule through dialogue.",
+          "Chapter Reference: Consider adding a justification for the Chapter 7 violation or revising the scene."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide the complete story synopsis before submitting chapters for analysis.",
+      "List any intentional contradictions (unreliable narrator, time loops, etc.) to avoid false positives.",
+      "Review the consistency report before making edits and prioritize critical plot holes first."
+    ],
+    "anti_patterns": [
+      "Submitting isolated chapters without context of the full story arc.",
+      "Assuming the AI remembers details from previous sessions (always restate key facts).",
+      "Ignoring minor inconsistencies that could compound into larger plot holes."
+    ],
+    "faq": [
+      {
+        "question": "Which genres does this skill support?",
+        "answer": "Works with all fiction genres including fantasy, sci-fi, romance, mystery, thriller, and literary fiction."
+      },
+      {
+        "question": "How much text can I submit at once?",
+        "answer": "Submit up to 10,000 words for detailed analysis. Break longer manuscripts into sections."
+      },
+      {
+        "question": "Can I use this with existing writing tools?",
+        "answer": "Yes, copy text from any writing software (Scrivener, Word, Google Docs) into the conversation."
+      },
+      {
+        "question": "Is my writing data safe?",
+        "answer": "Yes, your content is processed only within your conversation. Nothing is stored externally."
+      },
+      {
+        "question": "What if the skill misses an error?",
+        "answer": "This is a writing aid, not a replacement for professional editing. Always do your own review."
+      },
+      {
+        "question": "How is this different from grammar checkers?",
+        "answer": "Grammar checkers fix language errors. This skill analyzes story logic, character consistency, and narrative structure."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 599
+    }
+  ]
+}

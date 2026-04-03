@@ -1,0 +1,554 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:05:36.961Z",
+    "slug": "c0ntr0lledcha0s-coordinating-projects",
+    "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/tree/main/project-manager/skills/coordinating-projects",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "79b249a3211631eb8670ffa79826229600ae843479e5146f125b5db76d50eab7",
+    "tree_hash": "eaea69a08df3221f46a247e676daaead47a033f2bb45db5e34c779bfc7a1d134"
+  },
+  "skill": {
+    "name": "coordinating-projects",
+    "description": "Automatically activated when user mentions multi-project coordination, cross-project dependencies, portfolio management, roadmap planning, resource allocation across projects, or asks to coordinate/manage multiple projects simultaneously. Provides strategic project coordination expertise.",
+    "summary": "Automatically activated when user mentions multi-project coordination, cross-project dependencies, p...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "C0ntr0lledCha0s",
+    "license": "MIT",
+    "category": "productivity",
+    "tags": [
+      "project-management",
+      "roadmap-planning",
+      "resource-allocation",
+      "dependency-management"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only markdown content. SKILL.md provides project coordination frameworks and guidance using GitHub CLI examples. All 94 static findings are FALSE POSITIVES: the 'weak cryptographic algorithm' detections are hash strings in JSON being misidentified, and 'Ruby/shell backtick execution' detections are markdown backticks (`) used for code formatting in documentation examples. No executable code, no cryptographic operations, no actual command execution.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 139
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 139,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 187
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 187,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 211
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 211,
+            "line_end": 214
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 221
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 221,
+            "line_end": 225
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 231
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 231,
+            "line_end": 239
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 239,
+            "line_end": 243
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 243,
+            "line_end": 248
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 248,
+            "line_end": 262
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 262,
+            "line_end": 269
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 272
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 272,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 285
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 285,
+            "line_end": 297
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 297,
+            "line_end": 303
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 303,
+            "line_end": 317
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 325
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 325,
+            "line_end": 357
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 357,
+            "line_end": 363
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 363,
+            "line_end": 390
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 390,
+            "line_end": 396
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 396,
+            "line_end": 433
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 433,
+            "line_end": 440
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 440,
+            "line_end": 448
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 448,
+            "line_end": 451
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 451,
+            "line_end": 459
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 459,
+            "line_end": 463
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 463,
+            "line_end": 465
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 465,
+            "line_end": 491
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 491,
+            "line_end": 496
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 496,
+            "line_end": 505
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 505,
+            "line_end": 507
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 507,
+            "line_end": 510
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 510,
+            "line_end": 518
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 518,
+            "line_end": 527
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 527,
+            "line_end": 530
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 530,
+            "line_end": 544
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 544,
+            "line_end": 596
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 596,
+            "line_end": 603
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 603,
+            "line_end": 657
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 657,
+            "line_end": 664
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 664,
+            "line_end": 723
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 723,
+            "line_end": 765
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 765,
+            "line_end": 766
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 766,
+            "line_end": 767
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 77
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 966,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:05:36.961Z"
+  },
+  "content": {
+    "user_title": "Coordinate multiple projects strategically",
+    "value_statement": "Managing multiple projects creates coordination complexity, conflicting priorities, and resource conflicts. This skill provides strategic frameworks for portfolio management, dependency mapping, and cross-project coordination to align work with business objectives.",
+    "seo_keywords": [
+      "multi-project coordination",
+      "portfolio management",
+      "roadmap planning",
+      "resource allocation",
+      "project dependencies",
+      "strategic planning",
+      "Claude Code skill",
+      "cross-project management",
+      "OKR planning",
+      "capacity planning"
+    ],
+    "actual_capabilities": [
+      "Map dependencies across multiple projects and identify critical paths",
+      "Create quarterly and annual roadmaps aligned with strategic objectives",
+      "Allocate team resources efficiently across competing projects",
+      "Coordinate cross-project releases with sequencing and risk mitigation",
+      "Monitor portfolio health and identify at-risk projects early",
+      "Apply frameworks like OKR, Now-Next-Later, and theme-based planning"
+    ],
+    "limitations": [
+      "Provides guidance and recommendations only, does not execute project management tasks directly",
+      "Requires GitHub CLI or similar tools for data gathering operations",
+      "Cannot access external systems beyond the current project context",
+      "Delegates execution to other agents like workflow-orchestrator"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Engineering Managers",
+        "title": "Strategic Portfolio Planning",
+        "description": "Align multiple team projects with company OKRs, balance strategic initiatives with maintenance work, and create quarterly roadmaps."
+      },
+      {
+        "target_user": "Product Owners",
+        "title": "Cross-Project Dependencies",
+        "description": "Identify and track dependencies between projects, sequence work to unblock critical paths, and coordinate releases."
+      },
+      {
+        "target_user": "Technical Leads",
+        "title": "Resource Optimization",
+        "description": "Optimize team allocation across projects, prevent burnout from over-allocation, and plan capacity for upcoming work."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quarterly Roadmap",
+        "scenario": "Planning next quarter",
+        "prompt": "Create a quarterly roadmap for [time period] based on our company goals: [goals]. We have these active projects: [list projects] with these team resources: [describe teams]."
+      },
+      {
+        "title": "Dependency Map",
+        "scenario": "Identifying project links",
+        "prompt": "Map dependencies between our projects: [list projects and their relationships]. Identify critical path and suggest sequencing to unblock work."
+      },
+      {
+        "title": "Release Coordination",
+        "scenario": "Multi-project deployment",
+        "prompt": "Coordinate the release of [list projects]. Identify dependencies between them and create a phased rollout plan with risk mitigation."
+      },
+      {
+        "title": "Resource Allocation",
+        "scenario": "Team planning",
+        "prompt": "We have [number] engineers and these projects: [list projects with priorities]. Recommend allocation to balance delivery with sustainability."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create Q2 roadmap for our 3 microservices projects with 8 engineers",
+        "output": [
+          "Strategic theme alignment: Enterprise features (40%), Performance (30%), Technical debt (20%), Security (10%)",
+          "Dependency map showing critical path: Auth Service → API Gateway → Frontend",
+          "Resource allocation: 4 engineers on critical path, 2 on parallel work, 2 on support",
+          "Milestone timeline: April (50% complete), May (80% complete), June (100%)",
+          "Risk mitigation: Feature flags, rollback plan, staged rollout"
+        ]
+      },
+      {
+        "input": "Coordinate release of our API, Web, and Mobile apps together",
+        "output": [
+          "Release sequence: API v2.0.0 first, then Web and Mobile after stabilization",
+          "Phased rollout: 50% traffic day 1, gradual increase to 100% over 4 days",
+          "Dependencies mapped: Web and Mobile both consume API",
+          "Risk plan: Rollback procedures and feature flags for each service"
+        ]
+      },
+      {
+        "input": "We have 2 new engineers joining. How should we allocate them?",
+        "output": [
+          "Current state: Project A critical (behind 2 weeks), others on track",
+          "Recommendation: Senior engineer to Project A immediately, junior to low-pressure Project D for onboarding",
+          "Expected impact: Project A back on track in 3 weeks, balanced team growth"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Document dependencies early before they become blockers in sprint execution",
+      "Keep roadmaps as living documents and update based on learnings and changing priorities",
+      "Allocate 10% buffer capacity for unknowns to avoid chronic over-allocation"
+    ],
+    "anti_patterns": [
+      "Starting projects without mapping dependencies creates hidden blockers that delay delivery",
+      "Allocating 100% team capacity leads to burnout and inability to handle unexpected issues",
+      "Treating all projects as equal priority means nothing gets the resources it needs"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill integrate with?",
+        "answer": "Works with GitHub CLI for project data, delegates to workflow-orchestrator for execution, and creates roadmap files in .claude-project directories."
+      },
+      {
+        "question": "How many projects can this skill manage?",
+        "answer": "No hard limit. The skill scales by identifying dependencies, critical paths, and resource constraints regardless of portfolio size."
+      },
+      {
+        "question": "Can this skill replace a project manager?",
+        "answer": "No. The skill provides strategic frameworks and recommendations. Human judgment is required for stakeholder negotiation and organizational decisions."
+      },
+      {
+        "question": "Is data sent to external services?",
+        "answer": "No. All operations stay within the project context. GitHub CLI calls go directly to GitHub APIs configured in your environment."
+      },
+      {
+        "question": "Why is my project not activating this skill?",
+        "answer": "Mention keywords like roadmap, resource allocation, multiple projects, cross-project dependencies, or OKRs. The skill activates on these triggers."
+      },
+      {
+        "question": "How does this differ from sprint planning skills?",
+        "answer": "Sprint planning focuses on 1-2 week execution within a single project. This skill coordinates across multiple projects over months with strategic alignment."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 789
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-03-06T08:49:33.369Z",
+    "slug": "am-will-swarm-planner",
+    "source_url": "https://github.com/am-will/codex-skills/tree/main/skills/swarm-planner/",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "afafd4e1906d51628502dca690838b2fdaf2c3f22da986e8f3069c977bf426fd",
+    "tree_hash": "fdab0792137726dc44538aaa816c8f3f08ac448df57fe9320002d4ab8358bec0"
+  },
+  "skill": {
+    "name": "swarm-planner",
+    "description": "[EXPLICIT INVOCATION ONLY] Creates dependency-aware implementation plans optimized for parallel multi-agent execution.",
+    "summary": "Creates dependency-aware implementation plans with explicit task dependencies for parallel multi-agent execution",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "am-will",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "planning",
+      "multi-agent",
+      "parallel-execution",
+      "dependency-management",
+      "implementation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static scanner flagged 18 patterns (12 external_commands, 6 weak_crypto). Manual review confirms these are FALSE POSITIVES: backticks are markdown syntax for example task IDs (T1, depends_on: []), and 'description' is a documentation field, not cryptographic code. No shell execution, no crypto algorithms, no security risks present.",
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 1,
+    "total_lines": 180,
+    "audit_model": "claude",
+    "audited_at": "2026-03-06T08:49:33.369Z",
+    "risk_factors": [],
+    "risk_factor_evidence": []
+  },
+  "content": {
+    "user_title": "Create Parallel Execution Plans",
+    "value_statement": "This skill helps AI agents create detailed implementation plans with explicit task dependencies that enable safe parallel execution across multiple agents.",
+    "seo_keywords": [
+      "swarm planner",
+      "parallel task planning",
+      "AI agent planning",
+      "dependency aware plans",
+      "multi-agent execution",
+      "Claude Code planning",
+      "Codex planning",
+      "implementation planning",
+      "task dependencies",
+      "agent coordination"
+    ],
+    "actual_capabilities": [
+      "Analyze codebase architecture and dependencies before planning",
+      "Create implementation plans with explicit task dependencies",
+      "Generate parallel execution groups based on dependency chains",
+      "Use Context7 for accurate external library documentation",
+      "Spawn subagents to review plans for gaps and issues",
+      "Structure plans for maximum parallelization opportunities"
+    ],
+    "limitations": [
+      "Does not execute tasks - only creates plans",
+      "Requires explicit invocation to activate",
+      "Does not handle runtime task execution or monitoring",
+      "Context7 or web search required for external dependencies"
+    ],
+    "use_cases": [
+      {
+        "title": "Complex Feature Implementation",
+        "description": "Break down a complex feature into atomic, parallelizable tasks with clear dependencies for team execution",
+        "target_user": "Software developers working on multi-file features"
+      },
+      {
+        "title": "Large-Scale Refactoring",
+        "description": "Plan refactoring efforts that can safely run in parallel across different code areas",
+        "target_user": "Engineering teams doing major code reorganizations"
+      },
+      {
+        "title": "New Project Setup",
+        "description": "Create comprehensive implementation plans for new projects with proper task ordering",
+        "target_user": "Technical leads planning new applications"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Planning Request",
+        "prompt": "Use the swarm-planner skill to create an implementation plan for [describe your task]. Focus on identifying all dependencies and which tasks can run in parallel.",
+        "scenario": "When you need a simple implementation plan with dependency tracking"
+      },
+      {
+        "title": "Complex Feature Planning",
+        "prompt": "Use swarm-planner to analyze our codebase and create a detailed implementation plan for adding [feature description]. Include architecture investigation, external library research via Context7, and explicit dependency mapping.",
+        "scenario": "For complex features requiring codebase analysis and external dependencies"
+      },
+      {
+        "title": "Refactoring Planning",
+        "prompt": "Use swarm-planner to create a refactoring plan for [what to refactor]. Identify which files depend on each other, create parallel execution groups, and specify validation steps.",
+        "description": "Planning large-scale refactoring with dependency awareness"
+      },
+      {
+        "title": "Multi-Agent Coordination",
+        "prompt": "Use swarm-planner to create an implementation plan that assigns specific tasks to different agents. Ensure each task has clear depends_on fields so agents can execute in parallel where possible.",
+        "scenario": "When coordinating multiple AI agents on a single project"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Use swarm-planner to create a plan for adding user authentication to our React app",
+        "output": "Plan saved to authentication-plan.md with tasks: T1 Create auth schema (no deps), T2 Install auth packages (no deps), T3 Create auth service (depends_on T1), T4 Add login UI (depends_on T2,T3), T5 Write tests (depends_on T4)"
+      },
+      {
+        "input": "Plan a database migration with parallel schema and data tasks",
+        "output": "T1: Create migration files (no deps), T2: Backup data (no deps), T3: Apply schema (depends_on T1), T4: Migrate data (depends_on T2,T3), T5: Verify (depends_on T4)"
+      }
+    ],
+    "best_practices": [
+      "Always use Context7 to fetch current documentation for external libraries before finalizing tasks",
+      "Stop and ask clarifying questions when architecture is unclear rather than making assumptions",
+      "Ensure every task has explicit depends_on field, even if empty",
+      "Review generated plans with a subagent to catch missing dependencies"
+    ],
+    "anti_patterns": [
+      "Creating tasks without explicit dependency declarations",
+      "Assuming task order without documenting dependencies",
+      "Skipping external library documentation research",
+      "Implementing tasks instead of just planning them"
+    ],
+    "faq": [
+      {
+        "question": "How do I invoke this skill?",
+        "answer": "This skill requires explicit invocation. You must explicitly call it rather than having it trigger automatically."
+      },
+      {
+        "question": "What does dependency-aware mean?",
+        "answer": "Each task explicitly declares which other tasks must complete before it can start using the depends_on field."
+      },
+      {
+        "question": "Can tasks run in parallel?",
+        "answer": "Yes. Tasks with empty or satisfied dependencies can be executed in parallel by different agents simultaneously."
+      },
+      {
+        "question": "Do I need Context7?",
+        "answer": "Context7 is required for accurate external library documentation. If unavailable, use web search instead."
+      },
+      {
+        "question": "Does this skill execute the plan?",
+        "answer": "No. This skill only creates the implementation plan. It does not execute any tasks."
+      },
+      {
+        "question": "How does subagent review work?",
+        "answer": "After saving the plan, spawn a subagent to review it for missing dependencies, ordering issues, gaps, and edge cases."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 180
+    }
+  ]
+}

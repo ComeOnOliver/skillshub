@@ -1,0 +1,315 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:34:09.772Z",
+    "slug": "c0ntr0lledcha0s-investigating-codebases",
+    "source_url": "https://github.com/C0ntr0lledCha0s/claude-code-plugin-automations/tree/main/research-agent/skills/investigating-codebases",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "73cf5b0c9ef47d6bc3dc1428a2c17e14586bd9ac6a9c3ddab7db361e48886ec2",
+    "tree_hash": "29eb07eef3b31ae3a4bd8c81e3baff3654d86388cda9893a1412a2d761e8e3a0"
+  },
+  "skill": {
+    "name": "investigating-codebases",
+    "description": "Automatically activated when user asks how something works, wants to understand unfamiliar code, needs to explore a new codebase, or asks questions like \"where is X implemented?\", \"how does Y work?\", or \"explain the Z component\"",
+    "summary": "Automatically activated when user asks how something works, wants to understand unfamiliar code, nee...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "C0ntr0lledCha0s",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "code analysis",
+      "code exploration",
+      "structural analysis",
+      "dependency tracing",
+      "pattern recognition"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a prompt-based investigation guide with 3 utility scripts for code analysis. All scripts only read files and output to stdout without network access, file writes, or credential handling. The static analyzer flagged 274 potential issues, but all are false positives caused by documentation examples and legitimate analysis terminology. No actual command execution, credential access, or network calls exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/map-structure.sh",
+            "line_start": 1,
+            "line_end": 71
+          },
+          {
+            "file": "scripts/find-entry-points.py",
+            "line_start": 1,
+            "line_end": 109
+          },
+          {
+            "file": "scripts/trace-imports.py",
+            "line_start": 1,
+            "line_end": 152
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 10,
+    "total_lines": 1817,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:34:09.772Z"
+  },
+  "content": {
+    "user_title": "Investigate unfamiliar codebases quickly",
+    "value_statement": "Understanding new or complex codebases takes significant time and effort. This skill provides systematic investigation techniques to quickly map code structure, trace dependencies, identify patterns, and find key implementations without reading every file manually.",
+    "seo_keywords": [
+      "Claude Code skill",
+      "codebase investigation",
+      "code exploration",
+      "understanding code",
+      "code analysis",
+      "dependency tracing",
+      "structural analysis",
+      "pattern recognition",
+      "entry point discovery",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Map directory structures and identify architectural patterns",
+      "Trace import and dependency chains across files",
+      "Find main entry points across different project types",
+      "Recognize design patterns and coding conventions",
+      "Document execution flows with file references",
+      "Follow data transformations through the system"
+    ],
+    "limitations": [
+      "Does not execute or test code - only analyzes static code",
+      "Cannot modify or refactor code automatically",
+      "Analysis is based on file reading - no runtime behavior observation",
+      "Relies on existing code structure - obfuscated code may limit effectiveness"
+    ],
+    "use_cases": [
+      {
+        "target_user": "New developers",
+        "title": "Onboard to existing projects",
+        "description": "Quickly understand unfamiliar codebases when joining a new team or project"
+      },
+      {
+        "target_user": "Code reviewers",
+        "title": "Trace feature implementations",
+        "description": "Find exactly where specific features or logic are implemented with full context"
+      },
+      {
+        "target_user": "Security researchers",
+        "title": "Map attack surfaces",
+        "description": "Understand code organization to identify potential security vulnerabilities"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic feature exploration",
+        "scenario": "Finding where something is implemented",
+        "prompt": "How is the [feature name] feature implemented? Trace the execution flow from the entry point to the core logic."
+      },
+      {
+        "title": "Dependency analysis",
+        "scenario": "Understanding module relationships",
+        "prompt": "What modules does [file/module] depend on? Show me the import chain and how it connects to other parts of the system."
+      },
+      {
+        "title": "Pattern identification",
+        "scenario": "Recognizing architectural patterns",
+        "prompt": "What architectural pattern does this codebase follow? Identify the key directories and their purposes."
+      },
+      {
+        "title": "Deep dive analysis",
+        "scenario": "Thorough investigation",
+        "prompt": "Do a thorough investigation of [component]. Include: entry points, execution flow, data transformations, dependencies, and related components. Reference all files with line numbers."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How does the authentication flow work in this project?",
+        "output": [
+          "## Authentication Flow Investigation",
+          "",
+          "### Location",
+          "- Primary: src/middleware/auth.ts:25-78",
+          "- Related: src/controllers/auth.ts:15, src/services/tokenService.ts:42",
+          "",
+          "### How It Works",
+          "1. Request hits auth middleware (auth.ts:25) which checks for JWT token",
+          "2. Token is validated against the secret (tokenService.ts:42)",
+          "3. User ID is extracted and attached to request (auth.ts:55)",
+          "4. Request proceeds or returns 401 unauthorized",
+          "",
+          "### Key Files",
+          "- src/middleware/auth.ts: JWT validation logic",
+          "- src/services/tokenService.ts: Token creation and verification",
+          "- src/config/auth.config.ts: Secret keys and expiration settings"
+        ]
+      },
+      {
+        "input": "Where is the user API endpoint defined?",
+        "output": [
+          "## User API Endpoint Investigation",
+          "",
+          "### Location",
+          "- Route definition: src/routes/users.ts:12",
+          "- Handler: src/controllers/userController.ts:45",
+          "",
+          "### Route Definition",
+          "The endpoint is defined at line 12: `router.get('/users', userController.getAll)`",
+          "",
+          "### Handler Implementation",
+          "Function getAll (userController.ts:45) retrieves users from UserRepository",
+          "Repository method is at src/repositories/UserRepository.ts:23"
+        ]
+      },
+      {
+        "input": "What build system does this project use?",
+        "output": [
+          "## Build System Analysis",
+          "",
+          "### Build Tool: npm scripts with webpack",
+          "",
+          "### Key Configuration Files",
+          "- package.json: npm scripts defined",
+          "- webpack.config.js: bundling configuration",
+          "",
+          "### Build Scripts",
+          "- npm run build: Compiles TypeScript and bundles with webpack",
+          "- npm run dev: Starts development server with hot reload",
+          "- npm test: Runs Jest test suite"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with high-level structure before diving into implementation details",
+      "Always reference specific files and line numbers in findings",
+      "Trace both execution flow and data transformations for complete understanding"
+    ],
+    "anti_patterns": [
+      "Reading every file linearly instead of targeting relevant code",
+      "Failing to verify findings by cross-referencing multiple sources",
+      "Not documenting where you found information as you investigate"
+    ],
+    "faq": [
+      {
+        "question": "What programming languages does this skill support?",
+        "answer": "The skill works with any language. Scripts specifically support TypeScript, JavaScript, Python, Go, and Rust for import tracing and entry point detection."
+      },
+      {
+        "question": "How deep does the dependency tracing go?",
+        "answer": "Default depth is 3 levels but can be configured. The Python scripts accept a --depth parameter to control how far they follow import chains."
+      },
+      {
+        "question": "Can this skill integrate with other Claude skills?",
+        "answer": "Yes. The allowed tools include Task, so it can delegate to other agents for complex multi-step investigations."
+      },
+      {
+        "question": "Is any code executed during analysis?",
+        "answer": "No. This skill only reads and analyzes code statically. It does not run or execute any code from the target codebase."
+      },
+      {
+        "question": "Why are my findings different from expected?",
+        "answer": "Ensure you are looking at the correct files. Check package.json or project config to understand the actual entry points and structure before deep investigation."
+      },
+      {
+        "question": "How is this different from simple grep searches?",
+        "answer": "This skill provides a systematic methodology with scripts for comprehensive analysis, not just keyword searches. It guides you through structural, dependency, and pattern analysis."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "flow-diagram-syntax.md",
+          "type": "file",
+          "path": "assets/flow-diagram-syntax.md",
+          "lines": 79
+        },
+        {
+          "name": "investigation-template.md",
+          "type": "file",
+          "path": "assets/investigation-template.md",
+          "lines": 138
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "common-patterns.md",
+          "type": "file",
+          "path": "references/common-patterns.md",
+          "lines": 333
+        },
+        {
+          "name": "framework-clues.md",
+          "type": "file",
+          "path": "references/framework-clues.md",
+          "lines": 66
+        },
+        {
+          "name": "investigation-checklist.md",
+          "type": "file",
+          "path": "references/investigation-checklist.md",
+          "lines": 184
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "find-entry-points.py",
+          "type": "file",
+          "path": "scripts/find-entry-points.py",
+          "lines": 109
+        },
+        {
+          "name": "map-structure.sh",
+          "type": "file",
+          "path": "scripts/map-structure.sh",
+          "lines": 71
+        },
+        {
+          "name": "trace-imports.py",
+          "type": "file",
+          "path": "scripts/trace-imports.py",
+          "lines": 152
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 411
+    }
+  ]
+}

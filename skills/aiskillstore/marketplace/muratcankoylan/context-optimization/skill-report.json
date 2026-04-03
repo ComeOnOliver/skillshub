@@ -1,0 +1,317 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:49:45.543Z",
+    "slug": "muratcankoylan-context-optimization",
+    "source_url": "https://github.com/muratcankoylan/Agent-Skills-for-Context-Engineering/tree/main/skills/context-optimization",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "6a7a947d2c1fe30118ecd69d0e98ea21cce0933ba77429b53c186f892b9f089c",
+    "tree_hash": "ed1b8eb3713533fa80c85dc03acd2d3164b549a0ffc214435956ee5cb8dc0c52"
+  },
+  "skill": {
+    "name": "context-optimization",
+    "description": "This skill should be used when the user asks to \"optimize context\", \"reduce token costs\", \"improve context efficiency\", \"implement KV-cache optimization\", \"partition context\", or mentions context limits, observation masking, context budgeting, or extending effective context capacity.",
+    "summary": "This skill should be used when the user asks to \"optimize context\", \"reduce token costs\", \"improve c...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "muratcankoylan",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "context-management",
+      "token-optimization",
+      "performance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "The static analyzer flagged 53 patterns across 4 files (1035 lines). After evaluation, ALL findings are FALSE POSITIVES. The 'Ruby/shell backtick execution' flags are markdown code fence delimiters. The 'weak cryptographic algorithm' flags are benign MD5 use for non-crypto ID generation. The 'system reconnaissance' flags describe standard monitoring patterns. No network calls, file system access, credential handling, or malicious patterns exist. This is purely documentation and Python utility functions for in-memory text processing.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 43,
+            "line_end": 70
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 70,
+            "line_end": 89
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 89,
+            "line_end": 101
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 101,
+            "line_end": 111
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 111,
+            "line_end": 134
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 134,
+            "line_end": 204
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 204,
+            "line_end": 222
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 222,
+            "line_end": 228
+          },
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 228,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 118,
+            "line_end": 121
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 121,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 136
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "references/optimization_techniques.md",
+            "line_start": 76,
+            "line_end": 76
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 1035,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:49:45.542Z"
+  },
+  "content": {
+    "user_title": "Optimize Context for Longer Conversations",
+    "value_statement": "Limited context windows constrain complex tasks and increase API costs. This skill provides proven techniques to double or triple effective context capacity through compaction, observation masking, KV-cache optimization, and context partitioning.",
+    "seo_keywords": [
+      "context optimization",
+      "token reduction",
+      "KV-cache optimization",
+      "context compaction",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "context window",
+      "observation masking",
+      "token costs"
+    ],
+    "actual_capabilities": [
+      "Summarize context content when approaching token limits",
+      "Mask verbose tool outputs with compact references",
+      "Design prompts for maximum KV-cache reuse",
+      "Partition work across isolated context windows",
+      "Track and manage token budget allocation",
+      "Calculate cache hit rates and optimization metrics"
+    ],
+    "limitations": [
+      "Does not increase model context window limits",
+      "Token estimation uses approximate heuristics",
+      "Does not integrate with inference infrastructure",
+      "Requires implementation of callback hooks in your code"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI Developers",
+        "title": "Build Long-Running Agents",
+        "description": "Create agent systems that handle complex multi-step tasks without context overflow or quality degradation."
+      },
+      {
+        "target_user": "Cost-Conscious Users",
+        "title": "Reduce API Costs",
+        "description": "Cut token usage by 50-70% through smart compression while preserving output quality."
+      },
+      {
+        "target_user": "Enterprise Teams",
+        "title": "Scale Production Systems",
+        "description": "Implement context management patterns that work reliably at production scale with predictable performance."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check Context Usage",
+        "scenario": "Monitoring token utilization",
+        "prompt": "Check the current context utilization. If it exceeds 70%, apply compaction to summarize older messages while preserving key decisions and current task state."
+      },
+      {
+        "title": "Mask Tool Outputs",
+        "scenario": "Reducing observation overhead",
+        "prompt": "Mask tool outputs from 3 or more turns ago. Replace verbose outputs with compact references containing only key metrics and findings."
+      },
+      {
+        "title": "Design Cache-Friendly Prompts",
+        "scenario": "Optimizing cache hit rates",
+        "prompt": "Design the system prompt to maximize KV-cache stability. Replace dynamic content like timestamps with stable placeholders."
+      },
+      {
+        "title": "Partition Complex Tasks",
+        "scenario": "Handling large documents",
+        "prompt": "Partition this complex task across sub-agents with isolated contexts. Each sub-agent handles one subtask, with results aggregated at the coordinator level."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Optimize this conversation context. We've used 85% of our 100K token limit and response quality is degrading.",
+        "output": [
+          "Triggering compaction: Summarizing 15 oldest conversation turns",
+          "Masking 8 tool outputs from previous turns",
+          "Preserving: system prompt, current task state, recent decisions",
+          "Result: Context reduced from 85K to 32K tokens (62% reduction)",
+          "Estimated quality impact: Less than 3% degradation"
+        ]
+      },
+      {
+        "input": "Design a cache-friendly system prompt for a coding assistant that includes dynamic elements like current date.",
+        "output": [
+          "Separating static and dynamic content in prompt structure",
+          "Keeping role definition and instructions cacheable",
+          "Moving date/time to variable substitution at runtime",
+          "Result: Cache hit rate improved from 45% to 88%",
+          "Prompt remains semantically identical to original"
+        ]
+      },
+      {
+        "input": "We have 12 tool calls in our conversation history, each with verbose JSON outputs. How do we reduce context usage?",
+        "output": [
+          "Analyzing tool outputs by age and relevance",
+          "Masking 9 tool outputs from 3+ turns ago",
+          "Preserving 3 most recent tool outputs for active reasoning",
+          "Each masked output replaced with 50-char reference",
+          "Expected token reduction: 40-60% on tool output portion"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Measure current context usage before optimizing to establish baseline metrics and identify optimization opportunities",
+      "Apply compaction before masking when both techniques are needed to preserve maximum information density",
+      "Design prompts for cache stability by keeping structure consistent and separating dynamic content into variables"
+    ],
+    "anti_patterns": [
+      "Compacting system prompts or critical task state information that would cause irreversible information loss",
+      "Masking observations that are still needed for active reasoning in the current conversation context",
+      "Placing important information in the middle of context where attention distribution is lowest (lost-in-middle phenomenon)",
+      "Prematurely optimizing before context limits actually constrain task performance or quality"
+    ],
+    "faq": [
+      {
+        "question": "Which AI models are supported?",
+        "answer": "Works with any model supporting tool use or function calling including Claude 3/4, GPT-4, and Codex models. The utility functions are model-agnostic."
+      },
+      {
+        "question": "What are the token reduction targets?",
+        "answer": "Compaction achieves 50-70% token reduction with under 5% quality loss. Masking achieves 60-80% reduction on masked observations."
+      },
+      {
+        "question": "How do I integrate this with my code?",
+        "answer": "Import the compaction utilities and call them in your message handling loop. Monitor token usage and trigger optimization when thresholds are exceeded."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. All processing happens in-memory within your application. No data is sent to external services or stored externally."
+      },
+      {
+        "question": "Why did response quality drop after optimization?",
+        "answer": "Check if critical information was accidentally compacted. Ensure system prompts, key decisions, and current task state are preserved during optimization."
+      },
+      {
+        "question": "How does this compare to Claude's native context?",
+        "answer": "Claude has larger context windows. This skill helps you use any context window more efficiently and reduces costs regardless of window size."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "optimization_techniques.md",
+          "type": "file",
+          "path": "references/optimization_techniques.md",
+          "lines": 273
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "compaction.py",
+          "type": "file",
+          "path": "scripts/compaction.py",
+          "lines": 380
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 180
+    }
+  ]
+}

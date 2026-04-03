@@ -1,0 +1,1321 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:22:30.104Z",
+    "slug": "0xdarkmatter-claude-code-hooks",
+    "source_url": "https://github.com/0xDarkMatter/claude-mods/tree/main/skills/claude-code-hooks",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "597edd14dcbf4712bcca90e77f44034974009a4f7958df43abfffb21e922f832",
+    "tree_hash": "dedf18466252fba9f6ba78d3716bf7794aa8bb57a3d06f218c4e5be61a336d62"
+  },
+  "skill": {
+    "name": "claude-code-hooks",
+    "description": "Claude Code hook system for pre/post tool execution. Triggers on: hooks, PreToolUse, PostToolUse, hook script, tool validation, audit logging.",
+    "summary": "Claude Code hook system for pre/post tool execution. Triggers on: hooks, PreToolUse, PostToolUse, ho...",
+    "icon": "🪝",
+    "version": "1.0.0",
+    "author": "0xDarkMatter",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "hooks",
+      "automation",
+      "security",
+      "workflow",
+      "configuration"
+    ],
+    "supported_tools": [
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "env_access",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown reference files. All static findings are FALSE POSITIVES - the scanner detected shell command patterns in documentation examples showing safe hook script patterns. There is NO executable code, network calls, or file system access beyond documentation files. The skill documents Claude Code's built-in hook system and teaches security best practices.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/configuration.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 16,
+            "line_end": 33
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 33,
+            "line_end": 37
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 37,
+            "line_end": 62
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 62,
+            "line_end": 68
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 68,
+            "line_end": 72
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 72,
+            "line_end": 76
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 76,
+            "line_end": 80
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 80,
+            "line_end": 84
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 84,
+            "line_end": 87
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 87,
+            "line_end": 91
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 91,
+            "line_end": 105
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 105,
+            "line_end": 111
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 111,
+            "line_end": 117
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 117,
+            "line_end": 123
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 123,
+            "line_end": 125
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 125,
+            "line_end": 137
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 137,
+            "line_end": 143
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 143,
+            "line_end": 157
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 157,
+            "line_end": 163
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 163,
+            "line_end": 172
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 172,
+            "line_end": 176
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 176,
+            "line_end": 178
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 178,
+            "line_end": 190
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 190,
+            "line_end": 196
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 196,
+            "line_end": 208
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 208,
+            "line_end": 212
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 212,
+            "line_end": 225
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 225,
+            "line_end": 229
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 229,
+            "line_end": 240
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 240,
+            "line_end": 245
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 245,
+            "line_end": 247
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 247,
+            "line_end": 250
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 250,
+            "line_end": 253
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 253,
+            "line_end": 256
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 256,
+            "line_end": 258
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 258,
+            "line_end": 261
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 261,
+            "line_end": 263
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 145,
+            "line_end": 145
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 146,
+            "line_end": 146
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 143,
+            "line_end": 157
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 144,
+            "line_end": 144
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 164,
+            "line_end": 164
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 7,
+            "line_end": 9
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 9,
+            "line_end": 16
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 16,
+            "line_end": 25
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 25,
+            "line_end": 34
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 34,
+            "line_end": 44
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 44,
+            "line_end": 51
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 51,
+            "line_end": 64
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 64,
+            "line_end": 73
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 73,
+            "line_end": 81
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 81,
+            "line_end": 88
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 88,
+            "line_end": 97
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 97,
+            "line_end": 109
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 109,
+            "line_end": 115
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 115,
+            "line_end": 126
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 126,
+            "line_end": 131
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 131,
+            "line_end": 143
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 143,
+            "line_end": 149
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 149,
+            "line_end": 161
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 161,
+            "line_end": 168
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 168,
+            "line_end": 179
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 179,
+            "line_end": 185
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 185,
+            "line_end": 196
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 196,
+            "line_end": 202
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 202,
+            "line_end": 210
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 210,
+            "line_end": 215
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 215,
+            "line_end": 222
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 222,
+            "line_end": 228
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 228,
+            "line_end": 249
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 249,
+            "line_end": 250
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 250,
+            "line_end": 251
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 37,
+            "line_end": 37
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 75,
+            "line_end": 75
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 77,
+            "line_end": 77
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 78,
+            "line_end": 78
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 80,
+            "line_end": 80
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 214,
+            "line_end": 214
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 34,
+            "line_end": 44
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 73,
+            "line_end": 81
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 210,
+            "line_end": 215
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 35,
+            "line_end": 35
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 74,
+            "line_end": 74
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 211,
+            "line_end": 211
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 9,
+            "line_end": 26
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 26,
+            "line_end": 30
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 30,
+            "line_end": 39
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 39,
+            "line_end": 43
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 43,
+            "line_end": 60
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 60,
+            "line_end": 64
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 64,
+            "line_end": 85
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 85,
+            "line_end": 91
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 91,
+            "line_end": 101
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 101,
+            "line_end": 105
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 105,
+            "line_end": 117
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 117,
+            "line_end": 121
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 121,
+            "line_end": 154
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 154,
+            "line_end": 158
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 158,
+            "line_end": 168
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 168,
+            "line_end": 172
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 172,
+            "line_end": 190
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 190,
+            "line_end": 194
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 194,
+            "line_end": 203
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 203,
+            "line_end": 207
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 207,
+            "line_end": 222
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 222,
+            "line_end": 239
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 239,
+            "line_end": 264
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 13,
+            "line_end": 13
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 55,
+            "line_end": 55
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 67,
+            "line_end": 67
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 93,
+            "line_end": 93
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 99,
+            "line_end": 99
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 100,
+            "line_end": 100
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 127,
+            "line_end": 127
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 128,
+            "line_end": 128
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 136,
+            "line_end": 136
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 186,
+            "line_end": 186
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 209,
+            "line_end": 209
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 213,
+            "line_end": 213
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 214,
+            "line_end": 214
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 215,
+            "line_end": 215
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 220,
+            "line_end": 220
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 257,
+            "line_end": 257
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 9,
+            "line_end": 26
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 43,
+            "line_end": 60
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 64,
+            "line_end": 85
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 91,
+            "line_end": 101
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 121,
+            "line_end": 154
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 172,
+            "line_end": 190
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 207,
+            "line_end": 222
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 239,
+            "line_end": 264
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 65,
+            "line_end": 65
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 92,
+            "line_end": 92
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 106,
+            "line_end": 106
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 122,
+            "line_end": 122
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 159,
+            "line_end": 159
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 173,
+            "line_end": 173
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 208,
+            "line_end": 208
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 240,
+            "line_end": 240
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 18
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 22,
+            "line_end": 22
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 26,
+            "line_end": 26
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 27,
+            "line_end": 27
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 84
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 84,
+            "line_end": 90
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 90,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 108
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 108,
+            "line_end": 109
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 109,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 63,
+            "line_end": 63
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 60
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/configuration.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 246,
+            "line_end": 246
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 132,
+            "line_end": 132
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 203,
+            "line_end": 203
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 219,
+            "line_end": 219
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 235,
+            "line_end": 235
+          },
+          {
+            "file": "references/configuration.md",
+            "line_start": 246,
+            "line_end": 246
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 76,
+            "line_end": 76
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 213,
+            "line_end": 213
+          },
+          {
+            "file": "references/hook-events.md",
+            "line_start": 213,
+            "line_end": 213
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 199,
+            "line_end": 199
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 100,
+            "line_end": 100
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 108,
+            "line_end": 108
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 109,
+            "line_end": 109
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 199,
+            "line_end": 199
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 210,
+            "line_end": 210
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 16,
+            "line_end": 16
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 55,
+            "line_end": 55
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 180,
+            "line_end": 180
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 254,
+            "line_end": 254
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 258,
+            "line_end": 258
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 73,
+            "line_end": 73
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 96,
+            "line_end": 96
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 123,
+            "line_end": 123
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 113,
+            "line_end": 113
+          },
+          {
+            "file": "references/security-patterns.md",
+            "line_start": 116,
+            "line_end": 116
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 103
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 104
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1092,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:22:30.104Z"
+  },
+  "content": {
+    "user_title": "Master Claude Code hooks",
+    "value_statement": "Customize Claude Code behavior with pre and post tool execution hooks. Validate commands, audit activity, and enforce policies automatically. This documentation skill provides complete reference guides and security patterns for production use.",
+    "seo_keywords": [
+      "Claude Code hooks",
+      "Claude Code PreToolUse",
+      "Claude Code PostToolUse",
+      "Claude Code automation",
+      "Claude Code tool validation",
+      "Claude Code audit logging",
+      "Claude Code security hooks",
+      "Claude Code workflow automation",
+      "Claude Code CLI hooks",
+      "Claude Code policy enforcement"
+    ],
+    "actual_capabilities": [
+      "PreToolUse hook for validating commands before execution",
+      "PostToolUse hook for logging and notifications after tool calls",
+      "PermissionRequest hook for custom approval workflows",
+      "SessionStart and SessionEnd hooks for initialization and cleanup",
+      "Event matcher patterns for targeting specific tools",
+      "Security patterns for production deployment"
+    ],
+    "limitations": [
+      "Does not execute hooks itself, only provides documentation",
+      "Requires Claude Code CLI to use hooks feature",
+      "Hook scripts must be created and configured by the user",
+      "Exit code 2 blocks execution, other codes allow continuation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security engineers",
+        "title": "Validate and block dangerous commands",
+        "description": "Create PreToolUse hooks to validate Bash commands and block destructive operations like rm -rf or mkfs before execution."
+      },
+      {
+        "target_user": "DevOps teams",
+        "title": "Audit all tool activity",
+        "description": "Configure PostToolUse hooks to log every command, file change, and tool output to audit logs for compliance and debugging."
+      },
+      {
+        "target_user": "Team leads",
+        "title": "Enforce coding standards",
+        "description": "Use matcher patterns to run linters, formatters, or security scanners on specific tools before allowing execution."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Hook basics",
+        "scenario": "Understanding hook events",
+        "prompt": "What hook events does Claude Code support and when do they fire? Explain PreToolUse vs PostToolUse."
+      },
+      {
+        "title": "Configuration",
+        "scenario": "Setting up hooks",
+        "prompt": "How do I configure hooks in settings.json? Show me the exact JSON structure for a PreToolUse hook on Bash commands."
+      },
+      {
+        "title": "Security patterns",
+        "scenario": "Safe hook scripts",
+        "prompt": "What are the security best practices for writing hook scripts? How do I prevent command injection and path traversal?"
+      },
+      {
+        "title": "Production use",
+        "scenario": "Enterprise deployment",
+        "prompt": "Show me a production-ready hook script that includes input validation, proper error handling, rate limiting, and audit logging."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I block dangerous bash commands with a hook?",
+        "output": [
+          "Create a PreToolUse hook that parses JSON input and checks for dangerous patterns",
+          "Exit code 2 blocks the command, exit code 0 allows it",
+          "Match specific tools with patterns like \"Bash\" or \"*\" for all tools"
+        ]
+      },
+      {
+        "input": "How do I audit all tool usage?",
+        "output": [
+          "Configure a PostToolUse hook with matcher \"*\" to capture all tool calls",
+          "Parse the JSON input to extract tool name, input, and output",
+          "Write sanitized logs to a dedicated audit directory"
+        ]
+      },
+      {
+        "input": "What security measures should I implement?",
+        "output": [
+          "Always quote variables to prevent command injection",
+          "Validate JSON structure before processing",
+          "Block path traversal attempts by checking for \"..\" in paths"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always validate JSON input structure before processing to prevent errors",
+      "Quote all variables in shell scripts to prevent command injection",
+      "Use $CLAUDE_PROJECT_DIR for paths to ensure scripts work across environments"
+    ],
+    "anti_patterns": [
+      "Using unquoted variables that allow command injection attacks",
+      "Skipping input validation and trusting user-provided tool inputs",
+      "Storing secrets in hook scripts or logging sensitive data"
+    ],
+    "faq": [
+      {
+        "question": "Which Claude versions support hooks?",
+        "answer": "Claude Code CLI version 0.28 and later support the hooks system through settings.json configuration."
+      },
+      {
+        "question": "What is the maximum hook timeout?",
+        "answer": "Default timeout is 5000ms. You can configure longer timeouts up to practical limits in the hook definition."
+      },
+      {
+        "question": "Can hooks call other Claude Code tools?",
+        "answer": "Hooks run as external scripts and cannot directly invoke Claude Code tools. They execute as standalone processes."
+      },
+      {
+        "question": "Is hook output logged?",
+        "answer": "Hook stderr appears in Claude output when blocking. Stdout is captured but not logged by default."
+      },
+      {
+        "question": "Why is my hook not firing?",
+        "answer": "Check matcher patterns are correct, file is executable, and JSON in settings.json is valid using jq for validation."
+      },
+      {
+        "question": "How are hooks different from MCP?",
+        "answer": "Hooks run before or after tool calls for validation and logging. MCP provides new tools. Hooks work with existing tools."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "configuration.md",
+          "type": "file",
+          "path": "references/configuration.md",
+          "lines": 264
+        },
+        {
+          "name": "hook-events.md",
+          "type": "file",
+          "path": "references/hook-events.md",
+          "lines": 252
+        },
+        {
+          "name": "security-patterns.md",
+          "type": "file",
+          "path": "references/security-patterns.md",
+          "lines": 265
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 115
+    }
+  ]
+}

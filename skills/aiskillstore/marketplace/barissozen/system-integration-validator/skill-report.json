@@ -1,0 +1,271 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:31:15.743Z",
+    "slug": "barissozen-system-integration-validator",
+    "source_url": "https://github.com/BarisSozen/claude/tree/main/.claude/skills/system-integration-validator",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "cefe128d9d8e377125634e663fe466f09c1ecf7ed094f9947df9211741c11753",
+    "tree_hash": "1004801143c34a2d73862529087f438812e5518b94efd8dcdf2ce362940a5272"
+  },
+  "skill": {
+    "name": "system-integration-validator",
+    "description": "Validates system integration before deployment. Use when checking ports, database connections, frontend-backend APIs, or debugging blocked/stuck workflows. Detects dead ends, bottlenecks, circular dependencies.",
+    "summary": "Validates system integration before deployment. Use when checking ports, database connections, front...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "BarisSozen",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "integration",
+      "validation",
+      "deployment",
+      "debugging"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation-only skill providing validation guidance. No executable code, network operations, file access, or external commands. Static findings are false positives from misidentified documentation patterns and JSON field names.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 69,
+            "line_end": 69
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 74
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 56
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 75
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 382,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:31:15.743Z"
+  },
+  "content": {
+    "user_title": "Validate system integrations before deployment",
+    "value_statement": "Integration failures cause deployment delays and production incidents. This skill provides step-by-step validation for ports, databases, APIs, and data flows to catch issues early.",
+    "seo_keywords": [
+      "system integration validation",
+      "pre-deployment checklist",
+      "port availability check",
+      "database connection test",
+      "API contract validation",
+      "data flow analysis",
+      "Claude Code skill",
+      "deployment validation",
+      "integration testing",
+      "DevOps tools"
+    ],
+    "actual_capabilities": [
+      "Check port availability with lsof commands",
+      "Verify PostgreSQL and Redis database connections",
+      "Validate frontend-backend API contract consistency",
+      "Detect dead ends, orphan inputs, and bottlenecks in data flows",
+      "Analyze circular dependencies in system architecture",
+      "Provide troubleshooting guidance for integration issues"
+    ],
+    "limitations": [
+      "Does not execute commands - provides guidance only",
+      "Does not modify system configuration",
+      "Requires user to run validation commands manually",
+      "Does not persist validation results between sessions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps engineers",
+        "title": "Pre-deployment validation",
+        "description": "Run comprehensive port, database, and API checks before deploying to staging or production environments."
+      },
+      {
+        "target_user": "Backend developers",
+        "title": "Debug stuck workflows",
+        "description": "Identify circular dependencies and data flow issues that cause workflows to hang or fail silently."
+      },
+      {
+        "target_user": "Full-stack developers",
+        "title": "Verify API contracts",
+        "description": "Ensure frontend and backend API endpoints match to prevent integration bugs."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic port check",
+        "scenario": "Quick port availability check",
+        "prompt": "Check if ports 3000, 3001, 5432, 6379, and 8080 are available on my local machine."
+      },
+      {
+        "title": "Database connections",
+        "scenario": "Test database connectivity",
+        "prompt": "Verify PostgreSQL and Redis connections are working on localhost. Show the commands to test each."
+      },
+      {
+        "title": "API contract validation",
+        "scenario": "Frontend-backend API verification",
+        "prompt": "Help me validate that my frontend API calls match my backend endpoints. What should I check?"
+      },
+      {
+        "title": "Data flow analysis",
+        "scenario": "Detect integration issues",
+        "prompt": "Analyze my system for dead ends, orphan inputs, bottlenecks, and circular dependencies in the data flow."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Validate my system integration before deployment",
+        "output": [
+          "Port Check: All required ports (3000, 3001, 5432, 6379, 8080) are free",
+          "Database: PostgreSQL and Redis connections verified",
+          "API Contract: Frontend endpoints match backend definitions",
+          "Data Flow: No dead ends or circular dependencies detected",
+          "Ready for deployment"
+        ]
+      },
+      {
+        "input": "Check if port 5432 is available for PostgreSQL",
+        "output": [
+          "Run: lsof -i :5432",
+          "If occupied: Identify process with 'sudo lsof -i :5432'",
+          "Free port: Stop the conflicting process or configure PostgreSQL to use different port",
+          "Verify: lsof -i :5432 should return no output"
+        ]
+      },
+      {
+        "input": "Debug why my API requests are hanging",
+        "output": [
+          "Check port availability: Ports 3000, 3001 may be blocked or in use",
+          "Test database connections: pg_isready and redis-cli ping",
+          "Add timeouts: Use AbortController with 5 second limit on fetch calls",
+          "Review data flow: Look for circular dependencies or dead ends"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run port checks before starting any services to avoid conflicts",
+      "Test database connections with actual query or ping commands, not just socket tests",
+      "Use timeouts on all network operations to prevent hangs"
+    ],
+    "anti_patterns": [
+      "Skipping port checks and discovering conflicts at deployment time",
+      "Assuming database connection success means the database is fully functional",
+      "Ignoring data flow issues until users report broken workflows"
+    ],
+    "faq": [
+      {
+        "question": "Which tools and platforms are supported?",
+        "answer": "Works with Claude, Codex, and Claude Code on any operating system with standard networking tools installed."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "It provides validation guidance only. You must run the actual commands yourself on your system."
+      },
+      {
+        "question": "How do I integrate this with my CI/CD pipeline?",
+        "answer": "Use the validation steps as a template for your pipeline scripts. The skill outlines the commands to run."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "Yes. This skill only provides documentation and guidance. No data leaves your system."
+      },
+      {
+        "question": "What if validation fails?",
+        "answer": "The skill provides troubleshooting guidance. Common fixes include freeing ports, starting services, or fixing API mismatches."
+      },
+      {
+        "question": "How is this different from other testing tools?",
+        "answer": "This skill focuses on integration readiness before running tests. It catches environment issues early."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "audit_report.json",
+      "type": "file",
+      "path": "audit_report.json",
+      "lines": 132
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 76
+    }
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:01:03.116Z",
+    "slug": "aayushbaniya2006-ai-handler",
+    "source_url": "https://github.com/AayushBaniya2006/blinkfund/tree/main/.claude/skills/ai-handler",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2173497a0a58589e2460da2841f53e0ea182d14ccbea7d26a02f8df083be7c9b",
+    "tree_hash": "c7cb4aeb4799227936c9c5a776d5f563185f318fa5551ae0c5eb28be7dbda30b"
+  },
+  "skill": {
+    "name": "ai-handler",
+    "description": "Integrate Replicate AI models with background processing, S3 storage, and credit systems",
+    "summary": "Integrate Replicate AI models with background processing, S3 storage, and credit systems",
+    "icon": "🤖",
+    "version": "1.0.0",
+    "author": "AayushBaniya2006",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "ai",
+      "replicate",
+      "background-jobs",
+      "s3",
+      "credits"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill containing code examples for integrating Replicate AI services. All 41 static findings are false positives caused by the scanner detecting patterns in documentation. The skill teaches standard, secure patterns: environment-based credentials, background job processing via Inngest SDK, and proper API integration. No executable code or security concerns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 125
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Fetch API call for downloading AI-generated output",
+        "description": "Fetch API used to download output from Replicate for S3 persistence. This is legitimate functionality for the skill's intended purpose of handling AI-generated content.",
+        "locations": [
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 125
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 370,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:01:03.116Z"
+  },
+  "content": {
+    "user_title": "Integrate Replicate AI with background jobs",
+    "value_statement": "Building AI integrations from scratch is complex and error-prone. This skill provides production-ready patterns for handling long-running AI predictions, storing results reliably, and managing user credits securely.",
+    "seo_keywords": [
+      "Replicate AI integration",
+      "AI model API",
+      "background processing",
+      "Inngest functions",
+      "S3 storage",
+      "credit management",
+      "Claude Code",
+      "Claude AI",
+      "image generation API",
+      "prediction workflow"
+    ],
+    "actual_capabilities": [
+      "Create API routes for triggering AI generations with credit validation",
+      "Set up Inngest background jobs for long-running predictions",
+      "Handle Replicate API calls with polling and retry logic",
+      "Upload generated outputs to S3 storage",
+      "Manage database state for generation status tracking",
+      "Implement credit deduction and refund on failure"
+    ],
+    "limitations": [
+      "Requires existing Inngest, S3, and credit system infrastructure",
+      "Does not install or configure Replicate package automatically",
+      "Requires manual implementation of the provided code templates"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Full-stack developers",
+        "title": "Build image generation APIs",
+        "description": "Create production-ready API endpoints that trigger AI image generation and handle the full lifecycle"
+      },
+      {
+        "target_user": "SaaS product teams",
+        "title": "Implement usage-based pricing",
+        "description": "Charge users for AI generations using a credit system with background job processing"
+      },
+      {
+        "target_user": "AI application developers",
+        "title": "Scale AI workloads",
+        "description": "Handle long-running AI predictions reliably with retries and state management"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Generate API route",
+        "scenario": "Create endpoint for AI image generation",
+        "prompt": "Create an API route that accepts a prompt, checks user credits, creates a database record, and triggers an Inngest background job"
+      },
+      {
+        "title": "Build background processor",
+        "scenario": "Process AI predictions in background",
+        "prompt": "Write an Inngest function that calls Replicate API, polls for completion, uploads results to S3, and updates database status"
+      },
+      {
+        "title": "Add polling pattern",
+        "scenario": "Wait for AI prediction completion",
+        "prompt": "Implement a polling loop with step.sleep to wait for Replicate prediction status before proceeding"
+      },
+      {
+        "title": "Handle failures",
+        "scenario": "Manage errors and refund credits",
+        "prompt": "Add error handling that marks the generation as failed and refunds user credits when AI prediction fails"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an API route that generates AI images using Replicate",
+        "output": [
+          "POST /api/app/generate endpoint created",
+          "Validates user has sufficient credits before processing",
+          "Creates pending generation record in database",
+          "Triggers Inngest background job for AI processing",
+          "Returns generation ID and processing status"
+        ]
+      },
+      {
+        "input": "Set up background job to poll for AI prediction status",
+        "output": [
+          "Inngest function with step.sleep polling loop implemented",
+          "Checks prediction status every 5 seconds",
+          "Continues until status is succeeded or failed",
+          "Uploads result to S3 on success",
+          "Updates database record with final status"
+        ]
+      },
+      {
+        "input": "Add credit management to AI generation workflow",
+        "output": [
+          "Credit balance checked before generation starts",
+          "Credits deducted optimistically on submission",
+          "Credits refunded if prediction fails",
+          "Transaction logging for audit trail"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use optimistic credit deduction to prevent double-spending",
+      "Implement proper error handling with credit refunds on failure",
+      "Store AI outputs in S3 rather than relying on temporary Replicate URLs"
+    ],
+    "anti_patterns": [
+      "Calling Replicate API directly in the API route without background processing",
+      "Storing Replicate output URLs directly without persisting to your storage",
+      "Not checking user credits before triggering expensive AI generations"
+    ],
+    "faq": [
+      {
+        "question": "What AI models does this skill support?",
+        "answer": "This skill works with any model available on Replicate including image generators, LLMs, and video models."
+      },
+      {
+        "question": "How long can AI generations take?",
+        "answer": "Generation times vary by model. The background job pattern handles any duration reliably with retries."
+      },
+      {
+        "question": "Can I use this with other AI providers?",
+        "answer": "The pattern can be adapted for OpenAI, Anthropic, or Stability API by modifying the API client code."
+      },
+      {
+        "question": "Is my data sent to third parties?",
+        "answer": "Prompts are sent to Replicate API as required for AI generation. Configure model versions to control data handling."
+      },
+      {
+        "question": "What happens if a generation fails?",
+        "answer": "The background job catches errors, marks the record as failed, and can refund credits based on your implementation."
+      },
+      {
+        "question": "How does this compare to direct API calls?",
+        "answer": "Background processing prevents timeout issues, handles retries, and enables credit management reliably."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "reference.md",
+      "type": "file",
+      "path": "reference.md",
+      "lines": 30
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 158
+    }
+  ]
+}

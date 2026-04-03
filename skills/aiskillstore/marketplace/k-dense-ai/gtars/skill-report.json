@@ -1,0 +1,266 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T07:42:27.821Z",
+    "slug": "k-dense-ai-gtars",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/gtars",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "2c0efee64431f542ff9bcf18c8fe1ea3be746925c677fce4e959a5b031593e63",
+    "tree_hash": "9cdef823721380e39d4b5000c1bd9263bbd536b20300456d059765c3cdf40848"
+  },
+  "skill": {
+    "name": "gtars",
+    "description": "High-performance toolkit for genomic interval analysis in Rust with Python bindings. Use when working with genomic regions, BED files, coverage tracks, overlap detection, tokenization for ML models, or fragment analysis in computational genomics and machine learning applications.",
+    "summary": "High-performance toolkit for genomic interval analysis in Rust with Python bindings. Use when workin...",
+    "icon": "🧬",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "genomics",
+      "bioinformatics",
+      "interval-analysis",
+      "machine-learning",
+      "coverage-analysis"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 209 static findings are false positives. The static analyzer incorrectly flagged markdown documentation syntax as security risks. No malicious code present. This is a legitimate genomic analysis toolkit.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/cli.md",
+            "line_start": 7,
+            "line_end": 213
+          },
+          {
+            "file": "references/coverage.md",
+            "line_start": 9,
+            "line_end": 155
+          },
+          {
+            "file": "references/python-api.md",
+            "line_start": 7,
+            "line_end": 193
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "references/python-api.md",
+            "line_start": 154,
+            "line_end": 207
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 9,
+    "total_lines": 3532,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T07:42:27.821Z"
+  },
+  "content": {
+    "user_title": "Analyze genomic intervals and coverage tracks",
+    "value_statement": "Process and analyze genomic interval data for bioinformatics research. Gtars provides high-performance tools for overlap detection, coverage analysis, and ML tokenization of genomic sequences.",
+    "seo_keywords": [
+      "gtars",
+      "genomic interval analysis",
+      "BED file processing",
+      "coverage tracks",
+      "overlap detection",
+      "genomics",
+      "bioinformatics",
+      "machine learning",
+      "Claude",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Detect overlaps between genomic regions using IGD indexing",
+      "Generate coverage tracks from sequencing data in WIG and BigWig formats",
+      "Tokenize genomic regions for machine learning applications",
+      "Process reference genome sequences following GA4GH refget protocol",
+      "Split and analyze fragment files for single-cell genomics"
+    ],
+    "limitations": [
+      "Requires genomic interval files in standard formats (BED, WIG, BigWig, FASTA)",
+      "CLI installation requires Rust toolchain for full feature set",
+      "Memory-mapped processing may require sufficient RAM for very large files"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Bioinformatics researchers",
+        "title": "Peak overlap analysis",
+        "description": "Identify overlapping regulatory elements and annotate variants by comparing ChIP-seq peaks."
+      },
+      {
+        "target_user": "Computational biologists",
+        "title": "Coverage visualization",
+        "description": "Generate coverage tracks from ATAC-seq or ChIP-seq data for genome browser visualization."
+      },
+      {
+        "target_user": "ML engineers",
+        "title": "Genomic ML preprocessing",
+        "description": "Convert genomic regions into discrete tokens for training transformer models on DNA sequences."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic overlap query",
+        "scenario": "Find overlapping regions",
+        "prompt": "Use gtars to build an IGD index from my peaks.bed file and query overlaps with promoters.bed."
+      },
+      {
+        "title": "Coverage generation",
+        "scenario": "Create track files",
+        "prompt": "Generate a BigWig coverage track from my ATAC-seq fragments using gtars uniwig with 10bp resolution."
+      },
+      {
+        "title": "ML tokenization",
+        "scenario": "Prepare training data",
+        "prompt": "Create a TreeTokenizer from my training_regions.bed and tokenize the genomic coordinates for ML model input."
+      },
+      {
+        "title": "Fragment processing",
+        "scenario": "Single-cell analysis",
+        "prompt": "Split my fragments.tsv by cell barcodes using gtars fragsplit and output to cluster-specific directories."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find overlaps between my ChIP-seq peaks and gene promoters",
+        "output": [
+          "Overlapping peaks: 1,234 regions found",
+          "Peak distribution: 45% in promoter regions, 30% in enhancers, 25% intergenic",
+          "Results saved to peaks_in_promoters.bed"
+        ]
+      },
+      {
+        "input": "Generate coverage track from ATAC-seq data",
+        "output": [
+          "Coverage track generated: atac_coverage.bw",
+          "Resolution: 10bp",
+          "Total bases covered: 2.1 billion",
+          "Peak accessibility regions identified: 150,000"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use memory-mapped mode (mmap=True) when processing large genomic files for better performance.",
+      "Build IGD indexes once and reuse them for multiple overlap queries.",
+      "Specify thread count explicitly for predictable resource usage in batch processing."
+    ],
+    "anti_patterns": [
+      "Do not process GB-scale files without enabling memory-mapped mode.",
+      "Avoid running multiple gtars commands sequentially when parallel processing is available.",
+      "Do not skip format validation when integrating with external pipelines."
+    ],
+    "faq": [
+      {
+        "question": "What file formats does gtars support?",
+        "answer": "Gtars supports BED for intervals, WIG/BigWig for coverage tracks, FASTA for reference genomes, and TSV for fragment files."
+      },
+      {
+        "question": "Do I need Rust installed to use gtars?",
+        "answer": "Python bindings work without Rust. The CLI requires Rust/Cargo only if installing from source."
+      },
+      {
+        "question": "How does gtars compare to bedtools?",
+        "answer": "Gtars offers similar interval operations with Rust performance, plus specialized ML tokenization and BigWig support."
+      },
+      {
+        "question": "Can gtars handle chromosome-scale files?",
+        "answer": "Yes, memory-mapped mode enables processing of chromosome-scale files with minimal RAM usage."
+      },
+      {
+        "question": "What is IGD indexing?",
+        "answer": "Integrated Genome Database is a data structure for fast overlap queries on large genomic interval collections."
+      },
+      {
+        "question": "Is gtars compatible with geniml?",
+        "answer": "Yes, gtars is the foundation for geniml and provides core preprocessing operations for genomic ML workflows."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "cli.md",
+          "type": "file",
+          "path": "references/cli.md",
+          "lines": 223
+        },
+        {
+          "name": "coverage.md",
+          "type": "file",
+          "path": "references/coverage.md",
+          "lines": 173
+        },
+        {
+          "name": "overlap.md",
+          "type": "file",
+          "path": "references/overlap.md",
+          "lines": 157
+        },
+        {
+          "name": "python-api.md",
+          "type": "file",
+          "path": "references/python-api.md",
+          "lines": 212
+        },
+        {
+          "name": "refget.md",
+          "type": "file",
+          "path": "references/refget.md",
+          "lines": 148
+        },
+        {
+          "name": "tokenizers.md",
+          "type": "file",
+          "path": "references/tokenizers.md",
+          "lines": 104
+        }
+      ]
+    },
+    {
+      "name": "evaluation_output.json",
+      "type": "file",
+      "path": "evaluation_output.json",
+      "lines": 1198
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 285
+    }
+  ]
+}

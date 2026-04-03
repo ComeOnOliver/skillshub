@@ -1,0 +1,259 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:28:16.628Z",
+    "slug": "ck991357-tavily-search",
+    "source_url": "https://github.com/CK991357/gemini-chat/tree/main/src/skills/tavily_search",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "532815f9fce7d1dc93c0a035b59406b9f9bfe34c56a06f8362c8ba0b3ab5371d",
+    "tree_hash": "67bb955b4d3cd1a53843e5412f1ee155e8f2f692f87ebd451143c9a058a4006c"
+  },
+  "skill": {
+    "name": "tavily-search",
+    "description": "使用Tavily API进行网络搜索，获取实时信息、回答问题或研究主题",
+    "summary": "使用Tavily API进行网络搜索，获取实时信息、回答问题或研究主题",
+    "icon": "🔍",
+    "version": "1.0",
+    "author": "CK991357",
+    "license": "MIT",
+    "category": "search",
+    "tags": [
+      "search",
+      "research",
+      "real-time",
+      "information"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill consists only of documentation files (SKILL.md, skill-report.json) describing the Tavily web search API. No executable code exists in the package. The static scanner misinterpreted JSON code blocks in documentation as shell commands and misidentified metadata fields as cryptographic patterns. All findings are false positives from documentation parsing errors.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 18,
+            "line_end": 20
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 20,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 31,
+            "line_end": 32
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 44
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 262,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:28:16.628Z"
+  },
+  "content": {
+    "user_title": "Search the web with real-time results",
+    "value_statement": "Get current information beyond AI training data. Access live web results with intelligent query optimization and source verification.",
+    "seo_keywords": [
+      "tavily search",
+      "web search API",
+      "real-time search",
+      "AI search integration",
+      "Claude search",
+      "Codex web search",
+      "Claude Code search",
+      "research tool",
+      "live data",
+      "information retrieval"
+    ],
+    "actual_capabilities": [
+      "Query Tavily API for web search results",
+      "Filter and rank search results by relevance",
+      "Extract key snippets and metadata from pages",
+      "Handle API errors and rate limits gracefully",
+      "Support custom search parameters and domains"
+    ],
+    "limitations": [
+      "Requires Tavily API key configuration",
+      "Rate limited by Tavily service tiers",
+      "Cannot access paywalled or private content",
+      "Search results depend on Tavily's index coverage"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Researchers",
+        "title": "Academic research with sources",
+        "description": "Find recent papers, articles, and credible sources for research projects with automatic citation formatting."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Technical documentation search",
+        "description": "Get latest API docs, library updates, and coding examples from official sources and community forums."
+      },
+      {
+        "target_user": "Analysts",
+        "title": "Market and news monitoring",
+        "description": "Track industry news, competitor updates, and market trends with real-time web monitoring."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic search",
+        "scenario": "Simple factual queries",
+        "prompt": "Search for: [your question]. Provide 3-5 relevant results with brief summaries."
+      },
+      {
+        "title": "Research compilation",
+        "scenario": "Multi-source research",
+        "prompt": "Research [topic] and compile findings from multiple sources. Include recent developments and key statistics."
+      },
+      {
+        "title": "Technical lookup",
+        "scenario": "Programming documentation",
+        "prompt": "Find the official documentation for [technology/feature]. Include code examples and best practices."
+      },
+      {
+        "title": "Comparative analysis",
+        "scenario": "Product or service comparison",
+        "prompt": "Compare [option A] vs [option B] based on recent reviews and feature updates. Create a comparison table."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Search for latest TypeScript 5.0 features",
+        "output": [
+          "TypeScript 5.0 Introduces Decorators and Performance Improvements",
+          "Key features: Native decorators, const type parameters, bundler resolution",
+          "Source: Official TypeScript blog (March 2023)",
+          "Performance: Up to 10% faster compilation for large projects",
+          "Migration guide: Step-by-step upgrade instructions available"
+        ]
+      },
+      {
+        "input": "What are the best Python frameworks for web development in 2024",
+        "output": [
+          "Django: Full-stack framework with ORM, authentication, and admin panel",
+          "FastAPI: Modern async framework with automatic API documentation",
+          "Flask: Lightweight micro-framework for simple applications",
+          "Each framework has different trade-offs for project complexity and team size"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use specific keywords and phrases for better search results",
+      "Specify date ranges when looking for recent information",
+      "Combine multiple searches for comprehensive topic coverage"
+    ],
+    "anti_patterns": [
+      "Searching for personal or sensitive information",
+      "Relying on single source without verification",
+      "Using without proper API key configuration"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code. Integrates seamlessly through standard protocols."
+      },
+      {
+        "question": "Are there search limits?",
+        "answer": "Limited by your Tavily API plan. Free tier includes 100 queries monthly. Paid plans offer more."
+      },
+      {
+        "question": "How do I integrate with my workflow?",
+        "answer": "Configure Tavily API key in your AI tool settings. Use natural language to request searches."
+      },
+      {
+        "question": "Is my search data secure?",
+        "answer": "Searches go directly to Tavily API. No data is stored or logged by this skill."
+      },
+      {
+        "question": "Why am I getting no results?",
+        "answer": "Check API key configuration and query format. Very specific or recent topics may have limited results."
+      },
+      {
+        "question": "How does this compare to built-in search?",
+        "answer": "Provides real-time web results versus static training data. Better for current events and recent developments."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 69
+    }
+  ]
+}

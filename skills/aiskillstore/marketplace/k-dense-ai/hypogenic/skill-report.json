@@ -1,0 +1,236 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:27:47.212Z",
+    "slug": "k-dense-ai-hypogenic",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/hypogenic",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7187603d06cbca40a56f42ac8f34d8f690e70687c67bf542adba36762de25988",
+    "tree_hash": "e1b0a81d0c14c794dcc4dd4387bd74f12a09a81a6c8780fc88fb4fd0cc601214"
+  },
+  "skill": {
+    "name": "hypogenic",
+    "description": "Automated LLM-driven hypothesis generation and testing on tabular datasets. Use when you want to systematically explore hypotheses about patterns in empirical data (e.g., deception detection, content analysis). Combines literature insights with data-driven hypothesis testing. For manual hypothesis formulation use hypothesis-generation; for creative ideation use scientific-brainstorming.",
+    "summary": "Automated LLM-driven hypothesis generation and testing for scientific research. Generates testable hypotheses from tabular data using LLMs.",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "MIT license",
+    "tags": [
+      "hypothesis-generation",
+      "scientific-research",
+      "data-analysis",
+      "llm-automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This scientific hypothesis generation skill was scanned with 126 potential issues detected. After evaluation, all findings are false positives: environment variable references for API keys follow security best practices; hardcoded URLs are legitimate documentation links; shell command examples are user setup instructions; no actual cryptographic code or command-and-control patterns exist. The skill makes normal LLM API calls for hypothesis generation, which is expected functionality.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 544,
+            "line_end": 544
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 564,
+            "line_end": 564
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 603,
+            "line_end": 604
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 31
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 123,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 233,
+            "line_end": 235
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 2075,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:27:47.212Z"
+  },
+  "content": {
+    "user_title": "Generate scientific hypotheses from data",
+    "value_statement": "Manual hypothesis generation is time-consuming and prone to cognitive bias. Hypogenic automates hypothesis generation and testing using LLMs, enabling researchers to systematically explore patterns in tabular datasets and combine empirical findings with literature insights.",
+    "seo_keywords": [
+      "hypothesis generation",
+      "scientific discovery",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "LLM research",
+      "data analysis",
+      "empirical research",
+      "pattern detection",
+      "automated testing"
+    ],
+    "actual_capabilities": [
+      "Generates 10-20+ testable hypotheses from tabular datasets using LLMs",
+      "Supports three methods: HypoGeniC (data-driven), HypoRefine (literature + data), and Union (combined)",
+      "Processes research papers via GROBID for literature-informed hypothesis generation",
+      "Runs iterative hypothesis refinement to improve quality based on validation performance",
+      "Integrates with OpenAI, Anthropic, and local LLMs for flexible deployment"
+    ],
+    "limitations": [
+      "Requires datasets in HuggingFace format with specific naming conventions",
+      "Needs API keys for cloud LLM providers (OpenAI, Anthropic) or local LLM setup",
+      "Literature-based methods require PDF preprocessing with GROBID"
+    ],
+    "use_cases": [
+      {
+        "title": "Academic research hypothesis exploration",
+        "description": "Generate and test multiple hypotheses about patterns in observational data, such as detecting deception in text or identifying mental health indicators from social media posts.",
+        "target_user": "Academic researchers and data scientists"
+      },
+      {
+        "title": "Domain-specific pattern discovery",
+        "description": "Explore empirical relationships in tabular datasets for applications like content analysis, predictive modeling, or classification research.",
+        "target_user": "Data analysts and ML engineers"
+      },
+      {
+        "title": "Literature-grounded hypothesis generation",
+        "description": "Combine existing research papers with empirical data to generate theory-grounded hypotheses that extend or validate scientific theories.",
+        "target_user": "Graduate students and research scientists"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Generate initial hypotheses from data",
+        "prompt": "Analyze the following data samples and identify patterns in the features and labels. Generate {num_hypotheses} specific, testable hypotheses that could explain these patterns. Each hypothesis should be concrete and falsifiable.",
+        "scenario": "When you have a tabular dataset and want to generate initial hypotheses about observed patterns"
+      },
+      {
+        "title": "Refine existing hypotheses",
+        "prompt": "Review the following hypotheses and the validation results. Identify which hypotheses are underperforming and generate improved versions that better explain the challenging examples. Focus on specificity and testability.",
+        "scenario": "When iteratively improving hypothesis quality based on validation performance"
+      },
+      {
+        "title": "Integrate literature insights with data",
+        "prompt": "Based on the following research paper insights: {paper_insights}, and the observed data patterns: {data_observations}, generate hypotheses that combine theoretical foundations with empirical findings.",
+        "scenario": "When using HypoRefine to combine literature review with empirical analysis"
+      },
+      {
+        "title": "Validate hypothesis relevance",
+        "prompt": "Given the hypothesis: {hypothesis}, and the data sample: {data_sample}, evaluate whether this hypothesis is relevant and testable for this dataset. Provide specific reasoning.",
+        "scenario": "When checking if a hypothesis applies to specific data samples"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "A small subset of tabular data with text features and labels showing patterns in customer behavior",
+        "output": "1. Hypothesis: Samples with feature_X above threshold tend to have label_A due to underlying causal mechanism.\n2. Hypothesis: The interaction between feature_Y and feature_Z creates a stronger effect than either alone.\n3. Hypothesis: Label_B is associated with specific linguistic patterns in feature_W."
+      },
+      {
+        "input": "Validation results showing which hypotheses are underperforming on certain data subsets",
+        "output": "Refined Hypothesis 1: When feature_X > threshold AND feature_Y is low, label_A is more likely (updated from original to account for interaction effect).\nRefined Hypothesis 3: The linguistic pattern in feature_W is more predictive when combined with metadata about source type."
+      }
+    ],
+    "best_practices": [
+      "Start with a clean dataset in HuggingFace format with properly named text features and labels",
+      "Use at least 10-20 hypotheses for comprehensive exploration of the pattern space",
+      "Iteratively refine hypotheses based on validation performance rather than generating all at once",
+      "Combine literature insights with data-driven hypotheses for more grounded theoretical frameworks"
+    ],
+    "anti_patterns": [
+      "Using datasets that do not match the required HuggingFace format with proper key naming",
+      "Generating too few hypotheses and missing important pattern relationships",
+      "Skipping the iterative refinement process and accepting initial hypotheses",
+      "Running without proper API configuration or cache setup for cost management"
+    ],
+    "faq": [
+      {
+        "question": "What format does my dataset need to be in?",
+        "answer": "Datasets must follow HuggingFace format with files named <TASK>_train.json, <TASK>_val.json, and <TASK>_test.json. Each file must contain text_features_1 through text_features_n (lists of strings) and a label (list of strings)."
+      },
+      {
+        "question": "Which LLM providers are supported?",
+        "answer": "Hypogenic supports OpenAI GPT models, Anthropic Claude models, and local LLMs through compatible APIs. Configure your preferred provider in the config.yaml file."
+      },
+      {
+        "question": "What is the difference between HypoGeniC, HypoRefine, and Union methods?",
+        "answer": "HypoGeniC generates hypotheses solely from data. HypoRefine combines literature insights with empirical patterns. Union methods combine literature-only hypotheses with framework outputs for comprehensive coverage."
+      },
+      {
+        "question": "How many hypotheses should I generate?",
+        "answer": "The framework typically generates 10-20+ hypotheses. More hypotheses explore more pattern space but increase API costs. Start with 20 and adjust based on your validation results."
+      },
+      {
+        "question": "Do I need Redis for caching?",
+        "answer": "Redis is optional but recommended for reducing API costs during iterative experiments. It caches LLM responses to avoid redundant calls for the same prompts."
+      },
+      {
+        "question": "What are the computational requirements?",
+        "answer": "Basic usage requires minimal resources with just Python and pip. For literature processing with PDF parsing, you will need GROBID running as a service. For local LLM usage, GPU resources are recommended."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "config_template.yaml",
+          "type": "file",
+          "path": "references/config_template.yaml",
+          "lines": 151
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 655
+    }
+  ]
+}

@@ -1,0 +1,209 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T15:34:18.744Z",
+    "slug": "acskamloops-research-synthesizer",
+    "source_url": "https://github.com/ACSKamloops/shs-engine/tree/master/.codex/skills/research-synthesizer",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "892ae4f9ab4e24640cb9207b8dcd779ab02234614f612ccabca45cb07544ee96",
+    "tree_hash": "81bcbf10e7b3e580e903cd59a78e727ecd9e0e20e3739f48454e009b0571a016"
+  },
+  "skill": {
+    "name": "research-synthesizer",
+    "description": "Synthesizes provided sources neutrally; separates quotes from paraphrase and avoids ungrounded claims.",
+    "summary": "Synthesizes provided sources neutrally; separates quotes from paraphrase and avoids ungrounded claim...",
+    "icon": "📚",
+    "version": "1.0.0",
+    "author": "ACSKamloops",
+    "license": "MIT",
+    "category": "research",
+    "tags": [
+      "research",
+      "writing",
+      "documentation",
+      "synthesis",
+      "citation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure prompt template skill with no executable code. All 7 static findings are false positives: the URL field is standard metadata, and the 6 'weak cryptographic algorithm' alerts are regex errors triggered by the word 'synthesize' in plain text descriptions. This is a benign instruction-only skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 187,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T15:34:18.744Z"
+  },
+  "content": {
+    "user_title": "Synthesize research sources with neutral tone",
+    "value_statement": "When you need to summarize research materials, you often blend quotes with paraphrases or make unsupported claims. This skill ensures neutral synthesis with clear source attribution and explicit uncertainty flags about what is and is not supported by the provided text.",
+    "seo_keywords": [
+      "research synthesis",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "source summarization",
+      "academic writing",
+      "neutral tone",
+      "citation",
+      "research notes",
+      "literature review"
+    ],
+    "actual_capabilities": [
+      "Neutral synthesis of research sources in plain language",
+      "Clear separation of direct quotes from paraphrased content",
+      "Explicit identification of claims not supported by provided sources",
+      "Concise bullet summaries with clear next steps for deeper review",
+      "Highlighting agreements and disagreements across multiple sources"
+    ],
+    "limitations": [
+      "Does not provide real-time internet access or search external sources",
+      "Cannot verify accuracy of claims outside the provided source material",
+      "Works only with user-provided materials; does not fetch or discover sources independently"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Academic researchers",
+        "title": "Literature review preparation",
+        "description": "Synthesize multiple academic papers into clear summaries for literature reviews"
+      },
+      {
+        "target_user": "Policy analysts",
+        "title": "Source consolidation",
+        "description": "Neutral synthesis of policy documents and research findings for briefs"
+      },
+      {
+        "target_user": "Students",
+        "title": "Research note organization",
+        "description": "Organize and summarize research sources for essays and academic assignments"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Synthesis",
+        "scenario": "Single source summary",
+        "prompt": "Synthesize this source using neutral, plain language. Separate direct quotes from paraphrases. Note explicitly which claims are and are not supported by the text."
+      },
+      {
+        "title": "Multi-Source Comparison",
+        "scenario": "Multiple source analysis",
+        "prompt": "Compare and synthesize these sources on [TOPIC]. Highlight agreements, disagreements, and areas of uncertainty. Use clear attribution for each point."
+      },
+      {
+        "title": "Key Findings Extraction",
+        "scenario": "Research summary",
+        "prompt": "Extract the main findings from this research material. Use concise bullet points. Identify any gaps in the research and what conclusions are not supported."
+      },
+      {
+        "title": "Critical Analysis",
+        "scenario": "Methodology review",
+        "prompt": "Evaluate this study or document. Note methodology limitations and clearly state which conclusions are and are not supported by the evidence provided."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Synthesize this article on climate change impacts on agriculture.",
+        "output": [
+          "Key finding: Crop yields could decrease by 20% by 2050 under high-emission scenarios based on model projections.",
+          "Direct quote: 'The relationship between temperature and yield is non-linear', p. 45.",
+          "Supported claim: Higher temperatures increase pest pressure on major crops.",
+          "Unsupported claim: The study does not address regional adaptation strategies or economic impacts.",
+          "Next steps: Review regional studies for local projections and consult economic impact analyses."
+        ]
+      },
+      {
+        "input": "Compare these three studies on remote work productivity.",
+        "output": [
+          "Agreement: All three studies find increased productivity in the short term (first 6 months).",
+          "Disagreement: Study A cites hybrid models as optimal while Study B recommends fully remote work.",
+          "Methodology concern: Study B relies on self-reported data from a single company.",
+          "Caveat: None of these studies examine long-term effects beyond 18 months."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Provide the full text or substantial excerpts rather than just URLs or titles",
+      "Specify the synthesis format you need such as bullet points, paragraphs, or tables",
+      "Mention any specific topics, questions, or aspects to focus on in the synthesis"
+    ],
+    "anti_patterns": [
+      "Asking the skill to invent citations, references, or claims not present in the source material",
+      "Requesting synthesis without providing any source material or content",
+      "Expecting the skill to verify factual claims outside the provided sources or perform external research"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill search the internet for sources?",
+        "answer": "No. You must provide the sources you want synthesized. The skill works only with your provided materials."
+      },
+      {
+        "question": "Can it generate APA or MLA citations?",
+        "answer": "The skill focuses on synthesizing content and identifying where citations are needed. It does not format citations in specific styles."
+      },
+      {
+        "question": "How many sources can it handle at once?",
+        "answer": "The skill can handle multiple sources, but very large numbers may reduce quality. Consider batching large collections into groups."
+      },
+      {
+        "question": "Is my data sent to external servers?",
+        "answer": "No. This is a prompt-based skill that runs entirely within your AI tool. Source material is not transmitted externally."
+      },
+      {
+        "question": "Why are some claims marked as unsupported?",
+        "answer": "The skill only synthesizes what is in your provided sources. Claims, conclusions, or assertions not found in sources are explicitly flagged as unsupported."
+      },
+      {
+        "question": "How is this different from regular summarization?",
+        "answer": "Research synthesis maintains source fidelity. It clearly separates direct quotes from paraphrased content and explicitly flags uncertainty or unsupported claims."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 12
+    }
+  ]
+}

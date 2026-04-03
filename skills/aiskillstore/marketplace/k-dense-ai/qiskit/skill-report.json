@@ -1,0 +1,292 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:22:47.806Z",
+    "slug": "k-dense-ai-qiskit",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/qiskit",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "98d270593e18c0de2f6535bb64489aeca9e2168f1cb743d37ad57f1f9894aad3",
+    "tree_hash": "10f663b93b2f0b1f6c671497c5798668163c5655af3daf62a21391a1df2a383d"
+  },
+  "skill": {
+    "name": "qiskit",
+    "description": "IBM quantum computing framework. Use when targeting IBM Quantum hardware, working with Qiskit Runtime for production workloads, or needing IBM optimization tools. Best for IBM hardware execution, quantum error mitigation, and enterprise quantum computing. For Google hardware use cirq; for gradient-based quantum ML use pennylane; for open quantum system simulations use qutip.",
+    "summary": "IBM quantum computing framework. Use when targeting IBM Quantum hardware, working with Qiskit Runtim...",
+    "icon": "⚛️",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Apache-2.0 license",
+    "category": "research",
+    "tags": [
+      "quantum computing",
+      "IBM Quantum",
+      "quantum circuits",
+      "qiskit"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 426 static findings are FALSE POSITIVES. This skill is pure markdown documentation containing legitimate Python code examples for IBM Qiskit quantum computing. The static analyzer incorrectly interprets markdown code block delimiters (backticks) as command execution and flags standard quantum computing terminology as C2 or weak crypto indicators. No executable code or malicious patterns exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 28
+          },
+          {
+            "file": "references/setup.md",
+            "line_start": 7,
+            "line_end": 92
+          },
+          {
+            "file": "references/circuits.md",
+            "line_start": 5,
+            "line_end": 187
+          },
+          {
+            "file": "references/primitives.md",
+            "line_start": 27,
+            "line_end": 277
+          },
+          {
+            "file": "references/algorithms.md",
+            "line_start": 24,
+            "line_end": 582
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 272
+          },
+          {
+            "file": "references/setup.md",
+            "line_start": 33,
+            "line_end": 41
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 11,
+    "total_lines": 5394,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:22:47.806Z"
+  },
+  "content": {
+    "user_title": "Build quantum circuits with Qiskit",
+    "value_statement": "Quantum computing enables solving complex optimization, chemistry, and machine learning problems that are intractable for classical computers. Qiskit provides the tools to build quantum circuits, optimize them for IBM hardware, and execute on real quantum processors or simulators.",
+    "seo_keywords": [
+      "qiskit",
+      "quantum computing",
+      "IBM Quantum",
+      "quantum circuits",
+      "Claude Code",
+      "Codex",
+      "quantum algorithms",
+      "VQE",
+      "QAOA",
+      "quantum programming"
+    ],
+    "actual_capabilities": [
+      "Create quantum circuits with gates (H, X, Y, Z, CNOT, rotations)",
+      "Execute circuits on local simulators or IBM Quantum hardware",
+      "Transpile and optimize circuits for specific quantum backends",
+      "Implement algorithms like VQE, QAOA, and Grover's search",
+      "Visualize circuits, results, and quantum states (Bloch sphere, histograms)"
+    ],
+    "limitations": [
+      "Requires IBM Quantum account for hardware access (free tier available)",
+      "Real quantum hardware has limited qubit counts and error rates",
+      "Not suitable for classical computing problems better solved by traditional methods"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Chemistry researchers",
+        "title": "Simulate molecular systems",
+        "description": "Use VQE algorithm to compute ground state energies of molecules for drug discovery and materials science research."
+      },
+      {
+        "target_user": "Optimization specialists",
+        "title": "Solve combinatorial problems",
+        "description": "Apply QAOA to solve MaxCut, portfolio optimization, and scheduling problems that benefit from quantum speedup."
+      },
+      {
+        "target_user": "ML engineers",
+        "title": "Build quantum classifiers",
+        "description": "Create quantum kernels and neural networks for machine learning tasks using Qiskit Machine Learning."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create basic circuit",
+        "scenario": "Getting started with quantum circuits",
+        "prompt": "Show me how to create a Bell state entangled circuit with Qiskit that measures both qubits"
+      },
+      {
+        "title": "Run on hardware",
+        "scenario": "Executing on quantum backend",
+        "prompt": "Help me transpile my circuit for ibm_brisbane backend and run it using the SamplerV2 primitive"
+      },
+      {
+        "title": "Implement VQE",
+        "scenario": "Variational algorithm",
+        "prompt": "Write a complete VQE implementation using Qiskit Runtime Session to find the ground state energy of H2 molecule"
+      },
+      {
+        "title": "Optimize circuits",
+        "scenario": "Transpilation best practices",
+        "prompt": "Show me how to optimize a quantum circuit for hardware execution using optimization_level=3 and best practices"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a 3-qubit GHZ state circuit and run it on a simulator",
+        "output": [
+          "Created GHZ state circuit: |000⟩ + |111⟩ superposition",
+          "Executed with StatevectorSampler: 1024 shots",
+          "Results: {'000': 517, '111': 507} (approximately 50/50 distribution)"
+        ]
+      },
+      {
+        "input": "Optimize a quantum circuit for IBM hardware",
+        "output": [
+          "Transpiled circuit with optimization_level=3",
+          "Reduced 2-qubit gates from 12 to 8",
+          "Circuit depth: 6 (optimized from 10)",
+          "Ready for execution on ibm_brisbane"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with local simulators (StatevectorSampler) to validate circuits before using expensive hardware time",
+      "Always transpile circuits before execution on hardware with optimization_level=3 for production workloads",
+      "Use Session mode for iterative algorithms (VQE, QAOA) and Batch mode for parallel independent jobs"
+    ],
+    "anti_patterns": [
+      "Running untranspiled circuits directly on hardware (causes high error rates and queue rejections)",
+      "Using Estimator for sampling tasks or Sampler for expectation values (mismatched primitives)",
+      "Skipping error mitigation on real hardware (resilience_level should match accuracy requirements)"
+    ],
+    "faq": [
+      {
+        "question": "Do I need an IBM Quantum account?",
+        "answer": "No account needed for local simulators. Create free IBM Quantum account at quantum.ibm.com for hardware access."
+      },
+      {
+        "question": "How many qubits are available?",
+        "answer": "IBM Quantum offers 100+ qubit systems. Free tier provides access to smaller devices for learning."
+      },
+      {
+        "question": "What is the difference between Sampler and Estimator?",
+        "answer": "Sampler returns measurement outcomes (counts). Estimator returns expectation values of observables (energies)."
+      },
+      {
+        "question": "Can I run circuits without internet?",
+        "answer": "Yes, local simulators (StatevectorSampler, Aer) work offline. Cloud backends require internet connection."
+      },
+      {
+        "question": "What is transpilation?",
+        "answer": "Transpilation converts circuits to the native gate set and topology of target quantum hardware for execution."
+      },
+      {
+        "question": "How long do quantum jobs take?",
+        "answer": "Simulator jobs are instant. Hardware jobs queue based on system load, typically minutes to hours."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "algorithms.md",
+          "type": "file",
+          "path": "references/algorithms.md",
+          "lines": 608
+        },
+        {
+          "name": "backends.md",
+          "type": "file",
+          "path": "references/backends.md",
+          "lines": 434
+        },
+        {
+          "name": "circuits.md",
+          "type": "file",
+          "path": "references/circuits.md",
+          "lines": 198
+        },
+        {
+          "name": "patterns.md",
+          "type": "file",
+          "path": "references/patterns.md",
+          "lines": 534
+        },
+        {
+          "name": "primitives.md",
+          "type": "file",
+          "path": "references/primitives.md",
+          "lines": 278
+        },
+        {
+          "name": "setup.md",
+          "type": "file",
+          "path": "references/setup.md",
+          "lines": 100
+        },
+        {
+          "name": "transpilation.md",
+          "type": "file",
+          "path": "references/transpilation.md",
+          "lines": 287
+        },
+        {
+          "name": "visualization.md",
+          "type": "file",
+          "path": "references/visualization.md",
+          "lines": 416
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 169
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 275
+    }
+  ]
+}

@@ -1,0 +1,364 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:01:17.815Z",
+    "slug": "dimillian-macos-spm-app-packaging",
+    "source_url": "https://github.com/Dimillian/Skills/tree/main/macos-spm-app-packaging",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "bacaf081b91615b3769185ae19d172fa8a798636f57e3e69e602eb8448d6106f",
+    "tree_hash": "df358c8c6adda54906eb1398a34b42a118fb867d0fd26fa79b6354da78a0cbe2"
+  },
+  "skill": {
+    "name": "macos-spm-app-packaging",
+    "description": "Scaffold, build, and package SwiftPM-based macOS apps without an Xcode project. Use when you need a from-scratch macOS app layout, SwiftPM targets/resources, a custom .app bundle assembly script, or signing/notarization/appcast steps outside Xcode.",
+    "summary": "Scaffold, build, and package SwiftPM-based macOS apps without an Xcode project. Use when you need a ...",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "Dimillian",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "macos",
+      "swift",
+      "packaging",
+      "deployment"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem",
+      "env_access",
+      "network"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate macOS development tool for packaging Swift Package Manager apps. All static findings are FALSE POSITIVES - the 'suspicious' patterns (shell command execution, credential access, network calls) are standard macOS development workflows for building, signing, and notarizing apps. The static scanner misidentified standard build automation scripts as malicious.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "assets/templates/compile_and_run.sh",
+            "line_start": 1,
+            "line_end": 64
+          },
+          {
+            "file": "assets/templates/sign-and-notarize.sh",
+            "line_start": 1,
+            "line_end": 53
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "assets/templates/package_app.sh",
+            "line_start": 1,
+            "line_end": 207
+          },
+          {
+            "file": "assets/templates/compile_and_run.sh",
+            "line_start": 1,
+            "line_end": 64
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "assets/templates/sign-and-notarize.sh",
+            "line_start": 11,
+            "line_end": 14
+          },
+          {
+            "file": "assets/templates/make_appcast.sh",
+            "line_start": 8,
+            "line_end": 12
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "assets/templates/sign-and-notarize.sh",
+            "line_start": 36,
+            "line_end": 40
+          },
+          {
+            "file": "assets/templates/make_appcast.sh",
+            "line_start": 58,
+            "line_end": 78
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 16,
+    "total_lines": 1118,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:01:17.815Z"
+  },
+  "content": {
+    "user_title": "Package macOS apps with Swift Package Manager",
+    "value_statement": "Build and distribute macOS applications without Xcode. This skill scaffolds SwiftPM projects, creates .app bundles, handles code signing, and manages Apple notarization for distribution outside the Apple ecosystem.",
+    "seo_keywords": [
+      "macOS app packaging",
+      "Swift Package Manager",
+      "Xcode-free builds",
+      "macOS code signing",
+      "Apple notarization",
+      "Claude Code skill",
+      "Codex skill",
+      "Claude skill",
+      "app bundle creation",
+      "Sparkle updates"
+    ],
+    "actual_capabilities": [
+      "Bootstrap a complete SwiftPM macOS app folder from scratch",
+      "Build universal binaries for arm64 and x86_64 architectures",
+      "Create and sign .app bundles with custom resources and entitlements",
+      "Submit apps for Apple notarization and staple approval tickets",
+      "Generate Sparkle appcast entries for automatic software updates",
+      "Set up development code signing identities for testing"
+    ],
+    "limitations": [
+      "Requires macOS and Swift toolchain installed on the execution environment",
+      "Apple notarization requires valid App Store Connect API credentials",
+      "Cannot distribute outside macOS platforms - this is macOS-specific tooling",
+      "Code signing requires valid Apple Developer certificates for release builds"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Independent macOS developers",
+        "title": "Ship apps without Xcode",
+        "description": "Build and distribute simple macOS utilities using only Swift and the command line."
+      },
+      {
+        "target_user": "CI/CD pipeline engineers",
+        "title": "Automate release builds",
+        "description": "Integrate macOS app packaging into automated build pipelines with proper signing and notarization."
+      },
+      {
+        "target_user": "Swift library maintainers",
+        "title": "Create demo applications",
+        "description": "Package example apps that demonstrate library functionality without Xcode project complexity."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "New SwiftPM app project",
+        "scenario": "Create a new macOS app project",
+        "prompt": "Use the macos-spm-app-packaging skill to bootstrap a new Swift Package Manager macOS application called 'MyUtility'. Set the bundle ID to com.example.myutility and minimum macOS version to 14.0."
+      },
+      {
+        "title": "Package existing project",
+        "scenario": "Build and sign a release",
+        "prompt": "Use macos-spm-app-packaging to build a release .app bundle for my SwiftPM project. Use ad-hoc signing for testing. Create universal binaries for arm64 and x86_64."
+      },
+      {
+        "title": "Configure notarization",
+        "scenario": "Set up Apple notarization",
+        "prompt": "Use macos-spm-app-packaging to configure Apple notarization for my app. The App Store Connect API key is in APP_STORE_CONNECT_API_KEY_P8, APP_STORE_CONNECT_KEY_ID, and APP_STORE_CONNECT_ISSUER_ID environment variables."
+      },
+      {
+        "title": "Create update system",
+        "scenario": "Generate Sparkle appcast",
+        "prompt": "Use macos-spm-app-packaging to create a Sparkle appcast for my packaged app. The Sparkle private key is in SPARKLE_PRIVATE_KEY_FILE environment variable."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Bootstrap a new SwiftPM macOS app called ImageConverter with bundle ID com.example.imageconverter",
+        "output": [
+          "Created Package.swift with SwiftPM configuration",
+          "Generated Sources/ImageConverter/main.swift",
+          "Created version.env with MARKETING_VERSION=0.1.0 and BUILD_NUMBER=1",
+          "Ready to customize - run swift build to compile"
+        ]
+      },
+      {
+        "input": "Package my SwiftPM app for release with notarization",
+        "output": [
+          "Swift build completed for arm64 and x86_64",
+          "Created ImageConverter.app bundle with Info.plist and resources",
+          "Code signed with Developer ID certificate",
+          "Submitted to Apple notarization service",
+          "Staple approval ticket applied",
+          "Created ImageConverter-0.1.0.zip ready for distribution"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use unique bundle identifiers and increment BUILD_NUMBER for each Sparkle update release",
+      "Store App Store Connect API keys as environment variables, never in source code",
+      "Test with ad-hoc signing before attempting production code signing and notarization"
+    ],
+    "anti_patterns": [
+      "Do not skip notarization - Apple notarization is required for Gatekeeper approval on macOS 10.15+",
+      "Do not hardcode signing certificates or API keys in scripts that will be committed to version control",
+      "Do not forget to set LSUIElement for menu bar apps - they will not appear in the Dock without it"
+    ],
+    "faq": [
+      {
+        "question": "What tools does this skill require?",
+        "answer": "A macOS system with Swift installed. Xcode is not required but Xcode command line tools are recommended for iconutil."
+      },
+      {
+        "question": "How do I distribute my app?",
+        "answer": "Build the release .app bundle, sign it, notarize it with Apple, staple the ticket, then distribute the zip file or use Sparkle for updates."
+      },
+      {
+        "question": "Do I need Apple Developer membership?",
+        "answer": "Not for development builds with ad-hoc signing. Release distribution requires a paid Apple Developer account for code signing and notarization."
+      },
+      {
+        "question": "Can I use this for App Store submission?",
+        "answer": "This skill focuses on direct distribution. For App Store submission, use Xcode or altool with the appropriate App Store Connect API key."
+      },
+      {
+        "question": "How do I handle version numbers?",
+        "answer": "Set MARKETING_VERSION and BUILD_NUMBER in version.env. MARKETING_VERSION is the user-facing version (e.g., 1.0.0), while BUILD_NUMBER is the build identifier that must increment for each Sparkle update to trigger the update prompt on client machines."
+      },
+      {
+        "question": "What entitlements can I add?",
+        "answer": "Edit the .entitlements file in .build/entitlements. Common entitlements include com.apple.security.app-sandbox and com.apple.security.files.user-selected-read-only."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "templates",
+          "type": "dir",
+          "path": "assets/templates",
+          "children": [
+            {
+              "name": "bootstrap",
+              "type": "dir",
+              "path": "assets/templates/bootstrap",
+              "children": [
+                {
+                  "name": "Sources",
+                  "type": "dir",
+                  "path": "assets/templates/bootstrap/Sources"
+                },
+                {
+                  "name": "Package.swift",
+                  "type": "file",
+                  "path": "assets/templates/bootstrap/Package.swift",
+                  "lines": 18
+                },
+                {
+                  "name": "version.env",
+                  "type": "file",
+                  "path": "assets/templates/bootstrap/version.env",
+                  "lines": 3
+                }
+              ]
+            },
+            {
+              "name": "build_icon.sh",
+              "type": "file",
+              "path": "assets/templates/build_icon.sh",
+              "lines": 50
+            },
+            {
+              "name": "compile_and_run.sh",
+              "type": "file",
+              "path": "assets/templates/compile_and_run.sh",
+              "lines": 64
+            },
+            {
+              "name": "launch.sh",
+              "type": "file",
+              "path": "assets/templates/launch.sh",
+              "lines": 29
+            },
+            {
+              "name": "make_appcast.sh",
+              "type": "file",
+              "path": "assets/templates/make_appcast.sh",
+              "lines": 83
+            },
+            {
+              "name": "package_app.sh",
+              "type": "file",
+              "path": "assets/templates/package_app.sh",
+              "lines": 207
+            },
+            {
+              "name": "setup_dev_signing.sh",
+              "type": "file",
+              "path": "assets/templates/setup_dev_signing.sh",
+              "lines": 53
+            },
+            {
+              "name": "sign-and-notarize.sh",
+              "type": "file",
+              "path": "assets/templates/sign-and-notarize.sh",
+              "lines": 53
+            },
+            {
+              "name": "version.env",
+              "type": "file",
+              "path": "assets/templates/version.env",
+              "lines": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "packaging.md",
+          "type": "file",
+          "path": "references/packaging.md",
+          "lines": 18
+        },
+        {
+          "name": "release.md",
+          "type": "file",
+          "path": "references/release.md",
+          "lines": 33
+        },
+        {
+          "name": "scaffold.md",
+          "type": "file",
+          "path": "references/scaffold.md",
+          "lines": 80
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 41
+    }
+  ]
+}

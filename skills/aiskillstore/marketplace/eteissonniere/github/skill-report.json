@@ -1,0 +1,220 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:20:38.344Z",
+    "slug": "eteissonniere-github",
+    "source_url": "https://github.com/ETeissonniere/dotfiles/tree/master/config/claude/skills/github",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "4e62ed63a35599c376240fa03efca4983048b8837c9aadb0576aa769b9f9c517",
+    "tree_hash": "69fa4f9207be62015caf6cbcb0641ffc6fea3a0d1cda0e0386ae44adc89d8dc9"
+  },
+  "skill": {
+    "name": "github",
+    "description": "GitHub operations via gh CLI. Use when user mentions: PR, pull request, github issue, workflow, actions, gh, or when git remote shows github.com.",
+    "summary": "GitHub operations via gh CLI. Use when user mentions: PR, pull request, github issue, workflow, acti...",
+    "icon": "🐙",
+    "version": "1.0.0",
+    "author": "ETeissonniere",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "github",
+      "cli",
+      "git",
+      "repository",
+      "automation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is documentation-only for the GitHub CLI tool. All 55 static findings are false positives caused by the analyzer misinterpreting documentation metadata and GitHub terminology as security issues. The skill enables safe gh CLI command execution through the official GitHub CLI tool.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 80
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 22
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 326,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:20:38.344Z"
+  },
+  "content": {
+    "user_title": "Automate GitHub workflows with gh CLI",
+    "value_statement": "Managing GitHub repositories manually through the web interface is time-consuming and breaks your development flow. This skill enables seamless GitHub operations directly from your terminal using the gh CLI, automating PRs, issues, and workflows.",
+    "seo_keywords": [
+      "github cli",
+      "gh commands",
+      "pull request automation",
+      "github issues",
+      "claude code",
+      "codex",
+      "github workflow",
+      "repository management",
+      "cli automation",
+      "devops"
+    ],
+    "actual_capabilities": [
+      "Create and manage pull requests with titles and descriptions",
+      "List and view issues with comment threads",
+      "Monitor CI/CD workflow runs and logs",
+      "Clone repositories and manage forks",
+      "Execute GitHub API calls for advanced operations"
+    ],
+    "limitations": [
+      "Requires GitHub CLI (gh) installed and authenticated",
+      "Only works with GitHub repositories (not GitLab or Bitbucket)",
+      "Cannot bypass GitHub permission model",
+      "API rate limits apply to all operations"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Streamline PR workflow",
+        "description": "Create PRs, request reviews, and merge changes without leaving terminal"
+      },
+      {
+        "target_user": "DevOps engineers",
+        "title": "Monitor CI/CD pipelines",
+        "description": "Check workflow status, view logs, and rerun failed jobs from command line"
+      },
+      {
+        "target_user": "Open source maintainers",
+        "title": "Manage contributions",
+        "description": "Review issues, comment on PRs, and triage bug reports efficiently"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create PR",
+        "scenario": "Ready to submit changes",
+        "prompt": "Create a pull request with title \"Fix navigation bug\" and description \"Updates the header component to handle mobile menu toggle properly\""
+      },
+      {
+        "title": "List issues",
+        "scenario": "Check what needs attention",
+        "prompt": "Show all open issues assigned to me in the current repository"
+      },
+      {
+        "title": "Check workflows",
+        "scenario": "Monitor CI pipeline",
+        "prompt": "List recent workflow runs and show any that failed"
+      },
+      {
+        "title": "API query",
+        "scenario": "Get specific data",
+        "prompt": "Use the GitHub API to get all comments on pull request #123"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "List open pull requests",
+        "output": [
+          "Found 3 open pull requests:",
+          "• #142: Update dependencies (draft) - opened 2 days ago by dependabot",
+          "• #141: Add dark mode support - opened 5 days ago by sarah",
+          "• #138: Fix memory leak in cache - opened 1 week ago by mike"
+        ]
+      },
+      {
+        "input": "Check workflow status",
+        "output": [
+          "Recent workflow runs:",
+          "• #456: Build and test - failed (2 hours ago) - View logs: gh run view 456 --log",
+          "• #455: Lint code - success (5 hours ago)",
+          "• #454: Build and test - success (1 day ago)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always verify authentication with 'gh auth status' before operations",
+      "Use HEREDOC syntax for multi-line PR descriptions to preserve formatting",
+      "Check for uncommitted changes with 'git status' before creating PRs"
+    ],
+    "anti_patterns": [
+      "Never hardcode repository names in scripts - use variables instead",
+      "Avoid creating PRs without descriptions - always provide context",
+      "Do not ignore CI failures - check workflow status before merging"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with GitHub Enterprise?",
+        "answer": "Yes, the gh CLI works with GitHub Enterprise when properly configured"
+      },
+      {
+        "question": "What are the rate limits?",
+        "answer": "GitHub API allows 5000 requests per hour for authenticated users"
+      },
+      {
+        "question": "Can I use this with other Git platforms?",
+        "answer": "No, this skill is GitHub-specific and will not work with GitLab or Bitbucket"
+      },
+      {
+        "question": "Is my authentication token safe?",
+        "answer": "The gh CLI securely stores tokens locally, never exposed in commands"
+      },
+      {
+        "question": "Why is my command failing?",
+        "answer": "Check authentication with 'gh auth status' and ensure repository access"
+      },
+      {
+        "question": "How does this compare to GitHub web?",
+        "answer": "CLI is faster for bulk operations and integrates with your development workflow"
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 81
+    }
+  ]
+}

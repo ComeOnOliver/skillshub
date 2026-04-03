@@ -1,0 +1,184 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:10:58.533Z",
+    "slug": "adamfehse-cookmode-v2-source-of-truth",
+    "source_url": "https://github.com/AdamFehse/cookmodeV2/tree/main/.claude/skills/source-of-truth",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "07595f4dc33293cffb0f91bdc53c1d712a8f351a6821efe3e0c14349db045f75",
+    "tree_hash": "a8a26f6a72729a393acd81648ee8bc0c84a05a30e582c87038cf0596b5bf56ff"
+  },
+  "skill": {
+    "name": "cookmode-v2-source-of-truth",
+    "description": "Documents and explains the CookMode V2 codebase as it exists. Use this when the user needs factual information about the current implementation, architecture, file locations, or how components work. DOES NOT suggest improvements unless explicitly asked.",
+    "summary": "Codebase documentation assistant that provides factual explanations of CookMode V2 implementation details, architecture, and component locations.",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "AdamFehse",
+    "license": "MIT",
+    "tags": [
+      "documentation",
+      "codebase-exploration",
+      "architecture",
+      "implementation-guide"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 36 static findings evaluated as false positives. JSON syntax was misidentified as weak cryptographic algorithms. Markdown backticks were misidentified as shell command execution. Repository metadata fields were flagged as network/filesystem access. The skill is a passive documentation helper that only reads and explains codebase structure.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 709,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:10:58.533Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Explore CookMode V2 Codebase",
+    "value_statement": "CookMode V2 is a complex codebase that requires accurate documentation. This skill provides factual information about the current implementation, architecture, and component locations without suggesting changes or improvements.",
+    "seo_keywords": [
+      "CookMode",
+      "CookMode V2",
+      "codebase documentation",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "source of truth",
+      "implementation guide",
+      "architecture documentation",
+      "code exploration"
+    ],
+    "actual_capabilities": [
+      "Provides factual information about CookMode V2 codebase structure",
+      "Explains component locations and file organization",
+      "Describes architecture and implementation details",
+      "Answers questions about how features work in the current codebase",
+      "Locates specific code sections within the project"
+    ],
+    "limitations": [
+      "Only documents CookMode V2, not other projects",
+      "Does not provide implementation suggestions or improvements",
+      "Does not modify code or create new features",
+      "Relies on existing documentation and code analysis"
+    ],
+    "use_cases": [
+      {
+        "title": "Onboarding New Developers",
+        "description": "New team members can query the skill to quickly understand CookMode V2 architecture, file locations, and how existing features are implemented without reading through all source files.",
+        "target_user": "New developers joining the CookMode project"
+      },
+      {
+        "title": "Debugging Existing Issues",
+        "description": "Developers investigating bugs can ask where specific functionality lives, how components interact, and what the current implementation does before making changes.",
+        "target_user": "Developers debugging CookMode V2 issues"
+      },
+      {
+        "title": "Understanding Feature Boundaries",
+        "description": "Product managers and architects can query to understand what features exist, where they are implemented, and how they relate to each other in the codebase.",
+        "target_user": "Product managers and technical leads"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Codebase Question",
+        "prompt": "What does the [COMPONENT_NAME] do in CookMode V2? Where is it located?",
+        "scenario": "Quickly find and understand a specific component"
+      },
+      {
+        "title": "Architecture Overview",
+        "prompt": "Explain the overall architecture of CookMode V2. What are the main modules and how do they interact with each other?",
+        "scenario": "Get a high-level understanding of the system"
+      },
+      {
+        "title": "File Location Query",
+        "prompt": "Where can I find the code that handles [FEATURE] in CookMode V2? What files are involved?",
+        "scenario": "Locate specific feature implementation"
+      },
+      {
+        "title": "Implementation Details",
+        "prompt": "How is [FEATURE_OR_FUNCTION] implemented in CookMode V2? Walk through the code flow and explain each step.",
+        "scenario": "Deep dive into specific functionality"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How does the recipe parsing work in CookMode V2?",
+        "output": "The recipe parsing functionality is located in the `src/parsers/` directory. The main parser is `RecipeParser.ts` which handles parsing raw recipe data into structured objects. It uses a multi-stage parsing approach: first it tokenizes the input, then validates each token against the schema, and finally constructs the Recipe object. The validation rules are defined in `src/schemas/recipe-schema.json`."
+      },
+      {
+        "input": "Where are the UI components stored?",
+        "output": "The UI components for CookMode V2 are organized in `src/components/` with subdirectories for different feature areas: `src/components/recipe/` for recipe display, `src/components/search/` for search functionality, and `src/components/common/` for shared components like buttons and modals. Each component folder contains the TypeScript file, styles, and associated tests."
+      },
+      {
+        "input": "What is the data flow for saving a recipe?",
+        "output": "When a user saves a recipe, the flow is: 1) The `RecipeEditor` component collects form data, 2) It calls `RecipeService.save()` which validates the data against the recipe schema, 3) Valid data is passed to `StorageAdapter` which handles persistence, 4) The storage adapter communicates with the backend API defined in `src/api/recipe-endpoints.ts`, 5) On success, the local state is updated via the state management store in `src/store/recipe-store.ts`."
+      }
+    ],
+    "best_practices": [
+      "Ask specific questions about components or features for the most accurate responses",
+      "Use the skill to understand before modifying - it provides the current state without bias",
+      "Combine with code reading tools for complete understanding of complex features"
+    ],
+    "anti_patterns": [
+      "Do not ask for code improvements or refactoring suggestions - this skill only documents current state",
+      "Do not expect the skill to generate new code or features",
+      "Do not rely on the skill for projects other than CookMode V2"
+    ],
+    "faq": [
+      {
+        "question": "What is CookMode V2?",
+        "answer": "CookMode V2 is a recipe management and cooking assistance application. The skill documents its codebase including architecture, components, and implementation details."
+      },
+      {
+        "question": "Does this skill modify my code?",
+        "answer": "No. This skill only reads and explains the existing codebase. It does not create, modify, or delete any files or code."
+      },
+      {
+        "question": "Can I use this skill for other projects?",
+        "answer": "No. This skill is specifically trained on CookMode V2 codebase and can only provide information about that project."
+      },
+      {
+        "question": "Will the skill suggest improvements?",
+        "answer": "No. The skill provides factual information about the current implementation only. It does not offer suggestions, recommendations, or opinions on improvements."
+      },
+      {
+        "question": "How current is the information?",
+        "answer": "The skill reflects the codebase at the time of its last update. If the codebase has changed significantly, some information may be outdated."
+      },
+      {
+        "question": "Can I ask about third-party libraries used?",
+        "answer": "Yes. The skill can identify and explain which third-party libraries are used in CookMode V2 and where they are integrated."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "output.json",
+      "type": "file",
+      "path": "output.json",
+      "lines": 146
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 149
+    }
+  ]
+}

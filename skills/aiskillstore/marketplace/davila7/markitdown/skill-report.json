@@ -1,0 +1,320 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:39:26.152Z",
+    "slug": "davila7-markitdown",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/scientific/markitdown",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c6f3af0fc832acd8513f3fea57bb684fa6a84daaa185c20c737c1cf8a4c3310e",
+    "tree_hash": "8e7a16b28db563d283df7e04d20f87c3db8bea1d8ab6f80a5496ffd6467a5f4f"
+  },
+  "skill": {
+    "name": "markitdown",
+    "description": "Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), audio (with transcription), HTML, CSV, JSON, XML, ZIP, YouTube URLs, EPubs and more.",
+    "summary": "Convert files and office documents to Markdown. Supports PDF, DOCX, PPTX, XLSX, images (with OCR), a...",
+    "icon": "📄",
+    "version": "0.1.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "conversion",
+      "markdown",
+      "document-processing",
+      "ocr",
+      "transcription"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Static analysis flagged 735 issues, but all are false positives. Findings originated from documentation files where markdown code formatting was misidentified as shell execution, placeholder API keys were flagged as credentials, and legitimate file+network patterns were marked as dangerous. Actual Python scripts are benign document conversion utilities from Microsoft.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/convert_literature.py",
+            "line_start": 116,
+            "line_end": 116
+          },
+          {
+            "file": "scripts/batch_convert.py",
+            "line_start": 46,
+            "line_end": 46
+          },
+          {
+            "file": "scripts/convert_with_ai.py",
+            "line_start": 130,
+            "line_end": 130
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "scripts/convert_with_ai.py",
+            "line_start": 94,
+            "line_end": 97
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "scripts/convert_with_ai.py",
+            "line_start": 217,
+            "line_end": 217
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 14,
+    "total_lines": 4491,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:39:26.152Z"
+  },
+  "content": {
+    "user_title": "Convert Documents to Markdown",
+    "value_statement": "Convert PDF, DOCX, PPTX, images, and other documents to clean Markdown format. Supports OCR for images, transcription for audio, and optional AI-enhanced image descriptions for better LLM processing.",
+    "seo_keywords": [
+      "markdown conversion",
+      "PDF to markdown",
+      "document conversion",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "OCR",
+      "transcription"
+    ],
+    "actual_capabilities": [
+      "Convert PDF, DOCX, PPTX, XLSX to Markdown",
+      "Extract text from images using OCR",
+      "Transcribe audio files to text",
+      "Generate AI-enhanced image descriptions via OpenRouter",
+      "Process YouTube video transcripts",
+      "Batch convert multiple files in parallel"
+    ],
+    "limitations": [
+      "Requires installation of optional dependencies for specific formats",
+      "AI image descriptions require OpenRouter API key",
+      "OCR quality depends on image clarity and Tesseract installation",
+      "Large files may require additional processing time"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Researchers",
+        "title": "Convert Scientific Papers",
+        "description": "Transform PDF papers to Markdown for literature review and AI analysis with proper formatting preservation."
+      },
+      {
+        "target_user": "Content Creators",
+        "title": "Extract Presentation Content",
+        "description": "Convert PowerPoint slides to Markdown for republishing, summarization, or content extraction workflows."
+      },
+      {
+        "target_user": "Data Analysts",
+        "title": "Process Spreadsheet Data",
+        "description": "Convert Excel files to Markdown tables for easier data processing and analysis by AI systems."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Conversion",
+        "scenario": "Convert a single document",
+        "prompt": "Use the markitdown skill to convert {filename.pdf} to Markdown and save it as {filename.md}"
+      },
+      {
+        "title": "Batch Processing",
+        "scenario": "Convert multiple files",
+        "prompt": "Convert all PDF files in the {directory} folder to Markdown using markitdown and save outputs to {output_folder}"
+      },
+      {
+        "title": "With AI Descriptions",
+        "scenario": "AI-enhanced image descriptions",
+        "prompt": "Convert {presentation.pptx} to Markdown with AI-enhanced image descriptions using your OpenRouter API key"
+      },
+      {
+        "title": "Organized Literature Review",
+        "scenario": "Scientific paper organization",
+        "prompt": "Use convert_literature.py to convert all papers in {input_dir} to Markdown, organize by year, and create an index"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Convert research_paper.pdf to Markdown",
+        "output": [
+          "Converted research_paper.pdf → research_paper.md",
+          "Extracted title, author, and all text content",
+          "Preserved tables and formatted sections"
+        ]
+      },
+      {
+        "input": "Convert slides.pptx with AI image descriptions",
+        "output": [
+          "Converted slides.pptx → slides.md",
+          "AI generated descriptions for 12 images",
+          "Included speaker notes from each slide"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Install optional dependencies for the file formats you need (pip install 'markitdown[pdf,docx,pptx]')",
+      "Provide your OpenRouter API key via OPENROUTER_API_KEY environment variable for AI features",
+      "Use batch_convert.py with --recursive flag for processing large document collections"
+    ],
+    "anti_patterns": [
+      "Do not convert sensitive documents without reviewing the output first",
+      "Avoid processing files in place - always specify a separate output directory",
+      "Do not share API keys in prompts or commit them to version control"
+    ],
+    "faq": [
+      {
+        "question": "What file formats are supported?",
+        "answer": "PDF, DOCX, PPTX, XLSX, images (JPEG, PNG, GIF, WebP), audio (WAV, MP3), HTML, CSV, JSON, XML, ZIP, EPUB, and YouTube URLs."
+      },
+      {
+        "question": "Do I need to install additional dependencies?",
+        "answer": "Base installation handles basic formats. Install extras like pip install 'markitdown[pdf]' for PDF support or 'markitdown[all]' for everything."
+      },
+      {
+        "question": "How do I enable AI image descriptions?",
+        "answer": "Set OPENROUTER_API_KEY environment variable. The convert_with_ai.py script or MarkItDown with llm_client parameter will use it automatically."
+      },
+      {
+        "question": "Can this process scanned documents?",
+        "answer": "Yes, install Tesseract OCR (brew install tesseract or apt-get install tesseract-ocr) for optical character recognition on scanned PDFs and images."
+      },
+      {
+        "question": "How fast is batch conversion?",
+        "answer": "batch_convert.py supports parallel processing. Use --workers flag to control concurrency. Default is 4 parallel conversions."
+      },
+      {
+        "question": "Are my documents sent to external servers?",
+        "answer": "Only if using AI image descriptions with OpenRouter. Regular conversion runs entirely locally. You control when network access occurs."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "example_usage.md",
+          "type": "file",
+          "path": "assets/example_usage.md",
+          "lines": 464
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 400
+        },
+        {
+          "name": "file_formats.md",
+          "type": "file",
+          "path": "references/file_formats.md",
+          "lines": 543
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "batch_convert.py",
+          "type": "file",
+          "path": "scripts/batch_convert.py",
+          "lines": 229
+        },
+        {
+          "name": "convert_literature.py",
+          "type": "file",
+          "path": "scripts/convert_literature.py",
+          "lines": 284
+        },
+        {
+          "name": "convert_with_ai.py",
+          "type": "file",
+          "path": "scripts/convert_with_ai.py",
+          "lines": 244
+        }
+      ]
+    },
+    {
+      "name": "INSTALLATION_GUIDE.md",
+      "type": "file",
+      "path": "INSTALLATION_GUIDE.md",
+      "lines": 319
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 23
+    },
+    {
+      "name": "OPENROUTER_INTEGRATION.md",
+      "type": "file",
+      "path": "OPENROUTER_INTEGRATION.md",
+      "lines": 360
+    },
+    {
+      "name": "QUICK_REFERENCE.md",
+      "type": "file",
+      "path": "QUICK_REFERENCE.md",
+      "lines": 310
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 185
+    },
+    {
+      "name": "SKILL_SUMMARY.md",
+      "type": "file",
+      "path": "SKILL_SUMMARY.md",
+      "lines": 308
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 487
+    }
+  ]
+}

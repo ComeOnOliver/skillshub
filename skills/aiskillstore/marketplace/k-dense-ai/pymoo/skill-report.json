@@ -1,0 +1,306 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:12:50.645Z",
+    "slug": "k-dense-ai-pymoo",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/pymoo",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "385cde371b4f7d69dca8d9840cfe3d8b0a7ccc90a84c83ededce05fbcc7f5eee",
+    "tree_hash": "b9d04d8640b471b2d1438ee0f563be61157169205df7902040e1c21dc961925a"
+  },
+  "skill": {
+    "name": "pymoo",
+    "description": "Multi-objective optimization framework. NSGA-II, NSGA-III, MOEA/D, Pareto fronts, constraint handling, benchmarks (ZDT, DTLZ), for engineering design and optimization problems.",
+    "summary": "Multi-objective optimization framework. NSGA-II, NSGA-III, MOEA/D, Pareto fronts, constraint handlin...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Apache-2.0 license",
+    "category": "data",
+    "tags": [
+      "optimization",
+      "multi-objective",
+      "evolutionary-algorithms",
+      "pareto",
+      "scientific"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate multi-objective optimization documentation skill. All 315 static findings are false positives. The scanner misinterpreted markdown code formatting backticks as shell commands, optimization algorithm names (NSGA-II, NSGA-III) as cryptographic algorithms, and optimization terminology as security threats. Python scripts contain standard pymoo optimization examples with no malicious code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 44
+          },
+          {
+            "file": "references/algorithms.md",
+            "line_start": 13,
+            "line_end": 19
+          },
+          {
+            "file": "references/visualization.md",
+            "line_start": 16,
+            "line_end": 29
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 4425,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:12:50.645Z"
+  },
+  "content": {
+    "user_title": "Solve multi-objective optimization with evolutionary algorithms",
+    "value_statement": "Multi-objective optimization involves finding trade-off solutions when multiple conflicting objectives must be satisfied. This skill provides comprehensive access to pymoo algorithms including NSGA-II, NSGA-III, and MOEA/D for finding Pareto-optimal solutions and visualizing trade-off fronts.",
+    "seo_keywords": [
+      "pymoo",
+      "multi-objective optimization",
+      "NSGA-II",
+      "NSGA-III",
+      "Pareto front",
+      "evolutionary algorithms",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "optimization"
+    ],
+    "actual_capabilities": [
+      "Run single and multi-objective optimization using NSGA-II, NSGA-III, MOEA/D, GA, DE, PSO",
+      "Define custom optimization problems with ElementwiseProblem class",
+      "Apply constraint handling techniques including penalty methods and feasibility-first approaches",
+      "Visualize Pareto fronts using Scatter plots, PCP, Heatmaps, and Petal diagrams",
+      "Apply multi-criteria decision making methods including PseudoWeights and compromise programming",
+      "Benchmark algorithms using standard test problems (ZDT, DTLZ, WFG)"
+    ],
+    "limitations": [
+      "Requires pymoo library installation (uv pip install pymoo)",
+      "Gradient-based optimization not supported; uses population-based evolutionary approaches",
+      "Many-objective optimization (4+ objectives) requires NSGA-III with reference directions",
+      "Results depend on proper problem formulation and algorithm parameter tuning"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Engineers and designers",
+        "title": "Engineering design optimization",
+        "description": "Find optimal trade-offs between competing design objectives like cost, weight, strength, and performance."
+      },
+      {
+        "target_user": "Data scientists",
+        "title": "Model hyperparameter tuning",
+        "description": "Optimize multiple conflicting metrics like accuracy, inference speed, and model complexity simultaneously."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Algorithm comparison studies",
+        "description": "Benchmark optimization algorithms on standard test problems to evaluate convergence and diversity."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic multi-objective optimization",
+        "scenario": "Solve a bi-objective problem",
+        "prompt": "Optimize the ZDT1 benchmark problem with NSGA-II to find the Pareto front. Use 100 population size and 200 generations."
+      },
+      {
+        "title": "Custom problem definition",
+        "scenario": "Define a custom optimization problem",
+        "prompt": "Create a custom two-variable, two-objective problem where f1 = x[0]^2 + x[1]^2 and f2 = (x[0]-1)^2 + (x[1]-1)^2 with bounds [0, 5] for both variables."
+      },
+      {
+        "title": "Constraint handling",
+        "scenario": "Optimize with constraints",
+        "prompt": "Solve a constrained multi-objective optimization problem using the penalty method with NSGA-II. Show how to check feasibility of solutions."
+      },
+      {
+        "title": "Many-objective visualization",
+        "scenario": "Visualize high-dimensional results",
+        "prompt": "Run NSGA-III on DTLZ2 with 5 objectives and visualize the results using a Parallel Coordinate Plot to show trade-offs across all objectives."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Optimize ZDT1 with NSGA-II to find Pareto front",
+        "output": [
+          "Algorithm: NSGA2 with pop_size=100",
+          "Problem: ZDT1 (30 variables, 2 objectives)",
+          "Termination: 200 generations",
+          "Result: Found 95 Pareto-optimal solutions",
+          "Visualization: Scatter plot showing convex Pareto front"
+        ]
+      },
+      {
+        "input": "Create custom two-objective optimization problem",
+        "output": [
+          "Class: ElementwiseProblem extending pymoo.core.problem",
+          "Variables: 2 decision variables",
+          "Objectives: f1 = x[0]^2 + x[1]^2, f2 = (x[0]-1)^2 + (x[1]-1)^2",
+          "Bounds: [0, 5] for both variables",
+          "Ready for use with any pymoo algorithm"
+        ]
+      },
+      {
+        "input": "Apply constraint handling to optimization",
+        "output": [
+          "Method: ConstraintsAsPenalty or feasibility-first approach",
+          "Constraint violation tracking via CV (constraint violation) array",
+          "Feasible solutions: CV[:, 0] == 0",
+          "Inequality constraints: g(x) <= 0",
+          "Equality constraints: h(x) = 0"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Set random seed (seed=1) for reproducible optimization results",
+      "Normalize objectives to [0,1] range before applying decision-making methods",
+      "Compare obtained fronts with true Pareto fronts when benchmark problems are used"
+    ],
+    "anti_patterns": [
+      "Using NSGA-II for many-objective problems (4+ objectives) - use NSGA-III instead",
+      "Ignoring constraint formulation (must be g <= 0 for inequality, h = 0 for equality)",
+      "Running optimization without visualizing results - always plot Pareto fronts"
+    ],
+    "faq": [
+      {
+        "question": "What is the difference between NSGA-II and NSGA-III?",
+        "answer": "NSGA-II handles 2-3 objectives efficiently. NSGA-III is designed for 4+ objectives using reference directions."
+      },
+      {
+        "question": "How do I choose between NSGA-II and MOEA/D?",
+        "answer": "NSGA-II is general-purpose for well-distributed fronts. MOEA/D excels when decomposition into scalar subproblems is effective."
+      },
+      {
+        "question": "What termination criteria should I use?",
+        "answer": "Use ('n_gen', N) for generations, ('n_eval', N) for evaluations, or tolerance-based termination for convergence."
+      },
+      {
+        "question": "How do I extract the best solution from Pareto front?",
+        "answer": "Use PseudoWeights with preference weights, or knee point selection for balanced trade-offs."
+      },
+      {
+        "question": "Can I use this for discrete or mixed-variable problems?",
+        "answer": "Yes, pymoo supports binary, discrete, continuous, and mixed-variable problems with appropriate operators."
+      },
+      {
+        "question": "How do I visualize results with more than 3 objectives?",
+        "answer": "Use Parallel Coordinate Plot (PCP) for 4+ objectives to show all dimensions simultaneously."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "algorithms.md",
+          "type": "file",
+          "path": "references/algorithms.md",
+          "lines": 181
+        },
+        {
+          "name": "constraints_mcdm.md",
+          "type": "file",
+          "path": "references/constraints_mcdm.md",
+          "lines": 418
+        },
+        {
+          "name": "operators.md",
+          "type": "file",
+          "path": "references/operators.md",
+          "lines": 346
+        },
+        {
+          "name": "problems.md",
+          "type": "file",
+          "path": "references/problems.md",
+          "lines": 266
+        },
+        {
+          "name": "visualization.md",
+          "type": "file",
+          "path": "references/visualization.md",
+          "lines": 354
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "custom_problem_example.py",
+          "type": "file",
+          "path": "scripts/custom_problem_example.py",
+          "lines": 182
+        },
+        {
+          "name": "decision_making_example.py",
+          "type": "file",
+          "path": "scripts/decision_making_example.py",
+          "lines": 162
+        },
+        {
+          "name": "many_objective_example.py",
+          "type": "file",
+          "path": "scripts/many_objective_example.py",
+          "lines": 73
+        },
+        {
+          "name": "multi_objective_example.py",
+          "type": "file",
+          "path": "scripts/multi_objective_example.py",
+          "lines": 64
+        },
+        {
+          "name": "single_objective_example.py",
+          "type": "file",
+          "path": "scripts/single_objective_example.py",
+          "lines": 60
+        }
+      ]
+    },
+    {
+      "name": "EVALUATION_OUTPUT.json",
+      "type": "file",
+      "path": "EVALUATION_OUTPUT.json",
+      "lines": 169
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 571
+    }
+  ]
+}

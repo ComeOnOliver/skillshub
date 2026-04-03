@@ -1,0 +1,234 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T17:14:29.712Z",
+    "slug": "wshobson-unity-ecs-patterns",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/game-development/skills/unity-ecs-patterns",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b5b834d40c38f3fb4c5967db6440789f450092096823123ce9cae1ffe679a5be",
+    "tree_hash": "00c220d31b75ad67c784702c3e4896400512dbb925764929975a28023b674a36"
+  },
+  "skill": {
+    "name": "unity-ecs-patterns",
+    "description": "Master Unity ECS (Entity Component System) with DOTS, Jobs, and Burst for high-performance game development. Use when building data-oriented games, optimizing performance, or working with large entity counts.",
+    "summary": "Master Unity ECS patterns with DOTS, Jobs, and Burst for high-performance game development",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "tags": [
+      "unity",
+      "game-development",
+      "performance",
+      "dots",
+      "ecs"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 59 static findings are false positives. The skill contains Unity ECS documentation with code examples. Detected patterns (hash functions, system API references, backticks) are legitimate game development patterns and Markdown formatting, not security threats.",
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1194,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T17:14:29.712Z",
+    "risk_factors": []
+  },
+  "content": {
+    "user_title": "Implement Unity ECS Patterns",
+    "value_statement": "Building high-performance Unity games requires specialized data-oriented patterns that traditional OOP cannot provide. This skill provides production-ready ECS patterns using DOTS, Jobs, and Burst for games that scale to thousands of entities.",
+    "seo_keywords": [
+      "Unity ECS",
+      "DOTS",
+      "Entity Component System",
+      "Unity game development",
+      "Burst Compiler",
+      "Unity Jobs",
+      "high-performance games",
+      "data-oriented design",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Generate ECS component definitions and system implementations",
+      "Create entity spawning and management systems with command buffers",
+      "Implement job-based parallel processing with Unity Jobs",
+      "Build aspect-based component grouping for cleaner code",
+      "Convert GameObjects to entities using baking workflows",
+      "Optimize spatial queries with hash-based partitioning"
+    ],
+    "limitations": [
+      "Requires Unity 2022.2+ with Entities package installed",
+      "Does not generate complete Unity project structures",
+      "Assumes familiarity with C# and Unity basics",
+      "Does not cover visual scripting or runtime entity creation"
+    ],
+    "use_cases": [
+      {
+        "title": "Indie Game Developer Building Performance-Critical Games",
+        "description": "Create efficient game systems that handle thousands of enemies, particles, or units without performance degradation using ECS patterns.",
+        "target_user": "Indie game developers working on simulation or strategy games"
+      },
+      {
+        "title": "Gameplay Programmer Learning DOTS",
+        "description": "Transition from traditional Unity MonoBehaviour patterns to data-oriented ECS architecture with guided examples and best practices.",
+        "target_user": "Gameplay programmers new to DOTS"
+      },
+      {
+        "title": "Technical Artist Creating Particle Systems",
+        "description": "Build massive particle and effect systems that process in parallel using Jobs and Burst compilation for GPU-like performance on CPU.",
+        "target_user": "Technical artists and effects programmers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic ECS Component",
+        "prompt": "Create a Speed component and a MovementSystem in Unity ECS using ISystem and BurstCompile. The system should move entities forward based on their speed value.",
+        "scenario": "Learning ECS fundamentals"
+      },
+      {
+        "title": "Entity Spawning System",
+        "prompt": "Write a SpawnSystem that uses EntityCommandBuffer to create entities at runtime with a Spawner component. Include both single-threaded and parallel job versions.",
+        "scenario": "Implementing entity spawning"
+      },
+      {
+        "title": "Aspect-Based Character",
+        "prompt": "Create a CharacterAspect that groups Health, Speed, and LocalTransform components. Include a method to apply damage that respects shield absorption logic.",
+        "scenario": "Organizing components with Aspects"
+      },
+      {
+        "title": "Spatial Hash System",
+        "prompt": "Build a spatial hashing system using NativeParallelMultiHashMap for efficient collision queries. Include the hash function and parallel job for updating the spatial grid.",
+        "scenario": "Optimizing spatial queries"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create an ECS component for player health with current and max values, and a system that heals players over time.",
+        "output": [
+          "Component Definition:",
+          "```csharp",
+          "public struct Health : IComponentData",
+          "{",
+          "    public float Current;",
+          "    public float Max;",
+          "}",
+          "```",
+          "",
+          "Healing System:",
+          "```csharp",
+          "[BurstCompile]",
+          "public partial struct HealthRegenSystem : ISystem",
+          "{",
+          "    public void OnUpdate(ref SystemState state)",
+          "    {",
+          "        float deltaTime = SystemAPI.Time.DeltaTime;",
+          "        float regenRate = 5f;",
+          "",
+          "        foreach (var health in",
+          "            SystemAPI.Query<RefRW<Health>>())",
+          "        {",
+          "            health.ValueRW.Current = math.min(",
+          "                health.ValueRO.Max,",
+          "                health.ValueRO.Current + regenRate * deltaTime",
+          "            );",
+          "        }",
+          "    }",
+          "}",
+          "```"
+        ]
+      },
+      {
+        "input": "How do I convert a GameObject to an entity with authoring?",
+        "output": [
+          "1. Create an Authoring MonoBehaviour:",
+          "```csharp",
+          "public class EnemyAuthoring : MonoBehaviour",
+          "{",
+          "    public float Speed;",
+          "    public float Health;",
+          "",
+          "    class Baker : Baker<EnemyAuthoring>",
+          "    {",
+          "        public override void Bake(EnemyAuthoring authoring)",
+          "        {",
+          "            var entity = GetEntity(TransformUsageFlags.Dynamic);",
+          "            AddComponent(entity, new Speed { Value = authoring.Speed });",
+          "            AddComponent(entity, new Health { Current = authoring.Health, Max = authoring.Health });",
+          "        }",
+          "    }",
+          "}",
+          "```",
+          "",
+          "2. Add the authoring component to a GameObject in the Editor",
+          "3. The baking system automatically converts it to an entity at build time"
+        ]
+      },
+      {
+        "input": "Write a parallel job that damages all enemies in a radius around each entity.",
+        "output": "This requires a spatial hash approach. First, build a spatial hash map in a parallel job. Then run a second pass that queries nearby cells and applies damage. The spatial hash function uses prime number multiplication for uniform distribution: `hash = x * 73856093 ^ y * 19349663 ^ z * 83492791`."
+      }
+    ],
+    "best_practices": [
+      "Use ISystem instead of SystemBase for maximum performance and Burst compatibility",
+      "Always apply [BurstCompile] to jobs and systems for optimal performance",
+      "Defer structural changes (create/destroy/add) using EntityCommandBuffer to avoid breaking job scheduling"
+    ],
+    "anti_patterns": [
+      "Avoid adding managed types (classes, strings, arrays) to components as they break Burst compilation",
+      "Do not perform structural changes inside parallel jobs; use EntityCommandBuffer.ParallelWriter instead",
+      "Avoid querying entities one-by-one; use entity queries and ToComponentDataArray for batch operations"
+    ],
+    "faq": [
+      {
+        "question": "What Unity version supports ECS?",
+        "answer": "Unity 2022.2 LTS and newer have stable DOTS support. Install the Entities and Burst packages via Package Manager."
+      },
+      {
+        "question": "How is ECS different from MonoBehaviour?",
+        "answer": "ECS separates data (components) from behavior (systems). Components are simple structs with no methods. Systems contain logic. This enables cache-friendly memory layouts and parallel processing."
+      },
+      {
+        "question": "Can I mix ECS with traditional GameObjects?",
+        "answer": "Yes, use the Hybrid Renderer and authoring components to convert GameObjects to entities. For runtime interactions, use SystemAPI.GetComponent on entities and GameObject manipulation for hybrid approaches."
+      },
+      {
+        "question": "What is Burst and why should I use it?",
+        "answer": "Burst is a compiler that optimizes C# code using LLVM. It produces highly optimized native machine code. Always apply [BurstCompile] to jobs and systems for 10x+ performance improvements."
+      },
+      {
+        "question": "How many entities can ECS handle?",
+        "answer": "ECS can handle 100,000+ entities on modern hardware. Performance depends on cache locality, job efficiency, and avoiding main-thread bottlenecks. Profile to identify limits."
+      },
+      {
+        "question": "Should I use Aspects or direct component access?",
+        "answer": "Aspects improve code organization when querying the same component combination across multiple systems. For simple queries, direct access via SystemAPI.Query is clearer."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 627
+    }
+  ]
+}

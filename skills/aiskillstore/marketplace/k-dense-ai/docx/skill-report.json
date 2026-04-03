@@ -1,0 +1,645 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T06:51:02.483Z",
+    "slug": "k-dense-ai-docx",
+    "source_url": "https://github.com/K-Dense-AI/claude-scientific-skills/tree/main/scientific-skills/document-skills/docx",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "80180632e83c8e3c11474ceb846b46811ae74cb5897ea26689a34f8148a3e159",
+    "tree_hash": "6318e01693f99491eda5c23c4fb9e9ec6546d04a928dd01a19a066e64b4694d1"
+  },
+  "skill": {
+    "name": "docx",
+    "description": "Document toolkit (.docx). Create/edit documents, tracked changes, comments, formatting preservation, text extraction, for professional document processing.",
+    "summary": "Document toolkit (.docx). Create/edit documents, tracked changes, comments, formatting preservation,...",
+    "icon": "📄",
+    "version": "1.0.0",
+    "author": "K-Dense-AI",
+    "license": "Proprietary. LICENSE.txt has complete terms",
+    "category": "documentation",
+    "tags": [
+      "document",
+      "word",
+      "docx",
+      "office"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem",
+      "network",
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate document processing skill with no security concerns. All 1146 static findings are false positives: documentation code blocks (pandoc, soffice commands), OOXML schema namespace URLs, and XML attribute names misidentified as crypto/C2 patterns. The code uses safe XML parsing (defusedxml) to prevent XXE attacks.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/utilities.py",
+            "line_start": 37,
+            "line_end": 38
+          },
+          {
+            "file": "scripts/document.py",
+            "line_start": 36,
+            "line_end": 36
+          },
+          {
+            "file": "ooxml/scripts/unpack.py",
+            "line_start": 1,
+            "line_end": 30
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "LICENSE.txt",
+            "line_start": 8,
+            "line_end": 9
+          },
+          {
+            "file": "ooxml/schemas/microsoft/wml-2012.xsd",
+            "line_start": 1,
+            "line_end": 5
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "ooxml/scripts/pack.py",
+            "line_start": 1,
+            "line_end": 160
+          },
+          {
+            "file": "ooxml/scripts/validation/base.py",
+            "line_start": 1,
+            "line_end": 100
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 61,
+    "total_lines": 25568,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T06:51:02.483Z"
+  },
+  "content": {
+    "user_title": "Create and edit Word documents",
+    "value_statement": "This skill provides a complete toolkit for Word document operations. Create new documents from scratch with JavaScript, edit existing documents with Python, and manage tracked changes and comments with proper OOXML compliance.",
+    "seo_keywords": [
+      "docx",
+      "Word document",
+      "Claude Code",
+      "document editing",
+      "OOXML",
+      "tracked changes",
+      "document creation",
+      "office documents",
+      "docx manipulation",
+      "Python document"
+    ],
+    "actual_capabilities": [
+      "Create Word documents from scratch using JavaScript/TypeScript",
+      "Edit existing documents with Python DOM manipulation",
+      "Implement tracked changes and comments with proper OOXML patterns",
+      "Extract text content using pandoc conversion",
+      "Validate document structure against OOXML schemas",
+      "Pack and unpack OOXML archives for direct XML editing"
+    ],
+    "limitations": [
+      "Requires external tools (pandoc, LibreOffice) for text extraction and validation",
+      "Complex formatting changes may require direct XML editing",
+      "Does not support password-protected or encrypted documents"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Technical Writers",
+        "title": "Generate professional documents",
+        "description": "Create well-formatted Word documents with headings, tables, and styling using JavaScript."
+      },
+      {
+        "target_user": "Legal Professionals",
+        "title": "Review documents with tracked changes",
+        "description": "Edit contracts and legal documents while maintaining full revision history."
+      },
+      {
+        "target_user": "Researchers",
+        "title": "Automate document processing",
+        "description": "Extract text, modify content, and batch process multiple documents programmatically."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create simple document",
+        "scenario": "Create a basic Word document",
+        "prompt": "Create a new Word document with a title 'Report' and two paragraphs of placeholder text."
+      },
+      {
+        "title": "Add tracked changes",
+        "scenario": "Edit document with revision tracking",
+        "prompt": "Edit document.docx to change all occurrences of 'company' to 'Corporation' with tracked changes enabled."
+      },
+      {
+        "title": "Extract text content",
+        "scenario": "Convert document to markdown",
+        "prompt": "Extract all text from quarterly_report.docx and save as markdown with tracked changes preserved."
+      },
+      {
+        "title": "Complex XML editing",
+        "scenario": "Make precise structural changes",
+        "prompt": "Edit contract.docx to update the termination clause: change '30 days' to '60 days' notice period, maintaining proper tracked change markup."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a new Word document with title 'Meeting Notes' and add three bullet points: Action items, Attendees, and Next steps.",
+        "output": [
+          "Created new document: Meeting_Notes.docx",
+          "Added title with Heading1 style",
+          "Created numbered list with proper OOXML numbering configuration",
+          "Added 3 list items under 'Action items' section"
+        ]
+      },
+      {
+        "input": "Edit the quarterly report to replace all instances of '2024' with '2025' while keeping track of all changes.",
+        "output": [
+          "Opened quarterly_report.docx and unpacked to temporary directory",
+          "Found 12 instances of '2024' in word/document.xml",
+          "Applied tracked changes for each replacement (w:ins/w:del elements)",
+          "Repacked document with proper OOXML structure",
+          "Saved as quarterly_report_2025.docx"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always use tracked changes (w:ins, w:del) when editing documents you did not create",
+      "Validate XML structure after editing to ensure OOXML compliance",
+      "Use proper RSID values to track revision sessions"
+    ],
+    "anti_patterns": [
+      "Do not manually edit XML without understanding OOXML namespace requirements",
+      "Avoid skipping tracked changes when editing third-party documents",
+      "Do not ignore XML validation errors - they indicate OOXML compliance issues"
+    ],
+    "faq": [
+      {
+        "question": "How do I create a new Word document?",
+        "answer": "Use the docx-js workflow. Read docx-js.md for complete syntax, then create a JavaScript file using Document, Paragraph, and TextRun components."
+      },
+      {
+        "question": "How do I edit an existing document?",
+        "answer": "Use the Document library (Python). Unpack the docx, run a Python script with the Document class, then repack. See ooxml.md for patterns."
+      },
+      {
+        "question": "What are RSIDs and why do they matter?",
+        "answer": "RSIDs are revision identifiers in Word documents. They must be 8-digit hex values. The unpack script generates one for each editing session."
+      },
+      {
+        "question": "How do tracked changes work in OOXML?",
+        "answer": "Tracked changes use w:ins (insertions) and w:del (deletions) elements. Each needs w:author, w:date, w:id attributes. The Document library handles these automatically."
+      },
+      {
+        "question": "Can I extract text from a document?",
+        "answer": "Yes. Use pandoc: pandoc document.docx -o output.md. Add --track-changes=all to preserve revision history in the output."
+      },
+      {
+        "question": "What tools are required?",
+        "answer": "Install: pandoc (text extraction), docx npm package (document creation), LibreOffice (PDF conversion), poppler-utils (PDF to images), defusedxml (Python XML safety)."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "ooxml",
+      "type": "dir",
+      "path": "ooxml",
+      "children": [
+        {
+          "name": "schemas",
+          "type": "dir",
+          "path": "ooxml/schemas",
+          "children": [
+            {
+              "name": "ecma",
+              "type": "dir",
+              "path": "ooxml/schemas/ecma",
+              "children": [
+                {
+                  "name": "fouth-edition",
+                  "type": "dir",
+                  "path": "ooxml/schemas/ecma/fouth-edition"
+                }
+              ]
+            },
+            {
+              "name": "ISO-IEC29500-4_2016",
+              "type": "dir",
+              "path": "ooxml/schemas/ISO-IEC29500-4_2016",
+              "children": [
+                {
+                  "name": "dml-chart.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-chart.xsd",
+                  "lines": 1500
+                },
+                {
+                  "name": "dml-chartDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-chartDrawing.xsd",
+                  "lines": 147
+                },
+                {
+                  "name": "dml-diagram.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-diagram.xsd",
+                  "lines": 1086
+                },
+                {
+                  "name": "dml-lockedCanvas.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-lockedCanvas.xsd",
+                  "lines": 12
+                },
+                {
+                  "name": "dml-main.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-main.xsd",
+                  "lines": 3082
+                },
+                {
+                  "name": "dml-picture.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-picture.xsd",
+                  "lines": 24
+                },
+                {
+                  "name": "dml-spreadsheetDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-spreadsheetDrawing.xsd",
+                  "lines": 186
+                },
+                {
+                  "name": "dml-wordprocessingDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/dml-wordprocessingDrawing.xsd",
+                  "lines": 288
+                },
+                {
+                  "name": "pml.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/pml.xsd",
+                  "lines": 1677
+                },
+                {
+                  "name": "shared-additionalCharacteristics.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-additionalCharacteristics.xsd",
+                  "lines": 29
+                },
+                {
+                  "name": "shared-bibliography.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-bibliography.xsd",
+                  "lines": 145
+                },
+                {
+                  "name": "shared-commonSimpleTypes.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-commonSimpleTypes.xsd",
+                  "lines": 175
+                },
+                {
+                  "name": "shared-customXmlDataProperties.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-customXmlDataProperties.xsd",
+                  "lines": 26
+                },
+                {
+                  "name": "shared-customXmlSchemaProperties.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-customXmlSchemaProperties.xsd",
+                  "lines": 19
+                },
+                {
+                  "name": "shared-documentPropertiesCustom.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesCustom.xsd",
+                  "lines": 60
+                },
+                {
+                  "name": "shared-documentPropertiesExtended.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesExtended.xsd",
+                  "lines": 57
+                },
+                {
+                  "name": "shared-documentPropertiesVariantTypes.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-documentPropertiesVariantTypes.xsd",
+                  "lines": 196
+                },
+                {
+                  "name": "shared-math.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-math.xsd",
+                  "lines": 583
+                },
+                {
+                  "name": "shared-relationshipReference.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/shared-relationshipReference.xsd",
+                  "lines": 26
+                },
+                {
+                  "name": "sml.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/sml.xsd",
+                  "lines": 4440
+                },
+                {
+                  "name": "vml-main.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-main.xsd",
+                  "lines": 571
+                },
+                {
+                  "name": "vml-officeDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-officeDrawing.xsd",
+                  "lines": 510
+                },
+                {
+                  "name": "vml-presentationDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-presentationDrawing.xsd",
+                  "lines": 13
+                },
+                {
+                  "name": "vml-spreadsheetDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-spreadsheetDrawing.xsd",
+                  "lines": 109
+                },
+                {
+                  "name": "vml-wordprocessingDrawing.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/vml-wordprocessingDrawing.xsd",
+                  "lines": 97
+                },
+                {
+                  "name": "wml.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/wml.xsd",
+                  "lines": 3647
+                },
+                {
+                  "name": "xml.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/ISO-IEC29500-4_2016/xml.xsd",
+                  "lines": 117
+                }
+              ]
+            },
+            {
+              "name": "mce",
+              "type": "dir",
+              "path": "ooxml/schemas/mce",
+              "children": [
+                {
+                  "name": "mc.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/mce/mc.xsd",
+                  "lines": 76
+                }
+              ]
+            },
+            {
+              "name": "microsoft",
+              "type": "dir",
+              "path": "ooxml/schemas/microsoft",
+              "children": [
+                {
+                  "name": "wml-2010.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-2010.xsd",
+                  "lines": 561
+                },
+                {
+                  "name": "wml-2012.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-2012.xsd",
+                  "lines": 68
+                },
+                {
+                  "name": "wml-2018.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-2018.xsd",
+                  "lines": 15
+                },
+                {
+                  "name": "wml-cex-2018.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-cex-2018.xsd",
+                  "lines": 21
+                },
+                {
+                  "name": "wml-cid-2016.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-cid-2016.xsd",
+                  "lines": 14
+                },
+                {
+                  "name": "wml-sdtdatahash-2020.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-sdtdatahash-2020.xsd",
+                  "lines": 5
+                },
+                {
+                  "name": "wml-symex-2015.xsd",
+                  "type": "file",
+                  "path": "ooxml/schemas/microsoft/wml-symex-2015.xsd",
+                  "lines": 9
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "scripts",
+          "type": "dir",
+          "path": "ooxml/scripts",
+          "children": [
+            {
+              "name": "validation",
+              "type": "dir",
+              "path": "ooxml/scripts/validation",
+              "children": [
+                {
+                  "name": "__init__.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/__init__.py",
+                  "lines": 16
+                },
+                {
+                  "name": "base.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/base.py",
+                  "lines": 952
+                },
+                {
+                  "name": "docx.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/docx.py",
+                  "lines": 275
+                },
+                {
+                  "name": "pptx.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/pptx.py",
+                  "lines": 316
+                },
+                {
+                  "name": "redlining.py",
+                  "type": "file",
+                  "path": "ooxml/scripts/validation/redlining.py",
+                  "lines": 280
+                }
+              ]
+            },
+            {
+              "name": "pack.py",
+              "type": "file",
+              "path": "ooxml/scripts/pack.py",
+              "lines": 160
+            },
+            {
+              "name": "unpack.py",
+              "type": "file",
+              "path": "ooxml/scripts/unpack.py",
+              "lines": 30
+            },
+            {
+              "name": "validate.py",
+              "type": "file",
+              "path": "ooxml/scripts/validate.py",
+              "lines": 70
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "templates",
+          "type": "dir",
+          "path": "scripts/templates",
+          "children": [
+            {
+              "name": "comments.xml",
+              "type": "file",
+              "path": "scripts/templates/comments.xml",
+              "lines": 3
+            },
+            {
+              "name": "commentsExtended.xml",
+              "type": "file",
+              "path": "scripts/templates/commentsExtended.xml",
+              "lines": 3
+            },
+            {
+              "name": "commentsExtensible.xml",
+              "type": "file",
+              "path": "scripts/templates/commentsExtensible.xml",
+              "lines": 3
+            },
+            {
+              "name": "commentsIds.xml",
+              "type": "file",
+              "path": "scripts/templates/commentsIds.xml",
+              "lines": 3
+            },
+            {
+              "name": "people.xml",
+              "type": "file",
+              "path": "scripts/templates/people.xml",
+              "lines": 3
+            }
+          ]
+        },
+        {
+          "name": "__init__.py",
+          "type": "file",
+          "path": "scripts/__init__.py",
+          "lines": 2
+        },
+        {
+          "name": "document.py",
+          "type": "file",
+          "path": "scripts/document.py",
+          "lines": 1277
+        },
+        {
+          "name": "utilities.py",
+          "type": "file",
+          "path": "scripts/utilities.py",
+          "lines": 375
+        }
+      ]
+    },
+    {
+      "name": "docx-js.md",
+      "type": "file",
+      "path": "docx-js.md",
+      "lines": 350
+    },
+    {
+      "name": "evaluation.json",
+      "type": "file",
+      "path": "evaluation.json",
+      "lines": 232
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 31
+    },
+    {
+      "name": "ooxml.md",
+      "type": "file",
+      "path": "ooxml.md",
+      "lines": 610
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 233
+    }
+  ]
+}

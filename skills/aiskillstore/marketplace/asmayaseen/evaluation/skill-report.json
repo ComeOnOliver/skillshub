@@ -1,0 +1,357 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T18:25:24.713Z",
+    "slug": "asmayaseen-evaluation",
+    "source_url": "https://github.com/Asmayaseen/hackathon-2/tree/main/.claude/skills/evaluation",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "39cf87a03a8882ca3457a0b761ee350820071c116dbecfe89f32f52cf59d0aa1",
+    "tree_hash": "4d48104526df3113f320359457a62e60c9d2264c93d605c4ffd359ff309428b2"
+  },
+  "skill": {
+    "name": "evaluation",
+    "description": "Build evaluation frameworks for agent systems. Use when testing agent performance, validating context engineering choices, or measuring improvements over time.",
+    "summary": "Build evaluation frameworks for agent systems. Use when testing agent performance, validating contex...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "Asmayaseen",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "agent-evaluation",
+      "performance-testing",
+      "metrics",
+      "quality-assurance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a legitimate evaluation framework skill containing only documentation and Python evaluation logic. All 79 static findings are FALSE POSITIVES caused by the scanner misinterpreting Markdown code blocks (``` delimiters) as shell backticks, dictionary structures as key files, and floating-point score values (0.0-1.0) as cryptographic algorithms. No network calls, no credential access, no command execution, and no data exfiltration patterns exist in the actual runtime code.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "references/metrics.md",
+            "line_start": 11,
+            "line_end": 17
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 17,
+            "line_end": 29
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 29,
+            "line_end": 35
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 35,
+            "line_end": 41
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 41,
+            "line_end": 47
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 47,
+            "line_end": 53
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 53,
+            "line_end": 59
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 59,
+            "line_end": 65
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 65,
+            "line_end": 71
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 71,
+            "line_end": 75
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 75,
+            "line_end": 146
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 146,
+            "line_end": 150
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 150,
+            "line_end": 187
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 187,
+            "line_end": 191
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 191,
+            "line_end": 281
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 281,
+            "line_end": 285
+          },
+          {
+            "file": "references/metrics.md",
+            "line_start": 285,
+            "line_end": 338
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 151
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 151,
+            "line_end": 157
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 157,
+            "line_end": 185
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1280,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T18:25:24.713Z"
+  },
+  "content": {
+    "user_title": "Build evaluation frameworks for agent systems",
+    "value_statement": "Agent systems lack reliable quality measurement. This skill provides structured evaluation frameworks with multi-dimensional rubrics, test set design, and production monitoring to measure agent performance systematically.",
+    "seo_keywords": [
+      "agent evaluation framework",
+      "Claude Code evaluation",
+      "AI agent testing",
+      "performance metrics",
+      "LLM evaluation",
+      "agent quality assurance",
+      "context engineering testing",
+      "Claude evaluation",
+      "Codex testing",
+      "agent performance measurement"
+    ],
+    "actual_capabilities": [
+      "Design multi-dimensional evaluation rubrics with weighted scoring",
+      "Create test sets spanning simple to complex agent scenarios",
+      "Build automated evaluation pipelines with pass/fail thresholds",
+      "Implement production monitoring with alert thresholds",
+      "Compare agent configurations and track improvements over time"
+    ],
+    "limitations": [
+      "Requires structured test inputs and ground truth for accurate evaluation",
+      "Does not execute agents directly; evaluates outputs separately",
+      "Simulation mode demonstrates framework; production use needs integration",
+      "Does not provide built-in LLM-as-judge prompts for all use cases"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML Engineers",
+        "title": "Test agent performance",
+        "description": "Systematically measure agent outputs against defined quality dimensions and pass thresholds"
+      },
+      {
+        "target_user": "AI Researchers",
+        "title": "Validate context strategies",
+        "description": "Compare how different context engineering approaches affect agent quality and token usage"
+      },
+      {
+        "target_user": "Engineering Leaders",
+        "title": "Track quality trends",
+        "description": "Monitor production agent quality over time with automated sampling and alert systems"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create test set",
+        "scenario": "Build evaluation tests",
+        "prompt": "Create a test set with 5 test cases of varying complexity (simple to very complex) for evaluating an agent that researches technical topics. Include complexity levels, tags, and ground truth expectations."
+      },
+      {
+        "title": "Design rubric",
+        "scenario": "Define quality metrics",
+        "prompt": "Design a multi-dimensional evaluation rubric for [use case: customer support agent]. Define 5 dimensions with weights, level descriptions from 1.0 to 0.0, and explain scoring rationale."
+      },
+      {
+        "title": "Run evaluation",
+        "scenario": "Evaluate agent outputs",
+        "prompt": "Evaluate the following agent outputs against this rubric. For each output, provide dimension scores, overall score, and pass/fail determination with reasoning."
+      },
+      {
+        "title": "Build pipeline",
+        "scenario": "Automate testing",
+        "prompt": "Build an evaluation pipeline that runs on code changes. Include test set loading, parallel execution, result aggregation, and failure reporting to Slack."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Evaluate these 3 agent responses for factual accuracy, completeness, and citation quality.",
+        "output": [
+          "Response A: Overall 0.82 (Good) - Factual: 0.9, Completeness: 0.8, Citations: 0.7 - PASS",
+          "Response B: Overall 0.58 (Acceptable) - Factual: 0.7, Completeness: 0.5, Citations: 0.6 - NEEDS IMPROVEMENT",
+          "Response C: Overall 0.91 (Excellent) - Factual: 1.0, Completeness: 0.85, Citations: 0.9 - PASS",
+          "Recommendation: Focus on improving completeness for responses similar to task type B"
+        ]
+      },
+      {
+        "input": "Create a test set for a research agent.",
+        "output": [
+          "Test Set: 5 tests created",
+          "simple_lookup: Single factual query (complexity: simple)",
+          "context_retrieval: Preference-based recommendation (complexity: medium)",
+          "multi_step_reasoning: Data analysis task (complexity: complex)",
+          "Expected tool calls: 1-3 for simple, 3-5 for medium, 5+ for complex"
+        ]
+      },
+      {
+        "input": "Set up production monitoring for quality alerts.",
+        "output": [
+          "Production Monitor configured",
+          "Sample rate: 1% of interactions",
+          "Warning threshold: 85% pass rate",
+          "Critical threshold: 70% pass rate",
+          "Alert types: quality_drop, low_score, regression"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Combine LLM automated evaluation with human review for edge cases and subtle issues",
+      "Evaluate outcomes, not specific execution paths, to account for multiple valid agent approaches",
+      "Track metrics over time to detect regressions and measure the impact of optimizations"
+    ],
+    "anti_patterns": [
+      "Evaluating specific steps rather than outcomes, which penalizes valid alternative approaches",
+      "Using single metrics instead of multi-dimensional rubrics that capture different quality aspects",
+      "Testing only with unlimited context, missing performance cliffs that occur with realistic limits"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools and platforms are supported?",
+        "answer": "Compatible with Claude, Claude Code, and Codex. Framework-agnostic design works with any agent that produces text outputs."
+      },
+      {
+        "question": "How many test cases should I include?",
+        "answer": "Start with 5-10 tests covering different complexity levels during development. Expand to 50-100 tests for production monitoring."
+      },
+      {
+        "question": "How does this integrate with CI/CD pipelines?",
+        "answer": "Run evaluation scripts as pre-commit hooks or in CI. Fail builds when pass rate drops below your defined threshold."
+      },
+      {
+        "question": "Is my evaluation data kept private?",
+        "answer": "All evaluation runs happen locally in your environment. No data is sent to external services unless you configure it."
+      },
+      {
+        "question": "Why are my evaluation scores inconsistent?",
+        "answer": "Non-determinism is expected in agent evaluation. Use larger test sets and report confidence intervals, not single scores."
+      },
+      {
+        "question": "How does this compare to other evaluation tools?",
+        "answer": "This skill provides a lightweight, customizable framework. For specific benchmarks, combine with tools like LangSmith or RAGAS."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "metrics.md",
+          "type": "file",
+          "path": "references/metrics.md",
+          "lines": 339
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "evaluator.py",
+          "type": "file",
+          "path": "scripts/evaluator.py",
+          "lines": 474
+        },
+        {
+          "name": "verify.py",
+          "type": "file",
+          "path": "scripts/verify.py",
+          "lines": 32
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 231
+    }
+  ]
+}

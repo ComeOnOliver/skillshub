@@ -1,0 +1,308 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T14:05:24.052Z",
+    "slug": "1gy-creating-pull-requests",
+    "source_url": "https://github.com/1gy/jpp/tree/main/.claude/skills/creating-pull-requests",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "36b9a2b64b59fc37b5ffc8436577a6cf110b337dd38d62c960dda9ca37e03565",
+    "tree_hash": "e14793d853ced69ae0507ee7ebc86a308c42b2865819b094591594886c94a377"
+  },
+  "skill": {
+    "name": "creating-pull-requests",
+    "description": "Creates pull requests with generated descriptions. Triggered when: PR creation, pull request, merge request, code review preparation.\n",
+    "summary": "Creates pull requests with generated descriptions. Triggered when: PR creation, pull request, merge ...",
+    "icon": "🔀",
+    "version": "1.0.0",
+    "author": "1gy",
+    "license": "MIT",
+    "category": "development",
+    "tags": [
+      "git",
+      "github",
+      "pull-request",
+      "automation",
+      "cli"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation-based prompt wrapper for git and GitHub CLI operations. The static scanner produced 35 false positives due to misclassification: template placeholders like <branch-name> were flagged as 'weak cryptographic algorithms', and standard shell commands were flagged as 'Ruby/shell backtick execution'. In reality, this skill only documents standard git commands (branch, status, push) and GitHub CLI PR creation. No code execution occurs beyond user-initiated git/gh commands. The original AI audit correctly classified this as safe.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 150,
+            "line_end": 150
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 127,
+            "line_end": 127
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 15
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 15,
+            "line_end": 19
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 19,
+            "line_end": 21
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 21,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 35
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 35,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 52
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 52,
+            "line_end": 58
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 58,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 60
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 60,
+            "line_end": 61
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 51
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 52
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 246,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T14:05:24.052Z"
+  },
+  "content": {
+    "user_title": "Create GitHub pull requests with templates",
+    "value_statement": "Creating pull requests manually takes time and often results in incomplete descriptions. This skill automates PR creation with structured templates, ensuring consistent documentation and faster code reviews.",
+    "seo_keywords": [
+      "pull request creation",
+      "GitHub CLI",
+      "git automation",
+      "Claude Code skill",
+      "code review",
+      "merge request",
+      "git workflow",
+      "PR templates",
+      "developer tools",
+      "GitHub automation"
+    ],
+    "actual_capabilities": [
+      "Checks current branch and git status before creating PR",
+      "Reviews commit history against main branch",
+      "Pushes local branches to remote with tracking",
+      "Creates PRs with structured markdown descriptions",
+      "Adds labels, assignees, and target branches to PRs",
+      "Generates completion reports with PR URL and details"
+    ],
+    "limitations": [
+      "Requires GitHub CLI (gh) to be installed and authenticated",
+      "Only works with GitHub repositories, not other Git hosting services",
+      "Does not handle merge conflicts or failed checks",
+      "Cannot create PRs without appropriate repository permissions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software developers",
+        "title": "Streamline PR workflows",
+        "description": "Quickly create well-documented pull requests with consistent templates and test checklists"
+      },
+      {
+        "target_user": "Open source contributors",
+        "title": "Submit quality contributions",
+        "description": "Generate professional PR descriptions that help maintainers review and merge contributions faster"
+      },
+      {
+        "target_user": "Code review teams",
+        "title": "Improve review documentation",
+        "description": "Ensure every PR includes clear summaries and test plans for faster, more effective reviews"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create a simple PR",
+        "scenario": "When you need to create a basic pull request",
+        "prompt": "Create a pull request with the title '[Brief description]' describing my changes"
+      },
+      {
+        "title": "PR with test checklist",
+        "scenario": "When preparing a PR with testing requirements",
+        "prompt": "Create a pull request titled '[Feature name]' and include test checklist items: [Test item 1], [Test item 2]"
+      },
+      {
+        "title": "PR to non-main branch",
+        "scenario": "When targeting a different base branch",
+        "prompt": "Create a draft PR for my feature branch targeting the 'develop' branch with summary of changes"
+      },
+      {
+        "title": "Full PR with labels",
+        "scenario": "When you need all PR options configured",
+        "prompt": "Create a pull request with title '[Your title]', base branch 'main', assign to me, add 'enhancement' label, and include this summary: [Your summary]"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a pull request titled 'Fix login timeout bug' with test checklist items: verify login works, check session expiry",
+        "output": [
+          "Pull request created successfully",
+          "Title: Fix login timeout bug",
+          "URL: https://github.com/owner/repo/pull/123",
+          "Target branch: main",
+          "Test checklist included with 2 items"
+        ]
+      },
+      {
+        "input": "Create a draft PR for my feature branch targeting 'develop' branch",
+        "output": [
+          "Draft pull request created",
+          "Title: [Feature name]",
+          "URL: https://github.com/owner/repo/pull/124",
+          "Target branch: develop",
+          "Status: Draft - ready for more changes"
+        ]
+      },
+      {
+        "input": "Create a PR with 'enhancement' label and assign to me for adding user profile feature",
+        "output": [
+          "Pull request created with labels and assignee",
+          "Title: Add user profile feature",
+          "URL: https://github.com/owner/repo/pull/125",
+          "Target branch: main",
+          "Labels: enhancement",
+          "Assignee: @me"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Run git status and review changes before creating a PR to ensure only intended modifications are included",
+      "Use descriptive titles that summarize the change in under 60 characters for better visibility",
+      "Fill in all test checklist items to help reviewers understand what verification is needed"
+    ],
+    "anti_patterns": [
+      "Creating PRs without reviewing the diff first may include unintended changes",
+      "Using vague titles like 'fix' or 'update' makes it harder to track changes in project history",
+      "Skipping the test plan makes it difficult for reviewers to verify the implementation works correctly"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with GitLab or Bitbucket?",
+        "answer": "No, this skill uses GitHub CLI (gh) and only works with GitHub repositories."
+      },
+      {
+        "question": "What permissions does the GitHub CLI need?",
+        "answer": "GitHub CLI requires authentication and repo scope permissions to create pull requests."
+      },
+      {
+        "question": "Can I create draft pull requests?",
+        "answer": "Yes, use the --draft flag when creating a PR to mark it as a draft requiring more work."
+      },
+      {
+        "question": "Is my code or data sent anywhere?",
+        "answer": "Code is only sent to GitHub via the official gh CLI when creating a PR. No third-party services."
+      },
+      {
+        "question": "What if the PR creation fails?",
+        "answer": "The skill will report any errors from gh CLI such as permission."
+      },
+      {
+        "question": "What if the PR creation fails due to permission issues or branch conflicts?",
+        "answer": "The skill will report any errors from gh CLI such as permission issues or branch conflicts. You may need to resolve conflicts locally before attempting to create the PR again."
+      },
+      {
+        "question": "How is this different from manual PR creation?",
+        "answer": "This skill provides templates, automates branch pushing, ensures consistent description format, and reduces setup time."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 68
+    }
+  ]
+}

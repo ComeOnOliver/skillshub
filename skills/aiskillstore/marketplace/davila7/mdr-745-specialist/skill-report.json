@@ -1,0 +1,251 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T01:56:32.825Z",
+    "slug": "davila7-mdr-745-specialist",
+    "source_url": "https://github.com/davila7/claude-code-templates/tree/main/cli-tool/components/skills/enterprise-communication/mdr-745-specialist",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "c129ab319a25f5467d9622b1a7fc1323eb86f606f71a847af3238629cd4ec27e",
+    "tree_hash": "5fc806deaf7002d04389fa8b82d7ef13ea149baae5ff2ebccc8d3743142e703b"
+  },
+  "skill": {
+    "name": "mdr-745-specialist",
+    "description": "EU MDR 2017/745 regulation specialist and consultant for medical device requirement management. Provides comprehensive MDR compliance expertise, gap analysis, technical documentation guidance, clinical evidence requirements, and post-market surveillance implementation. Use for MDR compliance assessment, classification decisions, technical file preparation, and regulatory requirement interpretation.",
+    "summary": "EU MDR 2017/745 regulation specialist and consultant for medical device requirement management. Prov...",
+    "icon": "🏥",
+    "version": "1.0.0",
+    "author": "davila7",
+    "license": "MIT",
+    "category": "communication",
+    "tags": [
+      "medical-devices",
+      "regulatory-compliance",
+      "mdr",
+      "healthcare",
+      "eudamed"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "scripts"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a regulatory compliance knowledge-base skill for EU MDR 2017/745 guidance. All static findings are false positives triggered by regulatory terminology (MDR, Class I/II/III) being misinterpreted as security patterns. The skill contains only documentation and placeholder files with no executable malicious code, network calls, or data exfiltration.",
+    "risk_factor_evidence": [
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "scripts/example.py",
+            "line_start": 1,
+            "line_end": 20
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 503,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T01:56:32.825Z"
+  },
+  "content": {
+    "user_title": "Navigate EU MDR medical device compliance",
+    "value_statement": "Medical device manufacturers struggle with complex EU MDR 2017/745 requirements for technical documentation, clinical evidence, and post-market surveillance. This skill provides expert regulatory guidance for classification decisions, compliance gap analysis, and Notified Body interactions.",
+    "seo_keywords": [
+      "MDR 2017/745",
+      "EU MDR compliance",
+      "medical device regulation",
+      "medical device classification",
+      "technical documentation",
+      "clinical evidence",
+      "post-market surveillance",
+      "EUDAMED",
+      "Notified Body",
+      "MDCG guidance",
+      "Claude",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Guide device classification under MDR Annex VIII rules",
+      "Assess technical documentation requirements per Annex II and III",
+      "Evaluate clinical evidence and PMCF requirements per Annex XIV",
+      "Implement UDI system and EUDAMED registration",
+      "Develop post-market surveillance plans and PSUR reports",
+      "Navigate Notified Body selection and audit preparation"
+    ],
+    "limitations": [
+      "Does not provide legal advice or regulatory certification",
+      "Cannot access real-time EUDAMED database or Notified Body status",
+      "Does not replace qualified regulatory affairs professionals for final submissions"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Regulatory affairs professionals",
+        "title": "Classify medical devices accurately",
+        "description": "Determine correct device class and conformity assessment route for MDR compliance strategy planning."
+      },
+      {
+        "target_user": "Quality managers",
+        "title": "Prepare technical files",
+        "description": "Structure Annex II and III documentation and identify gaps in existing quality management system."
+      },
+      {
+        "target_user": "Medical device startups",
+        "title": "Plan MDR compliance roadmap",
+        "description": "Develop phased transition strategy from legacy directives to full MDR compliance requirements."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Device classification",
+        "scenario": "Determining MDR class for a new device",
+        "prompt": "I have a device type description. How should I classify it under MDR Annex VIII? Consider specific device characteristics. What conformity assessment route applies?"
+      },
+      {
+        "title": "Technical documentation",
+        "scenario": "Structuring MDR technical file",
+        "prompt": "Help me structure technical documentation for a Class I, IIa, IIb, or III device. What are the key sections required under Annex II and III?"
+      },
+      {
+        "title": "Clinical evidence",
+        "scenario": "Planning clinical evaluation strategy",
+        "prompt": "What clinical evidence requirements apply to my device type? Should I conduct a clinical investigation or use literature-based evaluation?"
+      },
+      {
+        "title": "Notified Body",
+        "scenario": "Preparing for audit",
+        "prompt": "What should I expect during a Notified Body audit for my device class? How do I prepare technical documentation and personnel?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I classify an insulin pump system under MDR?",
+        "output": [
+          "Device classification: Class IIb (active therapeutic device that administers or exchanges substances)",
+          "Classification rules: Rule 11 applies for active therapeutic devices",
+          "Conformity assessment route: Notified Body involvement required with Full Quality Management System",
+          "Key documentation: Technical file, clinical evaluation report, post-market surveillance plan, UDI registration",
+          "Timeline consideration: Engage with Notified Body early due to capacity constraints"
+        ]
+      },
+      {
+        "input": "What does my Class I device need for MDR compliance?",
+        "output": [
+          "Class I devices can use self-certification under Annex II",
+          "However, sterile devices, measuring devices, or reusable surgical instruments require Notified Body",
+          "Technical documentation must include device description, intended purpose, and risk management",
+          "Post-market surveillance plan is required with incident reporting procedures",
+          "UDI registration in EUDAMED is mandatory for all device classes"
+        ]
+      },
+      {
+        "input": "How do I plan clinical evaluation for a legacy device?",
+        "output": [
+          "Start with systematic literature review of existing clinical data",
+          "Identify gaps between current evidence and MDR requirements",
+          "Determine if equivalence to predicate devices is sufficiently demonstrated",
+          "Develop PMCF plan to address any remaining evidence gaps",
+          "Update clinical evaluation report at least every 5 years for higher risk devices"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start classification discussions with your Notified Body early to avoid reclassification delays",
+      "Maintain clinical evidence throughout device lifecycle, not just for initial CE marking",
+      "Document all decisions and rationale for regulatory compliance and audit trail purposes"
+    ],
+    "anti_patterns": [
+      "Assuming legacy MDD certification automatically transitions to MDR without gap analysis",
+      "Delaying UDI implementation until after CE marking is obtained",
+      "Using clinical data from outdated or irrelevant studies without proper equivalence justification"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill work with both new and existing medical devices?",
+        "answer": "Yes. It covers requirements for new device approvals and transition planning for legacy devices under MDR."
+      },
+      {
+        "question": "What device classes does this skill cover?",
+        "answer": "All four MDR classes: Class I, IIa, IIb, and III with specific guidance for each classification level."
+      },
+      {
+        "question": "Can this skill help with EUDAMED registration?",
+        "answer": "It provides guidance on registration requirements and process but cannot access or submit to the EUDAMED database."
+      },
+      {
+        "question": "Is this skill a replacement for a regulatory consultant?",
+        "answer": "No. It provides expert guidance but should complement, not replace, qualified regulatory affairs professionals."
+      },
+      {
+        "question": "Does the skill include PMCF plan templates?",
+        "answer": "The skill provides framework guidance for PMCF plan development based on Annex XIV Part B requirements."
+      },
+      {
+        "question": "How does this compare to MDD 93/42/EEC?",
+        "answer": "The skill explains key differences including expanded clinical evidence requirements and stricter post-market obligations."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "assets",
+      "type": "dir",
+      "path": "assets",
+      "children": [
+        {
+          "name": "example_asset.txt",
+          "type": "file",
+          "path": "assets/example_asset.txt",
+          "lines": 25
+        }
+      ]
+    },
+    {
+      "name": "references",
+      "type": "dir",
+      "path": "references",
+      "children": [
+        {
+          "name": "api_reference.md",
+          "type": "file",
+          "path": "references/api_reference.md",
+          "lines": 35
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "example.py",
+          "type": "file",
+          "path": "scripts/example.py",
+          "lines": 20
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 196
+    }
+  ]
+}

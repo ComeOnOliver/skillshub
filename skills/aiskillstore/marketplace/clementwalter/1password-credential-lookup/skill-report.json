@@ -1,0 +1,242 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T21:02:17.483Z",
+    "slug": "clementwalter-1password-credential-lookup",
+    "source_url": "https://github.com/ClementWalter/rookie-marketplace/tree/main/1password-mcp/skills/credential-lookup",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "9a352f47157c2883b3f14123b1c7e7bc940b1d089171407a1c59795e8059eefd",
+    "tree_hash": "93ae8204725b50571e4299a097ea38ba3a94459674fae66c8fa72504f4cfd345"
+  },
+  "skill": {
+    "name": "1password-credential-lookup",
+    "description": "This skill should be used when agents need to log into websites, retrieve passwords, or access credentials. CRITICAL - always use find_credential with the website URL, never guess item names.",
+    "summary": "This skill should be used when agents need to log into websites, retrieve passwords, or access crede...",
+    "icon": "🔐",
+    "version": "2.0.0",
+    "author": "ClementWalter",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "credentials",
+      "1password",
+      "authentication",
+      "password-manager"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Legitimate credential lookup tool that uses 1Password CLI for secure retrieval. No network calls, no credential exfiltration. Subprocess calls to `op` CLI use hardcoded string arguments. Static findings are false positives triggered by expected credential access patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "scripts/find_credential.py",
+            "line_start": 30,
+            "line_end": 31
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "scripts/find_credential.py",
+            "line_start": 57,
+            "line_end": 87
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [
+      {
+        "title": "Credentials output via stdout",
+        "description": "Script outputs credentials as JSON to stdout. This is the designed behavior for credential retrieval. Not a security flaw but expected functionality.",
+        "locations": [
+          {
+            "file": "scripts/find_credential.py",
+            "line_start": 112,
+            "line_end": 128
+          }
+        ]
+      }
+    ],
+    "dangerous_patterns": [],
+    "files_scanned": 3,
+    "total_lines": 507,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T21:02:17.483Z"
+  },
+  "content": {
+    "user_title": "Retrieve 1Password credentials by URL",
+    "value_statement": "AI agents need secure access to credentials for login automation. This skill provides URL-based lookup through 1Password CLI to retrieve usernames and passwords without exposing raw secrets in prompts.",
+    "seo_keywords": [
+      "1password credential lookup",
+      "Claude Code credentials",
+      "AI password retrieval",
+      "1password CLI integration",
+      "secure credential access",
+      "password manager automation",
+      "authentication AI",
+      "credential management Claude",
+      "1password MCP",
+      "AI login automation"
+    ],
+    "actual_capabilities": [
+      "Find credentials by website URL such as github.com or twitter.com",
+      "Filter credentials by username when multiple accounts exist for a domain",
+      "Handle domain aliases such as x.com mapping to twitter.com",
+      "Return structured JSON with username, password, and item details",
+      "Provide clear error messages for missing items or multiple matches",
+      "Integrate with 1Password CLI for secure local credential retrieval"
+    ],
+    "limitations": [
+      "Requires 1Password CLI installed and authenticated with op signin",
+      "No MCP server integration - uses CLI directly without persistent connection",
+      "Limited to Unix-like systems with 1Password CLI support",
+      "Cannot search by arbitrary item names - must use URL field"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers",
+        "title": "CI/CD Authentication",
+        "description": "Retrieve deployment credentials for automated pipelines without hardcoding secrets"
+      },
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Server Access",
+        "description": "Fetch SSH keys and server passwords for infrastructure management tasks"
+      },
+      {
+        "target_user": "Security Teams",
+        "title": "Credential Audit",
+        "description": "List and verify stored credentials across different services securely"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Login",
+        "scenario": "Get credentials for a website",
+        "prompt": "Find credentials for github.com"
+      },
+      {
+        "title": "With Username",
+        "scenario": "Filter by specific account",
+        "prompt": "Find credentials for github.com with username myuser"
+      },
+      {
+        "title": "Multi-Account",
+        "scenario": "Handle multiple accounts",
+        "prompt": "Get all accounts for twitter.com"
+      },
+      {
+        "title": "Unknown Account",
+        "scenario": "Find which account to use",
+        "prompt": "List all available accounts for x.com"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Find credentials for github.com with username claude",
+        "output": [
+          "Found credential: GitHub (claude account)",
+          "Username: claude",
+          "Password: [hidden - 16 chars]",
+          "Item ID: abc123xyz"
+        ]
+      },
+      {
+        "input": "Find credentials for twitter.com",
+        "output": [
+          "Multiple accounts found for twitter.com:",
+          "- Username: work@company.com",
+          "- Username: personal@email.com",
+          "Specify username to filter"
+        ]
+      },
+      {
+        "input": "List all available accounts for x.com",
+        "output": [
+          "Available accounts for x.com:",
+          "- @username1 (Twitter/X account)",
+          "- @username2 (Alternative account)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use URL-based lookup with find_credential instead of guessing arbitrary item names",
+      "Filter by username when multiple accounts exist for the same domain",
+      "Ensure 1Password CLI is signed in before requesting credentials"
+    ],
+    "anti_patterns": [
+      "Using item_name parameter with URLs or guessed names (item names are arbitrary and may not match domains)",
+      "Guessing item names like GitHub or my github (these do not work with the 1Password CLI)",
+      "Using get_credential with URLs instead of find_credential (violates the one rule)"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Compatible with Claude, Codex, and Claude Code for credential retrieval workflows."
+      },
+      {
+        "question": "Can I use this with multiple 1Password accounts?",
+        "answer": "Yes, but the script uses the default account. Filter by username to select the correct one."
+      },
+      {
+        "question": "Are credentials cached or stored?",
+        "answer": "No caching. Each request calls 1Password CLI directly and credentials stay in memory only."
+      },
+      {
+        "question": "Does this send data externally?",
+        "answer": "No network calls. All communication is with the local 1Password CLI installation only."
+      },
+      {
+        "question": "What if multiple accounts exist for a domain?",
+        "answer": "The script returns a list of accounts. Add a username filter to select the correct one."
+      },
+      {
+        "question": "How are credentials protected?",
+        "answer": "Credentials are retrieved via 1Password CLI and returned as JSON. Use environment variables to capture securely."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "scripts",
+      "type": "dir",
+      "path": "scripts",
+      "children": [
+        {
+          "name": "find_credential.py",
+          "type": "file",
+          "path": "scripts/find_credential.py",
+          "lines": 146
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 106
+    }
+  ]
+}

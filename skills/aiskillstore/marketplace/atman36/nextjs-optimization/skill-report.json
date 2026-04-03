@@ -1,0 +1,731 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:27:50.791Z",
+    "slug": "atman36-nextjs-optimization",
+    "source_url": "https://github.com/Atman36/AI-Vibe-Prompts/tree/main/.claude/skills/framework-specific/nextjs-optimization",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1c8f244e7bec093bf0aa29101681c3680631569ebed45d17c396ec3b28f1b60d",
+    "tree_hash": "c73d2fb3652f4ab770de3b8d859e338b2b7e83700fddf8062c6eb53c4da0e823"
+  },
+  "skill": {
+    "name": "nextjs-optimization",
+    "description": "Optimize Next.js 15 applications for performance, Core Web Vitals, and production best practices using App Router patterns",
+    "summary": "Optimize Next.js 15 applications for performance, Core Web Vitals, and production best practices usi...",
+    "icon": "⚡",
+    "version": "1.0.0",
+    "author": "AI-Vibe-Prompts",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "nextjs",
+      "performance",
+      "optimization",
+      "react",
+      "app-router"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "scripts",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing Next.js 15 optimization guidance. All 124 static findings are false positives. The scanner misinterprets documentation code examples (bash commands, environment variables, fetch patterns) as executable security risks. The skill provides instructional content only and does not include any executable code, scripts, network operations, or file system modifications beyond user-initiated code edits.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 478,
+            "line_end": 478
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 265,
+            "line_end": 265
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 270,
+            "line_end": 270
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 440,
+            "line_end": 440
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 478,
+            "line_end": 478
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 513,
+            "line_end": 513
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 518,
+            "line_end": 518
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "scripts",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 303,
+            "line_end": 303
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 25,
+            "line_end": 25
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 39
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 39,
+            "line_end": 42
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 42,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 43
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 46
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 46,
+            "line_end": 65
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 65,
+            "line_end": 71
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 71,
+            "line_end": 74
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 74,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 106
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 106,
+            "line_end": 113
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 113,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 142
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 142,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 189
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 189,
+            "line_end": 206
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 206,
+            "line_end": 210
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 210,
+            "line_end": 218
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 218,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 232
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 232,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 240
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 240,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 263
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 263,
+            "line_end": 276
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 276,
+            "line_end": 286
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 286,
+            "line_end": 290
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 290,
+            "line_end": 295
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 295,
+            "line_end": 297
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 297,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 307
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 307,
+            "line_end": 312
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 312,
+            "line_end": 314
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 314,
+            "line_end": 317
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 317,
+            "line_end": 323
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 323,
+            "line_end": 333
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 333,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 354
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 354,
+            "line_end": 365
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 365,
+            "line_end": 375
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 375,
+            "line_end": 398
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 398,
+            "line_end": 402
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 402,
+            "line_end": 409
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 409,
+            "line_end": 420
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 420,
+            "line_end": 424
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 424,
+            "line_end": 427
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 427,
+            "line_end": 436
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 436,
+            "line_end": 443
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 443,
+            "line_end": 450
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 450,
+            "line_end": 452
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 452,
+            "line_end": 457
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 457,
+            "line_end": 467
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 467,
+            "line_end": 472
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 472,
+            "line_end": 476
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 476,
+            "line_end": 483
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 483,
+            "line_end": 493
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 493,
+            "line_end": 507
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 507,
+            "line_end": 511
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 511,
+            "line_end": 519
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 519,
+            "line_end": 525
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 525,
+            "line_end": 526
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 526,
+            "line_end": 526
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 526,
+            "line_end": 530
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 530,
+            "line_end": 533
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 533,
+            "line_end": 540
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 540,
+            "line_end": 551
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 551,
+            "line_end": 552
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 552,
+            "line_end": 552
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 552,
+            "line_end": 553
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 553,
+            "line_end": 557
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 557,
+            "line_end": 560
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 560,
+            "line_end": 563
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 563,
+            "line_end": 583
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 583,
+            "line_end": 583
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 583,
+            "line_end": 587
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 587,
+            "line_end": 599
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 599,
+            "line_end": 600
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 600,
+            "line_end": 601
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 601,
+            "line_end": 602
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 384,
+            "line_end": 384
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 384,
+            "line_end": 384
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 797,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:27:50.790Z"
+  },
+  "content": {
+    "user_title": "Optimize Next.js 15 Performance",
+    "value_statement": "Slow Next.js applications hurt user experience and SEO rankings. This skill analyzes your app and provides specific optimizations for Core Web Vitals, bundle size, and rendering strategies.",
+    "seo_keywords": [
+      "Next.js optimization",
+      "Core Web Vitals",
+      "performance optimization",
+      "React performance",
+      "Next.js 15",
+      "Claude Code",
+      "Codex",
+      "bundle size",
+      "LCP optimization",
+      "rendering strategies"
+    ],
+    "actual_capabilities": [
+      "Analyzes Next.js project structure and version compatibility",
+      "Identifies performance issues like unoptimized images and large bundles",
+      "Optimizes rendering strategies (Server Components, Client Components, ISR, SSG)",
+      "Configures Next.js image and font optimization",
+      "Implements data fetching patterns to prevent waterfalls",
+      "Configures production settings in next.config.js"
+    ],
+    "limitations": [
+      "Cannot execute builds or run Lighthouse directly (user must run commands)",
+      "Does not modify third-party dependencies or external API behavior",
+      "Requires user approval before applying code changes",
+      "Does not provide server infrastructure optimization advice"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend Developers",
+        "title": "Improve Core Web Vitals",
+        "description": "Achieve LCP under 2.5 seconds and zero layout shifts for better SEO"
+      },
+      {
+        "target_user": "Full-Stack Engineers",
+        "title": "Optimize Bundle Size",
+        "description": "Reduce JavaScript bundle size with dynamic imports and tree shaking"
+      },
+      {
+        "target_user": "DevOps Teams",
+        "title": "Configure Production Settings",
+        "description": "Set up caching, compression, and React Compiler for production"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick Performance Check",
+        "scenario": "Basic optimization review",
+        "prompt": "Analyze my Next.js app and identify the top 5 performance issues affecting Core Web Vitals"
+      },
+      {
+        "title": "Image Optimization",
+        "scenario": "Fix image loading issues",
+        "prompt": "Find all unoptimized images in my Next.js project and show me how to replace them with next/image"
+      },
+      {
+        "title": "Bundle Analysis",
+        "scenario": "Reduce bundle size",
+        "prompt": "Analyze my JavaScript bundle and suggest specific components to lazy load for better performance"
+      },
+      {
+        "title": "Full Optimization",
+        "scenario": "Complete optimization pass",
+        "prompt": "Perform a complete Next.js 15 optimization pass: check rendering strategies, data fetching, caching, metadata, and next.config.js"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze my Next.js app and optimize performance",
+        "output": [
+          "Found 8 optimization opportunities:",
+          "Critical: 12 unoptimized <img> tags (adds ~800ms to LCP)",
+          "Critical: Chart.js loaded synchronously (142KB unused JS)",
+          "Warning: Sequential data fetching in dashboard (waterfall)",
+          "Applied: Next/image configuration with AVIF/WebP support",
+          "Estimated improvement: Load time 2.8s → 1.4s (-50%)"
+        ]
+      },
+      {
+        "input": "Help me optimize my dashboard page",
+        "output": [
+          "Issues found:",
+          "Sequential data fetching causing 2.3s waterfall",
+          "No Suspense boundaries for slow components",
+          "Missing revalidate cache configuration",
+          "Recommendations: Use Promise.all for parallel fetching, wrap Chart component in Suspense, add 60s revalidate"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use Server Components by default and only add use client for interactive leaf components",
+      "Preload above-the-fold images with the priority prop to hit LCP targets under 2.5s",
+      "Wrap slow components in Suspense boundaries to enable streaming and improve perceived performance"
+    ],
+    "anti_patterns": [
+      "Using use client at the top level of pages instead of leaf components",
+      "Not specifying width and height on images causing cumulative layout shifts",
+      "Fetching data sequentially instead of using Promise.all for parallel requests"
+    ],
+    "faq": [
+      {
+        "question": "Which Next.js versions are supported?",
+        "answer": "This skill is designed for Next.js 15 and works with App Router. It can provide basic guidance for Next.js 13-14."
+      },
+      {
+        "question": "What are the target Core Web Vitals scores?",
+        "answer": "LCP under 2.5s, FID under 100ms, and CLS under 0.1. The skill helps you achieve and maintain these targets."
+      },
+      {
+        "question": "Does this skill modify my code automatically?",
+        "answer": "No. The skill suggests optimizations and you must approve each change before it is applied to your codebase."
+      },
+      {
+        "question": "Is my code and data safe?",
+        "answer": "Yes. This skill only reads your files to analyze them and suggests optimizations. No data is sent anywhere."
+      },
+      {
+        "question": "Why are my pages still slow after optimization?",
+        "answer": "Check server response times, database queries, and third-party scripts. This skill optimizes client-side performance."
+      },
+      {
+        "question": "How does this compare to other Next.js tools?",
+        "answer": "This skill provides AI-powered guidance tailored to your codebase. Use it alongside @next/bundle-analyzer and Lighthouse."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 616
+    }
+  ]
+}

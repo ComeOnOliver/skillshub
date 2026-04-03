@@ -1,0 +1,353 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:42:09.254Z",
+    "slug": "dnyoussef-reasoningbank-adaptive-learning-with-agentdb",
+    "source_url": "https://github.com/DNYoussef/ai-chrome-extension/tree/main/.claude/skills/agentdb/when-implementing-adaptive-learning-use-reasoningbank-agentdb",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "00e9761caa44f9fc6827fc77c8135c81bac969ee24c95ba880d2f377035fcf65",
+    "tree_hash": "ec506d54ce43c1087fc7bc81a16164172f112de612e2e0e4e6a4a39e87f7ddaf"
+  },
+  "skill": {
+    "name": "reasoningbank-adaptive-learning-with-agentdb",
+    "description": "Implement ReasoningBank adaptive learning with AgentDB for trajectory tracking, verdict judgment, memory distillation, and pattern recognition to build self-learning agents that improve decision-making through experience.",
+    "summary": "Implement ReasoningBank adaptive learning with AgentDB for trajectory tracking, verdict judgment, me...",
+    "icon": "🧠",
+    "version": "1.0.0",
+    "author": "DNYoussef",
+    "license": "MIT",
+    "category": "agentdb",
+    "tags": [
+      "adaptive-learning",
+      "agentdb",
+      "reasoningbank",
+      "pattern-recognition",
+      "meta-learning"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands",
+      "network",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only TypeScript code examples and process documentation. All 34 static findings are FALSE POSITIVES. The scanner incorrectly identified TypeScript template literals (backticks for string interpolation) as shell command execution. All URLs are documentation links to external resources. No executable code, network operations, filesystem access, or external command execution is present. This skill is instructional content only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "PROCESS.md",
+            "line_start": 5,
+            "line_end": 17
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 17,
+            "line_end": 21
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 21,
+            "line_end": 29
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 29,
+            "line_end": 33
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 33,
+            "line_end": 42
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 42,
+            "line_end": 46
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 46,
+            "line_end": 55
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 55,
+            "line_end": 59
+          },
+          {
+            "file": "PROCESS.md",
+            "line_start": 59,
+            "line_end": 71
+          },
+          {
+            "file": "README.md",
+            "line_start": 14,
+            "line_end": 17
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 124
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 124,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 140
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 140,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 170
+          }
+        ]
+      },
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "PROCESS.md",
+            "line_start": 83,
+            "line_end": 83
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 183,
+            "line_end": 183
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 184
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 532,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:42:09.254Z"
+  },
+  "content": {
+    "user_title": "Implement adaptive learning with ReasoningBank",
+    "value_statement": "Building self-learning agents requires tracking decision trajectories and extracting patterns from experience. ReasoningBank with AgentDB provides a 5-phase system for trajectory tracking, verdict judgment, memory distillation, and pattern recognition to continuously improve decision quality.",
+    "seo_keywords": [
+      "ReasoningBank",
+      "AgentDB",
+      "adaptive learning",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "trajectory tracking",
+      "pattern recognition",
+      "self-learning agents",
+      "meta-learning"
+    ],
+    "actual_capabilities": [
+      "Initialize ReasoningBank with AgentDB for vector storage",
+      "Track agent decision trajectories with reasoning and context",
+      "Judge decision verdicts using efficiency, correctness, and novelty criteria",
+      "Distill learned patterns from successful decision paths",
+      "Apply learned patterns to improve future decision-making",
+      "Measure improvement in decision quality over time"
+    ],
+    "limitations": [
+      "Requires AgentDB installed and configured with vector database support",
+      "Pattern mining quality depends on trajectory data volume and diversity",
+      "Does not include pre-trained models or automatic neural network training",
+      "Verdict criteria must be explicitly defined for each use case"
+    ],
+    "use_cases": [
+      {
+        "target_user": "ML Engineers",
+        "title": "Build self-improving agents",
+        "description": "Create agents that learn from experience and improve decision quality through adaptive feedback loops."
+      },
+      {
+        "target_user": "AI Researchers",
+        "title": "Implement meta-learning systems",
+        "description": "Develop systems that learn to learn by extracting patterns across multiple decision trajectories."
+      },
+      {
+        "target_user": "Software Architects",
+        "title": "Add pattern recognition",
+        "description": "Enhance existing AI systems with memory consolidation and pattern application capabilities."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Setup",
+        "scenario": "Initialize adaptive learning system",
+        "prompt": "I want to implement adaptive learning with ReasoningBank and AgentDB. Initialize the system with trajectory tracking, verdict judgment, and pattern recognition capabilities."
+      },
+      {
+        "title": "Track Decisions",
+        "scenario": "Record agent reasoning",
+        "prompt": "Set up trajectory tracking for my agent. I want to record every decision, the reasoning behind it, the context, and the outcome for later analysis."
+      },
+      {
+        "title": "Evaluate Quality",
+        "scenario": "Judge decision outcomes",
+        "prompt": "Help me implement a verdict judgment system. I need to evaluate decisions based on efficiency, correctness, and novelty criteria and store the verdicts."
+      },
+      {
+        "title": "Extract Patterns",
+        "scenario": "Distill learned patterns",
+        "prompt": "Implement memory distillation to extract successful patterns from our trajectory history. Apply pattern mining with configurable support and confidence thresholds."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Initialize ReasoningBank for tracking and learning",
+        "output": [
+          "ReasoningBank initialized with trajectory tracking enabled",
+          "Verdict threshold set to 0.7",
+          "Trajectory window configured for 1000 entries",
+          "Ready to track decisions and apply learned patterns"
+        ]
+      },
+      {
+        "input": "Track a decision with reasoning and outcome",
+        "output": [
+          "Trajectory recorded: agent-1, action-A",
+          "Reasoning captured: Because X and Y",
+          "Context stored: current state preserved",
+          "Waiting for outcome to complete verdict"
+        ]
+      },
+      {
+        "input": "Extract patterns from successful decisions",
+        "output": [
+          "Pattern mining complete: 5 high-confidence patterns found",
+          "Pattern 1: state-A + action-B leads to success (confidence: 0.92)",
+          "Pattern 2: context-X + decision-Y correlates with positive outcome",
+          "Ready to apply patterns in future decisions"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Start with a trajectory window of 1000 entries and adjust based on memory constraints",
+      "Define verdict criteria that align with your specific success metrics",
+      "Use feedback loops to continuously refine patterns from new experiences"
+    ],
+    "anti_patterns": [
+      "Setting verdict threshold too high causes insufficient learning data",
+      "Distilling patterns without enough trajectories leads to unreliable patterns",
+      "Ignoring pattern application defeats the purpose of adaptive learning"
+    ],
+    "faq": [
+      {
+        "question": "Which AI tools support this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code for implementing adaptive learning patterns."
+      },
+      {
+        "question": "How many trajectories are needed for effective learning?",
+        "answer": "At least 100 trajectories with diverse outcomes are recommended for reliable pattern extraction."
+      },
+      {
+        "question": "Can I integrate with existing agent frameworks?",
+        "answer": "Yes, ReasoningBank provides a modular API for trajectory tracking and pattern application with any agent framework."
+      },
+      {
+        "question": "Is my trajectory data stored securely?",
+        "answer": "Trajectories are stored in AgentDB's vector database with configurable encryption and access controls."
+      },
+      {
+        "question": "Why are my patterns not improving decisions?",
+        "answer": "Check verdict threshold settings, ensure sufficient trajectory diversity, and verify patterns are being applied in makeDecision calls."
+      },
+      {
+        "question": "How does this compare to traditional RL?",
+        "answer": "ReasoningBank provides explicit reasoning traces and pattern extraction rather than opaque neural network weights for interpretable learning."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "process-diagram.gv",
+      "type": "file",
+      "path": "process-diagram.gv",
+      "lines": 21
+    },
+    {
+      "name": "PROCESS.md",
+      "type": "file",
+      "path": "PROCESS.md",
+      "lines": 84
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "path": "README.md",
+      "lines": 50
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 185
+    }
+  ]
+}

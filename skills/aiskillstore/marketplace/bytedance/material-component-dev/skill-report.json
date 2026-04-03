@@ -1,0 +1,177 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-21T15:40:19.757Z",
+    "slug": "bytedance-material-component-dev",
+    "source_url": "https://github.com/bytedance/flowgram.ai/tree/main/.claude/skills/material-component-dev",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "e4643e4fe18d1aa1b6483eff880ff6f86556cfc09aa4175a4e934f72295eddcf",
+    "tree_hash": "5c98abce4b6b544273c28a73801c1563c4ceb1236198973305b542e5cc924b61"
+  },
+  "skill": {
+    "name": "material-component-dev",
+    "description": "Development guide for creating new material components in FlowGram form-materials package with TypeScript and React",
+    "summary": "Guide AI assistants through building React components for FlowGram with Semi UI and TypeScript best practices",
+    "icon": "📦",
+    "version": "1.0.0",
+    "author": "bytedance",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "react",
+      "typescript",
+      "component-development",
+      "flowgram",
+      "storybook"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": []
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation guide for React component development. All static findings are false positives from markdown documentation containing example commands, local URLs, and relative import paths. No executable code or security risks present.",
+    "risk_factors": [],
+    "risk_factor_evidence": [],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 1199,
+    "audit_model": "claude",
+    "audited_at": "2026-01-21T15:40:19.757Z"
+  },
+  "content": {
+    "user_title": "Build FlowGram React Components with Best Practices",
+    "value_statement": "Creating React components for FlowGram requires following specific patterns and conventions. This skill guides Claude Code through the complete component development workflow with TypeScript, Semi UI, and Storybook testing.",
+    "seo_keywords": [
+      "Claude",
+      "Claude Code",
+      "Codex",
+      "React components",
+      "TypeScript development",
+      "FlowGram",
+      "Semi UI",
+      "Storybook",
+      "component library",
+      "frontend development"
+    ],
+    "actual_capabilities": [
+      "Guide creation of React components in FlowGram form-materials package structure",
+      "Generate TypeScript component code with proper type definitions and exports",
+      "Create Storybook stories for component testing and documentation",
+      "Provide code templates following FlowGram naming and structure conventions",
+      "Suggest proper usage of Semi UI components and internal dependencies",
+      "Generate component prop interfaces with appropriate TypeScript types"
+    ],
+    "limitations": [
+      "Only applicable to FlowGram project structure and conventions",
+      "Does not run automated tests or type checking directly",
+      "Requires manual verification in Storybook development environment",
+      "Limited to component patterns used in form-materials package"
+    ],
+    "use_cases": [
+      {
+        "title": "Create New Form Material Component",
+        "description": "Build a new reusable form component for FlowGram with proper TypeScript types, Semi UI integration, and Storybook documentation following project conventions.",
+        "target_user": "Frontend developers working on FlowGram component library"
+      },
+      {
+        "title": "Add Component with Code Editor Integration",
+        "description": "Develop components that integrate JSON or code editors from FlowGram internal packages with proper type safety and error handling.",
+        "target_user": "Developers building advanced form components"
+      },
+      {
+        "title": "Generate Storybook Documentation",
+        "description": "Create comprehensive Storybook stories that demonstrate component usage with interactive examples and proper metadata configuration.",
+        "target_user": "Component library maintainers"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Create Basic Component",
+        "prompt": "Create a new component called DataPicker in the form-materials package that allows users to select data fields from a schema.",
+        "scenario": "Starting a new component from scratch"
+      },
+      {
+        "title": "Add Storybook Story",
+        "prompt": "Create a Storybook story for the SchemaValidator component with examples showing validation success and error states.",
+        "scenario": "Adding documentation for existing component"
+      },
+      {
+        "title": "Integrate Code Editor",
+        "prompt": "Build a QueryBuilder component that uses JsonCodeEditor from internal packages and validates JSON Schema v7 format.",
+        "scenario": "Creating component with editor integration"
+      },
+      {
+        "title": "Debug Type Errors",
+        "prompt": "Fix the TypeScript errors in FormBuilder component. The error says IJsonSchema type is not found and React refers to UMD global.",
+        "scenario": "Resolving common development issues"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Create a new ColorPicker component for selecting colors in form schemas.",
+        "output": "I will create a ColorPicker component following FlowGram conventions. First, I will create the directory structure under packages/materials/form-materials/src/components/color-picker/ with the main component file using Semi UI ColorPicker, proper TypeScript interfaces, named exports, and then add it to the main index exports. Finally, I will create a Storybook story in apps/demo-materials/src/stories/components/ to demonstrate the component usage."
+      },
+      {
+        "input": "Add a story for the existing DataTable component showing pagination and sorting.",
+        "output": "I will create a comprehensive Storybook story at apps/demo-materials/src/stories/components/data-table.stories.tsx. The story will include a demo component that maintains state for pagination and sorting, demonstrate the DataTable with sample data, and include proper Meta configuration with component description and tags for autodocs."
+      }
+    ],
+    "best_practices": [
+      "Always use named exports instead of default exports to enable tree shaking and improve bundle optimization.",
+      "Import React explicitly in all component files to avoid UMD global reference errors in TypeScript.",
+      "Keep component props minimal and focused on core functionality rather than adding excessive configuration options."
+    ],
+    "anti_patterns": [
+      "Do not create separate npm packages for individual components. Keep all components in the form-materials package.",
+      "Avoid using external json-schema types. Always import IJsonSchema from internal packages.",
+      "Do not write unit tests for components. Use Storybook for manual testing and verification instead."
+    ],
+    "faq": [
+      {
+        "question": "Why use named exports instead of default exports?",
+        "answer": "Named exports enable better tree shaking in bundlers, making it easier to eliminate unused code and reduce bundle size. This is a project-wide convention for all FlowGram components."
+      },
+      {
+        "question": "Which UI component library should I use?",
+        "answer": "Always use Semi UI components from the @douyinfe/semi-ui package. This ensures visual consistency across the FlowGram application and provides a comprehensive set of pre-built components."
+      },
+      {
+        "question": "How do I test my component after creating it?",
+        "answer": "Run rush build:watch in one terminal to compile the package, then start Storybook with yarn dev in apps/demo-materials. Access your component story at localhost:6006 to test interactively."
+      },
+      {
+        "question": "What is the correct way to import JSON Schema types?",
+        "answer": "Use IJsonSchema type from @flowgram.ai/json-schema package. Do not use external json-schema or JSONSchema7 types from other packages as they are not compatible with the project structure."
+      },
+      {
+        "question": "Where should I place helper functions for my component?",
+        "answer": "Create a utils subdirectory within your component folder and place helper functions there with proper TypeScript types and copyright headers. Export functions using named exports."
+      },
+      {
+        "question": "How do I fix React UMD global reference errors?",
+        "answer": "Add an explicit import React statement at the top of your file. This error occurs when React is used as a global in UMD builds but your file is an ES module."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 369
+    }
+  ]
+}

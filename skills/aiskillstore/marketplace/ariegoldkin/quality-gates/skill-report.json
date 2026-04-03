@@ -1,0 +1,572 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T17:01:40.805Z",
+    "slug": "ariegoldkin-quality-gates",
+    "source_url": "https://github.com/ArieGoldkin/ai-agent-hub/tree/main/skills/quality-gates",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "b31ca54efc6caafd5b758b4a7681104c5f02d5017b3c3eb6019cb1dc5f9f8d36",
+    "tree_hash": "0f1813c618932c229d2c7c3bce808c41e504275d38b9f8c467ef3ec224fe5894"
+  },
+  "skill": {
+    "name": "quality-gates",
+    "description": "This skill teaches agents how to assess task complexity, enforce quality gates, and prevent wasted work on incomplete or poorly-defined tasks. Inspired by production-grade development practices, qu...",
+    "summary": "This skill teaches agents how to assess task complexity, enforce quality gates, and prevent wasted w...",
+    "icon": "🛡️",
+    "version": "1.0.0",
+    "author": "ArieGoldkin",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "quality-assurance",
+      "task-planning",
+      "complexity-assessment",
+      "escalation"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill contains only markdown documentation and illustrative JavaScript pseudocode templates. All JavaScript shown is for documentation purposes only and would need to be implemented by the host AI system. No executable scripts, file system access, network requests, environment variable reads, or external command execution occur. Static findings are false positives triggered by documentation patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 158,
+            "line_end": 202
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 202,
+            "line_end": 215
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 215,
+            "line_end": 222
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 222,
+            "line_end": 225
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 225,
+            "line_end": 235
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 235,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 238,
+            "line_end": 247
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 247,
+            "line_end": 250
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 250,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 259
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 259,
+            "line_end": 269
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 269,
+            "line_end": 278
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 278,
+            "line_end": 297
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 297,
+            "line_end": 300
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 300,
+            "line_end": 312
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 312,
+            "line_end": 315
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 315,
+            "line_end": 335
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 335,
+            "line_end": 344
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 344,
+            "line_end": 366
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 366,
+            "line_end": 369
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 369,
+            "line_end": 376
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 376,
+            "line_end": 379
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 379,
+            "line_end": 396
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 396,
+            "line_end": 405
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 405,
+            "line_end": 414
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 414,
+            "line_end": 417
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 417,
+            "line_end": 426
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 426,
+            "line_end": 429
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 429,
+            "line_end": 445
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 445,
+            "line_end": 453
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 453,
+            "line_end": 494
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 494,
+            "line_end": 498
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 498,
+            "line_end": 536
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 536,
+            "line_end": 540
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 540,
+            "line_end": 581
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 581,
+            "line_end": 589
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 589,
+            "line_end": 603
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 603,
+            "line_end": 609
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 609,
+            "line_end": 624
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 624,
+            "line_end": 631
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 631,
+            "line_end": 652
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 652,
+            "line_end": 655
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 655,
+            "line_end": 666
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 666,
+            "line_end": 669
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 669,
+            "line_end": 682
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 682,
+            "line_end": 685
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 685,
+            "line_end": 702
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 702,
+            "line_end": 709
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 709,
+            "line_end": 712
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 712,
+            "line_end": 715
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 715,
+            "line_end": 718
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 718,
+            "line_end": 721
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 721,
+            "line_end": 724
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 724,
+            "line_end": 727
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 727,
+            "line_end": 730
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 730,
+            "line_end": 749
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 749,
+            "line_end": 759
+          },
+          {
+            "file": "templates/complexity-assessment.md",
+            "line_start": 166,
+            "line_end": 166
+          },
+          {
+            "file": "templates/complexity-assessment.md",
+            "line_start": 172,
+            "line_end": 190
+          },
+          {
+            "file": "templates/gate-check-template.md",
+            "line_start": 273,
+            "line_end": 288
+          },
+          {
+            "file": "templates/gate-check-template.md",
+            "line_start": 288,
+            "line_end": 307
+          },
+          {
+            "file": "templates/gate-check-template.md",
+            "line_start": 307,
+            "line_end": 331
+          },
+          {
+            "file": "templates/requirements-checklist.md",
+            "line_start": 133,
+            "line_end": 138
+          },
+          {
+            "file": "templates/requirements-checklist.md",
+            "line_start": 138,
+            "line_end": 141
+          },
+          {
+            "file": "templates/requirements-checklist.md",
+            "line_start": 141,
+            "line_end": 146
+          },
+          {
+            "file": "templates/requirements-checklist.md",
+            "line_start": 146,
+            "line_end": 162
+          },
+          {
+            "file": "templates/requirements-checklist.md",
+            "line_start": 162,
+            "line_end": 167
+          },
+          {
+            "file": "templates/requirements-checklist.md",
+            "line_start": 167,
+            "line_end": 445
+          },
+          {
+            "file": "templates/requirements-checklist.md",
+            "line_start": 445,
+            "line_end": 451
+          },
+          {
+            "file": "templates/requirements-checklist.md",
+            "line_start": 451,
+            "line_end": 465
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 5,
+    "total_lines": 1986,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T17:01:40.805Z"
+  },
+  "content": {
+    "user_title": "Assess task complexity and enforce quality gates",
+    "value_statement": "AI agents often proceed with unclear requirements or overly complex tasks, leading to wasted effort and suboptimal solutions. This skill provides systematic complexity scoring, gate validation checklists, and escalation workflows that prevent agents from proceeding without sufficient context.",
+    "seo_keywords": [
+      "quality gates",
+      "task complexity",
+      "Claude Code",
+      "complexity assessment",
+      "AI agent workflows",
+      "task validation",
+      "escalation workflows",
+      "prevent wasted work",
+      "gate checks",
+      "Claude"
+    ],
+    "actual_capabilities": [
+      "Assess task complexity on a 1-5 scale based on lines of code, time, files, dependencies, and risk",
+      "Run pre-task gate validation to check requirements completeness and dependency readiness",
+      "Detect when stuck after 3 failed attempts and trigger escalation workflows",
+      "Break down Level 4-5 complex tasks into manageable Level 1-3 subtasks",
+      "Validate requirements completeness across functional and technical dimensions",
+      "Document assumptions and track quality gate status in context"
+    ],
+    "limitations": [
+      "Does not execute any code or run tests automatically",
+      "Does not access project files to estimate complexity automatically",
+      "Does not enforce gates in the host system without integration",
+      "Requires the AI agent to manually complete gate check templates"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software Development Teams",
+        "title": "Prevent scope creep",
+        "description": "Use complexity scoring to identify tasks that need breakdown before work begins"
+      },
+      {
+        "target_user": "Enterprise AI Integrators",
+        "title": "Govern agent behavior",
+        "description": "Implement quality gates that prevent agents from proceeding with incomplete requirements"
+      },
+      {
+        "target_user": "Solo Developers",
+        "title": "Reduce wasted effort",
+        "description": "Stop and ask questions before building the wrong solution"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick complexity check",
+        "scenario": "Starting a new task",
+        "prompt": "Assess the complexity of this task on a 1-5 scale using the quality-gates skill. Consider lines of code, time estimate, number of files, dependencies, and unknowns. What level is it?"
+      },
+      {
+        "title": "Full gate validation",
+        "scenario": "Before starting implementation",
+        "prompt": "Run a complete quality gate check for this task using /skills/quality-gates/templates/gate-check-template.md. List critical questions that must be answered and check all dependencies."
+      },
+      {
+        "title": "Stuck escalation",
+        "scenario": "After multiple failed attempts",
+        "prompt": "I have tried 3 approaches and none worked. Use the quality-gates skill to create an escalation document. Document what was tried, what failed, and what guidance I need."
+      },
+      {
+        "title": "Break down complex task",
+        "scenario": "Task complexity is Level 4-5",
+        "prompt": "This task is too complex. Break it down into Level 1-3 subtasks using the quality-gates complexity breakdown approach. Create dependencies and estimates for each subtask."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Add user authentication to the application",
+        "output": [
+          "Complexity Level: 4 (Complex)",
+          "Estimated lines: 800-1200",
+          "Files affected: 12-18",
+          "Dependencies: 4-6 (auth library, database, sessions, API endpoints)",
+          "Blocking conditions: Requires clarification on auth method (OAuth vs JWT vs session), user roles and permissions, existing user model structure",
+          "Gate Status: BLOCKED - Need 3+ questions answered before proceeding"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always run a gate check before starting Level 3+ tasks",
+      "Document every assumption when proceeding with a WARNING status",
+      "Escalate after 3 failed attempts instead of continuing to try the same approach"
+    ],
+    "anti_patterns": [
+      "Skipping gate checks for simple-looking tasks that turn out to be complex",
+      "Proceeding with BLOCKED status to make progress",
+      "Not tracking attempt counts and continuing to retry the same approach"
+    ],
+    "faq": [
+      {
+        "question": "Does quality-gates integrate with my existing AI setup?",
+        "answer": "Yes. The skill provides templates and decision frameworks that work with any AI system. Integration requires manually applying the gate checks."
+      },
+      {
+        "question": "What complexity level triggers mandatory breakdown?",
+        "answer": "Tasks rated Level 4 or 5 must be broken down into Level 1-3 subtasks before proceeding. This prevents tackling overly complex work directly."
+      },
+      {
+        "question": "How many unanswered questions trigger a block?",
+        "answer": "More than 3 unanswered critical questions triggers a BLOCKED status. This prevents proceeding with fundamentally incomplete requirements."
+      },
+      {
+        "question": "Is any data sent to external servers?",
+        "answer": "No. This skill contains only documentation and templates. No network requests, file access, or external communications occur."
+      },
+      {
+        "question": "What happens when I am stuck on a task?",
+        "answer": "After 3 failed attempts, the skill triggers escalation. Document what was tried, why it failed, and what guidance you need. Escalate to the user."
+      },
+      {
+        "question": "How does this differ from code review tools?",
+        "answer": "Quality gates operate before work begins, focusing on requirements and complexity. Code review tools examine completed work. They complement each other."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "templates",
+      "type": "dir",
+      "path": "templates",
+      "children": [
+        {
+          "name": "complexity-assessment.md",
+          "type": "file",
+          "path": "templates/complexity-assessment.md",
+          "lines": 203
+        },
+        {
+          "name": "gate-check-template.md",
+          "type": "file",
+          "path": "templates/gate-check-template.md",
+          "lines": 332
+        },
+        {
+          "name": "requirements-checklist.md",
+          "type": "file",
+          "path": "templates/requirements-checklist.md",
+          "lines": 475
+        }
+      ]
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 776
+    }
+  ]
+}

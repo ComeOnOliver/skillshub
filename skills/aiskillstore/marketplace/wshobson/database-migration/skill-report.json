@@ -1,0 +1,331 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T08:01:21.947Z",
+    "slug": "wshobson-database-migration",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/framework-migration/skills/database-migration",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "d9eb12ac5d5035dff2957cfd2c18729bf0c6f59dd2366e0874fb196d57df0d11",
+    "tree_hash": "d27536d88b9a2d8a9e38c0c98f299a3e75989bd14d44deb50105325c04742cd8"
+  },
+  "skill": {
+    "name": "database-migration",
+    "description": "Execute database migrations across ORMs and platforms with zero-downtime strategies, data transformation, and rollback procedures. Use when migrating databases, changing schemas, performing data transformations, or implementing zero-downtime deployment strategies.",
+    "summary": "Execute database migrations across ORMs and platforms with zero-downtime strategies, data transforma...",
+    "icon": "🗄️",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "database",
+      "migration",
+      "orm",
+      "schema",
+      "rollbacks"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "The static analyzer flagged 42 potential issues, but all are false positives. SKILL.md contains only documentation and code examples for database migration patterns. The 'weak cryptographic algorithm' findings were triggered by text patterns in documentation describing migration operations. The 'Ruby/shell backtick execution' findings misidentified command-line comments as shell execution. No actual executable code, credential access, or network exfiltration patterns exist. This is static instructional content only.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 50
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 50,
+            "line_end": 53
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 105
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 105,
+            "line_end": 110
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 110,
+            "line_end": 125
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 125,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 175
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 179,
+            "line_end": 194
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 194,
+            "line_end": 199
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 199,
+            "line_end": 212
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 238
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 241,
+            "line_end": 248
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 248,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 285
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 285,
+            "line_end": 321
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 321,
+            "line_end": 326
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 326,
+            "line_end": 342
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 346,
+            "line_end": 358
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 358,
+            "line_end": 363
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 363,
+            "line_end": 394
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 603,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T08:01:21.947Z"
+  },
+  "content": {
+    "user_title": "Plan database migrations with rollback safety",
+    "value_statement": "Database migrations can break production if rushed. This skill provides proven patterns for safe schema changes, data transforms, and rollbacks across Sequelize, TypeORM, and Prisma.",
+    "seo_keywords": [
+      "database migration",
+      "schema change",
+      "rollback strategy",
+      "zero downtime",
+      "Sequelize migration",
+      "TypeORM migration",
+      "Prisma migration",
+      "Claude",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Provide Sequelize migration examples with up and down steps",
+      "Provide TypeORM migration patterns with QueryRunner and Table",
+      "Provide Prisma schema migration guidance and commands",
+      "Describe zero downtime phased migration steps",
+      "Outline rollback strategies with transactions and checkpoints",
+      "Explain cross-database compatibility for PostgreSQL and MySQL"
+    ],
+    "limitations": [
+      "Does not execute migrations or validate results in a live database",
+      "Examples are templates and require adaptation to your schema",
+      "No coverage for every ORM or database vendor",
+      "Cannot automatically detect migration conflicts or dependencies"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Backend engineer",
+        "title": "Zero downtime rollout",
+        "description": "Plan phased migrations that keep the application available during schema changes with blue-green deployment strategies."
+      },
+      {
+        "target_user": "Data engineer",
+        "title": "Data transformation",
+        "description": "Design safe data backfills and column refactors with checkpoint-based rollback options for large datasets."
+      },
+      {
+        "target_user": "DevOps team",
+        "title": "ORM migration strategy",
+        "description": "Compare migration approaches when switching between Sequelize, TypeORM, and Prisma with compatibility considerations."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic migration plan",
+        "scenario": "Add a new column safely",
+        "prompt": "Create a safe migration plan to add a non-null status column with a default value in Sequelize, including rollback steps and data backfill considerations."
+      },
+      {
+        "title": "Rename with zero downtime",
+        "scenario": "Rename a column in production",
+        "prompt": "Outline a zero downtime process to rename users.name to users.full_name with phased deployment, backfill strategy, and cleanup steps."
+      },
+      {
+        "title": "Cross database change",
+        "scenario": "Handle MySQL and PostgreSQL differences",
+        "prompt": "Show a migration approach that handles JSON type differences between MySQL and PostgreSQL in TypeORM with conditional logic."
+      },
+      {
+        "title": "Advanced rollback strategy",
+        "scenario": "Complex data transformation",
+        "prompt": "Design a checkpoint-based rollback strategy for a data migration that splits a full_address field into street, city, state, and zip components."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Provide a zero downtime plan to rename users.name to users.full_name",
+        "output": [
+          "Phase 1: Add new full_name column alongside existing name column",
+          "Phase 2: Deploy code that writes to both columns simultaneously",
+          "Phase 3: Run backfill to copy name values to full_name in batches",
+          "Phase 4: Switch application reads to use full_name column",
+          "Phase 5: After verification, remove old name column in separate deployment"
+        ]
+      },
+      {
+        "input": "Create a checkpoint-based rollback strategy for migrating a full_address field",
+        "output": [
+          "Create backup table with CREATE TABLE AS SELECT before migration",
+          "Perform migration in small batches with verification after each batch",
+          "On failure, restore using DROP TABLE and CREATE TABLE AS SELECT from backup",
+          "Drop backup table after successful verification"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always provide a rollback step for every migration with proper down() methods",
+      "Test migrations on staging data that mirrors production before deployment",
+      "Use small, incremental schema changes rather than large monolithic migrations"
+    ],
+    "anti_patterns": [
+      "Dropping columns before verifying data backfill and application compatibility",
+      "Running large migrations without transaction boundaries or rollback plans",
+      "Ignoring NULL value handling and foreign key constraint impacts during transforms"
+    ],
+    "faq": [
+      {
+        "question": "Which ORMs are supported?",
+        "answer": "The skill includes comprehensive examples for Sequelize, TypeORM, and Prisma with migration patterns for each."
+      },
+      {
+        "question": "Are there size limits for migrations?",
+        "answer": "No size limits, but the skill recommends batching large data migrations and using checkpoint-based approaches for millions of rows."
+      },
+      {
+        "question": "Can I integrate this with CI pipelines?",
+        "answer": "Yes, the migration patterns can be incorporated into CI/CD workflows with proper testing and rollback procedures."
+      },
+      {
+        "question": "Does it access my database or secrets?",
+        "answer": "No, this is static guidance content with no data access, network calls, or credential handling capabilities."
+      },
+      {
+        "question": "What if a migration fails mid-run?",
+        "answer": "Use the transaction-based patterns for automatic rollback, or checkpoint-based strategies for manual recovery from backups."
+      },
+      {
+        "question": "How does it compare to migration tools?",
+        "answer": "It provides architectural patterns and best practices rather than automated execution, complementing tools like Flyway or Liquibase."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 425
+    }
+  ]
+}

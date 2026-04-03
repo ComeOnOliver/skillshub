@@ -1,0 +1,316 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:10:28.065Z",
+    "slug": "clouder0-error-recovery",
+    "source_url": "https://github.com/Clouder0/dotagent/tree/main/.claude/skills/error-recovery",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "09b00c272a1fa40335aa549191de52af4746485a8395877bb4cfbf9c690cbdcd",
+    "tree_hash": "f8ef823263eabfd904d9e79f02a2cc385f9c27e4bd280c9ff739732dd12039a9"
+  },
+  "skill": {
+    "name": "error-recovery",
+    "description": "Strategies for handling subagent failures with retry logic and escalation patterns.",
+    "summary": "Strategies for handling subagent failures with retry logic and escalation patterns.",
+    "icon": "🔄",
+    "version": "1.0.0",
+    "author": "Clouder0",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "error-handling",
+      "retry-logic",
+      "multi-agent",
+      "failure-recovery"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill containing 224 lines of markdown explaining error recovery patterns for multi-agent AI systems. The static scanner incorrectly flagged documentation examples describing authentication concepts (bcrypt, JWT, password hashing) as 'weak cryptographic algorithms'. These are purely instructional examples, not actual cryptographic implementations. No executable code, network calls, file system access, or command execution exists in this skill.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 24,
+            "line_end": 24
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 44
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 44,
+            "line_end": 55
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 55,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 95
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 95,
+            "line_end": 104
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 104,
+            "line_end": 122
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 122,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 145
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 145,
+            "line_end": 152
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 152,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 184
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 184,
+            "line_end": 190
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 190,
+            "line_end": 192
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 192,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 215
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 399,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:10:28.065Z"
+  },
+  "content": {
+    "user_title": "Handle Agent Failures with Smart Retry Strategies",
+    "value_statement": "Subagents often fail due to timeouts, unclear requirements, or scope issues. This skill provides proven retry patterns to recover from failures automatically.",
+    "seo_keywords": [
+      "Claude Code error recovery",
+      "multi-agent retry logic",
+      "AI agent failure handling",
+      "subagent error patterns",
+      "Claude retry strategies",
+      "Codex error recovery",
+      "agent escalation patterns",
+      "failure recovery automation",
+      "AI workflow resilience"
+    ],
+    "actual_capabilities": [
+      "Provides 5 distinct retry strategies for different failure types",
+      "Includes decision tree for choosing appropriate recovery method",
+      "Documents escalation paths for boundary/contract violations",
+      "Offers state tracking patterns for retry attempts",
+      "Contains integration examples for executor loops"
+    ],
+    "limitations": [
+      "Documentation only - no automated error recovery implementation",
+      "Requires manual integration into agent orchestration systems",
+      "Strategies assume access to task state and error information"
+    ],
+    "use_cases": [
+      {
+        "target_user": "AI system architects",
+        "title": "Build Resilient Multi-Agent Systems",
+        "description": "Implement robust error handling in agent orchestration platforms to handle transient failures and complex error scenarios."
+      },
+      {
+        "target_user": "Claude Code users",
+        "title": "Handle Failed Subagent Tasks",
+        "description": "Apply retry strategies when Claude Code subagents fail due to timeouts, unclear requirements, or scope issues."
+      },
+      {
+        "target_user": "Workflow automation developers",
+        "title": "Design Fault-Tolerant Workflows",
+        "description": "Create workflows that can recover from agent failures without manual intervention using proven retry patterns."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Retry Setup",
+        "scenario": "Simple timeout or malformed output",
+        "prompt": "My subagent failed with a timeout. Apply Strategy 1 (Simple Retry) with max 3 attempts. Track attempts in state file."
+      },
+      {
+        "title": "Context Enhancement",
+        "scenario": "Agent needs more information",
+        "prompt": "The implementer said 'I don't have enough context about the database schema'. Use Strategy 2 to add relevant schema files and examples."
+      },
+      {
+        "title": "Scope Reduction",
+        "scenario": "Task too complex for single agent",
+        "prompt": "The agent completed partial authentication work then failed. Apply Strategy 3 to split 'Implement full auth system' into smaller subtasks."
+      },
+      {
+        "title": "Contract Escalation",
+        "scenario": "Boundary violation blocking progress",
+        "prompt": "Task is blocked with status 'boundary_violation'. Escalate to contract-resolver agent with current contracts and blocked reason."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "My subagent keeps failing to implement the API endpoint. It says the requirements are unclear.",
+        "output": [
+          "Apply Strategy 2: Context Enhancement",
+          "Add these files to provide context: src/types/api.ts, examples/auth-endpoint.ts",
+          "Include clarification: 'Use JWT tokens, bcrypt for passwords, 15min expiry'",
+          "Retry with enhanced prompt containing original task + new context"
+        ]
+      },
+      {
+        "input": "The implementer agent timed out while processing a large file. What should I do?",
+        "output": [
+          "Apply Strategy 1: Simple Retry",
+          "Set max_attempts to 3",
+          "Track attempts in state file",
+          "If all attempts fail, escalate with timeout details"
+        ]
+      },
+      {
+        "input": "My task is blocked with a boundary violation error. How do I recover?",
+        "output": [
+          "Apply Strategy 4: Escalation to contract-resolver",
+          "Gather blocked reason and current contracts",
+          "Route to specialized resolver agent",
+          "Wait for boundary expansion before retrying"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always categorize the failure type before choosing a retry strategy",
+      "Track all retry attempts in state files for reflection and debugging",
+      "Preserve partial work from failed attempts when possible"
+    ],
+    "anti_patterns": [
+      "Don't retry blindly without analyzing the failure cause first",
+      "Avoid infinite retry loops - abort after 3 failed strategies",
+      "Don't discard partial work when agents complete some requirements"
+    ],
+    "faq": [
+      {
+        "question": "Which retry strategy should I try first?",
+        "answer": "Start with Strategy 2 (Context Enhancement) for unclear failures. Use Strategy 1 for transient issues like timeouts."
+      },
+      {
+        "question": "How many retry attempts are too many?",
+        "answer": "Abort after 3 failed strategies or 3 attempts of the same strategy. This prevents infinite loops."
+      },
+      {
+        "question": "Can I use these patterns with any AI platform?",
+        "answer": "Yes, the patterns are platform-agnostic. They work with Claude, Codex, Claude Code, and other agent systems."
+      },
+      {
+        "question": "What data should I track during retries?",
+        "answer": "Track attempt count, error messages, strategies tried, partial outputs, and any context added."
+      },
+      {
+        "question": "How do I handle agents that keep asking questions?",
+        "answer": "This indicates missing context. Use Strategy 2 to proactively provide the information they're asking for."
+      },
+      {
+        "question": "When should I escalate vs retry myself?",
+        "answer": "Escalate boundary/contract issues immediately. Retry implementation failures yourself first."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 224
+    }
+  ]
+}

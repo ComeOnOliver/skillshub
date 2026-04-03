@@ -1,0 +1,526 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T05:14:39.410Z",
+    "slug": "dyai2025-theme-factory",
+    "source_url": "https://github.com/DYAI2025/Stoppclock-page/tree/main/stoppclock_speckit/.claude/commands/skills/theme-factory",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "366ee55d92407128fd5f05871d9a6135bfe6fad2146ec2652edf99fc0b0d177b",
+    "tree_hash": "03e8a5af18ec88dd3d5e3de384fad23d49871d62d9a73a2151e6388d3b5abc64"
+  },
+  "skill": {
+    "name": "theme-factory",
+    "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+    "summary": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML la...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "DYAI2025",
+    "license": "Complete terms in LICENSE.txt",
+    "category": "design",
+    "tags": [
+      "themes",
+      "styling",
+      "color-palettes",
+      "typography",
+      "presentations"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure content-only skill containing markdown theme files with color/font specifications. All 95 static findings are false positives: hex color codes misidentified as cryptographic algorithms, markdown code formatting backticks misidentified as shell execution, and legitimate license URLs flagged as hardcoded. No executable code, network calls, or file system access beyond its own directory.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "LICENSE.txt",
+            "line_start": 4,
+            "line_end": 4
+          },
+          {
+            "file": "LICENSE.txt",
+            "line_start": 196,
+            "line_end": 196
+          },
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 23
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 45,
+            "line_end": 45
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 53,
+            "line_end": 53
+          },
+          {
+            "file": "themes/arctic-frost.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/arctic-frost.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/arctic-frost.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/arctic-frost.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/botanical-garden.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/botanical-garden.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/botanical-garden.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/botanical-garden.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/desert-rose.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/desert-rose.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/desert-rose.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/desert-rose.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/forest-canopy.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/forest-canopy.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/forest-canopy.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/forest-canopy.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/golden-hour.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/golden-hour.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/golden-hour.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/golden-hour.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/midnight-galaxy.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/midnight-galaxy.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/midnight-galaxy.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/midnight-galaxy.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/modern-minimalist.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/modern-minimalist.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/modern-minimalist.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/modern-minimalist.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/ocean-depths.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/ocean-depths.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/ocean-depths.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/ocean-depths.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/sunset-boulevard.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/sunset-boulevard.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/sunset-boulevard.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/sunset-boulevard.md",
+            "line_start": 10,
+            "line_end": 10
+          },
+          {
+            "file": "themes/tech-innovation.md",
+            "line_start": 7,
+            "line_end": 7
+          },
+          {
+            "file": "themes/tech-innovation.md",
+            "line_start": 8,
+            "line_end": 8
+          },
+          {
+            "file": "themes/tech-innovation.md",
+            "line_start": 9,
+            "line_end": 9
+          },
+          {
+            "file": "themes/tech-innovation.md",
+            "line_start": 10,
+            "line_end": 10
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 13,
+    "total_lines": 708,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T05:14:39.410Z"
+  },
+  "content": {
+    "user_title": "Apply themed color and font styles to artifacts",
+    "value_statement": "Presentations and documents often lack visual consistency. This skill provides 10 curated themes with color palettes and font pairings. Apply a theme instantly to any slide deck or document for professional styling.",
+    "seo_keywords": [
+      "theme factory",
+      "color themes",
+      "font pairings",
+      "presentation design",
+      "slide styling",
+      "document themes",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "color palettes"
+    ],
+    "actual_capabilities": [
+      "Display visual showcase of all 10 available themes",
+      "Apply pre-defined color palettes with hex codes",
+      "Apply font pairings for headers and body text",
+      "Generate custom themes on demand from descriptions",
+      "Ensure proper color contrast and readability",
+      "Maintain theme consistency across all slides"
+    ],
+    "limitations": [
+      "Does not modify actual files or output code directly",
+      "Theme application is guidance-based for the AI",
+      "Fonts limited to DejaVu and FreeSans families",
+      "Custom theme generation follows existing pattern"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Business professionals",
+        "title": "Style corporate presentations",
+        "description": "Apply Ocean Depths or Modern Minimalist for polished decks that impress clients and stakeholders."
+      },
+      {
+        "target_user": "Designers and marketers",
+        "title": "Create branded materials",
+        "description": "Use Tech Innovation or Sunset Boulevard for creative pitches and marketing content."
+      },
+      {
+        "target_user": "Educators and trainers",
+        "title": "Build engaging course materials",
+        "description": "Select themes that match subject matter for clearer, more appealing educational content."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Choose a theme",
+        "scenario": "Show available options",
+        "prompt": "Show me the theme showcase so I can choose a theme for my presentation."
+      },
+      {
+        "title": "Apply a theme",
+        "scenario": "Apply specific theme",
+        "prompt": "Apply the [THEME NAME] theme to my slide deck. Use the colors and fonts from that theme consistently."
+      },
+      {
+        "title": "Generate custom theme",
+        "scenario": "Create from description",
+        "prompt": "Generate a custom theme for [DESCRIBE YOUR PURPOSE/CONTEXT]. Create a name, color palette with hex codes, and font pairings."
+      },
+      {
+        "title": "Theme review",
+        "scenario": "Verify theme application",
+        "prompt": "Review the current slide deck and confirm the [THEME NAME] theme is applied consistently with proper contrast and readability."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Apply the Forest Canopy theme to my sustainability presentation",
+        "output": [
+          "Theme: Forest Canopy",
+          "Colors: Forest Green #2d4a2b, Sage #7d8471, Olive #a4ac86, Ivory #faf9f6",
+          "Fonts: FreeSerif Bold (headers), FreeSans (body)",
+          "Best for: Environmental content, sustainability reports, wellness presentations"
+        ]
+      },
+      {
+        "input": "Generate a tech startup pitch theme",
+        "output": [
+          "Theme: Tech Innovation",
+          "Colors: Electric Blue #007bff, Dark Navy #0d1b2a, Neon Green #39ff14, White #ffffff",
+          "Fonts: DejaVu Sans Bold (headers), DejaVu Sans (body)",
+          "Best for: Startup pitches, product demos, tech conferences"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Match theme to content context and audience expectations",
+      "Verify color contrast meets accessibility standards",
+      "Apply theme consistently across all slides or pages",
+      "Use the theme showcase to preview before selecting"
+    ],
+    "anti_patterns": [
+      "Mixing fonts from different themes in one document",
+      "Ignoring contrast warnings for text readability",
+      "Applying multiple themes within the same artifact",
+      "Using a theme that conflicts with the content message"
+    ],
+    "faq": [
+      {
+        "question": "What AI tools work with this skill?",
+        "answer": "Compatible with Claude, Codex, and Claude Code. Works through natural language prompts."
+      },
+      {
+        "question": "How many themes are included?",
+        "answer": "Ten pre-set themes: Ocean Depths, Sunset Boulevard, Forest Canopy, Modern Minimalist, Golden Hour, Arctic Frost, Desert Rose, Tech Innovation, Botanical Garden, and Midnight Galaxy."
+      },
+      {
+        "question": "Can I create custom themes?",
+        "answer": "Yes. Describe your needs and the skill generates a custom theme with colors, fonts, and a descriptive name following the same format."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. This is a prompt-based skill with no code execution, no network access, and no file modifications."
+      },
+      {
+        "question": "What file types can I apply themes to?",
+        "answer": "Any artifact the AI creates including slides, documents, reports, and HTML pages. The skill provides styling guidance."
+      },
+      {
+        "question": "How does this differ from other theme tools?",
+        "answer": "Pure prompt-based approach with no dependencies. Works across all Claude AI tools. Provides both pre-made and on-demand custom themes."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "themes",
+      "type": "dir",
+      "path": "themes",
+      "children": [
+        {
+          "name": "arctic-frost.md",
+          "type": "file",
+          "path": "themes/arctic-frost.md",
+          "lines": 20
+        },
+        {
+          "name": "botanical-garden.md",
+          "type": "file",
+          "path": "themes/botanical-garden.md",
+          "lines": 20
+        },
+        {
+          "name": "desert-rose.md",
+          "type": "file",
+          "path": "themes/desert-rose.md",
+          "lines": 20
+        },
+        {
+          "name": "forest-canopy.md",
+          "type": "file",
+          "path": "themes/forest-canopy.md",
+          "lines": 20
+        },
+        {
+          "name": "golden-hour.md",
+          "type": "file",
+          "path": "themes/golden-hour.md",
+          "lines": 20
+        },
+        {
+          "name": "midnight-galaxy.md",
+          "type": "file",
+          "path": "themes/midnight-galaxy.md",
+          "lines": 20
+        },
+        {
+          "name": "modern-minimalist.md",
+          "type": "file",
+          "path": "themes/modern-minimalist.md",
+          "lines": 20
+        },
+        {
+          "name": "ocean-depths.md",
+          "type": "file",
+          "path": "themes/ocean-depths.md",
+          "lines": 20
+        },
+        {
+          "name": "sunset-boulevard.md",
+          "type": "file",
+          "path": "themes/sunset-boulevard.md",
+          "lines": 20
+        },
+        {
+          "name": "tech-innovation.md",
+          "type": "file",
+          "path": "themes/tech-innovation.md",
+          "lines": 20
+        }
+      ]
+    },
+    {
+      "name": "LICENSE.txt",
+      "type": "file",
+      "path": "LICENSE.txt",
+      "lines": 202
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 60
+    },
+    {
+      "name": "theme-showcase.pdf",
+      "type": "file",
+      "path": "theme-showcase.pdf"
+    }
+  ]
+}

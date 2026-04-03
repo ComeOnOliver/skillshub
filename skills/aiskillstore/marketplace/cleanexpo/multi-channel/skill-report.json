@@ -1,0 +1,414 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:18:00.212Z",
+    "slug": "cleanexpo-multi-channel",
+    "source_url": "https://github.com/CleanExpo/Unite-Hub/tree/main/.claude/skills/multi-channel",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "db453d92d9a040d1f4d0b72f63222416f20ef85ef0c70203b2904c174eb4b9c4",
+    "tree_hash": "c375f09df97b60c9f6fadf5e0c741f93676529d8968f249ede65fee9b880caec"
+  },
+  "skill": {
+    "name": "multi-channel",
+    "description": "Unified social and advertising command center. Manages social inbox, optimizes ad performance, tracks keywords, coordinates messaging across YouTube, Instagram, TikTok, LinkedIn, Twitter, Facebook, Reddit, and Pinterest.",
+    "summary": "Unified social and advertising command center. Manages social inbox, optimizes ad performance, track...",
+    "icon": "📡",
+    "version": "1.0.0",
+    "author": "CleanExpo",
+    "license": "MIT",
+    "category": "marketing",
+    "tags": [
+      "social-media",
+      "advertising",
+      "marketing",
+      "multi-platform"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Documentation-only skill with no executable code. Contains only markdown content describing marketing strategies. The static scanner produced false positives by misidentifying markdown code block syntax (backticks) as shell execution and marketing terminology as security patterns. The skill-report.json at lines 37-40 confirms this is a pure prompt-based skill with no scripts, network calls, or filesystem access.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 32,
+            "line_end": 80
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 80,
+            "line_end": 83
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 83,
+            "line_end": 129
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 129,
+            "line_end": 134
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 134,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 153
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 153,
+            "line_end": 178
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 178,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 214
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 214,
+            "line_end": 219
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 219,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 282
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 282,
+            "line_end": 287
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 287,
+            "line_end": 364
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 364,
+            "line_end": 369
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 369,
+            "line_end": 400
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 400,
+            "line_end": 405
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 405,
+            "line_end": 450
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 450,
+            "line_end": 456
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 456,
+            "line_end": 475
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 475,
+            "line_end": 479
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 479,
+            "line_end": 503
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 503,
+            "line_end": 507
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 507,
+            "line_end": 526
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 526,
+            "line_end": 531
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 531,
+            "line_end": 547
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 547,
+            "line_end": 550
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 550,
+            "line_end": 567
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 567,
+            "line_end": 570
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 570,
+            "line_end": 587
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 587,
+            "line_end": 590
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 590,
+            "line_end": 606
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 606,
+            "line_end": 609
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 609,
+            "line_end": 625
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 625,
+            "line_end": 628
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 628,
+            "line_end": 644
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 644,
+            "line_end": 647
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 647,
+            "line_end": 664
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 664,
+            "line_end": 667
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 667,
+            "line_end": 684
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 917,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:18:00.212Z"
+  },
+  "content": {
+    "user_title": "Manage multi-channel social media and ads",
+    "value_statement": "Marketing teams struggle to coordinate messaging across 8+ platforms while tracking performance and optimizing ad spend. This skill provides a unified command center for social inbox management, campaign coordination, and cross-platform strategy across YouTube, Instagram, TikTok, LinkedIn, Twitter, Facebook, Reddit, and Pinterest.",
+    "seo_keywords": [
+      "multi-channel marketing",
+      "social media management",
+      "advertising optimization",
+      "cross-platform campaigns",
+      "social inbox",
+      "Claude Code",
+      "Claude",
+      "marketing automation",
+      "campaign coordination"
+    ],
+    "actual_capabilities": [
+      "Unify social inbox from 8 platforms (YouTube, Instagram, TikTok, LinkedIn, Twitter, Facebook, Reddit, Pinterest)",
+      "Manage advertising campaigns across Google Ads, Meta, LinkedIn, TikTok with unified dashboard",
+      "Analyze keyword performance and audience signals for targeted marketing",
+      "Coordinate cross-platform messaging for product launches and campaigns",
+      "Generate platform-specific best practices for content strategy",
+      "Track and optimize ad performance metrics (CPM, CPC, CTR, CPA, ROAS)"
+    ],
+    "limitations": [
+      "No real-time social listening or automated monitoring",
+      "No AI-powered content generation or automated posting",
+      "No actual API integrations with platforms (requires external setup)",
+      "No competitor monitoring or automated alerts"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Marketing managers",
+        "title": "Coordinate multi-platform campaigns",
+        "description": "Plan and execute coordinated campaigns across 8 platforms with consistent messaging and budget allocation"
+      },
+      {
+        "target_user": "Small business owners",
+        "title": "Manage social inbox efficiently",
+        "description": "Aggregate and prioritize customer messages from all social platforms in one unified view"
+      },
+      {
+        "target_user": "Digital marketers",
+        "title": "Optimize ad performance",
+        "description": "Track ad metrics across platforms and receive optimization recommendations for better ROI"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Check inbox",
+        "scenario": "Review customer messages",
+        "prompt": "Check my social inbox for the last 24 hours. Show me all messages categorized by priority (urgent, high, medium, low). List any customer complaints or questions that need immediate attention."
+      },
+      {
+        "title": "Campaign analysis",
+        "scenario": "Review ad performance",
+        "prompt": "Show me the performance of my advertising campaigns across all platforms for the last 30 days. Include impressions, clicks, conversions, and ROI by platform. Identify any underperforming campaigns."
+      },
+      {
+        "title": "Launch strategy",
+        "scenario": "Plan product launch",
+        "prompt": "Create a coordinated cross-platform campaign for my product launch in 4 weeks. The product is a project management tool for small teams. Budget is $5,000. Provide platform-by-platform strategy, messaging, content types, and timeline."
+      },
+      {
+        "title": "Keyword research",
+        "scenario": "Analyze keywords",
+        "prompt": "Analyze the following keywords for my SaaS product: project management software, team collaboration tools, remote work productivity. For each, provide search volume, competition, CPC, and profitability estimate."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Check my social inbox for urgent messages",
+        "output": [
+          "URGENT (3 items):",
+          "- Instagram: @john_smith commented \"Your app crashed during my presentation! Fix this now!\"",
+          "- Twitter: @businessowner mentioned \"Trying to cancel my subscription for 2 weeks. No response from support.\"",
+          "- YouTube: Video comment asking about data privacy and security features",
+          "HIGH PRIORITY (5 items):",
+          "- LinkedIn: Press inquiry about company funding news",
+          "- Facebook: Business partnership proposal from regional distributor",
+          "Recommended actions: Address Instagram crash report first, escalate cancellation issue to support team, prepare media response for LinkedIn inquiry."
+        ]
+      }
+    ],
+    "best_practices": [
+      "Prioritize messages using the 4-tier system: Urgent (complaints, technical issues), High (business inquiries, VIP customers), Medium (feedback, compliments), Low (casual discussion)",
+      "Use platform-specific best practices for content format, posting times, hashtag usage, and engagement tone",
+      "Track performance metrics consistently across platforms to identify which channels deliver best ROI for your goals"
+    ],
+    "anti_patterns": [
+      "Posting identical content across all platforms without adapting to platform culture and format norms",
+      "Ignoring platform-specific peak times and posting when your audience is least active",
+      "Spamming all platforms with promotional content instead of providing value and building community"
+    ],
+    "faq": [
+      {
+        "question": "Which platforms does this skill support?",
+        "answer": "YouTube, Instagram, TikTok, LinkedIn, Twitter/X, Facebook, Reddit, and Pinterest for social. Google Ads, Meta Ads, LinkedIn Ads, and TikTok Ads for advertising."
+      },
+      {
+        "question": "What are the limits of this skill?",
+        "answer": "The skill provides guidance and recommendations. It does not post content, access live APIs, or automate responses without your approval."
+      },
+      {
+        "question": "Does this integrate with existing marketing tools?",
+        "answer": "The skill describes integration points with platforms like Buffer, Hootsuite, Google Analytics, and design tools, but requires separate setup for actual connections."
+      },
+      {
+        "question": "Is my data safe with this skill?",
+        "answer": "This is a prompt-based skill with no code execution. It only processes the text you provide in conversations and does not store or transmit data externally."
+      },
+      {
+        "question": "Why are my ad metrics different from the skill recommendations?",
+        "answer": "The skill provides general benchmarks and best practices. Your actual results depend on your audience, creative quality, targeting, and market conditions."
+      },
+      {
+        "question": "How is this different from dedicated social media management tools?",
+        "answer": "This skill provides AI-powered strategy guidance and coordination templates rather than posting automation. It works alongside dedicated tools to improve your marketing decisions."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 738
+    }
+  ]
+}

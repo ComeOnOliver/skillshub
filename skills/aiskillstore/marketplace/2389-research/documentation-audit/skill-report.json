@@ -1,0 +1,223 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T13:27:47.299Z",
+    "slug": "2389-research-documentation-audit",
+    "source_url": "https://github.com/2389-research/claude-plugins/tree/main/documentation-audit/skills",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "672c8f4070bd99ce9c40e64dbb4070682c85b0d0620bd89a8d7dd0cb8ab8ad24",
+    "tree_hash": "3c058fd4a86fbb1318c676dc4736077acc2456ae07a6802058e2cbcfacc0f502"
+  },
+  "skill": {
+    "name": "documentation-audit",
+    "description": "This skill should be used when verifying documentation claims against codebase reality. Triggers on \"audit docs\", \"verify documentation\", \"check docs\", \"docs accurate\", \"documentation drift\", \"before release\", \"after refactor\", \"docs don't match\". Uses two-pass extraction with pattern expansion for comprehensive detection.",
+    "summary": "This skill should be used when verifying documentation claims against codebase reality. Triggers on ...",
+    "icon": "🔍",
+    "version": "1.0.0",
+    "author": "2389-research",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "documentation",
+      "verification",
+      "audit",
+      "quality-assurance"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "All 116 static findings are false positives. The static analyzer incorrectly flagged markdown documentation as executable code. All flagged items are documentation examples showing verification patterns, not actual security vulnerabilities. Previous audit explicitly confirmed: no malicious patterns detected.",
+    "risk_factor_evidence": [
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 11,
+            "line_end": 31
+          },
+          {
+            "file": "checklist.md",
+            "line_start": 7,
+            "line_end": 10
+          },
+          {
+            "file": "extraction-patterns.md",
+            "line_start": 20,
+            "line_end": 24
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 4,
+    "total_lines": 606,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T13:27:47.299Z"
+  },
+  "content": {
+    "user_title": "Verify documentation accuracy against codebase",
+    "value_statement": "Documentation drift causes confusion and bugs when code changes but docs are not updated. This skill systematically verifies claims in markdown documentation against the actual codebase using a two-pass approach with pattern expansion to catch similar issues.",
+    "seo_keywords": [
+      "documentation audit",
+      "verify documentation",
+      "documentation accuracy",
+      "Claude Code skill",
+      "codebase verification",
+      "docs drift",
+      "CLAUDE.md",
+      "CLAUDE",
+      "Codex",
+      "Claude Code"
+    ],
+    "actual_capabilities": [
+      "Extracts verifiable claims from markdown documentation including file paths, config defaults, env vars, and CLI flags",
+      "Verifies each claim against the actual codebase using glob, grep, and file existence checks",
+      "Uses parallel Task agents for efficient multi-document extraction across large codebases",
+      "Performs pattern expansion to search all docs for similar issues after finding false claims",
+      "Detects gaps between documented items and actual codebase artifacts like scripts and services",
+      "Generates audit reports with false claims, discovered patterns, and suggested fixes with evidence"
+    ],
+    "limitations": [
+      "Only verifies factual claims, not prose quality or writing style",
+      "Behavioral claims like timing and intervals require human review",
+      "Does not auto-fix documentation, only reports issues found",
+      "Skips design docs, plans, and historical artifacts intentionally"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Development teams",
+        "title": "Pre-release verification",
+        "description": "Verify all documentation is accurate before deploying or shipping releases"
+      },
+      {
+        "target_user": "Codebase maintainers",
+        "title": "Post-refactor checks",
+        "description": "Detect documentation drift after refactoring or renaming files and services"
+      },
+      {
+        "target_user": "Technical writers",
+        "title": "Documentation audits",
+        "description": "Systematically scan documentation for outdated references and stale claims"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick audit",
+        "scenario": "Verify specific docs",
+        "prompt": "Audit these documentation files for accuracy: [list files]"
+      },
+      {
+        "title": "Full project scan",
+        "scenario": "Complete documentation review",
+        "prompt": "Run a complete documentation audit of this project. Focus on user-facing docs only."
+      },
+      {
+        "title": "Refactor check",
+        "scenario": "After major changes",
+        "prompt": "Check if documentation matches reality after our recent refactor. Look for dead script references, renamed services, and outdated config defaults."
+      },
+      {
+        "title": "Pattern search",
+        "scenario": "Find similar issues",
+        "prompt": "I found a dead script reference. Search all docs for similar patterns and verify each one."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Audit the documentation files in docs/ for accuracy",
+        "output": [
+          "Documentation Audit Report - Generated: 2026-01-10",
+          "Executive Summary: 12 documents scanned, ~180 claims verified",
+          "Verified TRUE: 145 claims (81%)",
+          "Verified FALSE: 31 claims (17%) requiring fixes",
+          "False Claim - CONFIGURATION.md:135 - 'claude-sonnet-4-5' should be 'claude-3-5-sonnet-latest'",
+          "Pattern Found: 9 dead script references across 4 files",
+          "Human Review Queue: 4 behavioral claims need verification"
+        ]
+      },
+      {
+        "input": "Check our docs after renaming services from ai-radio-* to radio-*",
+        "output": [
+          "Found 5 outdated service references: ai-radio-break-gen.service (now generate-break.service)",
+          "Found 3 deprecated timer references using old naming convention",
+          "Pattern Search: Identified 4 additional docs with similar naming inconsistencies",
+          "All references updated in AUDIT_REPORT_2026-01-16.md with file:line evidence"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use parallel agents for extraction to maximize efficiency across multiple documents",
+      "Always run Pass 2 pattern expansion - it catches 10-20% more issues than Pass 1 alone",
+      "Record evidence (file:line) for every verdict to support suggested fixes with proof"
+    ],
+    "anti_patterns": [
+      "Skipping Pass 2 pattern expansion significantly reduces issue detection coverage",
+      "Trusting documentation 'looks correct' without verification allows hidden drift to persist",
+      "Auditing design docs or plans instead of user-facing documentation wastes audit effort"
+    ],
+    "faq": [
+      {
+        "question": "What claim types can this skill verify automatically?",
+        "answer": "File paths, config defaults, environment variables, and CLI flags are auto-verified. Behavioral claims require human review."
+      },
+      {
+        "question": "Does this skill modify my documentation files?",
+        "answer": "No. The skill only reads documentation and generates audit reports. It never modifies source files."
+      },
+      {
+        "question": "What is Pass 2 pattern expansion?",
+        "answer": "After finding false claims, the skill searches all docs for similar patterns to catch issues the initial scan missed."
+      },
+      {
+        "question": "How long does a full audit take?",
+        "answer": "Depends on codebase size. A typical project with 10-20 docs completes in 5-10 minutes using parallel extraction."
+      },
+      {
+        "question": "Can I integrate this into CI/CD pipelines?",
+        "answer": "Not directly. Run manually before releases or use scripts that invoke the skill and parse the generated audit report."
+      },
+      {
+        "question": "How is this different from linters or static analysis?",
+        "answer": "Linters check code quality. This skill verifies that documentation accurately describes the codebase behavior."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "checklist.md",
+      "type": "file",
+      "path": "checklist.md",
+      "lines": 105
+    },
+    {
+      "name": "extraction-patterns.md",
+      "type": "file",
+      "path": "extraction-patterns.md",
+      "lines": 167
+    },
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 105
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T10:38:53.534Z",
+    "slug": "wshobson-tailwind-design-system",
+    "source_url": "https://github.com/wshobson/agents/tree/main/plugins/frontend-mobile-development/skills/tailwind-design-system",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "1102931e66075ce2cbc064a2d55615bb994396e9bc6d3107fef671f1ec3fa304",
+    "tree_hash": "ab4108bef0449eb4e67f777fd1750e1ac37d5b111434e8081396aebcf0477845"
+  },
+  "skill": {
+    "name": "tailwind-design-system",
+    "description": "Build scalable design systems with Tailwind CSS, design tokens, component libraries, and responsive patterns. Use when creating component libraries, implementing design systems, or standardizing UI patterns.",
+    "summary": "Build scalable design systems with Tailwind CSS, design tokens, component libraries, and responsive ...",
+    "icon": "🎨",
+    "version": "1.0.0",
+    "author": "wshobson",
+    "license": "MIT",
+    "category": "design",
+    "tags": [
+      "tailwind",
+      "design-system",
+      "components",
+      "tokens",
+      "accessibility"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill with no executable code. Contains only markdown guidance and code examples for Tailwind CSS design systems. The static analyzer's 100/100 risk score is a false positive caused by misinterpreting Tailwind CSS opacity syntax (e.g., bg-primary/90) as cryptographic algorithms, and TypeScript template literals as shell backticks. The skill-report.json already contains a completed security audit confirming this skill is safe.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 663,
+            "line_end": 663
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 664,
+            "line_end": 664
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 665,
+            "line_end": 665
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 666,
+            "line_end": 666
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 23,
+            "line_end": 30
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 30,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 36
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 36,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 89
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 89,
+            "line_end": 131
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 131,
+            "line_end": 137
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 137,
+            "line_end": 196
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 196,
+            "line_end": 200
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 200,
+            "line_end": 285
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 285,
+            "line_end": 289
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 289,
+            "line_end": 311
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 311,
+            "line_end": 316
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 316,
+            "line_end": 382
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 382,
+            "line_end": 386
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 386,
+            "line_end": 460
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 460,
+            "line_end": 464
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 464,
+            "line_end": 526
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 526,
+            "line_end": 530
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 530,
+            "line_end": 622
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 622,
+            "line_end": 626
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 626,
+            "line_end": 643
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 643,
+            "line_end": 650
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 650,
+            "line_end": 650
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 843,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T10:38:53.534Z"
+  },
+  "content": {
+    "user_title": "Build Tailwind design systems",
+    "value_statement": "Design systems often drift without clear tokens and patterns. This skill provides Tailwind structures to standardize components, themes, and responsive layouts across your codebase.",
+    "seo_keywords": [
+      "Tailwind CSS design system",
+      "design tokens",
+      "component library",
+      "CVA",
+      "responsive UI",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "Tailwind theming",
+      "accessibility patterns"
+    ],
+    "actual_capabilities": [
+      "Provide Tailwind config with semantic color tokens and radius tokens",
+      "Define CSS variables for light and dark theme modes",
+      "Outline CVA-based button variants with sizes and states",
+      "Describe compound card component structure",
+      "Show form input and label patterns with error handling",
+      "Detail responsive grid and container utility patterns"
+    ],
+    "limitations": [
+      "Does not generate a full project or install dependencies",
+      "Does not validate tokens against a brand style guide",
+      "Does not run tests or audit live UI output"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Frontend lead",
+        "title": "Standardize team components",
+        "description": "Create shared Tailwind tokens and base components to align multiple product teams."
+      },
+      {
+        "target_user": "Design systems engineer",
+        "title": "Build token architecture",
+        "description": "Map brand colors to semantic tokens and wire them to Tailwind theme configuration."
+      },
+      {
+        "target_user": "Product engineer",
+        "title": "Ship responsive layouts",
+        "description": "Use grid and container patterns to scale layouts consistently across breakpoints."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Starter tokens",
+        "scenario": "Beginner needs a base theme",
+        "prompt": "Create a Tailwind token setup with semantic colors and radius variables for light and dark themes."
+      },
+      {
+        "title": "Button variants",
+        "scenario": "Add consistent button styles",
+        "prompt": "Design CVA button variants with sizes, states, and accessibility notes for a shared component library."
+      },
+      {
+        "title": "Form patterns",
+        "scenario": "Improve form UX",
+        "prompt": "Provide input and label component patterns with error handling and ARIA guidance."
+      },
+      {
+        "title": "Responsive grid",
+        "scenario": "Advanced layout system",
+        "prompt": "Define a responsive grid and container utility pattern for product cards across breakpoints."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Set up a Tailwind design system with tokens and a button pattern",
+        "output": [
+          "Defined semantic color tokens and radius variables for light and dark themes",
+          "Outlined a CVA button with variants, sizes, and focus ring behavior",
+          "Included accessibility notes for keyboard navigation and error states"
+        ]
+      },
+      {
+        "input": "Create a dark mode implementation for a React app",
+        "output": [
+          "Provided ThemeProvider using CSS variables and localStorage",
+          "Showed theme toggle component with icon switching",
+          "Included system preference detection with matchMedia"
+        ]
+      },
+      {
+        "input": "Build accessible form components with error states",
+        "output": [
+          "Created Input component with aria-invalid and error messaging",
+          "Added Label component with proper htmlFor association",
+          "Included focus ring utilities for keyboard navigation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Use semantic tokens and map them to CSS variables for runtime theming",
+      "Document component variants and default states clearly for team consumption",
+      "Test focus states and keyboard navigation on all interactive components"
+    ],
+    "anti_patterns": [
+      "Hardcoding brand colors directly in component classes instead of using tokens",
+      "Skipping dark mode token definitions and testing",
+      "Using arbitrary values like bg-[#123456] instead of extending the theme"
+    ],
+    "faq": [
+      {
+        "question": "What platforms can use this skill?",
+        "answer": "Works with Claude, Codex, and Claude Code as text-based guidance."
+      },
+      {
+        "question": "Are there usage limits?",
+        "answer": "No limits defined in the skill; your platform may have its own rate limits."
+      },
+      {
+        "question": "How do I integrate it into my project?",
+        "answer": "Apply the provided Tailwind config patterns and component structures in your codebase."
+      },
+      {
+        "question": "Does it access or store my data?",
+        "answer": "No, the skill content is static documentation and does not access files or network."
+      },
+      {
+        "question": "What if the output does not match my theme?",
+        "answer": "Adjust the semantic token values to match your brand colors and reapply patterns."
+      },
+      {
+        "question": "How does it compare to general Tailwind advice?",
+        "answer": "It focuses specifically on design system architecture, token hierarchies, and reusable patterns."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 667
+    }
+  ]
+}

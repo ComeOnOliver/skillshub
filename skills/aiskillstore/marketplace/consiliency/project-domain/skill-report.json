@@ -1,0 +1,227 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T22:28:10.048Z",
+    "slug": "consiliency-project-domain",
+    "source_url": "https://github.com/Consiliency/treesitter-chunker/tree/main/.ai-dev-kit/skills/stack-analyzer/templates/project-domain",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "7858f40cc36baf1656605d55e8e7a983f4d65fd33062aa1d1178dc309e54963d",
+    "tree_hash": "26fbd74edde7da0f1ff3201a03815a68b42a0054727048134d3316ffe49b0cad"
+  },
+  "skill": {
+    "name": "project-domain",
+    "description": "Domain vocabulary and entity relationships for {project}. Ensures consistent terminology and model understanding.",
+    "summary": "Domain vocabulary and entity relationships for {project}. Ensures consistent terminology and model u...",
+    "icon": "📚",
+    "version": "1.0.0",
+    "author": "Consiliency",
+    "license": "MIT",
+    "category": "documentation",
+    "tags": [
+      "domain",
+      "vocabulary",
+      "entities",
+      "terminology",
+      "consistency"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a documentation-only skill template containing markdown files with domain vocabulary guidelines. No executable code exists. All 19 static findings are false positives caused by the scanner misinterpreting markdown placeholders, code fence syntax, and metadata fields as security patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 47,
+            "line_end": 54
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 54,
+            "line_end": 87
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 87,
+            "line_end": 88
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 185,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T22:28:10.047Z"
+  },
+  "content": {
+    "user_title": "Define Project Domain Vocabulary",
+    "value_statement": "Inconsistent terminology creates confusion in codebases. This skill establishes a shared vocabulary and entity relationships for your project domain. Teams can document entities, map relationships, and enforce naming conventions.",
+    "seo_keywords": [
+      "domain vocabulary",
+      "entity relationships",
+      "terminology consistency",
+      "project documentation",
+      "Claude",
+      "Codex",
+      "Claude Code",
+      "AI coding assistant",
+      "domain modeling",
+      "software architecture"
+    ],
+    "actual_capabilities": [
+      "Documents domain entities with definitions and model locations",
+      "Maps entity relationships using standard notation",
+      "Enforces consistent terminology across code and documentation",
+      "Defines naming conventions and status field values",
+      "Validates domain logic against business rules"
+    ],
+    "limitations": [
+      "Requires manual population of domain glossary",
+      "Template needs customization for specific projects",
+      "Relationship depth limited to 2 levels by default"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Software architects",
+        "title": "Define Domain Models",
+        "description": "Establish clear entity definitions and relationships for complex business domains before implementation."
+      },
+      {
+        "target_user": "Development teams",
+        "title": "Enforce Naming Consistency",
+        "description": "Ensure all team members use consistent terminology across code, documentation, and discussions."
+      },
+      {
+        "target_user": "API designers",
+        "title": "Standardize API Schemas",
+        "description": "Maintain consistent field names and status values across REST APIs and database schemas."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic Domain Setup",
+        "scenario": "Starting a new project",
+        "prompt": "Help me define the domain vocabulary for this project including core entities, their relationships, and terminology rules."
+      },
+      {
+        "title": "Entity Relationships",
+        "scenario": "Mapping complex logic",
+        "prompt": "Document the relationships between the main entities in this codebase and identify any missing connections."
+      },
+      {
+        "title": "Terminology Review",
+        "scenario": "Checking consistency",
+        "prompt": "Review this codebase for inconsistent terminology and suggest standardization for entity names and status values."
+      },
+      {
+        "title": "Domain Rules",
+        "scenario": "Defining constraints",
+        "prompt": "Create validation rules for key business constraints and document them in the domain glossary."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Define domain vocabulary for a blog platform",
+        "output": [
+          "Core Entities: Author (user who creates posts), Post (published article), Comment (user feedback), Tag (category label)",
+          "Relationships: Author 1-* Posts, Post 1-* Comments, Post *-* Tags",
+          "Terminology Rules: Use 'Author' not 'Writer', use 'Post' not 'Article', status values: draft, published, archived"
+        ]
+      },
+      {
+        "input": "How should we name status fields in our order system?",
+        "output": [
+          "Recommended status values: pending, confirmed, processing, shipped, delivered, cancelled",
+          "Avoid: 'in_progress' (use 'processing'), 'finished' (use 'delivered')",
+          "Use 'status' field name consistently across all order-related entities"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Populate the glossary early in project development before coding begins",
+      "Review and update domain vocabulary when adding new features",
+      "Share the domain model with all team members and stakeholders"
+    ],
+    "anti_patterns": [
+      "Using different terms interchangeably (user, customer, client)",
+      "Creating duplicate concepts with different names",
+      "Ignoring relationship constraints when implementing features"
+    ],
+    "faq": [
+      {
+        "question": "Is this compatible with existing projects?",
+        "answer": "Yes, you can retrofit domain vocabulary to existing projects by documenting current entities and standardizing terminology."
+      },
+      {
+        "question": "What are the file size limits?",
+        "answer": "The skill has no hard limits, but keep glossaries focused and maintainable for large domains."
+      },
+      {
+        "question": "How does this integrate with my codebase?",
+        "answer": "It provides reference documentation aligned with models in src/models/, BAML types, and API schemas."
+      },
+      {
+        "question": "Is my project data safe?",
+        "answer": "Yes, this is documentation-only with no code execution or data access."
+      },
+      {
+        "question": "What if my domain changes?",
+        "answer": "Update the SKILL.md file to reflect new entities, relationships, or terminology as your project evolves."
+      },
+      {
+        "question": "How is this different from UML diagrams?",
+        "answer": "It focuses on vocabulary consistency rather than visual modeling, with practical rules for code implementation."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 99
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T20:00:56.954Z",
+    "slug": "brownfinesecurity-iotnet",
+    "source_url": "https://github.com/BrownFineSecurity/iothackbot/tree/master/skills/iotnet",
+    "source_ref": "master",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "906b710351881a520ee44b60803f1159856bfa3e6ef59405190ef13709516d2f",
+    "tree_hash": "44a32832e41b2e949a573ae06990ae45eabcd956e43543a344019fb9ffd94f80"
+  },
+  "skill": {
+    "name": "iotnet",
+    "description": "IoT network traffic analyzer for detecting IoT protocols and identifying security vulnerabilities in network communications. Use when you need to analyze network traffic, identify IoT protocols, or assess network security of IoT devices.",
+    "summary": "IoT network traffic analyzer for detecting IoT protocols and identifying security vulnerabilities in...",
+    "icon": "🔒",
+    "version": "1.0.0",
+    "author": "BrownFineSecurity",
+    "license": "MIT",
+    "category": "security",
+    "tags": [
+      "network-security",
+      "iot",
+      "protocol-analysis",
+      "pcap",
+      "vulnerability-assessment"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "low",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill providing AI guidance for using the iotnet network analysis tool. Static findings are false positives: the scanner misinterpreted markdown code formatting as shell execution, documented sudo requirements for legitimate packet capture as privilege escalation, and references to detecting weak cryptography as actual weak algorithms. The skill explicitly requires authorization and is designed for defensive security assessment.",
+    "risk_factor_evidence": [
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 82,
+            "line_end": 82
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 92,
+            "line_end": 92
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 138,
+            "line_end": 139
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 324,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T20:00:56.954Z"
+  },
+  "content": {
+    "user_title": "Analyze IoT network traffic for security issues",
+    "value_statement": "Analyzing IoT network traffic manually is complex and time-consuming. This skill guides AI assistants to use the iotnet tool for automated detection of IoT protocols and security vulnerabilities in packet captures.",
+    "seo_keywords": [
+      "IoT network analysis",
+      "MQTT security",
+      "network traffic analyzer",
+      "IoT vulnerability detection",
+      "PCAP analysis",
+      "CoAP protocol security",
+      "Zigbee network scanning",
+      "IoT security auditing",
+      "Claude Code IoT security",
+      "network protocol detection"
+    ],
+    "actual_capabilities": [
+      "Guide analysis of PCAP files for IoT protocols",
+      "Support live network capture with interface selection",
+      "Detect MQTT, CoAP, Zigbee, Z-Wave, ONVIF, and UPnP protocols",
+      "Identify unencrypted communications and weak authentication",
+      "Apply BPF and display filters for focused analysis",
+      "Generate vulnerability reports with severity levels"
+    ],
+    "limitations": [
+      "Requires iotnet tool installation on the user's system",
+      "Live capture requires root or sudo privileges",
+      "Cannot analyze encrypted traffic without decryption keys",
+      "Detection accuracy depends on configured rules"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Security analysts",
+        "title": "Audit IoT device networks",
+        "description": "Detect unencrypted protocols and weak authentication in enterprise IoT deployments"
+      },
+      {
+        "target_user": "Network administrators",
+        "title": "Monitor IoT traffic patterns",
+        "description": "Identify unexpected protocol usage and potential security gaps in network infrastructure"
+      },
+      {
+        "target_user": "IoT developers",
+        "title": "Verify device communications",
+        "description": "Test that IoT devices use proper encryption and secure protocols"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Analyze PCAP file",
+        "scenario": "Analyze existing packet capture",
+        "prompt": "Use iotnet to analyze the packet capture at /path/to/iot_traffic.pcap. Identify all IoT protocols present and any security vulnerabilities found."
+      },
+      {
+        "title": "Live capture session",
+        "scenario": "Capture live network traffic",
+        "prompt": "Help me perform a live capture on interface eth0 for 60 seconds using iotnet. Then analyze the results for IoT protocols and security issues."
+      },
+      {
+        "title": "Filter by protocol",
+        "scenario": "Focus on specific protocols",
+        "prompt": "Analyze capture.pcap and filter to show only MQTT and CoAP traffic. Report any unencrypted communications or authentication weaknesses."
+      },
+      {
+        "title": "Generate security report",
+        "scenario": "Create vulnerability assessment",
+        "prompt": "Run a comprehensive security analysis with iotnet on this PCAP file. Generate a report listing all vulnerabilities by severity with recommendations for remediation."
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Analyze my home network capture for IoT security issues",
+        "output": [
+          "Protocol Distribution: MQTT (45%), CoAP (30%), UPnP (15%), Other (10%)",
+          "Security Findings: 3 vulnerabilities detected",
+          "  - HIGH: Unencrypted MQTT traffic on port 1883 (192.168.1.50 → 192.168.1.100)",
+          "  - MEDIUM: Plaintext credentials in CoAP discovery (192.168.1.75)",
+          "  - LOW: UPnP device responding to SSDP from WAN interface",
+          "Recommendations: Enable TLS for MQTT broker, implement CoAP DTLS, block UPnP WAN requests"
+        ]
+      },
+      {
+        "input": "Check our office IoT devices for security problems",
+        "output": [
+          "Analyzed 15000 packets from office_network.pcap",
+          "Protocols Detected: MQTT, Zigbee, Modbus, ONVIF",
+          "Critical Finding: Zigbee traffic using no encryption (Zigbee Cluster Library)",
+          "High Finding: ONVIF credentials transmitted in plaintext",
+          "Medium Finding: MQTT broker accepting anonymous connections",
+          "Recommendation: Enable Zigbee security layer, configure ONVIF authentication, require MQTT credentials"
+        ]
+      },
+      {
+        "input": "Monitor smart home traffic for 30 seconds",
+        "output": [
+          "Live capture on wlan0 for 30 seconds completed",
+          "Traffic Summary: 2500 packets captured",
+          "IoT Device Discovery: 12 unique devices detected",
+          "Security Observations:",
+          "  - 3 devices using default MQTT ports with no TLS",
+          "  - 2 devices exposing WiFi credentials in cleartext",
+          "  - 1 device making unexpected external connections",
+          "Action Required: Review device configurations and network segmentation"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always verify you have authorization before capturing network traffic",
+      "Use filtering options to reduce analysis time and focus on relevant traffic",
+      "Combine PCAP analysis with live capture for comprehensive coverage"
+    ],
+    "anti_patterns": [
+      "Capturing traffic without proper authorization or legal consent",
+      "Analyzing production networks during peak hours",
+      "Ignoring low-severity findings that may indicate broader security gaps"
+    ],
+    "faq": [
+      {
+        "question": "What operating systems support iotnet?",
+        "answer": "IoTNet runs on Linux and macOS. Windows support requires WSL. Live capture needs root privileges on all platforms."
+      },
+      {
+        "question": "What file formats are supported for PCAP analysis?",
+        "answer": "Standard PCAP and PCAPNG formats from tcpdump, Wireshark, and other packet capture tools are fully supported."
+      },
+      {
+        "question": "Can this skill capture traffic on my network without installing anything?",
+        "answer": "No. This skill provides AI guidance only. The iotnet tool must be installed separately on your system for actual traffic analysis."
+      },
+      {
+        "question": "Is my network data sent to any external servers?",
+        "answer": "No. All analysis is performed locally using the iotnet tool. Network data never leaves your machine during analysis."
+      },
+      {
+        "question": "Why does live capture require sudo privileges?",
+        "answer": "Capturing raw network packets requires promiscuous mode access to network interfaces, which is a restricted operation on most operating systems."
+      },
+      {
+        "question": "How does this compare to Wireshark for IoT analysis?",
+        "answer": "Wireshark is a general-purpose tool. IoTNet is specialized for IoT protocols with automated vulnerability detection and simplified output for security assessments."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 143
+    }
+  ]
+}

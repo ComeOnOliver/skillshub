@@ -1,0 +1,429 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T23:21:53.728Z",
+    "slug": "curiouslearner-resource-monitor",
+    "source_url": "https://github.com/CuriousLearner/devkit/tree/main/skills/resource-monitor",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "3d46d7c6dbd8cc27a40d3e5a802d294b82d114252ba9053a2683886366bf2c01",
+    "tree_hash": "a91e5ec04d7f793f4dbe92c079bb6d12f6f0dbf33ea4955e6f501ca19aaf28b2"
+  },
+  "skill": {
+    "name": "resource-monitor",
+    "description": "Monitor system resources (CPU, memory, disk, network) during development and production.",
+    "summary": "Monitor system resources (CPU, memory, disk, network) during development and production.",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "CuriousLearner",
+    "license": "MIT",
+    "category": "devops",
+    "tags": [
+      "system-monitoring",
+      "resource-management",
+      "performance",
+      "devops",
+      "troubleshooting"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "filesystem"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "Pure documentation skill containing only instructions and example code blocks. No executable files, no network calls, no file system access, and no command execution capabilities. The skill provides guidance for an AI assistant to help users understand system resource monitoring. All 68 static findings are false positives - see evaluation for details.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 482,
+            "line_end": 482
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 483,
+            "line_end": 483
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 484,
+            "line_end": 484
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 43,
+            "line_end": 59
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 59,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 78
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 78,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 99
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 99,
+            "line_end": 114
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 114,
+            "line_end": 119
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 119,
+            "line_end": 144
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 144,
+            "line_end": 148
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 148,
+            "line_end": 149
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 149,
+            "line_end": 150
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 150,
+            "line_end": 154
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 154,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 156
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 156,
+            "line_end": 162
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 162,
+            "line_end": 163
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 163,
+            "line_end": 164
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 164,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 209,
+            "line_end": 216
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 216,
+            "line_end": 229
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 229,
+            "line_end": 236
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 236,
+            "line_end": 240
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 240,
+            "line_end": 245
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 245,
+            "line_end": 253
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 253,
+            "line_end": 256
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 256,
+            "line_end": 350
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 350,
+            "line_end": 354
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 354,
+            "line_end": 360
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 360,
+            "line_end": 364
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 364,
+            "line_end": 401
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 401,
+            "line_end": 408
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 408,
+            "line_end": 432
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 432,
+            "line_end": 439
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 439,
+            "line_end": 549
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 549,
+            "line_end": 581
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 581,
+            "line_end": 609
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 67
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 797,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T23:21:53.728Z"
+  },
+  "content": {
+    "user_title": "Monitor system resources like CPU and memory",
+    "value_statement": "System resource issues cause slowdowns and outages. This skill provides expert guidance for monitoring CPU, memory, disk, and network usage to identify bottlenecks and optimize performance.",
+    "seo_keywords": [
+      "resource monitor",
+      "CPU monitoring",
+      "memory usage",
+      "disk space",
+      "network monitoring",
+      "system performance",
+      "Claude Code",
+      "Claude",
+      "AI assistant",
+      "devops"
+    ],
+    "actual_capabilities": [
+      "Explain CPU usage metrics and load averages",
+      "Analyze memory consumption patterns and identify leaks",
+      "Check disk space usage and I/O performance",
+      "Track network traffic and connection states",
+      "Recommend alert thresholds for resource monitoring",
+      "Provide optimization strategies for resource usage"
+    ],
+    "limitations": [
+      "Does not execute monitoring commands automatically",
+      "Requires user to run commands in their terminal",
+      "Does not persist monitoring data or history",
+      "Cannot access system metrics without user action"
+    ],
+    "use_cases": [
+      {
+        "target_user": "DevOps Engineers",
+        "title": "Production monitoring",
+        "description": "Track resource usage in production environments and identify bottlenecks before they cause outages."
+      },
+      {
+        "target_user": "Developers",
+        "title": "Debug performance issues",
+        "description": "Diagnose why an application is running slowly by analyzing CPU, memory, and disk patterns."
+      },
+      {
+        "target_user": "System Administrators",
+        "title": "Capacity planning",
+        "description": "Monitor trends over time to plan infrastructure upgrades and prevent resource exhaustion."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick status check",
+        "scenario": "Get current resource overview",
+        "prompt": "Show me the current CPU, memory, and disk usage on this system."
+      },
+      {
+        "title": "Find resource hogs",
+        "scenario": "Identify intensive processes",
+        "prompt": "Which processes are using the most CPU and memory right now?"
+      },
+      {
+        "title": "Monitor specific process",
+        "scenario": "Track a running application",
+        "prompt": "Monitor the resource usage of the node process with PID 1234."
+      },
+      {
+        "title": "Set up alerts",
+        "scenario": "Configure threshold warnings",
+        "prompt": "What are recommended alert thresholds for CPU, memory, and disk usage?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "Show me current system resources",
+        "output": [
+          "CPU Usage: 45 percent - Normal range",
+          "Memory: 8GB used out of 16GB (50 percent)",
+          "Disk: 290GB used out of 500GB (58 percent)",
+          "Network: 80 Mbps average bandwidth usage"
+        ]
+      },
+      {
+        "input": "Which processes are using the most memory",
+        "output": [
+          "Top memory consumers on this system:",
+          "1. node process using 6.4 GB",
+          "2. postgres database using 2.4 GB",
+          "3. redis cache using 1.1 GB"
+        ]
+      },
+      {
+        "input": "What are good alert thresholds for CPU",
+        "output": [
+          "CPU Warning Threshold: Above 70 percent for 5 minutes",
+          "CPU Critical Threshold: Above 85 percent for 5 minutes",
+          "Consider investigating when CPU exceeds warning threshold"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Monitor resources regularly, not just when issues occur",
+      "Set up alerts for thresholds before critical levels are reached",
+      "Keep historical data to identify trends and plan capacity"
+    ],
+    "anti_patterns": [
+      "Ignoring warning signs until they become critical outages",
+      "Setting alert thresholds too low, causing alert fatigue",
+      "Monitoring without acting on the data collected"
+    ],
+    "faq": [
+      {
+        "question": "Does this skill run monitoring commands?",
+        "answer": "No. This skill provides guidance. You must run the actual commands in your terminal."
+      },
+      {
+        "question": "Can it monitor remote servers?",
+        "answer": "Yes. Use SSH to connect to remote servers, then run monitoring commands there."
+      },
+      {
+        "question": "What monitoring tools does it support?",
+        "answer": "It covers standard tools like top, free, df, netstat, and integrations with Prometheus, Grafana, and CloudWatch."
+      },
+      {
+        "question": "Is my data safe?",
+        "answer": "Yes. The skill only provides instructions. All monitoring happens locally on your system."
+      },
+      {
+        "question": "Why are resources showing as high?",
+        "answer": "Common causes include memory leaks, inefficient code, too many processes, or insufficient resources for your workload."
+      },
+      {
+        "question": "How is this different from htop or top?",
+        "answer": "This skill is an AI assistant that explains what metrics mean and how to interpret them. htop and top are the actual command-line tools."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 621
+    }
+  ]
+}

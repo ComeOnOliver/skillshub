@@ -1,0 +1,254 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-16T12:14:27.466Z",
+    "slug": "5minfutures-portfolio-context",
+    "source_url": "https://github.com/5MinFutures/futures-arena/tree/main/.claude/skills/portfolio-context",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "0febc3c521414925c1a81e12bcebd34650f1e664e49aa20b619add2db974b622",
+    "tree_hash": "a7e05fa383a094cd331f88354daf9f6841c5c2618c2b536d104ea3e1541e8e25"
+  },
+  "skill": {
+    "name": "portfolio-context",
+    "description": "Auto-loaded context for Portfolio Buddy 2 development. Use for ANY task involving: React 19 development, TypeScript, portfolio analysis features, metrics calculations, trading strategy comparison, or working with the Portfolio Buddy 2 codebase. Contains tech stack, known issues, and architectural constraints.",
+    "summary": "Auto-loaded context for Portfolio Buddy 2 development. Use for ANY task involving: React 19 developm...",
+    "icon": "📊",
+    "version": "1.0.0",
+    "author": "5MinFutures",
+    "license": "MIT",
+    "category": "data",
+    "tags": [
+      "React 19",
+      "TypeScript",
+      "Portfolio Analysis",
+      "Trading"
+    ],
+    "supported_tools": [
+      "claude",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "filesystem",
+      "external_commands"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This skill is a pure documentation/context file containing no executable code. All 22 static findings are FALSE POSITIVES caused by the analyzer misinterpreting JSON metadata fields, markdown code fences, and documentation text as security threats. The skill-report.json was previously audited as safe with the same conclusion. No network calls, file access, or command execution capabilities exist.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "filesystem",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 38,
+            "line_end": 38
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 67,
+            "line_end": 67
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 68,
+            "line_end": 68
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 72,
+            "line_end": 96
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 96,
+            "line_end": 99
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 277,
+    "audit_model": "claude",
+    "audited_at": "2026-01-16T12:14:27.466Z"
+  },
+  "content": {
+    "user_title": "Provide portfolio analysis project context",
+    "value_statement": "Accelerate Portfolio Buddy 2 development with instant access to tech stack, architecture, known issues, and component patterns. This context skill helps AI assistants deliver accurate, project-aware responses.",
+    "seo_keywords": [
+      "portfolio analysis",
+      "React 19",
+      "TypeScript",
+      "trading metrics",
+      "Chart.js",
+      "Supabase",
+      "investment tools",
+      "Claude",
+      "Claude Code",
+      "trading strategy comparison"
+    ],
+    "actual_capabilities": [
+      "Provides complete tech stack for Portfolio Buddy 2",
+      "Documents known bugs and tech debt items",
+      "Describes component architecture and file structure",
+      "Lists architectural constraints and coding standards",
+      "Shares recent feature implementation details",
+      "Contains migration progress from legacy app"
+    ],
+    "limitations": [
+      "Does not execute code or perform calculations",
+      "Does not access external APIs or databases",
+      "Does not modify or create project files",
+      "Only provides context documentation"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Developers",
+        "title": "New developer onboarding",
+        "description": "Get instant understanding of project architecture, patterns, and coding standards when joining the team"
+      },
+      {
+        "target_user": "AI Assistants",
+        "title": "Context-aware coding help",
+        "description": "Receive project-specific guidance that respects existing architecture and avoids conflicting patterns"
+      },
+      {
+        "target_user": "Maintainers",
+        "title": "Quick reference for issues",
+        "description": "Access documented bugs and tech debt items when debugging or planning refactoring work"
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Quick start",
+        "scenario": "Get project overview",
+        "prompt": "What tech stack does this project use and what is the main purpose?"
+      },
+      {
+        "title": "Component help",
+        "scenario": "Find component location",
+        "prompt": "Where is the correlation heatmap component and how does it work?"
+      },
+      {
+        "title": "Debug issue",
+        "scenario": "Investigate Supabase errors",
+        "prompt": "What known issues exist with Supabase uploads and how are they handled?"
+      },
+      {
+        "title": "Architecture review",
+        "scenario": "Check coding standards",
+        "prompt": "What are the component size limits and TypeScript rules for this project?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "What metrics does this project calculate for portfolio analysis?",
+        "output": [
+          "• Sharpe Ratio - risk-adjusted return measure",
+          "• Sortino Ratio - downside risk focus",
+          "• Maximum Drawdown - peak-to-trough decline",
+          "• Correlation matrices - asset relationships",
+          "• Contract multipliers for futures trading"
+        ]
+      },
+      {
+        "input": "What state management approach does this project use?",
+        "output": [
+          "• Plain React hooks only (useState, useMemo, useCallback)",
+          "• No external state libraries like Zustand or TanStack Query",
+          "• Custom hooks organized in /src/hooks/"
+        ]
+      },
+      {
+        "input": "What charting library is used in this project?",
+        "output": [
+          "• Chart.js with react-chartjs-2 wrapper",
+          "• Chart plugins for zoom, annotation, and date handling",
+          "• Recharts is installed but unused (tech debt item)"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Load this skill first when working on Portfolio Buddy 2 tasks",
+      "Reference known issues before filing new bug reports",
+      "Follow documented component and hook patterns",
+      "Check tech debt items before adding new dependencies"
+    ],
+    "anti_patterns": [
+      "Adding Zustand or TanStack Query (state management already defined)",
+      "Using Recharts (project uses Chart.js instead)",
+      "Creating components over 200 lines (violates project standards)",
+      "Using any types in TypeScript code (strict typing required)"
+    ],
+    "faq": [
+      {
+        "question": "Is this skill compatible with other context skills?",
+        "answer": "Yes. This skill provides project-specific context and works alongside other general-purpose skills."
+      },
+      {
+        "question": "What is the maximum component size allowed?",
+        "answer": "Components should not exceed 200 lines. Three components currently violate this as known tech debt."
+      },
+      {
+        "question": "Does this skill connect to my database?",
+        "answer": "No. This skill only provides documentation context. It does not access any databases or APIs."
+      },
+      {
+        "question": "Is my trade data safe when using this skill?",
+        "answer": "Yes. The skill contains no code that accesses files or data. It only provides static documentation."
+      },
+      {
+        "question": "Why is my AI response not project-aware?",
+        "answer": "Ensure this skill is loaded before asking project-related questions. It provides the context needed."
+      },
+      {
+        "question": "How does this compare to migration-tracker skill?",
+        "answer": "Portfolio-context covers current project state. Migration-tracker tracks progress migrating features from the legacy app."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 99
+    }
+  ]
+}

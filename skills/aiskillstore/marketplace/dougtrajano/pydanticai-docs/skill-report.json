@@ -1,0 +1,386 @@
+{
+  "schema_version": "2.0",
+  "meta": {
+    "generated_at": "2026-01-17T04:09:37.139Z",
+    "slug": "dougtrajano-pydanticai-docs",
+    "source_url": "https://github.com/DougTrajano/pydantic-ai-skills/tree/main/examples/skills/pydanticai-docs",
+    "source_ref": "main",
+    "model": "claude",
+    "analysis_version": "3.0.0",
+    "source_type": "community",
+    "content_hash": "ca78eda76fe538eb2bec2142d5a24cb24238cd3f1c53e7721bbbf44a703276e7",
+    "tree_hash": "653bf8e3894597399c37120d3c007b34c5ff1116b2ad50d8820995b7a6f0d193"
+  },
+  "skill": {
+    "name": "pydanticai-docs",
+    "description": "Use this skill for requests related to Pydantic AI framework - building agents, tools, dependencies, structured outputs, and model integrations.",
+    "summary": "Use this skill for requests related to Pydantic AI framework - building agents, tools, dependencies,...",
+    "icon": "🐍",
+    "version": "1.0.0",
+    "author": "DougTrajano",
+    "license": "MIT",
+    "category": "coding",
+    "tags": [
+      "pydantic",
+      "python",
+      "ai-agents",
+      "framework",
+      "structured-outputs"
+    ],
+    "supported_tools": [
+      "claude",
+      "codex",
+      "claude-code"
+    ],
+    "risk_factors": [
+      "network",
+      "external_commands",
+      "env_access"
+    ]
+  },
+  "security_audit": {
+    "risk_level": "safe",
+    "is_blocked": false,
+    "safe_to_publish": true,
+    "summary": "This is a pure documentation skill containing only markdown guidance and Python code examples. No executable code, no file system access, no network calls, and no external commands are present. All static findings are false positives triggered by the documentation format and Python decorator syntax being misinterpreted as command execution patterns.",
+    "risk_factor_evidence": [
+      {
+        "factor": "network",
+        "evidence": [
+          {
+            "file": "skill-report.json",
+            "line_start": 6,
+            "line_end": 6
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 48,
+            "line_end": 48
+          }
+        ]
+      },
+      {
+        "factor": "external_commands",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 33,
+            "line_end": 33
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 34,
+            "line_end": 34
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 40,
+            "line_end": 40
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 41,
+            "line_end": 41
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 56,
+            "line_end": 62
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 62,
+            "line_end": 66
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 66,
+            "line_end": 77
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 77,
+            "line_end": 81
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 81,
+            "line_end": 93
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 93,
+            "line_end": 97
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 97,
+            "line_end": 112
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 112,
+            "line_end": 116
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 116,
+            "line_end": 128
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 128,
+            "line_end": 132
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 132,
+            "line_end": 143
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 143,
+            "line_end": 147
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 147,
+            "line_end": 155
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 155,
+            "line_end": 161
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 161,
+            "line_end": 165
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 165,
+            "line_end": 169
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 169,
+            "line_end": 173
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 173,
+            "line_end": 177
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 177,
+            "line_end": 182
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 182,
+            "line_end": 186
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 186,
+            "line_end": 191
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 191,
+            "line_end": 195
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 195,
+            "line_end": 201
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 201,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 205
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 205,
+            "line_end": 208
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 208,
+            "line_end": 209
+          },
+          {
+            "file": "SKILL.md",
+            "line_start": 209,
+            "line_end": 209
+          }
+        ]
+      },
+      {
+        "factor": "env_access",
+        "evidence": [
+          {
+            "file": "SKILL.md",
+            "line_start": 103,
+            "line_end": 103
+          }
+        ]
+      }
+    ],
+    "critical_findings": [],
+    "high_findings": [],
+    "medium_findings": [],
+    "low_findings": [],
+    "dangerous_patterns": [],
+    "files_scanned": 2,
+    "total_lines": 387,
+    "audit_model": "claude",
+    "audited_at": "2026-01-17T04:09:37.139Z"
+  },
+  "content": {
+    "user_title": "Build AI agents with Pydantic AI guidance",
+    "value_statement": "Building production-grade AI agents requires understanding type safety, dependency injection, and structured outputs. This skill provides comprehensive documentation and examples for the Pydantic AI Python framework.",
+    "seo_keywords": [
+      "pydantic ai",
+      "python ai agents",
+      "llm framework",
+      "structured outputs",
+      "dependency injection",
+      "Claude Code",
+      "Claude",
+      "Codex",
+      "agent framework",
+      "pydantic-ai"
+    ],
+    "actual_capabilities": [
+      "Provide documentation for Pydantic AI agents and tools",
+      "Explain dependency injection patterns for AI applications",
+      "Show structured output examples using Pydantic models",
+      "Demonstrate tool creation with @agent.tool and @agent.tool_plain",
+      "Guide on using toolsets and model integrations",
+      "Offer best practices for production AI applications"
+    ],
+    "limitations": [
+      "Does not execute code or install packages",
+      "Does not access local files or repositories",
+      "Does not make network requests to external APIs",
+      "Provides guidance only, no direct integration with user projects"
+    ],
+    "use_cases": [
+      {
+        "target_user": "Python developers",
+        "title": "Build type-safe AI agents",
+        "description": "Create production-ready AI agents with proper type hints, dependency injection, and validated structured outputs."
+      },
+      {
+        "target_user": "AI application architects",
+        "title": "Design agent architectures",
+        "description": "Learn patterns for organizing tools, dependencies, and model integrations in scalable AI applications."
+      },
+      {
+        "target_user": "ML engineers",
+        "title": "Implement structured outputs",
+        "description": "Use Pydantic models to ensure LLM responses conform to specific schemas and data types."
+      }
+    ],
+    "prompt_templates": [
+      {
+        "title": "Basic agent setup",
+        "scenario": "Creating your first Pydantic AI agent",
+        "prompt": "Show me how to create a basic Pydantic AI agent with OpenAI and run a simple query."
+      },
+      {
+        "title": "Add tools to agents",
+        "scenario": "Extending agents with custom functions",
+        "prompt": "How do I add custom tools to a Pydantic AI agent? Show me an example with @agent.tool decorator."
+      },
+      {
+        "title": "Structured outputs",
+        "scenario": "Getting validated responses from LLMs",
+        "prompt": "How do I use Pydantic models to get structured, type-safe output from my agent? Give me a complete example."
+      },
+      {
+        "title": "Dependency injection",
+        "scenario": "Managing external services and API keys",
+        "prompt": "Explain how to use dependency injection in Pydantic AI. How do I pass API keys and database connections to my tools?"
+      }
+    ],
+    "output_examples": [
+      {
+        "input": "How do I create an agent that returns structured city information?",
+        "output": [
+          "Define a Pydantic BaseModel with your desired fields (name, country, population)",
+          "Create an Agent with output_type set to your model class",
+          "Run the agent with your query - it will return validated, typed output",
+          "Access the structured data via result.output which is an instance of your model"
+        ]
+      },
+      {
+        "input": "How do I pass API keys securely to my agent tools?",
+        "output": [
+          "Create a dataclass to hold your dependencies (api_key, database connection, etc.)",
+          "Define deps_type when creating the Agent",
+          "Tools receive dependencies via the RunContext parameter",
+          "Pass actual values when calling agent.run() or agent.run_sync()"
+        ]
+      }
+    ],
+    "best_practices": [
+      "Always define deps_type and output_type for better IDE support and type safety",
+      "Use dependency injection for database connections, API clients, and other shared services",
+      "Use Pydantic models for all structured outputs to ensure validated, type-safe responses"
+    ],
+    "anti_patterns": [
+      "Avoid using plain dictionaries instead of Pydantic models for outputs",
+      "Do not hardcode API keys in agent code - use dependency injection",
+      "Avoid creating agents without proper type definitions for dependencies and outputs"
+    ],
+    "faq": [
+      {
+        "question": "Which LLM providers are supported by Pydantic AI?",
+        "answer": "Pydantic AI supports any model provider with tool-calling capability including OpenAI, Anthropic, Gemini, and Ollama."
+      },
+      {
+        "question": "What Python version is required?",
+        "answer": "Pydantic AI requires Python 3.9 or higher. Check your Python version with python --version before installation."
+      },
+      {
+        "question": "Can I use this skill with Claude Code?",
+        "answer": "Yes, this skill is compatible with Claude, Codex, and Claude Code. Install via pip and import the Agent class."
+      },
+      {
+        "question": "Is my data safe when using this skill?",
+        "answer": "This skill only provides documentation guidance. No data is sent to external services or stored anywhere."
+      },
+      {
+        "question": "How do I handle authentication in my agents?",
+        "answer": "Use the deps_type parameter to define a dependency class. Inject API keys through the deps argument when running agents."
+      },
+      {
+        "question": "How is Pydantic AI different from LangChain?",
+        "answer": "Pydantic AI focuses on type safety and structured outputs using Pydantic models. It provides a simpler, more Pythonic API for building agents."
+      }
+    ]
+  },
+  "file_structure": [
+    {
+      "name": "SKILL.md",
+      "type": "file",
+      "path": "SKILL.md",
+      "lines": 210
+    }
+  ]
+}
