@@ -71,10 +71,14 @@ export async function rateLimit(
       // Redis not configured – fail open
       return { success: true, limit: 0, remaining: 0, reset: 0 };
     }
-    const { success, limit, remaining, reset } = await limiter.limit(identifier);
+    const { success, limit, remaining, reset } =
+      await limiter.limit(identifier);
     return { success, limit, remaining, reset };
   } catch (error) {
-    console.warn("[rate-limit] Upstash check failed, allowing request through:", error);
+    console.warn(
+      "[rate-limit] Upstash check failed, allowing request through:",
+      error,
+    );
     return { success: true, limit: 0, remaining: 0, reset: 0 };
   }
 }
