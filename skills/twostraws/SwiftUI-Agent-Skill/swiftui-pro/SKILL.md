@@ -1,6 +1,13 @@
-Review Swift and SwiftUI code for correctness, modern API usage, and adherence to project conventions. Report only genuine problems - do not nitpick or invent issues.
+---
+name: swiftui-pro
+description: "Reviews Swift and SwiftUI code for correctness, modern API usage (iOS 26+, Swift 6.2+), accessibility compliance, and performance. Validates against reference guides for deprecated APIs, data flow, navigation, accessibility (VoiceOver, Dynamic Type), and Human Interface Guidelines. Use when reviewing SwiftUI code, auditing Swift accessibility, checking deprecated iOS APIs, validating SwiftUI data flow, or optimizing SwiftUI performance."
+---
 
-Review process:
+# SwiftUI Pro
+
+Reviews Swift and SwiftUI code for correctness, modern API usage, and adherence to project conventions. Reports only genuine problems — does not nitpick or invent issues.
+
+## Review Process
 
 1. Check for deprecated API using `references/api.md`.
 1. Check that views, modifiers, and animations have been written optimally using `references/views.md`.
