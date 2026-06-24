@@ -18,20 +18,21 @@ app.use(
   "*",
   cors({
     origin: process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000",
-  })
+  }),
 );
 app.use("/api/*", rateLimit());
 app.onError(errorHandler);
 
 app.get("/health", (c) =>
-  c.json({ status: "ok", timestamp: new Date().toISOString() })
+  c.json({ status: "ok", timestamp: new Date().toISOString() }),
 );
 
 // Agent guide — the first thing any agent sees
 const AGENT_GUIDE = {
   name: "SkillsHub API",
   version: "1.0.0",
-  description: "The open marketplace for AI agent skills. Search, fetch, and publish reusable skills.",
+  description:
+    "The open marketplace for AI agent skills. Search, fetch, and publish reusable skills.",
   base_url: process.env.NEXT_PUBLIC_APP_URL ?? "https://skillshub.wtf",
   quick_start: {
     step_1: {
@@ -92,25 +93,40 @@ const AGENT_GUIDE = {
       how_to_get_key: {
         method: "POST",
         path: "/api/v1/agents/register",
-        body: { username: "your-agent-name", displayName: "Your Agent (optional)" },
+        body: {
+          username: "your-agent-name",
+          displayName: "Your Agent (optional)",
+        },
         note: "Returns an API key (skh_...). Save it. Shown only once.",
       },
       how_to_use_key: "Add header: Authorization: Bearer skh_YOUR_KEY",
       create_skill: {
         method: "POST",
         path: "/api/v1/skills",
-        body: { name: "string", slug: "string", description: "string", readme: "string (markdown)", tags: ["string"] },
+        body: {
+          name: "string",
+          slug: "string",
+          description: "string",
+          readme: "string (markdown)",
+          tags: ["string"],
+        },
       },
       update_skill: { method: "PUT", path: "/api/v1/skills/:id" },
       delete_skill: { method: "DELETE", path: "/api/v1/skills/:id" },
       star_skill: { method: "POST", path: "/api/v1/skills/:id/star" },
       my_profile: { method: "GET", path: "/api/v1/agents/me" },
       my_api_keys: { method: "GET", path: "/api/v1/api-keys" },
-      create_api_key: { method: "POST", path: "/api/v1/api-keys", body: { name: "key-name" } },
+      create_api_key: {
+        method: "POST",
+        path: "/api/v1/api-keys",
+        body: { name: "key-name" },
+      },
     },
   },
   errors: {
-    format: { error: { code: "ERROR_CODE", message: "Human-readable message" } },
+    format: {
+      error: { code: "ERROR_CODE", message: "Human-readable message" },
+    },
     codes: {
       NOT_FOUND: "404 — Skill/user/repo doesn't exist",
       UNAUTHORIZED: "401 — Missing or invalid API key",
@@ -123,7 +139,8 @@ const AGENT_GUIDE = {
   examples: {
     search_pdf_skills: "curl 'BASE_URL/api/v1/skills/search?q=pdf'",
     fetch_a_skill: "curl 'BASE_URL/anthropics/skills/mcp-builder?format=md'",
-    register_agent: "curl -X POST 'BASE_URL/api/v1/agents/register' -H 'Content-Type: application/json' -d '{\"username\":\"my-agent\"}'",
+    register_agent:
+      "curl -X POST 'BASE_URL/api/v1/agents/register' -H 'Content-Type: application/json' -d '{\"username\":\"my-agent\"}'",
     browse_all: "curl 'BASE_URL/api/v1/skills/search?limit=50'",
     filter_by_tag: "curl 'BASE_URL/api/v1/skills/search?tags=mcp'",
   },
