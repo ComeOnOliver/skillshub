@@ -1,19 +1,19 @@
 ---
 name: github-cli
-description: Use this skill for any GitHub-related task. Always read it before using gh. It contains the default commands and operating rules for working with GitHub through the local gh CLI.
+description: "Manages GitHub repositories, pull requests, issues, and user metadata via the local gh CLI. Provides commands for inspecting repos, reading READMEs, listing PRs and issues, and querying repository metadata with structured JSON output. Use when working with gh CLI, listing pull requests, inspecting GitHub repos, reading repository READMEs, managing issues, or querying GitHub API endpoints."
 ---
 
 # GitHub CLI
 
-## When to Use This Skill
+## When to Use
 
-Use this skill for GitHub-related tasks when working through the local `gh` CLI.
+Use when performing GitHub operations through the local `gh` CLI:
 
-Examples:
-- inspect the authenticated user's repositories
-- read a repository README to understand the project
-- inspect repository metadata
-- work with issues or pull requests
+- Inspecting the authenticated user's repositories
+- Reading a repository README to understand the project
+- Inspecting repository metadata (description, dates, URLs)
+- Listing and managing pull requests or issues
+- Querying the GitHub API for structured data
 
 ## Core Rules
 

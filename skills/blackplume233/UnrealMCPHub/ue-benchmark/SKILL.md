@@ -1,6 +1,6 @@
 ---
 name: ue-benchmark
-description: 'UE Agent Benchmark 评测框架。定义通用评分体系、评测流程和质量层级，支持多场景 Benchmark。触发：用户提及 Benchmark/评测/基准测试/跑分 等关键词时激活。'
+description: "UE Agent Benchmark evaluation framework for Unreal Engine. Runs end-to-end game prototype benchmarks via MCP toolchain, scoring PackageGate validation, user playability (PVP protocol), AI code review, content richness, and token efficiency. Use when running UE benchmarks, evaluating agent game prototypes, scoring Unreal Engine builds, conducting playability testing, or comparing agent performance on game development tasks."
 license: MIT
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, CallMcpTool
 ---

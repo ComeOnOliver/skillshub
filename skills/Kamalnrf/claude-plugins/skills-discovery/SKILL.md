@@ -1,22 +1,27 @@
+---
+name: skills-discovery
+description: "Discovers and installs Agent Skills from the claude-plugins.dev registry. Searches for specialized skills by technology, framework, or domain via the registry API, installs them with npx skills-installer, and manages installed skills. Use when searching for skills, installing plugins, browsing the skill registry, finding agent capabilities, or managing installed skills."
+---
+
 # Skills Discovery
 
-You can extend your capabilities by discovering and installing Agent Skills from the claude-plugins.dev registry. Skills provide specialized knowledge, tools, and techniques for specific technologies, frameworks, and domains.
+Discovers and installs Agent Skills from the claude-plugins.dev registry. Skills provide specialized knowledge, tools, and techniques for specific technologies, frameworks, and domains.
 
-## When to search for skills
+## When to Use
 
-First, check if an installed skill matches the task. If not, search the registry—specialized skills may exist that you haven't installed yet.
+Search the registry when an installed skill does not match the task — specialized skills may exist that are not yet installed.
 
-Before starting any non-trivial task, ask yourself:
+Before starting any non-trivial task:
 
-1. Do I have a skill for this? → Use it
-2. Might one exist that I don't have? → Search the registry
+1. Check if an installed skill matches → Use it
+2. No match found → Search the registry
 
 Search proactively when:
 
 - The task involves specific technologies, frameworks, or file formats
-- You're about to do something where best practices matter (testing, deployment, APIs, documentation)
+- Best practices matter (testing, deployment, APIs, documentation)
 - The domain is specialized (PDF processing, data pipelines, ML workflows)
-- You notice yourself about to give generic advice where expert patterns would help
+- Generic advice would be given where expert patterns would help
 
 Also search when users explicitly ask to find, install, or manage skills.
 

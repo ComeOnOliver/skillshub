@@ -1,6 +1,11 @@
+---
+name: yt-dlp-downloader-skill
+description: "Downloads videos and extracts audio from YouTube, Bilibili, Twitter/X, TikTok, and thousands of other sites using yt-dlp. Handles cookie-based authentication for YouTube 403 errors, format selection, subtitle downloads, playlist downloads, and quality selection. Use when downloading videos, extracting audio to MP3, downloading playlists, fetching subtitles, or troubleshooting yt-dlp errors."
+---
+
 # yt-dlp Video Downloader
 
-Download videos from thousands of websites using yt-dlp.
+Downloads videos from thousands of websites using yt-dlp.
 
 ## Prerequisites
 
