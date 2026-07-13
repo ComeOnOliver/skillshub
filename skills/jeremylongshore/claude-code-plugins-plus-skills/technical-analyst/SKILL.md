@@ -5,7 +5,7 @@ version: 1.0.0
 author: Ahmed Khaled Mohamed <ahmd.khaled.a.mohamed@gmail.com>
 license: MIT
 allowed-tools: Read, Grep, Glob, Bash(git:*)
-argument-hint: [system, service, or file]
+argument-hint: "[system, service, or file]"
 compatible-with: claude-code
 tags: [productivity, technical-analyst]
 

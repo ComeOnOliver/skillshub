@@ -1,7 +1,7 @@
 ---
 description: Analyze the specified component and provide recommendations
 allowed-tools: Read, Grep, Glob, Bash
-argument-hint: [component-name]
+argument-hint: "[component-name]"
 ---
 
 # Analyze Command

@@ -5,7 +5,7 @@ version: 1.0.0
 author: Ahmed Khaled Mohamed <ahmd.khaled.a.mohamed@gmail.com>
 license: MIT
 allowed-tools: Read, Glob, Grep
-argument-hint: [assumption or experiment]
+argument-hint: "[assumption or experiment]"
 compatible-with: claude-code
 tags: [productivity, testing, hypothesis-tester]
 

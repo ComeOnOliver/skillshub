@@ -126,7 +126,7 @@ description: Expert at security reviews. Auto-invokes when reviewing code or ana
 ```yaml
 ---
 description: Run security scan on specified file
-argument-hint: [file-path]
+argument-hint: "[file-path]"
 ---
 ```
 

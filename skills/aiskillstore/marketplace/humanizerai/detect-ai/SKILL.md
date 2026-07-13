@@ -2,7 +2,7 @@
 name: detect-ai
 description: Analyze text to detect if it was written by AI. Returns a score from 0-100 with detailed metrics. Use when checking content before publishing or submitting.
 user-invocable: true
-argument-hint: [text to analyze]
+argument-hint: "[text to analyze]"
 allowed-tools: WebFetch
 ---
 

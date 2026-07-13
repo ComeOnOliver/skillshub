@@ -1,7 +1,7 @@
 ---
 description: Example command that demonstrates plugin functionality
 allowed-tools: Read, Grep, Glob
-argument-hint: [optional-arg]
+argument-hint: "[optional-arg]"
 ---
 
 # Example Command

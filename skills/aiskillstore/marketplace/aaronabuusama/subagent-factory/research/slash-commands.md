@@ -43,7 +43,7 @@ Analyze this code for performance issues and suggest optimizations.
 ```markdown
 ---
 description: Create a git commit
-argument-hint: [message]
+argument-hint: "[message]"
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
 model: claude-3-5-haiku-20241022
 disable-model-invocation: false
@@ -82,7 +82,7 @@ Fix issue #$ARGUMENTS following our coding standards
 
 ```markdown
 ---
-argument-hint: [pr-number] [priority] [assignee]
+argument-hint: "[pr-number] [priority] [assignee]"
 description: Review pull request
 ---
 
@@ -195,7 +195,7 @@ EOF
 ```bash
 cat > .claude/commands/commit.md << 'EOF'
 ---
-argument-hint: [message]
+argument-hint: "[message]"
 description: Create a git commit
 ---
 
@@ -1367,7 +1367,7 @@ fi
 ```markdown
 ---
 description: Brief description
-argument-hint: [arg1] [arg2]
+argument-hint: "[arg1] [arg2]"
 allowed-tools: Bash(git:*), Read
 model: claude-3-5-sonnet-20241022
 ---

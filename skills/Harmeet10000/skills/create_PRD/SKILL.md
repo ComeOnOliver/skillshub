@@ -1,6 +1,6 @@
 ---
 description: Create a Product Requirements Document from conversation
-argument-hint: [output-filename]
+argument-hint: "[output-filename]"
 ---
 
 # Create PRD: Generate Product Requirements Document
