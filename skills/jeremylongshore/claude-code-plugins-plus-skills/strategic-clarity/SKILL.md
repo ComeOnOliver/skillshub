@@ -5,7 +5,7 @@ version: 1.0.0
 author: Ahmed Khaled Mohamed <ahmd.khaled.a.mohamed@gmail.com>
 license: MIT
 allowed-tools: Read, Glob, Grep
-argument-hint: [phase: absorb/audit/articulate/align]
+argument-hint: "[phase: absorb/audit/articulate/align]"
 compatible-with: claude-code
 tags: [productivity, workflow, strategic-clarity]
 

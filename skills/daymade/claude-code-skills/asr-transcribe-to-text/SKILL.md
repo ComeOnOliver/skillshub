@@ -1,7 +1,7 @@
 ---
 name: asr-transcribe-to-text
 description: Transcribe audio and video files to text using a remote ASR service (Qwen3-ASR or OpenAI-compatible endpoint). Extracts audio from video, sends to configurable ASR endpoint, outputs clean text. Use when the user wants to transcribe recordings, convert audio/video to text, do speech-to-text, or mentions ASR, Qwen ASR, 转录, 语音转文字, 录音转文字, or has a meeting recording, lecture, interview, or screen recording to transcribe.
-argument-hint: [audio-or-video-file-path]
+argument-hint: "[audio-or-video-file-path]"
 ---
 
 # ASR Transcribe to Text

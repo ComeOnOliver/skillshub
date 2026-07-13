@@ -48,7 +48,7 @@ description: Brief description of what the command does
 ---
 description: Brief description of what the command does
 allowed-tools: Read, Grep, Glob, Bash
-argument-hint: [parameter-description]
+argument-hint: "[parameter-description]"
 ---
 ```
 
@@ -57,7 +57,7 @@ argument-hint: [parameter-description]
 ---
 description: Brief description of command functionality            # Required
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash               # Optional: Pre-approved tools
-argument-hint: [filename] [options]                               # Optional: Parameter guide for users
+argument-hint: "[filename] [options]                               # Optional: Parameter guide for users"
 model: claude-3-5-haiku-20241022                                  # Optional: Specific model (see warning below)
 disable-model-invocation: false                                   # Optional: Prevent auto-invocation
 ---
@@ -175,7 +175,7 @@ Commands support special variables for arguments:
 ---
 description: One-line description of what this command does
 allowed-tools: Read, Grep, Bash
-argument-hint: [arg1] [arg2]
+argument-hint: "[arg1] [arg2]"
 ---
 
 # Command Name
@@ -287,7 +287,7 @@ python3 validate-command.py .claude/commands/run-tests.md
 
 ### Pattern 1: Single Argument
 ```yaml
-argument-hint: [filename]
+argument-hint: "[filename]"
 ```
 
 Body:
@@ -299,7 +299,7 @@ Usage: `/process-file data.csv`
 
 ### Pattern 2: Multiple Arguments
 ```yaml
-argument-hint: [source] [destination]
+argument-hint: "[source] [destination]"
 ```
 
 Body:
@@ -311,7 +311,7 @@ Usage: `/copy-file src.txt dest.txt`
 
 ### Pattern 3: Flexible Arguments
 ```yaml
-argument-hint: [search-term] [optional-path]
+argument-hint: "[search-term] [optional-path]"
 ```
 
 Body:
@@ -323,7 +323,7 @@ Usage: `/search "error" ./src` or `/search "error"`
 
 ### Pattern 4: All Arguments
 ```yaml
-argument-hint: [commit-message]
+argument-hint: "[commit-message]"
 ```
 
 Body:
@@ -373,7 +373,7 @@ Use for: Complete workflows (test + commit + push)
 ---
 description: Commit changes and push to remote
 allowed-tools: Read, Grep, Bash
-argument-hint: [commit-message]
+argument-hint: "[commit-message]"
 ---
 
 # Git Commit and Push
@@ -397,7 +397,7 @@ Usage: `/git-commit-push Add authentication feature`
 ---
 description: Review a pull request for quality and security
 allowed-tools: Read, Grep, Bash
-argument-hint: [PR-number]
+argument-hint: "[PR-number]"
 ---
 
 # Review Pull Request
@@ -418,7 +418,7 @@ Usage: `/review-pr 123`
 ---
 description: Run specific test suite and report results
 allowed-tools: Read, Grep, Bash
-argument-hint: [test-path]
+argument-hint: "[test-path]"
 ---
 
 # Run Tests
@@ -438,7 +438,7 @@ Usage: `/run-tests ./tests/unit`
 ---
 description: Create a new React component with tests
 allowed-tools: Read, Write, Grep, Glob
-argument-hint: [component-name]
+argument-hint: "[component-name]"
 ---
 
 # Create React Component
@@ -458,7 +458,7 @@ Usage: `/create-component UserProfile`
 ---
 description: Generate API documentation from code
 allowed-tools: Read, Write, Grep, Glob, Bash
-argument-hint: [source-directory]
+argument-hint: "[source-directory]"
 ---
 
 # Generate API Docs

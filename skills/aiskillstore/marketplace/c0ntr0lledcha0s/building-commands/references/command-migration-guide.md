@@ -82,7 +82,7 @@ model: claude-haiku-4-5
 argument-hint: filename options
 
 # After
-argument-hint: [filename] [options]
+argument-hint: "[filename] [options]"
 ```
 
 ---
@@ -176,7 +176,7 @@ Open command file and update YAML:
 description: [new description]
 allowed-tools: [updated tools]
 model: [version alias]
-argument-hint: [bracketed hint]
+argument-hint: "[bracketed hint]"
 ---
 ```
 

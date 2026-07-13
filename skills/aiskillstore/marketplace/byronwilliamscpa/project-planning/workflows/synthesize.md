@@ -1,5 +1,5 @@
 ---
-argument-hint: [--start-phase]
+argument-hint: "[--start-phase]"
 description: Synthesize 4 planning documents into comprehensive PROJECT-PLAN.md with git branch strategy
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash(git:*), TodoWrite
 ---

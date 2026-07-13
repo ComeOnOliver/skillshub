@@ -441,7 +441,7 @@ After collecting answers:
 ```yaml
 ---
 description: [From command purpose]
-argument-hint: [If $ARGUMENTS needed]
+argument-hint: "[If $ARGUMENTS needed]"
 allowed-tools: [From tool selection]
 model: [If specified]
 ---
@@ -510,7 +510,7 @@ To install:
 ```yaml
 ---
 description: Comprehensive business and market research with competitor analysis
-argument-hint: [company/market] [industry]
+argument-hint: "[company/market] [industry]"
 allowed-tools: Read, Bash, Grep
 ---
 ```
@@ -534,7 +534,7 @@ allowed-tools: Read, Bash, Grep
 ```yaml
 ---
 description: Multi-platform content trend analysis for data-driven content strategy
-argument-hint: [topic] [platforms]
+argument-hint: "[topic] [platforms]"
 allowed-tools: Read, Bash
 ---
 ```
@@ -558,7 +558,7 @@ allowed-tools: Read, Bash
 ```yaml
 ---
 description: Translate medical terminology to 8th-10th grade reading level (German/English)
-argument-hint: [medical-term] [de|en]
+argument-hint: "[medical-term] [de|en]"
 allowed-tools: Read
 ---
 ```
@@ -582,7 +582,7 @@ allowed-tools: Read
 ```yaml
 ---
 description: Audit code for HIPAA/GDPR/DSGVO compliance requirements
-argument-hint: [code-path] [hipaa|gdpr|dsgvo|all]
+argument-hint: "[code-path] [hipaa|gdpr|dsgvo|all]"
 allowed-tools: Read, Grep, Task
 ---
 ```
@@ -606,7 +606,7 @@ allowed-tools: Read, Grep, Task
 ```yaml
 ---
 description: Generate complete API client with error handling and tests
-argument-hint: [api-name] [endpoints]
+argument-hint: "[api-name] [endpoints]"
 allowed-tools: Read, Write, Edit, Bash, Task
 ---
 ```
@@ -630,7 +630,7 @@ allowed-tools: Read, Write, Edit, Bash, Task
 ```yaml
 ---
 description: Auto-generate comprehensive test suite with coverage analysis
-argument-hint: [file-path] [unit|integration|e2e]
+argument-hint: "[file-path] [unit|integration|e2e]"
 allowed-tools: Read, Write, Bash
 ---
 ```
@@ -654,7 +654,7 @@ allowed-tools: Read, Write, Bash
 ```yaml
 ---
 description: Auto-generate documentation from code (API docs, README, architecture)
-argument-hint: [code-path] [api|readme|architecture|all]
+argument-hint: "[code-path] [api|readme|architecture|all]"
 allowed-tools: Read, Write, Grep
 ---
 ```
@@ -678,7 +678,7 @@ allowed-tools: Read, Write, Grep
 ```yaml
 ---
 description: Extract and structure knowledge from documents into actionable insights
-argument-hint: [doc-path] [faq|summary|kb|all]
+argument-hint: "[doc-path] [faq|summary|kb|all]"
 allowed-tools: Read, Grep
 ---
 ```
@@ -702,7 +702,7 @@ allowed-tools: Read, Grep
 ```yaml
 ---
 description: Analyze workflows and provide optimization recommendations
-argument-hint: [workflow-description]
+argument-hint: "[workflow-description]"
 allowed-tools: Read, Task
 ---
 ```
@@ -726,7 +726,7 @@ allowed-tools: Read, Task
 ```yaml
 ---
 description: Launch and coordinate multiple agents for complex tasks
-argument-hint: [agent-names] [task-description]
+argument-hint: "[agent-names] [task-description]"
 allowed-tools: Task
 ---
 ```
@@ -825,7 +825,7 @@ Create a custom command for analyzing customer feedback and generating product i
 ```markdown
 ---
 description: Brief description of what the command does
-argument-hint: [arg1] [arg2]
+argument-hint: "[arg1] [arg2]"
 allowed-tools: Read, Write, Bash
 model: claude-3-5-sonnet-20241022
 ---

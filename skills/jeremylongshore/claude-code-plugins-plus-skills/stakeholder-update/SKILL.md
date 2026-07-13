@@ -5,7 +5,7 @@ version: 1.0.0
 author: Ahmed Khaled Mohamed <ahmd.khaled.a.mohamed@gmail.com>
 license: MIT
 allowed-tools: Read, Glob, Grep
-argument-hint: [project or team]
+argument-hint: "[project or team]"
 compatible-with: claude-code
 tags: [productivity, stakeholder-update]
 

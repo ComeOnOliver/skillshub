@@ -256,7 +256,7 @@ description: Process a file
 # After
 ---
 description: Process a file
-argument-hint: [filename]
+argument-hint: "[filename]"
 ---
 ```
 
@@ -281,7 +281,7 @@ argument-hint: filename options
 
 # After
 ---
-argument-hint: [filename] [options]
+argument-hint: "[filename] [options]"
 ---
 ```
 

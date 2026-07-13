@@ -183,7 +183,7 @@ For example:
 ```markdown
 ---
 allowed-tools: Bash(git add:*), Bash(git status:*), Bash(git commit:*)
-argument-hint: [message]
+argument-hint: "[message]"
 description: Create a git commit
 model: claude-3-5-haiku-20241022
 ---
@@ -195,7 +195,7 @@ Example using positional arguments:
 
 ```markdown
 ---
-argument-hint: [pr-number] [priority] [assignee]
+argument-hint: "[pr-number] [priority] [assignee]"
 description: Review pull request
 ---
 

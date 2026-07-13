@@ -190,7 +190,7 @@ Provide a detailed report with severity levels and specific fixes.
 ```markdown
 <!-- .claude/commands/review-pr.md -->
 ---
-argument-hint: [pr-number]
+argument-hint: "[pr-number]"
 description: Review pull request with code-reviewer agent
 allowed-tools: Bash(gh:*), Read
 ---
@@ -578,7 +578,7 @@ When invoked:
 ```markdown
 <!-- .claude/commands/full-feature.md -->
 ---
-argument-hint: [feature-description]
+argument-hint: "[feature-description]"
 description: Complete feature development pipeline
 ---
 

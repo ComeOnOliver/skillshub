@@ -1,7 +1,7 @@
 ---
 description: Fix identified issues in the specified component
 allowed-tools: Read, Write, Edit, Grep, Glob, Bash
-argument-hint: [component-name]
+argument-hint: "[component-name]"
 ---
 
 # Fix Command

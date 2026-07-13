@@ -1,7 +1,7 @@
 ---
 name: daily-news-report
 description: Scrapes content based on a preset URL list, filters high-quality technical information, and generates daily Markdown reports.
-argument-hint: [optional: date]
+argument-hint: "[optional: date]"
 disable-model-invocation: false
 user-invocable: true
 allowed-tools: Task, WebFetch, Read, Write, Bash(mkdir*), Bash(date*), Bash(ls*), mcp__chrome-devtools__*

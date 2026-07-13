@@ -187,7 +187,7 @@ name: my-skill
 description: What this skill does and when to use it. Use when...
 context: fork
 agent: general-purpose
-argument-hint: [topic]
+argument-hint: "[topic]"
 ---
 ```
 
@@ -300,7 +300,7 @@ Step 0: Check available tools
   - `which docker` → If found, enable container-based execution
 
 # Bad: Manual flags
-argument-hint: [scope] [--with-codex] [--docker] [--verbose]
+argument-hint: "[scope] [--with-codex] [--docker] [--verbose]"
 ```
 
 **Principle:** Capabilities auto-detect, user decides scope. A skill should discover what it CAN do and act accordingly, not require users to remember what tools are installed.
